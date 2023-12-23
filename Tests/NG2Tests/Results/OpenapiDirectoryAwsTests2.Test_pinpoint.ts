@@ -22,23 +22,35 @@ export namespace MyNS {
 
 	/** Provides information about an application. */
 	export interface ApplicationResponse {
+
+		/** Required */
 		Arn: string;
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		Name: string;
 		tags?: MapOf__string;
 	}
 
 	/** Provides information about an application. */
 	export interface ApplicationResponseFormProperties {
+
+		/** Required */
 		Arn: FormControl<string | null | undefined>,
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateApplicationResponseFormGroup() {
 		return new FormGroup<ApplicationResponseFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -143,8 +155,14 @@ export namespace MyNS {
 	/** Provides information about the status, configuration, and other settings for a campaign. */
 	export interface CampaignResponse {
 		AdditionalTreatments?: Array<TreatmentResource>;
+
+		/** Required */
 		ApplicationId: string;
+
+		/** Required */
 		Arn: string;
+
+		/** Required */
 		CreationDate: string;
 
 		/** Specifies the delivery configuration settings for sending a campaign or campaign treatment through a custom channel. This object is required if you use the CampaignCustomMessage object to define the message to send for the campaign or campaign treatment. */
@@ -157,8 +175,12 @@ export namespace MyNS {
 
 		/** Specifies settings for invoking an AWS Lambda function that customizes a segment for a campaign. */
 		Hook?: CampaignHook;
+
+		/** Required */
 		Id: string;
 		IsPaused?: boolean | null;
+
+		/** Required */
 		LastModifiedDate: string;
 
 		/** For a campaign, specifies limits on the messages that the campaign can send. For an application, specifies the default limits for messages that campaigns and journeys in the application can send. */
@@ -170,7 +192,11 @@ export namespace MyNS {
 
 		/** Specifies the schedule settings for a campaign. */
 		Schedule?: Schedule;
+
+		/** Required */
 		SegmentId: string;
+
+		/** Required */
 		SegmentVersion: number;
 
 		/** Provides information about the status of a campaign. */
@@ -186,16 +212,30 @@ export namespace MyNS {
 
 	/** Provides information about the status, configuration, and other settings for a campaign. */
 	export interface CampaignResponseFormProperties {
+
+		/** Required */
 		ApplicationId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Arn: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreationDate: FormControl<string | null | undefined>,
 		Description: FormControl<string | null | undefined>,
 		HoldoutPercent: FormControl<number | null | undefined>,
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
 		IsPaused: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		LastModifiedDate: FormControl<string | null | undefined>,
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		SegmentId: FormControl<string | null | undefined>,
+
+		/** Required */
 		SegmentVersion: FormControl<number | null | undefined>,
 		TreatmentDescription: FormControl<string | null | undefined>,
 		TreatmentName: FormControl<string | null | undefined>,
@@ -203,17 +243,17 @@ export namespace MyNS {
 	}
 	export function CreateCampaignResponseFormGroup() {
 		return new FormGroup<CampaignResponseFormProperties>({
-			ApplicationId: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
-			CreationDate: new FormControl<string | null | undefined>(undefined),
+			ApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			CreationDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Description: new FormControl<string | null | undefined>(undefined),
 			HoldoutPercent: new FormControl<number | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			IsPaused: new FormControl<boolean | null | undefined>(undefined),
-			LastModifiedDate: new FormControl<string | null | undefined>(undefined),
+			LastModifiedDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Name: new FormControl<string | null | undefined>(undefined),
-			SegmentId: new FormControl<string | null | undefined>(undefined),
-			SegmentVersion: new FormControl<number | null | undefined>(undefined),
+			SegmentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SegmentVersion: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			TreatmentDescription: new FormControl<string | null | undefined>(undefined),
 			TreatmentName: new FormControl<string | null | undefined>(undefined),
 			Version: new FormControl<number | null | undefined>(undefined),
@@ -227,6 +267,8 @@ export namespace MyNS {
 
 		/** Specifies the delivery configuration settings for sending a campaign or campaign treatment through a custom channel. This object is required if you use the CampaignCustomMessage object to define the message to send for the campaign or campaign treatment. */
 		CustomDeliveryConfiguration?: CustomDeliveryConfiguration;
+
+		/** Required */
 		Id: string;
 
 		/** Specifies the message configuration settings for a campaign. */
@@ -234,6 +276,8 @@ export namespace MyNS {
 
 		/** Specifies the schedule settings for a campaign. */
 		Schedule?: Schedule;
+
+		/** Required */
 		SizePercent: number;
 
 		/** Provides information about the status of a campaign. */
@@ -247,15 +291,19 @@ export namespace MyNS {
 
 	/** Specifies the settings for a campaign treatment. A <i>treatment</i> is a variation of a campaign that's used for A/B testing of a campaign. */
 	export interface TreatmentResourceFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		SizePercent: FormControl<number | null | undefined>,
 		TreatmentDescription: FormControl<string | null | undefined>,
 		TreatmentName: FormControl<string | null | undefined>,
 	}
 	export function CreateTreatmentResourceFormGroup() {
 		return new FormGroup<TreatmentResourceFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			SizePercent: new FormControl<number | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SizePercent: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			TreatmentDescription: new FormControl<string | null | undefined>(undefined),
 			TreatmentName: new FormControl<string | null | undefined>(undefined),
 		});
@@ -265,17 +313,21 @@ export namespace MyNS {
 
 	/** Specifies the delivery configuration settings for sending a campaign or campaign treatment through a custom channel. This object is required if you use the CampaignCustomMessage object to define the message to send for the campaign or campaign treatment. */
 	export interface CustomDeliveryConfiguration {
+
+		/** Required */
 		DeliveryUri: string;
 		EndpointTypes?: Array<__EndpointTypesElement>;
 	}
 
 	/** Specifies the delivery configuration settings for sending a campaign or campaign treatment through a custom channel. This object is required if you use the CampaignCustomMessage object to define the message to send for the campaign or campaign treatment. */
 	export interface CustomDeliveryConfigurationFormProperties {
+
+		/** Required */
 		DeliveryUri: FormControl<string | null | undefined>,
 	}
 	export function CreateCustomDeliveryConfigurationFormGroup() {
 		return new FormGroup<CustomDeliveryConfigurationFormProperties>({
-			DeliveryUri: new FormControl<string | null | undefined>(undefined),
+			DeliveryUri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -452,6 +504,8 @@ export namespace MyNS {
 
 		/** Specifies the start and end times that define a time range when messages aren't sent to endpoints. */
 		QuietTime?: QuietTime;
+
+		/** Required */
 		StartTime: string;
 		Timezone?: string | null;
 	}
@@ -461,6 +515,8 @@ export namespace MyNS {
 		EndTime: FormControl<string | null | undefined>,
 		Frequency: FormControl<ScheduleFrequency | null | undefined>,
 		IsLocalTime: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		StartTime: FormControl<string | null | undefined>,
 		Timezone: FormControl<string | null | undefined>,
 	}
@@ -469,7 +525,7 @@ export namespace MyNS {
 			EndTime: new FormControl<string | null | undefined>(undefined),
 			Frequency: new FormControl<ScheduleFrequency | null | undefined>(undefined),
 			IsLocalTime: new FormControl<boolean | null | undefined>(undefined),
-			StartTime: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Timezone: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -484,16 +540,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		Dimensions: EventDimensions;
+
+		/** Required */
 		FilterType: CampaignEventFilterFilterType;
 	}
 
 	/** Specifies the settings for events that cause a campaign to be sent. */
 	export interface CampaignEventFilterFormProperties {
+
+		/** Required */
 		FilterType: FormControl<CampaignEventFilterFilterType | null | undefined>,
 	}
 	export function CreateCampaignEventFilterFormGroup() {
 		return new FormGroup<CampaignEventFilterFormProperties>({
-			FilterType: new FormControl<CampaignEventFilterFilterType | null | undefined>(undefined),
+			FilterType: new FormControl<CampaignEventFilterFilterType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -531,6 +591,8 @@ export namespace MyNS {
 	/** Specifies the dimension type and values for a segment dimension. */
 	export interface SetDimension {
 		DimensionType?: SetDimensionDimensionType | null;
+
+		/** Required */
 		Values: Array<string>;
 	}
 
@@ -709,6 +771,8 @@ export namespace MyNS {
 
 		/** Specifies the schedule settings for a campaign. */
 		Schedule?: Schedule;
+
+		/** Required */
 		SizePercent: number;
 
 		/** Specifies the message template to use for the message, for each type of channel. */
@@ -719,13 +783,15 @@ export namespace MyNS {
 
 	/** Specifies the settings for a campaign treatment. A <i>treatment</i> is a variation of a campaign that's used for A/B testing of a campaign. */
 	export interface WriteTreatmentResourceFormProperties {
+
+		/** Required */
 		SizePercent: FormControl<number | null | undefined>,
 		TreatmentDescription: FormControl<string | null | undefined>,
 		TreatmentName: FormControl<string | null | undefined>,
 	}
 	export function CreateWriteTreatmentResourceFormGroup() {
 		return new FormGroup<WriteTreatmentResourceFormProperties>({
-			SizePercent: new FormControl<number | null | undefined>(undefined),
+			SizePercent: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			TreatmentDescription: new FormControl<string | null | undefined>(undefined),
 			TreatmentName: new FormControl<string | null | undefined>(undefined),
 		});
@@ -790,9 +856,13 @@ export namespace MyNS {
 
 	/** Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console. */
 	export interface ExportJobResponse {
+
+		/** Required */
 		ApplicationId: string;
 		CompletedPieces?: number | null;
 		CompletionDate?: string | null;
+
+		/** Required */
 		CreationDate: string;
 
 		/**
@@ -802,41 +872,57 @@ export namespace MyNS {
 		Definition: ExportJobResource;
 		FailedPieces?: number | null;
 		Failures?: Array<string>;
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		JobStatus: ExportJobResponseJobStatus;
 		TotalFailures?: number | null;
 		TotalPieces?: number | null;
 		TotalProcessed?: number | null;
+
+		/** Required */
 		Type: string;
 	}
 
 	/** Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console. */
 	export interface ExportJobResponseFormProperties {
+
+		/** Required */
 		ApplicationId: FormControl<string | null | undefined>,
 		CompletedPieces: FormControl<number | null | undefined>,
 		CompletionDate: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreationDate: FormControl<string | null | undefined>,
 		FailedPieces: FormControl<number | null | undefined>,
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		JobStatus: FormControl<ExportJobResponseJobStatus | null | undefined>,
 		TotalFailures: FormControl<number | null | undefined>,
 		TotalPieces: FormControl<number | null | undefined>,
 		TotalProcessed: FormControl<number | null | undefined>,
+
+		/** Required */
 		Type: FormControl<string | null | undefined>,
 	}
 	export function CreateExportJobResponseFormGroup() {
 		return new FormGroup<ExportJobResponseFormProperties>({
-			ApplicationId: new FormControl<string | null | undefined>(undefined),
+			ApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			CompletedPieces: new FormControl<number | null | undefined>(undefined),
 			CompletionDate: new FormControl<string | null | undefined>(undefined),
-			CreationDate: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			FailedPieces: new FormControl<number | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			JobStatus: new FormControl<ExportJobResponseJobStatus | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			JobStatus: new FormControl<ExportJobResponseJobStatus | null | undefined>(undefined, [Validators.required]),
 			TotalFailures: new FormControl<number | null | undefined>(undefined),
 			TotalPieces: new FormControl<number | null | undefined>(undefined),
 			TotalProcessed: new FormControl<number | null | undefined>(undefined),
-			Type: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -844,7 +930,11 @@ export namespace MyNS {
 
 	/** Provides information about the resource settings for a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console. */
 	export interface ExportJobResource {
+
+		/** Required */
 		RoleArn: string;
+
+		/** Required */
 		S3UrlPrefix: string;
 		SegmentId?: string | null;
 		SegmentVersion?: number | null;
@@ -852,15 +942,19 @@ export namespace MyNS {
 
 	/** Provides information about the resource settings for a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console. */
 	export interface ExportJobResourceFormProperties {
+
+		/** Required */
 		RoleArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		S3UrlPrefix: FormControl<string | null | undefined>,
 		SegmentId: FormControl<string | null | undefined>,
 		SegmentVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateExportJobResourceFormGroup() {
 		return new FormGroup<ExportJobResourceFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined),
-			S3UrlPrefix: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			S3UrlPrefix: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SegmentId: new FormControl<string | null | undefined>(undefined),
 			SegmentVersion: new FormControl<number | null | undefined>(undefined),
 		});
@@ -888,9 +982,13 @@ export namespace MyNS {
 
 	/** Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console. */
 	export interface ImportJobResponse {
+
+		/** Required */
 		ApplicationId: string;
 		CompletedPieces?: number | null;
 		CompletionDate?: string | null;
+
+		/** Required */
 		CreationDate: string;
 
 		/**
@@ -900,41 +998,57 @@ export namespace MyNS {
 		Definition: ImportJobResource;
 		FailedPieces?: number | null;
 		Failures?: Array<string>;
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		JobStatus: ExportJobResponseJobStatus;
 		TotalFailures?: number | null;
 		TotalPieces?: number | null;
 		TotalProcessed?: number | null;
+
+		/** Required */
 		Type: string;
 	}
 
 	/** Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console. */
 	export interface ImportJobResponseFormProperties {
+
+		/** Required */
 		ApplicationId: FormControl<string | null | undefined>,
 		CompletedPieces: FormControl<number | null | undefined>,
 		CompletionDate: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreationDate: FormControl<string | null | undefined>,
 		FailedPieces: FormControl<number | null | undefined>,
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		JobStatus: FormControl<ExportJobResponseJobStatus | null | undefined>,
 		TotalFailures: FormControl<number | null | undefined>,
 		TotalPieces: FormControl<number | null | undefined>,
 		TotalProcessed: FormControl<number | null | undefined>,
+
+		/** Required */
 		Type: FormControl<string | null | undefined>,
 	}
 	export function CreateImportJobResponseFormGroup() {
 		return new FormGroup<ImportJobResponseFormProperties>({
-			ApplicationId: new FormControl<string | null | undefined>(undefined),
+			ApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			CompletedPieces: new FormControl<number | null | undefined>(undefined),
 			CompletionDate: new FormControl<string | null | undefined>(undefined),
-			CreationDate: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			FailedPieces: new FormControl<number | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			JobStatus: new FormControl<ExportJobResponseJobStatus | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			JobStatus: new FormControl<ExportJobResponseJobStatus | null | undefined>(undefined, [Validators.required]),
 			TotalFailures: new FormControl<number | null | undefined>(undefined),
 			TotalPieces: new FormControl<number | null | undefined>(undefined),
 			TotalProcessed: new FormControl<number | null | undefined>(undefined),
-			Type: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -944,9 +1058,15 @@ export namespace MyNS {
 	export interface ImportJobResource {
 		DefineSegment?: boolean | null;
 		ExternalId?: string | null;
+
+		/** Required */
 		Format: ImportJobResourceFormat;
 		RegisterEndpoints?: boolean | null;
+
+		/** Required */
 		RoleArn: string;
+
+		/** Required */
 		S3Url: string;
 		SegmentId?: string | null;
 		SegmentName?: string | null;
@@ -956,9 +1076,15 @@ export namespace MyNS {
 	export interface ImportJobResourceFormProperties {
 		DefineSegment: FormControl<boolean | null | undefined>,
 		ExternalId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Format: FormControl<ImportJobResourceFormat | null | undefined>,
 		RegisterEndpoints: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		RoleArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		S3Url: FormControl<string | null | undefined>,
 		SegmentId: FormControl<string | null | undefined>,
 		SegmentName: FormControl<string | null | undefined>,
@@ -967,10 +1093,10 @@ export namespace MyNS {
 		return new FormGroup<ImportJobResourceFormProperties>({
 			DefineSegment: new FormControl<boolean | null | undefined>(undefined),
 			ExternalId: new FormControl<string | null | undefined>(undefined),
-			Format: new FormControl<ImportJobResourceFormat | null | undefined>(undefined),
+			Format: new FormControl<ImportJobResourceFormat | null | undefined>(undefined, [Validators.required]),
 			RegisterEndpoints: new FormControl<boolean | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
-			S3Url: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			S3Url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SegmentId: new FormControl<string | null | undefined>(undefined),
 			SegmentName: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1001,14 +1127,20 @@ export namespace MyNS {
 	/** Provides information about the status, configuration, and other settings for a journey. */
 	export interface JourneyResponse {
 		Activities?: MapOfActivity;
+
+		/** Required */
 		ApplicationId: string;
 		CreationDate?: string | null;
+
+		/** Required */
 		Id: string;
 		LastModifiedDate?: string | null;
 
 		/** Specifies limits on the messages that a journey can send and the number of times participants can enter a journey. */
 		Limits?: JourneyLimits;
 		LocalTime?: boolean | null;
+
+		/** Required */
 		Name: string;
 
 		/** Specifies the start and end times that define a time range when messages aren't sent to endpoints. */
@@ -1027,11 +1159,17 @@ export namespace MyNS {
 
 	/** Provides information about the status, configuration, and other settings for a journey. */
 	export interface JourneyResponseFormProperties {
+
+		/** Required */
 		ApplicationId: FormControl<string | null | undefined>,
 		CreationDate: FormControl<string | null | undefined>,
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
 		LastModifiedDate: FormControl<string | null | undefined>,
 		LocalTime: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 		RefreshFrequency: FormControl<string | null | undefined>,
 		StartActivity: FormControl<string | null | undefined>,
@@ -1039,12 +1177,12 @@ export namespace MyNS {
 	}
 	export function CreateJourneyResponseFormGroup() {
 		return new FormGroup<JourneyResponseFormProperties>({
-			ApplicationId: new FormControl<string | null | undefined>(undefined),
+			ApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			CreationDate: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			LastModifiedDate: new FormControl<string | null | undefined>(undefined),
 			LocalTime: new FormControl<boolean | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RefreshFrequency: new FormControl<string | null | undefined>(undefined),
 			StartActivity: new FormControl<string | null | undefined>(undefined),
 			State: new FormControl<JourneyResponseState | null | undefined>(undefined),
@@ -1131,16 +1269,20 @@ export namespace MyNS {
 
 	/** Specifies a segment to associate with an activity in a journey. */
 	export interface SegmentCondition {
+
+		/** Required */
 		SegmentId: string;
 	}
 
 	/** Specifies a segment to associate with an activity in a journey. */
 	export interface SegmentConditionFormProperties {
+
+		/** Required */
 		SegmentId: FormControl<string | null | undefined>,
 	}
 	export function CreateSegmentConditionFormGroup() {
 		return new FormGroup<SegmentConditionFormProperties>({
-			SegmentId: new FormControl<string | null | undefined>(undefined),
+			SegmentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1290,13 +1432,23 @@ export namespace MyNS {
 	/** Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model. */
 	export interface RecommenderConfigurationResponse {
 		Attributes?: MapOf__string;
+
+		/** Required */
 		CreationDate: string;
 		Description?: string | null;
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		LastModifiedDate: string;
 		Name?: string | null;
 		RecommendationProviderIdType?: string | null;
+
+		/** Required */
 		RecommendationProviderRoleArn: string;
+
+		/** Required */
 		RecommendationProviderUri: string;
 		RecommendationTransformerUri?: string | null;
 		RecommendationsDisplayName?: string | null;
@@ -1305,13 +1457,23 @@ export namespace MyNS {
 
 	/** Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model. */
 	export interface RecommenderConfigurationResponseFormProperties {
+
+		/** Required */
 		CreationDate: FormControl<string | null | undefined>,
 		Description: FormControl<string | null | undefined>,
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		LastModifiedDate: FormControl<string | null | undefined>,
 		Name: FormControl<string | null | undefined>,
 		RecommendationProviderIdType: FormControl<string | null | undefined>,
+
+		/** Required */
 		RecommendationProviderRoleArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		RecommendationProviderUri: FormControl<string | null | undefined>,
 		RecommendationTransformerUri: FormControl<string | null | undefined>,
 		RecommendationsDisplayName: FormControl<string | null | undefined>,
@@ -1319,14 +1481,14 @@ export namespace MyNS {
 	}
 	export function CreateRecommenderConfigurationResponseFormGroup() {
 		return new FormGroup<RecommenderConfigurationResponseFormProperties>({
-			CreationDate: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Description: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			LastModifiedDate: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			LastModifiedDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Name: new FormControl<string | null | undefined>(undefined),
 			RecommendationProviderIdType: new FormControl<string | null | undefined>(undefined),
-			RecommendationProviderRoleArn: new FormControl<string | null | undefined>(undefined),
-			RecommendationProviderUri: new FormControl<string | null | undefined>(undefined),
+			RecommendationProviderRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RecommendationProviderUri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RecommendationTransformerUri: new FormControl<string | null | undefined>(undefined),
 			RecommendationsDisplayName: new FormControl<string | null | undefined>(undefined),
 			RecommendationsPerMessage: new FormControl<number | null | undefined>(undefined),
@@ -1353,12 +1515,20 @@ export namespace MyNS {
 
 	/** Provides information about the configuration, dimension, and other settings for a segment. */
 	export interface SegmentResponse {
+
+		/** Required */
 		ApplicationId: string;
+
+		/** Required */
 		Arn: string;
+
+		/** Required */
 		CreationDate: string;
 
 		/** Specifies the dimension settings for a segment. */
 		Dimensions?: SegmentDimensions;
+
+		/** Required */
 		Id: string;
 
 		/** Provides information about the import job that created a segment. An import job is a job that creates a user segment by importing endpoint definitions. */
@@ -1368,6 +1538,8 @@ export namespace MyNS {
 
 		/** Specifies the settings that define the relationships between segment groups for a segment. */
 		SegmentGroups?: SegmentGroupList;
+
+		/** Required */
 		SegmentType: SegmentResponseSegmentType;
 		tags?: MapOf__string;
 		Version?: number | null;
@@ -1375,24 +1547,34 @@ export namespace MyNS {
 
 	/** Provides information about the configuration, dimension, and other settings for a segment. */
 	export interface SegmentResponseFormProperties {
+
+		/** Required */
 		ApplicationId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Arn: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreationDate: FormControl<string | null | undefined>,
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
 		LastModifiedDate: FormControl<string | null | undefined>,
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		SegmentType: FormControl<SegmentResponseSegmentType | null | undefined>,
 		Version: FormControl<number | null | undefined>,
 	}
 	export function CreateSegmentResponseFormGroup() {
 		return new FormGroup<SegmentResponseFormProperties>({
-			ApplicationId: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
-			CreationDate: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			ApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			CreationDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			LastModifiedDate: new FormControl<string | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined),
-			SegmentType: new FormControl<SegmentResponseSegmentType | null | undefined>(undefined),
+			SegmentType: new FormControl<SegmentResponseSegmentType | null | undefined>(undefined, [Validators.required]),
 			Version: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1444,19 +1626,27 @@ export namespace MyNS {
 
 	/** Specifies criteria for including or excluding endpoints from a segment based on how recently an endpoint was active. */
 	export interface RecencyDimension {
+
+		/** Required */
 		Duration: RecencyDimensionDuration;
+
+		/** Required */
 		RecencyType: RecencyDimensionRecencyType;
 	}
 
 	/** Specifies criteria for including or excluding endpoints from a segment based on how recently an endpoint was active. */
 	export interface RecencyDimensionFormProperties {
+
+		/** Required */
 		Duration: FormControl<RecencyDimensionDuration | null | undefined>,
+
+		/** Required */
 		RecencyType: FormControl<RecencyDimensionRecencyType | null | undefined>,
 	}
 	export function CreateRecencyDimensionFormGroup() {
 		return new FormGroup<RecencyDimensionFormProperties>({
-			Duration: new FormControl<RecencyDimensionDuration | null | undefined>(undefined),
-			RecencyType: new FormControl<RecencyDimensionRecencyType | null | undefined>(undefined),
+			Duration: new FormControl<RecencyDimensionDuration | null | undefined>(undefined, [Validators.required]),
+			RecencyType: new FormControl<RecencyDimensionRecencyType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1543,19 +1733,27 @@ export namespace MyNS {
 
 	/** Specifies the GPS coordinates of a location. */
 	export interface GPSCoordinates {
+
+		/** Required */
 		Latitude: number;
+
+		/** Required */
 		Longitude: number;
 	}
 
 	/** Specifies the GPS coordinates of a location. */
 	export interface GPSCoordinatesFormProperties {
+
+		/** Required */
 		Latitude: FormControl<number | null | undefined>,
+
+		/** Required */
 		Longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateGPSCoordinatesFormGroup() {
 		return new FormGroup<GPSCoordinatesFormProperties>({
-			Latitude: new FormControl<number | null | undefined>(undefined),
-			Longitude: new FormControl<number | null | undefined>(undefined),
+			Latitude: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			Longitude: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1564,28 +1762,48 @@ export namespace MyNS {
 	/** Provides information about the import job that created a segment. An import job is a job that creates a user segment by importing endpoint definitions. */
 	export interface SegmentImportResource {
 		ChannelCounts?: MapOf__integer;
+
+		/** Required */
 		ExternalId: string;
+
+		/** Required */
 		Format: ImportJobResourceFormat;
+
+		/** Required */
 		RoleArn: string;
+
+		/** Required */
 		S3Url: string;
+
+		/** Required */
 		Size: number;
 	}
 
 	/** Provides information about the import job that created a segment. An import job is a job that creates a user segment by importing endpoint definitions. */
 	export interface SegmentImportResourceFormProperties {
+
+		/** Required */
 		ExternalId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Format: FormControl<ImportJobResourceFormat | null | undefined>,
+
+		/** Required */
 		RoleArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		S3Url: FormControl<string | null | undefined>,
+
+		/** Required */
 		Size: FormControl<number | null | undefined>,
 	}
 	export function CreateSegmentImportResourceFormGroup() {
 		return new FormGroup<SegmentImportResourceFormProperties>({
-			ExternalId: new FormControl<string | null | undefined>(undefined),
-			Format: new FormControl<ImportJobResourceFormat | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
-			S3Url: new FormControl<string | null | undefined>(undefined),
-			Size: new FormControl<number | null | undefined>(undefined),
+			ExternalId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Format: new FormControl<ImportJobResourceFormat | null | undefined>(undefined, [Validators.required]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			S3Url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Size: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1643,18 +1861,22 @@ export namespace MyNS {
 
 	/** Specifies the segment identifier and version of a segment. */
 	export interface SegmentReference {
+
+		/** Required */
 		Id: string;
 		Version?: number | null;
 	}
 
 	/** Specifies the segment identifier and version of a segment. */
 	export interface SegmentReferenceFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
 		Version: FormControl<number | null | undefined>,
 	}
 	export function CreateSegmentReferenceFormGroup() {
 		return new FormGroup<SegmentReferenceFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Version: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1723,6 +1945,8 @@ export namespace MyNS {
 		IsArchived?: boolean | null;
 		LastModifiedBy?: string | null;
 		LastModifiedDate?: string | null;
+
+		/** Required */
 		Platform: string;
 		Version?: number | null;
 	}
@@ -1737,6 +1961,8 @@ export namespace MyNS {
 		IsArchived: FormControl<boolean | null | undefined>,
 		LastModifiedBy: FormControl<string | null | undefined>,
 		LastModifiedDate: FormControl<string | null | undefined>,
+
+		/** Required */
 		Platform: FormControl<string | null | undefined>,
 		Version: FormControl<number | null | undefined>,
 	}
@@ -1750,7 +1976,7 @@ export namespace MyNS {
 			IsArchived: new FormControl<boolean | null | undefined>(undefined),
 			LastModifiedBy: new FormControl<string | null | undefined>(undefined),
 			LastModifiedDate: new FormControl<string | null | undefined>(undefined),
-			Platform: new FormControl<string | null | undefined>(undefined),
+			Platform: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Version: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1785,6 +2011,8 @@ export namespace MyNS {
 		IsArchived?: boolean | null;
 		LastModifiedBy?: string | null;
 		LastModifiedDate?: string | null;
+
+		/** Required */
 		Platform: string;
 		Version?: number | null;
 	}
@@ -1801,6 +2029,8 @@ export namespace MyNS {
 		IsArchived: FormControl<boolean | null | undefined>,
 		LastModifiedBy: FormControl<string | null | undefined>,
 		LastModifiedDate: FormControl<string | null | undefined>,
+
+		/** Required */
 		Platform: FormControl<string | null | undefined>,
 		Version: FormControl<number | null | undefined>,
 	}
@@ -1816,7 +2046,7 @@ export namespace MyNS {
 			IsArchived: new FormControl<boolean | null | undefined>(undefined),
 			LastModifiedBy: new FormControl<string | null | undefined>(undefined),
 			LastModifiedDate: new FormControl<string | null | undefined>(undefined),
-			Platform: new FormControl<string | null | undefined>(undefined),
+			Platform: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Version: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1851,6 +2081,8 @@ export namespace MyNS {
 		IsArchived?: boolean | null;
 		LastModifiedBy?: string | null;
 		LastModifiedDate?: string | null;
+
+		/** Required */
 		Platform: string;
 		Version?: number | null;
 	}
@@ -1867,6 +2099,8 @@ export namespace MyNS {
 		IsArchived: FormControl<boolean | null | undefined>,
 		LastModifiedBy: FormControl<string | null | undefined>,
 		LastModifiedDate: FormControl<string | null | undefined>,
+
+		/** Required */
 		Platform: FormControl<string | null | undefined>,
 		Version: FormControl<number | null | undefined>,
 	}
@@ -1882,7 +2116,7 @@ export namespace MyNS {
 			IsArchived: new FormControl<boolean | null | undefined>(undefined),
 			LastModifiedBy: new FormControl<string | null | undefined>(undefined),
 			LastModifiedDate: new FormControl<string | null | undefined>(undefined),
-			Platform: new FormControl<string | null | undefined>(undefined),
+			Platform: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Version: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1917,6 +2151,8 @@ export namespace MyNS {
 		IsArchived?: boolean | null;
 		LastModifiedBy?: string | null;
 		LastModifiedDate?: string | null;
+
+		/** Required */
 		Platform: string;
 		Version?: number | null;
 	}
@@ -1933,6 +2169,8 @@ export namespace MyNS {
 		IsArchived: FormControl<boolean | null | undefined>,
 		LastModifiedBy: FormControl<string | null | undefined>,
 		LastModifiedDate: FormControl<string | null | undefined>,
+
+		/** Required */
 		Platform: FormControl<string | null | undefined>,
 		Version: FormControl<number | null | undefined>,
 	}
@@ -1948,7 +2186,7 @@ export namespace MyNS {
 			IsArchived: new FormControl<boolean | null | undefined>(undefined),
 			LastModifiedBy: new FormControl<string | null | undefined>(undefined),
 			LastModifiedDate: new FormControl<string | null | undefined>(undefined),
-			Platform: new FormControl<string | null | undefined>(undefined),
+			Platform: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Version: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1983,6 +2221,8 @@ export namespace MyNS {
 		IsArchived?: boolean | null;
 		LastModifiedBy?: string | null;
 		LastModifiedDate?: string | null;
+
+		/** Required */
 		Platform: string;
 		Version?: number | null;
 	}
@@ -1999,6 +2239,8 @@ export namespace MyNS {
 		IsArchived: FormControl<boolean | null | undefined>,
 		LastModifiedBy: FormControl<string | null | undefined>,
 		LastModifiedDate: FormControl<string | null | undefined>,
+
+		/** Required */
 		Platform: FormControl<string | null | undefined>,
 		Version: FormControl<number | null | undefined>,
 	}
@@ -2014,7 +2256,7 @@ export namespace MyNS {
 			IsArchived: new FormControl<boolean | null | undefined>(undefined),
 			LastModifiedBy: new FormControl<string | null | undefined>(undefined),
 			LastModifiedDate: new FormControl<string | null | undefined>(undefined),
-			Platform: new FormControl<string | null | undefined>(undefined),
+			Platform: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Version: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -2057,6 +2299,8 @@ export namespace MyNS {
 	export interface BaiduChannelResponse {
 		ApplicationId?: string | null;
 		CreationDate?: string | null;
+
+		/** Required */
 		Credential: string;
 		Enabled?: boolean | null;
 		HasCredential?: boolean | null;
@@ -2064,6 +2308,8 @@ export namespace MyNS {
 		IsArchived?: boolean | null;
 		LastModifiedBy?: string | null;
 		LastModifiedDate?: string | null;
+
+		/** Required */
 		Platform: string;
 		Version?: number | null;
 	}
@@ -2072,6 +2318,8 @@ export namespace MyNS {
 	export interface BaiduChannelResponseFormProperties {
 		ApplicationId: FormControl<string | null | undefined>,
 		CreationDate: FormControl<string | null | undefined>,
+
+		/** Required */
 		Credential: FormControl<string | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
 		HasCredential: FormControl<boolean | null | undefined>,
@@ -2079,6 +2327,8 @@ export namespace MyNS {
 		IsArchived: FormControl<boolean | null | undefined>,
 		LastModifiedBy: FormControl<string | null | undefined>,
 		LastModifiedDate: FormControl<string | null | undefined>,
+
+		/** Required */
 		Platform: FormControl<string | null | undefined>,
 		Version: FormControl<number | null | undefined>,
 	}
@@ -2086,14 +2336,14 @@ export namespace MyNS {
 		return new FormGroup<BaiduChannelResponseFormProperties>({
 			ApplicationId: new FormControl<string | null | undefined>(undefined),
 			CreationDate: new FormControl<string | null | undefined>(undefined),
-			Credential: new FormControl<string | null | undefined>(undefined),
+			Credential: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
 			HasCredential: new FormControl<boolean | null | undefined>(undefined),
 			Id: new FormControl<string | null | undefined>(undefined),
 			IsArchived: new FormControl<boolean | null | undefined>(undefined),
 			LastModifiedBy: new FormControl<string | null | undefined>(undefined),
 			LastModifiedDate: new FormControl<string | null | undefined>(undefined),
-			Platform: new FormControl<string | null | undefined>(undefined),
+			Platform: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Version: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -2146,6 +2396,8 @@ export namespace MyNS {
 		LastModifiedBy?: string | null;
 		LastModifiedDate?: string | null;
 		MessagesPerSecond?: number | null;
+
+		/** Required */
 		Platform: string;
 		RoleArn?: string | null;
 		Version?: number | null;
@@ -2165,6 +2417,8 @@ export namespace MyNS {
 		LastModifiedBy: FormControl<string | null | undefined>,
 		LastModifiedDate: FormControl<string | null | undefined>,
 		MessagesPerSecond: FormControl<number | null | undefined>,
+
+		/** Required */
 		Platform: FormControl<string | null | undefined>,
 		RoleArn: FormControl<string | null | undefined>,
 		Version: FormControl<number | null | undefined>,
@@ -2183,7 +2437,7 @@ export namespace MyNS {
 			LastModifiedBy: new FormControl<string | null | undefined>(undefined),
 			LastModifiedDate: new FormControl<string | null | undefined>(undefined),
 			MessagesPerSecond: new FormControl<number | null | undefined>(undefined),
-			Platform: new FormControl<string | null | undefined>(undefined),
+			Platform: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RoleArn: new FormControl<string | null | undefined>(undefined),
 			Version: new FormControl<number | null | undefined>(undefined),
 		});
@@ -2424,31 +2678,43 @@ export namespace MyNS {
 
 	/** Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream. */
 	export interface EventStream {
+
+		/** Required */
 		ApplicationId: string;
+
+		/** Required */
 		DestinationStreamArn: string;
 		ExternalId?: string | null;
 		LastModifiedDate?: string | null;
 		LastUpdatedBy?: string | null;
+
+		/** Required */
 		RoleArn: string;
 	}
 
 	/** Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream. */
 	export interface EventStreamFormProperties {
+
+		/** Required */
 		ApplicationId: FormControl<string | null | undefined>,
+
+		/** Required */
 		DestinationStreamArn: FormControl<string | null | undefined>,
 		ExternalId: FormControl<string | null | undefined>,
 		LastModifiedDate: FormControl<string | null | undefined>,
 		LastUpdatedBy: FormControl<string | null | undefined>,
+
+		/** Required */
 		RoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateEventStreamFormGroup() {
 		return new FormGroup<EventStreamFormProperties>({
-			ApplicationId: new FormControl<string | null | undefined>(undefined),
-			DestinationStreamArn: new FormControl<string | null | undefined>(undefined),
+			ApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DestinationStreamArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ExternalId: new FormControl<string | null | undefined>(undefined),
 			LastModifiedDate: new FormControl<string | null | undefined>(undefined),
 			LastUpdatedBy: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2474,6 +2740,8 @@ export namespace MyNS {
 	export interface GCMChannelResponse {
 		ApplicationId?: string | null;
 		CreationDate?: string | null;
+
+		/** Required */
 		Credential: string;
 		Enabled?: boolean | null;
 		HasCredential?: boolean | null;
@@ -2481,6 +2749,8 @@ export namespace MyNS {
 		IsArchived?: boolean | null;
 		LastModifiedBy?: string | null;
 		LastModifiedDate?: string | null;
+
+		/** Required */
 		Platform: string;
 		Version?: number | null;
 	}
@@ -2489,6 +2759,8 @@ export namespace MyNS {
 	export interface GCMChannelResponseFormProperties {
 		ApplicationId: FormControl<string | null | undefined>,
 		CreationDate: FormControl<string | null | undefined>,
+
+		/** Required */
 		Credential: FormControl<string | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
 		HasCredential: FormControl<boolean | null | undefined>,
@@ -2496,6 +2768,8 @@ export namespace MyNS {
 		IsArchived: FormControl<boolean | null | undefined>,
 		LastModifiedBy: FormControl<string | null | undefined>,
 		LastModifiedDate: FormControl<string | null | undefined>,
+
+		/** Required */
 		Platform: FormControl<string | null | undefined>,
 		Version: FormControl<number | null | undefined>,
 	}
@@ -2503,14 +2777,14 @@ export namespace MyNS {
 		return new FormGroup<GCMChannelResponseFormProperties>({
 			ApplicationId: new FormControl<string | null | undefined>(undefined),
 			CreationDate: new FormControl<string | null | undefined>(undefined),
-			Credential: new FormControl<string | null | undefined>(undefined),
+			Credential: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
 			HasCredential: new FormControl<boolean | null | undefined>(undefined),
 			Id: new FormControl<string | null | undefined>(undefined),
 			IsArchived: new FormControl<boolean | null | undefined>(undefined),
 			LastModifiedBy: new FormControl<string | null | undefined>(undefined),
 			LastModifiedDate: new FormControl<string | null | undefined>(undefined),
-			Platform: new FormControl<string | null | undefined>(undefined),
+			Platform: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Version: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -2607,6 +2881,8 @@ export namespace MyNS {
 		IsArchived?: boolean | null;
 		LastModifiedBy?: string | null;
 		LastModifiedDate?: string | null;
+
+		/** Required */
 		Platform: string;
 		PromotionalMessagesPerSecond?: number | null;
 		SenderId?: string | null;
@@ -2625,6 +2901,8 @@ export namespace MyNS {
 		IsArchived: FormControl<boolean | null | undefined>,
 		LastModifiedBy: FormControl<string | null | undefined>,
 		LastModifiedDate: FormControl<string | null | undefined>,
+
+		/** Required */
 		Platform: FormControl<string | null | undefined>,
 		PromotionalMessagesPerSecond: FormControl<number | null | undefined>,
 		SenderId: FormControl<string | null | undefined>,
@@ -2642,7 +2920,7 @@ export namespace MyNS {
 			IsArchived: new FormControl<boolean | null | undefined>(undefined),
 			LastModifiedBy: new FormControl<string | null | undefined>(undefined),
 			LastModifiedDate: new FormControl<string | null | undefined>(undefined),
-			Platform: new FormControl<string | null | undefined>(undefined),
+			Platform: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			PromotionalMessagesPerSecond: new FormControl<number | null | undefined>(undefined),
 			SenderId: new FormControl<string | null | undefined>(undefined),
 			ShortCode: new FormControl<string | null | undefined>(undefined),
@@ -2687,6 +2965,8 @@ export namespace MyNS {
 
 	/** Provides information about all the endpoints that are associated with a user ID. */
 	export interface EndpointsResponse {
+
+		/** Required */
 		Item: Array<EndpointResponse>;
 	}
 
@@ -2726,6 +3006,8 @@ export namespace MyNS {
 		IsArchived?: boolean | null;
 		LastModifiedBy?: string | null;
 		LastModifiedDate?: string | null;
+
+		/** Required */
 		Platform: string;
 		Version?: number | null;
 	}
@@ -2740,6 +3022,8 @@ export namespace MyNS {
 		IsArchived: FormControl<boolean | null | undefined>,
 		LastModifiedBy: FormControl<string | null | undefined>,
 		LastModifiedDate: FormControl<string | null | undefined>,
+
+		/** Required */
 		Platform: FormControl<string | null | undefined>,
 		Version: FormControl<number | null | undefined>,
 	}
@@ -2753,7 +3037,7 @@ export namespace MyNS {
 			IsArchived: new FormControl<boolean | null | undefined>(undefined),
 			LastModifiedBy: new FormControl<string | null | undefined>(undefined),
 			LastModifiedDate: new FormControl<string | null | undefined>(undefined),
-			Platform: new FormControl<string | null | undefined>(undefined),
+			Platform: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Version: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -2890,8 +3174,14 @@ export namespace MyNS {
 
 	/** Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query. */
 	export interface ApplicationDateRangeKpiResponse {
+
+		/** Required */
 		ApplicationId: string;
+
+		/** Required */
 		EndTime: Date;
+
+		/** Required */
 		KpiName: string;
 
 		/**
@@ -2900,24 +3190,34 @@ export namespace MyNS {
 		 */
 		KpiResult: BaseKpiResult;
 		NextToken?: string | null;
+
+		/** Required */
 		StartTime: Date;
 	}
 
 	/** Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query. */
 	export interface ApplicationDateRangeKpiResponseFormProperties {
+
+		/** Required */
 		ApplicationId: FormControl<string | null | undefined>,
+
+		/** Required */
 		EndTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		KpiName: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Required */
 		StartTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateApplicationDateRangeKpiResponseFormGroup() {
 		return new FormGroup<ApplicationDateRangeKpiResponseFormProperties>({
-			ApplicationId: new FormControl<string | null | undefined>(undefined),
-			EndTime: new FormControl<Date | null | undefined>(undefined),
-			KpiName: new FormControl<string | null | undefined>(undefined),
+			ApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			EndTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			KpiName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			StartTime: new FormControl<Date | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2925,6 +3225,8 @@ export namespace MyNS {
 
 	/** Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey. */
 	export interface BaseKpiResult {
+
+		/** Required */
 		Rows: Array<ResultRow>;
 	}
 
@@ -2940,7 +3242,11 @@ export namespace MyNS {
 
 	/** Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey. */
 	export interface ResultRow {
+
+		/** Required */
 		GroupedBys: Array<ResultRowValue>;
+
+		/** Required */
 		Values: Array<ResultRowValue>;
 	}
 
@@ -2956,22 +3262,34 @@ export namespace MyNS {
 
 	/** Provides a single value and metadata about that value as part of an array of query results for a standard metric that applies to an application, campaign, or journey. */
 	export interface ResultRowValue {
+
+		/** Required */
 		Key: string;
+
+		/** Required */
 		Type: string;
+
+		/** Required */
 		Value: string;
 	}
 
 	/** Provides a single value and metadata about that value as part of an array of query results for a standard metric that applies to an application, campaign, or journey. */
 	export interface ResultRowValueFormProperties {
+
+		/** Required */
 		Key: FormControl<string | null | undefined>,
+
+		/** Required */
 		Type: FormControl<string | null | undefined>,
+
+		/** Required */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateResultRowValueFormGroup() {
 		return new FormGroup<ResultRowValueFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Type: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Type: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2995,6 +3313,8 @@ export namespace MyNS {
 
 	/** Provides information about an application, including the default settings for an application. */
 	export interface ApplicationSettingsResource {
+
+		/** Required */
 		ApplicationId: string;
 
 		/** Specifies settings for invoking an AWS Lambda function that customizes a segment for a campaign. */
@@ -3010,12 +3330,14 @@ export namespace MyNS {
 
 	/** Provides information about an application, including the default settings for an application. */
 	export interface ApplicationSettingsResourceFormProperties {
+
+		/** Required */
 		ApplicationId: FormControl<string | null | undefined>,
 		LastModifiedDate: FormControl<string | null | undefined>,
 	}
 	export function CreateApplicationSettingsResourceFormGroup() {
 		return new FormGroup<ApplicationSettingsResourceFormProperties>({
-			ApplicationId: new FormControl<string | null | undefined>(undefined),
+			ApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			LastModifiedDate: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3106,6 +3428,8 @@ export namespace MyNS {
 
 	/** Provides information about the activities that were performed by a campaign. */
 	export interface ActivitiesResponse {
+
+		/** Required */
 		Item: Array<ActivityResponse>;
 		NextToken?: string | null;
 	}
@@ -3124,9 +3448,15 @@ export namespace MyNS {
 
 	/** Provides information about an activity that was performed by a campaign. */
 	export interface ActivityResponse {
+
+		/** Required */
 		ApplicationId: string;
+
+		/** Required */
 		CampaignId: string;
 		End?: string | null;
+
+		/** Required */
 		Id: string;
 		Result?: string | null;
 		ScheduledStart?: string | null;
@@ -3141,9 +3471,15 @@ export namespace MyNS {
 
 	/** Provides information about an activity that was performed by a campaign. */
 	export interface ActivityResponseFormProperties {
+
+		/** Required */
 		ApplicationId: FormControl<string | null | undefined>,
+
+		/** Required */
 		CampaignId: FormControl<string | null | undefined>,
 		End: FormControl<string | null | undefined>,
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
 		Result: FormControl<string | null | undefined>,
 		ScheduledStart: FormControl<string | null | undefined>,
@@ -3157,10 +3493,10 @@ export namespace MyNS {
 	}
 	export function CreateActivityResponseFormGroup() {
 		return new FormGroup<ActivityResponseFormProperties>({
-			ApplicationId: new FormControl<string | null | undefined>(undefined),
-			CampaignId: new FormControl<string | null | undefined>(undefined),
+			ApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			CampaignId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			End: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Result: new FormControl<string | null | undefined>(undefined),
 			ScheduledStart: new FormControl<string | null | undefined>(undefined),
 			Start: new FormControl<string | null | undefined>(undefined),
@@ -3193,9 +3529,17 @@ export namespace MyNS {
 
 	/** Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query. */
 	export interface CampaignDateRangeKpiResponse {
+
+		/** Required */
 		ApplicationId: string;
+
+		/** Required */
 		CampaignId: string;
+
+		/** Required */
 		EndTime: Date;
+
+		/** Required */
 		KpiName: string;
 
 		/**
@@ -3204,26 +3548,38 @@ export namespace MyNS {
 		 */
 		KpiResult: BaseKpiResult;
 		NextToken?: string | null;
+
+		/** Required */
 		StartTime: Date;
 	}
 
 	/** Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query. */
 	export interface CampaignDateRangeKpiResponseFormProperties {
+
+		/** Required */
 		ApplicationId: FormControl<string | null | undefined>,
+
+		/** Required */
 		CampaignId: FormControl<string | null | undefined>,
+
+		/** Required */
 		EndTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		KpiName: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Required */
 		StartTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateCampaignDateRangeKpiResponseFormGroup() {
 		return new FormGroup<CampaignDateRangeKpiResponseFormProperties>({
-			ApplicationId: new FormControl<string | null | undefined>(undefined),
-			CampaignId: new FormControl<string | null | undefined>(undefined),
-			EndTime: new FormControl<Date | null | undefined>(undefined),
-			KpiName: new FormControl<string | null | undefined>(undefined),
+			ApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			CampaignId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			EndTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			KpiName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			StartTime: new FormControl<Date | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3263,6 +3619,8 @@ export namespace MyNS {
 
 	/** Provides information about the configuration and other settings for all the campaigns that are associated with an application. */
 	export interface CampaignsResponse {
+
+		/** Required */
 		Item: Array<CampaignResponse>;
 		NextToken?: string | null;
 	}
@@ -3313,6 +3671,8 @@ export namespace MyNS {
 
 	/** Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application. */
 	export interface ChannelsResponse {
+
+		/** Required */
 		Channels: MapOfChannelResponse;
 	}
 
@@ -3371,15 +3731,23 @@ export namespace MyNS {
 	/** Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel. */
 	export interface EmailTemplateResponse {
 		Arn?: string | null;
+
+		/** Required */
 		CreationDate: string;
 		DefaultSubstitutions?: string | null;
 		HtmlPart?: string | null;
+
+		/** Required */
 		LastModifiedDate: string;
 		RecommenderId?: string | null;
 		Subject?: string | null;
 		tags?: MapOf__string;
 		TemplateDescription?: string | null;
+
+		/** Required */
 		TemplateName: string;
+
+		/** Required */
 		TemplateType: EmailTemplateResponseTemplateType;
 		TextPart?: string | null;
 		Version?: string | null;
@@ -3388,14 +3756,22 @@ export namespace MyNS {
 	/** Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel. */
 	export interface EmailTemplateResponseFormProperties {
 		Arn: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreationDate: FormControl<string | null | undefined>,
 		DefaultSubstitutions: FormControl<string | null | undefined>,
 		HtmlPart: FormControl<string | null | undefined>,
+
+		/** Required */
 		LastModifiedDate: FormControl<string | null | undefined>,
 		RecommenderId: FormControl<string | null | undefined>,
 		Subject: FormControl<string | null | undefined>,
 		TemplateDescription: FormControl<string | null | undefined>,
+
+		/** Required */
 		TemplateName: FormControl<string | null | undefined>,
+
+		/** Required */
 		TemplateType: FormControl<EmailTemplateResponseTemplateType | null | undefined>,
 		TextPart: FormControl<string | null | undefined>,
 		Version: FormControl<string | null | undefined>,
@@ -3403,15 +3779,15 @@ export namespace MyNS {
 	export function CreateEmailTemplateResponseFormGroup() {
 		return new FormGroup<EmailTemplateResponseFormProperties>({
 			Arn: new FormControl<string | null | undefined>(undefined),
-			CreationDate: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DefaultSubstitutions: new FormControl<string | null | undefined>(undefined),
 			HtmlPart: new FormControl<string | null | undefined>(undefined),
-			LastModifiedDate: new FormControl<string | null | undefined>(undefined),
+			LastModifiedDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RecommenderId: new FormControl<string | null | undefined>(undefined),
 			Subject: new FormControl<string | null | undefined>(undefined),
 			TemplateDescription: new FormControl<string | null | undefined>(undefined),
-			TemplateName: new FormControl<string | null | undefined>(undefined),
-			TemplateType: new FormControl<EmailTemplateResponseTemplateType | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TemplateType: new FormControl<EmailTemplateResponseTemplateType | null | undefined>(undefined, [Validators.required]),
 			TextPart: new FormControl<string | null | undefined>(undefined),
 			Version: new FormControl<string | null | undefined>(undefined),
 		});
@@ -3487,6 +3863,8 @@ export namespace MyNS {
 
 	/** Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file. */
 	export interface ExportJobsResponse {
+
+		/** Required */
 		Item: Array<ExportJobResponse>;
 		NextToken?: string | null;
 	}
@@ -3553,6 +3931,8 @@ export namespace MyNS {
 
 	/** Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files. */
 	export interface ImportJobsResponse {
+
+		/** Required */
 		Item: Array<ImportJobResponse>;
 		NextToken?: string | null;
 	}
@@ -3603,9 +3983,17 @@ export namespace MyNS {
 
 	/** Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query. */
 	export interface JourneyDateRangeKpiResponse {
+
+		/** Required */
 		ApplicationId: string;
+
+		/** Required */
 		EndTime: Date;
+
+		/** Required */
 		JourneyId: string;
+
+		/** Required */
 		KpiName: string;
 
 		/**
@@ -3614,26 +4002,38 @@ export namespace MyNS {
 		 */
 		KpiResult: BaseKpiResult;
 		NextToken?: string | null;
+
+		/** Required */
 		StartTime: Date;
 	}
 
 	/** Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query. */
 	export interface JourneyDateRangeKpiResponseFormProperties {
+
+		/** Required */
 		ApplicationId: FormControl<string | null | undefined>,
+
+		/** Required */
 		EndTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		JourneyId: FormControl<string | null | undefined>,
+
+		/** Required */
 		KpiName: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Required */
 		StartTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateJourneyDateRangeKpiResponseFormGroup() {
 		return new FormGroup<JourneyDateRangeKpiResponseFormProperties>({
-			ApplicationId: new FormControl<string | null | undefined>(undefined),
-			EndTime: new FormControl<Date | null | undefined>(undefined),
-			JourneyId: new FormControl<string | null | undefined>(undefined),
-			KpiName: new FormControl<string | null | undefined>(undefined),
+			ApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			EndTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			JourneyId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			KpiName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			StartTime: new FormControl<Date | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3657,29 +4057,51 @@ export namespace MyNS {
 
 	/** Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity, and provides information about that query. */
 	export interface JourneyExecutionActivityMetricsResponse {
+
+		/** Required */
 		ActivityType: string;
+
+		/** Required */
 		ApplicationId: string;
+
+		/** Required */
 		JourneyActivityId: string;
+
+		/** Required */
 		JourneyId: string;
+
+		/** Required */
 		LastEvaluatedTime: string;
+
+		/** Required */
 		Metrics: MapOf__string;
 	}
 
 	/** Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity, and provides information about that query. */
 	export interface JourneyExecutionActivityMetricsResponseFormProperties {
+
+		/** Required */
 		ActivityType: FormControl<string | null | undefined>,
+
+		/** Required */
 		ApplicationId: FormControl<string | null | undefined>,
+
+		/** Required */
 		JourneyActivityId: FormControl<string | null | undefined>,
+
+		/** Required */
 		JourneyId: FormControl<string | null | undefined>,
+
+		/** Required */
 		LastEvaluatedTime: FormControl<string | null | undefined>,
 	}
 	export function CreateJourneyExecutionActivityMetricsResponseFormGroup() {
 		return new FormGroup<JourneyExecutionActivityMetricsResponseFormProperties>({
-			ActivityType: new FormControl<string | null | undefined>(undefined),
-			ApplicationId: new FormControl<string | null | undefined>(undefined),
-			JourneyActivityId: new FormControl<string | null | undefined>(undefined),
-			JourneyId: new FormControl<string | null | undefined>(undefined),
-			LastEvaluatedTime: new FormControl<string | null | undefined>(undefined),
+			ActivityType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			JourneyActivityId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			JourneyId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			LastEvaluatedTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3703,23 +4125,37 @@ export namespace MyNS {
 
 	/** Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query. */
 	export interface JourneyExecutionMetricsResponse {
+
+		/** Required */
 		ApplicationId: string;
+
+		/** Required */
 		JourneyId: string;
+
+		/** Required */
 		LastEvaluatedTime: string;
+
+		/** Required */
 		Metrics: MapOf__string;
 	}
 
 	/** Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query. */
 	export interface JourneyExecutionMetricsResponseFormProperties {
+
+		/** Required */
 		ApplicationId: FormControl<string | null | undefined>,
+
+		/** Required */
 		JourneyId: FormControl<string | null | undefined>,
+
+		/** Required */
 		LastEvaluatedTime: FormControl<string | null | undefined>,
 	}
 	export function CreateJourneyExecutionMetricsResponseFormGroup() {
 		return new FormGroup<JourneyExecutionMetricsResponseFormProperties>({
-			ApplicationId: new FormControl<string | null | undefined>(undefined),
-			JourneyId: new FormControl<string | null | undefined>(undefined),
-			LastEvaluatedTime: new FormControl<string | null | undefined>(undefined),
+			ApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			JourneyId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			LastEvaluatedTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3753,6 +4189,8 @@ export namespace MyNS {
 
 		/** Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the ADM (Amazon Device Messaging), Baidu (Baidu Cloud Push), or GCM (Firebase Cloud Messaging, formerly Google Cloud Messaging) channel. */
 		Baidu?: AndroidPushNotificationTemplate;
+
+		/** Required */
 		CreationDate: string;
 
 		/** Specifies the default settings and content for a message template that can be used in messages that are sent through a push notification channel. */
@@ -3761,11 +4199,17 @@ export namespace MyNS {
 
 		/** Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the ADM (Amazon Device Messaging), Baidu (Baidu Cloud Push), or GCM (Firebase Cloud Messaging, formerly Google Cloud Messaging) channel. */
 		GCM?: AndroidPushNotificationTemplate;
+
+		/** Required */
 		LastModifiedDate: string;
 		RecommenderId?: string | null;
 		tags?: MapOf__string;
 		TemplateDescription?: string | null;
+
+		/** Required */
 		TemplateName: string;
+
+		/** Required */
 		TemplateType: EmailTemplateResponseTemplateType;
 		Version?: string | null;
 	}
@@ -3773,25 +4217,33 @@ export namespace MyNS {
 	/** Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel. */
 	export interface PushNotificationTemplateResponseFormProperties {
 		Arn: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreationDate: FormControl<string | null | undefined>,
 		DefaultSubstitutions: FormControl<string | null | undefined>,
+
+		/** Required */
 		LastModifiedDate: FormControl<string | null | undefined>,
 		RecommenderId: FormControl<string | null | undefined>,
 		TemplateDescription: FormControl<string | null | undefined>,
+
+		/** Required */
 		TemplateName: FormControl<string | null | undefined>,
+
+		/** Required */
 		TemplateType: FormControl<EmailTemplateResponseTemplateType | null | undefined>,
 		Version: FormControl<string | null | undefined>,
 	}
 	export function CreatePushNotificationTemplateResponseFormGroup() {
 		return new FormGroup<PushNotificationTemplateResponseFormProperties>({
 			Arn: new FormControl<string | null | undefined>(undefined),
-			CreationDate: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DefaultSubstitutions: new FormControl<string | null | undefined>(undefined),
-			LastModifiedDate: new FormControl<string | null | undefined>(undefined),
+			LastModifiedDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RecommenderId: new FormControl<string | null | undefined>(undefined),
 			TemplateDescription: new FormControl<string | null | undefined>(undefined),
-			TemplateName: new FormControl<string | null | undefined>(undefined),
-			TemplateType: new FormControl<EmailTemplateResponseTemplateType | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TemplateType: new FormControl<EmailTemplateResponseTemplateType | null | undefined>(undefined, [Validators.required]),
 			Version: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3832,6 +4284,8 @@ export namespace MyNS {
 
 	/** Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account. */
 	export interface ListRecommenderConfigurationsResponse {
+
+		/** Required */
 		Item: Array<RecommenderConfigurationResponse>;
 		NextToken?: string | null;
 	}
@@ -3930,6 +4384,8 @@ export namespace MyNS {
 
 	/** Provides information about all the segments that are associated with an application. */
 	export interface SegmentsResponse {
+
+		/** Required */
 		Item: Array<SegmentResponse>;
 		NextToken?: string | null;
 	}
@@ -3998,13 +4454,21 @@ export namespace MyNS {
 	export interface SMSTemplateResponse {
 		Arn?: string | null;
 		Body?: string | null;
+
+		/** Required */
 		CreationDate: string;
 		DefaultSubstitutions?: string | null;
+
+		/** Required */
 		LastModifiedDate: string;
 		RecommenderId?: string | null;
 		tags?: MapOf__string;
 		TemplateDescription?: string | null;
+
+		/** Required */
 		TemplateName: string;
+
+		/** Required */
 		TemplateType: EmailTemplateResponseTemplateType;
 		Version?: string | null;
 	}
@@ -4013,12 +4477,20 @@ export namespace MyNS {
 	export interface SMSTemplateResponseFormProperties {
 		Arn: FormControl<string | null | undefined>,
 		Body: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreationDate: FormControl<string | null | undefined>,
 		DefaultSubstitutions: FormControl<string | null | undefined>,
+
+		/** Required */
 		LastModifiedDate: FormControl<string | null | undefined>,
 		RecommenderId: FormControl<string | null | undefined>,
 		TemplateDescription: FormControl<string | null | undefined>,
+
+		/** Required */
 		TemplateName: FormControl<string | null | undefined>,
+
+		/** Required */
 		TemplateType: FormControl<EmailTemplateResponseTemplateType | null | undefined>,
 		Version: FormControl<string | null | undefined>,
 	}
@@ -4026,13 +4498,13 @@ export namespace MyNS {
 		return new FormGroup<SMSTemplateResponseFormProperties>({
 			Arn: new FormControl<string | null | undefined>(undefined),
 			Body: new FormControl<string | null | undefined>(undefined),
-			CreationDate: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DefaultSubstitutions: new FormControl<string | null | undefined>(undefined),
-			LastModifiedDate: new FormControl<string | null | undefined>(undefined),
+			LastModifiedDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RecommenderId: new FormControl<string | null | undefined>(undefined),
 			TemplateDescription: new FormControl<string | null | undefined>(undefined),
-			TemplateName: new FormControl<string | null | undefined>(undefined),
-			TemplateType: new FormControl<EmailTemplateResponseTemplateType | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TemplateType: new FormControl<EmailTemplateResponseTemplateType | null | undefined>(undefined, [Validators.required]),
 			Version: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4091,13 +4563,21 @@ export namespace MyNS {
 	export interface VoiceTemplateResponse {
 		Arn?: string | null;
 		Body?: string | null;
+
+		/** Required */
 		CreationDate: string;
 		DefaultSubstitutions?: string | null;
 		LanguageCode?: string | null;
+
+		/** Required */
 		LastModifiedDate: string;
 		tags?: MapOf__string;
 		TemplateDescription?: string | null;
+
+		/** Required */
 		TemplateName: string;
+
+		/** Required */
 		TemplateType: EmailTemplateResponseTemplateType;
 		Version?: string | null;
 		VoiceId?: string | null;
@@ -4107,12 +4587,20 @@ export namespace MyNS {
 	export interface VoiceTemplateResponseFormProperties {
 		Arn: FormControl<string | null | undefined>,
 		Body: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreationDate: FormControl<string | null | undefined>,
 		DefaultSubstitutions: FormControl<string | null | undefined>,
 		LanguageCode: FormControl<string | null | undefined>,
+
+		/** Required */
 		LastModifiedDate: FormControl<string | null | undefined>,
 		TemplateDescription: FormControl<string | null | undefined>,
+
+		/** Required */
 		TemplateName: FormControl<string | null | undefined>,
+
+		/** Required */
 		TemplateType: FormControl<EmailTemplateResponseTemplateType | null | undefined>,
 		Version: FormControl<string | null | undefined>,
 		VoiceId: FormControl<string | null | undefined>,
@@ -4121,13 +4609,13 @@ export namespace MyNS {
 		return new FormGroup<VoiceTemplateResponseFormProperties>({
 			Arn: new FormControl<string | null | undefined>(undefined),
 			Body: new FormControl<string | null | undefined>(undefined),
-			CreationDate: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DefaultSubstitutions: new FormControl<string | null | undefined>(undefined),
 			LanguageCode: new FormControl<string | null | undefined>(undefined),
-			LastModifiedDate: new FormControl<string | null | undefined>(undefined),
+			LastModifiedDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TemplateDescription: new FormControl<string | null | undefined>(undefined),
-			TemplateName: new FormControl<string | null | undefined>(undefined),
-			TemplateType: new FormControl<EmailTemplateResponseTemplateType | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TemplateType: new FormControl<EmailTemplateResponseTemplateType | null | undefined>(undefined, [Validators.required]),
 			Version: new FormControl<string | null | undefined>(undefined),
 			VoiceId: new FormControl<string | null | undefined>(undefined),
 		});
@@ -4153,6 +4641,8 @@ export namespace MyNS {
 
 	/** Provides information about the status, configuration, and other settings for all the journeys that are associated with an application. */
 	export interface JourneysResponse {
+
+		/** Required */
 		Item: Array<JourneyResponse>;
 		NextToken?: string | null;
 	}
@@ -4187,6 +4677,8 @@ export namespace MyNS {
 
 	/** Specifies the tags (keys and values) for an application, campaign, message template, or segment. */
 	export interface TagsModel {
+
+		/** Required */
 		tags: MapOf__string;
 	}
 
@@ -4218,6 +4710,8 @@ export namespace MyNS {
 
 	/** Provides information about all the versions of a specific message template. */
 	export interface TemplateVersionsResponse {
+
+		/** Required */
 		Item: Array<TemplateVersionResponse>;
 		Message?: string | null;
 		NextToken?: string | null;
@@ -4242,33 +4736,49 @@ export namespace MyNS {
 
 	/** Provides information about a specific version of a message template. */
 	export interface TemplateVersionResponse {
+
+		/** Required */
 		CreationDate: string;
 		DefaultSubstitutions?: string | null;
+
+		/** Required */
 		LastModifiedDate: string;
 		TemplateDescription?: string | null;
+
+		/** Required */
 		TemplateName: string;
+
+		/** Required */
 		TemplateType: string;
 		Version?: string | null;
 	}
 
 	/** Provides information about a specific version of a message template. */
 	export interface TemplateVersionResponseFormProperties {
+
+		/** Required */
 		CreationDate: FormControl<string | null | undefined>,
 		DefaultSubstitutions: FormControl<string | null | undefined>,
+
+		/** Required */
 		LastModifiedDate: FormControl<string | null | undefined>,
 		TemplateDescription: FormControl<string | null | undefined>,
+
+		/** Required */
 		TemplateName: FormControl<string | null | undefined>,
+
+		/** Required */
 		TemplateType: FormControl<string | null | undefined>,
 		Version: FormControl<string | null | undefined>,
 	}
 	export function CreateTemplateVersionResponseFormGroup() {
 		return new FormGroup<TemplateVersionResponseFormProperties>({
-			CreationDate: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DefaultSubstitutions: new FormControl<string | null | undefined>(undefined),
-			LastModifiedDate: new FormControl<string | null | undefined>(undefined),
+			LastModifiedDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TemplateDescription: new FormControl<string | null | undefined>(undefined),
-			TemplateName: new FormControl<string | null | undefined>(undefined),
-			TemplateType: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TemplateType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Version: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4293,6 +4803,8 @@ export namespace MyNS {
 
 	/** Provides information about all the message templates that are associated with your Amazon Pinpoint account. */
 	export interface TemplatesResponse {
+
+		/** Required */
 		Item: Array<TemplateResponse>;
 		NextToken?: string | null;
 	}
@@ -4312,12 +4824,20 @@ export namespace MyNS {
 	/** Provides information about a message template that's associated with your Amazon Pinpoint account. */
 	export interface TemplateResponse {
 		Arn?: string | null;
+
+		/** Required */
 		CreationDate: string;
 		DefaultSubstitutions?: string | null;
+
+		/** Required */
 		LastModifiedDate: string;
 		tags?: MapOf__string;
 		TemplateDescription?: string | null;
+
+		/** Required */
 		TemplateName: string;
+
+		/** Required */
 		TemplateType: EmailTemplateResponseTemplateType;
 		Version?: string | null;
 	}
@@ -4325,23 +4845,31 @@ export namespace MyNS {
 	/** Provides information about a message template that's associated with your Amazon Pinpoint account. */
 	export interface TemplateResponseFormProperties {
 		Arn: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreationDate: FormControl<string | null | undefined>,
 		DefaultSubstitutions: FormControl<string | null | undefined>,
+
+		/** Required */
 		LastModifiedDate: FormControl<string | null | undefined>,
 		TemplateDescription: FormControl<string | null | undefined>,
+
+		/** Required */
 		TemplateName: FormControl<string | null | undefined>,
+
+		/** Required */
 		TemplateType: FormControl<EmailTemplateResponseTemplateType | null | undefined>,
 		Version: FormControl<string | null | undefined>,
 	}
 	export function CreateTemplateResponseFormGroup() {
 		return new FormGroup<TemplateResponseFormProperties>({
 			Arn: new FormControl<string | null | undefined>(undefined),
-			CreationDate: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DefaultSubstitutions: new FormControl<string | null | undefined>(undefined),
-			LastModifiedDate: new FormControl<string | null | undefined>(undefined),
+			LastModifiedDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TemplateDescription: new FormControl<string | null | undefined>(undefined),
-			TemplateName: new FormControl<string | null | undefined>(undefined),
-			TemplateType: new FormControl<EmailTemplateResponseTemplateType | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TemplateType: new FormControl<EmailTemplateResponseTemplateType | null | undefined>(undefined, [Validators.required]),
 			Version: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4505,20 +5033,28 @@ export namespace MyNS {
 
 	/** Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application. */
 	export interface AttributesResource {
+
+		/** Required */
 		ApplicationId: string;
+
+		/** Required */
 		AttributeType: string;
 		Attributes?: Array<string>;
 	}
 
 	/** Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application. */
 	export interface AttributesResourceFormProperties {
+
+		/** Required */
 		ApplicationId: FormControl<string | null | undefined>,
+
+		/** Required */
 		AttributeType: FormControl<string | null | undefined>,
 	}
 	export function CreateAttributesResourceFormGroup() {
 		return new FormGroup<AttributesResourceFormProperties>({
-			ApplicationId: new FormControl<string | null | undefined>(undefined),
-			AttributeType: new FormControl<string | null | undefined>(undefined),
+			ApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			AttributeType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4542,6 +5078,8 @@ export namespace MyNS {
 
 	/** Provides information about the results of a request to send a message to an endpoint address. */
 	export interface MessageResponse {
+
+		/** Required */
 		ApplicationId: string;
 		EndpointResult?: MapOfEndpointMessageResult;
 		RequestId?: string | null;
@@ -4550,12 +5088,14 @@ export namespace MyNS {
 
 	/** Provides information about the results of a request to send a message to an endpoint address. */
 	export interface MessageResponseFormProperties {
+
+		/** Required */
 		ApplicationId: FormControl<string | null | undefined>,
 		RequestId: FormControl<string | null | undefined>,
 	}
 	export function CreateMessageResponseFormGroup() {
 		return new FormGroup<MessageResponseFormProperties>({
-			ApplicationId: new FormControl<string | null | undefined>(undefined),
+			ApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RequestId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5096,6 +5636,8 @@ export namespace MyNS {
 
 	/** Provides information about which users and endpoints a message was sent to. */
 	export interface SendUsersMessageResponse {
+
+		/** Required */
 		ApplicationId: string;
 		RequestId?: string | null;
 		Result?: MapOfMapOfEndpointMessageResult;
@@ -5103,12 +5645,14 @@ export namespace MyNS {
 
 	/** Provides information about which users and endpoints a message was sent to. */
 	export interface SendUsersMessageResponseFormProperties {
+
+		/** Required */
 		ApplicationId: FormControl<string | null | undefined>,
 		RequestId: FormControl<string | null | undefined>,
 	}
 	export function CreateSendUsersMessageResponseFormGroup() {
 		return new FormGroup<SendUsersMessageResponseFormProperties>({
-			ApplicationId: new FormControl<string | null | undefined>(undefined),
+			ApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RequestId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5543,21 +6087,29 @@ export namespace MyNS {
 
 	/** Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application. */
 	export interface ADMChannelRequest {
+
+		/** Required */
 		ClientId: string;
+
+		/** Required */
 		ClientSecret: string;
 		Enabled?: boolean | null;
 	}
 
 	/** Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application. */
 	export interface ADMChannelRequestFormProperties {
+
+		/** Required */
 		ClientId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ClientSecret: FormControl<string | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateADMChannelRequestFormGroup() {
 		return new FormGroup<ADMChannelRequestFormProperties>({
-			ClientId: new FormControl<string | null | undefined>(undefined),
-			ClientSecret: new FormControl<string | null | undefined>(undefined),
+			ClientId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ClientSecret: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -5920,18 +6472,22 @@ export namespace MyNS {
 	/** Specifies the settings for a holdout activity in a journey. This type of activity stops a journey for a specified percentage of participants. */
 	export interface HoldoutActivity {
 		NextActivity?: string | null;
+
+		/** Required */
 		Percentage: number;
 	}
 
 	/** Specifies the settings for a holdout activity in a journey. This type of activity stops a journey for a specified percentage of participants. */
 	export interface HoldoutActivityFormProperties {
 		NextActivity: FormControl<string | null | undefined>,
+
+		/** Required */
 		Percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateHoldoutActivityFormGroup() {
 		return new FormGroup<HoldoutActivityFormProperties>({
 			NextActivity: new FormControl<string | null | undefined>(undefined),
-			Percentage: new FormControl<number | null | undefined>(undefined),
+			Percentage: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6199,6 +6755,8 @@ export namespace MyNS {
 	/** Specifies attribute-based criteria for including or excluding endpoints from a segment. */
 	export interface AttributeDimension {
 		AttributeType?: SetDimensionDimensionType | null;
+
+		/** Required */
 		Values: Array<string>;
 	}
 
@@ -6216,22 +6774,30 @@ export namespace MyNS {
 
 	/** Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application. */
 	export interface BaiduChannelRequest {
+
+		/** Required */
 		ApiKey: string;
 		Enabled?: boolean | null;
+
+		/** Required */
 		SecretKey: string;
 	}
 
 	/** Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application. */
 	export interface BaiduChannelRequestFormProperties {
+
+		/** Required */
 		ApiKey: FormControl<string | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		SecretKey: FormControl<string | null | undefined>,
 	}
 	export function CreateBaiduChannelRequestFormGroup() {
 		return new FormGroup<BaiduChannelRequestFormProperties>({
-			ApiKey: new FormControl<string | null | undefined>(undefined),
+			ApiKey: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			SecretKey: new FormControl<string | null | undefined>(undefined),
+			SecretKey: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6290,17 +6856,21 @@ export namespace MyNS {
 
 	/** Specifies the display name of an application and the tags to associate with the application. */
 	export interface CreateApplicationRequest {
+
+		/** Required */
 		Name: string;
 		tags?: MapOf__string;
 	}
 
 	/** Specifies the display name of an application and the tags to associate with the application. */
 	export interface CreateApplicationRequestFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateApplicationRequestFormGroup() {
 		return new FormGroup<CreateApplicationRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6447,7 +7017,11 @@ export namespace MyNS {
 
 	/** Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket. */
 	export interface ExportJobRequest {
+
+		/** Required */
 		RoleArn: string;
+
+		/** Required */
 		S3UrlPrefix: string;
 		SegmentId?: string | null;
 		SegmentVersion?: number | null;
@@ -6455,15 +7029,19 @@ export namespace MyNS {
 
 	/** Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket. */
 	export interface ExportJobRequestFormProperties {
+
+		/** Required */
 		RoleArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		S3UrlPrefix: FormControl<string | null | undefined>,
 		SegmentId: FormControl<string | null | undefined>,
 		SegmentVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateExportJobRequestFormGroup() {
 		return new FormGroup<ExportJobRequestFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined),
-			S3UrlPrefix: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			S3UrlPrefix: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SegmentId: new FormControl<string | null | undefined>(undefined),
 			SegmentVersion: new FormControl<number | null | undefined>(undefined),
 		});
@@ -6491,9 +7069,15 @@ export namespace MyNS {
 	export interface ImportJobRequest {
 		DefineSegment?: boolean | null;
 		ExternalId?: string | null;
+
+		/** Required */
 		Format: ImportJobResourceFormat;
 		RegisterEndpoints?: boolean | null;
+
+		/** Required */
 		RoleArn: string;
+
+		/** Required */
 		S3Url: string;
 		SegmentId?: string | null;
 		SegmentName?: string | null;
@@ -6503,9 +7087,15 @@ export namespace MyNS {
 	export interface ImportJobRequestFormProperties {
 		DefineSegment: FormControl<boolean | null | undefined>,
 		ExternalId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Format: FormControl<ImportJobResourceFormat | null | undefined>,
 		RegisterEndpoints: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		RoleArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		S3Url: FormControl<string | null | undefined>,
 		SegmentId: FormControl<string | null | undefined>,
 		SegmentName: FormControl<string | null | undefined>,
@@ -6514,10 +7104,10 @@ export namespace MyNS {
 		return new FormGroup<ImportJobRequestFormProperties>({
 			DefineSegment: new FormControl<boolean | null | undefined>(undefined),
 			ExternalId: new FormControl<string | null | undefined>(undefined),
-			Format: new FormControl<ImportJobResourceFormat | null | undefined>(undefined),
+			Format: new FormControl<ImportJobResourceFormat | null | undefined>(undefined, [Validators.required]),
 			RegisterEndpoints: new FormControl<boolean | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
-			S3Url: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			S3Url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SegmentId: new FormControl<string | null | undefined>(undefined),
 			SegmentName: new FormControl<string | null | undefined>(undefined),
 		});
@@ -6550,6 +7140,8 @@ export namespace MyNS {
 		/** Specifies limits on the messages that a journey can send and the number of times participants can enter a journey. */
 		Limits?: JourneyLimits;
 		LocalTime?: boolean | null;
+
+		/** Required */
 		Name: string;
 
 		/** Specifies the start and end times that define a time range when messages aren't sent to endpoints. */
@@ -6570,6 +7162,8 @@ export namespace MyNS {
 		CreationDate: FormControl<string | null | undefined>,
 		LastModifiedDate: FormControl<string | null | undefined>,
 		LocalTime: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 		RefreshFrequency: FormControl<string | null | undefined>,
 		StartActivity: FormControl<string | null | undefined>,
@@ -6580,7 +7174,7 @@ export namespace MyNS {
 			CreationDate: new FormControl<string | null | undefined>(undefined),
 			LastModifiedDate: new FormControl<string | null | undefined>(undefined),
 			LocalTime: new FormControl<boolean | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RefreshFrequency: new FormControl<string | null | undefined>(undefined),
 			StartActivity: new FormControl<string | null | undefined>(undefined),
 			State: new FormControl<JourneyResponseState | null | undefined>(undefined),
@@ -6666,7 +7260,11 @@ export namespace MyNS {
 		Description?: string | null;
 		Name?: string | null;
 		RecommendationProviderIdType?: string | null;
+
+		/** Required */
 		RecommendationProviderRoleArn: string;
+
+		/** Required */
 		RecommendationProviderUri: string;
 		RecommendationTransformerUri?: string | null;
 		RecommendationsDisplayName?: string | null;
@@ -6678,7 +7276,11 @@ export namespace MyNS {
 		Description: FormControl<string | null | undefined>,
 		Name: FormControl<string | null | undefined>,
 		RecommendationProviderIdType: FormControl<string | null | undefined>,
+
+		/** Required */
 		RecommendationProviderRoleArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		RecommendationProviderUri: FormControl<string | null | undefined>,
 		RecommendationTransformerUri: FormControl<string | null | undefined>,
 		RecommendationsDisplayName: FormControl<string | null | undefined>,
@@ -6689,8 +7291,8 @@ export namespace MyNS {
 			Description: new FormControl<string | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined),
 			RecommendationProviderIdType: new FormControl<string | null | undefined>(undefined),
-			RecommendationProviderRoleArn: new FormControl<string | null | undefined>(undefined),
-			RecommendationProviderUri: new FormControl<string | null | undefined>(undefined),
+			RecommendationProviderRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RecommendationProviderUri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RecommendationTransformerUri: new FormControl<string | null | undefined>(undefined),
 			RecommendationsDisplayName: new FormControl<string | null | undefined>(undefined),
 			RecommendationsPerMessage: new FormControl<number | null | undefined>(undefined),
@@ -7074,7 +7676,11 @@ export namespace MyNS {
 	export interface EmailChannelRequest {
 		ConfigurationSet?: string | null;
 		Enabled?: boolean | null;
+
+		/** Required */
 		FromAddress: string;
+
+		/** Required */
 		Identity: string;
 		RoleArn?: string | null;
 	}
@@ -7083,7 +7689,11 @@ export namespace MyNS {
 	export interface EmailChannelRequestFormProperties {
 		ConfigurationSet: FormControl<string | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		FromAddress: FormControl<string | null | undefined>,
+
+		/** Required */
 		Identity: FormControl<string | null | undefined>,
 		RoleArn: FormControl<string | null | undefined>,
 	}
@@ -7091,8 +7701,8 @@ export namespace MyNS {
 		return new FormGroup<EmailChannelRequestFormProperties>({
 			ConfigurationSet: new FormControl<string | null | undefined>(undefined),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			FromAddress: new FormControl<string | null | undefined>(undefined),
-			Identity: new FormControl<string | null | undefined>(undefined),
+			FromAddress: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Identity: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RoleArn: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -7103,6 +7713,8 @@ export namespace MyNS {
 
 	/** Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint. */
 	export interface EndpointBatchRequest {
+
+		/** Required */
 		Item: Array<EndpointBatchItem>;
 	}
 
@@ -7139,8 +7751,12 @@ export namespace MyNS {
 	/** Provides information about the delivery status and results of sending a message directly to an endpoint. */
 	export interface EndpointMessageResult {
 		Address?: string | null;
+
+		/** Required */
 		DeliveryStatus: DeliveryStatus;
 		MessageId?: string | null;
+
+		/** Required */
 		StatusCode: number;
 		StatusMessage?: string | null;
 		UpdatedToken?: string | null;
@@ -7149,8 +7765,12 @@ export namespace MyNS {
 	/** Provides information about the delivery status and results of sending a message directly to an endpoint. */
 	export interface EndpointMessageResultFormProperties {
 		Address: FormControl<string | null | undefined>,
+
+		/** Required */
 		DeliveryStatus: FormControl<DeliveryStatus | null | undefined>,
 		MessageId: FormControl<string | null | undefined>,
+
+		/** Required */
 		StatusCode: FormControl<number | null | undefined>,
 		StatusMessage: FormControl<string | null | undefined>,
 		UpdatedToken: FormControl<string | null | undefined>,
@@ -7158,9 +7778,9 @@ export namespace MyNS {
 	export function CreateEndpointMessageResultFormGroup() {
 		return new FormGroup<EndpointMessageResultFormProperties>({
 			Address: new FormControl<string | null | undefined>(undefined),
-			DeliveryStatus: new FormControl<DeliveryStatus | null | undefined>(undefined),
+			DeliveryStatus: new FormControl<DeliveryStatus | null | undefined>(undefined, [Validators.required]),
 			MessageId: new FormControl<string | null | undefined>(undefined),
-			StatusCode: new FormControl<number | null | undefined>(undefined),
+			StatusCode: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			StatusMessage: new FormControl<string | null | undefined>(undefined),
 			UpdatedToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -7239,7 +7859,11 @@ export namespace MyNS {
 	/** Provides information about a session. */
 	export interface Session {
 		Duration?: number | null;
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		StartTimestamp: string;
 		StopTimestamp?: string | null;
 	}
@@ -7247,15 +7871,19 @@ export namespace MyNS {
 	/** Provides information about a session. */
 	export interface SessionFormProperties {
 		Duration: FormControl<number | null | undefined>,
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		StartTimestamp: FormControl<string | null | undefined>,
 		StopTimestamp: FormControl<string | null | undefined>,
 	}
 	export function CreateSessionFormGroup() {
 		return new FormGroup<SessionFormProperties>({
 			Duration: new FormControl<number | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			StartTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			StartTimestamp: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			StopTimestamp: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -7269,12 +7897,16 @@ export namespace MyNS {
 		AppVersionCode?: string | null;
 		Attributes?: MapOf__string;
 		ClientSdkVersion?: string | null;
+
+		/** Required */
 		EventType: string;
 		Metrics?: MapOf__double;
 		SdkName?: string | null;
 
 		/** Provides information about a session. */
 		Session?: Session;
+
+		/** Required */
 		Timestamp: string;
 	}
 
@@ -7284,8 +7916,12 @@ export namespace MyNS {
 		AppTitle: FormControl<string | null | undefined>,
 		AppVersionCode: FormControl<string | null | undefined>,
 		ClientSdkVersion: FormControl<string | null | undefined>,
+
+		/** Required */
 		EventType: FormControl<string | null | undefined>,
 		SdkName: FormControl<string | null | undefined>,
+
+		/** Required */
 		Timestamp: FormControl<string | null | undefined>,
 	}
 	export function CreateEventFormGroup() {
@@ -7294,9 +7930,9 @@ export namespace MyNS {
 			AppTitle: new FormControl<string | null | undefined>(undefined),
 			AppVersionCode: new FormControl<string | null | undefined>(undefined),
 			ClientSdkVersion: new FormControl<string | null | undefined>(undefined),
-			EventType: new FormControl<string | null | undefined>(undefined),
+			EventType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SdkName: new FormControl<string | null | undefined>(undefined),
-			Timestamp: new FormControl<string | null | undefined>(undefined),
+			Timestamp: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7383,6 +8019,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		Endpoint: PublicEndpoint;
+
+		/** Required */
 		Events: MapOfEvent;
 	}
 
@@ -7398,6 +8036,8 @@ export namespace MyNS {
 
 	/** Specifies a batch of events to process. */
 	export interface EventsRequest {
+
+		/** Required */
 		BatchItem: MapOfEventsBatch;
 	}
 
@@ -7417,18 +8057,22 @@ export namespace MyNS {
 
 	/** Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. */
 	export interface GCMChannelRequest {
+
+		/** Required */
 		ApiKey: string;
 		Enabled?: boolean | null;
 	}
 
 	/** Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. */
 	export interface GCMChannelRequestFormProperties {
+
+		/** Required */
 		ApiKey: FormControl<string | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateGCMChannelRequestFormGroup() {
 		return new FormGroup<GCMChannelRequestFormProperties>({
-			ApiKey: new FormControl<string | null | undefined>(undefined),
+			ApiKey: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -7993,8 +8637,12 @@ export namespace MyNS {
 
 	/** Provides information about the results of sending a message directly to an endpoint address. */
 	export interface MessageResult {
+
+		/** Required */
 		DeliveryStatus: DeliveryStatus;
 		MessageId?: string | null;
+
+		/** Required */
 		StatusCode: number;
 		StatusMessage?: string | null;
 		UpdatedToken?: string | null;
@@ -8002,17 +8650,21 @@ export namespace MyNS {
 
 	/** Provides information about the results of sending a message directly to an endpoint address. */
 	export interface MessageResultFormProperties {
+
+		/** Required */
 		DeliveryStatus: FormControl<DeliveryStatus | null | undefined>,
 		MessageId: FormControl<string | null | undefined>,
+
+		/** Required */
 		StatusCode: FormControl<number | null | undefined>,
 		StatusMessage: FormControl<string | null | undefined>,
 		UpdatedToken: FormControl<string | null | undefined>,
 	}
 	export function CreateMessageResultFormGroup() {
 		return new FormGroup<MessageResultFormProperties>({
-			DeliveryStatus: new FormControl<DeliveryStatus | null | undefined>(undefined),
+			DeliveryStatus: new FormControl<DeliveryStatus | null | undefined>(undefined, [Validators.required]),
 			MessageId: new FormControl<string | null | undefined>(undefined),
-			StatusCode: new FormControl<number | null | undefined>(undefined),
+			StatusCode: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			StatusMessage: new FormControl<string | null | undefined>(undefined),
 			UpdatedToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -8022,19 +8674,27 @@ export namespace MyNS {
 
 	/** Specifies metric-based criteria for including or excluding endpoints from a segment. These criteria derive from custom metrics that you define for endpoints. */
 	export interface MetricDimension {
+
+		/** Required */
 		ComparisonOperator: string;
+
+		/** Required */
 		Value: number;
 	}
 
 	/** Specifies metric-based criteria for including or excluding endpoints from a segment. These criteria derive from custom metrics that you define for endpoints. */
 	export interface MetricDimensionFormProperties {
+
+		/** Required */
 		ComparisonOperator: FormControl<string | null | undefined>,
+
+		/** Required */
 		Value: FormControl<number | null | undefined>,
 	}
 	export function CreateMetricDimensionFormGroup() {
 		return new FormGroup<MetricDimensionFormProperties>({
-			ComparisonOperator: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<number | null | undefined>(undefined),
+			ComparisonOperator: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Value: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8078,19 +8738,27 @@ export namespace MyNS {
 
 	/** Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events. */
 	export interface WriteEventStream {
+
+		/** Required */
 		DestinationStreamArn: string;
+
+		/** Required */
 		RoleArn: string;
 	}
 
 	/** Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events. */
 	export interface WriteEventStreamFormProperties {
+
+		/** Required */
 		DestinationStreamArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		RoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateWriteEventStreamFormGroup() {
 		return new FormGroup<WriteEventStreamFormProperties>({
-			DestinationStreamArn: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			DestinationStreamArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8219,6 +8887,8 @@ export namespace MyNS {
 		/** Specifies the message template to use for the message, for each type of channel. */
 		TemplateConfiguration?: TemplateConfiguration;
 		TraceId?: string | null;
+
+		/** Required */
 		Users: MapOfEndpointSendConfiguration;
 	}
 
@@ -8581,7 +9251,11 @@ export namespace MyNS {
 		Description?: string | null;
 		Name?: string | null;
 		RecommendationProviderIdType?: string | null;
+
+		/** Required */
 		RecommendationProviderRoleArn: string;
+
+		/** Required */
 		RecommendationProviderUri: string;
 		RecommendationTransformerUri?: string | null;
 		RecommendationsDisplayName?: string | null;
@@ -8593,7 +9267,11 @@ export namespace MyNS {
 		Description: FormControl<string | null | undefined>,
 		Name: FormControl<string | null | undefined>,
 		RecommendationProviderIdType: FormControl<string | null | undefined>,
+
+		/** Required */
 		RecommendationProviderRoleArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		RecommendationProviderUri: FormControl<string | null | undefined>,
 		RecommendationTransformerUri: FormControl<string | null | undefined>,
 		RecommendationsDisplayName: FormControl<string | null | undefined>,
@@ -8604,8 +9282,8 @@ export namespace MyNS {
 			Description: new FormControl<string | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined),
 			RecommendationProviderIdType: new FormControl<string | null | undefined>(undefined),
-			RecommendationProviderRoleArn: new FormControl<string | null | undefined>(undefined),
-			RecommendationProviderUri: new FormControl<string | null | undefined>(undefined),
+			RecommendationProviderRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RecommendationProviderUri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RecommendationTransformerUri: new FormControl<string | null | undefined>(undefined),
 			RecommendationsDisplayName: new FormControl<string | null | undefined>(undefined),
 			RecommendationsPerMessage: new FormControl<number | null | undefined>(undefined),

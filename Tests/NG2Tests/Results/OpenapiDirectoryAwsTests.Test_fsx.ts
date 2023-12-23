@@ -5,16 +5,28 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CancelDataRepositoryTaskResponse {
 		Lifecycle?: CancelDataRepositoryTaskResponseLifecycle | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 12
+		 * Pattern: ^(task-[0-9a-f]{17,})$
+		 */
 		TaskId?: string | null;
 	}
 	export interface CancelDataRepositoryTaskResponseFormProperties {
 		Lifecycle: FormControl<CancelDataRepositoryTaskResponseLifecycle | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 12
+		 * Pattern: ^(task-[0-9a-f]{17,})$
+		 */
 		TaskId: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelDataRepositoryTaskResponseFormGroup() {
 		return new FormGroup<CancelDataRepositoryTaskResponseFormProperties>({
 			Lifecycle: new FormControl<CancelDataRepositoryTaskResponseLifecycle | null | undefined>(undefined),
-			TaskId: new FormControl<string | null | undefined>(undefined),
+			TaskId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(12)]),
 		});
 
 	}
@@ -24,16 +36,30 @@ export namespace MyNS {
 
 	/** Cancels a data repository task. */
 	export interface CancelDataRepositoryTaskRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 12
+		 * Pattern: ^(task-[0-9a-f]{17,})$
+		 */
 		TaskId: string;
 	}
 
 	/** Cancels a data repository task. */
 	export interface CancelDataRepositoryTaskRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 12
+		 * Pattern: ^(task-[0-9a-f]{17,})$
+		 */
 		TaskId: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelDataRepositoryTaskRequestFormGroup() {
 		return new FormGroup<CancelDataRepositoryTaskRequestFormProperties>({
-			TaskId: new FormControl<string | null | undefined>(undefined),
+			TaskId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(12)]),
 		});
 
 	}
@@ -234,13 +260,13 @@ export namespace MyNS {
 	}
 	export function CreateBackupFormGroup() {
 		return new FormGroup<BackupFormProperties>({
-			BackupId: new FormControl<string | null | undefined>(undefined),
-			Lifecycle: new FormControl<BackupLifecycle | null | undefined>(undefined),
-			Type: new FormControl<BackupType | null | undefined>(undefined),
-			ProgressPercent: new FormControl<number | null | undefined>(undefined),
-			CreationTime: new FormControl<Date | null | undefined>(undefined),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined),
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			BackupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(12)]),
+			Lifecycle: new FormControl<BackupLifecycle | null | undefined>(undefined, [Validators.required]),
+			Type: new FormControl<BackupType | null | undefined>(undefined, [Validators.required]),
+			ProgressPercent: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(8)]),
 		});
 
 	}
@@ -271,7 +297,7 @@ export namespace MyNS {
 	}
 	export function CreateBackupFailureDetailsFormGroup() {
 		return new FormGroup<BackupFailureDetailsFormProperties>({
-			Message: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -320,8 +346,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -424,6 +450,8 @@ export namespace MyNS {
 
 		/** The configuration for the Amazon FSx for Lustre file system. */
 		LustreConfiguration?: LustreFileSystemConfiguration;
+
+		/** Maximum items: 50 */
 		AdministrativeActions?: Array<AdministrativeAction>;
 	}
 
@@ -499,17 +527,17 @@ export namespace MyNS {
 	}
 	export function CreateFileSystemFormGroup() {
 		return new FormGroup<FileSystemFormProperties>({
-			OwnerId: new FormControl<string | null | undefined>(undefined),
+			OwnerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
-			FileSystemId: new FormControl<string | null | undefined>(undefined),
+			FileSystemId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(21), Validators.minLength(11)]),
 			FileSystemType: new FormControl<FileSystemFileSystemType | null | undefined>(undefined),
 			Lifecycle: new FormControl<FileSystemLifecycle | null | undefined>(undefined),
-			StorageCapacity: new FormControl<number | null | undefined>(undefined),
+			StorageCapacity: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
 			StorageType: new FormControl<FileSystemStorageType | null | undefined>(undefined),
-			VpcId: new FormControl<string | null | undefined>(undefined),
-			DNSName: new FormControl<string | null | undefined>(undefined),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined),
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			VpcId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(21), Validators.minLength(12)]),
+			DNSName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(275), Validators.minLength(16)]),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(8)]),
 		});
 
 	}
@@ -542,7 +570,7 @@ export namespace MyNS {
 	}
 	export function CreateFileSystemFailureDetailsFormGroup() {
 		return new FormGroup<FileSystemFailureDetailsFormProperties>({
-			Message: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -552,6 +580,12 @@ export namespace MyNS {
 
 	/** The configuration for this Microsoft Windows file system. */
 	export interface WindowsFileSystemConfiguration {
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: ^d-[0-9a-f]{10}$
+		 */
 		ActiveDirectoryId?: string | null;
 
 		/** The configuration of the self-managed Microsoft Active Directory (AD) directory to which the Windows File Server instance is joined. */
@@ -573,6 +607,12 @@ export namespace MyNS {
 		 * Pattern: ^(subnet-[0-9a-f]{8,})$
 		 */
 		PreferredSubnetId?: string | null;
+
+		/**
+		 * Max length: 15
+		 * Min length: 7
+		 * Pattern: ^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$
+		 */
 		PreferredFileServerIp?: string | null;
 
 		/**
@@ -615,6 +655,12 @@ export namespace MyNS {
 
 	/** The configuration for this Microsoft Windows file system. */
 	export interface WindowsFileSystemConfigurationFormProperties {
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: ^d-[0-9a-f]{10}$
+		 */
 		ActiveDirectoryId: FormControl<string | null | undefined>,
 		DeploymentType: FormControl<WindowsFileSystemConfigurationDeploymentType | null | undefined>,
 
@@ -633,6 +679,12 @@ export namespace MyNS {
 		 * Pattern: ^(subnet-[0-9a-f]{8,})$
 		 */
 		PreferredSubnetId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 15
+		 * Min length: 7
+		 * Pattern: ^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$
+		 */
 		PreferredFileServerIp: FormControl<string | null | undefined>,
 
 		/**
@@ -668,15 +720,15 @@ export namespace MyNS {
 	}
 	export function CreateWindowsFileSystemConfigurationFormGroup() {
 		return new FormGroup<WindowsFileSystemConfigurationFormProperties>({
-			ActiveDirectoryId: new FormControl<string | null | undefined>(undefined),
+			ActiveDirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
 			DeploymentType: new FormControl<WindowsFileSystemConfigurationDeploymentType | null | undefined>(undefined),
-			RemoteAdministrationEndpoint: new FormControl<string | null | undefined>(undefined),
-			PreferredSubnetId: new FormControl<string | null | undefined>(undefined),
-			PreferredFileServerIp: new FormControl<string | null | undefined>(undefined),
-			ThroughputCapacity: new FormControl<number | null | undefined>(undefined),
-			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined),
-			DailyAutomaticBackupStartTime: new FormControl<string | null | undefined>(undefined),
-			AutomaticBackupRetentionDays: new FormControl<number | null | undefined>(undefined),
+			RemoteAdministrationEndpoint: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(275), Validators.minLength(16)]),
+			PreferredSubnetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(24), Validators.minLength(15)]),
+			PreferredFileServerIp: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(15), Validators.minLength(7)]),
+			ThroughputCapacity: new FormControl<number | null | undefined>(undefined, [Validators.min(8), Validators.max(2048)]),
+			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(7)]),
+			DailyAutomaticBackupStartTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5), Validators.minLength(5)]),
+			AutomaticBackupRetentionDays: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(35)]),
 			CopyTagsToBackups: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -685,26 +737,79 @@ export namespace MyNS {
 
 	/** The configuration of the self-managed Microsoft Active Directory (AD) directory to which the Windows File Server instance is joined. */
 	export interface SelfManagedActiveDirectoryAttributes {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^.{1,255}$
+		 */
 		DomainName?: string | null;
+
+		/**
+		 * Max length: 2000
+		 * Min length: 1
+		 * Pattern: ^.{1,2000}$
+		 */
 		OrganizationalUnitDistinguishedName?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^.{1,256}$
+		 */
 		FileSystemAdministratorsGroup?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^.{1,256}$
+		 */
 		UserName?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 2
+		 */
 		DnsIps?: Array<string>;
 	}
 
 	/** The configuration of the self-managed Microsoft Active Directory (AD) directory to which the Windows File Server instance is joined. */
 	export interface SelfManagedActiveDirectoryAttributesFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^.{1,255}$
+		 */
 		DomainName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2000
+		 * Min length: 1
+		 * Pattern: ^.{1,2000}$
+		 */
 		OrganizationalUnitDistinguishedName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^.{1,256}$
+		 */
 		FileSystemAdministratorsGroup: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^.{1,256}$
+		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateSelfManagedActiveDirectoryAttributesFormGroup() {
 		return new FormGroup<SelfManagedActiveDirectoryAttributesFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
-			OrganizationalUnitDistinguishedName: new FormControl<string | null | undefined>(undefined),
-			FileSystemAdministratorsGroup: new FormControl<string | null | undefined>(undefined),
-			UserName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			OrganizationalUnitDistinguishedName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
+			FileSystemAdministratorsGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -730,7 +835,18 @@ export namespace MyNS {
 		/** The data repository configuration object for Lustre file systems returned in the response of the <code>CreateFileSystem</code> operation. */
 		DataRepositoryConfiguration?: DataRepositoryConfiguration;
 		DeploymentType?: LustreFileSystemConfigurationDeploymentType | null;
+
+		/**
+		 * Minimum: 50
+		 * Maximum: 200
+		 */
 		PerUnitStorageThroughput?: number | null;
+
+		/**
+		 * Max length: 8
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z0-9_-]{1,8})$
+		 */
 		MountName?: string | null;
 	}
 
@@ -745,15 +861,26 @@ export namespace MyNS {
 		 */
 		WeeklyMaintenanceStartTime: FormControl<string | null | undefined>,
 		DeploymentType: FormControl<LustreFileSystemConfigurationDeploymentType | null | undefined>,
+
+		/**
+		 * Minimum: 50
+		 * Maximum: 200
+		 */
 		PerUnitStorageThroughput: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 8
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z0-9_-]{1,8})$
+		 */
 		MountName: FormControl<string | null | undefined>,
 	}
 	export function CreateLustreFileSystemConfigurationFormGroup() {
 		return new FormGroup<LustreFileSystemConfigurationFormProperties>({
-			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined),
+			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(7)]),
 			DeploymentType: new FormControl<LustreFileSystemConfigurationDeploymentType | null | undefined>(undefined),
-			PerUnitStorageThroughput: new FormControl<number | null | undefined>(undefined),
-			MountName: new FormControl<string | null | undefined>(undefined),
+			PerUnitStorageThroughput: new FormControl<number | null | undefined>(undefined, [Validators.min(50), Validators.max(200)]),
+			MountName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(1)]),
 		});
 
 	}
@@ -761,22 +888,56 @@ export namespace MyNS {
 
 	/** The data repository configuration object for Lustre file systems returned in the response of the <code>CreateFileSystem</code> operation. */
 	export interface DataRepositoryConfiguration {
+
+		/**
+		 * Max length: 900
+		 * Min length: 3
+		 * Pattern: ^.{3,900}$
+		 */
 		ImportPath?: string | null;
+
+		/**
+		 * Max length: 900
+		 * Min length: 3
+		 * Pattern: ^.{3,900}$
+		 */
 		ExportPath?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 512000
+		 */
 		ImportedFileChunkSize?: number | null;
 	}
 
 	/** The data repository configuration object for Lustre file systems returned in the response of the <code>CreateFileSystem</code> operation. */
 	export interface DataRepositoryConfigurationFormProperties {
+
+		/**
+		 * Max length: 900
+		 * Min length: 3
+		 * Pattern: ^.{3,900}$
+		 */
 		ImportPath: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 900
+		 * Min length: 3
+		 * Pattern: ^.{3,900}$
+		 */
 		ExportPath: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 512000
+		 */
 		ImportedFileChunkSize: FormControl<number | null | undefined>,
 	}
 	export function CreateDataRepositoryConfigurationFormGroup() {
 		return new FormGroup<DataRepositoryConfigurationFormProperties>({
-			ImportPath: new FormControl<string | null | undefined>(undefined),
-			ExportPath: new FormControl<string | null | undefined>(undefined),
-			ImportedFileChunkSize: new FormControl<number | null | undefined>(undefined),
+			ImportPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(900), Validators.minLength(3)]),
+			ExportPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(900), Validators.minLength(3)]),
+			ImportedFileChunkSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(512000)]),
 		});
 
 	}
@@ -824,7 +985,7 @@ export namespace MyNS {
 	export function CreateAdministrativeActionFormGroup() {
 		return new FormGroup<AdministrativeActionFormProperties>({
 			AdministrativeActionType: new FormControl<AdministrativeActionAdministrativeActionType | null | undefined>(undefined),
-			ProgressPercent: new FormControl<number | null | undefined>(undefined),
+			ProgressPercent: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			RequestTime: new FormControl<Date | null | undefined>(undefined),
 			Status: new FormControl<AdministrativeActionStatus | null | undefined>(undefined),
 		});
@@ -859,7 +1020,7 @@ export namespace MyNS {
 	}
 	export function CreateAdministrativeActionFailureDetailsFormGroup() {
 		return new FormGroup<AdministrativeActionFailureDetailsFormProperties>({
-			Message: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -867,19 +1028,43 @@ export namespace MyNS {
 
 	/** The Microsoft AD attributes of the Amazon FSx for Windows File Server file system. */
 	export interface ActiveDirectoryBackupAttributes {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^.{1,255}$
+		 */
 		DomainName?: string | null;
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: ^d-[0-9a-f]{10}$
+		 */
 		ActiveDirectoryId?: string | null;
 	}
 
 	/** The Microsoft AD attributes of the Amazon FSx for Windows File Server file system. */
 	export interface ActiveDirectoryBackupAttributesFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^.{1,255}$
+		 */
 		DomainName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: ^d-[0-9a-f]{10}$
+		 */
 		ActiveDirectoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateActiveDirectoryBackupAttributesFormGroup() {
 		return new FormGroup<ActiveDirectoryBackupAttributesFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
-			ActiveDirectoryId: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			ActiveDirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
 		});
 
 	}
@@ -935,8 +1120,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateBackupRequestFormGroup() {
 		return new FormGroup<CreateBackupRequestFormProperties>({
-			FileSystemId: new FormControl<string | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			FileSystemId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(11)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
 		});
 
 	}
@@ -997,8 +1182,19 @@ export namespace MyNS {
 
 	/** A description of the data repository task. You use data repository tasks to perform bulk transfer operations between your Amazon FSx file system and its linked data repository. */
 	export interface DataRepositoryTask {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 12
+		 * Pattern: ^(task-[0-9a-f]{17,})$
+		 */
 		TaskId: string;
+
+		/** Required */
 		Lifecycle: CancelDataRepositoryTaskResponseLifecycle;
+
+		/** Required */
 		Type: DataRepositoryTaskType;
 
 		/**
@@ -1032,6 +1228,8 @@ export namespace MyNS {
 		 * Pattern: ^(fs-[0-9a-f]{8,})$
 		 */
 		FileSystemId: string;
+
+		/** Maximum items: 100 */
 		Paths?: Array<string>;
 
 		/** Provides information about why a data repository task failed. Only populated when the task <code>Lifecycle</code> is set to <code>FAILED</code>. */
@@ -1046,8 +1244,19 @@ export namespace MyNS {
 
 	/** A description of the data repository task. You use data repository tasks to perform bulk transfer operations between your Amazon FSx file system and its linked data repository. */
 	export interface DataRepositoryTaskFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 12
+		 * Pattern: ^(task-[0-9a-f]{17,})$
+		 */
 		TaskId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Lifecycle: FormControl<CancelDataRepositoryTaskResponseLifecycle | null | undefined>,
+
+		/** Required */
 		Type: FormControl<DataRepositoryTaskType | null | undefined>,
 
 		/**
@@ -1077,14 +1286,14 @@ export namespace MyNS {
 	}
 	export function CreateDataRepositoryTaskFormGroup() {
 		return new FormGroup<DataRepositoryTaskFormProperties>({
-			TaskId: new FormControl<string | null | undefined>(undefined),
-			Lifecycle: new FormControl<CancelDataRepositoryTaskResponseLifecycle | null | undefined>(undefined),
-			Type: new FormControl<DataRepositoryTaskType | null | undefined>(undefined),
-			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			TaskId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(12)]),
+			Lifecycle: new FormControl<CancelDataRepositoryTaskResponseLifecycle | null | undefined>(undefined, [Validators.required]),
+			Type: new FormControl<DataRepositoryTaskType | null | undefined>(undefined, [Validators.required]),
+			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
-			FileSystemId: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(8)]),
+			FileSystemId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(11)]),
 		});
 
 	}
@@ -1115,7 +1324,7 @@ export namespace MyNS {
 	}
 	export function CreateDataRepositoryTaskFailureDetailsFormGroup() {
 		return new FormGroup<DataRepositoryTaskFailureDetailsFormProperties>({
-			Message: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -1149,7 +1358,15 @@ export namespace MyNS {
 
 	/** Provides a report detailing the data repository task results of the files processed that match the criteria specified in the report <code>Scope</code> parameter. FSx delivers the report to the file system's linked data repository in Amazon S3, using the path specified in the report <code>Path</code> parameter. You can specify whether or not a report gets generated for a task using the <code>Enabled</code> parameter. */
 	export interface CompletionReport {
+
+		/** Required */
 		Enabled: boolean;
+
+		/**
+		 * Max length: 900
+		 * Min length: 3
+		 * Pattern: ^.{3,900}$
+		 */
 		Path?: string | null;
 		Format?: CompletionReportFormat | null;
 		Scope?: CompletionReportScope | null;
@@ -1157,15 +1374,23 @@ export namespace MyNS {
 
 	/** Provides a report detailing the data repository task results of the files processed that match the criteria specified in the report <code>Scope</code> parameter. FSx delivers the report to the file system's linked data repository in Amazon S3, using the path specified in the report <code>Path</code> parameter. You can specify whether or not a report gets generated for a task using the <code>Enabled</code> parameter. */
 	export interface CompletionReportFormProperties {
+
+		/** Required */
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 900
+		 * Min length: 3
+		 * Pattern: ^.{3,900}$
+		 */
 		Path: FormControl<string | null | undefined>,
 		Format: FormControl<CompletionReportFormat | null | undefined>,
 		Scope: FormControl<CompletionReportScope | null | undefined>,
 	}
 	export function CreateCompletionReportFormGroup() {
 		return new FormGroup<CompletionReportFormProperties>({
-			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			Path: new FormControl<string | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(900), Validators.minLength(3)]),
 			Format: new FormControl<CompletionReportFormat | null | undefined>(undefined),
 			Scope: new FormControl<CompletionReportScope | null | undefined>(undefined),
 		});
@@ -1177,7 +1402,11 @@ export namespace MyNS {
 	export enum CompletionReportScope { FAILED_FILES_ONLY = 0 }
 
 	export interface CreateDataRepositoryTaskRequest {
+
+		/** Required */
 		Type: DataRepositoryTaskType;
+
+		/** Maximum items: 100 */
 		Paths?: Array<string>;
 
 		/**
@@ -1211,6 +1440,8 @@ export namespace MyNS {
 		Tags?: Array<Tag>;
 	}
 	export interface CreateDataRepositoryTaskRequestFormProperties {
+
+		/** Required */
 		Type: FormControl<DataRepositoryTaskType | null | undefined>,
 
 		/**
@@ -1232,9 +1463,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateDataRepositoryTaskRequestFormGroup() {
 		return new FormGroup<CreateDataRepositoryTaskRequestFormProperties>({
-			Type: new FormControl<DataRepositoryTaskType | null | undefined>(undefined),
-			FileSystemId: new FormControl<string | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<DataRepositoryTaskType | null | undefined>(undefined, [Validators.required]),
+			FileSystemId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(11)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
 		});
 
 	}
@@ -1368,11 +1599,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateFileSystemRequestFormGroup() {
 		return new FormGroup<CreateFileSystemRequestFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
-			FileSystemType: new FormControl<FileSystemFileSystemType | null | undefined>(undefined),
-			StorageCapacity: new FormControl<number | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			FileSystemType: new FormControl<FileSystemFileSystemType | null | undefined>(undefined, [Validators.required]),
+			StorageCapacity: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(2147483647)]),
 			StorageType: new FormControl<FileSystemStorageType | null | undefined>(undefined),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1380,6 +1611,12 @@ export namespace MyNS {
 
 	/** The configuration object for the Microsoft Windows file system used in <code>CreateFileSystem</code> and <code>CreateFileSystemFromBackup</code> operations. */
 	export interface CreateFileSystemWindowsConfiguration {
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: ^d-[0-9a-f]{10}$
+		 */
 		ActiveDirectoryId?: string | null;
 
 		/** The configuration that Amazon FSx uses to join the Windows File Server instance to your self-managed (including on-premises) Microsoft Active Directory (AD) directory. */
@@ -1429,6 +1666,12 @@ export namespace MyNS {
 
 	/** The configuration object for the Microsoft Windows file system used in <code>CreateFileSystem</code> and <code>CreateFileSystemFromBackup</code> operations. */
 	export interface CreateFileSystemWindowsConfigurationFormProperties {
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: ^d-[0-9a-f]{10}$
+		 */
 		ActiveDirectoryId: FormControl<string | null | undefined>,
 		DeploymentType: FormControl<WindowsFileSystemConfigurationDeploymentType | null | undefined>,
 
@@ -1474,13 +1717,13 @@ export namespace MyNS {
 	}
 	export function CreateCreateFileSystemWindowsConfigurationFormGroup() {
 		return new FormGroup<CreateFileSystemWindowsConfigurationFormProperties>({
-			ActiveDirectoryId: new FormControl<string | null | undefined>(undefined),
+			ActiveDirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
 			DeploymentType: new FormControl<WindowsFileSystemConfigurationDeploymentType | null | undefined>(undefined),
-			PreferredSubnetId: new FormControl<string | null | undefined>(undefined),
-			ThroughputCapacity: new FormControl<number | null | undefined>(undefined),
-			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined),
-			DailyAutomaticBackupStartTime: new FormControl<string | null | undefined>(undefined),
-			AutomaticBackupRetentionDays: new FormControl<number | null | undefined>(undefined),
+			PreferredSubnetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(24), Validators.minLength(15)]),
+			ThroughputCapacity: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(8), Validators.max(2048)]),
+			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(7)]),
+			DailyAutomaticBackupStartTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5), Validators.minLength(5)]),
+			AutomaticBackupRetentionDays: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(35)]),
 			CopyTagsToBackups: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1489,29 +1732,101 @@ export namespace MyNS {
 
 	/** The configuration that Amazon FSx uses to join the Windows File Server instance to your self-managed (including on-premises) Microsoft Active Directory (AD) directory. */
 	export interface SelfManagedActiveDirectoryConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^.{1,255}$
+		 */
 		DomainName: string;
+
+		/**
+		 * Max length: 2000
+		 * Min length: 1
+		 * Pattern: ^.{1,2000}$
+		 */
 		OrganizationalUnitDistinguishedName?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^.{1,256}$
+		 */
 		FileSystemAdministratorsGroup?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^.{1,256}$
+		 */
 		UserName: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^.{1,256}$
+		 */
 		Password: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 2
+		 */
 		DnsIps: Array<string>;
 	}
 
 	/** The configuration that Amazon FSx uses to join the Windows File Server instance to your self-managed (including on-premises) Microsoft Active Directory (AD) directory. */
 	export interface SelfManagedActiveDirectoryConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^.{1,255}$
+		 */
 		DomainName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2000
+		 * Min length: 1
+		 * Pattern: ^.{1,2000}$
+		 */
 		OrganizationalUnitDistinguishedName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^.{1,256}$
+		 */
 		FileSystemAdministratorsGroup: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^.{1,256}$
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^.{1,256}$
+		 */
 		Password: FormControl<string | null | undefined>,
 	}
 	export function CreateSelfManagedActiveDirectoryConfigurationFormGroup() {
 		return new FormGroup<SelfManagedActiveDirectoryConfigurationFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
-			OrganizationalUnitDistinguishedName: new FormControl<string | null | undefined>(undefined),
-			FileSystemAdministratorsGroup: new FormControl<string | null | undefined>(undefined),
-			UserName: new FormControl<string | null | undefined>(undefined),
-			Password: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			OrganizationalUnitDistinguishedName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
+			FileSystemAdministratorsGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -1527,10 +1842,32 @@ export namespace MyNS {
 		 * Pattern: ^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$
 		 */
 		WeeklyMaintenanceStartTime?: string | null;
+
+		/**
+		 * Max length: 900
+		 * Min length: 3
+		 * Pattern: ^.{3,900}$
+		 */
 		ImportPath?: string | null;
+
+		/**
+		 * Max length: 900
+		 * Min length: 3
+		 * Pattern: ^.{3,900}$
+		 */
 		ExportPath?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 512000
+		 */
 		ImportedFileChunkSize?: number | null;
 		DeploymentType?: LustreFileSystemConfigurationDeploymentType | null;
+
+		/**
+		 * Minimum: 50
+		 * Maximum: 200
+		 */
 		PerUnitStorageThroughput?: number | null;
 	}
 
@@ -1544,20 +1881,42 @@ export namespace MyNS {
 		 * Pattern: ^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$
 		 */
 		WeeklyMaintenanceStartTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 900
+		 * Min length: 3
+		 * Pattern: ^.{3,900}$
+		 */
 		ImportPath: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 900
+		 * Min length: 3
+		 * Pattern: ^.{3,900}$
+		 */
 		ExportPath: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 512000
+		 */
 		ImportedFileChunkSize: FormControl<number | null | undefined>,
 		DeploymentType: FormControl<LustreFileSystemConfigurationDeploymentType | null | undefined>,
+
+		/**
+		 * Minimum: 50
+		 * Maximum: 200
+		 */
 		PerUnitStorageThroughput: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateFileSystemLustreConfigurationFormGroup() {
 		return new FormGroup<CreateFileSystemLustreConfigurationFormProperties>({
-			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined),
-			ImportPath: new FormControl<string | null | undefined>(undefined),
-			ExportPath: new FormControl<string | null | undefined>(undefined),
-			ImportedFileChunkSize: new FormControl<number | null | undefined>(undefined),
+			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(7)]),
+			ImportPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(900), Validators.minLength(3)]),
+			ExportPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(900), Validators.minLength(3)]),
+			ImportedFileChunkSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(512000)]),
 			DeploymentType: new FormControl<LustreFileSystemConfigurationDeploymentType | null | undefined>(undefined),
-			PerUnitStorageThroughput: new FormControl<number | null | undefined>(undefined),
+			PerUnitStorageThroughput: new FormControl<number | null | undefined>(undefined, [Validators.min(50), Validators.max(200)]),
 		});
 
 	}
@@ -1712,8 +2071,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateFileSystemFromBackupRequestFormGroup() {
 		return new FormGroup<CreateFileSystemFromBackupRequestFormProperties>({
-			BackupId: new FormControl<string | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			BackupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(12)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
 			StorageType: new FormControl<FileSystemStorageType | null | undefined>(undefined),
 		});
 
@@ -1761,7 +2120,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteBackupResponseFormGroup() {
 		return new FormGroup<DeleteBackupResponseFormProperties>({
-			BackupId: new FormControl<string | null | undefined>(undefined),
+			BackupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(12)]),
 			Lifecycle: new FormControl<BackupLifecycle | null | undefined>(undefined),
 		});
 
@@ -1811,8 +2170,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteBackupRequestFormGroup() {
 		return new FormGroup<DeleteBackupRequestFormProperties>({
-			BackupId: new FormControl<string | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			BackupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(12)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
 		});
 
 	}
@@ -1862,7 +2221,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteFileSystemResponseFormGroup() {
 		return new FormGroup<DeleteFileSystemResponseFormProperties>({
-			FileSystemId: new FormControl<string | null | undefined>(undefined),
+			FileSystemId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(21), Validators.minLength(11)]),
 			Lifecycle: new FormControl<FileSystemLifecycle | null | undefined>(undefined),
 		});
 
@@ -1901,7 +2260,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteFileSystemWindowsResponseFormGroup() {
 		return new FormGroup<DeleteFileSystemWindowsResponseFormProperties>({
-			FinalBackupId: new FormControl<string | null | undefined>(undefined),
+			FinalBackupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(12)]),
 		});
 
 	}
@@ -1953,8 +2312,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteFileSystemRequestFormGroup() {
 		return new FormGroup<DeleteFileSystemRequestFormProperties>({
-			FileSystemId: new FormControl<string | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			FileSystemId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(11)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
 		});
 
 	}
@@ -2015,7 +2374,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeBackupsResponseFormGroup() {
 		return new FormGroup<DescribeBackupsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -2072,8 +2431,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeBackupsRequestFormGroup() {
 		return new FormGroup<DescribeBackupsRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(2147483647)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -2108,6 +2467,8 @@ export namespace MyNS {
 	export enum FilterName { file_system_id = 0, backup_type = 1 }
 
 	export interface DescribeDataRepositoryTasksResponse {
+
+		/** Maximum items: 50 */
 		DataRepositoryTasks?: Array<DataRepositoryTask>;
 
 		/**
@@ -2130,13 +2491,17 @@ export namespace MyNS {
 	}
 	export function CreateDescribeDataRepositoryTasksResponseFormGroup() {
 		return new FormGroup<DescribeDataRepositoryTasksResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeDataRepositoryTasksRequest {
+
+		/** Maximum items: 50 */
 		TaskIds?: Array<string>;
+
+		/** Maximum items: 3 */
 		Filters?: Array<DataRepositoryTaskFilter>;
 
 		/**
@@ -2173,8 +2538,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeDataRepositoryTasksRequestFormGroup() {
 		return new FormGroup<DescribeDataRepositoryTasksRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(2147483647)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -2183,6 +2548,8 @@ export namespace MyNS {
 	/** (Optional) An array of filter objects you can use to filter the response of data repository tasks you will see in the the response. You can filter the tasks returned in the response by one or more file system IDs, task lifecycles, and by task type. A filter object consists of a filter <code>Name</code>, and one or more <code>Values</code> for the filter. */
 	export interface DataRepositoryTaskFilter {
 		Name?: DataRepositoryTaskFilterName | null;
+
+		/** Maximum items: 20 */
 		Values?: Array<string>;
 	}
 
@@ -2231,7 +2598,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeFileSystemsResponseFormGroup() {
 		return new FormGroup<DescribeFileSystemsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -2282,8 +2649,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeFileSystemsRequestFormGroup() {
 		return new FormGroup<DescribeFileSystemsRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(2147483647)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -2321,7 +2688,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourceResponseFormGroup() {
 		return new FormGroup<ListTagsForResourceResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -2384,9 +2751,9 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(8)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(2147483647)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -2471,7 +2838,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(8)]),
 		});
 
 	}
@@ -2526,7 +2893,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(8)]),
 		});
 
 	}
@@ -2612,9 +2979,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateFileSystemRequestFormGroup() {
 		return new FormGroup<UpdateFileSystemRequestFormProperties>({
-			FileSystemId: new FormControl<string | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
-			StorageCapacity: new FormControl<number | null | undefined>(undefined),
+			FileSystemId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(11)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			StorageCapacity: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
 		});
 
 	}
@@ -2692,10 +3059,10 @@ export namespace MyNS {
 	}
 	export function CreateUpdateFileSystemWindowsConfigurationFormGroup() {
 		return new FormGroup<UpdateFileSystemWindowsConfigurationFormProperties>({
-			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined),
-			DailyAutomaticBackupStartTime: new FormControl<string | null | undefined>(undefined),
-			AutomaticBackupRetentionDays: new FormControl<number | null | undefined>(undefined),
-			ThroughputCapacity: new FormControl<number | null | undefined>(undefined),
+			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(7)]),
+			DailyAutomaticBackupStartTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5), Validators.minLength(5)]),
+			AutomaticBackupRetentionDays: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(35)]),
+			ThroughputCapacity: new FormControl<number | null | undefined>(undefined, [Validators.min(8), Validators.max(2048)]),
 		});
 
 	}
@@ -2703,20 +3070,49 @@ export namespace MyNS {
 
 	/** The configuration that Amazon FSx uses to join the Windows File Server instance to a self-managed Microsoft Active Directory (AD) directory. */
 	export interface SelfManagedActiveDirectoryConfigurationUpdates {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^.{1,256}$
+		 */
 		UserName?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^.{1,256}$
+		 */
 		Password?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 2
+		 */
 		DnsIps?: Array<string>;
 	}
 
 	/** The configuration that Amazon FSx uses to join the Windows File Server instance to a self-managed Microsoft Active Directory (AD) directory. */
 	export interface SelfManagedActiveDirectoryConfigurationUpdatesFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^.{1,256}$
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^.{1,256}$
+		 */
 		Password: FormControl<string | null | undefined>,
 	}
 	export function CreateSelfManagedActiveDirectoryConfigurationUpdatesFormGroup() {
 		return new FormGroup<SelfManagedActiveDirectoryConfigurationUpdatesFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			Password: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -2747,7 +3143,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateFileSystemLustreConfigurationFormGroup() {
 		return new FormGroup<UpdateFileSystemLustreConfigurationFormProperties>({
-			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined),
+			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(7)]),
 		});
 
 	}

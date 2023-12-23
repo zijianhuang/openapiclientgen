@@ -7,6 +7,11 @@ export namespace MyNS {
 	/** Contains the UsageRecords processed by BatchMeterUsage and any records that have failed due to transient error. */
 	export interface BatchMeterUsageResult {
 		Results?: Array<UsageRecordResult>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 25
+		 */
 		UnprocessedRecords?: Array<UsageRecord>;
 	}
 
@@ -45,25 +50,63 @@ export namespace MyNS {
 
 	/** <p>A UsageRecord indicates a quantity of usage for a given product, customer, dimension and time.</p> <p>Multiple requests with the same UsageRecords as input will be deduplicated to prevent double charges.</p> */
 	export interface UsageRecord {
+
+		/** Required */
 		Timestamp: Date;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		CustomerIdentifier: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		Dimension: string;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 2147483647
+		 */
 		Quantity?: number | null;
 	}
 
 	/** <p>A UsageRecord indicates a quantity of usage for a given product, customer, dimension and time.</p> <p>Multiple requests with the same UsageRecords as input will be deduplicated to prevent double charges.</p> */
 	export interface UsageRecordFormProperties {
+
+		/** Required */
 		Timestamp: FormControl<Date | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		CustomerIdentifier: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		Dimension: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 2147483647
+		 */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateUsageRecordFormGroup() {
 		return new FormGroup<UsageRecordFormProperties>({
-			Timestamp: new FormControl<Date | null | undefined>(undefined),
-			CustomerIdentifier: new FormControl<string | null | undefined>(undefined),
-			Dimension: new FormControl<string | null | undefined>(undefined),
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			Timestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			CustomerIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			Dimension: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
 		});
 
 	}
@@ -73,17 +116,35 @@ export namespace MyNS {
 
 	/** A BatchMeterUsageRequest contains UsageRecords, which indicate quantities of usage within your application. */
 	export interface BatchMeterUsageRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 25
+		 */
 		UsageRecords: Array<UsageRecord>;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		ProductCode: string;
 	}
 
 	/** A BatchMeterUsageRequest contains UsageRecords, which indicate quantities of usage within your application. */
 	export interface BatchMeterUsageRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		ProductCode: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchMeterUsageRequestFormGroup() {
 		return new FormGroup<BatchMeterUsageRequestFormProperties>({
-			ProductCode: new FormControl<string | null | undefined>(undefined),
+			ProductCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -172,25 +233,63 @@ export namespace MyNS {
 	}
 
 	export interface MeterUsageRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		ProductCode: string;
+
+		/** Required */
 		Timestamp: Date;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		UsageDimension: string;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 2147483647
+		 */
 		UsageQuantity?: number | null;
 		DryRun?: boolean | null;
 	}
 	export interface MeterUsageRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		ProductCode: FormControl<string | null | undefined>,
+
+		/** Required */
 		Timestamp: FormControl<Date | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		UsageDimension: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 2147483647
+		 */
 		UsageQuantity: FormControl<number | null | undefined>,
 		DryRun: FormControl<boolean | null | undefined>,
 	}
 	export function CreateMeterUsageRequestFormGroup() {
 		return new FormGroup<MeterUsageRequestFormProperties>({
-			ProductCode: new FormControl<string | null | undefined>(undefined),
-			Timestamp: new FormControl<Date | null | undefined>(undefined),
-			UsageDimension: new FormControl<string | null | undefined>(undefined),
-			UsageQuantity: new FormControl<number | null | undefined>(undefined),
+			ProductCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			Timestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			UsageDimension: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			UsageQuantity: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
 			DryRun: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -228,10 +327,14 @@ export namespace MyNS {
 
 	export interface RegisterUsageResult {
 		PublicKeyRotationTimestamp?: Date | null;
+
+		/** Pattern: \S+ */
 		Signature?: string | null;
 	}
 	export interface RegisterUsageResultFormProperties {
 		PublicKeyRotationTimestamp: FormControl<Date | null | undefined>,
+
+		/** Pattern: \S+ */
 		Signature: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterUsageResultFormGroup() {
@@ -243,20 +346,46 @@ export namespace MyNS {
 	}
 
 	export interface RegisterUsageRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		ProductCode: string;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		PublicKeyVersion: number;
+
+		/** Max length: 255 */
 		Nonce?: string | null;
 	}
 	export interface RegisterUsageRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		ProductCode: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		PublicKeyVersion: FormControl<number | null | undefined>,
+
+		/** Max length: 255 */
 		Nonce: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterUsageRequestFormGroup() {
 		return new FormGroup<RegisterUsageRequestFormProperties>({
-			ProductCode: new FormControl<string | null | undefined>(undefined),
-			PublicKeyVersion: new FormControl<number | null | undefined>(undefined),
-			Nonce: new FormControl<string | null | undefined>(undefined),
+			ProductCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			PublicKeyVersion: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
+			Nonce: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -294,19 +423,39 @@ export namespace MyNS {
 
 	/** The result of the ResolveCustomer operation. Contains the CustomerIdentifier and product code. */
 	export interface ResolveCustomerResult {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		CustomerIdentifier?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		ProductCode?: string | null;
 	}
 
 	/** The result of the ResolveCustomer operation. Contains the CustomerIdentifier and product code. */
 	export interface ResolveCustomerResultFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		CustomerIdentifier: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		ProductCode: FormControl<string | null | undefined>,
 	}
 	export function CreateResolveCustomerResultFormGroup() {
 		return new FormGroup<ResolveCustomerResultFormProperties>({
-			CustomerIdentifier: new FormControl<string | null | undefined>(undefined),
-			ProductCode: new FormControl<string | null | undefined>(undefined),
+			CustomerIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			ProductCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -314,16 +463,26 @@ export namespace MyNS {
 
 	/** Contains input to the ResolveCustomer operation. */
 	export interface ResolveCustomerRequest {
+
+		/**
+		 * Required
+		 * Pattern: \S+
+		 */
 		RegistrationToken: string;
 	}
 
 	/** Contains input to the ResolveCustomer operation. */
 	export interface ResolveCustomerRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: \S+
+		 */
 		RegistrationToken: FormControl<string | null | undefined>,
 	}
 	export function CreateResolveCustomerRequestFormGroup() {
 		return new FormGroup<ResolveCustomerRequestFormProperties>({
-			RegistrationToken: new FormControl<string | null | undefined>(undefined),
+			RegistrationToken: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

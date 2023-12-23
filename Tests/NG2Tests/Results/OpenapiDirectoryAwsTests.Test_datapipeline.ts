@@ -20,6 +20,12 @@ export namespace MyNS {
 
 	/** Contains the parameters for ActivatePipeline. */
 	export interface ActivatePipelineInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: string;
 		parameterValues?: Array<ParameterValue>;
 		startTimestamp?: Date | null;
@@ -27,12 +33,18 @@ export namespace MyNS {
 
 	/** Contains the parameters for ActivatePipeline. */
 	export interface ActivatePipelineInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: FormControl<string | null | undefined>,
 		startTimestamp: FormControl<Date | null | undefined>,
 	}
 	export function CreateActivatePipelineInputFormGroup() {
 		return new FormGroup<ActivatePipelineInputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 			startTimestamp: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -41,19 +53,43 @@ export namespace MyNS {
 
 	/** A value or list of parameter values.  */
 	export interface ParameterValue {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		id: string;
+
+		/**
+		 * Required
+		 * Max length: 10240
+		 * Min length: 0
+		 */
 		stringValue: string;
 	}
 
 	/** A value or list of parameter values.  */
 	export interface ParameterValueFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 10240
+		 * Min length: 0
+		 */
 		stringValue: FormControl<string | null | undefined>,
 	}
 	export function CreateParameterValueFormGroup() {
 		return new FormGroup<ParameterValueFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			stringValue: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			stringValue: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10240), Validators.minLength(0)]),
 		});
 
 	}
@@ -143,17 +179,35 @@ export namespace MyNS {
 
 	/** Contains the parameters for AddTags. */
 	export interface AddTagsInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: string;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		tags: Array<Tag>;
 	}
 
 	/** Contains the parameters for AddTags. */
 	export interface AddTagsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: FormControl<string | null | undefined>,
 	}
 	export function CreateAddTagsInputFormGroup() {
 		return new FormGroup<AddTagsInputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -161,19 +215,43 @@ export namespace MyNS {
 
 	/** Tags are key/value pairs defined by a user and associated with a pipeline to control access. AWS Data Pipeline allows you to associate ten tags per pipeline. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		value: string;
 	}
 
 	/** Tags are key/value pairs defined by a user and associated with a pipeline to control access. AWS Data Pipeline allows you to associate ten tags per pipeline. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -181,16 +259,28 @@ export namespace MyNS {
 
 	/** Contains the output of CreatePipeline. */
 	export interface CreatePipelineOutput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: string;
 	}
 
 	/** Contains the output of CreatePipeline. */
 	export interface CreatePipelineOutputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePipelineOutputFormGroup() {
 		return new FormGroup<CreatePipelineOutputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -198,23 +288,62 @@ export namespace MyNS {
 
 	/** Contains the parameters for CreatePipeline. */
 	export interface CreatePipelineInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		name: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		uniqueId: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		description?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		tags?: Array<Tag>;
 	}
 
 	/** Contains the parameters for CreatePipeline. */
 	export interface CreatePipelineInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		uniqueId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePipelineInputFormGroup() {
 		return new FormGroup<CreatePipelineInputFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			uniqueId: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			uniqueId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 		});
 
 	}
@@ -236,18 +365,30 @@ export namespace MyNS {
 
 	/** Contains the parameters for DeactivatePipeline. */
 	export interface DeactivatePipelineInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: string;
 		cancelActive?: boolean | null;
 	}
 
 	/** Contains the parameters for DeactivatePipeline. */
 	export interface DeactivatePipelineInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: FormControl<string | null | undefined>,
 		cancelActive: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDeactivatePipelineInputFormGroup() {
 		return new FormGroup<DeactivatePipelineInputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 			cancelActive: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -256,16 +397,28 @@ export namespace MyNS {
 
 	/** Contains the parameters for DeletePipeline. */
 	export interface DeletePipelineInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: string;
 	}
 
 	/** Contains the parameters for DeletePipeline. */
 	export interface DeletePipelineInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeletePipelineInputFormGroup() {
 		return new FormGroup<DeletePipelineInputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -273,19 +426,31 @@ export namespace MyNS {
 
 	/** Contains the output of DescribeObjects. */
 	export interface DescribeObjectsOutput {
+
+		/** Required */
 		pipelineObjects: Array<PipelineObject>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		marker?: string | null;
 		hasMoreResults?: boolean | null;
 	}
 
 	/** Contains the output of DescribeObjects. */
 	export interface DescribeObjectsOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		marker: FormControl<string | null | undefined>,
 		hasMoreResults: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDescribeObjectsOutputFormGroup() {
 		return new FormGroup<DescribeObjectsOutputFormProperties>({
-			marker: new FormControl<string | null | undefined>(undefined),
+			marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 			hasMoreResults: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -294,20 +459,46 @@ export namespace MyNS {
 
 	/** Contains information about a pipeline object. This can be a logical, physical, or physical attempt pipeline object. The complete set of components of a pipeline defines the pipeline. */
 	export interface PipelineObject {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		id: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		name: string;
+
+		/** Required */
 		fields: Array<Field>;
 	}
 
 	/** Contains information about a pipeline object. This can be a logical, physical, or physical attempt pipeline object. The complete set of components of a pipeline defines the pipeline. */
 	export interface PipelineObjectFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreatePipelineObjectFormGroup() {
 		return new FormGroup<PipelineObjectFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -315,22 +506,54 @@ export namespace MyNS {
 
 	/** A key-value pair that describes a property of a pipeline object. The value is specified as either a string value (<code>StringValue</code>) or a reference to another object (<code>RefValue</code>) but not as both. */
 	export interface Field {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		key: string;
+
+		/**
+		 * Max length: 10240
+		 * Min length: 0
+		 */
 		stringValue?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		refValue?: string | null;
 	}
 
 	/** A key-value pair that describes a property of a pipeline object. The value is specified as either a string value (<code>StringValue</code>) or a reference to another object (<code>RefValue</code>) but not as both. */
 	export interface FieldFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10240
+		 * Min length: 0
+		 */
 		stringValue: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		refValue: FormControl<string | null | undefined>,
 	}
 	export function CreateFieldFormGroup() {
 		return new FormGroup<FieldFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined),
-			stringValue: new FormControl<string | null | undefined>(undefined),
-			refValue: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			stringValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10240), Validators.minLength(0)]),
+			refValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -338,23 +561,47 @@ export namespace MyNS {
 
 	/** Contains the parameters for DescribeObjects. */
 	export interface DescribeObjectsInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: string;
+
+		/** Required */
 		objectIds: Array<string>;
 		evaluateExpressions?: boolean | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		marker?: string | null;
 	}
 
 	/** Contains the parameters for DescribeObjects. */
 	export interface DescribeObjectsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: FormControl<string | null | undefined>,
 		evaluateExpressions: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		marker: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeObjectsInputFormGroup() {
 		return new FormGroup<DescribeObjectsInputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 			evaluateExpressions: new FormControl<boolean | null | undefined>(undefined),
-			marker: new FormControl<string | null | undefined>(undefined),
+			marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 		});
 
 	}
@@ -362,6 +609,8 @@ export namespace MyNS {
 
 	/** Contains the output of DescribePipelines. */
 	export interface DescribePipelinesOutput {
+
+		/** Required */
 		pipelineDescriptionList: Array<PipelineDescription>;
 	}
 
@@ -377,24 +626,65 @@ export namespace MyNS {
 
 	/** Contains pipeline metadata. */
 	export interface PipelineDescription {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		name: string;
+
+		/** Required */
 		fields: Array<Field>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		description?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		tags?: Array<Tag>;
 	}
 
 	/** Contains pipeline metadata. */
 	export interface PipelineDescriptionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 	}
 	export function CreatePipelineDescriptionFormGroup() {
 		return new FormGroup<PipelineDescriptionFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 		});
 
 	}
@@ -402,6 +692,8 @@ export namespace MyNS {
 
 	/** Contains the parameters for DescribePipelines. */
 	export interface DescribePipelinesInput {
+
+		/** Required */
 		pipelineIds: Array<string>;
 	}
 
@@ -417,16 +709,28 @@ export namespace MyNS {
 
 	/** Contains the output of EvaluateExpression. */
 	export interface EvaluateExpressionOutput {
+
+		/**
+		 * Required
+		 * Max length: 20971520
+		 * Min length: 0
+		 */
 		evaluatedExpression: string;
 	}
 
 	/** Contains the output of EvaluateExpression. */
 	export interface EvaluateExpressionOutputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 20971520
+		 * Min length: 0
+		 */
 		evaluatedExpression: FormControl<string | null | undefined>,
 	}
 	export function CreateEvaluateExpressionOutputFormGroup() {
 		return new FormGroup<EvaluateExpressionOutputFormProperties>({
-			evaluatedExpression: new FormControl<string | null | undefined>(undefined),
+			evaluatedExpression: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20971520), Validators.minLength(0)]),
 		});
 
 	}
@@ -434,22 +738,58 @@ export namespace MyNS {
 
 	/** Contains the parameters for EvaluateExpression. */
 	export interface EvaluateExpressionInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		objectId: string;
+
+		/**
+		 * Required
+		 * Max length: 20971520
+		 * Min length: 0
+		 */
 		expression: string;
 	}
 
 	/** Contains the parameters for EvaluateExpression. */
 	export interface EvaluateExpressionInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		objectId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 20971520
+		 * Min length: 0
+		 */
 		expression: FormControl<string | null | undefined>,
 	}
 	export function CreateEvaluateExpressionInputFormGroup() {
 		return new FormGroup<EvaluateExpressionInputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined),
-			objectId: new FormControl<string | null | undefined>(undefined),
-			expression: new FormControl<string | null | undefined>(undefined),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			objectId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			expression: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20971520), Validators.minLength(0)]),
 		});
 
 	}
@@ -491,17 +831,31 @@ export namespace MyNS {
 
 	/** Contains information about a parameter object. */
 	export interface ParameterObject {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		id: string;
+
+		/** Required */
 		attributes: Array<ParameterAttribute>;
 	}
 
 	/** Contains information about a parameter object. */
 	export interface ParameterObjectFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreateParameterObjectFormGroup() {
 		return new FormGroup<ParameterObjectFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -509,19 +863,43 @@ export namespace MyNS {
 
 	/** The attributes allowed or specified with a parameter object. */
 	export interface ParameterAttribute {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		key: string;
+
+		/**
+		 * Required
+		 * Max length: 10240
+		 * Min length: 0
+		 */
 		stringValue: string;
 	}
 
 	/** The attributes allowed or specified with a parameter object. */
 	export interface ParameterAttributeFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 10240
+		 * Min length: 0
+		 */
 		stringValue: FormControl<string | null | undefined>,
 	}
 	export function CreateParameterAttributeFormGroup() {
 		return new FormGroup<ParameterAttributeFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined),
-			stringValue: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			stringValue: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10240), Validators.minLength(0)]),
 		});
 
 	}
@@ -529,19 +907,41 @@ export namespace MyNS {
 
 	/** Contains the parameters for GetPipelineDefinition. */
 	export interface GetPipelineDefinitionInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		version?: string | null;
 	}
 
 	/** Contains the parameters for GetPipelineDefinition. */
 	export interface GetPipelineDefinitionInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		version: FormControl<string | null | undefined>,
 	}
 	export function CreateGetPipelineDefinitionInputFormGroup() {
 		return new FormGroup<GetPipelineDefinitionInputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 		});
 
 	}
@@ -549,19 +949,31 @@ export namespace MyNS {
 
 	/** Contains the output of ListPipelines. */
 	export interface ListPipelinesOutput {
+
+		/** Required */
 		pipelineIdList: Array<PipelineIdName>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		marker?: string | null;
 		hasMoreResults?: boolean | null;
 	}
 
 	/** Contains the output of ListPipelines. */
 	export interface ListPipelinesOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		marker: FormControl<string | null | undefined>,
 		hasMoreResults: FormControl<boolean | null | undefined>,
 	}
 	export function CreateListPipelinesOutputFormGroup() {
 		return new FormGroup<ListPipelinesOutputFormProperties>({
-			marker: new FormControl<string | null | undefined>(undefined),
+			marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 			hasMoreResults: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -570,19 +982,39 @@ export namespace MyNS {
 
 	/** Contains the name and identifier of a pipeline. */
 	export interface PipelineIdName {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		id?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		name?: string | null;
 	}
 
 	/** Contains the name and identifier of a pipeline. */
 	export interface PipelineIdNameFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreatePipelineIdNameFormGroup() {
 		return new FormGroup<PipelineIdNameFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -590,16 +1022,26 @@ export namespace MyNS {
 
 	/** Contains the parameters for ListPipelines. */
 	export interface ListPipelinesInput {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		marker?: string | null;
 	}
 
 	/** Contains the parameters for ListPipelines. */
 	export interface ListPipelinesInputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		marker: FormControl<string | null | undefined>,
 	}
 	export function CreateListPipelinesInputFormGroup() {
 		return new FormGroup<ListPipelinesInputFormProperties>({
-			marker: new FormControl<string | null | undefined>(undefined),
+			marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 		});
 
 	}
@@ -624,23 +1066,53 @@ export namespace MyNS {
 
 	/** Contains information about a pipeline task that is assigned to a task runner. */
 	export interface TaskObject {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		taskId?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		attemptId?: string | null;
 		objects?: PipelineObjectMap;
 	}
 
 	/** Contains information about a pipeline task that is assigned to a task runner. */
 	export interface TaskObjectFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		taskId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		attemptId: FormControl<string | null | undefined>,
 	}
 	export function CreateTaskObjectFormGroup() {
 		return new FormGroup<TaskObjectFormProperties>({
-			taskId: new FormControl<string | null | undefined>(undefined),
-			pipelineId: new FormControl<string | null | undefined>(undefined),
-			attemptId: new FormControl<string | null | undefined>(undefined),
+			taskId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			attemptId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -658,7 +1130,18 @@ export namespace MyNS {
 
 	/** Contains the parameters for PollForTask. */
 	export interface PollForTaskInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		workerGroup: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		hostname?: string | null;
 
 		/** <p><p>Identity information for the EC2 instance that is hosting the task runner. You can get this value by calling a metadata URI from the EC2 instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p></p> */
@@ -667,13 +1150,24 @@ export namespace MyNS {
 
 	/** Contains the parameters for PollForTask. */
 	export interface PollForTaskInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		workerGroup: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		hostname: FormControl<string | null | undefined>,
 	}
 	export function CreatePollForTaskInputFormGroup() {
 		return new FormGroup<PollForTaskInputFormProperties>({
-			workerGroup: new FormControl<string | null | undefined>(undefined),
-			hostname: new FormControl<string | null | undefined>(undefined),
+			workerGroup: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(0)]),
+			hostname: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -681,19 +1175,39 @@ export namespace MyNS {
 
 	/** <p><p>Identity information for the EC2 instance that is hosting the task runner. You can get this value by calling a metadata URI from the EC2 instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p></p> */
 	export interface InstanceIdentity {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		document?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		signature?: string | null;
 	}
 
 	/** <p><p>Identity information for the EC2 instance that is hosting the task runner. You can get this value by calling a metadata URI from the EC2 instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p></p> */
 	export interface InstanceIdentityFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		document: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		signature: FormControl<string | null | undefined>,
 	}
 	export function CreateInstanceIdentityFormGroup() {
 		return new FormGroup<InstanceIdentityFormProperties>({
-			document: new FormControl<string | null | undefined>(undefined),
-			signature: new FormControl<string | null | undefined>(undefined),
+			document: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			signature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 		});
 
 	}
@@ -703,16 +1217,20 @@ export namespace MyNS {
 	export interface PutPipelineDefinitionOutput {
 		validationErrors?: Array<ValidationError>;
 		validationWarnings?: Array<ValidationWarning>;
+
+		/** Required */
 		errored: boolean;
 	}
 
 	/** Contains the output of PutPipelineDefinition. */
 	export interface PutPipelineDefinitionOutputFormProperties {
+
+		/** Required */
 		errored: FormControl<boolean | null | undefined>,
 	}
 	export function CreatePutPipelineDefinitionOutputFormGroup() {
 		return new FormGroup<PutPipelineDefinitionOutputFormProperties>({
-			errored: new FormControl<boolean | null | undefined>(undefined),
+			errored: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -720,17 +1238,27 @@ export namespace MyNS {
 
 	/** Defines a validation error. Validation errors prevent pipeline activation. The set of validation errors that can be returned are defined by AWS Data Pipeline. */
 	export interface ValidationError {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		id?: string | null;
 		errors?: Array<string>;
 	}
 
 	/** Defines a validation error. Validation errors prevent pipeline activation. The set of validation errors that can be returned are defined by AWS Data Pipeline. */
 	export interface ValidationErrorFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreateValidationErrorFormGroup() {
 		return new FormGroup<ValidationErrorFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -738,17 +1266,27 @@ export namespace MyNS {
 
 	/** Defines a validation warning. Validation warnings do not prevent pipeline activation. The set of validation warnings that can be returned are defined by AWS Data Pipeline. */
 	export interface ValidationWarning {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		id?: string | null;
 		warnings?: Array<string>;
 	}
 
 	/** Defines a validation warning. Validation warnings do not prevent pipeline activation. The set of validation warnings that can be returned are defined by AWS Data Pipeline. */
 	export interface ValidationWarningFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreateValidationWarningFormGroup() {
 		return new FormGroup<ValidationWarningFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -756,7 +1294,15 @@ export namespace MyNS {
 
 	/** Contains the parameters for PutPipelineDefinition. */
 	export interface PutPipelineDefinitionInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: string;
+
+		/** Required */
 		pipelineObjects: Array<PipelineObject>;
 		parameterObjects?: Array<ParameterObject>;
 		parameterValues?: Array<ParameterValue>;
@@ -764,11 +1310,17 @@ export namespace MyNS {
 
 	/** Contains the parameters for PutPipelineDefinition. */
 	export interface PutPipelineDefinitionInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: FormControl<string | null | undefined>,
 	}
 	export function CreatePutPipelineDefinitionInputFormGroup() {
 		return new FormGroup<PutPipelineDefinitionInputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -777,18 +1329,28 @@ export namespace MyNS {
 	/** Contains the output of QueryObjects. */
 	export interface QueryObjectsOutput {
 		ids?: Array<string>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		marker?: string | null;
 		hasMoreResults?: boolean | null;
 	}
 
 	/** Contains the output of QueryObjects. */
 	export interface QueryObjectsOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		marker: FormControl<string | null | undefined>,
 		hasMoreResults: FormControl<boolean | null | undefined>,
 	}
 	export function CreateQueryObjectsOutputFormGroup() {
 		return new FormGroup<QueryObjectsOutputFormProperties>({
-			marker: new FormControl<string | null | undefined>(undefined),
+			marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 			hasMoreResults: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -797,27 +1359,61 @@ export namespace MyNS {
 
 	/** Contains the parameters for QueryObjects. */
 	export interface QueryObjectsInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: string;
 
 		/** Defines the query to run against an object. */
 		query?: Query;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		sphere: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		marker?: string | null;
 		limit?: number | null;
 	}
 
 	/** Contains the parameters for QueryObjects. */
 	export interface QueryObjectsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		sphere: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		marker: FormControl<string | null | undefined>,
 		limit: FormControl<number | null | undefined>,
 	}
 	export function CreateQueryObjectsInputFormGroup() {
 		return new FormGroup<QueryObjectsInputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined),
-			sphere: new FormControl<string | null | undefined>(undefined),
-			marker: new FormControl<string | null | undefined>(undefined),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			sphere: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(0)]),
+			marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 			limit: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -843,6 +1439,11 @@ export namespace MyNS {
 
 	/** A comparision that is used to determine whether a query should return this object. */
 	export interface Selector {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		fieldName?: string | null;
 
 		/** Contains a logical operation for comparing the value of a field with a specified value. */
@@ -851,11 +1452,16 @@ export namespace MyNS {
 
 	/** A comparision that is used to determine whether a query should return this object. */
 	export interface SelectorFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		fieldName: FormControl<string | null | undefined>,
 	}
 	export function CreateSelectorFormGroup() {
 		return new FormGroup<SelectorFormProperties>({
-			fieldName: new FormControl<string | null | undefined>(undefined),
+			fieldName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 		});
 
 	}
@@ -897,17 +1503,31 @@ export namespace MyNS {
 
 	/** Contains the parameters for RemoveTags. */
 	export interface RemoveTagsInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: string;
+
+		/** Required */
 		tagKeys: Array<string>;
 	}
 
 	/** Contains the parameters for RemoveTags. */
 	export interface RemoveTagsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveTagsInputFormGroup() {
 		return new FormGroup<RemoveTagsInputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -915,16 +1535,20 @@ export namespace MyNS {
 
 	/** Contains the output of ReportTaskProgress. */
 	export interface ReportTaskProgressOutput {
+
+		/** Required */
 		canceled: boolean;
 	}
 
 	/** Contains the output of ReportTaskProgress. */
 	export interface ReportTaskProgressOutputFormProperties {
+
+		/** Required */
 		canceled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateReportTaskProgressOutputFormGroup() {
 		return new FormGroup<ReportTaskProgressOutputFormProperties>({
-			canceled: new FormControl<boolean | null | undefined>(undefined),
+			canceled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -932,17 +1556,29 @@ export namespace MyNS {
 
 	/** Contains the parameters for ReportTaskProgress. */
 	export interface ReportTaskProgressInput {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		taskId: string;
 		fields?: Array<Field>;
 	}
 
 	/** Contains the parameters for ReportTaskProgress. */
 	export interface ReportTaskProgressInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		taskId: FormControl<string | null | undefined>,
 	}
 	export function CreateReportTaskProgressInputFormGroup() {
 		return new FormGroup<ReportTaskProgressInputFormProperties>({
-			taskId: new FormControl<string | null | undefined>(undefined),
+			taskId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -950,16 +1586,20 @@ export namespace MyNS {
 
 	/** Contains the output of ReportTaskRunnerHeartbeat. */
 	export interface ReportTaskRunnerHeartbeatOutput {
+
+		/** Required */
 		terminate: boolean;
 	}
 
 	/** Contains the output of ReportTaskRunnerHeartbeat. */
 	export interface ReportTaskRunnerHeartbeatOutputFormProperties {
+
+		/** Required */
 		terminate: FormControl<boolean | null | undefined>,
 	}
 	export function CreateReportTaskRunnerHeartbeatOutputFormGroup() {
 		return new FormGroup<ReportTaskRunnerHeartbeatOutputFormProperties>({
-			terminate: new FormControl<boolean | null | undefined>(undefined),
+			terminate: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -967,22 +1607,54 @@ export namespace MyNS {
 
 	/** Contains the parameters for ReportTaskRunnerHeartbeat. */
 	export interface ReportTaskRunnerHeartbeatInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		taskrunnerId: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		workerGroup?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		hostname?: string | null;
 	}
 
 	/** Contains the parameters for ReportTaskRunnerHeartbeat. */
 	export interface ReportTaskRunnerHeartbeatInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		taskrunnerId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		workerGroup: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		hostname: FormControl<string | null | undefined>,
 	}
 	export function CreateReportTaskRunnerHeartbeatInputFormGroup() {
 		return new FormGroup<ReportTaskRunnerHeartbeatInputFormProperties>({
-			taskrunnerId: new FormControl<string | null | undefined>(undefined),
-			workerGroup: new FormControl<string | null | undefined>(undefined),
-			hostname: new FormControl<string | null | undefined>(undefined),
+			taskrunnerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			workerGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			hostname: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -990,20 +1662,46 @@ export namespace MyNS {
 
 	/** Contains the parameters for SetStatus. */
 	export interface SetStatusInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: string;
+
+		/** Required */
 		objectIds: Array<string>;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		status: string;
 	}
 
 	/** Contains the parameters for SetStatus. */
 	export interface SetStatusInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		status: FormControl<string | null | undefined>,
 	}
 	export function CreateSetStatusInputFormGroup() {
 		return new FormGroup<SetStatusInputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(0)]),
 		});
 
 	}
@@ -1025,28 +1723,64 @@ export namespace MyNS {
 
 	/** Contains the parameters for SetTaskStatus. */
 	export interface SetTaskStatusInput {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		taskId: string;
+
+		/** Required */
 		taskStatus: SetTaskStatusInputTaskStatus;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		errorId?: string | null;
 		errorMessage?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		errorStackTrace?: string | null;
 	}
 
 	/** Contains the parameters for SetTaskStatus. */
 	export interface SetTaskStatusInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		taskId: FormControl<string | null | undefined>,
+
+		/** Required */
 		taskStatus: FormControl<SetTaskStatusInputTaskStatus | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		errorId: FormControl<string | null | undefined>,
 		errorMessage: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		errorStackTrace: FormControl<string | null | undefined>,
 	}
 	export function CreateSetTaskStatusInputFormGroup() {
 		return new FormGroup<SetTaskStatusInputFormProperties>({
-			taskId: new FormControl<string | null | undefined>(undefined),
-			taskStatus: new FormControl<SetTaskStatusInputTaskStatus | null | undefined>(undefined),
-			errorId: new FormControl<string | null | undefined>(undefined),
+			taskId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			taskStatus: new FormControl<SetTaskStatusInputTaskStatus | null | undefined>(undefined, [Validators.required]),
+			errorId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 			errorMessage: new FormControl<string | null | undefined>(undefined),
-			errorStackTrace: new FormControl<string | null | undefined>(undefined),
+			errorStackTrace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 		});
 
 	}
@@ -1058,16 +1792,20 @@ export namespace MyNS {
 	export interface ValidatePipelineDefinitionOutput {
 		validationErrors?: Array<ValidationError>;
 		validationWarnings?: Array<ValidationWarning>;
+
+		/** Required */
 		errored: boolean;
 	}
 
 	/** Contains the output of ValidatePipelineDefinition. */
 	export interface ValidatePipelineDefinitionOutputFormProperties {
+
+		/** Required */
 		errored: FormControl<boolean | null | undefined>,
 	}
 	export function CreateValidatePipelineDefinitionOutputFormGroup() {
 		return new FormGroup<ValidatePipelineDefinitionOutputFormProperties>({
-			errored: new FormControl<boolean | null | undefined>(undefined),
+			errored: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1075,7 +1813,15 @@ export namespace MyNS {
 
 	/** Contains the parameters for ValidatePipelineDefinition. */
 	export interface ValidatePipelineDefinitionInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: string;
+
+		/** Required */
 		pipelineObjects: Array<PipelineObject>;
 		parameterObjects?: Array<ParameterObject>;
 		parameterValues?: Array<ParameterValue>;
@@ -1083,11 +1829,17 @@ export namespace MyNS {
 
 	/** Contains the parameters for ValidatePipelineDefinition. */
 	export interface ValidatePipelineDefinitionInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		pipelineId: FormControl<string | null | undefined>,
 	}
 	export function CreateValidatePipelineDefinitionInputFormGroup() {
 		return new FormGroup<ValidatePipelineDefinitionInputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}

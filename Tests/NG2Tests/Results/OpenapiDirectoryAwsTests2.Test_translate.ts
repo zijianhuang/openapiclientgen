@@ -4,14 +4,28 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface DeleteTerminologyRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z0-9-]_?)+$
+		 */
 		Name: string;
 	}
 	export interface DeleteTerminologyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z0-9-]_?)+$
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteTerminologyRequestFormGroup() {
 		return new FormGroup<DeleteTerminologyRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -62,13 +76,35 @@ export namespace MyNS {
 
 	/** Provides information about a translation job. */
 	export interface TextTranslationJobProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$
+		 */
 		JobId?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$
+		 */
 		JobName?: string | null;
 		JobStatus?: TextTranslationJobPropertiesJobStatus | null;
 
 		/** The number of documents successfully and unsuccessfully processed during a translation job. */
 		JobDetails?: JobDetails;
+
+		/**
+		 * Max length: 5
+		 * Min length: 2
+		 */
 		SourceLanguageCode?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 1
+		 */
 		TargetLanguageCodes?: Array<string>;
 		TerminologyNames?: Array<string>;
 		Message?: string | null;
@@ -80,30 +116,59 @@ export namespace MyNS {
 
 		/** The output configuration properties for a batch translation job. */
 		OutputDataConfig?: OutputDataConfig;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+
+		 */
 		DataAccessRoleArn?: string | null;
 	}
 
 	/** Provides information about a translation job. */
 	export interface TextTranslationJobPropertiesFormProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$
+		 */
 		JobId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$
+		 */
 		JobName: FormControl<string | null | undefined>,
 		JobStatus: FormControl<TextTranslationJobPropertiesJobStatus | null | undefined>,
+
+		/**
+		 * Max length: 5
+		 * Min length: 2
+		 */
 		SourceLanguageCode: FormControl<string | null | undefined>,
 		Message: FormControl<string | null | undefined>,
 		SubmittedTime: FormControl<Date | null | undefined>,
 		EndTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+
+		 */
 		DataAccessRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTextTranslationJobPropertiesFormGroup() {
 		return new FormGroup<TextTranslationJobPropertiesFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
-			JobName: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			JobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			JobStatus: new FormControl<TextTranslationJobPropertiesJobStatus | null | undefined>(undefined),
-			SourceLanguageCode: new FormControl<string | null | undefined>(undefined),
+			SourceLanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5), Validators.minLength(2)]),
 			Message: new FormControl<string | null | undefined>(undefined),
 			SubmittedTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
-			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -136,19 +201,43 @@ export namespace MyNS {
 
 	/** The input configuration properties for requesting a batch translation job. */
 	export interface InputDataConfig {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Pattern: s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?
+		 */
 		S3Uri: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: ^[-\w.]+\/[-\w.+]+$
+		 */
 		ContentType: string;
 	}
 
 	/** The input configuration properties for requesting a batch translation job. */
 	export interface InputDataConfigFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Pattern: s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?
+		 */
 		S3Uri: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: ^[-\w.]+\/[-\w.+]+$
+		 */
 		ContentType: FormControl<string | null | undefined>,
 	}
 	export function CreateInputDataConfigFormGroup() {
 		return new FormGroup<InputDataConfigFormProperties>({
-			S3Uri: new FormControl<string | null | undefined>(undefined),
-			ContentType: new FormControl<string | null | undefined>(undefined),
+			S3Uri: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
+			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
@@ -156,29 +245,55 @@ export namespace MyNS {
 
 	/** The output configuration properties for a batch translation job. */
 	export interface OutputDataConfig {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Pattern: s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?
+		 */
 		S3Uri: string;
 	}
 
 	/** The output configuration properties for a batch translation job. */
 	export interface OutputDataConfigFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Pattern: s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?
+		 */
 		S3Uri: FormControl<string | null | undefined>,
 	}
 	export function CreateOutputDataConfigFormGroup() {
 		return new FormGroup<OutputDataConfigFormProperties>({
-			S3Uri: new FormControl<string | null | undefined>(undefined),
+			S3Uri: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
 		});
 
 	}
 
 	export interface DescribeTextTranslationJobRequest {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$
+		 */
 		JobId: string;
 	}
 	export interface DescribeTextTranslationJobRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$
+		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeTextTranslationJobRequestFormGroup() {
 		return new FormGroup<DescribeTextTranslationJobRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
@@ -202,9 +317,27 @@ export namespace MyNS {
 
 	/** The properties of the custom terminology. */
 	export interface TerminologyProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z0-9-]_?)+$
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: [\P{M}\p{M}]{0,256}
+		 */
 		Description?: string | null;
+
+		/** Pattern: ^arn:aws((-us-gov)|(-iso)|(-iso-b)|(-cn))?:translate:[a-zA-Z0-9-]+:[0-9]{12}:terminology/.+?/.+?$ */
 		Arn?: string | null;
+
+		/**
+		 * Max length: 5
+		 * Min length: 2
+		 */
 		SourceLanguageCode?: string | null;
 		TargetLanguageCodes?: Array<string>;
 
@@ -218,9 +351,27 @@ export namespace MyNS {
 
 	/** The properties of the custom terminology. */
 	export interface TerminologyPropertiesFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z0-9-]_?)+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: [\P{M}\p{M}]{0,256}
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/** Pattern: ^arn:aws((-us-gov)|(-iso)|(-iso-b)|(-cn))?:translate:[a-zA-Z0-9-]+:[0-9]{12}:terminology/.+?/.+?$ */
 		Arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 5
+		 * Min length: 2
+		 */
 		SourceLanguageCode: FormControl<string | null | undefined>,
 		SizeBytes: FormControl<number | null | undefined>,
 		TermCount: FormControl<number | null | undefined>,
@@ -229,10 +380,10 @@ export namespace MyNS {
 	}
 	export function CreateTerminologyPropertiesFormGroup() {
 		return new FormGroup<TerminologyPropertiesFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			Arn: new FormControl<string | null | undefined>(undefined),
-			SourceLanguageCode: new FormControl<string | null | undefined>(undefined),
+			SourceLanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5), Validators.minLength(2)]),
 			SizeBytes: new FormControl<number | null | undefined>(undefined),
 			TermCount: new FormControl<number | null | undefined>(undefined),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
@@ -244,19 +395,37 @@ export namespace MyNS {
 
 	/** The encryption key used to encrypt the custom terminologies used by Amazon Translate. */
 	export interface EncryptionKey {
+
+		/** Required */
 		Type: EncryptionKeyType;
+
+		/**
+		 * Required
+		 * Max length: 400
+		 * Min length: 1
+		 * Pattern: (arn:aws((-us-gov)|(-iso)|(-iso-b)|(-cn))?:kms:)?([a-z]{2}-[a-z]+(-[a-z]+)?-\d:)?(\d{12}:)?(((key/)?[a-zA-Z0-9-_]+)|(alias/[a-zA-Z0-9:/_-]+))
+		 */
 		Id: string;
 	}
 
 	/** The encryption key used to encrypt the custom terminologies used by Amazon Translate. */
 	export interface EncryptionKeyFormProperties {
+
+		/** Required */
 		Type: FormControl<EncryptionKeyType | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 400
+		 * Min length: 1
+		 * Pattern: (arn:aws((-us-gov)|(-iso)|(-iso-b)|(-cn))?:kms:)?([a-z]{2}-[a-z]+(-[a-z]+)?-\d:)?(\d{12}:)?(((key/)?[a-zA-Z0-9-_]+)|(alias/[a-zA-Z0-9:/_-]+))
+		 */
 		Id: FormControl<string | null | undefined>,
 	}
 	export function CreateEncryptionKeyFormGroup() {
 		return new FormGroup<EncryptionKeyFormProperties>({
-			Type: new FormControl<EncryptionKeyType | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<EncryptionKeyType | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(400), Validators.minLength(1)]),
 		});
 
 	}
@@ -266,35 +435,77 @@ export namespace MyNS {
 
 	/** The location of the custom terminology data. */
 	export interface TerminologyDataLocation {
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 * Pattern: [\P{M}\p{M}]{0,10000}
+		 */
 		RepositoryType: string;
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 * Pattern: [\P{M}\p{M}]{0,10000}
+		 */
 		Location: string;
 	}
 
 	/** The location of the custom terminology data. */
 	export interface TerminologyDataLocationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 * Pattern: [\P{M}\p{M}]{0,10000}
+		 */
 		RepositoryType: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 * Pattern: [\P{M}\p{M}]{0,10000}
+		 */
 		Location: FormControl<string | null | undefined>,
 	}
 	export function CreateTerminologyDataLocationFormGroup() {
 		return new FormGroup<TerminologyDataLocationFormProperties>({
-			RepositoryType: new FormControl<string | null | undefined>(undefined),
-			Location: new FormControl<string | null | undefined>(undefined),
+			RepositoryType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000)]),
+			Location: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000)]),
 		});
 
 	}
 
 	export interface GetTerminologyRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z0-9-]_?)+$
+		 */
 		Name: string;
+
+		/** Required */
 		TerminologyDataFormat: GetTerminologyRequestTerminologyDataFormat;
 	}
 	export interface GetTerminologyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z0-9-]_?)+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		TerminologyDataFormat: FormControl<GetTerminologyRequestTerminologyDataFormat | null | undefined>,
 	}
 	export function CreateGetTerminologyRequestFormGroup() {
 		return new FormGroup<GetTerminologyRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			TerminologyDataFormat: new FormControl<GetTerminologyRequestTerminologyDataFormat | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			TerminologyDataFormat: new FormControl<GetTerminologyRequestTerminologyDataFormat | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -325,8 +536,22 @@ export namespace MyNS {
 	}
 
 	export interface ImportTerminologyRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z0-9-]_?)+$
+		 */
 		Name: string;
+
+		/** Required */
 		MergeStrategy: ImportTerminologyRequestMergeStrategy;
+
+		/**
+		 * Max length: 256
+		 * Pattern: [\P{M}\p{M}]{0,256}
+		 */
 		Description?: string | null;
 
 		/**
@@ -339,15 +564,29 @@ export namespace MyNS {
 		EncryptionKey?: EncryptionKey;
 	}
 	export interface ImportTerminologyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z0-9-]_?)+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		MergeStrategy: FormControl<ImportTerminologyRequestMergeStrategy | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: [\P{M}\p{M}]{0,256}
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateImportTerminologyRequestFormGroup() {
 		return new FormGroup<ImportTerminologyRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			MergeStrategy: new FormControl<ImportTerminologyRequestMergeStrategy | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			MergeStrategy: new FormControl<ImportTerminologyRequestMergeStrategy | null | undefined>(undefined, [Validators.required]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -357,19 +596,33 @@ export namespace MyNS {
 
 	/** The data associated with the custom terminology. */
 	export interface TerminologyData {
+
+		/**
+		 * Required
+		 * Max length: 10485760
+		 */
 		File: string;
+
+		/** Required */
 		Format: GetTerminologyRequestTerminologyDataFormat;
 	}
 
 	/** The data associated with the custom terminology. */
 	export interface TerminologyDataFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 10485760
+		 */
 		File: FormControl<string | null | undefined>,
+
+		/** Required */
 		Format: FormControl<GetTerminologyRequestTerminologyDataFormat | null | undefined>,
 	}
 	export function CreateTerminologyDataFormGroup() {
 		return new FormGroup<TerminologyDataFormProperties>({
-			File: new FormControl<string | null | undefined>(undefined),
-			Format: new FormControl<GetTerminologyRequestTerminologyDataFormat | null | undefined>(undefined),
+			File: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10485760)]),
+			Format: new FormControl<GetTerminologyRequestTerminologyDataFormat | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -386,44 +639,84 @@ export namespace MyNS {
 
 	export interface ListTerminologiesResponse {
 		TerminologyPropertiesList?: Array<TerminologyProperties>;
+
+		/**
+		 * Max length: 8192
+		 * Pattern: \p{ASCII}{0,8192}
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListTerminologiesResponseFormProperties {
+
+		/**
+		 * Max length: 8192
+		 * Pattern: \p{ASCII}{0,8192}
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTerminologiesResponseFormGroup() {
 		return new FormGroup<ListTerminologiesResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
 		});
 
 	}
 
 	export interface ListTerminologiesRequest {
+
+		/**
+		 * Max length: 8192
+		 * Pattern: \p{ASCII}{0,8192}
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListTerminologiesRequestFormProperties {
+
+		/**
+		 * Max length: 8192
+		 * Pattern: \p{ASCII}{0,8192}
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListTerminologiesRequestFormGroup() {
 		return new FormGroup<ListTerminologiesRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(500)]),
 		});
 
 	}
 
 	export interface ListTextTranslationJobsResponse {
 		TextTranslationJobPropertiesList?: Array<TextTranslationJobProperties>;
+
+		/**
+		 * Max length: 8192
+		 * Pattern: \p{ASCII}{0,8192}
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListTextTranslationJobsResponseFormProperties {
+
+		/**
+		 * Max length: 8192
+		 * Pattern: \p{ASCII}{0,8192}
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTextTranslationJobsResponseFormGroup() {
 		return new FormGroup<ListTextTranslationJobsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
 		});
 
 	}
@@ -432,17 +725,37 @@ export namespace MyNS {
 
 		/** Provides information for filtering a list of translation jobs. For more information, see <a>ListTextTranslationJobs</a>. */
 		Filter?: TextTranslationJobFilter;
+
+		/**
+		 * Max length: 8192
+		 * Pattern: \p{ASCII}{0,8192}
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListTextTranslationJobsRequestFormProperties {
+
+		/**
+		 * Max length: 8192
+		 * Pattern: \p{ASCII}{0,8192}
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListTextTranslationJobsRequestFormGroup() {
 		return new FormGroup<ListTextTranslationJobsRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(500)]),
 		});
 
 	}
@@ -450,6 +763,12 @@ export namespace MyNS {
 
 	/** Provides information for filtering a list of translation jobs. For more information, see <a>ListTextTranslationJobs</a>. */
 	export interface TextTranslationJobFilter {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$
+		 */
 		JobName?: string | null;
 		JobStatus?: TextTranslationJobPropertiesJobStatus | null;
 		SubmittedBeforeTime?: Date | null;
@@ -458,6 +777,12 @@ export namespace MyNS {
 
 	/** Provides information for filtering a list of translation jobs. For more information, see <a>ListTextTranslationJobs</a>. */
 	export interface TextTranslationJobFilterFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$
+		 */
 		JobName: FormControl<string | null | undefined>,
 		JobStatus: FormControl<TextTranslationJobPropertiesJobStatus | null | undefined>,
 		SubmittedBeforeTime: FormControl<Date | null | undefined>,
@@ -465,7 +790,7 @@ export namespace MyNS {
 	}
 	export function CreateTextTranslationJobFilterFormGroup() {
 		return new FormGroup<TextTranslationJobFilterFormProperties>({
-			JobName: new FormControl<string | null | undefined>(undefined),
+			JobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			JobStatus: new FormControl<TextTranslationJobPropertiesJobStatus | null | undefined>(undefined),
 			SubmittedBeforeTime: new FormControl<Date | null | undefined>(undefined),
 			SubmittedAfterTime: new FormControl<Date | null | undefined>(undefined),
@@ -494,22 +819,40 @@ export namespace MyNS {
 	}
 
 	export interface StartTextTranslationJobResponse {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$
+		 */
 		JobId?: string | null;
 		JobStatus?: TextTranslationJobPropertiesJobStatus | null;
 	}
 	export interface StartTextTranslationJobResponseFormProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$
+		 */
 		JobId: FormControl<string | null | undefined>,
 		JobStatus: FormControl<TextTranslationJobPropertiesJobStatus | null | undefined>,
 	}
 	export function CreateStartTextTranslationJobResponseFormGroup() {
 		return new FormGroup<StartTextTranslationJobResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 			JobStatus: new FormControl<TextTranslationJobPropertiesJobStatus | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface StartTextTranslationJobRequest {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$
+		 */
 		JobName?: string | null;
 
 		/**
@@ -523,24 +866,76 @@ export namespace MyNS {
 		 * Required
 		 */
 		OutputDataConfig: OutputDataConfig;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+
+		 */
 		DataAccessRoleArn: string;
+
+		/**
+		 * Required
+		 * Max length: 5
+		 * Min length: 2
+		 */
 		SourceLanguageCode: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 1
+		 */
 		TargetLanguageCodes: Array<string>;
 		TerminologyNames?: Array<string>;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-]+$
+		 */
 		ClientToken: string;
 	}
 	export interface StartTextTranslationJobRequestFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$
+		 */
 		JobName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+
+		 */
 		DataAccessRoleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 5
+		 * Min length: 2
+		 */
 		SourceLanguageCode: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-]+$
+		 */
 		ClientToken: FormControl<string | null | undefined>,
 	}
 	export function CreateStartTextTranslationJobRequestFormGroup() {
 		return new FormGroup<StartTextTranslationJobRequestFormProperties>({
-			JobName: new FormControl<string | null | undefined>(undefined),
-			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined),
-			SourceLanguageCode: new FormControl<string | null | undefined>(undefined),
-			ClientToken: new FormControl<string | null | undefined>(undefined),
+			JobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			SourceLanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(5), Validators.minLength(2)]),
+			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -556,50 +951,112 @@ export namespace MyNS {
 	}
 
 	export interface StopTextTranslationJobResponse {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$
+		 */
 		JobId?: string | null;
 		JobStatus?: TextTranslationJobPropertiesJobStatus | null;
 	}
 	export interface StopTextTranslationJobResponseFormProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$
+		 */
 		JobId: FormControl<string | null | undefined>,
 		JobStatus: FormControl<TextTranslationJobPropertiesJobStatus | null | undefined>,
 	}
 	export function CreateStopTextTranslationJobResponseFormGroup() {
 		return new FormGroup<StopTextTranslationJobResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 			JobStatus: new FormControl<TextTranslationJobPropertiesJobStatus | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface StopTextTranslationJobRequest {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$
+		 */
 		JobId: string;
 	}
 	export interface StopTextTranslationJobRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$
+		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateStopTextTranslationJobRequestFormGroup() {
 		return new FormGroup<StopTextTranslationJobRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface TranslateTextResponse {
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 * Pattern: [\P{M}\p{M}]{0,10000}
+		 */
 		TranslatedText: string;
+
+		/**
+		 * Required
+		 * Max length: 5
+		 * Min length: 2
+		 */
 		SourceLanguageCode: string;
+
+		/**
+		 * Required
+		 * Max length: 5
+		 * Min length: 2
+		 */
 		TargetLanguageCode: string;
 		AppliedTerminologies?: Array<AppliedTerminology>;
 	}
 	export interface TranslateTextResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 * Pattern: [\P{M}\p{M}]{0,10000}
+		 */
 		TranslatedText: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 5
+		 * Min length: 2
+		 */
 		SourceLanguageCode: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 5
+		 * Min length: 2
+		 */
 		TargetLanguageCode: FormControl<string | null | undefined>,
 	}
 	export function CreateTranslateTextResponseFormGroup() {
 		return new FormGroup<TranslateTextResponseFormProperties>({
-			TranslatedText: new FormControl<string | null | undefined>(undefined),
-			SourceLanguageCode: new FormControl<string | null | undefined>(undefined),
-			TargetLanguageCode: new FormControl<string | null | undefined>(undefined),
+			TranslatedText: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000)]),
+			SourceLanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(5), Validators.minLength(2)]),
+			TargetLanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(5), Validators.minLength(2)]),
 		});
 
 	}
@@ -607,17 +1064,29 @@ export namespace MyNS {
 
 	/** The custom terminology applied to the input text by Amazon Translate for the translated text response. This is optional in the response and will only be present if you specified terminology input in the request. Currently, only one terminology can be applied per TranslateText request. */
 	export interface AppliedTerminology {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z0-9-]_?)+$
+		 */
 		Name?: string | null;
 		Terms?: Array<Term>;
 	}
 
 	/** The custom terminology applied to the input text by Amazon Translate for the translated text response. This is optional in the response and will only be present if you specified terminology input in the request. Currently, only one terminology can be applied per TranslateText request. */
 	export interface AppliedTerminologyFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z0-9-]_?)+$
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateAppliedTerminologyFormGroup() {
 		return new FormGroup<AppliedTerminologyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -625,39 +1094,97 @@ export namespace MyNS {
 
 	/** The term being translated by the custom terminology. */
 	export interface Term {
+
+		/**
+		 * Max length: 10000
+		 * Pattern: [\P{M}\p{M}]{0,10000}
+		 */
 		SourceText?: string | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: [\P{M}\p{M}]{0,10000}
+		 */
 		TargetText?: string | null;
 	}
 
 	/** The term being translated by the custom terminology. */
 	export interface TermFormProperties {
+
+		/**
+		 * Max length: 10000
+		 * Pattern: [\P{M}\p{M}]{0,10000}
+		 */
 		SourceText: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: [\P{M}\p{M}]{0,10000}
+		 */
 		TargetText: FormControl<string | null | undefined>,
 	}
 	export function CreateTermFormGroup() {
 		return new FormGroup<TermFormProperties>({
-			SourceText: new FormControl<string | null | undefined>(undefined),
-			TargetText: new FormControl<string | null | undefined>(undefined),
+			SourceText: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			TargetText: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 		});
 
 	}
 
 	export interface TranslateTextRequest {
+
+		/**
+		 * Required
+		 * Max length: 5000
+		 * Min length: 1
+		 * Pattern: [\P{M}\p{M}]{1,5000}
+		 */
 		Text: string;
 		TerminologyNames?: Array<string>;
+
+		/**
+		 * Required
+		 * Max length: 5
+		 * Min length: 2
+		 */
 		SourceLanguageCode: string;
+
+		/**
+		 * Required
+		 * Max length: 5
+		 * Min length: 2
+		 */
 		TargetLanguageCode: string;
 	}
 	export interface TranslateTextRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 5000
+		 * Min length: 1
+		 * Pattern: [\P{M}\p{M}]{1,5000}
+		 */
 		Text: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 5
+		 * Min length: 2
+		 */
 		SourceLanguageCode: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 5
+		 * Min length: 2
+		 */
 		TargetLanguageCode: FormControl<string | null | undefined>,
 	}
 	export function CreateTranslateTextRequestFormGroup() {
 		return new FormGroup<TranslateTextRequestFormProperties>({
-			Text: new FormControl<string | null | undefined>(undefined),
-			SourceLanguageCode: new FormControl<string | null | undefined>(undefined),
-			TargetLanguageCode: new FormControl<string | null | undefined>(undefined),
+			Text: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(5000), Validators.minLength(1)]),
+			SourceLanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(5), Validators.minLength(2)]),
+			TargetLanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(5), Validators.minLength(2)]),
 		});
 
 	}

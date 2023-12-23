@@ -27,6 +27,8 @@ export namespace MyNS {
 
 	/** If <code>PartitionBy</code> was specified in a <code>DescribeDimensionKeys</code> request, the dimensions are returned in an array. Each element in the array specifies one dimension.  */
 	export interface ResponsePartitionKey {
+
+		/** Required */
 		Dimensions: DimensionMap;
 	}
 
@@ -69,10 +71,20 @@ export namespace MyNS {
 	}
 
 	export interface DescribeDimensionKeysRequest {
+
+		/** Required */
 		ServiceType: DescribeDimensionKeysRequestServiceType;
+
+		/** Required */
 		Identifier: string;
+
+		/** Required */
 		StartTime: Date;
+
+		/** Required */
 		EndTime: Date;
+
+		/** Required */
 		Metric: string;
 		PeriodInSeconds?: number | null;
 
@@ -85,28 +97,48 @@ export namespace MyNS {
 		/** A logical grouping of Performance Insights metrics for a related subject area. For example, the <code>db.sql</code> dimension group consists of the following dimensions: <code>db.sql.id</code>, <code>db.sql.db_id</code>, <code>db.sql.statement</code>, and <code>db.sql.tokenized_id</code>. */
 		PartitionBy?: DimensionGroup;
 		Filter?: MetricQueryFilterMap;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 20
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeDimensionKeysRequestFormProperties {
+
+		/** Required */
 		ServiceType: FormControl<DescribeDimensionKeysRequestServiceType | null | undefined>,
+
+		/** Required */
 		Identifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		StartTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		EndTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		Metric: FormControl<string | null | undefined>,
 		PeriodInSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 20
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeDimensionKeysRequestFormGroup() {
 		return new FormGroup<DescribeDimensionKeysRequestFormProperties>({
-			ServiceType: new FormControl<DescribeDimensionKeysRequestServiceType | null | undefined>(undefined),
-			Identifier: new FormControl<string | null | undefined>(undefined),
-			StartTime: new FormControl<Date | null | undefined>(undefined),
-			EndTime: new FormControl<Date | null | undefined>(undefined),
-			Metric: new FormControl<string | null | undefined>(undefined),
+			ServiceType: new FormControl<DescribeDimensionKeysRequestServiceType | null | undefined>(undefined, [Validators.required]),
+			Identifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			StartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			EndTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			Metric: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			PeriodInSeconds: new FormControl<number | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(20)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -117,20 +149,39 @@ export namespace MyNS {
 
 	/** A logical grouping of Performance Insights metrics for a related subject area. For example, the <code>db.sql</code> dimension group consists of the following dimensions: <code>db.sql.id</code>, <code>db.sql.db_id</code>, <code>db.sql.statement</code>, and <code>db.sql.tokenized_id</code>. */
 	export interface DimensionGroup {
+
+		/** Required */
 		Group: string;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		Dimensions?: Array<string>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		Limit?: number | null;
 	}
 
 	/** A logical grouping of Performance Insights metrics for a related subject area. For example, the <code>db.sql</code> dimension group consists of the following dimensions: <code>db.sql.id</code>, <code>db.sql.db_id</code>, <code>db.sql.statement</code>, and <code>db.sql.tokenized_id</code>. */
 	export interface DimensionGroupFormProperties {
+
+		/** Required */
 		Group: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateDimensionGroupFormGroup() {
 		return new FormGroup<DimensionGroupFormProperties>({
-			Group: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			Group: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10)]),
 		});
 
 	}
@@ -240,17 +291,21 @@ export namespace MyNS {
 
 	/** An object describing a Performance Insights metric and one or more dimensions for that metric. */
 	export interface ResponseResourceMetricKey {
+
+		/** Required */
 		Metric: string;
 		Dimensions?: DimensionMap;
 	}
 
 	/** An object describing a Performance Insights metric and one or more dimensions for that metric. */
 	export interface ResponseResourceMetricKeyFormProperties {
+
+		/** Required */
 		Metric: FormControl<string | null | undefined>,
 	}
 	export function CreateResponseResourceMetricKeyFormGroup() {
 		return new FormGroup<ResponseResourceMetricKeyFormProperties>({
-			Metric: new FormControl<string | null | undefined>(undefined),
+			Metric: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -258,50 +313,90 @@ export namespace MyNS {
 
 	/** A timestamp, and a single numerical value, which together represent a measurement at a particular point in time. */
 	export interface DataPoint {
+
+		/** Required */
 		Timestamp: Date;
+
+		/** Required */
 		Value: number;
 	}
 
 	/** A timestamp, and a single numerical value, which together represent a measurement at a particular point in time. */
 	export interface DataPointFormProperties {
+
+		/** Required */
 		Timestamp: FormControl<Date | null | undefined>,
+
+		/** Required */
 		Value: FormControl<number | null | undefined>,
 	}
 	export function CreateDataPointFormGroup() {
 		return new FormGroup<DataPointFormProperties>({
-			Timestamp: new FormControl<Date | null | undefined>(undefined),
-			Value: new FormControl<number | null | undefined>(undefined),
+			Timestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			Value: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface GetResourceMetricsRequest {
+
+		/** Required */
 		ServiceType: DescribeDimensionKeysRequestServiceType;
+
+		/** Required */
 		Identifier: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 15
+		 */
 		MetricQueries: Array<MetricQuery>;
+
+		/** Required */
 		StartTime: Date;
+
+		/** Required */
 		EndTime: Date;
 		PeriodInSeconds?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 20
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface GetResourceMetricsRequestFormProperties {
+
+		/** Required */
 		ServiceType: FormControl<DescribeDimensionKeysRequestServiceType | null | undefined>,
+
+		/** Required */
 		Identifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		StartTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		EndTime: FormControl<Date | null | undefined>,
 		PeriodInSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 20
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetResourceMetricsRequestFormGroup() {
 		return new FormGroup<GetResourceMetricsRequestFormProperties>({
-			ServiceType: new FormControl<DescribeDimensionKeysRequestServiceType | null | undefined>(undefined),
-			Identifier: new FormControl<string | null | undefined>(undefined),
-			StartTime: new FormControl<Date | null | undefined>(undefined),
-			EndTime: new FormControl<Date | null | undefined>(undefined),
+			ServiceType: new FormControl<DescribeDimensionKeysRequestServiceType | null | undefined>(undefined, [Validators.required]),
+			Identifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			StartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			EndTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			PeriodInSeconds: new FormControl<number | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(20)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -310,6 +405,8 @@ export namespace MyNS {
 
 	/** A single query to be processed. You must provide the metric to query. If no other parameters are specified, Performance Insights returns all of the data points for that metric. You can optionally request that the data points be aggregated by dimension group ( <code>GroupBy</code>), and return only those data points that match your criteria (<code>Filter</code>). */
 	export interface MetricQuery {
+
+		/** Required */
 		Metric: string;
 
 		/** A logical grouping of Performance Insights metrics for a related subject area. For example, the <code>db.sql</code> dimension group consists of the following dimensions: <code>db.sql.id</code>, <code>db.sql.db_id</code>, <code>db.sql.statement</code>, and <code>db.sql.tokenized_id</code>. */
@@ -319,11 +416,13 @@ export namespace MyNS {
 
 	/** A single query to be processed. You must provide the metric to query. If no other parameters are specified, Performance Insights returns all of the data points for that metric. You can optionally request that the data points be aggregated by dimension group ( <code>GroupBy</code>), and return only those data points that match your criteria (<code>Filter</code>). */
 	export interface MetricQueryFormProperties {
+
+		/** Required */
 		Metric: FormControl<string | null | undefined>,
 	}
 	export function CreateMetricQueryFormGroup() {
 		return new FormGroup<MetricQueryFormProperties>({
-			Metric: new FormControl<string | null | undefined>(undefined),
+			Metric: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

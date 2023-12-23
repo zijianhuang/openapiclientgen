@@ -6,24 +6,40 @@ export namespace MyNS {
 
 	/** Contains the count of workflow executions returned from <a>CountOpenWorkflowExecutions</a> or <a>CountClosedWorkflowExecutions</a>  */
 	export interface WorkflowExecutionCount {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		count: number;
 		truncated?: boolean | null;
 	}
 
 	/** Contains the count of workflow executions returned from <a>CountOpenWorkflowExecutions</a> or <a>CountClosedWorkflowExecutions</a>  */
 	export interface WorkflowExecutionCountFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		count: FormControl<number | null | undefined>,
 		truncated: FormControl<boolean | null | undefined>,
 	}
 	export function CreateWorkflowExecutionCountFormGroup() {
 		return new FormGroup<WorkflowExecutionCountFormProperties>({
-			count: new FormControl<number | null | undefined>(undefined),
+			count: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			truncated: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CountClosedWorkflowExecutionsInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: string;
 
 		/** Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be satisfied by each returned query result. The parameter values are in the <a href="https://en.wikipedia.org/wiki/Unix_time">Unix Time format</a>. For example: <code>"oldestDate": 1325376070.</code> */
@@ -45,11 +61,17 @@ export namespace MyNS {
 		closeStatusFilter?: CloseStatusFilter;
 	}
 	export interface CountClosedWorkflowExecutionsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: FormControl<string | null | undefined>,
 	}
 	export function CreateCountClosedWorkflowExecutionsInputFormGroup() {
 		return new FormGroup<CountClosedWorkflowExecutionsInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -57,18 +79,22 @@ export namespace MyNS {
 
 	/** Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be satisfied by each returned query result. The parameter values are in the <a href="https://en.wikipedia.org/wiki/Unix_time">Unix Time format</a>. For example: <code>"oldestDate": 1325376070.</code>  */
 	export interface ExecutionTimeFilter {
+
+		/** Required */
 		oldestDate: Date;
 		latestDate?: Date | null;
 	}
 
 	/** Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be satisfied by each returned query result. The parameter values are in the <a href="https://en.wikipedia.org/wiki/Unix_time">Unix Time format</a>. For example: <code>"oldestDate": 1325376070.</code>  */
 	export interface ExecutionTimeFilterFormProperties {
+
+		/** Required */
 		oldestDate: FormControl<Date | null | undefined>,
 		latestDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateExecutionTimeFilterFormGroup() {
 		return new FormGroup<ExecutionTimeFilterFormProperties>({
-			oldestDate: new FormControl<Date | null | undefined>(undefined),
+			oldestDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			latestDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -77,16 +103,28 @@ export namespace MyNS {
 
 	/** Used to filter the workflow executions in visibility APIs by their <code>workflowId</code>. */
 	export interface WorkflowExecutionFilter {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: string;
 	}
 
 	/** Used to filter the workflow executions in visibility APIs by their <code>workflowId</code>. */
 	export interface WorkflowExecutionFilterFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: FormControl<string | null | undefined>,
 	}
 	export function CreateWorkflowExecutionFilterFormGroup() {
 		return new FormGroup<WorkflowExecutionFilterFormProperties>({
-			workflowId: new FormControl<string | null | undefined>(undefined),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -94,19 +132,35 @@ export namespace MyNS {
 
 	/** Used to filter workflow execution query results by type. Each parameter, if specified, defines a rule that must be satisfied by each returned result. */
 	export interface WorkflowTypeFilter {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name: string;
+
+		/** Max length: 64 */
 		version?: string | null;
 	}
 
 	/** Used to filter workflow execution query results by type. Each parameter, if specified, defines a rule that must be satisfied by each returned result. */
 	export interface WorkflowTypeFilterFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Max length: 64 */
 		version: FormControl<string | null | undefined>,
 	}
 	export function CreateWorkflowTypeFilterFormGroup() {
 		return new FormGroup<WorkflowTypeFilterFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
 		});
 
 	}
@@ -114,16 +168,28 @@ export namespace MyNS {
 
 	/** Used to filter the workflow executions in visibility APIs based on a tag. */
 	export interface TagFilter {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		tag: string;
 	}
 
 	/** Used to filter the workflow executions in visibility APIs based on a tag. */
 	export interface TagFilterFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		tag: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFilterFormGroup() {
 		return new FormGroup<TagFilterFormProperties>({
-			tag: new FormControl<string | null | undefined>(undefined),
+			tag: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -131,16 +197,20 @@ export namespace MyNS {
 
 	/** Used to filter the closed workflow executions in visibility APIs by their close status. */
 	export interface CloseStatusFilter {
+
+		/** Required */
 		status: CloseStatusFilterStatus;
 	}
 
 	/** Used to filter the closed workflow executions in visibility APIs by their close status. */
 	export interface CloseStatusFilterFormProperties {
+
+		/** Required */
 		status: FormControl<CloseStatusFilterStatus | null | undefined>,
 	}
 	export function CreateCloseStatusFilterFormGroup() {
 		return new FormGroup<CloseStatusFilterFormProperties>({
-			status: new FormControl<CloseStatusFilterStatus | null | undefined>(undefined),
+			status: new FormControl<CloseStatusFilterStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -168,6 +238,12 @@ export namespace MyNS {
 	}
 
 	export interface CountOpenWorkflowExecutionsInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: string;
 
 		/**
@@ -186,11 +262,17 @@ export namespace MyNS {
 		executionFilter?: WorkflowExecutionFilter;
 	}
 	export interface CountOpenWorkflowExecutionsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: FormControl<string | null | undefined>,
 	}
 	export function CreateCountOpenWorkflowExecutionsInputFormGroup() {
 		return new FormGroup<CountOpenWorkflowExecutionsInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -198,24 +280,40 @@ export namespace MyNS {
 
 	/** Contains the count of tasks in a task list. */
 	export interface PendingTaskCount {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		count: number;
 		truncated?: boolean | null;
 	}
 
 	/** Contains the count of tasks in a task list. */
 	export interface PendingTaskCountFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		count: FormControl<number | null | undefined>,
 		truncated: FormControl<boolean | null | undefined>,
 	}
 	export function CreatePendingTaskCountFormGroup() {
 		return new FormGroup<PendingTaskCountFormProperties>({
-			count: new FormControl<number | null | undefined>(undefined),
+			count: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			truncated: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CountPendingActivityTasksInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: string;
 
 		/**
@@ -225,11 +323,17 @@ export namespace MyNS {
 		taskList: TaskList;
 	}
 	export interface CountPendingActivityTasksInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: FormControl<string | null | undefined>,
 	}
 	export function CreateCountPendingActivityTasksInputFormGroup() {
 		return new FormGroup<CountPendingActivityTasksInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -237,21 +341,39 @@ export namespace MyNS {
 
 	/** Represents a task list. */
 	export interface TaskList {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name: string;
 	}
 
 	/** Represents a task list. */
 	export interface TaskListFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateTaskListFormGroup() {
 		return new FormGroup<TaskListFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CountPendingDecisionTasksInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: string;
 
 		/**
@@ -261,16 +383,28 @@ export namespace MyNS {
 		taskList: TaskList;
 	}
 	export interface CountPendingDecisionTasksInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: FormControl<string | null | undefined>,
 	}
 	export function CreateCountPendingDecisionTasksInputFormGroup() {
 		return new FormGroup<CountPendingDecisionTasksInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeprecateActivityTypeInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: string;
 
 		/**
@@ -280,11 +414,17 @@ export namespace MyNS {
 		activityType: ActivityType;
 	}
 	export interface DeprecateActivityTypeInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: FormControl<string | null | undefined>,
 	}
 	export function CreateDeprecateActivityTypeInputFormGroup() {
 		return new FormGroup<DeprecateActivityTypeInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -292,19 +432,43 @@ export namespace MyNS {
 
 	/** Represents an activity type. */
 	export interface ActivityType {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		version: string;
 	}
 
 	/** Represents an activity type. */
 	export interface ActivityTypeFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		version: FormControl<string | null | undefined>,
 	}
 	export function CreateActivityTypeFormGroup() {
 		return new FormGroup<ActivityTypeFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -320,14 +484,26 @@ export namespace MyNS {
 	}
 
 	export interface DeprecateDomainInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name: string;
 	}
 	export interface DeprecateDomainInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeprecateDomainInputFormGroup() {
 		return new FormGroup<DeprecateDomainInputFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -343,6 +519,12 @@ export namespace MyNS {
 	}
 
 	export interface DeprecateWorkflowTypeInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: string;
 
 		/**
@@ -352,11 +534,17 @@ export namespace MyNS {
 		workflowType: WorkflowType;
 	}
 	export interface DeprecateWorkflowTypeInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: FormControl<string | null | undefined>,
 	}
 	export function CreateDeprecateWorkflowTypeInputFormGroup() {
 		return new FormGroup<DeprecateWorkflowTypeInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -364,19 +552,43 @@ export namespace MyNS {
 
 	/** Represents a workflow type. */
 	export interface WorkflowType {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		version: string;
 	}
 
 	/** Represents a workflow type. */
 	export interface WorkflowTypeFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		version: FormControl<string | null | undefined>,
 	}
 	export function CreateWorkflowTypeFormGroup() {
 		return new FormGroup<WorkflowTypeFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -416,24 +628,36 @@ export namespace MyNS {
 		 * Required
 		 */
 		activityType: ActivityType;
+
+		/** Required */
 		status: ActivityTypeInfoStatus;
+
+		/** Max length: 1024 */
 		description?: string | null;
+
+		/** Required */
 		creationDate: Date;
 		deprecationDate?: Date | null;
 	}
 
 	/** Detailed information about an activity type. */
 	export interface ActivityTypeInfoFormProperties {
+
+		/** Required */
 		status: FormControl<ActivityTypeInfoStatus | null | undefined>,
+
+		/** Max length: 1024 */
 		description: FormControl<string | null | undefined>,
+
+		/** Required */
 		creationDate: FormControl<Date | null | undefined>,
 		deprecationDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateActivityTypeInfoFormGroup() {
 		return new FormGroup<ActivityTypeInfoFormProperties>({
-			status: new FormControl<ActivityTypeInfoStatus | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			creationDate: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<ActivityTypeInfoStatus | null | undefined>(undefined, [Validators.required]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			creationDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			deprecationDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -444,36 +668,58 @@ export namespace MyNS {
 
 	/** Configuration settings registered with the activity type. */
 	export interface ActivityTypeConfiguration {
+
+		/** Max length: 8 */
 		defaultTaskStartToCloseTimeout?: string | null;
+
+		/** Max length: 8 */
 		defaultTaskHeartbeatTimeout?: string | null;
 
 		/** Represents a task list. */
 		defaultTaskList?: TaskList;
 		defaultTaskPriority?: string | null;
+
+		/** Max length: 8 */
 		defaultTaskScheduleToStartTimeout?: string | null;
+
+		/** Max length: 8 */
 		defaultTaskScheduleToCloseTimeout?: string | null;
 	}
 
 	/** Configuration settings registered with the activity type. */
 	export interface ActivityTypeConfigurationFormProperties {
+
+		/** Max length: 8 */
 		defaultTaskStartToCloseTimeout: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		defaultTaskHeartbeatTimeout: FormControl<string | null | undefined>,
 		defaultTaskPriority: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		defaultTaskScheduleToStartTimeout: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		defaultTaskScheduleToCloseTimeout: FormControl<string | null | undefined>,
 	}
 	export function CreateActivityTypeConfigurationFormGroup() {
 		return new FormGroup<ActivityTypeConfigurationFormProperties>({
-			defaultTaskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined),
-			defaultTaskHeartbeatTimeout: new FormControl<string | null | undefined>(undefined),
+			defaultTaskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
+			defaultTaskHeartbeatTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 			defaultTaskPriority: new FormControl<string | null | undefined>(undefined),
-			defaultTaskScheduleToStartTimeout: new FormControl<string | null | undefined>(undefined),
-			defaultTaskScheduleToCloseTimeout: new FormControl<string | null | undefined>(undefined),
+			defaultTaskScheduleToStartTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
+			defaultTaskScheduleToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 		});
 
 	}
 
 	export interface DescribeActivityTypeInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: string;
 
 		/**
@@ -483,11 +729,17 @@ export namespace MyNS {
 		activityType: ActivityType;
 	}
 	export interface DescribeActivityTypeInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeActivityTypeInputFormGroup() {
 		return new FormGroup<DescribeActivityTypeInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -521,25 +773,55 @@ export namespace MyNS {
 
 	/** Contains general information about a domain. */
 	export interface DomainInfo {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name: string;
+
+		/** Required */
 		status: ActivityTypeInfoStatus;
+
+		/** Max length: 1024 */
 		description?: string | null;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		arn?: string | null;
 	}
 
 	/** Contains general information about a domain. */
 	export interface DomainInfoFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Required */
 		status: FormControl<ActivityTypeInfoStatus | null | undefined>,
+
+		/** Max length: 1024 */
 		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateDomainInfoFormGroup() {
 		return new FormGroup<DomainInfoFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<ActivityTypeInfoStatus | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			status: new FormControl<ActivityTypeInfoStatus | null | undefined>(undefined, [Validators.required]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 		});
 
 	}
@@ -547,29 +829,53 @@ export namespace MyNS {
 
 	/** Contains the configuration settings of a domain. */
 	export interface DomainConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 8
+		 * Min length: 1
+		 */
 		workflowExecutionRetentionPeriodInDays: string;
 	}
 
 	/** Contains the configuration settings of a domain. */
 	export interface DomainConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 8
+		 * Min length: 1
+		 */
 		workflowExecutionRetentionPeriodInDays: FormControl<string | null | undefined>,
 	}
 	export function CreateDomainConfigurationFormGroup() {
 		return new FormGroup<DomainConfigurationFormProperties>({
-			workflowExecutionRetentionPeriodInDays: new FormControl<string | null | undefined>(undefined),
+			workflowExecutionRetentionPeriodInDays: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeDomainInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name: string;
 	}
 	export interface DescribeDomainInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeDomainInputFormGroup() {
 		return new FormGroup<DescribeDomainInputFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -596,18 +902,22 @@ export namespace MyNS {
 		 */
 		openCounts: WorkflowExecutionOpenCounts;
 		latestActivityTaskTimestamp?: Date | null;
+
+		/** Max length: 32768 */
 		latestExecutionContext?: string | null;
 	}
 
 	/** Contains details about a workflow execution. */
 	export interface WorkflowExecutionDetailFormProperties {
 		latestActivityTaskTimestamp: FormControl<Date | null | undefined>,
+
+		/** Max length: 32768 */
 		latestExecutionContext: FormControl<string | null | undefined>,
 	}
 	export function CreateWorkflowExecutionDetailFormGroup() {
 		return new FormGroup<WorkflowExecutionDetailFormProperties>({
 			latestActivityTaskTimestamp: new FormControl<Date | null | undefined>(undefined),
-			latestExecutionContext: new FormControl<string | null | undefined>(undefined),
+			latestExecutionContext: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -627,30 +937,40 @@ export namespace MyNS {
 		 * Required
 		 */
 		workflowType: WorkflowType;
+
+		/** Required */
 		startTimestamp: Date;
 		closeTimestamp?: Date | null;
+
+		/** Required */
 		executionStatus: WorkflowExecutionInfoExecutionStatus;
 		closeStatus?: CloseStatusFilterStatus | null;
 
 		/** Represents a workflow execution. */
 		parent?: WorkflowExecution;
+
+		/** Maximum items: 5 */
 		tagList?: Array<string>;
 		cancelRequested?: boolean | null;
 	}
 
 	/** Contains information about a workflow execution. */
 	export interface WorkflowExecutionInfoFormProperties {
+
+		/** Required */
 		startTimestamp: FormControl<Date | null | undefined>,
 		closeTimestamp: FormControl<Date | null | undefined>,
+
+		/** Required */
 		executionStatus: FormControl<WorkflowExecutionInfoExecutionStatus | null | undefined>,
 		closeStatus: FormControl<CloseStatusFilterStatus | null | undefined>,
 		cancelRequested: FormControl<boolean | null | undefined>,
 	}
 	export function CreateWorkflowExecutionInfoFormGroup() {
 		return new FormGroup<WorkflowExecutionInfoFormProperties>({
-			startTimestamp: new FormControl<Date | null | undefined>(undefined),
+			startTimestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			closeTimestamp: new FormControl<Date | null | undefined>(undefined),
-			executionStatus: new FormControl<WorkflowExecutionInfoExecutionStatus | null | undefined>(undefined),
+			executionStatus: new FormControl<WorkflowExecutionInfoExecutionStatus | null | undefined>(undefined, [Validators.required]),
 			closeStatus: new FormControl<CloseStatusFilterStatus | null | undefined>(undefined),
 			cancelRequested: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -660,19 +980,43 @@ export namespace MyNS {
 
 	/** Represents a workflow execution. */
 	export interface WorkflowExecution {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		runId: string;
 	}
 
 	/** Represents a workflow execution. */
 	export interface WorkflowExecutionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		runId: FormControl<string | null | undefined>,
 	}
 	export function CreateWorkflowExecutionFormGroup() {
 		return new FormGroup<WorkflowExecutionFormProperties>({
-			workflowId: new FormControl<string | null | undefined>(undefined),
-			runId: new FormControl<string | null | undefined>(undefined),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			runId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -682,7 +1026,19 @@ export namespace MyNS {
 
 	/** The configuration settings for a workflow execution including timeout values, tasklist etc. These configuration settings are determined from the defaults specified when registering the workflow type and those specified when starting the workflow execution. */
 	export interface WorkflowExecutionConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 8
+		 * Min length: 1
+		 */
 		taskStartToCloseTimeout: string;
+
+		/**
+		 * Required
+		 * Max length: 8
+		 * Min length: 1
+		 */
 		executionStartToCloseTimeout: string;
 
 		/**
@@ -691,25 +1047,51 @@ export namespace MyNS {
 		 */
 		taskList: TaskList;
 		taskPriority?: string | null;
+
+		/** Required */
 		childPolicy: WorkflowExecutionConfigurationChildPolicy;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		lambdaRole?: string | null;
 	}
 
 	/** The configuration settings for a workflow execution including timeout values, tasklist etc. These configuration settings are determined from the defaults specified when registering the workflow type and those specified when starting the workflow execution. */
 	export interface WorkflowExecutionConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 8
+		 * Min length: 1
+		 */
 		taskStartToCloseTimeout: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 8
+		 * Min length: 1
+		 */
 		executionStartToCloseTimeout: FormControl<string | null | undefined>,
 		taskPriority: FormControl<string | null | undefined>,
+
+		/** Required */
 		childPolicy: FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		lambdaRole: FormControl<string | null | undefined>,
 	}
 	export function CreateWorkflowExecutionConfigurationFormGroup() {
 		return new FormGroup<WorkflowExecutionConfigurationFormProperties>({
-			taskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined),
-			executionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined),
+			taskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8), Validators.minLength(1)]),
+			executionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8), Validators.minLength(1)]),
 			taskPriority: new FormControl<string | null | undefined>(undefined),
-			childPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined),
-			lambdaRole: new FormControl<string | null | undefined>(undefined),
+			childPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined, [Validators.required]),
+			lambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 		});
 
 	}
@@ -719,33 +1101,85 @@ export namespace MyNS {
 
 	/** Contains the counts of open tasks, child workflow executions and timers for a workflow execution. */
 	export interface WorkflowExecutionOpenCounts {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		openActivityTasks: number;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 1
+		 */
 		openDecisionTasks: number;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		openTimers: number;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		openChildWorkflowExecutions: number;
+
+		/** Minimum: 0 */
 		openLambdaFunctions?: number | null;
 	}
 
 	/** Contains the counts of open tasks, child workflow executions and timers for a workflow execution. */
 	export interface WorkflowExecutionOpenCountsFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		openActivityTasks: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 1
+		 */
 		openDecisionTasks: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		openTimers: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		openChildWorkflowExecutions: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		openLambdaFunctions: FormControl<number | null | undefined>,
 	}
 	export function CreateWorkflowExecutionOpenCountsFormGroup() {
 		return new FormGroup<WorkflowExecutionOpenCountsFormProperties>({
-			openActivityTasks: new FormControl<number | null | undefined>(undefined),
-			openDecisionTasks: new FormControl<number | null | undefined>(undefined),
-			openTimers: new FormControl<number | null | undefined>(undefined),
-			openChildWorkflowExecutions: new FormControl<number | null | undefined>(undefined),
-			openLambdaFunctions: new FormControl<number | null | undefined>(undefined),
+			openActivityTasks: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			openDecisionTasks: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(1)]),
+			openTimers: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			openChildWorkflowExecutions: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			openLambdaFunctions: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
 
 	export interface DescribeWorkflowExecutionInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: string;
 
 		/**
@@ -755,11 +1189,17 @@ export namespace MyNS {
 		execution: WorkflowExecution;
 	}
 	export interface DescribeWorkflowExecutionInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeWorkflowExecutionInputFormGroup() {
 		return new FormGroup<DescribeWorkflowExecutionInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -799,24 +1239,36 @@ export namespace MyNS {
 		 * Required
 		 */
 		workflowType: WorkflowType;
+
+		/** Required */
 		status: ActivityTypeInfoStatus;
+
+		/** Max length: 1024 */
 		description?: string | null;
+
+		/** Required */
 		creationDate: Date;
 		deprecationDate?: Date | null;
 	}
 
 	/** Contains information about a workflow type. */
 	export interface WorkflowTypeInfoFormProperties {
+
+		/** Required */
 		status: FormControl<ActivityTypeInfoStatus | null | undefined>,
+
+		/** Max length: 1024 */
 		description: FormControl<string | null | undefined>,
+
+		/** Required */
 		creationDate: FormControl<Date | null | undefined>,
 		deprecationDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateWorkflowTypeInfoFormGroup() {
 		return new FormGroup<WorkflowTypeInfoFormProperties>({
-			status: new FormControl<ActivityTypeInfoStatus | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			creationDate: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<ActivityTypeInfoStatus | null | undefined>(undefined, [Validators.required]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			creationDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			deprecationDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -825,36 +1277,60 @@ export namespace MyNS {
 
 	/** The configuration settings of a workflow type. */
 	export interface WorkflowTypeConfiguration {
+
+		/** Max length: 8 */
 		defaultTaskStartToCloseTimeout?: string | null;
+
+		/** Max length: 8 */
 		defaultExecutionStartToCloseTimeout?: string | null;
 
 		/** Represents a task list. */
 		defaultTaskList?: TaskList;
 		defaultTaskPriority?: string | null;
 		defaultChildPolicy?: WorkflowExecutionConfigurationChildPolicy | null;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		defaultLambdaRole?: string | null;
 	}
 
 	/** The configuration settings of a workflow type. */
 	export interface WorkflowTypeConfigurationFormProperties {
+
+		/** Max length: 8 */
 		defaultTaskStartToCloseTimeout: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		defaultExecutionStartToCloseTimeout: FormControl<string | null | undefined>,
 		defaultTaskPriority: FormControl<string | null | undefined>,
 		defaultChildPolicy: FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		defaultLambdaRole: FormControl<string | null | undefined>,
 	}
 	export function CreateWorkflowTypeConfigurationFormGroup() {
 		return new FormGroup<WorkflowTypeConfigurationFormProperties>({
-			defaultTaskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined),
-			defaultExecutionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined),
+			defaultTaskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
+			defaultExecutionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 			defaultTaskPriority: new FormControl<string | null | undefined>(undefined),
 			defaultChildPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined),
-			defaultLambdaRole: new FormControl<string | null | undefined>(undefined),
+			defaultLambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeWorkflowTypeInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: string;
 
 		/**
@@ -864,11 +1340,17 @@ export namespace MyNS {
 		workflowType: WorkflowType;
 	}
 	export interface DescribeWorkflowTypeInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeWorkflowTypeInputFormGroup() {
 		return new FormGroup<DescribeWorkflowTypeInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -876,17 +1358,23 @@ export namespace MyNS {
 
 	/** Paginated representation of a workflow history for a workflow execution. This is the up to date, complete and authoritative record of the events related to all tasks and events in the life of the workflow execution. */
 	export interface History {
+
+		/** Required */
 		events: Array<HistoryEvent>;
+
+		/** Max length: 2048 */
 		nextPageToken?: string | null;
 	}
 
 	/** Paginated representation of a workflow history for a workflow execution. This is the up to date, complete and authoritative record of the events related to all tasks and events in the life of the workflow execution. */
 	export interface HistoryFormProperties {
+
+		/** Max length: 2048 */
 		nextPageToken: FormControl<string | null | undefined>,
 	}
 	export function CreateHistoryFormGroup() {
 		return new FormGroup<HistoryFormProperties>({
-			nextPageToken: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 		});
 
 	}
@@ -894,8 +1382,14 @@ export namespace MyNS {
 
 	/** <p>Event within a workflow execution. A history event can be one of these types:</p> <ul> <li> <p> <code>ActivityTaskCancelRequested</code> – A <code>RequestCancelActivityTask</code> decision was received by the system.</p> </li> <li> <p> <code>ActivityTaskCanceled</code> – The activity task was successfully canceled.</p> </li> <li> <p> <code>ActivityTaskCompleted</code> – An activity worker successfully completed an activity task by calling <a>RespondActivityTaskCompleted</a>.</p> </li> <li> <p> <code>ActivityTaskFailed</code> – An activity worker failed an activity task by calling <a>RespondActivityTaskFailed</a>.</p> </li> <li> <p> <code>ActivityTaskScheduled</code> – An activity task was scheduled for execution.</p> </li> <li> <p> <code>ActivityTaskStarted</code> – The scheduled activity task was dispatched to a worker.</p> </li> <li> <p> <code>ActivityTaskTimedOut</code> – The activity task timed out.</p> </li> <li> <p> <code>CancelTimerFailed</code> – Failed to process CancelTimer decision. This happens when the decision isn't configured properly, for example no timer exists with the specified timer Id.</p> </li> <li> <p> <code>CancelWorkflowExecutionFailed</code> – A request to cancel a workflow execution failed.</p> </li> <li> <p> <code>ChildWorkflowExecutionCanceled</code> – A child workflow execution, started by this workflow execution, was canceled and closed.</p> </li> <li> <p> <code>ChildWorkflowExecutionCompleted</code> – A child workflow execution, started by this workflow execution, completed successfully and was closed.</p> </li> <li> <p> <code>ChildWorkflowExecutionFailed</code> – A child workflow execution, started by this workflow execution, failed to complete successfully and was closed.</p> </li> <li> <p> <code>ChildWorkflowExecutionStarted</code> – A child workflow execution was successfully started.</p> </li> <li> <p> <code>ChildWorkflowExecutionTerminated</code> – A child workflow execution, started by this workflow execution, was terminated.</p> </li> <li> <p> <code>ChildWorkflowExecutionTimedOut</code> – A child workflow execution, started by this workflow execution, timed out and was closed.</p> </li> <li> <p> <code>CompleteWorkflowExecutionFailed</code> – The workflow execution failed to complete.</p> </li> <li> <p> <code>ContinueAsNewWorkflowExecutionFailed</code> – The workflow execution failed to complete after being continued as a new workflow execution.</p> </li> <li> <p> <code>DecisionTaskCompleted</code> – The decider successfully completed a decision task by calling <a>RespondDecisionTaskCompleted</a>.</p> </li> <li> <p> <code>DecisionTaskScheduled</code> – A decision task was scheduled for the workflow execution.</p> </li> <li> <p> <code>DecisionTaskStarted</code> – The decision task was dispatched to a decider.</p> </li> <li> <p> <code>DecisionTaskTimedOut</code> – The decision task timed out.</p> </li> <li> <p> <code>ExternalWorkflowExecutionCancelRequested</code> – Request to cancel an external workflow execution was successfully delivered to the target execution.</p> </li> <li> <p> <code>ExternalWorkflowExecutionSignaled</code> – A signal, requested by this workflow execution, was successfully delivered to the target external workflow execution.</p> </li> <li> <p> <code>FailWorkflowExecutionFailed</code> – A request to mark a workflow execution as failed, itself failed.</p> </li> <li> <p> <code>MarkerRecorded</code> – A marker was recorded in the workflow history as the result of a <code>RecordMarker</code> decision.</p> </li> <li> <p> <code>RecordMarkerFailed</code> – A <code>RecordMarker</code> decision was returned as failed.</p> </li> <li> <p> <code>RequestCancelActivityTaskFailed</code> – Failed to process RequestCancelActivityTask decision. This happens when the decision isn't configured properly.</p> </li> <li> <p> <code>RequestCancelExternalWorkflowExecutionFailed</code> – Request to cancel an external workflow execution failed.</p> </li> <li> <p> <code>RequestCancelExternalWorkflowExecutionInitiated</code> – A request was made to request the cancellation of an external workflow execution.</p> </li> <li> <p> <code>ScheduleActivityTaskFailed</code> – Failed to process ScheduleActivityTask decision. This happens when the decision isn't configured properly, for example the activity type specified isn't registered.</p> </li> <li> <p> <code>SignalExternalWorkflowExecutionFailed</code> – The request to signal an external workflow execution failed.</p> </li> <li> <p> <code>SignalExternalWorkflowExecutionInitiated</code> – A request to signal an external workflow was made.</p> </li> <li> <p> <code>StartActivityTaskFailed</code> – A scheduled activity task failed to start.</p> </li> <li> <p> <code>StartChildWorkflowExecutionFailed</code> – Failed to process StartChildWorkflowExecution decision. This happens when the decision isn't configured properly, for example the workflow type specified isn't registered.</p> </li> <li> <p> <code>StartChildWorkflowExecutionInitiated</code> – A request was made to start a child workflow execution.</p> </li> <li> <p> <code>StartTimerFailed</code> – Failed to process StartTimer decision. This happens when the decision isn't configured properly, for example a timer already exists with the specified timer Id.</p> </li> <li> <p> <code>TimerCanceled</code> – A timer, previously started for this workflow execution, was successfully canceled.</p> </li> <li> <p> <code>TimerFired</code> – A timer, previously started for this workflow execution, fired.</p> </li> <li> <p> <code>TimerStarted</code> – A timer was started for the workflow execution due to a <code>StartTimer</code> decision.</p> </li> <li> <p> <code>WorkflowExecutionCancelRequested</code> – A request to cancel this workflow execution was made.</p> </li> <li> <p> <code>WorkflowExecutionCanceled</code> – The workflow execution was successfully canceled and closed.</p> </li> <li> <p> <code>WorkflowExecutionCompleted</code> – The workflow execution was closed due to successful completion.</p> </li> <li> <p> <code>WorkflowExecutionContinuedAsNew</code> – The workflow execution was closed and a new execution of the same type was created with the same workflowId.</p> </li> <li> <p> <code>WorkflowExecutionFailed</code> – The workflow execution closed due to a failure.</p> </li> <li> <p> <code>WorkflowExecutionSignaled</code> – An external signal was received for the workflow execution.</p> </li> <li> <p> <code>WorkflowExecutionStarted</code> – The workflow execution was started.</p> </li> <li> <p> <code>WorkflowExecutionTerminated</code> – The workflow execution was terminated.</p> </li> <li> <p> <code>WorkflowExecutionTimedOut</code> – The workflow execution was closed because a time out was exceeded.</p> </li> </ul> */
 	export interface HistoryEvent {
+
+		/** Required */
 		eventTimestamp: Date;
+
+		/** Required */
 		eventType: HistoryEventEventType;
+
+		/** Required */
 		eventId: number;
 
 		/** Provides details of <code>WorkflowExecutionStarted</code> event. */
@@ -1063,15 +1557,21 @@ export namespace MyNS {
 
 	/** <p>Event within a workflow execution. A history event can be one of these types:</p> <ul> <li> <p> <code>ActivityTaskCancelRequested</code> – A <code>RequestCancelActivityTask</code> decision was received by the system.</p> </li> <li> <p> <code>ActivityTaskCanceled</code> – The activity task was successfully canceled.</p> </li> <li> <p> <code>ActivityTaskCompleted</code> – An activity worker successfully completed an activity task by calling <a>RespondActivityTaskCompleted</a>.</p> </li> <li> <p> <code>ActivityTaskFailed</code> – An activity worker failed an activity task by calling <a>RespondActivityTaskFailed</a>.</p> </li> <li> <p> <code>ActivityTaskScheduled</code> – An activity task was scheduled for execution.</p> </li> <li> <p> <code>ActivityTaskStarted</code> – The scheduled activity task was dispatched to a worker.</p> </li> <li> <p> <code>ActivityTaskTimedOut</code> – The activity task timed out.</p> </li> <li> <p> <code>CancelTimerFailed</code> – Failed to process CancelTimer decision. This happens when the decision isn't configured properly, for example no timer exists with the specified timer Id.</p> </li> <li> <p> <code>CancelWorkflowExecutionFailed</code> – A request to cancel a workflow execution failed.</p> </li> <li> <p> <code>ChildWorkflowExecutionCanceled</code> – A child workflow execution, started by this workflow execution, was canceled and closed.</p> </li> <li> <p> <code>ChildWorkflowExecutionCompleted</code> – A child workflow execution, started by this workflow execution, completed successfully and was closed.</p> </li> <li> <p> <code>ChildWorkflowExecutionFailed</code> – A child workflow execution, started by this workflow execution, failed to complete successfully and was closed.</p> </li> <li> <p> <code>ChildWorkflowExecutionStarted</code> – A child workflow execution was successfully started.</p> </li> <li> <p> <code>ChildWorkflowExecutionTerminated</code> – A child workflow execution, started by this workflow execution, was terminated.</p> </li> <li> <p> <code>ChildWorkflowExecutionTimedOut</code> – A child workflow execution, started by this workflow execution, timed out and was closed.</p> </li> <li> <p> <code>CompleteWorkflowExecutionFailed</code> – The workflow execution failed to complete.</p> </li> <li> <p> <code>ContinueAsNewWorkflowExecutionFailed</code> – The workflow execution failed to complete after being continued as a new workflow execution.</p> </li> <li> <p> <code>DecisionTaskCompleted</code> – The decider successfully completed a decision task by calling <a>RespondDecisionTaskCompleted</a>.</p> </li> <li> <p> <code>DecisionTaskScheduled</code> – A decision task was scheduled for the workflow execution.</p> </li> <li> <p> <code>DecisionTaskStarted</code> – The decision task was dispatched to a decider.</p> </li> <li> <p> <code>DecisionTaskTimedOut</code> – The decision task timed out.</p> </li> <li> <p> <code>ExternalWorkflowExecutionCancelRequested</code> – Request to cancel an external workflow execution was successfully delivered to the target execution.</p> </li> <li> <p> <code>ExternalWorkflowExecutionSignaled</code> – A signal, requested by this workflow execution, was successfully delivered to the target external workflow execution.</p> </li> <li> <p> <code>FailWorkflowExecutionFailed</code> – A request to mark a workflow execution as failed, itself failed.</p> </li> <li> <p> <code>MarkerRecorded</code> – A marker was recorded in the workflow history as the result of a <code>RecordMarker</code> decision.</p> </li> <li> <p> <code>RecordMarkerFailed</code> – A <code>RecordMarker</code> decision was returned as failed.</p> </li> <li> <p> <code>RequestCancelActivityTaskFailed</code> – Failed to process RequestCancelActivityTask decision. This happens when the decision isn't configured properly.</p> </li> <li> <p> <code>RequestCancelExternalWorkflowExecutionFailed</code> – Request to cancel an external workflow execution failed.</p> </li> <li> <p> <code>RequestCancelExternalWorkflowExecutionInitiated</code> – A request was made to request the cancellation of an external workflow execution.</p> </li> <li> <p> <code>ScheduleActivityTaskFailed</code> – Failed to process ScheduleActivityTask decision. This happens when the decision isn't configured properly, for example the activity type specified isn't registered.</p> </li> <li> <p> <code>SignalExternalWorkflowExecutionFailed</code> – The request to signal an external workflow execution failed.</p> </li> <li> <p> <code>SignalExternalWorkflowExecutionInitiated</code> – A request to signal an external workflow was made.</p> </li> <li> <p> <code>StartActivityTaskFailed</code> – A scheduled activity task failed to start.</p> </li> <li> <p> <code>StartChildWorkflowExecutionFailed</code> – Failed to process StartChildWorkflowExecution decision. This happens when the decision isn't configured properly, for example the workflow type specified isn't registered.</p> </li> <li> <p> <code>StartChildWorkflowExecutionInitiated</code> – A request was made to start a child workflow execution.</p> </li> <li> <p> <code>StartTimerFailed</code> – Failed to process StartTimer decision. This happens when the decision isn't configured properly, for example a timer already exists with the specified timer Id.</p> </li> <li> <p> <code>TimerCanceled</code> – A timer, previously started for this workflow execution, was successfully canceled.</p> </li> <li> <p> <code>TimerFired</code> – A timer, previously started for this workflow execution, fired.</p> </li> <li> <p> <code>TimerStarted</code> – A timer was started for the workflow execution due to a <code>StartTimer</code> decision.</p> </li> <li> <p> <code>WorkflowExecutionCancelRequested</code> – A request to cancel this workflow execution was made.</p> </li> <li> <p> <code>WorkflowExecutionCanceled</code> – The workflow execution was successfully canceled and closed.</p> </li> <li> <p> <code>WorkflowExecutionCompleted</code> – The workflow execution was closed due to successful completion.</p> </li> <li> <p> <code>WorkflowExecutionContinuedAsNew</code> – The workflow execution was closed and a new execution of the same type was created with the same workflowId.</p> </li> <li> <p> <code>WorkflowExecutionFailed</code> – The workflow execution closed due to a failure.</p> </li> <li> <p> <code>WorkflowExecutionSignaled</code> – An external signal was received for the workflow execution.</p> </li> <li> <p> <code>WorkflowExecutionStarted</code> – The workflow execution was started.</p> </li> <li> <p> <code>WorkflowExecutionTerminated</code> – The workflow execution was terminated.</p> </li> <li> <p> <code>WorkflowExecutionTimedOut</code> – The workflow execution was closed because a time out was exceeded.</p> </li> </ul> */
 	export interface HistoryEventFormProperties {
+
+		/** Required */
 		eventTimestamp: FormControl<Date | null | undefined>,
+
+		/** Required */
 		eventType: FormControl<HistoryEventEventType | null | undefined>,
+
+		/** Required */
 		eventId: FormControl<number | null | undefined>,
 	}
 	export function CreateHistoryEventFormGroup() {
 		return new FormGroup<HistoryEventFormProperties>({
-			eventTimestamp: new FormControl<Date | null | undefined>(undefined),
-			eventType: new FormControl<HistoryEventEventType | null | undefined>(undefined),
-			eventId: new FormControl<number | null | undefined>(undefined),
+			eventTimestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			eventType: new FormControl<HistoryEventEventType | null | undefined>(undefined, [Validators.required]),
+			eventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1081,9 +1581,17 @@ export namespace MyNS {
 
 	/** Provides details of <code>WorkflowExecutionStarted</code> event. */
 	export interface WorkflowExecutionStartedEventAttributes {
+
+		/** Max length: 32768 */
 		input?: string | null;
+
+		/** Max length: 8 */
 		executionStartToCloseTimeout?: string | null;
+
+		/** Max length: 8 */
 		taskStartToCloseTimeout?: string | null;
+
+		/** Required */
 		childPolicy: WorkflowExecutionConfigurationChildPolicy;
 
 		/**
@@ -1098,36 +1606,60 @@ export namespace MyNS {
 		 * Required
 		 */
 		workflowType: WorkflowType;
+
+		/** Maximum items: 5 */
 		tagList?: Array<string>;
+
+		/** Max length: 64 */
 		continuedExecutionRunId?: string | null;
 
 		/** Represents a workflow execution. */
 		parentWorkflowExecution?: WorkflowExecution;
 		parentInitiatedEventId?: number | null;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		lambdaRole?: string | null;
 	}
 
 	/** Provides details of <code>WorkflowExecutionStarted</code> event. */
 	export interface WorkflowExecutionStartedEventAttributesFormProperties {
+
+		/** Max length: 32768 */
 		input: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		executionStartToCloseTimeout: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		taskStartToCloseTimeout: FormControl<string | null | undefined>,
+
+		/** Required */
 		childPolicy: FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>,
 		taskPriority: FormControl<string | null | undefined>,
+
+		/** Max length: 64 */
 		continuedExecutionRunId: FormControl<string | null | undefined>,
 		parentInitiatedEventId: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		lambdaRole: FormControl<string | null | undefined>,
 	}
 	export function CreateWorkflowExecutionStartedEventAttributesFormGroup() {
 		return new FormGroup<WorkflowExecutionStartedEventAttributesFormProperties>({
-			input: new FormControl<string | null | undefined>(undefined),
-			executionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined),
-			taskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined),
-			childPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined),
+			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			executionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
+			taskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
+			childPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined, [Validators.required]),
 			taskPriority: new FormControl<string | null | undefined>(undefined),
-			continuedExecutionRunId: new FormControl<string | null | undefined>(undefined),
+			continuedExecutionRunId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
 			parentInitiatedEventId: new FormControl<number | null | undefined>(undefined),
-			lambdaRole: new FormControl<string | null | undefined>(undefined),
+			lambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 		});
 
 	}
@@ -1135,19 +1667,27 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>WorkflowExecutionCompleted</code> event. */
 	export interface WorkflowExecutionCompletedEventAttributes {
+
+		/** Max length: 32768 */
 		result?: string | null;
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
 	}
 
 	/** Provides the details of the <code>WorkflowExecutionCompleted</code> event. */
 	export interface WorkflowExecutionCompletedEventAttributesFormProperties {
+
+		/** Max length: 32768 */
 		result: FormControl<string | null | undefined>,
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateWorkflowExecutionCompletedEventAttributesFormGroup() {
 		return new FormGroup<WorkflowExecutionCompletedEventAttributesFormProperties>({
-			result: new FormControl<string | null | undefined>(undefined),
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
+			result: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1155,19 +1695,27 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>CompleteWorkflowExecutionFailed</code> event. */
 	export interface CompleteWorkflowExecutionFailedEventAttributes {
+
+		/** Required */
 		cause: CompleteWorkflowExecutionFailedEventAttributesCause;
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
 	}
 
 	/** Provides the details of the <code>CompleteWorkflowExecutionFailed</code> event. */
 	export interface CompleteWorkflowExecutionFailedEventAttributesFormProperties {
+
+		/** Required */
 		cause: FormControl<CompleteWorkflowExecutionFailedEventAttributesCause | null | undefined>,
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateCompleteWorkflowExecutionFailedEventAttributesFormGroup() {
 		return new FormGroup<CompleteWorkflowExecutionFailedEventAttributesFormProperties>({
-			cause: new FormControl<CompleteWorkflowExecutionFailedEventAttributesCause | null | undefined>(undefined),
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
+			cause: new FormControl<CompleteWorkflowExecutionFailedEventAttributesCause | null | undefined>(undefined, [Validators.required]),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1177,22 +1725,34 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>WorkflowExecutionFailed</code> event. */
 	export interface WorkflowExecutionFailedEventAttributes {
+
+		/** Max length: 256 */
 		reason?: string | null;
+
+		/** Max length: 32768 */
 		details?: string | null;
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
 	}
 
 	/** Provides the details of the <code>WorkflowExecutionFailed</code> event. */
 	export interface WorkflowExecutionFailedEventAttributesFormProperties {
+
+		/** Max length: 256 */
 		reason: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		details: FormControl<string | null | undefined>,
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateWorkflowExecutionFailedEventAttributesFormGroup() {
 		return new FormGroup<WorkflowExecutionFailedEventAttributesFormProperties>({
-			reason: new FormControl<string | null | undefined>(undefined),
-			details: new FormControl<string | null | undefined>(undefined),
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
+			reason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1200,19 +1760,27 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>FailWorkflowExecutionFailed</code> event. */
 	export interface FailWorkflowExecutionFailedEventAttributes {
+
+		/** Required */
 		cause: CompleteWorkflowExecutionFailedEventAttributesCause;
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
 	}
 
 	/** Provides the details of the <code>FailWorkflowExecutionFailed</code> event. */
 	export interface FailWorkflowExecutionFailedEventAttributesFormProperties {
+
+		/** Required */
 		cause: FormControl<CompleteWorkflowExecutionFailedEventAttributesCause | null | undefined>,
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateFailWorkflowExecutionFailedEventAttributesFormGroup() {
 		return new FormGroup<FailWorkflowExecutionFailedEventAttributesFormProperties>({
-			cause: new FormControl<CompleteWorkflowExecutionFailedEventAttributesCause | null | undefined>(undefined),
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
+			cause: new FormControl<CompleteWorkflowExecutionFailedEventAttributesCause | null | undefined>(undefined, [Validators.required]),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1220,19 +1788,27 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>WorkflowExecutionTimedOut</code> event. */
 	export interface WorkflowExecutionTimedOutEventAttributes {
+
+		/** Required */
 		timeoutType: WorkflowExecutionTimedOutEventAttributesTimeoutType;
+
+		/** Required */
 		childPolicy: WorkflowExecutionConfigurationChildPolicy;
 	}
 
 	/** Provides the details of the <code>WorkflowExecutionTimedOut</code> event. */
 	export interface WorkflowExecutionTimedOutEventAttributesFormProperties {
+
+		/** Required */
 		timeoutType: FormControl<WorkflowExecutionTimedOutEventAttributesTimeoutType | null | undefined>,
+
+		/** Required */
 		childPolicy: FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>,
 	}
 	export function CreateWorkflowExecutionTimedOutEventAttributesFormGroup() {
 		return new FormGroup<WorkflowExecutionTimedOutEventAttributesFormProperties>({
-			timeoutType: new FormControl<WorkflowExecutionTimedOutEventAttributesTimeoutType | null | undefined>(undefined),
-			childPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined),
+			timeoutType: new FormControl<WorkflowExecutionTimedOutEventAttributesTimeoutType | null | undefined>(undefined, [Validators.required]),
+			childPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1242,19 +1818,27 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>WorkflowExecutionCanceled</code> event. */
 	export interface WorkflowExecutionCanceledEventAttributes {
+
+		/** Max length: 32768 */
 		details?: string | null;
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
 	}
 
 	/** Provides the details of the <code>WorkflowExecutionCanceled</code> event. */
 	export interface WorkflowExecutionCanceledEventAttributesFormProperties {
+
+		/** Max length: 32768 */
 		details: FormControl<string | null | undefined>,
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateWorkflowExecutionCanceledEventAttributesFormGroup() {
 		return new FormGroup<WorkflowExecutionCanceledEventAttributesFormProperties>({
-			details: new FormControl<string | null | undefined>(undefined),
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
+			details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1262,19 +1846,27 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>CancelWorkflowExecutionFailed</code> event. */
 	export interface CancelWorkflowExecutionFailedEventAttributes {
+
+		/** Required */
 		cause: CompleteWorkflowExecutionFailedEventAttributesCause;
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
 	}
 
 	/** Provides the details of the <code>CancelWorkflowExecutionFailed</code> event. */
 	export interface CancelWorkflowExecutionFailedEventAttributesFormProperties {
+
+		/** Required */
 		cause: FormControl<CompleteWorkflowExecutionFailedEventAttributesCause | null | undefined>,
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateCancelWorkflowExecutionFailedEventAttributesFormGroup() {
 		return new FormGroup<CancelWorkflowExecutionFailedEventAttributesFormProperties>({
-			cause: new FormControl<CompleteWorkflowExecutionFailedEventAttributesCause | null | undefined>(undefined),
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
+			cause: new FormControl<CompleteWorkflowExecutionFailedEventAttributesCause | null | undefined>(undefined, [Validators.required]),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1282,9 +1874,21 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>WorkflowExecutionContinuedAsNew</code> event. */
 	export interface WorkflowExecutionContinuedAsNewEventAttributes {
+
+		/** Max length: 32768 */
 		input?: string | null;
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		newExecutionRunId: string;
+
+		/** Max length: 8 */
 		executionStartToCloseTimeout?: string | null;
 
 		/**
@@ -1293,8 +1897,14 @@ export namespace MyNS {
 		 */
 		taskList: TaskList;
 		taskPriority?: string | null;
+
+		/** Max length: 8 */
 		taskStartToCloseTimeout?: string | null;
+
+		/** Required */
 		childPolicy: WorkflowExecutionConfigurationChildPolicy;
+
+		/** Maximum items: 5 */
 		tagList?: Array<string>;
 
 		/**
@@ -1302,30 +1912,56 @@ export namespace MyNS {
 		 * Required
 		 */
 		workflowType: WorkflowType;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		lambdaRole?: string | null;
 	}
 
 	/** Provides the details of the <code>WorkflowExecutionContinuedAsNew</code> event. */
 	export interface WorkflowExecutionContinuedAsNewEventAttributesFormProperties {
+
+		/** Max length: 32768 */
 		input: FormControl<string | null | undefined>,
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		newExecutionRunId: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		executionStartToCloseTimeout: FormControl<string | null | undefined>,
 		taskPriority: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		taskStartToCloseTimeout: FormControl<string | null | undefined>,
+
+		/** Required */
 		childPolicy: FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		lambdaRole: FormControl<string | null | undefined>,
 	}
 	export function CreateWorkflowExecutionContinuedAsNewEventAttributesFormGroup() {
 		return new FormGroup<WorkflowExecutionContinuedAsNewEventAttributesFormProperties>({
-			input: new FormControl<string | null | undefined>(undefined),
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
-			newExecutionRunId: new FormControl<string | null | undefined>(undefined),
-			executionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined),
+			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			newExecutionRunId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			executionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 			taskPriority: new FormControl<string | null | undefined>(undefined),
-			taskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined),
-			childPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined),
-			lambdaRole: new FormControl<string | null | undefined>(undefined),
+			taskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
+			childPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined, [Validators.required]),
+			lambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 		});
 
 	}
@@ -1333,19 +1969,27 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>ContinueAsNewWorkflowExecutionFailed</code> event. */
 	export interface ContinueAsNewWorkflowExecutionFailedEventAttributes {
+
+		/** Required */
 		cause: ContinueAsNewWorkflowExecutionFailedEventAttributesCause;
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
 	}
 
 	/** Provides the details of the <code>ContinueAsNewWorkflowExecutionFailed</code> event. */
 	export interface ContinueAsNewWorkflowExecutionFailedEventAttributesFormProperties {
+
+		/** Required */
 		cause: FormControl<ContinueAsNewWorkflowExecutionFailedEventAttributesCause | null | undefined>,
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateContinueAsNewWorkflowExecutionFailedEventAttributesFormGroup() {
 		return new FormGroup<ContinueAsNewWorkflowExecutionFailedEventAttributesFormProperties>({
-			cause: new FormControl<ContinueAsNewWorkflowExecutionFailedEventAttributesCause | null | undefined>(undefined),
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
+			cause: new FormControl<ContinueAsNewWorkflowExecutionFailedEventAttributesCause | null | undefined>(undefined, [Validators.required]),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1355,24 +1999,36 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>WorkflowExecutionTerminated</code> event. */
 	export interface WorkflowExecutionTerminatedEventAttributes {
+
+		/** Max length: 256 */
 		reason?: string | null;
+
+		/** Max length: 32768 */
 		details?: string | null;
+
+		/** Required */
 		childPolicy: WorkflowExecutionConfigurationChildPolicy;
 		cause?: WorkflowExecutionTerminatedEventAttributesCause | null;
 	}
 
 	/** Provides the details of the <code>WorkflowExecutionTerminated</code> event. */
 	export interface WorkflowExecutionTerminatedEventAttributesFormProperties {
+
+		/** Max length: 256 */
 		reason: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		details: FormControl<string | null | undefined>,
+
+		/** Required */
 		childPolicy: FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>,
 		cause: FormControl<WorkflowExecutionTerminatedEventAttributesCause | null | undefined>,
 	}
 	export function CreateWorkflowExecutionTerminatedEventAttributesFormGroup() {
 		return new FormGroup<WorkflowExecutionTerminatedEventAttributesFormProperties>({
-			reason: new FormControl<string | null | undefined>(undefined),
-			details: new FormControl<string | null | undefined>(undefined),
-			childPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined),
+			reason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			childPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined, [Validators.required]),
 			cause: new FormControl<WorkflowExecutionTerminatedEventAttributesCause | null | undefined>(undefined),
 		});
 
@@ -1415,18 +2071,22 @@ export namespace MyNS {
 		 */
 		taskList: TaskList;
 		taskPriority?: string | null;
+
+		/** Max length: 8 */
 		startToCloseTimeout?: string | null;
 	}
 
 	/** Provides details about the <code>DecisionTaskScheduled</code> event. */
 	export interface DecisionTaskScheduledEventAttributesFormProperties {
 		taskPriority: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		startToCloseTimeout: FormControl<string | null | undefined>,
 	}
 	export function CreateDecisionTaskScheduledEventAttributesFormGroup() {
 		return new FormGroup<DecisionTaskScheduledEventAttributesFormProperties>({
 			taskPriority: new FormControl<string | null | undefined>(undefined),
-			startToCloseTimeout: new FormControl<string | null | undefined>(undefined),
+			startToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 		});
 
 	}
@@ -1434,19 +2094,27 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>DecisionTaskStarted</code> event. */
 	export interface DecisionTaskStartedEventAttributes {
+
+		/** Max length: 256 */
 		identity?: string | null;
+
+		/** Required */
 		scheduledEventId: number;
 	}
 
 	/** Provides the details of the <code>DecisionTaskStarted</code> event. */
 	export interface DecisionTaskStartedEventAttributesFormProperties {
+
+		/** Max length: 256 */
 		identity: FormControl<string | null | undefined>,
+
+		/** Required */
 		scheduledEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateDecisionTaskStartedEventAttributesFormGroup() {
 		return new FormGroup<DecisionTaskStartedEventAttributesFormProperties>({
-			identity: new FormControl<string | null | undefined>(undefined),
-			scheduledEventId: new FormControl<number | null | undefined>(undefined),
+			identity: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			scheduledEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1454,22 +2122,34 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>DecisionTaskCompleted</code> event. */
 	export interface DecisionTaskCompletedEventAttributes {
+
+		/** Max length: 32768 */
 		executionContext?: string | null;
+
+		/** Required */
 		scheduledEventId: number;
+
+		/** Required */
 		startedEventId: number;
 	}
 
 	/** Provides the details of the <code>DecisionTaskCompleted</code> event. */
 	export interface DecisionTaskCompletedEventAttributesFormProperties {
+
+		/** Max length: 32768 */
 		executionContext: FormControl<string | null | undefined>,
+
+		/** Required */
 		scheduledEventId: FormControl<number | null | undefined>,
+
+		/** Required */
 		startedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateDecisionTaskCompletedEventAttributesFormGroup() {
 		return new FormGroup<DecisionTaskCompletedEventAttributesFormProperties>({
-			executionContext: new FormControl<string | null | undefined>(undefined),
-			scheduledEventId: new FormControl<number | null | undefined>(undefined),
-			startedEventId: new FormControl<number | null | undefined>(undefined),
+			executionContext: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			scheduledEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			startedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1477,22 +2157,34 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>DecisionTaskTimedOut</code> event. */
 	export interface DecisionTaskTimedOutEventAttributes {
+
+		/** Required */
 		timeoutType: WorkflowExecutionTimedOutEventAttributesTimeoutType;
+
+		/** Required */
 		scheduledEventId: number;
+
+		/** Required */
 		startedEventId: number;
 	}
 
 	/** Provides the details of the <code>DecisionTaskTimedOut</code> event. */
 	export interface DecisionTaskTimedOutEventAttributesFormProperties {
+
+		/** Required */
 		timeoutType: FormControl<WorkflowExecutionTimedOutEventAttributesTimeoutType | null | undefined>,
+
+		/** Required */
 		scheduledEventId: FormControl<number | null | undefined>,
+
+		/** Required */
 		startedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateDecisionTaskTimedOutEventAttributesFormGroup() {
 		return new FormGroup<DecisionTaskTimedOutEventAttributesFormProperties>({
-			timeoutType: new FormControl<WorkflowExecutionTimedOutEventAttributesTimeoutType | null | undefined>(undefined),
-			scheduledEventId: new FormControl<number | null | undefined>(undefined),
-			startedEventId: new FormControl<number | null | undefined>(undefined),
+			timeoutType: new FormControl<WorkflowExecutionTimedOutEventAttributesTimeoutType | null | undefined>(undefined, [Validators.required]),
+			scheduledEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			startedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1506,11 +2198,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		activityType: ActivityType;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityId: string;
+
+		/** Max length: 32768 */
 		input?: string | null;
+
+		/** Max length: 32768 */
 		control?: string | null;
+
+		/** Max length: 8 */
 		scheduleToStartTimeout?: string | null;
+
+		/** Max length: 8 */
 		scheduleToCloseTimeout?: string | null;
+
+		/** Max length: 8 */
 		startToCloseTimeout?: string | null;
 
 		/**
@@ -1519,33 +2227,57 @@ export namespace MyNS {
 		 */
 		taskList: TaskList;
 		taskPriority?: string | null;
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
+
+		/** Max length: 8 */
 		heartbeatTimeout?: string | null;
 	}
 
 	/** Provides the details of the <code>ActivityTaskScheduled</code> event. */
 	export interface ActivityTaskScheduledEventAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityId: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		input: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		control: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		scheduleToStartTimeout: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		scheduleToCloseTimeout: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		startToCloseTimeout: FormControl<string | null | undefined>,
 		taskPriority: FormControl<string | null | undefined>,
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
+
+		/** Max length: 8 */
 		heartbeatTimeout: FormControl<string | null | undefined>,
 	}
 	export function CreateActivityTaskScheduledEventAttributesFormGroup() {
 		return new FormGroup<ActivityTaskScheduledEventAttributesFormProperties>({
-			activityId: new FormControl<string | null | undefined>(undefined),
-			input: new FormControl<string | null | undefined>(undefined),
-			control: new FormControl<string | null | undefined>(undefined),
-			scheduleToStartTimeout: new FormControl<string | null | undefined>(undefined),
-			scheduleToCloseTimeout: new FormControl<string | null | undefined>(undefined),
-			startToCloseTimeout: new FormControl<string | null | undefined>(undefined),
+			activityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			scheduleToStartTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
+			scheduleToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
+			startToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 			taskPriority: new FormControl<string | null | undefined>(undefined),
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
-			heartbeatTimeout: new FormControl<string | null | undefined>(undefined),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			heartbeatTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 		});
 
 	}
@@ -1553,19 +2285,27 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>ActivityTaskStarted</code> event. */
 	export interface ActivityTaskStartedEventAttributes {
+
+		/** Max length: 256 */
 		identity?: string | null;
+
+		/** Required */
 		scheduledEventId: number;
 	}
 
 	/** Provides the details of the <code>ActivityTaskStarted</code> event. */
 	export interface ActivityTaskStartedEventAttributesFormProperties {
+
+		/** Max length: 256 */
 		identity: FormControl<string | null | undefined>,
+
+		/** Required */
 		scheduledEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateActivityTaskStartedEventAttributesFormGroup() {
 		return new FormGroup<ActivityTaskStartedEventAttributesFormProperties>({
-			identity: new FormControl<string | null | undefined>(undefined),
-			scheduledEventId: new FormControl<number | null | undefined>(undefined),
+			identity: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			scheduledEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1573,22 +2313,34 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>ActivityTaskCompleted</code> event. */
 	export interface ActivityTaskCompletedEventAttributes {
+
+		/** Max length: 32768 */
 		result?: string | null;
+
+		/** Required */
 		scheduledEventId: number;
+
+		/** Required */
 		startedEventId: number;
 	}
 
 	/** Provides the details of the <code>ActivityTaskCompleted</code> event. */
 	export interface ActivityTaskCompletedEventAttributesFormProperties {
+
+		/** Max length: 32768 */
 		result: FormControl<string | null | undefined>,
+
+		/** Required */
 		scheduledEventId: FormControl<number | null | undefined>,
+
+		/** Required */
 		startedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateActivityTaskCompletedEventAttributesFormGroup() {
 		return new FormGroup<ActivityTaskCompletedEventAttributesFormProperties>({
-			result: new FormControl<string | null | undefined>(undefined),
-			scheduledEventId: new FormControl<number | null | undefined>(undefined),
-			startedEventId: new FormControl<number | null | undefined>(undefined),
+			result: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			scheduledEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			startedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1596,25 +2348,41 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>ActivityTaskFailed</code> event. */
 	export interface ActivityTaskFailedEventAttributes {
+
+		/** Max length: 256 */
 		reason?: string | null;
+
+		/** Max length: 32768 */
 		details?: string | null;
+
+		/** Required */
 		scheduledEventId: number;
+
+		/** Required */
 		startedEventId: number;
 	}
 
 	/** Provides the details of the <code>ActivityTaskFailed</code> event. */
 	export interface ActivityTaskFailedEventAttributesFormProperties {
+
+		/** Max length: 256 */
 		reason: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		details: FormControl<string | null | undefined>,
+
+		/** Required */
 		scheduledEventId: FormControl<number | null | undefined>,
+
+		/** Required */
 		startedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateActivityTaskFailedEventAttributesFormGroup() {
 		return new FormGroup<ActivityTaskFailedEventAttributesFormProperties>({
-			reason: new FormControl<string | null | undefined>(undefined),
-			details: new FormControl<string | null | undefined>(undefined),
-			scheduledEventId: new FormControl<number | null | undefined>(undefined),
-			startedEventId: new FormControl<number | null | undefined>(undefined),
+			reason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			scheduledEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			startedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1622,25 +2390,41 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>ActivityTaskTimedOut</code> event. */
 	export interface ActivityTaskTimedOutEventAttributes {
+
+		/** Required */
 		timeoutType: ActivityTaskTimedOutEventAttributesTimeoutType;
+
+		/** Required */
 		scheduledEventId: number;
+
+		/** Required */
 		startedEventId: number;
+
+		/** Max length: 2048 */
 		details?: string | null;
 	}
 
 	/** Provides the details of the <code>ActivityTaskTimedOut</code> event. */
 	export interface ActivityTaskTimedOutEventAttributesFormProperties {
+
+		/** Required */
 		timeoutType: FormControl<ActivityTaskTimedOutEventAttributesTimeoutType | null | undefined>,
+
+		/** Required */
 		scheduledEventId: FormControl<number | null | undefined>,
+
+		/** Required */
 		startedEventId: FormControl<number | null | undefined>,
+
+		/** Max length: 2048 */
 		details: FormControl<string | null | undefined>,
 	}
 	export function CreateActivityTaskTimedOutEventAttributesFormGroup() {
 		return new FormGroup<ActivityTaskTimedOutEventAttributesFormProperties>({
-			timeoutType: new FormControl<ActivityTaskTimedOutEventAttributesTimeoutType | null | undefined>(undefined),
-			scheduledEventId: new FormControl<number | null | undefined>(undefined),
-			startedEventId: new FormControl<number | null | undefined>(undefined),
-			details: new FormControl<string | null | undefined>(undefined),
+			timeoutType: new FormControl<ActivityTaskTimedOutEventAttributesTimeoutType | null | undefined>(undefined, [Validators.required]),
+			scheduledEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			startedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 		});
 
 	}
@@ -1650,24 +2434,36 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>ActivityTaskCanceled</code> event. */
 	export interface ActivityTaskCanceledEventAttributes {
+
+		/** Max length: 32768 */
 		details?: string | null;
+
+		/** Required */
 		scheduledEventId: number;
+
+		/** Required */
 		startedEventId: number;
 		latestCancelRequestedEventId?: number | null;
 	}
 
 	/** Provides the details of the <code>ActivityTaskCanceled</code> event. */
 	export interface ActivityTaskCanceledEventAttributesFormProperties {
+
+		/** Max length: 32768 */
 		details: FormControl<string | null | undefined>,
+
+		/** Required */
 		scheduledEventId: FormControl<number | null | undefined>,
+
+		/** Required */
 		startedEventId: FormControl<number | null | undefined>,
 		latestCancelRequestedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateActivityTaskCanceledEventAttributesFormGroup() {
 		return new FormGroup<ActivityTaskCanceledEventAttributesFormProperties>({
-			details: new FormControl<string | null | undefined>(undefined),
-			scheduledEventId: new FormControl<number | null | undefined>(undefined),
-			startedEventId: new FormControl<number | null | undefined>(undefined),
+			details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			scheduledEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			startedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			latestCancelRequestedEventId: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1676,19 +2472,35 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>ActivityTaskCancelRequested</code> event. */
 	export interface ActivityTaskCancelRequestedEventAttributes {
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityId: string;
 	}
 
 	/** Provides the details of the <code>ActivityTaskCancelRequested</code> event. */
 	export interface ActivityTaskCancelRequestedEventAttributesFormProperties {
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityId: FormControl<string | null | undefined>,
 	}
 	export function CreateActivityTaskCancelRequestedEventAttributesFormGroup() {
 		return new FormGroup<ActivityTaskCancelRequestedEventAttributesFormProperties>({
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
-			activityId: new FormControl<string | null | undefined>(undefined),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			activityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -1696,7 +2508,15 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>WorkflowExecutionSignaled</code> event. */
 	export interface WorkflowExecutionSignaledEventAttributes {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		signalName: string;
+
+		/** Max length: 32768 */
 		input?: string | null;
 
 		/** Represents a workflow execution. */
@@ -1706,14 +2526,22 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>WorkflowExecutionSignaled</code> event. */
 	export interface WorkflowExecutionSignaledEventAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		signalName: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		input: FormControl<string | null | undefined>,
 		externalInitiatedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateWorkflowExecutionSignaledEventAttributesFormGroup() {
 		return new FormGroup<WorkflowExecutionSignaledEventAttributesFormProperties>({
-			signalName: new FormControl<string | null | undefined>(undefined),
-			input: new FormControl<string | null | undefined>(undefined),
+			signalName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 			externalInitiatedEventId: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1722,22 +2550,42 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>MarkerRecorded</code> event. */
 	export interface MarkerRecordedEventAttributes {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		markerName: string;
+
+		/** Max length: 32768 */
 		details?: string | null;
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
 	}
 
 	/** Provides the details of the <code>MarkerRecorded</code> event. */
 	export interface MarkerRecordedEventAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		markerName: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		details: FormControl<string | null | undefined>,
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateMarkerRecordedEventAttributesFormGroup() {
 		return new FormGroup<MarkerRecordedEventAttributesFormProperties>({
-			markerName: new FormControl<string | null | undefined>(undefined),
-			details: new FormControl<string | null | undefined>(undefined),
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
+			markerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1745,22 +2593,42 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>RecordMarkerFailed</code> event. */
 	export interface RecordMarkerFailedEventAttributes {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		markerName: string;
+
+		/** Required */
 		cause: RecordMarkerFailedEventAttributesCause;
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
 	}
 
 	/** Provides the details of the <code>RecordMarkerFailed</code> event. */
 	export interface RecordMarkerFailedEventAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		markerName: FormControl<string | null | undefined>,
+
+		/** Required */
 		cause: FormControl<RecordMarkerFailedEventAttributesCause | null | undefined>,
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateRecordMarkerFailedEventAttributesFormGroup() {
 		return new FormGroup<RecordMarkerFailedEventAttributesFormProperties>({
-			markerName: new FormControl<string | null | undefined>(undefined),
-			cause: new FormControl<RecordMarkerFailedEventAttributesCause | null | undefined>(undefined),
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
+			markerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			cause: new FormControl<RecordMarkerFailedEventAttributesCause | null | undefined>(undefined, [Validators.required]),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1770,25 +2638,57 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>TimerStarted</code> event. */
 	export interface TimerStartedEventAttributes {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		timerId: string;
+
+		/** Max length: 32768 */
 		control?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 8
+		 * Min length: 1
+		 */
 		startToFireTimeout: string;
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
 	}
 
 	/** Provides the details of the <code>TimerStarted</code> event. */
 	export interface TimerStartedEventAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		timerId: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		control: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 8
+		 * Min length: 1
+		 */
 		startToFireTimeout: FormControl<string | null | undefined>,
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateTimerStartedEventAttributesFormGroup() {
 		return new FormGroup<TimerStartedEventAttributesFormProperties>({
-			timerId: new FormControl<string | null | undefined>(undefined),
-			control: new FormControl<string | null | undefined>(undefined),
-			startToFireTimeout: new FormControl<string | null | undefined>(undefined),
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
+			timerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			startToFireTimeout: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8), Validators.minLength(1)]),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1796,19 +2696,35 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>TimerFired</code> event. */
 	export interface TimerFiredEventAttributes {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		timerId: string;
+
+		/** Required */
 		startedEventId: number;
 	}
 
 	/** Provides the details of the <code>TimerFired</code> event. */
 	export interface TimerFiredEventAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		timerId: FormControl<string | null | undefined>,
+
+		/** Required */
 		startedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateTimerFiredEventAttributesFormGroup() {
 		return new FormGroup<TimerFiredEventAttributesFormProperties>({
-			timerId: new FormControl<string | null | undefined>(undefined),
-			startedEventId: new FormControl<number | null | undefined>(undefined),
+			timerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			startedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1816,22 +2732,42 @@ export namespace MyNS {
 
 	/**  Provides the details of the <code>TimerCanceled</code> event.  */
 	export interface TimerCanceledEventAttributes {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		timerId: string;
+
+		/** Required */
 		startedEventId: number;
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
 	}
 
 	/**  Provides the details of the <code>TimerCanceled</code> event.  */
 	export interface TimerCanceledEventAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		timerId: FormControl<string | null | undefined>,
+
+		/** Required */
 		startedEventId: FormControl<number | null | undefined>,
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateTimerCanceledEventAttributesFormGroup() {
 		return new FormGroup<TimerCanceledEventAttributesFormProperties>({
-			timerId: new FormControl<string | null | undefined>(undefined),
-			startedEventId: new FormControl<number | null | undefined>(undefined),
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
+			timerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			startedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1839,6 +2775,12 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>StartChildWorkflowExecutionInitiated</code> event. */
 	export interface StartChildWorkflowExecutionInitiatedEventAttributes {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: string;
 
 		/**
@@ -1846,8 +2788,14 @@ export namespace MyNS {
 		 * Required
 		 */
 		workflowType: WorkflowType;
+
+		/** Max length: 32768 */
 		control?: string | null;
+
+		/** Max length: 32768 */
 		input?: string | null;
+
+		/** Max length: 8 */
 		executionStartToCloseTimeout?: string | null;
 
 		/**
@@ -1856,36 +2804,72 @@ export namespace MyNS {
 		 */
 		taskList: TaskList;
 		taskPriority?: string | null;
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
+
+		/** Required */
 		childPolicy: WorkflowExecutionConfigurationChildPolicy;
+
+		/** Max length: 8 */
 		taskStartToCloseTimeout?: string | null;
+
+		/** Maximum items: 5 */
 		tagList?: Array<string>;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		lambdaRole?: string | null;
 	}
 
 	/** Provides the details of the <code>StartChildWorkflowExecutionInitiated</code> event. */
 	export interface StartChildWorkflowExecutionInitiatedEventAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		control: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		input: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		executionStartToCloseTimeout: FormControl<string | null | undefined>,
 		taskPriority: FormControl<string | null | undefined>,
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
+
+		/** Required */
 		childPolicy: FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>,
+
+		/** Max length: 8 */
 		taskStartToCloseTimeout: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		lambdaRole: FormControl<string | null | undefined>,
 	}
 	export function CreateStartChildWorkflowExecutionInitiatedEventAttributesFormGroup() {
 		return new FormGroup<StartChildWorkflowExecutionInitiatedEventAttributesFormProperties>({
-			workflowId: new FormControl<string | null | undefined>(undefined),
-			control: new FormControl<string | null | undefined>(undefined),
-			input: new FormControl<string | null | undefined>(undefined),
-			executionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			executionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 			taskPriority: new FormControl<string | null | undefined>(undefined),
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
-			childPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined),
-			taskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined),
-			lambdaRole: new FormControl<string | null | undefined>(undefined),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			childPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined, [Validators.required]),
+			taskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
+			lambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 		});
 
 	}
@@ -1905,16 +2889,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		workflowType: WorkflowType;
+
+		/** Required */
 		initiatedEventId: number;
 	}
 
 	/** Provides the details of the <code>ChildWorkflowExecutionStarted</code> event. */
 	export interface ChildWorkflowExecutionStartedEventAttributesFormProperties {
+
+		/** Required */
 		initiatedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateChildWorkflowExecutionStartedEventAttributesFormGroup() {
 		return new FormGroup<ChildWorkflowExecutionStartedEventAttributesFormProperties>({
-			initiatedEventId: new FormControl<number | null | undefined>(undefined),
+			initiatedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1934,22 +2922,34 @@ export namespace MyNS {
 		 * Required
 		 */
 		workflowType: WorkflowType;
+
+		/** Max length: 32768 */
 		result?: string | null;
+
+		/** Required */
 		initiatedEventId: number;
+
+		/** Required */
 		startedEventId: number;
 	}
 
 	/** Provides the details of the <code>ChildWorkflowExecutionCompleted</code> event. */
 	export interface ChildWorkflowExecutionCompletedEventAttributesFormProperties {
+
+		/** Max length: 32768 */
 		result: FormControl<string | null | undefined>,
+
+		/** Required */
 		initiatedEventId: FormControl<number | null | undefined>,
+
+		/** Required */
 		startedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateChildWorkflowExecutionCompletedEventAttributesFormGroup() {
 		return new FormGroup<ChildWorkflowExecutionCompletedEventAttributesFormProperties>({
-			result: new FormControl<string | null | undefined>(undefined),
-			initiatedEventId: new FormControl<number | null | undefined>(undefined),
-			startedEventId: new FormControl<number | null | undefined>(undefined),
+			result: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			initiatedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			startedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1969,25 +2969,41 @@ export namespace MyNS {
 		 * Required
 		 */
 		workflowType: WorkflowType;
+
+		/** Max length: 256 */
 		reason?: string | null;
+
+		/** Max length: 32768 */
 		details?: string | null;
+
+		/** Required */
 		initiatedEventId: number;
+
+		/** Required */
 		startedEventId: number;
 	}
 
 	/** Provides the details of the <code>ChildWorkflowExecutionFailed</code> event. */
 	export interface ChildWorkflowExecutionFailedEventAttributesFormProperties {
+
+		/** Max length: 256 */
 		reason: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		details: FormControl<string | null | undefined>,
+
+		/** Required */
 		initiatedEventId: FormControl<number | null | undefined>,
+
+		/** Required */
 		startedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateChildWorkflowExecutionFailedEventAttributesFormGroup() {
 		return new FormGroup<ChildWorkflowExecutionFailedEventAttributesFormProperties>({
-			reason: new FormControl<string | null | undefined>(undefined),
-			details: new FormControl<string | null | undefined>(undefined),
-			initiatedEventId: new FormControl<number | null | undefined>(undefined),
-			startedEventId: new FormControl<number | null | undefined>(undefined),
+			reason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			initiatedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			startedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2007,22 +3023,34 @@ export namespace MyNS {
 		 * Required
 		 */
 		workflowType: WorkflowType;
+
+		/** Required */
 		timeoutType: WorkflowExecutionTimedOutEventAttributesTimeoutType;
+
+		/** Required */
 		initiatedEventId: number;
+
+		/** Required */
 		startedEventId: number;
 	}
 
 	/** Provides the details of the <code>ChildWorkflowExecutionTimedOut</code> event. */
 	export interface ChildWorkflowExecutionTimedOutEventAttributesFormProperties {
+
+		/** Required */
 		timeoutType: FormControl<WorkflowExecutionTimedOutEventAttributesTimeoutType | null | undefined>,
+
+		/** Required */
 		initiatedEventId: FormControl<number | null | undefined>,
+
+		/** Required */
 		startedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateChildWorkflowExecutionTimedOutEventAttributesFormGroup() {
 		return new FormGroup<ChildWorkflowExecutionTimedOutEventAttributesFormProperties>({
-			timeoutType: new FormControl<WorkflowExecutionTimedOutEventAttributesTimeoutType | null | undefined>(undefined),
-			initiatedEventId: new FormControl<number | null | undefined>(undefined),
-			startedEventId: new FormControl<number | null | undefined>(undefined),
+			timeoutType: new FormControl<WorkflowExecutionTimedOutEventAttributesTimeoutType | null | undefined>(undefined, [Validators.required]),
+			initiatedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			startedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2042,22 +3070,34 @@ export namespace MyNS {
 		 * Required
 		 */
 		workflowType: WorkflowType;
+
+		/** Max length: 32768 */
 		details?: string | null;
+
+		/** Required */
 		initiatedEventId: number;
+
+		/** Required */
 		startedEventId: number;
 	}
 
 	/** Provide details of the <code>ChildWorkflowExecutionCanceled</code> event. */
 	export interface ChildWorkflowExecutionCanceledEventAttributesFormProperties {
+
+		/** Max length: 32768 */
 		details: FormControl<string | null | undefined>,
+
+		/** Required */
 		initiatedEventId: FormControl<number | null | undefined>,
+
+		/** Required */
 		startedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateChildWorkflowExecutionCanceledEventAttributesFormGroup() {
 		return new FormGroup<ChildWorkflowExecutionCanceledEventAttributesFormProperties>({
-			details: new FormControl<string | null | undefined>(undefined),
-			initiatedEventId: new FormControl<number | null | undefined>(undefined),
-			startedEventId: new FormControl<number | null | undefined>(undefined),
+			details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			initiatedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			startedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2077,19 +3117,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		workflowType: WorkflowType;
+
+		/** Required */
 		initiatedEventId: number;
+
+		/** Required */
 		startedEventId: number;
 	}
 
 	/** Provides the details of the <code>ChildWorkflowExecutionTerminated</code> event. */
 	export interface ChildWorkflowExecutionTerminatedEventAttributesFormProperties {
+
+		/** Required */
 		initiatedEventId: FormControl<number | null | undefined>,
+
+		/** Required */
 		startedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateChildWorkflowExecutionTerminatedEventAttributesFormGroup() {
 		return new FormGroup<ChildWorkflowExecutionTerminatedEventAttributesFormProperties>({
-			initiatedEventId: new FormControl<number | null | undefined>(undefined),
-			startedEventId: new FormControl<number | null | undefined>(undefined),
+			initiatedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			startedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2097,31 +3145,71 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>SignalExternalWorkflowExecutionInitiated</code> event. */
 	export interface SignalExternalWorkflowExecutionInitiatedEventAttributes {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: string;
+
+		/** Max length: 64 */
 		runId?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		signalName: string;
+
+		/** Max length: 32768 */
 		input?: string | null;
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
+
+		/** Max length: 32768 */
 		control?: string | null;
 	}
 
 	/** Provides the details of the <code>SignalExternalWorkflowExecutionInitiated</code> event. */
 	export interface SignalExternalWorkflowExecutionInitiatedEventAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: FormControl<string | null | undefined>,
+
+		/** Max length: 64 */
 		runId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		signalName: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		input: FormControl<string | null | undefined>,
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
+
+		/** Max length: 32768 */
 		control: FormControl<string | null | undefined>,
 	}
 	export function CreateSignalExternalWorkflowExecutionInitiatedEventAttributesFormGroup() {
 		return new FormGroup<SignalExternalWorkflowExecutionInitiatedEventAttributesFormProperties>({
-			workflowId: new FormControl<string | null | undefined>(undefined),
-			runId: new FormControl<string | null | undefined>(undefined),
-			signalName: new FormControl<string | null | undefined>(undefined),
-			input: new FormControl<string | null | undefined>(undefined),
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
-			control: new FormControl<string | null | undefined>(undefined),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			runId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			signalName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -2135,16 +3223,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		workflowExecution: WorkflowExecution;
+
+		/** Required */
 		initiatedEventId: number;
 	}
 
 	/** Provides the details of the <code>ExternalWorkflowExecutionSignaled</code> event. */
 	export interface ExternalWorkflowExecutionSignaledEventAttributesFormProperties {
+
+		/** Required */
 		initiatedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateExternalWorkflowExecutionSignaledEventAttributesFormGroup() {
 		return new FormGroup<ExternalWorkflowExecutionSignaledEventAttributesFormProperties>({
-			initiatedEventId: new FormControl<number | null | undefined>(undefined),
+			initiatedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2152,31 +3244,63 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>SignalExternalWorkflowExecutionFailed</code> event. */
 	export interface SignalExternalWorkflowExecutionFailedEventAttributes {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: string;
+
+		/** Max length: 64 */
 		runId?: string | null;
+
+		/** Required */
 		cause: SignalExternalWorkflowExecutionFailedEventAttributesCause;
+
+		/** Required */
 		initiatedEventId: number;
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
+
+		/** Max length: 32768 */
 		control?: string | null;
 	}
 
 	/** Provides the details of the <code>SignalExternalWorkflowExecutionFailed</code> event. */
 	export interface SignalExternalWorkflowExecutionFailedEventAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: FormControl<string | null | undefined>,
+
+		/** Max length: 64 */
 		runId: FormControl<string | null | undefined>,
+
+		/** Required */
 		cause: FormControl<SignalExternalWorkflowExecutionFailedEventAttributesCause | null | undefined>,
+
+		/** Required */
 		initiatedEventId: FormControl<number | null | undefined>,
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
+
+		/** Max length: 32768 */
 		control: FormControl<string | null | undefined>,
 	}
 	export function CreateSignalExternalWorkflowExecutionFailedEventAttributesFormGroup() {
 		return new FormGroup<SignalExternalWorkflowExecutionFailedEventAttributesFormProperties>({
-			workflowId: new FormControl<string | null | undefined>(undefined),
-			runId: new FormControl<string | null | undefined>(undefined),
-			cause: new FormControl<SignalExternalWorkflowExecutionFailedEventAttributesCause | null | undefined>(undefined),
-			initiatedEventId: new FormControl<number | null | undefined>(undefined),
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
-			control: new FormControl<string | null | undefined>(undefined),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			runId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			cause: new FormControl<SignalExternalWorkflowExecutionFailedEventAttributesCause | null | undefined>(undefined, [Validators.required]),
+			initiatedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -2192,16 +3316,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		workflowExecution: WorkflowExecution;
+
+		/** Required */
 		initiatedEventId: number;
 	}
 
 	/** Provides the details of the <code>ExternalWorkflowExecutionCancelRequested</code> event. */
 	export interface ExternalWorkflowExecutionCancelRequestedEventAttributesFormProperties {
+
+		/** Required */
 		initiatedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateExternalWorkflowExecutionCancelRequestedEventAttributesFormGroup() {
 		return new FormGroup<ExternalWorkflowExecutionCancelRequestedEventAttributesFormProperties>({
-			initiatedEventId: new FormControl<number | null | undefined>(undefined),
+			initiatedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2209,25 +3337,49 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event. */
 	export interface RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: string;
+
+		/** Max length: 64 */
 		runId?: string | null;
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
+
+		/** Max length: 32768 */
 		control?: string | null;
 	}
 
 	/** Provides the details of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event. */
 	export interface RequestCancelExternalWorkflowExecutionInitiatedEventAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: FormControl<string | null | undefined>,
+
+		/** Max length: 64 */
 		runId: FormControl<string | null | undefined>,
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
+
+		/** Max length: 32768 */
 		control: FormControl<string | null | undefined>,
 	}
 	export function CreateRequestCancelExternalWorkflowExecutionInitiatedEventAttributesFormGroup() {
 		return new FormGroup<RequestCancelExternalWorkflowExecutionInitiatedEventAttributesFormProperties>({
-			workflowId: new FormControl<string | null | undefined>(undefined),
-			runId: new FormControl<string | null | undefined>(undefined),
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
-			control: new FormControl<string | null | undefined>(undefined),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			runId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -2235,31 +3387,63 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>RequestCancelExternalWorkflowExecutionFailed</code> event. */
 	export interface RequestCancelExternalWorkflowExecutionFailedEventAttributes {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: string;
+
+		/** Max length: 64 */
 		runId?: string | null;
+
+		/** Required */
 		cause: RequestCancelExternalWorkflowExecutionFailedEventAttributesCause;
+
+		/** Required */
 		initiatedEventId: number;
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
+
+		/** Max length: 32768 */
 		control?: string | null;
 	}
 
 	/** Provides the details of the <code>RequestCancelExternalWorkflowExecutionFailed</code> event. */
 	export interface RequestCancelExternalWorkflowExecutionFailedEventAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: FormControl<string | null | undefined>,
+
+		/** Max length: 64 */
 		runId: FormControl<string | null | undefined>,
+
+		/** Required */
 		cause: FormControl<RequestCancelExternalWorkflowExecutionFailedEventAttributesCause | null | undefined>,
+
+		/** Required */
 		initiatedEventId: FormControl<number | null | undefined>,
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
+
+		/** Max length: 32768 */
 		control: FormControl<string | null | undefined>,
 	}
 	export function CreateRequestCancelExternalWorkflowExecutionFailedEventAttributesFormGroup() {
 		return new FormGroup<RequestCancelExternalWorkflowExecutionFailedEventAttributesFormProperties>({
-			workflowId: new FormControl<string | null | undefined>(undefined),
-			runId: new FormControl<string | null | undefined>(undefined),
-			cause: new FormControl<RequestCancelExternalWorkflowExecutionFailedEventAttributesCause | null | undefined>(undefined),
-			initiatedEventId: new FormControl<number | null | undefined>(undefined),
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
-			control: new FormControl<string | null | undefined>(undefined),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			runId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			cause: new FormControl<RequestCancelExternalWorkflowExecutionFailedEventAttributesCause | null | undefined>(undefined, [Validators.required]),
+			initiatedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -2275,22 +3459,42 @@ export namespace MyNS {
 		 * Required
 		 */
 		activityType: ActivityType;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityId: string;
+
+		/** Required */
 		cause: ScheduleActivityTaskFailedEventAttributesCause;
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
 	}
 
 	/** Provides the details of the <code>ScheduleActivityTaskFailed</code> event. */
 	export interface ScheduleActivityTaskFailedEventAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityId: FormControl<string | null | undefined>,
+
+		/** Required */
 		cause: FormControl<ScheduleActivityTaskFailedEventAttributesCause | null | undefined>,
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateScheduleActivityTaskFailedEventAttributesFormGroup() {
 		return new FormGroup<ScheduleActivityTaskFailedEventAttributesFormProperties>({
-			activityId: new FormControl<string | null | undefined>(undefined),
-			cause: new FormControl<ScheduleActivityTaskFailedEventAttributesCause | null | undefined>(undefined),
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
+			activityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			cause: new FormControl<ScheduleActivityTaskFailedEventAttributesCause | null | undefined>(undefined, [Validators.required]),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2300,22 +3504,42 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>RequestCancelActivityTaskFailed</code> event. */
 	export interface RequestCancelActivityTaskFailedEventAttributes {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityId: string;
+
+		/** Required */
 		cause: RequestCancelActivityTaskFailedEventAttributesCause;
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
 	}
 
 	/** Provides the details of the <code>RequestCancelActivityTaskFailed</code> event. */
 	export interface RequestCancelActivityTaskFailedEventAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityId: FormControl<string | null | undefined>,
+
+		/** Required */
 		cause: FormControl<RequestCancelActivityTaskFailedEventAttributesCause | null | undefined>,
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateRequestCancelActivityTaskFailedEventAttributesFormGroup() {
 		return new FormGroup<RequestCancelActivityTaskFailedEventAttributesFormProperties>({
-			activityId: new FormControl<string | null | undefined>(undefined),
-			cause: new FormControl<RequestCancelActivityTaskFailedEventAttributesCause | null | undefined>(undefined),
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
+			activityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			cause: new FormControl<RequestCancelActivityTaskFailedEventAttributesCause | null | undefined>(undefined, [Validators.required]),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2325,22 +3549,42 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>StartTimerFailed</code> event. */
 	export interface StartTimerFailedEventAttributes {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		timerId: string;
+
+		/** Required */
 		cause: StartTimerFailedEventAttributesCause;
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
 	}
 
 	/** Provides the details of the <code>StartTimerFailed</code> event. */
 	export interface StartTimerFailedEventAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		timerId: FormControl<string | null | undefined>,
+
+		/** Required */
 		cause: FormControl<StartTimerFailedEventAttributesCause | null | undefined>,
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateStartTimerFailedEventAttributesFormGroup() {
 		return new FormGroup<StartTimerFailedEventAttributesFormProperties>({
-			timerId: new FormControl<string | null | undefined>(undefined),
-			cause: new FormControl<StartTimerFailedEventAttributesCause | null | undefined>(undefined),
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
+			timerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			cause: new FormControl<StartTimerFailedEventAttributesCause | null | undefined>(undefined, [Validators.required]),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2350,22 +3594,42 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>CancelTimerFailed</code> event. */
 	export interface CancelTimerFailedEventAttributes {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		timerId: string;
+
+		/** Required */
 		cause: CancelTimerFailedEventAttributesCause;
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
 	}
 
 	/** Provides the details of the <code>CancelTimerFailed</code> event. */
 	export interface CancelTimerFailedEventAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		timerId: FormControl<string | null | undefined>,
+
+		/** Required */
 		cause: FormControl<CancelTimerFailedEventAttributesCause | null | undefined>,
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateCancelTimerFailedEventAttributesFormGroup() {
 		return new FormGroup<CancelTimerFailedEventAttributesFormProperties>({
-			timerId: new FormControl<string | null | undefined>(undefined),
-			cause: new FormControl<CancelTimerFailedEventAttributesCause | null | undefined>(undefined),
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
+			timerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			cause: new FormControl<CancelTimerFailedEventAttributesCause | null | undefined>(undefined, [Validators.required]),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2381,28 +3645,56 @@ export namespace MyNS {
 		 * Required
 		 */
 		workflowType: WorkflowType;
+
+		/** Required */
 		cause: StartChildWorkflowExecutionFailedEventAttributesCause;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: string;
+
+		/** Required */
 		initiatedEventId: number;
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
+
+		/** Max length: 32768 */
 		control?: string | null;
 	}
 
 	/** Provides the details of the <code>StartChildWorkflowExecutionFailed</code> event. */
 	export interface StartChildWorkflowExecutionFailedEventAttributesFormProperties {
+
+		/** Required */
 		cause: FormControl<StartChildWorkflowExecutionFailedEventAttributesCause | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: FormControl<string | null | undefined>,
+
+		/** Required */
 		initiatedEventId: FormControl<number | null | undefined>,
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
+
+		/** Max length: 32768 */
 		control: FormControl<string | null | undefined>,
 	}
 	export function CreateStartChildWorkflowExecutionFailedEventAttributesFormGroup() {
 		return new FormGroup<StartChildWorkflowExecutionFailedEventAttributesFormProperties>({
-			cause: new FormControl<StartChildWorkflowExecutionFailedEventAttributesCause | null | undefined>(undefined),
-			workflowId: new FormControl<string | null | undefined>(undefined),
-			initiatedEventId: new FormControl<number | null | undefined>(undefined),
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
-			control: new FormControl<string | null | undefined>(undefined),
+			cause: new FormControl<StartChildWorkflowExecutionFailedEventAttributesCause | null | undefined>(undefined, [Validators.required]),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			initiatedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -2412,31 +3704,77 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event types. */
 	export interface LambdaFunctionScheduledEventAttributes {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		id: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		name: string;
+
+		/** Max length: 32768 */
 		control?: string | null;
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		input?: string | null;
+
+		/** Max length: 8 */
 		startToCloseTimeout?: string | null;
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
 	}
 
 	/** Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event types. */
 	export interface LambdaFunctionScheduledEventAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		control: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		input: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		startToCloseTimeout: FormControl<string | null | undefined>,
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateLambdaFunctionScheduledEventAttributesFormGroup() {
 		return new FormGroup<LambdaFunctionScheduledEventAttributesFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			control: new FormControl<string | null | undefined>(undefined),
-			input: new FormControl<string | null | undefined>(undefined),
-			startToCloseTimeout: new FormControl<string | null | undefined>(undefined),
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(0)]),
+			startToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2444,16 +3782,20 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set for other event types. */
 	export interface LambdaFunctionStartedEventAttributes {
+
+		/** Required */
 		scheduledEventId: number;
 	}
 
 	/** Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set for other event types. */
 	export interface LambdaFunctionStartedEventAttributesFormProperties {
+
+		/** Required */
 		scheduledEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateLambdaFunctionStartedEventAttributesFormGroup() {
 		return new FormGroup<LambdaFunctionStartedEventAttributesFormProperties>({
-			scheduledEventId: new FormControl<number | null | undefined>(undefined),
+			scheduledEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2461,22 +3803,34 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set for other event types. */
 	export interface LambdaFunctionCompletedEventAttributes {
+
+		/** Required */
 		scheduledEventId: number;
+
+		/** Required */
 		startedEventId: number;
+
+		/** Max length: 32768 */
 		result?: string | null;
 	}
 
 	/** Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set for other event types. */
 	export interface LambdaFunctionCompletedEventAttributesFormProperties {
+
+		/** Required */
 		scheduledEventId: FormControl<number | null | undefined>,
+
+		/** Required */
 		startedEventId: FormControl<number | null | undefined>,
+
+		/** Max length: 32768 */
 		result: FormControl<string | null | undefined>,
 	}
 	export function CreateLambdaFunctionCompletedEventAttributesFormGroup() {
 		return new FormGroup<LambdaFunctionCompletedEventAttributesFormProperties>({
-			scheduledEventId: new FormControl<number | null | undefined>(undefined),
-			startedEventId: new FormControl<number | null | undefined>(undefined),
-			result: new FormControl<string | null | undefined>(undefined),
+			scheduledEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			startedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			result: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -2484,25 +3838,41 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't set for other event types. */
 	export interface LambdaFunctionFailedEventAttributes {
+
+		/** Required */
 		scheduledEventId: number;
+
+		/** Required */
 		startedEventId: number;
+
+		/** Max length: 256 */
 		reason?: string | null;
+
+		/** Max length: 32768 */
 		details?: string | null;
 	}
 
 	/** Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't set for other event types. */
 	export interface LambdaFunctionFailedEventAttributesFormProperties {
+
+		/** Required */
 		scheduledEventId: FormControl<number | null | undefined>,
+
+		/** Required */
 		startedEventId: FormControl<number | null | undefined>,
+
+		/** Max length: 256 */
 		reason: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		details: FormControl<string | null | undefined>,
 	}
 	export function CreateLambdaFunctionFailedEventAttributesFormGroup() {
 		return new FormGroup<LambdaFunctionFailedEventAttributesFormProperties>({
-			scheduledEventId: new FormControl<number | null | undefined>(undefined),
-			startedEventId: new FormControl<number | null | undefined>(undefined),
-			reason: new FormControl<string | null | undefined>(undefined),
-			details: new FormControl<string | null | undefined>(undefined),
+			scheduledEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			startedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			reason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -2510,21 +3880,29 @@ export namespace MyNS {
 
 	/** Provides details of the <code>LambdaFunctionTimedOut</code> event. */
 	export interface LambdaFunctionTimedOutEventAttributes {
+
+		/** Required */
 		scheduledEventId: number;
+
+		/** Required */
 		startedEventId: number;
 		timeoutType?: WorkflowExecutionTimedOutEventAttributesTimeoutType | null;
 	}
 
 	/** Provides details of the <code>LambdaFunctionTimedOut</code> event. */
 	export interface LambdaFunctionTimedOutEventAttributesFormProperties {
+
+		/** Required */
 		scheduledEventId: FormControl<number | null | undefined>,
+
+		/** Required */
 		startedEventId: FormControl<number | null | undefined>,
 		timeoutType: FormControl<WorkflowExecutionTimedOutEventAttributesTimeoutType | null | undefined>,
 	}
 	export function CreateLambdaFunctionTimedOutEventAttributesFormGroup() {
 		return new FormGroup<LambdaFunctionTimedOutEventAttributesFormProperties>({
-			scheduledEventId: new FormControl<number | null | undefined>(undefined),
-			startedEventId: new FormControl<number | null | undefined>(undefined),
+			scheduledEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			startedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			timeoutType: new FormControl<WorkflowExecutionTimedOutEventAttributesTimeoutType | null | undefined>(undefined),
 		});
 
@@ -2533,25 +3911,57 @@ export namespace MyNS {
 
 	/** Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event. It isn't set for other event types. */
 	export interface ScheduleLambdaFunctionFailedEventAttributes {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		id: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		name: string;
+
+		/** Required */
 		cause: ScheduleLambdaFunctionFailedEventAttributesCause;
+
+		/** Required */
 		decisionTaskCompletedEventId: number;
 	}
 
 	/** Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event. It isn't set for other event types. */
 	export interface ScheduleLambdaFunctionFailedEventAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Required */
 		cause: FormControl<ScheduleLambdaFunctionFailedEventAttributesCause | null | undefined>,
+
+		/** Required */
 		decisionTaskCompletedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateScheduleLambdaFunctionFailedEventAttributesFormGroup() {
 		return new FormGroup<ScheduleLambdaFunctionFailedEventAttributesFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			cause: new FormControl<ScheduleLambdaFunctionFailedEventAttributesCause | null | undefined>(undefined),
-			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			cause: new FormControl<ScheduleLambdaFunctionFailedEventAttributesCause | null | undefined>(undefined, [Validators.required]),
+			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2563,6 +3973,8 @@ export namespace MyNS {
 	export interface StartLambdaFunctionFailedEventAttributes {
 		scheduledEventId?: number | null;
 		cause?: StartLambdaFunctionFailedEventAttributesCause | null;
+
+		/** Max length: 1728 */
 		message?: string | null;
 	}
 
@@ -2570,13 +3982,15 @@ export namespace MyNS {
 	export interface StartLambdaFunctionFailedEventAttributesFormProperties {
 		scheduledEventId: FormControl<number | null | undefined>,
 		cause: FormControl<StartLambdaFunctionFailedEventAttributesCause | null | undefined>,
+
+		/** Max length: 1728 */
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateStartLambdaFunctionFailedEventAttributesFormGroup() {
 		return new FormGroup<StartLambdaFunctionFailedEventAttributesFormProperties>({
 			scheduledEventId: new FormControl<number | null | undefined>(undefined),
 			cause: new FormControl<StartLambdaFunctionFailedEventAttributesCause | null | undefined>(undefined),
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1728)]),
 		});
 
 	}
@@ -2584,6 +3998,12 @@ export namespace MyNS {
 	export enum StartLambdaFunctionFailedEventAttributesCause { ASSUME_ROLE_FAILED = 0 }
 
 	export interface GetWorkflowExecutionHistoryInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: string;
 
 		/**
@@ -2591,21 +4011,41 @@ export namespace MyNS {
 		 * Required
 		 */
 		execution: WorkflowExecution;
+
+		/** Max length: 2048 */
 		nextPageToken?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maximumPageSize?: number | null;
 		reverseOrder?: boolean | null;
 	}
 	export interface GetWorkflowExecutionHistoryInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: FormControl<string | null | undefined>,
+
+		/** Max length: 2048 */
 		nextPageToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maximumPageSize: FormControl<number | null | undefined>,
 		reverseOrder: FormControl<boolean | null | undefined>,
 	}
 	export function CreateGetWorkflowExecutionHistoryInputFormGroup() {
 		return new FormGroup<GetWorkflowExecutionHistoryInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined),
-			nextPageToken: new FormControl<string | null | undefined>(undefined),
-			maximumPageSize: new FormControl<number | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			nextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			maximumPageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 			reverseOrder: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2614,44 +4054,90 @@ export namespace MyNS {
 
 	/** Contains a paginated list of activity type information structures. */
 	export interface ActivityTypeInfos {
+
+		/** Required */
 		typeInfos: Array<ActivityTypeInfo>;
+
+		/** Max length: 2048 */
 		nextPageToken?: string | null;
 	}
 
 	/** Contains a paginated list of activity type information structures. */
 	export interface ActivityTypeInfosFormProperties {
+
+		/** Max length: 2048 */
 		nextPageToken: FormControl<string | null | undefined>,
 	}
 	export function CreateActivityTypeInfosFormGroup() {
 		return new FormGroup<ActivityTypeInfosFormProperties>({
-			nextPageToken: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 		});
 
 	}
 
 	export interface ListActivityTypesInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name?: string | null;
+
+		/** Required */
 		registrationStatus: ActivityTypeInfoStatus;
+
+		/** Max length: 2048 */
 		nextPageToken?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maximumPageSize?: number | null;
 		reverseOrder?: boolean | null;
 	}
 	export interface ListActivityTypesInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Required */
 		registrationStatus: FormControl<ActivityTypeInfoStatus | null | undefined>,
+
+		/** Max length: 2048 */
 		nextPageToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maximumPageSize: FormControl<number | null | undefined>,
 		reverseOrder: FormControl<boolean | null | undefined>,
 	}
 	export function CreateListActivityTypesInputFormGroup() {
 		return new FormGroup<ListActivityTypesInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			registrationStatus: new FormControl<ActivityTypeInfoStatus | null | undefined>(undefined),
-			nextPageToken: new FormControl<string | null | undefined>(undefined),
-			maximumPageSize: new FormControl<number | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			registrationStatus: new FormControl<ActivityTypeInfoStatus | null | undefined>(undefined, [Validators.required]),
+			nextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			maximumPageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 			reverseOrder: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2660,22 +4146,34 @@ export namespace MyNS {
 
 	/** Contains a paginated list of information about workflow executions. */
 	export interface WorkflowExecutionInfos {
+
+		/** Required */
 		executionInfos: Array<WorkflowExecutionInfo>;
+
+		/** Max length: 2048 */
 		nextPageToken?: string | null;
 	}
 
 	/** Contains a paginated list of information about workflow executions. */
 	export interface WorkflowExecutionInfosFormProperties {
+
+		/** Max length: 2048 */
 		nextPageToken: FormControl<string | null | undefined>,
 	}
 	export function CreateWorkflowExecutionInfosFormGroup() {
 		return new FormGroup<WorkflowExecutionInfosFormProperties>({
-			nextPageToken: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 		});
 
 	}
 
 	export interface ListClosedWorkflowExecutionsInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: string;
 
 		/** Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be satisfied by each returned query result. The parameter values are in the <a href="https://en.wikipedia.org/wiki/Unix_time">Unix Time format</a>. For example: <code>"oldestDate": 1325376070.</code> */
@@ -2695,21 +4193,41 @@ export namespace MyNS {
 
 		/** Used to filter the workflow executions in visibility APIs based on a tag. */
 		tagFilter?: TagFilter;
+
+		/** Max length: 2048 */
 		nextPageToken?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maximumPageSize?: number | null;
 		reverseOrder?: boolean | null;
 	}
 	export interface ListClosedWorkflowExecutionsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: FormControl<string | null | undefined>,
+
+		/** Max length: 2048 */
 		nextPageToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maximumPageSize: FormControl<number | null | undefined>,
 		reverseOrder: FormControl<boolean | null | undefined>,
 	}
 	export function CreateListClosedWorkflowExecutionsInputFormGroup() {
 		return new FormGroup<ListClosedWorkflowExecutionsInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined),
-			nextPageToken: new FormControl<string | null | undefined>(undefined),
-			maximumPageSize: new FormControl<number | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			nextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			maximumPageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 			reverseOrder: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2718,44 +4236,74 @@ export namespace MyNS {
 
 	/** Contains a paginated collection of DomainInfo structures. */
 	export interface DomainInfos {
+
+		/** Required */
 		domainInfos: Array<DomainInfo>;
+
+		/** Max length: 2048 */
 		nextPageToken?: string | null;
 	}
 
 	/** Contains a paginated collection of DomainInfo structures. */
 	export interface DomainInfosFormProperties {
+
+		/** Max length: 2048 */
 		nextPageToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDomainInfosFormGroup() {
 		return new FormGroup<DomainInfosFormProperties>({
-			nextPageToken: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 		});
 
 	}
 
 	export interface ListDomainsInput {
+
+		/** Max length: 2048 */
 		nextPageToken?: string | null;
+
+		/** Required */
 		registrationStatus: ActivityTypeInfoStatus;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maximumPageSize?: number | null;
 		reverseOrder?: boolean | null;
 	}
 	export interface ListDomainsInputFormProperties {
+
+		/** Max length: 2048 */
 		nextPageToken: FormControl<string | null | undefined>,
+
+		/** Required */
 		registrationStatus: FormControl<ActivityTypeInfoStatus | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maximumPageSize: FormControl<number | null | undefined>,
 		reverseOrder: FormControl<boolean | null | undefined>,
 	}
 	export function CreateListDomainsInputFormGroup() {
 		return new FormGroup<ListDomainsInputFormProperties>({
-			nextPageToken: new FormControl<string | null | undefined>(undefined),
-			registrationStatus: new FormControl<ActivityTypeInfoStatus | null | undefined>(undefined),
-			maximumPageSize: new FormControl<number | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			registrationStatus: new FormControl<ActivityTypeInfoStatus | null | undefined>(undefined, [Validators.required]),
+			maximumPageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 			reverseOrder: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ListOpenWorkflowExecutionsInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: string;
 
 		/**
@@ -2769,7 +4317,14 @@ export namespace MyNS {
 
 		/** Used to filter the workflow executions in visibility APIs based on a tag. */
 		tagFilter?: TagFilter;
+
+		/** Max length: 2048 */
 		nextPageToken?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maximumPageSize?: number | null;
 		reverseOrder?: boolean | null;
 
@@ -2777,16 +4332,29 @@ export namespace MyNS {
 		executionFilter?: WorkflowExecutionFilter;
 	}
 	export interface ListOpenWorkflowExecutionsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: FormControl<string | null | undefined>,
+
+		/** Max length: 2048 */
 		nextPageToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maximumPageSize: FormControl<number | null | undefined>,
 		reverseOrder: FormControl<boolean | null | undefined>,
 	}
 	export function CreateListOpenWorkflowExecutionsInputFormGroup() {
 		return new FormGroup<ListOpenWorkflowExecutionsInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined),
-			nextPageToken: new FormControl<string | null | undefined>(undefined),
-			maximumPageSize: new FormControl<number | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			nextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			maximumPageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 			reverseOrder: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2806,32 +4374,60 @@ export namespace MyNS {
 
 	/** <p>Tags are key-value pairs that can be associated with Amazon SWF state machines and activities.</p> <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p> */
 	export interface ResourceTag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		key: string;
+
+		/** Max length: 256 */
 		value?: string | null;
 	}
 
 	/** <p>Tags are key-value pairs that can be associated with Amazon SWF state machines and activities.</p> <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p> */
 	export interface ResourceTagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		key: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateResourceTagFormGroup() {
 		return new FormGroup<ResourceTagFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface ListTagsForResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		resourceArn: string;
 	}
 	export interface ListTagsForResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceInputFormGroup() {
 		return new FormGroup<ListTagsForResourceInputFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
 		});
 
 	}
@@ -2849,44 +4445,90 @@ export namespace MyNS {
 
 	/** Contains a paginated list of information structures about workflow types. */
 	export interface WorkflowTypeInfos {
+
+		/** Required */
 		typeInfos: Array<WorkflowTypeInfo>;
+
+		/** Max length: 2048 */
 		nextPageToken?: string | null;
 	}
 
 	/** Contains a paginated list of information structures about workflow types. */
 	export interface WorkflowTypeInfosFormProperties {
+
+		/** Max length: 2048 */
 		nextPageToken: FormControl<string | null | undefined>,
 	}
 	export function CreateWorkflowTypeInfosFormGroup() {
 		return new FormGroup<WorkflowTypeInfosFormProperties>({
-			nextPageToken: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 		});
 
 	}
 
 	export interface ListWorkflowTypesInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name?: string | null;
+
+		/** Required */
 		registrationStatus: ActivityTypeInfoStatus;
+
+		/** Max length: 2048 */
 		nextPageToken?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maximumPageSize?: number | null;
 		reverseOrder?: boolean | null;
 	}
 	export interface ListWorkflowTypesInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Required */
 		registrationStatus: FormControl<ActivityTypeInfoStatus | null | undefined>,
+
+		/** Max length: 2048 */
 		nextPageToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maximumPageSize: FormControl<number | null | undefined>,
 		reverseOrder: FormControl<boolean | null | undefined>,
 	}
 	export function CreateListWorkflowTypesInputFormGroup() {
 		return new FormGroup<ListWorkflowTypesInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			registrationStatus: new FormControl<ActivityTypeInfoStatus | null | undefined>(undefined),
-			nextPageToken: new FormControl<string | null | undefined>(undefined),
-			maximumPageSize: new FormControl<number | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			registrationStatus: new FormControl<ActivityTypeInfoStatus | null | undefined>(undefined, [Validators.required]),
+			nextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			maximumPageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 			reverseOrder: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2895,8 +4537,22 @@ export namespace MyNS {
 
 	/** Unit of work sent to an activity worker. */
 	export interface ActivityTask {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		taskToken: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityId: string;
+
+		/** Required */
 		startedEventId: number;
 
 		/**
@@ -2910,27 +4566,51 @@ export namespace MyNS {
 		 * Required
 		 */
 		activityType: ActivityType;
+
+		/** Max length: 32768 */
 		input?: string | null;
 	}
 
 	/** Unit of work sent to an activity worker. */
 	export interface ActivityTaskFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		taskToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityId: FormControl<string | null | undefined>,
+
+		/** Required */
 		startedEventId: FormControl<number | null | undefined>,
+
+		/** Max length: 32768 */
 		input: FormControl<string | null | undefined>,
 	}
 	export function CreateActivityTaskFormGroup() {
 		return new FormGroup<ActivityTaskFormProperties>({
-			taskToken: new FormControl<string | null | undefined>(undefined),
-			activityId: new FormControl<string | null | undefined>(undefined),
-			startedEventId: new FormControl<number | null | undefined>(undefined),
-			input: new FormControl<string | null | undefined>(undefined),
+			taskToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			activityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			startedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
 
 	export interface PollForActivityTaskInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: string;
 
 		/**
@@ -2938,16 +4618,26 @@ export namespace MyNS {
 		 * Required
 		 */
 		taskList: TaskList;
+
+		/** Max length: 256 */
 		identity?: string | null;
 	}
 	export interface PollForActivityTaskInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		identity: FormControl<string | null | undefined>,
 	}
 	export function CreatePollForActivityTaskInputFormGroup() {
 		return new FormGroup<PollForActivityTaskInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined),
-			identity: new FormControl<string | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			identity: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -2955,7 +4645,15 @@ export namespace MyNS {
 
 	/** A structure that represents a decision task. Decision tasks are sent to deciders in order for them to make decisions. */
 	export interface DecisionTask {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		taskToken: string;
+
+		/** Required */
 		startedEventId: number;
 
 		/**
@@ -2969,29 +4667,49 @@ export namespace MyNS {
 		 * Required
 		 */
 		workflowType: WorkflowType;
+
+		/** Required */
 		events: Array<HistoryEvent>;
+
+		/** Max length: 2048 */
 		nextPageToken?: string | null;
 		previousStartedEventId?: number | null;
 	}
 
 	/** A structure that represents a decision task. Decision tasks are sent to deciders in order for them to make decisions. */
 	export interface DecisionTaskFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		taskToken: FormControl<string | null | undefined>,
+
+		/** Required */
 		startedEventId: FormControl<number | null | undefined>,
+
+		/** Max length: 2048 */
 		nextPageToken: FormControl<string | null | undefined>,
 		previousStartedEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateDecisionTaskFormGroup() {
 		return new FormGroup<DecisionTaskFormProperties>({
-			taskToken: new FormControl<string | null | undefined>(undefined),
-			startedEventId: new FormControl<number | null | undefined>(undefined),
-			nextPageToken: new FormControl<string | null | undefined>(undefined),
+			taskToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			startedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			nextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 			previousStartedEventId: new FormControl<number | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PollForDecisionTaskInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: string;
 
 		/**
@@ -2999,24 +4717,48 @@ export namespace MyNS {
 		 * Required
 		 */
 		taskList: TaskList;
+
+		/** Max length: 256 */
 		identity?: string | null;
+
+		/** Max length: 2048 */
 		nextPageToken?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maximumPageSize?: number | null;
 		reverseOrder?: boolean | null;
 	}
 	export interface PollForDecisionTaskInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		identity: FormControl<string | null | undefined>,
+
+		/** Max length: 2048 */
 		nextPageToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maximumPageSize: FormControl<number | null | undefined>,
 		reverseOrder: FormControl<boolean | null | undefined>,
 	}
 	export function CreatePollForDecisionTaskInputFormGroup() {
 		return new FormGroup<PollForDecisionTaskInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined),
-			identity: new FormControl<string | null | undefined>(undefined),
-			nextPageToken: new FormControl<string | null | undefined>(undefined),
-			maximumPageSize: new FormControl<number | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			identity: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			nextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			maximumPageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 			reverseOrder: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -3025,72 +4767,148 @@ export namespace MyNS {
 
 	/** Status information about an activity task. */
 	export interface ActivityTaskStatus {
+
+		/** Required */
 		cancelRequested: boolean;
 	}
 
 	/** Status information about an activity task. */
 	export interface ActivityTaskStatusFormProperties {
+
+		/** Required */
 		cancelRequested: FormControl<boolean | null | undefined>,
 	}
 	export function CreateActivityTaskStatusFormGroup() {
 		return new FormGroup<ActivityTaskStatusFormProperties>({
-			cancelRequested: new FormControl<boolean | null | undefined>(undefined),
+			cancelRequested: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface RecordActivityTaskHeartbeatInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		taskToken: string;
+
+		/** Max length: 2048 */
 		details?: string | null;
 	}
 	export interface RecordActivityTaskHeartbeatInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		taskToken: FormControl<string | null | undefined>,
+
+		/** Max length: 2048 */
 		details: FormControl<string | null | undefined>,
 	}
 	export function CreateRecordActivityTaskHeartbeatInputFormGroup() {
 		return new FormGroup<RecordActivityTaskHeartbeatInputFormProperties>({
-			taskToken: new FormControl<string | null | undefined>(undefined),
-			details: new FormControl<string | null | undefined>(undefined),
+			taskToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 		});
 
 	}
 
 	export interface RegisterActivityTypeInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		version: string;
+
+		/** Max length: 1024 */
 		description?: string | null;
+
+		/** Max length: 8 */
 		defaultTaskStartToCloseTimeout?: string | null;
+
+		/** Max length: 8 */
 		defaultTaskHeartbeatTimeout?: string | null;
 
 		/** Represents a task list. */
 		defaultTaskList?: TaskList;
 		defaultTaskPriority?: string | null;
+
+		/** Max length: 8 */
 		defaultTaskScheduleToStartTimeout?: string | null;
+
+		/** Max length: 8 */
 		defaultTaskScheduleToCloseTimeout?: string | null;
 	}
 	export interface RegisterActivityTypeInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		version: FormControl<string | null | undefined>,
+
+		/** Max length: 1024 */
 		description: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		defaultTaskStartToCloseTimeout: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		defaultTaskHeartbeatTimeout: FormControl<string | null | undefined>,
 		defaultTaskPriority: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		defaultTaskScheduleToStartTimeout: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		defaultTaskScheduleToCloseTimeout: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterActivityTypeInputFormGroup() {
 		return new FormGroup<RegisterActivityTypeInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			defaultTaskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined),
-			defaultTaskHeartbeatTimeout: new FormControl<string | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			defaultTaskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
+			defaultTaskHeartbeatTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 			defaultTaskPriority: new FormControl<string | null | undefined>(undefined),
-			defaultTaskScheduleToStartTimeout: new FormControl<string | null | undefined>(undefined),
-			defaultTaskScheduleToCloseTimeout: new FormControl<string | null | undefined>(undefined),
+			defaultTaskScheduleToStartTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
+			defaultTaskScheduleToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 		});
 
 	}
@@ -3106,21 +4924,49 @@ export namespace MyNS {
 	}
 
 	export interface RegisterDomainInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name: string;
+
+		/** Max length: 1024 */
 		description?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 8
+		 * Min length: 1
+		 */
 		workflowExecutionRetentionPeriodInDays: string;
 		tags?: Array<ResourceTag>;
 	}
 	export interface RegisterDomainInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Max length: 1024 */
 		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 8
+		 * Min length: 1
+		 */
 		workflowExecutionRetentionPeriodInDays: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterDomainInputFormGroup() {
 		return new FormGroup<RegisterDomainInputFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			workflowExecutionRetentionPeriodInDays: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			workflowExecutionRetentionPeriodInDays: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8), Validators.minLength(1)]),
 		});
 
 	}
@@ -3146,111 +4992,249 @@ export namespace MyNS {
 	}
 
 	export interface RegisterWorkflowTypeInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		version: string;
+
+		/** Max length: 1024 */
 		description?: string | null;
+
+		/** Max length: 8 */
 		defaultTaskStartToCloseTimeout?: string | null;
+
+		/** Max length: 8 */
 		defaultExecutionStartToCloseTimeout?: string | null;
 
 		/** Represents a task list. */
 		defaultTaskList?: TaskList;
 		defaultTaskPriority?: string | null;
 		defaultChildPolicy?: WorkflowExecutionConfigurationChildPolicy | null;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		defaultLambdaRole?: string | null;
 	}
 	export interface RegisterWorkflowTypeInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		version: FormControl<string | null | undefined>,
+
+		/** Max length: 1024 */
 		description: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		defaultTaskStartToCloseTimeout: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		defaultExecutionStartToCloseTimeout: FormControl<string | null | undefined>,
 		defaultTaskPriority: FormControl<string | null | undefined>,
 		defaultChildPolicy: FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		defaultLambdaRole: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterWorkflowTypeInputFormGroup() {
 		return new FormGroup<RegisterWorkflowTypeInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			defaultTaskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined),
-			defaultExecutionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			defaultTaskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
+			defaultExecutionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 			defaultTaskPriority: new FormControl<string | null | undefined>(undefined),
 			defaultChildPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined),
-			defaultLambdaRole: new FormControl<string | null | undefined>(undefined),
+			defaultLambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface RequestCancelWorkflowExecutionInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: string;
+
+		/** Max length: 64 */
 		runId?: string | null;
 	}
 	export interface RequestCancelWorkflowExecutionInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: FormControl<string | null | undefined>,
+
+		/** Max length: 64 */
 		runId: FormControl<string | null | undefined>,
 	}
 	export function CreateRequestCancelWorkflowExecutionInputFormGroup() {
 		return new FormGroup<RequestCancelWorkflowExecutionInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined),
-			workflowId: new FormControl<string | null | undefined>(undefined),
-			runId: new FormControl<string | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			runId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
 		});
 
 	}
 
 	export interface RespondActivityTaskCanceledInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		taskToken: string;
+
+		/** Max length: 32768 */
 		details?: string | null;
 	}
 	export interface RespondActivityTaskCanceledInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		taskToken: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		details: FormControl<string | null | undefined>,
 	}
 	export function CreateRespondActivityTaskCanceledInputFormGroup() {
 		return new FormGroup<RespondActivityTaskCanceledInputFormProperties>({
-			taskToken: new FormControl<string | null | undefined>(undefined),
-			details: new FormControl<string | null | undefined>(undefined),
+			taskToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
 
 	export interface RespondActivityTaskCompletedInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		taskToken: string;
+
+		/** Max length: 32768 */
 		result?: string | null;
 	}
 	export interface RespondActivityTaskCompletedInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		taskToken: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		result: FormControl<string | null | undefined>,
 	}
 	export function CreateRespondActivityTaskCompletedInputFormGroup() {
 		return new FormGroup<RespondActivityTaskCompletedInputFormProperties>({
-			taskToken: new FormControl<string | null | undefined>(undefined),
-			result: new FormControl<string | null | undefined>(undefined),
+			taskToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			result: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
 
 	export interface RespondActivityTaskFailedInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		taskToken: string;
+
+		/** Max length: 256 */
 		reason?: string | null;
+
+		/** Max length: 32768 */
 		details?: string | null;
 	}
 	export interface RespondActivityTaskFailedInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		taskToken: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		reason: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		details: FormControl<string | null | undefined>,
 	}
 	export function CreateRespondActivityTaskFailedInputFormGroup() {
 		return new FormGroup<RespondActivityTaskFailedInputFormProperties>({
-			taskToken: new FormControl<string | null | undefined>(undefined),
-			reason: new FormControl<string | null | undefined>(undefined),
-			details: new FormControl<string | null | undefined>(undefined),
+			taskToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			reason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -3258,20 +5242,36 @@ export namespace MyNS {
 
 	/** Input data for a TaskCompleted response to a decision task. */
 	export interface RespondDecisionTaskCompletedInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		taskToken: string;
 		decisions?: Array<Decision>;
+
+		/** Max length: 32768 */
 		executionContext?: string | null;
 	}
 
 	/** Input data for a TaskCompleted response to a decision task. */
 	export interface RespondDecisionTaskCompletedInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		taskToken: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		executionContext: FormControl<string | null | undefined>,
 	}
 	export function CreateRespondDecisionTaskCompletedInputFormGroup() {
 		return new FormGroup<RespondDecisionTaskCompletedInputFormProperties>({
-			taskToken: new FormControl<string | null | undefined>(undefined),
-			executionContext: new FormControl<string | null | undefined>(undefined),
+			taskToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			executionContext: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -3279,6 +5279,8 @@ export namespace MyNS {
 
 	/** <p>Specifies a decision made by the decider. A decision can be one of these types:</p> <ul> <li> <p> <code>CancelTimer</code> – Cancels a previously started timer and records a <code>TimerCanceled</code> event in the history.</p> </li> <li> <p> <code>CancelWorkflowExecution</code> – Closes the workflow execution and records a <code>WorkflowExecutionCanceled</code> event in the history.</p> </li> <li> <p> <code>CompleteWorkflowExecution</code> – Closes the workflow execution and records a <code>WorkflowExecutionCompleted</code> event in the history .</p> </li> <li> <p> <code>ContinueAsNewWorkflowExecution</code> – Closes the workflow execution and starts a new workflow execution of the same type using the same workflow ID and a unique run Id. A <code>WorkflowExecutionContinuedAsNew</code> event is recorded in the history.</p> </li> <li> <p> <code>FailWorkflowExecution</code> – Closes the workflow execution and records a <code>WorkflowExecutionFailed</code> event in the history.</p> </li> <li> <p> <code>RecordMarker</code> – Records a <code>MarkerRecorded</code> event in the history. Markers can be used for adding custom information in the history for instance to let deciders know that they don't need to look at the history beyond the marker event.</p> </li> <li> <p> <code>RequestCancelActivityTask</code> – Attempts to cancel a previously scheduled activity task. If the activity task was scheduled but has not been assigned to a worker, then it is canceled. If the activity task was already assigned to a worker, then the worker is informed that cancellation has been requested in the response to <a>RecordActivityTaskHeartbeat</a>.</p> </li> <li> <p> <code>RequestCancelExternalWorkflowExecution</code> – Requests that a request be made to cancel the specified external workflow execution and records a <code>RequestCancelExternalWorkflowExecutionInitiated</code> event in the history.</p> </li> <li> <p> <code>ScheduleActivityTask</code> – Schedules an activity task.</p> </li> <li> <p> <code>SignalExternalWorkflowExecution</code> – Requests a signal to be delivered to the specified external workflow execution and records a <code>SignalExternalWorkflowExecutionInitiated</code> event in the history.</p> </li> <li> <p> <code>StartChildWorkflowExecution</code> – Requests that a child workflow execution be started and records a <code>StartChildWorkflowExecutionInitiated</code> event in the history. The child workflow execution is a separate workflow execution with its own history.</p> </li> <li> <p> <code>StartTimer</code> – Starts a timer for this workflow execution and records a <code>TimerStarted</code> event in the history. This timer fires after the specified delay and record a <code>TimerFired</code> event.</p> </li> </ul> <p> <b>Access Control</b> </p> <p>If you grant permission to use <code>RespondDecisionTaskCompleted</code>, you can use IAM policies to express permissions for the list of decisions returned by this action as if they were members of the API. Treating decisions as a pseudo API maintains a uniform conceptual model and helps keep policies readable. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> <p> <b>Decision Failure</b> </p> <p>Decisions can fail for several reasons</p> <ul> <li> <p>The ordering of decisions should follow a logical flow. Some decisions might not make sense in the current context of the workflow execution and therefore fails.</p> </li> <li> <p>A limit on your account was reached.</p> </li> <li> <p>The decision lacks sufficient permissions.</p> </li> </ul> <p>One of the following events might be added to the history to indicate an error. The event attribute's <code>cause</code> parameter indicates the cause. If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> <ul> <li> <p> <code>ScheduleActivityTaskFailed</code> – A <code>ScheduleActivityTask</code> decision failed. This could happen if the activity type specified in the decision isn't registered, is in a deprecated state, or the decision isn't properly configured.</p> </li> <li> <p> <code>RequestCancelActivityTaskFailed</code> – A <code>RequestCancelActivityTask</code> decision failed. This could happen if there is no open activity task with the specified activityId.</p> </li> <li> <p> <code>StartTimerFailed</code> – A <code>StartTimer</code> decision failed. This could happen if there is another open timer with the same timerId.</p> </li> <li> <p> <code>CancelTimerFailed</code> – A <code>CancelTimer</code> decision failed. This could happen if there is no open timer with the specified timerId.</p> </li> <li> <p> <code>StartChildWorkflowExecutionFailed</code> – A <code>StartChildWorkflowExecution</code> decision failed. This could happen if the workflow type specified isn't registered, is deprecated, or the decision isn't properly configured.</p> </li> <li> <p> <code>SignalExternalWorkflowExecutionFailed</code> – A <code>SignalExternalWorkflowExecution</code> decision failed. This could happen if the <code>workflowID</code> specified in the decision was incorrect.</p> </li> <li> <p> <code>RequestCancelExternalWorkflowExecutionFailed</code> – A <code>RequestCancelExternalWorkflowExecution</code> decision failed. This could happen if the <code>workflowID</code> specified in the decision was incorrect.</p> </li> <li> <p> <code>CancelWorkflowExecutionFailed</code> – A <code>CancelWorkflowExecution</code> decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.</p> </li> <li> <p> <code>CompleteWorkflowExecutionFailed</code> – A <code>CompleteWorkflowExecution</code> decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.</p> </li> <li> <p> <code>ContinueAsNewWorkflowExecutionFailed</code> – A <code>ContinueAsNewWorkflowExecution</code> decision failed. This could happen if there is an unhandled decision task pending in the workflow execution or the ContinueAsNewWorkflowExecution decision was not configured correctly.</p> </li> <li> <p> <code>FailWorkflowExecutionFailed</code> – A <code>FailWorkflowExecution</code> decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.</p> </li> </ul> <p>The preceding error events might occur due to an error in the decider logic, which might put the workflow execution in an unstable state The cause field in the event structure for the error event indicates the cause of the error.</p> <note> <p>A workflow execution may be closed by the decider by returning one of the following decisions when completing a decision task: <code>CompleteWorkflowExecution</code>, <code>FailWorkflowExecution</code>, <code>CancelWorkflowExecution</code> and <code>ContinueAsNewWorkflowExecution</code>. An <code>UnhandledDecision</code> fault is returned if a workflow closing decision is specified and a signal or activity event had been added to the history while the decision task was being performed by the decider. Unlike the above situations which are logic issues, this fault is always possible because of race conditions in a distributed system. The right action here is to call <a>RespondDecisionTaskCompleted</a> without any decisions. This would result in another decision task with these new events included in the history. The decider should handle the new events and may decide to close the workflow execution.</p> </note> <p> <b>How to Code a Decision</b> </p> <p>You code a decision by first setting the decision type field to one of the above decision values, and then set the corresponding attributes field shown below:</p> <ul> <li> <p> <code> <a>ScheduleActivityTaskDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>RequestCancelActivityTaskDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>CompleteWorkflowExecutionDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>FailWorkflowExecutionDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>CancelWorkflowExecutionDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>ContinueAsNewWorkflowExecutionDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>RecordMarkerDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>StartTimerDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>CancelTimerDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>SignalExternalWorkflowExecutionDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>RequestCancelExternalWorkflowExecutionDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>StartChildWorkflowExecutionDecisionAttributes</a> </code> </p> </li> </ul> */
 	export interface Decision {
+
+		/** Required */
 		decisionType: DecisionDecisionType;
 
 		/** <p>Provides the details of the <code>ScheduleActivityTask</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p> <ul> <li> <p> <code>activityType.name</code> – String constraint. The key is <code>swf:activityType.name</code>.</p> </li> <li> <p> <code>activityType.version</code> – String constraint. The key is <code>swf:activityType.version</code>.</p> </li> <li> <p> <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.</p> </li> </ul> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
@@ -3323,11 +5325,13 @@ export namespace MyNS {
 
 	/** <p>Specifies a decision made by the decider. A decision can be one of these types:</p> <ul> <li> <p> <code>CancelTimer</code> – Cancels a previously started timer and records a <code>TimerCanceled</code> event in the history.</p> </li> <li> <p> <code>CancelWorkflowExecution</code> – Closes the workflow execution and records a <code>WorkflowExecutionCanceled</code> event in the history.</p> </li> <li> <p> <code>CompleteWorkflowExecution</code> – Closes the workflow execution and records a <code>WorkflowExecutionCompleted</code> event in the history .</p> </li> <li> <p> <code>ContinueAsNewWorkflowExecution</code> – Closes the workflow execution and starts a new workflow execution of the same type using the same workflow ID and a unique run Id. A <code>WorkflowExecutionContinuedAsNew</code> event is recorded in the history.</p> </li> <li> <p> <code>FailWorkflowExecution</code> – Closes the workflow execution and records a <code>WorkflowExecutionFailed</code> event in the history.</p> </li> <li> <p> <code>RecordMarker</code> – Records a <code>MarkerRecorded</code> event in the history. Markers can be used for adding custom information in the history for instance to let deciders know that they don't need to look at the history beyond the marker event.</p> </li> <li> <p> <code>RequestCancelActivityTask</code> – Attempts to cancel a previously scheduled activity task. If the activity task was scheduled but has not been assigned to a worker, then it is canceled. If the activity task was already assigned to a worker, then the worker is informed that cancellation has been requested in the response to <a>RecordActivityTaskHeartbeat</a>.</p> </li> <li> <p> <code>RequestCancelExternalWorkflowExecution</code> – Requests that a request be made to cancel the specified external workflow execution and records a <code>RequestCancelExternalWorkflowExecutionInitiated</code> event in the history.</p> </li> <li> <p> <code>ScheduleActivityTask</code> – Schedules an activity task.</p> </li> <li> <p> <code>SignalExternalWorkflowExecution</code> – Requests a signal to be delivered to the specified external workflow execution and records a <code>SignalExternalWorkflowExecutionInitiated</code> event in the history.</p> </li> <li> <p> <code>StartChildWorkflowExecution</code> – Requests that a child workflow execution be started and records a <code>StartChildWorkflowExecutionInitiated</code> event in the history. The child workflow execution is a separate workflow execution with its own history.</p> </li> <li> <p> <code>StartTimer</code> – Starts a timer for this workflow execution and records a <code>TimerStarted</code> event in the history. This timer fires after the specified delay and record a <code>TimerFired</code> event.</p> </li> </ul> <p> <b>Access Control</b> </p> <p>If you grant permission to use <code>RespondDecisionTaskCompleted</code>, you can use IAM policies to express permissions for the list of decisions returned by this action as if they were members of the API. Treating decisions as a pseudo API maintains a uniform conceptual model and helps keep policies readable. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> <p> <b>Decision Failure</b> </p> <p>Decisions can fail for several reasons</p> <ul> <li> <p>The ordering of decisions should follow a logical flow. Some decisions might not make sense in the current context of the workflow execution and therefore fails.</p> </li> <li> <p>A limit on your account was reached.</p> </li> <li> <p>The decision lacks sufficient permissions.</p> </li> </ul> <p>One of the following events might be added to the history to indicate an error. The event attribute's <code>cause</code> parameter indicates the cause. If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> <ul> <li> <p> <code>ScheduleActivityTaskFailed</code> – A <code>ScheduleActivityTask</code> decision failed. This could happen if the activity type specified in the decision isn't registered, is in a deprecated state, or the decision isn't properly configured.</p> </li> <li> <p> <code>RequestCancelActivityTaskFailed</code> – A <code>RequestCancelActivityTask</code> decision failed. This could happen if there is no open activity task with the specified activityId.</p> </li> <li> <p> <code>StartTimerFailed</code> – A <code>StartTimer</code> decision failed. This could happen if there is another open timer with the same timerId.</p> </li> <li> <p> <code>CancelTimerFailed</code> – A <code>CancelTimer</code> decision failed. This could happen if there is no open timer with the specified timerId.</p> </li> <li> <p> <code>StartChildWorkflowExecutionFailed</code> – A <code>StartChildWorkflowExecution</code> decision failed. This could happen if the workflow type specified isn't registered, is deprecated, or the decision isn't properly configured.</p> </li> <li> <p> <code>SignalExternalWorkflowExecutionFailed</code> – A <code>SignalExternalWorkflowExecution</code> decision failed. This could happen if the <code>workflowID</code> specified in the decision was incorrect.</p> </li> <li> <p> <code>RequestCancelExternalWorkflowExecutionFailed</code> – A <code>RequestCancelExternalWorkflowExecution</code> decision failed. This could happen if the <code>workflowID</code> specified in the decision was incorrect.</p> </li> <li> <p> <code>CancelWorkflowExecutionFailed</code> – A <code>CancelWorkflowExecution</code> decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.</p> </li> <li> <p> <code>CompleteWorkflowExecutionFailed</code> – A <code>CompleteWorkflowExecution</code> decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.</p> </li> <li> <p> <code>ContinueAsNewWorkflowExecutionFailed</code> – A <code>ContinueAsNewWorkflowExecution</code> decision failed. This could happen if there is an unhandled decision task pending in the workflow execution or the ContinueAsNewWorkflowExecution decision was not configured correctly.</p> </li> <li> <p> <code>FailWorkflowExecutionFailed</code> – A <code>FailWorkflowExecution</code> decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.</p> </li> </ul> <p>The preceding error events might occur due to an error in the decider logic, which might put the workflow execution in an unstable state The cause field in the event structure for the error event indicates the cause of the error.</p> <note> <p>A workflow execution may be closed by the decider by returning one of the following decisions when completing a decision task: <code>CompleteWorkflowExecution</code>, <code>FailWorkflowExecution</code>, <code>CancelWorkflowExecution</code> and <code>ContinueAsNewWorkflowExecution</code>. An <code>UnhandledDecision</code> fault is returned if a workflow closing decision is specified and a signal or activity event had been added to the history while the decision task was being performed by the decider. Unlike the above situations which are logic issues, this fault is always possible because of race conditions in a distributed system. The right action here is to call <a>RespondDecisionTaskCompleted</a> without any decisions. This would result in another decision task with these new events included in the history. The decider should handle the new events and may decide to close the workflow execution.</p> </note> <p> <b>How to Code a Decision</b> </p> <p>You code a decision by first setting the decision type field to one of the above decision values, and then set the corresponding attributes field shown below:</p> <ul> <li> <p> <code> <a>ScheduleActivityTaskDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>RequestCancelActivityTaskDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>CompleteWorkflowExecutionDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>FailWorkflowExecutionDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>CancelWorkflowExecutionDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>ContinueAsNewWorkflowExecutionDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>RecordMarkerDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>StartTimerDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>CancelTimerDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>SignalExternalWorkflowExecutionDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>RequestCancelExternalWorkflowExecutionDecisionAttributes</a> </code> </p> </li> <li> <p> <code> <a>StartChildWorkflowExecutionDecisionAttributes</a> </code> </p> </li> </ul> */
 	export interface DecisionFormProperties {
+
+		/** Required */
 		decisionType: FormControl<DecisionDecisionType | null | undefined>,
 	}
 	export function CreateDecisionFormGroup() {
 		return new FormGroup<DecisionFormProperties>({
-			decisionType: new FormControl<DecisionDecisionType | null | undefined>(undefined),
+			decisionType: new FormControl<DecisionDecisionType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3343,40 +5347,76 @@ export namespace MyNS {
 		 * Required
 		 */
 		activityType: ActivityType;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityId: string;
+
+		/** Max length: 32768 */
 		control?: string | null;
+
+		/** Max length: 32768 */
 		input?: string | null;
+
+		/** Max length: 8 */
 		scheduleToCloseTimeout?: string | null;
 
 		/** Represents a task list. */
 		taskList?: TaskList;
 		taskPriority?: string | null;
+
+		/** Max length: 8 */
 		scheduleToStartTimeout?: string | null;
+
+		/** Max length: 8 */
 		startToCloseTimeout?: string | null;
+
+		/** Max length: 8 */
 		heartbeatTimeout?: string | null;
 	}
 
 	/** <p>Provides the details of the <code>ScheduleActivityTask</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p> <ul> <li> <p> <code>activityType.name</code> – String constraint. The key is <code>swf:activityType.name</code>.</p> </li> <li> <p> <code>activityType.version</code> – String constraint. The key is <code>swf:activityType.version</code>.</p> </li> <li> <p> <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.</p> </li> </ul> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface ScheduleActivityTaskDecisionAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityId: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		control: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		input: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		scheduleToCloseTimeout: FormControl<string | null | undefined>,
 		taskPriority: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		scheduleToStartTimeout: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		startToCloseTimeout: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		heartbeatTimeout: FormControl<string | null | undefined>,
 	}
 	export function CreateScheduleActivityTaskDecisionAttributesFormGroup() {
 		return new FormGroup<ScheduleActivityTaskDecisionAttributesFormProperties>({
-			activityId: new FormControl<string | null | undefined>(undefined),
-			control: new FormControl<string | null | undefined>(undefined),
-			input: new FormControl<string | null | undefined>(undefined),
-			scheduleToCloseTimeout: new FormControl<string | null | undefined>(undefined),
+			activityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			scheduleToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 			taskPriority: new FormControl<string | null | undefined>(undefined),
-			scheduleToStartTimeout: new FormControl<string | null | undefined>(undefined),
-			startToCloseTimeout: new FormControl<string | null | undefined>(undefined),
-			heartbeatTimeout: new FormControl<string | null | undefined>(undefined),
+			scheduleToStartTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
+			startToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
+			heartbeatTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 		});
 
 	}
@@ -3384,16 +5424,28 @@ export namespace MyNS {
 
 	/** <p>Provides the details of the <code>RequestCancelActivityTask</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface RequestCancelActivityTaskDecisionAttributes {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityId: string;
 	}
 
 	/** <p>Provides the details of the <code>RequestCancelActivityTask</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface RequestCancelActivityTaskDecisionAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityId: FormControl<string | null | undefined>,
 	}
 	export function CreateRequestCancelActivityTaskDecisionAttributesFormGroup() {
 		return new FormGroup<RequestCancelActivityTaskDecisionAttributesFormProperties>({
-			activityId: new FormControl<string | null | undefined>(undefined),
+			activityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -3401,16 +5453,20 @@ export namespace MyNS {
 
 	/** <p>Provides the details of the <code>CompleteWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface CompleteWorkflowExecutionDecisionAttributes {
+
+		/** Max length: 32768 */
 		result?: string | null;
 	}
 
 	/** <p>Provides the details of the <code>CompleteWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface CompleteWorkflowExecutionDecisionAttributesFormProperties {
+
+		/** Max length: 32768 */
 		result: FormControl<string | null | undefined>,
 	}
 	export function CreateCompleteWorkflowExecutionDecisionAttributesFormGroup() {
 		return new FormGroup<CompleteWorkflowExecutionDecisionAttributesFormProperties>({
-			result: new FormControl<string | null | undefined>(undefined),
+			result: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -3418,19 +5474,27 @@ export namespace MyNS {
 
 	/** <p>Provides the details of the <code>FailWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface FailWorkflowExecutionDecisionAttributes {
+
+		/** Max length: 256 */
 		reason?: string | null;
+
+		/** Max length: 32768 */
 		details?: string | null;
 	}
 
 	/** <p>Provides the details of the <code>FailWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface FailWorkflowExecutionDecisionAttributesFormProperties {
+
+		/** Max length: 256 */
 		reason: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		details: FormControl<string | null | undefined>,
 	}
 	export function CreateFailWorkflowExecutionDecisionAttributesFormGroup() {
 		return new FormGroup<FailWorkflowExecutionDecisionAttributesFormProperties>({
-			reason: new FormControl<string | null | undefined>(undefined),
-			details: new FormControl<string | null | undefined>(undefined),
+			reason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -3438,16 +5502,20 @@ export namespace MyNS {
 
 	/** <p>Provides the details of the <code>CancelWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface CancelWorkflowExecutionDecisionAttributes {
+
+		/** Max length: 32768 */
 		details?: string | null;
 	}
 
 	/** <p>Provides the details of the <code>CancelWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface CancelWorkflowExecutionDecisionAttributesFormProperties {
+
+		/** Max length: 32768 */
 		details: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelWorkflowExecutionDecisionAttributesFormGroup() {
 		return new FormGroup<CancelWorkflowExecutionDecisionAttributesFormProperties>({
-			details: new FormControl<string | null | undefined>(undefined),
+			details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -3455,38 +5523,72 @@ export namespace MyNS {
 
 	/** <p>Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p> <ul> <li> <p> <code>tag</code> – A tag used to identify the workflow execution</p> </li> <li> <p> <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.</p> </li> <li> <p> <code>workflowType.version</code> – String constraint. The key is <code>swf:workflowType.version</code>.</p> </li> </ul> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface ContinueAsNewWorkflowExecutionDecisionAttributes {
+
+		/** Max length: 32768 */
 		input?: string | null;
+
+		/** Max length: 8 */
 		executionStartToCloseTimeout?: string | null;
 
 		/** Represents a task list. */
 		taskList?: TaskList;
 		taskPriority?: string | null;
+
+		/** Max length: 8 */
 		taskStartToCloseTimeout?: string | null;
 		childPolicy?: WorkflowExecutionConfigurationChildPolicy | null;
+
+		/** Maximum items: 5 */
 		tagList?: Array<string>;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		workflowTypeVersion?: string | null;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		lambdaRole?: string | null;
 	}
 
 	/** <p>Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p> <ul> <li> <p> <code>tag</code> – A tag used to identify the workflow execution</p> </li> <li> <p> <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.</p> </li> <li> <p> <code>workflowType.version</code> – String constraint. The key is <code>swf:workflowType.version</code>.</p> </li> </ul> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface ContinueAsNewWorkflowExecutionDecisionAttributesFormProperties {
+
+		/** Max length: 32768 */
 		input: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		executionStartToCloseTimeout: FormControl<string | null | undefined>,
 		taskPriority: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		taskStartToCloseTimeout: FormControl<string | null | undefined>,
 		childPolicy: FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		workflowTypeVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		lambdaRole: FormControl<string | null | undefined>,
 	}
 	export function CreateContinueAsNewWorkflowExecutionDecisionAttributesFormGroup() {
 		return new FormGroup<ContinueAsNewWorkflowExecutionDecisionAttributesFormProperties>({
-			input: new FormControl<string | null | undefined>(undefined),
-			executionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined),
+			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			executionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 			taskPriority: new FormControl<string | null | undefined>(undefined),
-			taskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined),
+			taskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 			childPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined),
-			workflowTypeVersion: new FormControl<string | null | undefined>(undefined),
-			lambdaRole: new FormControl<string | null | undefined>(undefined),
+			workflowTypeVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			lambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 		});
 
 	}
@@ -3494,19 +5596,35 @@ export namespace MyNS {
 
 	/** <p>Provides the details of the <code>RecordMarker</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface RecordMarkerDecisionAttributes {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		markerName: string;
+
+		/** Max length: 32768 */
 		details?: string | null;
 	}
 
 	/** <p>Provides the details of the <code>RecordMarker</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface RecordMarkerDecisionAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		markerName: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		details: FormControl<string | null | undefined>,
 	}
 	export function CreateRecordMarkerDecisionAttributesFormGroup() {
 		return new FormGroup<RecordMarkerDecisionAttributesFormProperties>({
-			markerName: new FormControl<string | null | undefined>(undefined),
-			details: new FormControl<string | null | undefined>(undefined),
+			markerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -3514,22 +5632,50 @@ export namespace MyNS {
 
 	/** <p>Provides the details of the <code>StartTimer</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface StartTimerDecisionAttributes {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		timerId: string;
+
+		/** Max length: 32768 */
 		control?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 8
+		 * Min length: 1
+		 */
 		startToFireTimeout: string;
 	}
 
 	/** <p>Provides the details of the <code>StartTimer</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface StartTimerDecisionAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		timerId: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		control: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 8
+		 * Min length: 1
+		 */
 		startToFireTimeout: FormControl<string | null | undefined>,
 	}
 	export function CreateStartTimerDecisionAttributesFormGroup() {
 		return new FormGroup<StartTimerDecisionAttributesFormProperties>({
-			timerId: new FormControl<string | null | undefined>(undefined),
-			control: new FormControl<string | null | undefined>(undefined),
-			startToFireTimeout: new FormControl<string | null | undefined>(undefined),
+			timerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			startToFireTimeout: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8), Validators.minLength(1)]),
 		});
 
 	}
@@ -3537,16 +5683,28 @@ export namespace MyNS {
 
 	/** <p>Provides the details of the <code>CancelTimer</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface CancelTimerDecisionAttributes {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		timerId: string;
 	}
 
 	/** <p>Provides the details of the <code>CancelTimer</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface CancelTimerDecisionAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		timerId: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelTimerDecisionAttributesFormGroup() {
 		return new FormGroup<CancelTimerDecisionAttributesFormProperties>({
-			timerId: new FormControl<string | null | undefined>(undefined),
+			timerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -3554,28 +5712,64 @@ export namespace MyNS {
 
 	/** <p>Provides the details of the <code>SignalExternalWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface SignalExternalWorkflowExecutionDecisionAttributes {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: string;
+
+		/** Max length: 64 */
 		runId?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		signalName: string;
+
+		/** Max length: 32768 */
 		input?: string | null;
+
+		/** Max length: 32768 */
 		control?: string | null;
 	}
 
 	/** <p>Provides the details of the <code>SignalExternalWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface SignalExternalWorkflowExecutionDecisionAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: FormControl<string | null | undefined>,
+
+		/** Max length: 64 */
 		runId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		signalName: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		input: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		control: FormControl<string | null | undefined>,
 	}
 	export function CreateSignalExternalWorkflowExecutionDecisionAttributesFormGroup() {
 		return new FormGroup<SignalExternalWorkflowExecutionDecisionAttributesFormProperties>({
-			workflowId: new FormControl<string | null | undefined>(undefined),
-			runId: new FormControl<string | null | undefined>(undefined),
-			signalName: new FormControl<string | null | undefined>(undefined),
-			input: new FormControl<string | null | undefined>(undefined),
-			control: new FormControl<string | null | undefined>(undefined),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			runId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			signalName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -3583,22 +5777,42 @@ export namespace MyNS {
 
 	/** <p>Provides the details of the <code>RequestCancelExternalWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface RequestCancelExternalWorkflowExecutionDecisionAttributes {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: string;
+
+		/** Max length: 64 */
 		runId?: string | null;
+
+		/** Max length: 32768 */
 		control?: string | null;
 	}
 
 	/** <p>Provides the details of the <code>RequestCancelExternalWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface RequestCancelExternalWorkflowExecutionDecisionAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: FormControl<string | null | undefined>,
+
+		/** Max length: 64 */
 		runId: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		control: FormControl<string | null | undefined>,
 	}
 	export function CreateRequestCancelExternalWorkflowExecutionDecisionAttributesFormGroup() {
 		return new FormGroup<RequestCancelExternalWorkflowExecutionDecisionAttributesFormProperties>({
-			workflowId: new FormControl<string | null | undefined>(undefined),
-			runId: new FormControl<string | null | undefined>(undefined),
-			control: new FormControl<string | null | undefined>(undefined),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			runId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -3612,41 +5826,81 @@ export namespace MyNS {
 		 * Required
 		 */
 		workflowType: WorkflowType;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: string;
+
+		/** Max length: 32768 */
 		control?: string | null;
+
+		/** Max length: 32768 */
 		input?: string | null;
+
+		/** Max length: 8 */
 		executionStartToCloseTimeout?: string | null;
 
 		/** Represents a task list. */
 		taskList?: TaskList;
 		taskPriority?: string | null;
+
+		/** Max length: 8 */
 		taskStartToCloseTimeout?: string | null;
 		childPolicy?: WorkflowExecutionConfigurationChildPolicy | null;
+
+		/** Maximum items: 5 */
 		tagList?: Array<string>;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		lambdaRole?: string | null;
 	}
 
 	/** <p>Provides the details of the <code>StartChildWorkflowExecution</code> decision.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li> <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p> <ul> <li> <p> <code>tagList.member.N</code> – The key is "swf:tagList.N" where N is the tag number from 0 to 4, inclusive.</p> </li> <li> <p> <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.</p> </li> <li> <p> <code>workflowType.name</code> – String constraint. The key is <code>swf:workflowType.name</code>.</p> </li> <li> <p> <code>workflowType.version</code> – String constraint. The key is <code>swf:workflowType.version</code>.</p> </li> </ul> </li> </ul> <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p> */
 	export interface StartChildWorkflowExecutionDecisionAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		control: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		input: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		executionStartToCloseTimeout: FormControl<string | null | undefined>,
 		taskPriority: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		taskStartToCloseTimeout: FormControl<string | null | undefined>,
 		childPolicy: FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		lambdaRole: FormControl<string | null | undefined>,
 	}
 	export function CreateStartChildWorkflowExecutionDecisionAttributesFormGroup() {
 		return new FormGroup<StartChildWorkflowExecutionDecisionAttributesFormProperties>({
-			workflowId: new FormControl<string | null | undefined>(undefined),
-			control: new FormControl<string | null | undefined>(undefined),
-			input: new FormControl<string | null | undefined>(undefined),
-			executionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			executionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 			taskPriority: new FormControl<string | null | undefined>(undefined),
-			taskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined),
+			taskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 			childPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined),
-			lambdaRole: new FormControl<string | null | undefined>(undefined),
+			lambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 		});
 
 	}
@@ -3654,53 +5908,139 @@ export namespace MyNS {
 
 	/** Decision attributes specified in <code>scheduleLambdaFunctionDecisionAttributes</code> within the list of decisions <code>decisions</code> passed to <a>RespondDecisionTaskCompleted</a>. */
 	export interface ScheduleLambdaFunctionDecisionAttributes {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		id: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		name: string;
+
+		/** Max length: 32768 */
 		control?: string | null;
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		input?: string | null;
+
+		/** Max length: 8 */
 		startToCloseTimeout?: string | null;
 	}
 
 	/** Decision attributes specified in <code>scheduleLambdaFunctionDecisionAttributes</code> within the list of decisions <code>decisions</code> passed to <a>RespondDecisionTaskCompleted</a>. */
 	export interface ScheduleLambdaFunctionDecisionAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		control: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		input: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		startToCloseTimeout: FormControl<string | null | undefined>,
 	}
 	export function CreateScheduleLambdaFunctionDecisionAttributesFormGroup() {
 		return new FormGroup<ScheduleLambdaFunctionDecisionAttributesFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			control: new FormControl<string | null | undefined>(undefined),
-			input: new FormControl<string | null | undefined>(undefined),
-			startToCloseTimeout: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(0)]),
+			startToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 		});
 
 	}
 
 	export interface SignalWorkflowExecutionInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: string;
+
+		/** Max length: 64 */
 		runId?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		signalName: string;
+
+		/** Max length: 32768 */
 		input?: string | null;
 	}
 	export interface SignalWorkflowExecutionInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: FormControl<string | null | undefined>,
+
+		/** Max length: 64 */
 		runId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		signalName: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		input: FormControl<string | null | undefined>,
 	}
 	export function CreateSignalWorkflowExecutionInputFormGroup() {
 		return new FormGroup<SignalWorkflowExecutionInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined),
-			workflowId: new FormControl<string | null | undefined>(undefined),
-			runId: new FormControl<string | null | undefined>(undefined),
-			signalName: new FormControl<string | null | undefined>(undefined),
-			input: new FormControl<string | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			runId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			signalName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -3708,22 +6048,44 @@ export namespace MyNS {
 
 	/** Specifies the <code>runId</code> of a workflow execution. */
 	export interface Run {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		runId?: string | null;
 	}
 
 	/** Specifies the <code>runId</code> of a workflow execution. */
 	export interface RunFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		runId: FormControl<string | null | undefined>,
 	}
 	export function CreateRunFormGroup() {
 		return new FormGroup<RunFormProperties>({
-			runId: new FormControl<string | null | undefined>(undefined),
+			runId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface StartWorkflowExecutionInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: string;
 
 		/**
@@ -3735,33 +6097,69 @@ export namespace MyNS {
 		/** Represents a task list. */
 		taskList?: TaskList;
 		taskPriority?: string | null;
+
+		/** Max length: 32768 */
 		input?: string | null;
+
+		/** Max length: 8 */
 		executionStartToCloseTimeout?: string | null;
+
+		/** Maximum items: 5 */
 		tagList?: Array<string>;
+
+		/** Max length: 8 */
 		taskStartToCloseTimeout?: string | null;
 		childPolicy?: WorkflowExecutionConfigurationChildPolicy | null;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		lambdaRole?: string | null;
 	}
 	export interface StartWorkflowExecutionInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: FormControl<string | null | undefined>,
 		taskPriority: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		input: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		executionStartToCloseTimeout: FormControl<string | null | undefined>,
+
+		/** Max length: 8 */
 		taskStartToCloseTimeout: FormControl<string | null | undefined>,
 		childPolicy: FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		lambdaRole: FormControl<string | null | undefined>,
 	}
 	export function CreateStartWorkflowExecutionInputFormGroup() {
 		return new FormGroup<StartWorkflowExecutionInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined),
-			workflowId: new FormControl<string | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 			taskPriority: new FormControl<string | null | undefined>(undefined),
-			input: new FormControl<string | null | undefined>(undefined),
-			executionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined),
-			taskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined),
+			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			executionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
+			taskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 			childPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined),
-			lambdaRole: new FormControl<string | null | undefined>(undefined),
+			lambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 		});
 
 	}
@@ -3787,48 +6185,104 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		resourceArn: string;
+
+		/** Required */
 		tags: Array<ResourceTag>;
 	}
 	export interface TagResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceInputFormGroup() {
 		return new FormGroup<TagResourceInputFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface TerminateWorkflowExecutionInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: string;
+
+		/** Max length: 64 */
 		runId?: string | null;
+
+		/** Max length: 256 */
 		reason?: string | null;
+
+		/** Max length: 32768 */
 		details?: string | null;
 		childPolicy?: WorkflowExecutionConfigurationChildPolicy | null;
 	}
 	export interface TerminateWorkflowExecutionInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		workflowId: FormControl<string | null | undefined>,
+
+		/** Max length: 64 */
 		runId: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		reason: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		details: FormControl<string | null | undefined>,
 		childPolicy: FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>,
 	}
 	export function CreateTerminateWorkflowExecutionInputFormGroup() {
 		return new FormGroup<TerminateWorkflowExecutionInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined),
-			workflowId: new FormControl<string | null | undefined>(undefined),
-			runId: new FormControl<string | null | undefined>(undefined),
-			reason: new FormControl<string | null | undefined>(undefined),
-			details: new FormControl<string | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			runId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			reason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 			childPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface UndeprecateActivityTypeInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: string;
 
 		/**
@@ -3838,29 +6292,53 @@ export namespace MyNS {
 		activityType: ActivityType;
 	}
 	export interface UndeprecateActivityTypeInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: FormControl<string | null | undefined>,
 	}
 	export function CreateUndeprecateActivityTypeInputFormGroup() {
 		return new FormGroup<UndeprecateActivityTypeInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UndeprecateDomainInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name: string;
 	}
 	export interface UndeprecateDomainInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateUndeprecateDomainInputFormGroup() {
 		return new FormGroup<UndeprecateDomainInputFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UndeprecateWorkflowTypeInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: string;
 
 		/**
@@ -3870,25 +6348,45 @@ export namespace MyNS {
 		workflowType: WorkflowType;
 	}
 	export interface UndeprecateWorkflowTypeInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		domain: FormControl<string | null | undefined>,
 	}
 	export function CreateUndeprecateWorkflowTypeInputFormGroup() {
 		return new FormGroup<UndeprecateWorkflowTypeInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UntagResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		resourceArn: string;
+
+		/** Required */
 		tagKeys: Array<string>;
 	}
 	export interface UntagResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceInputFormGroup() {
 		return new FormGroup<UntagResourceInputFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
 		});
 
 	}

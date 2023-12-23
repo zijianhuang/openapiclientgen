@@ -213,14 +213,14 @@ export namespace MyNS {
 	}
 	export function CreateSegmentFormGroup() {
 		return new FormGroup<SegmentFormProperties>({
-			bookingClass: new FormControl<string | null | undefined>(undefined),
-			carrier: new FormControl<string | null | undefined>(undefined),
+			bookingClass: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			carrier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			departure: new FormControl<Date | null | undefined>(undefined),
-			destination: new FormControl<string | null | undefined>(undefined),
+			destination: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			distance: new FormControl<number | null | undefined>(undefined),
 			flightNumber: new FormControl<number | null | undefined>(undefined),
 			operatingCarrier: new FormControl<string | null | undefined>(undefined),
-			origin: new FormControl<string | null | undefined>(undefined),
+			origin: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

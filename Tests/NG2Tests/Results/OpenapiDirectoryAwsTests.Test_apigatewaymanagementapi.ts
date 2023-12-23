@@ -51,17 +51,25 @@ export namespace MyNS {
 	}
 
 	export interface Identity {
+
+		/** Required */
 		SourceIp: string;
+
+		/** Required */
 		UserAgent: string;
 	}
 	export interface IdentityFormProperties {
+
+		/** Required */
 		SourceIp: FormControl<string | null | undefined>,
+
+		/** Required */
 		UserAgent: FormControl<string | null | undefined>,
 	}
 	export function CreateIdentityFormGroup() {
 		return new FormGroup<IdentityFormProperties>({
-			SourceIp: new FormControl<string | null | undefined>(undefined),
-			UserAgent: new FormControl<string | null | undefined>(undefined),
+			SourceIp: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			UserAgent: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -116,7 +124,7 @@ export namespace MyNS {
 	}
 	export function CreatePostToConnectionRequestFormGroup() {
 		return new FormGroup<PostToConnectionRequestFormProperties>({
-			Data: new FormControl<string | null | undefined>(undefined),
+			Data: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(131072)]),
 		});
 
 	}
@@ -175,7 +183,7 @@ export namespace MyNS {
 	}
 	export function CreatePostToConnectionPostBodyFormGroup() {
 		return new FormGroup<PostToConnectionPostBodyFormProperties>({
-			Data: new FormControl<string | null | undefined>(undefined),
+			Data: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(131072)]),
 		});
 
 	}

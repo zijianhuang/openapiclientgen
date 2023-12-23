@@ -4,20 +4,44 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Application {
+
+		/** Pattern: [a-z0-9]{4,7} */
 		Id?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description?: string | null;
 	}
 	export interface ApplicationFormProperties {
+
+		/** Pattern: [a-z0-9]{4,7} */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateApplicationFormGroup() {
 		return new FormGroup<ApplicationFormProperties>({
 			Id: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 		});
 
 	}
@@ -43,30 +67,85 @@ export namespace MyNS {
 	}
 
 	export interface ConfigurationProfile {
+
+		/** Pattern: [a-z0-9]{4,7} */
 		ApplicationId?: string | null;
+
+		/** Pattern: [a-z0-9]{4,7} */
 		Id?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		LocationUri?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
+		 */
 		RetrievalRoleArn?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 2
+		 */
 		Validators?: Array<Validator>;
 	}
 	export interface ConfigurationProfileFormProperties {
+
+		/** Pattern: [a-z0-9]{4,7} */
 		ApplicationId: FormControl<string | null | undefined>,
+
+		/** Pattern: [a-z0-9]{4,7} */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		LocationUri: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
+		 */
 		RetrievalRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateConfigurationProfileFormGroup() {
 		return new FormGroup<ConfigurationProfileFormProperties>({
 			ApplicationId: new FormControl<string | null | undefined>(undefined),
 			Id: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			LocationUri: new FormControl<string | null | undefined>(undefined),
-			RetrievalRoleArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			LocationUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			RetrievalRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -74,19 +153,35 @@ export namespace MyNS {
 
 	/** A validator provides a syntactic or semantic check to ensure the configuration you want to deploy functions as intended. To validate your application configuration data, you provide a schema or a Lambda function that runs against the configuration. The configuration deployment or update can only proceed when the configuration data is valid. */
 	export interface Validator {
+
+		/** Required */
 		Type: ValidatorType;
+
+		/**
+		 * Required
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		Content: string;
 	}
 
 	/** A validator provides a syntactic or semantic check to ensure the configuration you want to deploy functions as intended. To validate your application configuration data, you provide a schema or a Lambda function that runs against the configuration. The configuration deployment or update can only proceed when the configuration data is valid. */
 	export interface ValidatorFormProperties {
+
+		/** Required */
 		Type: FormControl<ValidatorType | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		Content: FormControl<string | null | undefined>,
 	}
 	export function CreateValidatorFormGroup() {
 		return new FormGroup<ValidatorFormProperties>({
-			Type: new FormControl<ValidatorType | null | undefined>(undefined),
-			Content: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<ValidatorType | null | undefined>(undefined, [Validators.required]),
+			Content: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32768), Validators.minLength(0)]),
 		});
 
 	}
@@ -104,34 +199,88 @@ export namespace MyNS {
 	}
 
 	export interface DeploymentStrategy {
+
+		/** Pattern: [a-z0-9]{4,7} */
 		Id?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1440
+		 */
 		DeploymentDurationInMinutes?: number | null;
 		GrowthType?: DeploymentStrategyGrowthType | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		GrowthFactor?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1440
+		 */
 		FinalBakeTimeInMinutes?: number | null;
 		ReplicateTo?: DeploymentStrategyReplicateTo | null;
 	}
 	export interface DeploymentStrategyFormProperties {
+
+		/** Pattern: [a-z0-9]{4,7} */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1440
+		 */
 		DeploymentDurationInMinutes: FormControl<number | null | undefined>,
 		GrowthType: FormControl<DeploymentStrategyGrowthType | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		GrowthFactor: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1440
+		 */
 		FinalBakeTimeInMinutes: FormControl<number | null | undefined>,
 		ReplicateTo: FormControl<DeploymentStrategyReplicateTo | null | undefined>,
 	}
 	export function CreateDeploymentStrategyFormGroup() {
 		return new FormGroup<DeploymentStrategyFormProperties>({
 			Id: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			DeploymentDurationInMinutes: new FormControl<number | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			DeploymentDurationInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1440)]),
 			GrowthType: new FormControl<DeploymentStrategyGrowthType | null | undefined>(undefined),
-			GrowthFactor: new FormControl<number | null | undefined>(undefined),
-			FinalBakeTimeInMinutes: new FormControl<number | null | undefined>(undefined),
+			GrowthFactor: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
+			FinalBakeTimeInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1440)]),
 			ReplicateTo: new FormControl<DeploymentStrategyReplicateTo | null | undefined>(undefined),
 		});
 
@@ -142,17 +291,50 @@ export namespace MyNS {
 	export enum DeploymentStrategyReplicateTo { NONE = 0, SSM_DOCUMENT = 1 }
 
 	export interface Environment {
+
+		/** Pattern: [a-z0-9]{4,7} */
 		ApplicationId?: string | null;
+
+		/** Pattern: [a-z0-9]{4,7} */
 		Id?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description?: string | null;
 		State?: EnvironmentState | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Monitors?: Array<Monitor>;
 	}
 	export interface EnvironmentFormProperties {
+
+		/** Pattern: [a-z0-9]{4,7} */
 		ApplicationId: FormControl<string | null | undefined>,
+
+		/** Pattern: [a-z0-9]{4,7} */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
 		State: FormControl<EnvironmentState | null | undefined>,
 	}
@@ -160,8 +342,8 @@ export namespace MyNS {
 		return new FormGroup<EnvironmentFormProperties>({
 			ApplicationId: new FormControl<string | null | undefined>(undefined),
 			Id: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 			State: new FormControl<EnvironmentState | null | undefined>(undefined),
 		});
 
@@ -172,19 +354,43 @@ export namespace MyNS {
 
 	/** Amazon CloudWatch alarms to monitor during the deployment process. */
 	export interface Monitor {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
+		 */
 		AlarmArn?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
+		 */
 		AlarmRoleArn?: string | null;
 	}
 
 	/** Amazon CloudWatch alarms to monitor during the deployment process. */
 	export interface MonitorFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
+		 */
 		AlarmArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
+		 */
 		AlarmRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateMonitorFormGroup() {
 		return new FormGroup<MonitorFormProperties>({
-			AlarmArn: new FormControl<string | null | undefined>(undefined),
-			AlarmRoleArn: new FormControl<string | null | undefined>(undefined),
+			AlarmArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			AlarmRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -213,40 +419,136 @@ export namespace MyNS {
 	}
 
 	export interface Deployment {
+
+		/** Pattern: [a-z0-9]{4,7} */
 		ApplicationId?: string | null;
+
+		/** Pattern: [a-z0-9]{4,7} */
 		EnvironmentId?: string | null;
+
+		/** Pattern: [a-z0-9]{4,7} */
 		DeploymentStrategyId?: string | null;
+
+		/** Pattern: [a-z0-9]{4,7} */
 		ConfigurationProfileId?: string | null;
 		DeploymentNumber?: number | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ConfigurationName?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		ConfigurationLocationUri?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		ConfigurationVersion?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1440
+		 */
 		DeploymentDurationInMinutes?: number | null;
 		GrowthType?: DeploymentStrategyGrowthType | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		GrowthFactor?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1440
+		 */
 		FinalBakeTimeInMinutes?: number | null;
 		State?: DeploymentState | null;
 		EventLog?: Array<DeploymentEvent>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		PercentageComplete?: number | null;
 		StartedAt?: Date | null;
 		CompletedAt?: Date | null;
 	}
 	export interface DeploymentFormProperties {
+
+		/** Pattern: [a-z0-9]{4,7} */
 		ApplicationId: FormControl<string | null | undefined>,
+
+		/** Pattern: [a-z0-9]{4,7} */
 		EnvironmentId: FormControl<string | null | undefined>,
+
+		/** Pattern: [a-z0-9]{4,7} */
 		DeploymentStrategyId: FormControl<string | null | undefined>,
+
+		/** Pattern: [a-z0-9]{4,7} */
 		ConfigurationProfileId: FormControl<string | null | undefined>,
 		DeploymentNumber: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ConfigurationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		ConfigurationLocationUri: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		ConfigurationVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1440
+		 */
 		DeploymentDurationInMinutes: FormControl<number | null | undefined>,
 		GrowthType: FormControl<DeploymentStrategyGrowthType | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		GrowthFactor: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1440
+		 */
 		FinalBakeTimeInMinutes: FormControl<number | null | undefined>,
 		State: FormControl<DeploymentState | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		PercentageComplete: FormControl<number | null | undefined>,
 		StartedAt: FormControl<Date | null | undefined>,
 		CompletedAt: FormControl<Date | null | undefined>,
@@ -258,16 +560,16 @@ export namespace MyNS {
 			DeploymentStrategyId: new FormControl<string | null | undefined>(undefined),
 			ConfigurationProfileId: new FormControl<string | null | undefined>(undefined),
 			DeploymentNumber: new FormControl<number | null | undefined>(undefined),
-			ConfigurationName: new FormControl<string | null | undefined>(undefined),
-			ConfigurationLocationUri: new FormControl<string | null | undefined>(undefined),
-			ConfigurationVersion: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			DeploymentDurationInMinutes: new FormControl<number | null | undefined>(undefined),
+			ConfigurationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			ConfigurationLocationUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			ConfigurationVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			DeploymentDurationInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1440)]),
 			GrowthType: new FormControl<DeploymentStrategyGrowthType | null | undefined>(undefined),
-			GrowthFactor: new FormControl<number | null | undefined>(undefined),
-			FinalBakeTimeInMinutes: new FormControl<number | null | undefined>(undefined),
+			GrowthFactor: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
+			FinalBakeTimeInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1440)]),
 			State: new FormControl<DeploymentState | null | undefined>(undefined),
-			PercentageComplete: new FormControl<number | null | undefined>(undefined),
+			PercentageComplete: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			StartedAt: new FormControl<Date | null | undefined>(undefined),
 			CompletedAt: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -281,6 +583,11 @@ export namespace MyNS {
 	export interface DeploymentEvent {
 		EventType?: DeploymentEventEventType | null;
 		TriggeredBy?: DeploymentEventTriggeredBy | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description?: string | null;
 		OccurredAt?: Date | null;
 	}
@@ -289,6 +596,11 @@ export namespace MyNS {
 	export interface DeploymentEventFormProperties {
 		EventType: FormControl<DeploymentEventEventType | null | undefined>,
 		TriggeredBy: FormControl<DeploymentEventTriggeredBy | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
 		OccurredAt: FormControl<Date | null | undefined>,
 	}
@@ -296,7 +608,7 @@ export namespace MyNS {
 		return new FormGroup<DeploymentEventFormProperties>({
 			EventType: new FormControl<DeploymentEventEventType | null | undefined>(undefined),
 			TriggeredBy: new FormControl<DeploymentEventTriggeredBy | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 			OccurredAt: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -308,28 +620,48 @@ export namespace MyNS {
 
 	export interface Applications {
 		Items?: Array<Application>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ApplicationsFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateApplicationsFormGroup() {
 		return new FormGroup<ApplicationsFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ConfigurationProfiles {
 		Items?: Array<ConfigurationProfileSummary>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ConfigurationProfilesFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateConfigurationProfilesFormGroup() {
 		return new FormGroup<ConfigurationProfilesFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -337,54 +669,107 @@ export namespace MyNS {
 
 	/** A summary of a configuration profile. */
 	export interface ConfigurationProfileSummary {
+
+		/** Pattern: [a-z0-9]{4,7} */
 		ApplicationId?: string | null;
+
+		/** Pattern: [a-z0-9]{4,7} */
 		Id?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		LocationUri?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 2
+		 */
 		ValidatorTypes?: Array<ValidatorType>;
 	}
 
 	/** A summary of a configuration profile. */
 	export interface ConfigurationProfileSummaryFormProperties {
+
+		/** Pattern: [a-z0-9]{4,7} */
 		ApplicationId: FormControl<string | null | undefined>,
+
+		/** Pattern: [a-z0-9]{4,7} */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		LocationUri: FormControl<string | null | undefined>,
 	}
 	export function CreateConfigurationProfileSummaryFormGroup() {
 		return new FormGroup<ConfigurationProfileSummaryFormProperties>({
 			ApplicationId: new FormControl<string | null | undefined>(undefined),
 			Id: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			LocationUri: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			LocationUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeploymentStrategies {
 		Items?: Array<DeploymentStrategy>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface DeploymentStrategiesFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeploymentStrategiesFormGroup() {
 		return new FormGroup<DeploymentStrategiesFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface Deployments {
 		Items?: Array<DeploymentSummary>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface DeploymentsFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeploymentsFormGroup() {
 		return new FormGroup<DeploymentsFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -393,13 +778,43 @@ export namespace MyNS {
 	/** Information about the deployment. */
 	export interface DeploymentSummary {
 		DeploymentNumber?: number | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ConfigurationName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		ConfigurationVersion?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1440
+		 */
 		DeploymentDurationInMinutes?: number | null;
 		GrowthType?: DeploymentStrategyGrowthType | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		GrowthFactor?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1440
+		 */
 		FinalBakeTimeInMinutes?: number | null;
 		State?: DeploymentState | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		PercentageComplete?: number | null;
 		StartedAt?: Date | null;
 		CompletedAt?: Date | null;
@@ -408,13 +823,43 @@ export namespace MyNS {
 	/** Information about the deployment. */
 	export interface DeploymentSummaryFormProperties {
 		DeploymentNumber: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ConfigurationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		ConfigurationVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1440
+		 */
 		DeploymentDurationInMinutes: FormControl<number | null | undefined>,
 		GrowthType: FormControl<DeploymentStrategyGrowthType | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		GrowthFactor: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1440
+		 */
 		FinalBakeTimeInMinutes: FormControl<number | null | undefined>,
 		State: FormControl<DeploymentState | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		PercentageComplete: FormControl<number | null | undefined>,
 		StartedAt: FormControl<Date | null | undefined>,
 		CompletedAt: FormControl<Date | null | undefined>,
@@ -422,14 +867,14 @@ export namespace MyNS {
 	export function CreateDeploymentSummaryFormGroup() {
 		return new FormGroup<DeploymentSummaryFormProperties>({
 			DeploymentNumber: new FormControl<number | null | undefined>(undefined),
-			ConfigurationName: new FormControl<string | null | undefined>(undefined),
-			ConfigurationVersion: new FormControl<string | null | undefined>(undefined),
-			DeploymentDurationInMinutes: new FormControl<number | null | undefined>(undefined),
+			ConfigurationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			ConfigurationVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			DeploymentDurationInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1440)]),
 			GrowthType: new FormControl<DeploymentStrategyGrowthType | null | undefined>(undefined),
-			GrowthFactor: new FormControl<number | null | undefined>(undefined),
-			FinalBakeTimeInMinutes: new FormControl<number | null | undefined>(undefined),
+			GrowthFactor: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
+			FinalBakeTimeInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1440)]),
 			State: new FormControl<DeploymentState | null | undefined>(undefined),
-			PercentageComplete: new FormControl<number | null | undefined>(undefined),
+			PercentageComplete: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			StartedAt: new FormControl<Date | null | undefined>(undefined),
 			CompletedAt: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -438,14 +883,24 @@ export namespace MyNS {
 
 	export interface Environments {
 		Items?: Array<Environment>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface EnvironmentsFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateEnvironmentsFormGroup() {
 		return new FormGroup<EnvironmentsFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -472,42 +927,117 @@ export namespace MyNS {
 	}
 
 	export interface CreateApplicationRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description?: string | null;
 		Tags?: TagMap;
 	}
 	export interface CreateApplicationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateApplicationRequestFormGroup() {
 		return new FormGroup<CreateApplicationRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface CreateConfigurationProfileRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		LocationUri: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
+		 */
 		RetrievalRoleArn: string;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 2
+		 */
 		Validators?: Array<Validator>;
 		Tags?: TagMap;
 	}
 	export interface CreateConfigurationProfileRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		LocationUri: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
+		 */
 		RetrievalRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateConfigurationProfileRequestFormGroup() {
 		return new FormGroup<CreateConfigurationProfileRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			LocationUri: new FormControl<string | null | undefined>(undefined),
-			RetrievalRoleArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			LocationUri: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			RetrievalRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -517,51 +1047,138 @@ export namespace MyNS {
 	export enum ReplicateTo { NONE = 0, SSM_DOCUMENT = 1 }
 
 	export interface CreateDeploymentStrategyRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description?: string | null;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 1440
+		 */
 		DeploymentDurationInMinutes: number;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1440
+		 */
 		FinalBakeTimeInMinutes?: number | null;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		GrowthFactor: number;
 		GrowthType?: DeploymentStrategyGrowthType | null;
+
+		/** Required */
 		ReplicateTo: DeploymentStrategyReplicateTo;
 		Tags?: TagMap;
 	}
 	export interface CreateDeploymentStrategyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 1440
+		 */
 		DeploymentDurationInMinutes: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1440
+		 */
 		FinalBakeTimeInMinutes: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		GrowthFactor: FormControl<number | null | undefined>,
 		GrowthType: FormControl<DeploymentStrategyGrowthType | null | undefined>,
+
+		/** Required */
 		ReplicateTo: FormControl<DeploymentStrategyReplicateTo | null | undefined>,
 	}
 	export function CreateCreateDeploymentStrategyRequestFormGroup() {
 		return new FormGroup<CreateDeploymentStrategyRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			DeploymentDurationInMinutes: new FormControl<number | null | undefined>(undefined),
-			FinalBakeTimeInMinutes: new FormControl<number | null | undefined>(undefined),
-			GrowthFactor: new FormControl<number | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			DeploymentDurationInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(1440)]),
+			FinalBakeTimeInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1440)]),
+			GrowthFactor: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(100)]),
 			GrowthType: new FormControl<DeploymentStrategyGrowthType | null | undefined>(undefined),
-			ReplicateTo: new FormControl<DeploymentStrategyReplicateTo | null | undefined>(undefined),
+			ReplicateTo: new FormControl<DeploymentStrategyReplicateTo | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface CreateEnvironmentRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Monitors?: Array<Monitor>;
 		Tags?: TagMap;
 	}
 	export interface CreateEnvironmentRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateEnvironmentRequestFormGroup() {
 		return new FormGroup<CreateEnvironmentRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 		});
 
 	}
@@ -731,24 +1348,66 @@ export namespace MyNS {
 	}
 
 	export interface StartDeploymentRequest {
+
+		/**
+		 * Required
+		 * Pattern: ([a-z0-9]{4,7}|arn:aws.*)
+		 */
 		DeploymentStrategyId: string;
+
+		/**
+		 * Required
+		 * Pattern: [a-z0-9]{4,7}
+		 */
 		ConfigurationProfileId: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		ConfigurationVersion: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description?: string | null;
 		Tags?: TagMap;
 	}
 	export interface StartDeploymentRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ([a-z0-9]{4,7}|arn:aws.*)
+		 */
 		DeploymentStrategyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: [a-z0-9]{4,7}
+		 */
 		ConfigurationProfileId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		ConfigurationVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateStartDeploymentRequestFormGroup() {
 		return new FormGroup<StartDeploymentRequestFormProperties>({
-			DeploymentStrategyId: new FormControl<string | null | undefined>(undefined),
-			ConfigurationProfileId: new FormControl<string | null | undefined>(undefined),
-			ConfigurationVersion: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			DeploymentStrategyId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ConfigurationProfileId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ConfigurationVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 		});
 
 	}
@@ -764,6 +1423,8 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/** Required */
 		Tags: TagMap;
 	}
 	export interface TagResourceRequestFormProperties {
@@ -785,79 +1446,201 @@ export namespace MyNS {
 	}
 
 	export interface UpdateApplicationRequest {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description?: string | null;
 	}
 	export interface UpdateApplicationRequestFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateApplicationRequestFormGroup() {
 		return new FormGroup<UpdateApplicationRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface UpdateConfigurationProfileRequest {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
+		 */
 		RetrievalRoleArn?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 2
+		 */
 		Validators?: Array<Validator>;
 	}
 	export interface UpdateConfigurationProfileRequestFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
+		 */
 		RetrievalRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateConfigurationProfileRequestFormGroup() {
 		return new FormGroup<UpdateConfigurationProfileRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			RetrievalRoleArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			RetrievalRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface UpdateDeploymentStrategyRequest {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1440
+		 */
 		DeploymentDurationInMinutes?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1440
+		 */
 		FinalBakeTimeInMinutes?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		GrowthFactor?: number | null;
 		GrowthType?: DeploymentStrategyGrowthType | null;
 	}
 	export interface UpdateDeploymentStrategyRequestFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1440
+		 */
 		DeploymentDurationInMinutes: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1440
+		 */
 		FinalBakeTimeInMinutes: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		GrowthFactor: FormControl<number | null | undefined>,
 		GrowthType: FormControl<DeploymentStrategyGrowthType | null | undefined>,
 	}
 	export function CreateUpdateDeploymentStrategyRequestFormGroup() {
 		return new FormGroup<UpdateDeploymentStrategyRequestFormProperties>({
-			Description: new FormControl<string | null | undefined>(undefined),
-			DeploymentDurationInMinutes: new FormControl<number | null | undefined>(undefined),
-			FinalBakeTimeInMinutes: new FormControl<number | null | undefined>(undefined),
-			GrowthFactor: new FormControl<number | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			DeploymentDurationInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1440)]),
+			FinalBakeTimeInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1440)]),
+			GrowthFactor: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			GrowthType: new FormControl<DeploymentStrategyGrowthType | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface UpdateEnvironmentRequest {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Monitors?: Array<Monitor>;
 	}
 	export interface UpdateEnvironmentRequestFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateEnvironmentRequestFormGroup() {
 		return new FormGroup<UpdateEnvironmentRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 		});
 
 	}
@@ -1245,8 +2028,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateApplicationPostBodyFormGroup() {
 		return new FormGroup<CreateApplicationPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -1335,10 +2118,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateConfigurationProfilePostBodyFormGroup() {
 		return new FormGroup<CreateConfigurationProfilePostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			LocationUri: new FormControl<string | null | undefined>(undefined),
-			RetrievalRoleArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			LocationUri: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			RetrievalRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -1450,13 +2233,13 @@ export namespace MyNS {
 	}
 	export function CreateCreateDeploymentStrategyPostBodyFormGroup() {
 		return new FormGroup<CreateDeploymentStrategyPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			DeploymentDurationInMinutes: new FormControl<number | null | undefined>(undefined),
-			FinalBakeTimeInMinutes: new FormControl<number | null | undefined>(undefined),
-			GrowthFactor: new FormControl<number | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			DeploymentDurationInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(1440)]),
+			FinalBakeTimeInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1440)]),
+			GrowthFactor: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(100)]),
 			GrowthType: new FormControl<DeploymentStrategyGrowthType | null | undefined>(undefined),
-			ReplicateTo: new FormControl<DeploymentStrategyReplicateTo | null | undefined>(undefined),
+			ReplicateTo: new FormControl<DeploymentStrategyReplicateTo | null | undefined>(undefined, [Validators.required]),
 			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -1511,8 +2294,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateEnvironmentPostBodyFormGroup() {
 		return new FormGroup<CreateEnvironmentPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -1552,8 +2335,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateApplicationPatchBodyFormGroup() {
 		return new FormGroup<UpdateApplicationPatchBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 		});
 
 	}
@@ -1615,9 +2398,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateConfigurationProfilePatchBodyFormGroup() {
 		return new FormGroup<UpdateConfigurationProfilePatchBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			RetrievalRoleArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			RetrievalRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -1663,8 +2446,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateEnvironmentPatchBodyFormGroup() {
 		return new FormGroup<UpdateEnvironmentPatchBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 		});
 
 	}
@@ -1737,10 +2520,10 @@ export namespace MyNS {
 	}
 	export function CreateUpdateDeploymentStrategyPatchBodyFormGroup() {
 		return new FormGroup<UpdateDeploymentStrategyPatchBodyFormProperties>({
-			Description: new FormControl<string | null | undefined>(undefined),
-			DeploymentDurationInMinutes: new FormControl<number | null | undefined>(undefined),
-			FinalBakeTimeInMinutes: new FormControl<number | null | undefined>(undefined),
-			GrowthFactor: new FormControl<number | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			DeploymentDurationInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1440)]),
+			FinalBakeTimeInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1440)]),
+			GrowthFactor: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			GrowthType: new FormControl<DeploymentStrategyGrowthType | null | undefined>(undefined),
 		});
 
@@ -1816,10 +2599,10 @@ export namespace MyNS {
 	}
 	export function CreateStartDeploymentPostBodyFormGroup() {
 		return new FormGroup<StartDeploymentPostBodyFormProperties>({
-			DeploymentStrategyId: new FormControl<string | null | undefined>(undefined),
-			ConfigurationProfileId: new FormControl<string | null | undefined>(undefined),
-			ConfigurationVersion: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			DeploymentStrategyId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ConfigurationProfileId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ConfigurationVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -1843,7 +2626,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

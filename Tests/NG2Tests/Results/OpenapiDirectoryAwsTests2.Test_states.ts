@@ -4,31 +4,59 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateActivityOutput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityArn: string;
+
+		/** Required */
 		creationDate: Date;
 	}
 	export interface CreateActivityOutputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		creationDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateCreateActivityOutputFormGroup() {
 		return new FormGroup<CreateActivityOutputFormProperties>({
-			activityArn: new FormControl<string | null | undefined>(undefined),
-			creationDate: new FormControl<Date | null | undefined>(undefined),
+			activityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			creationDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface CreateActivityInput {
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name: string;
 		tags?: Array<Tag>;
 	}
 	export interface CreateActivityInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateActivityInputFormGroup() {
 		return new FormGroup<CreateActivityInputFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
 		});
 
 	}
@@ -36,19 +64,39 @@ export namespace MyNS {
 
 	/** <p>Tags are key-value pairs that can be associated with Step Functions state machines and activities.</p> <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p> */
 	export interface Tag {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		key?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		value?: string | null;
 	}
 
 	/** <p>Tags are key-value pairs that can be associated with Step Functions state machines and activities.</p> <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p> */
 	export interface TagFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -84,24 +132,58 @@ export namespace MyNS {
 	}
 
 	export interface CreateStateMachineOutput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		stateMachineArn: string;
+
+		/** Required */
 		creationDate: Date;
 	}
 	export interface CreateStateMachineOutputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		stateMachineArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		creationDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateCreateStateMachineOutputFormGroup() {
 		return new FormGroup<CreateStateMachineOutputFormProperties>({
-			stateMachineArn: new FormControl<string | null | undefined>(undefined),
-			creationDate: new FormControl<Date | null | undefined>(undefined),
+			stateMachineArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			creationDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface CreateStateMachineInput {
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name: string;
+
+		/**
+		 * Required
+		 * Max length: 1048576
+		 * Min length: 1
+		 */
 		definition: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		roleArn: string;
 		type?: CreateStateMachineInputType | null;
 
@@ -110,16 +192,34 @@ export namespace MyNS {
 		tags?: Array<Tag>;
 	}
 	export interface CreateStateMachineInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1048576
+		 * Min length: 1
+		 */
 		definition: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		roleArn: FormControl<string | null | undefined>,
 		type: FormControl<CreateStateMachineInputType | null | undefined>,
 	}
 	export function CreateCreateStateMachineInputFormGroup() {
 		return new FormGroup<CreateStateMachineInputFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			definition: new FormControl<string | null | undefined>(undefined),
-			roleArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
+			definition: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1048576), Validators.minLength(1)]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 			type: new FormControl<CreateStateMachineInputType | null | undefined>(undefined),
 		});
 
@@ -170,16 +270,26 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CloudWatchLogsLogGroup {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		logGroupArn?: string | null;
 	}
 
 	/** <p/> */
 	export interface CloudWatchLogsLogGroupFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		logGroupArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCloudWatchLogsLogGroupFormGroup() {
 		return new FormGroup<CloudWatchLogsLogGroupFormProperties>({
-			logGroupArn: new FormControl<string | null | undefined>(undefined),
+			logGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -265,14 +375,26 @@ export namespace MyNS {
 	}
 
 	export interface DeleteActivityInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityArn: string;
 	}
 	export interface DeleteActivityInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteActivityInputFormGroup() {
 		return new FormGroup<DeleteActivityInputFormProperties>({
-			activityArn: new FormControl<string | null | undefined>(undefined),
+			activityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -288,46 +410,98 @@ export namespace MyNS {
 	}
 
 	export interface DeleteStateMachineInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		stateMachineArn: string;
 	}
 	export interface DeleteStateMachineInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		stateMachineArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteStateMachineInputFormGroup() {
 		return new FormGroup<DeleteStateMachineInputFormProperties>({
-			stateMachineArn: new FormControl<string | null | undefined>(undefined),
+			stateMachineArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeActivityOutput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityArn: string;
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name: string;
+
+		/** Required */
 		creationDate: Date;
 	}
 	export interface DescribeActivityOutputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Required */
 		creationDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateDescribeActivityOutputFormGroup() {
 		return new FormGroup<DescribeActivityOutputFormProperties>({
-			activityArn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			creationDate: new FormControl<Date | null | undefined>(undefined),
+			activityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
+			creationDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DescribeActivityInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityArn: string;
 	}
 	export interface DescribeActivityInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeActivityInputFormGroup() {
 		return new FormGroup<DescribeActivityInputFormProperties>({
-			activityArn: new FormControl<string | null | undefined>(undefined),
+			activityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -343,35 +517,91 @@ export namespace MyNS {
 	}
 
 	export interface DescribeExecutionOutput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		executionArn: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		stateMachineArn: string;
+
+		/**
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name?: string | null;
+
+		/** Required */
 		status: DescribeExecutionOutputStatus;
+
+		/** Required */
 		startDate: Date;
 		stopDate?: Date | null;
+
+		/**
+		 * Required
+		 * Max length: 32768
+		 */
 		input: string;
+
+		/** Max length: 32768 */
 		output?: string | null;
 	}
 	export interface DescribeExecutionOutputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		executionArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		stateMachineArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Required */
 		status: FormControl<DescribeExecutionOutputStatus | null | undefined>,
+
+		/** Required */
 		startDate: FormControl<Date | null | undefined>,
 		stopDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32768
+		 */
 		input: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		output: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeExecutionOutputFormGroup() {
 		return new FormGroup<DescribeExecutionOutputFormProperties>({
-			executionArn: new FormControl<string | null | undefined>(undefined),
-			stateMachineArn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<DescribeExecutionOutputStatus | null | undefined>(undefined),
-			startDate: new FormControl<Date | null | undefined>(undefined),
+			executionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			stateMachineArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(80), Validators.minLength(1)]),
+			status: new FormControl<DescribeExecutionOutputStatus | null | undefined>(undefined, [Validators.required]),
+			startDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			stopDate: new FormControl<Date | null | undefined>(undefined),
-			input: new FormControl<string | null | undefined>(undefined),
-			output: new FormControl<string | null | undefined>(undefined),
+			input: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32768)]),
+			output: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -379,14 +609,26 @@ export namespace MyNS {
 	export enum DescribeExecutionOutputStatus { RUNNING = 0, SUCCEEDED = 1, FAILED = 2, TIMED_OUT = 3, ABORTED = 4 }
 
 	export interface DescribeExecutionInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		executionArn: string;
 	}
 	export interface DescribeExecutionInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		executionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeExecutionInputFormGroup() {
 		return new FormGroup<DescribeExecutionInputFormProperties>({
-			executionArn: new FormControl<string | null | undefined>(undefined),
+			executionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -402,35 +644,91 @@ export namespace MyNS {
 	}
 
 	export interface DescribeStateMachineOutput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		stateMachineArn: string;
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name: string;
 		status?: DescribeStateMachineOutputStatus | null;
+
+		/**
+		 * Required
+		 * Max length: 1048576
+		 * Min length: 1
+		 */
 		definition: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		roleArn: string;
+
+		/** Required */
 		type: CreateStateMachineInputType;
+
+		/** Required */
 		creationDate: Date;
 
 		/** The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options. */
 		loggingConfiguration?: LoggingConfiguration;
 	}
 	export interface DescribeStateMachineOutputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		stateMachineArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
 		status: FormControl<DescribeStateMachineOutputStatus | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1048576
+		 * Min length: 1
+		 */
 		definition: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		roleArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		type: FormControl<CreateStateMachineInputType | null | undefined>,
+
+		/** Required */
 		creationDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateDescribeStateMachineOutputFormGroup() {
 		return new FormGroup<DescribeStateMachineOutputFormProperties>({
-			stateMachineArn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			stateMachineArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
 			status: new FormControl<DescribeStateMachineOutputStatus | null | undefined>(undefined),
-			definition: new FormControl<string | null | undefined>(undefined),
-			roleArn: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<CreateStateMachineInputType | null | undefined>(undefined),
-			creationDate: new FormControl<Date | null | undefined>(undefined),
+			definition: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1048576), Validators.minLength(1)]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			type: new FormControl<CreateStateMachineInputType | null | undefined>(undefined, [Validators.required]),
+			creationDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -438,14 +736,26 @@ export namespace MyNS {
 	export enum DescribeStateMachineOutputStatus { ACTIVE = 0, DELETING = 1 }
 
 	export interface DescribeStateMachineInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		stateMachineArn: string;
 	}
 	export interface DescribeStateMachineInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		stateMachineArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeStateMachineInputFormGroup() {
 		return new FormGroup<DescribeStateMachineInputFormProperties>({
-			stateMachineArn: new FormControl<string | null | undefined>(undefined),
+			stateMachineArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -461,74 +771,174 @@ export namespace MyNS {
 	}
 
 	export interface DescribeStateMachineForExecutionOutput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		stateMachineArn: string;
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name: string;
+
+		/**
+		 * Required
+		 * Max length: 1048576
+		 * Min length: 1
+		 */
 		definition: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		roleArn: string;
+
+		/** Required */
 		updateDate: Date;
 
 		/** The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options. */
 		loggingConfiguration?: LoggingConfiguration;
 	}
 	export interface DescribeStateMachineForExecutionOutputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		stateMachineArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1048576
+		 * Min length: 1
+		 */
 		definition: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		roleArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		updateDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateDescribeStateMachineForExecutionOutputFormGroup() {
 		return new FormGroup<DescribeStateMachineForExecutionOutputFormProperties>({
-			stateMachineArn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			definition: new FormControl<string | null | undefined>(undefined),
-			roleArn: new FormControl<string | null | undefined>(undefined),
-			updateDate: new FormControl<Date | null | undefined>(undefined),
+			stateMachineArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
+			definition: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1048576), Validators.minLength(1)]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			updateDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DescribeStateMachineForExecutionInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		executionArn: string;
 	}
 	export interface DescribeStateMachineForExecutionInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		executionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeStateMachineForExecutionInputFormGroup() {
 		return new FormGroup<DescribeStateMachineForExecutionInputFormProperties>({
-			executionArn: new FormControl<string | null | undefined>(undefined),
+			executionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetActivityTaskOutput {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		taskToken?: string | null;
+
+		/** Max length: 65536 */
 		input?: string | null;
 	}
 	export interface GetActivityTaskOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		taskToken: FormControl<string | null | undefined>,
+
+		/** Max length: 65536 */
 		input: FormControl<string | null | undefined>,
 	}
 	export function CreateGetActivityTaskOutputFormGroup() {
 		return new FormGroup<GetActivityTaskOutputFormProperties>({
-			taskToken: new FormControl<string | null | undefined>(undefined),
-			input: new FormControl<string | null | undefined>(undefined),
+			taskToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536)]),
 		});
 
 	}
 
 	export interface GetActivityTaskInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityArn: string;
+
+		/**
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		workerName?: string | null;
 	}
 	export interface GetActivityTaskInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		workerName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetActivityTaskInputFormGroup() {
 		return new FormGroup<GetActivityTaskInputFormProperties>({
-			activityArn: new FormControl<string | null | undefined>(undefined),
-			workerName: new FormControl<string | null | undefined>(undefined),
+			activityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			workerName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(80), Validators.minLength(1)]),
 		});
 
 	}
@@ -550,14 +960,24 @@ export namespace MyNS {
 		 * Required
 		 */
 		events: Array<HistoryEvent>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 	}
 	export interface GetExecutionHistoryOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetExecutionHistoryOutputFormGroup() {
 		return new FormGroup<GetExecutionHistoryOutputFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -565,8 +985,14 @@ export namespace MyNS {
 
 	/** Contains details about the events of an execution. */
 	export interface HistoryEvent {
+
+		/** Required */
 		timestamp: Date;
+
+		/** Required */
 		type: HistoryEventType;
+
+		/** Required */
 		id: number;
 		previousEventId?: number | null;
 
@@ -669,16 +1095,22 @@ export namespace MyNS {
 
 	/** Contains details about the events of an execution. */
 	export interface HistoryEventFormProperties {
+
+		/** Required */
 		timestamp: FormControl<Date | null | undefined>,
+
+		/** Required */
 		type: FormControl<HistoryEventType | null | undefined>,
+
+		/** Required */
 		id: FormControl<number | null | undefined>,
 		previousEventId: FormControl<number | null | undefined>,
 	}
 	export function CreateHistoryEventFormGroup() {
 		return new FormGroup<HistoryEventFormProperties>({
-			timestamp: new FormControl<Date | null | undefined>(undefined),
-			type: new FormControl<HistoryEventType | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			timestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<HistoryEventType | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			previousEventId: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -689,19 +1121,39 @@ export namespace MyNS {
 
 	/** Contains details about an activity that failed during an execution. */
 	export interface ActivityFailedEventDetails {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error?: string | null;
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause?: string | null;
 	}
 
 	/** Contains details about an activity that failed during an execution. */
 	export interface ActivityFailedEventDetailsFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause: FormControl<string | null | undefined>,
 	}
 	export function CreateActivityFailedEventDetailsFormGroup() {
 		return new FormGroup<ActivityFailedEventDetailsFormProperties>({
-			error: new FormControl<string | null | undefined>(undefined),
-			cause: new FormControl<string | null | undefined>(undefined),
+			error: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			cause: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(0)]),
 		});
 
 	}
@@ -709,19 +1161,39 @@ export namespace MyNS {
 
 	/** Contains details about an activity schedule failure that occurred during an execution. */
 	export interface ActivityScheduleFailedEventDetails {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error?: string | null;
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause?: string | null;
 	}
 
 	/** Contains details about an activity schedule failure that occurred during an execution. */
 	export interface ActivityScheduleFailedEventDetailsFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause: FormControl<string | null | undefined>,
 	}
 	export function CreateActivityScheduleFailedEventDetailsFormGroup() {
 		return new FormGroup<ActivityScheduleFailedEventDetailsFormProperties>({
-			error: new FormControl<string | null | undefined>(undefined),
-			cause: new FormControl<string | null | undefined>(undefined),
+			error: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			cause: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(0)]),
 		});
 
 	}
@@ -729,7 +1201,15 @@ export namespace MyNS {
 
 	/** Contains details about an activity scheduled during an execution. */
 	export interface ActivityScheduledEventDetails {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		resource: string;
+
+		/** Max length: 32768 */
 		input?: string | null;
 		timeoutInSeconds?: number | null;
 		heartbeatInSeconds?: number | null;
@@ -737,15 +1217,23 @@ export namespace MyNS {
 
 	/** Contains details about an activity scheduled during an execution. */
 	export interface ActivityScheduledEventDetailsFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		resource: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		input: FormControl<string | null | undefined>,
 		timeoutInSeconds: FormControl<number | null | undefined>,
 		heartbeatInSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateActivityScheduledEventDetailsFormGroup() {
 		return new FormGroup<ActivityScheduledEventDetailsFormProperties>({
-			resource: new FormControl<string | null | undefined>(undefined),
-			input: new FormControl<string | null | undefined>(undefined),
+			resource: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 			timeoutInSeconds: new FormControl<number | null | undefined>(undefined),
 			heartbeatInSeconds: new FormControl<number | null | undefined>(undefined),
 		});
@@ -755,16 +1243,20 @@ export namespace MyNS {
 
 	/** Contains details about the start of an activity during an execution. */
 	export interface ActivityStartedEventDetails {
+
+		/** Max length: 256 */
 		workerName?: string | null;
 	}
 
 	/** Contains details about the start of an activity during an execution. */
 	export interface ActivityStartedEventDetailsFormProperties {
+
+		/** Max length: 256 */
 		workerName: FormControl<string | null | undefined>,
 	}
 	export function CreateActivityStartedEventDetailsFormGroup() {
 		return new FormGroup<ActivityStartedEventDetailsFormProperties>({
-			workerName: new FormControl<string | null | undefined>(undefined),
+			workerName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -772,16 +1264,20 @@ export namespace MyNS {
 
 	/** Contains details about an activity that successfully terminated during an execution. */
 	export interface ActivitySucceededEventDetails {
+
+		/** Max length: 32768 */
 		output?: string | null;
 	}
 
 	/** Contains details about an activity that successfully terminated during an execution. */
 	export interface ActivitySucceededEventDetailsFormProperties {
+
+		/** Max length: 32768 */
 		output: FormControl<string | null | undefined>,
 	}
 	export function CreateActivitySucceededEventDetailsFormGroup() {
 		return new FormGroup<ActivitySucceededEventDetailsFormProperties>({
-			output: new FormControl<string | null | undefined>(undefined),
+			output: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -789,19 +1285,39 @@ export namespace MyNS {
 
 	/** Contains details about an activity timeout that occurred during an execution. */
 	export interface ActivityTimedOutEventDetails {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error?: string | null;
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause?: string | null;
 	}
 
 	/** Contains details about an activity timeout that occurred during an execution. */
 	export interface ActivityTimedOutEventDetailsFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause: FormControl<string | null | undefined>,
 	}
 	export function CreateActivityTimedOutEventDetailsFormGroup() {
 		return new FormGroup<ActivityTimedOutEventDetailsFormProperties>({
-			error: new FormControl<string | null | undefined>(undefined),
-			cause: new FormControl<string | null | undefined>(undefined),
+			error: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			cause: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(0)]),
 		});
 
 	}
@@ -809,25 +1325,69 @@ export namespace MyNS {
 
 	/** Contains details about a task failure event. */
 	export interface TaskFailedEventDetails {
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resourceType: string;
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resource: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error?: string | null;
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause?: string | null;
 	}
 
 	/** Contains details about a task failure event. */
 	export interface TaskFailedEventDetailsFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resourceType: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resource: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause: FormControl<string | null | undefined>,
 	}
 	export function CreateTaskFailedEventDetailsFormGroup() {
 		return new FormGroup<TaskFailedEventDetailsFormProperties>({
-			resourceType: new FormControl<string | null | undefined>(undefined),
-			resource: new FormControl<string | null | undefined>(undefined),
-			error: new FormControl<string | null | undefined>(undefined),
-			cause: new FormControl<string | null | undefined>(undefined),
+			resourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
+			resource: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
+			error: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			cause: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(0)]),
 		});
 
 	}
@@ -835,27 +1395,75 @@ export namespace MyNS {
 
 	/** Contains details about a task scheduled during an execution. */
 	export interface TaskScheduledEventDetails {
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resourceType: string;
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resource: string;
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		region: string;
+
+		/**
+		 * Required
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		parameters: string;
 		timeoutInSeconds?: number | null;
 	}
 
 	/** Contains details about a task scheduled during an execution. */
 	export interface TaskScheduledEventDetailsFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resourceType: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resource: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		region: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		parameters: FormControl<string | null | undefined>,
 		timeoutInSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateTaskScheduledEventDetailsFormGroup() {
 		return new FormGroup<TaskScheduledEventDetailsFormProperties>({
-			resourceType: new FormControl<string | null | undefined>(undefined),
-			resource: new FormControl<string | null | undefined>(undefined),
-			region: new FormControl<string | null | undefined>(undefined),
-			parameters: new FormControl<string | null | undefined>(undefined),
+			resourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
+			resource: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
+			region: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
+			parameters: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32768), Validators.minLength(0)]),
 			timeoutInSeconds: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -864,25 +1472,69 @@ export namespace MyNS {
 
 	/** Contains details about a task that failed to start during an execution. */
 	export interface TaskStartFailedEventDetails {
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resourceType: string;
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resource: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error?: string | null;
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause?: string | null;
 	}
 
 	/** Contains details about a task that failed to start during an execution. */
 	export interface TaskStartFailedEventDetailsFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resourceType: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resource: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause: FormControl<string | null | undefined>,
 	}
 	export function CreateTaskStartFailedEventDetailsFormGroup() {
 		return new FormGroup<TaskStartFailedEventDetailsFormProperties>({
-			resourceType: new FormControl<string | null | undefined>(undefined),
-			resource: new FormControl<string | null | undefined>(undefined),
-			error: new FormControl<string | null | undefined>(undefined),
-			cause: new FormControl<string | null | undefined>(undefined),
+			resourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
+			resource: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
+			error: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			cause: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(0)]),
 		});
 
 	}
@@ -890,19 +1542,43 @@ export namespace MyNS {
 
 	/** Contains details about the start of a task during an execution. */
 	export interface TaskStartedEventDetails {
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resourceType: string;
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resource: string;
 	}
 
 	/** Contains details about the start of a task during an execution. */
 	export interface TaskStartedEventDetailsFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resourceType: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resource: FormControl<string | null | undefined>,
 	}
 	export function CreateTaskStartedEventDetailsFormGroup() {
 		return new FormGroup<TaskStartedEventDetailsFormProperties>({
-			resourceType: new FormControl<string | null | undefined>(undefined),
-			resource: new FormControl<string | null | undefined>(undefined),
+			resourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
+			resource: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
 		});
 
 	}
@@ -910,25 +1586,69 @@ export namespace MyNS {
 
 	/** Contains details about a task that failed to submit during an execution. */
 	export interface TaskSubmitFailedEventDetails {
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resourceType: string;
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resource: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error?: string | null;
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause?: string | null;
 	}
 
 	/** Contains details about a task that failed to submit during an execution. */
 	export interface TaskSubmitFailedEventDetailsFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resourceType: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resource: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause: FormControl<string | null | undefined>,
 	}
 	export function CreateTaskSubmitFailedEventDetailsFormGroup() {
 		return new FormGroup<TaskSubmitFailedEventDetailsFormProperties>({
-			resourceType: new FormControl<string | null | undefined>(undefined),
-			resource: new FormControl<string | null | undefined>(undefined),
-			error: new FormControl<string | null | undefined>(undefined),
-			cause: new FormControl<string | null | undefined>(undefined),
+			resourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
+			resource: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
+			error: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			cause: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(0)]),
 		});
 
 	}
@@ -936,22 +1656,50 @@ export namespace MyNS {
 
 	/** Contains details about a task submitted to a resource . */
 	export interface TaskSubmittedEventDetails {
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resourceType: string;
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resource: string;
+
+		/** Max length: 32768 */
 		output?: string | null;
 	}
 
 	/** Contains details about a task submitted to a resource . */
 	export interface TaskSubmittedEventDetailsFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resourceType: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resource: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		output: FormControl<string | null | undefined>,
 	}
 	export function CreateTaskSubmittedEventDetailsFormGroup() {
 		return new FormGroup<TaskSubmittedEventDetailsFormProperties>({
-			resourceType: new FormControl<string | null | undefined>(undefined),
-			resource: new FormControl<string | null | undefined>(undefined),
-			output: new FormControl<string | null | undefined>(undefined),
+			resourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
+			resource: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
+			output: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -959,22 +1707,50 @@ export namespace MyNS {
 
 	/** Contains details about the successful completion of a task state. */
 	export interface TaskSucceededEventDetails {
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resourceType: string;
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resource: string;
+
+		/** Max length: 32768 */
 		output?: string | null;
 	}
 
 	/** Contains details about the successful completion of a task state. */
 	export interface TaskSucceededEventDetailsFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resourceType: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resource: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		output: FormControl<string | null | undefined>,
 	}
 	export function CreateTaskSucceededEventDetailsFormGroup() {
 		return new FormGroup<TaskSucceededEventDetailsFormProperties>({
-			resourceType: new FormControl<string | null | undefined>(undefined),
-			resource: new FormControl<string | null | undefined>(undefined),
-			output: new FormControl<string | null | undefined>(undefined),
+			resourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
+			resource: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
+			output: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -982,25 +1758,69 @@ export namespace MyNS {
 
 	/** Contains details about a resource timeout that occurred during an execution. */
 	export interface TaskTimedOutEventDetails {
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resourceType: string;
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resource: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error?: string | null;
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause?: string | null;
 	}
 
 	/** Contains details about a resource timeout that occurred during an execution. */
 	export interface TaskTimedOutEventDetailsFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resourceType: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		resource: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause: FormControl<string | null | undefined>,
 	}
 	export function CreateTaskTimedOutEventDetailsFormGroup() {
 		return new FormGroup<TaskTimedOutEventDetailsFormProperties>({
-			resourceType: new FormControl<string | null | undefined>(undefined),
-			resource: new FormControl<string | null | undefined>(undefined),
-			error: new FormControl<string | null | undefined>(undefined),
-			cause: new FormControl<string | null | undefined>(undefined),
+			resourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
+			resource: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
+			error: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			cause: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(0)]),
 		});
 
 	}
@@ -1008,19 +1828,39 @@ export namespace MyNS {
 
 	/** Contains details about an execution failure event. */
 	export interface ExecutionFailedEventDetails {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error?: string | null;
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause?: string | null;
 	}
 
 	/** Contains details about an execution failure event. */
 	export interface ExecutionFailedEventDetailsFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause: FormControl<string | null | undefined>,
 	}
 	export function CreateExecutionFailedEventDetailsFormGroup() {
 		return new FormGroup<ExecutionFailedEventDetailsFormProperties>({
-			error: new FormControl<string | null | undefined>(undefined),
-			cause: new FormControl<string | null | undefined>(undefined),
+			error: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			cause: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(0)]),
 		});
 
 	}
@@ -1028,19 +1868,33 @@ export namespace MyNS {
 
 	/** Contains details about the start of the execution. */
 	export interface ExecutionStartedEventDetails {
+
+		/** Max length: 32768 */
 		input?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		roleArn?: string | null;
 	}
 
 	/** Contains details about the start of the execution. */
 	export interface ExecutionStartedEventDetailsFormProperties {
+
+		/** Max length: 32768 */
 		input: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		roleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateExecutionStartedEventDetailsFormGroup() {
 		return new FormGroup<ExecutionStartedEventDetailsFormProperties>({
-			input: new FormControl<string | null | undefined>(undefined),
-			roleArn: new FormControl<string | null | undefined>(undefined),
+			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -1048,16 +1902,20 @@ export namespace MyNS {
 
 	/** Contains details about the successful termination of the execution. */
 	export interface ExecutionSucceededEventDetails {
+
+		/** Max length: 32768 */
 		output?: string | null;
 	}
 
 	/** Contains details about the successful termination of the execution. */
 	export interface ExecutionSucceededEventDetailsFormProperties {
+
+		/** Max length: 32768 */
 		output: FormControl<string | null | undefined>,
 	}
 	export function CreateExecutionSucceededEventDetailsFormGroup() {
 		return new FormGroup<ExecutionSucceededEventDetailsFormProperties>({
-			output: new FormControl<string | null | undefined>(undefined),
+			output: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -1065,19 +1923,39 @@ export namespace MyNS {
 
 	/** Contains details about an abort of an execution. */
 	export interface ExecutionAbortedEventDetails {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error?: string | null;
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause?: string | null;
 	}
 
 	/** Contains details about an abort of an execution. */
 	export interface ExecutionAbortedEventDetailsFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause: FormControl<string | null | undefined>,
 	}
 	export function CreateExecutionAbortedEventDetailsFormGroup() {
 		return new FormGroup<ExecutionAbortedEventDetailsFormProperties>({
-			error: new FormControl<string | null | undefined>(undefined),
-			cause: new FormControl<string | null | undefined>(undefined),
+			error: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			cause: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(0)]),
 		});
 
 	}
@@ -1085,19 +1963,39 @@ export namespace MyNS {
 
 	/** Contains details about the execution timeout that occurred during the execution. */
 	export interface ExecutionTimedOutEventDetails {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error?: string | null;
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause?: string | null;
 	}
 
 	/** Contains details about the execution timeout that occurred during the execution. */
 	export interface ExecutionTimedOutEventDetailsFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause: FormControl<string | null | undefined>,
 	}
 	export function CreateExecutionTimedOutEventDetailsFormGroup() {
 		return new FormGroup<ExecutionTimedOutEventDetailsFormProperties>({
-			error: new FormControl<string | null | undefined>(undefined),
-			cause: new FormControl<string | null | undefined>(undefined),
+			error: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			cause: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(0)]),
 		});
 
 	}
@@ -1105,16 +2003,20 @@ export namespace MyNS {
 
 	/** Details about a Map state that was started. */
 	export interface MapStateStartedEventDetails {
+
+		/** Minimum: 0 */
 		length?: number | null;
 	}
 
 	/** Details about a Map state that was started. */
 	export interface MapStateStartedEventDetailsFormProperties {
+
+		/** Minimum: 0 */
 		length: FormControl<number | null | undefined>,
 	}
 	export function CreateMapStateStartedEventDetailsFormGroup() {
 		return new FormGroup<MapStateStartedEventDetailsFormProperties>({
-			length: new FormControl<number | null | undefined>(undefined),
+			length: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -1122,19 +2024,33 @@ export namespace MyNS {
 
 	/** Contains details about an iteration of a Map state. */
 	export interface MapIterationEventDetails {
+
+		/**
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name?: string | null;
+
+		/** Minimum: 0 */
 		index?: number | null;
 	}
 
 	/** Contains details about an iteration of a Map state. */
 	export interface MapIterationEventDetailsFormProperties {
+
+		/**
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		index: FormControl<number | null | undefined>,
 	}
 	export function CreateMapIterationEventDetailsFormGroup() {
 		return new FormGroup<MapIterationEventDetailsFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			index: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(80), Validators.minLength(1)]),
+			index: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -1142,19 +2058,39 @@ export namespace MyNS {
 
 	/** Contains details about a lambda function that failed during an execution. */
 	export interface LambdaFunctionFailedEventDetails {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error?: string | null;
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause?: string | null;
 	}
 
 	/** Contains details about a lambda function that failed during an execution. */
 	export interface LambdaFunctionFailedEventDetailsFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause: FormControl<string | null | undefined>,
 	}
 	export function CreateLambdaFunctionFailedEventDetailsFormGroup() {
 		return new FormGroup<LambdaFunctionFailedEventDetailsFormProperties>({
-			error: new FormControl<string | null | undefined>(undefined),
-			cause: new FormControl<string | null | undefined>(undefined),
+			error: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			cause: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(0)]),
 		});
 
 	}
@@ -1162,19 +2098,39 @@ export namespace MyNS {
 
 	/** Contains details about a failed lambda function schedule event that occurred during an execution. */
 	export interface LambdaFunctionScheduleFailedEventDetails {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error?: string | null;
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause?: string | null;
 	}
 
 	/** Contains details about a failed lambda function schedule event that occurred during an execution. */
 	export interface LambdaFunctionScheduleFailedEventDetailsFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause: FormControl<string | null | undefined>,
 	}
 	export function CreateLambdaFunctionScheduleFailedEventDetailsFormGroup() {
 		return new FormGroup<LambdaFunctionScheduleFailedEventDetailsFormProperties>({
-			error: new FormControl<string | null | undefined>(undefined),
-			cause: new FormControl<string | null | undefined>(undefined),
+			error: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			cause: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(0)]),
 		});
 
 	}
@@ -1182,21 +2138,37 @@ export namespace MyNS {
 
 	/** Contains details about a lambda function scheduled during an execution. */
 	export interface LambdaFunctionScheduledEventDetails {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		resource: string;
+
+		/** Max length: 32768 */
 		input?: string | null;
 		timeoutInSeconds?: number | null;
 	}
 
 	/** Contains details about a lambda function scheduled during an execution. */
 	export interface LambdaFunctionScheduledEventDetailsFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		resource: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		input: FormControl<string | null | undefined>,
 		timeoutInSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateLambdaFunctionScheduledEventDetailsFormGroup() {
 		return new FormGroup<LambdaFunctionScheduledEventDetailsFormProperties>({
-			resource: new FormControl<string | null | undefined>(undefined),
-			input: new FormControl<string | null | undefined>(undefined),
+			resource: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 			timeoutInSeconds: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1205,19 +2177,39 @@ export namespace MyNS {
 
 	/** Contains details about a lambda function that failed to start during an execution. */
 	export interface LambdaFunctionStartFailedEventDetails {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error?: string | null;
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause?: string | null;
 	}
 
 	/** Contains details about a lambda function that failed to start during an execution. */
 	export interface LambdaFunctionStartFailedEventDetailsFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause: FormControl<string | null | undefined>,
 	}
 	export function CreateLambdaFunctionStartFailedEventDetailsFormGroup() {
 		return new FormGroup<LambdaFunctionStartFailedEventDetailsFormProperties>({
-			error: new FormControl<string | null | undefined>(undefined),
-			cause: new FormControl<string | null | undefined>(undefined),
+			error: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			cause: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(0)]),
 		});
 
 	}
@@ -1225,16 +2217,20 @@ export namespace MyNS {
 
 	/** Contains details about a lambda function that successfully terminated during an execution. */
 	export interface LambdaFunctionSucceededEventDetails {
+
+		/** Max length: 32768 */
 		output?: string | null;
 	}
 
 	/** Contains details about a lambda function that successfully terminated during an execution. */
 	export interface LambdaFunctionSucceededEventDetailsFormProperties {
+
+		/** Max length: 32768 */
 		output: FormControl<string | null | undefined>,
 	}
 	export function CreateLambdaFunctionSucceededEventDetailsFormGroup() {
 		return new FormGroup<LambdaFunctionSucceededEventDetailsFormProperties>({
-			output: new FormControl<string | null | undefined>(undefined),
+			output: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -1242,19 +2238,39 @@ export namespace MyNS {
 
 	/** Contains details about a lambda function timeout that occurred during an execution. */
 	export interface LambdaFunctionTimedOutEventDetails {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error?: string | null;
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause?: string | null;
 	}
 
 	/** Contains details about a lambda function timeout that occurred during an execution. */
 	export interface LambdaFunctionTimedOutEventDetailsFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause: FormControl<string | null | undefined>,
 	}
 	export function CreateLambdaFunctionTimedOutEventDetailsFormGroup() {
 		return new FormGroup<LambdaFunctionTimedOutEventDetailsFormProperties>({
-			error: new FormControl<string | null | undefined>(undefined),
-			cause: new FormControl<string | null | undefined>(undefined),
+			error: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			cause: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(0)]),
 		});
 
 	}
@@ -1262,19 +2278,35 @@ export namespace MyNS {
 
 	/** Contains details about a state entered during an execution. */
 	export interface StateEnteredEventDetails {
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name: string;
+
+		/** Max length: 32768 */
 		input?: string | null;
 	}
 
 	/** Contains details about a state entered during an execution. */
 	export interface StateEnteredEventDetailsFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		input: FormControl<string | null | undefined>,
 	}
 	export function CreateStateEnteredEventDetailsFormGroup() {
 		return new FormGroup<StateEnteredEventDetailsFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			input: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
+			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -1282,41 +2314,89 @@ export namespace MyNS {
 
 	/** Contains details about an exit from a state during an execution. */
 	export interface StateExitedEventDetails {
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name: string;
+
+		/** Max length: 32768 */
 		output?: string | null;
 	}
 
 	/** Contains details about an exit from a state during an execution. */
 	export interface StateExitedEventDetailsFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		output: FormControl<string | null | undefined>,
 	}
 	export function CreateStateExitedEventDetailsFormGroup() {
 		return new FormGroup<StateExitedEventDetailsFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			output: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
+			output: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
 
 	export interface GetExecutionHistoryInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		executionArn: string;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maxResults?: number | null;
 		reverseOrder?: boolean | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 	}
 	export interface GetExecutionHistoryInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		executionArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maxResults: FormControl<number | null | undefined>,
 		reverseOrder: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetExecutionHistoryInputFormGroup() {
 		return new FormGroup<GetExecutionHistoryInputFormProperties>({
-			executionArn: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			executionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 			reverseOrder: new FormControl<boolean | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1332,15 +2412,27 @@ export namespace MyNS {
 	}
 
 	export interface ListActivitiesOutput {
+
+		/** Required */
 		activities: Array<ActivityListItem>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListActivitiesOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListActivitiesOutputFormGroup() {
 		return new FormGroup<ListActivitiesOutputFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1348,52 +2440,112 @@ export namespace MyNS {
 
 	/** Contains details about an activity. */
 	export interface ActivityListItem {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityArn: string;
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name: string;
+
+		/** Required */
 		creationDate: Date;
 	}
 
 	/** Contains details about an activity. */
 	export interface ActivityListItemFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		activityArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Required */
 		creationDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateActivityListItemFormGroup() {
 		return new FormGroup<ActivityListItemFormProperties>({
-			activityArn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			creationDate: new FormControl<Date | null | undefined>(undefined),
+			activityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
+			creationDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ListActivitiesInput {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maxResults?: number | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListActivitiesInputFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListActivitiesInputFormGroup() {
 		return new FormGroup<ListActivitiesInputFormProperties>({
-			maxResults: new FormControl<number | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListExecutionsOutput {
+
+		/** Required */
 		executions: Array<ExecutionListItem>;
+
+		/**
+		 * Max length: 3096
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListExecutionsOutputFormProperties {
+
+		/**
+		 * Max length: 3096
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListExecutionsOutputFormGroup() {
 		return new FormGroup<ListExecutionsOutputFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3096), Validators.minLength(1)]),
 		});
 
 	}
@@ -1401,67 +2553,155 @@ export namespace MyNS {
 
 	/** Contains details about an execution. */
 	export interface ExecutionListItem {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		executionArn: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		stateMachineArn: string;
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name: string;
+
+		/** Required */
 		status: DescribeExecutionOutputStatus;
+
+		/** Required */
 		startDate: Date;
 		stopDate?: Date | null;
 	}
 
 	/** Contains details about an execution. */
 	export interface ExecutionListItemFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		executionArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		stateMachineArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Required */
 		status: FormControl<DescribeExecutionOutputStatus | null | undefined>,
+
+		/** Required */
 		startDate: FormControl<Date | null | undefined>,
 		stopDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateExecutionListItemFormGroup() {
 		return new FormGroup<ExecutionListItemFormProperties>({
-			executionArn: new FormControl<string | null | undefined>(undefined),
-			stateMachineArn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<DescribeExecutionOutputStatus | null | undefined>(undefined),
-			startDate: new FormControl<Date | null | undefined>(undefined),
+			executionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			stateMachineArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
+			status: new FormControl<DescribeExecutionOutputStatus | null | undefined>(undefined, [Validators.required]),
+			startDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			stopDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ListExecutionsInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		stateMachineArn: string;
 		statusFilter?: DescribeExecutionOutputStatus | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maxResults?: number | null;
+
+		/**
+		 * Max length: 3096
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListExecutionsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		stateMachineArn: FormControl<string | null | undefined>,
 		statusFilter: FormControl<DescribeExecutionOutputStatus | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 3096
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListExecutionsInputFormGroup() {
 		return new FormGroup<ListExecutionsInputFormProperties>({
-			stateMachineArn: new FormControl<string | null | undefined>(undefined),
+			stateMachineArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 			statusFilter: new FormControl<DescribeExecutionOutputStatus | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3096), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListStateMachinesOutput {
+
+		/** Required */
 		stateMachines: Array<StateMachineListItem>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListStateMachinesOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListStateMachinesOutputFormGroup() {
 		return new FormGroup<ListStateMachinesOutputFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1469,41 +2709,93 @@ export namespace MyNS {
 
 	/** Contains details about the state machine. */
 	export interface StateMachineListItem {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		stateMachineArn: string;
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name: string;
+
+		/** Required */
 		type: CreateStateMachineInputType;
+
+		/** Required */
 		creationDate: Date;
 	}
 
 	/** Contains details about the state machine. */
 	export interface StateMachineListItemFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		stateMachineArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Required */
 		type: FormControl<CreateStateMachineInputType | null | undefined>,
+
+		/** Required */
 		creationDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateStateMachineListItemFormGroup() {
 		return new FormGroup<StateMachineListItemFormProperties>({
-			stateMachineArn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<CreateStateMachineInputType | null | undefined>(undefined),
-			creationDate: new FormControl<Date | null | undefined>(undefined),
+			stateMachineArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
+			type: new FormControl<CreateStateMachineInputType | null | undefined>(undefined, [Validators.required]),
+			creationDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ListStateMachinesInput {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maxResults?: number | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListStateMachinesInputFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListStateMachinesInputFormGroup() {
 		return new FormGroup<ListStateMachinesInputFormProperties>({
-			maxResults: new FormControl<number | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1520,14 +2812,26 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		resourceArn: string;
 	}
 	export interface ListTagsForResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceInputFormGroup() {
 		return new FormGroup<ListTagsForResourceInputFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -1553,20 +2857,52 @@ export namespace MyNS {
 	}
 
 	export interface SendTaskFailureInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		taskToken: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error?: string | null;
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause?: string | null;
 	}
 	export interface SendTaskFailureInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		taskToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause: FormControl<string | null | undefined>,
 	}
 	export function CreateSendTaskFailureInputFormGroup() {
 		return new FormGroup<SendTaskFailureInputFormProperties>({
-			taskToken: new FormControl<string | null | undefined>(undefined),
-			error: new FormControl<string | null | undefined>(undefined),
-			cause: new FormControl<string | null | undefined>(undefined),
+			taskToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			error: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			cause: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(0)]),
 		});
 
 	}
@@ -1602,14 +2938,26 @@ export namespace MyNS {
 	}
 
 	export interface SendTaskHeartbeatInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		taskToken: string;
 	}
 	export interface SendTaskHeartbeatInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		taskToken: FormControl<string | null | undefined>,
 	}
 	export function CreateSendTaskHeartbeatInputFormGroup() {
 		return new FormGroup<SendTaskHeartbeatInputFormProperties>({
-			taskToken: new FormControl<string | null | undefined>(undefined),
+			taskToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1625,17 +2973,39 @@ export namespace MyNS {
 	}
 
 	export interface SendTaskSuccessInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		taskToken: string;
+
+		/**
+		 * Required
+		 * Max length: 32768
+		 */
 		output: string;
 	}
 	export interface SendTaskSuccessInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		taskToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32768
+		 */
 		output: FormControl<string | null | undefined>,
 	}
 	export function CreateSendTaskSuccessInputFormGroup() {
 		return new FormGroup<SendTaskSuccessInputFormProperties>({
-			taskToken: new FormControl<string | null | undefined>(undefined),
-			output: new FormControl<string | null | undefined>(undefined),
+			taskToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			output: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32768)]),
 		});
 
 	}
@@ -1651,36 +3021,78 @@ export namespace MyNS {
 	}
 
 	export interface StartExecutionOutput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		executionArn: string;
+
+		/** Required */
 		startDate: Date;
 	}
 	export interface StartExecutionOutputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		executionArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		startDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateStartExecutionOutputFormGroup() {
 		return new FormGroup<StartExecutionOutputFormProperties>({
-			executionArn: new FormControl<string | null | undefined>(undefined),
-			startDate: new FormControl<Date | null | undefined>(undefined),
+			executionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			startDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface StartExecutionInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		stateMachineArn: string;
+
+		/**
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name?: string | null;
+
+		/** Max length: 32768 */
 		input?: string | null;
 	}
 	export interface StartExecutionInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		stateMachineArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Max length: 32768 */
 		input: FormControl<string | null | undefined>,
 	}
 	export function CreateStartExecutionInputFormGroup() {
 		return new FormGroup<StartExecutionInputFormProperties>({
-			stateMachineArn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			input: new FormControl<string | null | undefined>(undefined),
+			stateMachineArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(80), Validators.minLength(1)]),
+			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -1716,33 +3128,69 @@ export namespace MyNS {
 	}
 
 	export interface StopExecutionOutput {
+
+		/** Required */
 		stopDate: Date;
 	}
 	export interface StopExecutionOutputFormProperties {
+
+		/** Required */
 		stopDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateStopExecutionOutputFormGroup() {
 		return new FormGroup<StopExecutionOutputFormProperties>({
-			stopDate: new FormControl<Date | null | undefined>(undefined),
+			stopDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface StopExecutionInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		executionArn: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error?: string | null;
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause?: string | null;
 	}
 	export interface StopExecutionInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		executionArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		error: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32768
+		 * Min length: 0
+		 */
 		cause: FormControl<string | null | undefined>,
 	}
 	export function CreateStopExecutionInputFormGroup() {
 		return new FormGroup<StopExecutionInputFormProperties>({
-			executionArn: new FormControl<string | null | undefined>(undefined),
-			error: new FormControl<string | null | undefined>(undefined),
-			cause: new FormControl<string | null | undefined>(undefined),
+			executionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			error: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			cause: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(0)]),
 		});
 
 	}
@@ -1758,15 +3206,29 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		resourceArn: string;
+
+		/** Required */
 		tags: Array<Tag>;
 	}
 	export interface TagResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceInputFormGroup() {
 		return new FormGroup<TagResourceInputFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -1782,50 +3244,100 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		resourceArn: string;
+
+		/** Required */
 		tagKeys: Array<string>;
 	}
 	export interface UntagResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceInputFormGroup() {
 		return new FormGroup<UntagResourceInputFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateStateMachineOutput {
+
+		/** Required */
 		updateDate: Date;
 	}
 	export interface UpdateStateMachineOutputFormProperties {
+
+		/** Required */
 		updateDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateUpdateStateMachineOutputFormGroup() {
 		return new FormGroup<UpdateStateMachineOutputFormProperties>({
-			updateDate: new FormControl<Date | null | undefined>(undefined),
+			updateDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface UpdateStateMachineInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		stateMachineArn: string;
+
+		/**
+		 * Max length: 1048576
+		 * Min length: 1
+		 */
 		definition?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		roleArn?: string | null;
 
 		/** The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options. */
 		loggingConfiguration?: LoggingConfiguration;
 	}
 	export interface UpdateStateMachineInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		stateMachineArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1048576
+		 * Min length: 1
+		 */
 		definition: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		roleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateStateMachineInputFormGroup() {
 		return new FormGroup<UpdateStateMachineInputFormProperties>({
-			stateMachineArn: new FormControl<string | null | undefined>(undefined),
-			definition: new FormControl<string | null | undefined>(undefined),
-			roleArn: new FormControl<string | null | undefined>(undefined),
+			stateMachineArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			definition: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1048576), Validators.minLength(1)]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}

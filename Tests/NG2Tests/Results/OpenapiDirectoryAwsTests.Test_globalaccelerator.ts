@@ -19,6 +19,8 @@ export namespace MyNS {
 
 	/** <p>Information about an IP address range that is provisioned for use with your AWS resources through bring your own IP address (BYOIP).</p> <p>The following describes each BYOIP <code>State</code> that your IP address range can be in.</p> <ul> <li> <p> <b>PENDING_PROVISIONING</b> — You’ve submitted a request to provision an IP address range but it is not yet provisioned with AWS Global Accelerator.</p> </li> <li> <p> <b>READY</b> — The address range is provisioned with AWS Global Accelerator and can be advertised.</p> </li> <li> <p> <b>PENDING_ADVERTISING</b> — You’ve submitted a request for AWS Global Accelerator to advertise an address range but it is not yet being advertised.</p> </li> <li> <p> <b>ADVERTISING</b> — The address range is being advertised by AWS Global Accelerator.</p> </li> <li> <p> <b>PENDING_WITHDRAWING</b> — You’ve submitted a request to withdraw an address range from being advertised but it is still being advertised by AWS Global Accelerator.</p> </li> <li> <p> <b>PENDING_DEPROVISIONING</b> — You’ve submitted a request to deprovision an address range from AWS Global Accelerator but it is still provisioned.</p> </li> <li> <p> <b>DEPROVISIONED</b> — The address range is deprovisioned from AWS Global Accelerator.</p> </li> <li> <p> <b>FAILED_PROVISION </b> — The request to provision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_ADVERTISING</b> — The request for AWS Global Accelerator to advertise the address range was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_WITHDRAW</b> — The request to withdraw the address range from advertising by AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_DEPROVISION </b> — The request to deprovision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> </ul> */
 	export interface ByoipCidr {
+
+		/** Max length: 255 */
 		Cidr?: string | null;
 		State?: ByoipCidrState | null;
 		Events?: Array<ByoipCidrEvent>;
@@ -26,12 +28,14 @@ export namespace MyNS {
 
 	/** <p>Information about an IP address range that is provisioned for use with your AWS resources through bring your own IP address (BYOIP).</p> <p>The following describes each BYOIP <code>State</code> that your IP address range can be in.</p> <ul> <li> <p> <b>PENDING_PROVISIONING</b> — You’ve submitted a request to provision an IP address range but it is not yet provisioned with AWS Global Accelerator.</p> </li> <li> <p> <b>READY</b> — The address range is provisioned with AWS Global Accelerator and can be advertised.</p> </li> <li> <p> <b>PENDING_ADVERTISING</b> — You’ve submitted a request for AWS Global Accelerator to advertise an address range but it is not yet being advertised.</p> </li> <li> <p> <b>ADVERTISING</b> — The address range is being advertised by AWS Global Accelerator.</p> </li> <li> <p> <b>PENDING_WITHDRAWING</b> — You’ve submitted a request to withdraw an address range from being advertised but it is still being advertised by AWS Global Accelerator.</p> </li> <li> <p> <b>PENDING_DEPROVISIONING</b> — You’ve submitted a request to deprovision an address range from AWS Global Accelerator but it is still provisioned.</p> </li> <li> <p> <b>DEPROVISIONED</b> — The address range is deprovisioned from AWS Global Accelerator.</p> </li> <li> <p> <b>FAILED_PROVISION </b> — The request to provision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_ADVERTISING</b> — The request for AWS Global Accelerator to advertise the address range was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_WITHDRAW</b> — The request to withdraw the address range from advertising by AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_DEPROVISION </b> — The request to deprovision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> </ul> */
 	export interface ByoipCidrFormProperties {
+
+		/** Max length: 255 */
 		Cidr: FormControl<string | null | undefined>,
 		State: FormControl<ByoipCidrState | null | undefined>,
 	}
 	export function CreateByoipCidrFormGroup() {
 		return new FormGroup<ByoipCidrFormProperties>({
-			Cidr: new FormControl<string | null | undefined>(undefined),
+			Cidr: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			State: new FormControl<ByoipCidrState | null | undefined>(undefined),
 		});
 
@@ -42,32 +46,46 @@ export namespace MyNS {
 
 	/** A complex type that contains a <code>Message</code> and a <code>Timestamp</code> value for changes that you make in the status an IP address range that you bring to AWS Global Accelerator through bring your own IP address (BYOIP). */
 	export interface ByoipCidrEvent {
+
+		/** Max length: 255 */
 		Message?: string | null;
 		Timestamp?: Date | null;
 	}
 
 	/** A complex type that contains a <code>Message</code> and a <code>Timestamp</code> value for changes that you make in the status an IP address range that you bring to AWS Global Accelerator through bring your own IP address (BYOIP). */
 	export interface ByoipCidrEventFormProperties {
+
+		/** Max length: 255 */
 		Message: FormControl<string | null | undefined>,
 		Timestamp: FormControl<Date | null | undefined>,
 	}
 	export function CreateByoipCidrEventFormGroup() {
 		return new FormGroup<ByoipCidrEventFormProperties>({
-			Message: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			Timestamp: new FormControl<Date | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface AdvertiseByoipCidrRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		Cidr: string;
 	}
 	export interface AdvertiseByoipCidrRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		Cidr: FormControl<string | null | undefined>,
 	}
 	export function CreateAdvertiseByoipCidrRequestFormGroup() {
 		return new FormGroup<AdvertiseByoipCidrRequestFormProperties>({
-			Cidr: new FormControl<string | null | undefined>(undefined),
+			Cidr: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -138,11 +156,17 @@ export namespace MyNS {
 
 	/** An accelerator is a complex type that includes one or more listeners that process inbound connections and then direct traffic to one or more endpoint groups, each of which includes endpoints, such as load balancers. */
 	export interface Accelerator {
+
+		/** Max length: 255 */
 		AcceleratorArn?: string | null;
+
+		/** Max length: 255 */
 		Name?: string | null;
 		IpAddressType?: AcceleratorIpAddressType | null;
 		Enabled?: boolean | null;
 		IpSets?: Array<IpSet>;
+
+		/** Max length: 255 */
 		DnsName?: string | null;
 		Status?: AcceleratorStatus | null;
 		CreatedTime?: Date | null;
@@ -151,10 +175,16 @@ export namespace MyNS {
 
 	/** An accelerator is a complex type that includes one or more listeners that process inbound connections and then direct traffic to one or more endpoint groups, each of which includes endpoints, such as load balancers. */
 	export interface AcceleratorFormProperties {
+
+		/** Max length: 255 */
 		AcceleratorArn: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		Name: FormControl<string | null | undefined>,
 		IpAddressType: FormControl<AcceleratorIpAddressType | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/** Max length: 255 */
 		DnsName: FormControl<string | null | undefined>,
 		Status: FormControl<AcceleratorStatus | null | undefined>,
 		CreatedTime: FormControl<Date | null | undefined>,
@@ -162,11 +192,11 @@ export namespace MyNS {
 	}
 	export function CreateAcceleratorFormGroup() {
 		return new FormGroup<AcceleratorFormProperties>({
-			AcceleratorArn: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			AcceleratorArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			IpAddressType: new FormControl<AcceleratorIpAddressType | null | undefined>(undefined),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			DnsName: new FormControl<string | null | undefined>(undefined),
+			DnsName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			Status: new FormControl<AcceleratorStatus | null | undefined>(undefined),
 			CreatedTime: new FormControl<Date | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
@@ -179,17 +209,26 @@ export namespace MyNS {
 
 	/** A complex type for the set of IP addresses for an accelerator. */
 	export interface IpSet {
+
+		/** Max length: 255 */
 		IpFamily?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 2
+		 */
 		IpAddresses?: Array<string>;
 	}
 
 	/** A complex type for the set of IP addresses for an accelerator. */
 	export interface IpSetFormProperties {
+
+		/** Max length: 255 */
 		IpFamily: FormControl<string | null | undefined>,
 	}
 	export function CreateIpSetFormGroup() {
 		return new FormGroup<IpSetFormProperties>({
-			IpFamily: new FormControl<string | null | undefined>(undefined),
+			IpFamily: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -197,25 +236,50 @@ export namespace MyNS {
 	export enum AcceleratorStatus { DEPLOYED = 0, IN_PROGRESS = 1 }
 
 	export interface CreateAcceleratorRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		Name: string;
 		IpAddressType?: AcceleratorIpAddressType | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 2
+		 */
 		IpAddresses?: Array<string>;
 		Enabled?: boolean | null;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		IdempotencyToken: string;
 		Tags?: Array<Tag>;
 	}
 	export interface CreateAcceleratorRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		Name: FormControl<string | null | undefined>,
 		IpAddressType: FormControl<AcceleratorIpAddressType | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		IdempotencyToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateAcceleratorRequestFormGroup() {
 		return new FormGroup<CreateAcceleratorRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 			IpAddressType: new FormControl<AcceleratorIpAddressType | null | undefined>(undefined),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -223,19 +287,43 @@ export namespace MyNS {
 
 	/** A complex type that contains a <code>Tag</code> key and <code>Tag</code> value. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Value: string;
 	}
 
 	/** A complex type that contains a <code>Tag</code> key and <code>Tag</code> value. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -266,38 +354,90 @@ export namespace MyNS {
 
 	/** A complex type for the endpoint group. An AWS Region can have only one endpoint group for a specific listener.  */
 	export interface EndpointGroup {
+
+		/** Max length: 255 */
 		EndpointGroupArn?: string | null;
+
+		/** Max length: 255 */
 		EndpointGroupRegion?: string | null;
 		EndpointDescriptions?: Array<EndpointDescription>;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		TrafficDialPercentage?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		HealthCheckPort?: number | null;
 		HealthCheckProtocol?: EndpointGroupHealthCheckProtocol | null;
+
+		/** Max length: 255 */
 		HealthCheckPath?: string | null;
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 30
+		 */
 		HealthCheckIntervalSeconds?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		ThresholdCount?: number | null;
 	}
 
 	/** A complex type for the endpoint group. An AWS Region can have only one endpoint group for a specific listener.  */
 	export interface EndpointGroupFormProperties {
+
+		/** Max length: 255 */
 		EndpointGroupArn: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		EndpointGroupRegion: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		TrafficDialPercentage: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		HealthCheckPort: FormControl<number | null | undefined>,
 		HealthCheckProtocol: FormControl<EndpointGroupHealthCheckProtocol | null | undefined>,
+
+		/** Max length: 255 */
 		HealthCheckPath: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 30
+		 */
 		HealthCheckIntervalSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		ThresholdCount: FormControl<number | null | undefined>,
 	}
 	export function CreateEndpointGroupFormGroup() {
 		return new FormGroup<EndpointGroupFormProperties>({
-			EndpointGroupArn: new FormControl<string | null | undefined>(undefined),
-			EndpointGroupRegion: new FormControl<string | null | undefined>(undefined),
-			TrafficDialPercentage: new FormControl<number | null | undefined>(undefined),
-			HealthCheckPort: new FormControl<number | null | undefined>(undefined),
+			EndpointGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			EndpointGroupRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			TrafficDialPercentage: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			HealthCheckPort: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(65535)]),
 			HealthCheckProtocol: new FormControl<EndpointGroupHealthCheckProtocol | null | undefined>(undefined),
-			HealthCheckPath: new FormControl<string | null | undefined>(undefined),
-			HealthCheckIntervalSeconds: new FormControl<number | null | undefined>(undefined),
-			ThresholdCount: new FormControl<number | null | undefined>(undefined),
+			HealthCheckPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			HealthCheckIntervalSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(10), Validators.max(30)]),
+			ThresholdCount: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10)]),
 		});
 
 	}
@@ -305,27 +445,45 @@ export namespace MyNS {
 
 	/** A complex type for an endpoint. Each endpoint group can include one or more endpoints, such as load balancers. */
 	export interface EndpointDescription {
+
+		/** Max length: 255 */
 		EndpointId?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 255
+		 */
 		Weight?: number | null;
 		HealthState?: EndpointDescriptionHealthState | null;
+
+		/** Max length: 255 */
 		HealthReason?: string | null;
 		ClientIPPreservationEnabled?: boolean | null;
 	}
 
 	/** A complex type for an endpoint. Each endpoint group can include one or more endpoints, such as load balancers. */
 	export interface EndpointDescriptionFormProperties {
+
+		/** Max length: 255 */
 		EndpointId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 255
+		 */
 		Weight: FormControl<number | null | undefined>,
 		HealthState: FormControl<EndpointDescriptionHealthState | null | undefined>,
+
+		/** Max length: 255 */
 		HealthReason: FormControl<string | null | undefined>,
 		ClientIPPreservationEnabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateEndpointDescriptionFormGroup() {
 		return new FormGroup<EndpointDescriptionFormProperties>({
-			EndpointId: new FormControl<string | null | undefined>(undefined),
-			Weight: new FormControl<number | null | undefined>(undefined),
+			EndpointId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			Weight: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(255)]),
 			HealthState: new FormControl<EndpointDescriptionHealthState | null | undefined>(undefined),
-			HealthReason: new FormControl<string | null | undefined>(undefined),
+			HealthReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			ClientIPPreservationEnabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -336,39 +494,118 @@ export namespace MyNS {
 	export enum EndpointGroupHealthCheckProtocol { TCP = 0, HTTP = 1, HTTPS = 2 }
 
 	export interface CreateEndpointGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		ListenerArn: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		EndpointGroupRegion: string;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		EndpointConfigurations?: Array<EndpointConfiguration>;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		TrafficDialPercentage?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		HealthCheckPort?: number | null;
 		HealthCheckProtocol?: EndpointGroupHealthCheckProtocol | null;
+
+		/** Max length: 255 */
 		HealthCheckPath?: string | null;
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 30
+		 */
 		HealthCheckIntervalSeconds?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		ThresholdCount?: number | null;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		IdempotencyToken: string;
 	}
 	export interface CreateEndpointGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		ListenerArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		EndpointGroupRegion: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		TrafficDialPercentage: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		HealthCheckPort: FormControl<number | null | undefined>,
 		HealthCheckProtocol: FormControl<EndpointGroupHealthCheckProtocol | null | undefined>,
+
+		/** Max length: 255 */
 		HealthCheckPath: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 30
+		 */
 		HealthCheckIntervalSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		ThresholdCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		IdempotencyToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateEndpointGroupRequestFormGroup() {
 		return new FormGroup<CreateEndpointGroupRequestFormProperties>({
-			ListenerArn: new FormControl<string | null | undefined>(undefined),
-			EndpointGroupRegion: new FormControl<string | null | undefined>(undefined),
-			TrafficDialPercentage: new FormControl<number | null | undefined>(undefined),
-			HealthCheckPort: new FormControl<number | null | undefined>(undefined),
+			ListenerArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			EndpointGroupRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			TrafficDialPercentage: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			HealthCheckPort: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(65535)]),
 			HealthCheckProtocol: new FormControl<EndpointGroupHealthCheckProtocol | null | undefined>(undefined),
-			HealthCheckPath: new FormControl<string | null | undefined>(undefined),
-			HealthCheckIntervalSeconds: new FormControl<number | null | undefined>(undefined),
-			ThresholdCount: new FormControl<number | null | undefined>(undefined),
-			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+			HealthCheckPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			HealthCheckIntervalSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(10), Validators.max(30)]),
+			ThresholdCount: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10)]),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -376,21 +613,35 @@ export namespace MyNS {
 
 	/** A complex type for endpoints. */
 	export interface EndpointConfiguration {
+
+		/** Max length: 255 */
 		EndpointId?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 255
+		 */
 		Weight?: number | null;
 		ClientIPPreservationEnabled?: boolean | null;
 	}
 
 	/** A complex type for endpoints. */
 	export interface EndpointConfigurationFormProperties {
+
+		/** Max length: 255 */
 		EndpointId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 255
+		 */
 		Weight: FormControl<number | null | undefined>,
 		ClientIPPreservationEnabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateEndpointConfigurationFormGroup() {
 		return new FormGroup<EndpointConfigurationFormProperties>({
-			EndpointId: new FormControl<string | null | undefined>(undefined),
-			Weight: new FormControl<number | null | undefined>(undefined),
+			EndpointId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			Weight: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(255)]),
 			ClientIPPreservationEnabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -442,7 +693,14 @@ export namespace MyNS {
 
 	/** A complex type for a listener. */
 	export interface Listener {
+
+		/** Max length: 255 */
 		ListenerArn?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		PortRanges?: Array<PortRange>;
 		Protocol?: ListenerProtocol | null;
 		ClientAffinity?: ListenerClientAffinity | null;
@@ -450,13 +708,15 @@ export namespace MyNS {
 
 	/** A complex type for a listener. */
 	export interface ListenerFormProperties {
+
+		/** Max length: 255 */
 		ListenerArn: FormControl<string | null | undefined>,
 		Protocol: FormControl<ListenerProtocol | null | undefined>,
 		ClientAffinity: FormControl<ListenerClientAffinity | null | undefined>,
 	}
 	export function CreateListenerFormGroup() {
 		return new FormGroup<ListenerFormProperties>({
-			ListenerArn: new FormControl<string | null | undefined>(undefined),
+			ListenerArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			Protocol: new FormControl<ListenerProtocol | null | undefined>(undefined),
 			ClientAffinity: new FormControl<ListenerClientAffinity | null | undefined>(undefined),
 		});
@@ -466,19 +726,39 @@ export namespace MyNS {
 
 	/** A complex type for a range of ports for a listener. */
 	export interface PortRange {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		FromPort?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		ToPort?: number | null;
 	}
 
 	/** A complex type for a range of ports for a listener. */
 	export interface PortRangeFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		FromPort: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		ToPort: FormControl<number | null | undefined>,
 	}
 	export function CreatePortRangeFormGroup() {
 		return new FormGroup<PortRangeFormProperties>({
-			FromPort: new FormControl<number | null | undefined>(undefined),
-			ToPort: new FormControl<number | null | undefined>(undefined),
+			FromPort: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(65535)]),
+			ToPort: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(65535)]),
 		});
 
 	}
@@ -488,24 +768,54 @@ export namespace MyNS {
 	export enum ListenerClientAffinity { NONE = 0, SOURCE_IP = 1 }
 
 	export interface CreateListenerRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		AcceleratorArn: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		PortRanges: Array<PortRange>;
+
+		/** Required */
 		Protocol: ListenerProtocol;
 		ClientAffinity?: ListenerClientAffinity | null;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		IdempotencyToken: string;
 	}
 	export interface CreateListenerRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		AcceleratorArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		Protocol: FormControl<ListenerProtocol | null | undefined>,
 		ClientAffinity: FormControl<ListenerClientAffinity | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		IdempotencyToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateListenerRequestFormGroup() {
 		return new FormGroup<CreateListenerRequestFormProperties>({
-			AcceleratorArn: new FormControl<string | null | undefined>(undefined),
-			Protocol: new FormControl<ListenerProtocol | null | undefined>(undefined),
+			AcceleratorArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			Protocol: new FormControl<ListenerProtocol | null | undefined>(undefined, [Validators.required]),
 			ClientAffinity: new FormControl<ListenerClientAffinity | null | undefined>(undefined),
-			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -521,14 +831,24 @@ export namespace MyNS {
 	}
 
 	export interface DeleteAcceleratorRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		AcceleratorArn: string;
 	}
 	export interface DeleteAcceleratorRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		AcceleratorArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteAcceleratorRequestFormGroup() {
 		return new FormGroup<DeleteAcceleratorRequestFormProperties>({
-			AcceleratorArn: new FormControl<string | null | undefined>(undefined),
+			AcceleratorArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -554,14 +874,24 @@ export namespace MyNS {
 	}
 
 	export interface DeleteEndpointGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		EndpointGroupArn: string;
 	}
 	export interface DeleteEndpointGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		EndpointGroupArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteEndpointGroupRequestFormGroup() {
 		return new FormGroup<DeleteEndpointGroupRequestFormProperties>({
-			EndpointGroupArn: new FormControl<string | null | undefined>(undefined),
+			EndpointGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -577,14 +907,24 @@ export namespace MyNS {
 	}
 
 	export interface DeleteListenerRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		ListenerArn: string;
 	}
 	export interface DeleteListenerRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		ListenerArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteListenerRequestFormGroup() {
 		return new FormGroup<DeleteListenerRequestFormProperties>({
-			ListenerArn: new FormControl<string | null | undefined>(undefined),
+			ListenerArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -613,14 +953,24 @@ export namespace MyNS {
 	}
 
 	export interface DeprovisionByoipCidrRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		Cidr: string;
 	}
 	export interface DeprovisionByoipCidrRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		Cidr: FormControl<string | null | undefined>,
 	}
 	export function CreateDeprovisionByoipCidrRequestFormGroup() {
 		return new FormGroup<DeprovisionByoipCidrRequestFormProperties>({
-			Cidr: new FormControl<string | null | undefined>(undefined),
+			Cidr: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -639,14 +989,24 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAcceleratorRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		AcceleratorArn: string;
 	}
 	export interface DescribeAcceleratorRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		AcceleratorArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeAcceleratorRequestFormGroup() {
 		return new FormGroup<DescribeAcceleratorRequestFormProperties>({
-			AcceleratorArn: new FormControl<string | null | undefined>(undefined),
+			AcceleratorArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -668,34 +1028,52 @@ export namespace MyNS {
 	/** Attributes of an accelerator. */
 	export interface AcceleratorAttributes {
 		FlowLogsEnabled?: boolean | null;
+
+		/** Max length: 255 */
 		FlowLogsS3Bucket?: string | null;
+
+		/** Max length: 255 */
 		FlowLogsS3Prefix?: string | null;
 	}
 
 	/** Attributes of an accelerator. */
 	export interface AcceleratorAttributesFormProperties {
 		FlowLogsEnabled: FormControl<boolean | null | undefined>,
+
+		/** Max length: 255 */
 		FlowLogsS3Bucket: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		FlowLogsS3Prefix: FormControl<string | null | undefined>,
 	}
 	export function CreateAcceleratorAttributesFormGroup() {
 		return new FormGroup<AcceleratorAttributesFormProperties>({
 			FlowLogsEnabled: new FormControl<boolean | null | undefined>(undefined),
-			FlowLogsS3Bucket: new FormControl<string | null | undefined>(undefined),
-			FlowLogsS3Prefix: new FormControl<string | null | undefined>(undefined),
+			FlowLogsS3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			FlowLogsS3Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
 
 	export interface DescribeAcceleratorAttributesRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		AcceleratorArn: string;
 	}
 	export interface DescribeAcceleratorAttributesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		AcceleratorArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeAcceleratorAttributesRequestFormGroup() {
 		return new FormGroup<DescribeAcceleratorAttributesRequestFormProperties>({
-			AcceleratorArn: new FormControl<string | null | undefined>(undefined),
+			AcceleratorArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -714,14 +1092,24 @@ export namespace MyNS {
 	}
 
 	export interface DescribeEndpointGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		EndpointGroupArn: string;
 	}
 	export interface DescribeEndpointGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		EndpointGroupArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeEndpointGroupRequestFormGroup() {
 		return new FormGroup<DescribeEndpointGroupRequestFormProperties>({
-			EndpointGroupArn: new FormControl<string | null | undefined>(undefined),
+			EndpointGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -740,44 +1128,72 @@ export namespace MyNS {
 	}
 
 	export interface DescribeListenerRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		ListenerArn: string;
 	}
 	export interface DescribeListenerRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		ListenerArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeListenerRequestFormGroup() {
 		return new FormGroup<DescribeListenerRequestFormProperties>({
-			ListenerArn: new FormControl<string | null | undefined>(undefined),
+			ListenerArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
 
 	export interface ListAcceleratorsResponse {
 		Accelerators?: Array<Accelerator>;
+
+		/** Max length: 255 */
 		NextToken?: string | null;
 	}
 	export interface ListAcceleratorsResponseFormProperties {
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListAcceleratorsResponseFormGroup() {
 		return new FormGroup<ListAcceleratorsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
 
 	export interface ListAcceleratorsRequest {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
+
+		/** Max length: 255 */
 		NextToken?: string | null;
 	}
 	export interface ListAcceleratorsRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListAcceleratorsRequestFormGroup() {
 		return new FormGroup<ListAcceleratorsRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -794,96 +1210,170 @@ export namespace MyNS {
 
 	export interface ListByoipCidrsResponse {
 		ByoipCidrs?: Array<ByoipCidr>;
+
+		/** Max length: 255 */
 		NextToken?: string | null;
 	}
 	export interface ListByoipCidrsResponseFormProperties {
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListByoipCidrsResponseFormGroup() {
 		return new FormGroup<ListByoipCidrsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
 
 	export interface ListByoipCidrsRequest {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
+
+		/** Max length: 255 */
 		NextToken?: string | null;
 	}
 	export interface ListByoipCidrsRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListByoipCidrsRequestFormGroup() {
 		return new FormGroup<ListByoipCidrsRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
 
 	export interface ListEndpointGroupsResponse {
 		EndpointGroups?: Array<EndpointGroup>;
+
+		/** Max length: 255 */
 		NextToken?: string | null;
 	}
 	export interface ListEndpointGroupsResponseFormProperties {
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListEndpointGroupsResponseFormGroup() {
 		return new FormGroup<ListEndpointGroupsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
 
 	export interface ListEndpointGroupsRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		ListenerArn: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
+
+		/** Max length: 255 */
 		NextToken?: string | null;
 	}
 	export interface ListEndpointGroupsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		ListenerArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListEndpointGroupsRequestFormGroup() {
 		return new FormGroup<ListEndpointGroupsRequestFormProperties>({
-			ListenerArn: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			ListenerArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
 
 	export interface ListListenersResponse {
 		Listeners?: Array<Listener>;
+
+		/** Max length: 255 */
 		NextToken?: string | null;
 	}
 	export interface ListListenersResponseFormProperties {
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListListenersResponseFormGroup() {
 		return new FormGroup<ListListenersResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
 
 	export interface ListListenersRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		AcceleratorArn: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
+
+		/** Max length: 255 */
 		NextToken?: string | null;
 	}
 	export interface ListListenersRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		AcceleratorArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListListenersRequestFormGroup() {
 		return new FormGroup<ListListenersRequestFormProperties>({
-			AcceleratorArn: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			AcceleratorArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -900,14 +1390,26 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceArn: string;
 	}
 	export interface ListTagsForResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
 		});
 
 	}
@@ -926,6 +1428,11 @@ export namespace MyNS {
 	}
 
 	export interface ProvisionByoipCidrRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		Cidr: string;
 
 		/**
@@ -935,11 +1442,16 @@ export namespace MyNS {
 		CidrAuthorizationContext: CidrAuthorizationContext;
 	}
 	export interface ProvisionByoipCidrRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		Cidr: FormControl<string | null | undefined>,
 	}
 	export function CreateProvisionByoipCidrRequestFormGroup() {
 		return new FormGroup<ProvisionByoipCidrRequestFormProperties>({
-			Cidr: new FormControl<string | null | undefined>(undefined),
+			Cidr: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -947,19 +1459,39 @@ export namespace MyNS {
 
 	/** <p>Provides authorization for Amazon to bring a specific IP address range to a specific AWS account using bring your own IP addresses (BYOIP). </p> <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p> */
 	export interface CidrAuthorizationContext {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		Message: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		Signature: string;
 	}
 
 	/** <p>Provides authorization for Amazon to bring a specific IP address range to a specific AWS account using bring your own IP addresses (BYOIP). </p> <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p> */
 	export interface CidrAuthorizationContextFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		Message: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		Signature: FormControl<string | null | undefined>,
 	}
 	export function CreateCidrAuthorizationContextFormGroup() {
 		return new FormGroup<CidrAuthorizationContextFormProperties>({
-			Message: new FormControl<string | null | undefined>(undefined),
-			Signature: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			Signature: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -975,15 +1507,29 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceArn: string;
+
+		/** Required */
 		Tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
 		});
 
 	}
@@ -999,15 +1545,33 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceArn: string;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		TagKeys: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
 		});
 
 	}
@@ -1026,21 +1590,35 @@ export namespace MyNS {
 	}
 
 	export interface UpdateAcceleratorRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		AcceleratorArn: string;
+
+		/** Max length: 255 */
 		Name?: string | null;
 		IpAddressType?: AcceleratorIpAddressType | null;
 		Enabled?: boolean | null;
 	}
 	export interface UpdateAcceleratorRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		AcceleratorArn: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		Name: FormControl<string | null | undefined>,
 		IpAddressType: FormControl<AcceleratorIpAddressType | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpdateAcceleratorRequestFormGroup() {
 		return new FormGroup<UpdateAcceleratorRequestFormProperties>({
-			AcceleratorArn: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			AcceleratorArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			IpAddressType: new FormControl<AcceleratorIpAddressType | null | undefined>(undefined),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -1061,23 +1639,41 @@ export namespace MyNS {
 	}
 
 	export interface UpdateAcceleratorAttributesRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		AcceleratorArn: string;
 		FlowLogsEnabled?: boolean | null;
+
+		/** Max length: 255 */
 		FlowLogsS3Bucket?: string | null;
+
+		/** Max length: 255 */
 		FlowLogsS3Prefix?: string | null;
 	}
 	export interface UpdateAcceleratorAttributesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		AcceleratorArn: FormControl<string | null | undefined>,
 		FlowLogsEnabled: FormControl<boolean | null | undefined>,
+
+		/** Max length: 255 */
 		FlowLogsS3Bucket: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		FlowLogsS3Prefix: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateAcceleratorAttributesRequestFormGroup() {
 		return new FormGroup<UpdateAcceleratorAttributesRequestFormProperties>({
-			AcceleratorArn: new FormControl<string | null | undefined>(undefined),
+			AcceleratorArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 			FlowLogsEnabled: new FormControl<boolean | null | undefined>(undefined),
-			FlowLogsS3Bucket: new FormControl<string | null | undefined>(undefined),
-			FlowLogsS3Prefix: new FormControl<string | null | undefined>(undefined),
+			FlowLogsS3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			FlowLogsS3Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -1096,33 +1692,92 @@ export namespace MyNS {
 	}
 
 	export interface UpdateEndpointGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		EndpointGroupArn: string;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		EndpointConfigurations?: Array<EndpointConfiguration>;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		TrafficDialPercentage?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		HealthCheckPort?: number | null;
 		HealthCheckProtocol?: EndpointGroupHealthCheckProtocol | null;
+
+		/** Max length: 255 */
 		HealthCheckPath?: string | null;
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 30
+		 */
 		HealthCheckIntervalSeconds?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		ThresholdCount?: number | null;
 	}
 	export interface UpdateEndpointGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		EndpointGroupArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		TrafficDialPercentage: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		HealthCheckPort: FormControl<number | null | undefined>,
 		HealthCheckProtocol: FormControl<EndpointGroupHealthCheckProtocol | null | undefined>,
+
+		/** Max length: 255 */
 		HealthCheckPath: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 30
+		 */
 		HealthCheckIntervalSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		ThresholdCount: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateEndpointGroupRequestFormGroup() {
 		return new FormGroup<UpdateEndpointGroupRequestFormProperties>({
-			EndpointGroupArn: new FormControl<string | null | undefined>(undefined),
-			TrafficDialPercentage: new FormControl<number | null | undefined>(undefined),
-			HealthCheckPort: new FormControl<number | null | undefined>(undefined),
+			EndpointGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			TrafficDialPercentage: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			HealthCheckPort: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(65535)]),
 			HealthCheckProtocol: new FormControl<EndpointGroupHealthCheckProtocol | null | undefined>(undefined),
-			HealthCheckPath: new FormControl<string | null | undefined>(undefined),
-			HealthCheckIntervalSeconds: new FormControl<number | null | undefined>(undefined),
-			ThresholdCount: new FormControl<number | null | undefined>(undefined),
+			HealthCheckPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			HealthCheckIntervalSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(10), Validators.max(30)]),
+			ThresholdCount: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10)]),
 		});
 
 	}
@@ -1141,19 +1796,34 @@ export namespace MyNS {
 	}
 
 	export interface UpdateListenerRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		ListenerArn: string;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		PortRanges?: Array<PortRange>;
 		Protocol?: ListenerProtocol | null;
 		ClientAffinity?: ListenerClientAffinity | null;
 	}
 	export interface UpdateListenerRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		ListenerArn: FormControl<string | null | undefined>,
 		Protocol: FormControl<ListenerProtocol | null | undefined>,
 		ClientAffinity: FormControl<ListenerClientAffinity | null | undefined>,
 	}
 	export function CreateUpdateListenerRequestFormGroup() {
 		return new FormGroup<UpdateListenerRequestFormProperties>({
-			ListenerArn: new FormControl<string | null | undefined>(undefined),
+			ListenerArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 			Protocol: new FormControl<ListenerProtocol | null | undefined>(undefined),
 			ClientAffinity: new FormControl<ListenerClientAffinity | null | undefined>(undefined),
 		});
@@ -1174,14 +1844,24 @@ export namespace MyNS {
 	}
 
 	export interface WithdrawByoipCidrRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		Cidr: string;
 	}
 	export interface WithdrawByoipCidrRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		Cidr: FormControl<string | null | undefined>,
 	}
 	export function CreateWithdrawByoipCidrRequestFormGroup() {
 		return new FormGroup<WithdrawByoipCidrRequestFormProperties>({
-			Cidr: new FormControl<string | null | undefined>(undefined),
+			Cidr: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}

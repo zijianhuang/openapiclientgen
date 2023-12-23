@@ -74,14 +74,26 @@ export namespace MyNS {
 
 	export interface GetComplianceSummaryOutput {
 		SummaryList?: Array<Summary>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: [\s\S]*
+		 */
 		PaginationToken?: string | null;
 	}
 	export interface GetComplianceSummaryOutputFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: [\s\S]*
+		 */
 		PaginationToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetComplianceSummaryOutputFormGroup() {
 		return new FormGroup<GetComplianceSummaryOutputFormProperties>({
-			PaginationToken: new FormControl<string | null | undefined>(undefined),
+			PaginationToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 		});
 
 	}
@@ -90,9 +102,27 @@ export namespace MyNS {
 	/** A count of noncompliant resources. */
 	export interface Summary {
 		LastUpdated?: string | null;
+
+		/**
+		 * Max length: 68
+		 * Min length: 6
+		 * Pattern: [\s\S]*
+		 */
 		TargetId?: string | null;
 		TargetIdType?: SummaryTargetIdType | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [\s\S]*
+		 */
 		Region?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: [\s\S]*
+		 */
 		ResourceType?: string | null;
 		NonCompliantResources?: number | null;
 	}
@@ -100,19 +130,37 @@ export namespace MyNS {
 	/** A count of noncompliant resources. */
 	export interface SummaryFormProperties {
 		LastUpdated: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 68
+		 * Min length: 6
+		 * Pattern: [\s\S]*
+		 */
 		TargetId: FormControl<string | null | undefined>,
 		TargetIdType: FormControl<SummaryTargetIdType | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [\s\S]*
+		 */
 		Region: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: [\s\S]*
+		 */
 		ResourceType: FormControl<string | null | undefined>,
 		NonCompliantResources: FormControl<number | null | undefined>,
 	}
 	export function CreateSummaryFormGroup() {
 		return new FormGroup<SummaryFormProperties>({
 			LastUpdated: new FormControl<string | null | undefined>(undefined),
-			TargetId: new FormControl<string | null | undefined>(undefined),
+			TargetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(68), Validators.minLength(6)]),
 			TargetIdType: new FormControl<SummaryTargetIdType | null | undefined>(undefined),
-			Region: new FormControl<string | null | undefined>(undefined),
-			ResourceType: new FormControl<string | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			NonCompliantResources: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -121,22 +169,59 @@ export namespace MyNS {
 	export enum SummaryTargetIdType { ACCOUNT = 0, OU = 1, ROOT = 2 }
 
 	export interface GetComplianceSummaryInput {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		TargetIdFilters?: Array<string>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		RegionFilters?: Array<string>;
 		ResourceTypeFilters?: Array<string>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		TagKeyFilters?: Array<string>;
 		GroupBy?: Array<GroupByAttribute>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxResults?: number | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: [\s\S]*
+		 */
 		PaginationToken?: string | null;
 	}
 	export interface GetComplianceSummaryInputFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: [\s\S]*
+		 */
 		PaginationToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetComplianceSummaryInputFormGroup() {
 		return new FormGroup<GetComplianceSummaryInputFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			PaginationToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			PaginationToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 		});
 
 	}
@@ -144,15 +229,27 @@ export namespace MyNS {
 	export enum GroupByAttribute { TARGET_ID = 0, REGION = 1, RESOURCE_TYPE = 2 }
 
 	export interface GetResourcesOutput {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: [\s\S]*
+		 */
 		PaginationToken?: string | null;
 		ResourceTagMappingList?: Array<ResourceTagMapping>;
 	}
 	export interface GetResourcesOutputFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: [\s\S]*
+		 */
 		PaginationToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetResourcesOutputFormGroup() {
 		return new FormGroup<GetResourcesOutputFormProperties>({
-			PaginationToken: new FormControl<string | null | undefined>(undefined),
+			PaginationToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 		});
 
 	}
@@ -160,6 +257,12 @@ export namespace MyNS {
 
 	/** A list of resource ARNs and the tags (keys and values) that are associated with each. */
 	export interface ResourceTagMapping {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 1
+		 * Pattern: [\s\S]*
+		 */
 		ResourceARN?: string | null;
 		Tags?: Array<Tag>;
 
@@ -169,11 +272,17 @@ export namespace MyNS {
 
 	/** A list of resource ARNs and the tags (keys and values) that are associated with each. */
 	export interface ResourceTagMappingFormProperties {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 1
+		 * Pattern: [\s\S]*
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateResourceTagMappingFormGroup() {
 		return new FormGroup<ResourceTagMappingFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(1)]),
 		});
 
 	}
@@ -181,19 +290,47 @@ export namespace MyNS {
 
 	/** The metadata that you apply to AWS resources to help you categorize and organize them. Each tag consists of a key and a value, both of which you define. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in the <i>AWS General Reference</i>. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\s\S]*
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: [\s\S]*
+		 */
 		Value: string;
 	}
 
 	/** The metadata that you apply to AWS resources to help you categorize and organize them. Each tag consists of a key and a value, both of which you define. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in the <i>AWS General Reference</i>. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\s\S]*
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: [\s\S]*
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -218,7 +355,18 @@ export namespace MyNS {
 	}
 
 	export interface GetResourcesInput {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: [\s\S]*
+		 */
 		PaginationToken?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		TagFilters?: Array<TagFilter>;
 		ResourcesPerPage?: number | null;
 		TagsPerPage?: number | null;
@@ -227,6 +375,12 @@ export namespace MyNS {
 		ExcludeCompliantResources?: boolean | null;
 	}
 	export interface GetResourcesInputFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: [\s\S]*
+		 */
 		PaginationToken: FormControl<string | null | undefined>,
 		ResourcesPerPage: FormControl<number | null | undefined>,
 		TagsPerPage: FormControl<number | null | undefined>,
@@ -235,7 +389,7 @@ export namespace MyNS {
 	}
 	export function CreateGetResourcesInputFormGroup() {
 		return new FormGroup<GetResourcesInputFormProperties>({
-			PaginationToken: new FormControl<string | null | undefined>(undefined),
+			PaginationToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 			ResourcesPerPage: new FormControl<number | null | undefined>(undefined),
 			TagsPerPage: new FormControl<number | null | undefined>(undefined),
 			IncludeComplianceDetails: new FormControl<boolean | null | undefined>(undefined),
@@ -247,17 +401,34 @@ export namespace MyNS {
 
 	/** A list of tags (keys and values) that are used to specify the associated resources. */
 	export interface TagFilter {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\s\S]*
+		 */
 		Key?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 20
+		 */
 		Values?: Array<string>;
 	}
 
 	/** A list of tags (keys and values) that are used to specify the associated resources. */
 	export interface TagFilterFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\s\S]*
+		 */
 		Key: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFilterFormGroup() {
 		return new FormGroup<TagFilterFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -273,58 +444,120 @@ export namespace MyNS {
 	}
 
 	export interface GetTagKeysOutput {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: [\s\S]*
+		 */
 		PaginationToken?: string | null;
 		TagKeys?: Array<string>;
 	}
 	export interface GetTagKeysOutputFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: [\s\S]*
+		 */
 		PaginationToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTagKeysOutputFormGroup() {
 		return new FormGroup<GetTagKeysOutputFormProperties>({
-			PaginationToken: new FormControl<string | null | undefined>(undefined),
+			PaginationToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface GetTagKeysInput {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: [\s\S]*
+		 */
 		PaginationToken?: string | null;
 	}
 	export interface GetTagKeysInputFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: [\s\S]*
+		 */
 		PaginationToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTagKeysInputFormGroup() {
 		return new FormGroup<GetTagKeysInputFormProperties>({
-			PaginationToken: new FormControl<string | null | undefined>(undefined),
+			PaginationToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface GetTagValuesOutput {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: [\s\S]*
+		 */
 		PaginationToken?: string | null;
 		TagValues?: Array<string>;
 	}
 	export interface GetTagValuesOutputFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: [\s\S]*
+		 */
 		PaginationToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTagValuesOutputFormGroup() {
 		return new FormGroup<GetTagValuesOutputFormProperties>({
-			PaginationToken: new FormControl<string | null | undefined>(undefined),
+			PaginationToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface GetTagValuesInput {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: [\s\S]*
+		 */
 		PaginationToken?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\s\S]*
+		 */
 		Key: string;
 	}
 	export interface GetTagValuesInputFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: [\s\S]*
+		 */
 		PaginationToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\s\S]*
+		 */
 		Key: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTagValuesInputFormGroup() {
 		return new FormGroup<GetTagValuesInputFormProperties>({
-			PaginationToken: new FormControl<string | null | undefined>(undefined),
-			Key: new FormControl<string | null | undefined>(undefined),
+			PaginationToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -340,14 +573,28 @@ export namespace MyNS {
 	}
 
 	export interface StartReportCreationInput {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 3
+		 * Pattern: [\s\S]*
+		 */
 		S3Bucket: string;
 	}
 	export interface StartReportCreationInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 3
+		 * Pattern: [\s\S]*
+		 */
 		S3Bucket: FormControl<string | null | undefined>,
 	}
 	export function CreateStartReportCreationInputFormGroup() {
 		return new FormGroup<StartReportCreationInputFormProperties>({
-			S3Bucket: new FormControl<string | null | undefined>(undefined),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(3)]),
 		});
 
 	}
@@ -384,7 +631,15 @@ export namespace MyNS {
 	}
 
 	export interface TagResourcesInput {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 20
+		 */
 		ResourceARNList: Array<string>;
+
+		/** Required */
 		Tags: TagMap;
 	}
 	export interface TagResourcesInputFormProperties {
@@ -417,7 +672,19 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourcesInput {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 20
+		 */
 		ResourceARNList: Array<string>;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		TagKeys: Array<string>;
 	}
 	export interface UntagResourcesInputFormProperties {

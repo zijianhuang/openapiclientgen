@@ -160,15 +160,15 @@ export namespace MyNS {
 	}
 	export function CreateOutpostFormGroup() {
 		return new FormGroup<OutpostFormProperties>({
-			OutpostId: new FormControl<string | null | undefined>(undefined),
-			OwnerId: new FormControl<string | null | undefined>(undefined),
-			OutpostArn: new FormControl<string | null | undefined>(undefined),
-			SiteId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			OutpostId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(180), Validators.minLength(1)]),
+			OwnerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
+			OutpostArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			SiteId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 			LifeCycleStatus: new FormControl<string | null | undefined>(undefined),
-			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
-			AvailabilityZoneId: new FormControl<string | null | undefined>(undefined),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			AvailabilityZoneId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -313,9 +313,9 @@ export namespace MyNS {
 	}
 	export function CreateGetOutpostInstanceTypesOutputFormGroup() {
 		return new FormGroup<GetOutpostInstanceTypesOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			OutpostId: new FormControl<string | null | undefined>(undefined),
-			OutpostArn: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1005), Validators.minLength(1)]),
+			OutpostId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(180), Validators.minLength(1)]),
+			OutpostArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -366,7 +366,7 @@ export namespace MyNS {
 	}
 	export function CreateListOutpostsOutputFormGroup() {
 		return new FormGroup<ListOutpostsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1005), Validators.minLength(1)]),
 		});
 
 	}
@@ -396,7 +396,7 @@ export namespace MyNS {
 	}
 	export function CreateListSitesOutputFormGroup() {
 		return new FormGroup<ListSitesOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1005), Validators.minLength(1)]),
 		});
 
 	}
@@ -473,10 +473,10 @@ export namespace MyNS {
 	}
 	export function CreateSiteFormGroup() {
 		return new FormGroup<SiteFormProperties>({
-			SiteId: new FormControl<string | null | undefined>(undefined),
-			AccountId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			SiteId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
@@ -569,11 +569,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateOutpostInputFormGroup() {
 		return new FormGroup<CreateOutpostInputFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			SiteId: new FormControl<string | null | undefined>(undefined),
-			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
-			AvailabilityZoneId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			SiteId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			AvailabilityZoneId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -795,11 +795,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateOutpostPostBodyFormGroup() {
 		return new FormGroup<CreateOutpostPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			SiteId: new FormControl<string | null | undefined>(undefined),
-			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
-			AvailabilityZoneId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			SiteId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			AvailabilityZoneId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}

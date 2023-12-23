@@ -14,17 +14,45 @@ export namespace MyNS {
 	}
 
 	export interface AssociateWebACLRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		WebACLArn: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceArn: string;
 	}
 	export interface AssociateWebACLRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		WebACLArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateWebACLRequestFormGroup() {
 		return new FormGroup<AssociateWebACLRequestFormProperties>({
-			WebACLArn: new FormControl<string | null | undefined>(undefined),
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			WebACLArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -80,28 +108,38 @@ export namespace MyNS {
 	}
 
 	export interface CheckCapacityResponse {
+
+		/** Minimum: 0 */
 		Capacity?: number | null;
 	}
 	export interface CheckCapacityResponseFormProperties {
+
+		/** Minimum: 0 */
 		Capacity: FormControl<number | null | undefined>,
 	}
 	export function CreateCheckCapacityResponseFormGroup() {
 		return new FormGroup<CheckCapacityResponseFormProperties>({
-			Capacity: new FormControl<number | null | undefined>(undefined),
+			Capacity: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
 
 	export interface CheckCapacityRequest {
+
+		/** Required */
 		Scope: CheckCapacityRequestScope;
+
+		/** Required */
 		Rules: Array<Rule>;
 	}
 	export interface CheckCapacityRequestFormProperties {
+
+		/** Required */
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
 	}
 	export function CreateCheckCapacityRequestFormGroup() {
 		return new FormGroup<CheckCapacityRequestFormProperties>({
-			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
+			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -111,7 +149,19 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>A single rule, which you can use in a <a>WebACL</a> or <a>RuleGroup</a> to identify web requests that you want to allow, block, or count. Each rule includes one top-level <a>Statement</a> that AWS WAF uses to identify matching web requests, and parameters that govern how AWS WAF handles them. </p> */
 	export interface Rule {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		Priority: number;
 
 		/**
@@ -135,13 +185,25 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>A single rule, which you can use in a <a>WebACL</a> or <a>RuleGroup</a> to identify web requests that you want to allow, block, or count. Each rule includes one top-level <a>Statement</a> that AWS WAF uses to identify matching web requests, and parameters that govern how AWS WAF handles them. </p> */
 	export interface RuleFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		Priority: FormControl<number | null | undefined>,
 	}
 	export function CreateRuleFormGroup() {
 		return new FormGroup<RuleFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Priority: new FormControl<number | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Priority: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 		});
 
 	}
@@ -202,6 +264,8 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>A rule statement that defines a string match search for AWS WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want AWS WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the AWS WAF console and the developer guide, this is refered to as a string match statement.</p> */
 	export interface ByteMatchStatement {
+
+		/** Required */
 		SearchString: string;
 
 		/**
@@ -209,19 +273,30 @@ export namespace MyNS {
 		 * Required
 		 */
 		FieldToMatch: FieldToMatch;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 */
 		TextTransformations: Array<TextTransformation>;
+
+		/** Required */
 		PositionalConstraint: ByteMatchStatementPositionalConstraint;
 	}
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>A rule statement that defines a string match search for AWS WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want AWS WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the AWS WAF console and the developer guide, this is refered to as a string match statement.</p> */
 	export interface ByteMatchStatementFormProperties {
+
+		/** Required */
 		SearchString: FormControl<string | null | undefined>,
+
+		/** Required */
 		PositionalConstraint: FormControl<ByteMatchStatementPositionalConstraint | null | undefined>,
 	}
 	export function CreateByteMatchStatementFormGroup() {
 		return new FormGroup<ByteMatchStatementFormProperties>({
-			SearchString: new FormControl<string | null | undefined>(undefined),
-			PositionalConstraint: new FormControl<ByteMatchStatementPositionalConstraint | null | undefined>(undefined),
+			SearchString: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PositionalConstraint: new FormControl<ByteMatchStatementPositionalConstraint | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -264,16 +339,30 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>One of the headers in a web request, identified by name, for example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't case sensitive.</p> <p>This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification. </p> */
 	export interface SingleHeader {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		Name: string;
 	}
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>One of the headers in a web request, identified by name, for example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't case sensitive.</p> <p>This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification. </p> */
 	export interface SingleHeaderFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateSingleHeaderFormGroup() {
 		return new FormGroup<SingleHeaderFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -281,16 +370,30 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>One query argument in a web request, identified by name, for example <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive. </p> */
 	export interface SingleQueryArgument {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		Name: string;
 	}
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>One query argument in a web request, identified by name, for example <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive. </p> */
 	export interface SingleQueryArgumentFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateSingleQueryArgumentFormGroup() {
 		return new FormGroup<SingleQueryArgumentFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -368,19 +471,33 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. </p> */
 	export interface TextTransformation {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		Priority: number;
+
+		/** Required */
 		Type: TextTransformationType;
 	}
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. </p> */
 	export interface TextTransformationFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		Priority: FormControl<number | null | undefined>,
+
+		/** Required */
 		Type: FormControl<TextTransformationType | null | undefined>,
 	}
 	export function CreateTextTransformationFormGroup() {
 		return new FormGroup<TextTransformationFormProperties>({
-			Priority: new FormControl<number | null | undefined>(undefined),
-			Type: new FormControl<TextTransformationType | null | undefined>(undefined),
+			Priority: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			Type: new FormControl<TextTransformationType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -398,6 +515,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		FieldToMatch: FieldToMatch;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 */
 		TextTransformations: Array<TextTransformation>;
 	}
 
@@ -419,6 +541,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		FieldToMatch: FieldToMatch;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 */
 		TextTransformations: Array<TextTransformation>;
 	}
 
@@ -440,20 +567,41 @@ export namespace MyNS {
 		 * Required
 		 */
 		FieldToMatch: FieldToMatch;
+
+		/** Required */
 		ComparisonOperator: SizeConstraintStatementComparisonOperator;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 21474836480
+		 */
 		Size: number;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 */
 		TextTransformations: Array<TextTransformation>;
 	}
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (&gt;) or less than (&lt;). For example, you can use a size constraint statement to look for query strings that are longer than 100 bytes. </p> <p>If you configure AWS WAF to inspect the request body, AWS WAF inspects only the first 8192 bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block requests that have a request body greater than 8192 bytes.</p> <p>If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p> */
 	export interface SizeConstraintStatementFormProperties {
+
+		/** Required */
 		ComparisonOperator: FormControl<SizeConstraintStatementComparisonOperator | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 21474836480
+		 */
 		Size: FormControl<number | null | undefined>,
 	}
 	export function CreateSizeConstraintStatementFormGroup() {
 		return new FormGroup<SizeConstraintStatementFormProperties>({
-			ComparisonOperator: new FormControl<SizeConstraintStatementComparisonOperator | null | undefined>(undefined),
-			Size: new FormControl<number | null | undefined>(undefined),
+			ComparisonOperator: new FormControl<SizeConstraintStatementComparisonOperator | null | undefined>(undefined, [Validators.required]),
+			Size: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(21474836480)]),
 		});
 
 	}
@@ -463,6 +611,8 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>A rule statement used to identify web requests based on country of origin. </p> */
 	export interface GeoMatchStatement {
+
+		/** Minimum items: 1 */
 		CountryCodes?: Array<CountryCode>;
 	}
 
@@ -480,17 +630,31 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p> <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p> */
 	export interface RuleGroupReferenceStatement {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ARN: string;
 		ExcludedRules?: Array<ExcludedRule>;
 	}
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p> <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p> */
 	export interface RuleGroupReferenceStatementFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ARN: FormControl<string | null | undefined>,
 	}
 	export function CreateRuleGroupReferenceStatementFormGroup() {
 		return new FormGroup<RuleGroupReferenceStatementFormProperties>({
-			ARN: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -498,16 +662,30 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>Specifies a single rule to exclude from the rule group. Excluding a rule overrides its action setting for the rule group in the web ACL, setting it to <code>COUNT</code>. This effectively excludes the rule from acting on web requests. </p> */
 	export interface ExcludedRule {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: string;
 	}
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>Specifies a single rule to exclude from the rule group. Excluding a rule overrides its action setting for the rule group in the web ACL, setting it to <code>COUNT</code>. This effectively excludes the rule from acting on web requests. </p> */
 	export interface ExcludedRuleFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateExcludedRuleFormGroup() {
 		return new FormGroup<ExcludedRuleFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -515,16 +693,30 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <a>IPSet</a> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <a>CreateIPSet</a>.</p> <p>Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, AWS WAF automatically updates all rules that reference it.</p> */
 	export interface IPSetReferenceStatement {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ARN: string;
 	}
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <a>IPSet</a> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <a>CreateIPSet</a>.</p> <p>Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, AWS WAF automatically updates all rules that reference it.</p> */
 	export interface IPSetReferenceStatementFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ARN: FormControl<string | null | undefined>,
 	}
 	export function CreateIPSetReferenceStatementFormGroup() {
 		return new FormGroup<IPSetReferenceStatementFormProperties>({
-			ARN: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -532,6 +724,13 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>A rule statement used to search web request components for matches with regular expressions. To use this, create a <a>RegexPatternSet</a> that specifies the expressions that you want to detect, then use the ARN of that set in this statement. A web request matches the pattern set rule statement if the request component matches any of the patterns in the set. To create a regex pattern set, see <a>CreateRegexPatternSet</a>.</p> <p>Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, AWS WAF automatically updates all rules that reference it.</p> */
 	export interface RegexPatternSetReferenceStatement {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ARN: string;
 
 		/**
@@ -539,16 +738,28 @@ export namespace MyNS {
 		 * Required
 		 */
 		FieldToMatch: FieldToMatch;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 */
 		TextTransformations: Array<TextTransformation>;
 	}
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>A rule statement used to search web request components for matches with regular expressions. To use this, create a <a>RegexPatternSet</a> that specifies the expressions that you want to detect, then use the ARN of that set in this statement. A web request matches the pattern set rule statement if the request component matches any of the patterns in the set. To create a regex pattern set, see <a>CreateRegexPatternSet</a>.</p> <p>Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, AWS WAF automatically updates all rules that reference it.</p> */
 	export interface RegexPatternSetReferenceStatementFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ARN: FormControl<string | null | undefined>,
 	}
 	export function CreateRegexPatternSetReferenceStatementFormGroup() {
 		return new FormGroup<RegexPatternSetReferenceStatementFormProperties>({
-			ARN: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -556,7 +767,15 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>A rate-based rule tracks the rate of requests for each originating IP address, and triggers the rule action when the rate exceeds a limit that you specify on the number of requests in any 5-minute time span. You can use this to put a temporary block on requests from an IP address that is sending excessive requests.</p> <p>When the rule action triggers, AWS WAF blocks additional requests from the IP address until the request rate falls below the limit.</p> <p>You can optionally nest another statement inside the rate-based statement, to narrow the scope of the rule so that it only counts requests that match the nested statement. For example, based on recent requests that you have seen from an attacker, you might create a rate-based rule with a nested AND rule statement that contains the following nested statements:</p> <ul> <li> <p>An IP match statement with an IP set that specified the address 192.0.2.44.</p> </li> <li> <p>A string match statement that searches in the User-Agent header for the string BadBot.</p> </li> </ul> <p>In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet both conditions are not counted towards the rate limit and are not affected by this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p> */
 	export interface RateBasedStatement {
+
+		/**
+		 * Required
+		 * Minimum: 100
+		 * Maximum: 2000000000
+		 */
 		Limit: number;
+
+		/** Required */
 		AggregateKeyType: RateBasedStatementAggregateKeyType;
 
 		/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>The processing guidance for a <a>Rule</a>, used by AWS WAF to determine whether a web request matches the rule. </p> */
@@ -565,13 +784,21 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>A rate-based rule tracks the rate of requests for each originating IP address, and triggers the rule action when the rate exceeds a limit that you specify on the number of requests in any 5-minute time span. You can use this to put a temporary block on requests from an IP address that is sending excessive requests.</p> <p>When the rule action triggers, AWS WAF blocks additional requests from the IP address until the request rate falls below the limit.</p> <p>You can optionally nest another statement inside the rate-based statement, to narrow the scope of the rule so that it only counts requests that match the nested statement. For example, based on recent requests that you have seen from an attacker, you might create a rate-based rule with a nested AND rule statement that contains the following nested statements:</p> <ul> <li> <p>An IP match statement with an IP set that specified the address 192.0.2.44.</p> </li> <li> <p>A string match statement that searches in the User-Agent header for the string BadBot.</p> </li> </ul> <p>In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet both conditions are not counted towards the rate limit and are not affected by this rule.</p> <p>You cannot nest a <code>RateBasedStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p> */
 	export interface RateBasedStatementFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 100
+		 * Maximum: 2000000000
+		 */
 		Limit: FormControl<number | null | undefined>,
+
+		/** Required */
 		AggregateKeyType: FormControl<RateBasedStatementAggregateKeyType | null | undefined>,
 	}
 	export function CreateRateBasedStatementFormGroup() {
 		return new FormGroup<RateBasedStatementFormProperties>({
-			Limit: new FormControl<number | null | undefined>(undefined),
-			AggregateKeyType: new FormControl<RateBasedStatementAggregateKeyType | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(100), Validators.max(2000000000)]),
+			AggregateKeyType: new FormControl<RateBasedStatementAggregateKeyType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -581,6 +808,8 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>A logical rule statement used to combine other rule statements with AND logic. You provide more than one <a>Statement</a> within the <code>AndStatement</code>. </p> */
 	export interface AndStatement {
+
+		/** Required */
 		Statements: Array<Statement>;
 	}
 
@@ -596,6 +825,8 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>A logical rule statement used to combine other rule statements with OR logic. You provide more than one <a>Statement</a> within the <code>OrStatement</code>. </p> */
 	export interface OrStatement {
+
+		/** Required */
 		Statements: Array<Statement>;
 	}
 
@@ -631,20 +862,48 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <a>ListAvailableManagedRuleGroups</a>.</p> <p>You can't nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p> */
 	export interface ManagedRuleGroupStatement {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		VendorName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: string;
 		ExcludedRules?: Array<ExcludedRule>;
 	}
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <a>ListAvailableManagedRuleGroups</a>.</p> <p>You can't nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p> */
 	export interface ManagedRuleGroupStatementFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		VendorName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateManagedRuleGroupStatementFormGroup() {
 		return new FormGroup<ManagedRuleGroupStatementFormProperties>({
-			VendorName: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			VendorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -751,22 +1010,44 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p> */
 	export interface VisibilityConfig {
+
+		/** Required */
 		SampledRequestsEnabled: boolean;
+
+		/** Required */
 		CloudWatchMetricsEnabled: boolean;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^[\w#:\.\-/]+$
+		 */
 		MetricName: string;
 	}
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p> */
 	export interface VisibilityConfigFormProperties {
+
+		/** Required */
 		SampledRequestsEnabled: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		CloudWatchMetricsEnabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^[\w#:\.\-/]+$
+		 */
 		MetricName: FormControl<string | null | undefined>,
 	}
 	export function CreateVisibilityConfigFormGroup() {
 		return new FormGroup<VisibilityConfigFormProperties>({
-			SampledRequestsEnabled: new FormControl<boolean | null | undefined>(undefined),
-			CloudWatchMetricsEnabled: new FormControl<boolean | null | undefined>(undefined),
-			MetricName: new FormControl<string | null | undefined>(undefined),
+			SampledRequestsEnabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			CloudWatchMetricsEnabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -817,52 +1098,150 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>High-level information about an <a>IPSet</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <a>IPSetReferenceStatement</a> to use the address set in a <a>Rule</a>.</p> */
 	export interface IPSetSummary {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ARN?: string | null;
 	}
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>High-level information about an <a>IPSet</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <a>IPSetReferenceStatement</a> to use the address set in a <a>Rule</a>.</p> */
 	export interface IPSetSummaryFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ARN: FormControl<string | null | undefined>,
 	}
 	export function CreateIPSetSummaryFormGroup() {
 		return new FormGroup<IPSetSummaryFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			LockToken: new FormControl<string | null | undefined>(undefined),
-			ARN: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			LockToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface CreateIPSetRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: string;
+
+		/** Required */
 		Scope: CheckCapacityRequestScope;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description?: string | null;
+
+		/** Required */
 		IPAddressVersion: CreateIPSetRequestIPAddressVersion;
+
+		/** Required */
 		Addresses: Array<string>;
+
+		/** Minimum items: 1 */
 		Tags?: Array<Tag>;
 	}
 	export interface CreateIPSetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/** Required */
 		IPAddressVersion: FormControl<CreateIPSetRequestIPAddressVersion | null | undefined>,
 	}
 	export function CreateCreateIPSetRequestFormGroup() {
 		return new FormGroup<CreateIPSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			IPAddressVersion: new FormControl<CreateIPSetRequestIPAddressVersion | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined, [Validators.required]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			IPAddressVersion: new FormControl<CreateIPSetRequestIPAddressVersion | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -872,19 +1251,47 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>A collection of key:value pairs associated with an AWS resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each AWS resource. </p> */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		Value: string;
 	}
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>A collection of key:value pairs associated with an AWS resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each AWS resource. </p> */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -945,49 +1352,143 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>High-level information about a <a>RegexPatternSet</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <a>RegexPatternSetReferenceStatement</a> to use the pattern set in a <a>Rule</a>.</p> */
 	export interface RegexPatternSetSummary {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ARN?: string | null;
 	}
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>High-level information about a <a>RegexPatternSet</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <a>RegexPatternSetReferenceStatement</a> to use the pattern set in a <a>Rule</a>.</p> */
 	export interface RegexPatternSetSummaryFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ARN: FormControl<string | null | undefined>,
 	}
 	export function CreateRegexPatternSetSummaryFormGroup() {
 		return new FormGroup<RegexPatternSetSummaryFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			LockToken: new FormControl<string | null | undefined>(undefined),
-			ARN: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			LockToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface CreateRegexPatternSetRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: string;
+
+		/** Required */
 		Scope: CheckCapacityRequestScope;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description?: string | null;
+
+		/** Required */
 		RegularExpressionList: Array<Regex>;
+
+		/** Minimum items: 1 */
 		Tags?: Array<Tag>;
 	}
 	export interface CreateRegexPatternSetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateRegexPatternSetRequestFormGroup() {
 		return new FormGroup<CreateRegexPatternSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined, [Validators.required]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -995,16 +1496,28 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>A single regular expression. This is used in a <a>RegexPatternSet</a>.</p> */
 	export interface Regex {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: .*
+		 */
 		RegexString?: string | null;
 	}
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>A single regular expression. This is used in a <a>RegexPatternSet</a>.</p> */
 	export interface RegexFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: .*
+		 */
 		RegexString: FormControl<string | null | undefined>,
 	}
 	export function CreateRegexFormGroup() {
 		return new FormGroup<RegexFormProperties>({
-			RegexString: new FormControl<string | null | undefined>(undefined),
+			RegexString: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
@@ -1025,36 +1538,116 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>High-level information about a <a>RuleGroup</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <a>RuleGroupReferenceStatement</a> to use the rule group in a <a>Rule</a>.</p> */
 	export interface RuleGroupSummary {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ARN?: string | null;
 	}
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>High-level information about a <a>RuleGroup</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <a>RuleGroupReferenceStatement</a> to use the rule group in a <a>Rule</a>.</p> */
 	export interface RuleGroupSummaryFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ARN: FormControl<string | null | undefined>,
 	}
 	export function CreateRuleGroupSummaryFormGroup() {
 		return new FormGroup<RuleGroupSummaryFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			LockToken: new FormControl<string | null | undefined>(undefined),
-			ARN: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			LockToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface CreateRuleGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: string;
+
+		/** Required */
 		Scope: CheckCapacityRequestScope;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		Capacity: number;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description?: string | null;
 		Rules?: Array<Rule>;
 
@@ -1063,20 +1656,42 @@ export namespace MyNS {
 		 * Required
 		 */
 		VisibilityConfig: VisibilityConfig;
+
+		/** Minimum items: 1 */
 		Tags?: Array<Tag>;
 	}
 	export interface CreateRuleGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		Capacity: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateRuleGroupRequestFormGroup() {
 		return new FormGroup<CreateRuleGroupRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
-			Capacity: new FormControl<number | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined, [Validators.required]),
+			Capacity: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -1097,34 +1712,103 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>High-level information about a <a>WebACL</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <a>AssociateWebACL</a>.</p> */
 	export interface WebACLSummary {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ARN?: string | null;
 	}
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>High-level information about a <a>WebACL</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <a>AssociateWebACL</a>.</p> */
 	export interface WebACLSummaryFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ARN: FormControl<string | null | undefined>,
 	}
 	export function CreateWebACLSummaryFormGroup() {
 		return new FormGroup<WebACLSummaryFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			LockToken: new FormControl<string | null | undefined>(undefined),
-			ARN: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			LockToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface CreateWebACLRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: string;
+
+		/** Required */
 		Scope: CheckCapacityRequestScope;
 
 		/**
@@ -1132,6 +1816,12 @@ export namespace MyNS {
 		 * Required
 		 */
 		DefaultAction: DefaultAction;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description?: string | null;
 		Rules?: Array<Rule>;
 
@@ -1140,18 +1830,35 @@ export namespace MyNS {
 		 * Required
 		 */
 		VisibilityConfig: VisibilityConfig;
+
+		/** Minimum items: 1 */
 		Tags?: Array<Tag>;
 	}
 	export interface CreateWebACLRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateWebACLRequestFormGroup() {
 		return new FormGroup<CreateWebACLRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined, [Validators.required]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -1177,30 +1884,70 @@ export namespace MyNS {
 	}
 
 	export interface DeleteFirewallManagerRuleGroupsResponse {
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		NextWebACLLockToken?: string | null;
 	}
 	export interface DeleteFirewallManagerRuleGroupsResponseFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		NextWebACLLockToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteFirewallManagerRuleGroupsResponseFormGroup() {
 		return new FormGroup<DeleteFirewallManagerRuleGroupsResponseFormProperties>({
-			NextWebACLLockToken: new FormControl<string | null | undefined>(undefined),
+			NextWebACLLockToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteFirewallManagerRuleGroupsRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		WebACLArn: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		WebACLLockToken: string;
 	}
 	export interface DeleteFirewallManagerRuleGroupsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		WebACLArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		WebACLLockToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteFirewallManagerRuleGroupsRequestFormGroup() {
 		return new FormGroup<DeleteFirewallManagerRuleGroupsRequestFormProperties>({
-			WebACLArn: new FormControl<string | null | undefined>(undefined),
-			WebACLLockToken: new FormControl<string | null | undefined>(undefined),
+			WebACLArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			WebACLLockToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
@@ -1216,23 +1963,69 @@ export namespace MyNS {
 	}
 
 	export interface DeleteIPSetRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: string;
+
+		/** Required */
 		Scope: CheckCapacityRequestScope;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken: string;
 	}
 	export interface DeleteIPSetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteIPSetRequestFormGroup() {
 		return new FormGroup<DeleteIPSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			LockToken: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			LockToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
@@ -1258,14 +2051,28 @@ export namespace MyNS {
 	}
 
 	export interface DeleteLoggingConfigurationRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceArn: string;
 	}
 	export interface DeleteLoggingConfigurationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteLoggingConfigurationRequestFormGroup() {
 		return new FormGroup<DeleteLoggingConfigurationRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -1281,14 +2088,28 @@ export namespace MyNS {
 	}
 
 	export interface DeletePermissionPolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceArn: string;
 	}
 	export interface DeletePermissionPolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeletePermissionPolicyRequestFormGroup() {
 		return new FormGroup<DeletePermissionPolicyRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -1304,23 +2125,69 @@ export namespace MyNS {
 	}
 
 	export interface DeleteRegexPatternSetRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: string;
+
+		/** Required */
 		Scope: CheckCapacityRequestScope;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken: string;
 	}
 	export interface DeleteRegexPatternSetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRegexPatternSetRequestFormGroup() {
 		return new FormGroup<DeleteRegexPatternSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			LockToken: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			LockToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
@@ -1336,23 +2203,69 @@ export namespace MyNS {
 	}
 
 	export interface DeleteRuleGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: string;
+
+		/** Required */
 		Scope: CheckCapacityRequestScope;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken: string;
 	}
 	export interface DeleteRuleGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRuleGroupRequestFormGroup() {
 		return new FormGroup<DeleteRuleGroupRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			LockToken: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			LockToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
@@ -1368,37 +2281,87 @@ export namespace MyNS {
 	}
 
 	export interface DeleteWebACLRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: string;
+
+		/** Required */
 		Scope: CheckCapacityRequestScope;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken: string;
 	}
 	export interface DeleteWebACLRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteWebACLRequestFormGroup() {
 		return new FormGroup<DeleteWebACLRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			LockToken: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			LockToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeManagedRuleGroupResponse {
+
+		/** Minimum: 1 */
 		Capacity?: number | null;
 		Rules?: Array<RuleSummary>;
 	}
 	export interface DescribeManagedRuleGroupResponseFormProperties {
+
+		/** Minimum: 1 */
 		Capacity: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeManagedRuleGroupResponseFormGroup() {
 		return new FormGroup<DescribeManagedRuleGroupResponseFormProperties>({
-			Capacity: new FormControl<number | null | undefined>(undefined),
+			Capacity: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -1406,6 +2369,12 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>High-level information about a <a>Rule</a>, returned by operations like <a>DescribeManagedRuleGroup</a>. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <a>RuleGroupReferenceStatement</a> to use the rule group in a <a>Rule</a>.</p> */
 	export interface RuleSummary {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name?: string | null;
 
 		/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>The action that AWS WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting. </p> */
@@ -1414,30 +2383,68 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>High-level information about a <a>Rule</a>, returned by operations like <a>DescribeManagedRuleGroup</a>. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <a>RuleGroupReferenceStatement</a> to use the rule group in a <a>Rule</a>.</p> */
 	export interface RuleSummaryFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateRuleSummaryFormGroup() {
 		return new FormGroup<RuleSummaryFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeManagedRuleGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		VendorName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: string;
+
+		/** Required */
 		Scope: CheckCapacityRequestScope;
 	}
 	export interface DescribeManagedRuleGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		VendorName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
 	}
 	export function CreateDescribeManagedRuleGroupRequestFormGroup() {
 		return new FormGroup<DescribeManagedRuleGroupRequestFormProperties>({
-			VendorName: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
+			VendorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1453,14 +2460,28 @@ export namespace MyNS {
 	}
 
 	export interface DisassociateWebACLRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceArn: string;
 	}
 	export interface DisassociateWebACLRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDisassociateWebACLRequestFormGroup() {
 		return new FormGroup<DisassociateWebACLRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -1469,14 +2490,26 @@ export namespace MyNS {
 
 		/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR) notation. AWS WAF supports any CIDR range. For information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>. </p> <p>AWS WAF assigns an ARN to each <code>IPSet</code> that you create. To use an IP set in a rule, you provide the ARN to the <a>Rule</a> statement <a>IPSetReferenceStatement</a>. </p> */
 		IPSet?: IPSet;
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken?: string | null;
 	}
 	export interface GetIPSetResponseFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetIPSetResponseFormGroup() {
 		return new FormGroup<GetIPSetResponseFormProperties>({
-			LockToken: new FormControl<string | null | undefined>(undefined),
+			LockToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
@@ -1484,48 +2517,140 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR) notation. AWS WAF supports any CIDR range. For information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>. </p> <p>AWS WAF assigns an ARN to each <code>IPSet</code> that you create. To use an IP set in a rule, you provide the ARN to the <a>Rule</a> statement <a>IPSetReferenceStatement</a>. </p> */
 	export interface IPSet {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ARN: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description?: string | null;
+
+		/** Required */
 		IPAddressVersion: CreateIPSetRequestIPAddressVersion;
+
+		/** Required */
 		Addresses: Array<string>;
 	}
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR) notation. AWS WAF supports any CIDR range. For information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>. </p> <p>AWS WAF assigns an ARN to each <code>IPSet</code> that you create. To use an IP set in a rule, you provide the ARN to the <a>Rule</a> statement <a>IPSetReferenceStatement</a>. </p> */
 	export interface IPSetFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/** Required */
 		IPAddressVersion: FormControl<CreateIPSetRequestIPAddressVersion | null | undefined>,
 	}
 	export function CreateIPSetFormGroup() {
 		return new FormGroup<IPSetFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			ARN: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			IPAddressVersion: new FormControl<CreateIPSetRequestIPAddressVersion | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			IPAddressVersion: new FormControl<CreateIPSetRequestIPAddressVersion | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface GetIPSetRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: string;
+
+		/** Required */
 		Scope: CheckCapacityRequestScope;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: string;
 	}
 	export interface GetIPSetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: FormControl<string | null | undefined>,
 	}
 	export function CreateGetIPSetRequestFormGroup() {
 		return new FormGroup<GetIPSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
@@ -1546,57 +2671,111 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>Defines an association between Amazon Kinesis Data Firehose destinations and a web ACL resource, for logging from AWS WAF. As part of the association, you can specify parts of the standard logging fields to keep out of the logs. </p> */
 	export interface LoggingConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceArn: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		LogDestinationConfigs: Array<string>;
+
+		/** Maximum items: 100 */
 		RedactedFields?: Array<FieldToMatch>;
 	}
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>Defines an association between Amazon Kinesis Data Firehose destinations and a web ACL resource, for logging from AWS WAF. As part of the association, you can specify parts of the standard logging fields to keep out of the logs. </p> */
 	export interface LoggingConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateLoggingConfigurationFormGroup() {
 		return new FormGroup<LoggingConfigurationFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface GetLoggingConfigurationRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceArn: string;
 	}
 	export interface GetLoggingConfigurationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetLoggingConfigurationRequestFormGroup() {
 		return new FormGroup<GetLoggingConfigurationRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface GetPermissionPolicyResponse {
+
+		/** Min length: 1 */
 		Policy?: string | null;
 	}
 	export interface GetPermissionPolicyResponseFormProperties {
+
+		/** Min length: 1 */
 		Policy: FormControl<string | null | undefined>,
 	}
 	export function CreateGetPermissionPolicyResponseFormGroup() {
 		return new FormGroup<GetPermissionPolicyResponseFormProperties>({
-			Policy: new FormControl<string | null | undefined>(undefined),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetPermissionPolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceArn: string;
 	}
 	export interface GetPermissionPolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetPermissionPolicyRequestFormGroup() {
 		return new FormGroup<GetPermissionPolicyRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -1636,23 +2815,69 @@ export namespace MyNS {
 	}
 
 	export interface GetRateBasedStatementManagedKeysRequest {
+
+		/** Required */
 		Scope: CheckCapacityRequestScope;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		WebACLName: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		WebACLId: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		RuleName: string;
 	}
 	export interface GetRateBasedStatementManagedKeysRequestFormProperties {
+
+		/** Required */
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		WebACLName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		WebACLId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		RuleName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRateBasedStatementManagedKeysRequestFormGroup() {
 		return new FormGroup<GetRateBasedStatementManagedKeysRequestFormProperties>({
-			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
-			WebACLName: new FormControl<string | null | undefined>(undefined),
-			WebACLId: new FormControl<string | null | undefined>(undefined),
-			RuleName: new FormControl<string | null | undefined>(undefined),
+			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined, [Validators.required]),
+			WebACLName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			RuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -1661,14 +2886,26 @@ export namespace MyNS {
 
 		/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>Contains one or more regular expressions. </p> <p>AWS WAF assigns an ARN to each <code>RegexPatternSet</code> that you create. To use a set in a rule, you provide the ARN to the <a>Rule</a> statement <a>RegexPatternSetReferenceStatement</a>. </p> */
 		RegexPatternSet?: RegexPatternSet;
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken?: string | null;
 	}
 	export interface GetRegexPatternSetResponseFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRegexPatternSetResponseFormGroup() {
 		return new FormGroup<GetRegexPatternSetResponseFormProperties>({
-			LockToken: new FormControl<string | null | undefined>(undefined),
+			LockToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
@@ -1676,45 +2913,125 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>Contains one or more regular expressions. </p> <p>AWS WAF assigns an ARN to each <code>RegexPatternSet</code> that you create. To use a set in a rule, you provide the ARN to the <a>Rule</a> statement <a>RegexPatternSetReferenceStatement</a>. </p> */
 	export interface RegexPatternSet {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ARN?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description?: string | null;
 		RegularExpressionList?: Array<Regex>;
 	}
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>Contains one or more regular expressions. </p> <p>AWS WAF assigns an ARN to each <code>RegexPatternSet</code> that you create. To use a set in a rule, you provide the ARN to the <a>Rule</a> statement <a>RegexPatternSetReferenceStatement</a>. </p> */
 	export interface RegexPatternSetFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateRegexPatternSetFormGroup() {
 		return new FormGroup<RegexPatternSetFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			ARN: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetRegexPatternSetRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: string;
+
+		/** Required */
 		Scope: CheckCapacityRequestScope;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: string;
 	}
 	export interface GetRegexPatternSetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRegexPatternSetRequestFormGroup() {
 		return new FormGroup<GetRegexPatternSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
@@ -1723,14 +3040,26 @@ export namespace MyNS {
 
 		/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p> A rule group defines a collection of rules to inspect and control web requests that you can use in a <a>WebACL</a>. When you create a rule group, you define an immutable capacity limit. If you update a rule group, you must stay within the capacity. This allows others to reuse the rule group with confidence in its capacity requirements. </p> */
 		RuleGroup?: RuleGroup;
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken?: string | null;
 	}
 	export interface GetRuleGroupResponseFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRuleGroupResponseFormGroup() {
 		return new FormGroup<GetRuleGroupResponseFormProperties>({
-			LockToken: new FormControl<string | null | undefined>(undefined),
+			LockToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
@@ -1738,10 +3067,42 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p> A rule group defines a collection of rules to inspect and control web requests that you can use in a <a>WebACL</a>. When you create a rule group, you define an immutable capacity limit. If you update a rule group, you must stay within the capacity. This allows others to reuse the rule group with confidence in its capacity requirements. </p> */
 	export interface RuleGroup {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: string;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		Capacity: number;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ARN: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description?: string | null;
 		Rules?: Array<Rule>;
 
@@ -1754,38 +3115,102 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p> A rule group defines a collection of rules to inspect and control web requests that you can use in a <a>WebACL</a>. When you create a rule group, you define an immutable capacity limit. If you update a rule group, you must stay within the capacity. This allows others to reuse the rule group with confidence in its capacity requirements. </p> */
 	export interface RuleGroupFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		Capacity: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateRuleGroupFormGroup() {
 		return new FormGroup<RuleGroupFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			Capacity: new FormControl<number | null | undefined>(undefined),
-			ARN: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			Capacity: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetRuleGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: string;
+
+		/** Required */
 		Scope: CheckCapacityRequestScope;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: string;
 	}
 	export interface GetRuleGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRuleGroupRequestFormGroup() {
 		return new FormGroup<GetRuleGroupRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
@@ -1816,25 +3241,47 @@ export namespace MyNS {
 		 * Required
 		 */
 		Request: HTTPRequest;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		Weight: number;
 		Timestamp?: Date | null;
 		Action?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		RuleNameWithinRuleGroup?: string | null;
 	}
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>Represents a single sampled web request. The response from <a>GetSampledRequests</a> includes a <code>SampledHTTPRequests</code> complex type that appears as <code>SampledRequests</code> in the response syntax. <code>SampledHTTPRequests</code> contains an array of <code>SampledHTTPRequest</code> objects.</p> */
 	export interface SampledHTTPRequestFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		Weight: FormControl<number | null | undefined>,
 		Timestamp: FormControl<Date | null | undefined>,
 		Action: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		RuleNameWithinRuleGroup: FormControl<string | null | undefined>,
 	}
 	export function CreateSampledHTTPRequestFormGroup() {
 		return new FormGroup<SampledHTTPRequestFormProperties>({
-			Weight: new FormControl<number | null | undefined>(undefined),
+			Weight: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			Timestamp: new FormControl<Date | null | undefined>(undefined),
 			Action: new FormControl<string | null | undefined>(undefined),
-			RuleNameWithinRuleGroup: new FormControl<string | null | undefined>(undefined),
+			RuleNameWithinRuleGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -1892,26 +3339,50 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>In a <a>GetSampledRequests</a> request, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which you want AWS WAF to return a sample of web requests.</p> <p>In a <a>GetSampledRequests</a> response, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which AWS WAF actually returned a sample of web requests. AWS WAF gets the specified number of requests from among the first 5,000 requests that your AWS resource receives during the specified time period. If your resource receives more than 5,000 requests during that period, AWS WAF stops sampling after the 5,000th request. In that case, <code>EndTime</code> is the time that AWS WAF received the 5,000th request. </p> */
 	export interface TimeWindow {
+
+		/** Required */
 		StartTime: Date;
+
+		/** Required */
 		EndTime: Date;
 	}
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>In a <a>GetSampledRequests</a> request, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which you want AWS WAF to return a sample of web requests.</p> <p>In a <a>GetSampledRequests</a> response, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which AWS WAF actually returned a sample of web requests. AWS WAF gets the specified number of requests from among the first 5,000 requests that your AWS resource receives during the specified time period. If your resource receives more than 5,000 requests during that period, AWS WAF stops sampling after the 5,000th request. In that case, <code>EndTime</code> is the time that AWS WAF received the 5,000th request. </p> */
 	export interface TimeWindowFormProperties {
+
+		/** Required */
 		StartTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		EndTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateTimeWindowFormGroup() {
 		return new FormGroup<TimeWindowFormProperties>({
-			StartTime: new FormControl<Date | null | undefined>(undefined),
-			EndTime: new FormControl<Date | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			EndTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface GetSampledRequestsRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		WebAclArn: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^[\w#:\.\-/]+$
+		 */
 		RuleMetricName: string;
+
+		/** Required */
 		Scope: CheckCapacityRequestScope;
 
 		/**
@@ -1919,20 +3390,48 @@ export namespace MyNS {
 		 * Required
 		 */
 		TimeWindow: TimeWindow;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		MaxItems: number;
 	}
 	export interface GetSampledRequestsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		WebAclArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^[\w#:\.\-/]+$
+		 */
 		RuleMetricName: FormControl<string | null | undefined>,
+
+		/** Required */
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateGetSampledRequestsRequestFormGroup() {
 		return new FormGroup<GetSampledRequestsRequestFormProperties>({
-			WebAclArn: new FormControl<string | null | undefined>(undefined),
-			RuleMetricName: new FormControl<string | null | undefined>(undefined),
-			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			WebAclArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			RuleMetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined, [Validators.required]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(500)]),
 		});
 
 	}
@@ -1941,14 +3440,26 @@ export namespace MyNS {
 
 		/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p> A Web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined (allow, block, or count) for requests that match the statement of the rule. In the Web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a Web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a Web ACL with one or more AWS resources to protect. The resources can be Amazon CloudFront, an Amazon API Gateway API, or an Application Load Balancer. </p> */
 		WebACL?: WebACL;
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken?: string | null;
 	}
 	export interface GetWebACLResponseFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetWebACLResponseFormGroup() {
 		return new FormGroup<GetWebACLResponseFormProperties>({
-			LockToken: new FormControl<string | null | undefined>(undefined),
+			LockToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
@@ -1956,8 +3467,29 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p> A Web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined (allow, block, or count) for requests that match the statement of the rule. In the Web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a Web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a Web ACL with one or more AWS resources to protect. The resources can be Amazon CloudFront, an Amazon API Gateway API, or an Application Load Balancer. </p> */
 	export interface WebACL {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ARN: string;
 
 		/**
@@ -1965,6 +3497,12 @@ export namespace MyNS {
 		 * Required
 		 */
 		DefaultAction: DefaultAction;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description?: string | null;
 		Rules?: Array<Rule>;
 
@@ -1973,6 +3511,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		VisibilityConfig: VisibilityConfig;
+
+		/** Minimum: 0 */
 		Capacity?: number | null;
 		PreProcessFirewallManagerRuleGroups?: Array<FirewallManagerRuleGroup>;
 		PostProcessFirewallManagerRuleGroups?: Array<FirewallManagerRuleGroup>;
@@ -1981,20 +3521,49 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p> A Web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined (allow, block, or count) for requests that match the statement of the rule. In the Web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a Web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a Web ACL with one or more AWS resources to protect. The resources can be Amazon CloudFront, an Amazon API Gateway API, or an Application Load Balancer. </p> */
 	export interface WebACLFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		Capacity: FormControl<number | null | undefined>,
 		ManagedByFirewallManager: FormControl<boolean | null | undefined>,
 	}
 	export function CreateWebACLFormGroup() {
 		return new FormGroup<WebACLFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			ARN: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			Capacity: new FormControl<number | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Capacity: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			ManagedByFirewallManager: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2003,7 +3572,19 @@ export namespace MyNS {
 
 	/** A rule group that's defined for an AWS Firewall Manager WAF policy. */
 	export interface FirewallManagerRuleGroup {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		Priority: number;
 
 		/**
@@ -2027,13 +3608,25 @@ export namespace MyNS {
 
 	/** A rule group that's defined for an AWS Firewall Manager WAF policy. */
 	export interface FirewallManagerRuleGroupFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		Priority: FormControl<number | null | undefined>,
 	}
 	export function CreateFirewallManagerRuleGroupFormGroup() {
 		return new FormGroup<FirewallManagerRuleGroupFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Priority: new FormControl<number | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Priority: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 		});
 
 	}
@@ -2059,20 +3652,52 @@ export namespace MyNS {
 	}
 
 	export interface GetWebACLRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: string;
+
+		/** Required */
 		Scope: CheckCapacityRequestScope;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: string;
 	}
 	export interface GetWebACLRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: FormControl<string | null | undefined>,
 	}
 	export function CreateGetWebACLRequestFormGroup() {
 		return new FormGroup<GetWebACLRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
@@ -2091,28 +3716,54 @@ export namespace MyNS {
 	}
 
 	export interface GetWebACLForResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceArn: string;
 	}
 	export interface GetWebACLForResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetWebACLForResourceRequestFormGroup() {
 		return new FormGroup<GetWebACLForResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface ListAvailableManagedRuleGroupsResponse {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker?: string | null;
 		ManagedRuleGroups?: Array<ManagedRuleGroupSummary>;
 	}
 	export interface ListAvailableManagedRuleGroupsResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListAvailableManagedRuleGroupsResponseFormGroup() {
 		return new FormGroup<ListAvailableManagedRuleGroupsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -2120,140 +3771,312 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>High-level information about a managed rule group, returned by <a>ListAvailableManagedRuleGroups</a>. This provides information like the name and vendor name, that you provide when you add a <a>ManagedRuleGroupStatement</a> to a web ACL. Managed rule groups include AWS Managed Rules rule groups, which are free of charge to AWS WAF customers, and AWS Marketplace managed rule groups, which you can subscribe to through AWS Marketplace. </p> */
 	export interface ManagedRuleGroupSummary {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		VendorName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description?: string | null;
 	}
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>High-level information about a managed rule group, returned by <a>ListAvailableManagedRuleGroups</a>. This provides information like the name and vendor name, that you provide when you add a <a>ManagedRuleGroupStatement</a> to a web ACL. Managed rule groups include AWS Managed Rules rule groups, which are free of charge to AWS WAF customers, and AWS Marketplace managed rule groups, which you can subscribe to through AWS Marketplace. </p> */
 	export interface ManagedRuleGroupSummaryFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		VendorName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateManagedRuleGroupSummaryFormGroup() {
 		return new FormGroup<ManagedRuleGroupSummaryFormProperties>({
-			VendorName: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			VendorName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListAvailableManagedRuleGroupsRequest {
+
+		/** Required */
 		Scope: CheckCapacityRequestScope;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit?: number | null;
 	}
 	export interface ListAvailableManagedRuleGroupsRequestFormProperties {
+
+		/** Required */
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateListAvailableManagedRuleGroupsRequestFormGroup() {
 		return new FormGroup<ListAvailableManagedRuleGroupsRequestFormProperties>({
-			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
-			NextMarker: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined, [Validators.required]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListIPSetsResponse {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker?: string | null;
 		IPSets?: Array<IPSetSummary>;
 	}
 	export interface ListIPSetsResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListIPSetsResponseFormGroup() {
 		return new FormGroup<ListIPSetsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListIPSetsRequest {
+
+		/** Required */
 		Scope: CheckCapacityRequestScope;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit?: number | null;
 	}
 	export interface ListIPSetsRequestFormProperties {
+
+		/** Required */
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateListIPSetsRequestFormGroup() {
 		return new FormGroup<ListIPSetsRequestFormProperties>({
-			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
-			NextMarker: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined, [Validators.required]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListLoggingConfigurationsResponse {
 		LoggingConfigurations?: Array<LoggingConfiguration>;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker?: string | null;
 	}
 	export interface ListLoggingConfigurationsResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListLoggingConfigurationsResponseFormGroup() {
 		return new FormGroup<ListLoggingConfigurationsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListLoggingConfigurationsRequest {
 		Scope?: CheckCapacityRequestScope | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit?: number | null;
 	}
 	export interface ListLoggingConfigurationsRequestFormProperties {
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateListLoggingConfigurationsRequestFormGroup() {
 		return new FormGroup<ListLoggingConfigurationsRequestFormProperties>({
 			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
-			NextMarker: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListRegexPatternSetsResponse {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker?: string | null;
 		RegexPatternSets?: Array<RegexPatternSetSummary>;
 	}
 	export interface ListRegexPatternSetsResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListRegexPatternSetsResponseFormGroup() {
 		return new FormGroup<ListRegexPatternSetsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListRegexPatternSetsRequest {
+
+		/** Required */
 		Scope: CheckCapacityRequestScope;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit?: number | null;
 	}
 	export interface ListRegexPatternSetsRequestFormProperties {
+
+		/** Required */
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateListRegexPatternSetsRequestFormGroup() {
 		return new FormGroup<ListRegexPatternSetsRequestFormProperties>({
-			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
-			NextMarker: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined, [Validators.required]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -2270,16 +4093,30 @@ export namespace MyNS {
 	}
 
 	export interface ListResourcesForWebACLRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		WebACLArn: string;
 		ResourceType?: ListResourcesForWebACLRequestResourceType | null;
 	}
 	export interface ListResourcesForWebACLRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		WebACLArn: FormControl<string | null | undefined>,
 		ResourceType: FormControl<ListResourcesForWebACLRequestResourceType | null | undefined>,
 	}
 	export function CreateListResourcesForWebACLRequestFormGroup() {
 		return new FormGroup<ListResourcesForWebACLRequestFormProperties>({
-			WebACLArn: new FormControl<string | null | undefined>(undefined),
+			WebACLArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 			ResourceType: new FormControl<ListResourcesForWebACLRequestResourceType | null | undefined>(undefined),
 		});
 
@@ -2288,50 +4125,100 @@ export namespace MyNS {
 	export enum ListResourcesForWebACLRequestResourceType { APPLICATION_LOAD_BALANCER = 0, API_GATEWAY = 1 }
 
 	export interface ListRuleGroupsResponse {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker?: string | null;
 		RuleGroups?: Array<RuleGroupSummary>;
 	}
 	export interface ListRuleGroupsResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListRuleGroupsResponseFormGroup() {
 		return new FormGroup<ListRuleGroupsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListRuleGroupsRequest {
+
+		/** Required */
 		Scope: CheckCapacityRequestScope;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit?: number | null;
 	}
 	export interface ListRuleGroupsRequestFormProperties {
+
+		/** Required */
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateListRuleGroupsRequestFormGroup() {
 		return new FormGroup<ListRuleGroupsRequestFormProperties>({
-			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
-			NextMarker: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined, [Validators.required]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListTagsForResourceResponse {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker?: string | null;
 
 		/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>The collection of tagging definitions for an AWS resource. </p> */
 		TagInfoForResource?: TagInfoForResource;
 	}
 	export interface ListTagsForResourceResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceResponseFormGroup() {
 		return new FormGroup<ListTagsForResourceResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -2339,69 +4226,157 @@ export namespace MyNS {
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>The collection of tagging definitions for an AWS resource. </p> */
 	export interface TagInfoForResource {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceARN?: string | null;
+
+		/** Minimum items: 1 */
 		TagList?: Array<Tag>;
 	}
 
 	/** <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p> </note> <p>The collection of tagging definitions for an AWS resource. </p> */
 	export interface TagInfoForResourceFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateTagInfoForResourceFormGroup() {
 		return new FormGroup<TagInfoForResourceFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface ListTagsForResourceRequest {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit?: number | null;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceARN: string;
 	}
 	export interface ListTagsForResourceRequestFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface ListWebACLsResponse {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker?: string | null;
 		WebACLs?: Array<WebACLSummary>;
 	}
 	export interface ListWebACLsResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListWebACLsResponseFormGroup() {
 		return new FormGroup<ListWebACLsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListWebACLsRequest {
+
+		/** Required */
 		Scope: CheckCapacityRequestScope;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit?: number | null;
 	}
 	export interface ListWebACLsRequestFormProperties {
+
+		/** Required */
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextMarker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateListWebACLsRequestFormGroup() {
 		return new FormGroup<ListWebACLsRequestFormProperties>({
-			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
-			NextMarker: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined, [Validators.required]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -2456,17 +4431,41 @@ export namespace MyNS {
 	}
 
 	export interface PutPermissionPolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceArn: string;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Policy: string;
 	}
 	export interface PutPermissionPolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Policy: FormControl<string | null | undefined>,
 	}
 	export function CreatePutPermissionPolicyRequestFormGroup() {
 		return new FormGroup<PutPermissionPolicyRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
-			Policy: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -2492,15 +4491,34 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceARN: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 */
 		Tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -2516,114 +4534,311 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceARN: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 */
 		TagKeys: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: .*\S.*
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface UpdateIPSetResponse {
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		NextLockToken?: string | null;
 	}
 	export interface UpdateIPSetResponseFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		NextLockToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateIPSetResponseFormGroup() {
 		return new FormGroup<UpdateIPSetResponseFormProperties>({
-			NextLockToken: new FormControl<string | null | undefined>(undefined),
+			NextLockToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateIPSetRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: string;
+
+		/** Required */
 		Scope: CheckCapacityRequestScope;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description?: string | null;
+
+		/** Required */
 		Addresses: Array<string>;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken: string;
 	}
 	export interface UpdateIPSetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateIPSetRequestFormGroup() {
 		return new FormGroup<UpdateIPSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			LockToken: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			LockToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateRegexPatternSetResponse {
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		NextLockToken?: string | null;
 	}
 	export interface UpdateRegexPatternSetResponseFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		NextLockToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateRegexPatternSetResponseFormGroup() {
 		return new FormGroup<UpdateRegexPatternSetResponseFormProperties>({
-			NextLockToken: new FormControl<string | null | undefined>(undefined),
+			NextLockToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateRegexPatternSetRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: string;
+
+		/** Required */
 		Scope: CheckCapacityRequestScope;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description?: string | null;
+
+		/** Required */
 		RegularExpressionList: Array<Regex>;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken: string;
 	}
 	export interface UpdateRegexPatternSetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateRegexPatternSetRequestFormGroup() {
 		return new FormGroup<UpdateRegexPatternSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			LockToken: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			LockToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateRuleGroupResponse {
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		NextLockToken?: string | null;
 	}
 	export interface UpdateRuleGroupResponseFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		NextLockToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateRuleGroupResponseFormGroup() {
 		return new FormGroup<UpdateRuleGroupResponseFormProperties>({
-			NextLockToken: new FormControl<string | null | undefined>(undefined),
+			NextLockToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateRuleGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: string;
+
+		/** Required */
 		Scope: CheckCapacityRequestScope;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description?: string | null;
 		Rules?: Array<Rule>;
 
@@ -2632,42 +4847,106 @@ export namespace MyNS {
 		 * Required
 		 */
 		VisibilityConfig: VisibilityConfig;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken: string;
 	}
 	export interface UpdateRuleGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateRuleGroupRequestFormGroup() {
 		return new FormGroup<UpdateRuleGroupRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			LockToken: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			LockToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateWebACLResponse {
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		NextLockToken?: string | null;
 	}
 	export interface UpdateWebACLResponseFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		NextLockToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateWebACLResponseFormGroup() {
 		return new FormGroup<UpdateWebACLResponseFormProperties>({
-			NextLockToken: new FormControl<string | null | undefined>(undefined),
+			NextLockToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateWebACLRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: string;
+
+		/** Required */
 		Scope: CheckCapacityRequestScope;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: string;
 
 		/**
@@ -2675,6 +4954,12 @@ export namespace MyNS {
 		 * Required
 		 */
 		DefaultAction: DefaultAction;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description?: string | null;
 		Rules?: Array<Rule>;
 
@@ -2683,22 +4968,58 @@ export namespace MyNS {
 		 * Required
 		 */
 		VisibilityConfig: VisibilityConfig;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken: string;
 	}
 	export interface UpdateWebACLRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\w\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Scope: FormControl<CheckCapacityRequestScope | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=:#@/\-,\.][\w+=:#@/\-,\.\s]+[\w+=:#@/\-,\.]$
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$
+		 */
 		LockToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateWebACLRequestFormGroup() {
 		return new FormGroup<UpdateWebACLRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			LockToken: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Scope: new FormControl<CheckCapacityRequestScope | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			LockToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}

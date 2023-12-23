@@ -87,17 +87,25 @@ export namespace MyNS {
 	}
 
 	export interface CreateJobQueueResponse {
+
+		/** Required */
 		jobQueueName: string;
+
+		/** Required */
 		jobQueueArn: string;
 	}
 	export interface CreateJobQueueResponseFormProperties {
+
+		/** Required */
 		jobQueueName: FormControl<string | null | undefined>,
+
+		/** Required */
 		jobQueueArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateJobQueueResponseFormGroup() {
 		return new FormGroup<CreateJobQueueResponseFormProperties>({
-			jobQueueName: new FormControl<string | null | undefined>(undefined),
-			jobQueueArn: new FormControl<string | null | undefined>(undefined),
+			jobQueueName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			jobQueueArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -105,19 +113,27 @@ export namespace MyNS {
 
 	/** The order in which compute environments are tried for job placement within a queue. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower order integer value is tried for job placement first. */
 	export interface ComputeEnvironmentOrder {
+
+		/** Required */
 		order: number;
+
+		/** Required */
 		computeEnvironment: string;
 	}
 
 	/** The order in which compute environments are tried for job placement within a queue. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower order integer value is tried for job placement first. */
 	export interface ComputeEnvironmentOrderFormProperties {
+
+		/** Required */
 		order: FormControl<number | null | undefined>,
+
+		/** Required */
 		computeEnvironment: FormControl<string | null | undefined>,
 	}
 	export function CreateComputeEnvironmentOrderFormGroup() {
 		return new FormGroup<ComputeEnvironmentOrderFormProperties>({
-			order: new FormControl<number | null | undefined>(undefined),
-			computeEnvironment: new FormControl<string | null | undefined>(undefined),
+			order: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			computeEnvironment: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -169,8 +185,14 @@ export namespace MyNS {
 
 	/** An object representing an AWS Batch compute environment. */
 	export interface ComputeEnvironmentDetail {
+
+		/** Required */
 		computeEnvironmentName: string;
+
+		/** Required */
 		computeEnvironmentArn: string;
+
+		/** Required */
 		ecsClusterArn: string;
 		type?: ComputeEnvironmentDetailType | null;
 		state?: ComputeEnvironmentDetailState | null;
@@ -184,8 +206,14 @@ export namespace MyNS {
 
 	/** An object representing an AWS Batch compute environment. */
 	export interface ComputeEnvironmentDetailFormProperties {
+
+		/** Required */
 		computeEnvironmentName: FormControl<string | null | undefined>,
+
+		/** Required */
 		computeEnvironmentArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		ecsClusterArn: FormControl<string | null | undefined>,
 		type: FormControl<ComputeEnvironmentDetailType | null | undefined>,
 		state: FormControl<ComputeEnvironmentDetailState | null | undefined>,
@@ -195,9 +223,9 @@ export namespace MyNS {
 	}
 	export function CreateComputeEnvironmentDetailFormGroup() {
 		return new FormGroup<ComputeEnvironmentDetailFormProperties>({
-			computeEnvironmentName: new FormControl<string | null | undefined>(undefined),
-			computeEnvironmentArn: new FormControl<string | null | undefined>(undefined),
-			ecsClusterArn: new FormControl<string | null | undefined>(undefined),
+			computeEnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			computeEnvironmentArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ecsClusterArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			type: new FormControl<ComputeEnvironmentDetailType | null | undefined>(undefined),
 			state: new FormControl<ComputeEnvironmentDetailState | null | undefined>(undefined),
 			status: new FormControl<ComputeEnvironmentDetailStatus | null | undefined>(undefined),
@@ -216,16 +244,28 @@ export namespace MyNS {
 
 	/** An object representing an AWS Batch compute resource. */
 	export interface ComputeResource {
+
+		/** Required */
 		type: CRType;
 		allocationStrategy?: CRAllocationStrategy | null;
+
+		/** Required */
 		minvCpus: number;
+
+		/** Required */
 		maxvCpus: number;
 		desiredvCpus?: number | null;
+
+		/** Required */
 		instanceTypes: Array<string>;
 		imageId?: string | null;
+
+		/** Required */
 		subnets: Array<string>;
 		securityGroupIds?: Array<string>;
 		ec2KeyPair?: string | null;
+
+		/** Required */
 		instanceRole: string;
 		tags?: TagsMap;
 		placementGroup?: string | null;
@@ -238,13 +278,21 @@ export namespace MyNS {
 
 	/** An object representing an AWS Batch compute resource. */
 	export interface ComputeResourceFormProperties {
+
+		/** Required */
 		type: FormControl<CRType | null | undefined>,
 		allocationStrategy: FormControl<CRAllocationStrategy | null | undefined>,
+
+		/** Required */
 		minvCpus: FormControl<number | null | undefined>,
+
+		/** Required */
 		maxvCpus: FormControl<number | null | undefined>,
 		desiredvCpus: FormControl<number | null | undefined>,
 		imageId: FormControl<string | null | undefined>,
 		ec2KeyPair: FormControl<string | null | undefined>,
+
+		/** Required */
 		instanceRole: FormControl<string | null | undefined>,
 		placementGroup: FormControl<string | null | undefined>,
 		bidPercentage: FormControl<number | null | undefined>,
@@ -252,14 +300,14 @@ export namespace MyNS {
 	}
 	export function CreateComputeResourceFormGroup() {
 		return new FormGroup<ComputeResourceFormProperties>({
-			type: new FormControl<CRType | null | undefined>(undefined),
+			type: new FormControl<CRType | null | undefined>(undefined, [Validators.required]),
 			allocationStrategy: new FormControl<CRAllocationStrategy | null | undefined>(undefined),
-			minvCpus: new FormControl<number | null | undefined>(undefined),
-			maxvCpus: new FormControl<number | null | undefined>(undefined),
+			minvCpus: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			maxvCpus: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			desiredvCpus: new FormControl<number | null | undefined>(undefined),
 			imageId: new FormControl<string | null | undefined>(undefined),
 			ec2KeyPair: new FormControl<string | null | undefined>(undefined),
-			instanceRole: new FormControl<string | null | undefined>(undefined),
+			instanceRole: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			placementGroup: new FormControl<string | null | undefined>(undefined),
 			bidPercentage: new FormControl<number | null | undefined>(undefined),
 			spotIamFleetRole: new FormControl<string | null | undefined>(undefined),
@@ -284,10 +332,18 @@ export namespace MyNS {
 
 	/** An object representing an AWS Batch job definition. */
 	export interface JobDefinition {
+
+		/** Required */
 		jobDefinitionName: string;
+
+		/** Required */
 		jobDefinitionArn: string;
+
+		/** Required */
 		revision: number;
 		status?: string | null;
+
+		/** Required */
 		type: string;
 		parameters?: ParametersMap;
 
@@ -306,19 +362,27 @@ export namespace MyNS {
 
 	/** An object representing an AWS Batch job definition. */
 	export interface JobDefinitionFormProperties {
+
+		/** Required */
 		jobDefinitionName: FormControl<string | null | undefined>,
+
+		/** Required */
 		jobDefinitionArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		revision: FormControl<number | null | undefined>,
 		status: FormControl<string | null | undefined>,
+
+		/** Required */
 		type: FormControl<string | null | undefined>,
 	}
 	export function CreateJobDefinitionFormGroup() {
 		return new FormGroup<JobDefinitionFormProperties>({
-			jobDefinitionName: new FormControl<string | null | undefined>(undefined),
-			jobDefinitionArn: new FormControl<string | null | undefined>(undefined),
-			revision: new FormControl<number | null | undefined>(undefined),
+			jobDefinitionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			jobDefinitionArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			revision: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -480,22 +544,34 @@ export namespace MyNS {
 
 	/** The <code>ulimit</code> settings to pass to the container. */
 	export interface Ulimit {
+
+		/** Required */
 		hardLimit: number;
+
+		/** Required */
 		name: string;
+
+		/** Required */
 		softLimit: number;
 	}
 
 	/** The <code>ulimit</code> settings to pass to the container. */
 	export interface UlimitFormProperties {
+
+		/** Required */
 		hardLimit: FormControl<number | null | undefined>,
+
+		/** Required */
 		name: FormControl<string | null | undefined>,
+
+		/** Required */
 		softLimit: FormControl<number | null | undefined>,
 	}
 	export function CreateUlimitFormGroup() {
 		return new FormGroup<UlimitFormProperties>({
-			hardLimit: new FormControl<number | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			softLimit: new FormControl<number | null | undefined>(undefined),
+			hardLimit: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			softLimit: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -503,19 +579,27 @@ export namespace MyNS {
 
 	/** The type and amount of a resource to assign to a container. Currently, the only supported resource type is <code>GPU</code>. */
 	export interface ResourceRequirement {
+
+		/** Required */
 		value: string;
+
+		/** Required */
 		type: ResourceRequirementType;
 	}
 
 	/** The type and amount of a resource to assign to a container. Currently, the only supported resource type is <code>GPU</code>. */
 	export interface ResourceRequirementFormProperties {
+
+		/** Required */
 		value: FormControl<string | null | undefined>,
+
+		/** Required */
 		type: FormControl<ResourceRequirementType | null | undefined>,
 	}
 	export function CreateResourceRequirementFormGroup() {
 		return new FormGroup<ResourceRequirementFormProperties>({
-			value: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<ResourceRequirementType | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<ResourceRequirementType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -540,6 +624,8 @@ export namespace MyNS {
 
 	/** An object representing a container instance host device. */
 	export interface Device {
+
+		/** Required */
 		hostPath: string;
 		containerPath?: string | null;
 		permissions?: Array<DeviceCgroupPermission>;
@@ -547,12 +633,14 @@ export namespace MyNS {
 
 	/** An object representing a container instance host device. */
 	export interface DeviceFormProperties {
+
+		/** Required */
 		hostPath: FormControl<string | null | undefined>,
 		containerPath: FormControl<string | null | undefined>,
 	}
 	export function CreateDeviceFormGroup() {
 		return new FormGroup<DeviceFormProperties>({
-			hostPath: new FormControl<string | null | undefined>(undefined),
+			hostPath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			containerPath: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -580,20 +668,30 @@ export namespace MyNS {
 
 	/** An object representing the node properties of a multi-node parallel job. */
 	export interface NodeProperties {
+
+		/** Required */
 		numNodes: number;
+
+		/** Required */
 		mainNode: number;
+
+		/** Required */
 		nodeRangeProperties: Array<NodeRangeProperty>;
 	}
 
 	/** An object representing the node properties of a multi-node parallel job. */
 	export interface NodePropertiesFormProperties {
+
+		/** Required */
 		numNodes: FormControl<number | null | undefined>,
+
+		/** Required */
 		mainNode: FormControl<number | null | undefined>,
 	}
 	export function CreateNodePropertiesFormGroup() {
 		return new FormGroup<NodePropertiesFormProperties>({
-			numNodes: new FormControl<number | null | undefined>(undefined),
-			mainNode: new FormControl<number | null | undefined>(undefined),
+			numNodes: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			mainNode: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -601,6 +699,8 @@ export namespace MyNS {
 
 	/** An object representing the properties of the node range for a multi-node parallel job. */
 	export interface NodeRangeProperty {
+
+		/** Required */
 		targetNodes: string;
 
 		/** Container properties are used in job definitions to describe the container that is launched as part of a job. */
@@ -609,11 +709,13 @@ export namespace MyNS {
 
 	/** An object representing the properties of the node range for a multi-node parallel job. */
 	export interface NodeRangePropertyFormProperties {
+
+		/** Required */
 		targetNodes: FormControl<string | null | undefined>,
 	}
 	export function CreateNodeRangePropertyFormGroup() {
 		return new FormGroup<NodeRangePropertyFormProperties>({
-			targetNodes: new FormControl<string | null | undefined>(undefined),
+			targetNodes: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -635,32 +737,50 @@ export namespace MyNS {
 
 	/** An object representing the details of an AWS Batch job queue. */
 	export interface JobQueueDetail {
+
+		/** Required */
 		jobQueueName: string;
+
+		/** Required */
 		jobQueueArn: string;
+
+		/** Required */
 		state: ComputeEnvironmentDetailState;
 		status?: ComputeEnvironmentDetailStatus | null;
 		statusReason?: string | null;
+
+		/** Required */
 		priority: number;
+
+		/** Required */
 		computeEnvironmentOrder: Array<ComputeEnvironmentOrder>;
 	}
 
 	/** An object representing the details of an AWS Batch job queue. */
 	export interface JobQueueDetailFormProperties {
+
+		/** Required */
 		jobQueueName: FormControl<string | null | undefined>,
+
+		/** Required */
 		jobQueueArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		state: FormControl<ComputeEnvironmentDetailState | null | undefined>,
 		status: FormControl<ComputeEnvironmentDetailStatus | null | undefined>,
 		statusReason: FormControl<string | null | undefined>,
+
+		/** Required */
 		priority: FormControl<number | null | undefined>,
 	}
 	export function CreateJobQueueDetailFormGroup() {
 		return new FormGroup<JobQueueDetailFormProperties>({
-			jobQueueName: new FormControl<string | null | undefined>(undefined),
-			jobQueueArn: new FormControl<string | null | undefined>(undefined),
-			state: new FormControl<ComputeEnvironmentDetailState | null | undefined>(undefined),
+			jobQueueName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			jobQueueArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			state: new FormControl<ComputeEnvironmentDetailState | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<ComputeEnvironmentDetailStatus | null | undefined>(undefined),
 			statusReason: new FormControl<string | null | undefined>(undefined),
-			priority: new FormControl<number | null | undefined>(undefined),
+			priority: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -679,9 +799,17 @@ export namespace MyNS {
 
 	/** An object representing an AWS Batch job. */
 	export interface JobDetail {
+
+		/** Required */
 		jobName: string;
+
+		/** Required */
 		jobId: string;
+
+		/** Required */
 		jobQueue: string;
+
+		/** Required */
 		status: JobDetailStatus;
 		attempts?: Array<AttemptDetail>;
 		statusReason?: string | null;
@@ -689,9 +817,13 @@ export namespace MyNS {
 
 		/** The retry strategy associated with a job. */
 		retryStrategy?: RetryStrategy;
+
+		/** Required */
 		startedAt: number;
 		stoppedAt?: number | null;
 		dependsOn?: Array<JobDependency>;
+
+		/** Required */
 		jobDefinition: string;
 		parameters?: ParametersMap;
 
@@ -713,27 +845,39 @@ export namespace MyNS {
 
 	/** An object representing an AWS Batch job. */
 	export interface JobDetailFormProperties {
+
+		/** Required */
 		jobName: FormControl<string | null | undefined>,
+
+		/** Required */
 		jobId: FormControl<string | null | undefined>,
+
+		/** Required */
 		jobQueue: FormControl<string | null | undefined>,
+
+		/** Required */
 		status: FormControl<JobDetailStatus | null | undefined>,
 		statusReason: FormControl<string | null | undefined>,
 		createdAt: FormControl<number | null | undefined>,
+
+		/** Required */
 		startedAt: FormControl<number | null | undefined>,
 		stoppedAt: FormControl<number | null | undefined>,
+
+		/** Required */
 		jobDefinition: FormControl<string | null | undefined>,
 	}
 	export function CreateJobDetailFormGroup() {
 		return new FormGroup<JobDetailFormProperties>({
-			jobName: new FormControl<string | null | undefined>(undefined),
-			jobId: new FormControl<string | null | undefined>(undefined),
-			jobQueue: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<JobDetailStatus | null | undefined>(undefined),
+			jobName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			jobId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			jobQueue: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			status: new FormControl<JobDetailStatus | null | undefined>(undefined, [Validators.required]),
 			statusReason: new FormControl<string | null | undefined>(undefined),
 			createdAt: new FormControl<number | null | undefined>(undefined),
-			startedAt: new FormControl<number | null | undefined>(undefined),
+			startedAt: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			stoppedAt: new FormControl<number | null | undefined>(undefined),
-			jobDefinition: new FormControl<string | null | undefined>(undefined),
+			jobDefinition: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -956,6 +1100,8 @@ export namespace MyNS {
 	}
 
 	export interface ListJobsResponse {
+
+		/** Required */
 		jobSummaryList: Array<JobSummary>;
 		nextToken?: string | null;
 	}
@@ -972,7 +1118,11 @@ export namespace MyNS {
 
 	/** An object representing summary details of a job. */
 	export interface JobSummary {
+
+		/** Required */
 		jobId: string;
+
+		/** Required */
 		jobName: string;
 		createdAt?: number | null;
 		status?: JobDetailStatus | null;
@@ -992,7 +1142,11 @@ export namespace MyNS {
 
 	/** An object representing summary details of a job. */
 	export interface JobSummaryFormProperties {
+
+		/** Required */
 		jobId: FormControl<string | null | undefined>,
+
+		/** Required */
 		jobName: FormControl<string | null | undefined>,
 		createdAt: FormControl<number | null | undefined>,
 		status: FormControl<JobDetailStatus | null | undefined>,
@@ -1002,8 +1156,8 @@ export namespace MyNS {
 	}
 	export function CreateJobSummaryFormGroup() {
 		return new FormGroup<JobSummaryFormProperties>({
-			jobId: new FormControl<string | null | undefined>(undefined),
-			jobName: new FormControl<string | null | undefined>(undefined),
+			jobId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			jobName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			createdAt: new FormControl<number | null | undefined>(undefined),
 			status: new FormControl<JobDetailStatus | null | undefined>(undefined),
 			statusReason: new FormControl<string | null | undefined>(undefined),
@@ -1077,36 +1231,56 @@ export namespace MyNS {
 	}
 
 	export interface RegisterJobDefinitionResponse {
+
+		/** Required */
 		jobDefinitionName: string;
+
+		/** Required */
 		jobDefinitionArn: string;
+
+		/** Required */
 		revision: number;
 	}
 	export interface RegisterJobDefinitionResponseFormProperties {
+
+		/** Required */
 		jobDefinitionName: FormControl<string | null | undefined>,
+
+		/** Required */
 		jobDefinitionArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		revision: FormControl<number | null | undefined>,
 	}
 	export function CreateRegisterJobDefinitionResponseFormGroup() {
 		return new FormGroup<RegisterJobDefinitionResponseFormProperties>({
-			jobDefinitionName: new FormControl<string | null | undefined>(undefined),
-			jobDefinitionArn: new FormControl<string | null | undefined>(undefined),
-			revision: new FormControl<number | null | undefined>(undefined),
+			jobDefinitionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			jobDefinitionArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			revision: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface SubmitJobResponse {
+
+		/** Required */
 		jobName: string;
+
+		/** Required */
 		jobId: string;
 	}
 	export interface SubmitJobResponseFormProperties {
+
+		/** Required */
 		jobName: FormControl<string | null | undefined>,
+
+		/** Required */
 		jobId: FormControl<string | null | undefined>,
 	}
 	export function CreateSubmitJobResponseFormGroup() {
 		return new FormGroup<SubmitJobResponseFormProperties>({
-			jobName: new FormControl<string | null | undefined>(undefined),
-			jobId: new FormControl<string | null | undefined>(undefined),
+			jobName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			jobId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1114,6 +1288,8 @@ export namespace MyNS {
 
 	/** Object representing any node overrides to a job definition that is used in a <a>SubmitJob</a> API operation. */
 	export interface NodePropertyOverride {
+
+		/** Required */
 		targetNodes: string;
 
 		/** The overrides that should be sent to a container. */
@@ -1122,11 +1298,13 @@ export namespace MyNS {
 
 	/** Object representing any node overrides to a job definition that is used in a <a>SubmitJob</a> API operation. */
 	export interface NodePropertyOverrideFormProperties {
+
+		/** Required */
 		targetNodes: FormControl<string | null | undefined>,
 	}
 	export function CreateNodePropertyOverrideFormGroup() {
 		return new FormGroup<NodePropertyOverrideFormProperties>({
-			targetNodes: new FormControl<string | null | undefined>(undefined),
+			targetNodes: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1225,17 +1403,25 @@ export namespace MyNS {
 	export enum CEType { MANAGED = 0, UNMANAGED = 1 }
 
 	export interface CancelJobRequest {
+
+		/** Required */
 		jobId: string;
+
+		/** Required */
 		reason: string;
 	}
 	export interface CancelJobRequestFormProperties {
+
+		/** Required */
 		jobId: FormControl<string | null | undefined>,
+
+		/** Required */
 		reason: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelJobRequestFormGroup() {
 		return new FormGroup<CancelJobRequestFormProperties>({
-			jobId: new FormControl<string | null | undefined>(undefined),
-			reason: new FormControl<string | null | undefined>(undefined),
+			jobId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			reason: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1264,26 +1450,38 @@ export namespace MyNS {
 	}
 
 	export interface CreateComputeEnvironmentRequest {
+
+		/** Required */
 		computeEnvironmentName: string;
+
+		/** Required */
 		type: ComputeEnvironmentDetailType;
 		state?: ComputeEnvironmentDetailState | null;
 
 		/** An object representing an AWS Batch compute resource. */
 		computeResources?: ComputeResource;
+
+		/** Required */
 		serviceRole: string;
 	}
 	export interface CreateComputeEnvironmentRequestFormProperties {
+
+		/** Required */
 		computeEnvironmentName: FormControl<string | null | undefined>,
+
+		/** Required */
 		type: FormControl<ComputeEnvironmentDetailType | null | undefined>,
 		state: FormControl<ComputeEnvironmentDetailState | null | undefined>,
+
+		/** Required */
 		serviceRole: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateComputeEnvironmentRequestFormGroup() {
 		return new FormGroup<CreateComputeEnvironmentRequestFormProperties>({
-			computeEnvironmentName: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<ComputeEnvironmentDetailType | null | undefined>(undefined),
+			computeEnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<ComputeEnvironmentDetailType | null | undefined>(undefined, [Validators.required]),
 			state: new FormControl<ComputeEnvironmentDetailState | null | undefined>(undefined),
-			serviceRole: new FormControl<string | null | undefined>(undefined),
+			serviceRole: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1291,60 +1489,82 @@ export namespace MyNS {
 	export enum JQState { ENABLED = 0, DISABLED = 1 }
 
 	export interface CreateJobQueueRequest {
+
+		/** Required */
 		jobQueueName: string;
 		state?: ComputeEnvironmentDetailState | null;
+
+		/** Required */
 		priority: number;
+
+		/** Required */
 		computeEnvironmentOrder: Array<ComputeEnvironmentOrder>;
 	}
 	export interface CreateJobQueueRequestFormProperties {
+
+		/** Required */
 		jobQueueName: FormControl<string | null | undefined>,
 		state: FormControl<ComputeEnvironmentDetailState | null | undefined>,
+
+		/** Required */
 		priority: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateJobQueueRequestFormGroup() {
 		return new FormGroup<CreateJobQueueRequestFormProperties>({
-			jobQueueName: new FormControl<string | null | undefined>(undefined),
+			jobQueueName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			state: new FormControl<ComputeEnvironmentDetailState | null | undefined>(undefined),
-			priority: new FormControl<number | null | undefined>(undefined),
+			priority: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeleteComputeEnvironmentRequest {
+
+		/** Required */
 		computeEnvironment: string;
 	}
 	export interface DeleteComputeEnvironmentRequestFormProperties {
+
+		/** Required */
 		computeEnvironment: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteComputeEnvironmentRequestFormGroup() {
 		return new FormGroup<DeleteComputeEnvironmentRequestFormProperties>({
-			computeEnvironment: new FormControl<string | null | undefined>(undefined),
+			computeEnvironment: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeleteJobQueueRequest {
+
+		/** Required */
 		jobQueue: string;
 	}
 	export interface DeleteJobQueueRequestFormProperties {
+
+		/** Required */
 		jobQueue: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteJobQueueRequestFormGroup() {
 		return new FormGroup<DeleteJobQueueRequestFormProperties>({
-			jobQueue: new FormControl<string | null | undefined>(undefined),
+			jobQueue: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeregisterJobDefinitionRequest {
+
+		/** Required */
 		jobDefinition: string;
 	}
 	export interface DeregisterJobDefinitionRequestFormProperties {
+
+		/** Required */
 		jobDefinition: FormControl<string | null | undefined>,
 	}
 	export function CreateDeregisterJobDefinitionRequestFormGroup() {
 		return new FormGroup<DeregisterJobDefinitionRequestFormProperties>({
-			jobDefinition: new FormControl<string | null | undefined>(undefined),
+			jobDefinition: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1407,6 +1627,8 @@ export namespace MyNS {
 	}
 
 	export interface DescribeJobsRequest {
+
+		/** Required */
 		jobs: Array<string>;
 	}
 	export interface DescribeJobsRequestFormProperties {
@@ -1470,7 +1692,11 @@ export namespace MyNS {
 	}
 
 	export interface RegisterJobDefinitionRequest {
+
+		/** Required */
 		jobDefinitionName: string;
+
+		/** Required */
 		type: JobDefinitionType;
 		parameters?: ParametersMap;
 
@@ -1487,13 +1713,17 @@ export namespace MyNS {
 		timeout?: JobTimeout;
 	}
 	export interface RegisterJobDefinitionRequestFormProperties {
+
+		/** Required */
 		jobDefinitionName: FormControl<string | null | undefined>,
+
+		/** Required */
 		type: FormControl<JobDefinitionType | null | undefined>,
 	}
 	export function CreateRegisterJobDefinitionRequestFormGroup() {
 		return new FormGroup<RegisterJobDefinitionRequestFormProperties>({
-			jobDefinitionName: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<JobDefinitionType | null | undefined>(undefined),
+			jobDefinitionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<JobDefinitionType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1501,12 +1731,18 @@ export namespace MyNS {
 	export enum ResourceType { GPU = 0 }
 
 	export interface SubmitJobRequest {
+
+		/** Required */
 		jobName: string;
+
+		/** Required */
 		jobQueue: string;
 
 		/** An object representing an AWS Batch array job. */
 		arrayProperties?: ArrayProperties;
 		dependsOn?: Array<JobDependency>;
+
+		/** Required */
 		jobDefinition: string;
 		parameters?: ParametersMap;
 
@@ -1523,36 +1759,52 @@ export namespace MyNS {
 		timeout?: JobTimeout;
 	}
 	export interface SubmitJobRequestFormProperties {
+
+		/** Required */
 		jobName: FormControl<string | null | undefined>,
+
+		/** Required */
 		jobQueue: FormControl<string | null | undefined>,
+
+		/** Required */
 		jobDefinition: FormControl<string | null | undefined>,
 	}
 	export function CreateSubmitJobRequestFormGroup() {
 		return new FormGroup<SubmitJobRequestFormProperties>({
-			jobName: new FormControl<string | null | undefined>(undefined),
-			jobQueue: new FormControl<string | null | undefined>(undefined),
-			jobDefinition: new FormControl<string | null | undefined>(undefined),
+			jobName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			jobQueue: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			jobDefinition: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface TerminateJobRequest {
+
+		/** Required */
 		jobId: string;
+
+		/** Required */
 		reason: string;
 	}
 	export interface TerminateJobRequestFormProperties {
+
+		/** Required */
 		jobId: FormControl<string | null | undefined>,
+
+		/** Required */
 		reason: FormControl<string | null | undefined>,
 	}
 	export function CreateTerminateJobRequestFormGroup() {
 		return new FormGroup<TerminateJobRequestFormProperties>({
-			jobId: new FormControl<string | null | undefined>(undefined),
-			reason: new FormControl<string | null | undefined>(undefined),
+			jobId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			reason: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface UpdateComputeEnvironmentRequest {
+
+		/** Required */
 		computeEnvironment: string;
 		state?: ComputeEnvironmentDetailState | null;
 
@@ -1561,13 +1813,15 @@ export namespace MyNS {
 		serviceRole?: string | null;
 	}
 	export interface UpdateComputeEnvironmentRequestFormProperties {
+
+		/** Required */
 		computeEnvironment: FormControl<string | null | undefined>,
 		state: FormControl<ComputeEnvironmentDetailState | null | undefined>,
 		serviceRole: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateComputeEnvironmentRequestFormGroup() {
 		return new FormGroup<UpdateComputeEnvironmentRequestFormProperties>({
-			computeEnvironment: new FormControl<string | null | undefined>(undefined),
+			computeEnvironment: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			state: new FormControl<ComputeEnvironmentDetailState | null | undefined>(undefined),
 			serviceRole: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1575,19 +1829,23 @@ export namespace MyNS {
 	}
 
 	export interface UpdateJobQueueRequest {
+
+		/** Required */
 		jobQueue: string;
 		state?: ComputeEnvironmentDetailState | null;
 		priority?: number | null;
 		computeEnvironmentOrder?: Array<ComputeEnvironmentOrder>;
 	}
 	export interface UpdateJobQueueRequestFormProperties {
+
+		/** Required */
 		jobQueue: FormControl<string | null | undefined>,
 		state: FormControl<ComputeEnvironmentDetailState | null | undefined>,
 		priority: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateJobQueueRequestFormGroup() {
 		return new FormGroup<UpdateJobQueueRequestFormProperties>({
-			jobQueue: new FormControl<string | null | undefined>(undefined),
+			jobQueue: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			state: new FormControl<ComputeEnvironmentDetailState | null | undefined>(undefined),
 			priority: new FormControl<number | null | undefined>(undefined),
 		});
@@ -1782,8 +2040,8 @@ export namespace MyNS {
 	}
 	export function CreateCancelJobPostBodyFormGroup() {
 		return new FormGroup<CancelJobPostBodyFormProperties>({
-			jobId: new FormControl<string | null | undefined>(undefined),
-			reason: new FormControl<string | null | undefined>(undefined),
+			jobId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			reason: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1839,10 +2097,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateComputeEnvironmentPostBodyFormGroup() {
 		return new FormGroup<CreateComputeEnvironmentPostBodyFormProperties>({
-			computeEnvironmentName: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<ComputeEnvironmentDetailType | null | undefined>(undefined),
+			computeEnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<ComputeEnvironmentDetailType | null | undefined>(undefined, [Validators.required]),
 			state: new FormControl<ComputeEnvironmentDetailState | null | undefined>(undefined),
-			serviceRole: new FormControl<string | null | undefined>(undefined),
+			serviceRole: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1939,9 +2197,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateJobQueuePostBodyFormGroup() {
 		return new FormGroup<CreateJobQueuePostBodyFormProperties>({
-			jobQueueName: new FormControl<string | null | undefined>(undefined),
+			jobQueueName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			state: new FormControl<ComputeEnvironmentDetailState | null | undefined>(undefined),
-			priority: new FormControl<number | null | undefined>(undefined),
+			priority: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1964,7 +2222,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteComputeEnvironmentPostBodyFormGroup() {
 		return new FormGroup<DeleteComputeEnvironmentPostBodyFormProperties>({
-			computeEnvironment: new FormControl<string | null | undefined>(undefined),
+			computeEnvironment: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1987,7 +2245,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteJobQueuePostBodyFormGroup() {
 		return new FormGroup<DeleteJobQueuePostBodyFormProperties>({
-			jobQueue: new FormControl<string | null | undefined>(undefined),
+			jobQueue: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2010,7 +2268,7 @@ export namespace MyNS {
 	}
 	export function CreateDeregisterJobDefinitionPostBodyFormGroup() {
 		return new FormGroup<DeregisterJobDefinitionPostBodyFormProperties>({
-			jobDefinition: new FormControl<string | null | undefined>(undefined),
+			jobDefinition: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2226,8 +2484,8 @@ export namespace MyNS {
 	}
 	export function CreateRegisterJobDefinitionPostBodyFormGroup() {
 		return new FormGroup<RegisterJobDefinitionPostBodyFormProperties>({
-			jobDefinitionName: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<JobDefinitionType | null | undefined>(undefined),
+			jobDefinitionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<JobDefinitionType | null | undefined>(undefined, [Validators.required]),
 			parameters: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -2385,9 +2643,9 @@ export namespace MyNS {
 	}
 	export function CreateSubmitJobPostBodyFormGroup() {
 		return new FormGroup<SubmitJobPostBodyFormProperties>({
-			jobName: new FormControl<string | null | undefined>(undefined),
-			jobQueue: new FormControl<string | null | undefined>(undefined),
-			jobDefinition: new FormControl<string | null | undefined>(undefined),
+			jobName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			jobQueue: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			jobDefinition: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			parameters: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -2498,8 +2756,8 @@ export namespace MyNS {
 	}
 	export function CreateTerminateJobPostBodyFormGroup() {
 		return new FormGroup<TerminateJobPostBodyFormProperties>({
-			jobId: new FormControl<string | null | undefined>(undefined),
-			reason: new FormControl<string | null | undefined>(undefined),
+			jobId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			reason: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2537,7 +2795,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateComputeEnvironmentPostBodyFormGroup() {
 		return new FormGroup<UpdateComputeEnvironmentPostBodyFormProperties>({
-			computeEnvironment: new FormControl<string | null | undefined>(undefined),
+			computeEnvironment: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			state: new FormControl<ComputeEnvironmentDetailState | null | undefined>(undefined),
 			serviceRole: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2596,7 +2854,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateJobQueuePostBodyFormGroup() {
 		return new FormGroup<UpdateJobQueuePostBodyFormProperties>({
-			jobQueue: new FormControl<string | null | undefined>(undefined),
+			jobQueue: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			state: new FormControl<ComputeEnvironmentDetailState | null | undefined>(undefined),
 			priority: new FormControl<number | null | undefined>(undefined),
 		});

@@ -4,21 +4,49 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateBatchInferenceJobResponse {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		batchInferenceJobArn?: string | null;
 	}
 	export interface CreateBatchInferenceJobResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		batchInferenceJobArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateBatchInferenceJobResponseFormGroup() {
 		return new FormGroup<CreateBatchInferenceJobResponseFormProperties>({
-			batchInferenceJobArn: new FormControl<string | null | undefined>(undefined),
+			batchInferenceJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface CreateBatchInferenceJobRequest {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		jobName: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn: string;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		filterArn?: string | null;
 		numResults?: number | null;
 
@@ -33,22 +61,52 @@ export namespace MyNS {
 		 * Required
 		 */
 		jobOutput: BatchInferenceJobOutput;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		roleArn: string;
 	}
 	export interface CreateBatchInferenceJobRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		jobName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		filterArn: FormControl<string | null | undefined>,
 		numResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		roleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateBatchInferenceJobRequestFormGroup() {
 		return new FormGroup<CreateBatchInferenceJobRequestFormProperties>({
-			jobName: new FormControl<string | null | undefined>(undefined),
-			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
-			filterArn: new FormControl<string | null | undefined>(undefined),
+			jobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			filterArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			numResults: new FormControl<number | null | undefined>(undefined),
-			roleArn: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
@@ -76,18 +134,28 @@ export namespace MyNS {
 
 	/** The configuration details of an Amazon S3 input or output bucket. */
 	export interface S3DataConfig {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 */
 		path: string;
 		kmsKeyArn?: string | null;
 	}
 
 	/** The configuration details of an Amazon S3 input or output bucket. */
 	export interface S3DataConfigFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 */
 		path: FormControl<string | null | undefined>,
 		kmsKeyArn: FormControl<string | null | undefined>,
 	}
 	export function CreateS3DataConfigFormGroup() {
 		return new FormGroup<S3DataConfigFormProperties>({
-			path: new FormControl<string | null | undefined>(undefined),
+			path: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 			kmsKeyArn: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -164,119 +232,280 @@ export namespace MyNS {
 	}
 
 	export interface CreateCampaignResponse {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		campaignArn?: string | null;
 	}
 	export interface CreateCampaignResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		campaignArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateCampaignResponseFormGroup() {
 		return new FormGroup<CreateCampaignResponseFormProperties>({
-			campaignArn: new FormControl<string | null | undefined>(undefined),
+			campaignArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface CreateCampaignRequest {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn: string;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		minProvisionedTPS: number;
 	}
 	export interface CreateCampaignRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		minProvisionedTPS: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateCampaignRequestFormGroup() {
 		return new FormGroup<CreateCampaignRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
-			minProvisionedTPS: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			minProvisionedTPS: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 		});
 
 	}
 
 	export interface CreateDatasetResponse {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetArn?: string | null;
 	}
 	export interface CreateDatasetResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDatasetResponseFormGroup() {
 		return new FormGroup<CreateDatasetResponseFormProperties>({
-			datasetArn: new FormControl<string | null | undefined>(undefined),
+			datasetArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface CreateDatasetRequest {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		schemaArn: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 */
 		datasetType: string;
 	}
 	export interface CreateDatasetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		schemaArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 */
 		datasetType: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDatasetRequestFormGroup() {
 		return new FormGroup<CreateDatasetRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			schemaArn: new FormControl<string | null | undefined>(undefined),
-			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
-			datasetType: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
+			schemaArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			datasetType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface CreateDatasetGroupResponse {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn?: string | null;
 	}
 	export interface CreateDatasetGroupResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDatasetGroupResponseFormGroup() {
 		return new FormGroup<CreateDatasetGroupResponseFormProperties>({
-			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface CreateDatasetGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: string;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		roleArn?: string | null;
 		kmsKeyArn?: string | null;
 	}
 	export interface CreateDatasetGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		roleArn: FormControl<string | null | undefined>,
 		kmsKeyArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDatasetGroupRequestFormGroup() {
 		return new FormGroup<CreateDatasetGroupRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			roleArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			kmsKeyArn: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CreateDatasetImportJobResponse {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetImportJobArn?: string | null;
 	}
 	export interface CreateDatasetImportJobResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetImportJobArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDatasetImportJobResponseFormGroup() {
 		return new FormGroup<CreateDatasetImportJobResponseFormProperties>({
-			datasetImportJobArn: new FormControl<string | null | undefined>(undefined),
+			datasetImportJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface CreateDatasetImportJobRequest {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		jobName: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetArn: string;
 
 		/**
@@ -284,18 +513,43 @@ export namespace MyNS {
 		 * Required
 		 */
 		dataSource: DataSource;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		roleArn: string;
 	}
 	export interface CreateDatasetImportJobRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		jobName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		roleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDatasetImportJobRequestFormGroup() {
 		return new FormGroup<CreateDatasetImportJobRequestFormProperties>({
-			jobName: new FormControl<string | null | undefined>(undefined),
-			datasetArn: new FormControl<string | null | undefined>(undefined),
-			roleArn: new FormControl<string | null | undefined>(undefined),
+			jobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
+			datasetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
@@ -303,153 +557,329 @@ export namespace MyNS {
 
 	/** Describes the data source that contains the data to upload to a dataset. */
 	export interface DataSource {
+
+		/** Max length: 256 */
 		dataLocation?: string | null;
 	}
 
 	/** Describes the data source that contains the data to upload to a dataset. */
 	export interface DataSourceFormProperties {
+
+		/** Max length: 256 */
 		dataLocation: FormControl<string | null | undefined>,
 	}
 	export function CreateDataSourceFormGroup() {
 		return new FormGroup<DataSourceFormProperties>({
-			dataLocation: new FormControl<string | null | undefined>(undefined),
+			dataLocation: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface CreateEventTrackerResponse {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		eventTrackerArn?: string | null;
+
+		/** Max length: 256 */
 		trackingId?: string | null;
 	}
 	export interface CreateEventTrackerResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		eventTrackerArn: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		trackingId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateEventTrackerResponseFormGroup() {
 		return new FormGroup<CreateEventTrackerResponseFormProperties>({
-			eventTrackerArn: new FormControl<string | null | undefined>(undefined),
-			trackingId: new FormControl<string | null | undefined>(undefined),
+			eventTrackerArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			trackingId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface CreateEventTrackerRequest {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn: string;
 	}
 	export interface CreateEventTrackerRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateEventTrackerRequestFormGroup() {
 		return new FormGroup<CreateEventTrackerRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface CreateFilterResponse {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		filterArn?: string | null;
 	}
 	export interface CreateFilterResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		filterArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateFilterResponseFormGroup() {
 		return new FormGroup<CreateFilterResponseFormProperties>({
-			filterArn: new FormControl<string | null | undefined>(undefined),
+			filterArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface CreateFilterRequest {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn: string;
+
+		/**
+		 * Required
+		 * Max length: 2500
+		 * Min length: 1
+		 */
 		filterExpression: string;
 	}
 	export interface CreateFilterRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2500
+		 * Min length: 1
+		 */
 		filterExpression: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateFilterRequestFormGroup() {
 		return new FormGroup<CreateFilterRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
-			filterExpression: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			filterExpression: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2500), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateSchemaResponse {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		schemaArn?: string | null;
 	}
 	export interface CreateSchemaResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		schemaArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSchemaResponseFormGroup() {
 		return new FormGroup<CreateSchemaResponseFormProperties>({
-			schemaArn: new FormControl<string | null | undefined>(undefined),
+			schemaArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface CreateSchemaRequest {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: string;
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 */
 		schema: string;
 	}
 	export interface CreateSchemaRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 */
 		schema: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSchemaRequestFormGroup() {
 		return new FormGroup<CreateSchemaRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			schema: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
+			schema: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000)]),
 		});
 
 	}
 
 	export interface CreateSolutionResponse {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionArn?: string | null;
 	}
 	export interface CreateSolutionResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSolutionResponseFormGroup() {
 		return new FormGroup<CreateSolutionResponseFormProperties>({
-			solutionArn: new FormControl<string | null | undefined>(undefined),
+			solutionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface CreateSolutionRequest {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: string;
 		performHPO?: boolean | null;
 		performAutoML?: boolean | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		recipeArn?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn: string;
+
+		/** Max length: 256 */
 		eventType?: string | null;
 
 		/** Describes the configuration properties for the solution. */
 		solutionConfig?: SolutionConfig;
 	}
 	export interface CreateSolutionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
 		performHPO: FormControl<boolean | null | undefined>,
 		performAutoML: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		recipeArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		eventType: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSolutionRequestFormGroup() {
 		return new FormGroup<CreateSolutionRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
 			performHPO: new FormControl<boolean | null | undefined>(undefined),
 			performAutoML: new FormControl<boolean | null | undefined>(undefined),
-			recipeArn: new FormControl<string | null | undefined>(undefined),
-			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
-			eventType: new FormControl<string | null | undefined>(undefined),
+			recipeArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			eventType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -457,6 +887,8 @@ export namespace MyNS {
 
 	/** Describes the configuration properties for the solution. */
 	export interface SolutionConfig {
+
+		/** Max length: 256 */
 		eventValueThreshold?: string | null;
 
 		/** Describes the properties for hyperparameter optimization (HPO). For use with the bring-your-own-recipe feature. Do not use for Amazon Personalize native recipes. */
@@ -470,11 +902,13 @@ export namespace MyNS {
 
 	/** Describes the configuration properties for the solution. */
 	export interface SolutionConfigFormProperties {
+
+		/** Max length: 256 */
 		eventValueThreshold: FormControl<string | null | undefined>,
 	}
 	export function CreateSolutionConfigFormGroup() {
 		return new FormGroup<SolutionConfigFormProperties>({
-			eventValueThreshold: new FormControl<string | null | undefined>(undefined),
+			eventValueThreshold: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -505,22 +939,34 @@ export namespace MyNS {
 
 	/** The metric to optimize during hyperparameter optimization (HPO). */
 	export interface HPOObjective {
+
+		/** Max length: 256 */
 		type?: string | null;
+
+		/** Max length: 256 */
 		metricName?: string | null;
+
+		/** Max length: 256 */
 		metricRegex?: string | null;
 	}
 
 	/** The metric to optimize during hyperparameter optimization (HPO). */
 	export interface HPOObjectiveFormProperties {
+
+		/** Max length: 256 */
 		type: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		metricName: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		metricRegex: FormControl<string | null | undefined>,
 	}
 	export function CreateHPOObjectiveFormGroup() {
 		return new FormGroup<HPOObjectiveFormProperties>({
-			type: new FormControl<string | null | undefined>(undefined),
-			metricName: new FormControl<string | null | undefined>(undefined),
-			metricRegex: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			metricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			metricRegex: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -528,19 +974,27 @@ export namespace MyNS {
 
 	/** Describes the resource configuration for hyperparameter optimization (HPO). */
 	export interface HPOResourceConfig {
+
+		/** Max length: 256 */
 		maxNumberOfTrainingJobs?: string | null;
+
+		/** Max length: 256 */
 		maxParallelTrainingJobs?: string | null;
 	}
 
 	/** Describes the resource configuration for hyperparameter optimization (HPO). */
 	export interface HPOResourceConfigFormProperties {
+
+		/** Max length: 256 */
 		maxNumberOfTrainingJobs: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		maxParallelTrainingJobs: FormControl<string | null | undefined>,
 	}
 	export function CreateHPOResourceConfigFormGroup() {
 		return new FormGroup<HPOResourceConfigFormProperties>({
-			maxNumberOfTrainingJobs: new FormControl<string | null | undefined>(undefined),
-			maxParallelTrainingJobs: new FormControl<string | null | undefined>(undefined),
+			maxNumberOfTrainingJobs: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			maxParallelTrainingJobs: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -548,8 +1002,14 @@ export namespace MyNS {
 
 	/** Specifies the hyperparameters and their ranges. Hyperparameters can be categorical, continuous, or integer-valued. */
 	export interface HyperParameterRanges {
+
+		/** Maximum items: 100 */
 		integerHyperParameterRanges?: Array<IntegerHyperParameterRange>;
+
+		/** Maximum items: 100 */
 		continuousHyperParameterRanges?: Array<ContinuousHyperParameterRange>;
+
+		/** Maximum items: 100 */
 		categoricalHyperParameterRanges?: Array<CategoricalHyperParameterRange>;
 	}
 
@@ -565,22 +1025,34 @@ export namespace MyNS {
 
 	/** Provides the name and range of an integer-valued hyperparameter. */
 	export interface IntegerHyperParameterRange {
+
+		/** Max length: 256 */
 		name?: string | null;
+
+		/** Minimum: -1000000 */
 		minValue?: number | null;
+
+		/** Maximum: 1000000 */
 		maxValue?: number | null;
 	}
 
 	/** Provides the name and range of an integer-valued hyperparameter. */
 	export interface IntegerHyperParameterRangeFormProperties {
+
+		/** Max length: 256 */
 		name: FormControl<string | null | undefined>,
+
+		/** Minimum: -1000000 */
 		minValue: FormControl<number | null | undefined>,
+
+		/** Maximum: 1000000 */
 		maxValue: FormControl<number | null | undefined>,
 	}
 	export function CreateIntegerHyperParameterRangeFormGroup() {
 		return new FormGroup<IntegerHyperParameterRangeFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			minValue: new FormControl<number | null | undefined>(undefined),
-			maxValue: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			minValue: new FormControl<number | null | undefined>(undefined, [Validators.min(-1000000)]),
+			maxValue: new FormControl<number | null | undefined>(undefined, [Validators.max(1000000)]),
 		});
 
 	}
@@ -588,22 +1060,34 @@ export namespace MyNS {
 
 	/** Provides the name and range of a continuous hyperparameter. */
 	export interface ContinuousHyperParameterRange {
+
+		/** Max length: 256 */
 		name?: string | null;
+
+		/** Minimum: -1000000 */
 		minValue?: number | null;
+
+		/** Minimum: -1000000 */
 		maxValue?: number | null;
 	}
 
 	/** Provides the name and range of a continuous hyperparameter. */
 	export interface ContinuousHyperParameterRangeFormProperties {
+
+		/** Max length: 256 */
 		name: FormControl<string | null | undefined>,
+
+		/** Minimum: -1000000 */
 		minValue: FormControl<number | null | undefined>,
+
+		/** Minimum: -1000000 */
 		maxValue: FormControl<number | null | undefined>,
 	}
 	export function CreateContinuousHyperParameterRangeFormGroup() {
 		return new FormGroup<ContinuousHyperParameterRangeFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			minValue: new FormControl<number | null | undefined>(undefined),
-			maxValue: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			minValue: new FormControl<number | null | undefined>(undefined, [Validators.min(-1000000)]),
+			maxValue: new FormControl<number | null | undefined>(undefined, [Validators.min(-1000000)]),
 		});
 
 	}
@@ -611,17 +1095,23 @@ export namespace MyNS {
 
 	/** Provides the name and range of a categorical hyperparameter. */
 	export interface CategoricalHyperParameterRange {
+
+		/** Max length: 256 */
 		name?: string | null;
+
+		/** Maximum items: 100 */
 		values?: Array<string>;
 	}
 
 	/** Provides the name and range of a categorical hyperparameter. */
 	export interface CategoricalHyperParameterRangeFormProperties {
+
+		/** Max length: 256 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateCategoricalHyperParameterRangeFormGroup() {
 		return new FormGroup<CategoricalHyperParameterRangeFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -649,45 +1139,73 @@ export namespace MyNS {
 
 	/** When the solution performs AutoML (<code>performAutoML</code> is true in <a>CreateSolution</a>), Amazon Personalize determines which recipe, from the specified list, optimizes the given metric. Amazon Personalize then uses that recipe for the solution. */
 	export interface AutoMLConfig {
+
+		/** Max length: 256 */
 		metricName?: string | null;
+
+		/** Maximum items: 100 */
 		recipeList?: Array<string>;
 	}
 
 	/** When the solution performs AutoML (<code>performAutoML</code> is true in <a>CreateSolution</a>), Amazon Personalize determines which recipe, from the specified list, optimizes the given metric. Amazon Personalize then uses that recipe for the solution. */
 	export interface AutoMLConfigFormProperties {
+
+		/** Max length: 256 */
 		metricName: FormControl<string | null | undefined>,
 	}
 	export function CreateAutoMLConfigFormGroup() {
 		return new FormGroup<AutoMLConfigFormProperties>({
-			metricName: new FormControl<string | null | undefined>(undefined),
+			metricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface CreateSolutionVersionResponse {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn?: string | null;
 	}
 	export interface CreateSolutionVersionResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSolutionVersionResponseFormGroup() {
 		return new FormGroup<CreateSolutionVersionResponseFormProperties>({
-			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface CreateSolutionVersionRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionArn: string;
 		trainingMode?: CreateSolutionVersionRequestTrainingMode | null;
 	}
 	export interface CreateSolutionVersionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionArn: FormControl<string | null | undefined>,
 		trainingMode: FormControl<CreateSolutionVersionRequestTrainingMode | null | undefined>,
 	}
 	export function CreateCreateSolutionVersionRequestFormGroup() {
 		return new FormGroup<CreateSolutionVersionRequestFormProperties>({
-			solutionArn: new FormControl<string | null | undefined>(undefined),
+			solutionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 			trainingMode: new FormControl<CreateSolutionVersionRequestTrainingMode | null | undefined>(undefined),
 		});
 
@@ -696,92 +1214,176 @@ export namespace MyNS {
 	export enum CreateSolutionVersionRequestTrainingMode { FULL = 0, UPDATE = 1 }
 
 	export interface DeleteCampaignRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		campaignArn: string;
 	}
 	export interface DeleteCampaignRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		campaignArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteCampaignRequestFormGroup() {
 		return new FormGroup<DeleteCampaignRequestFormProperties>({
-			campaignArn: new FormControl<string | null | undefined>(undefined),
+			campaignArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface DeleteDatasetRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetArn: string;
 	}
 	export interface DeleteDatasetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDatasetRequestFormGroup() {
 		return new FormGroup<DeleteDatasetRequestFormProperties>({
-			datasetArn: new FormControl<string | null | undefined>(undefined),
+			datasetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface DeleteDatasetGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn: string;
 	}
 	export interface DeleteDatasetGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDatasetGroupRequestFormGroup() {
 		return new FormGroup<DeleteDatasetGroupRequestFormProperties>({
-			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface DeleteEventTrackerRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		eventTrackerArn: string;
 	}
 	export interface DeleteEventTrackerRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		eventTrackerArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteEventTrackerRequestFormGroup() {
 		return new FormGroup<DeleteEventTrackerRequestFormProperties>({
-			eventTrackerArn: new FormControl<string | null | undefined>(undefined),
+			eventTrackerArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface DeleteFilterRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		filterArn: string;
 	}
 	export interface DeleteFilterRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		filterArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteFilterRequestFormGroup() {
 		return new FormGroup<DeleteFilterRequestFormProperties>({
-			filterArn: new FormControl<string | null | undefined>(undefined),
+			filterArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface DeleteSchemaRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		schemaArn: string;
 	}
 	export interface DeleteSchemaRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		schemaArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSchemaRequestFormGroup() {
 		return new FormGroup<DeleteSchemaRequestFormProperties>({
-			schemaArn: new FormControl<string | null | undefined>(undefined),
+			schemaArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface DeleteSolutionRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionArn: string;
 	}
 	export interface DeleteSolutionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSolutionRequestFormGroup() {
 		return new FormGroup<DeleteSolutionRequestFormProperties>({
-			solutionArn: new FormControl<string | null | undefined>(undefined),
+			solutionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
@@ -802,7 +1404,18 @@ export namespace MyNS {
 
 	/** Describes a custom algorithm. */
 	export interface Algorithm {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		algorithmArn?: string | null;
 
 		/** Describes an algorithm image. */
@@ -812,7 +1425,14 @@ export namespace MyNS {
 		/** Specifies the hyperparameters and their default ranges. Hyperparameters can be categorical, continuous, or integer-valued. */
 		defaultHyperParameterRanges?: DefaultHyperParameterRanges;
 		defaultResourceConfig?: ResourceConfig;
+
+		/** Max length: 256 */
 		trainingInputMode?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		roleArn?: string | null;
 		creationDateTime?: Date | null;
 		lastUpdatedDateTime?: Date | null;
@@ -820,19 +1440,37 @@ export namespace MyNS {
 
 	/** Describes a custom algorithm. */
 	export interface AlgorithmFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		algorithmArn: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		trainingInputMode: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		roleArn: FormControl<string | null | undefined>,
 		creationDateTime: FormControl<Date | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateAlgorithmFormGroup() {
 		return new FormGroup<AlgorithmFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			algorithmArn: new FormControl<string | null | undefined>(undefined),
-			trainingInputMode: new FormControl<string | null | undefined>(undefined),
-			roleArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			algorithmArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			trainingInputMode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -842,19 +1480,41 @@ export namespace MyNS {
 
 	/** Describes an algorithm image. */
 	export interface AlgorithmImage {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 */
 		dockerURI: string;
 	}
 
 	/** Describes an algorithm image. */
 	export interface AlgorithmImageFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 */
 		dockerURI: FormControl<string | null | undefined>,
 	}
 	export function CreateAlgorithmImageFormGroup() {
 		return new FormGroup<AlgorithmImageFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			dockerURI: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			dockerURI: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
@@ -862,8 +1522,14 @@ export namespace MyNS {
 
 	/** Specifies the hyperparameters and their default ranges. Hyperparameters can be categorical, continuous, or integer-valued. */
 	export interface DefaultHyperParameterRanges {
+
+		/** Maximum items: 100 */
 		integerHyperParameterRanges?: Array<DefaultIntegerHyperParameterRange>;
+
+		/** Maximum items: 100 */
 		continuousHyperParameterRanges?: Array<DefaultContinuousHyperParameterRange>;
+
+		/** Maximum items: 100 */
 		categoricalHyperParameterRanges?: Array<DefaultCategoricalHyperParameterRange>;
 	}
 
@@ -879,24 +1545,36 @@ export namespace MyNS {
 
 	/** Provides the name and default range of a integer-valued hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO). */
 	export interface DefaultIntegerHyperParameterRange {
+
+		/** Max length: 256 */
 		name?: string | null;
+
+		/** Minimum: -1000000 */
 		minValue?: number | null;
+
+		/** Maximum: 1000000 */
 		maxValue?: number | null;
 		isTunable?: boolean | null;
 	}
 
 	/** Provides the name and default range of a integer-valued hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO). */
 	export interface DefaultIntegerHyperParameterRangeFormProperties {
+
+		/** Max length: 256 */
 		name: FormControl<string | null | undefined>,
+
+		/** Minimum: -1000000 */
 		minValue: FormControl<number | null | undefined>,
+
+		/** Maximum: 1000000 */
 		maxValue: FormControl<number | null | undefined>,
 		isTunable: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDefaultIntegerHyperParameterRangeFormGroup() {
 		return new FormGroup<DefaultIntegerHyperParameterRangeFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			minValue: new FormControl<number | null | undefined>(undefined),
-			maxValue: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			minValue: new FormControl<number | null | undefined>(undefined, [Validators.min(-1000000)]),
+			maxValue: new FormControl<number | null | undefined>(undefined, [Validators.max(1000000)]),
 			isTunable: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -905,24 +1583,36 @@ export namespace MyNS {
 
 	/** Provides the name and default range of a continuous hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO). */
 	export interface DefaultContinuousHyperParameterRange {
+
+		/** Max length: 256 */
 		name?: string | null;
+
+		/** Minimum: -1000000 */
 		minValue?: number | null;
+
+		/** Minimum: -1000000 */
 		maxValue?: number | null;
 		isTunable?: boolean | null;
 	}
 
 	/** Provides the name and default range of a continuous hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO). */
 	export interface DefaultContinuousHyperParameterRangeFormProperties {
+
+		/** Max length: 256 */
 		name: FormControl<string | null | undefined>,
+
+		/** Minimum: -1000000 */
 		minValue: FormControl<number | null | undefined>,
+
+		/** Minimum: -1000000 */
 		maxValue: FormControl<number | null | undefined>,
 		isTunable: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDefaultContinuousHyperParameterRangeFormGroup() {
 		return new FormGroup<DefaultContinuousHyperParameterRangeFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			minValue: new FormControl<number | null | undefined>(undefined),
-			maxValue: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			minValue: new FormControl<number | null | undefined>(undefined, [Validators.min(-1000000)]),
+			maxValue: new FormControl<number | null | undefined>(undefined, [Validators.min(-1000000)]),
 			isTunable: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -931,19 +1621,25 @@ export namespace MyNS {
 
 	/** Provides the name and default range of a categorical hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO). */
 	export interface DefaultCategoricalHyperParameterRange {
+
+		/** Max length: 256 */
 		name?: string | null;
+
+		/** Maximum items: 100 */
 		values?: Array<string>;
 		isTunable?: boolean | null;
 	}
 
 	/** Provides the name and default range of a categorical hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO). */
 	export interface DefaultCategoricalHyperParameterRangeFormProperties {
+
+		/** Max length: 256 */
 		name: FormControl<string | null | undefined>,
 		isTunable: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDefaultCategoricalHyperParameterRangeFormGroup() {
 		return new FormGroup<DefaultCategoricalHyperParameterRangeFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			isTunable: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -960,14 +1656,26 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAlgorithmRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		algorithmArn: string;
 	}
 	export interface DescribeAlgorithmRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		algorithmArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeAlgorithmRequestFormGroup() {
 		return new FormGroup<DescribeAlgorithmRequestFormProperties>({
-			algorithmArn: new FormControl<string | null | undefined>(undefined),
+			algorithmArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
@@ -988,10 +1696,31 @@ export namespace MyNS {
 
 	/** Contains information on a batch inference job. */
 	export interface BatchInferenceJob {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		jobName?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		batchInferenceJobArn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		filterArn?: string | null;
 		failureReason?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn?: string | null;
 		numResults?: number | null;
 
@@ -1000,7 +1729,14 @@ export namespace MyNS {
 
 		/** The output configuration parameters of a batch inference job. */
 		jobOutput?: BatchInferenceJobOutput;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		roleArn?: string | null;
+
+		/** Max length: 256 */
 		status?: string | null;
 		creationDateTime?: Date | null;
 		lastUpdatedDateTime?: Date | null;
@@ -1008,27 +1744,55 @@ export namespace MyNS {
 
 	/** Contains information on a batch inference job. */
 	export interface BatchInferenceJobFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		jobName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		batchInferenceJobArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		filterArn: FormControl<string | null | undefined>,
 		failureReason: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn: FormControl<string | null | undefined>,
 		numResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		roleArn: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		status: FormControl<string | null | undefined>,
 		creationDateTime: FormControl<Date | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateBatchInferenceJobFormGroup() {
 		return new FormGroup<BatchInferenceJobFormProperties>({
-			jobName: new FormControl<string | null | undefined>(undefined),
-			batchInferenceJobArn: new FormControl<string | null | undefined>(undefined),
-			filterArn: new FormControl<string | null | undefined>(undefined),
+			jobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			batchInferenceJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			filterArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			failureReason: new FormControl<string | null | undefined>(undefined),
-			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			numResults: new FormControl<number | null | undefined>(undefined),
-			roleArn: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1036,14 +1800,26 @@ export namespace MyNS {
 	}
 
 	export interface DescribeBatchInferenceJobRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		batchInferenceJobArn: string;
 	}
 	export interface DescribeBatchInferenceJobRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		batchInferenceJobArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeBatchInferenceJobRequestFormGroup() {
 		return new FormGroup<DescribeBatchInferenceJobRequestFormProperties>({
-			batchInferenceJobArn: new FormControl<string | null | undefined>(undefined),
+			batchInferenceJobArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
@@ -1064,10 +1840,30 @@ export namespace MyNS {
 
 	/** Describes a deployed solution version, otherwise known as a campaign. For more information on campaigns, see <a>CreateCampaign</a>. */
 	export interface Campaign {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		campaignArn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn?: string | null;
+
+		/** Minimum: 1 */
 		minProvisionedTPS?: number | null;
+
+		/** Max length: 256 */
 		status?: string | null;
 		failureReason?: string | null;
 		creationDateTime?: Date | null;
@@ -1079,10 +1875,30 @@ export namespace MyNS {
 
 	/** Describes a deployed solution version, otherwise known as a campaign. For more information on campaigns, see <a>CreateCampaign</a>. */
 	export interface CampaignFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		campaignArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		minProvisionedTPS: FormControl<number | null | undefined>,
+
+		/** Max length: 256 */
 		status: FormControl<string | null | undefined>,
 		failureReason: FormControl<string | null | undefined>,
 		creationDateTime: FormControl<Date | null | undefined>,
@@ -1090,11 +1906,11 @@ export namespace MyNS {
 	}
 	export function CreateCampaignFormGroup() {
 		return new FormGroup<CampaignFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			campaignArn: new FormControl<string | null | undefined>(undefined),
-			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
-			minProvisionedTPS: new FormControl<number | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			campaignArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			minProvisionedTPS: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			failureReason: new FormControl<string | null | undefined>(undefined),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -1105,8 +1921,17 @@ export namespace MyNS {
 
 	/** Provides a summary of the properties of a campaign update. For a complete listing, call the <a>DescribeCampaign</a> API. */
 	export interface CampaignUpdateSummary {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn?: string | null;
+
+		/** Minimum: 1 */
 		minProvisionedTPS?: number | null;
+
+		/** Max length: 256 */
 		status?: string | null;
 		failureReason?: string | null;
 		creationDateTime?: Date | null;
@@ -1115,8 +1940,17 @@ export namespace MyNS {
 
 	/** Provides a summary of the properties of a campaign update. For a complete listing, call the <a>DescribeCampaign</a> API. */
 	export interface CampaignUpdateSummaryFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		minProvisionedTPS: FormControl<number | null | undefined>,
+
+		/** Max length: 256 */
 		status: FormControl<string | null | undefined>,
 		failureReason: FormControl<string | null | undefined>,
 		creationDateTime: FormControl<Date | null | undefined>,
@@ -1124,9 +1958,9 @@ export namespace MyNS {
 	}
 	export function CreateCampaignUpdateSummaryFormGroup() {
 		return new FormGroup<CampaignUpdateSummaryFormProperties>({
-			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
-			minProvisionedTPS: new FormControl<number | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			minProvisionedTPS: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			failureReason: new FormControl<string | null | undefined>(undefined),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -1135,14 +1969,26 @@ export namespace MyNS {
 	}
 
 	export interface DescribeCampaignRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		campaignArn: string;
 	}
 	export interface DescribeCampaignRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		campaignArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeCampaignRequestFormGroup() {
 		return new FormGroup<DescribeCampaignRequestFormProperties>({
-			campaignArn: new FormControl<string | null | undefined>(undefined),
+			campaignArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
@@ -1163,11 +2009,36 @@ export namespace MyNS {
 
 	/** Provides metadata for a dataset. */
 	export interface Dataset {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetArn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn?: string | null;
+
+		/** Max length: 256 */
 		datasetType?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		schemaArn?: string | null;
+
+		/** Max length: 256 */
 		status?: string | null;
 		creationDateTime?: Date | null;
 		lastUpdatedDateTime?: Date | null;
@@ -1175,23 +2046,48 @@ export namespace MyNS {
 
 	/** Provides metadata for a dataset. */
 	export interface DatasetFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		datasetType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		schemaArn: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		status: FormControl<string | null | undefined>,
 		creationDateTime: FormControl<Date | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateDatasetFormGroup() {
 		return new FormGroup<DatasetFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			datasetArn: new FormControl<string | null | undefined>(undefined),
-			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
-			datasetType: new FormControl<string | null | undefined>(undefined),
-			schemaArn: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			datasetArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			datasetType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			schemaArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1199,14 +2095,26 @@ export namespace MyNS {
 	}
 
 	export interface DescribeDatasetRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetArn: string;
 	}
 	export interface DescribeDatasetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeDatasetRequestFormGroup() {
 		return new FormGroup<DescribeDatasetRequestFormProperties>({
-			datasetArn: new FormControl<string | null | undefined>(undefined),
+			datasetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
@@ -1227,9 +2135,27 @@ export namespace MyNS {
 
 	/** <p>A dataset group is a collection of related datasets (Interactions, User, and Item). You create a dataset group by calling <a>CreateDatasetGroup</a>. You then create a dataset and add it to a dataset group by calling <a>CreateDataset</a>. The dataset group is used to create and train a solution by calling <a>CreateSolution</a>. A dataset group can contain only one of each type of dataset.</p> <p>You can specify an AWS Key Management Service (KMS) key to encrypt the datasets in the group.</p> */
 	export interface DatasetGroup {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn?: string | null;
+
+		/** Max length: 256 */
 		status?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		roleArn?: string | null;
 		kmsKeyArn?: string | null;
 		creationDateTime?: Date | null;
@@ -1239,9 +2165,27 @@ export namespace MyNS {
 
 	/** <p>A dataset group is a collection of related datasets (Interactions, User, and Item). You create a dataset group by calling <a>CreateDatasetGroup</a>. You then create a dataset and add it to a dataset group by calling <a>CreateDataset</a>. The dataset group is used to create and train a solution by calling <a>CreateSolution</a>. A dataset group can contain only one of each type of dataset.</p> <p>You can specify an AWS Key Management Service (KMS) key to encrypt the datasets in the group.</p> */
 	export interface DatasetGroupFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		status: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		roleArn: FormControl<string | null | undefined>,
 		kmsKeyArn: FormControl<string | null | undefined>,
 		creationDateTime: FormControl<Date | null | undefined>,
@@ -1250,10 +2194,10 @@ export namespace MyNS {
 	}
 	export function CreateDatasetGroupFormGroup() {
 		return new FormGroup<DatasetGroupFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
-			roleArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			kmsKeyArn: new FormControl<string | null | undefined>(undefined),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -1263,14 +2207,26 @@ export namespace MyNS {
 	}
 
 	export interface DescribeDatasetGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn: string;
 	}
 	export interface DescribeDatasetGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeDatasetGroupRequestFormGroup() {
 		return new FormGroup<DescribeDatasetGroupRequestFormProperties>({
-			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
@@ -1291,13 +2247,36 @@ export namespace MyNS {
 
 	/** <p>Describes a job that imports training data from a data source (Amazon S3 bucket) to an Amazon Personalize dataset. For more information, see <a>CreateDatasetImportJob</a>.</p> <p>A dataset import job can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul> */
 	export interface DatasetImportJob {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		jobName?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetImportJobArn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetArn?: string | null;
 
 		/** Describes the data source that contains the data to upload to a dataset. */
 		dataSource?: DataSource;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		roleArn?: string | null;
+
+		/** Max length: 256 */
 		status?: string | null;
 		creationDateTime?: Date | null;
 		lastUpdatedDateTime?: Date | null;
@@ -1306,10 +2285,33 @@ export namespace MyNS {
 
 	/** <p>Describes a job that imports training data from a data source (Amazon S3 bucket) to an Amazon Personalize dataset. For more information, see <a>CreateDatasetImportJob</a>.</p> <p>A dataset import job can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul> */
 	export interface DatasetImportJobFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		jobName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetImportJobArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		roleArn: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		status: FormControl<string | null | undefined>,
 		creationDateTime: FormControl<Date | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
@@ -1317,11 +2319,11 @@ export namespace MyNS {
 	}
 	export function CreateDatasetImportJobFormGroup() {
 		return new FormGroup<DatasetImportJobFormProperties>({
-			jobName: new FormControl<string | null | undefined>(undefined),
-			datasetImportJobArn: new FormControl<string | null | undefined>(undefined),
-			datasetArn: new FormControl<string | null | undefined>(undefined),
-			roleArn: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
+			jobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			datasetImportJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			datasetArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
 			failureReason: new FormControl<string | null | undefined>(undefined),
@@ -1330,14 +2332,26 @@ export namespace MyNS {
 	}
 
 	export interface DescribeDatasetImportJobRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetImportJobArn: string;
 	}
 	export interface DescribeDatasetImportJobRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetImportJobArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeDatasetImportJobRequestFormGroup() {
 		return new FormGroup<DescribeDatasetImportJobRequestFormProperties>({
-			datasetImportJobArn: new FormControl<string | null | undefined>(undefined),
+			datasetImportJobArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
@@ -1358,11 +2372,33 @@ export namespace MyNS {
 
 	/** Provides information about an event tracker. */
 	export interface EventTracker {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		eventTrackerArn?: string | null;
+
+		/** Max length: 256 */
 		accountId?: string | null;
+
+		/** Max length: 256 */
 		trackingId?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn?: string | null;
+
+		/** Max length: 256 */
 		status?: string | null;
 		creationDateTime?: Date | null;
 		lastUpdatedDateTime?: Date | null;
@@ -1370,23 +2406,45 @@ export namespace MyNS {
 
 	/** Provides information about an event tracker. */
 	export interface EventTrackerFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		eventTrackerArn: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		accountId: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		trackingId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		status: FormControl<string | null | undefined>,
 		creationDateTime: FormControl<Date | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateEventTrackerFormGroup() {
 		return new FormGroup<EventTrackerFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			eventTrackerArn: new FormControl<string | null | undefined>(undefined),
-			accountId: new FormControl<string | null | undefined>(undefined),
-			trackingId: new FormControl<string | null | undefined>(undefined),
-			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			eventTrackerArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			accountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			trackingId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1394,14 +2452,26 @@ export namespace MyNS {
 	}
 
 	export interface DescribeEventTrackerRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		eventTrackerArn: string;
 	}
 	export interface DescribeEventTrackerRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		eventTrackerArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeEventTrackerRequestFormGroup() {
 		return new FormGroup<DescribeEventTrackerRequestFormProperties>({
-			eventTrackerArn: new FormControl<string | null | undefined>(undefined),
+			eventTrackerArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
@@ -1422,29 +2492,55 @@ export namespace MyNS {
 
 	/** Provides feature transformation information. Feature transformation is the process of modifying raw input data into a form more suitable for model training. */
 	export interface FeatureTransformation {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		featureTransformationArn?: string | null;
 		defaultParameters?: FeaturizationParameters;
 		creationDateTime?: Date | null;
 		lastUpdatedDateTime?: Date | null;
+
+		/** Max length: 256 */
 		status?: string | null;
 	}
 
 	/** Provides feature transformation information. Feature transformation is the process of modifying raw input data into a form more suitable for model training. */
 	export interface FeatureTransformationFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		featureTransformationArn: FormControl<string | null | undefined>,
 		creationDateTime: FormControl<Date | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+
+		/** Max length: 256 */
 		status: FormControl<string | null | undefined>,
 	}
 	export function CreateFeatureTransformationFormGroup() {
 		return new FormGroup<FeatureTransformationFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			featureTransformationArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			featureTransformationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -1460,14 +2556,26 @@ export namespace MyNS {
 	}
 
 	export interface DescribeFeatureTransformationRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		featureTransformationArn: string;
 	}
 	export interface DescribeFeatureTransformationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		featureTransformationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeFeatureTransformationRequestFormGroup() {
 		return new FormGroup<DescribeFeatureTransformationRequestFormProperties>({
-			featureTransformationArn: new FormControl<string | null | undefined>(undefined),
+			featureTransformationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
@@ -1488,50 +2596,108 @@ export namespace MyNS {
 
 	/** Contains information on a recommendation filter, including its ARN, status, and filter expression. */
 	export interface Filter {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		filterArn?: string | null;
 		creationDateTime?: Date | null;
 		lastUpdatedDateTime?: Date | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn?: string | null;
 		failureReason?: string | null;
+
+		/**
+		 * Max length: 2500
+		 * Min length: 1
+		 */
 		filterExpression?: string | null;
+
+		/** Max length: 256 */
 		status?: string | null;
 	}
 
 	/** Contains information on a recommendation filter, including its ARN, status, and filter expression. */
 	export interface FilterFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		filterArn: FormControl<string | null | undefined>,
 		creationDateTime: FormControl<Date | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn: FormControl<string | null | undefined>,
 		failureReason: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2500
+		 * Min length: 1
+		 */
 		filterExpression: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		status: FormControl<string | null | undefined>,
 	}
 	export function CreateFilterFormGroup() {
 		return new FormGroup<FilterFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			filterArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			filterArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
-			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			failureReason: new FormControl<string | null | undefined>(undefined),
-			filterExpression: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
+			filterExpression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2500), Validators.minLength(1)]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface DescribeFilterRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		filterArn: string;
 	}
 	export interface DescribeFilterRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		filterArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeFilterRequestFormGroup() {
 		return new FormGroup<DescribeFilterRequestFormProperties>({
-			filterArn: new FormControl<string | null | undefined>(undefined),
+			filterArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
@@ -1552,53 +2718,115 @@ export namespace MyNS {
 
 	/** Provides information about a recipe. Each recipe provides an algorithm that Amazon Personalize uses in model training when you use the <a>CreateSolution</a> operation.  */
 	export interface Recipe {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		recipeArn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		algorithmArn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		featureTransformationArn?: string | null;
+
+		/** Max length: 256 */
 		status?: string | null;
 		description?: string | null;
 		creationDateTime?: Date | null;
+
+		/** Max length: 256 */
 		recipeType?: string | null;
 		lastUpdatedDateTime?: Date | null;
 	}
 
 	/** Provides information about a recipe. Each recipe provides an algorithm that Amazon Personalize uses in model training when you use the <a>CreateSolution</a> operation.  */
 	export interface RecipeFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		recipeArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		algorithmArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		featureTransformationArn: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		status: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		creationDateTime: FormControl<Date | null | undefined>,
+
+		/** Max length: 256 */
 		recipeType: FormControl<string | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateRecipeFormGroup() {
 		return new FormGroup<RecipeFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			recipeArn: new FormControl<string | null | undefined>(undefined),
-			algorithmArn: new FormControl<string | null | undefined>(undefined),
-			featureTransformationArn: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			recipeArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			algorithmArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			featureTransformationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			description: new FormControl<string | null | undefined>(undefined),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
-			recipeType: new FormControl<string | null | undefined>(undefined),
+			recipeType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface DescribeRecipeRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		recipeArn: string;
 	}
 	export interface DescribeRecipeRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		recipeArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeRecipeRequestFormGroup() {
 		return new FormGroup<DescribeRecipeRequestFormProperties>({
-			recipeArn: new FormControl<string | null | undefined>(undefined),
+			recipeArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
@@ -1619,8 +2847,21 @@ export namespace MyNS {
 
 	/** Describes the schema for a dataset. For more information on schemas, see <a>CreateSchema</a>. */
 	export interface DatasetSchema {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		schemaArn?: string | null;
+
+		/** Max length: 10000 */
 		schema?: string | null;
 		creationDateTime?: Date | null;
 		lastUpdatedDateTime?: Date | null;
@@ -1628,17 +2869,30 @@ export namespace MyNS {
 
 	/** Describes the schema for a dataset. For more information on schemas, see <a>CreateSchema</a>. */
 	export interface DatasetSchemaFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		schemaArn: FormControl<string | null | undefined>,
+
+		/** Max length: 10000 */
 		schema: FormControl<string | null | undefined>,
 		creationDateTime: FormControl<Date | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateDatasetSchemaFormGroup() {
 		return new FormGroup<DatasetSchemaFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			schemaArn: new FormControl<string | null | undefined>(undefined),
-			schema: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			schemaArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			schema: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1646,14 +2900,26 @@ export namespace MyNS {
 	}
 
 	export interface DescribeSchemaRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		schemaArn: string;
 	}
 	export interface DescribeSchemaRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		schemaArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeSchemaRequestFormGroup() {
 		return new FormGroup<DescribeSchemaRequestFormProperties>({
-			schemaArn: new FormControl<string | null | undefined>(undefined),
+			schemaArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
@@ -1674,12 +2940,35 @@ export namespace MyNS {
 
 	/** An object that provides information about a solution. A solution is a trained model that can be deployed as a campaign. */
 	export interface Solution {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionArn?: string | null;
 		performHPO?: boolean | null;
 		performAutoML?: boolean | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		recipeArn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn?: string | null;
+
+		/** Max length: 256 */
 		eventType?: string | null;
 
 		/** Describes the configuration properties for the solution. */
@@ -1687,6 +2976,8 @@ export namespace MyNS {
 
 		/** When the solution performs AutoML (<code>performAutoML</code> is true in <a>CreateSolution</a>), specifies the recipe that best optimized the specified metric. */
 		autoMLResult?: AutoMLResult;
+
+		/** Max length: 256 */
 		status?: string | null;
 		creationDateTime?: Date | null;
 		lastUpdatedDateTime?: Date | null;
@@ -1697,27 +2988,52 @@ export namespace MyNS {
 
 	/** An object that provides information about a solution. A solution is a trained model that can be deployed as a campaign. */
 	export interface SolutionFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionArn: FormControl<string | null | undefined>,
 		performHPO: FormControl<boolean | null | undefined>,
 		performAutoML: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		recipeArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		eventType: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		status: FormControl<string | null | undefined>,
 		creationDateTime: FormControl<Date | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateSolutionFormGroup() {
 		return new FormGroup<SolutionFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			solutionArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			solutionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			performHPO: new FormControl<boolean | null | undefined>(undefined),
 			performAutoML: new FormControl<boolean | null | undefined>(undefined),
-			recipeArn: new FormControl<string | null | undefined>(undefined),
-			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
-			eventType: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
+			recipeArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			eventType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1727,16 +3043,26 @@ export namespace MyNS {
 
 	/** When the solution performs AutoML (<code>performAutoML</code> is true in <a>CreateSolution</a>), specifies the recipe that best optimized the specified metric. */
 	export interface AutoMLResult {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		bestRecipeArn?: string | null;
 	}
 
 	/** When the solution performs AutoML (<code>performAutoML</code> is true in <a>CreateSolution</a>), specifies the recipe that best optimized the specified metric. */
 	export interface AutoMLResultFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		bestRecipeArn: FormControl<string | null | undefined>,
 	}
 	export function CreateAutoMLResultFormGroup() {
 		return new FormGroup<AutoMLResultFormProperties>({
-			bestRecipeArn: new FormControl<string | null | undefined>(undefined),
+			bestRecipeArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -1744,7 +3070,14 @@ export namespace MyNS {
 
 	/** Provides a summary of the properties of a solution version. For a complete listing, call the <a>DescribeSolutionVersion</a> API. */
 	export interface SolutionVersionSummary {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn?: string | null;
+
+		/** Max length: 256 */
 		status?: string | null;
 		creationDateTime?: Date | null;
 		lastUpdatedDateTime?: Date | null;
@@ -1753,7 +3086,14 @@ export namespace MyNS {
 
 	/** Provides a summary of the properties of a solution version. For a complete listing, call the <a>DescribeSolutionVersion</a> API. */
 	export interface SolutionVersionSummaryFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		status: FormControl<string | null | undefined>,
 		creationDateTime: FormControl<Date | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
@@ -1761,8 +3101,8 @@ export namespace MyNS {
 	}
 	export function CreateSolutionVersionSummaryFormGroup() {
 		return new FormGroup<SolutionVersionSummaryFormProperties>({
-			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
 			failureReason: new FormControl<string | null | undefined>(undefined),
@@ -1771,14 +3111,26 @@ export namespace MyNS {
 	}
 
 	export interface DescribeSolutionRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionArn: string;
 	}
 	export interface DescribeSolutionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeSolutionRequestFormGroup() {
 		return new FormGroup<DescribeSolutionRequestFormProperties>({
-			solutionArn: new FormControl<string | null | undefined>(undefined),
+			solutionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
@@ -1799,21 +3151,47 @@ export namespace MyNS {
 
 	/** An object that provides information about a specific version of a <a>Solution</a>. */
 	export interface SolutionVersion {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionArn?: string | null;
 		performHPO?: boolean | null;
 		performAutoML?: boolean | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		recipeArn?: string | null;
+
+		/** Max length: 256 */
 		eventType?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn?: string | null;
 
 		/** Describes the configuration properties for the solution. */
 		solutionConfig?: SolutionConfig;
+
+		/** Minimum: 0 */
 		trainingHours?: number | null;
 		trainingMode?: CreateSolutionVersionRequestTrainingMode | null;
 
 		/** If hyperparameter optimization (HPO) was performed, contains the hyperparameter values of the best performing model. */
 		tunedHPOParams?: TunedHPOParams;
+
+		/** Max length: 256 */
 		status?: string | null;
 		failureReason?: string | null;
 		creationDateTime?: Date | null;
@@ -1822,15 +3200,41 @@ export namespace MyNS {
 
 	/** An object that provides information about a specific version of a <a>Solution</a>. */
 	export interface SolutionVersionFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionArn: FormControl<string | null | undefined>,
 		performHPO: FormControl<boolean | null | undefined>,
 		performAutoML: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		recipeArn: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		eventType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		trainingHours: FormControl<number | null | undefined>,
 		trainingMode: FormControl<CreateSolutionVersionRequestTrainingMode | null | undefined>,
+
+		/** Max length: 256 */
 		status: FormControl<string | null | undefined>,
 		failureReason: FormControl<string | null | undefined>,
 		creationDateTime: FormControl<Date | null | undefined>,
@@ -1838,16 +3242,16 @@ export namespace MyNS {
 	}
 	export function CreateSolutionVersionFormGroup() {
 		return new FormGroup<SolutionVersionFormProperties>({
-			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
-			solutionArn: new FormControl<string | null | undefined>(undefined),
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			solutionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			performHPO: new FormControl<boolean | null | undefined>(undefined),
 			performAutoML: new FormControl<boolean | null | undefined>(undefined),
-			recipeArn: new FormControl<string | null | undefined>(undefined),
-			eventType: new FormControl<string | null | undefined>(undefined),
-			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
-			trainingHours: new FormControl<number | null | undefined>(undefined),
+			recipeArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			eventType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			trainingHours: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			trainingMode: new FormControl<CreateSolutionVersionRequestTrainingMode | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			failureReason: new FormControl<string | null | undefined>(undefined),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -1871,28 +3275,50 @@ export namespace MyNS {
 	}
 
 	export interface DescribeSolutionVersionRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn: string;
 	}
 	export interface DescribeSolutionVersionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeSolutionVersionRequestFormGroup() {
 		return new FormGroup<DescribeSolutionVersionRequestFormProperties>({
-			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface GetSolutionMetricsResponse {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn?: string | null;
 		metrics?: Metrics;
 	}
 	export interface GetSolutionMetricsResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSolutionMetricsResponseFormGroup() {
 		return new FormGroup<GetSolutionMetricsResponseFormProperties>({
-			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -1908,28 +3334,46 @@ export namespace MyNS {
 	}
 
 	export interface GetSolutionMetricsRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn: string;
 	}
 	export interface GetSolutionMetricsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSolutionMetricsRequestFormGroup() {
 		return new FormGroup<GetSolutionMetricsRequestFormProperties>({
-			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface ListBatchInferenceJobsResponse {
+
+		/** Maximum items: 100 */
 		batchInferenceJobs?: Array<BatchInferenceJobSummary>;
+
+		/** Max length: 1300 */
 		nextToken?: string | null;
 	}
 	export interface ListBatchInferenceJobsResponseFormProperties {
+
+		/** Max length: 1300 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListBatchInferenceJobsResponseFormGroup() {
 		return new FormGroup<ListBatchInferenceJobsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1300)]),
 		});
 
 	}
@@ -1937,53 +3381,113 @@ export namespace MyNS {
 
 	/** A truncated version of the <a>BatchInferenceJob</a> datatype. The <a>ListBatchInferenceJobs</a> operation returns a list of batch inference job summaries. */
 	export interface BatchInferenceJobSummary {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		batchInferenceJobArn?: string | null;
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		jobName?: string | null;
+
+		/** Max length: 256 */
 		status?: string | null;
 		creationDateTime?: Date | null;
 		lastUpdatedDateTime?: Date | null;
 		failureReason?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn?: string | null;
 	}
 
 	/** A truncated version of the <a>BatchInferenceJob</a> datatype. The <a>ListBatchInferenceJobs</a> operation returns a list of batch inference job summaries. */
 	export interface BatchInferenceJobSummaryFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		batchInferenceJobArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		jobName: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		status: FormControl<string | null | undefined>,
 		creationDateTime: FormControl<Date | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 		failureReason: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchInferenceJobSummaryFormGroup() {
 		return new FormGroup<BatchInferenceJobSummaryFormProperties>({
-			batchInferenceJobArn: new FormControl<string | null | undefined>(undefined),
-			jobName: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
+			batchInferenceJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			jobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
 			failureReason: new FormControl<string | null | undefined>(undefined),
-			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface ListBatchInferenceJobsRequest {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn?: string | null;
+
+		/** Max length: 1300 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListBatchInferenceJobsRequestFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn: FormControl<string | null | undefined>,
+
+		/** Max length: 1300 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListBatchInferenceJobsRequestFormGroup() {
 		return new FormGroup<ListBatchInferenceJobsRequestFormProperties>({
-			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1300)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -1999,15 +3503,21 @@ export namespace MyNS {
 	}
 
 	export interface ListCampaignsResponse {
+
+		/** Maximum items: 100 */
 		campaigns?: Array<CampaignSummary>;
+
+		/** Max length: 1300 */
 		nextToken?: string | null;
 	}
 	export interface ListCampaignsResponseFormProperties {
+
+		/** Max length: 1300 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListCampaignsResponseFormGroup() {
 		return new FormGroup<ListCampaignsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1300)]),
 		});
 
 	}
@@ -2015,8 +3525,21 @@ export namespace MyNS {
 
 	/** Provides a summary of the properties of a campaign. For a complete listing, call the <a>DescribeCampaign</a> API. */
 	export interface CampaignSummary {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		campaignArn?: string | null;
+
+		/** Max length: 256 */
 		status?: string | null;
 		creationDateTime?: Date | null;
 		lastUpdatedDateTime?: Date | null;
@@ -2025,8 +3548,21 @@ export namespace MyNS {
 
 	/** Provides a summary of the properties of a campaign. For a complete listing, call the <a>DescribeCampaign</a> API. */
 	export interface CampaignSummaryFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		campaignArn: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		status: FormControl<string | null | undefined>,
 		creationDateTime: FormControl<Date | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
@@ -2034,9 +3570,9 @@ export namespace MyNS {
 	}
 	export function CreateCampaignSummaryFormGroup() {
 		return new FormGroup<CampaignSummaryFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			campaignArn: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			campaignArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
 			failureReason: new FormControl<string | null | undefined>(undefined),
@@ -2045,34 +3581,64 @@ export namespace MyNS {
 	}
 
 	export interface ListCampaignsRequest {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionArn?: string | null;
+
+		/** Max length: 1300 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListCampaignsRequestFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionArn: FormControl<string | null | undefined>,
+
+		/** Max length: 1300 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListCampaignsRequestFormGroup() {
 		return new FormGroup<ListCampaignsRequestFormProperties>({
-			solutionArn: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			solutionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1300)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListDatasetGroupsResponse {
+
+		/** Maximum items: 100 */
 		datasetGroups?: Array<DatasetGroupSummary>;
+
+		/** Max length: 1300 */
 		nextToken?: string | null;
 	}
 	export interface ListDatasetGroupsResponseFormProperties {
+
+		/** Max length: 1300 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListDatasetGroupsResponseFormGroup() {
 		return new FormGroup<ListDatasetGroupsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1300)]),
 		});
 
 	}
@@ -2080,8 +3646,21 @@ export namespace MyNS {
 
 	/** Provides a summary of the properties of a dataset group. For a complete listing, call the <a>DescribeDatasetGroup</a> API. */
 	export interface DatasetGroupSummary {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn?: string | null;
+
+		/** Max length: 256 */
 		status?: string | null;
 		creationDateTime?: Date | null;
 		lastUpdatedDateTime?: Date | null;
@@ -2090,8 +3669,21 @@ export namespace MyNS {
 
 	/** Provides a summary of the properties of a dataset group. For a complete listing, call the <a>DescribeDatasetGroup</a> API. */
 	export interface DatasetGroupSummaryFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		status: FormControl<string | null | undefined>,
 		creationDateTime: FormControl<Date | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
@@ -2099,9 +3691,9 @@ export namespace MyNS {
 	}
 	export function CreateDatasetGroupSummaryFormGroup() {
 		return new FormGroup<DatasetGroupSummaryFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
 			failureReason: new FormControl<string | null | undefined>(undefined),
@@ -2110,31 +3702,51 @@ export namespace MyNS {
 	}
 
 	export interface ListDatasetGroupsRequest {
+
+		/** Max length: 1300 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListDatasetGroupsRequestFormProperties {
+
+		/** Max length: 1300 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListDatasetGroupsRequestFormGroup() {
 		return new FormGroup<ListDatasetGroupsRequestFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1300)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListDatasetImportJobsResponse {
+
+		/** Maximum items: 100 */
 		datasetImportJobs?: Array<DatasetImportJobSummary>;
+
+		/** Max length: 1300 */
 		nextToken?: string | null;
 	}
 	export interface ListDatasetImportJobsResponseFormProperties {
+
+		/** Max length: 1300 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListDatasetImportJobsResponseFormGroup() {
 		return new FormGroup<ListDatasetImportJobsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1300)]),
 		});
 
 	}
@@ -2142,8 +3754,21 @@ export namespace MyNS {
 
 	/** Provides a summary of the properties of a dataset import job. For a complete listing, call the <a>DescribeDatasetImportJob</a> API. */
 	export interface DatasetImportJobSummary {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetImportJobArn?: string | null;
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		jobName?: string | null;
+
+		/** Max length: 256 */
 		status?: string | null;
 		creationDateTime?: Date | null;
 		lastUpdatedDateTime?: Date | null;
@@ -2152,8 +3777,21 @@ export namespace MyNS {
 
 	/** Provides a summary of the properties of a dataset import job. For a complete listing, call the <a>DescribeDatasetImportJob</a> API. */
 	export interface DatasetImportJobSummaryFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetImportJobArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		jobName: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		status: FormControl<string | null | undefined>,
 		creationDateTime: FormControl<Date | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
@@ -2161,9 +3799,9 @@ export namespace MyNS {
 	}
 	export function CreateDatasetImportJobSummaryFormGroup() {
 		return new FormGroup<DatasetImportJobSummaryFormProperties>({
-			datasetImportJobArn: new FormControl<string | null | undefined>(undefined),
-			jobName: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
+			datasetImportJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			jobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
 			failureReason: new FormControl<string | null | undefined>(undefined),
@@ -2172,34 +3810,64 @@ export namespace MyNS {
 	}
 
 	export interface ListDatasetImportJobsRequest {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetArn?: string | null;
+
+		/** Max length: 1300 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListDatasetImportJobsRequestFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetArn: FormControl<string | null | undefined>,
+
+		/** Max length: 1300 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListDatasetImportJobsRequestFormGroup() {
 		return new FormGroup<ListDatasetImportJobsRequestFormProperties>({
-			datasetArn: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			datasetArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1300)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListDatasetsResponse {
+
+		/** Maximum items: 100 */
 		datasets?: Array<DatasetSummary>;
+
+		/** Max length: 1300 */
 		nextToken?: string | null;
 	}
 	export interface ListDatasetsResponseFormProperties {
+
+		/** Max length: 1300 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListDatasetsResponseFormGroup() {
 		return new FormGroup<ListDatasetsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1300)]),
 		});
 
 	}
@@ -2207,9 +3875,24 @@ export namespace MyNS {
 
 	/** Provides a summary of the properties of a dataset. For a complete listing, call the <a>DescribeDataset</a> API. */
 	export interface DatasetSummary {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetArn?: string | null;
+
+		/** Max length: 256 */
 		datasetType?: string | null;
+
+		/** Max length: 256 */
 		status?: string | null;
 		creationDateTime?: Date | null;
 		lastUpdatedDateTime?: Date | null;
@@ -2217,19 +3900,34 @@ export namespace MyNS {
 
 	/** Provides a summary of the properties of a dataset. For a complete listing, call the <a>DescribeDataset</a> API. */
 	export interface DatasetSummaryFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetArn: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		datasetType: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		status: FormControl<string | null | undefined>,
 		creationDateTime: FormControl<Date | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateDatasetSummaryFormGroup() {
 		return new FormGroup<DatasetSummaryFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			datasetArn: new FormControl<string | null | undefined>(undefined),
-			datasetType: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			datasetArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			datasetType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -2237,34 +3935,64 @@ export namespace MyNS {
 	}
 
 	export interface ListDatasetsRequest {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn?: string | null;
+
+		/** Max length: 1300 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListDatasetsRequestFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn: FormControl<string | null | undefined>,
+
+		/** Max length: 1300 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListDatasetsRequestFormGroup() {
 		return new FormGroup<ListDatasetsRequestFormProperties>({
-			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1300)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListEventTrackersResponse {
+
+		/** Maximum items: 100 */
 		eventTrackers?: Array<EventTrackerSummary>;
+
+		/** Max length: 1300 */
 		nextToken?: string | null;
 	}
 	export interface ListEventTrackersResponseFormProperties {
+
+		/** Max length: 1300 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListEventTrackersResponseFormGroup() {
 		return new FormGroup<ListEventTrackersResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1300)]),
 		});
 
 	}
@@ -2272,8 +4000,21 @@ export namespace MyNS {
 
 	/** Provides a summary of the properties of an event tracker. For a complete listing, call the <a>DescribeEventTracker</a> API. */
 	export interface EventTrackerSummary {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		eventTrackerArn?: string | null;
+
+		/** Max length: 256 */
 		status?: string | null;
 		creationDateTime?: Date | null;
 		lastUpdatedDateTime?: Date | null;
@@ -2281,17 +4022,30 @@ export namespace MyNS {
 
 	/** Provides a summary of the properties of an event tracker. For a complete listing, call the <a>DescribeEventTracker</a> API. */
 	export interface EventTrackerSummaryFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		eventTrackerArn: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		status: FormControl<string | null | undefined>,
 		creationDateTime: FormControl<Date | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateEventTrackerSummaryFormGroup() {
 		return new FormGroup<EventTrackerSummaryFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			eventTrackerArn: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			eventTrackerArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -2299,34 +4053,64 @@ export namespace MyNS {
 	}
 
 	export interface ListEventTrackersRequest {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn?: string | null;
+
+		/** Max length: 1300 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListEventTrackersRequestFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn: FormControl<string | null | undefined>,
+
+		/** Max length: 1300 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListEventTrackersRequestFormGroup() {
 		return new FormGroup<ListEventTrackersRequestFormProperties>({
-			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1300)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListFiltersResponse {
+
+		/** Maximum items: 100 */
 		Filters?: Array<FilterSummary>;
+
+		/** Max length: 1300 */
 		nextToken?: string | null;
 	}
 	export interface ListFiltersResponseFormProperties {
+
+		/** Max length: 1300 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListFiltersResponseFormGroup() {
 		return new FormGroup<ListFiltersResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1300)]),
 		});
 
 	}
@@ -2334,67 +4118,133 @@ export namespace MyNS {
 
 	/** A short summary of a filter's attributes. */
 	export interface FilterSummary {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		filterArn?: string | null;
 		creationDateTime?: Date | null;
 		lastUpdatedDateTime?: Date | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn?: string | null;
 		failureReason?: string | null;
+
+		/** Max length: 256 */
 		status?: string | null;
 	}
 
 	/** A short summary of a filter's attributes. */
 	export interface FilterSummaryFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		filterArn: FormControl<string | null | undefined>,
 		creationDateTime: FormControl<Date | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn: FormControl<string | null | undefined>,
 		failureReason: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		status: FormControl<string | null | undefined>,
 	}
 	export function CreateFilterSummaryFormGroup() {
 		return new FormGroup<FilterSummaryFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			filterArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			filterArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
-			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			failureReason: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface ListFiltersRequest {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn?: string | null;
+
+		/** Max length: 1300 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListFiltersRequestFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn: FormControl<string | null | undefined>,
+
+		/** Max length: 1300 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListFiltersRequestFormGroup() {
 		return new FormGroup<ListFiltersRequestFormProperties>({
-			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1300)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListRecipesResponse {
+
+		/** Maximum items: 100 */
 		recipes?: Array<RecipeSummary>;
+
+		/** Max length: 1300 */
 		nextToken?: string | null;
 	}
 	export interface ListRecipesResponseFormProperties {
+
+		/** Max length: 1300 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListRecipesResponseFormGroup() {
 		return new FormGroup<ListRecipesResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1300)]),
 		});
 
 	}
@@ -2402,8 +4252,21 @@ export namespace MyNS {
 
 	/** Provides a summary of the properties of a recipe. For a complete listing, call the <a>DescribeRecipe</a> API. */
 	export interface RecipeSummary {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		recipeArn?: string | null;
+
+		/** Max length: 256 */
 		status?: string | null;
 		creationDateTime?: Date | null;
 		lastUpdatedDateTime?: Date | null;
@@ -2411,17 +4274,30 @@ export namespace MyNS {
 
 	/** Provides a summary of the properties of a recipe. For a complete listing, call the <a>DescribeRecipe</a> API. */
 	export interface RecipeSummaryFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		recipeArn: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		status: FormControl<string | null | undefined>,
 		creationDateTime: FormControl<Date | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateRecipeSummaryFormGroup() {
 		return new FormGroup<RecipeSummaryFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			recipeArn: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			recipeArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -2430,19 +4306,33 @@ export namespace MyNS {
 
 	export interface ListRecipesRequest {
 		recipeProvider?: ListRecipesRequestRecipeProvider | null;
+
+		/** Max length: 1300 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListRecipesRequestFormProperties {
 		recipeProvider: FormControl<ListRecipesRequestRecipeProvider | null | undefined>,
+
+		/** Max length: 1300 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListRecipesRequestFormGroup() {
 		return new FormGroup<ListRecipesRequestFormProperties>({
 			recipeProvider: new FormControl<ListRecipesRequestRecipeProvider | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1300)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -2450,15 +4340,21 @@ export namespace MyNS {
 	export enum ListRecipesRequestRecipeProvider { SERVICE = 0 }
 
 	export interface ListSchemasResponse {
+
+		/** Maximum items: 100 */
 		schemas?: Array<DatasetSchemaSummary>;
+
+		/** Max length: 1300 */
 		nextToken?: string | null;
 	}
 	export interface ListSchemasResponseFormProperties {
+
+		/** Max length: 1300 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListSchemasResponseFormGroup() {
 		return new FormGroup<ListSchemasResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1300)]),
 		});
 
 	}
@@ -2466,7 +4362,18 @@ export namespace MyNS {
 
 	/** Provides a summary of the properties of a dataset schema. For a complete listing, call the <a>DescribeSchema</a> API. */
 	export interface DatasetSchemaSummary {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		schemaArn?: string | null;
 		creationDateTime?: Date | null;
 		lastUpdatedDateTime?: Date | null;
@@ -2474,15 +4381,26 @@ export namespace MyNS {
 
 	/** Provides a summary of the properties of a dataset schema. For a complete listing, call the <a>DescribeSchema</a> API. */
 	export interface DatasetSchemaSummaryFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		schemaArn: FormControl<string | null | undefined>,
 		creationDateTime: FormControl<Date | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateDatasetSchemaSummaryFormGroup() {
 		return new FormGroup<DatasetSchemaSummaryFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			schemaArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			schemaArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -2490,64 +4408,114 @@ export namespace MyNS {
 	}
 
 	export interface ListSchemasRequest {
+
+		/** Max length: 1300 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListSchemasRequestFormProperties {
+
+		/** Max length: 1300 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListSchemasRequestFormGroup() {
 		return new FormGroup<ListSchemasRequestFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1300)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListSolutionVersionsResponse {
+
+		/** Maximum items: 100 */
 		solutionVersions?: Array<SolutionVersionSummary>;
+
+		/** Max length: 1300 */
 		nextToken?: string | null;
 	}
 	export interface ListSolutionVersionsResponseFormProperties {
+
+		/** Max length: 1300 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListSolutionVersionsResponseFormGroup() {
 		return new FormGroup<ListSolutionVersionsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1300)]),
 		});
 
 	}
 
 	export interface ListSolutionVersionsRequest {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionArn?: string | null;
+
+		/** Max length: 1300 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListSolutionVersionsRequestFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionArn: FormControl<string | null | undefined>,
+
+		/** Max length: 1300 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListSolutionVersionsRequestFormGroup() {
 		return new FormGroup<ListSolutionVersionsRequestFormProperties>({
-			solutionArn: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			solutionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1300)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListSolutionsResponse {
+
+		/** Maximum items: 100 */
 		solutions?: Array<SolutionSummary>;
+
+		/** Max length: 1300 */
 		nextToken?: string | null;
 	}
 	export interface ListSolutionsResponseFormProperties {
+
+		/** Max length: 1300 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListSolutionsResponseFormGroup() {
 		return new FormGroup<ListSolutionsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1300)]),
 		});
 
 	}
@@ -2555,8 +4523,21 @@ export namespace MyNS {
 
 	/** Provides a summary of the properties of a solution. For a complete listing, call the <a>DescribeSolution</a> API. */
 	export interface SolutionSummary {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionArn?: string | null;
+
+		/** Max length: 256 */
 		status?: string | null;
 		creationDateTime?: Date | null;
 		lastUpdatedDateTime?: Date | null;
@@ -2564,17 +4545,30 @@ export namespace MyNS {
 
 	/** Provides a summary of the properties of a solution. For a complete listing, call the <a>DescribeSolution</a> API. */
 	export interface SolutionSummaryFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionArn: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		status: FormControl<string | null | undefined>,
 		creationDateTime: FormControl<Date | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateSolutionSummaryFormGroup() {
 		return new FormGroup<SolutionSummaryFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			solutionArn: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			solutionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -2582,52 +4576,112 @@ export namespace MyNS {
 	}
 
 	export interface ListSolutionsRequest {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn?: string | null;
+
+		/** Max length: 1300 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListSolutionsRequestFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		datasetGroupArn: FormControl<string | null | undefined>,
+
+		/** Max length: 1300 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListSolutionsRequestFormGroup() {
 		return new FormGroup<ListSolutionsRequestFormProperties>({
-			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1300)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface UpdateCampaignResponse {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		campaignArn?: string | null;
 	}
 	export interface UpdateCampaignResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		campaignArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateCampaignResponseFormGroup() {
 		return new FormGroup<UpdateCampaignResponseFormProperties>({
-			campaignArn: new FormControl<string | null | undefined>(undefined),
+			campaignArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface UpdateCampaignRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		campaignArn: string;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn?: string | null;
+
+		/** Minimum: 1 */
 		minProvisionedTPS?: number | null;
 	}
 	export interface UpdateCampaignRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		campaignArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		solutionVersionArn: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		minProvisionedTPS: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateCampaignRequestFormGroup() {
 		return new FormGroup<UpdateCampaignRequestFormProperties>({
-			campaignArn: new FormControl<string | null | undefined>(undefined),
-			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
-			minProvisionedTPS: new FormControl<number | null | undefined>(undefined),
+			campaignArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			minProvisionedTPS: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}

@@ -23,32 +23,78 @@ export namespace MyNS {
 
 	/** Container for the parameters to the GenerateDataSet operation. */
 	export interface GenerateDataSetRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		dataSetType: GenerateDataSetRequestDataSetType;
+
+		/** Required */
 		dataSetPublicationDate: Date;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		roleNameArn: string;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		destinationS3BucketName: string;
 		destinationS3Prefix?: string | null;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		snsTopicArn: string;
 		customerDefinedValues?: CustomerDefinedValues;
 	}
 
 	/** Container for the parameters to the GenerateDataSet operation. */
 	export interface GenerateDataSetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		dataSetType: FormControl<GenerateDataSetRequestDataSetType | null | undefined>,
+
+		/** Required */
 		dataSetPublicationDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		roleNameArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		destinationS3BucketName: FormControl<string | null | undefined>,
 		destinationS3Prefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		snsTopicArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGenerateDataSetRequestFormGroup() {
 		return new FormGroup<GenerateDataSetRequestFormProperties>({
-			dataSetType: new FormControl<GenerateDataSetRequestDataSetType | null | undefined>(undefined),
-			dataSetPublicationDate: new FormControl<Date | null | undefined>(undefined),
-			roleNameArn: new FormControl<string | null | undefined>(undefined),
-			destinationS3BucketName: new FormControl<string | null | undefined>(undefined),
+			dataSetType: new FormControl<GenerateDataSetRequestDataSetType | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			dataSetPublicationDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			roleNameArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			destinationS3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 			destinationS3Prefix: new FormControl<string | null | undefined>(undefined),
-			snsTopicArn: new FormControl<string | null | undefined>(undefined),
+			snsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -95,32 +141,78 @@ export namespace MyNS {
 
 	/** Container for the parameters to the StartSupportDataExport operation. */
 	export interface StartSupportDataExportRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		dataSetType: StartSupportDataExportRequestDataSetType;
+
+		/** Required */
 		fromDate: Date;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		roleNameArn: string;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		destinationS3BucketName: string;
 		destinationS3Prefix?: string | null;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		snsTopicArn: string;
 		customerDefinedValues?: CustomerDefinedValues;
 	}
 
 	/** Container for the parameters to the StartSupportDataExport operation. */
 	export interface StartSupportDataExportRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		dataSetType: FormControl<StartSupportDataExportRequestDataSetType | null | undefined>,
+
+		/** Required */
 		fromDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		roleNameArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		destinationS3BucketName: FormControl<string | null | undefined>,
 		destinationS3Prefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		snsTopicArn: FormControl<string | null | undefined>,
 	}
 	export function CreateStartSupportDataExportRequestFormGroup() {
 		return new FormGroup<StartSupportDataExportRequestFormProperties>({
-			dataSetType: new FormControl<StartSupportDataExportRequestDataSetType | null | undefined>(undefined),
-			fromDate: new FormControl<Date | null | undefined>(undefined),
-			roleNameArn: new FormControl<string | null | undefined>(undefined),
-			destinationS3BucketName: new FormControl<string | null | undefined>(undefined),
+			dataSetType: new FormControl<StartSupportDataExportRequestDataSetType | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			fromDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			roleNameArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			destinationS3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 			destinationS3Prefix: new FormControl<string | null | undefined>(undefined),
-			snsTopicArn: new FormControl<string | null | undefined>(undefined),
+			snsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}

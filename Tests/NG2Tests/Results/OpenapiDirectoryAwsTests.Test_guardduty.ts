@@ -44,27 +44,49 @@ export namespace MyNS {
 	}
 
 	export interface CreateDetectorResponse {
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		DetectorId?: string | null;
 	}
 	export interface CreateDetectorResponseFormProperties {
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		DetectorId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDetectorResponseFormGroup() {
 		return new FormGroup<CreateDetectorResponseFormProperties>({
-			DetectorId: new FormControl<string | null | undefined>(undefined),
+			DetectorId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateFilterResponse {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 3
+		 */
 		Name: string;
 	}
 	export interface CreateFilterResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 3
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateFilterResponseFormGroup() {
 		return new FormGroup<CreateFilterResponseFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(3)]),
 		});
 
 	}
@@ -80,19 +102,29 @@ export namespace MyNS {
 	}
 
 	export interface CreateIPSetResponse {
+
+		/** Required */
 		IpSetId: string;
 	}
 	export interface CreateIPSetResponseFormProperties {
+
+		/** Required */
 		IpSetId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateIPSetResponseFormGroup() {
 		return new FormGroup<CreateIPSetResponseFormProperties>({
-			IpSetId: new FormControl<string | null | undefined>(undefined),
+			IpSetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface CreateMembersResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		UnprocessedAccounts: Array<UnprocessedAccount>;
 	}
 	export interface CreateMembersResponseFormProperties {
@@ -106,19 +138,35 @@ export namespace MyNS {
 
 	/** Contains information about the accounts that weren't processed. */
 	export interface UnprocessedAccount {
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		AccountId: string;
+
+		/** Required */
 		Result: string;
 	}
 
 	/** Contains information about the accounts that weren't processed. */
 	export interface UnprocessedAccountFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		AccountId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Result: FormControl<string | null | undefined>,
 	}
 	export function CreateUnprocessedAccountFormGroup() {
 		return new FormGroup<UnprocessedAccountFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined),
-			Result: new FormControl<string | null | undefined>(undefined),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
+			Result: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -126,32 +174,60 @@ export namespace MyNS {
 
 	/** Contains information about the account. */
 	export interface AccountDetail {
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		AccountId: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Email: string;
 	}
 
 	/** Contains information about the account. */
 	export interface AccountDetailFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		AccountId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Email: FormControl<string | null | undefined>,
 	}
 	export function CreateAccountDetailFormGroup() {
 		return new FormGroup<AccountDetailFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined),
-			Email: new FormControl<string | null | undefined>(undefined),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
+			Email: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreatePublishingDestinationResponse {
+
+		/** Required */
 		DestinationId: string;
 	}
 	export interface CreatePublishingDestinationResponseFormProperties {
+
+		/** Required */
 		DestinationId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePublishingDestinationResponseFormGroup() {
 		return new FormGroup<CreatePublishingDestinationResponseFormProperties>({
-			DestinationId: new FormControl<string | null | undefined>(undefined),
+			DestinationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -167,19 +243,29 @@ export namespace MyNS {
 	}
 
 	export interface CreateThreatIntelSetResponse {
+
+		/** Required */
 		ThreatIntelSetId: string;
 	}
 	export interface CreateThreatIntelSetResponseFormProperties {
+
+		/** Required */
 		ThreatIntelSetId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateThreatIntelSetResponseFormGroup() {
 		return new FormGroup<CreateThreatIntelSetResponseFormProperties>({
-			ThreatIntelSetId: new FormControl<string | null | undefined>(undefined),
+			ThreatIntelSetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeclineInvitationsResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		UnprocessedAccounts: Array<UnprocessedAccount>;
 	}
 	export interface DeclineInvitationsResponseFormProperties {
@@ -221,6 +307,12 @@ export namespace MyNS {
 	}
 
 	export interface DeleteInvitationsResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		UnprocessedAccounts: Array<UnprocessedAccount>;
 	}
 	export interface DeleteInvitationsResponseFormProperties {
@@ -232,6 +324,12 @@ export namespace MyNS {
 	}
 
 	export interface DeleteMembersResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		UnprocessedAccounts: Array<UnprocessedAccount>;
 	}
 	export interface DeleteMembersResponseFormProperties {
@@ -263,25 +361,49 @@ export namespace MyNS {
 	}
 
 	export interface DescribeOrganizationConfigurationResponse {
+
+		/** Required */
 		AutoEnable: boolean;
+
+		/** Required */
 		MemberAccountLimitReached: boolean;
 	}
 	export interface DescribeOrganizationConfigurationResponseFormProperties {
+
+		/** Required */
 		AutoEnable: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		MemberAccountLimitReached: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDescribeOrganizationConfigurationResponseFormGroup() {
 		return new FormGroup<DescribeOrganizationConfigurationResponseFormProperties>({
-			AutoEnable: new FormControl<boolean | null | undefined>(undefined),
-			MemberAccountLimitReached: new FormControl<boolean | null | undefined>(undefined),
+			AutoEnable: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			MemberAccountLimitReached: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DescribePublishingDestinationResponse {
+
+		/** Required */
 		DestinationId: string;
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		DestinationType: DescribePublishingDestinationResponseDestinationType;
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Status: DescribePublishingDestinationResponseStatus;
+
+		/** Required */
 		PublishingFailureStartTimestamp: number;
 
 		/**
@@ -291,17 +413,33 @@ export namespace MyNS {
 		DestinationProperties: DestinationProperties;
 	}
 	export interface DescribePublishingDestinationResponseFormProperties {
+
+		/** Required */
 		DestinationId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		DestinationType: FormControl<DescribePublishingDestinationResponseDestinationType | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Status: FormControl<DescribePublishingDestinationResponseStatus | null | undefined>,
+
+		/** Required */
 		PublishingFailureStartTimestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribePublishingDestinationResponseFormGroup() {
 		return new FormGroup<DescribePublishingDestinationResponseFormProperties>({
-			DestinationId: new FormControl<string | null | undefined>(undefined),
-			DestinationType: new FormControl<DescribePublishingDestinationResponseDestinationType | null | undefined>(undefined),
-			Status: new FormControl<DescribePublishingDestinationResponseStatus | null | undefined>(undefined),
-			PublishingFailureStartTimestamp: new FormControl<number | null | undefined>(undefined),
+			DestinationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DestinationType: new FormControl<DescribePublishingDestinationResponseDestinationType | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			Status: new FormControl<DescribePublishingDestinationResponseStatus | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			PublishingFailureStartTimestamp: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -351,6 +489,12 @@ export namespace MyNS {
 	}
 
 	export interface DisassociateMembersResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		UnprocessedAccounts: Array<UnprocessedAccount>;
 	}
 	export interface DisassociateMembersResponseFormProperties {
@@ -374,7 +518,15 @@ export namespace MyNS {
 	export interface GetDetectorResponse {
 		CreatedAt?: string | null;
 		FindingPublishingFrequency?: GetDetectorResponseFindingPublishingFrequency | null;
+
+		/** Required */
 		ServiceRole: string;
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Status: GetDetectorResponseStatus;
 		UpdatedAt?: string | null;
 		Tags?: TagMap;
@@ -382,7 +534,15 @@ export namespace MyNS {
 	export interface GetDetectorResponseFormProperties {
 		CreatedAt: FormControl<string | null | undefined>,
 		FindingPublishingFrequency: FormControl<GetDetectorResponseFindingPublishingFrequency | null | undefined>,
+
+		/** Required */
 		ServiceRole: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Status: FormControl<GetDetectorResponseStatus | null | undefined>,
 		UpdatedAt: FormControl<string | null | undefined>,
 	}
@@ -390,8 +550,8 @@ export namespace MyNS {
 		return new FormGroup<GetDetectorResponseFormProperties>({
 			CreatedAt: new FormControl<string | null | undefined>(undefined),
 			FindingPublishingFrequency: new FormControl<GetDetectorResponseFindingPublishingFrequency | null | undefined>(undefined),
-			ServiceRole: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<GetDetectorResponseStatus | null | undefined>(undefined),
+			ServiceRole: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Status: new FormControl<GetDetectorResponseStatus | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
 			UpdatedAt: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -412,9 +572,31 @@ export namespace MyNS {
 	}
 
 	export interface GetFilterResponse {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 3
+		 */
 		Name: string;
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 */
 		Description?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Action: GetFilterResponseAction;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Rank?: number | null;
 
 		/**
@@ -425,17 +607,39 @@ export namespace MyNS {
 		Tags?: TagMap;
 	}
 	export interface GetFilterResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 3
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Action: FormControl<GetFilterResponseAction | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Rank: FormControl<number | null | undefined>,
 	}
 	export function CreateGetFilterResponseFormGroup() {
 		return new FormGroup<GetFilterResponseFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			Action: new FormControl<GetFilterResponseAction | null | undefined>(undefined),
-			Rank: new FormControl<number | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(3)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
+			Action: new FormControl<GetFilterResponseAction | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			Rank: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -458,6 +662,12 @@ export namespace MyNS {
 	}
 
 	export interface GetFindingsResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		Findings: Array<Finding>;
 	}
 	export interface GetFindingsResponseFormProperties {
@@ -471,13 +681,23 @@ export namespace MyNS {
 
 	/** Contains information about the finding, which is generated when abnormal or suspicious activity is detected. */
 	export interface Finding {
+
+		/** Required */
 		AccountId: string;
+
+		/** Required */
 		Arn: string;
 		Confidence?: number | null;
+
+		/** Required */
 		CreatedAt: string;
 		Description?: string | null;
+
+		/** Required */
 		Id: string;
 		Partition?: string | null;
+
+		/** Required */
 		Region: string;
 
 		/**
@@ -485,47 +705,81 @@ export namespace MyNS {
 		 * Required
 		 */
 		Resource: Resource;
+
+		/** Required */
 		SchemaVersion: string;
 
 		/** Contains additional information about the generated finding. */
 		Service?: Service;
+
+		/** Required */
 		Severity: number;
 		Title?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		Type: string;
+
+		/** Required */
 		UpdatedAt: string;
 	}
 
 	/** Contains information about the finding, which is generated when abnormal or suspicious activity is detected. */
 	export interface FindingFormProperties {
+
+		/** Required */
 		AccountId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Arn: FormControl<string | null | undefined>,
 		Confidence: FormControl<number | null | undefined>,
+
+		/** Required */
 		CreatedAt: FormControl<string | null | undefined>,
 		Description: FormControl<string | null | undefined>,
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
 		Partition: FormControl<string | null | undefined>,
+
+		/** Required */
 		Region: FormControl<string | null | undefined>,
+
+		/** Required */
 		SchemaVersion: FormControl<string | null | undefined>,
+
+		/** Required */
 		Severity: FormControl<number | null | undefined>,
 		Title: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		Type: FormControl<string | null | undefined>,
+
+		/** Required */
 		UpdatedAt: FormControl<string | null | undefined>,
 	}
 	export function CreateFindingFormGroup() {
 		return new FormGroup<FindingFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Confidence: new FormControl<number | null | undefined>(undefined),
-			CreatedAt: new FormControl<string | null | undefined>(undefined),
+			CreatedAt: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Description: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Partition: new FormControl<string | null | undefined>(undefined),
-			Region: new FormControl<string | null | undefined>(undefined),
-			SchemaVersion: new FormControl<string | null | undefined>(undefined),
-			Severity: new FormControl<number | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SchemaVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Severity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			Title: new FormControl<string | null | undefined>(undefined),
-			Type: new FormControl<string | null | undefined>(undefined),
-			UpdatedAt: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
+			UpdatedAt: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -993,6 +1247,11 @@ export namespace MyNS {
 		Evidence?: Evidence;
 		Archived?: boolean | null;
 		Count?: number | null;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		DetectorId?: string | null;
 		EventFirstSeen?: string | null;
 		EventLastSeen?: string | null;
@@ -1005,6 +1264,11 @@ export namespace MyNS {
 	export interface ServiceFormProperties {
 		Archived: FormControl<boolean | null | undefined>,
 		Count: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		DetectorId: FormControl<string | null | undefined>,
 		EventFirstSeen: FormControl<string | null | undefined>,
 		EventLastSeen: FormControl<string | null | undefined>,
@@ -1016,7 +1280,7 @@ export namespace MyNS {
 		return new FormGroup<ServiceFormProperties>({
 			Archived: new FormControl<boolean | null | undefined>(undefined),
 			Count: new FormControl<number | null | undefined>(undefined),
-			DetectorId: new FormControl<string | null | undefined>(undefined),
+			DetectorId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 			EventFirstSeen: new FormControl<string | null | undefined>(undefined),
 			EventLastSeen: new FormControl<string | null | undefined>(undefined),
 			ResourceRole: new FormControl<string | null | undefined>(undefined),
@@ -1442,24 +1706,72 @@ export namespace MyNS {
 	export enum FindingStatisticType { COUNT_BY_SEVERITY = 0 }
 
 	export interface GetIPSetResponse {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Format: GetIPSetResponseFormat;
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Location: string;
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Status: GetIPSetResponseStatus;
 		Tags?: TagMap;
 	}
 	export interface GetIPSetResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Format: FormControl<GetIPSetResponseFormat | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Location: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Status: FormControl<GetIPSetResponseStatus | null | undefined>,
 	}
 	export function CreateGetIPSetResponseFormGroup() {
 		return new FormGroup<GetIPSetResponseFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Format: new FormControl<GetIPSetResponseFormat | null | undefined>(undefined),
-			Location: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<GetIPSetResponseStatus | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			Format: new FormControl<GetIPSetResponseFormat | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			Location: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			Status: new FormControl<GetIPSetResponseStatus | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
@@ -1500,6 +1812,11 @@ export namespace MyNS {
 
 	/** Contains information about the master account and invitation. */
 	export interface Master {
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		AccountId?: string | null;
 		InvitationId?: string | null;
 		RelationshipStatus?: string | null;
@@ -1508,6 +1825,11 @@ export namespace MyNS {
 
 	/** Contains information about the master account and invitation. */
 	export interface MasterFormProperties {
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		AccountId: FormControl<string | null | undefined>,
 		InvitationId: FormControl<string | null | undefined>,
 		RelationshipStatus: FormControl<string | null | undefined>,
@@ -1515,7 +1837,7 @@ export namespace MyNS {
 	}
 	export function CreateMasterFormGroup() {
 		return new FormGroup<MasterFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
 			InvitationId: new FormControl<string | null | undefined>(undefined),
 			RelationshipStatus: new FormControl<string | null | undefined>(undefined),
 			InvitedAt: new FormControl<string | null | undefined>(undefined),
@@ -1524,7 +1846,19 @@ export namespace MyNS {
 	}
 
 	export interface GetMembersResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		Members: Array<Member>;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		UnprocessedAccounts: Array<UnprocessedAccount>;
 	}
 	export interface GetMembersResponseFormProperties {
@@ -1538,62 +1872,162 @@ export namespace MyNS {
 
 	/** Contains information about the member account.  */
 	export interface Member {
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		AccountId: string;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		DetectorId?: string | null;
+
+		/** Required */
 		MasterId: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Email: string;
+
+		/** Required */
 		RelationshipStatus: string;
 		InvitedAt?: string | null;
+
+		/** Required */
 		UpdatedAt: string;
 	}
 
 	/** Contains information about the member account.  */
 	export interface MemberFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		AccountId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		DetectorId: FormControl<string | null | undefined>,
+
+		/** Required */
 		MasterId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Email: FormControl<string | null | undefined>,
+
+		/** Required */
 		RelationshipStatus: FormControl<string | null | undefined>,
 		InvitedAt: FormControl<string | null | undefined>,
+
+		/** Required */
 		UpdatedAt: FormControl<string | null | undefined>,
 	}
 	export function CreateMemberFormGroup() {
 		return new FormGroup<MemberFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined),
-			DetectorId: new FormControl<string | null | undefined>(undefined),
-			MasterId: new FormControl<string | null | undefined>(undefined),
-			Email: new FormControl<string | null | undefined>(undefined),
-			RelationshipStatus: new FormControl<string | null | undefined>(undefined),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
+			DetectorId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
+			MasterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Email: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			RelationshipStatus: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			InvitedAt: new FormControl<string | null | undefined>(undefined),
-			UpdatedAt: new FormControl<string | null | undefined>(undefined),
+			UpdatedAt: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface GetThreatIntelSetResponse {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Format: GetIPSetResponseFormat;
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Location: string;
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Status: GetIPSetResponseStatus;
 		Tags?: TagMap;
 	}
 	export interface GetThreatIntelSetResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Format: FormControl<GetIPSetResponseFormat | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Location: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Status: FormControl<GetIPSetResponseStatus | null | undefined>,
 	}
 	export function CreateGetThreatIntelSetResponseFormGroup() {
 		return new FormGroup<GetThreatIntelSetResponseFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Format: new FormControl<GetIPSetResponseFormat | null | undefined>(undefined),
-			Location: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<GetIPSetResponseStatus | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			Format: new FormControl<GetIPSetResponseFormat | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			Location: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			Status: new FormControl<GetIPSetResponseStatus | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface InviteMembersResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		UnprocessedAccounts: Array<UnprocessedAccount>;
 	}
 	export interface InviteMembersResponseFormProperties {
@@ -1605,6 +2039,12 @@ export namespace MyNS {
 	}
 
 	export interface ListDetectorsResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		DetectorIds: Array<string>;
 		NextToken?: string | null;
 	}
@@ -1619,6 +2059,12 @@ export namespace MyNS {
 	}
 
 	export interface ListFiltersResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		FilterNames: Array<string>;
 		NextToken?: string | null;
 	}
@@ -1633,6 +2079,12 @@ export namespace MyNS {
 	}
 
 	export interface ListFindingsResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		FindingIds: Array<string>;
 		NextToken?: string | null;
 	}
@@ -1647,6 +2099,12 @@ export namespace MyNS {
 	}
 
 	export interface ListIPSetsResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		IpSetIds: Array<string>;
 		NextToken?: string | null;
 	}
@@ -1661,6 +2119,11 @@ export namespace MyNS {
 	}
 
 	export interface ListInvitationsResponse {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		Invitations?: Array<Invitation>;
 		NextToken?: string | null;
 	}
@@ -1677,6 +2140,11 @@ export namespace MyNS {
 
 	/** Contains information about the invitation to become a member account. */
 	export interface Invitation {
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		AccountId?: string | null;
 		InvitationId?: string | null;
 		RelationshipStatus?: string | null;
@@ -1685,6 +2153,11 @@ export namespace MyNS {
 
 	/** Contains information about the invitation to become a member account. */
 	export interface InvitationFormProperties {
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		AccountId: FormControl<string | null | undefined>,
 		InvitationId: FormControl<string | null | undefined>,
 		RelationshipStatus: FormControl<string | null | undefined>,
@@ -1692,7 +2165,7 @@ export namespace MyNS {
 	}
 	export function CreateInvitationFormGroup() {
 		return new FormGroup<InvitationFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
 			InvitationId: new FormControl<string | null | undefined>(undefined),
 			RelationshipStatus: new FormControl<string | null | undefined>(undefined),
 			InvitedAt: new FormControl<string | null | undefined>(undefined),
@@ -1701,6 +2174,11 @@ export namespace MyNS {
 	}
 
 	export interface ListMembersResponse {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		Members?: Array<Member>;
 		NextToken?: string | null;
 	}
@@ -1715,6 +2193,11 @@ export namespace MyNS {
 	}
 
 	export interface ListOrganizationAdminAccountsResponse {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 1
+		 */
 		AdminAccounts?: Array<AdminAccount>;
 		NextToken?: string | null;
 	}
@@ -1732,18 +2215,28 @@ export namespace MyNS {
 	/** The account within the organization specified as the GuardDuty delegated administrator. */
 	export interface AdminAccount {
 		AdminAccountId?: string | null;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		AdminStatus?: AdminAccountAdminStatus | null;
 	}
 
 	/** The account within the organization specified as the GuardDuty delegated administrator. */
 	export interface AdminAccountFormProperties {
 		AdminAccountId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		AdminStatus: FormControl<AdminAccountAdminStatus | null | undefined>,
 	}
 	export function CreateAdminAccountFormGroup() {
 		return new FormGroup<AdminAccountFormProperties>({
 			AdminAccountId: new FormControl<string | null | undefined>(undefined),
-			AdminStatus: new FormControl<AdminAccountAdminStatus | null | undefined>(undefined),
+			AdminStatus: new FormControl<AdminAccountAdminStatus | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
@@ -1751,6 +2244,8 @@ export namespace MyNS {
 	export enum AdminAccountAdminStatus { ENABLED = 0, DISABLE_IN_PROGRESS = 1 }
 
 	export interface ListPublishingDestinationsResponse {
+
+		/** Required */
 		Destinations: Array<Destination>;
 		NextToken?: string | null;
 	}
@@ -1767,22 +2262,50 @@ export namespace MyNS {
 
 	/** Contains information about the publishing destination, including the ID, type, and status. */
 	export interface Destination {
+
+		/** Required */
 		DestinationId: string;
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		DestinationType: DescribePublishingDestinationResponseDestinationType;
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Status: DescribePublishingDestinationResponseStatus;
 	}
 
 	/** Contains information about the publishing destination, including the ID, type, and status. */
 	export interface DestinationFormProperties {
+
+		/** Required */
 		DestinationId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		DestinationType: FormControl<DescribePublishingDestinationResponseDestinationType | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Status: FormControl<DescribePublishingDestinationResponseStatus | null | undefined>,
 	}
 	export function CreateDestinationFormGroup() {
 		return new FormGroup<DestinationFormProperties>({
-			DestinationId: new FormControl<string | null | undefined>(undefined),
-			DestinationType: new FormControl<DescribePublishingDestinationResponseDestinationType | null | undefined>(undefined),
-			Status: new FormControl<DescribePublishingDestinationResponseStatus | null | undefined>(undefined),
+			DestinationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DestinationType: new FormControl<DescribePublishingDestinationResponseDestinationType | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			Status: new FormControl<DescribePublishingDestinationResponseStatus | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
@@ -1799,6 +2322,12 @@ export namespace MyNS {
 	}
 
 	export interface ListThreatIntelSetsResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		ThreatIntelSetIds: Array<string>;
 		NextToken?: string | null;
 	}
@@ -1813,6 +2342,12 @@ export namespace MyNS {
 	}
 
 	export interface StartMonitoringMembersResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		UnprocessedAccounts: Array<UnprocessedAccount>;
 	}
 	export interface StartMonitoringMembersResponseFormProperties {
@@ -1824,6 +2359,12 @@ export namespace MyNS {
 	}
 
 	export interface StopMonitoringMembersResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		UnprocessedAccounts: Array<UnprocessedAccount>;
 	}
 	export interface StopMonitoringMembersResponseFormProperties {
@@ -1875,14 +2416,26 @@ export namespace MyNS {
 	}
 
 	export interface UpdateFilterResponse {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 3
+		 */
 		Name: string;
 	}
 	export interface UpdateFilterResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 3
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateFilterResponseFormGroup() {
 		return new FormGroup<UpdateFilterResponseFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(3)]),
 		});
 
 	}
@@ -1938,17 +2491,25 @@ export namespace MyNS {
 	}
 
 	export interface AcceptInvitationRequest {
+
+		/** Required */
 		MasterId: string;
+
+		/** Required */
 		InvitationId: string;
 	}
 	export interface AcceptInvitationRequestFormProperties {
+
+		/** Required */
 		MasterId: FormControl<string | null | undefined>,
+
+		/** Required */
 		InvitationId: FormControl<string | null | undefined>,
 	}
 	export function CreateAcceptInvitationRequestFormGroup() {
 		return new FormGroup<AcceptInvitationRequestFormProperties>({
-			MasterId: new FormControl<string | null | undefined>(undefined),
-			InvitationId: new FormControl<string | null | undefined>(undefined),
+			MasterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			InvitationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1956,6 +2517,12 @@ export namespace MyNS {
 	export enum AdminStatus { ENABLED = 0, DISABLE_IN_PROGRESS = 1 }
 
 	export interface ArchiveFindingsRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		FindingIds: Array<string>;
 	}
 	export interface ArchiveFindingsRequestFormProperties {
@@ -2011,20 +2578,34 @@ export namespace MyNS {
 	export enum FindingPublishingFrequency { FIFTEEN_MINUTES = 0, ONE_HOUR = 1, SIX_HOURS = 2 }
 
 	export interface CreateDetectorRequest {
+
+		/** Required */
 		Enable: boolean;
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		ClientToken?: string | null;
 		FindingPublishingFrequency?: GetDetectorResponseFindingPublishingFrequency | null;
 		Tags?: TagMap;
 	}
 	export interface CreateDetectorRequestFormProperties {
+
+		/** Required */
 		Enable: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		ClientToken: FormControl<string | null | undefined>,
 		FindingPublishingFrequency: FormControl<GetDetectorResponseFindingPublishingFrequency | null | undefined>,
 	}
 	export function CreateCreateDetectorRequestFormGroup() {
 		return new FormGroup<CreateDetectorRequestFormProperties>({
-			Enable: new FormControl<boolean | null | undefined>(undefined),
-			ClientToken: new FormControl<string | null | undefined>(undefined),
+			Enable: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
 			FindingPublishingFrequency: new FormControl<GetDetectorResponseFindingPublishingFrequency | null | undefined>(undefined),
 		});
 
@@ -2033,9 +2614,30 @@ export namespace MyNS {
 	export enum FilterAction { NOOP = 0, ARCHIVE = 1 }
 
 	export interface CreateFilterRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 3
+		 */
 		Name: string;
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Action?: GetFilterResponseAction | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Rank?: number | null;
 
 		/**
@@ -2043,23 +2645,54 @@ export namespace MyNS {
 		 * Required
 		 */
 		FindingCriteria: FindingCriteria;
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		ClientToken?: string | null;
 		Tags?: TagMap;
 	}
 	export interface CreateFilterRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 3
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Action: FormControl<GetFilterResponseAction | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Rank: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		ClientToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateFilterRequestFormGroup() {
 		return new FormGroup<CreateFilterRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			Action: new FormControl<GetFilterResponseAction | null | undefined>(undefined),
-			Rank: new FormControl<number | null | undefined>(undefined),
-			ClientToken: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(3)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
+			Action: new FormControl<GetFilterResponseAction | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
+			Rank: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
+			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
 		});
 
 	}
@@ -2067,32 +2700,88 @@ export namespace MyNS {
 	export enum IpSetFormat { TXT = 0, STIX = 1, OTX_CSV = 2, ALIEN_VAULT = 3, PROOF_POINT = 4, FIRE_EYE = 5 }
 
 	export interface CreateIPSetRequest {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Format: GetIPSetResponseFormat;
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Location: string;
+
+		/** Required */
 		Activate: boolean;
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		ClientToken?: string | null;
 		Tags?: TagMap;
 	}
 	export interface CreateIPSetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Format: FormControl<GetIPSetResponseFormat | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Location: FormControl<string | null | undefined>,
+
+		/** Required */
 		Activate: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		ClientToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateIPSetRequestFormGroup() {
 		return new FormGroup<CreateIPSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Format: new FormControl<GetIPSetResponseFormat | null | undefined>(undefined),
-			Location: new FormControl<string | null | undefined>(undefined),
-			Activate: new FormControl<boolean | null | undefined>(undefined),
-			ClientToken: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			Format: new FormControl<GetIPSetResponseFormat | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			Location: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			Activate: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface CreateMembersRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		AccountDetails: Array<AccountDetail>;
 	}
 	export interface CreateMembersRequestFormProperties {
@@ -2106,6 +2795,12 @@ export namespace MyNS {
 	export enum DestinationType { S3 = 0 }
 
 	export interface CreatePublishingDestinationRequest {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		DestinationType: DescribePublishingDestinationResponseDestinationType;
 
 		/**
@@ -2113,21 +2808,42 @@ export namespace MyNS {
 		 * Required
 		 */
 		DestinationProperties: DestinationProperties;
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		ClientToken?: string | null;
 	}
 	export interface CreatePublishingDestinationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		DestinationType: FormControl<DescribePublishingDestinationResponseDestinationType | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		ClientToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePublishingDestinationRequestFormGroup() {
 		return new FormGroup<CreatePublishingDestinationRequestFormProperties>({
-			DestinationType: new FormControl<DescribePublishingDestinationResponseDestinationType | null | undefined>(undefined),
-			ClientToken: new FormControl<string | null | undefined>(undefined),
+			DestinationType: new FormControl<DescribePublishingDestinationResponseDestinationType | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface CreateSampleFindingsRequest {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		FindingTypes?: Array<string>;
 	}
 	export interface CreateSampleFindingsRequestFormProperties {
@@ -2141,32 +2857,88 @@ export namespace MyNS {
 	export enum ThreatIntelSetFormat { TXT = 0, STIX = 1, OTX_CSV = 2, ALIEN_VAULT = 3, PROOF_POINT = 4, FIRE_EYE = 5 }
 
 	export interface CreateThreatIntelSetRequest {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Format: GetIPSetResponseFormat;
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Location: string;
+
+		/** Required */
 		Activate: boolean;
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		ClientToken?: string | null;
 		Tags?: TagMap;
 	}
 	export interface CreateThreatIntelSetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Format: FormControl<GetIPSetResponseFormat | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Location: FormControl<string | null | undefined>,
+
+		/** Required */
 		Activate: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		ClientToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateThreatIntelSetRequestFormGroup() {
 		return new FormGroup<CreateThreatIntelSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Format: new FormControl<GetIPSetResponseFormat | null | undefined>(undefined),
-			Location: new FormControl<string | null | undefined>(undefined),
-			Activate: new FormControl<boolean | null | undefined>(undefined),
-			ClientToken: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			Format: new FormControl<GetIPSetResponseFormat | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			Location: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			Activate: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface DeclineInvitationsRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		AccountIds: Array<string>;
 	}
 	export interface DeclineInvitationsRequestFormProperties {
@@ -2208,6 +2980,12 @@ export namespace MyNS {
 	}
 
 	export interface DeleteInvitationsRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		AccountIds: Array<string>;
 	}
 	export interface DeleteInvitationsRequestFormProperties {
@@ -2219,6 +2997,12 @@ export namespace MyNS {
 	}
 
 	export interface DeleteMembersRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		AccountIds: Array<string>;
 	}
 	export interface DeleteMembersRequestFormProperties {
@@ -2274,14 +3058,18 @@ export namespace MyNS {
 	export enum DetectorStatus { ENABLED = 0, DISABLED = 1 }
 
 	export interface DisableOrganizationAdminAccountRequest {
+
+		/** Required */
 		AdminAccountId: string;
 	}
 	export interface DisableOrganizationAdminAccountRequestFormProperties {
+
+		/** Required */
 		AdminAccountId: FormControl<string | null | undefined>,
 	}
 	export function CreateDisableOrganizationAdminAccountRequestFormGroup() {
 		return new FormGroup<DisableOrganizationAdminAccountRequestFormProperties>({
-			AdminAccountId: new FormControl<string | null | undefined>(undefined),
+			AdminAccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2297,6 +3085,12 @@ export namespace MyNS {
 	}
 
 	export interface DisassociateMembersRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		AccountIds: Array<string>;
 	}
 	export interface DisassociateMembersRequestFormProperties {
@@ -2308,14 +3102,18 @@ export namespace MyNS {
 	}
 
 	export interface EnableOrganizationAdminAccountRequest {
+
+		/** Required */
 		AdminAccountId: string;
 	}
 	export interface EnableOrganizationAdminAccountRequestFormProperties {
+
+		/** Required */
 		AdminAccountId: FormControl<string | null | undefined>,
 	}
 	export function CreateEnableOrganizationAdminAccountRequestFormGroup() {
 		return new FormGroup<EnableOrganizationAdminAccountRequestFormProperties>({
-			AdminAccountId: new FormControl<string | null | undefined>(undefined),
+			AdminAccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2363,6 +3161,12 @@ export namespace MyNS {
 	}
 
 	export interface GetFindingsRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		FindingIds: Array<string>;
 
 		/** Contains information about the criteria used for sorting findings. */
@@ -2377,6 +3181,12 @@ export namespace MyNS {
 	}
 
 	export interface GetFindingsStatisticsRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		FindingStatisticTypes: Array<FindingStatisticType>;
 
 		/** Contains information about the criteria used for querying findings. */
@@ -2423,6 +3233,12 @@ export namespace MyNS {
 	}
 
 	export interface GetMembersRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		AccountIds: Array<string>;
 	}
 	export interface GetMembersRequestFormProperties {
@@ -2446,6 +3262,12 @@ export namespace MyNS {
 	export enum ThreatIntelSetStatus { INACTIVE = 0, ACTIVATING = 1, ACTIVE = 2, DEACTIVATING = 3, ERROR = 4, DELETE_PENDING = 5, DELETED = 6 }
 
 	export interface InviteMembersRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		AccountIds: Array<string>;
 		DisableEmailNotification?: boolean | null;
 		Message?: string | null;
@@ -2489,16 +3311,26 @@ export namespace MyNS {
 
 		/** Contains information about the criteria used for sorting findings. */
 		SortCriteria?: SortCriteria;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface ListFindingsRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListFindingsRequestFormGroup() {
 		return new FormGroup<ListFindingsRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2575,6 +3407,12 @@ export namespace MyNS {
 	}
 
 	export interface StartMonitoringMembersRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		AccountIds: Array<string>;
 	}
 	export interface StartMonitoringMembersRequestFormProperties {
@@ -2586,6 +3424,12 @@ export namespace MyNS {
 	}
 
 	export interface StopMonitoringMembersRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		AccountIds: Array<string>;
 	}
 	export interface StopMonitoringMembersRequestFormProperties {
@@ -2597,6 +3441,8 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/** Required */
 		Tags: TagMap;
 	}
 	export interface TagResourceRequestFormProperties {
@@ -2608,6 +3454,12 @@ export namespace MyNS {
 	}
 
 	export interface UnarchiveFindingsRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		FindingIds: Array<string>;
 	}
 	export interface UnarchiveFindingsRequestFormProperties {
@@ -2645,72 +3497,136 @@ export namespace MyNS {
 	}
 
 	export interface UpdateFilterRequest {
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Action?: GetFilterResponseAction | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Rank?: number | null;
 
 		/** Contains information about the criteria used for querying findings. */
 		FindingCriteria?: FindingCriteria;
 	}
 	export interface UpdateFilterRequestFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Action: FormControl<GetFilterResponseAction | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Rank: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateFilterRequestFormGroup() {
 		return new FormGroup<UpdateFilterRequestFormProperties>({
-			Description: new FormControl<string | null | undefined>(undefined),
-			Action: new FormControl<GetFilterResponseAction | null | undefined>(undefined),
-			Rank: new FormControl<number | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
+			Action: new FormControl<GetFilterResponseAction | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
+			Rank: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface UpdateFindingsFeedbackRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		FindingIds: Array<string>;
+
+		/** Required */
 		Feedback: Feedback;
 		Comments?: string | null;
 	}
 	export interface UpdateFindingsFeedbackRequestFormProperties {
+
+		/** Required */
 		Feedback: FormControl<Feedback | null | undefined>,
 		Comments: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateFindingsFeedbackRequestFormGroup() {
 		return new FormGroup<UpdateFindingsFeedbackRequestFormProperties>({
-			Feedback: new FormControl<Feedback | null | undefined>(undefined),
+			Feedback: new FormControl<Feedback | null | undefined>(undefined, [Validators.required]),
 			Comments: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface UpdateIPSetRequest {
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Location?: string | null;
 		Activate?: boolean | null;
 	}
 	export interface UpdateIPSetRequestFormProperties {
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Location: FormControl<string | null | undefined>,
 		Activate: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpdateIPSetRequestFormGroup() {
 		return new FormGroup<UpdateIPSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Location: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
+			Location: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 			Activate: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface UpdateOrganizationConfigurationRequest {
+
+		/** Required */
 		AutoEnable: boolean;
 	}
 	export interface UpdateOrganizationConfigurationRequestFormProperties {
+
+		/** Required */
 		AutoEnable: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpdateOrganizationConfigurationRequestFormGroup() {
 		return new FormGroup<UpdateOrganizationConfigurationRequestFormProperties>({
-			AutoEnable: new FormControl<boolean | null | undefined>(undefined),
+			AutoEnable: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2729,19 +3645,39 @@ export namespace MyNS {
 	}
 
 	export interface UpdateThreatIntelSetRequest {
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Location?: string | null;
 		Activate?: boolean | null;
 	}
 	export interface UpdateThreatIntelSetRequestFormProperties {
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		Location: FormControl<string | null | undefined>,
 		Activate: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpdateThreatIntelSetRequestFormGroup() {
 		return new FormGroup<UpdateThreatIntelSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Location: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
+			Location: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 			Activate: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -3372,8 +4308,8 @@ export namespace MyNS {
 	}
 	export function CreateAcceptInvitationPostBodyFormGroup() {
 		return new FormGroup<AcceptInvitationPostBodyFormProperties>({
-			masterId: new FormControl<string | null | undefined>(undefined),
-			invitationId: new FormControl<string | null | undefined>(undefined),
+			masterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			invitationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3440,8 +4376,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateDetectorPostBodyFormGroup() {
 		return new FormGroup<CreateDetectorPostBodyFormProperties>({
-			enable: new FormControl<boolean | null | undefined>(undefined),
-			clientToken: new FormControl<string | null | undefined>(undefined),
+			enable: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
 			findingPublishingFrequency: new FormControl<GetDetectorResponseFindingPublishingFrequency | null | undefined>(undefined),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
@@ -3538,11 +4474,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateFilterPostBodyFormGroup() {
 		return new FormGroup<CreateFilterPostBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			action: new FormControl<GetFilterResponseAction | null | undefined>(undefined),
-			rank: new FormControl<number | null | undefined>(undefined),
-			clientToken: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(3)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
+			action: new FormControl<GetFilterResponseAction | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
+			rank: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -3645,11 +4581,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateIPSetPostBodyFormGroup() {
 		return new FormGroup<CreateIPSetPostBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			format: new FormControl<GetIPSetResponseFormat | null | undefined>(undefined),
-			location: new FormControl<string | null | undefined>(undefined),
-			activate: new FormControl<boolean | null | undefined>(undefined),
-			clientToken: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			format: new FormControl<GetIPSetResponseFormat | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			location: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			activate: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -3715,8 +4651,8 @@ export namespace MyNS {
 	}
 	export function CreateCreatePublishingDestinationPostBodyFormGroup() {
 		return new FormGroup<CreatePublishingDestinationPostBodyFormProperties>({
-			destinationType: new FormControl<DescribePublishingDestinationResponseDestinationType | null | undefined>(undefined),
-			clientToken: new FormControl<string | null | undefined>(undefined),
+			destinationType: new FormControl<DescribePublishingDestinationResponseDestinationType | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
 		});
 
 	}
@@ -3840,11 +4776,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateThreatIntelSetPostBodyFormGroup() {
 		return new FormGroup<CreateThreatIntelSetPostBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			format: new FormControl<GetIPSetResponseFormat | null | undefined>(undefined),
-			location: new FormControl<string | null | undefined>(undefined),
-			activate: new FormControl<boolean | null | undefined>(undefined),
-			clientToken: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			format: new FormControl<GetIPSetResponseFormat | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			location: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			activate: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -3943,9 +4879,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateFilterPostBodyFormGroup() {
 		return new FormGroup<UpdateFilterPostBodyFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined),
-			action: new FormControl<GetFilterResponseAction | null | undefined>(undefined),
-			rank: new FormControl<number | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
+			action: new FormControl<GetFilterResponseAction | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
+			rank: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -4001,8 +4937,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateIPSetPostBodyFormGroup() {
 		return new FormGroup<UpdateIPSetPostBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			location: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
+			location: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 			activate: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -4113,8 +5049,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateThreatIntelSetPostBodyFormGroup() {
 		return new FormGroup<UpdateThreatIntelSetPostBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			location: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
+			location: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 			activate: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -4138,7 +5074,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateOrganizationConfigurationPostBodyFormGroup() {
 		return new FormGroup<UpdateOrganizationConfigurationPostBodyFormProperties>({
-			autoEnable: new FormControl<boolean | null | undefined>(undefined),
+			autoEnable: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4161,7 +5097,7 @@ export namespace MyNS {
 	}
 	export function CreateDisableOrganizationAdminAccountPostBodyFormGroup() {
 		return new FormGroup<DisableOrganizationAdminAccountPostBodyFormProperties>({
-			adminAccountId: new FormControl<string | null | undefined>(undefined),
+			adminAccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4202,7 +5138,7 @@ export namespace MyNS {
 	}
 	export function CreateEnableOrganizationAdminAccountPostBodyFormGroup() {
 		return new FormGroup<EnableOrganizationAdminAccountPostBodyFormProperties>({
-			adminAccountId: new FormControl<string | null | undefined>(undefined),
+			adminAccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4358,7 +5294,7 @@ export namespace MyNS {
 	}
 	export function CreateListFindingsPostBodyFormGroup() {
 		return new FormGroup<ListFindingsPostBodyFormProperties>({
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4409,7 +5345,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4500,7 +5436,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateFindingsFeedbackPostBodyFormGroup() {
 		return new FormGroup<UpdateFindingsFeedbackPostBodyFormProperties>({
-			feedback: new FormControl<Feedback | null | undefined>(undefined),
+			feedback: new FormControl<Feedback | null | undefined>(undefined, [Validators.required]),
 			comments: new FormControl<string | null | undefined>(undefined),
 		});
 

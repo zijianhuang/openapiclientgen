@@ -4,14 +4,26 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateCertificateAuthorityResponse {
+
+		/**
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn?: string | null;
 	}
 	export interface CreateCertificateAuthorityResponseFormProperties {
+
+		/**
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateCertificateAuthorityResponseFormGroup() {
 		return new FormGroup<CreateCertificateAuthorityResponseFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(5)]),
 		});
 
 	}
@@ -26,18 +38,39 @@ export namespace MyNS {
 
 		/** Certificate revocation information used by the <a>CreateCertificateAuthority</a> and <a>UpdateCertificateAuthority</a> actions. Your private certificate authority (CA) can create and maintain a certificate revocation list (CRL). A CRL contains information about certificates revoked by your CA. For more information, see <a>RevokeCertificate</a>. */
 		RevocationConfiguration?: RevocationConfiguration;
+
+		/** Required */
 		CertificateAuthorityType: CreateCertificateAuthorityRequestCertificateAuthorityType;
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]*
+		 */
 		IdempotencyToken?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Tags?: Array<Tag>;
 	}
 	export interface CreateCertificateAuthorityRequestFormProperties {
+
+		/** Required */
 		CertificateAuthorityType: FormControl<CreateCertificateAuthorityRequestCertificateAuthorityType | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]*
+		 */
 		IdempotencyToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateCertificateAuthorityRequestFormGroup() {
 		return new FormGroup<CreateCertificateAuthorityRequestFormProperties>({
-			CertificateAuthorityType: new FormControl<CreateCertificateAuthorityRequestCertificateAuthorityType | null | undefined>(undefined),
-			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+			CertificateAuthorityType: new FormControl<CreateCertificateAuthorityRequestCertificateAuthorityType | null | undefined>(undefined, [Validators.required]),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
@@ -45,7 +78,11 @@ export namespace MyNS {
 
 	/** Contains configuration information for your private certificate authority (CA). This includes information about the class of public key algorithm and the key pair that your private CA creates when it issues a certificate. It also includes the signature algorithm that it uses when issuing certificates, and its X.500 distinguished name. You must specify this information when you call the <a>CreateCertificateAuthority</a> action.  */
 	export interface CertificateAuthorityConfiguration {
+
+		/** Required */
 		KeyAlgorithm: CertificateAuthorityConfigurationKeyAlgorithm;
+
+		/** Required */
 		SigningAlgorithm: CertificateAuthorityConfigurationSigningAlgorithm;
 
 		/**
@@ -57,13 +94,17 @@ export namespace MyNS {
 
 	/** Contains configuration information for your private certificate authority (CA). This includes information about the class of public key algorithm and the key pair that your private CA creates when it issues a certificate. It also includes the signature algorithm that it uses when issuing certificates, and its X.500 distinguished name. You must specify this information when you call the <a>CreateCertificateAuthority</a> action.  */
 	export interface CertificateAuthorityConfigurationFormProperties {
+
+		/** Required */
 		KeyAlgorithm: FormControl<CertificateAuthorityConfigurationKeyAlgorithm | null | undefined>,
+
+		/** Required */
 		SigningAlgorithm: FormControl<CertificateAuthorityConfigurationSigningAlgorithm | null | undefined>,
 	}
 	export function CreateCertificateAuthorityConfigurationFormGroup() {
 		return new FormGroup<CertificateAuthorityConfigurationFormProperties>({
-			KeyAlgorithm: new FormControl<CertificateAuthorityConfigurationKeyAlgorithm | null | undefined>(undefined),
-			SigningAlgorithm: new FormControl<CertificateAuthorityConfigurationSigningAlgorithm | null | undefined>(undefined),
+			KeyAlgorithm: new FormControl<CertificateAuthorityConfigurationKeyAlgorithm | null | undefined>(undefined, [Validators.required]),
+			SigningAlgorithm: new FormControl<CertificateAuthorityConfigurationSigningAlgorithm | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -75,55 +116,191 @@ export namespace MyNS {
 
 	/** Contains information about the certificate subject. The certificate can be one issued by your private certificate authority (CA) or it can be your private CA certificate. The <b>Subject</b> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <b>Subject</b> must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate. The DN must be unique for each entity, but your private CA can issue more than one certificate with the same DN to the same entity.  */
 	export interface ASN1Subject {
+
+		/** Pattern: [A-Za-z]{2} */
 		Country?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		Organization?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		OrganizationalUnit?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 * Pattern: [a-zA-Z0-9'()+-.?:/= ]*
+		 */
 		DistinguishedNameQualifier?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 0
+		 */
 		State?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		CommonName?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		SerialNumber?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 0
+		 */
 		Locality?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		Title?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 0
+		 */
 		Surname?: string | null;
+
+		/**
+		 * Max length: 16
+		 * Min length: 0
+		 */
 		GivenName?: string | null;
+
+		/**
+		 * Max length: 5
+		 * Min length: 0
+		 */
 		Initials?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 0
+		 */
 		Pseudonym?: string | null;
+
+		/**
+		 * Max length: 3
+		 * Min length: 0
+		 */
 		GenerationQualifier?: string | null;
 	}
 
 	/** Contains information about the certificate subject. The certificate can be one issued by your private certificate authority (CA) or it can be your private CA certificate. The <b>Subject</b> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <b>Subject</b> must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate. The DN must be unique for each entity, but your private CA can issue more than one certificate with the same DN to the same entity.  */
 	export interface ASN1SubjectFormProperties {
+
+		/** Pattern: [A-Za-z]{2} */
 		Country: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		Organization: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		OrganizationalUnit: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 * Pattern: [a-zA-Z0-9'()+-.?:/= ]*
+		 */
 		DistinguishedNameQualifier: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 0
+		 */
 		State: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		CommonName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		SerialNumber: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 0
+		 */
 		Locality: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		Title: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 0
+		 */
 		Surname: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16
+		 * Min length: 0
+		 */
 		GivenName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 5
+		 * Min length: 0
+		 */
 		Initials: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 0
+		 */
 		Pseudonym: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 3
+		 * Min length: 0
+		 */
 		GenerationQualifier: FormControl<string | null | undefined>,
 	}
 	export function CreateASN1SubjectFormGroup() {
 		return new FormGroup<ASN1SubjectFormProperties>({
 			Country: new FormControl<string | null | undefined>(undefined),
-			Organization: new FormControl<string | null | undefined>(undefined),
-			OrganizationalUnit: new FormControl<string | null | undefined>(undefined),
-			DistinguishedNameQualifier: new FormControl<string | null | undefined>(undefined),
-			State: new FormControl<string | null | undefined>(undefined),
-			CommonName: new FormControl<string | null | undefined>(undefined),
-			SerialNumber: new FormControl<string | null | undefined>(undefined),
-			Locality: new FormControl<string | null | undefined>(undefined),
-			Title: new FormControl<string | null | undefined>(undefined),
-			Surname: new FormControl<string | null | undefined>(undefined),
-			GivenName: new FormControl<string | null | undefined>(undefined),
-			Initials: new FormControl<string | null | undefined>(undefined),
-			Pseudonym: new FormControl<string | null | undefined>(undefined),
-			GenerationQualifier: new FormControl<string | null | undefined>(undefined),
+			Organization: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
+			OrganizationalUnit: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
+			DistinguishedNameQualifier: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
+			State: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
+			CommonName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
+			SerialNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
+			Locality: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
+			Title: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
+			Surname: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(0)]),
+			GivenName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16), Validators.minLength(0)]),
+			Initials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5), Validators.minLength(0)]),
+			Pseudonym: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
+			GenerationQualifier: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(0)]),
 		});
 
 	}
@@ -148,25 +325,59 @@ export namespace MyNS {
 
 	/** <p>Contains configuration information for a certificate revocation list (CRL). Your private certificate authority (CA) creates base CRLs. Delta CRLs are not supported. You can enable CRLs for your new or an existing private CA by setting the <b>Enabled</b> parameter to <code>true</code>. Your private CA writes CRLs to an S3 bucket that you specify in the <b>S3BucketName</b> parameter. You can hide the name of your bucket by specifying a value for the <b>CustomCname</b> parameter. Your private CA copies the CNAME or the S3 bucket name to the <b>CRL Distribution Points</b> extension of each certificate it issues. Your S3 bucket policy must give write permission to ACM Private CA. </p> <p>Your private CA uses the value in the <b>ExpirationInDays</b> parameter to calculate the <b>nextUpdate</b> field in the CRL. The CRL is refreshed at 1/2 the age of next update or when a certificate is revoked. When a certificate is revoked, it is recorded in the next CRL that is generated and in the next audit report. Only time valid certificates are listed in the CRL. Expired certificates are not included. </p> <p>CRLs contain the following fields:</p> <ul> <li> <p> <b>Version</b>: The current version number defined in RFC 5280 is V2. The integer value is 0x1. </p> </li> <li> <p> <b>Signature Algorithm</b>: The name of the algorithm used to sign the CRL.</p> </li> <li> <p> <b>Issuer</b>: The X.500 distinguished name of your private CA that issued the CRL.</p> </li> <li> <p> <b>Last Update</b>: The issue date and time of this CRL.</p> </li> <li> <p> <b>Next Update</b>: The day and time by which the next CRL will be issued.</p> </li> <li> <p> <b>Revoked Certificates</b>: List of revoked certificates. Each list item contains the following information.</p> <ul> <li> <p> <b>Serial Number</b>: The serial number, in hexadecimal format, of the revoked certificate.</p> </li> <li> <p> <b>Revocation Date</b>: Date and time the certificate was revoked.</p> </li> <li> <p> <b>CRL Entry Extensions</b>: Optional extensions for the CRL entry.</p> <ul> <li> <p> <b>X509v3 CRL Reason Code</b>: Reason the certificate was revoked.</p> </li> </ul> </li> </ul> </li> <li> <p> <b>CRL Extensions</b>: Optional extensions for the CRL.</p> <ul> <li> <p> <b>X509v3 Authority Key Identifier</b>: Identifies the public key associated with the private key used to sign the certificate.</p> </li> <li> <p> <b>X509v3 CRL Number:</b>: Decimal sequence number for the CRL.</p> </li> </ul> </li> <li> <p> <b>Signature Algorithm</b>: Algorithm used by your private CA to sign the CRL.</p> </li> <li> <p> <b>Signature Value</b>: Signature computed over the CRL.</p> </li> </ul> <p>Certificate revocation lists created by ACM Private CA are DER-encoded. You can use the following OpenSSL command to list a CRL.</p> <p> <code>openssl crl -inform DER -text -in <i>crl_path</i> -noout</code> </p> */
 	export interface CrlConfiguration {
+
+		/** Required */
 		Enabled: boolean;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 5000
+		 */
 		ExpirationInDays?: number | null;
+
+		/**
+		 * Max length: 253
+		 * Min length: 0
+		 */
 		CustomCname?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 */
 		S3BucketName?: string | null;
 	}
 
 	/** <p>Contains configuration information for a certificate revocation list (CRL). Your private certificate authority (CA) creates base CRLs. Delta CRLs are not supported. You can enable CRLs for your new or an existing private CA by setting the <b>Enabled</b> parameter to <code>true</code>. Your private CA writes CRLs to an S3 bucket that you specify in the <b>S3BucketName</b> parameter. You can hide the name of your bucket by specifying a value for the <b>CustomCname</b> parameter. Your private CA copies the CNAME or the S3 bucket name to the <b>CRL Distribution Points</b> extension of each certificate it issues. Your S3 bucket policy must give write permission to ACM Private CA. </p> <p>Your private CA uses the value in the <b>ExpirationInDays</b> parameter to calculate the <b>nextUpdate</b> field in the CRL. The CRL is refreshed at 1/2 the age of next update or when a certificate is revoked. When a certificate is revoked, it is recorded in the next CRL that is generated and in the next audit report. Only time valid certificates are listed in the CRL. Expired certificates are not included. </p> <p>CRLs contain the following fields:</p> <ul> <li> <p> <b>Version</b>: The current version number defined in RFC 5280 is V2. The integer value is 0x1. </p> </li> <li> <p> <b>Signature Algorithm</b>: The name of the algorithm used to sign the CRL.</p> </li> <li> <p> <b>Issuer</b>: The X.500 distinguished name of your private CA that issued the CRL.</p> </li> <li> <p> <b>Last Update</b>: The issue date and time of this CRL.</p> </li> <li> <p> <b>Next Update</b>: The day and time by which the next CRL will be issued.</p> </li> <li> <p> <b>Revoked Certificates</b>: List of revoked certificates. Each list item contains the following information.</p> <ul> <li> <p> <b>Serial Number</b>: The serial number, in hexadecimal format, of the revoked certificate.</p> </li> <li> <p> <b>Revocation Date</b>: Date and time the certificate was revoked.</p> </li> <li> <p> <b>CRL Entry Extensions</b>: Optional extensions for the CRL entry.</p> <ul> <li> <p> <b>X509v3 CRL Reason Code</b>: Reason the certificate was revoked.</p> </li> </ul> </li> </ul> </li> <li> <p> <b>CRL Extensions</b>: Optional extensions for the CRL.</p> <ul> <li> <p> <b>X509v3 Authority Key Identifier</b>: Identifies the public key associated with the private key used to sign the certificate.</p> </li> <li> <p> <b>X509v3 CRL Number:</b>: Decimal sequence number for the CRL.</p> </li> </ul> </li> <li> <p> <b>Signature Algorithm</b>: Algorithm used by your private CA to sign the CRL.</p> </li> <li> <p> <b>Signature Value</b>: Signature computed over the CRL.</p> </li> </ul> <p>Certificate revocation lists created by ACM Private CA are DER-encoded. You can use the following OpenSSL command to list a CRL.</p> <p> <code>openssl crl -inform DER -text -in <i>crl_path</i> -noout</code> </p> */
 	export interface CrlConfigurationFormProperties {
+
+		/** Required */
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 5000
+		 */
 		ExpirationInDays: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 253
+		 * Min length: 0
+		 */
 		CustomCname: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 */
 		S3BucketName: FormControl<string | null | undefined>,
 	}
 	export function CreateCrlConfigurationFormGroup() {
 		return new FormGroup<CrlConfigurationFormProperties>({
-			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			ExpirationInDays: new FormControl<number | null | undefined>(undefined),
-			CustomCname: new FormControl<string | null | undefined>(undefined),
-			S3BucketName: new FormControl<string | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			ExpirationInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(5000)]),
+			CustomCname: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(253), Validators.minLength(0)]),
+			S3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -176,19 +387,45 @@ export namespace MyNS {
 
 	/** Tags are labels that you can use to identify and organize your private CAs. Each tag consists of a key and an optional value. You can associate up to 50 tags with a private CA. To add one or more tags to a private CA, call the <a>TagCertificateAuthority</a> action. To remove a tag, call the <a>UntagCertificateAuthority</a> action.  */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Key: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Value?: string | null;
 	}
 
 	/** Tags are labels that you can use to identify and organize your private CAs. Each tag consists of a key and an optional value. You can associate up to 50 tags with a private CA. To add one or more tags to a private CA, call the <a>TagCertificateAuthority</a> action. To remove a tag, call the <a>UntagCertificateAuthority</a> action.  */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -234,36 +471,70 @@ export namespace MyNS {
 	}
 
 	export interface CreateCertificateAuthorityAuditReportResponse {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}
+		 */
 		AuditReportId?: string | null;
 		S3Key?: string | null;
 	}
 	export interface CreateCertificateAuthorityAuditReportResponseFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}
+		 */
 		AuditReportId: FormControl<string | null | undefined>,
 		S3Key: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateCertificateAuthorityAuditReportResponseFormGroup() {
 		return new FormGroup<CreateCertificateAuthorityAuditReportResponseFormProperties>({
-			AuditReportId: new FormControl<string | null | undefined>(undefined),
+			AuditReportId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 			S3Key: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CreateCertificateAuthorityAuditReportRequest {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: string;
+
+		/** Required */
 		S3BucketName: string;
+
+		/** Required */
 		AuditReportResponseFormat: CreateCertificateAuthorityAuditReportRequestAuditReportResponseFormat;
 	}
 	export interface CreateCertificateAuthorityAuditReportRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		S3BucketName: FormControl<string | null | undefined>,
+
+		/** Required */
 		AuditReportResponseFormat: FormControl<CreateCertificateAuthorityAuditReportRequestAuditReportResponseFormat | null | undefined>,
 	}
 	export function CreateCreateCertificateAuthorityAuditReportRequestFormGroup() {
 		return new FormGroup<CreateCertificateAuthorityAuditReportRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
-			S3BucketName: new FormControl<string | null | undefined>(undefined),
-			AuditReportResponseFormat: new FormControl<CreateCertificateAuthorityAuditReportRequestAuditReportResponseFormat | null | undefined>(undefined),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			S3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			AuditReportResponseFormat: new FormControl<CreateCertificateAuthorityAuditReportRequestAuditReportResponseFormat | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -321,21 +592,67 @@ export namespace MyNS {
 	}
 
 	export interface CreatePermissionRequest {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 0
+		 * Pattern: ^[^*]+$
+		 */
 		Principal: string;
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: [0-9]+
+		 */
 		SourceAccount?: string | null;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 3
+		 */
 		Actions: Array<ActionType>;
 	}
 	export interface CreatePermissionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 0
+		 * Pattern: ^[^*]+$
+		 */
 		Principal: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: [0-9]+
+		 */
 		SourceAccount: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePermissionRequestFormGroup() {
 		return new FormGroup<CreatePermissionRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
-			Principal: new FormControl<string | null | undefined>(undefined),
-			SourceAccount: new FormControl<string | null | undefined>(undefined),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			Principal: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(0)]),
+			SourceAccount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
 		});
 
 	}
@@ -353,17 +670,41 @@ export namespace MyNS {
 	}
 
 	export interface DeleteCertificateAuthorityRequest {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: string;
+
+		/**
+		 * Minimum: 7
+		 * Maximum: 30
+		 */
 		PermanentDeletionTimeInDays?: number | null;
 	}
 	export interface DeleteCertificateAuthorityRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 7
+		 * Maximum: 30
+		 */
 		PermanentDeletionTimeInDays: FormControl<number | null | undefined>,
 	}
 	export function CreateDeleteCertificateAuthorityRequestFormGroup() {
 		return new FormGroup<DeleteCertificateAuthorityRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
-			PermanentDeletionTimeInDays: new FormControl<number | null | undefined>(undefined),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			PermanentDeletionTimeInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(7), Validators.max(30)]),
 		});
 
 	}
@@ -379,20 +720,60 @@ export namespace MyNS {
 	}
 
 	export interface DeletePermissionRequest {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 0
+		 * Pattern: ^[^*]+$
+		 */
 		Principal: string;
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: [0-9]+
+		 */
 		SourceAccount?: string | null;
 	}
 	export interface DeletePermissionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 0
+		 * Pattern: ^[^*]+$
+		 */
 		Principal: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: [0-9]+
+		 */
 		SourceAccount: FormControl<string | null | undefined>,
 	}
 	export function CreateDeletePermissionRequestFormGroup() {
 		return new FormGroup<DeletePermissionRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
-			Principal: new FormControl<string | null | undefined>(undefined),
-			SourceAccount: new FormControl<string | null | undefined>(undefined),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			Principal: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(0)]),
+			SourceAccount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
 		});
 
 	}
@@ -413,6 +794,12 @@ export namespace MyNS {
 
 	/** Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509 digital certificates. Digital certificates verify that the entity named in the certificate <b>Subject</b> field owns or controls the public key contained in the <b>Subject Public Key Info</b> field. Call the <a>CreateCertificateAuthority</a> action to create your private CA. You must then call the <a>GetCertificateAuthorityCertificate</a> action to retrieve a private CA certificate signing request (CSR). Sign the CSR with your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call the <a>ImportCertificateAuthorityCertificate</a> action to import the signed certificate into AWS Certificate Manager (ACM).  */
 	export interface CertificateAuthority {
+
+		/**
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		Arn?: string | null;
 		CreatedAt?: Date | null;
 		LastStateChangeAt?: Date | null;
@@ -433,6 +820,12 @@ export namespace MyNS {
 
 	/** Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509 digital certificates. Digital certificates verify that the entity named in the certificate <b>Subject</b> field owns or controls the public key contained in the <b>Subject Public Key Info</b> field. Call the <a>CreateCertificateAuthority</a> action to create your private CA. You must then call the <a>GetCertificateAuthorityCertificate</a> action to retrieve a private CA certificate signing request (CSR). Sign the CSR with your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call the <a>ImportCertificateAuthorityCertificate</a> action to import the signed certificate into AWS Certificate Manager (ACM).  */
 	export interface CertificateAuthorityFormProperties {
+
+		/**
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		Arn: FormControl<string | null | undefined>,
 		CreatedAt: FormControl<Date | null | undefined>,
 		LastStateChangeAt: FormControl<Date | null | undefined>,
@@ -446,7 +839,7 @@ export namespace MyNS {
 	}
 	export function CreateCertificateAuthorityFormGroup() {
 		return new FormGroup<CertificateAuthorityFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(5)]),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			LastStateChangeAt: new FormControl<Date | null | undefined>(undefined),
 			Type: new FormControl<CreateCertificateAuthorityRequestCertificateAuthorityType | null | undefined>(undefined),
@@ -465,14 +858,28 @@ export namespace MyNS {
 	export enum CertificateAuthorityFailureReason { REQUEST_TIMED_OUT = 0, UNSUPPORTED_ALGORITHM = 1, OTHER = 2 }
 
 	export interface DescribeCertificateAuthorityRequest {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: string;
 	}
 	export interface DescribeCertificateAuthorityRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeCertificateAuthorityRequestFormGroup() {
 		return new FormGroup<DescribeCertificateAuthorityRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
 		});
 
 	}
@@ -502,17 +909,45 @@ export namespace MyNS {
 	export enum DescribeCertificateAuthorityAuditReportResponseAuditReportStatus { CREATING = 0, SUCCESS = 1, FAILED = 2 }
 
 	export interface DescribeCertificateAuthorityAuditReportRequest {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}
+		 */
 		AuditReportId: string;
 	}
 	export interface DescribeCertificateAuthorityAuditReportRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}
+		 */
 		AuditReportId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeCertificateAuthorityAuditReportRequestFormGroup() {
 		return new FormGroup<DescribeCertificateAuthorityAuditReportRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
-			AuditReportId: new FormControl<string | null | undefined>(undefined),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			AuditReportId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
@@ -534,17 +969,45 @@ export namespace MyNS {
 	}
 
 	export interface GetCertificateRequest {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: string;
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateArn: string;
 	}
 	export interface GetCertificateRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetCertificateRequestFormGroup() {
 		return new FormGroup<GetCertificateRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
-			CertificateArn: new FormControl<string | null | undefined>(undefined),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
 		});
 
 	}
@@ -566,14 +1029,28 @@ export namespace MyNS {
 	}
 
 	export interface GetCertificateAuthorityCertificateRequest {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: string;
 	}
 	export interface GetCertificateAuthorityCertificateRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetCertificateAuthorityCertificateRequestFormGroup() {
 		return new FormGroup<GetCertificateAuthorityCertificateRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
 		});
 
 	}
@@ -592,33 +1069,83 @@ export namespace MyNS {
 	}
 
 	export interface GetCertificateAuthorityCsrRequest {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: string;
 	}
 	export interface GetCertificateAuthorityCsrRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetCertificateAuthorityCsrRequestFormGroup() {
 		return new FormGroup<GetCertificateAuthorityCsrRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
 		});
 
 	}
 
 	export interface ImportCertificateAuthorityCertificateRequest {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: string;
+
+		/**
+		 * Required
+		 * Max length: 32768
+		 * Min length: 1
+		 */
 		Certificate: string;
+
+		/**
+		 * Max length: 2097152
+		 * Min length: 0
+		 */
 		CertificateChain?: string | null;
 	}
 	export interface ImportCertificateAuthorityCertificateRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32768
+		 * Min length: 1
+		 */
 		Certificate: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2097152
+		 * Min length: 0
+		 */
 		CertificateChain: FormControl<string | null | undefined>,
 	}
 	export function CreateImportCertificateAuthorityCertificateRequestFormGroup() {
 		return new FormGroup<ImportCertificateAuthorityCertificateRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
-			Certificate: new FormControl<string | null | undefined>(undefined),
-			CertificateChain: new FormControl<string | null | undefined>(undefined),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			Certificate: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32768), Validators.minLength(1)]),
+			CertificateChain: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2097152), Validators.minLength(0)]),
 		});
 
 	}
@@ -654,22 +1181,55 @@ export namespace MyNS {
 	}
 
 	export interface IssueCertificateResponse {
+
+		/**
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateArn?: string | null;
 	}
 	export interface IssueCertificateResponseFormProperties {
+
+		/**
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateArn: FormControl<string | null | undefined>,
 	}
 	export function CreateIssueCertificateResponseFormGroup() {
 		return new FormGroup<IssueCertificateResponseFormProperties>({
-			CertificateArn: new FormControl<string | null | undefined>(undefined),
+			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(5)]),
 		});
 
 	}
 
 	export interface IssueCertificateRequest {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: string;
+
+		/**
+		 * Required
+		 * Max length: 32768
+		 * Min length: 1
+		 */
 		Csr: string;
+
+		/** Required */
 		SigningAlgorithm: CertificateAuthorityConfigurationSigningAlgorithm;
+
+		/**
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		TemplateArn?: string | null;
 
 		/**
@@ -677,22 +1237,55 @@ export namespace MyNS {
 		 * Required
 		 */
 		Validity: Validity;
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]*
+		 */
 		IdempotencyToken?: string | null;
 	}
 	export interface IssueCertificateRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32768
+		 * Min length: 1
+		 */
 		Csr: FormControl<string | null | undefined>,
+
+		/** Required */
 		SigningAlgorithm: FormControl<CertificateAuthorityConfigurationSigningAlgorithm | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		TemplateArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]*
+		 */
 		IdempotencyToken: FormControl<string | null | undefined>,
 	}
 	export function CreateIssueCertificateRequestFormGroup() {
 		return new FormGroup<IssueCertificateRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
-			Csr: new FormControl<string | null | undefined>(undefined),
-			SigningAlgorithm: new FormControl<CertificateAuthorityConfigurationSigningAlgorithm | null | undefined>(undefined),
-			TemplateArn: new FormControl<string | null | undefined>(undefined),
-			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			Csr: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32768), Validators.minLength(1)]),
+			SigningAlgorithm: new FormControl<CertificateAuthorityConfigurationSigningAlgorithm | null | undefined>(undefined, [Validators.required]),
+			TemplateArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(5)]),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
@@ -700,19 +1293,33 @@ export namespace MyNS {
 
 	/** Length of time for which the certificate issued by your private certificate authority (CA), or by the private CA itself, is valid in days, months, or years. You can issue a certificate by calling the <a>IssueCertificate</a> action. */
 	export interface Validity {
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		Value: number;
+
+		/** Required */
 		Type: ValidityType;
 	}
 
 	/** Length of time for which the certificate issued by your private certificate authority (CA), or by the private CA itself, is valid in days, months, or years. You can issue a certificate by calling the <a>IssueCertificate</a> action. */
 	export interface ValidityFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		Value: FormControl<number | null | undefined>,
+
+		/** Required */
 		Type: FormControl<ValidityType | null | undefined>,
 	}
 	export function CreateValidityFormGroup() {
 		return new FormGroup<ValidityFormProperties>({
-			Value: new FormControl<number | null | undefined>(undefined),
-			Type: new FormControl<ValidityType | null | undefined>(undefined),
+			Value: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
+			Type: new FormControl<ValidityType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -731,30 +1338,60 @@ export namespace MyNS {
 
 	export interface ListCertificateAuthoritiesResponse {
 		CertificateAuthorities?: Array<CertificateAuthority>;
+
+		/**
+		 * Max length: 500
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListCertificateAuthoritiesResponseFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListCertificateAuthoritiesResponseFormGroup() {
 		return new FormGroup<ListCertificateAuthoritiesResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListCertificateAuthoritiesRequest {
+
+		/**
+		 * Max length: 500
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListCertificateAuthoritiesRequestFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListCertificateAuthoritiesRequestFormGroup() {
 		return new FormGroup<ListCertificateAuthoritiesRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
@@ -770,15 +1407,27 @@ export namespace MyNS {
 	}
 
 	export interface ListPermissionsResponse {
+
+		/** Minimum items: 0 */
 		Permissions?: Array<Permission>;
+
+		/**
+		 * Max length: 500
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListPermissionsResponseFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListPermissionsResponseFormGroup() {
 		return new FormGroup<ListPermissionsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(1)]),
 		});
 
 	}
@@ -786,16 +1435,33 @@ export namespace MyNS {
 
 	/** Permissions designate which private CA actions can be performed by an AWS service or entity. In order for ACM to automatically renew private certificates, you must give the ACM service principal all available permissions (<code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>). Permissions can be assigned with the <a>CreatePermission</a> action, removed with the <a>DeletePermission</a> action, and listed with the <a>ListPermissions</a> action. */
 	export interface Permission {
+
+		/**
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn?: string | null;
 		CreatedAt?: Date | null;
 		Principal?: string | null;
 		SourceAccount?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 3
+		 */
 		Actions?: Array<ActionType>;
 		Policy?: string | null;
 	}
 
 	/** Permissions designate which private CA actions can be performed by an AWS service or entity. In order for ACM to automatically renew private certificates, you must give the ACM service principal all available permissions (<code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>). Permissions can be assigned with the <a>CreatePermission</a> action, removed with the <a>DeletePermission</a> action, and listed with the <a>ListPermissions</a> action. */
 	export interface PermissionFormProperties {
+
+		/**
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 		CreatedAt: FormControl<Date | null | undefined>,
 		Principal: FormControl<string | null | undefined>,
@@ -804,7 +1470,7 @@ export namespace MyNS {
 	}
 	export function CreatePermissionFormGroup() {
 		return new FormGroup<PermissionFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(5)]),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			Principal: new FormControl<string | null | undefined>(undefined),
 			SourceAccount: new FormControl<string | null | undefined>(undefined),
@@ -814,85 +1480,212 @@ export namespace MyNS {
 	}
 
 	export interface ListPermissionsRequest {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: string;
+
+		/**
+		 * Max length: 500
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListPermissionsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 500
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListPermissionsRequestFormGroup() {
 		return new FormGroup<ListPermissionsRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
 
 	export interface ListTagsResponse {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Tags?: Array<Tag>;
+
+		/**
+		 * Max length: 500
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListTagsResponseFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsResponseFormGroup() {
 		return new FormGroup<ListTagsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListTagsRequest {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: string;
+
+		/**
+		 * Max length: 500
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListTagsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 500
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListTagsRequestFormGroup() {
 		return new FormGroup<ListTagsRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
 
 	export interface RestoreCertificateAuthorityRequest {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: string;
 	}
 	export interface RestoreCertificateAuthorityRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 	}
 	export function CreateRestoreCertificateAuthorityRequestFormGroup() {
 		return new FormGroup<RestoreCertificateAuthorityRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
 		});
 
 	}
 
 	export interface RevokeCertificateRequest {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 0
+		 */
 		CertificateSerial: string;
+
+		/** Required */
 		RevocationReason: RevokeCertificateRequestRevocationReason;
 	}
 	export interface RevokeCertificateRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 0
+		 */
 		CertificateSerial: FormControl<string | null | undefined>,
+
+		/** Required */
 		RevocationReason: FormControl<RevokeCertificateRequestRevocationReason | null | undefined>,
 	}
 	export function CreateRevokeCertificateRequestFormGroup() {
 		return new FormGroup<RevokeCertificateRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
-			CertificateSerial: new FormControl<string | null | undefined>(undefined),
-			RevocationReason: new FormControl<RevokeCertificateRequestRevocationReason | null | undefined>(undefined),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			CertificateSerial: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(0)]),
+			RevocationReason: new FormControl<RevokeCertificateRequestRevocationReason | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -910,15 +1703,35 @@ export namespace MyNS {
 	}
 
 	export interface TagCertificateAuthorityRequest {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Tags: Array<Tag>;
 	}
 	export interface TagCertificateAuthorityRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagCertificateAuthorityRequestFormGroup() {
 		return new FormGroup<TagCertificateAuthorityRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
 		});
 
 	}
@@ -934,20 +1747,47 @@ export namespace MyNS {
 	}
 
 	export interface UntagCertificateAuthorityRequest {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Tags: Array<Tag>;
 	}
 	export interface UntagCertificateAuthorityRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagCertificateAuthorityRequestFormGroup() {
 		return new FormGroup<UntagCertificateAuthorityRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
 		});
 
 	}
 
 	export interface UpdateCertificateAuthorityRequest {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: string;
 
 		/** Certificate revocation information used by the <a>CreateCertificateAuthority</a> and <a>UpdateCertificateAuthority</a> actions. Your private certificate authority (CA) can create and maintain a certificate revocation list (CRL). A CRL contains information about certificates revoked by your CA. For more information, see <a>RevokeCertificate</a>. */
@@ -955,12 +1795,19 @@ export namespace MyNS {
 		Status?: CertificateAuthorityStatus | null;
 	}
 	export interface UpdateCertificateAuthorityRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 5
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 		Status: FormControl<CertificateAuthorityStatus | null | undefined>,
 	}
 	export function CreateUpdateCertificateAuthorityRequestFormGroup() {
 		return new FormGroup<UpdateCertificateAuthorityRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
 			Status: new FormControl<CertificateAuthorityStatus | null | undefined>(undefined),
 		});
 

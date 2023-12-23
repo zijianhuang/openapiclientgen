@@ -43,6 +43,11 @@ export namespace MyNS {
 	}
 
 	export interface DomainInformation {
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		OwnerId?: string | null;
 
 		/**
@@ -56,6 +61,11 @@ export namespace MyNS {
 		Region?: string | null;
 	}
 	export interface DomainInformationFormProperties {
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		OwnerId: FormControl<string | null | undefined>,
 
 		/**
@@ -70,8 +80,8 @@ export namespace MyNS {
 	}
 	export function CreateDomainInformationFormGroup() {
 		return new FormGroup<DomainInformationFormProperties>({
-			OwnerId: new FormControl<string | null | undefined>(undefined),
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			OwnerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
 			Region: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -171,8 +181,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -228,6 +238,12 @@ export namespace MyNS {
 	/** Information on a package that is associated with a domain. */
 	export interface DomainPackageDetails {
 		PackageID?: string | null;
+
+		/**
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
 		PackageName?: string | null;
 		PackageType?: DomainPackageDetailsPackageType | null;
 		LastUpdated?: Date | null;
@@ -247,6 +263,12 @@ export namespace MyNS {
 	/** Information on a package that is associated with a domain. */
 	export interface DomainPackageDetailsFormProperties {
 		PackageID: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
 		PackageName: FormControl<string | null | undefined>,
 		PackageType: FormControl<DomainPackageDetailsPackageType | null | undefined>,
 		LastUpdated: FormControl<Date | null | undefined>,
@@ -264,10 +286,10 @@ export namespace MyNS {
 	export function CreateDomainPackageDetailsFormGroup() {
 		return new FormGroup<DomainPackageDetailsFormProperties>({
 			PackageID: new FormControl<string | null | undefined>(undefined),
-			PackageName: new FormControl<string | null | undefined>(undefined),
+			PackageName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3)]),
 			PackageType: new FormControl<DomainPackageDetailsPackageType | null | undefined>(undefined),
 			LastUpdated: new FormControl<Date | null | undefined>(undefined),
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3)]),
 			DomainPackageStatus: new FormControl<DomainPackageDetailsDomainPackageStatus | null | undefined>(undefined),
 			ReferencePath: new FormControl<string | null | undefined>(undefined),
 		});
@@ -504,9 +526,9 @@ export namespace MyNS {
 	}
 	export function CreateElasticsearchDomainStatusFormGroup() {
 		return new FormGroup<ElasticsearchDomainStatusFormProperties>({
-			DomainId: new FormControl<string | null | undefined>(undefined),
-			DomainName: new FormControl<string | null | undefined>(undefined),
-			ARN: new FormControl<string | null | undefined>(undefined),
+			DomainId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Created: new FormControl<boolean | null | undefined>(undefined),
 			Deleted: new FormControl<boolean | null | undefined>(undefined),
 			Endpoint: new FormControl<string | null | undefined>(undefined),
@@ -668,24 +690,58 @@ export namespace MyNS {
 	/** Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>. */
 	export interface CognitoOptions {
 		Enabled?: boolean | null;
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+_[0-9a-zA-Z]+
+		 */
 		UserPoolId?: string | null;
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		RoleArn?: string | null;
 	}
 
 	/** Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>. */
 	export interface CognitoOptionsFormProperties {
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+_[0-9a-zA-Z]+
+		 */
 		UserPoolId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		RoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCognitoOptionsFormGroup() {
 		return new FormGroup<CognitoOptionsFormProperties>({
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			UserPoolId: new FormControl<string | null | undefined>(undefined),
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			UserPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -694,18 +750,28 @@ export namespace MyNS {
 	/** Specifies the Encryption At Rest Options. */
 	export interface EncryptionAtRestOptions {
 		Enabled?: boolean | null;
+
+		/**
+		 * Max length: 500
+		 * Min length: 1
+		 */
 		KmsKeyId?: string | null;
 	}
 
 	/** Specifies the Encryption At Rest Options. */
 	export interface EncryptionAtRestOptionsFormProperties {
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 500
+		 * Min length: 1
+		 */
 		KmsKeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateEncryptionAtRestOptionsFormGroup() {
 		return new FormGroup<EncryptionAtRestOptionsFormProperties>({
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(1)]),
 		});
 
 	}
@@ -833,7 +899,11 @@ export namespace MyNS {
 
 		/** The Amazon Resource Name (ARN) of the Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information. */
 		MasterUserARN?: string | null;
+
+		/** Min length: 1 */
 		MasterUserName?: string | null;
+
+		/** Min length: 8 */
 		MasterUserPassword?: string | null;
 	}
 
@@ -842,14 +912,18 @@ export namespace MyNS {
 
 		/** The Amazon Resource Name (ARN) of the Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information. */
 		MasterUserARN: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		MasterUserName: FormControl<string | null | undefined>,
+
+		/** Min length: 8 */
 		MasterUserPassword: FormControl<string | null | undefined>,
 	}
 	export function CreateMasterUserOptionsFormGroup() {
 		return new FormGroup<MasterUserOptionsFormProperties>({
 			MasterUserARN: new FormControl<string | null | undefined>(undefined),
-			MasterUserName: new FormControl<string | null | undefined>(undefined),
-			MasterUserPassword: new FormControl<string | null | undefined>(undefined),
+			MasterUserName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			MasterUserPassword: new FormControl<string | null | undefined>(undefined, [Validators.minLength(8)]),
 		});
 
 	}
@@ -879,6 +953,8 @@ export namespace MyNS {
 	export interface CreateOutboundCrossClusterSearchConnectionResponse {
 		SourceDomainInfo?: DomainInformation;
 		DestinationDomainInfo?: DomainInformation;
+
+		/** Max length: 20 */
 		ConnectionAlias?: string | null;
 
 		/** Specifies the connection status of an outbound cross-cluster search connection. */
@@ -888,12 +964,14 @@ export namespace MyNS {
 
 	/** The result of a <code><a>CreateOutboundCrossClusterSearchConnection</a></code> request. Contains the details of the newly created cross-cluster search connection. */
 	export interface CreateOutboundCrossClusterSearchConnectionResponseFormProperties {
+
+		/** Max length: 20 */
 		ConnectionAlias: FormControl<string | null | undefined>,
 		CrossClusterSearchConnectionId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateOutboundCrossClusterSearchConnectionResponseFormGroup() {
 		return new FormGroup<CreateOutboundCrossClusterSearchConnectionResponseFormProperties>({
-			ConnectionAlias: new FormControl<string | null | undefined>(undefined),
+			ConnectionAlias: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20)]),
 			CrossClusterSearchConnectionId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -942,8 +1020,16 @@ export namespace MyNS {
 	/** Basic information about a package. */
 	export interface PackageDetails {
 		PackageID?: string | null;
+
+		/**
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
 		PackageName?: string | null;
 		PackageType?: PackageDetailsPackageType | null;
+
+		/** Max length: 1024 */
 		PackageDescription?: string | null;
 		PackageStatus?: PackageDetailsPackageStatus | null;
 		CreatedAt?: Date | null;
@@ -953,8 +1039,16 @@ export namespace MyNS {
 	/** Basic information about a package. */
 	export interface PackageDetailsFormProperties {
 		PackageID: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
 		PackageName: FormControl<string | null | undefined>,
 		PackageType: FormControl<PackageDetailsPackageType | null | undefined>,
+
+		/** Max length: 1024 */
 		PackageDescription: FormControl<string | null | undefined>,
 		PackageStatus: FormControl<PackageDetailsPackageStatus | null | undefined>,
 		CreatedAt: FormControl<Date | null | undefined>,
@@ -962,9 +1056,9 @@ export namespace MyNS {
 	export function CreatePackageDetailsFormGroup() {
 		return new FormGroup<PackageDetailsFormProperties>({
 			PackageID: new FormControl<string | null | undefined>(undefined),
-			PackageName: new FormControl<string | null | undefined>(undefined),
+			PackageName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3)]),
 			PackageType: new FormControl<PackageDetailsPackageType | null | undefined>(undefined),
-			PackageDescription: new FormControl<string | null | undefined>(undefined),
+			PackageDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			PackageStatus: new FormControl<PackageDetailsPackageStatus | null | undefined>(undefined),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1032,6 +1126,8 @@ export namespace MyNS {
 		SourceDomainInfo?: DomainInformation;
 		DestinationDomainInfo?: DomainInformation;
 		CrossClusterSearchConnectionId?: string | null;
+
+		/** Max length: 20 */
 		ConnectionAlias?: string | null;
 
 		/** Specifies the connection status of an outbound cross-cluster search connection. */
@@ -1041,12 +1137,14 @@ export namespace MyNS {
 	/** Specifies details of an outbound connection. */
 	export interface OutboundCrossClusterSearchConnectionFormProperties {
 		CrossClusterSearchConnectionId: FormControl<string | null | undefined>,
+
+		/** Max length: 20 */
 		ConnectionAlias: FormControl<string | null | undefined>,
 	}
 	export function CreateOutboundCrossClusterSearchConnectionFormGroup() {
 		return new FormGroup<OutboundCrossClusterSearchConnectionFormProperties>({
 			CrossClusterSearchConnectionId: new FormControl<string | null | undefined>(undefined),
-			ConnectionAlias: new FormControl<string | null | undefined>(undefined),
+			ConnectionAlias: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20)]),
 		});
 
 	}
@@ -1164,6 +1262,8 @@ export namespace MyNS {
 
 	/**  Status of the Elasticsearch version options for the specified Elasticsearch domain. */
 	export interface ElasticsearchVersionStatus {
+
+		/** Required */
 		Options: string;
 
 		/**
@@ -1175,11 +1275,13 @@ export namespace MyNS {
 
 	/**  Status of the Elasticsearch version options for the specified Elasticsearch domain. */
 	export interface ElasticsearchVersionStatusFormProperties {
+
+		/** Required */
 		Options: FormControl<string | null | undefined>,
 	}
 	export function CreateElasticsearchVersionStatusFormGroup() {
 		return new FormGroup<ElasticsearchVersionStatusFormProperties>({
-			Options: new FormControl<string | null | undefined>(undefined),
+			Options: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1187,8 +1289,14 @@ export namespace MyNS {
 
 	/** Provides the current status of the entity. */
 	export interface OptionStatus {
+
+		/** Required */
 		CreationDate: Date;
+
+		/** Required */
 		UpdateDate: Date;
+
+		/** Minimum: 0 */
 		UpdateVersion?: number | null;
 
 		/**
@@ -1201,8 +1309,14 @@ export namespace MyNS {
 
 	/** Provides the current status of the entity. */
 	export interface OptionStatusFormProperties {
+
+		/** Required */
 		CreationDate: FormControl<Date | null | undefined>,
+
+		/** Required */
 		UpdateDate: FormControl<Date | null | undefined>,
+
+		/** Minimum: 0 */
 		UpdateVersion: FormControl<number | null | undefined>,
 
 		/**
@@ -1214,10 +1328,10 @@ export namespace MyNS {
 	}
 	export function CreateOptionStatusFormGroup() {
 		return new FormGroup<OptionStatusFormProperties>({
-			CreationDate: new FormControl<Date | null | undefined>(undefined),
-			UpdateDate: new FormControl<Date | null | undefined>(undefined),
-			UpdateVersion: new FormControl<number | null | undefined>(undefined),
-			State: new FormControl<OptionStatusState | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			UpdateDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			UpdateVersion: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			State: new FormControl<OptionStatusState | null | undefined>(undefined, [Validators.required]),
 			PendingDeletion: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1305,7 +1419,7 @@ export namespace MyNS {
 	}
 	export function CreateAccessPoliciesStatusFormGroup() {
 		return new FormGroup<AccessPoliciesStatusFormProperties>({
-			Options: new FormControl<string | null | undefined>(undefined),
+			Options: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1612,17 +1726,23 @@ export namespace MyNS {
 
 	/**  A filter used to limit results when describing inbound or outbound cross-cluster search connections. Multiple values can be specified per filter. A cross-cluster search connection must match at least one of the specified values for it to be returned from an operation.  */
 	export interface Filter {
+
+		/** Min length: 1 */
 		Name?: string | null;
+
+		/** Minimum items: 1 */
 		Values?: Array<string>;
 	}
 
 	/**  A filter used to limit results when describing inbound or outbound cross-cluster search connections. Multiple values can be specified per filter. A cross-cluster search connection must match at least one of the specified values for it to be returned from an operation.  */
 	export interface FilterFormProperties {
+
+		/** Min length: 1 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateFilterFormGroup() {
 		return new FormGroup<FilterFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1722,6 +1842,8 @@ export namespace MyNS {
 
 	/** Details of a reserved Elasticsearch instance offering. */
 	export interface ReservedElasticsearchInstanceOffering {
+
+		/** Pattern: \p{XDigit}{8}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{12} */
 		ReservedElasticsearchInstanceOfferingId?: string | null;
 		ElasticsearchInstanceType?: ReservedElasticsearchInstanceOfferingElasticsearchInstanceType | null;
 		Duration?: number | null;
@@ -1734,6 +1856,8 @@ export namespace MyNS {
 
 	/** Details of a reserved Elasticsearch instance offering. */
 	export interface ReservedElasticsearchInstanceOfferingFormProperties {
+
+		/** Pattern: \p{XDigit}{8}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{12} */
 		ReservedElasticsearchInstanceOfferingId: FormControl<string | null | undefined>,
 		ElasticsearchInstanceType: FormControl<ReservedElasticsearchInstanceOfferingElasticsearchInstanceType | null | undefined>,
 		Duration: FormControl<number | null | undefined>,
@@ -1800,7 +1924,14 @@ export namespace MyNS {
 
 	/** Details of a reserved Elasticsearch instance. */
 	export interface ReservedElasticsearchInstance {
+
+		/**
+		 * Max length: 64
+		 * Min length: 5
+		 */
 		ReservationName?: string | null;
+
+		/** Pattern: \p{XDigit}{8}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{12} */
 		ReservedElasticsearchInstanceId?: string | null;
 		ReservedElasticsearchInstanceOfferingId?: string | null;
 		ElasticsearchInstanceType?: ReservedElasticsearchInstanceElasticsearchInstanceType | null;
@@ -1817,7 +1948,14 @@ export namespace MyNS {
 
 	/** Details of a reserved Elasticsearch instance. */
 	export interface ReservedElasticsearchInstanceFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 5
+		 */
 		ReservationName: FormControl<string | null | undefined>,
+
+		/** Pattern: \p{XDigit}{8}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{12} */
 		ReservedElasticsearchInstanceId: FormControl<string | null | undefined>,
 		ReservedElasticsearchInstanceOfferingId: FormControl<string | null | undefined>,
 		ElasticsearchInstanceType: FormControl<ReservedElasticsearchInstanceElasticsearchInstanceType | null | undefined>,
@@ -1832,7 +1970,7 @@ export namespace MyNS {
 	}
 	export function CreateReservedElasticsearchInstanceFormGroup() {
 		return new FormGroup<ReservedElasticsearchInstanceFormProperties>({
-			ReservationName: new FormControl<string | null | undefined>(undefined),
+			ReservationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(5)]),
 			ReservedElasticsearchInstanceId: new FormControl<string | null | undefined>(undefined),
 			ReservedElasticsearchInstanceOfferingId: new FormControl<string | null | undefined>(undefined),
 			ElasticsearchInstanceType: new FormControl<ReservedElasticsearchInstanceElasticsearchInstanceType | null | undefined>(undefined),
@@ -2034,7 +2172,7 @@ export namespace MyNS {
 	}
 	export function CreateDomainInfoFormGroup() {
 		return new FormGroup<DomainInfoFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3)]),
 		});
 
 	}
@@ -2143,19 +2281,33 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>PurchaseReservedElasticsearchInstanceOffering</code> operation. */
 	export interface PurchaseReservedElasticsearchInstanceOfferingResponse {
+
+		/** Pattern: \p{XDigit}{8}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{12} */
 		ReservedElasticsearchInstanceId?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 5
+		 */
 		ReservationName?: string | null;
 	}
 
 	/** Represents the output of a <code>PurchaseReservedElasticsearchInstanceOffering</code> operation. */
 	export interface PurchaseReservedElasticsearchInstanceOfferingResponseFormProperties {
+
+		/** Pattern: \p{XDigit}{8}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{12} */
 		ReservedElasticsearchInstanceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 5
+		 */
 		ReservationName: FormControl<string | null | undefined>,
 	}
 	export function CreatePurchaseReservedElasticsearchInstanceOfferingResponseFormGroup() {
 		return new FormGroup<PurchaseReservedElasticsearchInstanceOfferingResponseFormProperties>({
 			ReservedElasticsearchInstanceId: new FormControl<string | null | undefined>(undefined),
-			ReservationName: new FormControl<string | null | undefined>(undefined),
+			ReservationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(5)]),
 		});
 
 	}
@@ -2244,7 +2396,7 @@ export namespace MyNS {
 	}
 	export function CreateUpgradeElasticsearchDomainResponseFormGroup() {
 		return new FormGroup<UpgradeElasticsearchDomainResponseFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3)]),
 			TargetVersion: new FormControl<string | null | undefined>(undefined),
 			PerformCheckOnly: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -2293,7 +2445,7 @@ export namespace MyNS {
 	}
 	export function CreateAddTagsRequestFormGroup() {
 		return new FormGroup<AddTagsRequestFormProperties>({
-			ARN: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2381,7 +2533,7 @@ export namespace MyNS {
 	}
 	export function CreateCancelElasticsearchServiceSoftwareUpdateRequestFormGroup() {
 		return new FormGroup<CancelElasticsearchServiceSoftwareUpdateRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
 		});
 
 	}
@@ -2465,7 +2617,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateElasticsearchDomainRequestFormGroup() {
 		return new FormGroup<CreateElasticsearchDomainRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
 			ElasticsearchVersion: new FormControl<string | null | undefined>(undefined),
 			AccessPolicies: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2475,18 +2627,32 @@ export namespace MyNS {
 
 	/** Container for the parameters to the <code><a>CreateOutboundCrossClusterSearchConnection</a></code> operation. */
 	export interface CreateOutboundCrossClusterSearchConnectionRequest {
+
+		/** Required */
 		SourceDomainInfo: DomainInformation;
+
+		/** Required */
 		DestinationDomainInfo: DomainInformation;
+
+		/**
+		 * Required
+		 * Max length: 20
+		 */
 		ConnectionAlias: string;
 	}
 
 	/** Container for the parameters to the <code><a>CreateOutboundCrossClusterSearchConnection</a></code> operation. */
 	export interface CreateOutboundCrossClusterSearchConnectionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 */
 		ConnectionAlias: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateOutboundCrossClusterSearchConnectionRequestFormGroup() {
 		return new FormGroup<CreateOutboundCrossClusterSearchConnectionRequestFormProperties>({
-			ConnectionAlias: new FormControl<string | null | undefined>(undefined),
+			ConnectionAlias: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20)]),
 		});
 
 	}
@@ -2496,18 +2662,28 @@ export namespace MyNS {
 
 	/** The S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code> */
 	export interface PackageSource {
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 */
 		S3BucketName?: string | null;
 		S3Key?: string | null;
 	}
 
 	/** The S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code> */
 	export interface PackageSourceFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 */
 		S3BucketName: FormControl<string | null | undefined>,
 		S3Key: FormControl<string | null | undefined>,
 	}
 	export function CreatePackageSourceFormGroup() {
 		return new FormGroup<PackageSourceFormProperties>({
-			S3BucketName: new FormControl<string | null | undefined>(undefined),
+			S3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3)]),
 			S3Key: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2516,8 +2692,19 @@ export namespace MyNS {
 
 	/**  Container for request parameters to <code> <a>CreatePackage</a> </code> operation.  */
 	export interface CreatePackageRequest {
+
+		/**
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
 		PackageName: string;
+
+		/** Required */
 		PackageType: CreatePackageRequestPackageType;
+
+		/** Max length: 1024 */
 		PackageDescription?: string | null;
 
 		/**
@@ -2529,15 +2716,26 @@ export namespace MyNS {
 
 	/**  Container for request parameters to <code> <a>CreatePackage</a> </code> operation.  */
 	export interface CreatePackageRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
 		PackageName: FormControl<string | null | undefined>,
+
+		/** Required */
 		PackageType: FormControl<CreatePackageRequestPackageType | null | undefined>,
+
+		/** Max length: 1024 */
 		PackageDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePackageRequestFormGroup() {
 		return new FormGroup<CreatePackageRequestFormProperties>({
-			PackageName: new FormControl<string | null | undefined>(undefined),
-			PackageType: new FormControl<CreatePackageRequestPackageType | null | undefined>(undefined),
-			PackageDescription: new FormControl<string | null | undefined>(undefined),
+			PackageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			PackageType: new FormControl<CreatePackageRequestPackageType | null | undefined>(undefined, [Validators.required]),
+			PackageDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
@@ -2693,7 +2891,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeInboundCrossClusterSearchConnectionsRequestFormGroup() {
 		return new FormGroup<DescribeInboundCrossClusterSearchConnectionsRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2728,7 +2926,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeOutboundCrossClusterSearchConnectionsRequestFormGroup() {
 		return new FormGroup<DescribeOutboundCrossClusterSearchConnectionsRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2765,7 +2963,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribePackagesRequestFormGroup() {
 		return new FormGroup<DescribePackagesRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3059,7 +3257,18 @@ export namespace MyNS {
 
 	/** Container for parameters to <code>PurchaseReservedElasticsearchInstanceOffering</code> */
 	export interface PurchaseReservedElasticsearchInstanceOfferingRequest {
+
+		/**
+		 * Required
+		 * Pattern: \p{XDigit}{8}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{12}
+		 */
 		ReservedElasticsearchInstanceOfferingId: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 5
+		 */
 		ReservationName: string;
 
 		/**
@@ -3071,7 +3280,18 @@ export namespace MyNS {
 
 	/** Container for parameters to <code>PurchaseReservedElasticsearchInstanceOffering</code> */
 	export interface PurchaseReservedElasticsearchInstanceOfferingRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: \p{XDigit}{8}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{12}
+		 */
 		ReservedElasticsearchInstanceOfferingId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 5
+		 */
 		ReservationName: FormControl<string | null | undefined>,
 
 		/**
@@ -3082,9 +3302,9 @@ export namespace MyNS {
 	}
 	export function CreatePurchaseReservedElasticsearchInstanceOfferingRequestFormGroup() {
 		return new FormGroup<PurchaseReservedElasticsearchInstanceOfferingRequestFormProperties>({
-			ReservedElasticsearchInstanceOfferingId: new FormControl<string | null | undefined>(undefined),
-			ReservationName: new FormControl<string | null | undefined>(undefined),
-			InstanceCount: new FormControl<number | null | undefined>(undefined),
+			ReservedElasticsearchInstanceOfferingId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ReservationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(5)]),
+			InstanceCount: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -3112,6 +3332,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		ARN: string;
+
+		/** Required */
 		TagKeys: Array<string>;
 	}
 
@@ -3126,7 +3348,7 @@ export namespace MyNS {
 	}
 	export function CreateRemoveTagsRequestFormGroup() {
 		return new FormGroup<RemoveTagsRequestFormProperties>({
-			ARN: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3161,7 +3383,7 @@ export namespace MyNS {
 	}
 	export function CreateStartElasticsearchServiceSoftwareUpdateRequestFormGroup() {
 		return new FormGroup<StartElasticsearchServiceSoftwareUpdateRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
 		});
 
 	}
@@ -3224,6 +3446,8 @@ export namespace MyNS {
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
+
+		/** Required */
 		TargetVersion: string;
 		PerformCheckOnly?: boolean | null;
 	}
@@ -3239,13 +3463,15 @@ export namespace MyNS {
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
+
+		/** Required */
 		TargetVersion: FormControl<string | null | undefined>,
 		PerformCheckOnly: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpgradeElasticsearchDomainRequestFormGroup() {
 		return new FormGroup<UpgradeElasticsearchDomainRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
-			TargetVersion: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			TargetVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			PerformCheckOnly: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -3668,7 +3894,7 @@ export namespace MyNS {
 	}
 	export function CreateAddTagsPostBodyFormGroup() {
 		return new FormGroup<AddTagsPostBodyFormProperties>({
-			ARN: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3697,7 +3923,7 @@ export namespace MyNS {
 	}
 	export function CreateCancelElasticsearchServiceSoftwareUpdatePostBodyFormGroup() {
 		return new FormGroup<CancelElasticsearchServiceSoftwareUpdatePostBodyFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
 		});
 
 	}
@@ -3777,7 +4003,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateElasticsearchDomainPostBodyFormGroup() {
 		return new FormGroup<CreateElasticsearchDomainPostBodyFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
 			ElasticsearchVersion: new FormControl<string | null | undefined>(undefined),
 			AccessPolicies: new FormControl<string | null | undefined>(undefined),
 			AdvancedOptions: new FormControl<{[id: string]: string } | null | undefined>(undefined),
@@ -3885,38 +4111,82 @@ export namespace MyNS {
 
 	export interface CreateElasticsearchDomainPostBodyCognitoOptions {
 		Enabled?: boolean | null;
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+_[0-9a-zA-Z]+
+		 */
 		UserPoolId?: string | null;
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		RoleArn?: string | null;
 	}
 	export interface CreateElasticsearchDomainPostBodyCognitoOptionsFormProperties {
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+_[0-9a-zA-Z]+
+		 */
 		UserPoolId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		RoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateElasticsearchDomainPostBodyCognitoOptionsFormGroup() {
 		return new FormGroup<CreateElasticsearchDomainPostBodyCognitoOptionsFormProperties>({
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			UserPoolId: new FormControl<string | null | undefined>(undefined),
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			UserPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface CreateElasticsearchDomainPostBodyEncryptionAtRestOptions {
 		Enabled?: boolean | null;
+
+		/**
+		 * Max length: 500
+		 * Min length: 1
+		 */
 		KmsKeyId?: string | null;
 	}
 	export interface CreateElasticsearchDomainPostBodyEncryptionAtRestOptionsFormProperties {
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 500
+		 * Min length: 1
+		 */
 		KmsKeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateElasticsearchDomainPostBodyEncryptionAtRestOptionsFormGroup() {
 		return new FormGroup<CreateElasticsearchDomainPostBodyEncryptionAtRestOptionsFormProperties>({
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(1)]),
 		});
 
 	}
@@ -4003,12 +4273,17 @@ export namespace MyNS {
 	}
 	export function CreateCreateOutboundCrossClusterSearchConnectionPostBodyFormGroup() {
 		return new FormGroup<CreateOutboundCrossClusterSearchConnectionPostBodyFormProperties>({
-			ConnectionAlias: new FormControl<string | null | undefined>(undefined),
+			ConnectionAlias: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20)]),
 		});
 
 	}
 
 	export interface CreateOutboundCrossClusterSearchConnectionPostBodySourceDomainInfo {
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		OwnerId?: string | null;
 
 		/**
@@ -4021,6 +4296,11 @@ export namespace MyNS {
 		Region?: string | null;
 	}
 	export interface CreateOutboundCrossClusterSearchConnectionPostBodySourceDomainInfoFormProperties {
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		OwnerId: FormControl<string | null | undefined>,
 
 		/**
@@ -4034,14 +4314,19 @@ export namespace MyNS {
 	}
 	export function CreateCreateOutboundCrossClusterSearchConnectionPostBodySourceDomainInfoFormGroup() {
 		return new FormGroup<CreateOutboundCrossClusterSearchConnectionPostBodySourceDomainInfoFormProperties>({
-			OwnerId: new FormControl<string | null | undefined>(undefined),
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			OwnerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3)]),
 			Region: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CreateOutboundCrossClusterSearchConnectionPostBodyDestinationDomainInfo {
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		OwnerId?: string | null;
 
 		/**
@@ -4054,6 +4339,11 @@ export namespace MyNS {
 		Region?: string | null;
 	}
 	export interface CreateOutboundCrossClusterSearchConnectionPostBodyDestinationDomainInfoFormProperties {
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		OwnerId: FormControl<string | null | undefined>,
 
 		/**
@@ -4067,8 +4357,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateOutboundCrossClusterSearchConnectionPostBodyDestinationDomainInfoFormGroup() {
 		return new FormGroup<CreateOutboundCrossClusterSearchConnectionPostBodyDestinationDomainInfoFormProperties>({
-			OwnerId: new FormControl<string | null | undefined>(undefined),
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			OwnerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3)]),
 			Region: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4128,9 +4418,9 @@ export namespace MyNS {
 	}
 	export function CreateCreatePackagePostBodyFormGroup() {
 		return new FormGroup<CreatePackagePostBodyFormProperties>({
-			PackageName: new FormControl<string | null | undefined>(undefined),
-			PackageType: new FormControl<CreatePackagePostBodyPackageType | null | undefined>(undefined),
-			PackageDescription: new FormControl<string | null | undefined>(undefined),
+			PackageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			PackageType: new FormControl<CreatePackagePostBodyPackageType | null | undefined>(undefined, [Validators.required]),
+			PackageDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
@@ -4138,16 +4428,26 @@ export namespace MyNS {
 	export enum CreatePackagePostBodyPackageType { TXT_DICTIONARY = 0 }
 
 	export interface CreatePackagePostBodyPackageSource {
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 */
 		S3BucketName?: string | null;
 		S3Key?: string | null;
 	}
 	export interface CreatePackagePostBodyPackageSourceFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 */
 		S3BucketName: FormControl<string | null | undefined>,
 		S3Key: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePackagePostBodyPackageSourceFormGroup() {
 		return new FormGroup<CreatePackagePostBodyPackageSourceFormProperties>({
-			S3BucketName: new FormControl<string | null | undefined>(undefined),
+			S3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3)]),
 			S3Key: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4304,22 +4604,56 @@ export namespace MyNS {
 
 	export interface UpdateElasticsearchDomainConfigPostBodyCognitoOptions {
 		Enabled?: boolean | null;
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+_[0-9a-zA-Z]+
+		 */
 		UserPoolId?: string | null;
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		RoleArn?: string | null;
 	}
 	export interface UpdateElasticsearchDomainConfigPostBodyCognitoOptionsFormProperties {
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+_[0-9a-zA-Z]+
+		 */
 		UserPoolId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		RoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateElasticsearchDomainConfigPostBodyCognitoOptionsFormGroup() {
 		return new FormGroup<UpdateElasticsearchDomainConfigPostBodyCognitoOptionsFormProperties>({
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			UserPoolId: new FormControl<string | null | undefined>(undefined),
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			UserPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -4406,7 +4740,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeInboundCrossClusterSearchConnectionsPostBodyFormGroup() {
 		return new FormGroup<DescribeInboundCrossClusterSearchConnectionsPostBodyFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4439,7 +4773,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeOutboundCrossClusterSearchConnectionsPostBodyFormGroup() {
 		return new FormGroup<DescribeOutboundCrossClusterSearchConnectionsPostBodyFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4472,7 +4806,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribePackagesPostBodyFormGroup() {
 		return new FormGroup<DescribePackagesPostBodyFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4526,9 +4860,9 @@ export namespace MyNS {
 	}
 	export function CreatePurchaseReservedElasticsearchInstanceOfferingPostBodyFormGroup() {
 		return new FormGroup<PurchaseReservedElasticsearchInstanceOfferingPostBodyFormProperties>({
-			ReservedElasticsearchInstanceOfferingId: new FormControl<string | null | undefined>(undefined),
-			ReservationName: new FormControl<string | null | undefined>(undefined),
-			InstanceCount: new FormControl<number | null | undefined>(undefined),
+			ReservedElasticsearchInstanceOfferingId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ReservationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(5)]),
+			InstanceCount: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -4557,7 +4891,7 @@ export namespace MyNS {
 	}
 	export function CreateRemoveTagsPostBodyFormGroup() {
 		return new FormGroup<RemoveTagsPostBodyFormProperties>({
-			ARN: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4586,7 +4920,7 @@ export namespace MyNS {
 	}
 	export function CreateStartElasticsearchServiceSoftwareUpdatePostBodyFormGroup() {
 		return new FormGroup<StartElasticsearchServiceSoftwareUpdatePostBodyFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
 		});
 
 	}
@@ -4633,8 +4967,8 @@ export namespace MyNS {
 	}
 	export function CreateUpgradeElasticsearchDomainPostBodyFormGroup() {
 		return new FormGroup<UpgradeElasticsearchDomainPostBodyFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
-			TargetVersion: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			TargetVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			PerformCheckOnly: new FormControl<boolean | null | undefined>(undefined),
 		});
 

@@ -3199,17 +3199,23 @@ export namespace MyNS {
 
 	/** <p>A filter name and value pair that is used to return a more specific list of results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as IDs. The filters supported by a describe operation are documented with the describe operation.</p> <note> <p>Currently, wildcards are not supported in filters.</p> </note> <p>The following actions can be filtered:</p> <ul> <li> <p> <code>DescribeDBClusterBacktracks</code> </p> </li> <li> <p> <code>DescribeDBClusterEndpoints</code> </p> </li> <li> <p> <code>DescribeDBClusters</code> </p> </li> <li> <p> <code>DescribeDBInstances</code> </p> </li> <li> <p> <code>DescribePendingMaintenanceActions</code> </p> </li> </ul> */
 	export interface Filter {
+
+		/** Required */
 		Name: string;
+
+		/** Required */
 		Values: Array<string>;
 	}
 
 	/** <p>A filter name and value pair that is used to return a more specific list of results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as IDs. The filters supported by a describe operation are documented with the describe operation.</p> <note> <p>Currently, wildcards are not supported in filters.</p> </note> <p>The following actions can be filtered:</p> <ul> <li> <p> <code>DescribeDBClusterBacktracks</code> </p> </li> <li> <p> <code>DescribeDBClusterEndpoints</code> </p> </li> <li> <p> <code>DescribeDBClusters</code> </p> </li> <li> <p> <code>DescribeDBInstances</code> </p> </li> <li> <p> <code>DescribePendingMaintenanceActions</code> </p> </li> </ul> */
 	export interface FilterFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateFilterFormGroup() {
 		return new FormGroup<FilterFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5111,6 +5117,8 @@ export namespace MyNS {
 
 	/** A list of all available options */
 	export interface OptionConfiguration {
+
+		/** Required */
 		OptionName: string;
 		Port?: number | null;
 		OptionVersion?: string | null;
@@ -5121,13 +5129,15 @@ export namespace MyNS {
 
 	/** A list of all available options */
 	export interface OptionConfigurationFormProperties {
+
+		/** Required */
 		OptionName: FormControl<string | null | undefined>,
 		Port: FormControl<number | null | undefined>,
 		OptionVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateOptionConfigurationFormGroup() {
 		return new FormGroup<OptionConfigurationFormProperties>({
-			OptionName: new FormControl<string | null | undefined>(undefined),
+			OptionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Port: new FormControl<number | null | undefined>(undefined),
 			OptionVersion: new FormControl<string | null | undefined>(undefined),
 		});
@@ -5555,39 +5565,59 @@ export namespace MyNS {
 	export enum ActivityStreamStatus { stopped = 0, starting = 1, started = 2, stopping = 3 }
 
 	export interface AddRoleToDBClusterMessage {
+
+		/** Required */
 		DBClusterIdentifier: string;
+
+		/** Required */
 		RoleArn: string;
 		FeatureName?: string | null;
 	}
 	export interface AddRoleToDBClusterMessageFormProperties {
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		RoleArn: FormControl<string | null | undefined>,
 		FeatureName: FormControl<string | null | undefined>,
 	}
 	export function CreateAddRoleToDBClusterMessageFormGroup() {
 		return new FormGroup<AddRoleToDBClusterMessageFormProperties>({
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			FeatureName: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface AddRoleToDBInstanceMessage {
+
+		/** Required */
 		DBInstanceIdentifier: string;
+
+		/** Required */
 		RoleArn: string;
+
+		/** Required */
 		FeatureName: string;
 	}
 	export interface AddRoleToDBInstanceMessageFormProperties {
+
+		/** Required */
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		RoleArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		FeatureName: FormControl<string | null | undefined>,
 	}
 	export function CreateAddRoleToDBInstanceMessageFormGroup() {
 		return new FormGroup<AddRoleToDBInstanceMessageFormProperties>({
-			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
-			FeatureName: new FormControl<string | null | undefined>(undefined),
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			FeatureName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5595,19 +5625,27 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface AddSourceIdentifierToSubscriptionMessage {
+
+		/** Required */
 		SubscriptionName: string;
+
+		/** Required */
 		SourceIdentifier: string;
 	}
 
 	/** <p/> */
 	export interface AddSourceIdentifierToSubscriptionMessageFormProperties {
+
+		/** Required */
 		SubscriptionName: FormControl<string | null | undefined>,
+
+		/** Required */
 		SourceIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateAddSourceIdentifierToSubscriptionMessageFormGroup() {
 		return new FormGroup<AddSourceIdentifierToSubscriptionMessageFormProperties>({
-			SubscriptionName: new FormControl<string | null | undefined>(undefined),
-			SourceIdentifier: new FormControl<string | null | undefined>(undefined),
+			SubscriptionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SourceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5615,6 +5653,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface AddTagsToResourceMessage {
+
+		/** Required */
 		ResourceName: string;
 
 		/**
@@ -5626,11 +5666,13 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface AddTagsToResourceMessageFormProperties {
+
+		/** Required */
 		ResourceName: FormControl<string | null | undefined>,
 	}
 	export function CreateAddTagsToResourceMessageFormGroup() {
 		return new FormGroup<AddTagsToResourceMessageFormProperties>({
-			ResourceName: new FormControl<string | null | undefined>(undefined),
+			ResourceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5640,22 +5682,34 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ApplyPendingMaintenanceActionMessage {
+
+		/** Required */
 		ResourceIdentifier: string;
+
+		/** Required */
 		ApplyAction: string;
+
+		/** Required */
 		OptInType: string;
 	}
 
 	/** <p/> */
 	export interface ApplyPendingMaintenanceActionMessageFormProperties {
+
+		/** Required */
 		ResourceIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		ApplyAction: FormControl<string | null | undefined>,
+
+		/** Required */
 		OptInType: FormControl<string | null | undefined>,
 	}
 	export function CreateApplyPendingMaintenanceActionMessageFormGroup() {
 		return new FormGroup<ApplyPendingMaintenanceActionMessageFormProperties>({
-			ResourceIdentifier: new FormControl<string | null | undefined>(undefined),
-			ApplyAction: new FormControl<string | null | undefined>(undefined),
-			OptInType: new FormControl<string | null | undefined>(undefined),
+			ResourceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ApplyAction: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			OptInType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5665,6 +5719,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface AuthorizeDBSecurityGroupIngressMessage {
+
+		/** Required */
 		DBSecurityGroupName: string;
 		CIDRIP?: string | null;
 		EC2SecurityGroupName?: string | null;
@@ -5674,6 +5730,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface AuthorizeDBSecurityGroupIngressMessageFormProperties {
+
+		/** Required */
 		DBSecurityGroupName: FormControl<string | null | undefined>,
 		CIDRIP: FormControl<string | null | undefined>,
 		EC2SecurityGroupName: FormControl<string | null | undefined>,
@@ -5682,7 +5740,7 @@ export namespace MyNS {
 	}
 	export function CreateAuthorizeDBSecurityGroupIngressMessageFormGroup() {
 		return new FormGroup<AuthorizeDBSecurityGroupIngressMessageFormProperties>({
-			DBSecurityGroupName: new FormControl<string | null | undefined>(undefined),
+			DBSecurityGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			CIDRIP: new FormControl<string | null | undefined>(undefined),
 			EC2SecurityGroupName: new FormControl<string | null | undefined>(undefined),
 			EC2SecurityGroupId: new FormControl<string | null | undefined>(undefined),
@@ -5694,7 +5752,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface BacktrackDBClusterMessage {
+
+		/** Required */
 		DBClusterIdentifier: string;
+
+		/** Required */
 		BacktrackTo: Date;
 		Force?: boolean | null;
 		UseEarliestTimeOnPointInTimeUnavailable?: boolean | null;
@@ -5702,15 +5764,19 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface BacktrackDBClusterMessageFormProperties {
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		BacktrackTo: FormControl<Date | null | undefined>,
 		Force: FormControl<boolean | null | undefined>,
 		UseEarliestTimeOnPointInTimeUnavailable: FormControl<boolean | null | undefined>,
 	}
 	export function CreateBacktrackDBClusterMessageFormGroup() {
 		return new FormGroup<BacktrackDBClusterMessageFormProperties>({
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
-			BacktrackTo: new FormControl<Date | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			BacktrackTo: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			Force: new FormControl<boolean | null | undefined>(undefined),
 			UseEarliestTimeOnPointInTimeUnavailable: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -5718,14 +5784,18 @@ export namespace MyNS {
 	}
 
 	export interface CancelExportTaskMessage {
+
+		/** Required */
 		ExportTaskIdentifier: string;
 	}
 	export interface CancelExportTaskMessageFormProperties {
+
+		/** Required */
 		ExportTaskIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelExportTaskMessageFormGroup() {
 		return new FormGroup<CancelExportTaskMessageFormProperties>({
-			ExportTaskIdentifier: new FormControl<string | null | undefined>(undefined),
+			ExportTaskIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5774,23 +5844,35 @@ export namespace MyNS {
 	}
 
 	export interface CopyDBClusterParameterGroupMessage {
+
+		/** Required */
 		SourceDBClusterParameterGroupIdentifier: string;
+
+		/** Required */
 		TargetDBClusterParameterGroupIdentifier: string;
+
+		/** Required */
 		TargetDBClusterParameterGroupDescription: string;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
 		Tags?: Array<Tag>;
 	}
 	export interface CopyDBClusterParameterGroupMessageFormProperties {
+
+		/** Required */
 		SourceDBClusterParameterGroupIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		TargetDBClusterParameterGroupIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		TargetDBClusterParameterGroupDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateCopyDBClusterParameterGroupMessageFormGroup() {
 		return new FormGroup<CopyDBClusterParameterGroupMessageFormProperties>({
-			SourceDBClusterParameterGroupIdentifier: new FormControl<string | null | undefined>(undefined),
-			TargetDBClusterParameterGroupIdentifier: new FormControl<string | null | undefined>(undefined),
-			TargetDBClusterParameterGroupDescription: new FormControl<string | null | undefined>(undefined),
+			SourceDBClusterParameterGroupIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TargetDBClusterParameterGroupIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TargetDBClusterParameterGroupDescription: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5798,7 +5880,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CopyDBClusterSnapshotMessage {
+
+		/** Required */
 		SourceDBClusterSnapshotIdentifier: string;
+
+		/** Required */
 		TargetDBClusterSnapshotIdentifier: string;
 		KmsKeyId?: string | null;
 		PreSignedUrl?: string | null;
@@ -5811,7 +5897,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CopyDBClusterSnapshotMessageFormProperties {
+
+		/** Required */
 		SourceDBClusterSnapshotIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		TargetDBClusterSnapshotIdentifier: FormControl<string | null | undefined>,
 		KmsKeyId: FormControl<string | null | undefined>,
 		PreSignedUrl: FormControl<string | null | undefined>,
@@ -5820,8 +5910,8 @@ export namespace MyNS {
 	}
 	export function CreateCopyDBClusterSnapshotMessageFormGroup() {
 		return new FormGroup<CopyDBClusterSnapshotMessageFormProperties>({
-			SourceDBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
-			TargetDBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			SourceDBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TargetDBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			KmsKeyId: new FormControl<string | null | undefined>(undefined),
 			PreSignedUrl: new FormControl<string | null | undefined>(undefined),
 			CopyTags: new FormControl<boolean | null | undefined>(undefined),
@@ -5833,8 +5923,14 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CopyDBParameterGroupMessage {
+
+		/** Required */
 		SourceDBParameterGroupIdentifier: string;
+
+		/** Required */
 		TargetDBParameterGroupIdentifier: string;
+
+		/** Required */
 		TargetDBParameterGroupDescription: string;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
@@ -5843,15 +5939,21 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CopyDBParameterGroupMessageFormProperties {
+
+		/** Required */
 		SourceDBParameterGroupIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		TargetDBParameterGroupIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		TargetDBParameterGroupDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateCopyDBParameterGroupMessageFormGroup() {
 		return new FormGroup<CopyDBParameterGroupMessageFormProperties>({
-			SourceDBParameterGroupIdentifier: new FormControl<string | null | undefined>(undefined),
-			TargetDBParameterGroupIdentifier: new FormControl<string | null | undefined>(undefined),
-			TargetDBParameterGroupDescription: new FormControl<string | null | undefined>(undefined),
+			SourceDBParameterGroupIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TargetDBParameterGroupIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TargetDBParameterGroupDescription: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5859,7 +5961,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CopyDBSnapshotMessage {
+
+		/** Required */
 		SourceDBSnapshotIdentifier: string;
+
+		/** Required */
 		TargetDBSnapshotIdentifier: string;
 		KmsKeyId?: string | null;
 
@@ -5873,7 +5979,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CopyDBSnapshotMessageFormProperties {
+
+		/** Required */
 		SourceDBSnapshotIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		TargetDBSnapshotIdentifier: FormControl<string | null | undefined>,
 		KmsKeyId: FormControl<string | null | undefined>,
 		CopyTags: FormControl<boolean | null | undefined>,
@@ -5883,8 +5993,8 @@ export namespace MyNS {
 	}
 	export function CreateCopyDBSnapshotMessageFormGroup() {
 		return new FormGroup<CopyDBSnapshotMessageFormProperties>({
-			SourceDBSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
-			TargetDBSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			SourceDBSnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TargetDBSnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			KmsKeyId: new FormControl<string | null | undefined>(undefined),
 			CopyTags: new FormControl<boolean | null | undefined>(undefined),
 			PreSignedUrl: new FormControl<string | null | undefined>(undefined),
@@ -5897,8 +6007,14 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CopyOptionGroupMessage {
+
+		/** Required */
 		SourceOptionGroupIdentifier: string;
+
+		/** Required */
 		TargetOptionGroupIdentifier: string;
+
+		/** Required */
 		TargetOptionGroupDescription: string;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
@@ -5907,15 +6023,21 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CopyOptionGroupMessageFormProperties {
+
+		/** Required */
 		SourceOptionGroupIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		TargetOptionGroupIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		TargetOptionGroupDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateCopyOptionGroupMessageFormGroup() {
 		return new FormGroup<CopyOptionGroupMessageFormProperties>({
-			SourceOptionGroupIdentifier: new FormControl<string | null | undefined>(undefined),
-			TargetOptionGroupIdentifier: new FormControl<string | null | undefined>(undefined),
-			TargetOptionGroupDescription: new FormControl<string | null | undefined>(undefined),
+			SourceOptionGroupIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TargetOptionGroupIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TargetOptionGroupDescription: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5923,6 +6045,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateCustomAvailabilityZoneMessage {
+
+		/** Required */
 		CustomAvailabilityZoneName: string;
 		ExistingVpnId?: string | null;
 		NewVpnTunnelName?: string | null;
@@ -5931,6 +6055,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateCustomAvailabilityZoneMessageFormProperties {
+
+		/** Required */
 		CustomAvailabilityZoneName: FormControl<string | null | undefined>,
 		ExistingVpnId: FormControl<string | null | undefined>,
 		NewVpnTunnelName: FormControl<string | null | undefined>,
@@ -5938,7 +6064,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateCustomAvailabilityZoneMessageFormGroup() {
 		return new FormGroup<CreateCustomAvailabilityZoneMessageFormProperties>({
-			CustomAvailabilityZoneName: new FormControl<string | null | undefined>(undefined),
+			CustomAvailabilityZoneName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ExistingVpnId: new FormControl<string | null | undefined>(undefined),
 			NewVpnTunnelName: new FormControl<string | null | undefined>(undefined),
 			VpnTunnelOriginatorIP: new FormControl<string | null | undefined>(undefined),
@@ -5947,8 +6073,14 @@ export namespace MyNS {
 	}
 
 	export interface CreateDBClusterEndpointMessage {
+
+		/** Required */
 		DBClusterIdentifier: string;
+
+		/** Required */
 		DBClusterEndpointIdentifier: string;
+
+		/** Required */
 		EndpointType: string;
 		StaticMembers?: Array<string>;
 		ExcludedMembers?: Array<string>;
@@ -5957,15 +6089,21 @@ export namespace MyNS {
 		Tags?: Array<Tag>;
 	}
 	export interface CreateDBClusterEndpointMessageFormProperties {
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		DBClusterEndpointIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		EndpointType: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDBClusterEndpointMessageFormGroup() {
 		return new FormGroup<CreateDBClusterEndpointMessageFormProperties>({
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
-			DBClusterEndpointIdentifier: new FormControl<string | null | undefined>(undefined),
-			EndpointType: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DBClusterEndpointIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			EndpointType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6006,10 +6144,14 @@ export namespace MyNS {
 		BackupRetentionPeriod?: number | null;
 		CharacterSetName?: string | null;
 		DatabaseName?: string | null;
+
+		/** Required */
 		DBClusterIdentifier: string;
 		DBClusterParameterGroupName?: string | null;
 		VpcSecurityGroupIds?: Array<string>;
 		DBSubnetGroupName?: string | null;
+
+		/** Required */
 		Engine: string;
 		EngineVersion?: string | null;
 		Port?: number | null;
@@ -6046,9 +6188,13 @@ export namespace MyNS {
 		BackupRetentionPeriod: FormControl<number | null | undefined>,
 		CharacterSetName: FormControl<string | null | undefined>,
 		DatabaseName: FormControl<string | null | undefined>,
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
 		DBClusterParameterGroupName: FormControl<string | null | undefined>,
 		DBSubnetGroupName: FormControl<string | null | undefined>,
+
+		/** Required */
 		Engine: FormControl<string | null | undefined>,
 		EngineVersion: FormControl<string | null | undefined>,
 		Port: FormControl<number | null | undefined>,
@@ -6077,10 +6223,10 @@ export namespace MyNS {
 			BackupRetentionPeriod: new FormControl<number | null | undefined>(undefined),
 			CharacterSetName: new FormControl<string | null | undefined>(undefined),
 			DatabaseName: new FormControl<string | null | undefined>(undefined),
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
 			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined),
-			Engine: new FormControl<string | null | undefined>(undefined),
+			Engine: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			EngineVersion: new FormControl<string | null | undefined>(undefined),
 			Port: new FormControl<number | null | undefined>(undefined),
 			MasterUsername: new FormControl<string | null | undefined>(undefined),
@@ -6109,8 +6255,14 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateDBClusterParameterGroupMessage {
+
+		/** Required */
 		DBClusterParameterGroupName: string;
+
+		/** Required */
 		DBParameterGroupFamily: string;
+
+		/** Required */
 		Description: string;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
@@ -6119,15 +6271,21 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateDBClusterParameterGroupMessageFormProperties {
+
+		/** Required */
 		DBClusterParameterGroupName: FormControl<string | null | undefined>,
+
+		/** Required */
 		DBParameterGroupFamily: FormControl<string | null | undefined>,
+
+		/** Required */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDBClusterParameterGroupMessageFormGroup() {
 		return new FormGroup<CreateDBClusterParameterGroupMessageFormProperties>({
-			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
-			DBParameterGroupFamily: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DBParameterGroupFamily: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6135,7 +6293,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateDBClusterSnapshotMessage {
+
+		/** Required */
 		DBClusterSnapshotIdentifier: string;
+
+		/** Required */
 		DBClusterIdentifier: string;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
@@ -6144,13 +6306,17 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateDBClusterSnapshotMessageFormProperties {
+
+		/** Required */
 		DBClusterSnapshotIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDBClusterSnapshotMessageFormGroup() {
 		return new FormGroup<CreateDBClusterSnapshotMessageFormProperties>({
-			DBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6159,9 +6325,15 @@ export namespace MyNS {
 	/** <p/> */
 	export interface CreateDBInstanceMessage {
 		DBName?: string | null;
+
+		/** Required */
 		DBInstanceIdentifier: string;
 		AllocatedStorage?: number | null;
+
+		/** Required */
 		DBInstanceClass: string;
+
+		/** Required */
 		Engine: string;
 		MasterUsername?: string | null;
 		MasterUserPassword?: string | null;
@@ -6211,9 +6383,15 @@ export namespace MyNS {
 	/** <p/> */
 	export interface CreateDBInstanceMessageFormProperties {
 		DBName: FormControl<string | null | undefined>,
+
+		/** Required */
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
 		AllocatedStorage: FormControl<number | null | undefined>,
+
+		/** Required */
 		DBInstanceClass: FormControl<string | null | undefined>,
+
+		/** Required */
 		Engine: FormControl<string | null | undefined>,
 		MasterUsername: FormControl<string | null | undefined>,
 		MasterUserPassword: FormControl<string | null | undefined>,
@@ -6255,10 +6433,10 @@ export namespace MyNS {
 	export function CreateCreateDBInstanceMessageFormGroup() {
 		return new FormGroup<CreateDBInstanceMessageFormProperties>({
 			DBName: new FormControl<string | null | undefined>(undefined),
-			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			AllocatedStorage: new FormControl<number | null | undefined>(undefined),
-			DBInstanceClass: new FormControl<string | null | undefined>(undefined),
-			Engine: new FormControl<string | null | undefined>(undefined),
+			DBInstanceClass: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Engine: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			MasterUsername: new FormControl<string | null | undefined>(undefined),
 			MasterUserPassword: new FormControl<string | null | undefined>(undefined),
 			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
@@ -6300,7 +6478,11 @@ export namespace MyNS {
 	}
 
 	export interface CreateDBInstanceReadReplicaMessage {
+
+		/** Required */
 		DBInstanceIdentifier: string;
+
+		/** Required */
 		SourceDBInstanceIdentifier: string;
 		DBInstanceClass?: string | null;
 		AvailabilityZone?: string | null;
@@ -6335,7 +6517,11 @@ export namespace MyNS {
 		SourceRegion?: string | null;
 	}
 	export interface CreateDBInstanceReadReplicaMessageFormProperties {
+
+		/** Required */
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		SourceDBInstanceIdentifier: FormControl<string | null | undefined>,
 		DBInstanceClass: FormControl<string | null | undefined>,
 		AvailabilityZone: FormControl<string | null | undefined>,
@@ -6365,8 +6551,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateDBInstanceReadReplicaMessageFormGroup() {
 		return new FormGroup<CreateDBInstanceReadReplicaMessageFormProperties>({
-			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
-			SourceDBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SourceDBInstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DBInstanceClass: new FormControl<string | null | undefined>(undefined),
 			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
 			Port: new FormControl<number | null | undefined>(undefined),
@@ -6399,8 +6585,14 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateDBParameterGroupMessage {
+
+		/** Required */
 		DBParameterGroupName: string;
+
+		/** Required */
 		DBParameterGroupFamily: string;
+
+		/** Required */
 		Description: string;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
@@ -6409,15 +6601,21 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateDBParameterGroupMessageFormProperties {
+
+		/** Required */
 		DBParameterGroupName: FormControl<string | null | undefined>,
+
+		/** Required */
 		DBParameterGroupFamily: FormControl<string | null | undefined>,
+
+		/** Required */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDBParameterGroupMessageFormGroup() {
 		return new FormGroup<CreateDBParameterGroupMessageFormProperties>({
-			DBParameterGroupName: new FormControl<string | null | undefined>(undefined),
-			DBParameterGroupFamily: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			DBParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DBParameterGroupFamily: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6425,10 +6623,20 @@ export namespace MyNS {
 	export enum EngineFamily { MYSQL = 0, POSTGRESQL = 1 }
 
 	export interface CreateDBProxyRequest {
+
+		/** Required */
 		DBProxyName: string;
+
+		/** Required */
 		EngineFamily: EngineFamily;
+
+		/** Required */
 		Auth: Array<UserAuthConfig>;
+
+		/** Required */
 		RoleArn: string;
+
+		/** Required */
 		VpcSubnetIds: Array<string>;
 		VpcSecurityGroupIds?: Array<string>;
 		RequireTLS?: boolean | null;
@@ -6439,8 +6647,14 @@ export namespace MyNS {
 		Tags?: Array<Tag>;
 	}
 	export interface CreateDBProxyRequestFormProperties {
+
+		/** Required */
 		DBProxyName: FormControl<string | null | undefined>,
+
+		/** Required */
 		EngineFamily: FormControl<EngineFamily | null | undefined>,
+
+		/** Required */
 		RoleArn: FormControl<string | null | undefined>,
 		RequireTLS: FormControl<boolean | null | undefined>,
 		IdleClientTimeout: FormControl<number | null | undefined>,
@@ -6448,9 +6662,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateDBProxyRequestFormGroup() {
 		return new FormGroup<CreateDBProxyRequestFormProperties>({
-			DBProxyName: new FormControl<string | null | undefined>(undefined),
-			EngineFamily: new FormControl<EngineFamily | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			DBProxyName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			EngineFamily: new FormControl<EngineFamily | null | undefined>(undefined, [Validators.required]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RequireTLS: new FormControl<boolean | null | undefined>(undefined),
 			IdleClientTimeout: new FormControl<number | null | undefined>(undefined),
 			DebugLogging: new FormControl<boolean | null | undefined>(undefined),
@@ -6461,7 +6675,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateDBSecurityGroupMessage {
+
+		/** Required */
 		DBSecurityGroupName: string;
+
+		/** Required */
 		DBSecurityGroupDescription: string;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
@@ -6470,13 +6688,17 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateDBSecurityGroupMessageFormProperties {
+
+		/** Required */
 		DBSecurityGroupName: FormControl<string | null | undefined>,
+
+		/** Required */
 		DBSecurityGroupDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDBSecurityGroupMessageFormGroup() {
 		return new FormGroup<CreateDBSecurityGroupMessageFormProperties>({
-			DBSecurityGroupName: new FormControl<string | null | undefined>(undefined),
-			DBSecurityGroupDescription: new FormControl<string | null | undefined>(undefined),
+			DBSecurityGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DBSecurityGroupDescription: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6484,7 +6706,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateDBSnapshotMessage {
+
+		/** Required */
 		DBSnapshotIdentifier: string;
+
+		/** Required */
 		DBInstanceIdentifier: string;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
@@ -6493,13 +6719,17 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateDBSnapshotMessageFormProperties {
+
+		/** Required */
 		DBSnapshotIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDBSnapshotMessageFormGroup() {
 		return new FormGroup<CreateDBSnapshotMessageFormProperties>({
-			DBSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
-			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBSnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6507,8 +6737,14 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateDBSubnetGroupMessage {
+
+		/** Required */
 		DBSubnetGroupName: string;
+
+		/** Required */
 		DBSubnetGroupDescription: string;
+
+		/** Required */
 		SubnetIds: Array<string>;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
@@ -6517,13 +6753,17 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateDBSubnetGroupMessageFormProperties {
+
+		/** Required */
 		DBSubnetGroupName: FormControl<string | null | undefined>,
+
+		/** Required */
 		DBSubnetGroupDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDBSubnetGroupMessageFormGroup() {
 		return new FormGroup<CreateDBSubnetGroupMessageFormProperties>({
-			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined),
-			DBSubnetGroupDescription: new FormControl<string | null | undefined>(undefined),
+			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DBSubnetGroupDescription: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6531,7 +6771,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateEventSubscriptionMessage {
+
+		/** Required */
 		SubscriptionName: string;
+
+		/** Required */
 		SnsTopicArn: string;
 		SourceType?: string | null;
 		EventCategories?: Array<string>;
@@ -6544,15 +6788,19 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateEventSubscriptionMessageFormProperties {
+
+		/** Required */
 		SubscriptionName: FormControl<string | null | undefined>,
+
+		/** Required */
 		SnsTopicArn: FormControl<string | null | undefined>,
 		SourceType: FormControl<string | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateCreateEventSubscriptionMessageFormGroup() {
 		return new FormGroup<CreateEventSubscriptionMessageFormProperties>({
-			SubscriptionName: new FormControl<string | null | undefined>(undefined),
-			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
+			SubscriptionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SourceType: new FormControl<string | null | undefined>(undefined),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -6593,9 +6841,17 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateOptionGroupMessage {
+
+		/** Required */
 		OptionGroupName: string;
+
+		/** Required */
 		EngineName: string;
+
+		/** Required */
 		MajorEngineVersion: string;
+
+		/** Required */
 		OptionGroupDescription: string;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
@@ -6604,17 +6860,25 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateOptionGroupMessageFormProperties {
+
+		/** Required */
 		OptionGroupName: FormControl<string | null | undefined>,
+
+		/** Required */
 		EngineName: FormControl<string | null | undefined>,
+
+		/** Required */
 		MajorEngineVersion: FormControl<string | null | undefined>,
+
+		/** Required */
 		OptionGroupDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateOptionGroupMessageFormGroup() {
 		return new FormGroup<CreateOptionGroupMessageFormProperties>({
-			OptionGroupName: new FormControl<string | null | undefined>(undefined),
-			EngineName: new FormControl<string | null | undefined>(undefined),
-			MajorEngineVersion: new FormControl<string | null | undefined>(undefined),
-			OptionGroupDescription: new FormControl<string | null | undefined>(undefined),
+			OptionGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			EngineName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MajorEngineVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			OptionGroupDescription: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6622,27 +6886,35 @@ export namespace MyNS {
 	export enum TargetType { RDS_INSTANCE = 0, RDS_SERVERLESS_ENDPOINT = 1, TRACKED_CLUSTER = 2 }
 
 	export interface DeleteCustomAvailabilityZoneMessage {
+
+		/** Required */
 		CustomAvailabilityZoneId: string;
 	}
 	export interface DeleteCustomAvailabilityZoneMessageFormProperties {
+
+		/** Required */
 		CustomAvailabilityZoneId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteCustomAvailabilityZoneMessageFormGroup() {
 		return new FormGroup<DeleteCustomAvailabilityZoneMessageFormProperties>({
-			CustomAvailabilityZoneId: new FormControl<string | null | undefined>(undefined),
+			CustomAvailabilityZoneId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeleteDBClusterEndpointMessage {
+
+		/** Required */
 		DBClusterEndpointIdentifier: string;
 	}
 	export interface DeleteDBClusterEndpointMessageFormProperties {
+
+		/** Required */
 		DBClusterEndpointIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDBClusterEndpointMessageFormGroup() {
 		return new FormGroup<DeleteDBClusterEndpointMessageFormProperties>({
-			DBClusterEndpointIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterEndpointIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6650,6 +6922,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteDBClusterMessage {
+
+		/** Required */
 		DBClusterIdentifier: string;
 		SkipFinalSnapshot?: boolean | null;
 		FinalDBSnapshotIdentifier?: string | null;
@@ -6657,13 +6931,15 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteDBClusterMessageFormProperties {
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
 		SkipFinalSnapshot: FormControl<boolean | null | undefined>,
 		FinalDBSnapshotIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDBClusterMessageFormGroup() {
 		return new FormGroup<DeleteDBClusterMessageFormProperties>({
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SkipFinalSnapshot: new FormControl<boolean | null | undefined>(undefined),
 			FinalDBSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
 		});
@@ -6673,16 +6949,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteDBClusterParameterGroupMessage {
+
+		/** Required */
 		DBClusterParameterGroupName: string;
 	}
 
 	/** <p/> */
 	export interface DeleteDBClusterParameterGroupMessageFormProperties {
+
+		/** Required */
 		DBClusterParameterGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDBClusterParameterGroupMessageFormGroup() {
 		return new FormGroup<DeleteDBClusterParameterGroupMessageFormProperties>({
-			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6690,16 +6970,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteDBClusterSnapshotMessage {
+
+		/** Required */
 		DBClusterSnapshotIdentifier: string;
 	}
 
 	/** <p/> */
 	export interface DeleteDBClusterSnapshotMessageFormProperties {
+
+		/** Required */
 		DBClusterSnapshotIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDBClusterSnapshotMessageFormGroup() {
 		return new FormGroup<DeleteDBClusterSnapshotMessageFormProperties>({
-			DBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6707,16 +6991,20 @@ export namespace MyNS {
 
 	/** Parameter input for the <code>DeleteDBInstanceAutomatedBackup</code> operation.  */
 	export interface DeleteDBInstanceAutomatedBackupMessage {
+
+		/** Required */
 		DbiResourceId: string;
 	}
 
 	/** Parameter input for the <code>DeleteDBInstanceAutomatedBackup</code> operation.  */
 	export interface DeleteDBInstanceAutomatedBackupMessageFormProperties {
+
+		/** Required */
 		DbiResourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDBInstanceAutomatedBackupMessageFormGroup() {
 		return new FormGroup<DeleteDBInstanceAutomatedBackupMessageFormProperties>({
-			DbiResourceId: new FormControl<string | null | undefined>(undefined),
+			DbiResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6724,6 +7012,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteDBInstanceMessage {
+
+		/** Required */
 		DBInstanceIdentifier: string;
 		SkipFinalSnapshot?: boolean | null;
 		FinalDBSnapshotIdentifier?: string | null;
@@ -6732,6 +7022,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteDBInstanceMessageFormProperties {
+
+		/** Required */
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
 		SkipFinalSnapshot: FormControl<boolean | null | undefined>,
 		FinalDBSnapshotIdentifier: FormControl<string | null | undefined>,
@@ -6739,7 +7031,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteDBInstanceMessageFormGroup() {
 		return new FormGroup<DeleteDBInstanceMessageFormProperties>({
-			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SkipFinalSnapshot: new FormControl<boolean | null | undefined>(undefined),
 			FinalDBSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
 			DeleteAutomatedBackups: new FormControl<boolean | null | undefined>(undefined),
@@ -6750,29 +7042,37 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteDBParameterGroupMessage {
+
+		/** Required */
 		DBParameterGroupName: string;
 	}
 
 	/** <p/> */
 	export interface DeleteDBParameterGroupMessageFormProperties {
+
+		/** Required */
 		DBParameterGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDBParameterGroupMessageFormGroup() {
 		return new FormGroup<DeleteDBParameterGroupMessageFormProperties>({
-			DBParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			DBParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeleteDBProxyRequest {
+
+		/** Required */
 		DBProxyName: string;
 	}
 	export interface DeleteDBProxyRequestFormProperties {
+
+		/** Required */
 		DBProxyName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDBProxyRequestFormGroup() {
 		return new FormGroup<DeleteDBProxyRequestFormProperties>({
-			DBProxyName: new FormControl<string | null | undefined>(undefined),
+			DBProxyName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6780,16 +7080,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteDBSecurityGroupMessage {
+
+		/** Required */
 		DBSecurityGroupName: string;
 	}
 
 	/** <p/> */
 	export interface DeleteDBSecurityGroupMessageFormProperties {
+
+		/** Required */
 		DBSecurityGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDBSecurityGroupMessageFormGroup() {
 		return new FormGroup<DeleteDBSecurityGroupMessageFormProperties>({
-			DBSecurityGroupName: new FormControl<string | null | undefined>(undefined),
+			DBSecurityGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6797,16 +7101,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteDBSnapshotMessage {
+
+		/** Required */
 		DBSnapshotIdentifier: string;
 	}
 
 	/** <p/> */
 	export interface DeleteDBSnapshotMessageFormProperties {
+
+		/** Required */
 		DBSnapshotIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDBSnapshotMessageFormGroup() {
 		return new FormGroup<DeleteDBSnapshotMessageFormProperties>({
-			DBSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBSnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6814,16 +7122,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteDBSubnetGroupMessage {
+
+		/** Required */
 		DBSubnetGroupName: string;
 	}
 
 	/** <p/> */
 	export interface DeleteDBSubnetGroupMessageFormProperties {
+
+		/** Required */
 		DBSubnetGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDBSubnetGroupMessageFormGroup() {
 		return new FormGroup<DeleteDBSubnetGroupMessageFormProperties>({
-			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6831,42 +7143,54 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteEventSubscriptionMessage {
+
+		/** Required */
 		SubscriptionName: string;
 	}
 
 	/** <p/> */
 	export interface DeleteEventSubscriptionMessageFormProperties {
+
+		/** Required */
 		SubscriptionName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteEventSubscriptionMessageFormGroup() {
 		return new FormGroup<DeleteEventSubscriptionMessageFormProperties>({
-			SubscriptionName: new FormControl<string | null | undefined>(undefined),
+			SubscriptionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeleteGlobalClusterMessage {
+
+		/** Required */
 		GlobalClusterIdentifier: string;
 	}
 	export interface DeleteGlobalClusterMessageFormProperties {
+
+		/** Required */
 		GlobalClusterIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteGlobalClusterMessageFormGroup() {
 		return new FormGroup<DeleteGlobalClusterMessageFormProperties>({
-			GlobalClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			GlobalClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeleteInstallationMediaMessage {
+
+		/** Required */
 		InstallationMediaId: string;
 	}
 	export interface DeleteInstallationMediaMessageFormProperties {
+
+		/** Required */
 		InstallationMediaId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteInstallationMediaMessageFormGroup() {
 		return new FormGroup<DeleteInstallationMediaMessageFormProperties>({
-			InstallationMediaId: new FormControl<string | null | undefined>(undefined),
+			InstallationMediaId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6874,33 +7198,41 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteOptionGroupMessage {
+
+		/** Required */
 		OptionGroupName: string;
 	}
 
 	/** <p/> */
 	export interface DeleteOptionGroupMessageFormProperties {
+
+		/** Required */
 		OptionGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteOptionGroupMessageFormGroup() {
 		return new FormGroup<DeleteOptionGroupMessageFormProperties>({
-			OptionGroupName: new FormControl<string | null | undefined>(undefined),
+			OptionGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeregisterDBProxyTargetsRequest {
+
+		/** Required */
 		DBProxyName: string;
 		TargetGroupName?: string | null;
 		DBInstanceIdentifiers?: Array<string>;
 		DBClusterIdentifiers?: Array<string>;
 	}
 	export interface DeregisterDBProxyTargetsRequestFormProperties {
+
+		/** Required */
 		DBProxyName: FormControl<string | null | undefined>,
 		TargetGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeregisterDBProxyTargetsRequestFormGroup() {
 		return new FormGroup<DeregisterDBProxyTargetsRequestFormProperties>({
-			DBProxyName: new FormControl<string | null | undefined>(undefined),
+			DBProxyName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TargetGroupName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -6967,6 +7299,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeDBClusterBacktracksMessage {
+
+		/** Required */
 		DBClusterIdentifier: string;
 		BacktrackIdentifier?: string | null;
 		Filters?: Array<Filter>;
@@ -6976,6 +7310,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeDBClusterBacktracksMessageFormProperties {
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
 		BacktrackIdentifier: FormControl<string | null | undefined>,
 		MaxRecords: FormControl<number | null | undefined>,
@@ -6983,7 +7319,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeDBClusterBacktracksMessageFormGroup() {
 		return new FormGroup<DescribeDBClusterBacktracksMessageFormProperties>({
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			BacktrackIdentifier: new FormControl<string | null | undefined>(undefined),
 			MaxRecords: new FormControl<number | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
@@ -7041,6 +7377,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeDBClusterParametersMessage {
+
+		/** Required */
 		DBClusterParameterGroupName: string;
 		Source?: string | null;
 		Filters?: Array<Filter>;
@@ -7050,6 +7388,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeDBClusterParametersMessageFormProperties {
+
+		/** Required */
 		DBClusterParameterGroupName: FormControl<string | null | undefined>,
 		Source: FormControl<string | null | undefined>,
 		MaxRecords: FormControl<number | null | undefined>,
@@ -7057,7 +7397,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeDBClusterParametersMessageFormGroup() {
 		return new FormGroup<DescribeDBClusterParametersMessageFormProperties>({
-			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Source: new FormControl<string | null | undefined>(undefined),
 			MaxRecords: new FormControl<number | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
@@ -7068,16 +7408,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeDBClusterSnapshotAttributesMessage {
+
+		/** Required */
 		DBClusterSnapshotIdentifier: string;
 	}
 
 	/** <p/> */
 	export interface DescribeDBClusterSnapshotAttributesMessageFormProperties {
+
+		/** Required */
 		DBClusterSnapshotIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeDBClusterSnapshotAttributesMessageFormGroup() {
 		return new FormGroup<DescribeDBClusterSnapshotAttributesMessageFormProperties>({
-			DBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7237,6 +7581,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeDBLogFilesMessage {
+
+		/** Required */
 		DBInstanceIdentifier: string;
 		FilenameContains?: string | null;
 		FileLastWritten?: number | null;
@@ -7248,6 +7594,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeDBLogFilesMessageFormProperties {
+
+		/** Required */
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
 		FilenameContains: FormControl<string | null | undefined>,
 		FileLastWritten: FormControl<number | null | undefined>,
@@ -7257,7 +7605,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeDBLogFilesMessageFormGroup() {
 		return new FormGroup<DescribeDBLogFilesMessageFormProperties>({
-			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			FilenameContains: new FormControl<string | null | undefined>(undefined),
 			FileLastWritten: new FormControl<number | null | undefined>(undefined),
 			FileSize: new FormControl<number | null | undefined>(undefined),
@@ -7292,6 +7640,8 @@ export namespace MyNS {
 	}
 
 	export interface DescribeDBParametersMessage {
+
+		/** Required */
 		DBParameterGroupName: string;
 		Source?: string | null;
 		Filters?: Array<Filter>;
@@ -7299,6 +7649,8 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 	export interface DescribeDBParametersMessageFormProperties {
+
+		/** Required */
 		DBParameterGroupName: FormControl<string | null | undefined>,
 		Source: FormControl<string | null | undefined>,
 		MaxRecords: FormControl<number | null | undefined>,
@@ -7306,7 +7658,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeDBParametersMessageFormGroup() {
 		return new FormGroup<DescribeDBParametersMessageFormProperties>({
-			DBParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			DBParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Source: new FormControl<string | null | undefined>(undefined),
 			MaxRecords: new FormControl<number | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
@@ -7318,64 +7670,102 @@ export namespace MyNS {
 		DBProxyName?: string | null;
 		Filters?: Array<Filter>;
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 20
+		 * Maximum: 100
+		 */
 		MaxRecords?: number | null;
 	}
 	export interface DescribeDBProxiesRequestFormProperties {
 		DBProxyName: FormControl<string | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 20
+		 * Maximum: 100
+		 */
 		MaxRecords: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeDBProxiesRequestFormGroup() {
 		return new FormGroup<DescribeDBProxiesRequestFormProperties>({
 			DBProxyName: new FormControl<string | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined, [Validators.min(20), Validators.max(100)]),
 		});
 
 	}
 
 	export interface DescribeDBProxyTargetGroupsRequest {
+
+		/** Required */
 		DBProxyName: string;
 		TargetGroupName?: string | null;
 		Filters?: Array<Filter>;
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 20
+		 * Maximum: 100
+		 */
 		MaxRecords?: number | null;
 	}
 	export interface DescribeDBProxyTargetGroupsRequestFormProperties {
+
+		/** Required */
 		DBProxyName: FormControl<string | null | undefined>,
 		TargetGroupName: FormControl<string | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 20
+		 * Maximum: 100
+		 */
 		MaxRecords: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeDBProxyTargetGroupsRequestFormGroup() {
 		return new FormGroup<DescribeDBProxyTargetGroupsRequestFormProperties>({
-			DBProxyName: new FormControl<string | null | undefined>(undefined),
+			DBProxyName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TargetGroupName: new FormControl<string | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined, [Validators.min(20), Validators.max(100)]),
 		});
 
 	}
 
 	export interface DescribeDBProxyTargetsRequest {
+
+		/** Required */
 		DBProxyName: string;
 		TargetGroupName?: string | null;
 		Filters?: Array<Filter>;
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 20
+		 * Maximum: 100
+		 */
 		MaxRecords?: number | null;
 	}
 	export interface DescribeDBProxyTargetsRequestFormProperties {
+
+		/** Required */
 		DBProxyName: FormControl<string | null | undefined>,
 		TargetGroupName: FormControl<string | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 20
+		 * Maximum: 100
+		 */
 		MaxRecords: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeDBProxyTargetsRequestFormGroup() {
 		return new FormGroup<DescribeDBProxyTargetsRequestFormProperties>({
-			DBProxyName: new FormControl<string | null | undefined>(undefined),
+			DBProxyName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TargetGroupName: new FormControl<string | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined, [Validators.min(20), Validators.max(100)]),
 		});
 
 	}
@@ -7407,16 +7797,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeDBSnapshotAttributesMessage {
+
+		/** Required */
 		DBSnapshotIdentifier: string;
 	}
 
 	/** <p/> */
 	export interface DescribeDBSnapshotAttributesMessageFormProperties {
+
+		/** Required */
 		DBSnapshotIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeDBSnapshotAttributesMessageFormGroup() {
 		return new FormGroup<DescribeDBSnapshotAttributesMessageFormProperties>({
-			DBSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBSnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7487,6 +7881,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeEngineDefaultClusterParametersMessage {
+
+		/** Required */
 		DBParameterGroupFamily: string;
 		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
@@ -7495,13 +7891,15 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeEngineDefaultClusterParametersMessageFormProperties {
+
+		/** Required */
 		DBParameterGroupFamily: FormControl<string | null | undefined>,
 		MaxRecords: FormControl<number | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeEngineDefaultClusterParametersMessageFormGroup() {
 		return new FormGroup<DescribeEngineDefaultClusterParametersMessageFormProperties>({
-			DBParameterGroupFamily: new FormControl<string | null | undefined>(undefined),
+			DBParameterGroupFamily: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			MaxRecords: new FormControl<number | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
 		});
@@ -7511,6 +7909,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeEngineDefaultParametersMessage {
+
+		/** Required */
 		DBParameterGroupFamily: string;
 		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
@@ -7519,13 +7919,15 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeEngineDefaultParametersMessageFormProperties {
+
+		/** Required */
 		DBParameterGroupFamily: FormControl<string | null | undefined>,
 		MaxRecords: FormControl<number | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeEngineDefaultParametersMessageFormGroup() {
 		return new FormGroup<DescribeEngineDefaultParametersMessageFormProperties>({
-			DBParameterGroupFamily: new FormControl<string | null | undefined>(undefined),
+			DBParameterGroupFamily: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			MaxRecords: new FormControl<number | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
 		});
@@ -7620,12 +8022,22 @@ export namespace MyNS {
 		SourceArn?: string | null;
 		Filters?: Array<Filter>;
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 20
+		 * Maximum: 100
+		 */
 		MaxRecords?: number | null;
 	}
 	export interface DescribeExportTasksMessageFormProperties {
 		ExportTaskIdentifier: FormControl<string | null | undefined>,
 		SourceArn: FormControl<string | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 20
+		 * Maximum: 100
+		 */
 		MaxRecords: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeExportTasksMessageFormGroup() {
@@ -7633,7 +8045,7 @@ export namespace MyNS {
 			ExportTaskIdentifier: new FormControl<string | null | undefined>(undefined),
 			SourceArn: new FormControl<string | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined, [Validators.min(20), Validators.max(100)]),
 		});
 
 	}
@@ -7681,6 +8093,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeOptionGroupOptionsMessage {
+
+		/** Required */
 		EngineName: string;
 		MajorEngineVersion?: string | null;
 		Filters?: Array<Filter>;
@@ -7690,6 +8104,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeOptionGroupOptionsMessageFormProperties {
+
+		/** Required */
 		EngineName: FormControl<string | null | undefined>,
 		MajorEngineVersion: FormControl<string | null | undefined>,
 		MaxRecords: FormControl<number | null | undefined>,
@@ -7697,7 +8113,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeOptionGroupOptionsMessageFormGroup() {
 		return new FormGroup<DescribeOptionGroupOptionsMessageFormProperties>({
-			EngineName: new FormControl<string | null | undefined>(undefined),
+			EngineName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			MajorEngineVersion: new FormControl<string | null | undefined>(undefined),
 			MaxRecords: new FormControl<number | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
@@ -7738,6 +8154,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeOrderableDBInstanceOptionsMessage {
+
+		/** Required */
 		Engine: string;
 		EngineVersion?: string | null;
 		DBInstanceClass?: string | null;
@@ -7751,6 +8169,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeOrderableDBInstanceOptionsMessageFormProperties {
+
+		/** Required */
 		Engine: FormControl<string | null | undefined>,
 		EngineVersion: FormControl<string | null | undefined>,
 		DBInstanceClass: FormControl<string | null | undefined>,
@@ -7762,7 +8182,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeOrderableDBInstanceOptionsMessageFormGroup() {
 		return new FormGroup<DescribeOrderableDBInstanceOptionsMessageFormProperties>({
-			Engine: new FormControl<string | null | undefined>(undefined),
+			Engine: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			EngineVersion: new FormControl<string | null | undefined>(undefined),
 			DBInstanceClass: new FormControl<string | null | undefined>(undefined),
 			LicenseModel: new FormControl<string | null | undefined>(undefined),
@@ -7909,16 +8329,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeValidDBInstanceModificationsMessage {
+
+		/** Required */
 		DBInstanceIdentifier: string;
 	}
 
 	/** <p/> */
 	export interface DescribeValidDBInstanceModificationsMessageFormProperties {
+
+		/** Required */
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeValidDBInstanceModificationsMessageFormGroup() {
 		return new FormGroup<DescribeValidDBInstanceModificationsMessageFormProperties>({
-			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7926,7 +8350,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DownloadDBLogFilePortionMessage {
+
+		/** Required */
 		DBInstanceIdentifier: string;
+
+		/** Required */
 		LogFileName: string;
 		Marker?: string | null;
 		NumberOfLines?: number | null;
@@ -7934,15 +8362,19 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DownloadDBLogFilePortionMessageFormProperties {
+
+		/** Required */
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		LogFileName: FormControl<string | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 		NumberOfLines: FormControl<number | null | undefined>,
 	}
 	export function CreateDownloadDBLogFilePortionMessageFormGroup() {
 		return new FormGroup<DownloadDBLogFilePortionMessageFormProperties>({
-			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
-			LogFileName: new FormControl<string | null | undefined>(undefined),
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			LogFileName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Marker: new FormControl<string | null | undefined>(undefined),
 			NumberOfLines: new FormControl<number | null | undefined>(undefined),
 		});
@@ -7952,18 +8384,22 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface FailoverDBClusterMessage {
+
+		/** Required */
 		DBClusterIdentifier: string;
 		TargetDBInstanceIdentifier?: string | null;
 	}
 
 	/** <p/> */
 	export interface FailoverDBClusterMessageFormProperties {
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
 		TargetDBInstanceIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateFailoverDBClusterMessageFormGroup() {
 		return new FormGroup<FailoverDBClusterMessageFormProperties>({
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TargetDBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -7972,26 +8408,46 @@ export namespace MyNS {
 	export enum IAMAuthMode { DISABLED = 0, REQUIRED = 1 }
 
 	export interface ImportInstallationMediaMessage {
+
+		/** Required */
 		CustomAvailabilityZoneId: string;
+
+		/** Required */
 		Engine: string;
+
+		/** Required */
 		EngineVersion: string;
+
+		/** Required */
 		EngineInstallationMediaPath: string;
+
+		/** Required */
 		OSInstallationMediaPath: string;
 	}
 	export interface ImportInstallationMediaMessageFormProperties {
+
+		/** Required */
 		CustomAvailabilityZoneId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Engine: FormControl<string | null | undefined>,
+
+		/** Required */
 		EngineVersion: FormControl<string | null | undefined>,
+
+		/** Required */
 		EngineInstallationMediaPath: FormControl<string | null | undefined>,
+
+		/** Required */
 		OSInstallationMediaPath: FormControl<string | null | undefined>,
 	}
 	export function CreateImportInstallationMediaMessageFormGroup() {
 		return new FormGroup<ImportInstallationMediaMessageFormProperties>({
-			CustomAvailabilityZoneId: new FormControl<string | null | undefined>(undefined),
-			Engine: new FormControl<string | null | undefined>(undefined),
-			EngineVersion: new FormControl<string | null | undefined>(undefined),
-			EngineInstallationMediaPath: new FormControl<string | null | undefined>(undefined),
-			OSInstallationMediaPath: new FormControl<string | null | undefined>(undefined),
+			CustomAvailabilityZoneId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Engine: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			EngineVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			EngineInstallationMediaPath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			OSInstallationMediaPath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7999,17 +8455,21 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ListTagsForResourceMessage {
+
+		/** Required */
 		ResourceName: string;
 		Filters?: Array<Filter>;
 	}
 
 	/** <p/> */
 	export interface ListTagsForResourceMessageFormProperties {
+
+		/** Required */
 		ResourceName: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceMessageFormGroup() {
 		return new FormGroup<ListTagsForResourceMessageFormProperties>({
-			ResourceName: new FormControl<string | null | undefined>(undefined),
+			ResourceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8031,12 +8491,16 @@ export namespace MyNS {
 	}
 
 	export interface ModifyCurrentDBClusterCapacityMessage {
+
+		/** Required */
 		DBClusterIdentifier: string;
 		Capacity?: number | null;
 		SecondsBeforeTimeout?: number | null;
 		TimeoutAction?: string | null;
 	}
 	export interface ModifyCurrentDBClusterCapacityMessageFormProperties {
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
 		Capacity: FormControl<number | null | undefined>,
 		SecondsBeforeTimeout: FormControl<number | null | undefined>,
@@ -8044,7 +8508,7 @@ export namespace MyNS {
 	}
 	export function CreateModifyCurrentDBClusterCapacityMessageFormGroup() {
 		return new FormGroup<ModifyCurrentDBClusterCapacityMessageFormProperties>({
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Capacity: new FormControl<number | null | undefined>(undefined),
 			SecondsBeforeTimeout: new FormControl<number | null | undefined>(undefined),
 			TimeoutAction: new FormControl<string | null | undefined>(undefined),
@@ -8053,18 +8517,22 @@ export namespace MyNS {
 	}
 
 	export interface ModifyDBClusterEndpointMessage {
+
+		/** Required */
 		DBClusterEndpointIdentifier: string;
 		EndpointType?: string | null;
 		StaticMembers?: Array<string>;
 		ExcludedMembers?: Array<string>;
 	}
 	export interface ModifyDBClusterEndpointMessageFormProperties {
+
+		/** Required */
 		DBClusterEndpointIdentifier: FormControl<string | null | undefined>,
 		EndpointType: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyDBClusterEndpointMessageFormGroup() {
 		return new FormGroup<ModifyDBClusterEndpointMessageFormProperties>({
-			DBClusterEndpointIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterEndpointIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			EndpointType: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -8073,6 +8541,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyDBClusterMessage {
+
+		/** Required */
 		DBClusterIdentifier: string;
 		NewDBClusterIdentifier?: string | null;
 		ApplyImmediately?: boolean | null;
@@ -8104,6 +8574,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyDBClusterMessageFormProperties {
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
 		NewDBClusterIdentifier: FormControl<string | null | undefined>,
 		ApplyImmediately: FormControl<boolean | null | undefined>,
@@ -8127,7 +8599,7 @@ export namespace MyNS {
 	}
 	export function CreateModifyDBClusterMessageFormGroup() {
 		return new FormGroup<ModifyDBClusterMessageFormProperties>({
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NewDBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
 			ApplyImmediately: new FormControl<boolean | null | undefined>(undefined),
 			BackupRetentionPeriod: new FormControl<number | null | undefined>(undefined),
@@ -8154,17 +8626,23 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyDBClusterParameterGroupMessage {
+
+		/** Required */
 		DBClusterParameterGroupName: string;
+
+		/** Required */
 		Parameters: Array<Parameter>;
 	}
 
 	/** <p/> */
 	export interface ModifyDBClusterParameterGroupMessageFormProperties {
+
+		/** Required */
 		DBClusterParameterGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyDBClusterParameterGroupMessageFormGroup() {
 		return new FormGroup<ModifyDBClusterParameterGroupMessageFormProperties>({
-			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8172,7 +8650,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyDBClusterSnapshotAttributeMessage {
+
+		/** Required */
 		DBClusterSnapshotIdentifier: string;
+
+		/** Required */
 		AttributeName: string;
 		ValuesToAdd?: Array<string>;
 		ValuesToRemove?: Array<string>;
@@ -8180,13 +8662,17 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyDBClusterSnapshotAttributeMessageFormProperties {
+
+		/** Required */
 		DBClusterSnapshotIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		AttributeName: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyDBClusterSnapshotAttributeMessageFormGroup() {
 		return new FormGroup<ModifyDBClusterSnapshotAttributeMessageFormProperties>({
-			DBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
-			AttributeName: new FormControl<string | null | undefined>(undefined),
+			DBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8194,6 +8680,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyDBInstanceMessage {
+
+		/** Required */
 		DBInstanceIdentifier: string;
 		AllocatedStorage?: number | null;
 		DBInstanceClass?: string | null;
@@ -8242,6 +8730,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyDBInstanceMessageFormProperties {
+
+		/** Required */
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
 		AllocatedStorage: FormControl<number | null | undefined>,
 		DBInstanceClass: FormControl<string | null | undefined>,
@@ -8283,7 +8773,7 @@ export namespace MyNS {
 	}
 	export function CreateModifyDBInstanceMessageFormGroup() {
 		return new FormGroup<ModifyDBInstanceMessageFormProperties>({
-			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			AllocatedStorage: new FormControl<number | null | undefined>(undefined),
 			DBInstanceClass: new FormControl<string | null | undefined>(undefined),
 			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined),
@@ -8328,22 +8818,30 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyDBParameterGroupMessage {
+
+		/** Required */
 		DBParameterGroupName: string;
+
+		/** Required */
 		Parameters: Array<Parameter>;
 	}
 
 	/** <p/> */
 	export interface ModifyDBParameterGroupMessageFormProperties {
+
+		/** Required */
 		DBParameterGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyDBParameterGroupMessageFormGroup() {
 		return new FormGroup<ModifyDBParameterGroupMessageFormProperties>({
-			DBParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			DBParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ModifyDBProxyRequest {
+
+		/** Required */
 		DBProxyName: string;
 		NewDBProxyName?: string | null;
 		Auth?: Array<UserAuthConfig>;
@@ -8354,6 +8852,8 @@ export namespace MyNS {
 		SecurityGroups?: Array<string>;
 	}
 	export interface ModifyDBProxyRequestFormProperties {
+
+		/** Required */
 		DBProxyName: FormControl<string | null | undefined>,
 		NewDBProxyName: FormControl<string | null | undefined>,
 		RequireTLS: FormControl<boolean | null | undefined>,
@@ -8363,7 +8863,7 @@ export namespace MyNS {
 	}
 	export function CreateModifyDBProxyRequestFormGroup() {
 		return new FormGroup<ModifyDBProxyRequestFormProperties>({
-			DBProxyName: new FormControl<string | null | undefined>(undefined),
+			DBProxyName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NewDBProxyName: new FormControl<string | null | undefined>(undefined),
 			RequireTLS: new FormControl<boolean | null | undefined>(undefined),
 			IdleClientTimeout: new FormControl<number | null | undefined>(undefined),
@@ -8374,7 +8874,11 @@ export namespace MyNS {
 	}
 
 	export interface ModifyDBProxyTargetGroupRequest {
+
+		/** Required */
 		TargetGroupName: string;
+
+		/** Required */
 		DBProxyName: string;
 
 		/** <note> <p>This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.</p> </note> <p>Specifies the settings that control the size and behavior of the connection pool associated with a <code>DBProxyTargetGroup</code>.</p> */
@@ -8382,14 +8886,18 @@ export namespace MyNS {
 		NewName?: string | null;
 	}
 	export interface ModifyDBProxyTargetGroupRequestFormProperties {
+
+		/** Required */
 		TargetGroupName: FormControl<string | null | undefined>,
+
+		/** Required */
 		DBProxyName: FormControl<string | null | undefined>,
 		NewName: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyDBProxyTargetGroupRequestFormGroup() {
 		return new FormGroup<ModifyDBProxyTargetGroupRequestFormProperties>({
-			TargetGroupName: new FormControl<string | null | undefined>(undefined),
-			DBProxyName: new FormControl<string | null | undefined>(undefined),
+			TargetGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DBProxyName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NewName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -8398,7 +8906,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyDBSnapshotAttributeMessage {
+
+		/** Required */
 		DBSnapshotIdentifier: string;
+
+		/** Required */
 		AttributeName: string;
 		ValuesToAdd?: Array<string>;
 		ValuesToRemove?: Array<string>;
@@ -8406,30 +8918,38 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyDBSnapshotAttributeMessageFormProperties {
+
+		/** Required */
 		DBSnapshotIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		AttributeName: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyDBSnapshotAttributeMessageFormGroup() {
 		return new FormGroup<ModifyDBSnapshotAttributeMessageFormProperties>({
-			DBSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
-			AttributeName: new FormControl<string | null | undefined>(undefined),
+			DBSnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ModifyDBSnapshotMessage {
+
+		/** Required */
 		DBSnapshotIdentifier: string;
 		EngineVersion?: string | null;
 		OptionGroupName?: string | null;
 	}
 	export interface ModifyDBSnapshotMessageFormProperties {
+
+		/** Required */
 		DBSnapshotIdentifier: FormControl<string | null | undefined>,
 		EngineVersion: FormControl<string | null | undefined>,
 		OptionGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyDBSnapshotMessageFormGroup() {
 		return new FormGroup<ModifyDBSnapshotMessageFormProperties>({
-			DBSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBSnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			EngineVersion: new FormControl<string | null | undefined>(undefined),
 			OptionGroupName: new FormControl<string | null | undefined>(undefined),
 		});
@@ -8439,19 +8959,25 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyDBSubnetGroupMessage {
+
+		/** Required */
 		DBSubnetGroupName: string;
 		DBSubnetGroupDescription?: string | null;
+
+		/** Required */
 		SubnetIds: Array<string>;
 	}
 
 	/** <p/> */
 	export interface ModifyDBSubnetGroupMessageFormProperties {
+
+		/** Required */
 		DBSubnetGroupName: FormControl<string | null | undefined>,
 		DBSubnetGroupDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyDBSubnetGroupMessageFormGroup() {
 		return new FormGroup<ModifyDBSubnetGroupMessageFormProperties>({
-			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DBSubnetGroupDescription: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -8460,6 +8986,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyEventSubscriptionMessage {
+
+		/** Required */
 		SubscriptionName: string;
 		SnsTopicArn?: string | null;
 		SourceType?: string | null;
@@ -8469,6 +8997,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyEventSubscriptionMessageFormProperties {
+
+		/** Required */
 		SubscriptionName: FormControl<string | null | undefined>,
 		SnsTopicArn: FormControl<string | null | undefined>,
 		SourceType: FormControl<string | null | undefined>,
@@ -8476,7 +9006,7 @@ export namespace MyNS {
 	}
 	export function CreateModifyEventSubscriptionMessageFormGroup() {
 		return new FormGroup<ModifyEventSubscriptionMessageFormProperties>({
-			SubscriptionName: new FormControl<string | null | undefined>(undefined),
+			SubscriptionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
 			SourceType: new FormControl<string | null | undefined>(undefined),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
@@ -8506,6 +9036,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyOptionGroupMessage {
+
+		/** Required */
 		OptionGroupName: string;
 		OptionsToInclude?: Array<OptionConfiguration>;
 		OptionsToRemove?: Array<string>;
@@ -8514,12 +9046,14 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyOptionGroupMessageFormProperties {
+
+		/** Required */
 		OptionGroupName: FormControl<string | null | undefined>,
 		ApplyImmediately: FormControl<boolean | null | undefined>,
 	}
 	export function CreateModifyOptionGroupMessageFormGroup() {
 		return new FormGroup<ModifyOptionGroupMessageFormProperties>({
-			OptionGroupName: new FormControl<string | null | undefined>(undefined),
+			OptionGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ApplyImmediately: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -8528,16 +9062,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface PromoteReadReplicaDBClusterMessage {
+
+		/** Required */
 		DBClusterIdentifier: string;
 	}
 
 	/** <p/> */
 	export interface PromoteReadReplicaDBClusterMessageFormProperties {
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreatePromoteReadReplicaDBClusterMessageFormGroup() {
 		return new FormGroup<PromoteReadReplicaDBClusterMessageFormProperties>({
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8545,6 +9083,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface PromoteReadReplicaMessage {
+
+		/** Required */
 		DBInstanceIdentifier: string;
 		BackupRetentionPeriod?: number | null;
 		PreferredBackupWindow?: string | null;
@@ -8552,13 +9092,15 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface PromoteReadReplicaMessageFormProperties {
+
+		/** Required */
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
 		BackupRetentionPeriod: FormControl<number | null | undefined>,
 		PreferredBackupWindow: FormControl<string | null | undefined>,
 	}
 	export function CreatePromoteReadReplicaMessageFormGroup() {
 		return new FormGroup<PromoteReadReplicaMessageFormProperties>({
-			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			BackupRetentionPeriod: new FormControl<number | null | undefined>(undefined),
 			PreferredBackupWindow: new FormControl<string | null | undefined>(undefined),
 		});
@@ -8568,6 +9110,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface PurchaseReservedDBInstancesOfferingMessage {
+
+		/** Required */
 		ReservedDBInstancesOfferingId: string;
 		ReservedDBInstanceId?: string | null;
 		DBInstanceCount?: number | null;
@@ -8578,13 +9122,15 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface PurchaseReservedDBInstancesOfferingMessageFormProperties {
+
+		/** Required */
 		ReservedDBInstancesOfferingId: FormControl<string | null | undefined>,
 		ReservedDBInstanceId: FormControl<string | null | undefined>,
 		DBInstanceCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePurchaseReservedDBInstancesOfferingMessageFormGroup() {
 		return new FormGroup<PurchaseReservedDBInstancesOfferingMessageFormProperties>({
-			ReservedDBInstancesOfferingId: new FormControl<string | null | undefined>(undefined),
+			ReservedDBInstancesOfferingId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ReservedDBInstanceId: new FormControl<string | null | undefined>(undefined),
 			DBInstanceCount: new FormControl<number | null | undefined>(undefined),
 		});
@@ -8594,36 +9140,44 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface RebootDBInstanceMessage {
+
+		/** Required */
 		DBInstanceIdentifier: string;
 		ForceFailover?: boolean | null;
 	}
 
 	/** <p/> */
 	export interface RebootDBInstanceMessageFormProperties {
+
+		/** Required */
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
 		ForceFailover: FormControl<boolean | null | undefined>,
 	}
 	export function CreateRebootDBInstanceMessageFormGroup() {
 		return new FormGroup<RebootDBInstanceMessageFormProperties>({
-			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ForceFailover: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface RegisterDBProxyTargetsRequest {
+
+		/** Required */
 		DBProxyName: string;
 		TargetGroupName?: string | null;
 		DBInstanceIdentifiers?: Array<string>;
 		DBClusterIdentifiers?: Array<string>;
 	}
 	export interface RegisterDBProxyTargetsRequestFormProperties {
+
+		/** Required */
 		DBProxyName: FormControl<string | null | undefined>,
 		TargetGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterDBProxyTargetsRequestFormGroup() {
 		return new FormGroup<RegisterDBProxyTargetsRequestFormProperties>({
-			DBProxyName: new FormControl<string | null | undefined>(undefined),
+			DBProxyName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TargetGroupName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -8646,39 +9200,59 @@ export namespace MyNS {
 	}
 
 	export interface RemoveRoleFromDBClusterMessage {
+
+		/** Required */
 		DBClusterIdentifier: string;
+
+		/** Required */
 		RoleArn: string;
 		FeatureName?: string | null;
 	}
 	export interface RemoveRoleFromDBClusterMessageFormProperties {
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		RoleArn: FormControl<string | null | undefined>,
 		FeatureName: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveRoleFromDBClusterMessageFormGroup() {
 		return new FormGroup<RemoveRoleFromDBClusterMessageFormProperties>({
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			FeatureName: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface RemoveRoleFromDBInstanceMessage {
+
+		/** Required */
 		DBInstanceIdentifier: string;
+
+		/** Required */
 		RoleArn: string;
+
+		/** Required */
 		FeatureName: string;
 	}
 	export interface RemoveRoleFromDBInstanceMessageFormProperties {
+
+		/** Required */
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		RoleArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		FeatureName: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveRoleFromDBInstanceMessageFormGroup() {
 		return new FormGroup<RemoveRoleFromDBInstanceMessageFormProperties>({
-			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
-			FeatureName: new FormControl<string | null | undefined>(undefined),
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			FeatureName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8686,19 +9260,27 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface RemoveSourceIdentifierFromSubscriptionMessage {
+
+		/** Required */
 		SubscriptionName: string;
+
+		/** Required */
 		SourceIdentifier: string;
 	}
 
 	/** <p/> */
 	export interface RemoveSourceIdentifierFromSubscriptionMessageFormProperties {
+
+		/** Required */
 		SubscriptionName: FormControl<string | null | undefined>,
+
+		/** Required */
 		SourceIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveSourceIdentifierFromSubscriptionMessageFormGroup() {
 		return new FormGroup<RemoveSourceIdentifierFromSubscriptionMessageFormProperties>({
-			SubscriptionName: new FormControl<string | null | undefined>(undefined),
-			SourceIdentifier: new FormControl<string | null | undefined>(undefined),
+			SubscriptionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SourceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8706,17 +9288,23 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface RemoveTagsFromResourceMessage {
+
+		/** Required */
 		ResourceName: string;
+
+		/** Required */
 		TagKeys: Array<string>;
 	}
 
 	/** <p/> */
 	export interface RemoveTagsFromResourceMessageFormProperties {
+
+		/** Required */
 		ResourceName: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveTagsFromResourceMessageFormGroup() {
 		return new FormGroup<RemoveTagsFromResourceMessageFormProperties>({
-			ResourceName: new FormControl<string | null | undefined>(undefined),
+			ResourceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8724,6 +9312,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ResetDBClusterParameterGroupMessage {
+
+		/** Required */
 		DBClusterParameterGroupName: string;
 		ResetAllParameters?: boolean | null;
 		Parameters?: Array<Parameter>;
@@ -8731,12 +9321,14 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ResetDBClusterParameterGroupMessageFormProperties {
+
+		/** Required */
 		DBClusterParameterGroupName: FormControl<string | null | undefined>,
 		ResetAllParameters: FormControl<boolean | null | undefined>,
 	}
 	export function CreateResetDBClusterParameterGroupMessageFormGroup() {
 		return new FormGroup<ResetDBClusterParameterGroupMessageFormProperties>({
-			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ResetAllParameters: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -8745,6 +9337,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ResetDBParameterGroupMessage {
+
+		/** Required */
 		DBParameterGroupName: string;
 		ResetAllParameters?: boolean | null;
 		Parameters?: Array<Parameter>;
@@ -8752,12 +9346,14 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ResetDBParameterGroupMessageFormProperties {
+
+		/** Required */
 		DBParameterGroupName: FormControl<string | null | undefined>,
 		ResetAllParameters: FormControl<boolean | null | undefined>,
 	}
 	export function CreateResetDBParameterGroupMessageFormGroup() {
 		return new FormGroup<ResetDBParameterGroupMessageFormProperties>({
-			DBParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			DBParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ResetAllParameters: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -8768,14 +9364,22 @@ export namespace MyNS {
 		BackupRetentionPeriod?: number | null;
 		CharacterSetName?: string | null;
 		DatabaseName?: string | null;
+
+		/** Required */
 		DBClusterIdentifier: string;
 		DBClusterParameterGroupName?: string | null;
 		VpcSecurityGroupIds?: Array<string>;
 		DBSubnetGroupName?: string | null;
+
+		/** Required */
 		Engine: string;
 		EngineVersion?: string | null;
 		Port?: number | null;
+
+		/** Required */
 		MasterUsername: string;
+
+		/** Required */
 		MasterUserPassword: string;
 		OptionGroupName?: string | null;
 		PreferredBackupWindow?: string | null;
@@ -8786,10 +9390,18 @@ export namespace MyNS {
 		StorageEncrypted?: boolean | null;
 		KmsKeyId?: string | null;
 		EnableIAMDatabaseAuthentication?: boolean | null;
+
+		/** Required */
 		SourceEngine: string;
+
+		/** Required */
 		SourceEngineVersion: string;
+
+		/** Required */
 		S3BucketName: string;
 		S3Prefix?: string | null;
+
+		/** Required */
 		S3IngestionRoleArn: string;
 		BacktrackWindow?: number | null;
 		EnableCloudwatchLogsExports?: Array<string>;
@@ -8802,13 +9414,21 @@ export namespace MyNS {
 		BackupRetentionPeriod: FormControl<number | null | undefined>,
 		CharacterSetName: FormControl<string | null | undefined>,
 		DatabaseName: FormControl<string | null | undefined>,
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
 		DBClusterParameterGroupName: FormControl<string | null | undefined>,
 		DBSubnetGroupName: FormControl<string | null | undefined>,
+
+		/** Required */
 		Engine: FormControl<string | null | undefined>,
 		EngineVersion: FormControl<string | null | undefined>,
 		Port: FormControl<number | null | undefined>,
+
+		/** Required */
 		MasterUsername: FormControl<string | null | undefined>,
+
+		/** Required */
 		MasterUserPassword: FormControl<string | null | undefined>,
 		OptionGroupName: FormControl<string | null | undefined>,
 		PreferredBackupWindow: FormControl<string | null | undefined>,
@@ -8816,10 +9436,18 @@ export namespace MyNS {
 		StorageEncrypted: FormControl<boolean | null | undefined>,
 		KmsKeyId: FormControl<string | null | undefined>,
 		EnableIAMDatabaseAuthentication: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		SourceEngine: FormControl<string | null | undefined>,
+
+		/** Required */
 		SourceEngineVersion: FormControl<string | null | undefined>,
+
+		/** Required */
 		S3BucketName: FormControl<string | null | undefined>,
 		S3Prefix: FormControl<string | null | undefined>,
+
+		/** Required */
 		S3IngestionRoleArn: FormControl<string | null | undefined>,
 		BacktrackWindow: FormControl<number | null | undefined>,
 		DeletionProtection: FormControl<boolean | null | undefined>,
@@ -8832,25 +9460,25 @@ export namespace MyNS {
 			BackupRetentionPeriod: new FormControl<number | null | undefined>(undefined),
 			CharacterSetName: new FormControl<string | null | undefined>(undefined),
 			DatabaseName: new FormControl<string | null | undefined>(undefined),
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
 			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined),
-			Engine: new FormControl<string | null | undefined>(undefined),
+			Engine: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			EngineVersion: new FormControl<string | null | undefined>(undefined),
 			Port: new FormControl<number | null | undefined>(undefined),
-			MasterUsername: new FormControl<string | null | undefined>(undefined),
-			MasterUserPassword: new FormControl<string | null | undefined>(undefined),
+			MasterUsername: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MasterUserPassword: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			OptionGroupName: new FormControl<string | null | undefined>(undefined),
 			PreferredBackupWindow: new FormControl<string | null | undefined>(undefined),
 			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
 			StorageEncrypted: new FormControl<boolean | null | undefined>(undefined),
 			KmsKeyId: new FormControl<string | null | undefined>(undefined),
 			EnableIAMDatabaseAuthentication: new FormControl<boolean | null | undefined>(undefined),
-			SourceEngine: new FormControl<string | null | undefined>(undefined),
-			SourceEngineVersion: new FormControl<string | null | undefined>(undefined),
-			S3BucketName: new FormControl<string | null | undefined>(undefined),
+			SourceEngine: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SourceEngineVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			S3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			S3Prefix: new FormControl<string | null | undefined>(undefined),
-			S3IngestionRoleArn: new FormControl<string | null | undefined>(undefined),
+			S3IngestionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			BacktrackWindow: new FormControl<number | null | undefined>(undefined),
 			DeletionProtection: new FormControl<boolean | null | undefined>(undefined),
 			CopyTagsToSnapshot: new FormControl<boolean | null | undefined>(undefined),
@@ -8864,8 +9492,14 @@ export namespace MyNS {
 	/** <p/> */
 	export interface RestoreDBClusterFromSnapshotMessage {
 		AvailabilityZones?: Array<string>;
+
+		/** Required */
 		DBClusterIdentifier: string;
+
+		/** Required */
 		SnapshotIdentifier: string;
+
+		/** Required */
 		Engine: string;
 		EngineVersion?: string | null;
 		Port?: number | null;
@@ -8893,8 +9527,14 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface RestoreDBClusterFromSnapshotMessageFormProperties {
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		SnapshotIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		Engine: FormControl<string | null | undefined>,
 		EngineVersion: FormControl<string | null | undefined>,
 		Port: FormControl<number | null | undefined>,
@@ -8913,9 +9553,9 @@ export namespace MyNS {
 	}
 	export function CreateRestoreDBClusterFromSnapshotMessageFormGroup() {
 		return new FormGroup<RestoreDBClusterFromSnapshotMessageFormProperties>({
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
-			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
-			Engine: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Engine: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			EngineVersion: new FormControl<string | null | undefined>(undefined),
 			Port: new FormControl<number | null | undefined>(undefined),
 			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined),
@@ -8937,8 +9577,12 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface RestoreDBClusterToPointInTimeMessage {
+
+		/** Required */
 		DBClusterIdentifier: string;
 		RestoreType?: string | null;
+
+		/** Required */
 		SourceDBClusterIdentifier: string;
 		RestoreToTime?: Date | null;
 		UseLatestRestorableTime?: boolean | null;
@@ -8962,8 +9606,12 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface RestoreDBClusterToPointInTimeMessageFormProperties {
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
 		RestoreType: FormControl<string | null | undefined>,
+
+		/** Required */
 		SourceDBClusterIdentifier: FormControl<string | null | undefined>,
 		RestoreToTime: FormControl<Date | null | undefined>,
 		UseLatestRestorableTime: FormControl<boolean | null | undefined>,
@@ -8981,9 +9629,9 @@ export namespace MyNS {
 	}
 	export function CreateRestoreDBClusterToPointInTimeMessageFormGroup() {
 		return new FormGroup<RestoreDBClusterToPointInTimeMessageFormProperties>({
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RestoreType: new FormControl<string | null | undefined>(undefined),
-			SourceDBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			SourceDBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RestoreToTime: new FormControl<Date | null | undefined>(undefined),
 			UseLatestRestorableTime: new FormControl<boolean | null | undefined>(undefined),
 			Port: new FormControl<number | null | undefined>(undefined),
@@ -9004,7 +9652,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface RestoreDBInstanceFromDBSnapshotMessage {
+
+		/** Required */
 		DBInstanceIdentifier: string;
+
+		/** Required */
 		DBSnapshotIdentifier: string;
 		DBInstanceClass?: string | null;
 		Port?: number | null;
@@ -9038,7 +9690,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface RestoreDBInstanceFromDBSnapshotMessageFormProperties {
+
+		/** Required */
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		DBSnapshotIdentifier: FormControl<string | null | undefined>,
 		DBInstanceClass: FormControl<string | null | undefined>,
 		Port: FormControl<number | null | undefined>,
@@ -9065,8 +9721,8 @@ export namespace MyNS {
 	}
 	export function CreateRestoreDBInstanceFromDBSnapshotMessageFormGroup() {
 		return new FormGroup<RestoreDBInstanceFromDBSnapshotMessageFormProperties>({
-			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
-			DBSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DBSnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DBInstanceClass: new FormControl<string | null | undefined>(undefined),
 			Port: new FormControl<number | null | undefined>(undefined),
 			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
@@ -9095,9 +9751,15 @@ export namespace MyNS {
 
 	export interface RestoreDBInstanceFromS3Message {
 		DBName?: string | null;
+
+		/** Required */
 		DBInstanceIdentifier: string;
 		AllocatedStorage?: number | null;
+
+		/** Required */
 		DBInstanceClass: string;
+
+		/** Required */
 		Engine: string;
 		MasterUsername?: string | null;
 		MasterUserPassword?: string | null;
@@ -9127,10 +9789,18 @@ export namespace MyNS {
 		MonitoringInterval?: number | null;
 		MonitoringRoleArn?: string | null;
 		EnableIAMDatabaseAuthentication?: boolean | null;
+
+		/** Required */
 		SourceEngine: string;
+
+		/** Required */
 		SourceEngineVersion: string;
+
+		/** Required */
 		S3BucketName: string;
 		S3Prefix?: string | null;
+
+		/** Required */
 		S3IngestionRoleArn: string;
 		EnablePerformanceInsights?: boolean | null;
 		PerformanceInsightsKMSKeyId?: string | null;
@@ -9142,9 +9812,15 @@ export namespace MyNS {
 	}
 	export interface RestoreDBInstanceFromS3MessageFormProperties {
 		DBName: FormControl<string | null | undefined>,
+
+		/** Required */
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
 		AllocatedStorage: FormControl<number | null | undefined>,
+
+		/** Required */
 		DBInstanceClass: FormControl<string | null | undefined>,
+
+		/** Required */
 		Engine: FormControl<string | null | undefined>,
 		MasterUsername: FormControl<string | null | undefined>,
 		MasterUserPassword: FormControl<string | null | undefined>,
@@ -9169,10 +9845,18 @@ export namespace MyNS {
 		MonitoringInterval: FormControl<number | null | undefined>,
 		MonitoringRoleArn: FormControl<string | null | undefined>,
 		EnableIAMDatabaseAuthentication: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		SourceEngine: FormControl<string | null | undefined>,
+
+		/** Required */
 		SourceEngineVersion: FormControl<string | null | undefined>,
+
+		/** Required */
 		S3BucketName: FormControl<string | null | undefined>,
 		S3Prefix: FormControl<string | null | undefined>,
+
+		/** Required */
 		S3IngestionRoleArn: FormControl<string | null | undefined>,
 		EnablePerformanceInsights: FormControl<boolean | null | undefined>,
 		PerformanceInsightsKMSKeyId: FormControl<string | null | undefined>,
@@ -9183,10 +9867,10 @@ export namespace MyNS {
 	export function CreateRestoreDBInstanceFromS3MessageFormGroup() {
 		return new FormGroup<RestoreDBInstanceFromS3MessageFormProperties>({
 			DBName: new FormControl<string | null | undefined>(undefined),
-			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			AllocatedStorage: new FormControl<number | null | undefined>(undefined),
-			DBInstanceClass: new FormControl<string | null | undefined>(undefined),
-			Engine: new FormControl<string | null | undefined>(undefined),
+			DBInstanceClass: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Engine: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			MasterUsername: new FormControl<string | null | undefined>(undefined),
 			MasterUserPassword: new FormControl<string | null | undefined>(undefined),
 			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
@@ -9210,11 +9894,11 @@ export namespace MyNS {
 			MonitoringInterval: new FormControl<number | null | undefined>(undefined),
 			MonitoringRoleArn: new FormControl<string | null | undefined>(undefined),
 			EnableIAMDatabaseAuthentication: new FormControl<boolean | null | undefined>(undefined),
-			SourceEngine: new FormControl<string | null | undefined>(undefined),
-			SourceEngineVersion: new FormControl<string | null | undefined>(undefined),
-			S3BucketName: new FormControl<string | null | undefined>(undefined),
+			SourceEngine: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SourceEngineVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			S3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			S3Prefix: new FormControl<string | null | undefined>(undefined),
-			S3IngestionRoleArn: new FormControl<string | null | undefined>(undefined),
+			S3IngestionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			EnablePerformanceInsights: new FormControl<boolean | null | undefined>(undefined),
 			PerformanceInsightsKMSKeyId: new FormControl<string | null | undefined>(undefined),
 			PerformanceInsightsRetentionPeriod: new FormControl<number | null | undefined>(undefined),
@@ -9228,6 +9912,8 @@ export namespace MyNS {
 	/** <p/> */
 	export interface RestoreDBInstanceToPointInTimeMessage {
 		SourceDBInstanceIdentifier?: string | null;
+
+		/** Required */
 		TargetDBInstanceIdentifier: string;
 		RestoreTime?: Date | null;
 		UseLatestRestorableTime?: boolean | null;
@@ -9265,6 +9951,8 @@ export namespace MyNS {
 	/** <p/> */
 	export interface RestoreDBInstanceToPointInTimeMessageFormProperties {
 		SourceDBInstanceIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		TargetDBInstanceIdentifier: FormControl<string | null | undefined>,
 		RestoreTime: FormControl<Date | null | undefined>,
 		UseLatestRestorableTime: FormControl<boolean | null | undefined>,
@@ -9295,7 +9983,7 @@ export namespace MyNS {
 	export function CreateRestoreDBInstanceToPointInTimeMessageFormGroup() {
 		return new FormGroup<RestoreDBInstanceToPointInTimeMessageFormProperties>({
 			SourceDBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
-			TargetDBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			TargetDBInstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RestoreTime: new FormControl<Date | null | undefined>(undefined),
 			UseLatestRestorableTime: new FormControl<boolean | null | undefined>(undefined),
 			DBInstanceClass: new FormControl<string | null | undefined>(undefined),
@@ -9328,6 +10016,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface RevokeDBSecurityGroupIngressMessage {
+
+		/** Required */
 		DBSecurityGroupName: string;
 		CIDRIP?: string | null;
 		EC2SecurityGroupName?: string | null;
@@ -9337,6 +10027,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface RevokeDBSecurityGroupIngressMessageFormProperties {
+
+		/** Required */
 		DBSecurityGroupName: FormControl<string | null | undefined>,
 		CIDRIP: FormControl<string | null | undefined>,
 		EC2SecurityGroupName: FormControl<string | null | undefined>,
@@ -9345,7 +10037,7 @@ export namespace MyNS {
 	}
 	export function CreateRevokeDBSecurityGroupIngressMessageFormGroup() {
 		return new FormGroup<RevokeDBSecurityGroupIngressMessageFormProperties>({
-			DBSecurityGroupName: new FormControl<string | null | undefined>(undefined),
+			DBSecurityGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			CIDRIP: new FormControl<string | null | undefined>(undefined),
 			EC2SecurityGroupName: new FormControl<string | null | undefined>(undefined),
 			EC2SecurityGroupId: new FormControl<string | null | undefined>(undefined),
@@ -9355,122 +10047,174 @@ export namespace MyNS {
 	}
 
 	export interface StartActivityStreamRequest {
+
+		/** Required */
 		ResourceArn: string;
+
+		/** Required */
 		Mode: DBClusterActivityStreamMode;
+
+		/** Required */
 		KmsKeyId: string;
 		ApplyImmediately?: boolean | null;
 	}
 	export interface StartActivityStreamRequestFormProperties {
+
+		/** Required */
 		ResourceArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		Mode: FormControl<DBClusterActivityStreamMode | null | undefined>,
+
+		/** Required */
 		KmsKeyId: FormControl<string | null | undefined>,
 		ApplyImmediately: FormControl<boolean | null | undefined>,
 	}
 	export function CreateStartActivityStreamRequestFormGroup() {
 		return new FormGroup<StartActivityStreamRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
-			Mode: new FormControl<DBClusterActivityStreamMode | null | undefined>(undefined),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Mode: new FormControl<DBClusterActivityStreamMode | null | undefined>(undefined, [Validators.required]),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ApplyImmediately: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface StartDBClusterMessage {
+
+		/** Required */
 		DBClusterIdentifier: string;
 	}
 	export interface StartDBClusterMessageFormProperties {
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateStartDBClusterMessageFormGroup() {
 		return new FormGroup<StartDBClusterMessageFormProperties>({
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface StartDBInstanceMessage {
+
+		/** Required */
 		DBInstanceIdentifier: string;
 	}
 	export interface StartDBInstanceMessageFormProperties {
+
+		/** Required */
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateStartDBInstanceMessageFormGroup() {
 		return new FormGroup<StartDBInstanceMessageFormProperties>({
-			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface StartExportTaskMessage {
+
+		/** Required */
 		ExportTaskIdentifier: string;
+
+		/** Required */
 		SourceArn: string;
+
+		/** Required */
 		S3BucketName: string;
+
+		/** Required */
 		IamRoleArn: string;
+
+		/** Required */
 		KmsKeyId: string;
 		S3Prefix?: string | null;
 		ExportOnly?: Array<string>;
 	}
 	export interface StartExportTaskMessageFormProperties {
+
+		/** Required */
 		ExportTaskIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		SourceArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		S3BucketName: FormControl<string | null | undefined>,
+
+		/** Required */
 		IamRoleArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		KmsKeyId: FormControl<string | null | undefined>,
 		S3Prefix: FormControl<string | null | undefined>,
 	}
 	export function CreateStartExportTaskMessageFormGroup() {
 		return new FormGroup<StartExportTaskMessageFormProperties>({
-			ExportTaskIdentifier: new FormControl<string | null | undefined>(undefined),
-			SourceArn: new FormControl<string | null | undefined>(undefined),
-			S3BucketName: new FormControl<string | null | undefined>(undefined),
-			IamRoleArn: new FormControl<string | null | undefined>(undefined),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			ExportTaskIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			S3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			S3Prefix: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface StopActivityStreamRequest {
+
+		/** Required */
 		ResourceArn: string;
 		ApplyImmediately?: boolean | null;
 	}
 	export interface StopActivityStreamRequestFormProperties {
+
+		/** Required */
 		ResourceArn: FormControl<string | null | undefined>,
 		ApplyImmediately: FormControl<boolean | null | undefined>,
 	}
 	export function CreateStopActivityStreamRequestFormGroup() {
 		return new FormGroup<StopActivityStreamRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ApplyImmediately: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface StopDBClusterMessage {
+
+		/** Required */
 		DBClusterIdentifier: string;
 	}
 	export interface StopDBClusterMessageFormProperties {
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateStopDBClusterMessageFormGroup() {
 		return new FormGroup<StopDBClusterMessageFormProperties>({
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface StopDBInstanceMessage {
+
+		/** Required */
 		DBInstanceIdentifier: string;
 		DBSnapshotIdentifier?: string | null;
 	}
 	export interface StopDBInstanceMessageFormProperties {
+
+		/** Required */
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
 		DBSnapshotIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateStopDBInstanceMessageFormGroup() {
 		return new FormGroup<StopDBInstanceMessageFormProperties>({
-			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DBSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
 		});
 

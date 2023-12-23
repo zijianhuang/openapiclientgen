@@ -14,7 +14,20 @@ export namespace MyNS {
 	}
 
 	export interface AddApplicationCloudWatchLoggingOptionRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: string;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 999999999
+		 */
 		CurrentApplicationVersionId: number;
 
 		/**
@@ -24,13 +37,26 @@ export namespace MyNS {
 		CloudWatchLoggingOption: CloudWatchLoggingOption;
 	}
 	export interface AddApplicationCloudWatchLoggingOptionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 999999999
+		 */
 		CurrentApplicationVersionId: FormControl<number | null | undefined>,
 	}
 	export function CreateAddApplicationCloudWatchLoggingOptionRequestFormGroup() {
 		return new FormGroup<AddApplicationCloudWatchLoggingOptionRequestFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(999999999)]),
 		});
 
 	}
@@ -38,19 +64,47 @@ export namespace MyNS {
 
 	/** Provides a description of CloudWatch logging options, including the log stream Amazon Resource Name (ARN) and the role ARN. */
 	export interface CloudWatchLoggingOption {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		LogStreamARN: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN: string;
 	}
 
 	/** Provides a description of CloudWatch logging options, including the log stream Amazon Resource Name (ARN) and the role ARN. */
 	export interface CloudWatchLoggingOptionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		LogStreamARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN: FormControl<string | null | undefined>,
 	}
 	export function CreateCloudWatchLoggingOptionFormGroup() {
 		return new FormGroup<CloudWatchLoggingOptionFormProperties>({
-			LogStreamARN: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			LogStreamARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -122,7 +176,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface AddApplicationInputRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: string;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 999999999
+		 */
 		CurrentApplicationVersionId: number;
 
 		/**
@@ -134,13 +201,26 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface AddApplicationInputRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 999999999
+		 */
 		CurrentApplicationVersionId: FormControl<number | null | undefined>,
 	}
 	export function CreateAddApplicationInputRequestFormGroup() {
 		return new FormGroup<AddApplicationInputRequestFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(999999999)]),
 		});
 
 	}
@@ -148,6 +228,12 @@ export namespace MyNS {
 
 	/** When you configure the application input, you specify the streaming source, the in-application stream name that is created, and the mapping between the two. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.  */
 	export interface Input {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		NamePrefix: string;
 
 		/** Provides a description of a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>. */
@@ -171,11 +257,17 @@ export namespace MyNS {
 
 	/** When you configure the application input, you specify the streaming source, the in-application stream name that is created, and the mapping between the two. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.  */
 	export interface InputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		NamePrefix: FormControl<string | null | undefined>,
 	}
 	export function CreateInputFormGroup() {
 		return new FormGroup<InputFormProperties>({
-			NamePrefix: new FormControl<string | null | undefined>(undefined),
+			NamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
@@ -203,19 +295,47 @@ export namespace MyNS {
 
 	/** An object that contains the Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used to preprocess records in the stream, and the ARN of the IAM role that is used to access the AWS Lambda function.  */
 	export interface InputLambdaProcessor {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN: string;
 	}
 
 	/** An object that contains the Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used to preprocess records in the stream, and the ARN of the IAM role that is used to access the AWS Lambda function.  */
 	export interface InputLambdaProcessorFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN: FormControl<string | null | undefined>,
 	}
 	export function CreateInputLambdaProcessorFormGroup() {
 		return new FormGroup<InputLambdaProcessorFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -223,19 +343,47 @@ export namespace MyNS {
 
 	/**  Identifies an Amazon Kinesis stream as the streaming source. You provide the stream's Amazon Resource Name (ARN) and an IAM role ARN that enables Amazon Kinesis Analytics to access the stream on your behalf. */
 	export interface KinesisStreamsInput {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN: string;
 	}
 
 	/**  Identifies an Amazon Kinesis stream as the streaming source. You provide the stream's Amazon Resource Name (ARN) and an IAM role ARN that enables Amazon Kinesis Analytics to access the stream on your behalf. */
 	export interface KinesisStreamsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN: FormControl<string | null | undefined>,
 	}
 	export function CreateKinesisStreamsInputFormGroup() {
 		return new FormGroup<KinesisStreamsInputFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -243,19 +391,47 @@ export namespace MyNS {
 
 	/**  Identifies an Amazon Kinesis Firehose delivery stream as the streaming source. You provide the delivery stream's Amazon Resource Name (ARN) and an IAM role ARN that enables Amazon Kinesis Analytics to access the stream on your behalf. */
 	export interface KinesisFirehoseInput {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN: string;
 	}
 
 	/**  Identifies an Amazon Kinesis Firehose delivery stream as the streaming source. You provide the delivery stream's Amazon Resource Name (ARN) and an IAM role ARN that enables Amazon Kinesis Analytics to access the stream on your behalf. */
 	export interface KinesisFirehoseInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN: FormControl<string | null | undefined>,
 	}
 	export function CreateKinesisFirehoseInputFormGroup() {
 		return new FormGroup<KinesisFirehoseInputFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -263,16 +439,26 @@ export namespace MyNS {
 
 	/** Describes the number of in-application streams to create for a given streaming source. For information about parallelism, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.  */
 	export interface InputParallelism {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 64
+		 */
 		Count?: number | null;
 	}
 
 	/** Describes the number of in-application streams to create for a given streaming source. For information about parallelism, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.  */
 	export interface InputParallelismFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 64
+		 */
 		Count: FormControl<number | null | undefined>,
 	}
 	export function CreateInputParallelismFormGroup() {
 		return new FormGroup<InputParallelismFormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(64)]),
 		});
 
 	}
@@ -286,12 +472,22 @@ export namespace MyNS {
 		 * Required
 		 */
 		RecordFormat: RecordFormat;
+
+		/** Pattern: UTF-8 */
 		RecordEncoding?: string | null;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 1000
+		 */
 		RecordColumns: Array<RecordColumn>;
 	}
 
 	/** Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream. */
 	export interface SourceSchemaFormProperties {
+
+		/** Pattern: UTF-8 */
 		RecordEncoding: FormControl<string | null | undefined>,
 	}
 	export function CreateSourceSchemaFormGroup() {
@@ -304,6 +500,8 @@ export namespace MyNS {
 
 	/**  Describes the record format and relevant mapping information that should be applied to schematize the records on the stream.  */
 	export interface RecordFormat {
+
+		/** Required */
 		RecordFormatType: RecordFormatRecordFormatType;
 
 		/** When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source. */
@@ -312,11 +510,13 @@ export namespace MyNS {
 
 	/**  Describes the record format and relevant mapping information that should be applied to schematize the records on the stream.  */
 	export interface RecordFormatFormProperties {
+
+		/** Required */
 		RecordFormatType: FormControl<RecordFormatRecordFormatType | null | undefined>,
 	}
 	export function CreateRecordFormatFormGroup() {
 		return new FormGroup<RecordFormatFormProperties>({
-			RecordFormatType: new FormControl<RecordFormatRecordFormatType | null | undefined>(undefined),
+			RecordFormatType: new FormControl<RecordFormatRecordFormatType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -346,16 +546,26 @@ export namespace MyNS {
 
 	/** Provides additional mapping information when JSON is the record format on the streaming source. */
 	export interface JSONMappingParameters {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		RecordRowPath: string;
 	}
 
 	/** Provides additional mapping information when JSON is the record format on the streaming source. */
 	export interface JSONMappingParametersFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		RecordRowPath: FormControl<string | null | undefined>,
 	}
 	export function CreateJSONMappingParametersFormGroup() {
 		return new FormGroup<JSONMappingParametersFormProperties>({
-			RecordRowPath: new FormControl<string | null | undefined>(undefined),
+			RecordRowPath: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -363,19 +573,39 @@ export namespace MyNS {
 
 	/** <p>Provides additional mapping information when the record format uses delimiters, such as CSV. For example, the following sample records use CSV format, where the records use the <i>'\n'</i> as the row delimiter and a comma (",") as the column delimiter: </p> <p> <code>"name1", "address1"</code> </p> <p> <code>"name2", "address2"</code> </p> */
 	export interface CSVMappingParameters {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		RecordRowDelimiter: string;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		RecordColumnDelimiter: string;
 	}
 
 	/** <p>Provides additional mapping information when the record format uses delimiters, such as CSV. For example, the following sample records use CSV format, where the records use the <i>'\n'</i> as the row delimiter and a comma (",") as the column delimiter: </p> <p> <code>"name1", "address1"</code> </p> <p> <code>"name2", "address2"</code> </p> */
 	export interface CSVMappingParametersFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		RecordRowDelimiter: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		RecordColumnDelimiter: FormControl<string | null | undefined>,
 	}
 	export function CreateCSVMappingParametersFormGroup() {
 		return new FormGroup<CSVMappingParametersFormProperties>({
-			RecordRowDelimiter: new FormControl<string | null | undefined>(undefined),
-			RecordColumnDelimiter: new FormControl<string | null | undefined>(undefined),
+			RecordRowDelimiter: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			RecordColumnDelimiter: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -383,22 +613,36 @@ export namespace MyNS {
 
 	/** <p>Describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.</p> <p>Also used to describe the format of the reference data source.</p> */
 	export interface RecordColumn {
+
+		/** Required */
 		Name: string;
 		Mapping?: string | null;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		SqlType: string;
 	}
 
 	/** <p>Describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.</p> <p>Also used to describe the format of the reference data source.</p> */
 	export interface RecordColumnFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 		Mapping: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		SqlType: FormControl<string | null | undefined>,
 	}
 	export function CreateRecordColumnFormGroup() {
 		return new FormGroup<RecordColumnFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Mapping: new FormControl<string | null | undefined>(undefined),
-			SqlType: new FormControl<string | null | undefined>(undefined),
+			SqlType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -424,8 +668,28 @@ export namespace MyNS {
 	}
 
 	export interface AddApplicationInputProcessingConfigurationRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: string;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 999999999
+		 */
 		CurrentApplicationVersionId: number;
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		InputId: string;
 
 		/**
@@ -435,15 +699,35 @@ export namespace MyNS {
 		InputProcessingConfiguration: InputProcessingConfiguration;
 	}
 	export interface AddApplicationInputProcessingConfigurationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 999999999
+		 */
 		CurrentApplicationVersionId: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		InputId: FormControl<string | null | undefined>,
 	}
 	export function CreateAddApplicationInputProcessingConfigurationRequestFormGroup() {
 		return new FormGroup<AddApplicationInputProcessingConfigurationRequestFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined),
-			InputId: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(999999999)]),
+			InputId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
 		});
 
 	}
@@ -465,7 +749,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface AddApplicationOutputRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: string;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 999999999
+		 */
 		CurrentApplicationVersionId: number;
 
 		/**
@@ -477,13 +774,26 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface AddApplicationOutputRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 999999999
+		 */
 		CurrentApplicationVersionId: FormControl<number | null | undefined>,
 	}
 	export function CreateAddApplicationOutputRequestFormGroup() {
 		return new FormGroup<AddApplicationOutputRequestFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(999999999)]),
 		});
 
 	}
@@ -491,6 +801,12 @@ export namespace MyNS {
 
 	/** <p> Describes application output configuration in which you identify an in-application stream and a destination where you want the in-application stream data to be written. The destination can be an Amazon Kinesis stream or an Amazon Kinesis Firehose delivery stream. </p> <p/> <p>For limits on how many destinations an application can write and other limitations, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>. </p> */
 	export interface Output {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		Name: string;
 
 		/** When configuring application output, identifies an Amazon Kinesis stream as the destination. You provide the stream Amazon Resource Name (ARN) and also an IAM role ARN that Amazon Kinesis Analytics can use to write to the stream on your behalf. */
@@ -511,11 +827,17 @@ export namespace MyNS {
 
 	/** <p> Describes application output configuration in which you identify an in-application stream and a destination where you want the in-application stream data to be written. The destination can be an Amazon Kinesis stream or an Amazon Kinesis Firehose delivery stream. </p> <p/> <p>For limits on how many destinations an application can write and other limitations, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>. </p> */
 	export interface OutputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateOutputFormGroup() {
 		return new FormGroup<OutputFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
@@ -523,19 +845,47 @@ export namespace MyNS {
 
 	/** When configuring application output, identifies an Amazon Kinesis stream as the destination. You provide the stream Amazon Resource Name (ARN) and also an IAM role ARN that Amazon Kinesis Analytics can use to write to the stream on your behalf. */
 	export interface KinesisStreamsOutput {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN: string;
 	}
 
 	/** When configuring application output, identifies an Amazon Kinesis stream as the destination. You provide the stream Amazon Resource Name (ARN) and also an IAM role ARN that Amazon Kinesis Analytics can use to write to the stream on your behalf. */
 	export interface KinesisStreamsOutputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN: FormControl<string | null | undefined>,
 	}
 	export function CreateKinesisStreamsOutputFormGroup() {
 		return new FormGroup<KinesisStreamsOutputFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -543,19 +893,47 @@ export namespace MyNS {
 
 	/** When configuring application output, identifies an Amazon Kinesis Firehose delivery stream as the destination. You provide the stream Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to write to the stream on your behalf. */
 	export interface KinesisFirehoseOutput {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN: string;
 	}
 
 	/** When configuring application output, identifies an Amazon Kinesis Firehose delivery stream as the destination. You provide the stream Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to write to the stream on your behalf. */
 	export interface KinesisFirehoseOutputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN: FormControl<string | null | undefined>,
 	}
 	export function CreateKinesisFirehoseOutputFormGroup() {
 		return new FormGroup<KinesisFirehoseOutputFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -563,19 +941,47 @@ export namespace MyNS {
 
 	/** When configuring application output, identifies an AWS Lambda function as the destination. You provide the function Amazon Resource Name (ARN) and also an IAM role ARN that Amazon Kinesis Analytics can use to write to the function on your behalf.  */
 	export interface LambdaOutput {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN: string;
 	}
 
 	/** When configuring application output, identifies an AWS Lambda function as the destination. You provide the function Amazon Resource Name (ARN) and also an IAM role ARN that Amazon Kinesis Analytics can use to write to the function on your behalf.  */
 	export interface LambdaOutputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN: FormControl<string | null | undefined>,
 	}
 	export function CreateLambdaOutputFormGroup() {
 		return new FormGroup<LambdaOutputFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -583,16 +989,20 @@ export namespace MyNS {
 
 	/** Describes the data format when records are written to the destination. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.  */
 	export interface DestinationSchema {
+
+		/** Required */
 		RecordFormatType: RecordFormatRecordFormatType;
 	}
 
 	/** Describes the data format when records are written to the destination. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.  */
 	export interface DestinationSchemaFormProperties {
+
+		/** Required */
 		RecordFormatType: FormControl<RecordFormatRecordFormatType | null | undefined>,
 	}
 	export function CreateDestinationSchemaFormGroup() {
 		return new FormGroup<DestinationSchemaFormProperties>({
-			RecordFormatType: new FormControl<RecordFormatRecordFormatType | null | undefined>(undefined),
+			RecordFormatType: new FormControl<RecordFormatRecordFormatType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -614,7 +1024,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface AddApplicationReferenceDataSourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: string;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 999999999
+		 */
 		CurrentApplicationVersionId: number;
 
 		/**
@@ -626,13 +1049,26 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface AddApplicationReferenceDataSourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 999999999
+		 */
 		CurrentApplicationVersionId: FormControl<number | null | undefined>,
 	}
 	export function CreateAddApplicationReferenceDataSourceRequestFormGroup() {
 		return new FormGroup<AddApplicationReferenceDataSourceRequestFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(999999999)]),
 		});
 
 	}
@@ -640,6 +1076,12 @@ export namespace MyNS {
 
 	/** Describes the reference data source by providing the source information (S3 bucket name and object key name), the resulting in-application table name that is created, and the necessary schema to map the data elements in the Amazon S3 object to the in-application table. */
 	export interface ReferenceDataSource {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		TableName: string;
 
 		/** <p>Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon Kinesis Analytics can assume to read this object on your behalf.</p> <p>An Amazon Kinesis Analytics application loads reference data only once. If the data changes, you call the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation to trigger reloading of data into your application.</p> */
@@ -654,11 +1096,17 @@ export namespace MyNS {
 
 	/** Describes the reference data source by providing the source information (S3 bucket name and object key name), the resulting in-application table name that is created, and the necessary schema to map the data elements in the Amazon S3 object to the in-application table. */
 	export interface ReferenceDataSourceFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		TableName: FormControl<string | null | undefined>,
 	}
 	export function CreateReferenceDataSourceFormGroup() {
 		return new FormGroup<ReferenceDataSourceFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
@@ -666,22 +1114,62 @@ export namespace MyNS {
 
 	/** <p>Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon Kinesis Analytics can assume to read this object on your behalf.</p> <p>An Amazon Kinesis Analytics application loads reference data only once. If the data changes, you call the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation to trigger reloading of data into your application.</p> */
 	export interface S3ReferenceDataSource {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		BucketARN: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		FileKey: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		ReferenceRoleARN: string;
 	}
 
 	/** <p>Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon Kinesis Analytics can assume to read this object on your behalf.</p> <p>An Amazon Kinesis Analytics application loads reference data only once. If the data changes, you call the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation to trigger reloading of data into your application.</p> */
 	export interface S3ReferenceDataSourceFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		BucketARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		FileKey: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		ReferenceRoleARN: FormControl<string | null | undefined>,
 	}
 	export function CreateS3ReferenceDataSourceFormGroup() {
 		return new FormGroup<S3ReferenceDataSourceFormProperties>({
-			BucketARN: new FormControl<string | null | undefined>(undefined),
-			FileKey: new FormControl<string | null | undefined>(undefined),
-			ReferenceRoleARN: new FormControl<string | null | undefined>(undefined),
+			BucketARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			FileKey: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			ReferenceRoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -709,22 +1197,54 @@ export namespace MyNS {
 
 	/** <note> <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p> </note> <p>Provides application summary information, including the application Amazon Resource Name (ARN), name, and status.</p> */
 	export interface ApplicationSummary {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ApplicationARN: string;
+
+		/** Required */
 		ApplicationStatus: ApplicationSummaryApplicationStatus;
 	}
 
 	/** <note> <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p> </note> <p>Provides application summary information, including the application Amazon Resource Name (ARN), name, and status.</p> */
 	export interface ApplicationSummaryFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ApplicationARN: FormControl<string | null | undefined>,
+
+		/** Required */
 		ApplicationStatus: FormControl<ApplicationSummaryApplicationStatus | null | undefined>,
 	}
 	export function CreateApplicationSummaryFormGroup() {
 		return new FormGroup<ApplicationSummaryFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			ApplicationARN: new FormControl<string | null | undefined>(undefined),
-			ApplicationStatus: new FormControl<ApplicationSummaryApplicationStatus | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ApplicationARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			ApplicationStatus: new FormControl<ApplicationSummaryApplicationStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -734,26 +1254,65 @@ export namespace MyNS {
 
 	/** TBD */
 	export interface CreateApplicationRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		ApplicationDescription?: string | null;
 		Inputs?: Array<Input>;
 		Outputs?: Array<Output>;
 		CloudWatchLoggingOptions?: Array<CloudWatchLoggingOption>;
+
+		/**
+		 * Max length: 102400
+		 * Min length: 0
+		 */
 		ApplicationCode?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 200
+		 */
 		Tags?: Array<Tag>;
 	}
 
 	/** TBD */
 	export interface CreateApplicationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		ApplicationDescription: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 102400
+		 * Min length: 0
+		 */
 		ApplicationCode: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateApplicationRequestFormGroup() {
 		return new FormGroup<CreateApplicationRequestFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			ApplicationDescription: new FormControl<string | null | undefined>(undefined),
-			ApplicationCode: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ApplicationDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			ApplicationCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(102400), Validators.minLength(0)]),
 		});
 
 	}
@@ -761,19 +1320,41 @@ export namespace MyNS {
 
 	/** A key-value pair (the value is optional) that you can define and assign to AWS resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Value?: string | null;
 	}
 
 	/** A key-value pair (the value is optional) that you can define and assign to AWS resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -815,19 +1396,37 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteApplicationRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: string;
+
+		/** Required */
 		CreateTimestamp: Date;
 	}
 
 	/** <p/> */
 	export interface DeleteApplicationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreateTimestamp: FormControl<Date | null | undefined>,
 	}
 	export function CreateDeleteApplicationRequestFormGroup() {
 		return new FormGroup<DeleteApplicationRequestFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			CreateTimestamp: new FormControl<Date | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			CreateTimestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -843,20 +1442,60 @@ export namespace MyNS {
 	}
 
 	export interface DeleteApplicationCloudWatchLoggingOptionRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: string;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 999999999
+		 */
 		CurrentApplicationVersionId: number;
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		CloudWatchLoggingOptionId: string;
 	}
 	export interface DeleteApplicationCloudWatchLoggingOptionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 999999999
+		 */
 		CurrentApplicationVersionId: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		CloudWatchLoggingOptionId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteApplicationCloudWatchLoggingOptionRequestFormGroup() {
 		return new FormGroup<DeleteApplicationCloudWatchLoggingOptionRequestFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined),
-			CloudWatchLoggingOptionId: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(999999999)]),
+			CloudWatchLoggingOptionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
 		});
 
 	}
@@ -872,20 +1511,60 @@ export namespace MyNS {
 	}
 
 	export interface DeleteApplicationInputProcessingConfigurationRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: string;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 999999999
+		 */
 		CurrentApplicationVersionId: number;
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		InputId: string;
 	}
 	export interface DeleteApplicationInputProcessingConfigurationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 999999999
+		 */
 		CurrentApplicationVersionId: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		InputId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteApplicationInputProcessingConfigurationRequestFormGroup() {
 		return new FormGroup<DeleteApplicationInputProcessingConfigurationRequestFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined),
-			InputId: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(999999999)]),
+			InputId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
 		});
 
 	}
@@ -907,22 +1586,62 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteApplicationOutputRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: string;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 999999999
+		 */
 		CurrentApplicationVersionId: number;
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		OutputId: string;
 	}
 
 	/** <p/> */
 	export interface DeleteApplicationOutputRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 999999999
+		 */
 		CurrentApplicationVersionId: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		OutputId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteApplicationOutputRequestFormGroup() {
 		return new FormGroup<DeleteApplicationOutputRequestFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined),
-			OutputId: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(999999999)]),
+			OutputId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
 		});
 
 	}
@@ -938,20 +1657,60 @@ export namespace MyNS {
 	}
 
 	export interface DeleteApplicationReferenceDataSourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: string;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 999999999
+		 */
 		CurrentApplicationVersionId: number;
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ReferenceId: string;
 	}
 	export interface DeleteApplicationReferenceDataSourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 999999999
+		 */
 		CurrentApplicationVersionId: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ReferenceId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteApplicationReferenceDataSourceRequestFormGroup() {
 		return new FormGroup<DeleteApplicationReferenceDataSourceRequestFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined),
-			ReferenceId: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(999999999)]),
+			ReferenceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
 		});
 
 	}
@@ -979,9 +1738,30 @@ export namespace MyNS {
 
 	/** <note> <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p> </note> <p>Provides a description of the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configuration.</p> */
 	export interface ApplicationDetail {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		ApplicationDescription?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ApplicationARN: string;
+
+		/** Required */
 		ApplicationStatus: ApplicationSummaryApplicationStatus;
 		CreateTimestamp?: Date | null;
 		LastUpdateTimestamp?: Date | null;
@@ -989,31 +1769,74 @@ export namespace MyNS {
 		OutputDescriptions?: Array<OutputDescription>;
 		ReferenceDataSourceDescriptions?: Array<ReferenceDataSourceDescription>;
 		CloudWatchLoggingOptionDescriptions?: Array<CloudWatchLoggingOptionDescription>;
+
+		/**
+		 * Max length: 102400
+		 * Min length: 0
+		 */
 		ApplicationCode?: string | null;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 999999999
+		 */
 		ApplicationVersionId: number;
 	}
 
 	/** <note> <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p> </note> <p>Provides a description of the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configuration.</p> */
 	export interface ApplicationDetailFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		ApplicationDescription: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ApplicationARN: FormControl<string | null | undefined>,
+
+		/** Required */
 		ApplicationStatus: FormControl<ApplicationSummaryApplicationStatus | null | undefined>,
 		CreateTimestamp: FormControl<Date | null | undefined>,
 		LastUpdateTimestamp: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 102400
+		 * Min length: 0
+		 */
 		ApplicationCode: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 999999999
+		 */
 		ApplicationVersionId: FormControl<number | null | undefined>,
 	}
 	export function CreateApplicationDetailFormGroup() {
 		return new FormGroup<ApplicationDetailFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			ApplicationDescription: new FormControl<string | null | undefined>(undefined),
-			ApplicationARN: new FormControl<string | null | undefined>(undefined),
-			ApplicationStatus: new FormControl<ApplicationSummaryApplicationStatus | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ApplicationDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			ApplicationARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			ApplicationStatus: new FormControl<ApplicationSummaryApplicationStatus | null | undefined>(undefined, [Validators.required]),
 			CreateTimestamp: new FormControl<Date | null | undefined>(undefined),
 			LastUpdateTimestamp: new FormControl<Date | null | undefined>(undefined),
-			ApplicationCode: new FormControl<string | null | undefined>(undefined),
-			ApplicationVersionId: new FormControl<number | null | undefined>(undefined),
+			ApplicationCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(102400), Validators.minLength(0)]),
+			ApplicationVersionId: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(999999999)]),
 		});
 
 	}
@@ -1021,7 +1844,18 @@ export namespace MyNS {
 
 	/** Describes the application input configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.  */
 	export interface InputDescription {
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		InputId?: string | null;
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		NamePrefix?: string | null;
 		InAppStreamNames?: Array<string>;
 
@@ -1046,13 +1880,24 @@ export namespace MyNS {
 
 	/** Describes the application input configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.  */
 	export interface InputDescriptionFormProperties {
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		InputId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		NamePrefix: FormControl<string | null | undefined>,
 	}
 	export function CreateInputDescriptionFormGroup() {
 		return new FormGroup<InputDescriptionFormProperties>({
-			InputId: new FormControl<string | null | undefined>(undefined),
-			NamePrefix: new FormControl<string | null | undefined>(undefined),
+			InputId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
+			NamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
@@ -1077,19 +1922,43 @@ export namespace MyNS {
 
 	/** An object that contains the Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used to preprocess records in the stream, and the ARN of the IAM role that is used to access the AWS Lambda expression. */
 	export interface InputLambdaProcessorDescription {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN?: string | null;
 	}
 
 	/** An object that contains the Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used to preprocess records in the stream, and the ARN of the IAM role that is used to access the AWS Lambda expression. */
 	export interface InputLambdaProcessorDescriptionFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN: FormControl<string | null | undefined>,
 	}
 	export function CreateInputLambdaProcessorDescriptionFormGroup() {
 		return new FormGroup<InputLambdaProcessorDescriptionFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1097,19 +1966,43 @@ export namespace MyNS {
 
 	/**  Describes the Amazon Kinesis stream that is configured as the streaming source in the application input configuration.  */
 	export interface KinesisStreamsInputDescription {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN?: string | null;
 	}
 
 	/**  Describes the Amazon Kinesis stream that is configured as the streaming source in the application input configuration.  */
 	export interface KinesisStreamsInputDescriptionFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN: FormControl<string | null | undefined>,
 	}
 	export function CreateKinesisStreamsInputDescriptionFormGroup() {
 		return new FormGroup<KinesisStreamsInputDescriptionFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1117,19 +2010,43 @@ export namespace MyNS {
 
 	/**  Describes the Amazon Kinesis Firehose delivery stream that is configured as the streaming source in the application input configuration.  */
 	export interface KinesisFirehoseInputDescription {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN?: string | null;
 	}
 
 	/**  Describes the Amazon Kinesis Firehose delivery stream that is configured as the streaming source in the application input configuration.  */
 	export interface KinesisFirehoseInputDescriptionFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN: FormControl<string | null | undefined>,
 	}
 	export function CreateKinesisFirehoseInputDescriptionFormGroup() {
 		return new FormGroup<KinesisFirehoseInputDescriptionFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1156,7 +2073,18 @@ export namespace MyNS {
 
 	/** Describes the application output configuration, which includes the in-application stream name and the destination where the stream data is written. The destination can be an Amazon Kinesis stream or an Amazon Kinesis Firehose delivery stream.  */
 	export interface OutputDescription {
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		OutputId?: string | null;
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		Name?: string | null;
 
 		/** For an application output, describes the Amazon Kinesis stream configured as its destination. */
@@ -1174,13 +2102,24 @@ export namespace MyNS {
 
 	/** Describes the application output configuration, which includes the in-application stream name and the destination where the stream data is written. The destination can be an Amazon Kinesis stream or an Amazon Kinesis Firehose delivery stream.  */
 	export interface OutputDescriptionFormProperties {
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		OutputId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateOutputDescriptionFormGroup() {
 		return new FormGroup<OutputDescriptionFormProperties>({
-			OutputId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			OutputId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
@@ -1188,19 +2127,43 @@ export namespace MyNS {
 
 	/**  For an application output, describes the Amazon Kinesis stream configured as its destination.  */
 	export interface KinesisStreamsOutputDescription {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN?: string | null;
 	}
 
 	/**  For an application output, describes the Amazon Kinesis stream configured as its destination.  */
 	export interface KinesisStreamsOutputDescriptionFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN: FormControl<string | null | undefined>,
 	}
 	export function CreateKinesisStreamsOutputDescriptionFormGroup() {
 		return new FormGroup<KinesisStreamsOutputDescriptionFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1208,19 +2171,43 @@ export namespace MyNS {
 
 	/**  For an application output, describes the Amazon Kinesis Firehose delivery stream configured as its destination.  */
 	export interface KinesisFirehoseOutputDescription {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN?: string | null;
 	}
 
 	/**  For an application output, describes the Amazon Kinesis Firehose delivery stream configured as its destination.  */
 	export interface KinesisFirehoseOutputDescriptionFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN: FormControl<string | null | undefined>,
 	}
 	export function CreateKinesisFirehoseOutputDescriptionFormGroup() {
 		return new FormGroup<KinesisFirehoseOutputDescriptionFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1228,19 +2215,43 @@ export namespace MyNS {
 
 	/** For an application output, describes the AWS Lambda function configured as its destination.  */
 	export interface LambdaOutputDescription {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN?: string | null;
 	}
 
 	/** For an application output, describes the AWS Lambda function configured as its destination.  */
 	export interface LambdaOutputDescriptionFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN: FormControl<string | null | undefined>,
 	}
 	export function CreateLambdaOutputDescriptionFormGroup() {
 		return new FormGroup<LambdaOutputDescriptionFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1248,7 +2259,20 @@ export namespace MyNS {
 
 	/** Describes the reference data source configured for an application. */
 	export interface ReferenceDataSourceDescription {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ReferenceId: string;
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		TableName: string;
 
 		/**
@@ -1263,13 +2287,26 @@ export namespace MyNS {
 
 	/** Describes the reference data source configured for an application. */
 	export interface ReferenceDataSourceDescriptionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ReferenceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		TableName: FormControl<string | null | undefined>,
 	}
 	export function CreateReferenceDataSourceDescriptionFormGroup() {
 		return new FormGroup<ReferenceDataSourceDescriptionFormProperties>({
-			ReferenceId: new FormControl<string | null | undefined>(undefined),
-			TableName: new FormControl<string | null | undefined>(undefined),
+			ReferenceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
@@ -1277,22 +2314,62 @@ export namespace MyNS {
 
 	/** Provides the bucket name and object key name that stores the reference data. */
 	export interface S3ReferenceDataSourceDescription {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		BucketARN: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		FileKey: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		ReferenceRoleARN: string;
 	}
 
 	/** Provides the bucket name and object key name that stores the reference data. */
 	export interface S3ReferenceDataSourceDescriptionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		BucketARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		FileKey: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		ReferenceRoleARN: FormControl<string | null | undefined>,
 	}
 	export function CreateS3ReferenceDataSourceDescriptionFormGroup() {
 		return new FormGroup<S3ReferenceDataSourceDescriptionFormProperties>({
-			BucketARN: new FormControl<string | null | undefined>(undefined),
-			FileKey: new FormControl<string | null | undefined>(undefined),
-			ReferenceRoleARN: new FormControl<string | null | undefined>(undefined),
+			BucketARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			FileKey: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			ReferenceRoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1300,22 +2377,62 @@ export namespace MyNS {
 
 	/** Description of the CloudWatch logging option. */
 	export interface CloudWatchLoggingOptionDescription {
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		CloudWatchLoggingOptionId?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		LogStreamARN: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN: string;
 	}
 
 	/** Description of the CloudWatch logging option. */
 	export interface CloudWatchLoggingOptionDescriptionFormProperties {
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		CloudWatchLoggingOptionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		LogStreamARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN: FormControl<string | null | undefined>,
 	}
 	export function CreateCloudWatchLoggingOptionDescriptionFormGroup() {
 		return new FormGroup<CloudWatchLoggingOptionDescriptionFormProperties>({
-			CloudWatchLoggingOptionId: new FormControl<string | null | undefined>(undefined),
-			LogStreamARN: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			CloudWatchLoggingOptionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
+			LogStreamARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1323,16 +2440,30 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeApplicationRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: string;
 	}
 
 	/** <p/> */
 	export interface DescribeApplicationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeApplicationRequestFormGroup() {
 		return new FormGroup<DescribeApplicationRequestFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -1358,7 +2489,19 @@ export namespace MyNS {
 	}
 
 	export interface DiscoverInputSchemaRequest {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN?: string | null;
 
 		/** Describes the point at which the application reads from the streaming source. */
@@ -1371,13 +2514,25 @@ export namespace MyNS {
 		InputProcessingConfiguration?: InputProcessingConfiguration;
 	}
 	export interface DiscoverInputSchemaRequestFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN: FormControl<string | null | undefined>,
 	}
 	export function CreateDiscoverInputSchemaRequestFormGroup() {
 		return new FormGroup<DiscoverInputSchemaRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1385,22 +2540,62 @@ export namespace MyNS {
 
 	/** Provides a description of an Amazon S3 data source, including the Amazon Resource Name (ARN) of the S3 bucket, the ARN of the IAM role that is used to access the bucket, and the name of the Amazon S3 object that contains the data. */
 	export interface S3Configuration {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		BucketARN: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		FileKey: string;
 	}
 
 	/** Provides a description of an Amazon S3 data source, including the Amazon Resource Name (ARN) of the S3 bucket, the ARN of the IAM role that is used to access the bucket, and the name of the Amazon S3 object that contains the data. */
 	export interface S3ConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		BucketARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		FileKey: FormControl<string | null | undefined>,
 	}
 	export function CreateS3ConfigurationFormGroup() {
 		return new FormGroup<S3ConfigurationFormProperties>({
-			RoleARN: new FormControl<string | null | undefined>(undefined),
-			BucketARN: new FormControl<string | null | undefined>(undefined),
-			FileKey: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			BucketARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			FileKey: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1438,17 +2633,23 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ListApplicationsResponse {
+
+		/** Required */
 		ApplicationSummaries: Array<ApplicationSummary>;
+
+		/** Required */
 		HasMoreApplications: boolean;
 	}
 
 	/** <p/> */
 	export interface ListApplicationsResponseFormProperties {
+
+		/** Required */
 		HasMoreApplications: FormControl<boolean | null | undefined>,
 	}
 	export function CreateListApplicationsResponseFormGroup() {
 		return new FormGroup<ListApplicationsResponseFormProperties>({
-			HasMoreApplications: new FormControl<boolean | null | undefined>(undefined),
+			HasMoreApplications: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1456,24 +2657,51 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ListApplicationsRequest {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		Limit?: number | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ExclusiveStartApplicationName?: string | null;
 	}
 
 	/** <p/> */
 	export interface ListApplicationsRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		Limit: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ExclusiveStartApplicationName: FormControl<string | null | undefined>,
 	}
 	export function CreateListApplicationsRequestFormGroup() {
 		return new FormGroup<ListApplicationsRequestFormProperties>({
-			Limit: new FormControl<number | null | undefined>(undefined),
-			ExclusiveStartApplicationName: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
+			ExclusiveStartApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListTagsForResourceResponse {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 200
+		 */
 		Tags?: Array<Tag>;
 	}
 	export interface ListTagsForResourceResponseFormProperties {
@@ -1485,14 +2713,28 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisanalytics:[a-z]\{2\}-[a-z]\+-\d\{1\}\+:\d\{12\}\+:application/[a-zA-Z0-9_.-]\{1,128\}
+		 */
 		ResourceARN: string;
 	}
 	export interface ListTagsForResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisanalytics:[a-z]\{2\}-[a-z]\+-\d\{1\}\+:\d\{12\}\+:application/[a-zA-Z0-9_.-]\{1,128\}
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1514,17 +2756,33 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface StartApplicationRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: string;
+
+		/** Required */
 		InputConfigurations: Array<InputConfiguration>;
 	}
 
 	/** <p/> */
 	export interface StartApplicationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
 	}
 	export function CreateStartApplicationRequestFormGroup() {
 		return new FormGroup<StartApplicationRequestFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -1532,6 +2790,13 @@ export namespace MyNS {
 
 	/** When you start your application, you provide this configuration, which identifies the input source and the point in the input source at which you want the application to start processing records. */
 	export interface InputConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		Id: string;
 
 		/**
@@ -1543,11 +2808,18 @@ export namespace MyNS {
 
 	/** When you start your application, you provide this configuration, which identifies the input source and the point in the input source at which you want the application to start processing records. */
 	export interface InputConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		Id: FormControl<string | null | undefined>,
 	}
 	export function CreateInputConfigurationFormGroup() {
 		return new FormGroup<InputConfigurationFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
 		});
 
 	}
@@ -1579,16 +2851,30 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface StopApplicationRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: string;
 	}
 
 	/** <p/> */
 	export interface StopApplicationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
 	}
 	export function CreateStopApplicationRequestFormGroup() {
 		return new FormGroup<StopApplicationRequestFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -1604,15 +2890,35 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisanalytics:[a-z]\{2\}-[a-z]\+-\d\{1\}\+:\d\{12\}\+:application/[a-zA-Z0-9_.-]\{1,128\}
+		 */
 		ResourceARN: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 200
+		 */
 		Tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisanalytics:[a-z]\{2\}-[a-z]\+-\d\{1\}\+:\d\{12\}\+:application/[a-zA-Z0-9_.-]\{1,128\}
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1628,15 +2934,35 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisanalytics:[a-z]\{2\}-[a-z]\+-\d\{1\}\+:\d\{12\}\+:application/[a-zA-Z0-9_.-]\{1,128\}
+		 */
 		ResourceARN: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 200
+		 */
 		TagKeys: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisanalytics:[a-z]\{2\}-[a-z]\+-\d\{1\}\+:\d\{12\}\+:application/[a-zA-Z0-9_.-]\{1,128\}
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1652,7 +2978,20 @@ export namespace MyNS {
 	}
 
 	export interface UpdateApplicationRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: string;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 999999999
+		 */
 		CurrentApplicationVersionId: number;
 
 		/**
@@ -1662,13 +3001,26 @@ export namespace MyNS {
 		ApplicationUpdate: ApplicationUpdate;
 	}
 	export interface UpdateApplicationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 999999999
+		 */
 		CurrentApplicationVersionId: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateApplicationRequestFormGroup() {
 		return new FormGroup<UpdateApplicationRequestFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(999999999)]),
 		});
 
 	}
@@ -1677,6 +3029,11 @@ export namespace MyNS {
 	/** Describes updates to apply to an existing Amazon Kinesis Analytics application. */
 	export interface ApplicationUpdate {
 		InputUpdates?: Array<InputUpdate>;
+
+		/**
+		 * Max length: 102400
+		 * Min length: 0
+		 */
 		ApplicationCodeUpdate?: string | null;
 		OutputUpdates?: Array<OutputUpdate>;
 		ReferenceDataSourceUpdates?: Array<ReferenceDataSourceUpdate>;
@@ -1685,11 +3042,16 @@ export namespace MyNS {
 
 	/** Describes updates to apply to an existing Amazon Kinesis Analytics application. */
 	export interface ApplicationUpdateFormProperties {
+
+		/**
+		 * Max length: 102400
+		 * Min length: 0
+		 */
 		ApplicationCodeUpdate: FormControl<string | null | undefined>,
 	}
 	export function CreateApplicationUpdateFormGroup() {
 		return new FormGroup<ApplicationUpdateFormProperties>({
-			ApplicationCodeUpdate: new FormControl<string | null | undefined>(undefined),
+			ApplicationCodeUpdate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(102400), Validators.minLength(0)]),
 		});
 
 	}
@@ -1697,7 +3059,19 @@ export namespace MyNS {
 
 	/** Describes updates to a specific input configuration (identified by the <code>InputId</code> of an application).  */
 	export interface InputUpdate {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		InputId: string;
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		NamePrefixUpdate?: string | null;
 
 		/** Describes updates to an <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>. */
@@ -1718,13 +3092,25 @@ export namespace MyNS {
 
 	/** Describes updates to a specific input configuration (identified by the <code>InputId</code> of an application).  */
 	export interface InputUpdateFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		InputId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		NamePrefixUpdate: FormControl<string | null | undefined>,
 	}
 	export function CreateInputUpdateFormGroup() {
 		return new FormGroup<InputUpdateFormProperties>({
-			InputId: new FormControl<string | null | undefined>(undefined),
-			NamePrefixUpdate: new FormControl<string | null | undefined>(undefined),
+			InputId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
+			NamePrefixUpdate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
@@ -1752,19 +3138,43 @@ export namespace MyNS {
 
 	/** Represents an update to the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a> that is used to preprocess the records in the stream. */
 	export interface InputLambdaProcessorUpdate {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARNUpdate?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARNUpdate?: string | null;
 	}
 
 	/** Represents an update to the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a> that is used to preprocess the records in the stream. */
 	export interface InputLambdaProcessorUpdateFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARNUpdate: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARNUpdate: FormControl<string | null | undefined>,
 	}
 	export function CreateInputLambdaProcessorUpdateFormGroup() {
 		return new FormGroup<InputLambdaProcessorUpdateFormProperties>({
-			ResourceARNUpdate: new FormControl<string | null | undefined>(undefined),
-			RoleARNUpdate: new FormControl<string | null | undefined>(undefined),
+			ResourceARNUpdate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			RoleARNUpdate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1772,19 +3182,43 @@ export namespace MyNS {
 
 	/** When updating application input configuration, provides information about an Amazon Kinesis stream as the streaming source. */
 	export interface KinesisStreamsInputUpdate {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARNUpdate?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARNUpdate?: string | null;
 	}
 
 	/** When updating application input configuration, provides information about an Amazon Kinesis stream as the streaming source. */
 	export interface KinesisStreamsInputUpdateFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARNUpdate: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARNUpdate: FormControl<string | null | undefined>,
 	}
 	export function CreateKinesisStreamsInputUpdateFormGroup() {
 		return new FormGroup<KinesisStreamsInputUpdateFormProperties>({
-			ResourceARNUpdate: new FormControl<string | null | undefined>(undefined),
-			RoleARNUpdate: new FormControl<string | null | undefined>(undefined),
+			ResourceARNUpdate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			RoleARNUpdate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1792,19 +3226,43 @@ export namespace MyNS {
 
 	/** When updating application input configuration, provides information about an Amazon Kinesis Firehose delivery stream as the streaming source. */
 	export interface KinesisFirehoseInputUpdate {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARNUpdate?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARNUpdate?: string | null;
 	}
 
 	/** When updating application input configuration, provides information about an Amazon Kinesis Firehose delivery stream as the streaming source. */
 	export interface KinesisFirehoseInputUpdateFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARNUpdate: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARNUpdate: FormControl<string | null | undefined>,
 	}
 	export function CreateKinesisFirehoseInputUpdateFormGroup() {
 		return new FormGroup<KinesisFirehoseInputUpdateFormProperties>({
-			ResourceARNUpdate: new FormControl<string | null | undefined>(undefined),
-			RoleARNUpdate: new FormControl<string | null | undefined>(undefined),
+			ResourceARNUpdate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			RoleARNUpdate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1815,12 +3273,21 @@ export namespace MyNS {
 
 		/** Describes the record format and relevant mapping information that should be applied to schematize the records on the stream. */
 		RecordFormatUpdate?: RecordFormat;
+
+		/** Pattern: UTF-8 */
 		RecordEncodingUpdate?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 1000
+		 */
 		RecordColumnUpdates?: Array<RecordColumn>;
 	}
 
 	/** Describes updates for the application's input schema. */
 	export interface InputSchemaUpdateFormProperties {
+
+		/** Pattern: UTF-8 */
 		RecordEncodingUpdate: FormControl<string | null | undefined>,
 	}
 	export function CreateInputSchemaUpdateFormGroup() {
@@ -1833,16 +3300,26 @@ export namespace MyNS {
 
 	/** Provides updates to the parallelism count. */
 	export interface InputParallelismUpdate {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 64
+		 */
 		CountUpdate?: number | null;
 	}
 
 	/** Provides updates to the parallelism count. */
 	export interface InputParallelismUpdateFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 64
+		 */
 		CountUpdate: FormControl<number | null | undefined>,
 	}
 	export function CreateInputParallelismUpdateFormGroup() {
 		return new FormGroup<InputParallelismUpdateFormProperties>({
-			CountUpdate: new FormControl<number | null | undefined>(undefined),
+			CountUpdate: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(64)]),
 		});
 
 	}
@@ -1850,7 +3327,19 @@ export namespace MyNS {
 
 	/**  Describes updates to the output configuration identified by the <code>OutputId</code>.  */
 	export interface OutputUpdate {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		OutputId: string;
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		NameUpdate?: string | null;
 
 		/** When updating an output configuration using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation, provides information about an Amazon Kinesis stream configured as the destination. */
@@ -1868,13 +3357,25 @@ export namespace MyNS {
 
 	/**  Describes updates to the output configuration identified by the <code>OutputId</code>.  */
 	export interface OutputUpdateFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		OutputId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		NameUpdate: FormControl<string | null | undefined>,
 	}
 	export function CreateOutputUpdateFormGroup() {
 		return new FormGroup<OutputUpdateFormProperties>({
-			OutputId: new FormControl<string | null | undefined>(undefined),
-			NameUpdate: new FormControl<string | null | undefined>(undefined),
+			OutputId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
+			NameUpdate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
@@ -1882,19 +3383,43 @@ export namespace MyNS {
 
 	/**  When updating an output configuration using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation, provides information about an Amazon Kinesis stream configured as the destination.  */
 	export interface KinesisStreamsOutputUpdate {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARNUpdate?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARNUpdate?: string | null;
 	}
 
 	/**  When updating an output configuration using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation, provides information about an Amazon Kinesis stream configured as the destination.  */
 	export interface KinesisStreamsOutputUpdateFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARNUpdate: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARNUpdate: FormControl<string | null | undefined>,
 	}
 	export function CreateKinesisStreamsOutputUpdateFormGroup() {
 		return new FormGroup<KinesisStreamsOutputUpdateFormProperties>({
-			ResourceARNUpdate: new FormControl<string | null | undefined>(undefined),
-			RoleARNUpdate: new FormControl<string | null | undefined>(undefined),
+			ResourceARNUpdate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			RoleARNUpdate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1902,19 +3427,43 @@ export namespace MyNS {
 
 	/**  When updating an output configuration using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation, provides information about an Amazon Kinesis Firehose delivery stream configured as the destination.  */
 	export interface KinesisFirehoseOutputUpdate {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARNUpdate?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARNUpdate?: string | null;
 	}
 
 	/**  When updating an output configuration using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation, provides information about an Amazon Kinesis Firehose delivery stream configured as the destination.  */
 	export interface KinesisFirehoseOutputUpdateFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARNUpdate: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARNUpdate: FormControl<string | null | undefined>,
 	}
 	export function CreateKinesisFirehoseOutputUpdateFormGroup() {
 		return new FormGroup<KinesisFirehoseOutputUpdateFormProperties>({
-			ResourceARNUpdate: new FormControl<string | null | undefined>(undefined),
-			RoleARNUpdate: new FormControl<string | null | undefined>(undefined),
+			ResourceARNUpdate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			RoleARNUpdate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1922,19 +3471,43 @@ export namespace MyNS {
 
 	/** When updating an output configuration using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation, provides information about an AWS Lambda function configured as the destination. */
 	export interface LambdaOutputUpdate {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARNUpdate?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARNUpdate?: string | null;
 	}
 
 	/** When updating an output configuration using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation, provides information about an AWS Lambda function configured as the destination. */
 	export interface LambdaOutputUpdateFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		ResourceARNUpdate: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARNUpdate: FormControl<string | null | undefined>,
 	}
 	export function CreateLambdaOutputUpdateFormGroup() {
 		return new FormGroup<LambdaOutputUpdateFormProperties>({
-			ResourceARNUpdate: new FormControl<string | null | undefined>(undefined),
-			RoleARNUpdate: new FormControl<string | null | undefined>(undefined),
+			ResourceARNUpdate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			RoleARNUpdate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1942,7 +3515,19 @@ export namespace MyNS {
 
 	/** When you update a reference data source configuration for an application, this object provides all the updated values (such as the source bucket name and object key name), the in-application table name that is created, and updated mapping information that maps the data in the Amazon S3 object to the in-application reference table that is created. */
 	export interface ReferenceDataSourceUpdate {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ReferenceId: string;
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		TableNameUpdate?: string | null;
 
 		/** Describes the S3 bucket name, object key name, and IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object on your behalf and populate the in-application reference table. */
@@ -1954,13 +3539,25 @@ export namespace MyNS {
 
 	/** When you update a reference data source configuration for an application, this object provides all the updated values (such as the source bucket name and object key name), the in-application table name that is created, and updated mapping information that maps the data in the Amazon S3 object to the in-application reference table that is created. */
 	export interface ReferenceDataSourceUpdateFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ReferenceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		TableNameUpdate: FormControl<string | null | undefined>,
 	}
 	export function CreateReferenceDataSourceUpdateFormGroup() {
 		return new FormGroup<ReferenceDataSourceUpdateFormProperties>({
-			ReferenceId: new FormControl<string | null | undefined>(undefined),
-			TableNameUpdate: new FormControl<string | null | undefined>(undefined),
+			ReferenceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
+			TableNameUpdate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
@@ -1968,22 +3565,56 @@ export namespace MyNS {
 
 	/** Describes the S3 bucket name, object key name, and IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object on your behalf and populate the in-application reference table. */
 	export interface S3ReferenceDataSourceUpdate {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		BucketARNUpdate?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		FileKeyUpdate?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		ReferenceRoleARNUpdate?: string | null;
 	}
 
 	/** Describes the S3 bucket name, object key name, and IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object on your behalf and populate the in-application reference table. */
 	export interface S3ReferenceDataSourceUpdateFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		BucketARNUpdate: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		FileKeyUpdate: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		ReferenceRoleARNUpdate: FormControl<string | null | undefined>,
 	}
 	export function CreateS3ReferenceDataSourceUpdateFormGroup() {
 		return new FormGroup<S3ReferenceDataSourceUpdateFormProperties>({
-			BucketARNUpdate: new FormControl<string | null | undefined>(undefined),
-			FileKeyUpdate: new FormControl<string | null | undefined>(undefined),
-			ReferenceRoleARNUpdate: new FormControl<string | null | undefined>(undefined),
+			BucketARNUpdate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			FileKeyUpdate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ReferenceRoleARNUpdate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1991,22 +3622,60 @@ export namespace MyNS {
 
 	/** Describes CloudWatch logging option updates. */
 	export interface CloudWatchLoggingOptionUpdate {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		CloudWatchLoggingOptionId: string;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		LogStreamARNUpdate?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARNUpdate?: string | null;
 	}
 
 	/** Describes CloudWatch logging option updates. */
 	export interface CloudWatchLoggingOptionUpdateFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		CloudWatchLoggingOptionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		LogStreamARNUpdate: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleARNUpdate: FormControl<string | null | undefined>,
 	}
 	export function CreateCloudWatchLoggingOptionUpdateFormGroup() {
 		return new FormGroup<CloudWatchLoggingOptionUpdateFormProperties>({
-			CloudWatchLoggingOptionId: new FormControl<string | null | undefined>(undefined),
-			LogStreamARNUpdate: new FormControl<string | null | undefined>(undefined),
-			RoleARNUpdate: new FormControl<string | null | undefined>(undefined),
+			CloudWatchLoggingOptionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
+			LogStreamARNUpdate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			RoleARNUpdate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}

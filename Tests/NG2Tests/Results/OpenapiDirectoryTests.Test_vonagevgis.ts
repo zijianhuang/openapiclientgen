@@ -233,20 +233,20 @@ export namespace MyNS {
 	}
 	export function CreateCallFormGroup() {
 		return new FormGroup<CallFormProperties>({
-			accountId: new FormControl<number | null | undefined>(undefined),
+			accountId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			answerTime: new FormControl<Date | null | undefined>(undefined),
 			callerId: new FormControl<string | null | undefined>(undefined),
-			direction: new FormControl<CallDirection | null | undefined>(undefined),
-			duration: new FormControl<number | null | undefined>(undefined),
+			direction: new FormControl<CallDirection | null | undefined>(undefined, [Validators.required]),
+			duration: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			endTime: new FormControl<Date | null | undefined>(undefined),
 			externalId: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
-			phoneNumber: new FormControl<string | null | undefined>(undefined),
-			startTime: new FormControl<Date | null | undefined>(undefined),
-			state: new FormControl<CallState | null | undefined>(undefined),
-			type: new FormControl<CallType | null | undefined>(undefined),
-			uciId: new FormControl<number | null | undefined>(undefined),
-			userId: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			phoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			startTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			state: new FormControl<CallState | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<CallType | null | undefined>(undefined, [Validators.required]),
+			uciId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			userId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -275,7 +275,7 @@ export namespace MyNS {
 	}
 	export function CreateCallCreateFormGroup() {
 		return new FormGroup<CallCreateFormProperties>({
-			phoneNumber: new FormControl<string | null | undefined>(undefined),
+			phoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -298,7 +298,7 @@ export namespace MyNS {
 	}
 	export function CreateCallTransferFormGroup() {
 		return new FormGroup<CallTransferFormProperties>({
-			phoneNumber: new FormControl<string | null | undefined>(undefined),
+			phoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -482,21 +482,21 @@ export namespace MyNS {
 	}
 	export function CreateEventFormGroup() {
 		return new FormGroup<EventFormProperties>({
-			accountId: new FormControl<number | null | undefined>(undefined),
+			accountId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			answerTime: new FormControl<Date | null | undefined>(undefined),
 			callerId: new FormControl<string | null | undefined>(undefined),
-			direction: new FormControl<CallDirection | null | undefined>(undefined),
+			direction: new FormControl<CallDirection | null | undefined>(undefined, [Validators.required]),
 			duration: new FormControl<number | null | undefined>(undefined),
 			endTime: new FormControl<Date | null | undefined>(undefined),
 			externalId: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
-			phoneNumber: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			phoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			smsData: new FormControl<string | null | undefined>(undefined),
-			startTime: new FormControl<Date | null | undefined>(undefined),
-			state: new FormControl<CallState | null | undefined>(undefined),
-			type: new FormControl<CallType | null | undefined>(undefined),
-			uciId: new FormControl<number | null | undefined>(undefined),
-			userId: new FormControl<number | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			state: new FormControl<CallState | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<CallType | null | undefined>(undefined, [Validators.required]),
+			uciId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			userId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

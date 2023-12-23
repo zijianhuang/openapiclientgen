@@ -4,27 +4,49 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CancelKeyDeletionResponse {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId?: string | null;
 	}
 	export interface CancelKeyDeletionResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelKeyDeletionResponseFormGroup() {
 		return new FormGroup<CancelKeyDeletionResponseFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CancelKeyDeletionRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
 	}
 	export interface CancelKeyDeletionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelKeyDeletionRequestFormGroup() {
 		return new FormGroup<CancelKeyDeletionRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -90,14 +112,26 @@ export namespace MyNS {
 	}
 
 	export interface ConnectCustomKeyStoreRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CustomKeyStoreId: string;
 	}
 	export interface ConnectCustomKeyStoreRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CustomKeyStoreId: FormControl<string | null | undefined>,
 	}
 	export function CreateConnectCustomKeyStoreRequestFormGroup() {
 		return new FormGroup<ConnectCustomKeyStoreRequestFormProperties>({
-			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined),
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -143,17 +177,43 @@ export namespace MyNS {
 	}
 
 	export interface CreateAliasRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9:/_-]+$
+		 */
 		AliasName: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		TargetKeyId: string;
 	}
 	export interface CreateAliasRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9:/_-]+$
+		 */
 		AliasName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		TargetKeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateAliasRequestFormGroup() {
 		return new FormGroup<CreateAliasRequestFormProperties>({
-			AliasName: new FormControl<string | null | undefined>(undefined),
-			TargetKeyId: new FormControl<string | null | undefined>(undefined),
+			AliasName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			TargetKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -189,36 +249,94 @@ export namespace MyNS {
 	}
 
 	export interface CreateCustomKeyStoreResponse {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CustomKeyStoreId?: string | null;
 	}
 	export interface CreateCustomKeyStoreResponseFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CustomKeyStoreId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateCustomKeyStoreResponseFormGroup() {
 		return new FormGroup<CreateCustomKeyStoreResponseFormProperties>({
-			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined),
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateCustomKeyStoreRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		CustomKeyStoreName: string;
+
+		/**
+		 * Required
+		 * Max length: 24
+		 * Min length: 19
+		 */
 		CloudHsmClusterId: string;
+
+		/**
+		 * Required
+		 * Max length: 5000
+		 * Min length: 1
+		 */
 		TrustAnchorCertificate: string;
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 7
+		 */
 		KeyStorePassword: string;
 	}
 	export interface CreateCustomKeyStoreRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		CustomKeyStoreName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 24
+		 * Min length: 19
+		 */
 		CloudHsmClusterId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 5000
+		 * Min length: 1
+		 */
 		TrustAnchorCertificate: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 7
+		 */
 		KeyStorePassword: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateCustomKeyStoreRequestFormGroup() {
 		return new FormGroup<CreateCustomKeyStoreRequestFormProperties>({
-			CustomKeyStoreName: new FormControl<string | null | undefined>(undefined),
-			CloudHsmClusterId: new FormControl<string | null | undefined>(undefined),
-			TrustAnchorCertificate: new FormControl<string | null | undefined>(undefined),
-			KeyStorePassword: new FormControl<string | null | undefined>(undefined),
+			CustomKeyStoreName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			CloudHsmClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(24), Validators.minLength(19)]),
+			TrustAnchorCertificate: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(5000), Validators.minLength(1)]),
+			KeyStorePassword: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(7)]),
 		});
 
 	}
@@ -264,44 +382,121 @@ export namespace MyNS {
 	}
 
 	export interface CreateGrantResponse {
+
+		/**
+		 * Max length: 8192
+		 * Min length: 1
+		 */
 		GrantToken?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		GrantId?: string | null;
 	}
 	export interface CreateGrantResponseFormProperties {
+
+		/**
+		 * Max length: 8192
+		 * Min length: 1
+		 */
 		GrantToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		GrantId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateGrantResponseFormGroup() {
 		return new FormGroup<CreateGrantResponseFormProperties>({
-			GrantToken: new FormControl<string | null | undefined>(undefined),
-			GrantId: new FormControl<string | null | undefined>(undefined),
+			GrantToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(1)]),
+			GrantId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateGrantRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=,.@:/-]+$
+		 */
 		GranteePrincipal: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=,.@:/-]+$
+		 */
 		RetiringPrincipal?: string | null;
+
+		/** Required */
 		Operations: Array<GrantOperation>;
 
 		/** <p>Use this structure to allow <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>. </p> <p>AWS KMS applies the grant constraints only to cryptographic operations that support an encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric CMK</a>. Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic operations with asymmetric CMKs and management operations, such as <a>DescribeKey</a> or <a>ScheduleKeyDeletion</a>.</p> <important> <p>In a cryptographic operation, the encryption context in the decryption operation must be an exact, case-sensitive match for the keys and values in the encryption context of the encryption operation. Only the order of the pairs can vary.</p> <p>However, in a grant constraint, the key in each key-value pair is not case sensitive, but the value is case sensitive.</p> <p>To avoid confusion, do not use multiple encryption context pairs that differ only by case. To require a fully case-sensitive encryption context, use the <code>kms:EncryptionContext:</code> and <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context">kms:EncryptionContext:</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.</p> </important> */
 		Constraints?: GrantConstraints;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		GrantTokens?: Array<string>;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9:/_-]+$
+		 */
 		Name?: string | null;
 	}
 	export interface CreateGrantRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=,.@:/-]+$
+		 */
 		GranteePrincipal: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=,.@:/-]+$
+		 */
 		RetiringPrincipal: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9:/_-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateGrantRequestFormGroup() {
 		return new FormGroup<CreateGrantRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			GranteePrincipal: new FormControl<string | null | undefined>(undefined),
-			RetiringPrincipal: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			GranteePrincipal: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			RetiringPrincipal: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -371,17 +566,43 @@ export namespace MyNS {
 	/** <p>Contains metadata about a customer master key (CMK).</p> <p>This data type is used as a response element for the <a>CreateKey</a> and <a>DescribeKey</a> operations.</p> */
 	export interface KeyMetadata {
 		AWSAccountId?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		Arn?: string | null;
 		CreationDate?: Date | null;
 		Enabled?: boolean | null;
+
+		/**
+		 * Max length: 8192
+		 * Min length: 0
+		 */
 		Description?: string | null;
 		KeyUsage?: KeyMetadataKeyUsage | null;
 		KeyState?: KeyMetadataKeyState | null;
 		DeletionDate?: Date | null;
 		ValidTo?: Date | null;
 		Origin?: KeyMetadataOrigin | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CustomKeyStoreId?: string | null;
+
+		/**
+		 * Max length: 24
+		 * Min length: 19
+		 */
 		CloudHsmClusterId?: string | null;
 		ExpirationModel?: KeyMetadataExpirationModel | null;
 		KeyManager?: KeyMetadataKeyManager | null;
@@ -393,17 +614,43 @@ export namespace MyNS {
 	/** <p>Contains metadata about a customer master key (CMK).</p> <p>This data type is used as a response element for the <a>CreateKey</a> and <a>DescribeKey</a> operations.</p> */
 	export interface KeyMetadataFormProperties {
 		AWSAccountId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		Arn: FormControl<string | null | undefined>,
 		CreationDate: FormControl<Date | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 8192
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
 		KeyUsage: FormControl<KeyMetadataKeyUsage | null | undefined>,
 		KeyState: FormControl<KeyMetadataKeyState | null | undefined>,
 		DeletionDate: FormControl<Date | null | undefined>,
 		ValidTo: FormControl<Date | null | undefined>,
 		Origin: FormControl<KeyMetadataOrigin | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CustomKeyStoreId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 24
+		 * Min length: 19
+		 */
 		CloudHsmClusterId: FormControl<string | null | undefined>,
 		ExpirationModel: FormControl<KeyMetadataExpirationModel | null | undefined>,
 		KeyManager: FormControl<KeyMetadataKeyManager | null | undefined>,
@@ -412,18 +659,18 @@ export namespace MyNS {
 	export function CreateKeyMetadataFormGroup() {
 		return new FormGroup<KeyMetadataFormProperties>({
 			AWSAccountId: new FormControl<string | null | undefined>(undefined),
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
 			KeyUsage: new FormControl<KeyMetadataKeyUsage | null | undefined>(undefined),
 			KeyState: new FormControl<KeyMetadataKeyState | null | undefined>(undefined),
 			DeletionDate: new FormControl<Date | null | undefined>(undefined),
 			ValidTo: new FormControl<Date | null | undefined>(undefined),
 			Origin: new FormControl<KeyMetadataOrigin | null | undefined>(undefined),
-			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined),
-			CloudHsmClusterId: new FormControl<string | null | undefined>(undefined),
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			CloudHsmClusterId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(24), Validators.minLength(19)]),
 			ExpirationModel: new FormControl<KeyMetadataExpirationModel | null | undefined>(undefined),
 			KeyManager: new FormControl<KeyMetadataKeyManager | null | undefined>(undefined),
 			CustomerMasterKeySpec: new FormControl<KeyMetadataCustomerMasterKeySpec | null | undefined>(undefined),
@@ -448,32 +695,64 @@ export namespace MyNS {
 	export enum SigningAlgorithmSpec { RSASSA_PSS_SHA_256 = 0, RSASSA_PSS_SHA_384 = 1, RSASSA_PSS_SHA_512 = 2, RSASSA_PKCS1_V1_5_SHA_256 = 3, RSASSA_PKCS1_V1_5_SHA_384 = 4, RSASSA_PKCS1_V1_5_SHA_512 = 5, ECDSA_SHA_256 = 6, ECDSA_SHA_384 = 7, ECDSA_SHA_512 = 8 }
 
 	export interface CreateKeyRequest {
+
+		/**
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		Policy?: string | null;
+
+		/**
+		 * Max length: 8192
+		 * Min length: 0
+		 */
 		Description?: string | null;
 		KeyUsage?: KeyMetadataKeyUsage | null;
 		CustomerMasterKeySpec?: KeyMetadataCustomerMasterKeySpec | null;
 		Origin?: KeyMetadataOrigin | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CustomKeyStoreId?: string | null;
 		BypassPolicyLockoutSafetyCheck?: boolean | null;
 		Tags?: Array<Tag>;
 	}
 	export interface CreateKeyRequestFormProperties {
+
+		/**
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		Policy: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 8192
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
 		KeyUsage: FormControl<KeyMetadataKeyUsage | null | undefined>,
 		CustomerMasterKeySpec: FormControl<KeyMetadataCustomerMasterKeySpec | null | undefined>,
 		Origin: FormControl<KeyMetadataOrigin | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CustomKeyStoreId: FormControl<string | null | undefined>,
 		BypassPolicyLockoutSafetyCheck: FormControl<boolean | null | undefined>,
 	}
 	export function CreateCreateKeyRequestFormGroup() {
 		return new FormGroup<CreateKeyRequestFormProperties>({
-			Policy: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(131072), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
 			KeyUsage: new FormControl<KeyMetadataKeyUsage | null | undefined>(undefined),
 			CustomerMasterKeySpec: new FormControl<KeyMetadataCustomerMasterKeySpec | null | undefined>(undefined),
 			Origin: new FormControl<KeyMetadataOrigin | null | undefined>(undefined),
-			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined),
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			BypassPolicyLockoutSafetyCheck: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -482,19 +761,43 @@ export namespace MyNS {
 
 	/** <p>A key-value pair. A tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty (null) strings.</p> <p>For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p> */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		TagKey: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		TagValue: string;
 	}
 
 	/** <p>A key-value pair. A tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty (null) strings.</p> <p>For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p> */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		TagKey: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		TagValue: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			TagKey: new FormControl<string | null | undefined>(undefined),
-			TagValue: new FormControl<string | null | undefined>(undefined),
+			TagKey: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			TagValue: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -530,40 +833,87 @@ export namespace MyNS {
 	}
 
 	export interface DecryptResponse {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId?: string | null;
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		Plaintext?: string | null;
 		EncryptionAlgorithm?: EncryptionAlgorithmSpec | null;
 	}
 	export interface DecryptResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		Plaintext: FormControl<string | null | undefined>,
 		EncryptionAlgorithm: FormControl<EncryptionAlgorithmSpec | null | undefined>,
 	}
 	export function CreateDecryptResponseFormGroup() {
 		return new FormGroup<DecryptResponseFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			Plaintext: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			Plaintext: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
 			EncryptionAlgorithm: new FormControl<EncryptionAlgorithmSpec | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface DecryptRequest {
+
+		/**
+		 * Required
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		CiphertextBlob: string;
 		EncryptionContext?: EncryptionContextType;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		GrantTokens?: Array<string>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId?: string | null;
 		EncryptionAlgorithm?: EncryptionAlgorithmSpec | null;
 	}
 	export interface DecryptRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		CiphertextBlob: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
 		EncryptionAlgorithm: FormControl<EncryptionAlgorithmSpec | null | undefined>,
 	}
 	export function CreateDecryptRequestFormGroup() {
 		return new FormGroup<DecryptRequestFormProperties>({
-			CiphertextBlob: new FormControl<string | null | undefined>(undefined),
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			CiphertextBlob: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6144), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 			EncryptionAlgorithm: new FormControl<EncryptionAlgorithmSpec | null | undefined>(undefined),
 		});
 
@@ -610,14 +960,28 @@ export namespace MyNS {
 	}
 
 	export interface DeleteAliasRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9:/_-]+$
+		 */
 		AliasName: string;
 	}
 	export interface DeleteAliasRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9:/_-]+$
+		 */
 		AliasName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteAliasRequestFormGroup() {
 		return new FormGroup<DeleteAliasRequestFormProperties>({
-			AliasName: new FormControl<string | null | undefined>(undefined),
+			AliasName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -633,14 +997,26 @@ export namespace MyNS {
 	}
 
 	export interface DeleteCustomKeyStoreRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CustomKeyStoreId: string;
 	}
 	export interface DeleteCustomKeyStoreRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CustomKeyStoreId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteCustomKeyStoreRequestFormGroup() {
 		return new FormGroup<DeleteCustomKeyStoreRequestFormProperties>({
-			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined),
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -656,30 +1032,54 @@ export namespace MyNS {
 	}
 
 	export interface DeleteImportedKeyMaterialRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
 	}
 	export interface DeleteImportedKeyMaterialRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteImportedKeyMaterialRequestFormGroup() {
 		return new FormGroup<DeleteImportedKeyMaterialRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeCustomKeyStoresResponse {
 		CustomKeyStores?: Array<CustomKeyStoresListEntry>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		NextMarker?: string | null;
 		Truncated?: boolean | null;
 	}
 	export interface DescribeCustomKeyStoresResponseFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		NextMarker: FormControl<string | null | undefined>,
 		Truncated: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDescribeCustomKeyStoresResponseFormGroup() {
 		return new FormGroup<DescribeCustomKeyStoresResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			Truncated: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -688,9 +1088,29 @@ export namespace MyNS {
 
 	/** Contains information about each custom key store in the custom key store list. */
 	export interface CustomKeyStoresListEntry {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CustomKeyStoreId?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		CustomKeyStoreName?: string | null;
+
+		/**
+		 * Max length: 24
+		 * Min length: 19
+		 */
 		CloudHsmClusterId?: string | null;
+
+		/**
+		 * Max length: 5000
+		 * Min length: 1
+		 */
 		TrustAnchorCertificate?: string | null;
 		ConnectionState?: CustomKeyStoresListEntryConnectionState | null;
 		ConnectionErrorCode?: CustomKeyStoresListEntryConnectionErrorCode | null;
@@ -699,9 +1119,29 @@ export namespace MyNS {
 
 	/** Contains information about each custom key store in the custom key store list. */
 	export interface CustomKeyStoresListEntryFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CustomKeyStoreId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		CustomKeyStoreName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 24
+		 * Min length: 19
+		 */
 		CloudHsmClusterId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 5000
+		 * Min length: 1
+		 */
 		TrustAnchorCertificate: FormControl<string | null | undefined>,
 		ConnectionState: FormControl<CustomKeyStoresListEntryConnectionState | null | undefined>,
 		ConnectionErrorCode: FormControl<CustomKeyStoresListEntryConnectionErrorCode | null | undefined>,
@@ -709,10 +1149,10 @@ export namespace MyNS {
 	}
 	export function CreateCustomKeyStoresListEntryFormGroup() {
 		return new FormGroup<CustomKeyStoresListEntryFormProperties>({
-			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined),
-			CustomKeyStoreName: new FormControl<string | null | undefined>(undefined),
-			CloudHsmClusterId: new FormControl<string | null | undefined>(undefined),
-			TrustAnchorCertificate: new FormControl<string | null | undefined>(undefined),
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			CustomKeyStoreName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			CloudHsmClusterId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(24), Validators.minLength(19)]),
+			TrustAnchorCertificate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5000), Validators.minLength(1)]),
 			ConnectionState: new FormControl<CustomKeyStoresListEntryConnectionState | null | undefined>(undefined),
 			ConnectionErrorCode: new FormControl<CustomKeyStoresListEntryConnectionErrorCode | null | undefined>(undefined),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
@@ -725,23 +1165,65 @@ export namespace MyNS {
 	export enum CustomKeyStoresListEntryConnectionErrorCode { INVALID_CREDENTIALS = 0, CLUSTER_NOT_FOUND = 1, NETWORK_ERRORS = 2, INTERNAL_ERROR = 3, INSUFFICIENT_CLOUDHSM_HSMS = 4, USER_LOCKED_OUT = 5, USER_NOT_FOUND = 6, USER_LOGGED_IN = 7, SUBNET_NOT_FOUND = 8 }
 
 	export interface DescribeCustomKeyStoresRequest {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CustomKeyStoreId?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		CustomKeyStoreName?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		Limit?: number | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		Marker?: string | null;
 	}
 	export interface DescribeCustomKeyStoresRequestFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CustomKeyStoreId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		CustomKeyStoreName: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		Limit: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeCustomKeyStoresRequestFormGroup() {
 		return new FormGroup<DescribeCustomKeyStoresRequestFormProperties>({
-			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined),
-			CustomKeyStoreName: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			CustomKeyStoreName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -760,41 +1242,82 @@ export namespace MyNS {
 	}
 
 	export interface DescribeKeyRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		GrantTokens?: Array<string>;
 	}
 	export interface DescribeKeyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeKeyRequestFormGroup() {
 		return new FormGroup<DescribeKeyRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DisableKeyRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
 	}
 	export interface DisableKeyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateDisableKeyRequestFormGroup() {
 		return new FormGroup<DisableKeyRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DisableKeyRotationRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
 	}
 	export interface DisableKeyRotationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateDisableKeyRotationRequestFormGroup() {
 		return new FormGroup<DisableKeyRotationRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -810,119 +1333,261 @@ export namespace MyNS {
 	}
 
 	export interface DisconnectCustomKeyStoreRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CustomKeyStoreId: string;
 	}
 	export interface DisconnectCustomKeyStoreRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CustomKeyStoreId: FormControl<string | null | undefined>,
 	}
 	export function CreateDisconnectCustomKeyStoreRequestFormGroup() {
 		return new FormGroup<DisconnectCustomKeyStoreRequestFormProperties>({
-			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined),
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface EnableKeyRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
 	}
 	export interface EnableKeyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateEnableKeyRequestFormGroup() {
 		return new FormGroup<EnableKeyRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface EnableKeyRotationRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
 	}
 	export interface EnableKeyRotationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateEnableKeyRotationRequestFormGroup() {
 		return new FormGroup<EnableKeyRotationRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface EncryptResponse {
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		CiphertextBlob?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId?: string | null;
 		EncryptionAlgorithm?: EncryptionAlgorithmSpec | null;
 	}
 	export interface EncryptResponseFormProperties {
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		CiphertextBlob: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
 		EncryptionAlgorithm: FormControl<EncryptionAlgorithmSpec | null | undefined>,
 	}
 	export function CreateEncryptResponseFormGroup() {
 		return new FormGroup<EncryptResponseFormProperties>({
-			CiphertextBlob: new FormControl<string | null | undefined>(undefined),
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			CiphertextBlob: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 			EncryptionAlgorithm: new FormControl<EncryptionAlgorithmSpec | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface EncryptRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
+
+		/**
+		 * Required
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		Plaintext: string;
 		EncryptionContext?: EncryptionContextType;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		GrantTokens?: Array<string>;
 		EncryptionAlgorithm?: EncryptionAlgorithmSpec | null;
 	}
 	export interface EncryptRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		Plaintext: FormControl<string | null | undefined>,
 		EncryptionAlgorithm: FormControl<EncryptionAlgorithmSpec | null | undefined>,
 	}
 	export function CreateEncryptRequestFormGroup() {
 		return new FormGroup<EncryptRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			Plaintext: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			Plaintext: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4096), Validators.minLength(1)]),
 			EncryptionAlgorithm: new FormControl<EncryptionAlgorithmSpec | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GenerateDataKeyResponse {
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		CiphertextBlob?: string | null;
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		Plaintext?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId?: string | null;
 	}
 	export interface GenerateDataKeyResponseFormProperties {
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		CiphertextBlob: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		Plaintext: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateGenerateDataKeyResponseFormGroup() {
 		return new FormGroup<GenerateDataKeyResponseFormProperties>({
-			CiphertextBlob: new FormControl<string | null | undefined>(undefined),
-			Plaintext: new FormControl<string | null | undefined>(undefined),
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			CiphertextBlob: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
+			Plaintext: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GenerateDataKeyRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
 		EncryptionContext?: EncryptionContextType;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1024
+		 */
 		NumberOfBytes?: number | null;
 		KeySpec?: GenerateDataKeyRequestKeySpec | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		GrantTokens?: Array<string>;
 	}
 	export interface GenerateDataKeyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1024
+		 */
 		NumberOfBytes: FormControl<number | null | undefined>,
 		KeySpec: FormControl<GenerateDataKeyRequestKeySpec | null | undefined>,
 	}
 	export function CreateGenerateDataKeyRequestFormGroup() {
 		return new FormGroup<GenerateDataKeyRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			NumberOfBytes: new FormControl<number | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			NumberOfBytes: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
 			KeySpec: new FormControl<GenerateDataKeyRequestKeySpec | null | undefined>(undefined),
 		});
 
@@ -931,25 +1596,65 @@ export namespace MyNS {
 	export enum GenerateDataKeyRequestKeySpec { AES_256 = 0, AES_128 = 1 }
 
 	export interface GenerateDataKeyPairResponse {
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		PrivateKeyCiphertextBlob?: string | null;
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		PrivateKeyPlaintext?: string | null;
+
+		/**
+		 * Max length: 8192
+		 * Min length: 1
+		 */
 		PublicKey?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId?: string | null;
 		KeyPairSpec?: GenerateDataKeyPairResponseKeyPairSpec | null;
 	}
 	export interface GenerateDataKeyPairResponseFormProperties {
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		PrivateKeyCiphertextBlob: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		PrivateKeyPlaintext: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 8192
+		 * Min length: 1
+		 */
 		PublicKey: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
 		KeyPairSpec: FormControl<GenerateDataKeyPairResponseKeyPairSpec | null | undefined>,
 	}
 	export function CreateGenerateDataKeyPairResponseFormGroup() {
 		return new FormGroup<GenerateDataKeyPairResponseFormProperties>({
-			PrivateKeyCiphertextBlob: new FormControl<string | null | undefined>(undefined),
-			PrivateKeyPlaintext: new FormControl<string | null | undefined>(undefined),
-			PublicKey: new FormControl<string | null | undefined>(undefined),
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			PrivateKeyCiphertextBlob: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
+			PrivateKeyPlaintext: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			PublicKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 			KeyPairSpec: new FormControl<GenerateDataKeyPairResponseKeyPairSpec | null | undefined>(undefined),
 		});
 
@@ -959,39 +1664,90 @@ export namespace MyNS {
 
 	export interface GenerateDataKeyPairRequest {
 		EncryptionContext?: EncryptionContextType;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
+
+		/** Required */
 		KeyPairSpec: GenerateDataKeyPairResponseKeyPairSpec;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		GrantTokens?: Array<string>;
 	}
 	export interface GenerateDataKeyPairRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/** Required */
 		KeyPairSpec: FormControl<GenerateDataKeyPairResponseKeyPairSpec | null | undefined>,
 	}
 	export function CreateGenerateDataKeyPairRequestFormGroup() {
 		return new FormGroup<GenerateDataKeyPairRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			KeyPairSpec: new FormControl<GenerateDataKeyPairResponseKeyPairSpec | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyPairSpec: new FormControl<GenerateDataKeyPairResponseKeyPairSpec | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface GenerateDataKeyPairWithoutPlaintextResponse {
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		PrivateKeyCiphertextBlob?: string | null;
+
+		/**
+		 * Max length: 8192
+		 * Min length: 1
+		 */
 		PublicKey?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId?: string | null;
 		KeyPairSpec?: GenerateDataKeyPairResponseKeyPairSpec | null;
 	}
 	export interface GenerateDataKeyPairWithoutPlaintextResponseFormProperties {
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		PrivateKeyCiphertextBlob: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 8192
+		 * Min length: 1
+		 */
 		PublicKey: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
 		KeyPairSpec: FormControl<GenerateDataKeyPairResponseKeyPairSpec | null | undefined>,
 	}
 	export function CreateGenerateDataKeyPairWithoutPlaintextResponseFormGroup() {
 		return new FormGroup<GenerateDataKeyPairWithoutPlaintextResponseFormProperties>({
-			PrivateKeyCiphertextBlob: new FormControl<string | null | undefined>(undefined),
-			PublicKey: new FormControl<string | null | undefined>(undefined),
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			PrivateKeyCiphertextBlob: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
+			PublicKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 			KeyPairSpec: new FormControl<GenerateDataKeyPairResponseKeyPairSpec | null | undefined>(undefined),
 		});
 
@@ -999,113 +1755,249 @@ export namespace MyNS {
 
 	export interface GenerateDataKeyPairWithoutPlaintextRequest {
 		EncryptionContext?: EncryptionContextType;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
+
+		/** Required */
 		KeyPairSpec: GenerateDataKeyPairResponseKeyPairSpec;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		GrantTokens?: Array<string>;
 	}
 	export interface GenerateDataKeyPairWithoutPlaintextRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/** Required */
 		KeyPairSpec: FormControl<GenerateDataKeyPairResponseKeyPairSpec | null | undefined>,
 	}
 	export function CreateGenerateDataKeyPairWithoutPlaintextRequestFormGroup() {
 		return new FormGroup<GenerateDataKeyPairWithoutPlaintextRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			KeyPairSpec: new FormControl<GenerateDataKeyPairResponseKeyPairSpec | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyPairSpec: new FormControl<GenerateDataKeyPairResponseKeyPairSpec | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface GenerateDataKeyWithoutPlaintextResponse {
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		CiphertextBlob?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId?: string | null;
 	}
 	export interface GenerateDataKeyWithoutPlaintextResponseFormProperties {
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		CiphertextBlob: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateGenerateDataKeyWithoutPlaintextResponseFormGroup() {
 		return new FormGroup<GenerateDataKeyWithoutPlaintextResponseFormProperties>({
-			CiphertextBlob: new FormControl<string | null | undefined>(undefined),
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			CiphertextBlob: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GenerateDataKeyWithoutPlaintextRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
 		EncryptionContext?: EncryptionContextType;
 		KeySpec?: GenerateDataKeyRequestKeySpec | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1024
+		 */
 		NumberOfBytes?: number | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		GrantTokens?: Array<string>;
 	}
 	export interface GenerateDataKeyWithoutPlaintextRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
 		KeySpec: FormControl<GenerateDataKeyRequestKeySpec | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1024
+		 */
 		NumberOfBytes: FormControl<number | null | undefined>,
 	}
 	export function CreateGenerateDataKeyWithoutPlaintextRequestFormGroup() {
 		return new FormGroup<GenerateDataKeyWithoutPlaintextRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 			KeySpec: new FormControl<GenerateDataKeyRequestKeySpec | null | undefined>(undefined),
-			NumberOfBytes: new FormControl<number | null | undefined>(undefined),
+			NumberOfBytes: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
 		});
 
 	}
 
 	export interface GenerateRandomResponse {
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		Plaintext?: string | null;
 	}
 	export interface GenerateRandomResponseFormProperties {
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		Plaintext: FormControl<string | null | undefined>,
 	}
 	export function CreateGenerateRandomResponseFormGroup() {
 		return new FormGroup<GenerateRandomResponseFormProperties>({
-			Plaintext: new FormControl<string | null | undefined>(undefined),
+			Plaintext: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GenerateRandomRequest {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1024
+		 */
 		NumberOfBytes?: number | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CustomKeyStoreId?: string | null;
 	}
 	export interface GenerateRandomRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1024
+		 */
 		NumberOfBytes: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CustomKeyStoreId: FormControl<string | null | undefined>,
 	}
 	export function CreateGenerateRandomRequestFormGroup() {
 		return new FormGroup<GenerateRandomRequestFormProperties>({
-			NumberOfBytes: new FormControl<number | null | undefined>(undefined),
-			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined),
+			NumberOfBytes: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetKeyPolicyResponse {
+
+		/**
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		Policy?: string | null;
 	}
 	export interface GetKeyPolicyResponseFormProperties {
+
+		/**
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		Policy: FormControl<string | null | undefined>,
 	}
 	export function CreateGetKeyPolicyResponseFormGroup() {
 		return new FormGroup<GetKeyPolicyResponseFormProperties>({
-			Policy: new FormControl<string | null | undefined>(undefined),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(131072), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetKeyPolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w]+
+		 */
 		PolicyName: string;
 	}
 	export interface GetKeyPolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w]+
+		 */
 		PolicyName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetKeyPolicyRequestFormGroup() {
 		return new FormGroup<GetKeyPolicyRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			PolicyName: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -1124,55 +2016,117 @@ export namespace MyNS {
 	}
 
 	export interface GetKeyRotationStatusRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
 	}
 	export interface GetKeyRotationStatusRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetKeyRotationStatusRequestFormGroup() {
 		return new FormGroup<GetKeyRotationStatusRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetParametersForImportResponse {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId?: string | null;
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		ImportToken?: string | null;
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		PublicKey?: string | null;
 		ParametersValidTo?: Date | null;
 	}
 	export interface GetParametersForImportResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		ImportToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		PublicKey: FormControl<string | null | undefined>,
 		ParametersValidTo: FormControl<Date | null | undefined>,
 	}
 	export function CreateGetParametersForImportResponseFormGroup() {
 		return new FormGroup<GetParametersForImportResponseFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			ImportToken: new FormControl<string | null | undefined>(undefined),
-			PublicKey: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			ImportToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
+			PublicKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
 			ParametersValidTo: new FormControl<Date | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetParametersForImportRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
+
+		/** Required */
 		WrappingAlgorithm: GetParametersForImportRequestWrappingAlgorithm;
+
+		/** Required */
 		WrappingKeySpec: GetParametersForImportRequestWrappingKeySpec;
 	}
 	export interface GetParametersForImportRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/** Required */
 		WrappingAlgorithm: FormControl<GetParametersForImportRequestWrappingAlgorithm | null | undefined>,
+
+		/** Required */
 		WrappingKeySpec: FormControl<GetParametersForImportRequestWrappingKeySpec | null | undefined>,
 	}
 	export function CreateGetParametersForImportRequestFormGroup() {
 		return new FormGroup<GetParametersForImportRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			WrappingAlgorithm: new FormControl<GetParametersForImportRequestWrappingAlgorithm | null | undefined>(undefined),
-			WrappingKeySpec: new FormControl<GetParametersForImportRequestWrappingKeySpec | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			WrappingAlgorithm: new FormControl<GetParametersForImportRequestWrappingAlgorithm | null | undefined>(undefined, [Validators.required]),
+			WrappingKeySpec: new FormControl<GetParametersForImportRequestWrappingKeySpec | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1182,7 +2136,17 @@ export namespace MyNS {
 	export enum GetParametersForImportRequestWrappingKeySpec { RSA_2048 = 0 }
 
 	export interface GetPublicKeyResponse {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId?: string | null;
+
+		/**
+		 * Max length: 8192
+		 * Min length: 1
+		 */
 		PublicKey?: string | null;
 		CustomerMasterKeySpec?: KeyMetadataCustomerMasterKeySpec | null;
 		KeyUsage?: KeyMetadataKeyUsage | null;
@@ -1190,15 +2154,25 @@ export namespace MyNS {
 		SigningAlgorithms?: Array<SigningAlgorithmSpec>;
 	}
 	export interface GetPublicKeyResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 8192
+		 * Min length: 1
+		 */
 		PublicKey: FormControl<string | null | undefined>,
 		CustomerMasterKeySpec: FormControl<KeyMetadataCustomerMasterKeySpec | null | undefined>,
 		KeyUsage: FormControl<KeyMetadataKeyUsage | null | undefined>,
 	}
 	export function CreateGetPublicKeyResponseFormGroup() {
 		return new FormGroup<GetPublicKeyResponseFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			PublicKey: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			PublicKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(1)]),
 			CustomerMasterKeySpec: new FormControl<KeyMetadataCustomerMasterKeySpec | null | undefined>(undefined),
 			KeyUsage: new FormControl<KeyMetadataKeyUsage | null | undefined>(undefined),
 		});
@@ -1206,15 +2180,32 @@ export namespace MyNS {
 	}
 
 	export interface GetPublicKeyRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		GrantTokens?: Array<string>;
 	}
 	export interface GetPublicKeyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetPublicKeyRequestFormGroup() {
 		return new FormGroup<GetPublicKeyRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1230,24 +2221,60 @@ export namespace MyNS {
 	}
 
 	export interface ImportKeyMaterialRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
+
+		/**
+		 * Required
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		ImportToken: string;
+
+		/**
+		 * Required
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		EncryptedKeyMaterial: string;
 		ValidTo?: Date | null;
 		ExpirationModel?: KeyMetadataExpirationModel | null;
 	}
 	export interface ImportKeyMaterialRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		ImportToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		EncryptedKeyMaterial: FormControl<string | null | undefined>,
 		ValidTo: FormControl<Date | null | undefined>,
 		ExpirationModel: FormControl<KeyMetadataExpirationModel | null | undefined>,
 	}
 	export function CreateImportKeyMaterialRequestFormGroup() {
 		return new FormGroup<ImportKeyMaterialRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			ImportToken: new FormControl<string | null | undefined>(undefined),
-			EncryptedKeyMaterial: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			ImportToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6144), Validators.minLength(1)]),
+			EncryptedKeyMaterial: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6144), Validators.minLength(1)]),
 			ValidTo: new FormControl<Date | null | undefined>(undefined),
 			ExpirationModel: new FormControl<KeyMetadataExpirationModel | null | undefined>(undefined),
 		});
@@ -1286,16 +2313,28 @@ export namespace MyNS {
 
 	export interface ListAliasesResponse {
 		Aliases?: Array<AliasListEntry>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		NextMarker?: string | null;
 		Truncated?: boolean | null;
 	}
 	export interface ListAliasesResponseFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		NextMarker: FormControl<string | null | undefined>,
 		Truncated: FormControl<boolean | null | undefined>,
 	}
 	export function CreateListAliasesResponseFormGroup() {
 		return new FormGroup<ListAliasesResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			Truncated: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1304,41 +2343,105 @@ export namespace MyNS {
 
 	/** Contains information about an alias. */
 	export interface AliasListEntry {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9:/_-]+$
+		 */
 		AliasName?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		AliasArn?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		TargetKeyId?: string | null;
 	}
 
 	/** Contains information about an alias. */
 	export interface AliasListEntryFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9:/_-]+$
+		 */
 		AliasName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		AliasArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		TargetKeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateAliasListEntryFormGroup() {
 		return new FormGroup<AliasListEntryFormProperties>({
-			AliasName: new FormControl<string | null | undefined>(undefined),
-			AliasArn: new FormControl<string | null | undefined>(undefined),
-			TargetKeyId: new FormControl<string | null | undefined>(undefined),
+			AliasName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			AliasArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			TargetKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListAliasesRequest {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		Limit?: number | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		Marker?: string | null;
 	}
 	export interface ListAliasesRequestFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		Limit: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateListAliasesRequestFormGroup() {
 		return new FormGroup<ListAliasesRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1355,16 +2458,28 @@ export namespace MyNS {
 
 	export interface ListGrantsResponse {
 		Grants?: Array<GrantListEntry>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		NextMarker?: string | null;
 		Truncated?: boolean | null;
 	}
 	export interface ListGrantsResponseFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		NextMarker: FormControl<string | null | undefined>,
 		Truncated: FormControl<boolean | null | undefined>,
 	}
 	export function CreateListGrantsResponseFormGroup() {
 		return new FormGroup<ListGrantsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			Truncated: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1373,12 +2488,46 @@ export namespace MyNS {
 
 	/** Contains information about a grant. */
 	export interface GrantListEntry {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		GrantId?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9:/_-]+$
+		 */
 		Name?: string | null;
 		CreationDate?: Date | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=,.@:/-]+$
+		 */
 		GranteePrincipal?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=,.@:/-]+$
+		 */
 		RetiringPrincipal?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=,.@:/-]+$
+		 */
 		IssuingAccount?: string | null;
 		Operations?: Array<GrantOperation>;
 
@@ -1388,94 +2537,220 @@ export namespace MyNS {
 
 	/** Contains information about a grant. */
 	export interface GrantListEntryFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		GrantId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9:/_-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
 		CreationDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=,.@:/-]+$
+		 */
 		GranteePrincipal: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=,.@:/-]+$
+		 */
 		RetiringPrincipal: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=,.@:/-]+$
+		 */
 		IssuingAccount: FormControl<string | null | undefined>,
 	}
 	export function CreateGrantListEntryFormGroup() {
 		return new FormGroup<GrantListEntryFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			GrantId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			GrantId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
-			GranteePrincipal: new FormControl<string | null | undefined>(undefined),
-			RetiringPrincipal: new FormControl<string | null | undefined>(undefined),
-			IssuingAccount: new FormControl<string | null | undefined>(undefined),
+			GranteePrincipal: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			RetiringPrincipal: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			IssuingAccount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListGrantsRequest {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		Limit?: number | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
 	}
 	export interface ListGrantsRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		Limit: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateListGrantsRequestFormGroup() {
 		return new FormGroup<ListGrantsRequestFormProperties>({
-			Limit: new FormControl<number | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListKeyPoliciesResponse {
 		PolicyNames?: Array<string>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		NextMarker?: string | null;
 		Truncated?: boolean | null;
 	}
 	export interface ListKeyPoliciesResponseFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		NextMarker: FormControl<string | null | undefined>,
 		Truncated: FormControl<boolean | null | undefined>,
 	}
 	export function CreateListKeyPoliciesResponseFormGroup() {
 		return new FormGroup<ListKeyPoliciesResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			Truncated: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ListKeyPoliciesRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		Limit?: number | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		Marker?: string | null;
 	}
 	export interface ListKeyPoliciesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		Limit: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateListKeyPoliciesRequestFormGroup() {
 		return new FormGroup<ListKeyPoliciesRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListKeysResponse {
 		Keys?: Array<KeyListEntry>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		NextMarker?: string | null;
 		Truncated?: boolean | null;
 	}
 	export interface ListKeysResponseFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		NextMarker: FormControl<string | null | undefined>,
 		Truncated: FormControl<boolean | null | undefined>,
 	}
 	export function CreateListKeysResponseFormGroup() {
 		return new FormGroup<ListKeysResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			Truncated: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1484,135 +2759,329 @@ export namespace MyNS {
 
 	/** Contains information about each entry in the key list. */
 	export interface KeyListEntry {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		KeyArn?: string | null;
 	}
 
 	/** Contains information about each entry in the key list. */
 	export interface KeyListEntryFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		KeyArn: FormControl<string | null | undefined>,
 	}
 	export function CreateKeyListEntryFormGroup() {
 		return new FormGroup<KeyListEntryFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			KeyArn: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface ListKeysRequest {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		Limit?: number | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		Marker?: string | null;
 	}
 	export interface ListKeysRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		Limit: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateListKeysRequestFormGroup() {
 		return new FormGroup<ListKeysRequestFormProperties>({
-			Limit: new FormControl<number | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListResourceTagsResponse {
 		Tags?: Array<Tag>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		NextMarker?: string | null;
 		Truncated?: boolean | null;
 	}
 	export interface ListResourceTagsResponseFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		NextMarker: FormControl<string | null | undefined>,
 		Truncated: FormControl<boolean | null | undefined>,
 	}
 	export function CreateListResourceTagsResponseFormGroup() {
 		return new FormGroup<ListResourceTagsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			Truncated: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ListResourceTagsRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		Limit?: number | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		Marker?: string | null;
 	}
 	export interface ListResourceTagsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		Limit: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateListResourceTagsRequestFormGroup() {
 		return new FormGroup<ListResourceTagsRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListRetirableGrantsRequest {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		Limit?: number | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=,.@:/-]+$
+		 */
 		RetiringPrincipal: string;
 	}
 	export interface ListRetirableGrantsRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		Limit: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]*
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w+=,.@:/-]+$
+		 */
 		RetiringPrincipal: FormControl<string | null | undefined>,
 	}
 	export function CreateListRetirableGrantsRequestFormGroup() {
 		return new FormGroup<ListRetirableGrantsRequestFormProperties>({
-			Limit: new FormControl<number | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			RetiringPrincipal: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			RetiringPrincipal: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface PutKeyPolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w]+
+		 */
 		PolicyName: string;
+
+		/**
+		 * Required
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		Policy: string;
 		BypassPolicyLockoutSafetyCheck?: boolean | null;
 	}
 	export interface PutKeyPolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w]+
+		 */
 		PolicyName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		Policy: FormControl<string | null | undefined>,
 		BypassPolicyLockoutSafetyCheck: FormControl<boolean | null | undefined>,
 	}
 	export function CreatePutKeyPolicyRequestFormGroup() {
 		return new FormGroup<PutKeyPolicyRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			PolicyName: new FormControl<string | null | undefined>(undefined),
-			Policy: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(131072), Validators.minLength(1)]),
 			BypassPolicyLockoutSafetyCheck: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ReEncryptResponse {
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		CiphertextBlob?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SourceKeyId?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId?: string | null;
 		SourceEncryptionAlgorithm?: EncryptionAlgorithmSpec | null;
 		DestinationEncryptionAlgorithm?: EncryptionAlgorithmSpec | null;
 	}
 	export interface ReEncryptResponseFormProperties {
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		CiphertextBlob: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SourceKeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
 		SourceEncryptionAlgorithm: FormControl<EncryptionAlgorithmSpec | null | undefined>,
 		DestinationEncryptionAlgorithm: FormControl<EncryptionAlgorithmSpec | null | undefined>,
 	}
 	export function CreateReEncryptResponseFormGroup() {
 		return new FormGroup<ReEncryptResponseFormProperties>({
-			CiphertextBlob: new FormControl<string | null | undefined>(undefined),
-			SourceKeyId: new FormControl<string | null | undefined>(undefined),
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			CiphertextBlob: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
+			SourceKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 			SourceEncryptionAlgorithm: new FormControl<EncryptionAlgorithmSpec | null | undefined>(undefined),
 			DestinationEncryptionAlgorithm: new FormControl<EncryptionAlgorithmSpec | null | undefined>(undefined),
 		});
@@ -1620,27 +3089,66 @@ export namespace MyNS {
 	}
 
 	export interface ReEncryptRequest {
+
+		/**
+		 * Required
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		CiphertextBlob: string;
 		SourceEncryptionContext?: EncryptionContextType;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SourceKeyId?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		DestinationKeyId: string;
 		DestinationEncryptionContext?: EncryptionContextType;
 		SourceEncryptionAlgorithm?: EncryptionAlgorithmSpec | null;
 		DestinationEncryptionAlgorithm?: EncryptionAlgorithmSpec | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		GrantTokens?: Array<string>;
 	}
 	export interface ReEncryptRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		CiphertextBlob: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SourceKeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		DestinationKeyId: FormControl<string | null | undefined>,
 		SourceEncryptionAlgorithm: FormControl<EncryptionAlgorithmSpec | null | undefined>,
 		DestinationEncryptionAlgorithm: FormControl<EncryptionAlgorithmSpec | null | undefined>,
 	}
 	export function CreateReEncryptRequestFormGroup() {
 		return new FormGroup<ReEncryptRequestFormProperties>({
-			CiphertextBlob: new FormControl<string | null | undefined>(undefined),
-			SourceKeyId: new FormControl<string | null | undefined>(undefined),
-			DestinationKeyId: new FormControl<string | null | undefined>(undefined),
+			CiphertextBlob: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6144), Validators.minLength(1)]),
+			SourceKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			DestinationKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 			SourceEncryptionAlgorithm: new FormControl<EncryptionAlgorithmSpec | null | undefined>(undefined),
 			DestinationEncryptionAlgorithm: new FormControl<EncryptionAlgorithmSpec | null | undefined>(undefined),
 		});
@@ -1648,20 +3156,50 @@ export namespace MyNS {
 	}
 
 	export interface RetireGrantRequest {
+
+		/**
+		 * Max length: 8192
+		 * Min length: 1
+		 */
 		GrantToken?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		GrantId?: string | null;
 	}
 	export interface RetireGrantRequestFormProperties {
+
+		/**
+		 * Max length: 8192
+		 * Min length: 1
+		 */
 		GrantToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		GrantId: FormControl<string | null | undefined>,
 	}
 	export function CreateRetireGrantRequestFormGroup() {
 		return new FormGroup<RetireGrantRequestFormProperties>({
-			GrantToken: new FormControl<string | null | undefined>(undefined),
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			GrantId: new FormControl<string | null | undefined>(undefined),
+			GrantToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			GrantId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -1677,91 +3215,200 @@ export namespace MyNS {
 	}
 
 	export interface RevokeGrantRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		GrantId: string;
 	}
 	export interface RevokeGrantRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		GrantId: FormControl<string | null | undefined>,
 	}
 	export function CreateRevokeGrantRequestFormGroup() {
 		return new FormGroup<RevokeGrantRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			GrantId: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			GrantId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ScheduleKeyDeletionResponse {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId?: string | null;
 		DeletionDate?: Date | null;
 	}
 	export interface ScheduleKeyDeletionResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
 		DeletionDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateScheduleKeyDeletionResponseFormGroup() {
 		return new FormGroup<ScheduleKeyDeletionResponseFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 			DeletionDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ScheduleKeyDeletionRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 365
+		 */
 		PendingWindowInDays?: number | null;
 	}
 	export interface ScheduleKeyDeletionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 365
+		 */
 		PendingWindowInDays: FormControl<number | null | undefined>,
 	}
 	export function CreateScheduleKeyDeletionRequestFormGroup() {
 		return new FormGroup<ScheduleKeyDeletionRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			PendingWindowInDays: new FormControl<number | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			PendingWindowInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(365)]),
 		});
 
 	}
 
 	export interface SignResponse {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId?: string | null;
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		Signature?: string | null;
 		SigningAlgorithm?: SigningAlgorithmSpec | null;
 	}
 	export interface SignResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		Signature: FormControl<string | null | undefined>,
 		SigningAlgorithm: FormControl<SigningAlgorithmSpec | null | undefined>,
 	}
 	export function CreateSignResponseFormGroup() {
 		return new FormGroup<SignResponseFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			Signature: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			Signature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
 			SigningAlgorithm: new FormControl<SigningAlgorithmSpec | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface SignRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
+
+		/**
+		 * Required
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		Message: string;
 		MessageType?: SignRequestMessageType | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		GrantTokens?: Array<string>;
+
+		/** Required */
 		SigningAlgorithm: SigningAlgorithmSpec;
 	}
 	export interface SignRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		Message: FormControl<string | null | undefined>,
 		MessageType: FormControl<SignRequestMessageType | null | undefined>,
+
+		/** Required */
 		SigningAlgorithm: FormControl<SigningAlgorithmSpec | null | undefined>,
 	}
 	export function CreateSignRequestFormGroup() {
 		return new FormGroup<SignRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			Message: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4096), Validators.minLength(1)]),
 			MessageType: new FormControl<SignRequestMessageType | null | undefined>(undefined),
-			SigningAlgorithm: new FormControl<SigningAlgorithmSpec | null | undefined>(undefined),
+			SigningAlgorithm: new FormControl<SigningAlgorithmSpec | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1769,45 +3416,99 @@ export namespace MyNS {
 	export enum SignRequestMessageType { RAW = 0, DIGEST = 1 }
 
 	export interface TagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
+
+		/** Required */
 		Tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UntagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
+
+		/** Required */
 		TagKeys: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateAliasRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9:/_-]+$
+		 */
 		AliasName: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		TargetKeyId: string;
 	}
 	export interface UpdateAliasRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9:/_-]+$
+		 */
 		AliasName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		TargetKeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateAliasRequestFormGroup() {
 		return new FormGroup<UpdateAliasRequestFormProperties>({
-			AliasName: new FormControl<string | null | undefined>(undefined),
-			TargetKeyId: new FormControl<string | null | undefined>(undefined),
+			AliasName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			TargetKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1823,23 +3524,65 @@ export namespace MyNS {
 	}
 
 	export interface UpdateCustomKeyStoreRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CustomKeyStoreId: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		NewCustomKeyStoreName?: string | null;
+
+		/**
+		 * Max length: 32
+		 * Min length: 7
+		 */
 		KeyStorePassword?: string | null;
+
+		/**
+		 * Max length: 24
+		 * Min length: 19
+		 */
 		CloudHsmClusterId?: string | null;
 	}
 	export interface UpdateCustomKeyStoreRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CustomKeyStoreId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		NewCustomKeyStoreName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 7
+		 */
 		KeyStorePassword: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 24
+		 * Min length: 19
+		 */
 		CloudHsmClusterId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateCustomKeyStoreRequestFormGroup() {
 		return new FormGroup<UpdateCustomKeyStoreRequestFormProperties>({
-			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined),
-			NewCustomKeyStoreName: new FormControl<string | null | undefined>(undefined),
-			KeyStorePassword: new FormControl<string | null | undefined>(undefined),
-			CloudHsmClusterId: new FormControl<string | null | undefined>(undefined),
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			NewCustomKeyStoreName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			KeyStorePassword: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(7)]),
+			CloudHsmClusterId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(24), Validators.minLength(19)]),
 		});
 
 	}
@@ -1855,34 +3598,68 @@ export namespace MyNS {
 	}
 
 	export interface UpdateKeyDescriptionRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
+
+		/**
+		 * Required
+		 * Max length: 8192
+		 * Min length: 0
+		 */
 		Description: string;
 	}
 	export interface UpdateKeyDescriptionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 8192
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateKeyDescriptionRequestFormGroup() {
 		return new FormGroup<UpdateKeyDescriptionRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface VerifyResponse {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId?: string | null;
 		SignatureValid?: boolean | null;
 		SigningAlgorithm?: SigningAlgorithmSpec | null;
 	}
 	export interface VerifyResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
 		SignatureValid: FormControl<boolean | null | undefined>,
 		SigningAlgorithm: FormControl<SigningAlgorithmSpec | null | undefined>,
 	}
 	export function CreateVerifyResponseFormGroup() {
 		return new FormGroup<VerifyResponseFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 			SignatureValid: new FormControl<boolean | null | undefined>(undefined),
 			SigningAlgorithm: new FormControl<SigningAlgorithmSpec | null | undefined>(undefined),
 		});
@@ -1890,27 +3667,72 @@ export namespace MyNS {
 	}
 
 	export interface VerifyRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: string;
+
+		/**
+		 * Required
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		Message: string;
 		MessageType?: SignRequestMessageType | null;
+
+		/**
+		 * Required
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		Signature: string;
+
+		/** Required */
 		SigningAlgorithm: SigningAlgorithmSpec;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		GrantTokens?: Array<string>;
 	}
 	export interface VerifyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		Message: FormControl<string | null | undefined>,
 		MessageType: FormControl<SignRequestMessageType | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		Signature: FormControl<string | null | undefined>,
+
+		/** Required */
 		SigningAlgorithm: FormControl<SigningAlgorithmSpec | null | undefined>,
 	}
 	export function CreateVerifyRequestFormGroup() {
 		return new FormGroup<VerifyRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			Message: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4096), Validators.minLength(1)]),
 			MessageType: new FormControl<SignRequestMessageType | null | undefined>(undefined),
-			Signature: new FormControl<string | null | undefined>(undefined),
-			SigningAlgorithm: new FormControl<SigningAlgorithmSpec | null | undefined>(undefined),
+			Signature: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6144), Validators.minLength(1)]),
+			SigningAlgorithm: new FormControl<SigningAlgorithmSpec | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

@@ -23,7 +23,11 @@ export namespace MyNS {
 
 	/** CloudFront origin access identity. */
 	export interface CloudFrontOriginAccessIdentity {
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		S3CanonicalUserId: string;
 
 		/** Origin access identity configuration. Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/CloudFront/identity ID/config</code> resource. */
@@ -32,13 +36,17 @@ export namespace MyNS {
 
 	/** CloudFront origin access identity. */
 	export interface CloudFrontOriginAccessIdentityFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		S3CanonicalUserId: FormControl<string | null | undefined>,
 	}
 	export function CreateCloudFrontOriginAccessIdentityFormGroup() {
 		return new FormGroup<CloudFrontOriginAccessIdentityFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			S3CanonicalUserId: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			S3CanonicalUserId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -46,19 +54,27 @@ export namespace MyNS {
 
 	/** Origin access identity configuration. Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/CloudFront/identity ID/config</code> resource.  */
 	export interface CloudFrontOriginAccessIdentityConfig {
+
+		/** Required */
 		CallerReference: string;
+
+		/** Required */
 		Comment: string;
 	}
 
 	/** Origin access identity configuration. Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/CloudFront/identity ID/config</code> resource.  */
 	export interface CloudFrontOriginAccessIdentityConfigFormProperties {
+
+		/** Required */
 		CallerReference: FormControl<string | null | undefined>,
+
+		/** Required */
 		Comment: FormControl<string | null | undefined>,
 	}
 	export function CreateCloudFrontOriginAccessIdentityConfigFormGroup() {
 		return new FormGroup<CloudFrontOriginAccessIdentityConfigFormProperties>({
-			CallerReference: new FormControl<string | null | undefined>(undefined),
-			Comment: new FormControl<string | null | undefined>(undefined),
+			CallerReference: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -133,11 +149,23 @@ export namespace MyNS {
 
 	/** A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery. */
 	export interface Distribution {
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		ARN: string;
+
+		/** Required */
 		Status: string;
+
+		/** Required */
 		LastModifiedTime: Date;
+
+		/** Required */
 		InProgressInvalidationBatches: number;
+
+		/** Required */
 		DomainName: string;
 
 		/**
@@ -156,21 +184,33 @@ export namespace MyNS {
 
 	/** A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery. */
 	export interface DistributionFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		ARN: FormControl<string | null | undefined>,
+
+		/** Required */
 		Status: FormControl<string | null | undefined>,
+
+		/** Required */
 		LastModifiedTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		InProgressInvalidationBatches: FormControl<number | null | undefined>,
+
+		/** Required */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateDistributionFormGroup() {
 		return new FormGroup<DistributionFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			ARN: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<string | null | undefined>(undefined),
-			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
-			InProgressInvalidationBatches: new FormControl<number | null | undefined>(undefined),
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Status: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			InProgressInvalidationBatches: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -178,20 +218,28 @@ export namespace MyNS {
 
 	/** <p>A complex type that lists the AWS accounts, if any, that you included in the <code>TrustedSigners</code> complex type for this distribution. These are the accounts that you want to allow to create signed URLs for private content.</p> <p>The <code>Signer</code> complex type lists the AWS account number of the trusted signer or <code>self</code> if the signer is the AWS account that created the distribution. The <code>Signer</code> element also includes the IDs of any active CloudFront key pairs that are associated with the trusted signer's AWS account. If no <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer can't create signed URLs. </p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
 	export interface ActiveTrustedSigners {
+
+		/** Required */
 		Enabled: boolean;
+
+		/** Required */
 		Quantity: number;
 		Items?: Array<Signer>;
 	}
 
 	/** <p>A complex type that lists the AWS accounts, if any, that you included in the <code>TrustedSigners</code> complex type for this distribution. These are the accounts that you want to allow to create signed URLs for private content.</p> <p>The <code>Signer</code> complex type lists the AWS account number of the trusted signer or <code>self</code> if the signer is the AWS account that created the distribution. The <code>Signer</code> element also includes the IDs of any active CloudFront key pairs that are associated with the trusted signer's AWS account. If no <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer can't create signed URLs. </p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
 	export interface ActiveTrustedSignersFormProperties {
+
+		/** Required */
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateActiveTrustedSignersFormGroup() {
 		return new FormGroup<ActiveTrustedSignersFormProperties>({
-			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -219,17 +267,21 @@ export namespace MyNS {
 
 	/** <p>A complex type that lists the active CloudFront key pairs, if any, that are associated with <code>AwsAccountNumber</code>. </p> <p>For more information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html">ActiveTrustedSigners</a>.</p> */
 	export interface KeyPairIds {
+
+		/** Required */
 		Quantity: number;
 		Items?: Array<string>;
 	}
 
 	/** <p>A complex type that lists the active CloudFront key pairs, if any, that are associated with <code>AwsAccountNumber</code>. </p> <p>For more information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html">ActiveTrustedSigners</a>.</p> */
 	export interface KeyPairIdsFormProperties {
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateKeyPairIdsFormGroup() {
 		return new FormGroup<KeyPairIdsFormProperties>({
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -237,6 +289,8 @@ export namespace MyNS {
 
 	/** A distribution configuration. */
 	export interface DistributionConfig {
+
+		/** Required */
 		CallerReference: string;
 
 		/** A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution. */
@@ -263,11 +317,15 @@ export namespace MyNS {
 
 		/** <p>A complex type that controls:</p> <ul> <li> <p>Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer.</p> </li> <li> <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li> </ul> <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
 		CustomErrorResponses?: CustomErrorResponses;
+
+		/** Required */
 		Comment: string;
 
 		/** A complex type that controls whether access logs are written for the distribution. */
 		Logging?: LoggingConfig;
 		PriceClass?: DistributionConfigPriceClass | null;
+
+		/** Required */
 		Enabled: boolean;
 
 		/** <p>A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.</p> <p>If the distribution doesn’t use <code>Aliases</code> (also known as alternate domain names or CNAMEs)—that is, if the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>—set <code>CloudFrontDefaultCertificate</code> to <code>true</code> and leave all other fields empty.</p> <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), use the fields in this type to specify the following settings:</p> <ul> <li> <p>Which viewers the distribution accepts HTTPS connections from: only viewers that support <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a> (recommended), or all viewers including those that don’t support SNI.</p> <ul> <li> <p>To accept HTTPS connections from only viewers that support SNI, set <code>SSLSupportMethod</code> to <code>sni-only</code>. This is recommended. Most browsers and clients released after 2010 support SNI. </p> </li> <li> <p>To accept HTTPS connections from all viewers, including those that don’t support SNI, set <code>SSLSupportMethod</code> to <code>vip</code>. This is not recommended, and results in additional monthly charges from CloudFront. </p> </li> </ul> </li> <li> <p>The minimum SSL/TLS protocol version that the distribution can use to communicate with viewers. To specify a minimum version, choose a value for <code>MinimumProtocolVersion</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValues-security-policy">Security Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> </li> <li> <p>The location of the SSL/TLS certificate, <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS Certificate Manager (ACM)</a> (recommended) or <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS Identity and Access Management (AWS IAM)</a>. You specify the location by setting a value in one of the following fields (not both):</p> <ul> <li> <p> <code>ACMCertificateArn</code> </p> </li> <li> <p> <code>IAMCertificateId</code> </p> </li> </ul> </li> </ul> <p>All distributions support HTTPS connections from viewers. To require viewers to use HTTPS only, or to redirect them from HTTP to HTTPS, use <code>ViewerProtocolPolicy</code> in the <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>. To specify how CloudFront should use SSL/TLS to communicate with your custom origin, use <code>CustomOriginConfig</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https.html">Using HTTPS with CloudFront</a> and <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-alternate-domain-names.html"> Using Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
@@ -282,10 +340,16 @@ export namespace MyNS {
 
 	/** A distribution configuration. */
 	export interface DistributionConfigFormProperties {
+
+		/** Required */
 		CallerReference: FormControl<string | null | undefined>,
 		DefaultRootObject: FormControl<string | null | undefined>,
+
+		/** Required */
 		Comment: FormControl<string | null | undefined>,
 		PriceClass: FormControl<DistributionConfigPriceClass | null | undefined>,
+
+		/** Required */
 		Enabled: FormControl<boolean | null | undefined>,
 		WebACLId: FormControl<string | null | undefined>,
 		HttpVersion: FormControl<DistributionConfigHttpVersion | null | undefined>,
@@ -293,11 +357,11 @@ export namespace MyNS {
 	}
 	export function CreateDistributionConfigFormGroup() {
 		return new FormGroup<DistributionConfigFormProperties>({
-			CallerReference: new FormControl<string | null | undefined>(undefined),
+			CallerReference: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DefaultRootObject: new FormControl<string | null | undefined>(undefined),
-			Comment: new FormControl<string | null | undefined>(undefined),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			PriceClass: new FormControl<DistributionConfigPriceClass | null | undefined>(undefined),
-			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			WebACLId: new FormControl<string | null | undefined>(undefined),
 			HttpVersion: new FormControl<DistributionConfigHttpVersion | null | undefined>(undefined),
 			IsIPV6Enabled: new FormControl<boolean | null | undefined>(undefined),
@@ -308,17 +372,21 @@ export namespace MyNS {
 
 	/** A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.  */
 	export interface Aliases {
+
+		/** Required */
 		Quantity: number;
 		Items?: Array<string>;
 	}
 
 	/** A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.  */
 	export interface AliasesFormProperties {
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateAliasesFormGroup() {
 		return new FormGroup<AliasesFormProperties>({
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -326,17 +394,26 @@ export namespace MyNS {
 
 	/** A complex type that contains information about origins and origin groups for this distribution.  */
 	export interface Origins {
+
+		/** Required */
 		Quantity: number;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 */
 		Items: Array<Origin>;
 	}
 
 	/** A complex type that contains information about origins and origin groups for this distribution.  */
 	export interface OriginsFormProperties {
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateOriginsFormGroup() {
 		return new FormGroup<OriginsFormProperties>({
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -344,7 +421,11 @@ export namespace MyNS {
 
 	/** <p>An origin.</p> <p>An origin is the location where content is stored, and from which CloudFront gets content to serve to viewers. To specify an origin:</p> <ul> <li> <p>Use the <code>S3OriginConfig</code> type to specify an Amazon S3 bucket that is <i> <b>not</b> </i> configured with static website hosting.</p> </li> <li> <p>Use the <code>CustomOriginConfig</code> type to specify various other kinds of content containers or HTTP servers, including:</p> <ul> <li> <p>An Amazon S3 bucket that is configured with static website hosting</p> </li> <li> <p>An Elastic Load Balancing load balancer</p> </li> <li> <p>An AWS Elemental MediaPackage origin</p> </li> <li> <p>An AWS Elemental MediaStore container</p> </li> <li> <p>Any other HTTP server, running on an Amazon EC2 instance or any other kind of host</p> </li> </ul> </li> </ul> <p>For the current maximum number of origins that you can specify per distribution, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html#limits-web-distributions">General Quotas on Web Distributions</a> in the <i>Amazon CloudFront Developer Guide</i> (quotas were formerly referred to as limits).</p> */
 	export interface Origin {
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		DomainName: string;
 		OriginPath?: string | null;
 
@@ -362,7 +443,11 @@ export namespace MyNS {
 
 	/** <p>An origin.</p> <p>An origin is the location where content is stored, and from which CloudFront gets content to serve to viewers. To specify an origin:</p> <ul> <li> <p>Use the <code>S3OriginConfig</code> type to specify an Amazon S3 bucket that is <i> <b>not</b> </i> configured with static website hosting.</p> </li> <li> <p>Use the <code>CustomOriginConfig</code> type to specify various other kinds of content containers or HTTP servers, including:</p> <ul> <li> <p>An Amazon S3 bucket that is configured with static website hosting</p> </li> <li> <p>An Elastic Load Balancing load balancer</p> </li> <li> <p>An AWS Elemental MediaPackage origin</p> </li> <li> <p>An AWS Elemental MediaStore container</p> </li> <li> <p>Any other HTTP server, running on an Amazon EC2 instance or any other kind of host</p> </li> </ul> </li> </ul> <p>For the current maximum number of origins that you can specify per distribution, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html#limits-web-distributions">General Quotas on Web Distributions</a> in the <i>Amazon CloudFront Developer Guide</i> (quotas were formerly referred to as limits).</p> */
 	export interface OriginFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		DomainName: FormControl<string | null | undefined>,
 		OriginPath: FormControl<string | null | undefined>,
 		ConnectionAttempts: FormControl<number | null | undefined>,
@@ -370,8 +455,8 @@ export namespace MyNS {
 	}
 	export function CreateOriginFormGroup() {
 		return new FormGroup<OriginFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			OriginPath: new FormControl<string | null | undefined>(undefined),
 			ConnectionAttempts: new FormControl<number | null | undefined>(undefined),
 			ConnectionTimeout: new FormControl<number | null | undefined>(undefined),
@@ -382,17 +467,21 @@ export namespace MyNS {
 
 	/** A complex type that contains the list of Custom Headers for each origin.  */
 	export interface CustomHeaders {
+
+		/** Required */
 		Quantity: number;
 		Items?: Array<OriginCustomHeader>;
 	}
 
 	/** A complex type that contains the list of Custom Headers for each origin.  */
 	export interface CustomHeadersFormProperties {
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateCustomHeadersFormGroup() {
 		return new FormGroup<CustomHeadersFormProperties>({
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -400,19 +489,27 @@ export namespace MyNS {
 
 	/** A complex type that contains <code>HeaderName</code> and <code>HeaderValue</code> elements, if any, for this distribution.  */
 	export interface OriginCustomHeader {
+
+		/** Required */
 		HeaderName: string;
+
+		/** Required */
 		HeaderValue: string;
 	}
 
 	/** A complex type that contains <code>HeaderName</code> and <code>HeaderValue</code> elements, if any, for this distribution.  */
 	export interface OriginCustomHeaderFormProperties {
+
+		/** Required */
 		HeaderName: FormControl<string | null | undefined>,
+
+		/** Required */
 		HeaderValue: FormControl<string | null | undefined>,
 	}
 	export function CreateOriginCustomHeaderFormGroup() {
 		return new FormGroup<OriginCustomHeaderFormProperties>({
-			HeaderName: new FormControl<string | null | undefined>(undefined),
-			HeaderValue: new FormControl<string | null | undefined>(undefined),
+			HeaderName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			HeaderValue: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -420,16 +517,20 @@ export namespace MyNS {
 
 	/** A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin or an S3 bucket that is configured as a website endpoint, use the <code>CustomOriginConfig</code> element instead. */
 	export interface S3OriginConfig {
+
+		/** Required */
 		OriginAccessIdentity: string;
 	}
 
 	/** A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin or an S3 bucket that is configured as a website endpoint, use the <code>CustomOriginConfig</code> element instead. */
 	export interface S3OriginConfigFormProperties {
+
+		/** Required */
 		OriginAccessIdentity: FormControl<string | null | undefined>,
 	}
 	export function CreateS3OriginConfigFormGroup() {
 		return new FormGroup<S3OriginConfigFormProperties>({
-			OriginAccessIdentity: new FormControl<string | null | undefined>(undefined),
+			OriginAccessIdentity: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -437,8 +538,14 @@ export namespace MyNS {
 
 	/** A custom origin. A custom origin is any origin that is <i>not</i> an Amazon S3 bucket, with one exception. An Amazon S3 bucket that is <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">configured with static website hosting</a> <i>is</i> a custom origin. */
 	export interface CustomOriginConfig {
+
+		/** Required */
 		HTTPPort: number;
+
+		/** Required */
 		HTTPSPort: number;
+
+		/** Required */
 		OriginProtocolPolicy: CustomOriginConfigOriginProtocolPolicy;
 
 		/** A complex type that contains information about the SSL/TLS protocols that CloudFront can use when establishing an HTTPS connection with your origin. */
@@ -449,17 +556,23 @@ export namespace MyNS {
 
 	/** A custom origin. A custom origin is any origin that is <i>not</i> an Amazon S3 bucket, with one exception. An Amazon S3 bucket that is <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">configured with static website hosting</a> <i>is</i> a custom origin. */
 	export interface CustomOriginConfigFormProperties {
+
+		/** Required */
 		HTTPPort: FormControl<number | null | undefined>,
+
+		/** Required */
 		HTTPSPort: FormControl<number | null | undefined>,
+
+		/** Required */
 		OriginProtocolPolicy: FormControl<CustomOriginConfigOriginProtocolPolicy | null | undefined>,
 		OriginReadTimeout: FormControl<number | null | undefined>,
 		OriginKeepaliveTimeout: FormControl<number | null | undefined>,
 	}
 	export function CreateCustomOriginConfigFormGroup() {
 		return new FormGroup<CustomOriginConfigFormProperties>({
-			HTTPPort: new FormControl<number | null | undefined>(undefined),
-			HTTPSPort: new FormControl<number | null | undefined>(undefined),
-			OriginProtocolPolicy: new FormControl<CustomOriginConfigOriginProtocolPolicy | null | undefined>(undefined),
+			HTTPPort: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			HTTPSPort: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			OriginProtocolPolicy: new FormControl<CustomOriginConfigOriginProtocolPolicy | null | undefined>(undefined, [Validators.required]),
 			OriginReadTimeout: new FormControl<number | null | undefined>(undefined),
 			OriginKeepaliveTimeout: new FormControl<number | null | undefined>(undefined),
 		});
@@ -471,17 +584,23 @@ export namespace MyNS {
 
 	/** A complex type that contains information about the SSL/TLS protocols that CloudFront can use when establishing an HTTPS connection with your origin.  */
 	export interface OriginSslProtocols {
+
+		/** Required */
 		Quantity: number;
+
+		/** Required */
 		Items: Array<SslProtocol>;
 	}
 
 	/** A complex type that contains information about the SSL/TLS protocols that CloudFront can use when establishing an HTTPS connection with your origin.  */
 	export interface OriginSslProtocolsFormProperties {
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateOriginSslProtocolsFormGroup() {
 		return new FormGroup<OriginSslProtocolsFormProperties>({
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -491,6 +610,8 @@ export namespace MyNS {
 
 	/** A complex data type for the origin groups specified for a distribution. */
 	export interface OriginGroups {
+
+		/** Required */
 		Quantity: number;
 
 		/** List of origin groups for a distribution. */
@@ -499,11 +620,13 @@ export namespace MyNS {
 
 	/** A complex data type for the origin groups specified for a distribution. */
 	export interface OriginGroupsFormProperties {
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateOriginGroupsFormGroup() {
 		return new FormGroup<OriginGroupsFormProperties>({
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -511,6 +634,8 @@ export namespace MyNS {
 
 	/** An origin group includes two origins (a primary origin and a second origin to failover to) and a failover criteria that you specify. You create an origin group to support origin failover in CloudFront. When you create or update a distribution, you can specifiy the origin group instead of a single origin, and CloudFront will failover from the primary origin to the second origin under the failover conditions that you've chosen. */
 	export interface OriginGroup {
+
+		/** Required */
 		Id: string;
 
 		/**
@@ -528,11 +653,13 @@ export namespace MyNS {
 
 	/** An origin group includes two origins (a primary origin and a second origin to failover to) and a failover criteria that you specify. You create an origin group to support origin failover in CloudFront. When you create or update a distribution, you can specifiy the origin group instead of a single origin, and CloudFront will failover from the primary origin to the second origin under the failover conditions that you've chosen. */
 	export interface OriginGroupFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
 	}
 	export function CreateOriginGroupFormGroup() {
 		return new FormGroup<OriginGroupFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -560,6 +687,8 @@ export namespace MyNS {
 
 	/** A complex data type for the status codes that you specify that, when returned by a primary origin, trigger CloudFront to failover to a second origin. */
 	export interface StatusCodes {
+
+		/** Required */
 		Quantity: number;
 
 		/**
@@ -572,11 +701,13 @@ export namespace MyNS {
 
 	/** A complex data type for the status codes that you specify that, when returned by a primary origin, trigger CloudFront to failover to a second origin. */
 	export interface StatusCodesFormProperties {
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateStatusCodesFormGroup() {
 		return new FormGroup<StatusCodesFormProperties>({
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -584,6 +715,8 @@ export namespace MyNS {
 
 	/** A complex data type for the origins included in an origin group. */
 	export interface OriginGroupMembers {
+
+		/** Required */
 		Quantity: number;
 
 		/**
@@ -597,11 +730,13 @@ export namespace MyNS {
 
 	/** A complex data type for the origins included in an origin group. */
 	export interface OriginGroupMembersFormProperties {
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateOriginGroupMembersFormGroup() {
 		return new FormGroup<OriginGroupMembersFormProperties>({
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -609,16 +744,20 @@ export namespace MyNS {
 
 	/** An origin in an origin group. */
 	export interface OriginGroupMember {
+
+		/** Required */
 		OriginId: string;
 	}
 
 	/** An origin in an origin group. */
 	export interface OriginGroupMemberFormProperties {
+
+		/** Required */
 		OriginId: FormControl<string | null | undefined>,
 	}
 	export function CreateOriginGroupMemberFormGroup() {
 		return new FormGroup<OriginGroupMemberFormProperties>({
-			OriginId: new FormControl<string | null | undefined>(undefined),
+			OriginId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -626,6 +765,8 @@ export namespace MyNS {
 
 	/** A complex type that describes the default cache behavior if you don’t specify a <code>CacheBehavior</code> element or if request URLs don’t match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior. */
 	export interface DefaultCacheBehavior {
+
+		/** Required */
 		TargetOriginId: string;
 
 		/**
@@ -639,7 +780,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		TrustedSigners: TrustedSigners;
+
+		/** Required */
 		ViewerProtocolPolicy: DefaultCacheBehaviorViewerProtocolPolicy;
+
+		/** Required */
 		MinTTL: number;
 
 		/** <p>A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin. There are three choices:</p> <ul> <li> <p>CloudFront forwards only <code>GET</code> and <code>HEAD</code> requests.</p> </li> <li> <p>CloudFront forwards only <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests.</p> </li> <li> <p>CloudFront forwards <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests.</p> </li> </ul> <p>If you pick the third choice, you may need to restrict access to your Amazon S3 bucket or to your custom origin so users can't perform operations that you don't want them to. For example, you might not want users to have permissions to delete objects from your origin.</p> */
@@ -656,8 +801,14 @@ export namespace MyNS {
 
 	/** A complex type that describes the default cache behavior if you don’t specify a <code>CacheBehavior</code> element or if request URLs don’t match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior. */
 	export interface DefaultCacheBehaviorFormProperties {
+
+		/** Required */
 		TargetOriginId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ViewerProtocolPolicy: FormControl<DefaultCacheBehaviorViewerProtocolPolicy | null | undefined>,
+
+		/** Required */
 		MinTTL: FormControl<number | null | undefined>,
 		SmoothStreaming: FormControl<boolean | null | undefined>,
 		DefaultTTL: FormControl<number | null | undefined>,
@@ -667,9 +818,9 @@ export namespace MyNS {
 	}
 	export function CreateDefaultCacheBehaviorFormGroup() {
 		return new FormGroup<DefaultCacheBehaviorFormProperties>({
-			TargetOriginId: new FormControl<string | null | undefined>(undefined),
-			ViewerProtocolPolicy: new FormControl<DefaultCacheBehaviorViewerProtocolPolicy | null | undefined>(undefined),
-			MinTTL: new FormControl<number | null | undefined>(undefined),
+			TargetOriginId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ViewerProtocolPolicy: new FormControl<DefaultCacheBehaviorViewerProtocolPolicy | null | undefined>(undefined, [Validators.required]),
+			MinTTL: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			SmoothStreaming: new FormControl<boolean | null | undefined>(undefined),
 			DefaultTTL: new FormControl<number | null | undefined>(undefined),
 			MaxTTL: new FormControl<number | null | undefined>(undefined),
@@ -682,6 +833,8 @@ export namespace MyNS {
 
 	/** A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers. */
 	export interface ForwardedValues {
+
+		/** Required */
 		QueryString: boolean;
 
 		/**
@@ -699,11 +852,13 @@ export namespace MyNS {
 
 	/** A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers. */
 	export interface ForwardedValuesFormProperties {
+
+		/** Required */
 		QueryString: FormControl<boolean | null | undefined>,
 	}
 	export function CreateForwardedValuesFormGroup() {
 		return new FormGroup<ForwardedValuesFormProperties>({
-			QueryString: new FormControl<boolean | null | undefined>(undefined),
+			QueryString: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -711,6 +866,8 @@ export namespace MyNS {
 
 	/** A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">Caching Content Based on Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>. */
 	export interface CookiePreference {
+
+		/** Required */
 		Forward: CookiePreferenceForward;
 
 		/** A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html"> Caching Content Based on Request Headers</a> in the <i>Amazon CloudFront Developer Guide</i>. */
@@ -719,11 +876,13 @@ export namespace MyNS {
 
 	/** A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">Caching Content Based on Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>. */
 	export interface CookiePreferenceFormProperties {
+
+		/** Required */
 		Forward: FormControl<CookiePreferenceForward | null | undefined>,
 	}
 	export function CreateCookiePreferenceFormGroup() {
 		return new FormGroup<CookiePreferenceFormProperties>({
-			Forward: new FormControl<CookiePreferenceForward | null | undefined>(undefined),
+			Forward: new FormControl<CookiePreferenceForward | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -733,17 +892,21 @@ export namespace MyNS {
 
 	/** A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html"> Caching Content Based on Request Headers</a> in the <i>Amazon CloudFront Developer Guide</i>. */
 	export interface CookieNames {
+
+		/** Required */
 		Quantity: number;
 		Items?: Array<string>;
 	}
 
 	/** A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html"> Caching Content Based on Request Headers</a> in the <i>Amazon CloudFront Developer Guide</i>. */
 	export interface CookieNamesFormProperties {
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateCookieNamesFormGroup() {
 		return new FormGroup<CookieNamesFormProperties>({
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -751,17 +914,21 @@ export namespace MyNS {
 
 	/** <p>A complex type that specifies the request headers, if any, that you want CloudFront to base caching on for this cache behavior. </p> <p>For the headers that you specify, CloudFront caches separate versions of a specified object based on the header values in viewer requests. For example, suppose viewer requests for <code>logo.jpg</code> contain a custom <code>product</code> header that has a value of either <code>acme</code> or <code>apex</code>, and you configure CloudFront to cache your content based on values in the <code>product</code> header. CloudFront forwards the <code>product</code> header to the origin and caches the response from the origin once for each header value. For more information about caching based on header values, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html">How CloudFront Forwards and Caches Headers</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
 	export interface Headers {
+
+		/** Required */
 		Quantity: number;
 		Items?: Array<string>;
 	}
 
 	/** <p>A complex type that specifies the request headers, if any, that you want CloudFront to base caching on for this cache behavior. </p> <p>For the headers that you specify, CloudFront caches separate versions of a specified object based on the header values in viewer requests. For example, suppose viewer requests for <code>logo.jpg</code> contain a custom <code>product</code> header that has a value of either <code>acme</code> or <code>apex</code>, and you configure CloudFront to cache your content based on values in the <code>product</code> header. CloudFront forwards the <code>product</code> header to the origin and caches the response from the origin once for each header value. For more information about caching based on header values, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html">How CloudFront Forwards and Caches Headers</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
 	export interface HeadersFormProperties {
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateHeadersFormGroup() {
 		return new FormGroup<HeadersFormProperties>({
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -769,17 +936,21 @@ export namespace MyNS {
 
 	/** A complex type that contains information about the query string parameters that you want CloudFront to use for caching for a cache behavior.  */
 	export interface QueryStringCacheKeys {
+
+		/** Required */
 		Quantity: number;
 		Items?: Array<string>;
 	}
 
 	/** A complex type that contains information about the query string parameters that you want CloudFront to use for caching for a cache behavior.  */
 	export interface QueryStringCacheKeysFormProperties {
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateQueryStringCacheKeysFormGroup() {
 		return new FormGroup<QueryStringCacheKeysFormProperties>({
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -787,20 +958,28 @@ export namespace MyNS {
 
 	/** <p>A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content.</p> <p>If you want to require signed URLs in requests for objects in the target origin that match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.</p> <p>If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>.</p> <p>To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the updated distribution.</p> <p>For more information about updating the distribution configuration, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/DistributionConfig.html">DistributionConfig</a> in the <i>Amazon CloudFront API Reference</i>.</p> */
 	export interface TrustedSigners {
+
+		/** Required */
 		Enabled: boolean;
+
+		/** Required */
 		Quantity: number;
 		Items?: Array<string>;
 	}
 
 	/** <p>A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content.</p> <p>If you want to require signed URLs in requests for objects in the target origin that match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.</p> <p>If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>.</p> <p>To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the updated distribution.</p> <p>For more information about updating the distribution configuration, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/DistributionConfig.html">DistributionConfig</a> in the <i>Amazon CloudFront API Reference</i>.</p> */
 	export interface TrustedSignersFormProperties {
+
+		/** Required */
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateTrustedSignersFormGroup() {
 		return new FormGroup<TrustedSignersFormProperties>({
-			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -810,7 +989,11 @@ export namespace MyNS {
 
 	/** <p>A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin. There are three choices:</p> <ul> <li> <p>CloudFront forwards only <code>GET</code> and <code>HEAD</code> requests.</p> </li> <li> <p>CloudFront forwards only <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests.</p> </li> <li> <p>CloudFront forwards <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests.</p> </li> </ul> <p>If you pick the third choice, you may need to restrict access to your Amazon S3 bucket or to your custom origin so users can't perform operations that you don't want them to. For example, you might not want users to have permissions to delete objects from your origin.</p> */
 	export interface AllowedMethods {
+
+		/** Required */
 		Quantity: number;
+
+		/** Required */
 		Items: Array<Method>;
 
 		/** <p>A complex type that controls whether CloudFront caches the response to requests using the specified HTTP methods. There are two choices:</p> <ul> <li> <p>CloudFront caches responses to <code>GET</code> and <code>HEAD</code> requests.</p> </li> <li> <p>CloudFront caches responses to <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests.</p> </li> </ul> <p>If you pick the second choice for your Amazon S3 Origin, you may need to forward Access-Control-Request-Method, Access-Control-Request-Headers, and Origin headers for the responses to be cached correctly. </p> */
@@ -819,11 +1002,13 @@ export namespace MyNS {
 
 	/** <p>A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin. There are three choices:</p> <ul> <li> <p>CloudFront forwards only <code>GET</code> and <code>HEAD</code> requests.</p> </li> <li> <p>CloudFront forwards only <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests.</p> </li> <li> <p>CloudFront forwards <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests.</p> </li> </ul> <p>If you pick the third choice, you may need to restrict access to your Amazon S3 bucket or to your custom origin so users can't perform operations that you don't want them to. For example, you might not want users to have permissions to delete objects from your origin.</p> */
 	export interface AllowedMethodsFormProperties {
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateAllowedMethodsFormGroup() {
 		return new FormGroup<AllowedMethodsFormProperties>({
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -833,17 +1018,23 @@ export namespace MyNS {
 
 	/** <p>A complex type that controls whether CloudFront caches the response to requests using the specified HTTP methods. There are two choices:</p> <ul> <li> <p>CloudFront caches responses to <code>GET</code> and <code>HEAD</code> requests.</p> </li> <li> <p>CloudFront caches responses to <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests.</p> </li> </ul> <p>If you pick the second choice for your Amazon S3 Origin, you may need to forward Access-Control-Request-Method, Access-Control-Request-Headers, and Origin headers for the responses to be cached correctly. </p> */
 	export interface CachedMethods {
+
+		/** Required */
 		Quantity: number;
+
+		/** Required */
 		Items: Array<Method>;
 	}
 
 	/** <p>A complex type that controls whether CloudFront caches the response to requests using the specified HTTP methods. There are two choices:</p> <ul> <li> <p>CloudFront caches responses to <code>GET</code> and <code>HEAD</code> requests.</p> </li> <li> <p>CloudFront caches responses to <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests.</p> </li> </ul> <p>If you pick the second choice for your Amazon S3 Origin, you may need to forward Access-Control-Request-Method, Access-Control-Request-Headers, and Origin headers for the responses to be cached correctly. </p> */
 	export interface CachedMethodsFormProperties {
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateCachedMethodsFormGroup() {
 		return new FormGroup<CachedMethodsFormProperties>({
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -851,17 +1042,21 @@ export namespace MyNS {
 
 	/** <p>A complex type that specifies a list of Lambda functions associations for a cache behavior.</p> <p>If you want to invoke one or more Lambda functions triggered by requests that match the <code>PathPattern</code> of the cache behavior, specify the applicable values for <code>Quantity</code> and <code>Items</code>. Note that there can be up to 4 <code>LambdaFunctionAssociation</code> items in this list (one for each possible value of <code>EventType</code>) and each <code>EventType</code> can be associated with the Lambda function only once.</p> <p>If you don't want to invoke any Lambda functions for the requests that match <code>PathPattern</code>, specify <code>0</code> for <code>Quantity</code> and omit <code>Items</code>. </p> */
 	export interface LambdaFunctionAssociations {
+
+		/** Required */
 		Quantity: number;
 		Items?: Array<LambdaFunctionAssociation>;
 	}
 
 	/** <p>A complex type that specifies a list of Lambda functions associations for a cache behavior.</p> <p>If you want to invoke one or more Lambda functions triggered by requests that match the <code>PathPattern</code> of the cache behavior, specify the applicable values for <code>Quantity</code> and <code>Items</code>. Note that there can be up to 4 <code>LambdaFunctionAssociation</code> items in this list (one for each possible value of <code>EventType</code>) and each <code>EventType</code> can be associated with the Lambda function only once.</p> <p>If you don't want to invoke any Lambda functions for the requests that match <code>PathPattern</code>, specify <code>0</code> for <code>Quantity</code> and omit <code>Items</code>. </p> */
 	export interface LambdaFunctionAssociationsFormProperties {
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateLambdaFunctionAssociationsFormGroup() {
 		return new FormGroup<LambdaFunctionAssociationsFormProperties>({
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -869,21 +1064,29 @@ export namespace MyNS {
 
 	/** A complex type that contains a Lambda function association. */
 	export interface LambdaFunctionAssociation {
+
+		/** Required */
 		LambdaFunctionARN: string;
+
+		/** Required */
 		EventType: LambdaFunctionAssociationEventType;
 		IncludeBody?: boolean | null;
 	}
 
 	/** A complex type that contains a Lambda function association. */
 	export interface LambdaFunctionAssociationFormProperties {
+
+		/** Required */
 		LambdaFunctionARN: FormControl<string | null | undefined>,
+
+		/** Required */
 		EventType: FormControl<LambdaFunctionAssociationEventType | null | undefined>,
 		IncludeBody: FormControl<boolean | null | undefined>,
 	}
 	export function CreateLambdaFunctionAssociationFormGroup() {
 		return new FormGroup<LambdaFunctionAssociationFormProperties>({
-			LambdaFunctionARN: new FormControl<string | null | undefined>(undefined),
-			EventType: new FormControl<LambdaFunctionAssociationEventType | null | undefined>(undefined),
+			LambdaFunctionARN: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			EventType: new FormControl<LambdaFunctionAssociationEventType | null | undefined>(undefined, [Validators.required]),
 			IncludeBody: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -894,17 +1097,21 @@ export namespace MyNS {
 
 	/** A complex type that contains zero or more <code>CacheBehavior</code> elements.  */
 	export interface CacheBehaviors {
+
+		/** Required */
 		Quantity: number;
 		Items?: Array<CacheBehavior>;
 	}
 
 	/** A complex type that contains zero or more <code>CacheBehavior</code> elements.  */
 	export interface CacheBehaviorsFormProperties {
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateCacheBehaviorsFormGroup() {
 		return new FormGroup<CacheBehaviorsFormProperties>({
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -912,7 +1119,11 @@ export namespace MyNS {
 
 	/** <p>A complex type that describes how CloudFront processes requests.</p> <p>You must create at least as many cache behaviors (including the default cache behavior) as you have origins if you want CloudFront to serve objects from all of the origins. Each cache behavior specifies the one origin from which you want CloudFront to get objects. If you have two origins and only the default cache behavior, the default cache behavior will cause CloudFront to get objects from one of the origins, but the other origin is never used.</p> <p>For the current quota (formerly known as limit) on the number of cache behaviors that you can add to a distribution, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <p>If you don’t want to specify any cache behaviors, include only an empty <code>CacheBehaviors</code> element. Don’t include an empty <code>CacheBehavior</code> element because this is invalid.</p> <p>To delete all cache behaviors in an existing distribution, update the distribution configuration and include only an empty <code>CacheBehaviors</code> element.</p> <p>To add, change, or remove one or more cache behaviors, update the distribution configuration and specify all of the cache behaviors that you want to include in the updated distribution.</p> <p>For more information about cache behaviors, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
 	export interface CacheBehavior {
+
+		/** Required */
 		PathPattern: string;
+
+		/** Required */
 		TargetOriginId: string;
 
 		/**
@@ -926,7 +1137,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		TrustedSigners: TrustedSigners;
+
+		/** Required */
 		ViewerProtocolPolicy: CacheBehaviorViewerProtocolPolicy;
+
+		/** Required */
 		MinTTL: number;
 
 		/** <p>A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin. There are three choices:</p> <ul> <li> <p>CloudFront forwards only <code>GET</code> and <code>HEAD</code> requests.</p> </li> <li> <p>CloudFront forwards only <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests.</p> </li> <li> <p>CloudFront forwards <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests.</p> </li> </ul> <p>If you pick the third choice, you may need to restrict access to your Amazon S3 bucket or to your custom origin so users can't perform operations that you don't want them to. For example, you might not want users to have permissions to delete objects from your origin.</p> */
@@ -943,9 +1158,17 @@ export namespace MyNS {
 
 	/** <p>A complex type that describes how CloudFront processes requests.</p> <p>You must create at least as many cache behaviors (including the default cache behavior) as you have origins if you want CloudFront to serve objects from all of the origins. Each cache behavior specifies the one origin from which you want CloudFront to get objects. If you have two origins and only the default cache behavior, the default cache behavior will cause CloudFront to get objects from one of the origins, but the other origin is never used.</p> <p>For the current quota (formerly known as limit) on the number of cache behaviors that you can add to a distribution, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <p>If you don’t want to specify any cache behaviors, include only an empty <code>CacheBehaviors</code> element. Don’t include an empty <code>CacheBehavior</code> element because this is invalid.</p> <p>To delete all cache behaviors in an existing distribution, update the distribution configuration and include only an empty <code>CacheBehaviors</code> element.</p> <p>To add, change, or remove one or more cache behaviors, update the distribution configuration and specify all of the cache behaviors that you want to include in the updated distribution.</p> <p>For more information about cache behaviors, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
 	export interface CacheBehaviorFormProperties {
+
+		/** Required */
 		PathPattern: FormControl<string | null | undefined>,
+
+		/** Required */
 		TargetOriginId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ViewerProtocolPolicy: FormControl<CacheBehaviorViewerProtocolPolicy | null | undefined>,
+
+		/** Required */
 		MinTTL: FormControl<number | null | undefined>,
 		SmoothStreaming: FormControl<boolean | null | undefined>,
 		DefaultTTL: FormControl<number | null | undefined>,
@@ -955,10 +1178,10 @@ export namespace MyNS {
 	}
 	export function CreateCacheBehaviorFormGroup() {
 		return new FormGroup<CacheBehaviorFormProperties>({
-			PathPattern: new FormControl<string | null | undefined>(undefined),
-			TargetOriginId: new FormControl<string | null | undefined>(undefined),
-			ViewerProtocolPolicy: new FormControl<CacheBehaviorViewerProtocolPolicy | null | undefined>(undefined),
-			MinTTL: new FormControl<number | null | undefined>(undefined),
+			PathPattern: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TargetOriginId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ViewerProtocolPolicy: new FormControl<CacheBehaviorViewerProtocolPolicy | null | undefined>(undefined, [Validators.required]),
+			MinTTL: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			SmoothStreaming: new FormControl<boolean | null | undefined>(undefined),
 			DefaultTTL: new FormControl<number | null | undefined>(undefined),
 			MaxTTL: new FormControl<number | null | undefined>(undefined),
@@ -973,17 +1196,21 @@ export namespace MyNS {
 
 	/** <p>A complex type that controls:</p> <ul> <li> <p>Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer.</p> </li> <li> <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li> </ul> <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
 	export interface CustomErrorResponses {
+
+		/** Required */
 		Quantity: number;
 		Items?: Array<CustomErrorResponse>;
 	}
 
 	/** <p>A complex type that controls:</p> <ul> <li> <p>Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer.</p> </li> <li> <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li> </ul> <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
 	export interface CustomErrorResponsesFormProperties {
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateCustomErrorResponsesFormGroup() {
 		return new FormGroup<CustomErrorResponsesFormProperties>({
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -991,6 +1218,8 @@ export namespace MyNS {
 
 	/** <p>A complex type that controls:</p> <ul> <li> <p>Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer. </p> </li> <li> <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li> </ul> <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
 	export interface CustomErrorResponse {
+
+		/** Required */
 		ErrorCode: number;
 		ResponsePagePath?: string | null;
 		ResponseCode?: string | null;
@@ -999,6 +1228,8 @@ export namespace MyNS {
 
 	/** <p>A complex type that controls:</p> <ul> <li> <p>Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer. </p> </li> <li> <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li> </ul> <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
 	export interface CustomErrorResponseFormProperties {
+
+		/** Required */
 		ErrorCode: FormControl<number | null | undefined>,
 		ResponsePagePath: FormControl<string | null | undefined>,
 		ResponseCode: FormControl<string | null | undefined>,
@@ -1006,7 +1237,7 @@ export namespace MyNS {
 	}
 	export function CreateCustomErrorResponseFormGroup() {
 		return new FormGroup<CustomErrorResponseFormProperties>({
-			ErrorCode: new FormControl<number | null | undefined>(undefined),
+			ErrorCode: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			ResponsePagePath: new FormControl<string | null | undefined>(undefined),
 			ResponseCode: new FormControl<string | null | undefined>(undefined),
 			ErrorCachingMinTTL: new FormControl<number | null | undefined>(undefined),
@@ -1017,25 +1248,41 @@ export namespace MyNS {
 
 	/** A complex type that controls whether access logs are written for the distribution. */
 	export interface LoggingConfig {
+
+		/** Required */
 		Enabled: boolean;
+
+		/** Required */
 		IncludeCookies: boolean;
+
+		/** Required */
 		Bucket: string;
+
+		/** Required */
 		Prefix: string;
 	}
 
 	/** A complex type that controls whether access logs are written for the distribution. */
 	export interface LoggingConfigFormProperties {
+
+		/** Required */
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		IncludeCookies: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		Bucket: FormControl<string | null | undefined>,
+
+		/** Required */
 		Prefix: FormControl<string | null | undefined>,
 	}
 	export function CreateLoggingConfigFormGroup() {
 		return new FormGroup<LoggingConfigFormProperties>({
-			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			IncludeCookies: new FormControl<boolean | null | undefined>(undefined),
-			Bucket: new FormControl<string | null | undefined>(undefined),
-			Prefix: new FormControl<string | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			IncludeCookies: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1106,20 +1353,28 @@ export namespace MyNS {
 
 	/** A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using <code>MaxMind</code> GeoIP databases.  */
 	export interface GeoRestriction {
+
+		/** Required */
 		RestrictionType: GeoRestrictionRestrictionType;
+
+		/** Required */
 		Quantity: number;
 		Items?: Array<string>;
 	}
 
 	/** A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using <code>MaxMind</code> GeoIP databases.  */
 	export interface GeoRestrictionFormProperties {
+
+		/** Required */
 		RestrictionType: FormControl<GeoRestrictionRestrictionType | null | undefined>,
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateGeoRestrictionFormGroup() {
 		return new FormGroup<GeoRestrictionFormProperties>({
-			RestrictionType: new FormControl<GeoRestrictionRestrictionType | null | undefined>(undefined),
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			RestrictionType: new FormControl<GeoRestrictionRestrictionType | null | undefined>(undefined, [Validators.required]),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1608,6 +1863,12 @@ export namespace MyNS {
 		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Key: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Value?: string | null;
 	}
 
@@ -1622,12 +1883,18 @@ export namespace MyNS {
 		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -1658,7 +1925,11 @@ export namespace MyNS {
 
 	/** A complex data type that includes the profile configurations and other options specified for field-level encryption.  */
 	export interface FieldLevelEncryption {
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		LastModifiedTime: Date;
 
 		/**
@@ -1670,13 +1941,17 @@ export namespace MyNS {
 
 	/** A complex data type that includes the profile configurations and other options specified for field-level encryption.  */
 	export interface FieldLevelEncryptionFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		LastModifiedTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateFieldLevelEncryptionFormGroup() {
 		return new FormGroup<FieldLevelEncryptionFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1684,6 +1959,8 @@ export namespace MyNS {
 
 	/** A complex data type that includes the profile configurations specified for field-level encryption.  */
 	export interface FieldLevelEncryptionConfig {
+
+		/** Required */
 		CallerReference: string;
 		Comment?: string | null;
 
@@ -1696,12 +1973,14 @@ export namespace MyNS {
 
 	/** A complex data type that includes the profile configurations specified for field-level encryption.  */
 	export interface FieldLevelEncryptionConfigFormProperties {
+
+		/** Required */
 		CallerReference: FormControl<string | null | undefined>,
 		Comment: FormControl<string | null | undefined>,
 	}
 	export function CreateFieldLevelEncryptionConfigFormGroup() {
 		return new FormGroup<FieldLevelEncryptionConfigFormProperties>({
-			CallerReference: new FormControl<string | null | undefined>(undefined),
+			CallerReference: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Comment: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1710,6 +1989,8 @@ export namespace MyNS {
 
 	/** Configuration for query argument-profile mapping for field-level encryption. */
 	export interface QueryArgProfileConfig {
+
+		/** Required */
 		ForwardWhenQueryArgProfileIsUnknown: boolean;
 
 		/** Query argument-profile mapping for field-level encryption. */
@@ -1718,11 +1999,13 @@ export namespace MyNS {
 
 	/** Configuration for query argument-profile mapping for field-level encryption. */
 	export interface QueryArgProfileConfigFormProperties {
+
+		/** Required */
 		ForwardWhenQueryArgProfileIsUnknown: FormControl<boolean | null | undefined>,
 	}
 	export function CreateQueryArgProfileConfigFormGroup() {
 		return new FormGroup<QueryArgProfileConfigFormProperties>({
-			ForwardWhenQueryArgProfileIsUnknown: new FormControl<boolean | null | undefined>(undefined),
+			ForwardWhenQueryArgProfileIsUnknown: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1730,17 +2013,21 @@ export namespace MyNS {
 
 	/** Query argument-profile mapping for field-level encryption. */
 	export interface QueryArgProfiles {
+
+		/** Required */
 		Quantity: number;
 		Items?: Array<QueryArgProfile>;
 	}
 
 	/** Query argument-profile mapping for field-level encryption. */
 	export interface QueryArgProfilesFormProperties {
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateQueryArgProfilesFormGroup() {
 		return new FormGroup<QueryArgProfilesFormProperties>({
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1748,19 +2035,27 @@ export namespace MyNS {
 
 	/** Query argument-profile mapping for field-level encryption. */
 	export interface QueryArgProfile {
+
+		/** Required */
 		QueryArg: string;
+
+		/** Required */
 		ProfileId: string;
 	}
 
 	/** Query argument-profile mapping for field-level encryption. */
 	export interface QueryArgProfileFormProperties {
+
+		/** Required */
 		QueryArg: FormControl<string | null | undefined>,
+
+		/** Required */
 		ProfileId: FormControl<string | null | undefined>,
 	}
 	export function CreateQueryArgProfileFormGroup() {
 		return new FormGroup<QueryArgProfileFormProperties>({
-			QueryArg: new FormControl<string | null | undefined>(undefined),
-			ProfileId: new FormControl<string | null | undefined>(undefined),
+			QueryArg: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ProfileId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1768,6 +2063,8 @@ export namespace MyNS {
 
 	/** The configuration for a field-level encryption content type-profile mapping.  */
 	export interface ContentTypeProfileConfig {
+
+		/** Required */
 		ForwardWhenContentTypeIsUnknown: boolean;
 
 		/** Field-level encryption content type-profile. */
@@ -1776,11 +2073,13 @@ export namespace MyNS {
 
 	/** The configuration for a field-level encryption content type-profile mapping.  */
 	export interface ContentTypeProfileConfigFormProperties {
+
+		/** Required */
 		ForwardWhenContentTypeIsUnknown: FormControl<boolean | null | undefined>,
 	}
 	export function CreateContentTypeProfileConfigFormGroup() {
 		return new FormGroup<ContentTypeProfileConfigFormProperties>({
-			ForwardWhenContentTypeIsUnknown: new FormControl<boolean | null | undefined>(undefined),
+			ForwardWhenContentTypeIsUnknown: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1788,17 +2087,21 @@ export namespace MyNS {
 
 	/** Field-level encryption content type-profile.  */
 	export interface ContentTypeProfiles {
+
+		/** Required */
 		Quantity: number;
 		Items?: Array<ContentTypeProfile>;
 	}
 
 	/** Field-level encryption content type-profile.  */
 	export interface ContentTypeProfilesFormProperties {
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateContentTypeProfilesFormGroup() {
 		return new FormGroup<ContentTypeProfilesFormProperties>({
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1806,22 +2109,30 @@ export namespace MyNS {
 
 	/** A field-level encryption content type profile.  */
 	export interface ContentTypeProfile {
+
+		/** Required */
 		Format: ContentTypeProfileFormat;
 		ProfileId?: string | null;
+
+		/** Required */
 		ContentType: string;
 	}
 
 	/** A field-level encryption content type profile.  */
 	export interface ContentTypeProfileFormProperties {
+
+		/** Required */
 		Format: FormControl<ContentTypeProfileFormat | null | undefined>,
 		ProfileId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ContentType: FormControl<string | null | undefined>,
 	}
 	export function CreateContentTypeProfileFormGroup() {
 		return new FormGroup<ContentTypeProfileFormProperties>({
-			Format: new FormControl<ContentTypeProfileFormat | null | undefined>(undefined),
+			Format: new FormControl<ContentTypeProfileFormat | null | undefined>(undefined, [Validators.required]),
 			ProfileId: new FormControl<string | null | undefined>(undefined),
-			ContentType: new FormControl<string | null | undefined>(undefined),
+			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1904,7 +2215,11 @@ export namespace MyNS {
 
 	/** A complex data type for field-level encryption profiles. */
 	export interface FieldLevelEncryptionProfile {
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		LastModifiedTime: Date;
 
 		/**
@@ -1916,13 +2231,17 @@ export namespace MyNS {
 
 	/** A complex data type for field-level encryption profiles. */
 	export interface FieldLevelEncryptionProfileFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		LastModifiedTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateFieldLevelEncryptionProfileFormGroup() {
 		return new FormGroup<FieldLevelEncryptionProfileFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1930,7 +2249,11 @@ export namespace MyNS {
 
 	/** A complex data type of profiles for the field-level encryption. */
 	export interface FieldLevelEncryptionProfileConfig {
+
+		/** Required */
 		Name: string;
+
+		/** Required */
 		CallerReference: string;
 		Comment?: string | null;
 
@@ -1943,14 +2266,18 @@ export namespace MyNS {
 
 	/** A complex data type of profiles for the field-level encryption. */
 	export interface FieldLevelEncryptionProfileConfigFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		CallerReference: FormControl<string | null | undefined>,
 		Comment: FormControl<string | null | undefined>,
 	}
 	export function CreateFieldLevelEncryptionProfileConfigFormGroup() {
 		return new FormGroup<FieldLevelEncryptionProfileConfigFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			CallerReference: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			CallerReference: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Comment: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1959,17 +2286,21 @@ export namespace MyNS {
 
 	/** Complex data type for field-level encryption profiles that includes all of the encryption entities.  */
 	export interface EncryptionEntities {
+
+		/** Required */
 		Quantity: number;
 		Items?: Array<EncryptionEntity>;
 	}
 
 	/** Complex data type for field-level encryption profiles that includes all of the encryption entities.  */
 	export interface EncryptionEntitiesFormProperties {
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateEncryptionEntitiesFormGroup() {
 		return new FormGroup<EncryptionEntitiesFormProperties>({
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1977,7 +2308,11 @@ export namespace MyNS {
 
 	/** Complex data type for field-level encryption profiles that includes the encryption key and field pattern specifications.  */
 	export interface EncryptionEntity {
+
+		/** Required */
 		PublicKeyId: string;
+
+		/** Required */
 		ProviderId: string;
 
 		/**
@@ -1989,13 +2324,17 @@ export namespace MyNS {
 
 	/** Complex data type for field-level encryption profiles that includes the encryption key and field pattern specifications.  */
 	export interface EncryptionEntityFormProperties {
+
+		/** Required */
 		PublicKeyId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ProviderId: FormControl<string | null | undefined>,
 	}
 	export function CreateEncryptionEntityFormGroup() {
 		return new FormGroup<EncryptionEntityFormProperties>({
-			PublicKeyId: new FormControl<string | null | undefined>(undefined),
-			ProviderId: new FormControl<string | null | undefined>(undefined),
+			PublicKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ProviderId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2003,17 +2342,21 @@ export namespace MyNS {
 
 	/** A complex data type that includes the field patterns to match for field-level encryption. */
 	export interface FieldPatterns {
+
+		/** Required */
 		Quantity: number;
 		Items?: Array<string>;
 	}
 
 	/** A complex data type that includes the field patterns to match for field-level encryption. */
 	export interface FieldPatternsFormProperties {
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateFieldPatternsFormGroup() {
 		return new FormGroup<FieldPatternsFormProperties>({
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2098,8 +2441,14 @@ export namespace MyNS {
 
 	/** An invalidation.  */
 	export interface Invalidation {
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		Status: string;
+
+		/** Required */
 		CreateTime: Date;
 
 		/**
@@ -2111,15 +2460,21 @@ export namespace MyNS {
 
 	/** An invalidation.  */
 	export interface InvalidationFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		Status: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateInvalidationFormGroup() {
 		return new FormGroup<InvalidationFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<string | null | undefined>(undefined),
-			CreateTime: new FormControl<Date | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Status: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			CreateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2133,16 +2488,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		Paths: Paths;
+
+		/** Required */
 		CallerReference: string;
 	}
 
 	/** An invalidation batch. */
 	export interface InvalidationBatchFormProperties {
+
+		/** Required */
 		CallerReference: FormControl<string | null | undefined>,
 	}
 	export function CreateInvalidationBatchFormGroup() {
 		return new FormGroup<InvalidationBatchFormProperties>({
-			CallerReference: new FormControl<string | null | undefined>(undefined),
+			CallerReference: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2150,17 +2509,21 @@ export namespace MyNS {
 
 	/** A complex type that contains information about the objects that you want to invalidate. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.  */
 	export interface Paths {
+
+		/** Required */
 		Quantity: number;
 		Items?: Array<string>;
 	}
 
 	/** A complex type that contains information about the objects that you want to invalidate. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.  */
 	export interface PathsFormProperties {
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreatePathsFormGroup() {
 		return new FormGroup<PathsFormProperties>({
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2211,7 +2574,11 @@ export namespace MyNS {
 
 	/** A complex data type of public keys you add to CloudFront to use with features like field-level encryption. */
 	export interface PublicKey {
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		CreatedTime: Date;
 
 		/**
@@ -2223,13 +2590,17 @@ export namespace MyNS {
 
 	/** A complex data type of public keys you add to CloudFront to use with features like field-level encryption. */
 	export interface PublicKeyFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreatedTime: FormControl<Date | null | undefined>,
 	}
 	export function CreatePublicKeyFormGroup() {
 		return new FormGroup<PublicKeyFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2237,24 +2608,36 @@ export namespace MyNS {
 
 	/** Information about a public key you add to CloudFront to use with features like field-level encryption. */
 	export interface PublicKeyConfig {
+
+		/** Required */
 		CallerReference: string;
+
+		/** Required */
 		Name: string;
+
+		/** Required */
 		EncodedKey: string;
 		Comment?: string | null;
 	}
 
 	/** Information about a public key you add to CloudFront to use with features like field-level encryption. */
 	export interface PublicKeyConfigFormProperties {
+
+		/** Required */
 		CallerReference: FormControl<string | null | undefined>,
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		EncodedKey: FormControl<string | null | undefined>,
 		Comment: FormControl<string | null | undefined>,
 	}
 	export function CreatePublicKeyConfigFormGroup() {
 		return new FormGroup<PublicKeyConfigFormProperties>({
-			CallerReference: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			EncodedKey: new FormControl<string | null | undefined>(undefined),
+			CallerReference: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			EncodedKey: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Comment: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2300,10 +2683,18 @@ export namespace MyNS {
 
 	/** A streaming distribution tells CloudFront where you want RTMP content to be delivered from, and the details about how to track and manage content delivery. */
 	export interface StreamingDistribution {
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		ARN: string;
+
+		/** Required */
 		Status: string;
 		LastModifiedTime?: Date | null;
+
+		/** Required */
 		DomainName: string;
 
 		/**
@@ -2321,19 +2712,27 @@ export namespace MyNS {
 
 	/** A streaming distribution tells CloudFront where you want RTMP content to be delivered from, and the details about how to track and manage content delivery. */
 	export interface StreamingDistributionFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		ARN: FormControl<string | null | undefined>,
+
+		/** Required */
 		Status: FormControl<string | null | undefined>,
 		LastModifiedTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateStreamingDistributionFormGroup() {
 		return new FormGroup<StreamingDistributionFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			ARN: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Status: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2341,6 +2740,8 @@ export namespace MyNS {
 
 	/** The RTMP distribution's configuration information. */
 	export interface StreamingDistributionConfig {
+
+		/** Required */
 		CallerReference: string;
 
 		/**
@@ -2351,6 +2752,8 @@ export namespace MyNS {
 
 		/** A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution. */
 		Aliases?: Aliases;
+
+		/** Required */
 		Comment: string;
 
 		/** A complex type that controls whether access logs are written for this streaming distribution. */
@@ -2362,22 +2765,30 @@ export namespace MyNS {
 		 */
 		TrustedSigners: TrustedSigners;
 		PriceClass?: DistributionConfigPriceClass | null;
+
+		/** Required */
 		Enabled: boolean;
 	}
 
 	/** The RTMP distribution's configuration information. */
 	export interface StreamingDistributionConfigFormProperties {
+
+		/** Required */
 		CallerReference: FormControl<string | null | undefined>,
+
+		/** Required */
 		Comment: FormControl<string | null | undefined>,
 		PriceClass: FormControl<DistributionConfigPriceClass | null | undefined>,
+
+		/** Required */
 		Enabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateStreamingDistributionConfigFormGroup() {
 		return new FormGroup<StreamingDistributionConfigFormProperties>({
-			CallerReference: new FormControl<string | null | undefined>(undefined),
-			Comment: new FormControl<string | null | undefined>(undefined),
+			CallerReference: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			PriceClass: new FormControl<DistributionConfigPriceClass | null | undefined>(undefined),
-			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2385,19 +2796,27 @@ export namespace MyNS {
 
 	/** A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution. */
 	export interface S3Origin {
+
+		/** Required */
 		DomainName: string;
+
+		/** Required */
 		OriginAccessIdentity: string;
 	}
 
 	/** A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution. */
 	export interface S3OriginFormProperties {
+
+		/** Required */
 		DomainName: FormControl<string | null | undefined>,
+
+		/** Required */
 		OriginAccessIdentity: FormControl<string | null | undefined>,
 	}
 	export function CreateS3OriginFormGroup() {
 		return new FormGroup<S3OriginFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
-			OriginAccessIdentity: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			OriginAccessIdentity: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2405,22 +2824,34 @@ export namespace MyNS {
 
 	/** A complex type that controls whether access logs are written for this streaming distribution. */
 	export interface StreamingLoggingConfig {
+
+		/** Required */
 		Enabled: boolean;
+
+		/** Required */
 		Bucket: string;
+
+		/** Required */
 		Prefix: string;
 	}
 
 	/** A complex type that controls whether access logs are written for this streaming distribution. */
 	export interface StreamingLoggingConfigFormProperties {
+
+		/** Required */
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		Bucket: FormControl<string | null | undefined>,
+
+		/** Required */
 		Prefix: FormControl<string | null | undefined>,
 	}
 	export function CreateStreamingLoggingConfigFormGroup() {
 		return new FormGroup<StreamingLoggingConfigFormProperties>({
-			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			Bucket: new FormControl<string | null | undefined>(undefined),
-			Prefix: new FormControl<string | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2799,29 +3230,45 @@ export namespace MyNS {
 
 	/** Lists the origin access identities for CloudFront.Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/origin-access-identity/cloudfront</code> resource. The response includes a <code>CloudFrontOriginAccessIdentityList</code> element with zero or more <code>CloudFrontOriginAccessIdentitySummary</code> child elements. By default, your entire list of origin access identities is returned in one single page. If the list is long, you can paginate it using the <code>MaxItems</code> and <code>Marker</code> parameters. */
 	export interface CloudFrontOriginAccessIdentityList {
+
+		/** Required */
 		Marker: string;
 		NextMarker?: string | null;
+
+		/** Required */
 		MaxItems: number;
+
+		/** Required */
 		IsTruncated: boolean;
+
+		/** Required */
 		Quantity: number;
 		Items?: Array<CloudFrontOriginAccessIdentitySummary>;
 	}
 
 	/** Lists the origin access identities for CloudFront.Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/origin-access-identity/cloudfront</code> resource. The response includes a <code>CloudFrontOriginAccessIdentityList</code> element with zero or more <code>CloudFrontOriginAccessIdentitySummary</code> child elements. By default, your entire list of origin access identities is returned in one single page. If the list is long, you can paginate it using the <code>MaxItems</code> and <code>Marker</code> parameters. */
 	export interface CloudFrontOriginAccessIdentityListFormProperties {
+
+		/** Required */
 		Marker: FormControl<string | null | undefined>,
 		NextMarker: FormControl<string | null | undefined>,
+
+		/** Required */
 		MaxItems: FormControl<number | null | undefined>,
+
+		/** Required */
 		IsTruncated: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateCloudFrontOriginAccessIdentityListFormGroup() {
 		return new FormGroup<CloudFrontOriginAccessIdentityListFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NextMarker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
-			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2829,22 +3276,34 @@ export namespace MyNS {
 
 	/** Summary of the information about a CloudFront origin access identity. */
 	export interface CloudFrontOriginAccessIdentitySummary {
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		S3CanonicalUserId: string;
+
+		/** Required */
 		Comment: string;
 	}
 
 	/** Summary of the information about a CloudFront origin access identity. */
 	export interface CloudFrontOriginAccessIdentitySummaryFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		S3CanonicalUserId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Comment: FormControl<string | null | undefined>,
 	}
 	export function CreateCloudFrontOriginAccessIdentitySummaryFormGroup() {
 		return new FormGroup<CloudFrontOriginAccessIdentitySummaryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			S3CanonicalUserId: new FormControl<string | null | undefined>(undefined),
-			Comment: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			S3CanonicalUserId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2869,29 +3328,45 @@ export namespace MyNS {
 
 	/** A distribution list. */
 	export interface DistributionList {
+
+		/** Required */
 		Marker: string;
 		NextMarker?: string | null;
+
+		/** Required */
 		MaxItems: number;
+
+		/** Required */
 		IsTruncated: boolean;
+
+		/** Required */
 		Quantity: number;
 		Items?: Array<DistributionSummary>;
 	}
 
 	/** A distribution list. */
 	export interface DistributionListFormProperties {
+
+		/** Required */
 		Marker: FormControl<string | null | undefined>,
 		NextMarker: FormControl<string | null | undefined>,
+
+		/** Required */
 		MaxItems: FormControl<number | null | undefined>,
+
+		/** Required */
 		IsTruncated: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateDistributionListFormGroup() {
 		return new FormGroup<DistributionListFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NextMarker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
-			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2899,10 +3374,20 @@ export namespace MyNS {
 
 	/** A summary of the information about a CloudFront distribution. */
 	export interface DistributionSummary {
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		ARN: string;
+
+		/** Required */
 		Status: string;
+
+		/** Required */
 		LastModifiedTime: Date;
+
+		/** Required */
 		DomainName: string;
 
 		/**
@@ -2937,8 +3422,14 @@ export namespace MyNS {
 		 * Required
 		 */
 		CustomErrorResponses: CustomErrorResponses;
+
+		/** Required */
 		Comment: string;
+
+		/** Required */
 		PriceClass: DistributionConfigPriceClass;
+
+		/** Required */
 		Enabled: boolean;
 
 		/**
@@ -2952,39 +3443,67 @@ export namespace MyNS {
 		 * Required
 		 */
 		Restrictions: Restrictions;
+
+		/** Required */
 		WebACLId: string;
+
+		/** Required */
 		HttpVersion: DistributionSummaryHttpVersion;
+
+		/** Required */
 		IsIPV6Enabled: boolean;
 		AliasICPRecordals?: Array<AliasICPRecordal>;
 	}
 
 	/** A summary of the information about a CloudFront distribution. */
 	export interface DistributionSummaryFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		ARN: FormControl<string | null | undefined>,
+
+		/** Required */
 		Status: FormControl<string | null | undefined>,
+
+		/** Required */
 		LastModifiedTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		DomainName: FormControl<string | null | undefined>,
+
+		/** Required */
 		Comment: FormControl<string | null | undefined>,
+
+		/** Required */
 		PriceClass: FormControl<DistributionConfigPriceClass | null | undefined>,
+
+		/** Required */
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		WebACLId: FormControl<string | null | undefined>,
+
+		/** Required */
 		HttpVersion: FormControl<DistributionSummaryHttpVersion | null | undefined>,
+
+		/** Required */
 		IsIPV6Enabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDistributionSummaryFormGroup() {
 		return new FormGroup<DistributionSummaryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			ARN: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<string | null | undefined>(undefined),
-			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
-			DomainName: new FormControl<string | null | undefined>(undefined),
-			Comment: new FormControl<string | null | undefined>(undefined),
-			PriceClass: new FormControl<DistributionConfigPriceClass | null | undefined>(undefined),
-			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			WebACLId: new FormControl<string | null | undefined>(undefined),
-			HttpVersion: new FormControl<DistributionSummaryHttpVersion | null | undefined>(undefined),
-			IsIPV6Enabled: new FormControl<boolean | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Status: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PriceClass: new FormControl<DistributionConfigPriceClass | null | undefined>(undefined, [Validators.required]),
+			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			HttpVersion: new FormControl<DistributionSummaryHttpVersion | null | undefined>(undefined, [Validators.required]),
+			IsIPV6Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3025,7 +3544,11 @@ export namespace MyNS {
 	/** List of field-level encrpytion configurations. */
 	export interface FieldLevelEncryptionList {
 		NextMarker?: string | null;
+
+		/** Required */
 		MaxItems: number;
+
+		/** Required */
 		Quantity: number;
 		Items?: Array<FieldLevelEncryptionSummary>;
 	}
@@ -3033,14 +3556,18 @@ export namespace MyNS {
 	/** List of field-level encrpytion configurations. */
 	export interface FieldLevelEncryptionListFormProperties {
 		NextMarker: FormControl<string | null | undefined>,
+
+		/** Required */
 		MaxItems: FormControl<number | null | undefined>,
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateFieldLevelEncryptionListFormGroup() {
 		return new FormGroup<FieldLevelEncryptionListFormProperties>({
 			NextMarker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3048,7 +3575,11 @@ export namespace MyNS {
 
 	/** A summary of a field-level encryption item. */
 	export interface FieldLevelEncryptionSummary {
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		LastModifiedTime: Date;
 		Comment?: string | null;
 
@@ -3061,14 +3592,18 @@ export namespace MyNS {
 
 	/** A summary of a field-level encryption item. */
 	export interface FieldLevelEncryptionSummaryFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		LastModifiedTime: FormControl<Date | null | undefined>,
 		Comment: FormControl<string | null | undefined>,
 	}
 	export function CreateFieldLevelEncryptionSummaryFormGroup() {
 		return new FormGroup<FieldLevelEncryptionSummaryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			Comment: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3091,7 +3626,11 @@ export namespace MyNS {
 	/** List of field-level encryption profiles. */
 	export interface FieldLevelEncryptionProfileList {
 		NextMarker?: string | null;
+
+		/** Required */
 		MaxItems: number;
+
+		/** Required */
 		Quantity: number;
 		Items?: Array<FieldLevelEncryptionProfileSummary>;
 	}
@@ -3099,14 +3638,18 @@ export namespace MyNS {
 	/** List of field-level encryption profiles. */
 	export interface FieldLevelEncryptionProfileListFormProperties {
 		NextMarker: FormControl<string | null | undefined>,
+
+		/** Required */
 		MaxItems: FormControl<number | null | undefined>,
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateFieldLevelEncryptionProfileListFormGroup() {
 		return new FormGroup<FieldLevelEncryptionProfileListFormProperties>({
 			NextMarker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3114,8 +3657,14 @@ export namespace MyNS {
 
 	/** The field-level encryption profile summary. */
 	export interface FieldLevelEncryptionProfileSummary {
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		LastModifiedTime: Date;
+
+		/** Required */
 		Name: string;
 
 		/**
@@ -3128,16 +3677,22 @@ export namespace MyNS {
 
 	/** The field-level encryption profile summary. */
 	export interface FieldLevelEncryptionProfileSummaryFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		LastModifiedTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 		Comment: FormControl<string | null | undefined>,
 	}
 	export function CreateFieldLevelEncryptionProfileSummaryFormGroup() {
 		return new FormGroup<FieldLevelEncryptionProfileSummaryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Comment: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3163,29 +3718,45 @@ export namespace MyNS {
 
 	/** The <code>InvalidationList</code> complex type describes the list of invalidation objects. For more information about invalidation, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html">Invalidating Objects (Web Distributions Only)</a> in the <i>Amazon CloudFront Developer Guide</i>. */
 	export interface InvalidationList {
+
+		/** Required */
 		Marker: string;
 		NextMarker?: string | null;
+
+		/** Required */
 		MaxItems: number;
+
+		/** Required */
 		IsTruncated: boolean;
+
+		/** Required */
 		Quantity: number;
 		Items?: Array<InvalidationSummary>;
 	}
 
 	/** The <code>InvalidationList</code> complex type describes the list of invalidation objects. For more information about invalidation, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html">Invalidating Objects (Web Distributions Only)</a> in the <i>Amazon CloudFront Developer Guide</i>. */
 	export interface InvalidationListFormProperties {
+
+		/** Required */
 		Marker: FormControl<string | null | undefined>,
 		NextMarker: FormControl<string | null | undefined>,
+
+		/** Required */
 		MaxItems: FormControl<number | null | undefined>,
+
+		/** Required */
 		IsTruncated: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateInvalidationListFormGroup() {
 		return new FormGroup<InvalidationListFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NextMarker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
-			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3193,22 +3764,34 @@ export namespace MyNS {
 
 	/** A summary of an invalidation request. */
 	export interface InvalidationSummary {
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		CreateTime: Date;
+
+		/** Required */
 		Status: string;
 	}
 
 	/** A summary of an invalidation request. */
 	export interface InvalidationSummaryFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreateTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		Status: FormControl<string | null | undefined>,
 	}
 	export function CreateInvalidationSummaryFormGroup() {
 		return new FormGroup<InvalidationSummaryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			CreateTime: new FormControl<Date | null | undefined>(undefined),
-			Status: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			CreateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			Status: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3230,7 +3813,11 @@ export namespace MyNS {
 	/** A list of public keys you've added to CloudFront to use with features like field-level encryption. */
 	export interface PublicKeyList {
 		NextMarker?: string | null;
+
+		/** Required */
 		MaxItems: number;
+
+		/** Required */
 		Quantity: number;
 		Items?: Array<PublicKeySummary>;
 	}
@@ -3238,14 +3825,18 @@ export namespace MyNS {
 	/** A list of public keys you've added to CloudFront to use with features like field-level encryption. */
 	export interface PublicKeyListFormProperties {
 		NextMarker: FormControl<string | null | undefined>,
+
+		/** Required */
 		MaxItems: FormControl<number | null | undefined>,
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreatePublicKeyListFormGroup() {
 		return new FormGroup<PublicKeyListFormProperties>({
 			NextMarker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3253,27 +3844,43 @@ export namespace MyNS {
 
 	/** A complex data type for public key information.  */
 	export interface PublicKeySummary {
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		Name: string;
+
+		/** Required */
 		CreatedTime: Date;
+
+		/** Required */
 		EncodedKey: string;
 		Comment?: string | null;
 	}
 
 	/** A complex data type for public key information.  */
 	export interface PublicKeySummaryFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreatedTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		EncodedKey: FormControl<string | null | undefined>,
 		Comment: FormControl<string | null | undefined>,
 	}
 	export function CreatePublicKeySummaryFormGroup() {
 		return new FormGroup<PublicKeySummaryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			CreatedTime: new FormControl<Date | null | undefined>(undefined),
-			EncodedKey: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			EncodedKey: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Comment: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3299,29 +3906,45 @@ export namespace MyNS {
 
 	/** A streaming distribution list.  */
 	export interface StreamingDistributionList {
+
+		/** Required */
 		Marker: string;
 		NextMarker?: string | null;
+
+		/** Required */
 		MaxItems: number;
+
+		/** Required */
 		IsTruncated: boolean;
+
+		/** Required */
 		Quantity: number;
 		Items?: Array<StreamingDistributionSummary>;
 	}
 
 	/** A streaming distribution list.  */
 	export interface StreamingDistributionListFormProperties {
+
+		/** Required */
 		Marker: FormControl<string | null | undefined>,
 		NextMarker: FormControl<string | null | undefined>,
+
+		/** Required */
 		MaxItems: FormControl<number | null | undefined>,
+
+		/** Required */
 		IsTruncated: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateStreamingDistributionListFormGroup() {
 		return new FormGroup<StreamingDistributionListFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NextMarker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
-			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
-			Quantity: new FormControl<number | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3329,10 +3952,20 @@ export namespace MyNS {
 
 	/**  A summary of the information for a CloudFront streaming distribution. */
 	export interface StreamingDistributionSummary {
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		ARN: string;
+
+		/** Required */
 		Status: string;
+
+		/** Required */
 		LastModifiedTime: Date;
+
+		/** Required */
 		DomainName: string;
 
 		/**
@@ -3352,32 +3985,54 @@ export namespace MyNS {
 		 * Required
 		 */
 		TrustedSigners: TrustedSigners;
+
+		/** Required */
 		Comment: string;
+
+		/** Required */
 		PriceClass: DistributionConfigPriceClass;
+
+		/** Required */
 		Enabled: boolean;
 	}
 
 	/**  A summary of the information for a CloudFront streaming distribution. */
 	export interface StreamingDistributionSummaryFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		ARN: FormControl<string | null | undefined>,
+
+		/** Required */
 		Status: FormControl<string | null | undefined>,
+
+		/** Required */
 		LastModifiedTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		DomainName: FormControl<string | null | undefined>,
+
+		/** Required */
 		Comment: FormControl<string | null | undefined>,
+
+		/** Required */
 		PriceClass: FormControl<DistributionConfigPriceClass | null | undefined>,
+
+		/** Required */
 		Enabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateStreamingDistributionSummaryFormGroup() {
 		return new FormGroup<StreamingDistributionSummaryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			ARN: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<string | null | undefined>(undefined),
-			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
-			DomainName: new FormControl<string | null | undefined>(undefined),
-			Comment: new FormControl<string | null | undefined>(undefined),
-			PriceClass: new FormControl<DistributionConfigPriceClass | null | undefined>(undefined),
-			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Status: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PriceClass: new FormControl<DistributionConfigPriceClass | null | undefined>(undefined, [Validators.required]),
+			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

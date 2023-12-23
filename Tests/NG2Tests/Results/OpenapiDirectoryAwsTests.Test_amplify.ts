@@ -22,20 +22,72 @@ export namespace MyNS {
 
 	/**  Amplify App represents different branches of a repository for building, deploying, and hosting.  */
 	export interface App {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		appId: string;
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		appArn: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		name: string;
 		tags?: TagMap;
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		description: string;
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		repository: string;
+
+		/** Required */
 		platform: AppPlatform;
+
+		/** Required */
 		createTime: Date;
+
+		/** Required */
 		updateTime: Date;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		iamServiceRoleArn?: string | null;
+
+		/** Required */
 		environmentVariables: EnvironmentVariables;
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		defaultDomain: string;
+
+		/** Required */
 		enableBranchAutoBuild: boolean;
+
+		/** Required */
 		enableBasicAuth: boolean;
+
+		/** Max length: 2000 */
 		basicAuthCredentials?: string | null;
 		customRules?: Array<CustomRule>;
 
@@ -57,18 +109,68 @@ export namespace MyNS {
 
 	/**  Amplify App represents different branches of a repository for building, deploying, and hosting.  */
 	export interface AppFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		appId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		appArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		repository: FormControl<string | null | undefined>,
+
+		/** Required */
 		platform: FormControl<AppPlatform | null | undefined>,
+
+		/** Required */
 		createTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		updateTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		iamServiceRoleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		defaultDomain: FormControl<string | null | undefined>,
+
+		/** Required */
 		enableBranchAutoBuild: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		enableBasicAuth: FormControl<boolean | null | undefined>,
+
+		/** Max length: 2000 */
 		basicAuthCredentials: FormControl<string | null | undefined>,
 
 		/**
@@ -81,20 +183,20 @@ export namespace MyNS {
 	}
 	export function CreateAppFormGroup() {
 		return new FormGroup<AppFormProperties>({
-			appId: new FormControl<string | null | undefined>(undefined),
-			appArn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			repository: new FormControl<string | null | undefined>(undefined),
-			platform: new FormControl<AppPlatform | null | undefined>(undefined),
-			createTime: new FormControl<Date | null | undefined>(undefined),
-			updateTime: new FormControl<Date | null | undefined>(undefined),
-			iamServiceRoleArn: new FormControl<string | null | undefined>(undefined),
-			defaultDomain: new FormControl<string | null | undefined>(undefined),
-			enableBranchAutoBuild: new FormControl<boolean | null | undefined>(undefined),
-			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined),
-			basicAuthCredentials: new FormControl<string | null | undefined>(undefined),
-			buildSpec: new FormControl<string | null | undefined>(undefined),
+			appId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			appArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
+			repository: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
+			platform: new FormControl<AppPlatform | null | undefined>(undefined, [Validators.required]),
+			createTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			updateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			iamServiceRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			defaultDomain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000), Validators.minLength(1)]),
+			enableBranchAutoBuild: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
 			enableAutoBranchCreation: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -125,25 +227,69 @@ export namespace MyNS {
 
 	/**  Custom rewrite / redirect rule.  */
 	export interface CustomRule {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		source: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		target: string;
+
+		/**
+		 * Max length: 7
+		 * Min length: 3
+		 */
 		status?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		condition?: string | null;
 	}
 
 	/**  Custom rewrite / redirect rule.  */
 	export interface CustomRuleFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		source: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		target: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 3
+		 */
 		status: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		condition: FormControl<string | null | undefined>,
 	}
 	export function CreateCustomRuleFormGroup() {
 		return new FormGroup<CustomRuleFormProperties>({
-			source: new FormControl<string | null | undefined>(undefined),
-			target: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
-			condition: new FormControl<string | null | undefined>(undefined),
+			source: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			target: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(3)]),
+			condition: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -152,24 +298,54 @@ export namespace MyNS {
 	/**  Structure with Production Branch information.  */
 	export interface ProductionBranch {
 		lastDeployTime?: Date | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 3
+		 */
 		status?: string | null;
+
+		/**
+		 * Max length: 2000
+		 * Min length: 1
+		 */
 		thumbnailUrl?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		branchName?: string | null;
 	}
 
 	/**  Structure with Production Branch information.  */
 	export interface ProductionBranchFormProperties {
 		lastDeployTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 3
+		 */
 		status: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2000
+		 * Min length: 1
+		 */
 		thumbnailUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		branchName: FormControl<string | null | undefined>,
 	}
 	export function CreateProductionBranchFormGroup() {
 		return new FormGroup<ProductionBranchFormProperties>({
 			lastDeployTime: new FormControl<Date | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
-			thumbnailUrl: new FormControl<string | null | undefined>(undefined),
-			branchName: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(3)]),
+			thumbnailUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -178,9 +354,13 @@ export namespace MyNS {
 	/**  Structure with auto branch creation config.  */
 	export interface AutoBranchCreationConfig {
 		stage?: AutoBranchCreationConfigStage | null;
+
+		/** Max length: 255 */
 		framework?: string | null;
 		enableAutoBuild?: boolean | null;
 		environmentVariables?: EnvironmentVariables;
+
+		/** Max length: 2000 */
 		basicAuthCredentials?: string | null;
 		enableBasicAuth?: boolean | null;
 
@@ -191,14 +371,20 @@ export namespace MyNS {
 		 */
 		buildSpec?: string | null;
 		enablePullRequestPreview?: boolean | null;
+
+		/** Max length: 20 */
 		pullRequestEnvironmentName?: string | null;
 	}
 
 	/**  Structure with auto branch creation config.  */
 	export interface AutoBranchCreationConfigFormProperties {
 		stage: FormControl<AutoBranchCreationConfigStage | null | undefined>,
+
+		/** Max length: 255 */
 		framework: FormControl<string | null | undefined>,
 		enableAutoBuild: FormControl<boolean | null | undefined>,
+
+		/** Max length: 2000 */
 		basicAuthCredentials: FormControl<string | null | undefined>,
 		enableBasicAuth: FormControl<boolean | null | undefined>,
 
@@ -209,18 +395,20 @@ export namespace MyNS {
 		 */
 		buildSpec: FormControl<string | null | undefined>,
 		enablePullRequestPreview: FormControl<boolean | null | undefined>,
+
+		/** Max length: 20 */
 		pullRequestEnvironmentName: FormControl<string | null | undefined>,
 	}
 	export function CreateAutoBranchCreationConfigFormGroup() {
 		return new FormGroup<AutoBranchCreationConfigFormProperties>({
 			stage: new FormControl<AutoBranchCreationConfigStage | null | undefined>(undefined),
-			framework: new FormControl<string | null | undefined>(undefined),
+			framework: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			enableAutoBuild: new FormControl<boolean | null | undefined>(undefined),
-			basicAuthCredentials: new FormControl<string | null | undefined>(undefined),
+			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined),
-			buildSpec: new FormControl<string | null | undefined>(undefined),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
 			enablePullRequestPreview: new FormControl<boolean | null | undefined>(undefined),
-			pullRequestEnvironmentName: new FormControl<string | null | undefined>(undefined),
+			pullRequestEnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20)]),
 		});
 
 	}
@@ -302,31 +490,83 @@ export namespace MyNS {
 
 	/**  Backend environment for an Amplify App.  */
 	export interface BackendEnvironment {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		backendEnvironmentArn: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		environmentName: string;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		stackName?: string | null;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		deploymentArtifacts?: string | null;
+
+		/** Required */
 		createTime: Date;
+
+		/** Required */
 		updateTime: Date;
 	}
 
 	/**  Backend environment for an Amplify App.  */
 	export interface BackendEnvironmentFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		backendEnvironmentArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		environmentName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		stackName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		deploymentArtifacts: FormControl<string | null | undefined>,
+
+		/** Required */
 		createTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		updateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateBackendEnvironmentFormGroup() {
 		return new FormGroup<BackendEnvironmentFormProperties>({
-			backendEnvironmentArn: new FormControl<string | null | undefined>(undefined),
-			environmentName: new FormControl<string | null | undefined>(undefined),
-			stackName: new FormControl<string | null | undefined>(undefined),
-			deploymentArtifacts: new FormControl<string | null | undefined>(undefined),
-			createTime: new FormControl<Date | null | undefined>(undefined),
-			updateTime: new FormControl<Date | null | undefined>(undefined),
+			backendEnvironmentArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000), Validators.minLength(1)]),
+			environmentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			stackName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			deploymentArtifacts: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			createTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			updateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -364,23 +604,85 @@ export namespace MyNS {
 
 	/**  Branch for an Amplify App, which maps to a 3rd party repository branch.  */
 	export interface Branch {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		branchArn: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		branchName: string;
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		description: string;
 		tags?: TagMap;
+
+		/** Required */
 		stage: AutoBranchCreationConfigStage;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		displayName: string;
+
+		/** Required */
 		enableNotification: boolean;
+
+		/** Required */
 		createTime: Date;
+
+		/** Required */
 		updateTime: Date;
+
+		/** Required */
 		environmentVariables: EnvironmentVariables;
+
+		/** Required */
 		enableAutoBuild: boolean;
+
+		/**
+		 * Required
+		 * Maximum items: 255
+		 */
 		customDomains: Array<string>;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		framework: string;
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		activeJobId: string;
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		totalNumberOfJobs: string;
+
+		/** Required */
 		enableBasicAuth: boolean;
+
+		/**
+		 * Max length: 2000
+		 * Min length: 1
+		 */
 		thumbnailUrl?: string | null;
+
+		/** Max length: 2000 */
 		basicAuthCredentials?: string | null;
 
 		/**
@@ -396,29 +698,103 @@ export namespace MyNS {
 		 */
 		ttl: string;
 		associatedResources?: Array<string>;
+
+		/** Required */
 		enablePullRequestPreview: boolean;
+
+		/** Max length: 20 */
 		pullRequestEnvironmentName?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		destinationBranch?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		sourceBranch?: string | null;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		backendEnvironmentArn?: string | null;
 	}
 
 	/**  Branch for an Amplify App, which maps to a 3rd party repository branch.  */
 	export interface BranchFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		branchArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		branchName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		description: FormControl<string | null | undefined>,
+
+		/** Required */
 		stage: FormControl<AutoBranchCreationConfigStage | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		displayName: FormControl<string | null | undefined>,
+
+		/** Required */
 		enableNotification: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		createTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		updateTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		enableAutoBuild: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		framework: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		activeJobId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		totalNumberOfJobs: FormControl<string | null | undefined>,
+
+		/** Required */
 		enableBasicAuth: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 2000
+		 * Min length: 1
+		 */
 		thumbnailUrl: FormControl<string | null | undefined>,
+
+		/** Max length: 2000 */
 		basicAuthCredentials: FormControl<string | null | undefined>,
 
 		/**
@@ -433,36 +809,55 @@ export namespace MyNS {
 		 * Required
 		 */
 		ttl: FormControl<string | null | undefined>,
+
+		/** Required */
 		enablePullRequestPreview: FormControl<boolean | null | undefined>,
+
+		/** Max length: 20 */
 		pullRequestEnvironmentName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		destinationBranch: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		sourceBranch: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		backendEnvironmentArn: FormControl<string | null | undefined>,
 	}
 	export function CreateBranchFormGroup() {
 		return new FormGroup<BranchFormProperties>({
-			branchArn: new FormControl<string | null | undefined>(undefined),
-			branchName: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			stage: new FormControl<AutoBranchCreationConfigStage | null | undefined>(undefined),
-			displayName: new FormControl<string | null | undefined>(undefined),
-			enableNotification: new FormControl<boolean | null | undefined>(undefined),
-			createTime: new FormControl<Date | null | undefined>(undefined),
-			updateTime: new FormControl<Date | null | undefined>(undefined),
-			enableAutoBuild: new FormControl<boolean | null | undefined>(undefined),
-			framework: new FormControl<string | null | undefined>(undefined),
-			activeJobId: new FormControl<string | null | undefined>(undefined),
-			totalNumberOfJobs: new FormControl<string | null | undefined>(undefined),
-			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined),
-			thumbnailUrl: new FormControl<string | null | undefined>(undefined),
-			basicAuthCredentials: new FormControl<string | null | undefined>(undefined),
-			buildSpec: new FormControl<string | null | undefined>(undefined),
-			ttl: new FormControl<string | null | undefined>(undefined),
-			enablePullRequestPreview: new FormControl<boolean | null | undefined>(undefined),
-			pullRequestEnvironmentName: new FormControl<string | null | undefined>(undefined),
-			destinationBranch: new FormControl<string | null | undefined>(undefined),
-			sourceBranch: new FormControl<string | null | undefined>(undefined),
-			backendEnvironmentArn: new FormControl<string | null | undefined>(undefined),
+			branchArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
+			stage: new FormControl<AutoBranchCreationConfigStage | null | undefined>(undefined, [Validators.required]),
+			displayName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			enableNotification: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			createTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			updateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			enableAutoBuild: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			framework: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			activeJobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
+			totalNumberOfJobs: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
+			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			thumbnailUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
+			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
+			ttl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			enablePullRequestPreview: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			pullRequestEnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20)]),
+			destinationBranch: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			sourceBranch: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			backendEnvironmentArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
@@ -470,20 +865,36 @@ export namespace MyNS {
 
 	/**  Result structure for create a new deployment.  */
 	export interface CreateDeploymentResult {
+
+		/** Max length: 255 */
 		jobId?: string | null;
+
+		/** Required */
 		fileUploadUrls: FileUploadUrls;
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		zipUploadUrl: string;
 	}
 
 	/**  Result structure for create a new deployment.  */
 	export interface CreateDeploymentResultFormProperties {
+
+		/** Max length: 255 */
 		jobId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		zipUploadUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDeploymentResultFormGroup() {
 		return new FormGroup<CreateDeploymentResultFormProperties>({
-			jobId: new FormControl<string | null | undefined>(undefined),
-			zipUploadUrl: new FormControl<string | null | undefined>(undefined),
+			jobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			zipUploadUrl: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
 		});
 
 	}
@@ -521,32 +932,79 @@ export namespace MyNS {
 
 	/**  Structure for Domain Association, which associates a custom domain with an Amplify App.  */
 	export interface DomainAssociation {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		domainAssociationArn: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		domainName: string;
+
+		/** Required */
 		enableAutoSubDomain: boolean;
+
+		/** Required */
 		domainStatus: DomainAssociationDomainStatus;
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		statusReason: string;
+
+		/** Max length: 1000 */
 		certificateVerificationDNSRecord?: string | null;
+
+		/**
+		 * Required
+		 * Maximum items: 255
+		 */
 		subDomains: Array<SubDomain>;
 	}
 
 	/**  Structure for Domain Association, which associates a custom domain with an Amplify App.  */
 	export interface DomainAssociationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		domainAssociationArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		domainName: FormControl<string | null | undefined>,
+
+		/** Required */
 		enableAutoSubDomain: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		domainStatus: FormControl<DomainAssociationDomainStatus | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		statusReason: FormControl<string | null | undefined>,
+
+		/** Max length: 1000 */
 		certificateVerificationDNSRecord: FormControl<string | null | undefined>,
 	}
 	export function CreateDomainAssociationFormGroup() {
 		return new FormGroup<DomainAssociationFormProperties>({
-			domainAssociationArn: new FormControl<string | null | undefined>(undefined),
-			domainName: new FormControl<string | null | undefined>(undefined),
-			enableAutoSubDomain: new FormControl<boolean | null | undefined>(undefined),
-			domainStatus: new FormControl<DomainAssociationDomainStatus | null | undefined>(undefined),
-			statusReason: new FormControl<string | null | undefined>(undefined),
-			certificateVerificationDNSRecord: new FormControl<string | null | undefined>(undefined),
+			domainAssociationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
+			domainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			enableAutoSubDomain: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			domainStatus: new FormControl<DomainAssociationDomainStatus | null | undefined>(undefined, [Validators.required]),
+			statusReason: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
+			certificateVerificationDNSRecord: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 		});
 
 	}
@@ -562,19 +1020,33 @@ export namespace MyNS {
 		 * Required
 		 */
 		subDomainSetting: SubDomainSetting;
+
+		/** Required */
 		verified: boolean;
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		dnsRecord: string;
 	}
 
 	/**  Subdomain for the Domain Association.  */
 	export interface SubDomainFormProperties {
+
+		/** Required */
 		verified: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		dnsRecord: FormControl<string | null | undefined>,
 	}
 	export function CreateSubDomainFormGroup() {
 		return new FormGroup<SubDomainFormProperties>({
-			verified: new FormControl<boolean | null | undefined>(undefined),
-			dnsRecord: new FormControl<string | null | undefined>(undefined),
+			verified: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			dnsRecord: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
 		});
 
 	}
@@ -582,19 +1054,41 @@ export namespace MyNS {
 
 	/**  Setting for the Subdomain.  */
 	export interface SubDomainSetting {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		prefix: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		branchName: string;
 	}
 
 	/**  Setting for the Subdomain.  */
 	export interface SubDomainSettingFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		prefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		branchName: FormControl<string | null | undefined>,
 	}
 	export function CreateSubDomainSettingFormGroup() {
 		return new FormGroup<SubDomainSettingFormProperties>({
-			prefix: new FormControl<string | null | undefined>(undefined),
-			branchName: new FormControl<string | null | undefined>(undefined),
+			prefix: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -622,34 +1116,94 @@ export namespace MyNS {
 
 	/**  Structure for webhook, which associates a webhook with an Amplify App.  */
 	export interface Webhook {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		webhookArn: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		webhookId: string;
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		webhookUrl: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		branchName: string;
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		description: string;
+
+		/** Required */
 		createTime: Date;
+
+		/** Required */
 		updateTime: Date;
 	}
 
 	/**  Structure for webhook, which associates a webhook with an Amplify App.  */
 	export interface WebhookFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		webhookArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		webhookId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		webhookUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		branchName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		description: FormControl<string | null | undefined>,
+
+		/** Required */
 		createTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		updateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateWebhookFormGroup() {
 		return new FormGroup<WebhookFormProperties>({
-			webhookArn: new FormControl<string | null | undefined>(undefined),
-			webhookId: new FormControl<string | null | undefined>(undefined),
-			webhookUrl: new FormControl<string | null | undefined>(undefined),
-			branchName: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			createTime: new FormControl<Date | null | undefined>(undefined),
-			updateTime: new FormControl<Date | null | undefined>(undefined),
+			webhookArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
+			webhookId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			webhookUrl: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
+			createTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			updateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -753,40 +1307,102 @@ export namespace MyNS {
 
 	/**  Structure for the summary of a Job.  */
 	export interface JobSummary {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		jobArn: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		jobId: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		commitId: string;
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 */
 		commitMessage: string;
+
+		/** Required */
 		commitTime: Date;
+
+		/** Required */
 		startTime: Date;
+
+		/** Required */
 		status: JobSummaryStatus;
 		endTime?: Date | null;
+
+		/**
+		 * Required
+		 * Max length: 10
+		 */
 		jobType: JobSummaryJobType;
 	}
 
 	/**  Structure for the summary of a Job.  */
 	export interface JobSummaryFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		jobArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		jobId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		commitId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 */
 		commitMessage: FormControl<string | null | undefined>,
+
+		/** Required */
 		commitTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		startTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		status: FormControl<JobSummaryStatus | null | undefined>,
 		endTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 10
+		 */
 		jobType: FormControl<JobSummaryJobType | null | undefined>,
 	}
 	export function CreateJobSummaryFormGroup() {
 		return new FormGroup<JobSummaryFormProperties>({
-			jobArn: new FormControl<string | null | undefined>(undefined),
-			jobId: new FormControl<string | null | undefined>(undefined),
-			commitId: new FormControl<string | null | undefined>(undefined),
-			commitMessage: new FormControl<string | null | undefined>(undefined),
-			commitTime: new FormControl<Date | null | undefined>(undefined),
-			startTime: new FormControl<Date | null | undefined>(undefined),
-			status: new FormControl<JobSummaryStatus | null | undefined>(undefined),
+			jobArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
+			jobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			commitId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			commitMessage: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000)]),
+			commitTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			startTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			status: new FormControl<JobSummaryStatus | null | undefined>(undefined, [Validators.required]),
 			endTime: new FormControl<Date | null | undefined>(undefined),
-			jobType: new FormControl<JobSummaryJobType | null | undefined>(undefined),
+			jobType: new FormControl<JobSummaryJobType | null | undefined>(undefined, [Validators.required, Validators.maxLength(10)]),
 		});
 
 	}
@@ -818,16 +1434,20 @@ export namespace MyNS {
 
 	/**  Result structure for the generate access logs request.  */
 	export interface GenerateAccessLogsResult {
+
+		/** Max length: 1000 */
 		logUrl?: string | null;
 	}
 
 	/**  Result structure for the generate access logs request.  */
 	export interface GenerateAccessLogsResultFormProperties {
+
+		/** Max length: 1000 */
 		logUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateGenerateAccessLogsResultFormGroup() {
 		return new FormGroup<GenerateAccessLogsResultFormProperties>({
-			logUrl: new FormControl<string | null | undefined>(undefined),
+			logUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 		});
 
 	}
@@ -851,19 +1471,39 @@ export namespace MyNS {
 
 	/**  Result structure for the get artifact request.  */
 	export interface GetArtifactUrlResult {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		artifactId: string;
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		artifactUrl: string;
 	}
 
 	/**  Result structure for the get artifact request.  */
 	export interface GetArtifactUrlResultFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		artifactId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		artifactUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateGetArtifactUrlResultFormGroup() {
 		return new FormGroup<GetArtifactUrlResultFormProperties>({
-			artifactId: new FormControl<string | null | undefined>(undefined),
-			artifactUrl: new FormControl<string | null | undefined>(undefined),
+			artifactId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			artifactUrl: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
 		});
 
 	}
@@ -949,6 +1589,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		summary: JobSummary;
+
+		/** Required */
 		steps: Array<Step>;
 	}
 
@@ -964,43 +1606,85 @@ export namespace MyNS {
 
 	/**  Structure for an execution step for an execution job, for an Amplify App.  */
 	export interface Step {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		stepName: string;
+
+		/** Required */
 		startTime: Date;
+
+		/** Required */
 		status: JobSummaryStatus;
+
+		/** Required */
 		endTime: Date;
+
+		/** Max length: 1000 */
 		logUrl?: string | null;
+
+		/** Max length: 1000 */
 		artifactsUrl?: string | null;
+
+		/** Max length: 1000 */
 		testArtifactsUrl?: string | null;
+
+		/** Max length: 1000 */
 		testConfigUrl?: string | null;
 		screenshots?: Screenshots;
+
+		/** Max length: 1000 */
 		statusReason?: string | null;
 		context?: string | null;
 	}
 
 	/**  Structure for an execution step for an execution job, for an Amplify App.  */
 	export interface StepFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		stepName: FormControl<string | null | undefined>,
+
+		/** Required */
 		startTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		status: FormControl<JobSummaryStatus | null | undefined>,
+
+		/** Required */
 		endTime: FormControl<Date | null | undefined>,
+
+		/** Max length: 1000 */
 		logUrl: FormControl<string | null | undefined>,
+
+		/** Max length: 1000 */
 		artifactsUrl: FormControl<string | null | undefined>,
+
+		/** Max length: 1000 */
 		testArtifactsUrl: FormControl<string | null | undefined>,
+
+		/** Max length: 1000 */
 		testConfigUrl: FormControl<string | null | undefined>,
+
+		/** Max length: 1000 */
 		statusReason: FormControl<string | null | undefined>,
 		context: FormControl<string | null | undefined>,
 	}
 	export function CreateStepFormGroup() {
 		return new FormGroup<StepFormProperties>({
-			stepName: new FormControl<string | null | undefined>(undefined),
-			startTime: new FormControl<Date | null | undefined>(undefined),
-			status: new FormControl<JobSummaryStatus | null | undefined>(undefined),
-			endTime: new FormControl<Date | null | undefined>(undefined),
-			logUrl: new FormControl<string | null | undefined>(undefined),
-			artifactsUrl: new FormControl<string | null | undefined>(undefined),
-			testArtifactsUrl: new FormControl<string | null | undefined>(undefined),
-			testConfigUrl: new FormControl<string | null | undefined>(undefined),
-			statusReason: new FormControl<string | null | undefined>(undefined),
+			stepName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			startTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			status: new FormControl<JobSummaryStatus | null | undefined>(undefined, [Validators.required]),
+			endTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			logUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
+			artifactsUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
+			testArtifactsUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
+			testConfigUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
+			statusReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 			context: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1039,17 +1723,23 @@ export namespace MyNS {
 
 	/**  Result structure for an Amplify App list request.  */
 	export interface ListAppsResult {
+
+		/** Required */
 		apps: Array<App>;
+
+		/** Max length: 2000 */
 		nextToken?: string | null;
 	}
 
 	/**  Result structure for an Amplify App list request.  */
 	export interface ListAppsResultFormProperties {
+
+		/** Max length: 2000 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListAppsResultFormGroup() {
 		return new FormGroup<ListAppsResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 		});
 
 	}
@@ -1057,17 +1747,23 @@ export namespace MyNS {
 
 	/**  Result structure for the list artifacts request.  */
 	export interface ListArtifactsResult {
+
+		/** Required */
 		artifacts: Array<Artifact>;
+
+		/** Max length: 2000 */
 		nextToken?: string | null;
 	}
 
 	/**  Result structure for the list artifacts request.  */
 	export interface ListArtifactsResultFormProperties {
+
+		/** Max length: 2000 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListArtifactsResultFormGroup() {
 		return new FormGroup<ListArtifactsResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 		});
 
 	}
@@ -1075,19 +1771,39 @@ export namespace MyNS {
 
 	/**  Structure for artifact.  */
 	export interface Artifact {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		artifactFileName: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		artifactId: string;
 	}
 
 	/**  Structure for artifact.  */
 	export interface ArtifactFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 */
 		artifactFileName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		artifactId: FormControl<string | null | undefined>,
 	}
 	export function CreateArtifactFormGroup() {
 		return new FormGroup<ArtifactFormProperties>({
-			artifactFileName: new FormControl<string | null | undefined>(undefined),
-			artifactId: new FormControl<string | null | undefined>(undefined),
+			artifactFileName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
+			artifactId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -1095,17 +1811,23 @@ export namespace MyNS {
 
 	/**  Result structure for list backend environments result.  */
 	export interface ListBackendEnvironmentsResult {
+
+		/** Required */
 		backendEnvironments: Array<BackendEnvironment>;
+
+		/** Max length: 2000 */
 		nextToken?: string | null;
 	}
 
 	/**  Result structure for list backend environments result.  */
 	export interface ListBackendEnvironmentsResultFormProperties {
+
+		/** Max length: 2000 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListBackendEnvironmentsResultFormGroup() {
 		return new FormGroup<ListBackendEnvironmentsResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 		});
 
 	}
@@ -1113,17 +1835,26 @@ export namespace MyNS {
 
 	/**  Result structure for list branches request.  */
 	export interface ListBranchesResult {
+
+		/**
+		 * Required
+		 * Maximum items: 255
+		 */
 		branches: Array<Branch>;
+
+		/** Max length: 2000 */
 		nextToken?: string | null;
 	}
 
 	/**  Result structure for list branches request.  */
 	export interface ListBranchesResultFormProperties {
+
+		/** Max length: 2000 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListBranchesResultFormGroup() {
 		return new FormGroup<ListBranchesResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 		});
 
 	}
@@ -1131,17 +1862,26 @@ export namespace MyNS {
 
 	/**  Result structure for the list Domain Association request.  */
 	export interface ListDomainAssociationsResult {
+
+		/**
+		 * Required
+		 * Maximum items: 255
+		 */
 		domainAssociations: Array<DomainAssociation>;
+
+		/** Max length: 2000 */
 		nextToken?: string | null;
 	}
 
 	/**  Result structure for the list Domain Association request.  */
 	export interface ListDomainAssociationsResultFormProperties {
+
+		/** Max length: 2000 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListDomainAssociationsResultFormGroup() {
 		return new FormGroup<ListDomainAssociationsResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 		});
 
 	}
@@ -1149,17 +1889,23 @@ export namespace MyNS {
 
 	/**  Maximum number of records to list in a single response.  */
 	export interface ListJobsResult {
+
+		/** Required */
 		jobSummaries: Array<JobSummary>;
+
+		/** Max length: 2000 */
 		nextToken?: string | null;
 	}
 
 	/**  Maximum number of records to list in a single response.  */
 	export interface ListJobsResultFormProperties {
+
+		/** Max length: 2000 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListJobsResultFormGroup() {
 		return new FormGroup<ListJobsResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 		});
 
 	}
@@ -1192,17 +1938,23 @@ export namespace MyNS {
 
 	/**  Result structure for the list webhooks request.  */
 	export interface ListWebhooksResult {
+
+		/** Required */
 		webhooks: Array<Webhook>;
+
+		/** Max length: 2000 */
 		nextToken?: string | null;
 	}
 
 	/**  Result structure for the list webhooks request.  */
 	export interface ListWebhooksResultFormProperties {
+
+		/** Max length: 2000 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListWebhooksResultFormGroup() {
 		return new FormGroup<ListWebhooksResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 		});
 
 	}
@@ -1380,16 +2132,40 @@ export namespace MyNS {
 
 	/**  Request structure used to create Apps in Amplify.  */
 	export interface CreateAppRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		name: string;
+
+		/** Max length: 1000 */
 		description?: string | null;
+
+		/** Max length: 1000 */
 		repository?: string | null;
 		platform?: AppPlatform | null;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		iamServiceRoleArn?: string | null;
+
+		/** Max length: 100 */
 		oauthToken?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		accessToken?: string | null;
 		environmentVariables?: EnvironmentVariables;
 		enableBranchAutoBuild?: boolean | null;
 		enableBasicAuth?: boolean | null;
+
+		/** Max length: 2000 */
 		basicAuthCredentials?: string | null;
 		customRules?: Array<CustomRule>;
 		tags?: TagMap;
@@ -1409,15 +2185,39 @@ export namespace MyNS {
 
 	/**  Request structure used to create Apps in Amplify.  */
 	export interface CreateAppRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Max length: 1000 */
 		description: FormControl<string | null | undefined>,
+
+		/** Max length: 1000 */
 		repository: FormControl<string | null | undefined>,
 		platform: FormControl<AppPlatform | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		iamServiceRoleArn: FormControl<string | null | undefined>,
+
+		/** Max length: 100 */
 		oauthToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		accessToken: FormControl<string | null | undefined>,
 		enableBranchAutoBuild: FormControl<boolean | null | undefined>,
 		enableBasicAuth: FormControl<boolean | null | undefined>,
+
+		/** Max length: 2000 */
 		basicAuthCredentials: FormControl<string | null | undefined>,
 
 		/**
@@ -1430,17 +2230,17 @@ export namespace MyNS {
 	}
 	export function CreateCreateAppRequestFormGroup() {
 		return new FormGroup<CreateAppRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			repository: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
+			repository: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 			platform: new FormControl<AppPlatform | null | undefined>(undefined),
-			iamServiceRoleArn: new FormControl<string | null | undefined>(undefined),
-			oauthToken: new FormControl<string | null | undefined>(undefined),
-			accessToken: new FormControl<string | null | undefined>(undefined),
+			iamServiceRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			oauthToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
+			accessToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 			enableBranchAutoBuild: new FormControl<boolean | null | undefined>(undefined),
 			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined),
-			basicAuthCredentials: new FormControl<string | null | undefined>(undefined),
-			buildSpec: new FormControl<string | null | undefined>(undefined),
+			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
 			enableAutoBranchCreation: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1449,22 +2249,54 @@ export namespace MyNS {
 
 	/**  Request structure for a backend environment create request.  */
 	export interface CreateBackendEnvironmentRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		environmentName: string;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		stackName?: string | null;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		deploymentArtifacts?: string | null;
 	}
 
 	/**  Request structure for a backend environment create request.  */
 	export interface CreateBackendEnvironmentRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		environmentName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		stackName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		deploymentArtifacts: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateBackendEnvironmentRequestFormGroup() {
 		return new FormGroup<CreateBackendEnvironmentRequestFormProperties>({
-			environmentName: new FormControl<string | null | undefined>(undefined),
-			stackName: new FormControl<string | null | undefined>(undefined),
-			deploymentArtifacts: new FormControl<string | null | undefined>(undefined),
+			environmentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			stackName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			deploymentArtifacts: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
@@ -1472,13 +2304,25 @@ export namespace MyNS {
 
 	/**  Request structure for a branch create request.  */
 	export interface CreateBranchRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		branchName: string;
+
+		/** Max length: 1000 */
 		description?: string | null;
 		stage?: AutoBranchCreationConfigStage | null;
+
+		/** Max length: 255 */
 		framework?: string | null;
 		enableNotification?: boolean | null;
 		enableAutoBuild?: boolean | null;
 		environmentVariables?: EnvironmentVariables;
+
+		/** Max length: 2000 */
 		basicAuthCredentials?: string | null;
 		enableBasicAuth?: boolean | null;
 		tags?: TagMap;
@@ -1492,20 +2336,41 @@ export namespace MyNS {
 
 		/** The content TTL for the website in seconds. */
 		ttl?: string | null;
+
+		/** Max length: 255 */
 		displayName?: string | null;
 		enablePullRequestPreview?: boolean | null;
+
+		/** Max length: 20 */
 		pullRequestEnvironmentName?: string | null;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		backendEnvironmentArn?: string | null;
 	}
 
 	/**  Request structure for a branch create request.  */
 	export interface CreateBranchRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		branchName: FormControl<string | null | undefined>,
+
+		/** Max length: 1000 */
 		description: FormControl<string | null | undefined>,
 		stage: FormControl<AutoBranchCreationConfigStage | null | undefined>,
+
+		/** Max length: 255 */
 		framework: FormControl<string | null | undefined>,
 		enableNotification: FormControl<boolean | null | undefined>,
 		enableAutoBuild: FormControl<boolean | null | undefined>,
+
+		/** Max length: 2000 */
 		basicAuthCredentials: FormControl<string | null | undefined>,
 		enableBasicAuth: FormControl<boolean | null | undefined>,
 
@@ -1518,27 +2383,36 @@ export namespace MyNS {
 
 		/** The content TTL for the website in seconds. */
 		ttl: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		displayName: FormControl<string | null | undefined>,
 		enablePullRequestPreview: FormControl<boolean | null | undefined>,
+
+		/** Max length: 20 */
 		pullRequestEnvironmentName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		backendEnvironmentArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateBranchRequestFormGroup() {
 		return new FormGroup<CreateBranchRequestFormProperties>({
-			branchName: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 			stage: new FormControl<AutoBranchCreationConfigStage | null | undefined>(undefined),
-			framework: new FormControl<string | null | undefined>(undefined),
+			framework: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			enableNotification: new FormControl<boolean | null | undefined>(undefined),
 			enableAutoBuild: new FormControl<boolean | null | undefined>(undefined),
-			basicAuthCredentials: new FormControl<string | null | undefined>(undefined),
+			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined),
-			buildSpec: new FormControl<string | null | undefined>(undefined),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
 			ttl: new FormControl<string | null | undefined>(undefined),
-			displayName: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			enablePullRequestPreview: new FormControl<boolean | null | undefined>(undefined),
-			pullRequestEnvironmentName: new FormControl<string | null | undefined>(undefined),
-			backendEnvironmentArn: new FormControl<string | null | undefined>(undefined),
+			pullRequestEnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20)]),
+			backendEnvironmentArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
@@ -1571,19 +2445,34 @@ export namespace MyNS {
 
 	/**  Request structure for create Domain Association request.  */
 	export interface CreateDomainAssociationRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		domainName: string;
 		enableAutoSubDomain?: boolean | null;
+
+		/**
+		 * Required
+		 * Maximum items: 255
+		 */
 		subDomainSettings: Array<SubDomainSetting>;
 	}
 
 	/**  Request structure for create Domain Association request.  */
 	export interface CreateDomainAssociationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		domainName: FormControl<string | null | undefined>,
 		enableAutoSubDomain: FormControl<boolean | null | undefined>,
 	}
 	export function CreateCreateDomainAssociationRequestFormGroup() {
 		return new FormGroup<CreateDomainAssociationRequestFormProperties>({
-			domainName: new FormControl<string | null | undefined>(undefined),
+			domainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 			enableAutoSubDomain: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1592,19 +2481,35 @@ export namespace MyNS {
 
 	/**  Request structure for create webhook request.  */
 	export interface CreateWebhookRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		branchName: string;
+
+		/** Max length: 1000 */
 		description?: string | null;
 	}
 
 	/**  Request structure for create webhook request.  */
 	export interface CreateWebhookRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		branchName: FormControl<string | null | undefined>,
+
+		/** Max length: 1000 */
 		description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateWebhookRequestFormGroup() {
 		return new FormGroup<CreateWebhookRequestFormProperties>({
-			branchName: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 		});
 
 	}
@@ -1700,6 +2605,11 @@ export namespace MyNS {
 	export interface GenerateAccessLogsRequest {
 		startTime?: Date | null;
 		endTime?: Date | null;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		domainName: string;
 	}
 
@@ -1707,13 +2617,18 @@ export namespace MyNS {
 	export interface GenerateAccessLogsRequestFormProperties {
 		startTime: FormControl<Date | null | undefined>,
 		endTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		domainName: FormControl<string | null | undefined>,
 	}
 	export function CreateGenerateAccessLogsRequestFormGroup() {
 		return new FormGroup<GenerateAccessLogsRequestFormProperties>({
 			startTime: new FormControl<Date | null | undefined>(undefined),
 			endTime: new FormControl<Date | null | undefined>(undefined),
-			domainName: new FormControl<string | null | undefined>(undefined),
+			domainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -1851,16 +2766,26 @@ export namespace MyNS {
 
 	/**  Request structure for list backend environments request.  */
 	export interface ListBackendEnvironmentsRequest {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		environmentName?: string | null;
 	}
 
 	/**  Request structure for list backend environments request.  */
 	export interface ListBackendEnvironmentsRequestFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		environmentName: FormControl<string | null | undefined>,
 	}
 	export function CreateListBackendEnvironmentsRequestFormGroup() {
 		return new FormGroup<ListBackendEnvironmentsRequestFormProperties>({
-			environmentName: new FormControl<string | null | undefined>(undefined),
+			environmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -1938,19 +2863,27 @@ export namespace MyNS {
 
 	/**  Request structure for start a deployment.  */
 	export interface StartDeploymentRequest {
+
+		/** Max length: 255 */
 		jobId?: string | null;
+
+		/** Max length: 1000 */
 		sourceUrl?: string | null;
 	}
 
 	/**  Request structure for start a deployment.  */
 	export interface StartDeploymentRequestFormProperties {
+
+		/** Max length: 255 */
 		jobId: FormControl<string | null | undefined>,
+
+		/** Max length: 1000 */
 		sourceUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateStartDeploymentRequestFormGroup() {
 		return new FormGroup<StartDeploymentRequestFormProperties>({
-			jobId: new FormControl<string | null | undefined>(undefined),
-			sourceUrl: new FormControl<string | null | undefined>(undefined),
+			jobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			sourceUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 		});
 
 	}
@@ -1958,30 +2891,56 @@ export namespace MyNS {
 
 	/**  Request structure for Start job request.  */
 	export interface StartJobRequest {
+
+		/** Max length: 255 */
 		jobId?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 10
+		 */
 		jobType: JobSummaryJobType;
+
+		/** Max length: 255 */
 		jobReason?: string | null;
+
+		/** Max length: 255 */
 		commitId?: string | null;
+
+		/** Max length: 10000 */
 		commitMessage?: string | null;
 		commitTime?: Date | null;
 	}
 
 	/**  Request structure for Start job request.  */
 	export interface StartJobRequestFormProperties {
+
+		/** Max length: 255 */
 		jobId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 10
+		 */
 		jobType: FormControl<JobSummaryJobType | null | undefined>,
+
+		/** Max length: 255 */
 		jobReason: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		commitId: FormControl<string | null | undefined>,
+
+		/** Max length: 10000 */
 		commitMessage: FormControl<string | null | undefined>,
 		commitTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateStartJobRequestFormGroup() {
 		return new FormGroup<StartJobRequestFormProperties>({
-			jobId: new FormControl<string | null | undefined>(undefined),
-			jobType: new FormControl<JobSummaryJobType | null | undefined>(undefined),
-			jobReason: new FormControl<string | null | undefined>(undefined),
-			commitId: new FormControl<string | null | undefined>(undefined),
-			commitMessage: new FormControl<string | null | undefined>(undefined),
+			jobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			jobType: new FormControl<JobSummaryJobType | null | undefined>(undefined, [Validators.required, Validators.maxLength(10)]),
+			jobReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			commitId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			commitMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 			commitTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -2004,6 +2963,8 @@ export namespace MyNS {
 
 	/**  Request structure used to tag resource.  */
 	export interface TagResourceRequest {
+
+		/** Required */
 		tags: TagMap;
 	}
 
@@ -2033,13 +2994,27 @@ export namespace MyNS {
 
 	/**  Request structure for update App request.  */
 	export interface UpdateAppRequest {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		name?: string | null;
+
+		/** Max length: 1000 */
 		description?: string | null;
 		platform?: AppPlatform | null;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		iamServiceRoleArn?: string | null;
 		environmentVariables?: EnvironmentVariables;
 		enableBranchAutoBuild?: boolean | null;
 		enableBasicAuth?: boolean | null;
+
+		/** Max length: 2000 */
 		basicAuthCredentials?: string | null;
 		customRules?: Array<CustomRule>;
 
@@ -2054,19 +3029,42 @@ export namespace MyNS {
 
 		/** Structure with auto branch creation config. */
 		autoBranchCreationConfig?: AutoBranchCreationConfig;
+
+		/** Max length: 1000 */
 		repository?: string | null;
+
+		/** Max length: 100 */
 		oauthToken?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		accessToken?: string | null;
 	}
 
 	/**  Request structure for update App request.  */
 	export interface UpdateAppRequestFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Max length: 1000 */
 		description: FormControl<string | null | undefined>,
 		platform: FormControl<AppPlatform | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		iamServiceRoleArn: FormControl<string | null | undefined>,
 		enableBranchAutoBuild: FormControl<boolean | null | undefined>,
 		enableBasicAuth: FormControl<boolean | null | undefined>,
+
+		/** Max length: 2000 */
 		basicAuthCredentials: FormControl<string | null | undefined>,
 
 		/**
@@ -2076,24 +3074,33 @@ export namespace MyNS {
 		 */
 		buildSpec: FormControl<string | null | undefined>,
 		enableAutoBranchCreation: FormControl<boolean | null | undefined>,
+
+		/** Max length: 1000 */
 		repository: FormControl<string | null | undefined>,
+
+		/** Max length: 100 */
 		oauthToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		accessToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateAppRequestFormGroup() {
 		return new FormGroup<UpdateAppRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 			platform: new FormControl<AppPlatform | null | undefined>(undefined),
-			iamServiceRoleArn: new FormControl<string | null | undefined>(undefined),
+			iamServiceRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 			enableBranchAutoBuild: new FormControl<boolean | null | undefined>(undefined),
 			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined),
-			basicAuthCredentials: new FormControl<string | null | undefined>(undefined),
-			buildSpec: new FormControl<string | null | undefined>(undefined),
+			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
 			enableAutoBranchCreation: new FormControl<boolean | null | undefined>(undefined),
-			repository: new FormControl<string | null | undefined>(undefined),
-			oauthToken: new FormControl<string | null | undefined>(undefined),
-			accessToken: new FormControl<string | null | undefined>(undefined),
+			repository: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
+			oauthToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
+			accessToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -2101,12 +3108,18 @@ export namespace MyNS {
 
 	/**  Request structure for update branch request.  */
 	export interface UpdateBranchRequest {
+
+		/** Max length: 1000 */
 		description?: string | null;
+
+		/** Max length: 255 */
 		framework?: string | null;
 		stage?: AutoBranchCreationConfigStage | null;
 		enableNotification?: boolean | null;
 		enableAutoBuild?: boolean | null;
 		environmentVariables?: EnvironmentVariables;
+
+		/** Max length: 2000 */
 		basicAuthCredentials?: string | null;
 		enableBasicAuth?: boolean | null;
 
@@ -2119,19 +3132,34 @@ export namespace MyNS {
 
 		/** The content TTL for the website in seconds. */
 		ttl?: string | null;
+
+		/** Max length: 255 */
 		displayName?: string | null;
 		enablePullRequestPreview?: boolean | null;
+
+		/** Max length: 20 */
 		pullRequestEnvironmentName?: string | null;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		backendEnvironmentArn?: string | null;
 	}
 
 	/**  Request structure for update branch request.  */
 	export interface UpdateBranchRequestFormProperties {
+
+		/** Max length: 1000 */
 		description: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		framework: FormControl<string | null | undefined>,
 		stage: FormControl<AutoBranchCreationConfigStage | null | undefined>,
 		enableNotification: FormControl<boolean | null | undefined>,
 		enableAutoBuild: FormControl<boolean | null | undefined>,
+
+		/** Max length: 2000 */
 		basicAuthCredentials: FormControl<string | null | undefined>,
 		enableBasicAuth: FormControl<boolean | null | undefined>,
 
@@ -2144,26 +3172,35 @@ export namespace MyNS {
 
 		/** The content TTL for the website in seconds. */
 		ttl: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		displayName: FormControl<string | null | undefined>,
 		enablePullRequestPreview: FormControl<boolean | null | undefined>,
+
+		/** Max length: 20 */
 		pullRequestEnvironmentName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		backendEnvironmentArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateBranchRequestFormGroup() {
 		return new FormGroup<UpdateBranchRequestFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined),
-			framework: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
+			framework: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			stage: new FormControl<AutoBranchCreationConfigStage | null | undefined>(undefined),
 			enableNotification: new FormControl<boolean | null | undefined>(undefined),
 			enableAutoBuild: new FormControl<boolean | null | undefined>(undefined),
-			basicAuthCredentials: new FormControl<string | null | undefined>(undefined),
+			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined),
-			buildSpec: new FormControl<string | null | undefined>(undefined),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
 			ttl: new FormControl<string | null | undefined>(undefined),
-			displayName: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			enablePullRequestPreview: new FormControl<boolean | null | undefined>(undefined),
-			pullRequestEnvironmentName: new FormControl<string | null | undefined>(undefined),
-			backendEnvironmentArn: new FormControl<string | null | undefined>(undefined),
+			pullRequestEnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20)]),
+			backendEnvironmentArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
@@ -2172,6 +3209,11 @@ export namespace MyNS {
 	/**  Request structure for update Domain Association request.  */
 	export interface UpdateDomainAssociationRequest {
 		enableAutoSubDomain?: boolean | null;
+
+		/**
+		 * Required
+		 * Maximum items: 255
+		 */
 		subDomainSettings: Array<SubDomainSetting>;
 	}
 
@@ -2189,19 +3231,33 @@ export namespace MyNS {
 
 	/**  Request structure for update webhook request.  */
 	export interface UpdateWebhookRequest {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		branchName?: string | null;
+
+		/** Max length: 1000 */
 		description?: string | null;
 	}
 
 	/**  Request structure for update webhook request.  */
 	export interface UpdateWebhookRequestFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		branchName: FormControl<string | null | undefined>,
+
+		/** Max length: 1000 */
 		description: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateWebhookRequestFormGroup() {
 		return new FormGroup<UpdateWebhookRequestFormProperties>({
-			branchName: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 		});
 
 	}
@@ -2772,19 +3828,19 @@ export namespace MyNS {
 	}
 	export function CreateCreateAppPostBodyFormGroup() {
 		return new FormGroup<CreateAppPostBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			repository: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
+			repository: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 			platform: new FormControl<AppPlatform | null | undefined>(undefined),
-			iamServiceRoleArn: new FormControl<string | null | undefined>(undefined),
-			oauthToken: new FormControl<string | null | undefined>(undefined),
-			accessToken: new FormControl<string | null | undefined>(undefined),
+			iamServiceRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			oauthToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
+			accessToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 			environmentVariables: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			enableBranchAutoBuild: new FormControl<boolean | null | undefined>(undefined),
 			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined),
-			basicAuthCredentials: new FormControl<string | null | undefined>(undefined),
+			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
-			buildSpec: new FormControl<string | null | undefined>(undefined),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
 			enableAutoBranchCreation: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2792,9 +3848,13 @@ export namespace MyNS {
 
 	export interface CreateAppPostBodyAutoBranchCreationConfig {
 		stage?: AutoBranchCreationConfigStage | null;
+
+		/** Max length: 255 */
 		framework?: string | null;
 		enableAutoBuild?: boolean | null;
 		environmentVariables?: EnvironmentVariables;
+
+		/** Max length: 2000 */
 		basicAuthCredentials?: string | null;
 		enableBasicAuth?: boolean | null;
 
@@ -2805,12 +3865,18 @@ export namespace MyNS {
 		 */
 		buildSpec?: string | null;
 		enablePullRequestPreview?: boolean | null;
+
+		/** Max length: 20 */
 		pullRequestEnvironmentName?: string | null;
 	}
 	export interface CreateAppPostBodyAutoBranchCreationConfigFormProperties {
 		stage: FormControl<AutoBranchCreationConfigStage | null | undefined>,
+
+		/** Max length: 255 */
 		framework: FormControl<string | null | undefined>,
 		enableAutoBuild: FormControl<boolean | null | undefined>,
+
+		/** Max length: 2000 */
 		basicAuthCredentials: FormControl<string | null | undefined>,
 		enableBasicAuth: FormControl<boolean | null | undefined>,
 
@@ -2821,18 +3887,20 @@ export namespace MyNS {
 		 */
 		buildSpec: FormControl<string | null | undefined>,
 		enablePullRequestPreview: FormControl<boolean | null | undefined>,
+
+		/** Max length: 20 */
 		pullRequestEnvironmentName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateAppPostBodyAutoBranchCreationConfigFormGroup() {
 		return new FormGroup<CreateAppPostBodyAutoBranchCreationConfigFormProperties>({
 			stage: new FormControl<AutoBranchCreationConfigStage | null | undefined>(undefined),
-			framework: new FormControl<string | null | undefined>(undefined),
+			framework: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			enableAutoBuild: new FormControl<boolean | null | undefined>(undefined),
-			basicAuthCredentials: new FormControl<string | null | undefined>(undefined),
+			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined),
-			buildSpec: new FormControl<string | null | undefined>(undefined),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
 			enablePullRequestPreview: new FormControl<boolean | null | undefined>(undefined),
-			pullRequestEnvironmentName: new FormControl<string | null | undefined>(undefined),
+			pullRequestEnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20)]),
 		});
 
 	}
@@ -2887,9 +3955,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateBackendEnvironmentPostBodyFormGroup() {
 		return new FormGroup<CreateBackendEnvironmentPostBodyFormProperties>({
-			environmentName: new FormControl<string | null | undefined>(undefined),
-			stackName: new FormControl<string | null | undefined>(undefined),
-			deploymentArtifacts: new FormControl<string | null | undefined>(undefined),
+			environmentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			stackName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			deploymentArtifacts: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
@@ -3052,22 +4120,22 @@ export namespace MyNS {
 	}
 	export function CreateCreateBranchPostBodyFormGroup() {
 		return new FormGroup<CreateBranchPostBodyFormProperties>({
-			branchName: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 			stage: new FormControl<AutoBranchCreationConfigStage | null | undefined>(undefined),
-			framework: new FormControl<string | null | undefined>(undefined),
+			framework: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			enableNotification: new FormControl<boolean | null | undefined>(undefined),
 			enableAutoBuild: new FormControl<boolean | null | undefined>(undefined),
 			environmentVariables: new FormControl<{[id: string]: string } | null | undefined>(undefined),
-			basicAuthCredentials: new FormControl<string | null | undefined>(undefined),
+			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
-			buildSpec: new FormControl<string | null | undefined>(undefined),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
 			ttl: new FormControl<string | null | undefined>(undefined),
-			displayName: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			enablePullRequestPreview: new FormControl<boolean | null | undefined>(undefined),
-			pullRequestEnvironmentName: new FormControl<string | null | undefined>(undefined),
-			backendEnvironmentArn: new FormControl<string | null | undefined>(undefined),
+			pullRequestEnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20)]),
+			backendEnvironmentArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
@@ -3122,7 +4190,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateDomainAssociationPostBodyFormGroup() {
 		return new FormGroup<CreateDomainAssociationPostBodyFormProperties>({
-			domainName: new FormControl<string | null | undefined>(undefined),
+			domainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 			enableAutoSubDomain: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -3162,8 +4230,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateWebhookPostBodyFormGroup() {
 		return new FormGroup<CreateWebhookPostBodyFormProperties>({
-			branchName: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 		});
 
 	}
@@ -3317,28 +4385,32 @@ export namespace MyNS {
 	}
 	export function CreateUpdateAppPostBodyFormGroup() {
 		return new FormGroup<UpdateAppPostBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 			platform: new FormControl<AppPlatform | null | undefined>(undefined),
-			iamServiceRoleArn: new FormControl<string | null | undefined>(undefined),
+			iamServiceRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 			environmentVariables: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			enableBranchAutoBuild: new FormControl<boolean | null | undefined>(undefined),
 			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined),
-			basicAuthCredentials: new FormControl<string | null | undefined>(undefined),
-			buildSpec: new FormControl<string | null | undefined>(undefined),
+			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
 			enableAutoBranchCreation: new FormControl<boolean | null | undefined>(undefined),
-			repository: new FormControl<string | null | undefined>(undefined),
-			oauthToken: new FormControl<string | null | undefined>(undefined),
-			accessToken: new FormControl<string | null | undefined>(undefined),
+			repository: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
+			oauthToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
+			accessToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateAppPostBodyAutoBranchCreationConfig {
 		stage?: AutoBranchCreationConfigStage | null;
+
+		/** Max length: 255 */
 		framework?: string | null;
 		enableAutoBuild?: boolean | null;
 		environmentVariables?: EnvironmentVariables;
+
+		/** Max length: 2000 */
 		basicAuthCredentials?: string | null;
 		enableBasicAuth?: boolean | null;
 
@@ -3349,12 +4421,18 @@ export namespace MyNS {
 		 */
 		buildSpec?: string | null;
 		enablePullRequestPreview?: boolean | null;
+
+		/** Max length: 20 */
 		pullRequestEnvironmentName?: string | null;
 	}
 	export interface UpdateAppPostBodyAutoBranchCreationConfigFormProperties {
 		stage: FormControl<AutoBranchCreationConfigStage | null | undefined>,
+
+		/** Max length: 255 */
 		framework: FormControl<string | null | undefined>,
 		enableAutoBuild: FormControl<boolean | null | undefined>,
+
+		/** Max length: 2000 */
 		basicAuthCredentials: FormControl<string | null | undefined>,
 		enableBasicAuth: FormControl<boolean | null | undefined>,
 
@@ -3365,18 +4443,20 @@ export namespace MyNS {
 		 */
 		buildSpec: FormControl<string | null | undefined>,
 		enablePullRequestPreview: FormControl<boolean | null | undefined>,
+
+		/** Max length: 20 */
 		pullRequestEnvironmentName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateAppPostBodyAutoBranchCreationConfigFormGroup() {
 		return new FormGroup<UpdateAppPostBodyAutoBranchCreationConfigFormProperties>({
 			stage: new FormControl<AutoBranchCreationConfigStage | null | undefined>(undefined),
-			framework: new FormControl<string | null | undefined>(undefined),
+			framework: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			enableAutoBuild: new FormControl<boolean | null | undefined>(undefined),
-			basicAuthCredentials: new FormControl<string | null | undefined>(undefined),
+			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined),
-			buildSpec: new FormControl<string | null | undefined>(undefined),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
 			enablePullRequestPreview: new FormControl<boolean | null | undefined>(undefined),
-			pullRequestEnvironmentName: new FormControl<string | null | undefined>(undefined),
+			pullRequestEnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20)]),
 		});
 
 	}
@@ -3517,20 +4597,20 @@ export namespace MyNS {
 	}
 	export function CreateUpdateBranchPostBodyFormGroup() {
 		return new FormGroup<UpdateBranchPostBodyFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined),
-			framework: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
+			framework: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			stage: new FormControl<AutoBranchCreationConfigStage | null | undefined>(undefined),
 			enableNotification: new FormControl<boolean | null | undefined>(undefined),
 			enableAutoBuild: new FormControl<boolean | null | undefined>(undefined),
 			environmentVariables: new FormControl<{[id: string]: string } | null | undefined>(undefined),
-			basicAuthCredentials: new FormControl<string | null | undefined>(undefined),
+			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined),
-			buildSpec: new FormControl<string | null | undefined>(undefined),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
 			ttl: new FormControl<string | null | undefined>(undefined),
-			displayName: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			enablePullRequestPreview: new FormControl<boolean | null | undefined>(undefined),
-			pullRequestEnvironmentName: new FormControl<string | null | undefined>(undefined),
-			backendEnvironmentArn: new FormControl<string | null | undefined>(undefined),
+			pullRequestEnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20)]),
+			backendEnvironmentArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
@@ -3591,8 +4671,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateWebhookPostBodyFormGroup() {
 		return new FormGroup<UpdateWebhookPostBodyFormProperties>({
-			branchName: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 		});
 
 	}
@@ -3631,7 +4711,7 @@ export namespace MyNS {
 		return new FormGroup<GenerateAccessLogsPostBodyFormProperties>({
 			startTime: new FormControl<Date | null | undefined>(undefined),
 			endTime: new FormControl<Date | null | undefined>(undefined),
-			domainName: new FormControl<string | null | undefined>(undefined),
+			domainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -3710,11 +4790,11 @@ export namespace MyNS {
 	}
 	export function CreateStartJobPostBodyFormGroup() {
 		return new FormGroup<StartJobPostBodyFormProperties>({
-			jobId: new FormControl<string | null | undefined>(undefined),
-			jobType: new FormControl<JobSummaryJobType | null | undefined>(undefined),
-			jobReason: new FormControl<string | null | undefined>(undefined),
-			commitId: new FormControl<string | null | undefined>(undefined),
-			commitMessage: new FormControl<string | null | undefined>(undefined),
+			jobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			jobType: new FormControl<JobSummaryJobType | null | undefined>(undefined, [Validators.required, Validators.maxLength(10)]),
+			jobReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			commitId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			commitMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 			commitTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -3738,7 +4818,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3773,8 +4853,8 @@ export namespace MyNS {
 	}
 	export function CreateStartDeploymentPostBodyFormGroup() {
 		return new FormGroup<StartDeploymentPostBodyFormProperties>({
-			jobId: new FormControl<string | null | undefined>(undefined),
-			sourceUrl: new FormControl<string | null | undefined>(undefined),
+			jobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			sourceUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 		});
 
 	}

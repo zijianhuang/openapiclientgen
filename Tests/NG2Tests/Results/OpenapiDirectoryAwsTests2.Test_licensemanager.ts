@@ -17,8 +17,12 @@ export namespace MyNS {
 	}
 
 	export interface CreateLicenseConfigurationRequest {
+
+		/** Required */
 		Name: string;
 		Description?: string | null;
+
+		/** Required */
 		LicenseCountingType: CreateLicenseConfigurationRequestLicenseCountingType;
 		LicenseCount?: number | null;
 		LicenseCountHardLimit?: boolean | null;
@@ -27,17 +31,21 @@ export namespace MyNS {
 		ProductInformationList?: Array<ProductInformation>;
 	}
 	export interface CreateLicenseConfigurationRequestFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 		Description: FormControl<string | null | undefined>,
+
+		/** Required */
 		LicenseCountingType: FormControl<CreateLicenseConfigurationRequestLicenseCountingType | null | undefined>,
 		LicenseCount: FormControl<number | null | undefined>,
 		LicenseCountHardLimit: FormControl<boolean | null | undefined>,
 	}
 	export function CreateCreateLicenseConfigurationRequestFormGroup() {
 		return new FormGroup<CreateLicenseConfigurationRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Description: new FormControl<string | null | undefined>(undefined),
-			LicenseCountingType: new FormControl<CreateLicenseConfigurationRequestLicenseCountingType | null | undefined>(undefined),
+			LicenseCountingType: new FormControl<CreateLicenseConfigurationRequestLicenseCountingType | null | undefined>(undefined, [Validators.required]),
 			LicenseCount: new FormControl<number | null | undefined>(undefined),
 			LicenseCountHardLimit: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -69,17 +77,23 @@ export namespace MyNS {
 
 	/** Describes product information for a license configuration. */
 	export interface ProductInformation {
+
+		/** Required */
 		ResourceType: string;
+
+		/** Required */
 		ProductInformationFilterList: Array<ProductInformationFilter>;
 	}
 
 	/** Describes product information for a license configuration. */
 	export interface ProductInformationFormProperties {
+
+		/** Required */
 		ResourceType: FormControl<string | null | undefined>,
 	}
 	export function CreateProductInformationFormGroup() {
 		return new FormGroup<ProductInformationFormProperties>({
-			ResourceType: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -87,20 +101,30 @@ export namespace MyNS {
 
 	/** Describes product information filters. */
 	export interface ProductInformationFilter {
+
+		/** Required */
 		ProductInformationFilterName: string;
+
+		/** Required */
 		ProductInformationFilterValue: Array<string>;
+
+		/** Required */
 		ProductInformationFilterComparator: string;
 	}
 
 	/** Describes product information filters. */
 	export interface ProductInformationFilterFormProperties {
+
+		/** Required */
 		ProductInformationFilterName: FormControl<string | null | undefined>,
+
+		/** Required */
 		ProductInformationFilterComparator: FormControl<string | null | undefined>,
 	}
 	export function CreateProductInformationFilterFormGroup() {
 		return new FormGroup<ProductInformationFilterFormProperties>({
-			ProductInformationFilterName: new FormControl<string | null | undefined>(undefined),
-			ProductInformationFilterComparator: new FormControl<string | null | undefined>(undefined),
+			ProductInformationFilterName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ProductInformationFilterComparator: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -176,14 +200,18 @@ export namespace MyNS {
 	}
 
 	export interface DeleteLicenseConfigurationRequest {
+
+		/** Required */
 		LicenseConfigurationArn: string;
 	}
 	export interface DeleteLicenseConfigurationRequestFormProperties {
+
+		/** Required */
 		LicenseConfigurationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteLicenseConfigurationRequestFormGroup() {
 		return new FormGroup<DeleteLicenseConfigurationRequestFormProperties>({
-			LicenseConfigurationArn: new FormControl<string | null | undefined>(undefined),
+			LicenseConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -296,14 +324,18 @@ export namespace MyNS {
 	}
 
 	export interface GetLicenseConfigurationRequest {
+
+		/** Required */
 		LicenseConfigurationArn: string;
 	}
 	export interface GetLicenseConfigurationRequestFormProperties {
+
+		/** Required */
 		LicenseConfigurationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetLicenseConfigurationRequestFormGroup() {
 		return new FormGroup<GetLicenseConfigurationRequestFormProperties>({
-			LicenseConfigurationArn: new FormControl<string | null | undefined>(undefined),
+			LicenseConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -336,16 +368,20 @@ export namespace MyNS {
 
 	/** Configuration information for AWS Organizations. */
 	export interface OrganizationConfiguration {
+
+		/** Required */
 		EnableIntegration: boolean;
 	}
 
 	/** Configuration information for AWS Organizations. */
 	export interface OrganizationConfigurationFormProperties {
+
+		/** Required */
 		EnableIntegration: FormControl<boolean | null | undefined>,
 	}
 	export function CreateOrganizationConfigurationFormGroup() {
 		return new FormGroup<OrganizationConfigurationFormProperties>({
-			EnableIntegration: new FormControl<boolean | null | undefined>(undefined),
+			EnableIntegration: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -401,18 +437,22 @@ export namespace MyNS {
 	}
 
 	export interface ListAssociationsForLicenseConfigurationRequest {
+
+		/** Required */
 		LicenseConfigurationArn: string;
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface ListAssociationsForLicenseConfigurationRequestFormProperties {
+
+		/** Required */
 		LicenseConfigurationArn: FormControl<string | null | undefined>,
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListAssociationsForLicenseConfigurationRequestFormGroup() {
 		return new FormGroup<ListAssociationsForLicenseConfigurationRequestFormProperties>({
-			LicenseConfigurationArn: new FormControl<string | null | undefined>(undefined),
+			LicenseConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			MaxResults: new FormControl<number | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -500,18 +540,22 @@ export namespace MyNS {
 	}
 
 	export interface ListFailuresForLicenseConfigurationOperationsRequest {
+
+		/** Required */
 		LicenseConfigurationArn: string;
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface ListFailuresForLicenseConfigurationOperationsRequestFormProperties {
+
+		/** Required */
 		LicenseConfigurationArn: FormControl<string | null | undefined>,
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListFailuresForLicenseConfigurationOperationsRequestFormGroup() {
 		return new FormGroup<ListFailuresForLicenseConfigurationOperationsRequestFormProperties>({
-			LicenseConfigurationArn: new FormControl<string | null | undefined>(undefined),
+			LicenseConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			MaxResults: new FormControl<number | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -636,33 +680,41 @@ export namespace MyNS {
 
 	/** Details for associating a license configuration with a resource. */
 	export interface LicenseSpecification {
+
+		/** Required */
 		LicenseConfigurationArn: string;
 	}
 
 	/** Details for associating a license configuration with a resource. */
 	export interface LicenseSpecificationFormProperties {
+
+		/** Required */
 		LicenseConfigurationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateLicenseSpecificationFormGroup() {
 		return new FormGroup<LicenseSpecificationFormProperties>({
-			LicenseConfigurationArn: new FormControl<string | null | undefined>(undefined),
+			LicenseConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ListLicenseSpecificationsForResourceRequest {
+
+		/** Required */
 		ResourceArn: string;
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface ListLicenseSpecificationsForResourceRequestFormProperties {
+
+		/** Required */
 		ResourceArn: FormControl<string | null | undefined>,
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListLicenseSpecificationsForResourceRequestFormGroup() {
 		return new FormGroup<ListLicenseSpecificationsForResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			MaxResults: new FormControl<number | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -735,21 +787,29 @@ export namespace MyNS {
 
 	/** An inventory filter. */
 	export interface InventoryFilter {
+
+		/** Required */
 		Name: string;
+
+		/** Required */
 		Condition: InventoryFilterCondition;
 		Value?: string | null;
 	}
 
 	/** An inventory filter. */
 	export interface InventoryFilterFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Condition: FormControl<InventoryFilterCondition | null | undefined>,
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateInventoryFilterFormGroup() {
 		return new FormGroup<InventoryFilterFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Condition: new FormControl<InventoryFilterCondition | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Condition: new FormControl<InventoryFilterCondition | null | undefined>(undefined, [Validators.required]),
 			Value: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -779,14 +839,18 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceRequest {
+
+		/** Required */
 		ResourceArn: string;
 	}
 	export interface ListTagsForResourceRequestFormProperties {
+
+		/** Required */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -838,19 +902,23 @@ export namespace MyNS {
 	}
 
 	export interface ListUsageForLicenseConfigurationRequest {
+
+		/** Required */
 		LicenseConfigurationArn: string;
 		MaxResults?: number | null;
 		NextToken?: string | null;
 		Filters?: Array<Filter>;
 	}
 	export interface ListUsageForLicenseConfigurationRequestFormProperties {
+
+		/** Required */
 		LicenseConfigurationArn: FormControl<string | null | undefined>,
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListUsageForLicenseConfigurationRequestFormGroup() {
 		return new FormGroup<ListUsageForLicenseConfigurationRequestFormProperties>({
-			LicenseConfigurationArn: new FormControl<string | null | undefined>(undefined),
+			LicenseConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			MaxResults: new FormControl<number | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -868,15 +936,21 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/** Required */
 		ResourceArn: string;
+
+		/** Required */
 		Tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/** Required */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -892,15 +966,21 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceRequest {
+
+		/** Required */
 		ResourceArn: string;
+
+		/** Required */
 		TagKeys: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/** Required */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -916,6 +996,8 @@ export namespace MyNS {
 	}
 
 	export interface UpdateLicenseConfigurationRequest {
+
+		/** Required */
 		LicenseConfigurationArn: string;
 		LicenseConfigurationStatus?: UpdateLicenseConfigurationRequestLicenseConfigurationStatus | null;
 		LicenseRules?: Array<string>;
@@ -926,6 +1008,8 @@ export namespace MyNS {
 		ProductInformationList?: Array<ProductInformation>;
 	}
 	export interface UpdateLicenseConfigurationRequestFormProperties {
+
+		/** Required */
 		LicenseConfigurationArn: FormControl<string | null | undefined>,
 		LicenseConfigurationStatus: FormControl<UpdateLicenseConfigurationRequestLicenseConfigurationStatus | null | undefined>,
 		LicenseCount: FormControl<number | null | undefined>,
@@ -935,7 +1019,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateLicenseConfigurationRequestFormGroup() {
 		return new FormGroup<UpdateLicenseConfigurationRequestFormProperties>({
-			LicenseConfigurationArn: new FormControl<string | null | undefined>(undefined),
+			LicenseConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			LicenseConfigurationStatus: new FormControl<UpdateLicenseConfigurationRequestLicenseConfigurationStatus | null | undefined>(undefined),
 			LicenseCount: new FormControl<number | null | undefined>(undefined),
 			LicenseCountHardLimit: new FormControl<boolean | null | undefined>(undefined),
@@ -958,16 +1042,20 @@ export namespace MyNS {
 	}
 
 	export interface UpdateLicenseSpecificationsForResourceRequest {
+
+		/** Required */
 		ResourceArn: string;
 		AddLicenseSpecifications?: Array<LicenseSpecification>;
 		RemoveLicenseSpecifications?: Array<LicenseSpecification>;
 	}
 	export interface UpdateLicenseSpecificationsForResourceRequestFormProperties {
+
+		/** Required */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateLicenseSpecificationsForResourceRequestFormGroup() {
 		return new FormGroup<UpdateLicenseSpecificationsForResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

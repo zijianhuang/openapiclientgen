@@ -117,18 +117,28 @@ export namespace MyNS {
 		/** Describes the configuration of an Auto Scaling group. */
 		configuration?: AutoScalingGroupConfiguration;
 		projectedUtilizationMetrics?: Array<UtilizationMetric>;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 5
+		 */
 		performanceRisk?: number | null;
 		rank?: number | null;
 	}
 
 	/** Describes a recommendation option for an Auto Scaling group. */
 	export interface AutoScalingGroupRecommendationOptionFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 5
+		 */
 		performanceRisk: FormControl<number | null | undefined>,
 		rank: FormControl<number | null | undefined>,
 	}
 	export function CreateAutoScalingGroupRecommendationOptionFormGroup() {
 		return new FormGroup<AutoScalingGroupRecommendationOptionFormProperties>({
-			performanceRisk: new FormControl<number | null | undefined>(undefined),
+			performanceRisk: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(5)]),
 			rank: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -334,6 +344,11 @@ export namespace MyNS {
 	export interface InstanceRecommendationOption {
 		instanceType?: string | null;
 		projectedUtilizationMetrics?: Array<UtilizationMetric>;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 5
+		 */
 		performanceRisk?: number | null;
 		rank?: number | null;
 	}
@@ -341,13 +356,18 @@ export namespace MyNS {
 	/** Describes a recommendation option for an Amazon EC2 instance. */
 	export interface InstanceRecommendationOptionFormProperties {
 		instanceType: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 5
+		 */
 		performanceRisk: FormControl<number | null | undefined>,
 		rank: FormControl<number | null | undefined>,
 	}
 	export function CreateInstanceRecommendationOptionFormGroup() {
 		return new FormGroup<InstanceRecommendationOptionFormProperties>({
 			instanceType: new FormControl<string | null | undefined>(undefined),
-			performanceRisk: new FormControl<number | null | undefined>(undefined),
+			performanceRisk: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(5)]),
 			rank: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -446,26 +466,46 @@ export namespace MyNS {
 	}
 
 	export interface GetEC2RecommendationProjectedMetricsRequest {
+
+		/** Required */
 		instanceArn: string;
+
+		/** Required */
 		stat: UtilizationMetricStatistic;
+
+		/** Required */
 		period: number;
+
+		/** Required */
 		startTime: Date;
+
+		/** Required */
 		endTime: Date;
 	}
 	export interface GetEC2RecommendationProjectedMetricsRequestFormProperties {
+
+		/** Required */
 		instanceArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		stat: FormControl<UtilizationMetricStatistic | null | undefined>,
+
+		/** Required */
 		period: FormControl<number | null | undefined>,
+
+		/** Required */
 		startTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		endTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateGetEC2RecommendationProjectedMetricsRequestFormGroup() {
 		return new FormGroup<GetEC2RecommendationProjectedMetricsRequestFormProperties>({
-			instanceArn: new FormControl<string | null | undefined>(undefined),
-			stat: new FormControl<UtilizationMetricStatistic | null | undefined>(undefined),
-			period: new FormControl<number | null | undefined>(undefined),
-			startTime: new FormControl<Date | null | undefined>(undefined),
-			endTime: new FormControl<Date | null | undefined>(undefined),
+			instanceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			stat: new FormControl<UtilizationMetricStatistic | null | undefined>(undefined, [Validators.required]),
+			period: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			startTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			endTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -590,16 +630,20 @@ export namespace MyNS {
 	}
 
 	export interface UpdateEnrollmentStatusRequest {
+
+		/** Required */
 		status: GetEnrollmentStatusResponseStatus;
 		includeMemberAccounts?: boolean | null;
 	}
 	export interface UpdateEnrollmentStatusRequestFormProperties {
+
+		/** Required */
 		status: FormControl<GetEnrollmentStatusResponseStatus | null | undefined>,
 		includeMemberAccounts: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpdateEnrollmentStatusRequestFormGroup() {
 		return new FormGroup<UpdateEnrollmentStatusRequestFormProperties>({
-			status: new FormControl<GetEnrollmentStatusResponseStatus | null | undefined>(undefined),
+			status: new FormControl<GetEnrollmentStatusResponseStatus | null | undefined>(undefined, [Validators.required]),
 			includeMemberAccounts: new FormControl<boolean | null | undefined>(undefined),
 		});
 

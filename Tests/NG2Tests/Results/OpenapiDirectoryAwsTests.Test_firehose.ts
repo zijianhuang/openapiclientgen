@@ -4,19 +4,38 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateDeliveryStreamOutput {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		DeliveryStreamARN?: string | null;
 	}
 	export interface CreateDeliveryStreamOutputFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		DeliveryStreamARN: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDeliveryStreamOutputFormGroup() {
 		return new FormGroup<CreateDeliveryStreamOutputFormProperties>({
-			DeliveryStreamARN: new FormControl<string | null | undefined>(undefined),
+			DeliveryStreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateDeliveryStreamInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeliveryStreamName: string;
 		DeliveryStreamType?: CreateDeliveryStreamInputDeliveryStreamType | null;
 
@@ -40,15 +59,27 @@ export namespace MyNS {
 
 		/** Describes the configuration of a destination in Splunk. */
 		SplunkDestinationConfiguration?: SplunkDestinationConfiguration;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Tags?: Array<Tag>;
 	}
 	export interface CreateDeliveryStreamInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeliveryStreamName: FormControl<string | null | undefined>,
 		DeliveryStreamType: FormControl<CreateDeliveryStreamInputDeliveryStreamType | null | undefined>,
 	}
 	export function CreateCreateDeliveryStreamInputFormGroup() {
 		return new FormGroup<CreateDeliveryStreamInputFormProperties>({
-			DeliveryStreamName: new FormControl<string | null | undefined>(undefined),
+			DeliveryStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 			DeliveryStreamType: new FormControl<CreateDeliveryStreamInputDeliveryStreamType | null | undefined>(undefined),
 		});
 
@@ -59,19 +90,47 @@ export namespace MyNS {
 
 	/** The stream and role Amazon Resource Names (ARNs) for a Kinesis data stream used as the source for a delivery stream. */
 	export interface KinesisStreamSourceConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		KinesisStreamARN: string;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: string;
 	}
 
 	/** The stream and role Amazon Resource Names (ARNs) for a Kinesis data stream used as the source for a delivery stream. */
 	export interface KinesisStreamSourceConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		KinesisStreamARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: FormControl<string | null | undefined>,
 	}
 	export function CreateKinesisStreamSourceConfigurationFormGroup() {
 		return new FormGroup<KinesisStreamSourceConfigurationFormProperties>({
-			KinesisStreamARN: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			KinesisStreamARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
@@ -79,19 +138,35 @@ export namespace MyNS {
 
 	/** Specifies the type and Amazon Resource Name (ARN) of the CMK to use for Server-Side Encryption (SSE).  */
 	export interface DeliveryStreamEncryptionConfigurationInput {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		KeyARN?: string | null;
+
+		/** Required */
 		KeyType: DeliveryStreamEncryptionConfigurationInputKeyType;
 	}
 
 	/** Specifies the type and Amazon Resource Name (ARN) of the CMK to use for Server-Side Encryption (SSE).  */
 	export interface DeliveryStreamEncryptionConfigurationInputFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		KeyARN: FormControl<string | null | undefined>,
+
+		/** Required */
 		KeyType: FormControl<DeliveryStreamEncryptionConfigurationInputKeyType | null | undefined>,
 	}
 	export function CreateDeliveryStreamEncryptionConfigurationInputFormGroup() {
 		return new FormGroup<DeliveryStreamEncryptionConfigurationInputFormProperties>({
-			KeyARN: new FormControl<string | null | undefined>(undefined),
-			KeyType: new FormControl<DeliveryStreamEncryptionConfigurationInputKeyType | null | undefined>(undefined),
+			KeyARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			KeyType: new FormControl<DeliveryStreamEncryptionConfigurationInputKeyType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -101,9 +176,35 @@ export namespace MyNS {
 
 	/** Describes the configuration of a destination in Amazon S3. */
 	export interface S3DestinationConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		BucketARN: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		Prefix?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		ErrorOutputPrefix?: string | null;
 
 		/** Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. */
@@ -119,18 +220,44 @@ export namespace MyNS {
 
 	/** Describes the configuration of a destination in Amazon S3. */
 	export interface S3DestinationConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		BucketARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		Prefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		ErrorOutputPrefix: FormControl<string | null | undefined>,
 		CompressionFormat: FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>,
 	}
 	export function CreateS3DestinationConfigurationFormGroup() {
 		return new FormGroup<S3DestinationConfigurationFormProperties>({
-			RoleARN: new FormControl<string | null | undefined>(undefined),
-			BucketARN: new FormControl<string | null | undefined>(undefined),
-			Prefix: new FormControl<string | null | undefined>(undefined),
-			ErrorOutputPrefix: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			BucketARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			ErrorOutputPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 			CompressionFormat: new FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>(undefined),
 		});
 
@@ -139,19 +266,39 @@ export namespace MyNS {
 
 	/** Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. */
 	export interface BufferingHints {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 128
+		 */
 		SizeInMBs?: number | null;
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 900
+		 */
 		IntervalInSeconds?: number | null;
 	}
 
 	/** Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. */
 	export interface BufferingHintsFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 128
+		 */
 		SizeInMBs: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 900
+		 */
 		IntervalInSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateBufferingHintsFormGroup() {
 		return new FormGroup<BufferingHintsFormProperties>({
-			SizeInMBs: new FormControl<number | null | undefined>(undefined),
-			IntervalInSeconds: new FormControl<number | null | undefined>(undefined),
+			SizeInMBs: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(128)]),
+			IntervalInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(900)]),
 		});
 
 	}
@@ -183,16 +330,30 @@ export namespace MyNS {
 
 	/** Describes an encryption key for a destination in Amazon S3. */
 	export interface KMSEncryptionConfig {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		AWSKMSKeyARN: string;
 	}
 
 	/** Describes an encryption key for a destination in Amazon S3. */
 	export interface KMSEncryptionConfigFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		AWSKMSKeyARN: FormControl<string | null | undefined>,
 	}
 	export function CreateKMSEncryptionConfigFormGroup() {
 		return new FormGroup<KMSEncryptionConfigFormProperties>({
-			AWSKMSKeyARN: new FormControl<string | null | undefined>(undefined),
+			AWSKMSKeyARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
@@ -201,21 +362,45 @@ export namespace MyNS {
 	/** Describes the Amazon CloudWatch logging options for your delivery stream. */
 	export interface CloudWatchLoggingOptions {
 		Enabled?: boolean | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 * Pattern: [\.\-_/#A-Za-z0-9]*
+		 */
 		LogGroupName?: string | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 * Pattern: [^:*]*
+		 */
 		LogStreamName?: string | null;
 	}
 
 	/** Describes the Amazon CloudWatch logging options for your delivery stream. */
 	export interface CloudWatchLoggingOptionsFormProperties {
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 * Pattern: [\.\-_/#A-Za-z0-9]*
+		 */
 		LogGroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 * Pattern: [^:*]*
+		 */
 		LogStreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateCloudWatchLoggingOptionsFormGroup() {
 		return new FormGroup<CloudWatchLoggingOptionsFormProperties>({
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			LogGroupName: new FormControl<string | null | undefined>(undefined),
-			LogStreamName: new FormControl<string | null | undefined>(undefined),
+			LogGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
+			LogStreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
 		});
 
 	}
@@ -223,9 +408,35 @@ export namespace MyNS {
 
 	/** Describes the configuration of a destination in Amazon S3. */
 	export interface ExtendedS3DestinationConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		BucketARN: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		Prefix?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		ErrorOutputPrefix?: string | null;
 
 		/** Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. */
@@ -251,19 +462,45 @@ export namespace MyNS {
 
 	/** Describes the configuration of a destination in Amazon S3. */
 	export interface ExtendedS3DestinationConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		BucketARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		Prefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		ErrorOutputPrefix: FormControl<string | null | undefined>,
 		CompressionFormat: FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>,
 		S3BackupMode: FormControl<ExtendedS3DestinationConfigurationS3BackupMode | null | undefined>,
 	}
 	export function CreateExtendedS3DestinationConfigurationFormGroup() {
 		return new FormGroup<ExtendedS3DestinationConfigurationFormProperties>({
-			RoleARN: new FormControl<string | null | undefined>(undefined),
-			BucketARN: new FormControl<string | null | undefined>(undefined),
-			Prefix: new FormControl<string | null | undefined>(undefined),
-			ErrorOutputPrefix: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			BucketARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			ErrorOutputPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 			CompressionFormat: new FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>(undefined),
 			S3BackupMode: new FormControl<ExtendedS3DestinationConfigurationS3BackupMode | null | undefined>(undefined),
 		});
@@ -291,17 +528,21 @@ export namespace MyNS {
 
 	/** Describes a data processor. */
 	export interface Processor {
+
+		/** Required */
 		Type: ProcessorType;
 		Parameters?: Array<ProcessorParameter>;
 	}
 
 	/** Describes a data processor. */
 	export interface ProcessorFormProperties {
+
+		/** Required */
 		Type: FormControl<ProcessorType | null | undefined>,
 	}
 	export function CreateProcessorFormGroup() {
 		return new FormGroup<ProcessorFormProperties>({
-			Type: new FormControl<ProcessorType | null | undefined>(undefined),
+			Type: new FormControl<ProcessorType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -311,19 +552,37 @@ export namespace MyNS {
 
 	/** Describes the processor parameter. */
 	export interface ProcessorParameter {
+
+		/** Required */
 		ParameterName: ProcessorParameterParameterName;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ^(?!\s*$).+
+		 */
 		ParameterValue: string;
 	}
 
 	/** Describes the processor parameter. */
 	export interface ProcessorParameterFormProperties {
+
+		/** Required */
 		ParameterName: FormControl<ProcessorParameterParameterName | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ^(?!\s*$).+
+		 */
 		ParameterValue: FormControl<string | null | undefined>,
 	}
 	export function CreateProcessorParameterFormGroup() {
 		return new FormGroup<ProcessorParameterFormProperties>({
-			ParameterName: new FormControl<ProcessorParameterParameterName | null | undefined>(undefined),
-			ParameterValue: new FormControl<string | null | undefined>(undefined),
+			ParameterName: new FormControl<ProcessorParameterParameterName | null | undefined>(undefined, [Validators.required]),
+			ParameterValue: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
@@ -361,31 +620,103 @@ export namespace MyNS {
 
 	/** Specifies the schema to which you want Kinesis Data Firehose to configure your data before it writes it to Amazon S3. This parameter is required if <code>Enabled</code> is set to true. */
 	export interface SchemaConfiguration {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^\S+$
+		 */
 		RoleARN?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^\S+$
+		 */
 		CatalogId?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^\S+$
+		 */
 		DatabaseName?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^\S+$
+		 */
 		TableName?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^\S+$
+		 */
 		Region?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^\S+$
+		 */
 		VersionId?: string | null;
 	}
 
 	/** Specifies the schema to which you want Kinesis Data Firehose to configure your data before it writes it to Amazon S3. This parameter is required if <code>Enabled</code> is set to true. */
 	export interface SchemaConfigurationFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^\S+$
+		 */
 		RoleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^\S+$
+		 */
 		CatalogId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^\S+$
+		 */
 		DatabaseName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^\S+$
+		 */
 		TableName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^\S+$
+		 */
 		Region: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^\S+$
+		 */
 		VersionId: FormControl<string | null | undefined>,
 	}
 	export function CreateSchemaConfigurationFormGroup() {
 		return new FormGroup<SchemaConfigurationFormProperties>({
-			RoleARN: new FormControl<string | null | undefined>(undefined),
-			CatalogId: new FormControl<string | null | undefined>(undefined),
-			DatabaseName: new FormControl<string | null | undefined>(undefined),
-			TableName: new FormControl<string | null | undefined>(undefined),
-			Region: new FormControl<string | null | undefined>(undefined),
-			VersionId: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			CatalogId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			DatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			VersionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -513,30 +844,42 @@ export namespace MyNS {
 
 	/** A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more information, see <a href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>. */
 	export interface ParquetSerDe {
+
+		/** Minimum: 67108864 */
 		BlockSizeBytes?: number | null;
+
+		/** Minimum: 65536 */
 		PageSizeBytes?: number | null;
 		Compression?: ParquetSerDeCompression | null;
 		EnableDictionaryCompression?: boolean | null;
+
+		/** Minimum: 0 */
 		MaxPaddingBytes?: number | null;
 		WriterVersion?: ParquetSerDeWriterVersion | null;
 	}
 
 	/** A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more information, see <a href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>. */
 	export interface ParquetSerDeFormProperties {
+
+		/** Minimum: 67108864 */
 		BlockSizeBytes: FormControl<number | null | undefined>,
+
+		/** Minimum: 65536 */
 		PageSizeBytes: FormControl<number | null | undefined>,
 		Compression: FormControl<ParquetSerDeCompression | null | undefined>,
 		EnableDictionaryCompression: FormControl<boolean | null | undefined>,
+
+		/** Minimum: 0 */
 		MaxPaddingBytes: FormControl<number | null | undefined>,
 		WriterVersion: FormControl<ParquetSerDeWriterVersion | null | undefined>,
 	}
 	export function CreateParquetSerDeFormGroup() {
 		return new FormGroup<ParquetSerDeFormProperties>({
-			BlockSizeBytes: new FormControl<number | null | undefined>(undefined),
-			PageSizeBytes: new FormControl<number | null | undefined>(undefined),
+			BlockSizeBytes: new FormControl<number | null | undefined>(undefined, [Validators.min(67108864)]),
+			PageSizeBytes: new FormControl<number | null | undefined>(undefined, [Validators.min(65536)]),
 			Compression: new FormControl<ParquetSerDeCompression | null | undefined>(undefined),
 			EnableDictionaryCompression: new FormControl<boolean | null | undefined>(undefined),
-			MaxPaddingBytes: new FormControl<number | null | undefined>(undefined),
+			MaxPaddingBytes: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			WriterVersion: new FormControl<ParquetSerDeWriterVersion | null | undefined>(undefined),
 		});
 
@@ -549,40 +892,82 @@ export namespace MyNS {
 
 	/** A serializer to use for converting data to the ORC format before storing it in Amazon S3. For more information, see <a href="https://orc.apache.org/docs/">Apache ORC</a>. */
 	export interface OrcSerDe {
+
+		/** Minimum: 8388608 */
 		StripeSizeBytes?: number | null;
+
+		/** Minimum: 67108864 */
 		BlockSizeBytes?: number | null;
+
+		/** Minimum: 1000 */
 		RowIndexStride?: number | null;
 		EnablePadding?: boolean | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1
+		 */
 		PaddingTolerance?: number | null;
 		Compression?: OrcSerDeCompression | null;
 		BloomFilterColumns?: Array<string>;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1
+		 */
 		BloomFilterFalsePositiveProbability?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1
+		 */
 		DictionaryKeyThreshold?: number | null;
 		FormatVersion?: OrcSerDeFormatVersion | null;
 	}
 
 	/** A serializer to use for converting data to the ORC format before storing it in Amazon S3. For more information, see <a href="https://orc.apache.org/docs/">Apache ORC</a>. */
 	export interface OrcSerDeFormProperties {
+
+		/** Minimum: 8388608 */
 		StripeSizeBytes: FormControl<number | null | undefined>,
+
+		/** Minimum: 67108864 */
 		BlockSizeBytes: FormControl<number | null | undefined>,
+
+		/** Minimum: 1000 */
 		RowIndexStride: FormControl<number | null | undefined>,
 		EnablePadding: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1
+		 */
 		PaddingTolerance: FormControl<number | null | undefined>,
 		Compression: FormControl<OrcSerDeCompression | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1
+		 */
 		BloomFilterFalsePositiveProbability: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1
+		 */
 		DictionaryKeyThreshold: FormControl<number | null | undefined>,
 		FormatVersion: FormControl<OrcSerDeFormatVersion | null | undefined>,
 	}
 	export function CreateOrcSerDeFormGroup() {
 		return new FormGroup<OrcSerDeFormProperties>({
-			StripeSizeBytes: new FormControl<number | null | undefined>(undefined),
-			BlockSizeBytes: new FormControl<number | null | undefined>(undefined),
-			RowIndexStride: new FormControl<number | null | undefined>(undefined),
+			StripeSizeBytes: new FormControl<number | null | undefined>(undefined, [Validators.min(8388608)]),
+			BlockSizeBytes: new FormControl<number | null | undefined>(undefined, [Validators.min(67108864)]),
+			RowIndexStride: new FormControl<number | null | undefined>(undefined, [Validators.min(1000)]),
 			EnablePadding: new FormControl<boolean | null | undefined>(undefined),
-			PaddingTolerance: new FormControl<number | null | undefined>(undefined),
+			PaddingTolerance: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1)]),
 			Compression: new FormControl<OrcSerDeCompression | null | undefined>(undefined),
-			BloomFilterFalsePositiveProbability: new FormControl<number | null | undefined>(undefined),
-			DictionaryKeyThreshold: new FormControl<number | null | undefined>(undefined),
+			BloomFilterFalsePositiveProbability: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1)]),
+			DictionaryKeyThreshold: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1)]),
 			FormatVersion: new FormControl<OrcSerDeFormatVersion | null | undefined>(undefined),
 		});
 
@@ -595,7 +980,21 @@ export namespace MyNS {
 
 	/** Describes the configuration of a destination in Amazon Redshift. */
 	export interface RedshiftDestinationConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: string;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?<!-)\.)+redshift\.([a-zA-Z0-9\.]+):\d{1,5}/[a-zA-Z0-9_$]+
+		 */
 		ClusterJDBCURL: string;
 
 		/**
@@ -603,7 +1002,21 @@ export namespace MyNS {
 		 * Required
 		 */
 		CopyCommand: CopyCommand;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: .*
+		 */
 		Username: string;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 6
+		 * Pattern: .*
+		 */
 		Password: string;
 
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. */
@@ -628,18 +1041,46 @@ export namespace MyNS {
 
 	/** Describes the configuration of a destination in Amazon Redshift. */
 	export interface RedshiftDestinationConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?<!-)\.)+redshift\.([a-zA-Z0-9\.]+):\d{1,5}/[a-zA-Z0-9_$]+
+		 */
 		ClusterJDBCURL: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: .*
+		 */
 		Username: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 6
+		 * Pattern: .*
+		 */
 		Password: FormControl<string | null | undefined>,
 		S3BackupMode: FormControl<ExtendedS3DestinationConfigurationS3BackupMode | null | undefined>,
 	}
 	export function CreateRedshiftDestinationConfigurationFormGroup() {
 		return new FormGroup<RedshiftDestinationConfigurationFormProperties>({
-			RoleARN: new FormControl<string | null | undefined>(undefined),
-			ClusterJDBCURL: new FormControl<string | null | undefined>(undefined),
-			Username: new FormControl<string | null | undefined>(undefined),
-			Password: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			ClusterJDBCURL: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			Username: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(6)]),
 			S3BackupMode: new FormControl<ExtendedS3DestinationConfigurationS3BackupMode | null | undefined>(undefined),
 		});
 
@@ -648,22 +1089,60 @@ export namespace MyNS {
 
 	/** Describes a <code>COPY</code> command for Amazon Redshift. */
 	export interface CopyCommand {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: .*
+		 */
 		DataTableName: string;
+
+		/**
+		 * Max length: 204800
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		DataTableColumns?: string | null;
+
+		/**
+		 * Max length: 204800
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		CopyOptions?: string | null;
 	}
 
 	/** Describes a <code>COPY</code> command for Amazon Redshift. */
 	export interface CopyCommandFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: .*
+		 */
 		DataTableName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 204800
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		DataTableColumns: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 204800
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		CopyOptions: FormControl<string | null | undefined>,
 	}
 	export function CreateCopyCommandFormGroup() {
 		return new FormGroup<CopyCommandFormProperties>({
-			DataTableName: new FormControl<string | null | undefined>(undefined),
-			DataTableColumns: new FormControl<string | null | undefined>(undefined),
-			CopyOptions: new FormControl<string | null | undefined>(undefined),
+			DataTableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			DataTableColumns: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(204800), Validators.minLength(0)]),
+			CopyOptions: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(204800), Validators.minLength(0)]),
 		});
 
 	}
@@ -671,16 +1150,26 @@ export namespace MyNS {
 
 	/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. */
 	export interface RedshiftRetryOptions {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 7200
+		 */
 		DurationInSeconds?: number | null;
 	}
 
 	/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. */
 	export interface RedshiftRetryOptionsFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 7200
+		 */
 		DurationInSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateRedshiftRetryOptionsFormGroup() {
 		return new FormGroup<RedshiftRetryOptionsFormProperties>({
-			DurationInSeconds: new FormControl<number | null | undefined>(undefined),
+			DurationInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(7200)]),
 		});
 
 	}
@@ -688,10 +1177,42 @@ export namespace MyNS {
 
 	/** Describes the configuration of a destination in Amazon ES. */
 	export interface ElasticsearchDestinationConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: string;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		DomainARN?: string | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: https:.*
+		 */
 		ClusterEndpoint?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 * Pattern: .*
+		 */
 		IndexName: string;
+
+		/**
+		 * Max length: 100
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		TypeName?: string | null;
 		IndexRotationPeriod?: ElasticsearchDestinationConfigurationIndexRotationPeriod | null;
 
@@ -720,21 +1241,53 @@ export namespace MyNS {
 
 	/** Describes the configuration of a destination in Amazon ES. */
 	export interface ElasticsearchDestinationConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		DomainARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: https:.*
+		 */
 		ClusterEndpoint: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 80
+		 * Min length: 1
+		 * Pattern: .*
+		 */
 		IndexName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		TypeName: FormControl<string | null | undefined>,
 		IndexRotationPeriod: FormControl<ElasticsearchDestinationConfigurationIndexRotationPeriod | null | undefined>,
 		S3BackupMode: FormControl<ElasticsearchDestinationConfigurationS3BackupMode | null | undefined>,
 	}
 	export function CreateElasticsearchDestinationConfigurationFormGroup() {
 		return new FormGroup<ElasticsearchDestinationConfigurationFormProperties>({
-			RoleARN: new FormControl<string | null | undefined>(undefined),
-			DomainARN: new FormControl<string | null | undefined>(undefined),
-			ClusterEndpoint: new FormControl<string | null | undefined>(undefined),
-			IndexName: new FormControl<string | null | undefined>(undefined),
-			TypeName: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			DomainARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			ClusterEndpoint: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(80), Validators.minLength(1)]),
+			TypeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(0)]),
 			IndexRotationPeriod: new FormControl<ElasticsearchDestinationConfigurationIndexRotationPeriod | null | undefined>(undefined),
 			S3BackupMode: new FormControl<ElasticsearchDestinationConfigurationS3BackupMode | null | undefined>(undefined),
 		});
@@ -746,19 +1299,39 @@ export namespace MyNS {
 
 	/** Describes the buffering to perform before delivering data to the Amazon ES destination. */
 	export interface ElasticsearchBufferingHints {
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 900
+		 */
 		IntervalInSeconds?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		SizeInMBs?: number | null;
 	}
 
 	/** Describes the buffering to perform before delivering data to the Amazon ES destination. */
 	export interface ElasticsearchBufferingHintsFormProperties {
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 900
+		 */
 		IntervalInSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		SizeInMBs: FormControl<number | null | undefined>,
 	}
 	export function CreateElasticsearchBufferingHintsFormGroup() {
 		return new FormGroup<ElasticsearchBufferingHintsFormProperties>({
-			IntervalInSeconds: new FormControl<number | null | undefined>(undefined),
-			SizeInMBs: new FormControl<number | null | undefined>(undefined),
+			IntervalInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(900)]),
+			SizeInMBs: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -766,16 +1339,26 @@ export namespace MyNS {
 
 	/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. */
 	export interface ElasticsearchRetryOptions {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 7200
+		 */
 		DurationInSeconds?: number | null;
 	}
 
 	/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. */
 	export interface ElasticsearchRetryOptionsFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 7200
+		 */
 		DurationInSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateElasticsearchRetryOptionsFormGroup() {
 		return new FormGroup<ElasticsearchRetryOptionsFormProperties>({
-			DurationInSeconds: new FormControl<number | null | undefined>(undefined),
+			DurationInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(7200)]),
 		});
 
 	}
@@ -785,18 +1368,44 @@ export namespace MyNS {
 
 	/** The details of the VPC of the Amazon ES destination. */
 	export interface VpcConfiguration {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 16
+		 */
 		SubnetIds: Array<string>;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 5
+		 */
 		SecurityGroupIds: Array<string>;
 	}
 
 	/** The details of the VPC of the Amazon ES destination. */
 	export interface VpcConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: FormControl<string | null | undefined>,
 	}
 	export function CreateVpcConfigurationFormGroup() {
 		return new FormGroup<VpcConfigurationFormProperties>({
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
@@ -804,9 +1413,30 @@ export namespace MyNS {
 
 	/** Describes the configuration of a destination in Splunk. */
 	export interface SplunkDestinationConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		HECEndpoint: string;
+
+		/** Required */
 		HECEndpointType: SplunkDestinationConfigurationHECEndpointType;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		HECToken: string;
+
+		/**
+		 * Minimum: 180
+		 * Maximum: 600
+		 */
 		HECAcknowledgmentTimeoutInSeconds?: number | null;
 
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Splunk, or if it doesn't receive an acknowledgment from Splunk. */
@@ -828,18 +1458,39 @@ export namespace MyNS {
 
 	/** Describes the configuration of a destination in Splunk. */
 	export interface SplunkDestinationConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		HECEndpoint: FormControl<string | null | undefined>,
+
+		/** Required */
 		HECEndpointType: FormControl<SplunkDestinationConfigurationHECEndpointType | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		HECToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 180
+		 * Maximum: 600
+		 */
 		HECAcknowledgmentTimeoutInSeconds: FormControl<number | null | undefined>,
 		S3BackupMode: FormControl<SplunkDestinationConfigurationS3BackupMode | null | undefined>,
 	}
 	export function CreateSplunkDestinationConfigurationFormGroup() {
 		return new FormGroup<SplunkDestinationConfigurationFormProperties>({
-			HECEndpoint: new FormControl<string | null | undefined>(undefined),
-			HECEndpointType: new FormControl<SplunkDestinationConfigurationHECEndpointType | null | undefined>(undefined),
-			HECToken: new FormControl<string | null | undefined>(undefined),
-			HECAcknowledgmentTimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
+			HECEndpoint: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(0)]),
+			HECEndpointType: new FormControl<SplunkDestinationConfigurationHECEndpointType | null | undefined>(undefined, [Validators.required]),
+			HECToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(0)]),
+			HECAcknowledgmentTimeoutInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(180), Validators.max(600)]),
 			S3BackupMode: new FormControl<SplunkDestinationConfigurationS3BackupMode | null | undefined>(undefined),
 		});
 
@@ -850,16 +1501,26 @@ export namespace MyNS {
 
 	/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Splunk, or if it doesn't receive an acknowledgment from Splunk. */
 	export interface SplunkRetryOptions {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 7200
+		 */
 		DurationInSeconds?: number | null;
 	}
 
 	/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Splunk, or if it doesn't receive an acknowledgment from Splunk. */
 	export interface SplunkRetryOptionsFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 7200
+		 */
 		DurationInSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateSplunkRetryOptionsFormGroup() {
 		return new FormGroup<SplunkRetryOptionsFormProperties>({
-			DurationInSeconds: new FormControl<number | null | undefined>(undefined),
+			DurationInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(7200)]),
 		});
 
 	}
@@ -869,19 +1530,45 @@ export namespace MyNS {
 
 	/** Metadata that you can assign to a delivery stream, consisting of a key-value pair. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^(?!aws:)[\p{L}\p{Z}\p{N}_.:\/=+\-@%]*$
+		 */
 		Key: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^[\p{L}\p{Z}\p{N}_.:\/=+\-@%]*$
+		 */
 		Value?: string | null;
 	}
 
 	/** Metadata that you can assign to a delivery stream, consisting of a key-value pair. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^(?!aws:)[\p{L}\p{Z}\p{N}_.:\/=+\-@%]*$
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^[\p{L}\p{Z}\p{N}_.:\/=+\-@%]*$
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -937,16 +1624,30 @@ export namespace MyNS {
 	}
 
 	export interface DeleteDeliveryStreamInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeliveryStreamName: string;
 		AllowForceDelete?: boolean | null;
 	}
 	export interface DeleteDeliveryStreamInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeliveryStreamName: FormControl<string | null | undefined>,
 		AllowForceDelete: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDeleteDeliveryStreamInputFormGroup() {
 		return new FormGroup<DeleteDeliveryStreamInputFormProperties>({
-			DeliveryStreamName: new FormControl<string | null | undefined>(undefined),
+			DeliveryStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 			AllowForceDelete: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -981,8 +1682,24 @@ export namespace MyNS {
 
 	/** Contains information about a delivery stream. */
 	export interface DeliveryStreamDescription {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeliveryStreamName: string;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		DeliveryStreamARN: string;
+
+		/** Required */
 		DeliveryStreamStatus: DeliveryStreamDescriptionDeliveryStreamStatus;
 
 		/** Provides details in case one of the following operations fails due to an error related to KMS: <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>, <a>StopDeliveryStreamEncryption</a>. */
@@ -990,38 +1707,78 @@ export namespace MyNS {
 
 		/** Contains information about the server-side encryption (SSE) status for the delivery stream, the type customer master key (CMK) in use, if any, and the ARN of the CMK. You can get <code>DeliveryStreamEncryptionConfiguration</code> by invoking the <a>DescribeDeliveryStream</a> operation. */
 		DeliveryStreamEncryptionConfiguration?: DeliveryStreamEncryptionConfiguration;
+
+		/** Required */
 		DeliveryStreamType: CreateDeliveryStreamInputDeliveryStreamType;
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [0-9]+
+		 */
 		VersionId: string;
 		CreateTimestamp?: Date | null;
 		LastUpdateTimestamp?: Date | null;
 
 		/** Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream. */
 		Source?: SourceDescription;
+
+		/** Required */
 		Destinations: Array<DestinationDescription>;
+
+		/** Required */
 		HasMoreDestinations: boolean;
 	}
 
 	/** Contains information about a delivery stream. */
 	export interface DeliveryStreamDescriptionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeliveryStreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		DeliveryStreamARN: FormControl<string | null | undefined>,
+
+		/** Required */
 		DeliveryStreamStatus: FormControl<DeliveryStreamDescriptionDeliveryStreamStatus | null | undefined>,
+
+		/** Required */
 		DeliveryStreamType: FormControl<CreateDeliveryStreamInputDeliveryStreamType | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [0-9]+
+		 */
 		VersionId: FormControl<string | null | undefined>,
 		CreateTimestamp: FormControl<Date | null | undefined>,
 		LastUpdateTimestamp: FormControl<Date | null | undefined>,
+
+		/** Required */
 		HasMoreDestinations: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDeliveryStreamDescriptionFormGroup() {
 		return new FormGroup<DeliveryStreamDescriptionFormProperties>({
-			DeliveryStreamName: new FormControl<string | null | undefined>(undefined),
-			DeliveryStreamARN: new FormControl<string | null | undefined>(undefined),
-			DeliveryStreamStatus: new FormControl<DeliveryStreamDescriptionDeliveryStreamStatus | null | undefined>(undefined),
-			DeliveryStreamType: new FormControl<CreateDeliveryStreamInputDeliveryStreamType | null | undefined>(undefined),
-			VersionId: new FormControl<string | null | undefined>(undefined),
+			DeliveryStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			DeliveryStreamARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			DeliveryStreamStatus: new FormControl<DeliveryStreamDescriptionDeliveryStreamStatus | null | undefined>(undefined, [Validators.required]),
+			DeliveryStreamType: new FormControl<CreateDeliveryStreamInputDeliveryStreamType | null | undefined>(undefined, [Validators.required]),
+			VersionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
 			CreateTimestamp: new FormControl<Date | null | undefined>(undefined),
 			LastUpdateTimestamp: new FormControl<Date | null | undefined>(undefined),
-			HasMoreDestinations: new FormControl<boolean | null | undefined>(undefined),
+			HasMoreDestinations: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1031,19 +1788,37 @@ export namespace MyNS {
 
 	/** Provides details in case one of the following operations fails due to an error related to KMS: <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>, <a>StopDeliveryStreamEncryption</a>. */
 	export interface FailureDescription {
+
+		/** Required */
 		Type: FailureDescriptionType;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^(?!\s*$).+
+		 */
 		Details: string;
 	}
 
 	/** Provides details in case one of the following operations fails due to an error related to KMS: <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>, <a>StopDeliveryStreamEncryption</a>. */
 	export interface FailureDescriptionFormProperties {
+
+		/** Required */
 		Type: FormControl<FailureDescriptionType | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^(?!\s*$).+
+		 */
 		Details: FormControl<string | null | undefined>,
 	}
 	export function CreateFailureDescriptionFormGroup() {
 		return new FormGroup<FailureDescriptionFormProperties>({
-			Type: new FormControl<FailureDescriptionType | null | undefined>(undefined),
-			Details: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<FailureDescriptionType | null | undefined>(undefined, [Validators.required]),
+			Details: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1053,6 +1828,12 @@ export namespace MyNS {
 
 	/** Contains information about the server-side encryption (SSE) status for the delivery stream, the type customer master key (CMK) in use, if any, and the ARN of the CMK. You can get <code>DeliveryStreamEncryptionConfiguration</code> by invoking the <a>DescribeDeliveryStream</a> operation.  */
 	export interface DeliveryStreamEncryptionConfiguration {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		KeyARN?: string | null;
 		KeyType?: DeliveryStreamEncryptionConfigurationInputKeyType | null;
 		Status?: DeliveryStreamEncryptionConfigurationStatus | null;
@@ -1063,13 +1844,19 @@ export namespace MyNS {
 
 	/** Contains information about the server-side encryption (SSE) status for the delivery stream, the type customer master key (CMK) in use, if any, and the ARN of the CMK. You can get <code>DeliveryStreamEncryptionConfiguration</code> by invoking the <a>DescribeDeliveryStream</a> operation.  */
 	export interface DeliveryStreamEncryptionConfigurationFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		KeyARN: FormControl<string | null | undefined>,
 		KeyType: FormControl<DeliveryStreamEncryptionConfigurationInputKeyType | null | undefined>,
 		Status: FormControl<DeliveryStreamEncryptionConfigurationStatus | null | undefined>,
 	}
 	export function CreateDeliveryStreamEncryptionConfigurationFormGroup() {
 		return new FormGroup<DeliveryStreamEncryptionConfigurationFormProperties>({
-			KeyARN: new FormControl<string | null | undefined>(undefined),
+			KeyARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 			KeyType: new FormControl<DeliveryStreamEncryptionConfigurationInputKeyType | null | undefined>(undefined),
 			Status: new FormControl<DeliveryStreamEncryptionConfigurationStatus | null | undefined>(undefined),
 		});
@@ -1098,21 +1885,45 @@ export namespace MyNS {
 
 	/** Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream. */
 	export interface KinesisStreamSourceDescription {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		KinesisStreamARN?: string | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN?: string | null;
 		DeliveryStartTimestamp?: Date | null;
 	}
 
 	/** Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream. */
 	export interface KinesisStreamSourceDescriptionFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		KinesisStreamARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: FormControl<string | null | undefined>,
 		DeliveryStartTimestamp: FormControl<Date | null | undefined>,
 	}
 	export function CreateKinesisStreamSourceDescriptionFormGroup() {
 		return new FormGroup<KinesisStreamSourceDescriptionFormProperties>({
-			KinesisStreamARN: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			KinesisStreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 			DeliveryStartTimestamp: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -1121,6 +1932,13 @@ export namespace MyNS {
 
 	/** Describes the destination for a delivery stream. */
 	export interface DestinationDescription {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9-]+
+		 */
 		DestinationId: string;
 
 		/** Describes a destination in Amazon S3. */
@@ -1141,11 +1959,18 @@ export namespace MyNS {
 
 	/** Describes the destination for a delivery stream. */
 	export interface DestinationDescriptionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9-]+
+		 */
 		DestinationId: FormControl<string | null | undefined>,
 	}
 	export function CreateDestinationDescriptionFormGroup() {
 		return new FormGroup<DestinationDescriptionFormProperties>({
-			DestinationId: new FormControl<string | null | undefined>(undefined),
+			DestinationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -1153,9 +1978,35 @@ export namespace MyNS {
 
 	/** Describes a destination in Amazon S3. */
 	export interface S3DestinationDescription {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		BucketARN: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		Prefix?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		ErrorOutputPrefix?: string | null;
 
 		/**
@@ -1163,6 +2014,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		BufferingHints: BufferingHints;
+
+		/** Required */
 		CompressionFormat: S3DestinationConfigurationCompressionFormat;
 
 		/**
@@ -1177,19 +2030,47 @@ export namespace MyNS {
 
 	/** Describes a destination in Amazon S3. */
 	export interface S3DestinationDescriptionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		BucketARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		Prefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		ErrorOutputPrefix: FormControl<string | null | undefined>,
+
+		/** Required */
 		CompressionFormat: FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>,
 	}
 	export function CreateS3DestinationDescriptionFormGroup() {
 		return new FormGroup<S3DestinationDescriptionFormProperties>({
-			RoleARN: new FormControl<string | null | undefined>(undefined),
-			BucketARN: new FormControl<string | null | undefined>(undefined),
-			Prefix: new FormControl<string | null | undefined>(undefined),
-			ErrorOutputPrefix: new FormControl<string | null | undefined>(undefined),
-			CompressionFormat: new FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			BucketARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			ErrorOutputPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			CompressionFormat: new FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1197,9 +2078,35 @@ export namespace MyNS {
 
 	/** Describes a destination in Amazon S3. */
 	export interface ExtendedS3DestinationDescription {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		BucketARN: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		Prefix?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		ErrorOutputPrefix?: string | null;
 
 		/**
@@ -1207,6 +2114,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		BufferingHints: BufferingHints;
+
+		/** Required */
 		CompressionFormat: S3DestinationConfigurationCompressionFormat;
 
 		/**
@@ -1231,20 +2140,48 @@ export namespace MyNS {
 
 	/** Describes a destination in Amazon S3. */
 	export interface ExtendedS3DestinationDescriptionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		BucketARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		Prefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		ErrorOutputPrefix: FormControl<string | null | undefined>,
+
+		/** Required */
 		CompressionFormat: FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>,
 		S3BackupMode: FormControl<ExtendedS3DestinationConfigurationS3BackupMode | null | undefined>,
 	}
 	export function CreateExtendedS3DestinationDescriptionFormGroup() {
 		return new FormGroup<ExtendedS3DestinationDescriptionFormProperties>({
-			RoleARN: new FormControl<string | null | undefined>(undefined),
-			BucketARN: new FormControl<string | null | undefined>(undefined),
-			Prefix: new FormControl<string | null | undefined>(undefined),
-			ErrorOutputPrefix: new FormControl<string | null | undefined>(undefined),
-			CompressionFormat: new FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			BucketARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			ErrorOutputPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			CompressionFormat: new FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>(undefined, [Validators.required]),
 			S3BackupMode: new FormControl<ExtendedS3DestinationConfigurationS3BackupMode | null | undefined>(undefined),
 		});
 
@@ -1253,7 +2190,21 @@ export namespace MyNS {
 
 	/** Describes a destination in Amazon Redshift. */
 	export interface RedshiftDestinationDescription {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: string;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?<!-)\.)+redshift\.([a-zA-Z0-9\.]+):\d{1,5}/[a-zA-Z0-9_$]+
+		 */
 		ClusterJDBCURL: string;
 
 		/**
@@ -1261,6 +2212,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		CopyCommand: CopyCommand;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: .*
+		 */
 		Username: string;
 
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. */
@@ -1285,16 +2243,37 @@ export namespace MyNS {
 
 	/** Describes a destination in Amazon Redshift. */
 	export interface RedshiftDestinationDescriptionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?<!-)\.)+redshift\.([a-zA-Z0-9\.]+):\d{1,5}/[a-zA-Z0-9_$]+
+		 */
 		ClusterJDBCURL: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: .*
+		 */
 		Username: FormControl<string | null | undefined>,
 		S3BackupMode: FormControl<ExtendedS3DestinationConfigurationS3BackupMode | null | undefined>,
 	}
 	export function CreateRedshiftDestinationDescriptionFormGroup() {
 		return new FormGroup<RedshiftDestinationDescriptionFormProperties>({
-			RoleARN: new FormControl<string | null | undefined>(undefined),
-			ClusterJDBCURL: new FormControl<string | null | undefined>(undefined),
-			Username: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			ClusterJDBCURL: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			Username: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
 			S3BackupMode: new FormControl<ExtendedS3DestinationConfigurationS3BackupMode | null | undefined>(undefined),
 		});
 
@@ -1303,10 +2282,40 @@ export namespace MyNS {
 
 	/** The destination description in Amazon ES. */
 	export interface ElasticsearchDestinationDescription {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN?: string | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		DomainARN?: string | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: https:.*
+		 */
 		ClusterEndpoint?: string | null;
+
+		/**
+		 * Max length: 80
+		 * Min length: 1
+		 * Pattern: .*
+		 */
 		IndexName?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		TypeName?: string | null;
 		IndexRotationPeriod?: ElasticsearchDestinationConfigurationIndexRotationPeriod | null;
 
@@ -1332,21 +2341,51 @@ export namespace MyNS {
 
 	/** The destination description in Amazon ES. */
 	export interface ElasticsearchDestinationDescriptionFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		DomainARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: https:.*
+		 */
 		ClusterEndpoint: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 80
+		 * Min length: 1
+		 * Pattern: .*
+		 */
 		IndexName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		TypeName: FormControl<string | null | undefined>,
 		IndexRotationPeriod: FormControl<ElasticsearchDestinationConfigurationIndexRotationPeriod | null | undefined>,
 		S3BackupMode: FormControl<ElasticsearchDestinationConfigurationS3BackupMode | null | undefined>,
 	}
 	export function CreateElasticsearchDestinationDescriptionFormGroup() {
 		return new FormGroup<ElasticsearchDestinationDescriptionFormProperties>({
-			RoleARN: new FormControl<string | null | undefined>(undefined),
-			DomainARN: new FormControl<string | null | undefined>(undefined),
-			ClusterEndpoint: new FormControl<string | null | undefined>(undefined),
-			IndexName: new FormControl<string | null | undefined>(undefined),
-			TypeName: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			DomainARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			ClusterEndpoint: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(80), Validators.minLength(1)]),
+			TypeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(0)]),
 			IndexRotationPeriod: new FormControl<ElasticsearchDestinationConfigurationIndexRotationPeriod | null | undefined>(undefined),
 			S3BackupMode: new FormControl<ElasticsearchDestinationConfigurationS3BackupMode | null | undefined>(undefined),
 		});
@@ -1356,21 +2395,61 @@ export namespace MyNS {
 
 	/** The details of the VPC of the Amazon ES destination. */
 	export interface VpcConfigurationDescription {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 16
+		 */
 		SubnetIds: Array<string>;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 5
+		 */
 		SecurityGroupIds: Array<string>;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^\S+$
+		 */
 		VpcId: string;
 	}
 
 	/** The details of the VPC of the Amazon ES destination. */
 	export interface VpcConfigurationDescriptionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^\S+$
+		 */
 		VpcId: FormControl<string | null | undefined>,
 	}
 	export function CreateVpcConfigurationDescriptionFormGroup() {
 		return new FormGroup<VpcConfigurationDescriptionFormProperties>({
-			RoleARN: new FormControl<string | null | undefined>(undefined),
-			VpcId: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			VpcId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1378,9 +2457,26 @@ export namespace MyNS {
 
 	/** Describes a destination in Splunk. */
 	export interface SplunkDestinationDescription {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		HECEndpoint?: string | null;
 		HECEndpointType?: SplunkDestinationConfigurationHECEndpointType | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		HECToken?: string | null;
+
+		/**
+		 * Minimum: 180
+		 * Maximum: 600
+		 */
 		HECAcknowledgmentTimeoutInSeconds?: number | null;
 
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Splunk, or if it doesn't receive an acknowledgment from Splunk. */
@@ -1399,125 +2495,269 @@ export namespace MyNS {
 
 	/** Describes a destination in Splunk. */
 	export interface SplunkDestinationDescriptionFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		HECEndpoint: FormControl<string | null | undefined>,
 		HECEndpointType: FormControl<SplunkDestinationConfigurationHECEndpointType | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		HECToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 180
+		 * Maximum: 600
+		 */
 		HECAcknowledgmentTimeoutInSeconds: FormControl<number | null | undefined>,
 		S3BackupMode: FormControl<SplunkDestinationConfigurationS3BackupMode | null | undefined>,
 	}
 	export function CreateSplunkDestinationDescriptionFormGroup() {
 		return new FormGroup<SplunkDestinationDescriptionFormProperties>({
-			HECEndpoint: new FormControl<string | null | undefined>(undefined),
+			HECEndpoint: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 			HECEndpointType: new FormControl<SplunkDestinationConfigurationHECEndpointType | null | undefined>(undefined),
-			HECToken: new FormControl<string | null | undefined>(undefined),
-			HECAcknowledgmentTimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
+			HECToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
+			HECAcknowledgmentTimeoutInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(180), Validators.max(600)]),
 			S3BackupMode: new FormControl<SplunkDestinationConfigurationS3BackupMode | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface DescribeDeliveryStreamInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeliveryStreamName: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
 		Limit?: number | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9-]+
+		 */
 		ExclusiveStartDestinationId?: string | null;
 	}
 	export interface DescribeDeliveryStreamInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeliveryStreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
 		Limit: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9-]+
+		 */
 		ExclusiveStartDestinationId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeDeliveryStreamInputFormGroup() {
 		return new FormGroup<DescribeDeliveryStreamInputFormProperties>({
-			DeliveryStreamName: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
-			ExclusiveStartDestinationId: new FormControl<string | null | undefined>(undefined),
+			DeliveryStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
+			ExclusiveStartDestinationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListDeliveryStreamsOutput {
+
+		/** Required */
 		DeliveryStreamNames: Array<string>;
+
+		/** Required */
 		HasMoreDeliveryStreams: boolean;
 	}
 	export interface ListDeliveryStreamsOutputFormProperties {
+
+		/** Required */
 		HasMoreDeliveryStreams: FormControl<boolean | null | undefined>,
 	}
 	export function CreateListDeliveryStreamsOutputFormGroup() {
 		return new FormGroup<ListDeliveryStreamsOutputFormProperties>({
-			HasMoreDeliveryStreams: new FormControl<boolean | null | undefined>(undefined),
+			HasMoreDeliveryStreams: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ListDeliveryStreamsInput {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
 		Limit?: number | null;
 		DeliveryStreamType?: CreateDeliveryStreamInputDeliveryStreamType | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ExclusiveStartDeliveryStreamName?: string | null;
 	}
 	export interface ListDeliveryStreamsInputFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
 		Limit: FormControl<number | null | undefined>,
 		DeliveryStreamType: FormControl<CreateDeliveryStreamInputDeliveryStreamType | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ExclusiveStartDeliveryStreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateListDeliveryStreamsInputFormGroup() {
 		return new FormGroup<ListDeliveryStreamsInputFormProperties>({
-			Limit: new FormControl<number | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
 			DeliveryStreamType: new FormControl<CreateDeliveryStreamInputDeliveryStreamType | null | undefined>(undefined),
-			ExclusiveStartDeliveryStreamName: new FormControl<string | null | undefined>(undefined),
+			ExclusiveStartDeliveryStreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListTagsForDeliveryStreamOutput {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		Tags: Array<Tag>;
+
+		/** Required */
 		HasMoreTags: boolean;
 	}
 	export interface ListTagsForDeliveryStreamOutputFormProperties {
+
+		/** Required */
 		HasMoreTags: FormControl<boolean | null | undefined>,
 	}
 	export function CreateListTagsForDeliveryStreamOutputFormGroup() {
 		return new FormGroup<ListTagsForDeliveryStreamOutputFormProperties>({
-			HasMoreTags: new FormControl<boolean | null | undefined>(undefined),
+			HasMoreTags: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ListTagsForDeliveryStreamInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeliveryStreamName: string;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^(?!aws:)[\p{L}\p{Z}\p{N}_.:\/=+\-@%]*$
+		 */
 		ExclusiveStartTagKey?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		Limit?: number | null;
 	}
 	export interface ListTagsForDeliveryStreamInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeliveryStreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^(?!aws:)[\p{L}\p{Z}\p{N}_.:\/=+\-@%]*$
+		 */
 		ExclusiveStartTagKey: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateListTagsForDeliveryStreamInputFormGroup() {
 		return new FormGroup<ListTagsForDeliveryStreamInputFormProperties>({
-			DeliveryStreamName: new FormControl<string | null | undefined>(undefined),
-			ExclusiveStartTagKey: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			DeliveryStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			ExclusiveStartTagKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 		});
 
 	}
 
 	export interface PutRecordOutput {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		RecordId: string;
 		Encrypted?: boolean | null;
 	}
 	export interface PutRecordOutputFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		RecordId: FormControl<string | null | undefined>,
 		Encrypted: FormControl<boolean | null | undefined>,
 	}
 	export function CreatePutRecordOutputFormGroup() {
 		return new FormGroup<PutRecordOutputFormProperties>({
-			RecordId: new FormControl<string | null | undefined>(undefined),
+			RecordId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 			Encrypted: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PutRecordInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeliveryStreamName: string;
 
 		/**
@@ -1527,11 +2767,18 @@ export namespace MyNS {
 		Record: Record;
 	}
 	export interface PutRecordInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeliveryStreamName: FormControl<string | null | undefined>,
 	}
 	export function CreatePutRecordInputFormGroup() {
 		return new FormGroup<PutRecordInputFormProperties>({
-			DeliveryStreamName: new FormControl<string | null | undefined>(undefined),
+			DeliveryStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1539,16 +2786,28 @@ export namespace MyNS {
 
 	/** The unit of data in a delivery stream. */
 	export interface Record {
+
+		/**
+		 * Required
+		 * Max length: 1024000
+		 * Min length: 0
+		 */
 		Data: string;
 	}
 
 	/** The unit of data in a delivery stream. */
 	export interface RecordFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024000
+		 * Min length: 0
+		 */
 		Data: FormControl<string | null | undefined>,
 	}
 	export function CreateRecordFormGroup() {
 		return new FormGroup<RecordFormProperties>({
-			Data: new FormControl<string | null | undefined>(undefined),
+			Data: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024000), Validators.minLength(0)]),
 		});
 
 	}
@@ -1564,17 +2823,33 @@ export namespace MyNS {
 	}
 
 	export interface PutRecordBatchOutput {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		FailedPutCount: number;
 		Encrypted?: boolean | null;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 500
+		 */
 		RequestResponses: Array<PutRecordBatchResponseEntry>;
 	}
 	export interface PutRecordBatchOutputFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		FailedPutCount: FormControl<number | null | undefined>,
 		Encrypted: FormControl<boolean | null | undefined>,
 	}
 	export function CreatePutRecordBatchOutputFormGroup() {
 		return new FormGroup<PutRecordBatchOutputFormProperties>({
-			FailedPutCount: new FormControl<number | null | undefined>(undefined),
+			FailedPutCount: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			Encrypted: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1583,6 +2858,8 @@ export namespace MyNS {
 
 	/** Contains the result for an individual record from a <a>PutRecordBatch</a> request. If the record is successfully added to your delivery stream, it receives a record ID. If the record fails to be added to your delivery stream, the result includes an error code and an error message. */
 	export interface PutRecordBatchResponseEntry {
+
+		/** Min length: 1 */
 		RecordId?: string | null;
 		ErrorCode?: string | null;
 		ErrorMessage?: string | null;
@@ -1590,13 +2867,15 @@ export namespace MyNS {
 
 	/** Contains the result for an individual record from a <a>PutRecordBatch</a> request. If the record is successfully added to your delivery stream, it receives a record ID. If the record fails to be added to your delivery stream, the result includes an error code and an error message. */
 	export interface PutRecordBatchResponseEntryFormProperties {
+
+		/** Min length: 1 */
 		RecordId: FormControl<string | null | undefined>,
 		ErrorCode: FormControl<string | null | undefined>,
 		ErrorMessage: FormControl<string | null | undefined>,
 	}
 	export function CreatePutRecordBatchResponseEntryFormGroup() {
 		return new FormGroup<PutRecordBatchResponseEntryFormProperties>({
-			RecordId: new FormControl<string | null | undefined>(undefined),
+			RecordId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			ErrorCode: new FormControl<string | null | undefined>(undefined),
 			ErrorMessage: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1604,15 +2883,35 @@ export namespace MyNS {
 	}
 
 	export interface PutRecordBatchInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeliveryStreamName: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 500
+		 */
 		Records: Array<Record>;
 	}
 	export interface PutRecordBatchInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeliveryStreamName: FormControl<string | null | undefined>,
 	}
 	export function CreatePutRecordBatchInputFormGroup() {
 		return new FormGroup<PutRecordBatchInputFormProperties>({
-			DeliveryStreamName: new FormControl<string | null | undefined>(undefined),
+			DeliveryStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1628,17 +2927,31 @@ export namespace MyNS {
 	}
 
 	export interface StartDeliveryStreamEncryptionInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeliveryStreamName: string;
 
 		/** Specifies the type and Amazon Resource Name (ARN) of the CMK to use for Server-Side Encryption (SSE). */
 		DeliveryStreamEncryptionConfigurationInput?: DeliveryStreamEncryptionConfigurationInput;
 	}
 	export interface StartDeliveryStreamEncryptionInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeliveryStreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateStartDeliveryStreamEncryptionInputFormGroup() {
 		return new FormGroup<StartDeliveryStreamEncryptionInputFormProperties>({
-			DeliveryStreamName: new FormControl<string | null | undefined>(undefined),
+			DeliveryStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1654,14 +2967,28 @@ export namespace MyNS {
 	}
 
 	export interface StopDeliveryStreamEncryptionInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeliveryStreamName: string;
 	}
 	export interface StopDeliveryStreamEncryptionInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeliveryStreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateStopDeliveryStreamEncryptionInputFormGroup() {
 		return new FormGroup<StopDeliveryStreamEncryptionInputFormProperties>({
-			DeliveryStreamName: new FormControl<string | null | undefined>(undefined),
+			DeliveryStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1677,15 +3004,35 @@ export namespace MyNS {
 	}
 
 	export interface TagDeliveryStreamInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeliveryStreamName: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Tags: Array<Tag>;
 	}
 	export interface TagDeliveryStreamInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeliveryStreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateTagDeliveryStreamInputFormGroup() {
 		return new FormGroup<TagDeliveryStreamInputFormProperties>({
-			DeliveryStreamName: new FormControl<string | null | undefined>(undefined),
+			DeliveryStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1701,15 +3048,35 @@ export namespace MyNS {
 	}
 
 	export interface UntagDeliveryStreamInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeliveryStreamName: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		TagKeys: Array<string>;
 	}
 	export interface UntagDeliveryStreamInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeliveryStreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagDeliveryStreamInputFormGroup() {
 		return new FormGroup<UntagDeliveryStreamInputFormProperties>({
-			DeliveryStreamName: new FormControl<string | null | undefined>(undefined),
+			DeliveryStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1725,8 +3092,29 @@ export namespace MyNS {
 	}
 
 	export interface UpdateDestinationInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeliveryStreamName: string;
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [0-9]+
+		 */
 		CurrentDeliveryStreamVersionId: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9-]+
+		 */
 		DestinationId: string;
 
 		/** Describes an update for a destination in Amazon S3. */
@@ -1745,15 +3133,36 @@ export namespace MyNS {
 		SplunkDestinationUpdate?: SplunkDestinationUpdate;
 	}
 	export interface UpdateDestinationInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeliveryStreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [0-9]+
+		 */
 		CurrentDeliveryStreamVersionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9-]+
+		 */
 		DestinationId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateDestinationInputFormGroup() {
 		return new FormGroup<UpdateDestinationInputFormProperties>({
-			DeliveryStreamName: new FormControl<string | null | undefined>(undefined),
-			CurrentDeliveryStreamVersionId: new FormControl<string | null | undefined>(undefined),
-			DestinationId: new FormControl<string | null | undefined>(undefined),
+			DeliveryStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			CurrentDeliveryStreamVersionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
+			DestinationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -1761,9 +3170,33 @@ export namespace MyNS {
 
 	/** Describes an update for a destination in Amazon S3. */
 	export interface S3DestinationUpdate {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		BucketARN?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		Prefix?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		ErrorOutputPrefix?: string | null;
 
 		/** Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. */
@@ -1779,18 +3212,42 @@ export namespace MyNS {
 
 	/** Describes an update for a destination in Amazon S3. */
 	export interface S3DestinationUpdateFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		BucketARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		Prefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		ErrorOutputPrefix: FormControl<string | null | undefined>,
 		CompressionFormat: FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>,
 	}
 	export function CreateS3DestinationUpdateFormGroup() {
 		return new FormGroup<S3DestinationUpdateFormProperties>({
-			RoleARN: new FormControl<string | null | undefined>(undefined),
-			BucketARN: new FormControl<string | null | undefined>(undefined),
-			Prefix: new FormControl<string | null | undefined>(undefined),
-			ErrorOutputPrefix: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			BucketARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			ErrorOutputPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 			CompressionFormat: new FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>(undefined),
 		});
 
@@ -1799,9 +3256,33 @@ export namespace MyNS {
 
 	/** Describes an update for a destination in Amazon S3. */
 	export interface ExtendedS3DestinationUpdate {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		BucketARN?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		Prefix?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		ErrorOutputPrefix?: string | null;
 
 		/** Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. */
@@ -1827,19 +3308,43 @@ export namespace MyNS {
 
 	/** Describes an update for a destination in Amazon S3. */
 	export interface ExtendedS3DestinationUpdateFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		BucketARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		Prefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		ErrorOutputPrefix: FormControl<string | null | undefined>,
 		CompressionFormat: FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>,
 		S3BackupMode: FormControl<ExtendedS3DestinationConfigurationS3BackupMode | null | undefined>,
 	}
 	export function CreateExtendedS3DestinationUpdateFormGroup() {
 		return new FormGroup<ExtendedS3DestinationUpdateFormProperties>({
-			RoleARN: new FormControl<string | null | undefined>(undefined),
-			BucketARN: new FormControl<string | null | undefined>(undefined),
-			Prefix: new FormControl<string | null | undefined>(undefined),
-			ErrorOutputPrefix: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			BucketARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			ErrorOutputPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 			CompressionFormat: new FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>(undefined),
 			S3BackupMode: new FormControl<ExtendedS3DestinationConfigurationS3BackupMode | null | undefined>(undefined),
 		});
@@ -1849,12 +3354,36 @@ export namespace MyNS {
 
 	/** Describes an update for a destination in Amazon Redshift. */
 	export interface RedshiftDestinationUpdate {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN?: string | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?<!-)\.)+redshift\.([a-zA-Z0-9\.]+):\d{1,5}/[a-zA-Z0-9_$]+
+		 */
 		ClusterJDBCURL?: string | null;
 
 		/** Describes a <code>COPY</code> command for Amazon Redshift. */
 		CopyCommand?: CopyCommand;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: .*
+		 */
 		Username?: string | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 6
+		 * Pattern: .*
+		 */
 		Password?: string | null;
 
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. */
@@ -1876,18 +3405,42 @@ export namespace MyNS {
 
 	/** Describes an update for a destination in Amazon Redshift. */
 	export interface RedshiftDestinationUpdateFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: jdbc:(redshift|postgresql)://((?!-)[A-Za-z0-9-]{1,63}(?<!-)\.)+redshift\.([a-zA-Z0-9\.]+):\d{1,5}/[a-zA-Z0-9_$]+
+		 */
 		ClusterJDBCURL: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: .*
+		 */
 		Username: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 6
+		 * Pattern: .*
+		 */
 		Password: FormControl<string | null | undefined>,
 		S3BackupMode: FormControl<ExtendedS3DestinationConfigurationS3BackupMode | null | undefined>,
 	}
 	export function CreateRedshiftDestinationUpdateFormGroup() {
 		return new FormGroup<RedshiftDestinationUpdateFormProperties>({
-			RoleARN: new FormControl<string | null | undefined>(undefined),
-			ClusterJDBCURL: new FormControl<string | null | undefined>(undefined),
-			Username: new FormControl<string | null | undefined>(undefined),
-			Password: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			ClusterJDBCURL: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			Username: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(6)]),
 			S3BackupMode: new FormControl<ExtendedS3DestinationConfigurationS3BackupMode | null | undefined>(undefined),
 		});
 
@@ -1896,10 +3449,40 @@ export namespace MyNS {
 
 	/** Describes an update for a destination in Amazon ES. */
 	export interface ElasticsearchDestinationUpdate {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN?: string | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		DomainARN?: string | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: https:.*
+		 */
 		ClusterEndpoint?: string | null;
+
+		/**
+		 * Max length: 80
+		 * Min length: 1
+		 * Pattern: .*
+		 */
 		IndexName?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		TypeName?: string | null;
 		IndexRotationPeriod?: ElasticsearchDestinationConfigurationIndexRotationPeriod | null;
 
@@ -1921,20 +3504,50 @@ export namespace MyNS {
 
 	/** Describes an update for a destination in Amazon ES. */
 	export interface ElasticsearchDestinationUpdateFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		RoleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		DomainARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: https:.*
+		 */
 		ClusterEndpoint: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 80
+		 * Min length: 1
+		 * Pattern: .*
+		 */
 		IndexName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		TypeName: FormControl<string | null | undefined>,
 		IndexRotationPeriod: FormControl<ElasticsearchDestinationConfigurationIndexRotationPeriod | null | undefined>,
 	}
 	export function CreateElasticsearchDestinationUpdateFormGroup() {
 		return new FormGroup<ElasticsearchDestinationUpdateFormProperties>({
-			RoleARN: new FormControl<string | null | undefined>(undefined),
-			DomainARN: new FormControl<string | null | undefined>(undefined),
-			ClusterEndpoint: new FormControl<string | null | undefined>(undefined),
-			IndexName: new FormControl<string | null | undefined>(undefined),
-			TypeName: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			DomainARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			ClusterEndpoint: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(80), Validators.minLength(1)]),
+			TypeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(0)]),
 			IndexRotationPeriod: new FormControl<ElasticsearchDestinationConfigurationIndexRotationPeriod | null | undefined>(undefined),
 		});
 
@@ -1943,9 +3556,26 @@ export namespace MyNS {
 
 	/** Describes an update for a destination in Splunk. */
 	export interface SplunkDestinationUpdate {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		HECEndpoint?: string | null;
 		HECEndpointType?: SplunkDestinationConfigurationHECEndpointType | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		HECToken?: string | null;
+
+		/**
+		 * Minimum: 180
+		 * Maximum: 600
+		 */
 		HECAcknowledgmentTimeoutInSeconds?: number | null;
 
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Splunk, or if it doesn't receive an acknowledgment from Splunk. */
@@ -1964,18 +3594,35 @@ export namespace MyNS {
 
 	/** Describes an update for a destination in Splunk. */
 	export interface SplunkDestinationUpdateFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		HECEndpoint: FormControl<string | null | undefined>,
 		HECEndpointType: FormControl<SplunkDestinationConfigurationHECEndpointType | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: .*
+		 */
 		HECToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 180
+		 * Maximum: 600
+		 */
 		HECAcknowledgmentTimeoutInSeconds: FormControl<number | null | undefined>,
 		S3BackupMode: FormControl<SplunkDestinationConfigurationS3BackupMode | null | undefined>,
 	}
 	export function CreateSplunkDestinationUpdateFormGroup() {
 		return new FormGroup<SplunkDestinationUpdateFormProperties>({
-			HECEndpoint: new FormControl<string | null | undefined>(undefined),
+			HECEndpoint: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 			HECEndpointType: new FormControl<SplunkDestinationConfigurationHECEndpointType | null | undefined>(undefined),
-			HECToken: new FormControl<string | null | undefined>(undefined),
-			HECAcknowledgmentTimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
+			HECToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
+			HECAcknowledgmentTimeoutInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(180), Validators.max(600)]),
 			S3BackupMode: new FormControl<SplunkDestinationConfigurationS3BackupMode | null | undefined>(undefined),
 		});
 

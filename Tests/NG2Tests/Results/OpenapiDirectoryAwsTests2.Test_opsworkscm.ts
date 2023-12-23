@@ -4,19 +4,36 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AssociateNodeResponse {
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		NodeAssociationStatusToken?: string | null;
 	}
 	export interface AssociateNodeResponseFormProperties {
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		NodeAssociationStatusToken: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateNodeResponseFormGroup() {
 		return new FormGroup<AssociateNodeResponseFormProperties>({
-			NodeAssociationStatusToken: new FormControl<string | null | undefined>(undefined),
+			NodeAssociationStatusToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 		});
 
 	}
 
 	export interface AssociateNodeRequest {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: string;
 
 		/**
@@ -26,9 +43,18 @@ export namespace MyNS {
 		 * Pattern: ^[\-\p{Alnum}_:.]+$
 		 */
 		NodeName: string;
+
+		/** Required */
 		EngineAttributes: Array<EngineAttribute>;
 	}
 	export interface AssociateNodeRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: FormControl<string | null | undefined>,
 
 		/**
@@ -41,8 +67,8 @@ export namespace MyNS {
 	}
 	export function CreateAssociateNodeRequestFormGroup() {
 		return new FormGroup<AssociateNodeRequestFormProperties>({
-			ServerName: new FormControl<string | null | undefined>(undefined),
-			NodeName: new FormControl<string | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1)]),
+			NodeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000)]),
 		});
 
 	}
@@ -50,19 +76,39 @@ export namespace MyNS {
 
 	/** A name and value pair that is specific to the engine of the server.  */
 	export interface EngineAttribute {
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		Value?: string | null;
 	}
 
 	/** A name and value pair that is specific to the engine of the server.  */
 	export interface EngineAttributeFormProperties {
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateEngineAttributeFormGroup() {
 		return new FormGroup<EngineAttributeFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 		});
 
 	}
@@ -113,16 +159,61 @@ export namespace MyNS {
 
 	/** Describes a single backup.  */
 	export interface Backup {
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		BackupArn?: string | null;
+
+		/**
+		 * Max length: 79
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-\.\:]*
+		 */
 		BackupId?: string | null;
 		BackupType?: BackupBackupType | null;
 		CreatedAt?: Date | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		Engine?: string | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		EngineModel?: string | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		EngineVersion?: string | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		InstanceProfileArn?: string | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		InstanceType?: string | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		KeyPair?: string | null;
 
 		/**
@@ -139,30 +230,111 @@ export namespace MyNS {
 		 */
 		PreferredMaintenanceWindow?: string | null;
 		S3DataSize?: number | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		S3DataUrl?: string | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		S3LogUrl?: string | null;
 		SecurityGroupIds?: Array<string>;
+
+		/**
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName?: string | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		ServiceRoleArn?: string | null;
 		Status?: BackupStatus | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		StatusDescription?: string | null;
 		SubnetIds?: Array<string>;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		ToolsVersion?: string | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		UserArn?: string | null;
 	}
 
 	/** Describes a single backup.  */
 	export interface BackupFormProperties {
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		BackupArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 79
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-\.\:]*
+		 */
 		BackupId: FormControl<string | null | undefined>,
 		BackupType: FormControl<BackupBackupType | null | undefined>,
 		CreatedAt: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		Engine: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		EngineModel: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		EngineVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		InstanceProfileArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		InstanceType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		KeyPair: FormControl<string | null | undefined>,
 
 		/**
@@ -179,39 +351,75 @@ export namespace MyNS {
 		 */
 		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
 		S3DataSize: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		S3DataUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		S3LogUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		ServiceRoleArn: FormControl<string | null | undefined>,
 		Status: FormControl<BackupStatus | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		StatusDescription: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		ToolsVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		UserArn: FormControl<string | null | undefined>,
 	}
 	export function CreateBackupFormGroup() {
 		return new FormGroup<BackupFormProperties>({
-			BackupArn: new FormControl<string | null | undefined>(undefined),
-			BackupId: new FormControl<string | null | undefined>(undefined),
+			BackupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			BackupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(79)]),
 			BackupType: new FormControl<BackupBackupType | null | undefined>(undefined),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			Engine: new FormControl<string | null | undefined>(undefined),
-			EngineModel: new FormControl<string | null | undefined>(undefined),
-			EngineVersion: new FormControl<string | null | undefined>(undefined),
-			InstanceProfileArn: new FormControl<string | null | undefined>(undefined),
-			InstanceType: new FormControl<string | null | undefined>(undefined),
-			KeyPair: new FormControl<string | null | undefined>(undefined),
-			PreferredBackupWindow: new FormControl<string | null | undefined>(undefined),
-			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			Engine: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			EngineModel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			EngineVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			InstanceProfileArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			KeyPair: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			PreferredBackupWindow: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 			S3DataSize: new FormControl<number | null | undefined>(undefined),
-			S3DataUrl: new FormControl<string | null | undefined>(undefined),
-			S3LogUrl: new FormControl<string | null | undefined>(undefined),
-			ServerName: new FormControl<string | null | undefined>(undefined),
-			ServiceRoleArn: new FormControl<string | null | undefined>(undefined),
+			S3DataUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			S3LogUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(1)]),
+			ServiceRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 			Status: new FormControl<BackupStatus | null | undefined>(undefined),
-			StatusDescription: new FormControl<string | null | undefined>(undefined),
-			ToolsVersion: new FormControl<string | null | undefined>(undefined),
-			UserArn: new FormControl<string | null | undefined>(undefined),
+			StatusDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			ToolsVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			UserArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 		});
 
 	}
@@ -221,18 +429,47 @@ export namespace MyNS {
 	export enum BackupStatus { IN_PROGRESS = 0, OK = 1, FAILED = 2, DELETING = 3 }
 
 	export interface CreateBackupRequest {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: string;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		Description?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		Tags?: Array<Tag>;
 	}
 	export interface CreateBackupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateBackupRequestFormGroup() {
 		return new FormGroup<CreateBackupRequestFormProperties>({
-			ServerName: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 		});
 
 	}
@@ -240,19 +477,47 @@ export namespace MyNS {
 
 	/** A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server. Leading and trailing white spaces are trimmed from both the key and value. A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Value: string;
 	}
 
 	/** A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server. Leading and trailing white spaces are trimmed from both the key and value. A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -285,18 +550,68 @@ export namespace MyNS {
 	export interface Server {
 		AssociatePublicIpAddress?: boolean | null;
 		BackupRetentionCount?: number | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		ServerName?: string | null;
 		CreatedAt?: Date | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		CloudFormationStackArn?: string | null;
+
+		/**
+		 * Max length: 253
+		 * Pattern: ^(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$
+		 */
 		CustomDomain?: string | null;
 		DisableAutomatedBackup?: boolean | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		Endpoint?: string | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		Engine?: string | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		EngineModel?: string | null;
 		EngineAttributes?: Array<EngineAttribute>;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		EngineVersion?: string | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		InstanceProfileArn?: string | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		InstanceType?: string | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		KeyPair?: string | null;
 		MaintenanceStatus?: ServerMaintenanceStatus | null;
 
@@ -314,10 +629,25 @@ export namespace MyNS {
 		 */
 		PreferredBackupWindow?: string | null;
 		SecurityGroupIds?: Array<string>;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		ServiceRoleArn?: string | null;
 		Status?: ServerStatus | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		StatusReason?: string | null;
 		SubnetIds?: Array<string>;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		ServerArn?: string | null;
 	}
 
@@ -325,17 +655,67 @@ export namespace MyNS {
 	export interface ServerFormProperties {
 		AssociatePublicIpAddress: FormControl<boolean | null | undefined>,
 		BackupRetentionCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		ServerName: FormControl<string | null | undefined>,
 		CreatedAt: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		CloudFormationStackArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 253
+		 * Pattern: ^(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$
+		 */
 		CustomDomain: FormControl<string | null | undefined>,
 		DisableAutomatedBackup: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		Endpoint: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		Engine: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		EngineModel: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		EngineVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		InstanceProfileArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		InstanceType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		KeyPair: FormControl<string | null | undefined>,
 		MaintenanceStatus: FormControl<ServerMaintenanceStatus | null | undefined>,
 
@@ -352,34 +732,49 @@ export namespace MyNS {
 		 * Pattern: ^((Mon|Tue|Wed|Thu|Fri|Sat|Sun):)?([0-1][0-9]|2[0-3]):[0-5][0-9]$
 		 */
 		PreferredBackupWindow: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		ServiceRoleArn: FormControl<string | null | undefined>,
 		Status: FormControl<ServerStatus | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		StatusReason: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		ServerArn: FormControl<string | null | undefined>,
 	}
 	export function CreateServerFormGroup() {
 		return new FormGroup<ServerFormProperties>({
 			AssociatePublicIpAddress: new FormControl<boolean | null | undefined>(undefined),
 			BackupRetentionCount: new FormControl<number | null | undefined>(undefined),
-			ServerName: new FormControl<string | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
-			CloudFormationStackArn: new FormControl<string | null | undefined>(undefined),
-			CustomDomain: new FormControl<string | null | undefined>(undefined),
+			CloudFormationStackArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			CustomDomain: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(253)]),
 			DisableAutomatedBackup: new FormControl<boolean | null | undefined>(undefined),
-			Endpoint: new FormControl<string | null | undefined>(undefined),
-			Engine: new FormControl<string | null | undefined>(undefined),
-			EngineModel: new FormControl<string | null | undefined>(undefined),
-			EngineVersion: new FormControl<string | null | undefined>(undefined),
-			InstanceProfileArn: new FormControl<string | null | undefined>(undefined),
-			InstanceType: new FormControl<string | null | undefined>(undefined),
-			KeyPair: new FormControl<string | null | undefined>(undefined),
+			Endpoint: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			Engine: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			EngineModel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			EngineVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			InstanceProfileArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			KeyPair: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 			MaintenanceStatus: new FormControl<ServerMaintenanceStatus | null | undefined>(undefined),
-			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
-			PreferredBackupWindow: new FormControl<string | null | undefined>(undefined),
-			ServiceRoleArn: new FormControl<string | null | undefined>(undefined),
+			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			PreferredBackupWindow: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			ServiceRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 			Status: new FormControl<ServerStatus | null | undefined>(undefined),
-			StatusReason: new FormControl<string | null | undefined>(undefined),
-			ServerArn: new FormControl<string | null | undefined>(undefined),
+			StatusReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			ServerArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 		});
 
 	}
@@ -390,18 +785,74 @@ export namespace MyNS {
 
 	export interface CreateServerRequest {
 		AssociatePublicIpAddress?: boolean | null;
+
+		/**
+		 * Max length: 253
+		 * Pattern: ^(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$
+		 */
 		CustomDomain?: string | null;
+
+		/**
+		 * Max length: 2097152
+		 * Pattern: \(\?s\)\s*-----BEGIN CERTIFICATE-----.\+-----END CERTIFICATE-----\s*
+		 */
 		CustomCertificate?: string | null;
+
+		/**
+		 * Max length: 4096
+		 * Pattern: \(\?ms\)\s*^-----BEGIN \(\?-s:.*\)PRIVATE KEY-----$.*\?^-----END \(\?-s:.*\)PRIVATE KEY-----$\s*
+		 */
 		CustomPrivateKey?: string | null;
 		DisableAutomatedBackup?: boolean | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		Engine?: string | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		EngineModel?: string | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		EngineVersion?: string | null;
 		EngineAttributes?: Array<EngineAttribute>;
+
+		/** Minimum: 1 */
 		BackupRetentionCount?: number | null;
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: string;
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 * Pattern: arn:aws:iam::[0-9]{12}:instance-profile/.*
+		 */
 		InstanceProfileArn: string;
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		InstanceType: string;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: .*
+		 */
 		KeyPair?: string | null;
 
 		/**
@@ -418,24 +869,96 @@ export namespace MyNS {
 		 */
 		PreferredBackupWindow?: string | null;
 		SecurityGroupIds?: Array<string>;
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 * Pattern: arn:aws:iam::[0-9]{12}:role/.*
+		 */
 		ServiceRoleArn: string;
 		SubnetIds?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		Tags?: Array<Tag>;
+
+		/**
+		 * Max length: 79
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-\.\:]*
+		 */
 		BackupId?: string | null;
 	}
 	export interface CreateServerRequestFormProperties {
 		AssociatePublicIpAddress: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 253
+		 * Pattern: ^(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$
+		 */
 		CustomDomain: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2097152
+		 * Pattern: \(\?s\)\s*-----BEGIN CERTIFICATE-----.\+-----END CERTIFICATE-----\s*
+		 */
 		CustomCertificate: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 4096
+		 * Pattern: \(\?ms\)\s*^-----BEGIN \(\?-s:.*\)PRIVATE KEY-----$.*\?^-----END \(\?-s:.*\)PRIVATE KEY-----$\s*
+		 */
 		CustomPrivateKey: FormControl<string | null | undefined>,
 		DisableAutomatedBackup: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		Engine: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		EngineModel: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		EngineVersion: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		BackupRetentionCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 * Pattern: arn:aws:iam::[0-9]{12}:instance-profile/.*
+		 */
 		InstanceProfileArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		InstanceType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: .*
+		 */
 		KeyPair: FormControl<string | null | undefined>,
 
 		/**
@@ -451,28 +974,39 @@ export namespace MyNS {
 		 * Pattern: ^((Mon|Tue|Wed|Thu|Fri|Sat|Sun):)?([0-1][0-9]|2[0-3]):[0-5][0-9]$
 		 */
 		PreferredBackupWindow: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 * Pattern: arn:aws:iam::[0-9]{12}:role/.*
+		 */
 		ServiceRoleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 79
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-\.\:]*
+		 */
 		BackupId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateServerRequestFormGroup() {
 		return new FormGroup<CreateServerRequestFormProperties>({
 			AssociatePublicIpAddress: new FormControl<boolean | null | undefined>(undefined),
-			CustomDomain: new FormControl<string | null | undefined>(undefined),
-			CustomCertificate: new FormControl<string | null | undefined>(undefined),
-			CustomPrivateKey: new FormControl<string | null | undefined>(undefined),
+			CustomDomain: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(253)]),
+			CustomCertificate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2097152)]),
+			CustomPrivateKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
 			DisableAutomatedBackup: new FormControl<boolean | null | undefined>(undefined),
-			Engine: new FormControl<string | null | undefined>(undefined),
-			EngineModel: new FormControl<string | null | undefined>(undefined),
-			EngineVersion: new FormControl<string | null | undefined>(undefined),
-			BackupRetentionCount: new FormControl<number | null | undefined>(undefined),
-			ServerName: new FormControl<string | null | undefined>(undefined),
-			InstanceProfileArn: new FormControl<string | null | undefined>(undefined),
-			InstanceType: new FormControl<string | null | undefined>(undefined),
-			KeyPair: new FormControl<string | null | undefined>(undefined),
-			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
-			PreferredBackupWindow: new FormControl<string | null | undefined>(undefined),
-			ServiceRoleArn: new FormControl<string | null | undefined>(undefined),
-			BackupId: new FormControl<string | null | undefined>(undefined),
+			Engine: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			EngineModel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			EngineVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			BackupRetentionCount: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1)]),
+			InstanceProfileArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000)]),
+			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000)]),
+			KeyPair: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			PreferredBackupWindow: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			ServiceRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000)]),
+			BackupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(79)]),
 		});
 
 	}
@@ -498,14 +1032,26 @@ export namespace MyNS {
 	}
 
 	export interface DeleteBackupRequest {
+
+		/**
+		 * Required
+		 * Max length: 79
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-\.\:]*
+		 */
 		BackupId: string;
 	}
 	export interface DeleteBackupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 79
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-\.\:]*
+		 */
 		BackupId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteBackupRequestFormGroup() {
 		return new FormGroup<DeleteBackupRequestFormProperties>({
-			BackupId: new FormControl<string | null | undefined>(undefined),
+			BackupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(79)]),
 		});
 
 	}
@@ -521,14 +1067,28 @@ export namespace MyNS {
 	}
 
 	export interface DeleteServerRequest {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: string;
 	}
 	export interface DeleteServerRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteServerRequestFormGroup() {
 		return new FormGroup<DeleteServerRequestFormProperties>({
-			ServerName: new FormControl<string | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1)]),
 		});
 
 	}
@@ -549,6 +1109,11 @@ export namespace MyNS {
 
 	/** Stores account attributes.  */
 	export interface AccountAttribute {
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		Name?: string | null;
 		Maximum?: number | null;
 		Used?: number | null;
@@ -556,13 +1121,18 @@ export namespace MyNS {
 
 	/** Stores account attributes.  */
 	export interface AccountAttributeFormProperties {
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		Name: FormControl<string | null | undefined>,
 		Maximum: FormControl<number | null | undefined>,
 		Used: FormControl<number | null | undefined>,
 	}
 	export function CreateAccountAttributeFormGroup() {
 		return new FormGroup<AccountAttributeFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 			Maximum: new FormControl<number | null | undefined>(undefined),
 			Used: new FormControl<number | null | undefined>(undefined),
 		});
@@ -581,36 +1151,82 @@ export namespace MyNS {
 
 	export interface DescribeBackupsResponse {
 		Backups?: Array<Backup>;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		NextToken?: string | null;
 	}
 	export interface DescribeBackupsResponseFormProperties {
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeBackupsResponseFormGroup() {
 		return new FormGroup<DescribeBackupsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 		});
 
 	}
 
 	export interface DescribeBackupsRequest {
+
+		/**
+		 * Max length: 79
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-\.\:]*
+		 */
 		BackupId?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName?: string | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 	export interface DescribeBackupsRequestFormProperties {
+
+		/**
+		 * Max length: 79
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-\.\:]*
+		 */
 		BackupId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeBackupsRequestFormGroup() {
 		return new FormGroup<DescribeBackupsRequestFormProperties>({
-			BackupId: new FormControl<string | null | undefined>(undefined),
-			ServerName: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			BackupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(79)]),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -627,14 +1243,24 @@ export namespace MyNS {
 
 	export interface DescribeEventsResponse {
 		ServerEvents?: Array<ServerEvent>;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		NextToken?: string | null;
 	}
 	export interface DescribeEventsResponseFormProperties {
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeEventsResponseFormGroup() {
 		return new FormGroup<DescribeEventsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 		});
 
 	}
@@ -643,43 +1269,101 @@ export namespace MyNS {
 	/** An event that is related to the server, such as the start of maintenance or backup.  */
 	export interface ServerEvent {
 		CreatedAt?: Date | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		ServerName?: string | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		Message?: string | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		LogUrl?: string | null;
 	}
 
 	/** An event that is related to the server, such as the start of maintenance or backup.  */
 	export interface ServerEventFormProperties {
 		CreatedAt: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		ServerName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		Message: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		LogUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateServerEventFormGroup() {
 		return new FormGroup<ServerEventFormProperties>({
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
-			ServerName: new FormControl<string | null | undefined>(undefined),
-			Message: new FormControl<string | null | undefined>(undefined),
-			LogUrl: new FormControl<string | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			LogUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 		});
 
 	}
 
 	export interface DescribeEventsRequest {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: string;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 	export interface DescribeEventsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeEventsRequestFormGroup() {
 		return new FormGroup<DescribeEventsRequestFormProperties>({
-			ServerName: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -705,68 +1389,147 @@ export namespace MyNS {
 	export enum DescribeNodeAssociationStatusResponseNodeAssociationStatus { SUCCESS = 0, FAILED = 1, IN_PROGRESS = 2 }
 
 	export interface DescribeNodeAssociationStatusRequest {
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		NodeAssociationStatusToken: string;
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: string;
 	}
 	export interface DescribeNodeAssociationStatusRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		NodeAssociationStatusToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeNodeAssociationStatusRequestFormGroup() {
 		return new FormGroup<DescribeNodeAssociationStatusRequestFormProperties>({
-			NodeAssociationStatusToken: new FormControl<string | null | undefined>(undefined),
-			ServerName: new FormControl<string | null | undefined>(undefined),
+			NodeAssociationStatusToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000)]),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeServersResponse {
 		Servers?: Array<Server>;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		NextToken?: string | null;
 	}
 	export interface DescribeServersResponseFormProperties {
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeServersResponseFormGroup() {
 		return new FormGroup<DescribeServersResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 		});
 
 	}
 
 	export interface DescribeServersRequest {
+
+		/**
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName?: string | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 	export interface DescribeServersRequestFormProperties {
+
+		/**
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeServersRequestFormGroup() {
 		return new FormGroup<DescribeServersRequestFormProperties>({
-			ServerName: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
 
 	export interface DisassociateNodeResponse {
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		NodeAssociationStatusToken?: string | null;
 	}
 	export interface DisassociateNodeResponseFormProperties {
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		NodeAssociationStatusToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDisassociateNodeResponseFormGroup() {
 		return new FormGroup<DisassociateNodeResponseFormProperties>({
-			NodeAssociationStatusToken: new FormControl<string | null | undefined>(undefined),
+			NodeAssociationStatusToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 		});
 
 	}
 
 	export interface DisassociateNodeRequest {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: string;
 
 		/**
@@ -779,6 +1542,13 @@ export namespace MyNS {
 		EngineAttributes?: Array<EngineAttribute>;
 	}
 	export interface DisassociateNodeRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: FormControl<string | null | undefined>,
 
 		/**
@@ -791,8 +1561,8 @@ export namespace MyNS {
 	}
 	export function CreateDisassociateNodeRequestFormGroup() {
 		return new FormGroup<DisassociateNodeRequestFormProperties>({
-			ServerName: new FormControl<string | null | undefined>(undefined),
-			NodeName: new FormControl<string | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1)]),
+			NodeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000)]),
 		});
 
 	}
@@ -801,64 +1571,141 @@ export namespace MyNS {
 
 		/** A name and value pair that is specific to the engine of the server. */
 		EngineAttribute?: EngineAttribute;
+
+		/**
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName?: string | null;
 	}
 	export interface ExportServerEngineAttributeResponseFormProperties {
+
+		/**
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: FormControl<string | null | undefined>,
 	}
 	export function CreateExportServerEngineAttributeResponseFormGroup() {
 		return new FormGroup<ExportServerEngineAttributeResponseFormProperties>({
-			ServerName: new FormControl<string | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ExportServerEngineAttributeRequest {
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		ExportAttributeName: string;
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: string;
 		InputAttributes?: Array<EngineAttribute>;
 	}
 	export interface ExportServerEngineAttributeRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		ExportAttributeName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: FormControl<string | null | undefined>,
 	}
 	export function CreateExportServerEngineAttributeRequestFormGroup() {
 		return new FormGroup<ExportServerEngineAttributeRequestFormProperties>({
-			ExportAttributeName: new FormControl<string | null | undefined>(undefined),
-			ServerName: new FormControl<string | null | undefined>(undefined),
+			ExportAttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000)]),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListTagsForResourceResponse {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		Tags?: Array<Tag>;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListTagsForResourceResponseFormProperties {
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceResponseFormGroup() {
 		return new FormGroup<ListTagsForResourceResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 		});
 
 	}
 
 	export interface ListTagsForResourceRequest {
+
+		/**
+		 * Required
+		 * Pattern: arn:aws.*:opsworks-cm:.*:[0-9]{12}:.*
+		 */
 		ResourceArn: string;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 	export interface ListTagsForResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: arn:aws.*:opsworks-cm:.*:[0-9]{12}:.*
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -874,23 +1721,69 @@ export namespace MyNS {
 	}
 
 	export interface RestoreServerRequest {
+
+		/**
+		 * Required
+		 * Max length: 79
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-\.\:]*
+		 */
 		BackupId: string;
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: string;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		InstanceType?: string | null;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: .*
+		 */
 		KeyPair?: string | null;
 	}
 	export interface RestoreServerRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 79
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-\.\:]*
+		 */
 		BackupId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		InstanceType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: .*
+		 */
 		KeyPair: FormControl<string | null | undefined>,
 	}
 	export function CreateRestoreServerRequestFormGroup() {
 		return new FormGroup<RestoreServerRequestFormProperties>({
-			BackupId: new FormControl<string | null | undefined>(undefined),
-			ServerName: new FormControl<string | null | undefined>(undefined),
-			InstanceType: new FormControl<string | null | undefined>(undefined),
-			KeyPair: new FormControl<string | null | undefined>(undefined),
+			BackupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(79)]),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1)]),
+			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			KeyPair: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 		});
 
 	}
@@ -909,15 +1802,29 @@ export namespace MyNS {
 	}
 
 	export interface StartMaintenanceRequest {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: string;
 		EngineAttributes?: Array<EngineAttribute>;
 	}
 	export interface StartMaintenanceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: FormControl<string | null | undefined>,
 	}
 	export function CreateStartMaintenanceRequestFormGroup() {
 		return new FormGroup<StartMaintenanceRequestFormProperties>({
-			ServerName: new FormControl<string | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1)]),
 		});
 
 	}
@@ -933,15 +1840,31 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/**
+		 * Required
+		 * Pattern: arn:aws.*:opsworks-cm:.*:[0-9]{12}:.*
+		 */
 		ResourceArn: string;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		Tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: arn:aws.*:opsworks-cm:.*:[0-9]{12}:.*
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -957,15 +1880,31 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceRequest {
+
+		/**
+		 * Required
+		 * Pattern: arn:aws.*:opsworks-cm:.*:[0-9]{12}:.*
+		 */
 		ResourceArn: string;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		TagKeys: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: arn:aws.*:opsworks-cm:.*:[0-9]{12}:.*
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -986,6 +1925,13 @@ export namespace MyNS {
 	export interface UpdateServerRequest {
 		DisableAutomatedBackup?: boolean | null;
 		BackupRetentionCount?: number | null;
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: string;
 
 		/**
@@ -1005,6 +1951,13 @@ export namespace MyNS {
 	export interface UpdateServerRequestFormProperties {
 		DisableAutomatedBackup: FormControl<boolean | null | undefined>,
 		BackupRetentionCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: FormControl<string | null | undefined>,
 
 		/**
@@ -1025,9 +1978,9 @@ export namespace MyNS {
 		return new FormGroup<UpdateServerRequestFormProperties>({
 			DisableAutomatedBackup: new FormControl<boolean | null | undefined>(undefined),
 			BackupRetentionCount: new FormControl<number | null | undefined>(undefined),
-			ServerName: new FormControl<string | null | undefined>(undefined),
-			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
-			PreferredBackupWindow: new FormControl<string | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1)]),
+			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
+			PreferredBackupWindow: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 		});
 
 	}
@@ -1046,20 +1999,58 @@ export namespace MyNS {
 	}
 
 	export interface UpdateServerEngineAttributesRequest {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [A-Z][A-Z0-9_]*
+		 */
 		AttributeName: string;
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		AttributeValue?: string | null;
 	}
 	export interface UpdateServerEngineAttributesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][a-zA-Z0-9\-]*
+		 */
 		ServerName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [A-Z][A-Z0-9_]*
+		 */
 		AttributeName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Pattern: \(\?s\).*
+		 */
 		AttributeValue: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateServerEngineAttributesRequestFormGroup() {
 		return new FormGroup<UpdateServerEngineAttributesRequestFormProperties>({
-			ServerName: new FormControl<string | null | undefined>(undefined),
-			AttributeName: new FormControl<string | null | undefined>(undefined),
-			AttributeValue: new FormControl<string | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1)]),
+			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			AttributeValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 		});
 
 	}

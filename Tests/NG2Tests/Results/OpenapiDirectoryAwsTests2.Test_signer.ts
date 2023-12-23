@@ -52,6 +52,12 @@ export namespace MyNS {
 		/** The ACM certificate that is used to sign your code. */
 		signingMaterial?: SigningMaterial;
 		platformId?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 2
+		 * Pattern: ^[a-zA-Z0-9_]{2,}
+		 */
 		profileName?: string | null;
 
 		/** Any overrides that are applied to the signing configuration of a code signing platform. */
@@ -69,6 +75,12 @@ export namespace MyNS {
 	export interface DescribeSigningJobResponseFormProperties {
 		jobId: FormControl<string | null | undefined>,
 		platformId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 2
+		 * Pattern: ^[a-zA-Z0-9_]{2,}
+		 */
 		profileName: FormControl<string | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
 		completedAt: FormControl<Date | null | undefined>,
@@ -80,7 +92,7 @@ export namespace MyNS {
 		return new FormGroup<DescribeSigningJobResponseFormProperties>({
 			jobId: new FormControl<string | null | undefined>(undefined),
 			platformId: new FormControl<string | null | undefined>(undefined),
-			profileName: new FormControl<string | null | undefined>(undefined),
+			profileName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			completedAt: new FormControl<Date | null | undefined>(undefined),
 			requestedBy: new FormControl<string | null | undefined>(undefined),
@@ -110,22 +122,34 @@ export namespace MyNS {
 
 	/** Information about the S3 bucket where you saved your unsigned code. */
 	export interface S3Source {
+
+		/** Required */
 		bucketName: string;
+
+		/** Required */
 		key: string;
+
+		/** Required */
 		version: string;
 	}
 
 	/** Information about the S3 bucket where you saved your unsigned code. */
 	export interface S3SourceFormProperties {
+
+		/** Required */
 		bucketName: FormControl<string | null | undefined>,
+
+		/** Required */
 		key: FormControl<string | null | undefined>,
+
+		/** Required */
 		version: FormControl<string | null | undefined>,
 	}
 	export function CreateS3SourceFormGroup() {
 		return new FormGroup<S3SourceFormProperties>({
-			bucketName: new FormControl<string | null | undefined>(undefined),
-			key: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
+			bucketName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -133,16 +157,20 @@ export namespace MyNS {
 
 	/** The ACM certificate that is used to sign your code. */
 	export interface SigningMaterial {
+
+		/** Required */
 		certificateArn: string;
 	}
 
 	/** The ACM certificate that is used to sign your code. */
 	export interface SigningMaterialFormProperties {
+
+		/** Required */
 		certificateArn: FormControl<string | null | undefined>,
 	}
 	export function CreateSigningMaterialFormGroup() {
 		return new FormGroup<SigningMaterialFormProperties>({
-			certificateArn: new FormControl<string | null | undefined>(undefined),
+			certificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -307,17 +335,23 @@ export namespace MyNS {
 
 	/** The encryption algorithm options that are available to a code signing job. */
 	export interface EncryptionAlgorithmOptions {
+
+		/** Required */
 		allowedValues: Array<EncryptionAlgorithm>;
+
+		/** Required */
 		defaultValue: SigningConfigurationOverridesEncryptionAlgorithm;
 	}
 
 	/** The encryption algorithm options that are available to a code signing job. */
 	export interface EncryptionAlgorithmOptionsFormProperties {
+
+		/** Required */
 		defaultValue: FormControl<SigningConfigurationOverridesEncryptionAlgorithm | null | undefined>,
 	}
 	export function CreateEncryptionAlgorithmOptionsFormGroup() {
 		return new FormGroup<EncryptionAlgorithmOptionsFormProperties>({
-			defaultValue: new FormControl<SigningConfigurationOverridesEncryptionAlgorithm | null | undefined>(undefined),
+			defaultValue: new FormControl<SigningConfigurationOverridesEncryptionAlgorithm | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -327,17 +361,23 @@ export namespace MyNS {
 
 	/** The hash algorithms that are available to a code signing job. */
 	export interface HashAlgorithmOptions {
+
+		/** Required */
 		allowedValues: Array<HashAlgorithm>;
+
+		/** Required */
 		defaultValue: SigningConfigurationOverridesHashAlgorithm;
 	}
 
 	/** The hash algorithms that are available to a code signing job. */
 	export interface HashAlgorithmOptionsFormProperties {
+
+		/** Required */
 		defaultValue: FormControl<SigningConfigurationOverridesHashAlgorithm | null | undefined>,
 	}
 	export function CreateHashAlgorithmOptionsFormGroup() {
 		return new FormGroup<HashAlgorithmOptionsFormProperties>({
-			defaultValue: new FormControl<SigningConfigurationOverridesHashAlgorithm | null | undefined>(undefined),
+			defaultValue: new FormControl<SigningConfigurationOverridesHashAlgorithm | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -347,17 +387,23 @@ export namespace MyNS {
 
 	/** The image format of a code signing platform or profile. */
 	export interface SigningImageFormat {
+
+		/** Required */
 		supportedFormats: Array<ImageFormat>;
+
+		/** Required */
 		defaultFormat: SigningPlatformOverridesSigningImageFormat;
 	}
 
 	/** The image format of a code signing platform or profile. */
 	export interface SigningImageFormatFormProperties {
+
+		/** Required */
 		defaultFormat: FormControl<SigningPlatformOverridesSigningImageFormat | null | undefined>,
 	}
 	export function CreateSigningImageFormatFormGroup() {
 		return new FormGroup<SigningImageFormatFormProperties>({
-			defaultFormat: new FormControl<SigningPlatformOverridesSigningImageFormat | null | undefined>(undefined),
+			defaultFormat: new FormControl<SigningPlatformOverridesSigningImageFormat | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -365,6 +411,12 @@ export namespace MyNS {
 	export enum ImageFormat { JSON = 0, JSONEmbedded = 1, JSONDetached = 2 }
 
 	export interface GetSigningProfileResponse {
+
+		/**
+		 * Max length: 64
+		 * Min length: 2
+		 * Pattern: ^[a-zA-Z0-9_]{2,}
+		 */
 		profileName?: string | null;
 
 		/** The ACM certificate that is used to sign your code. */
@@ -379,6 +431,12 @@ export namespace MyNS {
 		tags?: TagMap;
 	}
 	export interface GetSigningProfileResponseFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 2
+		 * Pattern: ^[a-zA-Z0-9_]{2,}
+		 */
 		profileName: FormControl<string | null | undefined>,
 		platformId: FormControl<string | null | undefined>,
 		status: FormControl<GetSigningProfileResponseStatus | null | undefined>,
@@ -386,7 +444,7 @@ export namespace MyNS {
 	}
 	export function CreateGetSigningProfileResponseFormGroup() {
 		return new FormGroup<GetSigningProfileResponseFormProperties>({
-			profileName: new FormControl<string | null | undefined>(undefined),
+			profileName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
 			platformId: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<GetSigningProfileResponseStatus | null | undefined>(undefined),
 			arn: new FormControl<string | null | undefined>(undefined),
@@ -531,6 +589,12 @@ export namespace MyNS {
 
 	/** Contains information about the ACM certificates and code signing configuration parameters that can be used by a given code signing user. */
 	export interface SigningProfile {
+
+		/**
+		 * Max length: 64
+		 * Min length: 2
+		 * Pattern: ^[a-zA-Z0-9_]{2,}
+		 */
 		profileName?: string | null;
 
 		/** The ACM certificate that is used to sign your code. */
@@ -544,6 +608,12 @@ export namespace MyNS {
 
 	/** Contains information about the ACM certificates and code signing configuration parameters that can be used by a given code signing user. */
 	export interface SigningProfileFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 2
+		 * Pattern: ^[a-zA-Z0-9_]{2,}
+		 */
 		profileName: FormControl<string | null | undefined>,
 		platformId: FormControl<string | null | undefined>,
 		status: FormControl<GetSigningProfileResponseStatus | null | undefined>,
@@ -551,7 +621,7 @@ export namespace MyNS {
 	}
 	export function CreateSigningProfileFormGroup() {
 		return new FormGroup<SigningProfileFormProperties>({
-			profileName: new FormControl<string | null | undefined>(undefined),
+			profileName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
 			platformId: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<GetSigningProfileResponseStatus | null | undefined>(undefined),
 			arn: new FormControl<string | null | undefined>(undefined),
@@ -766,6 +836,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		signingMaterial: SigningMaterial;
+
+		/** Required */
 		platformId: string;
 
 		/** Any overrides that are applied to the signing configuration of a code signing platform. */
@@ -774,11 +846,13 @@ export namespace MyNS {
 		tags?: TagMap;
 	}
 	export interface PutSigningProfileRequestFormProperties {
+
+		/** Required */
 		platformId: FormControl<string | null | undefined>,
 	}
 	export function CreatePutSigningProfileRequestFormGroup() {
 		return new FormGroup<PutSigningProfileRequestFormProperties>({
-			platformId: new FormControl<string | null | undefined>(undefined),
+			platformId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -796,22 +870,40 @@ export namespace MyNS {
 		 * Required
 		 */
 		destination: Destination;
+
+		/**
+		 * Max length: 64
+		 * Min length: 2
+		 * Pattern: ^[a-zA-Z0-9_]{2,}
+		 */
 		profileName?: string | null;
+
+		/** Required */
 		clientRequestToken: string;
 	}
 	export interface StartSigningJobRequestFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 2
+		 * Pattern: ^[a-zA-Z0-9_]{2,}
+		 */
 		profileName: FormControl<string | null | undefined>,
+
+		/** Required */
 		clientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateStartSigningJobRequestFormGroup() {
 		return new FormGroup<StartSigningJobRequestFormProperties>({
-			profileName: new FormControl<string | null | undefined>(undefined),
-			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+			profileName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface TagResourceRequest {
+
+		/** Required */
 		tags: TagMap;
 	}
 	export interface TagResourceRequestFormProperties {
@@ -1007,7 +1099,7 @@ export namespace MyNS {
 	}
 	export function CreatePutSigningProfilePutBodyFormGroup() {
 		return new FormGroup<PutSigningProfilePutBodyFormProperties>({
-			platformId: new FormControl<string | null | undefined>(undefined),
+			platformId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			signingParameters: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
@@ -1089,8 +1181,8 @@ export namespace MyNS {
 	}
 	export function CreateStartSigningJobPostBodyFormGroup() {
 		return new FormGroup<StartSigningJobPostBodyFormProperties>({
-			profileName: new FormControl<string | null | undefined>(undefined),
-			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+			profileName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1139,7 +1231,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

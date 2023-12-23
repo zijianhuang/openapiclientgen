@@ -14,17 +14,37 @@ export namespace MyNS {
 	}
 
 	export interface AssociateFleetRequest {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		FleetName: string;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		StackName: string;
 	}
 	export interface AssociateFleetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		FleetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		StackName: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateFleetRequestFormGroup() {
 		return new FormGroup<AssociateFleetRequestFormProperties>({
-			FleetName: new FormControl<string | null | undefined>(undefined),
-			StackName: new FormControl<string | null | undefined>(undefined),
+			FleetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -107,18 +127,22 @@ export namespace MyNS {
 		/** Describes a user in the user pool and the associated stack. */
 		UserStackAssociation?: UserStackAssociation;
 		ErrorCode?: UserStackAssociationErrorErrorCode | null;
+
+		/** Min length: 1 */
 		ErrorMessage?: string | null;
 	}
 
 	/** Describes the error that is returned when a user can’t be associated with or disassociated from a stack.  */
 	export interface UserStackAssociationErrorFormProperties {
 		ErrorCode: FormControl<UserStackAssociationErrorErrorCode | null | undefined>,
+
+		/** Min length: 1 */
 		ErrorMessage: FormControl<string | null | undefined>,
 	}
 	export function CreateUserStackAssociationErrorFormGroup() {
 		return new FormGroup<UserStackAssociationErrorFormProperties>({
 			ErrorCode: new FormControl<UserStackAssociationErrorErrorCode | null | undefined>(undefined),
-			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -126,24 +150,52 @@ export namespace MyNS {
 
 	/** Describes a user in the user pool and the associated stack. */
 	export interface UserStackAssociation {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		StackName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}]+
+		 */
 		UserName: string;
+
+		/** Required */
 		AuthenticationType: UserStackAssociationAuthenticationType;
 		SendEmailNotification?: boolean | null;
 	}
 
 	/** Describes a user in the user pool and the associated stack. */
 	export interface UserStackAssociationFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		StackName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/** Required */
 		AuthenticationType: FormControl<UserStackAssociationAuthenticationType | null | undefined>,
 		SendEmailNotification: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUserStackAssociationFormGroup() {
 		return new FormGroup<UserStackAssociationFormProperties>({
-			StackName: new FormControl<string | null | undefined>(undefined),
-			UserName: new FormControl<string | null | undefined>(undefined),
-			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined, [Validators.required]),
 			SendEmailNotification: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -154,6 +206,12 @@ export namespace MyNS {
 	export enum UserStackAssociationErrorErrorCode { STACK_NOT_FOUND = 0, USER_NAME_NOT_FOUND = 1, INTERNAL_ERROR = 2 }
 
 	export interface BatchAssociateUserStackRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 25
+		 */
 		UserStackAssociations: Array<UserStackAssociation>;
 	}
 	export interface BatchAssociateUserStackRequestFormProperties {
@@ -176,6 +234,12 @@ export namespace MyNS {
 	}
 
 	export interface BatchDisassociateUserStackRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 25
+		 */
 		UserStackAssociations: Array<UserStackAssociation>;
 	}
 	export interface BatchDisassociateUserStackRequestFormProperties {
@@ -187,9 +251,13 @@ export namespace MyNS {
 	}
 
 	export interface CopyImageResponse {
+
+		/** Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$ */
 		DestinationImageName?: string | null;
 	}
 	export interface CopyImageResponseFormProperties {
+
+		/** Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$ */
 		DestinationImageName: FormControl<string | null | undefined>,
 	}
 	export function CreateCopyImageResponseFormGroup() {
@@ -200,23 +268,59 @@ export namespace MyNS {
 	}
 
 	export interface CopyImageRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$
+		 */
 		SourceImageName: string;
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$
+		 */
 		DestinationImageName: string;
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		DestinationRegion: string;
+
+		/** Max length: 256 */
 		DestinationImageDescription?: string | null;
 	}
 	export interface CopyImageRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$
+		 */
 		SourceImageName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$
+		 */
 		DestinationImageName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		DestinationRegion: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		DestinationImageDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateCopyImageRequestFormGroup() {
 		return new FormGroup<CopyImageRequestFormProperties>({
-			SourceImageName: new FormControl<string | null | undefined>(undefined),
-			DestinationImageName: new FormControl<string | null | undefined>(undefined),
-			DestinationRegion: new FormControl<string | null | undefined>(undefined),
-			DestinationImageDescription: new FormControl<string | null | undefined>(undefined),
+			SourceImageName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DestinationImageName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DestinationRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
+			DestinationImageDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -257,6 +361,8 @@ export namespace MyNS {
 
 	/** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains. */
 	export interface DirectoryConfig {
+
+		/** Required */
 		DirectoryName: string;
 		OrganizationalUnitDistinguishedNames?: Array<string>;
 
@@ -267,12 +373,14 @@ export namespace MyNS {
 
 	/** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains. */
 	export interface DirectoryConfigFormProperties {
+
+		/** Required */
 		DirectoryName: FormControl<string | null | undefined>,
 		CreatedTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateDirectoryConfigFormGroup() {
 		return new FormGroup<DirectoryConfigFormProperties>({
-			DirectoryName: new FormControl<string | null | undefined>(undefined),
+			DirectoryName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			CreatedTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -281,25 +389,51 @@ export namespace MyNS {
 
 	/** Describes the credentials for the service account used by the fleet or image builder to connect to the directory. */
 	export interface ServiceAccountCredentials {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		AccountName: string;
+
+		/**
+		 * Required
+		 * Max length: 127
+		 * Min length: 1
+		 */
 		AccountPassword: string;
 	}
 
 	/** Describes the credentials for the service account used by the fleet or image builder to connect to the directory. */
 	export interface ServiceAccountCredentialsFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		AccountName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 127
+		 * Min length: 1
+		 */
 		AccountPassword: FormControl<string | null | undefined>,
 	}
 	export function CreateServiceAccountCredentialsFormGroup() {
 		return new FormGroup<ServiceAccountCredentialsFormProperties>({
-			AccountName: new FormControl<string | null | undefined>(undefined),
-			AccountPassword: new FormControl<string | null | undefined>(undefined),
+			AccountName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			AccountPassword: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(127), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateDirectoryConfigRequest {
+
+		/** Required */
 		DirectoryName: string;
+
+		/** Required */
 		OrganizationalUnitDistinguishedNames: Array<string>;
 
 		/**
@@ -309,11 +443,13 @@ export namespace MyNS {
 		ServiceAccountCredentials: ServiceAccountCredentials;
 	}
 	export interface CreateDirectoryConfigRequestFormProperties {
+
+		/** Required */
 		DirectoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDirectoryConfigRequestFormGroup() {
 		return new FormGroup<CreateDirectoryConfigRequestFormProperties>({
-			DirectoryName: new FormControl<string | null | undefined>(undefined),
+			DirectoryName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -334,12 +470,35 @@ export namespace MyNS {
 
 	/** Describes a fleet. */
 	export interface Fleet {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$
+		 */
 		Arn: string;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Name: string;
+
+		/** Min length: 1 */
 		DisplayName?: string | null;
+
+		/** Min length: 1 */
 		Description?: string | null;
+
+		/** Min length: 1 */
 		ImageName?: string | null;
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		ImageArn?: string | null;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		InstanceType: string;
 		FleetType?: FleetFleetType | null;
 
@@ -350,6 +509,8 @@ export namespace MyNS {
 		ComputeCapacityStatus: ComputeCapacityStatus;
 		MaxUserDurationInSeconds?: number | null;
 		DisconnectTimeoutInSeconds?: number | null;
+
+		/** Required */
 		State: FleetState;
 
 		/** Describes VPC configuration information for fleets and image builders. */
@@ -361,40 +522,69 @@ export namespace MyNS {
 		/** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains. */
 		DomainJoinInfo?: DomainJoinInfo;
 		IdleDisconnectTimeoutInSeconds?: number | null;
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		IamRoleArn?: string | null;
 	}
 
 	/** Describes a fleet. */
 	export interface FleetFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$
+		 */
 		Arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		DisplayName: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		Description: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		ImageName: FormControl<string | null | undefined>,
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		ImageArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		InstanceType: FormControl<string | null | undefined>,
 		FleetType: FormControl<FleetFleetType | null | undefined>,
 		MaxUserDurationInSeconds: FormControl<number | null | undefined>,
 		DisconnectTimeoutInSeconds: FormControl<number | null | undefined>,
+
+		/** Required */
 		State: FormControl<FleetState | null | undefined>,
 		CreatedTime: FormControl<Date | null | undefined>,
 		EnableDefaultInternetAccess: FormControl<boolean | null | undefined>,
 		IdleDisconnectTimeoutInSeconds: FormControl<number | null | undefined>,
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		IamRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateFleetFormGroup() {
 		return new FormGroup<FleetFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			DisplayName: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			ImageName: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			ImageName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			ImageArn: new FormControl<string | null | undefined>(undefined),
-			InstanceType: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 			FleetType: new FormControl<FleetFleetType | null | undefined>(undefined),
 			MaxUserDurationInSeconds: new FormControl<number | null | undefined>(undefined),
 			DisconnectTimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
-			State: new FormControl<FleetState | null | undefined>(undefined),
+			State: new FormControl<FleetState | null | undefined>(undefined, [Validators.required]),
 			CreatedTime: new FormControl<Date | null | undefined>(undefined),
 			EnableDefaultInternetAccess: new FormControl<boolean | null | undefined>(undefined),
 			IdleDisconnectTimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
@@ -408,6 +598,8 @@ export namespace MyNS {
 
 	/** Describes the capacity status for a fleet. */
 	export interface ComputeCapacityStatus {
+
+		/** Required */
 		Desired: number;
 		Running?: number | null;
 		InUse?: number | null;
@@ -416,6 +608,8 @@ export namespace MyNS {
 
 	/** Describes the capacity status for a fleet. */
 	export interface ComputeCapacityStatusFormProperties {
+
+		/** Required */
 		Desired: FormControl<number | null | undefined>,
 		Running: FormControl<number | null | undefined>,
 		InUse: FormControl<number | null | undefined>,
@@ -423,7 +617,7 @@ export namespace MyNS {
 	}
 	export function CreateComputeCapacityStatusFormGroup() {
 		return new FormGroup<ComputeCapacityStatusFormProperties>({
-			Desired: new FormControl<number | null | undefined>(undefined),
+			Desired: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			Running: new FormControl<number | null | undefined>(undefined),
 			InUse: new FormControl<number | null | undefined>(undefined),
 			Available: new FormControl<number | null | undefined>(undefined),
@@ -460,18 +654,22 @@ export namespace MyNS {
 	/** Describes a fleet error. */
 	export interface FleetError {
 		ErrorCode?: FleetErrorErrorCode | null;
+
+		/** Min length: 1 */
 		ErrorMessage?: string | null;
 	}
 
 	/** Describes a fleet error. */
 	export interface FleetErrorFormProperties {
 		ErrorCode: FormControl<FleetErrorErrorCode | null | undefined>,
+
+		/** Min length: 1 */
 		ErrorMessage: FormControl<string | null | undefined>,
 	}
 	export function CreateFleetErrorFormGroup() {
 		return new FormGroup<FleetErrorFormProperties>({
 			ErrorCode: new FormControl<FleetErrorErrorCode | null | undefined>(undefined),
-			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -482,26 +680,44 @@ export namespace MyNS {
 	/** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains. */
 	export interface DomainJoinInfo {
 		DirectoryName?: string | null;
+
+		/** Max length: 2000 */
 		OrganizationalUnitDistinguishedName?: string | null;
 	}
 
 	/** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains. */
 	export interface DomainJoinInfoFormProperties {
 		DirectoryName: FormControl<string | null | undefined>,
+
+		/** Max length: 2000 */
 		OrganizationalUnitDistinguishedName: FormControl<string | null | undefined>,
 	}
 	export function CreateDomainJoinInfoFormGroup() {
 		return new FormGroup<DomainJoinInfoFormProperties>({
 			DirectoryName: new FormControl<string | null | undefined>(undefined),
-			OrganizationalUnitDistinguishedName: new FormControl<string | null | undefined>(undefined),
+			OrganizationalUnitDistinguishedName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 		});
 
 	}
 
 	export interface CreateFleetRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$
+		 */
 		Name: string;
+
+		/** Min length: 1 */
 		ImageName?: string | null;
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		ImageArn?: string | null;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		InstanceType: string;
 		FleetType?: FleetFleetType | null;
 
@@ -515,7 +731,11 @@ export namespace MyNS {
 		VpcConfig?: VpcConfig;
 		MaxUserDurationInSeconds?: number | null;
 		DisconnectTimeoutInSeconds?: number | null;
+
+		/** Max length: 256 */
 		Description?: string | null;
+
+		/** Max length: 100 */
 		DisplayName?: string | null;
 		EnableDefaultInternetAccess?: boolean | null;
 
@@ -523,33 +743,55 @@ export namespace MyNS {
 		DomainJoinInfo?: DomainJoinInfo;
 		Tags?: Tags;
 		IdleDisconnectTimeoutInSeconds?: number | null;
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		IamRoleArn?: string | null;
 	}
 	export interface CreateFleetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		ImageName: FormControl<string | null | undefined>,
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		ImageArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		InstanceType: FormControl<string | null | undefined>,
 		FleetType: FormControl<FleetFleetType | null | undefined>,
 		MaxUserDurationInSeconds: FormControl<number | null | undefined>,
 		DisconnectTimeoutInSeconds: FormControl<number | null | undefined>,
+
+		/** Max length: 256 */
 		Description: FormControl<string | null | undefined>,
+
+		/** Max length: 100 */
 		DisplayName: FormControl<string | null | undefined>,
 		EnableDefaultInternetAccess: FormControl<boolean | null | undefined>,
 		IdleDisconnectTimeoutInSeconds: FormControl<number | null | undefined>,
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		IamRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateFleetRequestFormGroup() {
 		return new FormGroup<CreateFleetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			ImageName: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ImageName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			ImageArn: new FormControl<string | null | undefined>(undefined),
-			InstanceType: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 			FleetType: new FormControl<FleetFleetType | null | undefined>(undefined),
 			MaxUserDurationInSeconds: new FormControl<number | null | undefined>(undefined),
 			DisconnectTimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			DisplayName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 			EnableDefaultInternetAccess: new FormControl<boolean | null | undefined>(undefined),
 			IdleDisconnectTimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
 			IamRoleArn: new FormControl<string | null | undefined>(undefined),
@@ -560,16 +802,20 @@ export namespace MyNS {
 
 	/** Describes the capacity for a fleet. */
 	export interface ComputeCapacity {
+
+		/** Required */
 		DesiredInstances: number;
 	}
 
 	/** Describes the capacity for a fleet. */
 	export interface ComputeCapacityFormProperties {
+
+		/** Required */
 		DesiredInstances: FormControl<number | null | undefined>,
 	}
 	export function CreateComputeCapacityFormGroup() {
 		return new FormGroup<ComputeCapacityFormProperties>({
-			DesiredInstances: new FormControl<number | null | undefined>(undefined),
+			DesiredInstances: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -620,16 +866,33 @@ export namespace MyNS {
 
 	/** Describes a virtual machine that is used to create an image.  */
 	export interface ImageBuilder {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Name: string;
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		Arn?: string | null;
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		ImageArn?: string | null;
+
+		/** Min length: 1 */
 		Description?: string | null;
+
+		/** Min length: 1 */
 		DisplayName?: string | null;
 
 		/** Describes VPC configuration information for fleets and image builders. */
 		VpcConfig?: VpcConfig;
+
+		/** Min length: 1 */
 		InstanceType?: string | null;
 		Platform?: ImageBuilderPlatform | null;
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		IamRoleArn?: string | null;
 		State?: ImageBuilderState | null;
 
@@ -644,39 +907,71 @@ export namespace MyNS {
 		/** Describes the network details of the fleet or image builder instance. */
 		NetworkAccessConfiguration?: NetworkAccessConfiguration;
 		ImageBuilderErrors?: Array<ResourceError>;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		AppstreamAgentVersion?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 4
+		 */
 		AccessEndpoints?: Array<AccessEndpoint>;
 	}
 
 	/** Describes a virtual machine that is used to create an image.  */
 	export interface ImageBuilderFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		Arn: FormControl<string | null | undefined>,
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		ImageArn: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		Description: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		DisplayName: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		InstanceType: FormControl<string | null | undefined>,
 		Platform: FormControl<ImageBuilderPlatform | null | undefined>,
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		IamRoleArn: FormControl<string | null | undefined>,
 		State: FormControl<ImageBuilderState | null | undefined>,
 		CreatedTime: FormControl<Date | null | undefined>,
 		EnableDefaultInternetAccess: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		AppstreamAgentVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateImageBuilderFormGroup() {
 		return new FormGroup<ImageBuilderFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 			Arn: new FormControl<string | null | undefined>(undefined),
 			ImageArn: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			DisplayName: new FormControl<string | null | undefined>(undefined),
-			InstanceType: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			Platform: new FormControl<ImageBuilderPlatform | null | undefined>(undefined),
 			IamRoleArn: new FormControl<string | null | undefined>(undefined),
 			State: new FormControl<ImageBuilderState | null | undefined>(undefined),
 			CreatedTime: new FormControl<Date | null | undefined>(undefined),
 			EnableDefaultInternetAccess: new FormControl<boolean | null | undefined>(undefined),
-			AppstreamAgentVersion: new FormControl<string | null | undefined>(undefined),
+			AppstreamAgentVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -689,18 +984,22 @@ export namespace MyNS {
 	/** Describes the reason why the last image builder state change occurred. */
 	export interface ImageBuilderStateChangeReason {
 		Code?: ImageBuilderStateChangeReasonCode | null;
+
+		/** Min length: 1 */
 		Message?: string | null;
 	}
 
 	/** Describes the reason why the last image builder state change occurred. */
 	export interface ImageBuilderStateChangeReasonFormProperties {
 		Code: FormControl<ImageBuilderStateChangeReasonCode | null | undefined>,
+
+		/** Min length: 1 */
 		Message: FormControl<string | null | undefined>,
 	}
 	export function CreateImageBuilderStateChangeReasonFormGroup() {
 		return new FormGroup<ImageBuilderStateChangeReasonFormProperties>({
 			Code: new FormControl<ImageBuilderStateChangeReasonCode | null | undefined>(undefined),
-			Message: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -710,19 +1009,27 @@ export namespace MyNS {
 
 	/** Describes the network details of the fleet or image builder instance. */
 	export interface NetworkAccessConfiguration {
+
+		/** Min length: 1 */
 		EniPrivateIpAddress?: string | null;
+
+		/** Min length: 1 */
 		EniId?: string | null;
 	}
 
 	/** Describes the network details of the fleet or image builder instance. */
 	export interface NetworkAccessConfigurationFormProperties {
+
+		/** Min length: 1 */
 		EniPrivateIpAddress: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		EniId: FormControl<string | null | undefined>,
 	}
 	export function CreateNetworkAccessConfigurationFormGroup() {
 		return new FormGroup<NetworkAccessConfigurationFormProperties>({
-			EniPrivateIpAddress: new FormControl<string | null | undefined>(undefined),
-			EniId: new FormControl<string | null | undefined>(undefined),
+			EniPrivateIpAddress: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			EniId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -731,6 +1038,8 @@ export namespace MyNS {
 	/** Describes a resource error. */
 	export interface ResourceError {
 		ErrorCode?: FleetErrorErrorCode | null;
+
+		/** Min length: 1 */
 		ErrorMessage?: string | null;
 		ErrorTimestamp?: Date | null;
 	}
@@ -738,13 +1047,15 @@ export namespace MyNS {
 	/** Describes a resource error. */
 	export interface ResourceErrorFormProperties {
 		ErrorCode: FormControl<FleetErrorErrorCode | null | undefined>,
+
+		/** Min length: 1 */
 		ErrorMessage: FormControl<string | null | undefined>,
 		ErrorTimestamp: FormControl<Date | null | undefined>,
 	}
 	export function CreateResourceErrorFormGroup() {
 		return new FormGroup<ResourceErrorFormProperties>({
 			ErrorCode: new FormControl<FleetErrorErrorCode | null | undefined>(undefined),
-			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			ErrorTimestamp: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -753,19 +1064,27 @@ export namespace MyNS {
 
 	/** Describes an interface VPC endpoint (interface endpoint) that lets you create a private connection between the virtual private cloud (VPC) that you specify and AppStream 2.0. When you specify an interface endpoint for a stack, users of the stack can connect to AppStream 2.0 only through that endpoint. When you specify an interface endpoint for an image builder, administrators can connect to the image builder only through that endpoint. */
 	export interface AccessEndpoint {
+
+		/** Required */
 		EndpointType: AccessEndpointEndpointType;
+
+		/** Min length: 1 */
 		VpceId?: string | null;
 	}
 
 	/** Describes an interface VPC endpoint (interface endpoint) that lets you create a private connection between the virtual private cloud (VPC) that you specify and AppStream 2.0. When you specify an interface endpoint for a stack, users of the stack can connect to AppStream 2.0 only through that endpoint. When you specify an interface endpoint for an image builder, administrators can connect to the image builder only through that endpoint. */
 	export interface AccessEndpointFormProperties {
+
+		/** Required */
 		EndpointType: FormControl<AccessEndpointEndpointType | null | undefined>,
+
+		/** Min length: 1 */
 		VpceId: FormControl<string | null | undefined>,
 	}
 	export function CreateAccessEndpointFormGroup() {
 		return new FormGroup<AccessEndpointFormProperties>({
-			EndpointType: new FormControl<AccessEndpointEndpointType | null | undefined>(undefined),
-			VpceId: new FormControl<string | null | undefined>(undefined),
+			EndpointType: new FormControl<AccessEndpointEndpointType | null | undefined>(undefined, [Validators.required]),
+			VpceId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -773,77 +1092,146 @@ export namespace MyNS {
 	export enum AccessEndpointEndpointType { STREAMING = 0 }
 
 	export interface CreateImageBuilderRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$
+		 */
 		Name: string;
+
+		/** Min length: 1 */
 		ImageName?: string | null;
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		ImageArn?: string | null;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		InstanceType: string;
+
+		/** Max length: 256 */
 		Description?: string | null;
+
+		/** Max length: 100 */
 		DisplayName?: string | null;
 
 		/** Describes VPC configuration information for fleets and image builders. */
 		VpcConfig?: VpcConfig;
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		IamRoleArn?: string | null;
 		EnableDefaultInternetAccess?: boolean | null;
 
 		/** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains. */
 		DomainJoinInfo?: DomainJoinInfo;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		AppstreamAgentVersion?: string | null;
 		Tags?: Tags;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 4
+		 */
 		AccessEndpoints?: Array<AccessEndpoint>;
 	}
 	export interface CreateImageBuilderRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		ImageName: FormControl<string | null | undefined>,
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		ImageArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		InstanceType: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		Description: FormControl<string | null | undefined>,
+
+		/** Max length: 100 */
 		DisplayName: FormControl<string | null | undefined>,
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		IamRoleArn: FormControl<string | null | undefined>,
 		EnableDefaultInternetAccess: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		AppstreamAgentVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateImageBuilderRequestFormGroup() {
 		return new FormGroup<CreateImageBuilderRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			ImageName: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ImageName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			ImageArn: new FormControl<string | null | undefined>(undefined),
-			InstanceType: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			DisplayName: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 			IamRoleArn: new FormControl<string | null | undefined>(undefined),
 			EnableDefaultInternetAccess: new FormControl<boolean | null | undefined>(undefined),
-			AppstreamAgentVersion: new FormControl<string | null | undefined>(undefined),
+			AppstreamAgentVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateImageBuilderStreamingURLResult {
+
+		/** Min length: 1 */
 		StreamingURL?: string | null;
 		Expires?: Date | null;
 	}
 	export interface CreateImageBuilderStreamingURLResultFormProperties {
+
+		/** Min length: 1 */
 		StreamingURL: FormControl<string | null | undefined>,
 		Expires: FormControl<Date | null | undefined>,
 	}
 	export function CreateCreateImageBuilderStreamingURLResultFormGroup() {
 		return new FormGroup<CreateImageBuilderStreamingURLResultFormProperties>({
-			StreamingURL: new FormControl<string | null | undefined>(undefined),
+			StreamingURL: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			Expires: new FormControl<Date | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CreateImageBuilderStreamingURLRequest {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Name: string;
 		Validity?: number | null;
 	}
 	export interface CreateImageBuilderStreamingURLRequestFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 		Validity: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateImageBuilderStreamingURLRequestFormGroup() {
 		return new FormGroup<CreateImageBuilderStreamingURLRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 			Validity: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -865,46 +1253,88 @@ export namespace MyNS {
 
 	/** Describes a stack. */
 	export interface Stack {
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		Arn?: string | null;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Name: string;
+
+		/** Min length: 1 */
 		Description?: string | null;
+
+		/** Min length: 1 */
 		DisplayName?: string | null;
 		CreatedTime?: Date | null;
 
 		/** The storage connectors. */
 		StorageConnectors?: Array<StorageConnector>;
+
+		/** Max length: 1000 */
 		RedirectURL?: string | null;
+
+		/** Max length: 1000 */
 		FeedbackURL?: string | null;
 
 		/** The stack errors. */
 		StackErrors?: Array<StackError>;
+
+		/** Minimum items: 1 */
 		UserSettings?: Array<UserSetting>;
 
 		/** Describes the persistent application settings for users of a stack. */
 		ApplicationSettings?: ApplicationSettingsResponse;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 4
+		 */
 		AccessEndpoints?: Array<AccessEndpoint>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 20
+		 */
 		EmbedHostDomains?: Array<string>;
 	}
 
 	/** Describes a stack. */
 	export interface StackFormProperties {
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		Arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		Description: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		DisplayName: FormControl<string | null | undefined>,
 		CreatedTime: FormControl<Date | null | undefined>,
+
+		/** Max length: 1000 */
 		RedirectURL: FormControl<string | null | undefined>,
+
+		/** Max length: 1000 */
 		FeedbackURL: FormControl<string | null | undefined>,
 	}
 	export function CreateStackFormGroup() {
 		return new FormGroup<StackFormProperties>({
 			Arn: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			DisplayName: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			CreatedTime: new FormControl<Date | null | undefined>(undefined),
-			RedirectURL: new FormControl<string | null | undefined>(undefined),
-			FeedbackURL: new FormControl<string | null | undefined>(undefined),
+			RedirectURL: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
+			FeedbackURL: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 		});
 
 	}
@@ -924,6 +1354,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		ResourceIdentifier?: string | null;
+
+		/** Maximum items: 10 */
 		Domains?: Array<string>;
 	}
 
@@ -944,8 +1376,8 @@ export namespace MyNS {
 	}
 	export function CreateStorageConnectorFormGroup() {
 		return new FormGroup<StorageConnectorFormProperties>({
-			ConnectorType: new FormControl<StorageConnectorConnectorType | null | undefined>(undefined),
-			ResourceIdentifier: new FormControl<string | null | undefined>(undefined),
+			ConnectorType: new FormControl<StorageConnectorConnectorType | null | undefined>(undefined, [Validators.required]),
+			ResourceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -956,18 +1388,22 @@ export namespace MyNS {
 	/** Describes a stack error. */
 	export interface StackError {
 		ErrorCode?: StackErrorErrorCode | null;
+
+		/** Min length: 1 */
 		ErrorMessage?: string | null;
 	}
 
 	/** Describes a stack error. */
 	export interface StackErrorFormProperties {
 		ErrorCode: FormControl<StackErrorErrorCode | null | undefined>,
+
+		/** Min length: 1 */
 		ErrorMessage: FormControl<string | null | undefined>,
 	}
 	export function CreateStackErrorFormGroup() {
 		return new FormGroup<StackErrorFormProperties>({
 			ErrorCode: new FormControl<StackErrorErrorCode | null | undefined>(undefined),
-			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -977,19 +1413,27 @@ export namespace MyNS {
 
 	/** Describes an action and whether the action is enabled or disabled for users during their streaming sessions. */
 	export interface UserSetting {
+
+		/** Required */
 		Action: UserSettingAction;
+
+		/** Required */
 		Permission: UserSettingPermission;
 	}
 
 	/** Describes an action and whether the action is enabled or disabled for users during their streaming sessions. */
 	export interface UserSettingFormProperties {
+
+		/** Required */
 		Action: FormControl<UserSettingAction | null | undefined>,
+
+		/** Required */
 		Permission: FormControl<UserSettingPermission | null | undefined>,
 	}
 	export function CreateUserSettingFormGroup() {
 		return new FormGroup<UserSettingFormProperties>({
-			Action: new FormControl<UserSettingAction | null | undefined>(undefined),
-			Permission: new FormControl<UserSettingPermission | null | undefined>(undefined),
+			Action: new FormControl<UserSettingAction | null | undefined>(undefined, [Validators.required]),
+			Permission: new FormControl<UserSettingPermission | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1002,56 +1446,102 @@ export namespace MyNS {
 	/** Describes the persistent application settings for users of a stack. */
 	export interface ApplicationSettingsResponse {
 		Enabled?: boolean | null;
+
+		/** Max length: 100 */
 		SettingsGroup?: string | null;
+
+		/** Min length: 1 */
 		S3BucketName?: string | null;
 	}
 
 	/** Describes the persistent application settings for users of a stack. */
 	export interface ApplicationSettingsResponseFormProperties {
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/** Max length: 100 */
 		SettingsGroup: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		S3BucketName: FormControl<string | null | undefined>,
 	}
 	export function CreateApplicationSettingsResponseFormGroup() {
 		return new FormGroup<ApplicationSettingsResponseFormProperties>({
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			SettingsGroup: new FormControl<string | null | undefined>(undefined),
-			S3BucketName: new FormControl<string | null | undefined>(undefined),
+			SettingsGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
+			S3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateStackRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$
+		 */
 		Name: string;
+
+		/** Max length: 256 */
 		Description?: string | null;
+
+		/** Max length: 100 */
 		DisplayName?: string | null;
 
 		/** The storage connectors. */
 		StorageConnectors?: Array<StorageConnector>;
+
+		/** Max length: 1000 */
 		RedirectURL?: string | null;
+
+		/** Max length: 1000 */
 		FeedbackURL?: string | null;
+
+		/** Minimum items: 1 */
 		UserSettings?: Array<UserSetting>;
 
 		/** The persistent application settings for users of a stack. */
 		ApplicationSettings?: ApplicationSettings;
 		Tags?: Tags;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 4
+		 */
 		AccessEndpoints?: Array<AccessEndpoint>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 20
+		 */
 		EmbedHostDomains?: Array<string>;
 	}
 	export interface CreateStackRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		Description: FormControl<string | null | undefined>,
+
+		/** Max length: 100 */
 		DisplayName: FormControl<string | null | undefined>,
+
+		/** Max length: 1000 */
 		RedirectURL: FormControl<string | null | undefined>,
+
+		/** Max length: 1000 */
 		FeedbackURL: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateStackRequestFormGroup() {
 		return new FormGroup<CreateStackRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			DisplayName: new FormControl<string | null | undefined>(undefined),
-			RedirectURL: new FormControl<string | null | undefined>(undefined),
-			FeedbackURL: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
+			RedirectURL: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
+			FeedbackURL: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 		});
 
 	}
@@ -1059,78 +1549,136 @@ export namespace MyNS {
 
 	/** The persistent application settings for users of a stack. */
 	export interface ApplicationSettings {
+
+		/** Required */
 		Enabled: boolean;
+
+		/** Max length: 100 */
 		SettingsGroup?: string | null;
 	}
 
 	/** The persistent application settings for users of a stack. */
 	export interface ApplicationSettingsFormProperties {
+
+		/** Required */
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/** Max length: 100 */
 		SettingsGroup: FormControl<string | null | undefined>,
 	}
 	export function CreateApplicationSettingsFormGroup() {
 		return new FormGroup<ApplicationSettingsFormProperties>({
-			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			SettingsGroup: new FormControl<string | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			SettingsGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 		});
 
 	}
 
 	export interface CreateStreamingURLResult {
+
+		/** Min length: 1 */
 		StreamingURL?: string | null;
 		Expires?: Date | null;
 	}
 	export interface CreateStreamingURLResultFormProperties {
+
+		/** Min length: 1 */
 		StreamingURL: FormControl<string | null | undefined>,
 		Expires: FormControl<Date | null | undefined>,
 	}
 	export function CreateCreateStreamingURLResultFormGroup() {
 		return new FormGroup<CreateStreamingURLResultFormProperties>({
-			StreamingURL: new FormControl<string | null | undefined>(undefined),
+			StreamingURL: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			Expires: new FormControl<Date | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CreateStreamingURLRequest {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		StackName: string;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		FleetName: string;
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 2
+		 * Pattern: [\w+=,.@-]*
+		 */
 		UserId: string;
+
+		/** Min length: 1 */
 		ApplicationId?: string | null;
 		Validity?: number | null;
+
+		/** Min length: 1 */
 		SessionContext?: string | null;
 	}
 	export interface CreateStreamingURLRequestFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		StackName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		FleetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 2
+		 * Pattern: [\w+=,.@-]*
+		 */
 		UserId: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		ApplicationId: FormControl<string | null | undefined>,
 		Validity: FormControl<number | null | undefined>,
+
+		/** Min length: 1 */
 		SessionContext: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateStreamingURLRequestFormGroup() {
 		return new FormGroup<CreateStreamingURLRequestFormProperties>({
-			StackName: new FormControl<string | null | undefined>(undefined),
-			FleetName: new FormControl<string | null | undefined>(undefined),
-			UserId: new FormControl<string | null | undefined>(undefined),
-			ApplicationId: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			FleetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			UserId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(2)]),
+			ApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			Validity: new FormControl<number | null | undefined>(undefined),
-			SessionContext: new FormControl<string | null | undefined>(undefined),
+			SessionContext: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateUsageReportSubscriptionResult {
+
+		/** Min length: 1 */
 		S3BucketName?: string | null;
 		Schedule?: CreateUsageReportSubscriptionResultSchedule | null;
 	}
 	export interface CreateUsageReportSubscriptionResultFormProperties {
+
+		/** Min length: 1 */
 		S3BucketName: FormControl<string | null | undefined>,
 		Schedule: FormControl<CreateUsageReportSubscriptionResultSchedule | null | undefined>,
 	}
 	export function CreateCreateUsageReportSubscriptionResultFormGroup() {
 		return new FormGroup<CreateUsageReportSubscriptionResultFormProperties>({
-			S3BucketName: new FormControl<string | null | undefined>(undefined),
+			S3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			Schedule: new FormControl<CreateUsageReportSubscriptionResultSchedule | null | undefined>(undefined),
 		});
 
@@ -1159,26 +1707,64 @@ export namespace MyNS {
 	}
 
 	export interface CreateUserRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}]+
+		 */
 		UserName: string;
 		MessageAction?: CreateUserRequestMessageAction | null;
+
+		/**
+		 * Max length: 2048
+		 * Pattern: ^[A-Za-z0-9_\-\s]+$
+		 */
 		FirstName?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Pattern: ^[A-Za-z0-9_\-\s]+$
+		 */
 		LastName?: string | null;
+
+		/** Required */
 		AuthenticationType: UserStackAssociationAuthenticationType;
 	}
 	export interface CreateUserRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}]+
+		 */
 		UserName: FormControl<string | null | undefined>,
 		MessageAction: FormControl<CreateUserRequestMessageAction | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Pattern: ^[A-Za-z0-9_\-\s]+$
+		 */
 		FirstName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Pattern: ^[A-Za-z0-9_\-\s]+$
+		 */
 		LastName: FormControl<string | null | undefined>,
+
+		/** Required */
 		AuthenticationType: FormControl<UserStackAssociationAuthenticationType | null | undefined>,
 	}
 	export function CreateCreateUserRequestFormGroup() {
 		return new FormGroup<CreateUserRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 			MessageAction: new FormControl<CreateUserRequestMessageAction | null | undefined>(undefined),
-			FirstName: new FormControl<string | null | undefined>(undefined),
-			LastName: new FormControl<string | null | undefined>(undefined),
-			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined),
+			FirstName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			LastName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1196,14 +1782,18 @@ export namespace MyNS {
 	}
 
 	export interface DeleteDirectoryConfigRequest {
+
+		/** Required */
 		DirectoryName: string;
 	}
 	export interface DeleteDirectoryConfigRequestFormProperties {
+
+		/** Required */
 		DirectoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDirectoryConfigRequestFormGroup() {
 		return new FormGroup<DeleteDirectoryConfigRequestFormProperties>({
-			DirectoryName: new FormControl<string | null | undefined>(undefined),
+			DirectoryName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1229,14 +1819,24 @@ export namespace MyNS {
 	}
 
 	export interface DeleteFleetRequest {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Name: string;
 	}
 	export interface DeleteFleetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteFleetRequestFormGroup() {
 		return new FormGroup<DeleteFleetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -1257,15 +1857,30 @@ export namespace MyNS {
 
 	/** Describes an image. */
 	export interface Image {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Name: string;
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		Arn?: string | null;
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		BaseImageArn?: string | null;
+
+		/** Min length: 1 */
 		DisplayName?: string | null;
 		State?: ImageState | null;
 		Visibility?: ImageVisibility | null;
 		ImageBuilderSupported?: boolean | null;
+
+		/** Min length: 1 */
 		ImageBuilderName?: string | null;
 		Platform?: ImageBuilderPlatform | null;
+
+		/** Min length: 1 */
 		Description?: string | null;
 
 		/** Describes the reason why the last image state change occurred. */
@@ -1273,6 +1888,11 @@ export namespace MyNS {
 		Applications?: Array<Application>;
 		CreatedTime?: Date | null;
 		PublicBaseImageReleasedDate?: Date | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		AppstreamAgentVersion?: string | null;
 
 		/** Describes the permissions for an image. */
@@ -1281,35 +1901,55 @@ export namespace MyNS {
 
 	/** Describes an image. */
 	export interface ImageFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		Arn: FormControl<string | null | undefined>,
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		BaseImageArn: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		DisplayName: FormControl<string | null | undefined>,
 		State: FormControl<ImageState | null | undefined>,
 		Visibility: FormControl<ImageVisibility | null | undefined>,
 		ImageBuilderSupported: FormControl<boolean | null | undefined>,
+
+		/** Min length: 1 */
 		ImageBuilderName: FormControl<string | null | undefined>,
 		Platform: FormControl<ImageBuilderPlatform | null | undefined>,
+
+		/** Min length: 1 */
 		Description: FormControl<string | null | undefined>,
 		CreatedTime: FormControl<Date | null | undefined>,
 		PublicBaseImageReleasedDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		AppstreamAgentVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateImageFormGroup() {
 		return new FormGroup<ImageFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 			Arn: new FormControl<string | null | undefined>(undefined),
 			BaseImageArn: new FormControl<string | null | undefined>(undefined),
-			DisplayName: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			State: new FormControl<ImageState | null | undefined>(undefined),
 			Visibility: new FormControl<ImageVisibility | null | undefined>(undefined),
 			ImageBuilderSupported: new FormControl<boolean | null | undefined>(undefined),
-			ImageBuilderName: new FormControl<string | null | undefined>(undefined),
+			ImageBuilderName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			Platform: new FormControl<ImageBuilderPlatform | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			CreatedTime: new FormControl<Date | null | undefined>(undefined),
 			PublicBaseImageReleasedDate: new FormControl<Date | null | undefined>(undefined),
-			AppstreamAgentVersion: new FormControl<string | null | undefined>(undefined),
+			AppstreamAgentVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -1322,18 +1962,22 @@ export namespace MyNS {
 	/** Describes the reason why the last image state change occurred. */
 	export interface ImageStateChangeReason {
 		Code?: ImageStateChangeReasonCode | null;
+
+		/** Min length: 1 */
 		Message?: string | null;
 	}
 
 	/** Describes the reason why the last image state change occurred. */
 	export interface ImageStateChangeReasonFormProperties {
 		Code: FormControl<ImageStateChangeReasonCode | null | undefined>,
+
+		/** Min length: 1 */
 		Message: FormControl<string | null | undefined>,
 	}
 	export function CreateImageStateChangeReasonFormGroup() {
 		return new FormGroup<ImageStateChangeReasonFormProperties>({
 			Code: new FormControl<ImageStateChangeReasonCode | null | undefined>(undefined),
-			Message: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1343,10 +1987,20 @@ export namespace MyNS {
 
 	/** Describes an application in the application catalog. */
 	export interface Application {
+
+		/** Min length: 1 */
 		Name?: string | null;
+
+		/** Min length: 1 */
 		DisplayName?: string | null;
+
+		/** Min length: 1 */
 		IconURL?: string | null;
+
+		/** Min length: 1 */
 		LaunchPath?: string | null;
+
+		/** Min length: 1 */
 		LaunchParameters?: string | null;
 		Enabled?: boolean | null;
 		Metadata?: Metadata;
@@ -1354,20 +2008,30 @@ export namespace MyNS {
 
 	/** Describes an application in the application catalog. */
 	export interface ApplicationFormProperties {
+
+		/** Min length: 1 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		DisplayName: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		IconURL: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		LaunchPath: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		LaunchParameters: FormControl<string | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateApplicationFormGroup() {
 		return new FormGroup<ApplicationFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			DisplayName: new FormControl<string | null | undefined>(undefined),
-			IconURL: new FormControl<string | null | undefined>(undefined),
-			LaunchPath: new FormControl<string | null | undefined>(undefined),
-			LaunchParameters: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			IconURL: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			LaunchPath: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			LaunchParameters: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1404,14 +2068,24 @@ export namespace MyNS {
 	}
 
 	export interface DeleteImageRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$
+		 */
 		Name: string;
 	}
 	export interface DeleteImageRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteImageRequestFormGroup() {
 		return new FormGroup<DeleteImageRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1430,14 +2104,24 @@ export namespace MyNS {
 	}
 
 	export interface DeleteImageBuilderRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$
+		 */
 		Name: string;
 	}
 	export interface DeleteImageBuilderRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteImageBuilderRequestFormGroup() {
 		return new FormGroup<DeleteImageBuilderRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1453,17 +2137,37 @@ export namespace MyNS {
 	}
 
 	export interface DeleteImagePermissionsRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Pattern: ^\d+$
+		 */
 		SharedAccountId: string;
 	}
 	export interface DeleteImagePermissionsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: ^\d+$
+		 */
 		SharedAccountId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteImagePermissionsRequestFormGroup() {
 		return new FormGroup<DeleteImagePermissionsRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			SharedAccountId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SharedAccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1479,14 +2183,24 @@ export namespace MyNS {
 	}
 
 	export interface DeleteStackRequest {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Name: string;
 	}
 	export interface DeleteStackRequestFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteStackRequestFormGroup() {
 		return new FormGroup<DeleteStackRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -1522,31 +2236,53 @@ export namespace MyNS {
 	}
 
 	export interface DeleteUserRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}]+
+		 */
 		UserName: string;
+
+		/** Required */
 		AuthenticationType: UserStackAssociationAuthenticationType;
 	}
 	export interface DeleteUserRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/** Required */
 		AuthenticationType: FormControl<UserStackAssociationAuthenticationType | null | undefined>,
 	}
 	export function CreateDeleteUserRequestFormGroup() {
 		return new FormGroup<DeleteUserRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DescribeDirectoryConfigsResult {
 		DirectoryConfigs?: Array<DirectoryConfig>;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface DescribeDirectoryConfigsResultFormProperties {
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeDirectoryConfigsResultFormGroup() {
 		return new FormGroup<DescribeDirectoryConfigsResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1554,16 +2290,20 @@ export namespace MyNS {
 	export interface DescribeDirectoryConfigsRequest {
 		DirectoryNames?: Array<string>;
 		MaxResults?: number | null;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface DescribeDirectoryConfigsRequestFormProperties {
 		MaxResults: FormControl<number | null | undefined>,
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeDirectoryConfigsRequestFormGroup() {
 		return new FormGroup<DescribeDirectoryConfigsRequestFormProperties>({
 			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1572,42 +2312,54 @@ export namespace MyNS {
 
 		/** The fleets. */
 		Fleets?: Array<Fleet>;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface DescribeFleetsResultFormProperties {
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeFleetsResultFormGroup() {
 		return new FormGroup<DescribeFleetsResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeFleetsRequest {
 		Names?: Array<string>;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface DescribeFleetsRequestFormProperties {
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeFleetsRequestFormGroup() {
 		return new FormGroup<DescribeFleetsRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeImageBuildersResult {
 		ImageBuilders?: Array<ImageBuilder>;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface DescribeImageBuildersResultFormProperties {
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeImageBuildersResultFormGroup() {
 		return new FormGroup<DescribeImageBuildersResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1615,33 +2367,45 @@ export namespace MyNS {
 	export interface DescribeImageBuildersRequest {
 		Names?: Array<string>;
 		MaxResults?: number | null;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface DescribeImageBuildersRequestFormProperties {
 		MaxResults: FormControl<number | null | undefined>,
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeImageBuildersRequestFormGroup() {
 		return new FormGroup<DescribeImageBuildersRequestFormProperties>({
 			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeImagePermissionsResult {
+
+		/** Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$ */
 		Name?: string | null;
 		SharedImagePermissionsList?: Array<SharedImagePermissions>;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface DescribeImagePermissionsResultFormProperties {
+
+		/** Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$ */
 		Name: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeImagePermissionsResultFormGroup() {
 		return new FormGroup<DescribeImagePermissionsResultFormProperties>({
 			Name: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1649,6 +2413,11 @@ export namespace MyNS {
 
 	/** Describes the permissions that are available to the specified AWS account for a shared image. */
 	export interface SharedImagePermissions {
+
+		/**
+		 * Required
+		 * Pattern: ^\d+$
+		 */
 		sharedAccountId: string;
 
 		/**
@@ -1660,45 +2429,83 @@ export namespace MyNS {
 
 	/** Describes the permissions that are available to the specified AWS account for a shared image. */
 	export interface SharedImagePermissionsFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^\d+$
+		 */
 		sharedAccountId: FormControl<string | null | undefined>,
 	}
 	export function CreateSharedImagePermissionsFormGroup() {
 		return new FormGroup<SharedImagePermissionsFormProperties>({
-			sharedAccountId: new FormControl<string | null | undefined>(undefined),
+			sharedAccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DescribeImagePermissionsRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$
+		 */
 		Name: string;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 500
+		 */
 		MaxResults?: number | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 5
+		 */
 		SharedAwsAccountIds?: Array<string>;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface DescribeImagePermissionsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 500
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeImagePermissionsRequestFormGroup() {
 		return new FormGroup<DescribeImagePermissionsRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(500)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeImagesResult {
 		Images?: Array<Image>;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface DescribeImagesResultFormProperties {
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeImagesResultFormGroup() {
 		return new FormGroup<DescribeImagesResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1707,19 +2514,33 @@ export namespace MyNS {
 		Names?: Array<string>;
 		Arns?: Array<string>;
 		Type?: ImageVisibility | null;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 25
+		 */
 		MaxResults?: number | null;
 	}
 	export interface DescribeImagesRequestFormProperties {
 		Type: FormControl<ImageVisibility | null | undefined>,
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 25
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeImagesRequestFormGroup() {
 		return new FormGroup<DescribeImagesRequestFormProperties>({
 			Type: new FormControl<ImageVisibility | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(25)]),
 		});
 
 	}
@@ -1728,14 +2549,18 @@ export namespace MyNS {
 
 		/** List of sessions. */
 		Sessions?: Array<Session>;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface DescribeSessionsResultFormProperties {
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeSessionsResultFormGroup() {
 		return new FormGroup<DescribeSessionsResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1743,9 +2568,30 @@ export namespace MyNS {
 
 	/** Describes a streaming session. */
 	export interface Session {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Id: string;
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 2
+		 */
 		UserId: string;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		StackName: string;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		FleetName: string;
 
 		/**
@@ -1764,9 +2610,30 @@ export namespace MyNS {
 
 	/** Describes a streaming session. */
 	export interface SessionFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 2
+		 */
 		UserId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		StackName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		FleetName: FormControl<string | null | undefined>,
 
 		/**
@@ -1781,11 +2648,11 @@ export namespace MyNS {
 	}
 	export function CreateSessionFormGroup() {
 		return new FormGroup<SessionFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			UserId: new FormControl<string | null | undefined>(undefined),
-			StackName: new FormControl<string | null | undefined>(undefined),
-			FleetName: new FormControl<string | null | undefined>(undefined),
-			State: new FormControl<SessionState | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			UserId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(2)]),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			FleetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			State: new FormControl<SessionState | null | undefined>(undefined, [Validators.required]),
 			ConnectionState: new FormControl<SessionConnectionState | null | undefined>(undefined),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			MaxExpirationTime: new FormControl<Date | null | undefined>(undefined),
@@ -1799,27 +2666,61 @@ export namespace MyNS {
 	export enum SessionConnectionState { CONNECTED = 0, NOT_CONNECTED = 1 }
 
 	export interface DescribeSessionsRequest {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		StackName: string;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		FleetName: string;
+
+		/**
+		 * Max length: 32
+		 * Min length: 2
+		 */
 		UserId?: string | null;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 		Limit?: number | null;
 		AuthenticationType?: UserStackAssociationAuthenticationType | null;
 	}
 	export interface DescribeSessionsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		StackName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		FleetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 2
+		 */
 		UserId: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 		Limit: FormControl<number | null | undefined>,
 		AuthenticationType: FormControl<UserStackAssociationAuthenticationType | null | undefined>,
 	}
 	export function CreateDescribeSessionsRequestFormGroup() {
 		return new FormGroup<DescribeSessionsRequestFormProperties>({
-			StackName: new FormControl<string | null | undefined>(undefined),
-			FleetName: new FormControl<string | null | undefined>(undefined),
-			UserId: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			FleetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			UserId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(2)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			Limit: new FormControl<number | null | undefined>(undefined),
 			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined),
 		});
@@ -1830,42 +2731,54 @@ export namespace MyNS {
 
 		/** The stacks. */
 		Stacks?: Array<Stack>;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface DescribeStacksResultFormProperties {
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeStacksResultFormGroup() {
 		return new FormGroup<DescribeStacksResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeStacksRequest {
 		Names?: Array<string>;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface DescribeStacksRequestFormProperties {
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeStacksRequestFormGroup() {
 		return new FormGroup<DescribeStacksRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeUsageReportSubscriptionsResult {
 		UsageReportSubscriptions?: Array<UsageReportSubscription>;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface DescribeUsageReportSubscriptionsResultFormProperties {
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeUsageReportSubscriptionsResultFormGroup() {
 		return new FormGroup<DescribeUsageReportSubscriptionsResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1873,6 +2786,8 @@ export namespace MyNS {
 
 	/** Describes information about the usage report subscription. */
 	export interface UsageReportSubscription {
+
+		/** Min length: 1 */
 		S3BucketName?: string | null;
 		Schedule?: CreateUsageReportSubscriptionResultSchedule | null;
 		LastGeneratedReportDate?: Date | null;
@@ -1881,13 +2796,15 @@ export namespace MyNS {
 
 	/** Describes information about the usage report subscription. */
 	export interface UsageReportSubscriptionFormProperties {
+
+		/** Min length: 1 */
 		S3BucketName: FormControl<string | null | undefined>,
 		Schedule: FormControl<CreateUsageReportSubscriptionResultSchedule | null | undefined>,
 		LastGeneratedReportDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateUsageReportSubscriptionFormGroup() {
 		return new FormGroup<UsageReportSubscriptionFormProperties>({
-			S3BucketName: new FormControl<string | null | undefined>(undefined),
+			S3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			Schedule: new FormControl<CreateUsageReportSubscriptionResultSchedule | null | undefined>(undefined),
 			LastGeneratedReportDate: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1898,18 +2815,22 @@ export namespace MyNS {
 	/** Describes the error that is returned when a usage report can't be generated. */
 	export interface LastReportGenerationExecutionError {
 		ErrorCode?: LastReportGenerationExecutionErrorErrorCode | null;
+
+		/** Min length: 1 */
 		ErrorMessage?: string | null;
 	}
 
 	/** Describes the error that is returned when a usage report can't be generated. */
 	export interface LastReportGenerationExecutionErrorFormProperties {
 		ErrorCode: FormControl<LastReportGenerationExecutionErrorErrorCode | null | undefined>,
+
+		/** Min length: 1 */
 		ErrorMessage: FormControl<string | null | undefined>,
 	}
 	export function CreateLastReportGenerationExecutionErrorFormGroup() {
 		return new FormGroup<LastReportGenerationExecutionErrorFormProperties>({
 			ErrorCode: new FormControl<LastReportGenerationExecutionErrorErrorCode | null | undefined>(undefined),
-			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1918,69 +2839,116 @@ export namespace MyNS {
 
 	export interface DescribeUsageReportSubscriptionsRequest {
 		MaxResults?: number | null;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface DescribeUsageReportSubscriptionsRequestFormProperties {
 		MaxResults: FormControl<number | null | undefined>,
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeUsageReportSubscriptionsRequestFormGroup() {
 		return new FormGroup<DescribeUsageReportSubscriptionsRequestFormProperties>({
 			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeUserStackAssociationsResult {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 25
+		 */
 		UserStackAssociations?: Array<UserStackAssociation>;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface DescribeUserStackAssociationsResultFormProperties {
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeUserStackAssociationsResultFormGroup() {
 		return new FormGroup<DescribeUserStackAssociationsResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeUserStackAssociationsRequest {
+
+		/** Min length: 1 */
 		StackName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}]+
+		 */
 		UserName?: string | null;
 		AuthenticationType?: UserStackAssociationAuthenticationType | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 500
+		 */
 		MaxResults?: number | null;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface DescribeUserStackAssociationsRequestFormProperties {
+
+		/** Min length: 1 */
 		StackName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}]+
+		 */
 		UserName: FormControl<string | null | undefined>,
 		AuthenticationType: FormControl<UserStackAssociationAuthenticationType | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 500
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeUserStackAssociationsRequestFormGroup() {
 		return new FormGroup<DescribeUserStackAssociationsRequestFormProperties>({
-			StackName: new FormControl<string | null | undefined>(undefined),
-			UserName: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(500)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeUsersResult {
 		Users?: Array<User>;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface DescribeUsersResultFormProperties {
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeUsersResultFormGroup() {
 		return new FormGroup<DescribeUsersResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1988,56 +2956,108 @@ export namespace MyNS {
 
 	/** Describes a user in the user pool. */
 	export interface User {
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		Arn?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}]+
+		 */
 		UserName?: string | null;
 		Enabled?: boolean | null;
+
+		/** Min length: 1 */
 		Status?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Pattern: ^[A-Za-z0-9_\-\s]+$
+		 */
 		FirstName?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Pattern: ^[A-Za-z0-9_\-\s]+$
+		 */
 		LastName?: string | null;
 		CreatedTime?: Date | null;
+
+		/** Required */
 		AuthenticationType: UserStackAssociationAuthenticationType;
 	}
 
 	/** Describes a user in the user pool. */
 	export interface UserFormProperties {
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		Arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}]+
+		 */
 		UserName: FormControl<string | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/** Min length: 1 */
 		Status: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Pattern: ^[A-Za-z0-9_\-\s]+$
+		 */
 		FirstName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Pattern: ^[A-Za-z0-9_\-\s]+$
+		 */
 		LastName: FormControl<string | null | undefined>,
 		CreatedTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		AuthenticationType: FormControl<UserStackAssociationAuthenticationType | null | undefined>,
 	}
 	export function CreateUserFormGroup() {
 		return new FormGroup<UserFormProperties>({
 			Arn: new FormControl<string | null | undefined>(undefined),
-			UserName: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			Status: new FormControl<string | null | undefined>(undefined),
-			FirstName: new FormControl<string | null | undefined>(undefined),
-			LastName: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			FirstName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			LastName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 			CreatedTime: new FormControl<Date | null | undefined>(undefined),
-			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined),
+			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DescribeUsersRequest {
+
+		/** Required */
 		AuthenticationType: UserStackAssociationAuthenticationType;
 		MaxResults?: number | null;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface DescribeUsersRequestFormProperties {
+
+		/** Required */
 		AuthenticationType: FormControl<UserStackAssociationAuthenticationType | null | undefined>,
 		MaxResults: FormControl<number | null | undefined>,
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeUsersRequestFormGroup() {
 		return new FormGroup<DescribeUsersRequestFormProperties>({
-			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined),
+			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined, [Validators.required]),
 			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -2053,17 +3073,35 @@ export namespace MyNS {
 	}
 
 	export interface DisableUserRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}]+
+		 */
 		UserName: string;
+
+		/** Required */
 		AuthenticationType: UserStackAssociationAuthenticationType;
 	}
 	export interface DisableUserRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/** Required */
 		AuthenticationType: FormControl<UserStackAssociationAuthenticationType | null | undefined>,
 	}
 	export function CreateDisableUserRequestFormGroup() {
 		return new FormGroup<DisableUserRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2079,17 +3117,37 @@ export namespace MyNS {
 	}
 
 	export interface DisassociateFleetRequest {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		FleetName: string;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		StackName: string;
 	}
 	export interface DisassociateFleetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		FleetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		StackName: FormControl<string | null | undefined>,
 	}
 	export function CreateDisassociateFleetRequestFormGroup() {
 		return new FormGroup<DisassociateFleetRequestFormProperties>({
-			FleetName: new FormControl<string | null | undefined>(undefined),
-			StackName: new FormControl<string | null | undefined>(undefined),
+			FleetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -2105,17 +3163,35 @@ export namespace MyNS {
 	}
 
 	export interface EnableUserRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}]+
+		 */
 		UserName: string;
+
+		/** Required */
 		AuthenticationType: UserStackAssociationAuthenticationType;
 	}
 	export interface EnableUserRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/** Required */
 		AuthenticationType: FormControl<UserStackAssociationAuthenticationType | null | undefined>,
 	}
 	export function CreateEnableUserRequestFormGroup() {
 		return new FormGroup<EnableUserRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2131,74 +3207,120 @@ export namespace MyNS {
 	}
 
 	export interface ExpireSessionRequest {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		SessionId: string;
 	}
 	export interface ExpireSessionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		SessionId: FormControl<string | null | undefined>,
 	}
 	export function CreateExpireSessionRequestFormGroup() {
 		return new FormGroup<ExpireSessionRequestFormProperties>({
-			SessionId: new FormControl<string | null | undefined>(undefined),
+			SessionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListAssociatedFleetsResult {
 		Names?: Array<string>;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface ListAssociatedFleetsResultFormProperties {
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListAssociatedFleetsResultFormGroup() {
 		return new FormGroup<ListAssociatedFleetsResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListAssociatedFleetsRequest {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		StackName: string;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface ListAssociatedFleetsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		StackName: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListAssociatedFleetsRequestFormGroup() {
 		return new FormGroup<ListAssociatedFleetsRequestFormProperties>({
-			StackName: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListAssociatedStacksResult {
 		Names?: Array<string>;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface ListAssociatedStacksResultFormProperties {
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListAssociatedStacksResultFormGroup() {
 		return new FormGroup<ListAssociatedStacksResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListAssociatedStacksRequest {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		FleetName: string;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface ListAssociatedStacksRequestFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		FleetName: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListAssociatedStacksRequestFormGroup() {
 		return new FormGroup<ListAssociatedStacksRequestFormProperties>({
-			FleetName: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			FleetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -2215,14 +3337,24 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$
+		 */
 		ResourceArn: string;
 	}
 	export interface ListTagsForResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2238,14 +3370,24 @@ export namespace MyNS {
 	}
 
 	export interface StartFleetRequest {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Name: string;
 	}
 	export interface StartFleetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateStartFleetRequestFormGroup() {
 		return new FormGroup<StartFleetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -2264,17 +3406,37 @@ export namespace MyNS {
 	}
 
 	export interface StartImageBuilderRequest {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Name: string;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		AppstreamAgentVersion?: string | null;
 	}
 	export interface StartImageBuilderRequestFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		AppstreamAgentVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateStartImageBuilderRequestFormGroup() {
 		return new FormGroup<StartImageBuilderRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			AppstreamAgentVersion: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			AppstreamAgentVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -2290,14 +3452,24 @@ export namespace MyNS {
 	}
 
 	export interface StopFleetRequest {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Name: string;
 	}
 	export interface StopFleetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateStopFleetRequestFormGroup() {
 		return new FormGroup<StopFleetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -2316,14 +3488,24 @@ export namespace MyNS {
 	}
 
 	export interface StopImageBuilderRequest {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Name: string;
 	}
 	export interface StopImageBuilderRequestFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateStopImageBuilderRequestFormGroup() {
 		return new FormGroup<StopImageBuilderRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -2339,15 +3521,27 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$
+		 */
 		ResourceArn: string;
+
+		/** Required */
 		Tags: Tags;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2363,15 +3557,31 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$
+		 */
 		ResourceArn: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		TagKeys: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2390,6 +3600,8 @@ export namespace MyNS {
 	}
 
 	export interface UpdateDirectoryConfigRequest {
+
+		/** Required */
 		DirectoryName: string;
 		OrganizationalUnitDistinguishedNames?: Array<string>;
 
@@ -2397,11 +3609,13 @@ export namespace MyNS {
 		ServiceAccountCredentials?: ServiceAccountCredentials;
 	}
 	export interface UpdateDirectoryConfigRequestFormProperties {
+
+		/** Required */
 		DirectoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateDirectoryConfigRequestFormGroup() {
 		return new FormGroup<UpdateDirectoryConfigRequestFormProperties>({
-			DirectoryName: new FormControl<string | null | undefined>(undefined),
+			DirectoryName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2420,9 +3634,17 @@ export namespace MyNS {
 	}
 
 	export interface UpdateFleetRequest {
+
+		/** Min length: 1 */
 		ImageName?: string | null;
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		ImageArn?: string | null;
+
+		/** Min length: 1 */
 		Name?: string | null;
+
+		/** Min length: 1 */
 		InstanceType?: string | null;
 
 		/** Describes the capacity for a fleet. */
@@ -2433,7 +3655,11 @@ export namespace MyNS {
 		MaxUserDurationInSeconds?: number | null;
 		DisconnectTimeoutInSeconds?: number | null;
 		DeleteVpcConfig?: boolean | null;
+
+		/** Max length: 256 */
 		Description?: string | null;
+
+		/** Max length: 100 */
 		DisplayName?: string | null;
 		EnableDefaultInternetAccess?: boolean | null;
 
@@ -2443,33 +3669,49 @@ export namespace MyNS {
 
 		/** The fleet attributes. */
 		AttributesToDelete?: Array<FleetAttribute>;
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		IamRoleArn?: string | null;
 	}
 	export interface UpdateFleetRequestFormProperties {
+
+		/** Min length: 1 */
 		ImageName: FormControl<string | null | undefined>,
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		ImageArn: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		InstanceType: FormControl<string | null | undefined>,
 		MaxUserDurationInSeconds: FormControl<number | null | undefined>,
 		DisconnectTimeoutInSeconds: FormControl<number | null | undefined>,
 		DeleteVpcConfig: FormControl<boolean | null | undefined>,
+
+		/** Max length: 256 */
 		Description: FormControl<string | null | undefined>,
+
+		/** Max length: 100 */
 		DisplayName: FormControl<string | null | undefined>,
 		EnableDefaultInternetAccess: FormControl<boolean | null | undefined>,
 		IdleDisconnectTimeoutInSeconds: FormControl<number | null | undefined>,
+
+		/** Pattern: ^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		IamRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateFleetRequestFormGroup() {
 		return new FormGroup<UpdateFleetRequestFormProperties>({
-			ImageName: new FormControl<string | null | undefined>(undefined),
+			ImageName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			ImageArn: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			InstanceType: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			MaxUserDurationInSeconds: new FormControl<number | null | undefined>(undefined),
 			DisconnectTimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
 			DeleteVpcConfig: new FormControl<boolean | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			DisplayName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 			EnableDefaultInternetAccess: new FormControl<boolean | null | undefined>(undefined),
 			IdleDisconnectTimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
 			IamRoleArn: new FormControl<string | null | undefined>(undefined),
@@ -2492,7 +3734,17 @@ export namespace MyNS {
 	}
 
 	export interface UpdateImagePermissionsRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Pattern: ^\d+$
+		 */
 		SharedAccountId: string;
 
 		/**
@@ -2502,13 +3754,23 @@ export namespace MyNS {
 		ImagePermissions: ImagePermissions;
 	}
 	export interface UpdateImagePermissionsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: ^\d+$
+		 */
 		SharedAccountId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateImagePermissionsRequestFormGroup() {
 		return new FormGroup<UpdateImagePermissionsRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			SharedAccountId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SharedAccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2527,39 +3789,77 @@ export namespace MyNS {
 	}
 
 	export interface UpdateStackRequest {
+
+		/** Max length: 100 */
 		DisplayName?: string | null;
+
+		/** Max length: 256 */
 		Description?: string | null;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Name: string;
 
 		/** The storage connectors. */
 		StorageConnectors?: Array<StorageConnector>;
 		DeleteStorageConnectors?: boolean | null;
+
+		/** Max length: 1000 */
 		RedirectURL?: string | null;
+
+		/** Max length: 1000 */
 		FeedbackURL?: string | null;
 		AttributesToDelete?: Array<StackAttribute>;
+
+		/** Minimum items: 1 */
 		UserSettings?: Array<UserSetting>;
 
 		/** The persistent application settings for users of a stack. */
 		ApplicationSettings?: ApplicationSettings;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 4
+		 */
 		AccessEndpoints?: Array<AccessEndpoint>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 20
+		 */
 		EmbedHostDomains?: Array<string>;
 	}
 	export interface UpdateStackRequestFormProperties {
+
+		/** Max length: 100 */
 		DisplayName: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 		DeleteStorageConnectors: FormControl<boolean | null | undefined>,
+
+		/** Max length: 1000 */
 		RedirectURL: FormControl<string | null | undefined>,
+
+		/** Max length: 1000 */
 		FeedbackURL: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateStackRequestFormGroup() {
 		return new FormGroup<UpdateStackRequestFormProperties>({
-			DisplayName: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 			DeleteStorageConnectors: new FormControl<boolean | null | undefined>(undefined),
-			RedirectURL: new FormControl<string | null | undefined>(undefined),
-			FeedbackURL: new FormControl<string | null | undefined>(undefined),
+			RedirectURL: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
+			FeedbackURL: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 		});
 
 	}

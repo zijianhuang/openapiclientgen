@@ -105,9 +105,28 @@ export namespace MyNS {
 
 	/** Provides configuration information about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>. */
 	export interface AliasConfiguration {
+
+		/** Pattern: arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))? */
 		AliasArn?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_]+)
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: (\$LATEST|[0-9]+)
+		 */
 		FunctionVersion?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description?: string | null;
 
 		/** The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">traffic-shifting</a> configuration of a Lambda function alias. */
@@ -117,18 +136,37 @@ export namespace MyNS {
 
 	/** Provides configuration information about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>. */
 	export interface AliasConfigurationFormProperties {
+
+		/** Pattern: arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))? */
 		AliasArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_]+)
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: (\$LATEST|[0-9]+)
+		 */
 		FunctionVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
 		RevisionId: FormControl<string | null | undefined>,
 	}
 	export function CreateAliasConfigurationFormGroup() {
 		return new FormGroup<AliasConfigurationFormProperties>({
 			AliasArn: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			FunctionVersion: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			FunctionVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			RevisionId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -163,10 +201,29 @@ export namespace MyNS {
 	/** A mapping between an AWS resource and an AWS Lambda function. See <a>CreateEventSourceMapping</a> for details. */
 	export interface EventSourceMappingConfiguration {
 		UUID?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
 		BatchSize?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 300
+		 */
 		MaximumBatchingWindowInSeconds?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		ParallelizationFactor?: number | null;
+
+		/** Pattern: arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*) */
 		EventSourceArn?: string | null;
+
+		/** Pattern: arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))? */
 		FunctionArn?: string | null;
 		LastModified?: Date | null;
 		LastProcessingResult?: string | null;
@@ -175,42 +232,81 @@ export namespace MyNS {
 
 		/** A configuration object that specifies the destination of an event after Lambda processes it. */
 		DestinationConfig?: DestinationConfig;
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 604800
+		 */
 		MaximumRecordAgeInSeconds?: number | null;
 		BisectBatchOnFunctionError?: boolean | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 10000
+		 */
 		MaximumRetryAttempts?: number | null;
 	}
 
 	/** A mapping between an AWS resource and an AWS Lambda function. See <a>CreateEventSourceMapping</a> for details. */
 	export interface EventSourceMappingConfigurationFormProperties {
 		UUID: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
 		BatchSize: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 300
+		 */
 		MaximumBatchingWindowInSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		ParallelizationFactor: FormControl<number | null | undefined>,
+
+		/** Pattern: arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*) */
 		EventSourceArn: FormControl<string | null | undefined>,
+
+		/** Pattern: arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))? */
 		FunctionArn: FormControl<string | null | undefined>,
 		LastModified: FormControl<Date | null | undefined>,
 		LastProcessingResult: FormControl<string | null | undefined>,
 		State: FormControl<string | null | undefined>,
 		StateTransitionReason: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 604800
+		 */
 		MaximumRecordAgeInSeconds: FormControl<number | null | undefined>,
 		BisectBatchOnFunctionError: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 10000
+		 */
 		MaximumRetryAttempts: FormControl<number | null | undefined>,
 	}
 	export function CreateEventSourceMappingConfigurationFormGroup() {
 		return new FormGroup<EventSourceMappingConfigurationFormProperties>({
 			UUID: new FormControl<string | null | undefined>(undefined),
-			BatchSize: new FormControl<number | null | undefined>(undefined),
-			MaximumBatchingWindowInSeconds: new FormControl<number | null | undefined>(undefined),
-			ParallelizationFactor: new FormControl<number | null | undefined>(undefined),
+			BatchSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
+			MaximumBatchingWindowInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(300)]),
+			ParallelizationFactor: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10)]),
 			EventSourceArn: new FormControl<string | null | undefined>(undefined),
 			FunctionArn: new FormControl<string | null | undefined>(undefined),
 			LastModified: new FormControl<Date | null | undefined>(undefined),
 			LastProcessingResult: new FormControl<string | null | undefined>(undefined),
 			State: new FormControl<string | null | undefined>(undefined),
 			StateTransitionReason: new FormControl<string | null | undefined>(undefined),
-			MaximumRecordAgeInSeconds: new FormControl<number | null | undefined>(undefined),
+			MaximumRecordAgeInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(604800)]),
 			BisectBatchOnFunctionError: new FormControl<boolean | null | undefined>(undefined),
-			MaximumRetryAttempts: new FormControl<number | null | undefined>(undefined),
+			MaximumRetryAttempts: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(10000)]),
 		});
 
 	}
@@ -238,16 +334,28 @@ export namespace MyNS {
 
 	/** A destination for events that were processed successfully. */
 	export interface OnSuccess {
+
+		/**
+		 * Max length: 350
+		 * Min length: 0
+		 * Pattern: ^$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)
+		 */
 		Destination?: string | null;
 	}
 
 	/** A destination for events that were processed successfully. */
 	export interface OnSuccessFormProperties {
+
+		/**
+		 * Max length: 350
+		 * Min length: 0
+		 * Pattern: ^$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)
+		 */
 		Destination: FormControl<string | null | undefined>,
 	}
 	export function CreateOnSuccessFormGroup() {
 		return new FormGroup<OnSuccessFormProperties>({
-			Destination: new FormControl<string | null | undefined>(undefined),
+			Destination: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(350), Validators.minLength(0)]),
 		});
 
 	}
@@ -255,16 +363,28 @@ export namespace MyNS {
 
 	/** A destination for events that failed processing. */
 	export interface OnFailure {
+
+		/**
+		 * Max length: 350
+		 * Min length: 0
+		 * Pattern: ^$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)
+		 */
 		Destination?: string | null;
 	}
 
 	/** A destination for events that failed processing. */
 	export interface OnFailureFormProperties {
+
+		/**
+		 * Max length: 350
+		 * Min length: 0
+		 * Pattern: ^$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)
+		 */
 		Destination: FormControl<string | null | undefined>,
 	}
 	export function CreateOnFailureFormGroup() {
 		return new FormGroup<OnFailureFormProperties>({
-			Destination: new FormControl<string | null | undefined>(undefined),
+			Destination: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(350), Validators.minLength(0)]),
 		});
 
 	}
@@ -272,17 +392,50 @@ export namespace MyNS {
 
 	/** Details about a function's configuration. */
 	export interface FunctionConfiguration {
+
+		/**
+		 * Max length: 170
+		 * Min length: 1
+		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
+		 */
 		FunctionName?: string | null;
+
+		/** Pattern: arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))? */
 		FunctionArn?: string | null;
 		Runtime?: FunctionConfigurationRuntime | null;
+
+		/** Pattern: arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+ */
 		Role?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Pattern: [^\s]+
+		 */
 		Handler?: string | null;
 		CodeSize?: number | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description?: string | null;
+
+		/** Minimum: 1 */
 		Timeout?: number | null;
+
+		/**
+		 * Minimum: 128
+		 * Maximum: 3008
+		 */
 		MemorySize?: number | null;
 		LastModified?: string | null;
 		CodeSha256?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: (\$LATEST|[0-9]+)
+		 */
 		Version?: string | null;
 
 		/** The VPC security groups and subnets that are attached to a Lambda function. */
@@ -293,10 +446,14 @@ export namespace MyNS {
 
 		/** The results of an operation to update or read environment variables. If the operation is successful, the response contains the environment variables. If it failed, the response contains details about the error. */
 		Environment?: EnvironmentResponse;
+
+		/** Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|() */
 		KMSKeyArn?: string | null;
 
 		/** The function's AWS X-Ray tracing configuration. */
 		TracingConfig?: TracingConfigResponse;
+
+		/** Pattern: arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))? */
 		MasterArn?: string | null;
 		RevisionId?: string | null;
 		Layers?: Array<Layer>;
@@ -310,19 +467,56 @@ export namespace MyNS {
 
 	/** Details about a function's configuration. */
 	export interface FunctionConfigurationFormProperties {
+
+		/**
+		 * Max length: 170
+		 * Min length: 1
+		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
+		 */
 		FunctionName: FormControl<string | null | undefined>,
+
+		/** Pattern: arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))? */
 		FunctionArn: FormControl<string | null | undefined>,
 		Runtime: FormControl<FunctionConfigurationRuntime | null | undefined>,
+
+		/** Pattern: arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+ */
 		Role: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Pattern: [^\s]+
+		 */
 		Handler: FormControl<string | null | undefined>,
 		CodeSize: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		Timeout: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 128
+		 * Maximum: 3008
+		 */
 		MemorySize: FormControl<number | null | undefined>,
 		LastModified: FormControl<string | null | undefined>,
 		CodeSha256: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: (\$LATEST|[0-9]+)
+		 */
 		Version: FormControl<string | null | undefined>,
+
+		/** Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|() */
 		KMSKeyArn: FormControl<string | null | undefined>,
+
+		/** Pattern: arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))? */
 		MasterArn: FormControl<string | null | undefined>,
 		RevisionId: FormControl<string | null | undefined>,
 		State: FormControl<FunctionConfigurationState | null | undefined>,
@@ -334,18 +528,18 @@ export namespace MyNS {
 	}
 	export function CreateFunctionConfigurationFormGroup() {
 		return new FormGroup<FunctionConfigurationFormProperties>({
-			FunctionName: new FormControl<string | null | undefined>(undefined),
+			FunctionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(170), Validators.minLength(1)]),
 			FunctionArn: new FormControl<string | null | undefined>(undefined),
 			Runtime: new FormControl<FunctionConfigurationRuntime | null | undefined>(undefined),
 			Role: new FormControl<string | null | undefined>(undefined),
-			Handler: new FormControl<string | null | undefined>(undefined),
+			Handler: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			CodeSize: new FormControl<number | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			Timeout: new FormControl<number | null | undefined>(undefined),
-			MemorySize: new FormControl<number | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			Timeout: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			MemorySize: new FormControl<number | null | undefined>(undefined, [Validators.min(128), Validators.max(3008)]),
 			LastModified: new FormControl<string | null | undefined>(undefined),
 			CodeSha256: new FormControl<string | null | undefined>(undefined),
-			Version: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			KMSKeyArn: new FormControl<string | null | undefined>(undefined),
 			MasterArn: new FormControl<string | null | undefined>(undefined),
 			RevisionId: new FormControl<string | null | undefined>(undefined),
@@ -364,7 +558,11 @@ export namespace MyNS {
 
 	/** The VPC security groups and subnets that are attached to a Lambda function. */
 	export interface VpcConfigResponse {
+
+		/** Maximum items: 16 */
 		SubnetIds?: Array<string>;
+
+		/** Maximum items: 5 */
 		SecurityGroupIds?: Array<string>;
 		VpcId?: string | null;
 	}
@@ -383,11 +581,15 @@ export namespace MyNS {
 
 	/** The <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter queue</a> for failed asynchronous invocations. */
 	export interface DeadLetterConfig {
+
+		/** Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|() */
 		TargetArn?: string | null;
 	}
 
 	/** The <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter queue</a> for failed asynchronous invocations. */
 	export interface DeadLetterConfigFormProperties {
+
+		/** Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|() */
 		TargetArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeadLetterConfigFormGroup() {
@@ -467,18 +669,30 @@ export namespace MyNS {
 
 	/** An <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. */
 	export interface Layer {
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+
+		 */
 		Arn?: string | null;
 		CodeSize?: number | null;
 	}
 
 	/** An <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. */
 	export interface LayerFormProperties {
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+
+		 */
 		Arn: FormControl<string | null | undefined>,
 		CodeSize: FormControl<number | null | undefined>,
 	}
 	export function CreateLayerFormGroup() {
 		return new FormGroup<LayerFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1)]),
 			CodeSize: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -537,6 +751,8 @@ export namespace MyNS {
 		CodeSizeUnzipped?: number | null;
 		CodeSizeZipped?: number | null;
 		ConcurrentExecutions?: number | null;
+
+		/** Minimum: 0 */
 		UnreservedConcurrentExecutions?: number | null;
 	}
 
@@ -546,6 +762,8 @@ export namespace MyNS {
 		CodeSizeUnzipped: FormControl<number | null | undefined>,
 		CodeSizeZipped: FormControl<number | null | undefined>,
 		ConcurrentExecutions: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		UnreservedConcurrentExecutions: FormControl<number | null | undefined>,
 	}
 	export function CreateAccountLimitFormGroup() {
@@ -554,7 +772,7 @@ export namespace MyNS {
 			CodeSizeUnzipped: new FormControl<number | null | undefined>(undefined),
 			CodeSizeZipped: new FormControl<number | null | undefined>(undefined),
 			ConcurrentExecutions: new FormControl<number | null | undefined>(undefined),
-			UnreservedConcurrentExecutions: new FormControl<number | null | undefined>(undefined),
+			UnreservedConcurrentExecutions: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -628,35 +846,55 @@ export namespace MyNS {
 	}
 
 	export interface Concurrency {
+
+		/** Minimum: 0 */
 		ReservedConcurrentExecutions?: number | null;
 	}
 	export interface ConcurrencyFormProperties {
+
+		/** Minimum: 0 */
 		ReservedConcurrentExecutions: FormControl<number | null | undefined>,
 	}
 	export function CreateConcurrencyFormGroup() {
 		return new FormGroup<ConcurrencyFormProperties>({
-			ReservedConcurrentExecutions: new FormControl<number | null | undefined>(undefined),
+			ReservedConcurrentExecutions: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
 
 	export interface GetFunctionConcurrencyResponse {
+
+		/** Minimum: 0 */
 		ReservedConcurrentExecutions?: number | null;
 	}
 	export interface GetFunctionConcurrencyResponseFormProperties {
+
+		/** Minimum: 0 */
 		ReservedConcurrentExecutions: FormControl<number | null | undefined>,
 	}
 	export function CreateGetFunctionConcurrencyResponseFormGroup() {
 		return new FormGroup<GetFunctionConcurrencyResponseFormProperties>({
-			ReservedConcurrentExecutions: new FormControl<number | null | undefined>(undefined),
+			ReservedConcurrentExecutions: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
 
 	export interface FunctionEventInvokeConfig {
 		LastModified?: Date | null;
+
+		/** Pattern: arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))? */
 		FunctionArn?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 2
+		 */
 		MaximumRetryAttempts?: number | null;
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 21600
+		 */
 		MaximumEventAgeInSeconds?: number | null;
 
 		/** A configuration object that specifies the destination of an event after Lambda processes it. */
@@ -664,16 +902,28 @@ export namespace MyNS {
 	}
 	export interface FunctionEventInvokeConfigFormProperties {
 		LastModified: FormControl<Date | null | undefined>,
+
+		/** Pattern: arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))? */
 		FunctionArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 2
+		 */
 		MaximumRetryAttempts: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 21600
+		 */
 		MaximumEventAgeInSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateFunctionEventInvokeConfigFormGroup() {
 		return new FormGroup<FunctionEventInvokeConfigFormProperties>({
 			LastModified: new FormControl<Date | null | undefined>(undefined),
 			FunctionArn: new FormControl<string | null | undefined>(undefined),
-			MaximumRetryAttempts: new FormControl<number | null | undefined>(undefined),
-			MaximumEventAgeInSeconds: new FormControl<number | null | undefined>(undefined),
+			MaximumRetryAttempts: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2)]),
+			MaximumEventAgeInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(21600)]),
 		});
 
 	}
@@ -682,30 +932,70 @@ export namespace MyNS {
 
 		/** Details about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. */
 		Content?: LayerVersionContentOutput;
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+
+		 */
 		LayerArn?: string | null;
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+
+		 */
 		LayerVersionArn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description?: string | null;
 		CreatedDate?: string | null;
 		Version?: number | null;
+
+		/** Maximum items: 5 */
 		CompatibleRuntimes?: Array<Runtime>;
+
+		/** Max length: 512 */
 		LicenseInfo?: string | null;
 	}
 	export interface GetLayerVersionResponseFormProperties {
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+
+		 */
 		LayerArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+
+		 */
 		LayerVersionArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
 		CreatedDate: FormControl<string | null | undefined>,
 		Version: FormControl<number | null | undefined>,
+
+		/** Max length: 512 */
 		LicenseInfo: FormControl<string | null | undefined>,
 	}
 	export function CreateGetLayerVersionResponseFormGroup() {
 		return new FormGroup<GetLayerVersionResponseFormProperties>({
-			LayerArn: new FormControl<string | null | undefined>(undefined),
-			LayerVersionArn: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			LayerArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1)]),
+			LayerVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			CreatedDate: new FormControl<string | null | undefined>(undefined),
 			Version: new FormControl<number | null | undefined>(undefined),
-			LicenseInfo: new FormControl<string | null | undefined>(undefined),
+			LicenseInfo: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512)]),
 		});
 
 	}
@@ -768,16 +1058,28 @@ export namespace MyNS {
 	}
 
 	export interface GetProvisionedConcurrencyConfigResponse {
+
+		/** Minimum: 1 */
 		RequestedProvisionedConcurrentExecutions?: number | null;
+
+		/** Minimum: 0 */
 		AvailableProvisionedConcurrentExecutions?: number | null;
+
+		/** Minimum: 0 */
 		AllocatedProvisionedConcurrentExecutions?: number | null;
 		Status?: GetProvisionedConcurrencyConfigResponseStatus | null;
 		StatusReason?: string | null;
 		LastModified?: string | null;
 	}
 	export interface GetProvisionedConcurrencyConfigResponseFormProperties {
+
+		/** Minimum: 1 */
 		RequestedProvisionedConcurrentExecutions: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		AvailableProvisionedConcurrentExecutions: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		AllocatedProvisionedConcurrentExecutions: FormControl<number | null | undefined>,
 		Status: FormControl<GetProvisionedConcurrencyConfigResponseStatus | null | undefined>,
 		StatusReason: FormControl<string | null | undefined>,
@@ -785,9 +1087,9 @@ export namespace MyNS {
 	}
 	export function CreateGetProvisionedConcurrencyConfigResponseFormGroup() {
 		return new FormGroup<GetProvisionedConcurrencyConfigResponseFormProperties>({
-			RequestedProvisionedConcurrentExecutions: new FormControl<number | null | undefined>(undefined),
-			AvailableProvisionedConcurrentExecutions: new FormControl<number | null | undefined>(undefined),
-			AllocatedProvisionedConcurrentExecutions: new FormControl<number | null | undefined>(undefined),
+			RequestedProvisionedConcurrentExecutions: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			AvailableProvisionedConcurrentExecutions: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			AllocatedProvisionedConcurrentExecutions: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			Status: new FormControl<GetProvisionedConcurrencyConfigResponseStatus | null | undefined>(undefined),
 			StatusReason: new FormControl<string | null | undefined>(undefined),
 			LastModified: new FormControl<string | null | undefined>(undefined),
@@ -1087,29 +1389,57 @@ export namespace MyNS {
 
 	/** Details about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. */
 	export interface LayerVersionsListItem {
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+
+		 */
 		LayerVersionArn?: string | null;
 		Version?: number | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description?: string | null;
 		CreatedDate?: string | null;
+
+		/** Maximum items: 5 */
 		CompatibleRuntimes?: Array<Runtime>;
+
+		/** Max length: 512 */
 		LicenseInfo?: string | null;
 	}
 
 	/** Details about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. */
 	export interface LayerVersionsListItemFormProperties {
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+
+		 */
 		LayerVersionArn: FormControl<string | null | undefined>,
 		Version: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
 		CreatedDate: FormControl<string | null | undefined>,
+
+		/** Max length: 512 */
 		LicenseInfo: FormControl<string | null | undefined>,
 	}
 	export function CreateLayerVersionsListItemFormGroup() {
 		return new FormGroup<LayerVersionsListItemFormProperties>({
-			LayerVersionArn: new FormControl<string | null | undefined>(undefined),
+			LayerVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1)]),
 			Version: new FormControl<number | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			CreatedDate: new FormControl<string | null | undefined>(undefined),
-			LicenseInfo: new FormControl<string | null | undefined>(undefined),
+			LicenseInfo: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512)]),
 		});
 
 	}
@@ -1131,7 +1461,19 @@ export namespace MyNS {
 
 	/** Details about an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. */
 	export interface LayersListItem {
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 * Pattern: (arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+)|[a-zA-Z0-9-_]+
+		 */
 		LayerName?: string | null;
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+
+		 */
 		LayerArn?: string | null;
 
 		/** Details about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. */
@@ -1140,13 +1482,25 @@ export namespace MyNS {
 
 	/** Details about an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. */
 	export interface LayersListItemFormProperties {
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 * Pattern: (arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+)|[a-zA-Z0-9-_]+
+		 */
 		LayerName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+
+		 */
 		LayerArn: FormControl<string | null | undefined>,
 	}
 	export function CreateLayersListItemFormGroup() {
 		return new FormGroup<LayersListItemFormProperties>({
-			LayerName: new FormControl<string | null | undefined>(undefined),
-			LayerArn: new FormControl<string | null | undefined>(undefined),
+			LayerName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1)]),
+			LayerArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1)]),
 		});
 
 	}
@@ -1168,9 +1522,17 @@ export namespace MyNS {
 
 	/** Details about the provisioned concurrency configuration for a function alias or version. */
 	export interface ProvisionedConcurrencyConfigListItem {
+
+		/** Pattern: arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))? */
 		FunctionArn?: string | null;
+
+		/** Minimum: 1 */
 		RequestedProvisionedConcurrentExecutions?: number | null;
+
+		/** Minimum: 0 */
 		AvailableProvisionedConcurrentExecutions?: number | null;
+
+		/** Minimum: 0 */
 		AllocatedProvisionedConcurrentExecutions?: number | null;
 		Status?: GetProvisionedConcurrencyConfigResponseStatus | null;
 		StatusReason?: string | null;
@@ -1179,9 +1541,17 @@ export namespace MyNS {
 
 	/** Details about the provisioned concurrency configuration for a function alias or version. */
 	export interface ProvisionedConcurrencyConfigListItemFormProperties {
+
+		/** Pattern: arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))? */
 		FunctionArn: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		RequestedProvisionedConcurrentExecutions: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		AvailableProvisionedConcurrentExecutions: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		AllocatedProvisionedConcurrentExecutions: FormControl<number | null | undefined>,
 		Status: FormControl<GetProvisionedConcurrencyConfigResponseStatus | null | undefined>,
 		StatusReason: FormControl<string | null | undefined>,
@@ -1190,9 +1560,9 @@ export namespace MyNS {
 	export function CreateProvisionedConcurrencyConfigListItemFormGroup() {
 		return new FormGroup<ProvisionedConcurrencyConfigListItemFormProperties>({
 			FunctionArn: new FormControl<string | null | undefined>(undefined),
-			RequestedProvisionedConcurrentExecutions: new FormControl<number | null | undefined>(undefined),
-			AvailableProvisionedConcurrentExecutions: new FormControl<number | null | undefined>(undefined),
-			AllocatedProvisionedConcurrentExecutions: new FormControl<number | null | undefined>(undefined),
+			RequestedProvisionedConcurrentExecutions: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			AvailableProvisionedConcurrentExecutions: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			AllocatedProvisionedConcurrentExecutions: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			Status: new FormControl<GetProvisionedConcurrencyConfigResponseStatus | null | undefined>(undefined),
 			StatusReason: new FormControl<string | null | undefined>(undefined),
 			LastModified: new FormControl<string | null | undefined>(undefined),
@@ -1229,45 +1599,97 @@ export namespace MyNS {
 
 		/** Details about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. */
 		Content?: LayerVersionContentOutput;
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+
+		 */
 		LayerArn?: string | null;
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+
+		 */
 		LayerVersionArn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description?: string | null;
 		CreatedDate?: string | null;
 		Version?: number | null;
+
+		/** Maximum items: 5 */
 		CompatibleRuntimes?: Array<Runtime>;
+
+		/** Max length: 512 */
 		LicenseInfo?: string | null;
 	}
 	export interface PublishLayerVersionResponseFormProperties {
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+
+		 */
 		LayerArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+
+		 */
 		LayerVersionArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
 		CreatedDate: FormControl<string | null | undefined>,
 		Version: FormControl<number | null | undefined>,
+
+		/** Max length: 512 */
 		LicenseInfo: FormControl<string | null | undefined>,
 	}
 	export function CreatePublishLayerVersionResponseFormGroup() {
 		return new FormGroup<PublishLayerVersionResponseFormProperties>({
-			LayerArn: new FormControl<string | null | undefined>(undefined),
-			LayerVersionArn: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			LayerArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1)]),
+			LayerVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			CreatedDate: new FormControl<string | null | undefined>(undefined),
 			Version: new FormControl<number | null | undefined>(undefined),
-			LicenseInfo: new FormControl<string | null | undefined>(undefined),
+			LicenseInfo: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512)]),
 		});
 
 	}
 
 	export interface PutProvisionedConcurrencyConfigResponse {
+
+		/** Minimum: 1 */
 		RequestedProvisionedConcurrentExecutions?: number | null;
+
+		/** Minimum: 0 */
 		AvailableProvisionedConcurrentExecutions?: number | null;
+
+		/** Minimum: 0 */
 		AllocatedProvisionedConcurrentExecutions?: number | null;
 		Status?: GetProvisionedConcurrencyConfigResponseStatus | null;
 		StatusReason?: string | null;
 		LastModified?: string | null;
 	}
 	export interface PutProvisionedConcurrencyConfigResponseFormProperties {
+
+		/** Minimum: 1 */
 		RequestedProvisionedConcurrentExecutions: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		AvailableProvisionedConcurrentExecutions: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		AllocatedProvisionedConcurrentExecutions: FormControl<number | null | undefined>,
 		Status: FormControl<GetProvisionedConcurrencyConfigResponseStatus | null | undefined>,
 		StatusReason: FormControl<string | null | undefined>,
@@ -1275,9 +1697,9 @@ export namespace MyNS {
 	}
 	export function CreatePutProvisionedConcurrencyConfigResponseFormGroup() {
 		return new FormGroup<PutProvisionedConcurrencyConfigResponseFormProperties>({
-			RequestedProvisionedConcurrentExecutions: new FormControl<number | null | undefined>(undefined),
-			AvailableProvisionedConcurrentExecutions: new FormControl<number | null | undefined>(undefined),
-			AllocatedProvisionedConcurrentExecutions: new FormControl<number | null | undefined>(undefined),
+			RequestedProvisionedConcurrentExecutions: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			AvailableProvisionedConcurrentExecutions: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			AllocatedProvisionedConcurrentExecutions: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			Status: new FormControl<GetProvisionedConcurrencyConfigResponseStatus | null | undefined>(undefined),
 			StatusReason: new FormControl<string | null | undefined>(undefined),
 			LastModified: new FormControl<string | null | undefined>(undefined),
@@ -1286,76 +1708,206 @@ export namespace MyNS {
 	}
 
 	export interface AddLayerVersionPermissionRequest {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z0-9-_]+)
+		 */
 		StatementId: string;
+
+		/**
+		 * Required
+		 * Pattern: lambda:GetLayerVersion
+		 */
 		Action: string;
+
+		/**
+		 * Required
+		 * Pattern: \d{12}|\*|arn:(aws[a-zA-Z-]*):iam::\d{12}:root
+		 */
 		Principal: string;
+
+		/** Pattern: o-[a-z0-9]{10,32} */
 		OrganizationId?: string | null;
 	}
 	export interface AddLayerVersionPermissionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z0-9-_]+)
+		 */
 		StatementId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: lambda:GetLayerVersion
+		 */
 		Action: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: \d{12}|\*|arn:(aws[a-zA-Z-]*):iam::\d{12}:root
+		 */
 		Principal: FormControl<string | null | undefined>,
+
+		/** Pattern: o-[a-z0-9]{10,32} */
 		OrganizationId: FormControl<string | null | undefined>,
 	}
 	export function CreateAddLayerVersionPermissionRequestFormGroup() {
 		return new FormGroup<AddLayerVersionPermissionRequestFormProperties>({
-			StatementId: new FormControl<string | null | undefined>(undefined),
-			Action: new FormControl<string | null | undefined>(undefined),
-			Principal: new FormControl<string | null | undefined>(undefined),
+			StatementId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			Action: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Principal: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			OrganizationId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface AddPermissionRequest {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z0-9-_]+)
+		 */
 		StatementId: string;
+
+		/**
+		 * Required
+		 * Pattern: (lambda:[*]|lambda:[a-zA-Z]+|[*])
+		 */
 		Action: string;
+
+		/**
+		 * Required
+		 * Pattern: .*
+		 */
 		Principal: string;
+
+		/** Pattern: arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*) */
 		SourceArn?: string | null;
+
+		/** Pattern: \d{12} */
 		SourceAccount?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: [a-zA-Z0-9._\-]+
+		 */
 		EventSourceToken?: string | null;
 		RevisionId?: string | null;
 	}
 	export interface AddPermissionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z0-9-_]+)
+		 */
 		StatementId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: (lambda:[*]|lambda:[a-zA-Z]+|[*])
+		 */
 		Action: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: .*
+		 */
 		Principal: FormControl<string | null | undefined>,
+
+		/** Pattern: arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*) */
 		SourceArn: FormControl<string | null | undefined>,
+
+		/** Pattern: \d{12} */
 		SourceAccount: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: [a-zA-Z0-9._\-]+
+		 */
 		EventSourceToken: FormControl<string | null | undefined>,
 		RevisionId: FormControl<string | null | undefined>,
 	}
 	export function CreateAddPermissionRequestFormGroup() {
 		return new FormGroup<AddPermissionRequestFormProperties>({
-			StatementId: new FormControl<string | null | undefined>(undefined),
-			Action: new FormControl<string | null | undefined>(undefined),
-			Principal: new FormControl<string | null | undefined>(undefined),
+			StatementId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			Action: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Principal: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SourceArn: new FormControl<string | null | undefined>(undefined),
 			SourceAccount: new FormControl<string | null | undefined>(undefined),
-			EventSourceToken: new FormControl<string | null | undefined>(undefined),
+			EventSourceToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			RevisionId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CreateAliasRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_]+)
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: (\$LATEST|[0-9]+)
+		 */
 		FunctionVersion: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description?: string | null;
 
 		/** The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">traffic-shifting</a> configuration of a Lambda function alias. */
 		RoutingConfig?: AliasRoutingConfiguration;
 	}
 	export interface CreateAliasRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_]+)
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: (\$LATEST|[0-9]+)
+		 */
 		FunctionVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateAliasRequestFormGroup() {
 		return new FormGroup<CreateAliasRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			FunctionVersion: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			FunctionVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -1363,47 +1915,121 @@ export namespace MyNS {
 	export enum EventSourcePosition { TRIM_HORIZON = 0, LATEST = 1, AT_TIMESTAMP = 2 }
 
 	export interface CreateEventSourceMappingRequest {
+
+		/**
+		 * Required
+		 * Pattern: arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)
+		 */
 		EventSourceArn: string;
+
+		/**
+		 * Required
+		 * Max length: 140
+		 * Min length: 1
+		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
+		 */
 		FunctionName: string;
 		Enabled?: boolean | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
 		BatchSize?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 300
+		 */
 		MaximumBatchingWindowInSeconds?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		ParallelizationFactor?: number | null;
 		StartingPosition?: EventSourcePosition | null;
 		StartingPositionTimestamp?: Date | null;
 
 		/** A configuration object that specifies the destination of an event after Lambda processes it. */
 		DestinationConfig?: DestinationConfig;
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 604800
+		 */
 		MaximumRecordAgeInSeconds?: number | null;
 		BisectBatchOnFunctionError?: boolean | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 10000
+		 */
 		MaximumRetryAttempts?: number | null;
 	}
 	export interface CreateEventSourceMappingRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)
+		 */
 		EventSourceArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 140
+		 * Min length: 1
+		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
+		 */
 		FunctionName: FormControl<string | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
 		BatchSize: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 300
+		 */
 		MaximumBatchingWindowInSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		ParallelizationFactor: FormControl<number | null | undefined>,
 		StartingPosition: FormControl<EventSourcePosition | null | undefined>,
 		StartingPositionTimestamp: FormControl<Date | null | undefined>,
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 604800
+		 */
 		MaximumRecordAgeInSeconds: FormControl<number | null | undefined>,
 		BisectBatchOnFunctionError: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 10000
+		 */
 		MaximumRetryAttempts: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateEventSourceMappingRequestFormGroup() {
 		return new FormGroup<CreateEventSourceMappingRequestFormProperties>({
-			EventSourceArn: new FormControl<string | null | undefined>(undefined),
-			FunctionName: new FormControl<string | null | undefined>(undefined),
+			EventSourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			FunctionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(140), Validators.minLength(1)]),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			BatchSize: new FormControl<number | null | undefined>(undefined),
-			MaximumBatchingWindowInSeconds: new FormControl<number | null | undefined>(undefined),
-			ParallelizationFactor: new FormControl<number | null | undefined>(undefined),
+			BatchSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
+			MaximumBatchingWindowInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(300)]),
+			ParallelizationFactor: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10)]),
 			StartingPosition: new FormControl<EventSourcePosition | null | undefined>(undefined),
 			StartingPositionTimestamp: new FormControl<Date | null | undefined>(undefined),
-			MaximumRecordAgeInSeconds: new FormControl<number | null | undefined>(undefined),
+			MaximumRecordAgeInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(604800)]),
 			BisectBatchOnFunctionError: new FormControl<boolean | null | undefined>(undefined),
-			MaximumRetryAttempts: new FormControl<number | null | undefined>(undefined),
+			MaximumRetryAttempts: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(10000)]),
 		});
 
 	}
@@ -1412,24 +2038,56 @@ export namespace MyNS {
 	/** The code for the Lambda function. You can specify either an object in Amazon S3, or upload a deployment package directly. */
 	export interface FunctionCode {
 		ZipFile?: string | null;
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 * Pattern: ^[0-9A-Za-z\.\-_]*(?<!\.)$
+		 */
 		S3Bucket?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Key?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3ObjectVersion?: string | null;
 	}
 
 	/** The code for the Lambda function. You can specify either an object in Amazon S3, or upload a deployment package directly. */
 	export interface FunctionCodeFormProperties {
 		ZipFile: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 * Pattern: ^[0-9A-Za-z\.\-_]*(?<!\.)$
+		 */
 		S3Bucket: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3ObjectVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateFunctionCodeFormGroup() {
 		return new FormGroup<FunctionCodeFormProperties>({
 			ZipFile: new FormControl<string | null | undefined>(undefined),
-			S3Bucket: new FormControl<string | null | undefined>(undefined),
-			S3Key: new FormControl<string | null | undefined>(undefined),
-			S3ObjectVersion: new FormControl<string | null | undefined>(undefined),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3)]),
+			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			S3ObjectVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1437,7 +2095,11 @@ export namespace MyNS {
 
 	/** The VPC security groups and subnets that are attached to a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>. */
 	export interface VpcConfig {
+
+		/** Maximum items: 16 */
 		SubnetIds?: Array<string>;
+
+		/** Maximum items: 5 */
 		SecurityGroupIds?: Array<string>;
 	}
 
@@ -1483,9 +2145,29 @@ export namespace MyNS {
 	}
 
 	export interface CreateFunctionRequest {
+
+		/**
+		 * Required
+		 * Max length: 140
+		 * Min length: 1
+		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
+		 */
 		FunctionName: string;
+
+		/** Required */
 		Runtime: CreateFunctionRequestRuntime;
+
+		/**
+		 * Required
+		 * Pattern: arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		Role: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Pattern: [^\s]+
+		 */
 		Handler: string;
 
 		/**
@@ -1493,8 +2175,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		Code: FunctionCode;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description?: string | null;
+
+		/** Minimum: 1 */
 		Timeout?: number | null;
+
+		/**
+		 * Minimum: 128
+		 * Maximum: 3008
+		 */
 		MemorySize?: number | null;
 		Publish?: boolean | null;
 
@@ -1506,6 +2200,8 @@ export namespace MyNS {
 
 		/** A function's environment variable settings. */
 		Environment?: Environment;
+
+		/** Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|() */
 		KMSKeyArn?: string | null;
 
 		/** The function's AWS X-Ray tracing configuration. To sample and record incoming requests, set <code>Mode</code> to <code>Active</code>. */
@@ -1514,25 +2210,59 @@ export namespace MyNS {
 		Layers?: Array<string>;
 	}
 	export interface CreateFunctionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 140
+		 * Min length: 1
+		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
+		 */
 		FunctionName: FormControl<string | null | undefined>,
+
+		/** Required */
 		Runtime: FormControl<CreateFunctionRequestRuntime | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		Role: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Pattern: [^\s]+
+		 */
 		Handler: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		Timeout: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 128
+		 * Maximum: 3008
+		 */
 		MemorySize: FormControl<number | null | undefined>,
 		Publish: FormControl<boolean | null | undefined>,
+
+		/** Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|() */
 		KMSKeyArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateFunctionRequestFormGroup() {
 		return new FormGroup<CreateFunctionRequestFormProperties>({
-			FunctionName: new FormControl<string | null | undefined>(undefined),
-			Runtime: new FormControl<CreateFunctionRequestRuntime | null | undefined>(undefined),
-			Role: new FormControl<string | null | undefined>(undefined),
-			Handler: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			Timeout: new FormControl<number | null | undefined>(undefined),
-			MemorySize: new FormControl<number | null | undefined>(undefined),
+			FunctionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(140), Validators.minLength(1)]),
+			Runtime: new FormControl<CreateFunctionRequestRuntime | null | undefined>(undefined, [Validators.required]),
+			Role: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Handler: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			Timeout: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			MemorySize: new FormControl<number | null | undefined>(undefined, [Validators.min(128), Validators.max(3008)]),
 			Publish: new FormControl<boolean | null | undefined>(undefined),
 			KMSKeyArn: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1761,14 +2491,18 @@ export namespace MyNS {
 	}
 
 	export interface InvokeAsyncRequest {
+
+		/** Required */
 		InvokeArgs: string;
 	}
 	export interface InvokeAsyncRequestFormProperties {
+
+		/** Required */
 		InvokeArgs: FormControl<string | null | undefined>,
 	}
 	export function CreateInvokeAsyncRequestFormGroup() {
 		return new FormGroup<InvokeAsyncRequestFormProperties>({
-			InvokeArgs: new FormControl<string | null | undefined>(undefined),
+			InvokeArgs: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1776,24 +2510,56 @@ export namespace MyNS {
 
 	/** A ZIP archive that contains the contents of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. You can specify either an Amazon S3 location, or upload a layer archive directly. */
 	export interface LayerVersionContentInput {
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 * Pattern: ^[0-9A-Za-z\.\-_]*(?<!\.)$
+		 */
 		S3Bucket?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Key?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3ObjectVersion?: string | null;
 		ZipFile?: string | null;
 	}
 
 	/** A ZIP archive that contains the contents of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. You can specify either an Amazon S3 location, or upload a layer archive directly. */
 	export interface LayerVersionContentInputFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 * Pattern: ^[0-9A-Za-z\.\-_]*(?<!\.)$
+		 */
 		S3Bucket: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3ObjectVersion: FormControl<string | null | undefined>,
 		ZipFile: FormControl<string | null | undefined>,
 	}
 	export function CreateLayerVersionContentInputFormGroup() {
 		return new FormGroup<LayerVersionContentInputFormProperties>({
-			S3Bucket: new FormControl<string | null | undefined>(undefined),
-			S3Key: new FormControl<string | null | undefined>(undefined),
-			S3ObjectVersion: new FormControl<string | null | undefined>(undefined),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3)]),
+			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			S3ObjectVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			ZipFile: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1890,6 +2656,11 @@ export namespace MyNS {
 	}
 
 	export interface PublishLayerVersionRequest {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description?: string | null;
 
 		/**
@@ -1897,81 +2668,142 @@ export namespace MyNS {
 		 * Required
 		 */
 		Content: LayerVersionContentInput;
+
+		/** Maximum items: 5 */
 		CompatibleRuntimes?: Array<Runtime>;
+
+		/** Max length: 512 */
 		LicenseInfo?: string | null;
 	}
 	export interface PublishLayerVersionRequestFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/** Max length: 512 */
 		LicenseInfo: FormControl<string | null | undefined>,
 	}
 	export function CreatePublishLayerVersionRequestFormGroup() {
 		return new FormGroup<PublishLayerVersionRequestFormProperties>({
-			Description: new FormControl<string | null | undefined>(undefined),
-			LicenseInfo: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			LicenseInfo: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512)]),
 		});
 
 	}
 
 	export interface PublishVersionRequest {
 		CodeSha256?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description?: string | null;
 		RevisionId?: string | null;
 	}
 	export interface PublishVersionRequestFormProperties {
 		CodeSha256: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
 		RevisionId: FormControl<string | null | undefined>,
 	}
 	export function CreatePublishVersionRequestFormGroup() {
 		return new FormGroup<PublishVersionRequestFormProperties>({
 			CodeSha256: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			RevisionId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PutFunctionConcurrencyRequest {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		ReservedConcurrentExecutions: number;
 	}
 	export interface PutFunctionConcurrencyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		ReservedConcurrentExecutions: FormControl<number | null | undefined>,
 	}
 	export function CreatePutFunctionConcurrencyRequestFormGroup() {
 		return new FormGroup<PutFunctionConcurrencyRequestFormProperties>({
-			ReservedConcurrentExecutions: new FormControl<number | null | undefined>(undefined),
+			ReservedConcurrentExecutions: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 		});
 
 	}
 
 	export interface PutFunctionEventInvokeConfigRequest {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 2
+		 */
 		MaximumRetryAttempts?: number | null;
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 21600
+		 */
 		MaximumEventAgeInSeconds?: number | null;
 
 		/** A configuration object that specifies the destination of an event after Lambda processes it. */
 		DestinationConfig?: DestinationConfig;
 	}
 	export interface PutFunctionEventInvokeConfigRequestFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 2
+		 */
 		MaximumRetryAttempts: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 21600
+		 */
 		MaximumEventAgeInSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreatePutFunctionEventInvokeConfigRequestFormGroup() {
 		return new FormGroup<PutFunctionEventInvokeConfigRequestFormProperties>({
-			MaximumRetryAttempts: new FormControl<number | null | undefined>(undefined),
-			MaximumEventAgeInSeconds: new FormControl<number | null | undefined>(undefined),
+			MaximumRetryAttempts: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2)]),
+			MaximumEventAgeInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(21600)]),
 		});
 
 	}
 
 	export interface PutProvisionedConcurrencyConfigRequest {
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		ProvisionedConcurrentExecutions: number;
 	}
 	export interface PutProvisionedConcurrencyConfigRequestFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		ProvisionedConcurrentExecutions: FormControl<number | null | undefined>,
 	}
 	export function CreatePutProvisionedConcurrencyConfigRequestFormGroup() {
 		return new FormGroup<PutProvisionedConcurrencyConfigRequestFormProperties>({
-			ProvisionedConcurrentExecutions: new FormControl<number | null | undefined>(undefined),
+			ProvisionedConcurrentExecutions: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 		});
 
 	}
@@ -1997,6 +2829,8 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/** Required */
 		Tags: Tags;
 	}
 	export interface TagResourceRequestFormProperties {
@@ -2018,7 +2852,18 @@ export namespace MyNS {
 	}
 
 	export interface UpdateAliasRequest {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: (\$LATEST|[0-9]+)
+		 */
 		FunctionVersion?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description?: string | null;
 
 		/** The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">traffic-shifting</a> configuration of a Lambda function alias. */
@@ -2026,60 +2871,149 @@ export namespace MyNS {
 		RevisionId?: string | null;
 	}
 	export interface UpdateAliasRequestFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: (\$LATEST|[0-9]+)
+		 */
 		FunctionVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
 		RevisionId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateAliasRequestFormGroup() {
 		return new FormGroup<UpdateAliasRequestFormProperties>({
-			FunctionVersion: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			FunctionVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			RevisionId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface UpdateEventSourceMappingRequest {
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
+		 */
 		FunctionName?: string | null;
 		Enabled?: boolean | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
 		BatchSize?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 300
+		 */
 		MaximumBatchingWindowInSeconds?: number | null;
 
 		/** A configuration object that specifies the destination of an event after Lambda processes it. */
 		DestinationConfig?: DestinationConfig;
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 604800
+		 */
 		MaximumRecordAgeInSeconds?: number | null;
 		BisectBatchOnFunctionError?: boolean | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 10000
+		 */
 		MaximumRetryAttempts?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		ParallelizationFactor?: number | null;
 	}
 	export interface UpdateEventSourceMappingRequestFormProperties {
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
+		 */
 		FunctionName: FormControl<string | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
 		BatchSize: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 300
+		 */
 		MaximumBatchingWindowInSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 604800
+		 */
 		MaximumRecordAgeInSeconds: FormControl<number | null | undefined>,
 		BisectBatchOnFunctionError: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 10000
+		 */
 		MaximumRetryAttempts: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		ParallelizationFactor: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateEventSourceMappingRequestFormGroup() {
 		return new FormGroup<UpdateEventSourceMappingRequestFormProperties>({
-			FunctionName: new FormControl<string | null | undefined>(undefined),
+			FunctionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1)]),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			BatchSize: new FormControl<number | null | undefined>(undefined),
-			MaximumBatchingWindowInSeconds: new FormControl<number | null | undefined>(undefined),
-			MaximumRecordAgeInSeconds: new FormControl<number | null | undefined>(undefined),
+			BatchSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
+			MaximumBatchingWindowInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(300)]),
+			MaximumRecordAgeInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(604800)]),
 			BisectBatchOnFunctionError: new FormControl<boolean | null | undefined>(undefined),
-			MaximumRetryAttempts: new FormControl<number | null | undefined>(undefined),
-			ParallelizationFactor: new FormControl<number | null | undefined>(undefined),
+			MaximumRetryAttempts: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(10000)]),
+			ParallelizationFactor: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10)]),
 		});
 
 	}
 
 	export interface UpdateFunctionCodeRequest {
 		ZipFile?: string | null;
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 * Pattern: ^[0-9A-Za-z\.\-_]*(?<!\.)$
+		 */
 		S3Bucket?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Key?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3ObjectVersion?: string | null;
 		Publish?: boolean | null;
 		DryRun?: boolean | null;
@@ -2087,8 +3021,24 @@ export namespace MyNS {
 	}
 	export interface UpdateFunctionCodeRequestFormProperties {
 		ZipFile: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 * Pattern: ^[0-9A-Za-z\.\-_]*(?<!\.)$
+		 */
 		S3Bucket: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3ObjectVersion: FormControl<string | null | undefined>,
 		Publish: FormControl<boolean | null | undefined>,
 		DryRun: FormControl<boolean | null | undefined>,
@@ -2097,9 +3047,9 @@ export namespace MyNS {
 	export function CreateUpdateFunctionCodeRequestFormGroup() {
 		return new FormGroup<UpdateFunctionCodeRequestFormProperties>({
 			ZipFile: new FormControl<string | null | undefined>(undefined),
-			S3Bucket: new FormControl<string | null | undefined>(undefined),
-			S3Key: new FormControl<string | null | undefined>(undefined),
-			S3ObjectVersion: new FormControl<string | null | undefined>(undefined),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3)]),
+			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			S3ObjectVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			Publish: new FormControl<boolean | null | undefined>(undefined),
 			DryRun: new FormControl<boolean | null | undefined>(undefined),
 			RevisionId: new FormControl<string | null | undefined>(undefined),
@@ -2108,10 +3058,29 @@ export namespace MyNS {
 	}
 
 	export interface UpdateFunctionConfigurationRequest {
+
+		/** Pattern: arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+ */
 		Role?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Pattern: [^\s]+
+		 */
 		Handler?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description?: string | null;
+
+		/** Minimum: 1 */
 		Timeout?: number | null;
+
+		/**
+		 * Minimum: 128
+		 * Maximum: 3008
+		 */
 		MemorySize?: number | null;
 
 		/** The VPC security groups and subnets that are attached to a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>. */
@@ -2123,6 +3092,8 @@ export namespace MyNS {
 
 		/** The <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter queue</a> for failed asynchronous invocations. */
 		DeadLetterConfig?: DeadLetterConfig;
+
+		/** Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|() */
 		KMSKeyArn?: string | null;
 
 		/** The function's AWS X-Ray tracing configuration. To sample and record incoming requests, set <code>Mode</code> to <code>Active</code>. */
@@ -2131,22 +3102,43 @@ export namespace MyNS {
 		Layers?: Array<string>;
 	}
 	export interface UpdateFunctionConfigurationRequestFormProperties {
+
+		/** Pattern: arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+ */
 		Role: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Pattern: [^\s]+
+		 */
 		Handler: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		Timeout: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 128
+		 * Maximum: 3008
+		 */
 		MemorySize: FormControl<number | null | undefined>,
 		Runtime: FormControl<UpdateFunctionConfigurationRequestRuntime | null | undefined>,
+
+		/** Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|() */
 		KMSKeyArn: FormControl<string | null | undefined>,
 		RevisionId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateFunctionConfigurationRequestFormGroup() {
 		return new FormGroup<UpdateFunctionConfigurationRequestFormProperties>({
 			Role: new FormControl<string | null | undefined>(undefined),
-			Handler: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			Timeout: new FormControl<number | null | undefined>(undefined),
-			MemorySize: new FormControl<number | null | undefined>(undefined),
+			Handler: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			Timeout: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			MemorySize: new FormControl<number | null | undefined>(undefined, [Validators.min(128), Validators.max(3008)]),
 			Runtime: new FormControl<UpdateFunctionConfigurationRequestRuntime | null | undefined>(undefined),
 			KMSKeyArn: new FormControl<string | null | undefined>(undefined),
 			RevisionId: new FormControl<string | null | undefined>(undefined),
@@ -2157,20 +3149,40 @@ export namespace MyNS {
 	export enum UpdateFunctionConfigurationRequestRuntime { nodejs = 0, nodejs4_3 = 1, nodejs6_10 = 2, nodejs8_10 = 3, nodejs10_x = 4, nodejs12_x = 5, java8 = 6, java11 = 7, python2_7 = 8, python3_6 = 9, python3_7 = 10, python3_8 = 11, dotnetcore1_0 = 12, dotnetcore2_0 = 13, dotnetcore2_1 = 14, dotnetcore3_1 = 15, nodejs4_3_edge = 16, go1_x = 17, ruby2_5 = 18, ruby2_7 = 19, provided = 20 }
 
 	export interface UpdateFunctionEventInvokeConfigRequest {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 2
+		 */
 		MaximumRetryAttempts?: number | null;
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 21600
+		 */
 		MaximumEventAgeInSeconds?: number | null;
 
 		/** A configuration object that specifies the destination of an event after Lambda processes it. */
 		DestinationConfig?: DestinationConfig;
 	}
 	export interface UpdateFunctionEventInvokeConfigRequestFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 2
+		 */
 		MaximumRetryAttempts: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 21600
+		 */
 		MaximumEventAgeInSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateFunctionEventInvokeConfigRequestFormGroup() {
 		return new FormGroup<UpdateFunctionEventInvokeConfigRequestFormProperties>({
-			MaximumRetryAttempts: new FormControl<number | null | undefined>(undefined),
-			MaximumEventAgeInSeconds: new FormControl<number | null | undefined>(undefined),
+			MaximumRetryAttempts: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2)]),
+			MaximumEventAgeInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(21600)]),
 		});
 
 	}
@@ -2780,9 +3792,9 @@ export namespace MyNS {
 	}
 	export function CreateAddLayerVersionPermissionPostBodyFormGroup() {
 		return new FormGroup<AddLayerVersionPermissionPostBodyFormProperties>({
-			StatementId: new FormControl<string | null | undefined>(undefined),
-			Action: new FormControl<string | null | undefined>(undefined),
-			Principal: new FormControl<string | null | undefined>(undefined),
+			StatementId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			Action: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Principal: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			OrganizationId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2886,12 +3898,12 @@ export namespace MyNS {
 	}
 	export function CreateAddPermissionPostBodyFormGroup() {
 		return new FormGroup<AddPermissionPostBodyFormProperties>({
-			StatementId: new FormControl<string | null | undefined>(undefined),
-			Action: new FormControl<string | null | undefined>(undefined),
-			Principal: new FormControl<string | null | undefined>(undefined),
+			StatementId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			Action: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Principal: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SourceArn: new FormControl<string | null | undefined>(undefined),
 			SourceAccount: new FormControl<string | null | undefined>(undefined),
-			EventSourceToken: new FormControl<string | null | undefined>(undefined),
+			EventSourceToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			RevisionId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2956,9 +3968,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateAliasPostBodyFormGroup() {
 		return new FormGroup<CreateAliasPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			FunctionVersion: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			FunctionVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -3109,17 +4121,17 @@ export namespace MyNS {
 	}
 	export function CreateCreateEventSourceMappingPostBodyFormGroup() {
 		return new FormGroup<CreateEventSourceMappingPostBodyFormProperties>({
-			EventSourceArn: new FormControl<string | null | undefined>(undefined),
-			FunctionName: new FormControl<string | null | undefined>(undefined),
+			EventSourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			FunctionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(140), Validators.minLength(1)]),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			BatchSize: new FormControl<number | null | undefined>(undefined),
-			MaximumBatchingWindowInSeconds: new FormControl<number | null | undefined>(undefined),
-			ParallelizationFactor: new FormControl<number | null | undefined>(undefined),
+			BatchSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
+			MaximumBatchingWindowInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(300)]),
+			ParallelizationFactor: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10)]),
 			StartingPosition: new FormControl<EventSourcePosition | null | undefined>(undefined),
 			StartingPositionTimestamp: new FormControl<Date | null | undefined>(undefined),
-			MaximumRecordAgeInSeconds: new FormControl<number | null | undefined>(undefined),
+			MaximumRecordAgeInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(604800)]),
 			BisectBatchOnFunctionError: new FormControl<boolean | null | undefined>(undefined),
-			MaximumRetryAttempts: new FormControl<number | null | undefined>(undefined),
+			MaximumRetryAttempts: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(10000)]),
 		});
 
 	}
@@ -3291,13 +4303,13 @@ export namespace MyNS {
 	}
 	export function CreateCreateFunctionPostBodyFormGroup() {
 		return new FormGroup<CreateFunctionPostBodyFormProperties>({
-			FunctionName: new FormControl<string | null | undefined>(undefined),
-			Runtime: new FormControl<CreateFunctionPostBodyRuntime | null | undefined>(undefined),
-			Role: new FormControl<string | null | undefined>(undefined),
-			Handler: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			Timeout: new FormControl<number | null | undefined>(undefined),
-			MemorySize: new FormControl<number | null | undefined>(undefined),
+			FunctionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(140), Validators.minLength(1)]),
+			Runtime: new FormControl<CreateFunctionPostBodyRuntime | null | undefined>(undefined, [Validators.required]),
+			Role: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Handler: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			Timeout: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			MemorySize: new FormControl<number | null | undefined>(undefined, [Validators.min(128), Validators.max(3008)]),
 			Publish: new FormControl<boolean | null | undefined>(undefined),
 			KMSKeyArn: new FormControl<string | null | undefined>(undefined),
 			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
@@ -3309,28 +4321,64 @@ export namespace MyNS {
 
 	export interface CreateFunctionPostBodyCode {
 		ZipFile?: string | null;
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 * Pattern: ^[0-9A-Za-z\.\-_]*(?<!\.)$
+		 */
 		S3Bucket?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Key?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3ObjectVersion?: string | null;
 	}
 	export interface CreateFunctionPostBodyCodeFormProperties {
 		ZipFile: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 * Pattern: ^[0-9A-Za-z\.\-_]*(?<!\.)$
+		 */
 		S3Bucket: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3ObjectVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateFunctionPostBodyCodeFormGroup() {
 		return new FormGroup<CreateFunctionPostBodyCodeFormProperties>({
 			ZipFile: new FormControl<string | null | undefined>(undefined),
-			S3Bucket: new FormControl<string | null | undefined>(undefined),
-			S3Key: new FormControl<string | null | undefined>(undefined),
-			S3ObjectVersion: new FormControl<string | null | undefined>(undefined),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3)]),
+			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			S3ObjectVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateFunctionPostBodyVpcConfig {
+
+		/** Maximum items: 16 */
 		SubnetIds?: Array<string>;
+
+		/** Maximum items: 5 */
 		SecurityGroupIds?: Array<string>;
 	}
 	export interface CreateFunctionPostBodyVpcConfigFormProperties {
@@ -3342,9 +4390,13 @@ export namespace MyNS {
 	}
 
 	export interface CreateFunctionPostBodyDeadLetterConfig {
+
+		/** Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|() */
 		TargetArn?: string | null;
 	}
 	export interface CreateFunctionPostBodyDeadLetterConfigFormProperties {
+
+		/** Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|() */
 		TargetArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateFunctionPostBodyDeadLetterConfigFormGroup() {
@@ -3423,8 +4475,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateAliasPutBodyFormGroup() {
 		return new FormGroup<UpdateAliasPutBodyFormProperties>({
-			FunctionVersion: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			FunctionVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			RevisionId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3548,14 +4600,14 @@ export namespace MyNS {
 	}
 	export function CreateUpdateEventSourceMappingPutBodyFormGroup() {
 		return new FormGroup<UpdateEventSourceMappingPutBodyFormProperties>({
-			FunctionName: new FormControl<string | null | undefined>(undefined),
+			FunctionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1)]),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			BatchSize: new FormControl<number | null | undefined>(undefined),
-			MaximumBatchingWindowInSeconds: new FormControl<number | null | undefined>(undefined),
-			MaximumRecordAgeInSeconds: new FormControl<number | null | undefined>(undefined),
+			BatchSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
+			MaximumBatchingWindowInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(300)]),
+			MaximumRecordAgeInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(604800)]),
 			BisectBatchOnFunctionError: new FormControl<boolean | null | undefined>(undefined),
-			MaximumRetryAttempts: new FormControl<number | null | undefined>(undefined),
-			ParallelizationFactor: new FormControl<number | null | undefined>(undefined),
+			MaximumRetryAttempts: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(10000)]),
+			ParallelizationFactor: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10)]),
 		});
 
 	}
@@ -3596,7 +4648,7 @@ export namespace MyNS {
 	}
 	export function CreatePutFunctionConcurrencyPutBodyFormGroup() {
 		return new FormGroup<PutFunctionConcurrencyPutBodyFormProperties>({
-			ReservedConcurrentExecutions: new FormControl<number | null | undefined>(undefined),
+			ReservedConcurrentExecutions: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 		});
 
 	}
@@ -3638,8 +4690,8 @@ export namespace MyNS {
 	}
 	export function CreatePutFunctionEventInvokeConfigPutBodyFormGroup() {
 		return new FormGroup<PutFunctionEventInvokeConfigPutBodyFormProperties>({
-			MaximumRetryAttempts: new FormControl<number | null | undefined>(undefined),
-			MaximumEventAgeInSeconds: new FormControl<number | null | undefined>(undefined),
+			MaximumRetryAttempts: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2)]),
+			MaximumEventAgeInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(21600)]),
 		});
 
 	}
@@ -3697,8 +4749,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateFunctionEventInvokeConfigPostBodyFormGroup() {
 		return new FormGroup<UpdateFunctionEventInvokeConfigPostBodyFormProperties>({
-			MaximumRetryAttempts: new FormControl<number | null | undefined>(undefined),
-			MaximumEventAgeInSeconds: new FormControl<number | null | undefined>(undefined),
+			MaximumRetryAttempts: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2)]),
+			MaximumEventAgeInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(21600)]),
 		});
 
 	}
@@ -3739,7 +4791,7 @@ export namespace MyNS {
 	}
 	export function CreatePutProvisionedConcurrencyConfigPutBodyFormGroup() {
 		return new FormGroup<PutProvisionedConcurrencyConfigPutBodyFormProperties>({
-			ProvisionedConcurrentExecutions: new FormControl<number | null | undefined>(undefined),
+			ProvisionedConcurrentExecutions: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 		});
 
 	}
@@ -3856,10 +4908,10 @@ export namespace MyNS {
 	export function CreateUpdateFunctionConfigurationPutBodyFormGroup() {
 		return new FormGroup<UpdateFunctionConfigurationPutBodyFormProperties>({
 			Role: new FormControl<string | null | undefined>(undefined),
-			Handler: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			Timeout: new FormControl<number | null | undefined>(undefined),
-			MemorySize: new FormControl<number | null | undefined>(undefined),
+			Handler: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			Timeout: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			MemorySize: new FormControl<number | null | undefined>(undefined, [Validators.min(128), Validators.max(3008)]),
 			Runtime: new FormControl<UpdateFunctionConfigurationPutBodyRuntime | null | undefined>(undefined),
 			KMSKeyArn: new FormControl<string | null | undefined>(undefined),
 			RevisionId: new FormControl<string | null | undefined>(undefined),
@@ -3868,7 +4920,11 @@ export namespace MyNS {
 	}
 
 	export interface UpdateFunctionConfigurationPutBodyVpcConfig {
+
+		/** Maximum items: 16 */
 		SubnetIds?: Array<string>;
+
+		/** Maximum items: 5 */
 		SecurityGroupIds?: Array<string>;
 	}
 	export interface UpdateFunctionConfigurationPutBodyVpcConfigFormProperties {
@@ -3893,9 +4949,13 @@ export namespace MyNS {
 	export enum UpdateFunctionConfigurationPutBodyRuntime { nodejs = 0, nodejs4_3 = 1, nodejs6_10 = 2, nodejs8_10 = 3, nodejs10_x = 4, nodejs12_x = 5, java8 = 6, java11 = 7, python2_7 = 8, python3_6 = 9, python3_7 = 10, python3_8 = 11, dotnetcore1_0 = 12, dotnetcore2_0 = 13, dotnetcore2_1 = 14, dotnetcore3_1 = 15, nodejs4_3_edge = 16, go1_x = 17, ruby2_5 = 18, ruby2_7 = 19, provided = 20 }
 
 	export interface UpdateFunctionConfigurationPutBodyDeadLetterConfig {
+
+		/** Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|() */
 		TargetArn?: string | null;
 	}
 	export interface UpdateFunctionConfigurationPutBodyDeadLetterConfigFormProperties {
+
+		/** Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|() */
 		TargetArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateFunctionConfigurationPutBodyDeadLetterConfigFormGroup() {
@@ -3955,7 +5015,7 @@ export namespace MyNS {
 	}
 	export function CreateInvokeAsyncPostBodyFormGroup() {
 		return new FormGroup<InvokeAsyncPostBodyFormProperties>({
-			InvokeArgs: new FormControl<string | null | undefined>(undefined),
+			InvokeArgs: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4006,29 +5066,61 @@ export namespace MyNS {
 	}
 	export function CreatePublishLayerVersionPostBodyFormGroup() {
 		return new FormGroup<PublishLayerVersionPostBodyFormProperties>({
-			Description: new FormControl<string | null | undefined>(undefined),
-			LicenseInfo: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			LicenseInfo: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512)]),
 		});
 
 	}
 
 	export interface PublishLayerVersionPostBodyContent {
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 * Pattern: ^[0-9A-Za-z\.\-_]*(?<!\.)$
+		 */
 		S3Bucket?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Key?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3ObjectVersion?: string | null;
 		ZipFile?: string | null;
 	}
 	export interface PublishLayerVersionPostBodyContentFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 * Pattern: ^[0-9A-Za-z\.\-_]*(?<!\.)$
+		 */
 		S3Bucket: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3ObjectVersion: FormControl<string | null | undefined>,
 		ZipFile: FormControl<string | null | undefined>,
 	}
 	export function CreatePublishLayerVersionPostBodyContentFormGroup() {
 		return new FormGroup<PublishLayerVersionPostBodyContentFormProperties>({
-			S3Bucket: new FormControl<string | null | undefined>(undefined),
-			S3Key: new FormControl<string | null | undefined>(undefined),
-			S3ObjectVersion: new FormControl<string | null | undefined>(undefined),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3)]),
+			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			S3ObjectVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			ZipFile: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4054,7 +5146,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4092,7 +5184,7 @@ export namespace MyNS {
 	export function CreatePublishVersionPostBodyFormGroup() {
 		return new FormGroup<PublishVersionPostBodyFormProperties>({
 			CodeSha256: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			RevisionId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4173,9 +5265,9 @@ export namespace MyNS {
 	export function CreateUpdateFunctionCodePutBodyFormGroup() {
 		return new FormGroup<UpdateFunctionCodePutBodyFormProperties>({
 			ZipFile: new FormControl<string | null | undefined>(undefined),
-			S3Bucket: new FormControl<string | null | undefined>(undefined),
-			S3Key: new FormControl<string | null | undefined>(undefined),
-			S3ObjectVersion: new FormControl<string | null | undefined>(undefined),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3)]),
+			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			S3ObjectVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			Publish: new FormControl<boolean | null | undefined>(undefined),
 			DryRun: new FormControl<boolean | null | undefined>(undefined),
 			RevisionId: new FormControl<string | null | undefined>(undefined),

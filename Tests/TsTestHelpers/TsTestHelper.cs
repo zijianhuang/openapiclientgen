@@ -19,12 +19,14 @@ namespace SwagTests
 		/// 
 		/// </summary>
 		/// <param name="codeGenType">Code gen Type to be instantiated.</param>
-		public TsTestHelper(Type codeGenType)
+		public TsTestHelper(Type codeGenType, ITestingSettings testingSettings)
 		{
 			this.codeGenType = codeGenType;
+			this.testingSettings = testingSettings;
 		}
 
 		readonly Type codeGenType;
+		protected readonly ITestingSettings testingSettings;
 
 		static OpenApiDocument ReadOpenApiDef(string filePath)
 		{
@@ -108,7 +110,7 @@ namespace SwagTests
 		public void GenerateAndAssert(string openApiFile, string expectedFile, Settings mySettings = null)
 		{
 			string s = TranslateDefToCode(openApiFile, mySettings);
-			if (TestingSettings.Instance.UpdateGenerated)
+			if (testingSettings.UpdateGenerated)
 			{
 				File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
 			}

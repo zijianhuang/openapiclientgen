@@ -14,23 +14,55 @@ export namespace MyNS {
 	}
 
 	export interface DeleteScalingPolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		PolicyName: string;
+
+		/** Required */
 		ServiceNamespace: DeleteScalingPolicyRequestServiceNamespace;
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: string;
+
+		/** Required */
 		ScalableDimension: DeleteScalingPolicyRequestScalableDimension;
 	}
 	export interface DeleteScalingPolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		PolicyName: FormControl<string | null | undefined>,
+
+		/** Required */
 		ServiceNamespace: FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ScalableDimension: FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>,
 	}
 	export function CreateDeleteScalingPolicyRequestFormGroup() {
 		return new FormGroup<DeleteScalingPolicyRequestFormProperties>({
-			PolicyName: new FormControl<string | null | undefined>(undefined),
-			ServiceNamespace: new FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
-			ScalableDimension: new FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			ServiceNamespace: new FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			ScalableDimension: new FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -90,23 +122,55 @@ export namespace MyNS {
 	}
 
 	export interface DeleteScheduledActionRequest {
+
+		/** Required */
 		ServiceNamespace: DeleteScheduledActionRequestServiceNamespace;
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ScheduledActionName: string;
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: string;
+
+		/** Required */
 		ScalableDimension: DeleteScheduledActionRequestScalableDimension;
 	}
 	export interface DeleteScheduledActionRequestFormProperties {
+
+		/** Required */
 		ServiceNamespace: FormControl<DeleteScheduledActionRequestServiceNamespace | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ScheduledActionName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ScalableDimension: FormControl<DeleteScheduledActionRequestScalableDimension | null | undefined>,
 	}
 	export function CreateDeleteScheduledActionRequestFormGroup() {
 		return new FormGroup<DeleteScheduledActionRequestFormProperties>({
-			ServiceNamespace: new FormControl<DeleteScheduledActionRequestServiceNamespace | null | undefined>(undefined),
-			ScheduledActionName: new FormControl<string | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
-			ScalableDimension: new FormControl<DeleteScheduledActionRequestScalableDimension | null | undefined>(undefined),
+			ServiceNamespace: new FormControl<DeleteScheduledActionRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			ScheduledActionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			ScalableDimension: new FormControl<DeleteScheduledActionRequestScalableDimension | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -126,20 +190,40 @@ export namespace MyNS {
 	}
 
 	export interface DeregisterScalableTargetRequest {
+
+		/** Required */
 		ServiceNamespace: DeregisterScalableTargetRequestServiceNamespace;
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: string;
+
+		/** Required */
 		ScalableDimension: DeregisterScalableTargetRequestScalableDimension;
 	}
 	export interface DeregisterScalableTargetRequestFormProperties {
+
+		/** Required */
 		ServiceNamespace: FormControl<DeregisterScalableTargetRequestServiceNamespace | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ScalableDimension: FormControl<DeregisterScalableTargetRequestScalableDimension | null | undefined>,
 	}
 	export function CreateDeregisterScalableTargetRequestFormGroup() {
 		return new FormGroup<DeregisterScalableTargetRequestFormProperties>({
-			ServiceNamespace: new FormControl<DeregisterScalableTargetRequestServiceNamespace | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
-			ScalableDimension: new FormControl<DeregisterScalableTargetRequestScalableDimension | null | undefined>(undefined),
+			ServiceNamespace: new FormControl<DeregisterScalableTargetRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			ScalableDimension: new FormControl<DeregisterScalableTargetRequestScalableDimension | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -165,12 +249,34 @@ export namespace MyNS {
 
 	/** Represents a scalable target. */
 	export interface ScalableTarget {
+
+		/** Required */
 		ServiceNamespace: ScalableTargetServiceNamespace;
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: string;
+
+		/** Required */
 		ScalableDimension: ScalableTargetScalableDimension;
+
+		/** Required */
 		MinCapacity: number;
+
+		/** Required */
 		MaxCapacity: number;
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		RoleARN: string;
+
+		/** Required */
 		CreationTime: Date;
 
 		/** Specifies whether the scaling activities for a scalable target are in a suspended state. */
@@ -179,23 +285,45 @@ export namespace MyNS {
 
 	/** Represents a scalable target. */
 	export interface ScalableTargetFormProperties {
+
+		/** Required */
 		ServiceNamespace: FormControl<ScalableTargetServiceNamespace | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ScalableDimension: FormControl<ScalableTargetScalableDimension | null | undefined>,
+
+		/** Required */
 		MinCapacity: FormControl<number | null | undefined>,
+
+		/** Required */
 		MaxCapacity: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		RoleARN: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreationTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateScalableTargetFormGroup() {
 		return new FormGroup<ScalableTargetFormProperties>({
-			ServiceNamespace: new FormControl<ScalableTargetServiceNamespace | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
-			ScalableDimension: new FormControl<ScalableTargetScalableDimension | null | undefined>(undefined),
-			MinCapacity: new FormControl<number | null | undefined>(undefined),
-			MaxCapacity: new FormControl<number | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
-			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			ServiceNamespace: new FormControl<ScalableTargetServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			ScalableDimension: new FormControl<ScalableTargetScalableDimension | null | undefined>(undefined, [Validators.required]),
+			MinCapacity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			MaxCapacity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -228,6 +356,8 @@ export namespace MyNS {
 	}
 
 	export interface DescribeScalableTargetsRequest {
+
+		/** Required */
 		ServiceNamespace: DescribeScalableTargetsRequestServiceNamespace;
 		ResourceIds?: Array<string>;
 		ScalableDimension?: DescribeScalableTargetsRequestScalableDimension | null;
@@ -235,6 +365,8 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 	export interface DescribeScalableTargetsRequestFormProperties {
+
+		/** Required */
 		ServiceNamespace: FormControl<DescribeScalableTargetsRequestServiceNamespace | null | undefined>,
 		ScalableDimension: FormControl<DescribeScalableTargetsRequestScalableDimension | null | undefined>,
 		MaxResults: FormControl<number | null | undefined>,
@@ -242,7 +374,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeScalableTargetsRequestFormGroup() {
 		return new FormGroup<DescribeScalableTargetsRequestFormProperties>({
-			ServiceNamespace: new FormControl<DescribeScalableTargetsRequestServiceNamespace | null | undefined>(undefined),
+			ServiceNamespace: new FormControl<DescribeScalableTargetsRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
 			ScalableDimension: new FormControl<DescribeScalableTargetsRequestScalableDimension | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
@@ -281,14 +413,34 @@ export namespace MyNS {
 
 	/** Represents a scaling activity. */
 	export interface ScalingActivity {
+
+		/** Required */
 		ActivityId: string;
+
+		/** Required */
 		ServiceNamespace: ScalingActivityServiceNamespace;
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: string;
+
+		/** Required */
 		ScalableDimension: ScalingActivityScalableDimension;
+
+		/** Required */
 		Description: string;
+
+		/** Required */
 		Cause: string;
+
+		/** Required */
 		StartTime: Date;
 		EndTime?: Date | null;
+
+		/** Required */
 		StatusCode: ScalingActivityStatusCode;
 		StatusMessage?: string | null;
 		Details?: string | null;
@@ -296,29 +448,49 @@ export namespace MyNS {
 
 	/** Represents a scaling activity. */
 	export interface ScalingActivityFormProperties {
+
+		/** Required */
 		ActivityId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ServiceNamespace: FormControl<ScalingActivityServiceNamespace | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ScalableDimension: FormControl<ScalingActivityScalableDimension | null | undefined>,
+
+		/** Required */
 		Description: FormControl<string | null | undefined>,
+
+		/** Required */
 		Cause: FormControl<string | null | undefined>,
+
+		/** Required */
 		StartTime: FormControl<Date | null | undefined>,
 		EndTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		StatusCode: FormControl<ScalingActivityStatusCode | null | undefined>,
 		StatusMessage: FormControl<string | null | undefined>,
 		Details: FormControl<string | null | undefined>,
 	}
 	export function CreateScalingActivityFormGroup() {
 		return new FormGroup<ScalingActivityFormProperties>({
-			ActivityId: new FormControl<string | null | undefined>(undefined),
-			ServiceNamespace: new FormControl<ScalingActivityServiceNamespace | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
-			ScalableDimension: new FormControl<ScalingActivityScalableDimension | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			Cause: new FormControl<string | null | undefined>(undefined),
-			StartTime: new FormControl<Date | null | undefined>(undefined),
+			ActivityId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ServiceNamespace: new FormControl<ScalingActivityServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			ScalableDimension: new FormControl<ScalingActivityScalableDimension | null | undefined>(undefined, [Validators.required]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Cause: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			StartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
-			StatusCode: new FormControl<ScalingActivityStatusCode | null | undefined>(undefined),
+			StatusCode: new FormControl<ScalingActivityStatusCode | null | undefined>(undefined, [Validators.required]),
 			StatusMessage: new FormControl<string | null | undefined>(undefined),
 			Details: new FormControl<string | null | undefined>(undefined),
 		});
@@ -332,14 +504,28 @@ export namespace MyNS {
 	export enum ScalingActivityStatusCode { Pending = 0, InProgress = 1, Successful = 2, Overridden = 3, Unfulfilled = 4, Failed = 5 }
 
 	export interface DescribeScalingActivitiesRequest {
+
+		/** Required */
 		ServiceNamespace: DescribeScalingActivitiesRequestServiceNamespace;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId?: string | null;
 		ScalableDimension?: DescribeScalingActivitiesRequestScalableDimension | null;
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeScalingActivitiesRequestFormProperties {
+
+		/** Required */
 		ServiceNamespace: FormControl<DescribeScalingActivitiesRequestServiceNamespace | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: FormControl<string | null | undefined>,
 		ScalableDimension: FormControl<DescribeScalingActivitiesRequestScalableDimension | null | undefined>,
 		MaxResults: FormControl<number | null | undefined>,
@@ -347,8 +533,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeScalingActivitiesRequestFormGroup() {
 		return new FormGroup<DescribeScalingActivitiesRequestFormProperties>({
-			ServiceNamespace: new FormControl<DescribeScalingActivitiesRequestServiceNamespace | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ServiceNamespace: new FormControl<DescribeScalingActivitiesRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 			ScalableDimension: new FormControl<DescribeScalingActivitiesRequestScalableDimension | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
@@ -377,11 +563,36 @@ export namespace MyNS {
 
 	/** Represents a scaling policy to use with Application Auto Scaling. */
 	export interface ScalingPolicy {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		PolicyARN: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: \p{Print}+
+		 */
 		PolicyName: string;
+
+		/** Required */
 		ServiceNamespace: ScalingPolicyServiceNamespace;
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: string;
+
+		/** Required */
 		ScalableDimension: ScalingPolicyScalableDimension;
+
+		/** Required */
 		PolicyType: ScalingPolicyPolicyType;
 
 		/** Represents a step scaling policy configuration to use with Application Auto Scaling. */
@@ -390,28 +601,57 @@ export namespace MyNS {
 		/** Represents a target tracking scaling policy configuration to use with Application Auto Scaling. */
 		TargetTrackingScalingPolicyConfiguration?: TargetTrackingScalingPolicyConfiguration;
 		Alarms?: Array<Alarm>;
+
+		/** Required */
 		CreationTime: Date;
 	}
 
 	/** Represents a scaling policy to use with Application Auto Scaling. */
 	export interface ScalingPolicyFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		PolicyARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: \p{Print}+
+		 */
 		PolicyName: FormControl<string | null | undefined>,
+
+		/** Required */
 		ServiceNamespace: FormControl<ScalingPolicyServiceNamespace | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ScalableDimension: FormControl<ScalingPolicyScalableDimension | null | undefined>,
+
+		/** Required */
 		PolicyType: FormControl<ScalingPolicyPolicyType | null | undefined>,
+
+		/** Required */
 		CreationTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateScalingPolicyFormGroup() {
 		return new FormGroup<ScalingPolicyFormProperties>({
-			PolicyARN: new FormControl<string | null | undefined>(undefined),
-			PolicyName: new FormControl<string | null | undefined>(undefined),
-			ServiceNamespace: new FormControl<ScalingPolicyServiceNamespace | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
-			ScalableDimension: new FormControl<ScalingPolicyScalableDimension | null | undefined>(undefined),
-			PolicyType: new FormControl<ScalingPolicyPolicyType | null | undefined>(undefined),
-			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			PolicyARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			ServiceNamespace: new FormControl<ScalingPolicyServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			ScalableDimension: new FormControl<ScalingPolicyScalableDimension | null | undefined>(undefined, [Validators.required]),
+			PolicyType: new FormControl<ScalingPolicyPolicyType | null | undefined>(undefined, [Validators.required]),
+			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -456,6 +696,8 @@ export namespace MyNS {
 	export interface StepAdjustment {
 		MetricIntervalLowerBound?: number | null;
 		MetricIntervalUpperBound?: number | null;
+
+		/** Required */
 		ScalingAdjustment: number;
 	}
 
@@ -463,13 +705,15 @@ export namespace MyNS {
 	export interface StepAdjustmentFormProperties {
 		MetricIntervalLowerBound: FormControl<number | null | undefined>,
 		MetricIntervalUpperBound: FormControl<number | null | undefined>,
+
+		/** Required */
 		ScalingAdjustment: FormControl<number | null | undefined>,
 	}
 	export function CreateStepAdjustmentFormGroup() {
 		return new FormGroup<StepAdjustmentFormProperties>({
 			MetricIntervalLowerBound: new FormControl<number | null | undefined>(undefined),
 			MetricIntervalUpperBound: new FormControl<number | null | undefined>(undefined),
-			ScalingAdjustment: new FormControl<number | null | undefined>(undefined),
+			ScalingAdjustment: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -479,6 +723,8 @@ export namespace MyNS {
 
 	/** Represents a target tracking scaling policy configuration to use with Application Auto Scaling. */
 	export interface TargetTrackingScalingPolicyConfiguration {
+
+		/** Required */
 		TargetValue: number;
 
 		/** <p>Represents a predefined metric for a target tracking scaling policy to use with Application Auto Scaling.</p> <p>Only the AWS services that you're using send metrics to Amazon CloudWatch. To determine whether a desired metric already exists by looking up its namespace and dimension using the CloudWatch metrics dashboard in the console, follow the procedure in <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/monitoring-cloudwatch.html">Building Dashboards with CloudWatch</a> in the <i>Application Auto Scaling User Guide</i>.</p> */
@@ -493,6 +739,8 @@ export namespace MyNS {
 
 	/** Represents a target tracking scaling policy configuration to use with Application Auto Scaling. */
 	export interface TargetTrackingScalingPolicyConfigurationFormProperties {
+
+		/** Required */
 		TargetValue: FormControl<number | null | undefined>,
 		ScaleOutCooldown: FormControl<number | null | undefined>,
 		ScaleInCooldown: FormControl<number | null | undefined>,
@@ -500,7 +748,7 @@ export namespace MyNS {
 	}
 	export function CreateTargetTrackingScalingPolicyConfigurationFormGroup() {
 		return new FormGroup<TargetTrackingScalingPolicyConfigurationFormProperties>({
-			TargetValue: new FormControl<number | null | undefined>(undefined),
+			TargetValue: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			ScaleOutCooldown: new FormControl<number | null | undefined>(undefined),
 			ScaleInCooldown: new FormControl<number | null | undefined>(undefined),
 			DisableScaleIn: new FormControl<boolean | null | undefined>(undefined),
@@ -511,19 +759,33 @@ export namespace MyNS {
 
 	/** <p>Represents a predefined metric for a target tracking scaling policy to use with Application Auto Scaling.</p> <p>Only the AWS services that you're using send metrics to Amazon CloudWatch. To determine whether a desired metric already exists by looking up its namespace and dimension using the CloudWatch metrics dashboard in the console, follow the procedure in <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/monitoring-cloudwatch.html">Building Dashboards with CloudWatch</a> in the <i>Application Auto Scaling User Guide</i>.</p> */
 	export interface PredefinedMetricSpecification {
+
+		/** Required */
 		PredefinedMetricType: PredefinedMetricSpecificationPredefinedMetricType;
+
+		/**
+		 * Max length: 1023
+		 * Min length: 1
+		 */
 		ResourceLabel?: string | null;
 	}
 
 	/** <p>Represents a predefined metric for a target tracking scaling policy to use with Application Auto Scaling.</p> <p>Only the AWS services that you're using send metrics to Amazon CloudWatch. To determine whether a desired metric already exists by looking up its namespace and dimension using the CloudWatch metrics dashboard in the console, follow the procedure in <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/monitoring-cloudwatch.html">Building Dashboards with CloudWatch</a> in the <i>Application Auto Scaling User Guide</i>.</p> */
 	export interface PredefinedMetricSpecificationFormProperties {
+
+		/** Required */
 		PredefinedMetricType: FormControl<PredefinedMetricSpecificationPredefinedMetricType | null | undefined>,
+
+		/**
+		 * Max length: 1023
+		 * Min length: 1
+		 */
 		ResourceLabel: FormControl<string | null | undefined>,
 	}
 	export function CreatePredefinedMetricSpecificationFormGroup() {
 		return new FormGroup<PredefinedMetricSpecificationFormProperties>({
-			PredefinedMetricType: new FormControl<PredefinedMetricSpecificationPredefinedMetricType | null | undefined>(undefined),
-			ResourceLabel: new FormControl<string | null | undefined>(undefined),
+			PredefinedMetricType: new FormControl<PredefinedMetricSpecificationPredefinedMetricType | null | undefined>(undefined, [Validators.required]),
+			ResourceLabel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1023), Validators.minLength(1)]),
 		});
 
 	}
@@ -533,25 +795,37 @@ export namespace MyNS {
 
 	/** <p>Represents a CloudWatch metric of your choosing for a target tracking scaling policy to use with Application Auto Scaling.</p> <p>For information about the available metrics for a service, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">AWS Services That Publish CloudWatch Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>To create your customized metric specification:</p> <ul> <li> <p>Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish Custom Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li> <li> <p>Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases, and increase when capacity decreases. </p> </li> </ul> <p>For more information about CloudWatch, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a>. </p> */
 	export interface CustomizedMetricSpecification {
+
+		/** Required */
 		MetricName: string;
+
+		/** Required */
 		Namespace: string;
 		Dimensions?: Array<MetricDimension>;
+
+		/** Required */
 		Statistic: CustomizedMetricSpecificationStatistic;
 		Unit?: string | null;
 	}
 
 	/** <p>Represents a CloudWatch metric of your choosing for a target tracking scaling policy to use with Application Auto Scaling.</p> <p>For information about the available metrics for a service, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">AWS Services That Publish CloudWatch Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>To create your customized metric specification:</p> <ul> <li> <p>Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish Custom Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li> <li> <p>Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases, and increase when capacity decreases. </p> </li> </ul> <p>For more information about CloudWatch, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a>. </p> */
 	export interface CustomizedMetricSpecificationFormProperties {
+
+		/** Required */
 		MetricName: FormControl<string | null | undefined>,
+
+		/** Required */
 		Namespace: FormControl<string | null | undefined>,
+
+		/** Required */
 		Statistic: FormControl<CustomizedMetricSpecificationStatistic | null | undefined>,
 		Unit: FormControl<string | null | undefined>,
 	}
 	export function CreateCustomizedMetricSpecificationFormGroup() {
 		return new FormGroup<CustomizedMetricSpecificationFormProperties>({
-			MetricName: new FormControl<string | null | undefined>(undefined),
-			Namespace: new FormControl<string | null | undefined>(undefined),
-			Statistic: new FormControl<CustomizedMetricSpecificationStatistic | null | undefined>(undefined),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Statistic: new FormControl<CustomizedMetricSpecificationStatistic | null | undefined>(undefined, [Validators.required]),
 			Unit: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -560,19 +834,27 @@ export namespace MyNS {
 
 	/** Describes the dimension names and values associated with a metric. */
 	export interface MetricDimension {
+
+		/** Required */
 		Name: string;
+
+		/** Required */
 		Value: string;
 	}
 
 	/** Describes the dimension names and values associated with a metric. */
 	export interface MetricDimensionFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateMetricDimensionFormGroup() {
 		return new FormGroup<MetricDimensionFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -582,33 +864,55 @@ export namespace MyNS {
 
 	/** Represents a CloudWatch alarm associated with a scaling policy. */
 	export interface Alarm {
+
+		/** Required */
 		AlarmName: string;
+
+		/** Required */
 		AlarmARN: string;
 	}
 
 	/** Represents a CloudWatch alarm associated with a scaling policy. */
 	export interface AlarmFormProperties {
+
+		/** Required */
 		AlarmName: FormControl<string | null | undefined>,
+
+		/** Required */
 		AlarmARN: FormControl<string | null | undefined>,
 	}
 	export function CreateAlarmFormGroup() {
 		return new FormGroup<AlarmFormProperties>({
-			AlarmName: new FormControl<string | null | undefined>(undefined),
-			AlarmARN: new FormControl<string | null | undefined>(undefined),
+			AlarmName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			AlarmARN: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DescribeScalingPoliciesRequest {
 		PolicyNames?: Array<string>;
+
+		/** Required */
 		ServiceNamespace: DescribeScalingPoliciesRequestServiceNamespace;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId?: string | null;
 		ScalableDimension?: DescribeScalingPoliciesRequestScalableDimension | null;
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeScalingPoliciesRequestFormProperties {
+
+		/** Required */
 		ServiceNamespace: FormControl<DescribeScalingPoliciesRequestServiceNamespace | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: FormControl<string | null | undefined>,
 		ScalableDimension: FormControl<DescribeScalingPoliciesRequestScalableDimension | null | undefined>,
 		MaxResults: FormControl<number | null | undefined>,
@@ -616,8 +920,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeScalingPoliciesRequestFormGroup() {
 		return new FormGroup<DescribeScalingPoliciesRequestFormProperties>({
-			ServiceNamespace: new FormControl<DescribeScalingPoliciesRequestServiceNamespace | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ServiceNamespace: new FormControl<DescribeScalingPoliciesRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 			ScalableDimension: new FormControl<DescribeScalingPoliciesRequestScalableDimension | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
@@ -656,10 +960,37 @@ export namespace MyNS {
 
 	/** Represents a scheduled action. */
 	export interface ScheduledAction {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: (?!((^[ ]+.*)|(.*([\u0000-\u001f]|[\u007f-\u009f]|[:/|])+.*)|(.*[ ]+$))).+
+		 */
 		ScheduledActionName: string;
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ScheduledActionARN: string;
+
+		/** Required */
 		ServiceNamespace: ScheduledActionServiceNamespace;
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		Schedule: string;
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: string;
 		ScalableDimension?: ScheduledActionScalableDimension | null;
 		StartTime?: Date | null;
@@ -667,32 +998,63 @@ export namespace MyNS {
 
 		/** Represents the minimum and maximum capacity for a scheduled action. */
 		ScalableTargetAction?: ScalableTargetAction;
+
+		/** Required */
 		CreationTime: Date;
 	}
 
 	/** Represents a scheduled action. */
 	export interface ScheduledActionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: (?!((^[ ]+.*)|(.*([\u0000-\u001f]|[\u007f-\u009f]|[:/|])+.*)|(.*[ ]+$))).+
+		 */
 		ScheduledActionName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ScheduledActionARN: FormControl<string | null | undefined>,
+
+		/** Required */
 		ServiceNamespace: FormControl<ScheduledActionServiceNamespace | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		Schedule: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: FormControl<string | null | undefined>,
 		ScalableDimension: FormControl<ScheduledActionScalableDimension | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
 		EndTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		CreationTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateScheduledActionFormGroup() {
 		return new FormGroup<ScheduledActionFormProperties>({
-			ScheduledActionName: new FormControl<string | null | undefined>(undefined),
-			ScheduledActionARN: new FormControl<string | null | undefined>(undefined),
-			ServiceNamespace: new FormControl<ScheduledActionServiceNamespace | null | undefined>(undefined),
-			Schedule: new FormControl<string | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ScheduledActionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			ScheduledActionARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			ServiceNamespace: new FormControl<ScheduledActionServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			Schedule: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
 			ScalableDimension: new FormControl<ScheduledActionScalableDimension | null | undefined>(undefined),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
-			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -723,14 +1085,28 @@ export namespace MyNS {
 
 	export interface DescribeScheduledActionsRequest {
 		ScheduledActionNames?: Array<string>;
+
+		/** Required */
 		ServiceNamespace: DescribeScheduledActionsRequestServiceNamespace;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId?: string | null;
 		ScalableDimension?: DescribeScheduledActionsRequestScalableDimension | null;
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeScheduledActionsRequestFormProperties {
+
+		/** Required */
 		ServiceNamespace: FormControl<DescribeScheduledActionsRequestServiceNamespace | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: FormControl<string | null | undefined>,
 		ScalableDimension: FormControl<DescribeScheduledActionsRequestScalableDimension | null | undefined>,
 		MaxResults: FormControl<number | null | undefined>,
@@ -738,8 +1114,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeScheduledActionsRequestFormGroup() {
 		return new FormGroup<DescribeScheduledActionsRequestFormProperties>({
-			ServiceNamespace: new FormControl<DescribeScheduledActionsRequestServiceNamespace | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ServiceNamespace: new FormControl<DescribeScheduledActionsRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 			ScalableDimension: new FormControl<DescribeScheduledActionsRequestScalableDimension | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
@@ -752,23 +1128,52 @@ export namespace MyNS {
 	export enum DescribeScheduledActionsRequestScalableDimension { ecsserviceDesiredCount = 0, ec2spot_fleet_requestTargetCapacity = 1, elasticmapreduceinstancegroupInstanceCount = 2, appstreamfleetDesiredCapacity = 3, dynamodbtableReadCapacityUnits = 4, dynamodbtableWriteCapacityUnits = 5, dynamodbindexReadCapacityUnits = 6, dynamodbindexWriteCapacityUnits = 7, rdsclusterReadReplicaCount = 8, sagemakervariantDesiredInstanceCount = 9, custom_resourceResourceTypeProperty = 10, comprehenddocument_classifier_endpointDesiredInferenceUnits = 11, lambdafunctionProvisionedConcurrency = 12, cassandratableReadCapacityUnits = 13, cassandratableWriteCapacityUnits = 14 }
 
 	export interface PutScalingPolicyResponse {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		PolicyARN: string;
 		Alarms?: Array<Alarm>;
 	}
 	export interface PutScalingPolicyResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		PolicyARN: FormControl<string | null | undefined>,
 	}
 	export function CreatePutScalingPolicyResponseFormGroup() {
 		return new FormGroup<PutScalingPolicyResponseFormProperties>({
-			PolicyARN: new FormControl<string | null | undefined>(undefined),
+			PolicyARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface PutScalingPolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: \p{Print}+
+		 */
 		PolicyName: string;
+
+		/** Required */
 		ServiceNamespace: PutScalingPolicyRequestServiceNamespace;
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: string;
+
+		/** Required */
 		ScalableDimension: PutScalingPolicyRequestScalableDimension;
 		PolicyType?: ScalingPolicyPolicyType | null;
 
@@ -779,18 +1184,35 @@ export namespace MyNS {
 		TargetTrackingScalingPolicyConfiguration?: TargetTrackingScalingPolicyConfiguration;
 	}
 	export interface PutScalingPolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: \p{Print}+
+		 */
 		PolicyName: FormControl<string | null | undefined>,
+
+		/** Required */
 		ServiceNamespace: FormControl<PutScalingPolicyRequestServiceNamespace | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ScalableDimension: FormControl<PutScalingPolicyRequestScalableDimension | null | undefined>,
 		PolicyType: FormControl<ScalingPolicyPolicyType | null | undefined>,
 	}
 	export function CreatePutScalingPolicyRequestFormGroup() {
 		return new FormGroup<PutScalingPolicyRequestFormProperties>({
-			PolicyName: new FormControl<string | null | undefined>(undefined),
-			ServiceNamespace: new FormControl<PutScalingPolicyRequestServiceNamespace | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
-			ScalableDimension: new FormControl<PutScalingPolicyRequestScalableDimension | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			ServiceNamespace: new FormControl<PutScalingPolicyRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			ScalableDimension: new FormControl<PutScalingPolicyRequestScalableDimension | null | undefined>(undefined, [Validators.required]),
 			PolicyType: new FormControl<ScalingPolicyPolicyType | null | undefined>(undefined),
 		});
 
@@ -821,10 +1243,32 @@ export namespace MyNS {
 	}
 
 	export interface PutScheduledActionRequest {
+
+		/** Required */
 		ServiceNamespace: PutScheduledActionRequestServiceNamespace;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		Schedule?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: (?!((^[ ]+.*)|(.*([\u0000-\u001f]|[\u007f-\u009f]|[:/|])+.*)|(.*[ ]+$))).+
+		 */
 		ScheduledActionName: string;
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: string;
+
+		/** Required */
 		ScalableDimension: PutScheduledActionRequestScalableDimension;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
@@ -833,21 +1277,43 @@ export namespace MyNS {
 		ScalableTargetAction?: ScalableTargetAction;
 	}
 	export interface PutScheduledActionRequestFormProperties {
+
+		/** Required */
 		ServiceNamespace: FormControl<PutScheduledActionRequestServiceNamespace | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		Schedule: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: (?!((^[ ]+.*)|(.*([\u0000-\u001f]|[\u007f-\u009f]|[:/|])+.*)|(.*[ ]+$))).+
+		 */
 		ScheduledActionName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ScalableDimension: FormControl<PutScheduledActionRequestScalableDimension | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
 		EndTime: FormControl<Date | null | undefined>,
 	}
 	export function CreatePutScheduledActionRequestFormGroup() {
 		return new FormGroup<PutScheduledActionRequestFormProperties>({
-			ServiceNamespace: new FormControl<PutScheduledActionRequestServiceNamespace | null | undefined>(undefined),
-			Schedule: new FormControl<string | null | undefined>(undefined),
-			ScheduledActionName: new FormControl<string | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
-			ScalableDimension: new FormControl<PutScheduledActionRequestScalableDimension | null | undefined>(undefined),
+			ServiceNamespace: new FormControl<PutScheduledActionRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			Schedule: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			ScheduledActionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			ScalableDimension: new FormControl<PutScheduledActionRequestScalableDimension | null | undefined>(undefined, [Validators.required]),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -869,32 +1335,62 @@ export namespace MyNS {
 	}
 
 	export interface RegisterScalableTargetRequest {
+
+		/** Required */
 		ServiceNamespace: RegisterScalableTargetRequestServiceNamespace;
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: string;
+
+		/** Required */
 		ScalableDimension: RegisterScalableTargetRequestScalableDimension;
 		MinCapacity?: number | null;
 		MaxCapacity?: number | null;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		RoleARN?: string | null;
 
 		/** Specifies whether the scaling activities for a scalable target are in a suspended state. */
 		SuspendedState?: SuspendedState;
 	}
 	export interface RegisterScalableTargetRequestFormProperties {
+
+		/** Required */
 		ServiceNamespace: FormControl<RegisterScalableTargetRequestServiceNamespace | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ScalableDimension: FormControl<RegisterScalableTargetRequestScalableDimension | null | undefined>,
 		MinCapacity: FormControl<number | null | undefined>,
 		MaxCapacity: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		RoleARN: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterScalableTargetRequestFormGroup() {
 		return new FormGroup<RegisterScalableTargetRequestFormProperties>({
-			ServiceNamespace: new FormControl<RegisterScalableTargetRequestServiceNamespace | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
-			ScalableDimension: new FormControl<RegisterScalableTargetRequestScalableDimension | null | undefined>(undefined),
+			ServiceNamespace: new FormControl<RegisterScalableTargetRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			ScalableDimension: new FormControl<RegisterScalableTargetRequestScalableDimension | null | undefined>(undefined, [Validators.required]),
 			MinCapacity: new FormControl<number | null | undefined>(undefined),
 			MaxCapacity: new FormControl<number | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 		});
 
 	}

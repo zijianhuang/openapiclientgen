@@ -126,27 +126,63 @@ export namespace MyNS {
 
 	/** <p>Contains information about an AWS access key.</p> <p> This data type is used as a response element in the <a>CreateAccessKey</a> and <a>ListAccessKeys</a> operations. </p> <note> <p>The <code>SecretAccessKey</code> value is returned only in response to <a>CreateAccessKey</a>. You can get a secret access key only when you first create an access key; you cannot recover the secret access key later. If you lose a secret access key, you must create a new access key.</p> </note> */
 	export interface AccessKey {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		AccessKeyId: string;
+
+		/** Required */
 		Status: AccessKeyStatus;
+
+		/** Required */
 		SecretAccessKey: string;
 		CreateDate?: Date | null;
 	}
 
 	/** <p>Contains information about an AWS access key.</p> <p> This data type is used as a response element in the <a>CreateAccessKey</a> and <a>ListAccessKeys</a> operations. </p> <note> <p>The <code>SecretAccessKey</code> value is returned only in response to <a>CreateAccessKey</a>. You can get a secret access key only when you first create an access key; you cannot recover the secret access key later. If you lose a secret access key, you must create a new access key.</p> </note> */
 	export interface AccessKeyFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		AccessKeyId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Status: FormControl<AccessKeyStatus | null | undefined>,
+
+		/** Required */
 		SecretAccessKey: FormControl<string | null | undefined>,
 		CreateDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateAccessKeyFormGroup() {
 		return new FormGroup<AccessKeyFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			AccessKeyId: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined),
-			SecretAccessKey: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			AccessKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(16)]),
+			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined, [Validators.required]),
+			SecretAccessKey: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			CreateDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -177,8 +213,29 @@ export namespace MyNS {
 
 	/** <p>Contains information about an IAM group entity.</p> <p>This data type is used as a response element in the following operations:</p> <ul> <li> <p> <a>CreateGroup</a> </p> </li> <li> <p> <a>GetGroup</a> </p> </li> <li> <p> <a>ListGroups</a> </p> </li> </ul> */
 	export interface Group {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		GroupId: string;
 
 		/**
@@ -188,13 +245,36 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		Arn: string;
+
+		/** Required */
 		CreateDate: Date;
 	}
 
 	/** <p>Contains information about an IAM group entity.</p> <p>This data type is used as a response element in the following operations:</p> <ul> <li> <p> <a>CreateGroup</a> </p> </li> <li> <p> <a>GetGroup</a> </p> </li> <li> <p> <a>ListGroups</a> </p> </li> </ul> */
 	export interface GroupFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		GroupId: FormControl<string | null | undefined>,
 
 		/**
@@ -204,15 +284,17 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		Arn: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreateDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateGroupFormGroup() {
 		return new FormGroup<GroupFormProperties>({
-			Path: new FormControl<string | null | undefined>(undefined),
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			GroupId: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
-			CreateDate: new FormControl<Date | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			GroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(16)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			CreateDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -240,8 +322,29 @@ export namespace MyNS {
 
 	/** <p>Contains information about an instance profile.</p> <p>This data type is used as a response element in the following operations:</p> <ul> <li> <p> <a>CreateInstanceProfile</a> </p> </li> <li> <p> <a>GetInstanceProfile</a> </p> </li> <li> <p> <a>ListInstanceProfiles</a> </p> </li> <li> <p> <a>ListInstanceProfilesForRole</a> </p> </li> </ul> */
 	export interface InstanceProfile {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		InstanceProfileName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		InstanceProfileId: string;
 
 		/**
@@ -251,6 +354,8 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		Arn: string;
+
+		/** Required */
 		CreateDate: Date;
 
 		/**
@@ -262,8 +367,29 @@ export namespace MyNS {
 
 	/** <p>Contains information about an instance profile.</p> <p>This data type is used as a response element in the following operations:</p> <ul> <li> <p> <a>CreateInstanceProfile</a> </p> </li> <li> <p> <a>GetInstanceProfile</a> </p> </li> <li> <p> <a>ListInstanceProfiles</a> </p> </li> <li> <p> <a>ListInstanceProfilesForRole</a> </p> </li> </ul> */
 	export interface InstanceProfileFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		InstanceProfileName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		InstanceProfileId: FormControl<string | null | undefined>,
 
 		/**
@@ -273,15 +399,17 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		Arn: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreateDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateInstanceProfileFormGroup() {
 		return new FormGroup<InstanceProfileFormProperties>({
-			Path: new FormControl<string | null | undefined>(undefined),
-			InstanceProfileName: new FormControl<string | null | undefined>(undefined),
-			InstanceProfileId: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
-			CreateDate: new FormControl<Date | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			InstanceProfileName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			InstanceProfileId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(16)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			CreateDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -289,8 +417,29 @@ export namespace MyNS {
 
 	/** Contains information about an IAM role. This structure is returned as a response element in several API operations that interact with roles. */
 	export interface Role {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		RoleId: string;
 
 		/**
@@ -300,13 +449,33 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		Arn: string;
+
+		/** Required */
 		CreateDate: Date;
+
+		/**
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		AssumeRolePolicyDocument?: string | null;
+
+		/**
+		 * Max length: 1000
+		 * Pattern: [\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*
+		 */
 		Description?: string | null;
+
+		/**
+		 * Minimum: 3600
+		 * Maximum: 43200
+		 */
 		MaxSessionDuration?: number | null;
 
 		/** <p>Contains information about an attached permissions boundary.</p> <p>An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
 		PermissionsBoundary?: AttachedPermissionsBoundary;
+
+		/** Maximum items: 50 */
 		Tags?: Array<Tag>;
 
 		/** <p>Contains information about the last time that an IAM role was used. This includes the date and time and the Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be shorter if your Region began supporting these features within the last year. The role might have been used more than 400 days ago. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.</p> <p>This data type is returned as a response element in the <a>GetRole</a> and <a>GetAccountAuthorizationDetails</a> operations.</p> */
@@ -315,8 +484,29 @@ export namespace MyNS {
 
 	/** Contains information about an IAM role. This structure is returned as a response element in several API operations that interact with roles. */
 	export interface RoleFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		RoleId: FormControl<string | null | undefined>,
 
 		/**
@@ -326,21 +516,39 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		Arn: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreateDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		AssumeRolePolicyDocument: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Pattern: [\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 3600
+		 * Maximum: 43200
+		 */
 		MaxSessionDuration: FormControl<number | null | undefined>,
 	}
 	export function CreateRoleFormGroup() {
 		return new FormGroup<RoleFormProperties>({
-			Path: new FormControl<string | null | undefined>(undefined),
-			RoleName: new FormControl<string | null | undefined>(undefined),
-			RoleId: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
-			CreateDate: new FormControl<Date | null | undefined>(undefined),
-			AssumeRolePolicyDocument: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			MaxSessionDuration: new FormControl<number | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			RoleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(16)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			CreateDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			AssumeRolePolicyDocument: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(131072), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
+			MaxSessionDuration: new FormControl<number | null | undefined>(undefined, [Validators.min(3600), Validators.max(43200)]),
 		});
 
 	}
@@ -372,7 +580,7 @@ export namespace MyNS {
 	export function CreateAttachedPermissionsBoundaryFormGroup() {
 		return new FormGroup<AttachedPermissionsBoundaryFormProperties>({
 			PermissionsBoundaryType: new FormControl<AttachedPermissionsBoundaryPermissionsBoundaryType | null | undefined>(undefined),
-			PermissionsBoundaryArn: new FormControl<string | null | undefined>(undefined),
+			PermissionsBoundaryArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -382,19 +590,47 @@ export namespace MyNS {
 
 	/** A structure that represents user-provided metadata that can be associated with a resource such as an IAM user or role. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User Guide</i>. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{L}\p{Z}\p{N}_.:/=+\-@]+
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: [\p{L}\p{Z}\p{N}_.:/=+\-@]*
+		 */
 		Value: string;
 	}
 
 	/** A structure that represents user-provided metadata that can be associated with a resource such as an IAM user or role. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User Guide</i>. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{L}\p{Z}\p{N}_.:/=+\-@]+
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: [\p{L}\p{Z}\p{N}_.:/=+\-@]*
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -442,21 +678,39 @@ export namespace MyNS {
 
 	/** <p>Contains the user name and password create date for a user.</p> <p> This data type is used as a response element in the <a>CreateLoginProfile</a> and <a>GetLoginProfile</a> operations. </p> */
 	export interface LoginProfile {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/** Required */
 		CreateDate: Date;
 		PasswordResetRequired?: boolean | null;
 	}
 
 	/** <p>Contains the user name and password create date for a user.</p> <p> This data type is used as a response element in the <a>CreateLoginProfile</a> and <a>GetLoginProfile</a> operations. </p> */
 	export interface LoginProfileFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreateDate: FormControl<Date | null | undefined>,
 		PasswordResetRequired: FormControl<boolean | null | undefined>,
 	}
 	export function CreateLoginProfileFormGroup() {
 		return new FormGroup<LoginProfileFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			CreateDate: new FormControl<Date | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			CreateDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			PasswordResetRequired: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -486,7 +740,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateOpenIDConnectProviderResponseFormGroup() {
 		return new FormGroup<CreateOpenIDConnectProviderResponseFormProperties>({
-			OpenIDConnectProviderArn: new FormControl<string | null | undefined>(undefined),
+			OpenIDConnectProviderArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -511,7 +765,19 @@ export namespace MyNS {
 
 	/** <p>Contains information about a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>, and <a>ListPolicies</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface Policy {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		PolicyId?: string | null;
 
 		/**
@@ -520,11 +786,21 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		Arn?: string | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ((/[A-Za-z0-9\.,\+@=_-]+)*)/
+		 */
 		Path?: string | null;
+
+		/** Pattern: v[1-9][0-9]*(\.[A-Za-z0-9-]*)? */
 		DefaultVersionId?: string | null;
 		AttachmentCount?: number | null;
 		PermissionsBoundaryUsageCount?: number | null;
 		IsAttachable?: boolean | null;
+
+		/** Max length: 1000 */
 		Description?: string | null;
 		CreateDate?: Date | null;
 		UpdateDate?: Date | null;
@@ -532,7 +808,19 @@ export namespace MyNS {
 
 	/** <p>Contains information about a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>, and <a>ListPolicies</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface PolicyFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		PolicyId: FormControl<string | null | undefined>,
 
 		/**
@@ -541,26 +829,36 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		Arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ((/[A-Za-z0-9\.,\+@=_-]+)*)/
+		 */
 		Path: FormControl<string | null | undefined>,
+
+		/** Pattern: v[1-9][0-9]*(\.[A-Za-z0-9-]*)? */
 		DefaultVersionId: FormControl<string | null | undefined>,
 		AttachmentCount: FormControl<number | null | undefined>,
 		PermissionsBoundaryUsageCount: FormControl<number | null | undefined>,
 		IsAttachable: FormControl<boolean | null | undefined>,
+
+		/** Max length: 1000 */
 		Description: FormControl<string | null | undefined>,
 		CreateDate: FormControl<Date | null | undefined>,
 		UpdateDate: FormControl<Date | null | undefined>,
 	}
 	export function CreatePolicyFormGroup() {
 		return new FormGroup<PolicyFormProperties>({
-			PolicyName: new FormControl<string | null | undefined>(undefined),
-			PolicyId: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
-			Path: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(16)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 			DefaultVersionId: new FormControl<string | null | undefined>(undefined),
 			AttachmentCount: new FormControl<number | null | undefined>(undefined),
 			PermissionsBoundaryUsageCount: new FormControl<number | null | undefined>(undefined),
 			IsAttachable: new FormControl<boolean | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 			CreateDate: new FormControl<Date | null | undefined>(undefined),
 			UpdateDate: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -597,7 +895,15 @@ export namespace MyNS {
 
 	/** <p>Contains information about a version of a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicyVersion</a>, <a>GetPolicyVersion</a>, <a>ListPolicyVersions</a>, and <a>GetAccountAuthorizationDetails</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface PolicyVersion {
+
+		/**
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		Document?: string | null;
+
+		/** Pattern: v[1-9][0-9]*(\.[A-Za-z0-9-]*)? */
 		VersionId?: string | null;
 		IsDefaultVersion?: boolean | null;
 		CreateDate?: Date | null;
@@ -605,14 +911,22 @@ export namespace MyNS {
 
 	/** <p>Contains information about a version of a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicyVersion</a>, <a>GetPolicyVersion</a>, <a>ListPolicyVersions</a>, and <a>GetAccountAuthorizationDetails</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface PolicyVersionFormProperties {
+
+		/**
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		Document: FormControl<string | null | undefined>,
+
+		/** Pattern: v[1-9][0-9]*(\.[A-Za-z0-9-]*)? */
 		VersionId: FormControl<string | null | undefined>,
 		IsDefaultVersion: FormControl<boolean | null | undefined>,
 		CreateDate: FormControl<Date | null | undefined>,
 	}
 	export function CreatePolicyVersionFormGroup() {
 		return new FormGroup<PolicyVersionFormProperties>({
-			Document: new FormControl<string | null | undefined>(undefined),
+			Document: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(131072), Validators.minLength(1)]),
 			VersionId: new FormControl<string | null | undefined>(undefined),
 			IsDefaultVersion: new FormControl<boolean | null | undefined>(undefined),
 			CreateDate: new FormControl<Date | null | undefined>(undefined),
@@ -674,7 +988,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateSAMLProviderResponseFormGroup() {
 		return new FormGroup<CreateSAMLProviderResponseFormProperties>({
-			SAMLProviderArn: new FormControl<string | null | undefined>(undefined),
+			SAMLProviderArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -708,34 +1022,92 @@ export namespace MyNS {
 
 	/** Contains the details of a service-specific credential. */
 	export interface ServiceSpecificCredential {
+
+		/** Required */
 		CreateDate: Date;
+
+		/** Required */
 		ServiceName: string;
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 17
+		 * Pattern: [\w+=,.@-]+
+		 */
 		ServiceUserName: string;
+
+		/** Required */
 		ServicePassword: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: [\w]+
+		 */
 		ServiceSpecificCredentialId: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/** Required */
 		Status: AccessKeyStatus;
 	}
 
 	/** Contains the details of a service-specific credential. */
 	export interface ServiceSpecificCredentialFormProperties {
+
+		/** Required */
 		CreateDate: FormControl<Date | null | undefined>,
+
+		/** Required */
 		ServiceName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 17
+		 * Pattern: [\w+=,.@-]+
+		 */
 		ServiceUserName: FormControl<string | null | undefined>,
+
+		/** Required */
 		ServicePassword: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: [\w]+
+		 */
 		ServiceSpecificCredentialId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/** Required */
 		Status: FormControl<AccessKeyStatus | null | undefined>,
 	}
 	export function CreateServiceSpecificCredentialFormGroup() {
 		return new FormGroup<ServiceSpecificCredentialFormProperties>({
-			CreateDate: new FormControl<Date | null | undefined>(undefined),
-			ServiceName: new FormControl<string | null | undefined>(undefined),
-			ServiceUserName: new FormControl<string | null | undefined>(undefined),
-			ServicePassword: new FormControl<string | null | undefined>(undefined),
-			ServiceSpecificCredentialId: new FormControl<string | null | undefined>(undefined),
-			UserName: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined),
+			CreateDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			ServiceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ServiceUserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(17)]),
+			ServicePassword: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ServiceSpecificCredentialId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(20)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -770,8 +1142,29 @@ export namespace MyNS {
 
 	/** <p>Contains information about an IAM user entity.</p> <p>This data type is used as a response element in the following operations:</p> <ul> <li> <p> <a>CreateUser</a> </p> </li> <li> <p> <a>GetUser</a> </p> </li> <li> <p> <a>ListUsers</a> </p> </li> </ul> */
 	export interface User {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		UserId: string;
 
 		/**
@@ -781,18 +1174,43 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		Arn: string;
+
+		/** Required */
 		CreateDate: Date;
 		PasswordLastUsed?: Date | null;
 
 		/** <p>Contains information about an attached permissions boundary.</p> <p>An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
 		PermissionsBoundary?: AttachedPermissionsBoundary;
+
+		/** Maximum items: 50 */
 		Tags?: Array<Tag>;
 	}
 
 	/** <p>Contains information about an IAM user entity.</p> <p>This data type is used as a response element in the following operations:</p> <ul> <li> <p> <a>CreateUser</a> </p> </li> <li> <p> <a>GetUser</a> </p> </li> <li> <p> <a>ListUsers</a> </p> </li> </ul> */
 	export interface UserFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		UserId: FormControl<string | null | undefined>,
 
 		/**
@@ -802,16 +1220,18 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		Arn: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreateDate: FormControl<Date | null | undefined>,
 		PasswordLastUsed: FormControl<Date | null | undefined>,
 	}
 	export function CreateUserFormGroup() {
 		return new FormGroup<UserFormProperties>({
-			Path: new FormControl<string | null | undefined>(undefined),
-			UserName: new FormControl<string | null | undefined>(undefined),
-			UserId: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
-			CreateDate: new FormControl<Date | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			UserId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(16)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			CreateDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			PasswordLastUsed: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -840,6 +1260,13 @@ export namespace MyNS {
 
 	/** Contains information about a virtual MFA device. */
 	export interface VirtualMFADevice {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 9
+		 * Pattern: [\w+=/:,.@-]+
+		 */
 		SerialNumber: string;
 		Base32StringSeed?: string | null;
 		QRCodePNG?: string | null;
@@ -851,6 +1278,13 @@ export namespace MyNS {
 
 	/** Contains information about a virtual MFA device. */
 	export interface VirtualMFADeviceFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 9
+		 * Pattern: [\w+=/:,.@-]+
+		 */
 		SerialNumber: FormControl<string | null | undefined>,
 		Base32StringSeed: FormControl<string | null | undefined>,
 		QRCodePNG: FormControl<string | null | undefined>,
@@ -858,7 +1292,7 @@ export namespace MyNS {
 	}
 	export function CreateVirtualMFADeviceFormGroup() {
 		return new FormGroup<VirtualMFADeviceFormProperties>({
-			SerialNumber: new FormControl<string | null | undefined>(undefined),
+			SerialNumber: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(9)]),
 			Base32StringSeed: new FormControl<string | null | undefined>(undefined),
 			QRCodePNG: new FormControl<string | null | undefined>(undefined),
 			EnableDate: new FormControl<Date | null | undefined>(undefined),
@@ -877,14 +1311,26 @@ export namespace MyNS {
 	}
 
 	export interface DeleteServiceLinkedRoleResponse {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		DeletionTaskId: string;
 	}
 	export interface DeleteServiceLinkedRoleResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		DeletionTaskId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteServiceLinkedRoleResponseFormGroup() {
 		return new FormGroup<DeleteServiceLinkedRoleResponseFormProperties>({
-			DeletionTaskId: new FormControl<string | null | undefined>(undefined),
+			DeletionTaskId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
@@ -922,14 +1368,24 @@ export namespace MyNS {
 	export enum GenerateCredentialReportResponseState { STARTED = 0, INPROGRESS = 1, COMPLETE = 2 }
 
 	export interface GenerateOrganizationsAccessReportResponse {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		JobId?: string | null;
 	}
 	export interface GenerateOrganizationsAccessReportResponseFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateGenerateOrganizationsAccessReportResponseFormGroup() {
 		return new FormGroup<GenerateOrganizationsAccessReportResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
@@ -945,14 +1401,24 @@ export namespace MyNS {
 	}
 
 	export interface GenerateServiceLastAccessedDetailsResponse {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		JobId?: string | null;
 	}
 	export interface GenerateServiceLastAccessedDetailsResponseFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateGenerateServiceLastAccessedDetailsResponseFormGroup() {
 		return new FormGroup<GenerateServiceLastAccessedDetailsResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
@@ -960,6 +1426,12 @@ export namespace MyNS {
 
 	/** Contains the response to a successful <a>GetAccessKeyLastUsed</a> request. It is also returned as a member of the <a>AccessKeyMetaData</a> structure returned by the <a>ListAccessKeys</a> action. */
 	export interface GetAccessKeyLastUsedResponse {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName?: string | null;
 
 		/** <p>Contains information about the last time an AWS access key was used since IAM began tracking this information on April 22, 2015.</p> <p>This data type is used as a response element in the <a>GetAccessKeyLastUsed</a> operation.</p> */
@@ -968,11 +1440,17 @@ export namespace MyNS {
 
 	/** Contains the response to a successful <a>GetAccessKeyLastUsed</a> request. It is also returned as a member of the <a>AccessKeyMetaData</a> structure returned by the <a>ListAccessKeys</a> action. */
 	export interface GetAccessKeyLastUsedResponseFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetAccessKeyLastUsedResponseFormGroup() {
 		return new FormGroup<GetAccessKeyLastUsedResponseFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -980,22 +1458,34 @@ export namespace MyNS {
 
 	/** <p>Contains information about the last time an AWS access key was used since IAM began tracking this information on April 22, 2015.</p> <p>This data type is used as a response element in the <a>GetAccessKeyLastUsed</a> operation.</p> */
 	export interface AccessKeyLastUsed {
+
+		/** Required */
 		LastUsedDate: Date;
+
+		/** Required */
 		ServiceName: string;
+
+		/** Required */
 		Region: string;
 	}
 
 	/** <p>Contains information about the last time an AWS access key was used since IAM began tracking this information on April 22, 2015.</p> <p>This data type is used as a response element in the <a>GetAccessKeyLastUsed</a> operation.</p> */
 	export interface AccessKeyLastUsedFormProperties {
+
+		/** Required */
 		LastUsedDate: FormControl<Date | null | undefined>,
+
+		/** Required */
 		ServiceName: FormControl<string | null | undefined>,
+
+		/** Required */
 		Region: FormControl<string | null | undefined>,
 	}
 	export function CreateAccessKeyLastUsedFormGroup() {
 		return new FormGroup<AccessKeyLastUsedFormProperties>({
-			LastUsedDate: new FormControl<Date | null | undefined>(undefined),
-			ServiceName: new FormControl<string | null | undefined>(undefined),
-			Region: new FormControl<string | null | undefined>(undefined),
+			LastUsedDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			ServiceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Region: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1027,8 +1517,26 @@ export namespace MyNS {
 
 	/** <p>Contains information about an IAM user, including all the user's policies and all the IAM groups the user is in.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.</p> */
 	export interface UserDetail {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		UserId?: string | null;
 
 		/**
@@ -1044,13 +1552,33 @@ export namespace MyNS {
 
 		/** <p>Contains information about an attached permissions boundary.</p> <p>An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
 		PermissionsBoundary?: AttachedPermissionsBoundary;
+
+		/** Maximum items: 50 */
 		Tags?: Array<Tag>;
 	}
 
 	/** <p>Contains information about an IAM user, including all the user's policies and all the IAM groups the user is in.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.</p> */
 	export interface UserDetailFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		UserId: FormControl<string | null | undefined>,
 
 		/**
@@ -1063,10 +1591,10 @@ export namespace MyNS {
 	}
 	export function CreateUserDetailFormGroup() {
 		return new FormGroup<UserDetailFormProperties>({
-			Path: new FormControl<string | null | undefined>(undefined),
-			UserName: new FormControl<string | null | undefined>(undefined),
-			UserId: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			UserId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(16)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 			CreateDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -1075,19 +1603,43 @@ export namespace MyNS {
 
 	/** <p>Contains information about an IAM policy, including the policy document.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.</p> */
 	export interface PolicyDetail {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName?: string | null;
+
+		/**
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		PolicyDocument?: string | null;
 	}
 
 	/** <p>Contains information about an IAM policy, including the policy document.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.</p> */
 	export interface PolicyDetailFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		PolicyDocument: FormControl<string | null | undefined>,
 	}
 	export function CreatePolicyDetailFormGroup() {
 		return new FormGroup<PolicyDetailFormProperties>({
-			PolicyName: new FormControl<string | null | undefined>(undefined),
-			PolicyDocument: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			PolicyDocument: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(131072), Validators.minLength(1)]),
 		});
 
 	}
@@ -1095,6 +1647,12 @@ export namespace MyNS {
 
 	/** <p>Contains information about an attached policy.</p> <p>An attached policy is a managed policy that has been attached to a user, group, or role. This data type is used as a response element in the <a>ListAttachedGroupPolicies</a>, <a>ListAttachedRolePolicies</a>, <a>ListAttachedUserPolicies</a>, and <a>GetAccountAuthorizationDetails</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface AttachedPolicy {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName?: string | null;
 
 		/**
@@ -1107,6 +1665,12 @@ export namespace MyNS {
 
 	/** <p>Contains information about an attached policy.</p> <p>An attached policy is a managed policy that has been attached to a user, group, or role. This data type is used as a response element in the <a>ListAttachedGroupPolicies</a>, <a>ListAttachedRolePolicies</a>, <a>ListAttachedUserPolicies</a>, and <a>GetAccountAuthorizationDetails</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface AttachedPolicyFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: FormControl<string | null | undefined>,
 
 		/**
@@ -1118,8 +1682,8 @@ export namespace MyNS {
 	}
 	export function CreateAttachedPolicyFormGroup() {
 		return new FormGroup<AttachedPolicyFormProperties>({
-			PolicyName: new FormControl<string | null | undefined>(undefined),
-			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			PolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -1127,8 +1691,26 @@ export namespace MyNS {
 
 	/** <p>Contains information about an IAM group, including all of the group's policies.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.</p> */
 	export interface GroupDetail {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		GroupId?: string | null;
 
 		/**
@@ -1144,8 +1726,26 @@ export namespace MyNS {
 
 	/** <p>Contains information about an IAM group, including all of the group's policies.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.</p> */
 	export interface GroupDetailFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		GroupId: FormControl<string | null | undefined>,
 
 		/**
@@ -1158,10 +1758,10 @@ export namespace MyNS {
 	}
 	export function CreateGroupDetailFormGroup() {
 		return new FormGroup<GroupDetailFormProperties>({
-			Path: new FormControl<string | null | undefined>(undefined),
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			GroupId: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			GroupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(16)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 			CreateDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -1170,8 +1770,26 @@ export namespace MyNS {
 
 	/** <p>Contains information about an IAM role, including all of the role's policies.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.</p> */
 	export interface RoleDetail {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		RoleId?: string | null;
 
 		/**
@@ -1181,6 +1799,12 @@ export namespace MyNS {
 		 */
 		Arn?: string | null;
 		CreateDate?: Date | null;
+
+		/**
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		AssumeRolePolicyDocument?: string | null;
 
 		/** Contains a list of instance profiles. */
@@ -1190,6 +1814,8 @@ export namespace MyNS {
 
 		/** <p>Contains information about an attached permissions boundary.</p> <p>An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
 		PermissionsBoundary?: AttachedPermissionsBoundary;
+
+		/** Maximum items: 50 */
 		Tags?: Array<Tag>;
 
 		/** <p>Contains information about the last time that an IAM role was used. This includes the date and time and the Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be shorter if your Region began supporting these features within the last year. The role might have been used more than 400 days ago. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.</p> <p>This data type is returned as a response element in the <a>GetRole</a> and <a>GetAccountAuthorizationDetails</a> operations.</p> */
@@ -1198,8 +1824,26 @@ export namespace MyNS {
 
 	/** <p>Contains information about an IAM role, including all of the role's policies.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.</p> */
 	export interface RoleDetailFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		RoleId: FormControl<string | null | undefined>,
 
 		/**
@@ -1209,16 +1853,22 @@ export namespace MyNS {
 		 */
 		Arn: FormControl<string | null | undefined>,
 		CreateDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		AssumeRolePolicyDocument: FormControl<string | null | undefined>,
 	}
 	export function CreateRoleDetailFormGroup() {
 		return new FormGroup<RoleDetailFormProperties>({
-			Path: new FormControl<string | null | undefined>(undefined),
-			RoleName: new FormControl<string | null | undefined>(undefined),
-			RoleId: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			RoleId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(16)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 			CreateDate: new FormControl<Date | null | undefined>(undefined),
-			AssumeRolePolicyDocument: new FormControl<string | null | undefined>(undefined),
+			AssumeRolePolicyDocument: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(131072), Validators.minLength(1)]),
 		});
 
 	}
@@ -1226,7 +1876,19 @@ export namespace MyNS {
 
 	/** <p>Contains information about a managed policy, including the policy's ARN, versions, and the number of principal entities (users, groups, and roles) that the policy is attached to.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.</p> <p>For more information about managed policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface ManagedPolicyDetail {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		PolicyId?: string | null;
 
 		/**
@@ -1235,11 +1897,21 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		Arn?: string | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ((/[A-Za-z0-9\.,\+@=_-]+)*)/
+		 */
 		Path?: string | null;
+
+		/** Pattern: v[1-9][0-9]*(\.[A-Za-z0-9-]*)? */
 		DefaultVersionId?: string | null;
 		AttachmentCount?: number | null;
 		PermissionsBoundaryUsageCount?: number | null;
 		IsAttachable?: boolean | null;
+
+		/** Max length: 1000 */
 		Description?: string | null;
 		CreateDate?: Date | null;
 		UpdateDate?: Date | null;
@@ -1248,7 +1920,19 @@ export namespace MyNS {
 
 	/** <p>Contains information about a managed policy, including the policy's ARN, versions, and the number of principal entities (users, groups, and roles) that the policy is attached to.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.</p> <p>For more information about managed policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface ManagedPolicyDetailFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		PolicyId: FormControl<string | null | undefined>,
 
 		/**
@@ -1257,26 +1941,36 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		Arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ((/[A-Za-z0-9\.,\+@=_-]+)*)/
+		 */
 		Path: FormControl<string | null | undefined>,
+
+		/** Pattern: v[1-9][0-9]*(\.[A-Za-z0-9-]*)? */
 		DefaultVersionId: FormControl<string | null | undefined>,
 		AttachmentCount: FormControl<number | null | undefined>,
 		PermissionsBoundaryUsageCount: FormControl<number | null | undefined>,
 		IsAttachable: FormControl<boolean | null | undefined>,
+
+		/** Max length: 1000 */
 		Description: FormControl<string | null | undefined>,
 		CreateDate: FormControl<Date | null | undefined>,
 		UpdateDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateManagedPolicyDetailFormGroup() {
 		return new FormGroup<ManagedPolicyDetailFormProperties>({
-			PolicyName: new FormControl<string | null | undefined>(undefined),
-			PolicyId: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
-			Path: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(16)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 			DefaultVersionId: new FormControl<string | null | undefined>(undefined),
 			AttachmentCount: new FormControl<number | null | undefined>(undefined),
 			PermissionsBoundaryUsageCount: new FormControl<number | null | undefined>(undefined),
 			IsAttachable: new FormControl<boolean | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 			CreateDate: new FormControl<Date | null | undefined>(undefined),
 			UpdateDate: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1308,6 +2002,11 @@ export namespace MyNS {
 
 	/** <p>Contains information about the account password policy.</p> <p> This data type is used as a response element in the <a>GetAccountPasswordPolicy</a> operation. </p> */
 	export interface PasswordPolicy {
+
+		/**
+		 * Minimum: 6
+		 * Maximum: 128
+		 */
 		MinimumPasswordLength?: number | null;
 		RequireSymbols?: boolean | null;
 		RequireNumbers?: boolean | null;
@@ -1315,13 +2014,28 @@ export namespace MyNS {
 		RequireLowercaseCharacters?: boolean | null;
 		AllowUsersToChangePassword?: boolean | null;
 		ExpirePasswords?: boolean | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1095
+		 */
 		MaxPasswordAge?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 24
+		 */
 		PasswordReusePrevention?: number | null;
 		HardExpiry?: boolean | null;
 	}
 
 	/** <p>Contains information about the account password policy.</p> <p> This data type is used as a response element in the <a>GetAccountPasswordPolicy</a> operation. </p> */
 	export interface PasswordPolicyFormProperties {
+
+		/**
+		 * Minimum: 6
+		 * Maximum: 128
+		 */
 		MinimumPasswordLength: FormControl<number | null | undefined>,
 		RequireSymbols: FormControl<boolean | null | undefined>,
 		RequireNumbers: FormControl<boolean | null | undefined>,
@@ -1329,21 +2043,31 @@ export namespace MyNS {
 		RequireLowercaseCharacters: FormControl<boolean | null | undefined>,
 		AllowUsersToChangePassword: FormControl<boolean | null | undefined>,
 		ExpirePasswords: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1095
+		 */
 		MaxPasswordAge: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 24
+		 */
 		PasswordReusePrevention: FormControl<number | null | undefined>,
 		HardExpiry: FormControl<boolean | null | undefined>,
 	}
 	export function CreatePasswordPolicyFormGroup() {
 		return new FormGroup<PasswordPolicyFormProperties>({
-			MinimumPasswordLength: new FormControl<number | null | undefined>(undefined),
+			MinimumPasswordLength: new FormControl<number | null | undefined>(undefined, [Validators.min(6), Validators.max(128)]),
 			RequireSymbols: new FormControl<boolean | null | undefined>(undefined),
 			RequireNumbers: new FormControl<boolean | null | undefined>(undefined),
 			RequireUppercaseCharacters: new FormControl<boolean | null | undefined>(undefined),
 			RequireLowercaseCharacters: new FormControl<boolean | null | undefined>(undefined),
 			AllowUsersToChangePassword: new FormControl<boolean | null | undefined>(undefined),
 			ExpirePasswords: new FormControl<boolean | null | undefined>(undefined),
-			MaxPasswordAge: new FormControl<number | null | undefined>(undefined),
-			PasswordReusePrevention: new FormControl<number | null | undefined>(undefined),
+			MaxPasswordAge: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1095)]),
+			PasswordReusePrevention: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(24)]),
 			HardExpiry: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1479,22 +2203,64 @@ export namespace MyNS {
 
 	/** Contains the response to a successful <a>GetGroupPolicy</a> request.  */
 	export interface GetGroupPolicyResponse {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: string;
+
+		/**
+		 * Required
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		PolicyDocument: string;
 	}
 
 	/** Contains the response to a successful <a>GetGroupPolicy</a> request.  */
 	export interface GetGroupPolicyResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		PolicyDocument: FormControl<string | null | undefined>,
 	}
 	export function CreateGetGroupPolicyResponseFormGroup() {
 		return new FormGroup<GetGroupPolicyResponseFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			PolicyName: new FormControl<string | null | undefined>(undefined),
-			PolicyDocument: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			PolicyDocument: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(131072), Validators.minLength(1)]),
 		});
 
 	}
@@ -1569,43 +2335,63 @@ export namespace MyNS {
 	}
 	export function CreateGetOpenIDConnectProviderResponseFormGroup() {
 		return new FormGroup<GetOpenIDConnectProviderResponseFormProperties>({
-			Url: new FormControl<string | null | undefined>(undefined),
+			Url: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 			CreateDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetOrganizationsAccessReportResponse {
+
+		/** Required */
 		JobStatus: GetOrganizationsAccessReportResponseJobStatus;
+
+		/** Required */
 		JobCreationDate: Date;
 		JobCompletionDate?: Date | null;
 		NumberOfServicesAccessible?: number | null;
 		NumberOfServicesNotAccessed?: number | null;
 		AccessDetails?: Array<AccessDetail>;
 		IsTruncated?: boolean | null;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
 
 		/** <p>Contains information about the reason that the operation failed.</p> <p>This data type is used as a response element in the <a>GetOrganizationsAccessReport</a>, <a>GetServiceLastAccessedDetails</a>, and <a>GetServiceLastAccessedDetailsWithEntities</a> operations.</p> */
 		ErrorDetails?: ErrorDetails;
 	}
 	export interface GetOrganizationsAccessReportResponseFormProperties {
+
+		/** Required */
 		JobStatus: FormControl<GetOrganizationsAccessReportResponseJobStatus | null | undefined>,
+
+		/** Required */
 		JobCreationDate: FormControl<Date | null | undefined>,
 		JobCompletionDate: FormControl<Date | null | undefined>,
 		NumberOfServicesAccessible: FormControl<number | null | undefined>,
 		NumberOfServicesNotAccessed: FormControl<number | null | undefined>,
 		IsTruncated: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateGetOrganizationsAccessReportResponseFormGroup() {
 		return new FormGroup<GetOrganizationsAccessReportResponseFormProperties>({
-			JobStatus: new FormControl<GetOrganizationsAccessReportResponseJobStatus | null | undefined>(undefined),
-			JobCreationDate: new FormControl<Date | null | undefined>(undefined),
+			JobStatus: new FormControl<GetOrganizationsAccessReportResponseJobStatus | null | undefined>(undefined, [Validators.required]),
+			JobCreationDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			JobCompletionDate: new FormControl<Date | null | undefined>(undefined),
 			NumberOfServicesAccessible: new FormControl<number | null | undefined>(undefined),
 			NumberOfServicesNotAccessed: new FormControl<number | null | undefined>(undefined),
 			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
 		});
 
 	}
@@ -1615,9 +2401,24 @@ export namespace MyNS {
 
 	/** <p>An object that contains details about when a principal in the reported AWS Organizations entity last attempted to access an AWS service. A principal can be an IAM user, an IAM role, or the AWS account root user within the reported Organizations entity.</p> <p>This data type is a response element in the <a>GetOrganizationsAccessReport</a> operation.</p> */
 	export interface AccessDetail {
+
+		/** Required */
 		ServiceName: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w-]*
+		 */
 		ServiceNamespace: string;
 		Region?: string | null;
+
+		/**
+		 * Max length: 427
+		 * Min length: 19
+		 * Pattern: ^o-[0-9a-z]{10,32}\/r-[0-9a-z]{4,32}[0-9a-z-\/]*
+		 */
 		EntityPath?: string | null;
 		LastAuthenticatedTime?: Date | null;
 		TotalAuthenticatedEntities?: number | null;
@@ -1625,19 +2426,34 @@ export namespace MyNS {
 
 	/** <p>An object that contains details about when a principal in the reported AWS Organizations entity last attempted to access an AWS service. A principal can be an IAM user, an IAM role, or the AWS account root user within the reported Organizations entity.</p> <p>This data type is a response element in the <a>GetOrganizationsAccessReport</a> operation.</p> */
 	export interface AccessDetailFormProperties {
+
+		/** Required */
 		ServiceName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w-]*
+		 */
 		ServiceNamespace: FormControl<string | null | undefined>,
 		Region: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 427
+		 * Min length: 19
+		 * Pattern: ^o-[0-9a-z]{10,32}\/r-[0-9a-z]{4,32}[0-9a-z-\/]*
+		 */
 		EntityPath: FormControl<string | null | undefined>,
 		LastAuthenticatedTime: FormControl<Date | null | undefined>,
 		TotalAuthenticatedEntities: FormControl<number | null | undefined>,
 	}
 	export function CreateAccessDetailFormGroup() {
 		return new FormGroup<AccessDetailFormProperties>({
-			ServiceName: new FormControl<string | null | undefined>(undefined),
-			ServiceNamespace: new FormControl<string | null | undefined>(undefined),
+			ServiceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ServiceNamespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 			Region: new FormControl<string | null | undefined>(undefined),
-			EntityPath: new FormControl<string | null | undefined>(undefined),
+			EntityPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(427), Validators.minLength(19)]),
 			LastAuthenticatedTime: new FormControl<Date | null | undefined>(undefined),
 			TotalAuthenticatedEntities: new FormControl<number | null | undefined>(undefined),
 		});
@@ -1647,19 +2463,27 @@ export namespace MyNS {
 
 	/** <p>Contains information about the reason that the operation failed.</p> <p>This data type is used as a response element in the <a>GetOrganizationsAccessReport</a>, <a>GetServiceLastAccessedDetails</a>, and <a>GetServiceLastAccessedDetailsWithEntities</a> operations.</p> */
 	export interface ErrorDetails {
+
+		/** Required */
 		Message: string;
+
+		/** Required */
 		Code: string;
 	}
 
 	/** <p>Contains information about the reason that the operation failed.</p> <p>This data type is used as a response element in the <a>GetOrganizationsAccessReport</a>, <a>GetServiceLastAccessedDetails</a>, and <a>GetServiceLastAccessedDetailsWithEntities</a> operations.</p> */
 	export interface ErrorDetailsFormProperties {
+
+		/** Required */
 		Message: FormControl<string | null | undefined>,
+
+		/** Required */
 		Code: FormControl<string | null | undefined>,
 	}
 	export function CreateErrorDetailsFormGroup() {
 		return new FormGroup<ErrorDetailsFormProperties>({
-			Message: new FormControl<string | null | undefined>(undefined),
-			Code: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Code: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1721,22 +2545,64 @@ export namespace MyNS {
 
 	/** Contains the response to a successful <a>GetRolePolicy</a> request.  */
 	export interface GetRolePolicyResponse {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: string;
+
+		/**
+		 * Required
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		PolicyDocument: string;
 	}
 
 	/** Contains the response to a successful <a>GetRolePolicy</a> request.  */
 	export interface GetRolePolicyResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		PolicyDocument: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRolePolicyResponseFormGroup() {
 		return new FormGroup<GetRolePolicyResponseFormProperties>({
-			RoleName: new FormControl<string | null | undefined>(undefined),
-			PolicyName: new FormControl<string | null | undefined>(undefined),
-			PolicyDocument: new FormControl<string | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			PolicyDocument: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(131072), Validators.minLength(1)]),
 		});
 
 	}
@@ -1744,6 +2610,11 @@ export namespace MyNS {
 
 	/** Contains the response to a successful <a>GetSAMLProvider</a> request.  */
 	export interface GetSAMLProviderResponse {
+
+		/**
+		 * Max length: 10000000
+		 * Min length: 1000
+		 */
 		SAMLMetadataDocument?: string | null;
 		CreateDate?: Date | null;
 		ValidUntil?: Date | null;
@@ -1751,13 +2622,18 @@ export namespace MyNS {
 
 	/** Contains the response to a successful <a>GetSAMLProvider</a> request.  */
 	export interface GetSAMLProviderResponseFormProperties {
+
+		/**
+		 * Max length: 10000000
+		 * Min length: 1000
+		 */
 		SAMLMetadataDocument: FormControl<string | null | undefined>,
 		CreateDate: FormControl<Date | null | undefined>,
 		ValidUntil: FormControl<Date | null | undefined>,
 	}
 	export function CreateGetSAMLProviderResponseFormGroup() {
 		return new FormGroup<GetSAMLProviderResponseFormProperties>({
-			SAMLMetadataDocument: new FormControl<string | null | undefined>(undefined),
+			SAMLMetadataDocument: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000000), Validators.minLength(1000)]),
 			CreateDate: new FormControl<Date | null | undefined>(undefined),
 			ValidUntil: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1784,30 +2660,90 @@ export namespace MyNS {
 
 	/** <p>Contains information about an SSH public key.</p> <p>This data type is used as a response element in the <a>GetSSHPublicKey</a> and <a>UploadSSHPublicKey</a> operations. </p> */
 	export interface SSHPublicKey {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: [\w]+
+		 */
 		SSHPublicKeyId: string;
+
+		/**
+		 * Required
+		 * Max length: 48
+		 * Min length: 48
+		 * Pattern: [:\w]+
+		 */
 		Fingerprint: string;
+
+		/**
+		 * Required
+		 * Max length: 16384
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		SSHPublicKeyBody: string;
+
+		/** Required */
 		Status: AccessKeyStatus;
 		UploadDate?: Date | null;
 	}
 
 	/** <p>Contains information about an SSH public key.</p> <p>This data type is used as a response element in the <a>GetSSHPublicKey</a> and <a>UploadSSHPublicKey</a> operations. </p> */
 	export interface SSHPublicKeyFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: [\w]+
+		 */
 		SSHPublicKeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 48
+		 * Min length: 48
+		 * Pattern: [:\w]+
+		 */
 		Fingerprint: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 16384
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		SSHPublicKeyBody: FormControl<string | null | undefined>,
+
+		/** Required */
 		Status: FormControl<AccessKeyStatus | null | undefined>,
 		UploadDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateSSHPublicKeyFormGroup() {
 		return new FormGroup<SSHPublicKeyFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			SSHPublicKeyId: new FormControl<string | null | undefined>(undefined),
-			Fingerprint: new FormControl<string | null | undefined>(undefined),
-			SSHPublicKeyBody: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			SSHPublicKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(20)]),
+			Fingerprint: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(48), Validators.minLength(48)]),
+			SSHPublicKeyBody: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(16384), Validators.minLength(1)]),
+			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined, [Validators.required]),
 			UploadDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -1852,19 +2788,45 @@ export namespace MyNS {
 		 * Required
 		 */
 		ServerCertificateMetadata: ServerCertificateMetadata;
+
+		/**
+		 * Required
+		 * Max length: 16384
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		CertificateBody: string;
+
+		/**
+		 * Max length: 2097152
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		CertificateChain?: string | null;
 	}
 
 	/** <p>Contains information about a server certificate.</p> <p> This data type is used as a response element in the <a>GetServerCertificate</a> operation. </p> */
 	export interface ServerCertificateFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 16384
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		CertificateBody: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2097152
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		CertificateChain: FormControl<string | null | undefined>,
 	}
 	export function CreateServerCertificateFormGroup() {
 		return new FormGroup<ServerCertificateFormProperties>({
-			CertificateBody: new FormControl<string | null | undefined>(undefined),
-			CertificateChain: new FormControl<string | null | undefined>(undefined),
+			CertificateBody: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(16384), Validators.minLength(1)]),
+			CertificateChain: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2097152), Validators.minLength(1)]),
 		});
 
 	}
@@ -1872,8 +2834,29 @@ export namespace MyNS {
 
 	/** <p>Contains information about a server certificate without its certificate body, certificate chain, and private key.</p> <p> This data type is used as a response element in the <a>UploadServerCertificate</a> and <a>ListServerCertificates</a> operations. </p> */
 	export interface ServerCertificateMetadata {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		ServerCertificateName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		ServerCertificateId: string;
 
 		/**
@@ -1889,8 +2872,29 @@ export namespace MyNS {
 
 	/** <p>Contains information about a server certificate without its certificate body, certificate chain, and private key.</p> <p> This data type is used as a response element in the <a>UploadServerCertificate</a> and <a>ListServerCertificates</a> operations. </p> */
 	export interface ServerCertificateMetadataFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		ServerCertificateName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		ServerCertificateId: FormControl<string | null | undefined>,
 
 		/**
@@ -1905,10 +2909,10 @@ export namespace MyNS {
 	}
 	export function CreateServerCertificateMetadataFormGroup() {
 		return new FormGroup<ServerCertificateMetadataFormProperties>({
-			Path: new FormControl<string | null | undefined>(undefined),
-			ServerCertificateName: new FormControl<string | null | undefined>(undefined),
-			ServerCertificateId: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			ServerCertificateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ServerCertificateId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(16)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 			UploadDate: new FormControl<Date | null | undefined>(undefined),
 			Expiration: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1916,10 +2920,18 @@ export namespace MyNS {
 	}
 
 	export interface GetServiceLastAccessedDetailsResponse {
+
+		/** Required */
 		JobStatus: GetOrganizationsAccessReportResponseJobStatus;
 		JobType?: GetServiceLastAccessedDetailsResponseJobType | null;
+
+		/** Required */
 		JobCreationDate: Date;
+
+		/** Required */
 		ServicesLastAccessed: Array<ServiceLastAccessed>;
+
+		/** Required */
 		JobCompletionDate: Date;
 		IsTruncated?: boolean | null;
 		Marker?: string | null;
@@ -1928,19 +2940,25 @@ export namespace MyNS {
 		Error?: ErrorDetails;
 	}
 	export interface GetServiceLastAccessedDetailsResponseFormProperties {
+
+		/** Required */
 		JobStatus: FormControl<GetOrganizationsAccessReportResponseJobStatus | null | undefined>,
 		JobType: FormControl<GetServiceLastAccessedDetailsResponseJobType | null | undefined>,
+
+		/** Required */
 		JobCreationDate: FormControl<Date | null | undefined>,
+
+		/** Required */
 		JobCompletionDate: FormControl<Date | null | undefined>,
 		IsTruncated: FormControl<boolean | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateGetServiceLastAccessedDetailsResponseFormGroup() {
 		return new FormGroup<GetServiceLastAccessedDetailsResponseFormProperties>({
-			JobStatus: new FormControl<GetOrganizationsAccessReportResponseJobStatus | null | undefined>(undefined),
+			JobStatus: new FormControl<GetOrganizationsAccessReportResponseJobStatus | null | undefined>(undefined, [Validators.required]),
 			JobType: new FormControl<GetServiceLastAccessedDetailsResponseJobType | null | undefined>(undefined),
-			JobCreationDate: new FormControl<Date | null | undefined>(undefined),
-			JobCompletionDate: new FormControl<Date | null | undefined>(undefined),
+			JobCreationDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			JobCompletionDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1952,8 +2970,17 @@ export namespace MyNS {
 
 	/** <p>Contains details about the most recent attempt to access the service.</p> <p>This data type is used as a response element in the <a>GetServiceLastAccessedDetails</a> operation.</p> */
 	export interface ServiceLastAccessed {
+
+		/** Required */
 		ServiceName: string;
 		LastAuthenticated?: Date | null;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w-]*
+		 */
 		ServiceNamespace: string;
 
 		/**
@@ -1969,8 +2996,17 @@ export namespace MyNS {
 
 	/** <p>Contains details about the most recent attempt to access the service.</p> <p>This data type is used as a response element in the <a>GetServiceLastAccessedDetails</a> operation.</p> */
 	export interface ServiceLastAccessedFormProperties {
+
+		/** Required */
 		ServiceName: FormControl<string | null | undefined>,
 		LastAuthenticated: FormControl<Date | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w-]*
+		 */
 		ServiceNamespace: FormControl<string | null | undefined>,
 
 		/**
@@ -1984,10 +3020,10 @@ export namespace MyNS {
 	}
 	export function CreateServiceLastAccessedFormGroup() {
 		return new FormGroup<ServiceLastAccessedFormProperties>({
-			ServiceName: new FormControl<string | null | undefined>(undefined),
+			ServiceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			LastAuthenticated: new FormControl<Date | null | undefined>(undefined),
-			ServiceNamespace: new FormControl<string | null | undefined>(undefined),
-			LastAuthenticatedEntity: new FormControl<string | null | undefined>(undefined),
+			ServiceNamespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			LastAuthenticatedEntity: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 			LastAuthenticatedRegion: new FormControl<string | null | undefined>(undefined),
 			TotalAuthenticatedEntities: new FormControl<number | null | undefined>(undefined),
 		});
@@ -2025,7 +3061,7 @@ export namespace MyNS {
 	export function CreateTrackedActionLastAccessedFormGroup() {
 		return new FormGroup<TrackedActionLastAccessedFormProperties>({
 			ActionName: new FormControl<string | null | undefined>(undefined),
-			LastAccessedEntity: new FormControl<string | null | undefined>(undefined),
+			LastAccessedEntity: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 			LastAccessedTime: new FormControl<Date | null | undefined>(undefined),
 			LastAccessedRegion: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2033,9 +3069,17 @@ export namespace MyNS {
 	}
 
 	export interface GetServiceLastAccessedDetailsWithEntitiesResponse {
+
+		/** Required */
 		JobStatus: GetOrganizationsAccessReportResponseJobStatus;
+
+		/** Required */
 		JobCreationDate: Date;
+
+		/** Required */
 		JobCompletionDate: Date;
+
+		/** Required */
 		EntityDetailsList: Array<EntityDetails>;
 		IsTruncated?: boolean | null;
 		Marker?: string | null;
@@ -2044,17 +3088,23 @@ export namespace MyNS {
 		Error?: ErrorDetails;
 	}
 	export interface GetServiceLastAccessedDetailsWithEntitiesResponseFormProperties {
+
+		/** Required */
 		JobStatus: FormControl<GetOrganizationsAccessReportResponseJobStatus | null | undefined>,
+
+		/** Required */
 		JobCreationDate: FormControl<Date | null | undefined>,
+
+		/** Required */
 		JobCompletionDate: FormControl<Date | null | undefined>,
 		IsTruncated: FormControl<boolean | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateGetServiceLastAccessedDetailsWithEntitiesResponseFormGroup() {
 		return new FormGroup<GetServiceLastAccessedDetailsWithEntitiesResponseFormProperties>({
-			JobStatus: new FormControl<GetOrganizationsAccessReportResponseJobStatus | null | undefined>(undefined),
-			JobCreationDate: new FormControl<Date | null | undefined>(undefined),
-			JobCompletionDate: new FormControl<Date | null | undefined>(undefined),
+			JobStatus: new FormControl<GetOrganizationsAccessReportResponseJobStatus | null | undefined>(undefined, [Validators.required]),
+			JobCreationDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			JobCompletionDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2095,9 +3145,31 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		Arn: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		Name: string;
+
+		/** Required */
 		Type: EntityInfoType;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		Id: string;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path?: string | null;
 	}
 
@@ -2111,18 +3183,40 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		Arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Type: FormControl<EntityInfoType | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path: FormControl<string | null | undefined>,
 	}
 	export function CreateEntityInfoFormGroup() {
 		return new FormGroup<EntityInfoFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Type: new FormControl<EntityInfoType | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			Path: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Type: new FormControl<EntityInfoType | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(16)]),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
@@ -2130,17 +3224,21 @@ export namespace MyNS {
 	export enum EntityInfoType { USER = 0, ROLE = 1, GROUP = 2 }
 
 	export interface GetServiceLinkedRoleDeletionStatusResponse {
+
+		/** Required */
 		Status: GetServiceLinkedRoleDeletionStatusResponseStatus;
 
 		/** <p>The reason that the service-linked role deletion failed.</p> <p>This data type is used as a response element in the <a>GetServiceLinkedRoleDeletionStatus</a> operation.</p> */
 		Reason?: DeletionTaskFailureReasonType;
 	}
 	export interface GetServiceLinkedRoleDeletionStatusResponseFormProperties {
+
+		/** Required */
 		Status: FormControl<GetServiceLinkedRoleDeletionStatusResponseStatus | null | undefined>,
 	}
 	export function CreateGetServiceLinkedRoleDeletionStatusResponseFormGroup() {
 		return new FormGroup<GetServiceLinkedRoleDeletionStatusResponseFormProperties>({
-			Status: new FormControl<GetServiceLinkedRoleDeletionStatusResponseStatus | null | undefined>(undefined),
+			Status: new FormControl<GetServiceLinkedRoleDeletionStatusResponseStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2150,17 +3248,21 @@ export namespace MyNS {
 
 	/** <p>The reason that the service-linked role deletion failed.</p> <p>This data type is used as a response element in the <a>GetServiceLinkedRoleDeletionStatus</a> operation.</p> */
 	export interface DeletionTaskFailureReasonType {
+
+		/** Max length: 1000 */
 		Reason?: string | null;
 		RoleUsageList?: Array<RoleUsageType>;
 	}
 
 	/** <p>The reason that the service-linked role deletion failed.</p> <p>This data type is used as a response element in the <a>GetServiceLinkedRoleDeletionStatus</a> operation.</p> */
 	export interface DeletionTaskFailureReasonTypeFormProperties {
+
+		/** Max length: 1000 */
 		Reason: FormControl<string | null | undefined>,
 	}
 	export function CreateDeletionTaskFailureReasonTypeFormGroup() {
 		return new FormGroup<DeletionTaskFailureReasonTypeFormProperties>({
-			Reason: new FormControl<string | null | undefined>(undefined),
+			Reason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 		});
 
 	}
@@ -2168,17 +3270,27 @@ export namespace MyNS {
 
 	/** <p>An object that contains details about how a service-linked role is used, if that information is returned by the service.</p> <p>This data type is used as a response element in the <a>GetServiceLinkedRoleDeletionStatus</a> operation.</p> */
 	export interface RoleUsageType {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		Region?: string | null;
 		Resources?: Array<string>;
 	}
 
 	/** <p>An object that contains details about how a service-linked role is used, if that information is returned by the service.</p> <p>This data type is used as a response element in the <a>GetServiceLinkedRoleDeletionStatus</a> operation.</p> */
 	export interface RoleUsageTypeFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		Region: FormControl<string | null | undefined>,
 	}
 	export function CreateRoleUsageTypeFormGroup() {
 		return new FormGroup<RoleUsageTypeFormProperties>({
-			Region: new FormControl<string | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -2206,22 +3318,64 @@ export namespace MyNS {
 
 	/** Contains the response to a successful <a>GetUserPolicy</a> request.  */
 	export interface GetUserPolicyResponse {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: string;
+
+		/**
+		 * Required
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		PolicyDocument: string;
 	}
 
 	/** Contains the response to a successful <a>GetUserPolicy</a> request.  */
 	export interface GetUserPolicyResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		PolicyDocument: FormControl<string | null | undefined>,
 	}
 	export function CreateGetUserPolicyResponseFormGroup() {
 		return new FormGroup<GetUserPolicyResponseFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			PolicyName: new FormControl<string | null | undefined>(undefined),
-			PolicyDocument: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			PolicyDocument: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(131072), Validators.minLength(1)]),
 		});
 
 	}
@@ -2255,7 +3409,19 @@ export namespace MyNS {
 
 	/** <p>Contains information about an AWS access key, without its secret key.</p> <p>This data type is used as a response element in the <a>ListAccessKeys</a> operation.</p> */
 	export interface AccessKeyMetadata {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		AccessKeyId?: string | null;
 		Status?: AccessKeyStatus | null;
 		CreateDate?: Date | null;
@@ -2263,15 +3429,27 @@ export namespace MyNS {
 
 	/** <p>Contains information about an AWS access key, without its secret key.</p> <p>This data type is used as a response element in the <a>ListAccessKeys</a> operation.</p> */
 	export interface AccessKeyMetadataFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		AccessKeyId: FormControl<string | null | undefined>,
 		Status: FormControl<AccessKeyStatus | null | undefined>,
 		CreateDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateAccessKeyMetadataFormGroup() {
 		return new FormGroup<AccessKeyMetadataFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			AccessKeyId: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			AccessKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(16)]),
 			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined),
 			CreateDate: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -2281,6 +3459,8 @@ export namespace MyNS {
 
 	/** Contains the response to a successful <a>ListAccountAliases</a> request.  */
 	export interface ListAccountAliasesResponse {
+
+		/** Required */
 		AccountAliases: Array<string>;
 		IsTruncated?: boolean | null;
 		Marker?: string | null;
@@ -2388,19 +3568,43 @@ export namespace MyNS {
 
 	/** <p>Contains information about a group that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface PolicyGroup {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		GroupId?: string | null;
 	}
 
 	/** <p>Contains information about a group that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface PolicyGroupFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		GroupId: FormControl<string | null | undefined>,
 	}
 	export function CreatePolicyGroupFormGroup() {
 		return new FormGroup<PolicyGroupFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			GroupId: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			GroupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(16)]),
 		});
 
 	}
@@ -2408,19 +3612,43 @@ export namespace MyNS {
 
 	/** <p>Contains information about a user that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface PolicyUser {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		UserId?: string | null;
 	}
 
 	/** <p>Contains information about a user that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface PolicyUserFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		UserId: FormControl<string | null | undefined>,
 	}
 	export function CreatePolicyUserFormGroup() {
 		return new FormGroup<PolicyUserFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			UserId: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			UserId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(16)]),
 		});
 
 	}
@@ -2428,19 +3656,43 @@ export namespace MyNS {
 
 	/** <p>Contains information about a role that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface PolicyRole {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		RoleId?: string | null;
 	}
 
 	/** <p>Contains information about a role that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface PolicyRoleFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		RoleId: FormControl<string | null | undefined>,
 	}
 	export function CreatePolicyRoleFormGroup() {
 		return new FormGroup<PolicyRoleFormProperties>({
-			RoleName: new FormControl<string | null | undefined>(undefined),
-			RoleId: new FormControl<string | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			RoleId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(16)]),
 		});
 
 	}
@@ -2604,22 +3856,54 @@ export namespace MyNS {
 
 	/** <p>Contains information about an MFA device.</p> <p>This data type is used as a response element in the <a>ListMFADevices</a> operation.</p> */
 	export interface MFADevice {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 9
+		 * Pattern: [\w+=/:,.@-]+
+		 */
 		SerialNumber: string;
+
+		/** Required */
 		EnableDate: Date;
 	}
 
 	/** <p>Contains information about an MFA device.</p> <p>This data type is used as a response element in the <a>ListMFADevices</a> operation.</p> */
 	export interface MFADeviceFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 9
+		 * Pattern: [\w+=/:,.@-]+
+		 */
 		SerialNumber: FormControl<string | null | undefined>,
+
+		/** Required */
 		EnableDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateMFADeviceFormGroup() {
 		return new FormGroup<MFADeviceFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			SerialNumber: new FormControl<string | null | undefined>(undefined),
-			EnableDate: new FormControl<Date | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			SerialNumber: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(9)]),
+			EnableDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2665,7 +3949,7 @@ export namespace MyNS {
 	}
 	export function CreateOpenIDConnectProviderListEntryFormGroup() {
 		return new FormGroup<OpenIDConnectProviderListEntryFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -2692,6 +3976,8 @@ export namespace MyNS {
 	}
 
 	export interface ListPoliciesGrantingServiceAccessResponse {
+
+		/** Required */
 		PoliciesGrantingServiceAccess: Array<ListPoliciesGrantingServiceAccessEntry>;
 		IsTruncated?: boolean | null;
 		Marker?: string | null;
@@ -2711,17 +3997,29 @@ export namespace MyNS {
 
 	/** <p>Contains details about the permissions policies that are attached to the specified identity (user, group, or role).</p> <p>This data type is used as a response element in the <a>ListPoliciesGrantingServiceAccess</a> operation.</p> */
 	export interface ListPoliciesGrantingServiceAccessEntry {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w-]*
+		 */
 		ServiceNamespace?: string | null;
 		Policies?: Array<PolicyGrantingServiceAccess>;
 	}
 
 	/** <p>Contains details about the permissions policies that are attached to the specified identity (user, group, or role).</p> <p>This data type is used as a response element in the <a>ListPoliciesGrantingServiceAccess</a> operation.</p> */
 	export interface ListPoliciesGrantingServiceAccessEntryFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w-]*
+		 */
 		ServiceNamespace: FormControl<string | null | undefined>,
 	}
 	export function CreateListPoliciesGrantingServiceAccessEntryFormGroup() {
 		return new FormGroup<ListPoliciesGrantingServiceAccessEntryFormProperties>({
-			ServiceNamespace: new FormControl<string | null | undefined>(undefined),
+			ServiceNamespace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -2729,7 +4027,16 @@ export namespace MyNS {
 
 	/** <p>Contains details about the permissions policies that are attached to the specified identity (user, group, or role).</p> <p>This data type is an element of the <a>ListPoliciesGrantingServiceAccessEntry</a> object.</p> */
 	export interface PolicyGrantingServiceAccess {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: string;
+
+		/** Required */
 		PolicyType: PolicyGrantingServiceAccessPolicyType;
 
 		/**
@@ -2739,12 +4046,27 @@ export namespace MyNS {
 		 */
 		PolicyArn?: string | null;
 		EntityType?: EntityInfoType | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		EntityName?: string | null;
 	}
 
 	/** <p>Contains details about the permissions policies that are attached to the specified identity (user, group, or role).</p> <p>This data type is an element of the <a>ListPoliciesGrantingServiceAccessEntry</a> object.</p> */
 	export interface PolicyGrantingServiceAccessFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: FormControl<string | null | undefined>,
+
+		/** Required */
 		PolicyType: FormControl<PolicyGrantingServiceAccessPolicyType | null | undefined>,
 
 		/**
@@ -2754,15 +4076,21 @@ export namespace MyNS {
 		 */
 		PolicyArn: FormControl<string | null | undefined>,
 		EntityType: FormControl<EntityInfoType | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		EntityName: FormControl<string | null | undefined>,
 	}
 	export function CreatePolicyGrantingServiceAccessFormGroup() {
 		return new FormGroup<PolicyGrantingServiceAccessFormProperties>({
-			PolicyName: new FormControl<string | null | undefined>(undefined),
-			PolicyType: new FormControl<PolicyGrantingServiceAccessPolicyType | null | undefined>(undefined),
-			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			PolicyType: new FormControl<PolicyGrantingServiceAccessPolicyType | null | undefined>(undefined, [Validators.required]),
+			PolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 			EntityType: new FormControl<EntityInfoType | null | undefined>(undefined),
-			EntityName: new FormControl<string | null | undefined>(undefined),
+			EntityName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -2817,6 +4145,11 @@ export namespace MyNS {
 	}
 
 	export interface ListRoleTagsResponse {
+
+		/**
+		 * Required
+		 * Maximum items: 50
+		 */
 		Tags: Array<Tag>;
 		IsTruncated?: boolean | null;
 		Marker?: string | null;
@@ -2902,7 +4235,7 @@ export namespace MyNS {
 	}
 	export function CreateSAMLProviderListEntryFormGroup() {
 		return new FormGroup<SAMLProviderListEntryFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 			ValidUntil: new FormControl<Date | null | undefined>(undefined),
 			CreateDate: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -2933,25 +4266,61 @@ export namespace MyNS {
 
 	/** <p>Contains information about an SSH public key, without the key's body or fingerprint.</p> <p>This data type is used as a response element in the <a>ListSSHPublicKeys</a> operation.</p> */
 	export interface SSHPublicKeyMetadata {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: [\w]+
+		 */
 		SSHPublicKeyId: string;
+
+		/** Required */
 		Status: AccessKeyStatus;
+
+		/** Required */
 		UploadDate: Date;
 	}
 
 	/** <p>Contains information about an SSH public key, without the key's body or fingerprint.</p> <p>This data type is used as a response element in the <a>ListSSHPublicKeys</a> operation.</p> */
 	export interface SSHPublicKeyMetadataFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: [\w]+
+		 */
 		SSHPublicKeyId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Status: FormControl<AccessKeyStatus | null | undefined>,
+
+		/** Required */
 		UploadDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateSSHPublicKeyMetadataFormGroup() {
 		return new FormGroup<SSHPublicKeyMetadataFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			SSHPublicKeyId: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined),
-			UploadDate: new FormControl<Date | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			SSHPublicKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(20)]),
+			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined, [Validators.required]),
+			UploadDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2959,6 +4328,8 @@ export namespace MyNS {
 
 	/** Contains the response to a successful <a>ListServerCertificates</a> request.  */
 	export interface ListServerCertificatesResponse {
+
+		/** Required */
 		ServerCertificateMetadataList: Array<ServerCertificateMetadata>;
 		IsTruncated?: boolean | null;
 		Marker?: string | null;
@@ -2991,31 +4362,85 @@ export namespace MyNS {
 
 	/** Contains additional details about a service-specific credential. */
 	export interface ServiceSpecificCredentialMetadata {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/** Required */
 		Status: AccessKeyStatus;
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 17
+		 * Pattern: [\w+=,.@-]+
+		 */
 		ServiceUserName: string;
+
+		/** Required */
 		CreateDate: Date;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: [\w]+
+		 */
 		ServiceSpecificCredentialId: string;
+
+		/** Required */
 		ServiceName: string;
 	}
 
 	/** Contains additional details about a service-specific credential. */
 	export interface ServiceSpecificCredentialMetadataFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/** Required */
 		Status: FormControl<AccessKeyStatus | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 17
+		 * Pattern: [\w+=,.@-]+
+		 */
 		ServiceUserName: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreateDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: [\w]+
+		 */
 		ServiceSpecificCredentialId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ServiceName: FormControl<string | null | undefined>,
 	}
 	export function CreateServiceSpecificCredentialMetadataFormGroup() {
 		return new FormGroup<ServiceSpecificCredentialMetadataFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined),
-			ServiceUserName: new FormControl<string | null | undefined>(undefined),
-			CreateDate: new FormControl<Date | null | undefined>(undefined),
-			ServiceSpecificCredentialId: new FormControl<string | null | undefined>(undefined),
-			ServiceName: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined, [Validators.required]),
+			ServiceUserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(17)]),
+			CreateDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			ServiceSpecificCredentialId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(20)]),
+			ServiceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3049,27 +4474,73 @@ export namespace MyNS {
 
 	/** <p>Contains information about an X.509 signing certificate.</p> <p>This data type is used as a response element in the <a>UploadSigningCertificate</a> and <a>ListSigningCertificates</a> operations. </p> */
 	export interface SigningCertificate {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 24
+		 * Pattern: [\w]+
+		 */
 		CertificateId: string;
+
+		/**
+		 * Required
+		 * Max length: 16384
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		CertificateBody: string;
+
+		/** Required */
 		Status: AccessKeyStatus;
 		UploadDate?: Date | null;
 	}
 
 	/** <p>Contains information about an X.509 signing certificate.</p> <p>This data type is used as a response element in the <a>UploadSigningCertificate</a> and <a>ListSigningCertificates</a> operations. </p> */
 	export interface SigningCertificateFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 24
+		 * Pattern: [\w]+
+		 */
 		CertificateId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 16384
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		CertificateBody: FormControl<string | null | undefined>,
+
+		/** Required */
 		Status: FormControl<AccessKeyStatus | null | undefined>,
 		UploadDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateSigningCertificateFormGroup() {
 		return new FormGroup<SigningCertificateFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			CertificateId: new FormControl<string | null | undefined>(undefined),
-			CertificateBody: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			CertificateId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(24)]),
+			CertificateBody: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(16384), Validators.minLength(1)]),
+			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined, [Validators.required]),
 			UploadDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -3102,6 +4573,11 @@ export namespace MyNS {
 	}
 
 	export interface ListUserTagsResponse {
+
+		/**
+		 * Required
+		 * Maximum items: 50
+		 */
 		Tags: Array<Tag>;
 		IsTruncated?: boolean | null;
 		Marker?: string | null;
@@ -3147,6 +4623,8 @@ export namespace MyNS {
 
 	/** Contains the response to a successful <a>ListVirtualMFADevices</a> request.  */
 	export interface ListVirtualMFADevicesResponse {
+
+		/** Required */
 		VirtualMFADevices: Array<VirtualMFADevice>;
 		IsTruncated?: boolean | null;
 		Marker?: string | null;
@@ -3202,8 +4680,21 @@ export namespace MyNS {
 
 	/** <p>Contains the results of a simulation.</p> <p>This data type is used by the return parameter of <code> <a>SimulateCustomPolicy</a> </code> and <code> <a>SimulatePrincipalPolicy</a> </code>.</p> */
 	export interface EvaluationResult {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 3
+		 */
 		EvalActionName: string;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		EvalResourceName?: string | null;
+
+		/** Required */
 		EvalDecision: EvaluationResultEvalDecision;
 		MatchedStatements?: Array<Statement>;
 		MissingContextValues?: Array<string>;
@@ -3219,15 +4710,28 @@ export namespace MyNS {
 
 	/** <p>Contains the results of a simulation.</p> <p>This data type is used by the return parameter of <code> <a>SimulateCustomPolicy</a> </code> and <code> <a>SimulatePrincipalPolicy</a> </code>.</p> */
 	export interface EvaluationResultFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 3
+		 */
 		EvalActionName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		EvalResourceName: FormControl<string | null | undefined>,
+
+		/** Required */
 		EvalDecision: FormControl<EvaluationResultEvalDecision | null | undefined>,
 	}
 	export function CreateEvaluationResultFormGroup() {
 		return new FormGroup<EvaluationResultFormProperties>({
-			EvalActionName: new FormControl<string | null | undefined>(undefined),
-			EvalResourceName: new FormControl<string | null | undefined>(undefined),
-			EvalDecision: new FormControl<EvaluationResultEvalDecision | null | undefined>(undefined),
+			EvalActionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(3)]),
+			EvalResourceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			EvalDecision: new FormControl<EvaluationResultEvalDecision | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3329,7 +4833,15 @@ export namespace MyNS {
 
 	/** <p>Contains the result of the simulation of a single API operation call on a single resource.</p> <p>This data type is used by a member of the <a>EvaluationResult</a> data type.</p> */
 	export interface ResourceSpecificResult {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		EvalResourceName: string;
+
+		/** Required */
 		EvalResourceDecision: EvaluationResultEvalDecision;
 		MatchedStatements?: Array<Statement>;
 		MissingContextValues?: Array<string>;
@@ -3341,13 +4853,21 @@ export namespace MyNS {
 
 	/** <p>Contains the result of the simulation of a single API operation call on a single resource.</p> <p>This data type is used by a member of the <a>EvaluationResult</a> data type.</p> */
 	export interface ResourceSpecificResultFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		EvalResourceName: FormControl<string | null | undefined>,
+
+		/** Required */
 		EvalResourceDecision: FormControl<EvaluationResultEvalDecision | null | undefined>,
 	}
 	export function CreateResourceSpecificResultFormGroup() {
 		return new FormGroup<ResourceSpecificResultFormProperties>({
-			EvalResourceName: new FormControl<string | null | undefined>(undefined),
-			EvalResourceDecision: new FormControl<EvaluationResultEvalDecision | null | undefined>(undefined),
+			EvalResourceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			EvalResourceDecision: new FormControl<EvaluationResultEvalDecision | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3355,6 +4875,11 @@ export namespace MyNS {
 
 	/** <p>Contains information about a condition context key. It includes the name of the key and specifies the value (or values, if the context key supports multiple values) to use in the simulation. This information is used when evaluating the <code>Condition</code> elements of the input policies.</p> <p>This data type is used as an input parameter to <a>SimulateCustomPolicy</a> and <a>SimulatePrincipalPolicy</a>.</p> */
 	export interface ContextEntry {
+
+		/**
+		 * Max length: 256
+		 * Min length: 5
+		 */
 		ContextKeyName?: string | null;
 		ContextKeyValues?: Array<string>;
 		ContextKeyType?: ContextEntryContextKeyType | null;
@@ -3362,12 +4887,17 @@ export namespace MyNS {
 
 	/** <p>Contains information about a condition context key. It includes the name of the key and specifies the value (or values, if the context key supports multiple values) to use in the simulation. This information is used when evaluating the <code>Condition</code> elements of the input policies.</p> <p>This data type is used as an input parameter to <a>SimulateCustomPolicy</a> and <a>SimulatePrincipalPolicy</a>.</p> */
 	export interface ContextEntryFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 5
+		 */
 		ContextKeyName: FormControl<string | null | undefined>,
 		ContextKeyType: FormControl<ContextEntryContextKeyType | null | undefined>,
 	}
 	export function CreateContextEntryFormGroup() {
 		return new FormGroup<ContextEntryFormProperties>({
-			ContextKeyName: new FormControl<string | null | undefined>(undefined),
+			ContextKeyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(5)]),
 			ContextKeyType: new FormControl<ContextEntryContextKeyType | null | undefined>(undefined),
 		});
 
@@ -3432,7 +4962,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateSAMLProviderResponseFormGroup() {
 		return new FormGroup<UpdateSAMLProviderResponseFormProperties>({
-			SAMLProviderArn: new FormControl<string | null | undefined>(undefined),
+			SAMLProviderArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -3564,6 +5094,12 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		OpenIDConnectProviderArn: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		ClientID: string;
 	}
 	export interface AddClientIDToOpenIDConnectProviderRequestFormProperties {
@@ -3575,49 +5111,118 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		OpenIDConnectProviderArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		ClientID: FormControl<string | null | undefined>,
 	}
 	export function CreateAddClientIDToOpenIDConnectProviderRequestFormGroup() {
 		return new FormGroup<AddClientIDToOpenIDConnectProviderRequestFormProperties>({
-			OpenIDConnectProviderArn: new FormControl<string | null | undefined>(undefined),
-			ClientID: new FormControl<string | null | undefined>(undefined),
+			OpenIDConnectProviderArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			ClientID: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface AddRoleToInstanceProfileRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		InstanceProfileName: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: string;
 	}
 	export interface AddRoleToInstanceProfileRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		InstanceProfileName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
 	}
 	export function CreateAddRoleToInstanceProfileRequestFormGroup() {
 		return new FormGroup<AddRoleToInstanceProfileRequestFormProperties>({
-			InstanceProfileName: new FormControl<string | null | undefined>(undefined),
-			RoleName: new FormControl<string | null | undefined>(undefined),
+			InstanceProfileName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface AddUserToGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
 	}
 	export interface AddUserToGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateAddUserToGroupRequestFormGroup() {
 		return new FormGroup<AddUserToGroupRequestFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			UserName: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface AttachGroupPolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: string;
 
 		/**
@@ -3629,6 +5234,13 @@ export namespace MyNS {
 		PolicyArn: string;
 	}
 	export interface AttachGroupPolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: FormControl<string | null | undefined>,
 
 		/**
@@ -3641,13 +5253,20 @@ export namespace MyNS {
 	}
 	export function CreateAttachGroupPolicyRequestFormGroup() {
 		return new FormGroup<AttachGroupPolicyRequestFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			PolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface AttachRolePolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: string;
 
 		/**
@@ -3659,6 +5278,13 @@ export namespace MyNS {
 		PolicyArn: string;
 	}
 	export interface AttachRolePolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
 
 		/**
@@ -3671,13 +5297,20 @@ export namespace MyNS {
 	}
 	export function CreateAttachRolePolicyRequestFormGroup() {
 		return new FormGroup<AttachRolePolicyRequestFormProperties>({
-			RoleName: new FormControl<string | null | undefined>(undefined),
-			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			PolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface AttachUserPolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
 
 		/**
@@ -3689,6 +5322,13 @@ export namespace MyNS {
 		PolicyArn: string;
 	}
 	export interface AttachUserPolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
 
 		/**
@@ -3701,8 +5341,8 @@ export namespace MyNS {
 	}
 	export function CreateAttachUserPolicyRequestFormGroup() {
 		return new FormGroup<AttachUserPolicyRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			PolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -3710,17 +5350,45 @@ export namespace MyNS {
 	export enum PermissionsBoundaryAttachmentType { PermissionsBoundaryPolicy = 0 }
 
 	export interface ChangePasswordRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		OldPassword: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		NewPassword: string;
 	}
 	export interface ChangePasswordRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		OldPassword: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		NewPassword: FormControl<string | null | undefined>,
 	}
 	export function CreateChangePasswordRequestFormGroup() {
 		return new FormGroup<ChangePasswordRequestFormProperties>({
-			OldPassword: new FormControl<string | null | undefined>(undefined),
-			NewPassword: new FormControl<string | null | undefined>(undefined),
+			OldPassword: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			NewPassword: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -3728,77 +5396,183 @@ export namespace MyNS {
 	export enum ContextKeyTypeEnum { _string = 0, stringList = 1, numeric = 2, numericList = 3, boolean = 4, booleanList = 5, ip = 6, ipList = 7, binary = 8, binaryList = 9, date = 10, dateList = 11 }
 
 	export interface CreateAccessKeyRequest {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName?: string | null;
 	}
 	export interface CreateAccessKeyRequestFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateAccessKeyRequestFormGroup() {
 		return new FormGroup<CreateAccessKeyRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateAccountAliasRequest {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 3
+		 * Pattern: ^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$
+		 */
 		AccountAlias: string;
 	}
 	export interface CreateAccountAliasRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 3
+		 * Pattern: ^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$
+		 */
 		AccountAlias: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateAccountAliasRequestFormGroup() {
 		return new FormGroup<CreateAccountAliasRequestFormProperties>({
-			AccountAlias: new FormControl<string | null | undefined>(undefined),
+			AccountAlias: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(3)]),
 		});
 
 	}
 
 	export interface CreateGroupRequest {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: string;
 	}
 	export interface CreateGroupRequestFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateGroupRequestFormGroup() {
 		return new FormGroup<CreateGroupRequestFormProperties>({
-			Path: new FormControl<string | null | undefined>(undefined),
-			GroupName: new FormControl<string | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateInstanceProfileRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		InstanceProfileName: string;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path?: string | null;
 	}
 	export interface CreateInstanceProfileRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		InstanceProfileName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateInstanceProfileRequestFormGroup() {
 		return new FormGroup<CreateInstanceProfileRequestFormProperties>({
-			InstanceProfileName: new FormControl<string | null | undefined>(undefined),
-			Path: new FormControl<string | null | undefined>(undefined),
+			InstanceProfileName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateLoginProfileRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		Password: string;
 		PasswordResetRequired?: boolean | null;
 	}
 	export interface CreateLoginProfileRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		Password: FormControl<string | null | undefined>,
 		PasswordResetRequired: FormControl<boolean | null | undefined>,
 	}
 	export function CreateCreateLoginProfileRequestFormGroup() {
 		return new FormGroup<CreateLoginProfileRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			Password: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 			PasswordResetRequired: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -3833,29 +5607,73 @@ export namespace MyNS {
 	}
 	export function CreateCreateOpenIDConnectProviderRequestFormGroup() {
 		return new FormGroup<CreateOpenIDConnectProviderRequestFormProperties>({
-			Url: new FormControl<string | null | undefined>(undefined),
+			Url: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreatePolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: string;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ((/[A-Za-z0-9\.,\+@=_-]+)*)/
+		 */
 		Path?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		PolicyDocument: string;
+
+		/** Max length: 1000 */
 		Description?: string | null;
 	}
 	export interface CreatePolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ((/[A-Za-z0-9\.,\+@=_-]+)*)/
+		 */
 		Path: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		PolicyDocument: FormControl<string | null | undefined>,
+
+		/** Max length: 1000 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePolicyRequestFormGroup() {
 		return new FormGroup<CreatePolicyRequestFormProperties>({
-			PolicyName: new FormControl<string | null | undefined>(undefined),
-			Path: new FormControl<string | null | undefined>(undefined),
-			PolicyDocument: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			PolicyDocument: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(131072), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 		});
 
 	}
@@ -3869,6 +5687,13 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PolicyArn: string;
+
+		/**
+		 * Required
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		PolicyDocument: string;
 		SetAsDefault?: boolean | null;
 	}
@@ -3881,23 +5706,60 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PolicyArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		PolicyDocument: FormControl<string | null | undefined>,
 		SetAsDefault: FormControl<boolean | null | undefined>,
 	}
 	export function CreateCreatePolicyVersionRequestFormGroup() {
 		return new FormGroup<CreatePolicyVersionRequestFormProperties>({
-			PolicyArn: new FormControl<string | null | undefined>(undefined),
-			PolicyDocument: new FormControl<string | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			PolicyDocument: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(131072), Validators.minLength(1)]),
 			SetAsDefault: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CreateRoleRequest {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: string;
+
+		/**
+		 * Required
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		AssumeRolePolicyDocument: string;
+
+		/**
+		 * Max length: 1000
+		 * Pattern: [\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*
+		 */
 		Description?: string | null;
+
+		/**
+		 * Minimum: 3600
+		 * Maximum: 43200
+		 */
 		MaxSessionDuration?: number | null;
 
 		/**
@@ -3906,13 +5768,45 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PermissionsBoundary?: string | null;
+
+		/** Maximum items: 50 */
 		Tags?: Array<Tag>;
 	}
 	export interface CreateRoleRequestFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		AssumeRolePolicyDocument: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Pattern: [\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 3600
+		 * Maximum: 43200
+		 */
 		MaxSessionDuration: FormControl<number | null | undefined>,
 
 		/**
@@ -3924,69 +5818,162 @@ export namespace MyNS {
 	}
 	export function CreateCreateRoleRequestFormGroup() {
 		return new FormGroup<CreateRoleRequestFormProperties>({
-			Path: new FormControl<string | null | undefined>(undefined),
-			RoleName: new FormControl<string | null | undefined>(undefined),
-			AssumeRolePolicyDocument: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			MaxSessionDuration: new FormControl<number | null | undefined>(undefined),
-			PermissionsBoundary: new FormControl<string | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			AssumeRolePolicyDocument: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(131072), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
+			MaxSessionDuration: new FormControl<number | null | undefined>(undefined, [Validators.min(3600), Validators.max(43200)]),
+			PermissionsBoundary: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface CreateSAMLProviderRequest {
+
+		/**
+		 * Required
+		 * Max length: 10000000
+		 * Min length: 1000
+		 */
 		SAMLMetadataDocument: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w._-]+
+		 */
 		Name: string;
 	}
 	export interface CreateSAMLProviderRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 10000000
+		 * Min length: 1000
+		 */
 		SAMLMetadataDocument: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w._-]+
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSAMLProviderRequestFormGroup() {
 		return new FormGroup<CreateSAMLProviderRequestFormProperties>({
-			SAMLMetadataDocument: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			SAMLMetadataDocument: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000000), Validators.minLength(1000)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateServiceLinkedRoleRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		AWSServiceName: string;
+
+		/**
+		 * Max length: 1000
+		 * Pattern: [\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*
+		 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		CustomSuffix?: string | null;
 	}
 	export interface CreateServiceLinkedRoleRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		AWSServiceName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Pattern: [\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		CustomSuffix: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateServiceLinkedRoleRequestFormGroup() {
 		return new FormGroup<CreateServiceLinkedRoleRequestFormProperties>({
-			AWSServiceName: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			CustomSuffix: new FormControl<string | null | undefined>(undefined),
+			AWSServiceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
+			CustomSuffix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateServiceSpecificCredentialRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/** Required */
 		ServiceName: string;
 	}
 	export interface CreateServiceSpecificCredentialRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/** Required */
 		ServiceName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateServiceSpecificCredentialRequestFormGroup() {
 		return new FormGroup<CreateServiceSpecificCredentialRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			ServiceName: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			ServiceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface CreateUserRequest {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
 
 		/**
@@ -3995,10 +5982,25 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PermissionsBoundary?: string | null;
+
+		/** Maximum items: 50 */
 		Tags?: Array<Tag>;
 	}
 	export interface CreateUserRequestFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
 
 		/**
@@ -4010,125 +6012,287 @@ export namespace MyNS {
 	}
 	export function CreateCreateUserRequestFormGroup() {
 		return new FormGroup<CreateUserRequestFormProperties>({
-			Path: new FormControl<string | null | undefined>(undefined),
-			UserName: new FormControl<string | null | undefined>(undefined),
-			PermissionsBoundary: new FormControl<string | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			PermissionsBoundary: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface CreateVirtualMFADeviceRequest {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path?: string | null;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		VirtualMFADeviceName: string;
 	}
 	export interface CreateVirtualMFADeviceRequestFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		VirtualMFADeviceName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateVirtualMFADeviceRequestFormGroup() {
 		return new FormGroup<CreateVirtualMFADeviceRequestFormProperties>({
-			Path: new FormControl<string | null | undefined>(undefined),
-			VirtualMFADeviceName: new FormControl<string | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			VirtualMFADeviceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeactivateMFADeviceRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 9
+		 * Pattern: [\w+=/:,.@-]+
+		 */
 		SerialNumber: string;
 	}
 	export interface DeactivateMFADeviceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 9
+		 * Pattern: [\w+=/:,.@-]+
+		 */
 		SerialNumber: FormControl<string | null | undefined>,
 	}
 	export function CreateDeactivateMFADeviceRequestFormGroup() {
 		return new FormGroup<DeactivateMFADeviceRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			SerialNumber: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			SerialNumber: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(9)]),
 		});
 
 	}
 
 	export interface DeleteAccessKeyRequest {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		AccessKeyId: string;
 	}
 	export interface DeleteAccessKeyRequestFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		AccessKeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteAccessKeyRequestFormGroup() {
 		return new FormGroup<DeleteAccessKeyRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			AccessKeyId: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			AccessKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(16)]),
 		});
 
 	}
 
 	export interface DeleteAccountAliasRequest {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 3
+		 * Pattern: ^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$
+		 */
 		AccountAlias: string;
 	}
 	export interface DeleteAccountAliasRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 3
+		 * Pattern: ^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$
+		 */
 		AccountAlias: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteAccountAliasRequestFormGroup() {
 		return new FormGroup<DeleteAccountAliasRequestFormProperties>({
-			AccountAlias: new FormControl<string | null | undefined>(undefined),
+			AccountAlias: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(3)]),
 		});
 
 	}
 
 	export interface DeleteGroupPolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: string;
 	}
 	export interface DeleteGroupPolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteGroupPolicyRequestFormGroup() {
 		return new FormGroup<DeleteGroupPolicyRequestFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			PolicyName: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: string;
 	}
 	export interface DeleteGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteGroupRequestFormGroup() {
 		return new FormGroup<DeleteGroupRequestFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteInstanceProfileRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		InstanceProfileName: string;
 	}
 	export interface DeleteInstanceProfileRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		InstanceProfileName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteInstanceProfileRequestFormGroup() {
 		return new FormGroup<DeleteInstanceProfileRequestFormProperties>({
-			InstanceProfileName: new FormControl<string | null | undefined>(undefined),
+			InstanceProfileName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteLoginProfileRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
 	}
 	export interface DeleteLoginProfileRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteLoginProfileRequestFormGroup() {
 		return new FormGroup<DeleteLoginProfileRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -4155,7 +6319,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteOpenIDConnectProviderRequestFormGroup() {
 		return new FormGroup<DeleteOpenIDConnectProviderRequestFormProperties>({
-			OpenIDConnectProviderArn: new FormControl<string | null | undefined>(undefined),
+			OpenIDConnectProviderArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -4182,7 +6346,7 @@ export namespace MyNS {
 	}
 	export function CreateDeletePolicyRequestFormGroup() {
 		return new FormGroup<DeletePolicyRequestFormProperties>({
-			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -4196,6 +6360,11 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PolicyArn: string;
+
+		/**
+		 * Required
+		 * Pattern: v[1-9][0-9]*(\.[A-Za-z0-9-]*)?
+		 */
 		VersionId: string;
 	}
 	export interface DeletePolicyVersionRequestFormProperties {
@@ -4207,54 +6376,115 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PolicyArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: v[1-9][0-9]*(\.[A-Za-z0-9-]*)?
+		 */
 		VersionId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeletePolicyVersionRequestFormGroup() {
 		return new FormGroup<DeletePolicyVersionRequestFormProperties>({
-			PolicyArn: new FormControl<string | null | undefined>(undefined),
-			VersionId: new FormControl<string | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			VersionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeleteRolePermissionsBoundaryRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: string;
 	}
 	export interface DeleteRolePermissionsBoundaryRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRolePermissionsBoundaryRequestFormGroup() {
 		return new FormGroup<DeleteRolePermissionsBoundaryRequestFormProperties>({
-			RoleName: new FormControl<string | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteRolePolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: string;
 	}
 	export interface DeleteRolePolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRolePolicyRequestFormGroup() {
 		return new FormGroup<DeleteRolePolicyRequestFormProperties>({
-			RoleName: new FormControl<string | null | undefined>(undefined),
-			PolicyName: new FormControl<string | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteRoleRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: string;
 	}
 	export interface DeleteRoleRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRoleRequestFormGroup() {
 		return new FormGroup<DeleteRoleRequestFormProperties>({
-			RoleName: new FormControl<string | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -4281,136 +6511,314 @@ export namespace MyNS {
 	}
 	export function CreateDeleteSAMLProviderRequestFormGroup() {
 		return new FormGroup<DeleteSAMLProviderRequestFormProperties>({
-			SAMLProviderArn: new FormControl<string | null | undefined>(undefined),
+			SAMLProviderArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface DeleteSSHPublicKeyRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: [\w]+
+		 */
 		SSHPublicKeyId: string;
 	}
 	export interface DeleteSSHPublicKeyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: [\w]+
+		 */
 		SSHPublicKeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSSHPublicKeyRequestFormGroup() {
 		return new FormGroup<DeleteSSHPublicKeyRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			SSHPublicKeyId: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			SSHPublicKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface DeleteServerCertificateRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		ServerCertificateName: string;
 	}
 	export interface DeleteServerCertificateRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		ServerCertificateName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteServerCertificateRequestFormGroup() {
 		return new FormGroup<DeleteServerCertificateRequestFormProperties>({
-			ServerCertificateName: new FormControl<string | null | undefined>(undefined),
+			ServerCertificateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteServiceLinkedRoleRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: string;
 	}
 	export interface DeleteServiceLinkedRoleRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteServiceLinkedRoleRequestFormGroup() {
 		return new FormGroup<DeleteServiceLinkedRoleRequestFormProperties>({
-			RoleName: new FormControl<string | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteServiceSpecificCredentialRequest {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: [\w]+
+		 */
 		ServiceSpecificCredentialId: string;
 	}
 	export interface DeleteServiceSpecificCredentialRequestFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: [\w]+
+		 */
 		ServiceSpecificCredentialId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteServiceSpecificCredentialRequestFormGroup() {
 		return new FormGroup<DeleteServiceSpecificCredentialRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			ServiceSpecificCredentialId: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			ServiceSpecificCredentialId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface DeleteSigningCertificateRequest {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 24
+		 * Pattern: [\w]+
+		 */
 		CertificateId: string;
 	}
 	export interface DeleteSigningCertificateRequestFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 24
+		 * Pattern: [\w]+
+		 */
 		CertificateId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSigningCertificateRequestFormGroup() {
 		return new FormGroup<DeleteSigningCertificateRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			CertificateId: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			CertificateId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(24)]),
 		});
 
 	}
 
 	export interface DeleteUserPermissionsBoundaryRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
 	}
 	export interface DeleteUserPermissionsBoundaryRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteUserPermissionsBoundaryRequestFormGroup() {
 		return new FormGroup<DeleteUserPermissionsBoundaryRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteUserPolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: string;
 	}
 	export interface DeleteUserPolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteUserPolicyRequestFormGroup() {
 		return new FormGroup<DeleteUserPolicyRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			PolicyName: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteUserRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
 	}
 	export interface DeleteUserRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteUserRequestFormGroup() {
 		return new FormGroup<DeleteUserRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteVirtualMFADeviceRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 9
+		 * Pattern: [\w+=/:,.@-]+
+		 */
 		SerialNumber: string;
 	}
 	export interface DeleteVirtualMFADeviceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 9
+		 * Pattern: [\w+=/:,.@-]+
+		 */
 		SerialNumber: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteVirtualMFADeviceRequestFormGroup() {
 		return new FormGroup<DeleteVirtualMFADeviceRequestFormProperties>({
-			SerialNumber: new FormControl<string | null | undefined>(undefined),
+			SerialNumber: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(9)]),
 		});
 
 	}
@@ -4418,6 +6826,13 @@ export namespace MyNS {
 	export enum DeletionTaskStatusType { SUCCEEDED = 0, IN_PROGRESS = 1, FAILED = 2, NOT_STARTED = 3 }
 
 	export interface DetachGroupPolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: string;
 
 		/**
@@ -4429,6 +6844,13 @@ export namespace MyNS {
 		PolicyArn: string;
 	}
 	export interface DetachGroupPolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: FormControl<string | null | undefined>,
 
 		/**
@@ -4441,13 +6863,20 @@ export namespace MyNS {
 	}
 	export function CreateDetachGroupPolicyRequestFormGroup() {
 		return new FormGroup<DetachGroupPolicyRequestFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			PolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface DetachRolePolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: string;
 
 		/**
@@ -4459,6 +6888,13 @@ export namespace MyNS {
 		PolicyArn: string;
 	}
 	export interface DetachRolePolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
 
 		/**
@@ -4471,13 +6907,20 @@ export namespace MyNS {
 	}
 	export function CreateDetachRolePolicyRequestFormGroup() {
 		return new FormGroup<DetachRolePolicyRequestFormProperties>({
-			RoleName: new FormControl<string | null | undefined>(undefined),
-			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			PolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface DetachUserPolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
 
 		/**
@@ -4489,6 +6932,13 @@ export namespace MyNS {
 		PolicyArn: string;
 	}
 	export interface DetachUserPolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
 
 		/**
@@ -4501,30 +6951,86 @@ export namespace MyNS {
 	}
 	export function CreateDetachUserPolicyRequestFormGroup() {
 		return new FormGroup<DetachUserPolicyRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			PolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface EnableMFADeviceRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 9
+		 * Pattern: [\w+=/:,.@-]+
+		 */
 		SerialNumber: string;
+
+		/**
+		 * Required
+		 * Max length: 6
+		 * Min length: 6
+		 * Pattern: [\d]+
+		 */
 		AuthenticationCode1: string;
+
+		/**
+		 * Required
+		 * Max length: 6
+		 * Min length: 6
+		 * Pattern: [\d]+
+		 */
 		AuthenticationCode2: string;
 	}
 	export interface EnableMFADeviceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 9
+		 * Pattern: [\w+=/:,.@-]+
+		 */
 		SerialNumber: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 6
+		 * Min length: 6
+		 * Pattern: [\d]+
+		 */
 		AuthenticationCode1: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 6
+		 * Min length: 6
+		 * Pattern: [\d]+
+		 */
 		AuthenticationCode2: FormControl<string | null | undefined>,
 	}
 	export function CreateEnableMFADeviceRequestFormGroup() {
 		return new FormGroup<EnableMFADeviceRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			SerialNumber: new FormControl<string | null | undefined>(undefined),
-			AuthenticationCode1: new FormControl<string | null | undefined>(undefined),
-			AuthenticationCode2: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			SerialNumber: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(9)]),
+			AuthenticationCode1: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6), Validators.minLength(6)]),
+			AuthenticationCode2: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6), Validators.minLength(6)]),
 		});
 
 	}
@@ -4536,16 +7042,34 @@ export namespace MyNS {
 	export enum ReportStateType { STARTED = 0, INPROGRESS = 1, COMPLETE = 2 }
 
 	export interface GenerateOrganizationsAccessReportRequest {
+
+		/**
+		 * Required
+		 * Max length: 427
+		 * Min length: 19
+		 * Pattern: ^o-[0-9a-z]{10,32}\/r-[0-9a-z]{4,32}[0-9a-z-\/]*
+		 */
 		EntityPath: string;
+
+		/** Pattern: ^p-[0-9a-zA-Z_]{8,128}$ */
 		OrganizationsPolicyId?: string | null;
 	}
 	export interface GenerateOrganizationsAccessReportRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 427
+		 * Min length: 19
+		 * Pattern: ^o-[0-9a-z]{10,32}\/r-[0-9a-z]{4,32}[0-9a-z-\/]*
+		 */
 		EntityPath: FormControl<string | null | undefined>,
+
+		/** Pattern: ^p-[0-9a-zA-Z_]{8,128}$ */
 		OrganizationsPolicyId: FormControl<string | null | undefined>,
 	}
 	export function CreateGenerateOrganizationsAccessReportRequestFormGroup() {
 		return new FormGroup<GenerateOrganizationsAccessReportRequestFormProperties>({
-			EntityPath: new FormControl<string | null | undefined>(undefined),
+			EntityPath: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(427), Validators.minLength(19)]),
 			OrganizationsPolicyId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4575,43 +7099,81 @@ export namespace MyNS {
 	}
 	export function CreateGenerateServiceLastAccessedDetailsRequestFormGroup() {
 		return new FormGroup<GenerateServiceLastAccessedDetailsRequestFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 			Granularity: new FormControl<GetServiceLastAccessedDetailsResponseJobType | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetAccessKeyLastUsedRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		AccessKeyId: string;
 	}
 	export interface GetAccessKeyLastUsedRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		AccessKeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetAccessKeyLastUsedRequestFormGroup() {
 		return new FormGroup<GetAccessKeyLastUsedRequestFormProperties>({
-			AccessKeyId: new FormControl<string | null | undefined>(undefined),
+			AccessKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(16)]),
 		});
 
 	}
 
 	export interface GetAccountAuthorizationDetailsRequest {
 		Filter?: Array<EntityType>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
 	}
 	export interface GetAccountAuthorizationDetailsRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateGetAccountAuthorizationDetailsRequestFormGroup() {
 		return new FormGroup<GetAccountAuthorizationDetailsRequestFormProperties>({
-			MaxItems: new FormControl<number | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetContextKeysForCustomPolicyRequest {
+
+		/** Required */
 		PolicyInputList: Array<string>;
 	}
 	export interface GetContextKeysForCustomPolicyRequestFormProperties {
@@ -4645,7 +7207,7 @@ export namespace MyNS {
 	}
 	export function CreateGetContextKeysForPrincipalPolicyRequestFormGroup() {
 		return new FormGroup<GetContextKeysForPrincipalPolicyRequestFormProperties>({
-			PolicySourceArn: new FormControl<string | null | undefined>(undefined),
+			PolicySourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -4653,62 +7215,154 @@ export namespace MyNS {
 	export enum ReportFormatType { text_csv = 0 }
 
 	export interface GetGroupPolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: string;
 	}
 	export interface GetGroupPolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetGroupPolicyRequestFormGroup() {
 		return new FormGroup<GetGroupPolicyRequestFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			PolicyName: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: string;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
 	}
 	export interface GetGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateGetGroupRequestFormGroup() {
 		return new FormGroup<GetGroupRequestFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
 
 	export interface GetInstanceProfileRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		InstanceProfileName: string;
 	}
 	export interface GetInstanceProfileRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		InstanceProfileName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetInstanceProfileRequestFormGroup() {
 		return new FormGroup<GetInstanceProfileRequestFormProperties>({
-			InstanceProfileName: new FormControl<string | null | undefined>(undefined),
+			InstanceProfileName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetLoginProfileRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
 	}
 	export interface GetLoginProfileRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetLoginProfileRequestFormGroup() {
 		return new FormGroup<GetLoginProfileRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -4735,7 +7389,7 @@ export namespace MyNS {
 	}
 	export function CreateGetOpenIDConnectProviderRequestFormGroup() {
 		return new FormGroup<GetOpenIDConnectProviderRequestFormProperties>({
-			OpenIDConnectProviderArn: new FormControl<string | null | undefined>(undefined),
+			OpenIDConnectProviderArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -4743,22 +7397,56 @@ export namespace MyNS {
 	export enum SortKeyType { SERVICE_NAMESPACE_ASCENDING = 0, SERVICE_NAMESPACE_DESCENDING = 1, LAST_AUTHENTICATED_TIME_ASCENDING = 2, LAST_AUTHENTICATED_TIME_DESCENDING = 3 }
 
 	export interface GetOrganizationsAccessReportRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		JobId: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
 		SortKey?: SortKeyType | null;
 	}
 	export interface GetOrganizationsAccessReportRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		JobId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
 		SortKey: FormControl<SortKeyType | null | undefined>,
 	}
 	export function CreateGetOrganizationsAccessReportRequestFormGroup() {
 		return new FormGroup<GetOrganizationsAccessReportRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
 			SortKey: new FormControl<SortKeyType | null | undefined>(undefined),
 		});
 
@@ -4788,7 +7476,7 @@ export namespace MyNS {
 	}
 	export function CreateGetPolicyRequestFormGroup() {
 		return new FormGroup<GetPolicyRequestFormProperties>({
-			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -4802,6 +7490,11 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PolicyArn: string;
+
+		/**
+		 * Required
+		 * Pattern: v[1-9][0-9]*(\.[A-Za-z0-9-]*)?
+		 */
 		VersionId: string;
 	}
 	export interface GetPolicyVersionRequestFormProperties {
@@ -4813,41 +7506,88 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PolicyArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: v[1-9][0-9]*(\.[A-Za-z0-9-]*)?
+		 */
 		VersionId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetPolicyVersionRequestFormGroup() {
 		return new FormGroup<GetPolicyVersionRequestFormProperties>({
-			PolicyArn: new FormControl<string | null | undefined>(undefined),
-			VersionId: new FormControl<string | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			VersionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface GetRolePolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: string;
 	}
 	export interface GetRolePolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRolePolicyRequestFormGroup() {
 		return new FormGroup<GetRolePolicyRequestFormProperties>({
-			RoleName: new FormControl<string | null | undefined>(undefined),
-			PolicyName: new FormControl<string | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetRoleRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: string;
 	}
 	export interface GetRoleRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRoleRequestFormGroup() {
 		return new FormGroup<GetRoleRequestFormProperties>({
-			RoleName: new FormControl<string | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -4874,7 +7614,7 @@ export namespace MyNS {
 	}
 	export function CreateGetSAMLProviderRequestFormGroup() {
 		return new FormGroup<GetSAMLProviderRequestFormProperties>({
-			SAMLProviderArn: new FormControl<string | null | undefined>(undefined),
+			SAMLProviderArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -4882,217 +7622,597 @@ export namespace MyNS {
 	export enum EncodingType { SSH = 0, PEM = 1 }
 
 	export interface GetSSHPublicKeyRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: [\w]+
+		 */
 		SSHPublicKeyId: string;
+
+		/** Required */
 		Encoding: EncodingType;
 	}
 	export interface GetSSHPublicKeyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: [\w]+
+		 */
 		SSHPublicKeyId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Encoding: FormControl<EncodingType | null | undefined>,
 	}
 	export function CreateGetSSHPublicKeyRequestFormGroup() {
 		return new FormGroup<GetSSHPublicKeyRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			SSHPublicKeyId: new FormControl<string | null | undefined>(undefined),
-			Encoding: new FormControl<EncodingType | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			SSHPublicKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(20)]),
+			Encoding: new FormControl<EncodingType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface GetServerCertificateRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		ServerCertificateName: string;
 	}
 	export interface GetServerCertificateRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		ServerCertificateName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetServerCertificateRequestFormGroup() {
 		return new FormGroup<GetServerCertificateRequestFormProperties>({
-			ServerCertificateName: new FormControl<string | null | undefined>(undefined),
+			ServerCertificateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetServiceLastAccessedDetailsRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		JobId: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
 	}
 	export interface GetServiceLastAccessedDetailsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		JobId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateGetServiceLastAccessedDetailsRequestFormGroup() {
 		return new FormGroup<GetServiceLastAccessedDetailsRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetServiceLastAccessedDetailsWithEntitiesRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		JobId: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w-]*
+		 */
 		ServiceNamespace: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
 	}
 	export interface GetServiceLastAccessedDetailsWithEntitiesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		JobId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w-]*
+		 */
 		ServiceNamespace: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateGetServiceLastAccessedDetailsWithEntitiesRequestFormGroup() {
 		return new FormGroup<GetServiceLastAccessedDetailsWithEntitiesRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
-			ServiceNamespace: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			ServiceNamespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetServiceLinkedRoleDeletionStatusRequest {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		DeletionTaskId: string;
 	}
 	export interface GetServiceLinkedRoleDeletionStatusRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		DeletionTaskId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetServiceLinkedRoleDeletionStatusRequestFormGroup() {
 		return new FormGroup<GetServiceLinkedRoleDeletionStatusRequestFormProperties>({
-			DeletionTaskId: new FormControl<string | null | undefined>(undefined),
+			DeletionTaskId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetUserPolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: string;
 	}
 	export interface GetUserPolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetUserPolicyRequestFormGroup() {
 		return new FormGroup<GetUserPolicyRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			PolicyName: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetUserRequest {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName?: string | null;
 	}
 	export interface GetUserRequestFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetUserRequestFormGroup() {
 		return new FormGroup<GetUserRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListAccessKeysRequest {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName?: string | null;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
 	}
 	export interface ListAccessKeysRequestFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListAccessKeysRequestFormGroup() {
 		return new FormGroup<ListAccessKeysRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
 
 	export interface ListAccountAliasesRequest {
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
 	}
 	export interface ListAccountAliasesRequestFormProperties {
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListAccountAliasesRequestFormGroup() {
 		return new FormGroup<ListAccountAliasesRequestFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
 
 	export interface ListAttachedGroupPoliciesRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: string;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ((/[A-Za-z0-9\.,\+@=_-]+)*)/
+		 */
 		PathPrefix?: string | null;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
 	}
 	export interface ListAttachedGroupPoliciesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ((/[A-Za-z0-9\.,\+@=_-]+)*)/
+		 */
 		PathPrefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListAttachedGroupPoliciesRequestFormGroup() {
 		return new FormGroup<ListAttachedGroupPoliciesRequestFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			PathPrefix: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			PathPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
 
 	export interface ListAttachedRolePoliciesRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: string;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ((/[A-Za-z0-9\.,\+@=_-]+)*)/
+		 */
 		PathPrefix?: string | null;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
 	}
 	export interface ListAttachedRolePoliciesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ((/[A-Za-z0-9\.,\+@=_-]+)*)/
+		 */
 		PathPrefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListAttachedRolePoliciesRequestFormGroup() {
 		return new FormGroup<ListAttachedRolePoliciesRequestFormProperties>({
-			RoleName: new FormControl<string | null | undefined>(undefined),
-			PathPrefix: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			PathPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
 
 	export interface ListAttachedUserPoliciesRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ((/[A-Za-z0-9\.,\+@=_-]+)*)/
+		 */
 		PathPrefix?: string | null;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
 	}
 	export interface ListAttachedUserPoliciesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ((/[A-Za-z0-9\.,\+@=_-]+)*)/
+		 */
 		PathPrefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListAttachedUserPoliciesRequestFormGroup() {
 		return new FormGroup<ListAttachedUserPoliciesRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			PathPrefix: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			PathPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
@@ -5111,11 +8231,28 @@ export namespace MyNS {
 		 */
 		PolicyArn: string;
 		EntityFilter?: EntityType | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		PathPrefix?: string | null;
 
 		/** <p>The policy usage type that indicates whether the policy is used as a permissions policy or as the permissions boundary for an entity.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
 		PolicyUsageFilter?: PolicyUsageType | null;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
 	}
 	export interface ListEntitiesForPolicyRequestFormProperties {
@@ -5128,135 +8265,362 @@ export namespace MyNS {
 		 */
 		PolicyArn: FormControl<string | null | undefined>,
 		EntityFilter: FormControl<EntityType | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		PathPrefix: FormControl<string | null | undefined>,
 
 		/** <p>The policy usage type that indicates whether the policy is used as a permissions policy or as the permissions boundary for an entity.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
 		PolicyUsageFilter: FormControl<PolicyUsageType | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListEntitiesForPolicyRequestFormGroup() {
 		return new FormGroup<ListEntitiesForPolicyRequestFormProperties>({
-			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 			EntityFilter: new FormControl<EntityType | null | undefined>(undefined),
-			PathPrefix: new FormControl<string | null | undefined>(undefined),
+			PathPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 			PolicyUsageFilter: new FormControl<PolicyUsageType | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
 
 	export interface ListGroupPoliciesRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: string;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
 	}
 	export interface ListGroupPoliciesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListGroupPoliciesRequestFormGroup() {
 		return new FormGroup<ListGroupPoliciesRequestFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
 
 	export interface ListGroupsForUserRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
 	}
 	export interface ListGroupsForUserRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListGroupsForUserRequestFormGroup() {
 		return new FormGroup<ListGroupsForUserRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
 
 	export interface ListGroupsRequest {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: \u002F[\u0021-\u007F]*
+		 */
 		PathPrefix?: string | null;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
 	}
 	export interface ListGroupsRequestFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: \u002F[\u0021-\u007F]*
+		 */
 		PathPrefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListGroupsRequestFormGroup() {
 		return new FormGroup<ListGroupsRequestFormProperties>({
-			PathPrefix: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			PathPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
 
 	export interface ListInstanceProfilesForRoleRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: string;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
 	}
 	export interface ListInstanceProfilesForRoleRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListInstanceProfilesForRoleRequestFormGroup() {
 		return new FormGroup<ListInstanceProfilesForRoleRequestFormProperties>({
-			RoleName: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
 
 	export interface ListInstanceProfilesRequest {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: \u002F[\u0021-\u007F]*
+		 */
 		PathPrefix?: string | null;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
 	}
 	export interface ListInstanceProfilesRequestFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: \u002F[\u0021-\u007F]*
+		 */
 		PathPrefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListInstanceProfilesRequestFormGroup() {
 		return new FormGroup<ListInstanceProfilesRequestFormProperties>({
-			PathPrefix: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			PathPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
 
 	export interface ListMFADevicesRequest {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName?: string | null;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
 	}
 	export interface ListMFADevicesRequestFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListMFADevicesRequestFormGroup() {
 		return new FormGroup<ListMFADevicesRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
@@ -5272,6 +8636,12 @@ export namespace MyNS {
 	}
 
 	export interface ListPoliciesGrantingServiceAccessRequest {
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
 
 		/**
@@ -5281,9 +8651,21 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		Arn: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 200
+		 */
 		ServiceNamespaces: Array<string>;
 	}
 	export interface ListPoliciesGrantingServiceAccessRequestFormProperties {
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
 
 		/**
@@ -5296,8 +8678,8 @@ export namespace MyNS {
 	}
 	export function CreateListPoliciesGrantingServiceAccessRequestFormGroup() {
 		return new FormGroup<ListPoliciesGrantingServiceAccessRequestFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -5307,31 +8689,65 @@ export namespace MyNS {
 	export interface ListPoliciesRequest {
 		Scope?: PolicyScopeType | null;
 		OnlyAttached?: boolean | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ((/[A-Za-z0-9\.,\+@=_-]+)*)/
+		 */
 		PathPrefix?: string | null;
 
 		/** <p>The policy usage type that indicates whether the policy is used as a permissions policy or as the permissions boundary for an entity.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
 		PolicyUsageFilter?: PolicyUsageType | null;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
 	}
 	export interface ListPoliciesRequestFormProperties {
 		Scope: FormControl<PolicyScopeType | null | undefined>,
 		OnlyAttached: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ((/[A-Za-z0-9\.,\+@=_-]+)*)/
+		 */
 		PathPrefix: FormControl<string | null | undefined>,
 
 		/** <p>The policy usage type that indicates whether the policy is used as a permissions policy or as the permissions boundary for an entity.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
 		PolicyUsageFilter: FormControl<PolicyUsageType | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListPoliciesRequestFormGroup() {
 		return new FormGroup<ListPoliciesRequestFormProperties>({
 			Scope: new FormControl<PolicyScopeType | null | undefined>(undefined),
 			OnlyAttached: new FormControl<boolean | null | undefined>(undefined),
-			PathPrefix: new FormControl<string | null | undefined>(undefined),
+			PathPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 			PolicyUsageFilter: new FormControl<PolicyUsageType | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
@@ -5345,7 +8761,18 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PolicyArn: string;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
 	}
 	export interface ListPolicyVersionsRequestFormProperties {
@@ -5357,71 +8784,188 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PolicyArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListPolicyVersionsRequestFormGroup() {
 		return new FormGroup<ListPolicyVersionsRequestFormProperties>({
-			PolicyArn: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
 
 	export interface ListRolePoliciesRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: string;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
 	}
 	export interface ListRolePoliciesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListRolePoliciesRequestFormGroup() {
 		return new FormGroup<ListRolePoliciesRequestFormProperties>({
-			RoleName: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
 
 	export interface ListRoleTagsRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: string;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
 	}
 	export interface ListRoleTagsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListRoleTagsRequestFormGroup() {
 		return new FormGroup<ListRoleTagsRequestFormProperties>({
-			RoleName: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
 
 	export interface ListRolesRequest {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: \u002F[\u0021-\u007F]*
+		 */
 		PathPrefix?: string | null;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
 	}
 	export interface ListRolesRequestFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: \u002F[\u0021-\u007F]*
+		 */
 		PathPrefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListRolesRequestFormGroup() {
 		return new FormGroup<ListRolesRequestFormProperties>({
-			PathPrefix: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			PathPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
@@ -5437,131 +8981,351 @@ export namespace MyNS {
 	}
 
 	export interface ListSSHPublicKeysRequest {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName?: string | null;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
 	}
 	export interface ListSSHPublicKeysRequestFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListSSHPublicKeysRequestFormGroup() {
 		return new FormGroup<ListSSHPublicKeysRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
 
 	export interface ListServerCertificatesRequest {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: \u002F[\u0021-\u007F]*
+		 */
 		PathPrefix?: string | null;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
 	}
 	export interface ListServerCertificatesRequestFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: \u002F[\u0021-\u007F]*
+		 */
 		PathPrefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListServerCertificatesRequestFormGroup() {
 		return new FormGroup<ListServerCertificatesRequestFormProperties>({
-			PathPrefix: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			PathPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
 
 	export interface ListServiceSpecificCredentialsRequest {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName?: string | null;
 		ServiceName?: string | null;
 	}
 	export interface ListServiceSpecificCredentialsRequestFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
 		ServiceName: FormControl<string | null | undefined>,
 	}
 	export function CreateListServiceSpecificCredentialsRequestFormGroup() {
 		return new FormGroup<ListServiceSpecificCredentialsRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			ServiceName: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ListSigningCertificatesRequest {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName?: string | null;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
 	}
 	export interface ListSigningCertificatesRequestFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListSigningCertificatesRequestFormGroup() {
 		return new FormGroup<ListSigningCertificatesRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
 
 	export interface ListUserPoliciesRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
 	}
 	export interface ListUserPoliciesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListUserPoliciesRequestFormGroup() {
 		return new FormGroup<ListUserPoliciesRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
 
 	export interface ListUserTagsRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
 	}
 	export interface ListUserTagsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListUserTagsRequestFormGroup() {
 		return new FormGroup<ListUserTagsRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
 
 	export interface ListUsersRequest {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: \u002F[\u0021-\u007F]*
+		 */
 		PathPrefix?: string | null;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
 	}
 	export interface ListUsersRequestFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: \u002F[\u0021-\u007F]*
+		 */
 		PathPrefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListUsersRequestFormGroup() {
 		return new FormGroup<ListUsersRequestFormProperties>({
-			PathPrefix: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			PathPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
@@ -5570,19 +9334,41 @@ export namespace MyNS {
 
 	export interface ListVirtualMFADevicesRequest {
 		AssignmentStatus?: AssignmentStatusType | null;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
 	}
 	export interface ListVirtualMFADevicesRequestFormProperties {
 		AssignmentStatus: FormControl<AssignmentStatusType | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListVirtualMFADevicesRequestFormGroup() {
 		return new FormGroup<ListVirtualMFADevicesRequestFormProperties>({
 			AssignmentStatus: new FormControl<AssignmentStatusType | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
@@ -5592,25 +9378,74 @@ export namespace MyNS {
 	export enum PolicySourceType { user = 0, group = 1, role = 2, aws_managed = 3, user_managed = 4, resource = 5, none = 6 }
 
 	export interface PutGroupPolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: string;
+
+		/**
+		 * Required
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		PolicyDocument: string;
 	}
 	export interface PutGroupPolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		PolicyDocument: FormControl<string | null | undefined>,
 	}
 	export function CreatePutGroupPolicyRequestFormGroup() {
 		return new FormGroup<PutGroupPolicyRequestFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			PolicyName: new FormControl<string | null | undefined>(undefined),
-			PolicyDocument: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			PolicyDocument: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(131072), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface PutRolePermissionsBoundaryRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: string;
 
 		/**
@@ -5622,6 +9457,13 @@ export namespace MyNS {
 		PermissionsBoundary: string;
 	}
 	export interface PutRolePermissionsBoundaryRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
 
 		/**
@@ -5634,32 +9476,81 @@ export namespace MyNS {
 	}
 	export function CreatePutRolePermissionsBoundaryRequestFormGroup() {
 		return new FormGroup<PutRolePermissionsBoundaryRequestFormProperties>({
-			RoleName: new FormControl<string | null | undefined>(undefined),
-			PermissionsBoundary: new FormControl<string | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			PermissionsBoundary: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface PutRolePolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: string;
+
+		/**
+		 * Required
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		PolicyDocument: string;
 	}
 	export interface PutRolePolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		PolicyDocument: FormControl<string | null | undefined>,
 	}
 	export function CreatePutRolePolicyRequestFormGroup() {
 		return new FormGroup<PutRolePolicyRequestFormProperties>({
-			RoleName: new FormControl<string | null | undefined>(undefined),
-			PolicyName: new FormControl<string | null | undefined>(undefined),
-			PolicyDocument: new FormControl<string | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			PolicyDocument: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(131072), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface PutUserPermissionsBoundaryRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
 
 		/**
@@ -5671,6 +9562,13 @@ export namespace MyNS {
 		PermissionsBoundary: string;
 	}
 	export interface PutUserPermissionsBoundaryRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
 
 		/**
@@ -5683,27 +9581,69 @@ export namespace MyNS {
 	}
 	export function CreatePutUserPermissionsBoundaryRequestFormGroup() {
 		return new FormGroup<PutUserPermissionsBoundaryRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			PermissionsBoundary: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			PermissionsBoundary: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface PutUserPolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: string;
+
+		/**
+		 * Required
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		PolicyDocument: string;
 	}
 	export interface PutUserPolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		PolicyName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		PolicyDocument: FormControl<string | null | undefined>,
 	}
 	export function CreatePutUserPolicyRequestFormGroup() {
 		return new FormGroup<PutUserPolicyRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			PolicyName: new FormControl<string | null | undefined>(undefined),
-			PolicyDocument: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			PolicyDocument: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(131072), Validators.minLength(1)]),
 		});
 
 	}
@@ -5717,6 +9657,12 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		OpenIDConnectProviderArn: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		ClientID: string;
 	}
 	export interface RemoveClientIDFromOpenIDConnectProviderRequestFormProperties {
@@ -5728,82 +9674,226 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		OpenIDConnectProviderArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		ClientID: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveClientIDFromOpenIDConnectProviderRequestFormGroup() {
 		return new FormGroup<RemoveClientIDFromOpenIDConnectProviderRequestFormProperties>({
-			OpenIDConnectProviderArn: new FormControl<string | null | undefined>(undefined),
-			ClientID: new FormControl<string | null | undefined>(undefined),
+			OpenIDConnectProviderArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			ClientID: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface RemoveRoleFromInstanceProfileRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		InstanceProfileName: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: string;
 	}
 	export interface RemoveRoleFromInstanceProfileRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		InstanceProfileName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveRoleFromInstanceProfileRequestFormGroup() {
 		return new FormGroup<RemoveRoleFromInstanceProfileRequestFormProperties>({
-			InstanceProfileName: new FormControl<string | null | undefined>(undefined),
-			RoleName: new FormControl<string | null | undefined>(undefined),
+			InstanceProfileName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface RemoveUserFromGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
 	}
 	export interface RemoveUserFromGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveUserFromGroupRequestFormGroup() {
 		return new FormGroup<RemoveUserFromGroupRequestFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			UserName: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ResetServiceSpecificCredentialRequest {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: [\w]+
+		 */
 		ServiceSpecificCredentialId: string;
 	}
 	export interface ResetServiceSpecificCredentialRequestFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: [\w]+
+		 */
 		ServiceSpecificCredentialId: FormControl<string | null | undefined>,
 	}
 	export function CreateResetServiceSpecificCredentialRequestFormGroup() {
 		return new FormGroup<ResetServiceSpecificCredentialRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			ServiceSpecificCredentialId: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			ServiceSpecificCredentialId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface ResyncMFADeviceRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 9
+		 * Pattern: [\w+=/:,.@-]+
+		 */
 		SerialNumber: string;
+
+		/**
+		 * Required
+		 * Max length: 6
+		 * Min length: 6
+		 * Pattern: [\d]+
+		 */
 		AuthenticationCode1: string;
+
+		/**
+		 * Required
+		 * Max length: 6
+		 * Min length: 6
+		 * Pattern: [\d]+
+		 */
 		AuthenticationCode2: string;
 	}
 	export interface ResyncMFADeviceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 9
+		 * Pattern: [\w+=/:,.@-]+
+		 */
 		SerialNumber: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 6
+		 * Min length: 6
+		 * Pattern: [\d]+
+		 */
 		AuthenticationCode1: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 6
+		 * Min length: 6
+		 * Pattern: [\d]+
+		 */
 		AuthenticationCode2: FormControl<string | null | undefined>,
 	}
 	export function CreateResyncMFADeviceRequestFormGroup() {
 		return new FormGroup<ResyncMFADeviceRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			SerialNumber: new FormControl<string | null | undefined>(undefined),
-			AuthenticationCode1: new FormControl<string | null | undefined>(undefined),
-			AuthenticationCode2: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			SerialNumber: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(9)]),
+			AuthenticationCode1: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6), Validators.minLength(6)]),
+			AuthenticationCode2: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6), Validators.minLength(6)]),
 		});
 
 	}
@@ -5817,6 +9907,11 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PolicyArn: string;
+
+		/**
+		 * Required
+		 * Pattern: v[1-9][0-9]*(\.[A-Za-z0-9-]*)?
+		 */
 		VersionId: string;
 	}
 	export interface SetDefaultPolicyVersionRequestFormProperties {
@@ -5828,12 +9923,17 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PolicyArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: v[1-9][0-9]*(\.[A-Za-z0-9-]*)?
+		 */
 		VersionId: FormControl<string | null | undefined>,
 	}
 	export function CreateSetDefaultPolicyVersionRequestFormGroup() {
 		return new FormGroup<SetDefaultPolicyVersionRequestFormProperties>({
-			PolicyArn: new FormControl<string | null | undefined>(undefined),
-			VersionId: new FormControl<string | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			VersionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5841,47 +9941,119 @@ export namespace MyNS {
 	export enum GlobalEndpointTokenVersion { v1Token = 0, v2Token = 1 }
 
 	export interface SetSecurityTokenServicePreferencesRequest {
+
+		/** Required */
 		GlobalEndpointTokenVersion: GlobalEndpointTokenVersion;
 	}
 	export interface SetSecurityTokenServicePreferencesRequestFormProperties {
+
+		/** Required */
 		GlobalEndpointTokenVersion: FormControl<GlobalEndpointTokenVersion | null | undefined>,
 	}
 	export function CreateSetSecurityTokenServicePreferencesRequestFormGroup() {
 		return new FormGroup<SetSecurityTokenServicePreferencesRequestFormProperties>({
-			GlobalEndpointTokenVersion: new FormControl<GlobalEndpointTokenVersion | null | undefined>(undefined),
+			GlobalEndpointTokenVersion: new FormControl<GlobalEndpointTokenVersion | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface SimulateCustomPolicyRequest {
+
+		/** Required */
 		PolicyInputList: Array<string>;
 		PermissionsBoundaryPolicyInputList?: Array<string>;
+
+		/** Required */
 		ActionNames: Array<string>;
 		ResourceArns?: Array<string>;
+
+		/**
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		ResourcePolicy?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		ResourceOwner?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		CallerArn?: string | null;
 		ContextEntries?: Array<ContextEntry>;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResourceHandlingOption?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
 	}
 	export interface SimulateCustomPolicyRequestFormProperties {
+
+		/**
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		ResourcePolicy: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		ResourceOwner: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		CallerArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResourceHandlingOption: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateSimulateCustomPolicyRequestFormGroup() {
 		return new FormGroup<SimulateCustomPolicyRequestFormProperties>({
-			ResourcePolicy: new FormControl<string | null | undefined>(undefined),
-			ResourceOwner: new FormControl<string | null | undefined>(undefined),
-			CallerArn: new FormControl<string | null | undefined>(undefined),
-			ResourceHandlingOption: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
+			ResourcePolicy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(131072), Validators.minLength(1)]),
+			ResourceOwner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			CallerArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			ResourceHandlingOption: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
 		});
 
 	}
@@ -5897,14 +10069,48 @@ export namespace MyNS {
 		PolicySourceArn: string;
 		PolicyInputList?: Array<string>;
 		PermissionsBoundaryPolicyInputList?: Array<string>;
+
+		/** Required */
 		ActionNames: Array<string>;
 		ResourceArns?: Array<string>;
+
+		/**
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		ResourcePolicy?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		ResourceOwner?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		CallerArn?: string | null;
 		ContextEntries?: Array<ContextEntry>;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResourceHandlingOption?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems?: number | null;
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker?: string | null;
 	}
 	export interface SimulatePrincipalPolicyRequestFormProperties {
@@ -5916,187 +10122,447 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PolicySourceArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		ResourcePolicy: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		ResourceOwner: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		CallerArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResourceHandlingOption: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxItems: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 320
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateSimulatePrincipalPolicyRequestFormGroup() {
 		return new FormGroup<SimulatePrincipalPolicyRequestFormProperties>({
-			PolicySourceArn: new FormControl<string | null | undefined>(undefined),
-			ResourcePolicy: new FormControl<string | null | undefined>(undefined),
-			ResourceOwner: new FormControl<string | null | undefined>(undefined),
-			CallerArn: new FormControl<string | null | undefined>(undefined),
-			ResourceHandlingOption: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
+			PolicySourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			ResourcePolicy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(131072), Validators.minLength(1)]),
+			ResourceOwner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			CallerArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			ResourceHandlingOption: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface TagRoleRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: string;
+
+		/**
+		 * Required
+		 * Maximum items: 50
+		 */
 		Tags: Array<Tag>;
 	}
 	export interface TagRoleRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
 	}
 	export function CreateTagRoleRequestFormGroup() {
 		return new FormGroup<TagRoleRequestFormProperties>({
-			RoleName: new FormControl<string | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface TagUserRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Required
+		 * Maximum items: 50
+		 */
 		Tags: Array<Tag>;
 	}
 	export interface TagUserRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateTagUserRequestFormGroup() {
 		return new FormGroup<TagUserRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UntagRoleRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: string;
+
+		/**
+		 * Required
+		 * Maximum items: 50
+		 */
 		TagKeys: Array<string>;
 	}
 	export interface UntagRoleRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagRoleRequestFormGroup() {
 		return new FormGroup<UntagRoleRequestFormProperties>({
-			RoleName: new FormControl<string | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UntagUserRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Required
+		 * Maximum items: 50
+		 */
 		TagKeys: Array<string>;
 	}
 	export interface UntagUserRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagUserRequestFormGroup() {
 		return new FormGroup<UntagUserRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateAccessKeyRequest {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		AccessKeyId: string;
+
+		/** Required */
 		Status: AccessKeyStatus;
 	}
 	export interface UpdateAccessKeyRequestFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]+
+		 */
 		AccessKeyId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Status: FormControl<AccessKeyStatus | null | undefined>,
 	}
 	export function CreateUpdateAccessKeyRequestFormGroup() {
 		return new FormGroup<UpdateAccessKeyRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			AccessKeyId: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			AccessKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(16)]),
+			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface UpdateAccountPasswordPolicyRequest {
+
+		/**
+		 * Minimum: 6
+		 * Maximum: 128
+		 */
 		MinimumPasswordLength?: number | null;
 		RequireSymbols?: boolean | null;
 		RequireNumbers?: boolean | null;
 		RequireUppercaseCharacters?: boolean | null;
 		RequireLowercaseCharacters?: boolean | null;
 		AllowUsersToChangePassword?: boolean | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1095
+		 */
 		MaxPasswordAge?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 24
+		 */
 		PasswordReusePrevention?: number | null;
 		HardExpiry?: boolean | null;
 	}
 	export interface UpdateAccountPasswordPolicyRequestFormProperties {
+
+		/**
+		 * Minimum: 6
+		 * Maximum: 128
+		 */
 		MinimumPasswordLength: FormControl<number | null | undefined>,
 		RequireSymbols: FormControl<boolean | null | undefined>,
 		RequireNumbers: FormControl<boolean | null | undefined>,
 		RequireUppercaseCharacters: FormControl<boolean | null | undefined>,
 		RequireLowercaseCharacters: FormControl<boolean | null | undefined>,
 		AllowUsersToChangePassword: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1095
+		 */
 		MaxPasswordAge: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 24
+		 */
 		PasswordReusePrevention: FormControl<number | null | undefined>,
 		HardExpiry: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpdateAccountPasswordPolicyRequestFormGroup() {
 		return new FormGroup<UpdateAccountPasswordPolicyRequestFormProperties>({
-			MinimumPasswordLength: new FormControl<number | null | undefined>(undefined),
+			MinimumPasswordLength: new FormControl<number | null | undefined>(undefined, [Validators.min(6), Validators.max(128)]),
 			RequireSymbols: new FormControl<boolean | null | undefined>(undefined),
 			RequireNumbers: new FormControl<boolean | null | undefined>(undefined),
 			RequireUppercaseCharacters: new FormControl<boolean | null | undefined>(undefined),
 			RequireLowercaseCharacters: new FormControl<boolean | null | undefined>(undefined),
 			AllowUsersToChangePassword: new FormControl<boolean | null | undefined>(undefined),
-			MaxPasswordAge: new FormControl<number | null | undefined>(undefined),
-			PasswordReusePrevention: new FormControl<number | null | undefined>(undefined),
+			MaxPasswordAge: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1095)]),
+			PasswordReusePrevention: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(24)]),
 			HardExpiry: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface UpdateAssumeRolePolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: string;
+
+		/**
+		 * Required
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		PolicyDocument: string;
 	}
 	export interface UpdateAssumeRolePolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 131072
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		PolicyDocument: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateAssumeRolePolicyRequestFormGroup() {
 		return new FormGroup<UpdateAssumeRolePolicyRequestFormProperties>({
-			RoleName: new FormControl<string | null | undefined>(undefined),
-			PolicyDocument: new FormControl<string | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			PolicyDocument: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(131072), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: string;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		NewPath?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		NewGroupName?: string | null;
 	}
 	export interface UpdateGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		GroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		NewPath: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		NewGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateGroupRequestFormGroup() {
 		return new FormGroup<UpdateGroupRequestFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			NewPath: new FormControl<string | null | undefined>(undefined),
-			NewGroupName: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			NewPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			NewGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateLoginProfileRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		Password?: string | null;
 		PasswordResetRequired?: boolean | null;
 	}
 	export interface UpdateLoginProfileRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		Password: FormControl<string | null | undefined>,
 		PasswordResetRequired: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpdateLoginProfileRequestFormGroup() {
 		return new FormGroup<UpdateLoginProfileRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			Password: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			PasswordResetRequired: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -6130,47 +10596,113 @@ export namespace MyNS {
 	}
 	export function CreateUpdateOpenIDConnectProviderThumbprintRequestFormGroup() {
 		return new FormGroup<UpdateOpenIDConnectProviderThumbprintRequestFormProperties>({
-			OpenIDConnectProviderArn: new FormControl<string | null | undefined>(undefined),
+			OpenIDConnectProviderArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface UpdateRoleDescriptionRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: string;
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Pattern: [\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*
+		 */
 		Description: string;
 	}
 	export interface UpdateRoleDescriptionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Pattern: [\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateRoleDescriptionRequestFormGroup() {
 		return new FormGroup<UpdateRoleDescriptionRequestFormProperties>({
-			RoleName: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
 		});
 
 	}
 
 	export interface UpdateRoleRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: string;
+
+		/**
+		 * Max length: 1000
+		 * Pattern: [\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*
+		 */
 		Description?: string | null;
+
+		/**
+		 * Minimum: 3600
+		 * Maximum: 43200
+		 */
 		MaxSessionDuration?: number | null;
 	}
 	export interface UpdateRoleRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		RoleName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Pattern: [\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 3600
+		 * Maximum: 43200
+		 */
 		MaxSessionDuration: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateRoleRequestFormGroup() {
 		return new FormGroup<UpdateRoleRequestFormProperties>({
-			RoleName: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			MaxSessionDuration: new FormControl<number | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
+			MaxSessionDuration: new FormControl<number | null | undefined>(undefined, [Validators.min(3600), Validators.max(43200)]),
 		});
 
 	}
 
 	export interface UpdateSAMLProviderRequest {
+
+		/**
+		 * Required
+		 * Max length: 10000000
+		 * Min length: 1000
+		 */
 		SAMLMetadataDocument: string;
 
 		/**
@@ -6182,6 +10714,12 @@ export namespace MyNS {
 		SAMLProviderArn: string;
 	}
 	export interface UpdateSAMLProviderRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 10000000
+		 * Min length: 1000
+		 */
 		SAMLMetadataDocument: FormControl<string | null | undefined>,
 
 		/**
@@ -6194,160 +10732,448 @@ export namespace MyNS {
 	}
 	export function CreateUpdateSAMLProviderRequestFormGroup() {
 		return new FormGroup<UpdateSAMLProviderRequestFormProperties>({
-			SAMLMetadataDocument: new FormControl<string | null | undefined>(undefined),
-			SAMLProviderArn: new FormControl<string | null | undefined>(undefined),
+			SAMLMetadataDocument: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000000), Validators.minLength(1000)]),
+			SAMLProviderArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface UpdateSSHPublicKeyRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: [\w]+
+		 */
 		SSHPublicKeyId: string;
+
+		/** Required */
 		Status: AccessKeyStatus;
 	}
 	export interface UpdateSSHPublicKeyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: [\w]+
+		 */
 		SSHPublicKeyId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Status: FormControl<AccessKeyStatus | null | undefined>,
 	}
 	export function CreateUpdateSSHPublicKeyRequestFormGroup() {
 		return new FormGroup<UpdateSSHPublicKeyRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			SSHPublicKeyId: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			SSHPublicKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(20)]),
+			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface UpdateServerCertificateRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		ServerCertificateName: string;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		NewPath?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		NewServerCertificateName?: string | null;
 	}
 	export interface UpdateServerCertificateRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		ServerCertificateName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		NewPath: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		NewServerCertificateName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateServerCertificateRequestFormGroup() {
 		return new FormGroup<UpdateServerCertificateRequestFormProperties>({
-			ServerCertificateName: new FormControl<string | null | undefined>(undefined),
-			NewPath: new FormControl<string | null | undefined>(undefined),
-			NewServerCertificateName: new FormControl<string | null | undefined>(undefined),
+			ServerCertificateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			NewPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			NewServerCertificateName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateServiceSpecificCredentialRequest {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: [\w]+
+		 */
 		ServiceSpecificCredentialId: string;
+
+		/** Required */
 		Status: AccessKeyStatus;
 	}
 	export interface UpdateServiceSpecificCredentialRequestFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: [\w]+
+		 */
 		ServiceSpecificCredentialId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Status: FormControl<AccessKeyStatus | null | undefined>,
 	}
 	export function CreateUpdateServiceSpecificCredentialRequestFormGroup() {
 		return new FormGroup<UpdateServiceSpecificCredentialRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			ServiceSpecificCredentialId: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			ServiceSpecificCredentialId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(20)]),
+			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface UpdateSigningCertificateRequest {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 24
+		 * Pattern: [\w]+
+		 */
 		CertificateId: string;
+
+		/** Required */
 		Status: AccessKeyStatus;
 	}
 	export interface UpdateSigningCertificateRequestFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 24
+		 * Pattern: [\w]+
+		 */
 		CertificateId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Status: FormControl<AccessKeyStatus | null | undefined>,
 	}
 	export function CreateUpdateSigningCertificateRequestFormGroup() {
 		return new FormGroup<UpdateSigningCertificateRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			CertificateId: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			CertificateId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(24)]),
+			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface UpdateUserRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		NewPath?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		NewUserName?: string | null;
 	}
 	export interface UpdateUserRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		NewPath: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		NewUserName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateUserRequestFormGroup() {
 		return new FormGroup<UpdateUserRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			NewPath: new FormControl<string | null | undefined>(undefined),
-			NewUserName: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			NewPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			NewUserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UploadSSHPublicKeyRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: string;
+
+		/**
+		 * Required
+		 * Max length: 16384
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		SSHPublicKeyBody: string;
 	}
 	export interface UploadSSHPublicKeyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 16384
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		SSHPublicKeyBody: FormControl<string | null | undefined>,
 	}
 	export function CreateUploadSSHPublicKeyRequestFormGroup() {
 		return new FormGroup<UploadSSHPublicKeyRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			SSHPublicKeyBody: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			SSHPublicKeyBody: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(16384), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UploadServerCertificateRequest {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		ServerCertificateName: string;
+
+		/**
+		 * Required
+		 * Max length: 16384
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		CertificateBody: string;
+
+		/**
+		 * Required
+		 * Max length: 16384
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		PrivateKey: string;
+
+		/**
+		 * Max length: 2097152
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		CertificateChain?: string | null;
 	}
 	export interface UploadServerCertificateRequestFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: (\u002F)|(\u002F[\u0021-\u007F]+\u002F)
+		 */
 		Path: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		ServerCertificateName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 16384
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		CertificateBody: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 16384
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		PrivateKey: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2097152
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		CertificateChain: FormControl<string | null | undefined>,
 	}
 	export function CreateUploadServerCertificateRequestFormGroup() {
 		return new FormGroup<UploadServerCertificateRequestFormProperties>({
-			Path: new FormControl<string | null | undefined>(undefined),
-			ServerCertificateName: new FormControl<string | null | undefined>(undefined),
-			CertificateBody: new FormControl<string | null | undefined>(undefined),
-			PrivateKey: new FormControl<string | null | undefined>(undefined),
-			CertificateChain: new FormControl<string | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			ServerCertificateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			CertificateBody: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(16384), Validators.minLength(1)]),
+			PrivateKey: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(16384), Validators.minLength(1)]),
+			CertificateChain: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2097152), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UploadSigningCertificateRequest {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 16384
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		CertificateBody: string;
 	}
 	export interface UploadSigningCertificateRequestFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+=,.@-]+
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 16384
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		CertificateBody: FormControl<string | null | undefined>,
 	}
 	export function CreateUploadSigningCertificateRequestFormGroup() {
 		return new FormGroup<UploadSigningCertificateRequestFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
-			CertificateBody: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			CertificateBody: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(16384), Validators.minLength(1)]),
 		});
 
 	}

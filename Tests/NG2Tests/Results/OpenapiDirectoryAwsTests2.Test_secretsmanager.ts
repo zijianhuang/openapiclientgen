@@ -4,33 +4,75 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CancelRotateSecretResponse {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		VersionId?: string | null;
 	}
 	export interface CancelRotateSecretResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		VersionId: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelRotateSecretResponseFormGroup() {
 		return new FormGroup<CancelRotateSecretResponseFormProperties>({
-			ARN: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			VersionId: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			VersionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(32)]),
 		});
 
 	}
 
 	export interface CancelRotateSecretRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: string;
 	}
 	export interface CancelRotateSecretRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelRotateSecretRequestFormGroup() {
 		return new FormGroup<CancelRotateSecretRequestFormProperties>({
-			SecretId: new FormControl<string | null | undefined>(undefined),
+			SecretId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -76,49 +118,135 @@ export namespace MyNS {
 	}
 
 	export interface CreateSecretResponse {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		VersionId?: string | null;
 	}
 	export interface CreateSecretResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		VersionId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSecretResponseFormGroup() {
 		return new FormGroup<CreateSecretResponseFormProperties>({
-			ARN: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			VersionId: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			VersionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(32)]),
 		});
 
 	}
 
 	export interface CreateSecretRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		Name: string;
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		ClientRequestToken?: string | null;
+
+		/** Max length: 2048 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		KmsKeyId?: string | null;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 0
+		 */
 		SecretBinary?: string | null;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 0
+		 */
 		SecretString?: string | null;
 		Tags?: Array<Tag>;
 	}
 	export interface CreateSecretRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
+
+		/** Max length: 2048 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		KmsKeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 65536
+		 * Min length: 0
+		 */
 		SecretBinary: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 65536
+		 * Min length: 0
+		 */
 		SecretString: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSecretRequestFormGroup() {
 		return new FormGroup<CreateSecretRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined),
-			SecretBinary: new FormControl<string | null | undefined>(undefined),
-			SecretString: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(32)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
+			SecretBinary: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(0)]),
+			SecretString: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(0)]),
 		});
 
 	}
@@ -126,19 +254,39 @@ export namespace MyNS {
 
 	/** A structure that contains information about a tag. */
 	export interface Tag {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Value?: string | null;
 	}
 
 	/** A structure that contains information about a tag. */
 	export interface TagFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -194,66 +342,130 @@ export namespace MyNS {
 	}
 
 	export interface DeleteResourcePolicyResponse {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN?: string | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		Name?: string | null;
 	}
 	export interface DeleteResourcePolicyResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteResourcePolicyResponseFormGroup() {
 		return new FormGroup<DeleteResourcePolicyResponseFormProperties>({
-			ARN: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteResourcePolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: string;
 	}
 	export interface DeleteResourcePolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteResourcePolicyRequestFormGroup() {
 		return new FormGroup<DeleteResourcePolicyRequestFormProperties>({
-			SecretId: new FormControl<string | null | undefined>(undefined),
+			SecretId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteSecretResponse {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name?: string | null;
 		DeletionDate?: Date | null;
 	}
 	export interface DeleteSecretResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 		DeletionDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateDeleteSecretResponseFormGroup() {
 		return new FormGroup<DeleteSecretResponseFormProperties>({
-			ARN: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			DeletionDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface DeleteSecretRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: string;
 		RecoveryWindowInDays?: number | null;
 		ForceDeleteWithoutRecovery?: boolean | null;
 	}
 	export interface DeleteSecretRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: FormControl<string | null | undefined>,
 		RecoveryWindowInDays: FormControl<number | null | undefined>,
 		ForceDeleteWithoutRecovery: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDeleteSecretRequestFormGroup() {
 		return new FormGroup<DeleteSecretRequestFormProperties>({
-			SecretId: new FormControl<string | null | undefined>(undefined),
+			SecretId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 			RecoveryWindowInDays: new FormControl<number | null | undefined>(undefined),
 			ForceDeleteWithoutRecovery: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -261,11 +473,33 @@ export namespace MyNS {
 	}
 
 	export interface DescribeSecretResponse {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name?: string | null;
+
+		/** Max length: 2048 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		KmsKeyId?: string | null;
 		RotationEnabled?: boolean | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		RotationLambdaARN?: string | null;
 
 		/** A structure that defines the rotation configuration for the secret. */
@@ -276,34 +510,66 @@ export namespace MyNS {
 		DeletedDate?: Date | null;
 		Tags?: Array<Tag>;
 		VersionIdsToStages?: SecretVersionsToStagesMapType;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		OwningService?: string | null;
 	}
 	export interface DescribeSecretResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Max length: 2048 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		KmsKeyId: FormControl<string | null | undefined>,
 		RotationEnabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		RotationLambdaARN: FormControl<string | null | undefined>,
 		LastRotatedDate: FormControl<Date | null | undefined>,
 		LastChangedDate: FormControl<Date | null | undefined>,
 		LastAccessedDate: FormControl<Date | null | undefined>,
 		DeletedDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		OwningService: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeSecretResponseFormGroup() {
 		return new FormGroup<DescribeSecretResponseFormProperties>({
-			ARN: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 			RotationEnabled: new FormControl<boolean | null | undefined>(undefined),
-			RotationLambdaARN: new FormControl<string | null | undefined>(undefined),
+			RotationLambdaARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 			LastRotatedDate: new FormControl<Date | null | undefined>(undefined),
 			LastChangedDate: new FormControl<Date | null | undefined>(undefined),
 			LastAccessedDate: new FormControl<Date | null | undefined>(undefined),
 			DeletedDate: new FormControl<Date | null | undefined>(undefined),
-			OwningService: new FormControl<string | null | undefined>(undefined),
+			OwningService: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -311,16 +577,26 @@ export namespace MyNS {
 
 	/** A structure that defines the rotation configuration for the secret. */
 	export interface RotationRulesType {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		AutomaticallyAfterDays?: number | null;
 	}
 
 	/** A structure that defines the rotation configuration for the secret. */
 	export interface RotationRulesTypeFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		AutomaticallyAfterDays: FormControl<number | null | undefined>,
 	}
 	export function CreateRotationRulesTypeFormGroup() {
 		return new FormGroup<RotationRulesTypeFormProperties>({
-			AutomaticallyAfterDays: new FormControl<number | null | undefined>(undefined),
+			AutomaticallyAfterDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
@@ -336,33 +612,65 @@ export namespace MyNS {
 	}
 
 	export interface DescribeSecretRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: string;
 	}
 	export interface DescribeSecretRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeSecretRequestFormGroup() {
 		return new FormGroup<DescribeSecretRequestFormProperties>({
-			SecretId: new FormControl<string | null | undefined>(undefined),
+			SecretId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetRandomPasswordResponse {
+
+		/**
+		 * Max length: 4096
+		 * Min length: 0
+		 */
 		RandomPassword?: string | null;
 	}
 	export interface GetRandomPasswordResponseFormProperties {
+
+		/**
+		 * Max length: 4096
+		 * Min length: 0
+		 */
 		RandomPassword: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRandomPasswordResponseFormGroup() {
 		return new FormGroup<GetRandomPasswordResponseFormProperties>({
-			RandomPassword: new FormControl<string | null | undefined>(undefined),
+			RandomPassword: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface GetRandomPasswordRequest {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 4096
+		 */
 		PasswordLength?: number | null;
+
+		/**
+		 * Max length: 4096
+		 * Min length: 0
+		 */
 		ExcludeCharacters?: string | null;
 		ExcludeNumbers?: boolean | null;
 		ExcludePunctuation?: boolean | null;
@@ -372,7 +680,17 @@ export namespace MyNS {
 		RequireEachIncludedType?: boolean | null;
 	}
 	export interface GetRandomPasswordRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 4096
+		 */
 		PasswordLength: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 4096
+		 * Min length: 0
+		 */
 		ExcludeCharacters: FormControl<string | null | undefined>,
 		ExcludeNumbers: FormControl<boolean | null | undefined>,
 		ExcludePunctuation: FormControl<boolean | null | undefined>,
@@ -383,8 +701,8 @@ export namespace MyNS {
 	}
 	export function CreateGetRandomPasswordRequestFormGroup() {
 		return new FormGroup<GetRandomPasswordRequestFormProperties>({
-			PasswordLength: new FormControl<number | null | undefined>(undefined),
-			ExcludeCharacters: new FormControl<string | null | undefined>(undefined),
+			PasswordLength: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(4096)]),
+			ExcludeCharacters: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(0)]),
 			ExcludeNumbers: new FormControl<boolean | null | undefined>(undefined),
 			ExcludePunctuation: new FormControl<boolean | null | undefined>(undefined),
 			ExcludeUppercase: new FormControl<boolean | null | undefined>(undefined),
@@ -396,81 +714,210 @@ export namespace MyNS {
 	}
 
 	export interface GetResourcePolicyResponse {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN?: string | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 20480
+		 * Min length: 1
+		 */
 		ResourcePolicy?: string | null;
 	}
 	export interface GetResourcePolicyResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 20480
+		 * Min length: 1
+		 */
 		ResourcePolicy: FormControl<string | null | undefined>,
 	}
 	export function CreateGetResourcePolicyResponseFormGroup() {
 		return new FormGroup<GetResourcePolicyResponseFormProperties>({
-			ARN: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			ResourcePolicy: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			ResourcePolicy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20480), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetResourcePolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: string;
 	}
 	export interface GetResourcePolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetResourcePolicyRequestFormGroup() {
 		return new FormGroup<GetResourcePolicyRequestFormProperties>({
-			SecretId: new FormControl<string | null | undefined>(undefined),
+			SecretId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetSecretValueResponse {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		VersionId?: string | null;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 0
+		 */
 		SecretBinary?: string | null;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 0
+		 */
 		SecretString?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 20
+		 */
 		VersionStages?: Array<string>;
 		CreatedDate?: Date | null;
 	}
 	export interface GetSecretValueResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		VersionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 65536
+		 * Min length: 0
+		 */
 		SecretBinary: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 65536
+		 * Min length: 0
+		 */
 		SecretString: FormControl<string | null | undefined>,
 		CreatedDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateGetSecretValueResponseFormGroup() {
 		return new FormGroup<GetSecretValueResponseFormProperties>({
-			ARN: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			VersionId: new FormControl<string | null | undefined>(undefined),
-			SecretBinary: new FormControl<string | null | undefined>(undefined),
-			SecretString: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			VersionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(32)]),
+			SecretBinary: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(0)]),
+			SecretString: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(0)]),
 			CreatedDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetSecretValueRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: string;
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		VersionId?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		VersionStage?: string | null;
 	}
 	export interface GetSecretValueRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		VersionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		VersionStage: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSecretValueRequestFormGroup() {
 		return new FormGroup<GetSecretValueRequestFormProperties>({
-			SecretId: new FormControl<string | null | undefined>(undefined),
-			VersionId: new FormControl<string | null | undefined>(undefined),
-			VersionStage: new FormControl<string | null | undefined>(undefined),
+			SecretId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			VersionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(32)]),
+			VersionStage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -487,20 +934,50 @@ export namespace MyNS {
 
 	export interface ListSecretVersionIdsResponse {
 		Versions?: Array<SecretVersionsListEntry>;
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name?: string | null;
 	}
 	export interface ListSecretVersionIdsResponseFormProperties {
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateListSecretVersionIdsResponseFormGroup() {
 		return new FormGroup<ListSecretVersionIdsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			ARN: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -508,7 +985,17 @@ export namespace MyNS {
 
 	/** A structure that contains information about one version of a secret. */
 	export interface SecretVersionsListEntry {
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		VersionId?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 20
+		 */
 		VersionStages?: Array<string>;
 		LastAccessedDate?: Date | null;
 		CreatedDate?: Date | null;
@@ -516,13 +1003,18 @@ export namespace MyNS {
 
 	/** A structure that contains information about one version of a secret. */
 	export interface SecretVersionsListEntryFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		VersionId: FormControl<string | null | undefined>,
 		LastAccessedDate: FormControl<Date | null | undefined>,
 		CreatedDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateSecretVersionsListEntryFormGroup() {
 		return new FormGroup<SecretVersionsListEntryFormProperties>({
-			VersionId: new FormControl<string | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(32)]),
 			LastAccessedDate: new FormControl<Date | null | undefined>(undefined),
 			CreatedDate: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -530,22 +1022,54 @@ export namespace MyNS {
 	}
 
 	export interface ListSecretVersionIdsRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 		IncludeDeprecated?: boolean | null;
 	}
 	export interface ListSecretVersionIdsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 		IncludeDeprecated: FormControl<boolean | null | undefined>,
 	}
 	export function CreateListSecretVersionIdsRequestFormGroup() {
 		return new FormGroup<ListSecretVersionIdsRequestFormProperties>({
-			SecretId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			SecretId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
 			IncludeDeprecated: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -563,14 +1087,24 @@ export namespace MyNS {
 
 	export interface ListSecretsResponse {
 		SecretList?: Array<SecretListEntry>;
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListSecretsResponseFormProperties {
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListSecretsResponseFormGroup() {
 		return new FormGroup<ListSecretsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
 		});
 
 	}
@@ -578,11 +1112,33 @@ export namespace MyNS {
 
 	/** A structure that contains the details about a secret. It does not include the encrypted <code>SecretString</code> and <code>SecretBinary</code> values. To get those values, use the <a>GetSecretValue</a> operation. */
 	export interface SecretListEntry {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name?: string | null;
+
+		/** Max length: 2048 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		KmsKeyId?: string | null;
 		RotationEnabled?: boolean | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		RotationLambdaARN?: string | null;
 
 		/** A structure that defines the rotation configuration for the secret. */
@@ -593,310 +1149,760 @@ export namespace MyNS {
 		DeletedDate?: Date | null;
 		Tags?: Array<Tag>;
 		SecretVersionsToStages?: SecretVersionsToStagesMapType;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		OwningService?: string | null;
 	}
 
 	/** A structure that contains the details about a secret. It does not include the encrypted <code>SecretString</code> and <code>SecretBinary</code> values. To get those values, use the <a>GetSecretValue</a> operation. */
 	export interface SecretListEntryFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Max length: 2048 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		KmsKeyId: FormControl<string | null | undefined>,
 		RotationEnabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		RotationLambdaARN: FormControl<string | null | undefined>,
 		LastRotatedDate: FormControl<Date | null | undefined>,
 		LastChangedDate: FormControl<Date | null | undefined>,
 		LastAccessedDate: FormControl<Date | null | undefined>,
 		DeletedDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		OwningService: FormControl<string | null | undefined>,
 	}
 	export function CreateSecretListEntryFormGroup() {
 		return new FormGroup<SecretListEntryFormProperties>({
-			ARN: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 			RotationEnabled: new FormControl<boolean | null | undefined>(undefined),
-			RotationLambdaARN: new FormControl<string | null | undefined>(undefined),
+			RotationLambdaARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 			LastRotatedDate: new FormControl<Date | null | undefined>(undefined),
 			LastChangedDate: new FormControl<Date | null | undefined>(undefined),
 			LastAccessedDate: new FormControl<Date | null | undefined>(undefined),
 			DeletedDate: new FormControl<Date | null | undefined>(undefined),
-			OwningService: new FormControl<string | null | undefined>(undefined),
+			OwningService: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListSecretsRequest {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListSecretsRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListSecretsRequestFormGroup() {
 		return new FormGroup<ListSecretsRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface PutResourcePolicyResponse {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN?: string | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		Name?: string | null;
 	}
 	export interface PutResourcePolicyResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreatePutResourcePolicyResponseFormGroup() {
 		return new FormGroup<PutResourcePolicyResponseFormProperties>({
-			ARN: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface PutResourcePolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: string;
+
+		/**
+		 * Required
+		 * Max length: 20480
+		 * Min length: 1
+		 */
 		ResourcePolicy: string;
 	}
 	export interface PutResourcePolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 20480
+		 * Min length: 1
+		 */
 		ResourcePolicy: FormControl<string | null | undefined>,
 	}
 	export function CreatePutResourcePolicyRequestFormGroup() {
 		return new FormGroup<PutResourcePolicyRequestFormProperties>({
-			SecretId: new FormControl<string | null | undefined>(undefined),
-			ResourcePolicy: new FormControl<string | null | undefined>(undefined),
+			SecretId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			ResourcePolicy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20480), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface PutSecretValueResponse {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		VersionId?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 20
+		 */
 		VersionStages?: Array<string>;
 	}
 	export interface PutSecretValueResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		VersionId: FormControl<string | null | undefined>,
 	}
 	export function CreatePutSecretValueResponseFormGroup() {
 		return new FormGroup<PutSecretValueResponseFormProperties>({
-			ARN: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			VersionId: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			VersionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(32)]),
 		});
 
 	}
 
 	export interface PutSecretValueRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: string;
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		ClientRequestToken?: string | null;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 0
+		 */
 		SecretBinary?: string | null;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 0
+		 */
 		SecretString?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 20
+		 */
 		VersionStages?: Array<string>;
 	}
 	export interface PutSecretValueRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 65536
+		 * Min length: 0
+		 */
 		SecretBinary: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 65536
+		 * Min length: 0
+		 */
 		SecretString: FormControl<string | null | undefined>,
 	}
 	export function CreatePutSecretValueRequestFormGroup() {
 		return new FormGroup<PutSecretValueRequestFormProperties>({
-			SecretId: new FormControl<string | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
-			SecretBinary: new FormControl<string | null | undefined>(undefined),
-			SecretString: new FormControl<string | null | undefined>(undefined),
+			SecretId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(32)]),
+			SecretBinary: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(0)]),
+			SecretString: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface RestoreSecretResponse {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name?: string | null;
 	}
 	export interface RestoreSecretResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateRestoreSecretResponseFormGroup() {
 		return new FormGroup<RestoreSecretResponseFormProperties>({
-			ARN: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface RestoreSecretRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: string;
 	}
 	export interface RestoreSecretRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: FormControl<string | null | undefined>,
 	}
 	export function CreateRestoreSecretRequestFormGroup() {
 		return new FormGroup<RestoreSecretRequestFormProperties>({
-			SecretId: new FormControl<string | null | undefined>(undefined),
+			SecretId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface RotateSecretResponse {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		VersionId?: string | null;
 	}
 	export interface RotateSecretResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		VersionId: FormControl<string | null | undefined>,
 	}
 	export function CreateRotateSecretResponseFormGroup() {
 		return new FormGroup<RotateSecretResponseFormProperties>({
-			ARN: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			VersionId: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			VersionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(32)]),
 		});
 
 	}
 
 	export interface RotateSecretRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: string;
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		ClientRequestToken?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		RotationLambdaARN?: string | null;
 
 		/** A structure that defines the rotation configuration for the secret. */
 		RotationRules?: RotationRulesType;
 	}
 	export interface RotateSecretRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		RotationLambdaARN: FormControl<string | null | undefined>,
 	}
 	export function CreateRotateSecretRequestFormGroup() {
 		return new FormGroup<RotateSecretRequestFormProperties>({
-			SecretId: new FormControl<string | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
-			RotationLambdaARN: new FormControl<string | null | undefined>(undefined),
+			SecretId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(32)]),
+			RotationLambdaARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface TagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: string;
+
+		/** Required */
 		Tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			SecretId: new FormControl<string | null | undefined>(undefined),
+			SecretId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UntagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: string;
+
+		/** Required */
 		TagKeys: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			SecretId: new FormControl<string | null | undefined>(undefined),
+			SecretId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateSecretResponse {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		VersionId?: string | null;
 	}
 	export interface UpdateSecretResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		VersionId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateSecretResponseFormGroup() {
 		return new FormGroup<UpdateSecretResponseFormProperties>({
-			ARN: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			VersionId: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			VersionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(32)]),
 		});
 
 	}
 
 	export interface UpdateSecretRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: string;
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		ClientRequestToken?: string | null;
+
+		/** Max length: 2048 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		KmsKeyId?: string | null;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 0
+		 */
 		SecretBinary?: string | null;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 0
+		 */
 		SecretString?: string | null;
 	}
 	export interface UpdateSecretRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
+
+		/** Max length: 2048 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		KmsKeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 65536
+		 * Min length: 0
+		 */
 		SecretBinary: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 65536
+		 * Min length: 0
+		 */
 		SecretString: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateSecretRequestFormGroup() {
 		return new FormGroup<UpdateSecretRequestFormProperties>({
-			SecretId: new FormControl<string | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined),
-			SecretBinary: new FormControl<string | null | undefined>(undefined),
-			SecretString: new FormControl<string | null | undefined>(undefined),
+			SecretId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(32)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
+			SecretBinary: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(0)]),
+			SecretString: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface UpdateSecretVersionStageResponse {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name?: string | null;
 	}
 	export interface UpdateSecretVersionStageResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateSecretVersionStageResponseFormGroup() {
 		return new FormGroup<UpdateSecretVersionStageResponseFormProperties>({
-			ARN: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateSecretVersionStageRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		VersionStage: string;
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		RemoveFromVersionId?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		MoveToVersionId?: string | null;
 	}
 	export interface UpdateSecretVersionStageRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		SecretId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		VersionStage: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		RemoveFromVersionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 32
+		 */
 		MoveToVersionId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateSecretVersionStageRequestFormGroup() {
 		return new FormGroup<UpdateSecretVersionStageRequestFormProperties>({
-			SecretId: new FormControl<string | null | undefined>(undefined),
-			VersionStage: new FormControl<string | null | undefined>(undefined),
-			RemoveFromVersionId: new FormControl<string | null | undefined>(undefined),
-			MoveToVersionId: new FormControl<string | null | undefined>(undefined),
+			SecretId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			VersionStage: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			RemoveFromVersionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(32)]),
+			MoveToVersionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(32)]),
 		});
 
 	}

@@ -14,19 +14,45 @@ export namespace MyNS {
 	}
 
 	export interface AssociateEntityToThingRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
 		thingName: string;
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		entityId: string;
 		namespaceVersion?: number | null;
 	}
 	export interface AssociateEntityToThingRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
 		thingName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		entityId: FormControl<string | null | undefined>,
 		namespaceVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateAssociateEntityToThingRequestFormGroup() {
 		return new FormGroup<AssociateEntityToThingRequestFormProperties>({
-			thingName: new FormControl<string | null | undefined>(undefined),
-			entityId: new FormControl<string | null | undefined>(undefined),
+			thingName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			entityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
 			namespaceVersion: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -88,6 +114,11 @@ export namespace MyNS {
 
 	/** An object that contains summary information about a workflow. */
 	export interface FlowTemplateSummary {
+
+		/**
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id?: string | null;
 		arn?: string | null;
 		revisionNumber?: number | null;
@@ -96,6 +127,11 @@ export namespace MyNS {
 
 	/** An object that contains summary information about a workflow. */
 	export interface FlowTemplateSummaryFormProperties {
+
+		/**
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: FormControl<string | null | undefined>,
 		arn: FormControl<string | null | undefined>,
 		revisionNumber: FormControl<number | null | undefined>,
@@ -103,7 +139,7 @@ export namespace MyNS {
 	}
 	export function CreateFlowTemplateSummaryFormGroup() {
 		return new FormGroup<FlowTemplateSummaryFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160)]),
 			arn: new FormControl<string | null | undefined>(undefined),
 			revisionNumber: new FormControl<number | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
@@ -133,19 +169,33 @@ export namespace MyNS {
 
 	/** A document that defines an entity.  */
 	export interface DefinitionDocument {
+
+		/** Required */
 		language: DefinitionDocumentLanguage;
+
+		/**
+		 * Required
+		 * Max length: 1048576
+		 */
 		text: string;
 	}
 
 	/** A document that defines an entity.  */
 	export interface DefinitionDocumentFormProperties {
+
+		/** Required */
 		language: FormControl<DefinitionDocumentLanguage | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1048576
+		 */
 		text: FormControl<string | null | undefined>,
 	}
 	export function CreateDefinitionDocumentFormGroup() {
 		return new FormGroup<DefinitionDocumentFormProperties>({
-			language: new FormControl<DefinitionDocumentLanguage | null | undefined>(undefined),
-			text: new FormControl<string | null | undefined>(undefined),
+			language: new FormControl<DefinitionDocumentLanguage | null | undefined>(undefined, [Validators.required]),
+			text: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1048576)]),
 		});
 
 	}
@@ -188,6 +238,11 @@ export namespace MyNS {
 
 	/** An object that contains summary information about a system instance. */
 	export interface SystemInstanceSummary {
+
+		/**
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id?: string | null;
 		arn?: string | null;
 		status?: SystemInstanceSummaryStatus | null;
@@ -201,6 +256,11 @@ export namespace MyNS {
 
 	/** An object that contains summary information about a system instance. */
 	export interface SystemInstanceSummaryFormProperties {
+
+		/**
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: FormControl<string | null | undefined>,
 		arn: FormControl<string | null | undefined>,
 		status: FormControl<SystemInstanceSummaryStatus | null | undefined>,
@@ -213,7 +273,7 @@ export namespace MyNS {
 	}
 	export function CreateSystemInstanceSummaryFormGroup() {
 		return new FormGroup<SystemInstanceSummaryFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160)]),
 			arn: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<SystemInstanceSummaryStatus | null | undefined>(undefined),
 			target: new FormControl<SystemInstanceSummaryTarget | null | undefined>(undefined),
@@ -231,6 +291,11 @@ export namespace MyNS {
 	export enum SystemInstanceSummaryTarget { GREENGRASS = 0, CLOUD = 1 }
 
 	export interface CreateSystemInstanceRequest {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<Tag>;
 
 		/**
@@ -238,26 +303,40 @@ export namespace MyNS {
 		 * Required
 		 */
 		definition: DefinitionDocument;
+
+		/** Required */
 		target: SystemInstanceSummaryTarget;
 		greengrassGroupName?: string | null;
 		s3BucketName?: string | null;
 
 		/** An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics. */
 		metricsConfiguration?: MetricsConfiguration;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		flowActionsRoleArn?: string | null;
 	}
 	export interface CreateSystemInstanceRequestFormProperties {
+
+		/** Required */
 		target: FormControl<SystemInstanceSummaryTarget | null | undefined>,
 		greengrassGroupName: FormControl<string | null | undefined>,
 		s3BucketName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		flowActionsRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSystemInstanceRequestFormGroup() {
 		return new FormGroup<CreateSystemInstanceRequestFormProperties>({
-			target: new FormControl<SystemInstanceSummaryTarget | null | undefined>(undefined),
+			target: new FormControl<SystemInstanceSummaryTarget | null | undefined>(undefined, [Validators.required]),
 			greengrassGroupName: new FormControl<string | null | undefined>(undefined),
 			s3BucketName: new FormControl<string | null | undefined>(undefined),
-			flowActionsRoleArn: new FormControl<string | null | undefined>(undefined),
+			flowActionsRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -265,19 +344,45 @@ export namespace MyNS {
 
 	/** Metadata assigned to an AWS IoT Things Graph resource consisting of a key-value pair. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		value: string;
 	}
 
 	/** Metadata assigned to an AWS IoT Things Graph resource consisting of a key-value pair. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -286,18 +391,28 @@ export namespace MyNS {
 	/** An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics. */
 	export interface MetricsConfiguration {
 		cloudMetricEnabled?: boolean | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		metricRuleRoleArn?: string | null;
 	}
 
 	/** An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics. */
 	export interface MetricsConfigurationFormProperties {
 		cloudMetricEnabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		metricRuleRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateMetricsConfigurationFormGroup() {
 		return new FormGroup<MetricsConfigurationFormProperties>({
 			cloudMetricEnabled: new FormControl<boolean | null | undefined>(undefined),
-			metricRuleRoleArn: new FormControl<string | null | undefined>(undefined),
+			metricRuleRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -318,6 +433,11 @@ export namespace MyNS {
 
 	/** An object that contains information about a system. */
 	export interface SystemTemplateSummary {
+
+		/**
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id?: string | null;
 		arn?: string | null;
 		revisionNumber?: number | null;
@@ -326,6 +446,11 @@ export namespace MyNS {
 
 	/** An object that contains information about a system. */
 	export interface SystemTemplateSummaryFormProperties {
+
+		/**
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: FormControl<string | null | undefined>,
 		arn: FormControl<string | null | undefined>,
 		revisionNumber: FormControl<number | null | undefined>,
@@ -333,7 +458,7 @@ export namespace MyNS {
 	}
 	export function CreateSystemTemplateSummaryFormGroup() {
 		return new FormGroup<SystemTemplateSummaryFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160)]),
 			arn: new FormControl<string | null | undefined>(undefined),
 			revisionNumber: new FormControl<number | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
@@ -371,14 +496,26 @@ export namespace MyNS {
 	}
 
 	export interface DeleteFlowTemplateRequest {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: string;
 	}
 	export interface DeleteFlowTemplateRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteFlowTemplateRequestFormGroup() {
 		return new FormGroup<DeleteFlowTemplateRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
 		});
 
 	}
@@ -395,16 +532,20 @@ export namespace MyNS {
 
 	export interface DeleteNamespaceResponse {
 		namespaceArn?: string | null;
+
+		/** Max length: 128 */
 		namespaceName?: string | null;
 	}
 	export interface DeleteNamespaceResponseFormProperties {
 		namespaceArn: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		namespaceName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteNamespaceResponseFormGroup() {
 		return new FormGroup<DeleteNamespaceResponseFormProperties>({
 			namespaceArn: new FormControl<string | null | undefined>(undefined),
-			namespaceName: new FormControl<string | null | undefined>(undefined),
+			namespaceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 		});
 
 	}
@@ -430,14 +571,24 @@ export namespace MyNS {
 	}
 
 	export interface DeleteSystemInstanceRequest {
+
+		/**
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id?: string | null;
 	}
 	export interface DeleteSystemInstanceRequestFormProperties {
+
+		/**
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSystemInstanceRequestFormGroup() {
 		return new FormGroup<DeleteSystemInstanceRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160)]),
 		});
 
 	}
@@ -453,14 +604,26 @@ export namespace MyNS {
 	}
 
 	export interface DeleteSystemTemplateRequest {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: string;
 	}
 	export interface DeleteSystemTemplateRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSystemTemplateRequestFormGroup() {
 		return new FormGroup<DeleteSystemTemplateRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
 		});
 
 	}
@@ -485,14 +648,24 @@ export namespace MyNS {
 	}
 
 	export interface DeploySystemInstanceRequest {
+
+		/**
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id?: string | null;
 	}
 	export interface DeploySystemInstanceRequestFormProperties {
+
+		/**
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreateDeploySystemInstanceRequestFormGroup() {
 		return new FormGroup<DeploySystemInstanceRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160)]),
 		});
 
 	}
@@ -508,14 +681,26 @@ export namespace MyNS {
 	}
 
 	export interface DeprecateFlowTemplateRequest {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: string;
 	}
 	export interface DeprecateFlowTemplateRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreateDeprecateFlowTemplateRequestFormGroup() {
 		return new FormGroup<DeprecateFlowTemplateRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
 		});
 
 	}
@@ -531,28 +716,48 @@ export namespace MyNS {
 	}
 
 	export interface DeprecateSystemTemplateRequest {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: string;
 	}
 	export interface DeprecateSystemTemplateRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreateDeprecateSystemTemplateRequestFormGroup() {
 		return new FormGroup<DeprecateSystemTemplateRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
 		});
 
 	}
 
 	export interface DescribeNamespaceResponse {
 		namespaceArn?: string | null;
+
+		/** Max length: 128 */
 		namespaceName?: string | null;
+
+		/** Max length: 128 */
 		trackingNamespaceName?: string | null;
 		trackingNamespaceVersion?: number | null;
 		namespaceVersion?: number | null;
 	}
 	export interface DescribeNamespaceResponseFormProperties {
 		namespaceArn: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		namespaceName: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		trackingNamespaceName: FormControl<string | null | undefined>,
 		trackingNamespaceVersion: FormControl<number | null | undefined>,
 		namespaceVersion: FormControl<number | null | undefined>,
@@ -560,8 +765,8 @@ export namespace MyNS {
 	export function CreateDescribeNamespaceResponseFormGroup() {
 		return new FormGroup<DescribeNamespaceResponseFormProperties>({
 			namespaceArn: new FormControl<string | null | undefined>(undefined),
-			namespaceName: new FormControl<string | null | undefined>(undefined),
-			trackingNamespaceName: new FormControl<string | null | undefined>(undefined),
+			namespaceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			trackingNamespaceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			trackingNamespaceVersion: new FormControl<number | null | undefined>(undefined),
 			namespaceVersion: new FormControl<number | null | undefined>(undefined),
 		});
@@ -569,14 +774,18 @@ export namespace MyNS {
 	}
 
 	export interface DescribeNamespaceRequest {
+
+		/** Max length: 128 */
 		namespaceName?: string | null;
 	}
 	export interface DescribeNamespaceRequestFormProperties {
+
+		/** Max length: 128 */
 		namespaceName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeNamespaceRequestFormGroup() {
 		return new FormGroup<DescribeNamespaceRequestFormProperties>({
-			namespaceName: new FormControl<string | null | undefined>(undefined),
+			namespaceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 		});
 
 	}
@@ -592,17 +801,35 @@ export namespace MyNS {
 	}
 
 	export interface DissociateEntityFromThingRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
 		thingName: string;
+
+		/** Required */
 		entityType: DissociateEntityFromThingRequestEntityType;
 	}
 	export interface DissociateEntityFromThingRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
 		thingName: FormControl<string | null | undefined>,
+
+		/** Required */
 		entityType: FormControl<DissociateEntityFromThingRequestEntityType | null | undefined>,
 	}
 	export function CreateDissociateEntityFromThingRequestFormGroup() {
 		return new FormGroup<DissociateEntityFromThingRequestFormProperties>({
-			thingName: new FormControl<string | null | undefined>(undefined),
-			entityType: new FormControl<DissociateEntityFromThingRequestEntityType | null | undefined>(undefined),
+			thingName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			entityType: new FormControl<DissociateEntityFromThingRequestEntityType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -623,6 +850,11 @@ export namespace MyNS {
 
 	/** Describes the properties of an entity. */
 	export interface EntityDescription {
+
+		/**
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id?: string | null;
 		arn?: string | null;
 		type?: DissociateEntityFromThingRequestEntityType | null;
@@ -634,6 +866,11 @@ export namespace MyNS {
 
 	/** Describes the properties of an entity. */
 	export interface EntityDescriptionFormProperties {
+
+		/**
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: FormControl<string | null | undefined>,
 		arn: FormControl<string | null | undefined>,
 		type: FormControl<DissociateEntityFromThingRequestEntityType | null | undefined>,
@@ -641,7 +878,7 @@ export namespace MyNS {
 	}
 	export function CreateEntityDescriptionFormGroup() {
 		return new FormGroup<EntityDescriptionFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160)]),
 			arn: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<DissociateEntityFromThingRequestEntityType | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
@@ -650,6 +887,12 @@ export namespace MyNS {
 	}
 
 	export interface GetEntitiesRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 25
+		 */
 		ids: Array<string>;
 		namespaceVersion?: number | null;
 	}
@@ -700,16 +943,28 @@ export namespace MyNS {
 	}
 
 	export interface GetFlowTemplateRequest {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: string;
 		revisionNumber?: number | null;
 	}
 	export interface GetFlowTemplateRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: FormControl<string | null | undefined>,
 		revisionNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateGetFlowTemplateRequestFormGroup() {
 		return new FormGroup<GetFlowTemplateRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
 			revisionNumber: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -730,26 +985,50 @@ export namespace MyNS {
 	}
 
 	export interface GetFlowTemplateRevisionsRequest {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: string;
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 250
+		 */
 		maxResults?: number | null;
 	}
 	export interface GetFlowTemplateRevisionsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 250
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateGetFlowTemplateRevisionsRequestFormGroup() {
 		return new FormGroup<GetFlowTemplateRevisionsRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(250)]),
 		});
 
 	}
 
 	export interface GetNamespaceDeletionStatusResponse {
 		namespaceArn?: string | null;
+
+		/** Max length: 128 */
 		namespaceName?: string | null;
 		status?: GetNamespaceDeletionStatusResponseStatus | null;
 		errorCode?: GetNamespaceDeletionStatusResponseErrorCode | null;
@@ -757,6 +1036,8 @@ export namespace MyNS {
 	}
 	export interface GetNamespaceDeletionStatusResponseFormProperties {
 		namespaceArn: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		namespaceName: FormControl<string | null | undefined>,
 		status: FormControl<GetNamespaceDeletionStatusResponseStatus | null | undefined>,
 		errorCode: FormControl<GetNamespaceDeletionStatusResponseErrorCode | null | undefined>,
@@ -765,7 +1046,7 @@ export namespace MyNS {
 	export function CreateGetNamespaceDeletionStatusResponseFormGroup() {
 		return new FormGroup<GetNamespaceDeletionStatusResponseFormProperties>({
 			namespaceArn: new FormControl<string | null | undefined>(undefined),
-			namespaceName: new FormControl<string | null | undefined>(undefined),
+			namespaceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			status: new FormControl<GetNamespaceDeletionStatusResponseStatus | null | undefined>(undefined),
 			errorCode: new FormControl<GetNamespaceDeletionStatusResponseErrorCode | null | undefined>(undefined),
 			errorMessage: new FormControl<string | null | undefined>(undefined),
@@ -815,6 +1096,11 @@ export namespace MyNS {
 		metricsConfiguration?: MetricsConfiguration;
 		validatedNamespaceVersion?: number | null;
 		validatedDependencyRevisions?: Array<DependencyRevision>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		flowActionsRoleArn?: string | null;
 	}
 
@@ -822,13 +1108,18 @@ export namespace MyNS {
 	export interface SystemInstanceDescriptionFormProperties {
 		s3BucketName: FormControl<string | null | undefined>,
 		validatedNamespaceVersion: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		flowActionsRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateSystemInstanceDescriptionFormGroup() {
 		return new FormGroup<SystemInstanceDescriptionFormProperties>({
 			s3BucketName: new FormControl<string | null | undefined>(undefined),
 			validatedNamespaceVersion: new FormControl<number | null | undefined>(undefined),
-			flowActionsRoleArn: new FormControl<string | null | undefined>(undefined),
+			flowActionsRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -836,32 +1127,54 @@ export namespace MyNS {
 
 	/** An object that contains the ID and revision number of a workflow or system that is part of a deployment. */
 	export interface DependencyRevision {
+
+		/**
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id?: string | null;
 		revisionNumber?: number | null;
 	}
 
 	/** An object that contains the ID and revision number of a workflow or system that is part of a deployment. */
 	export interface DependencyRevisionFormProperties {
+
+		/**
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: FormControl<string | null | undefined>,
 		revisionNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateDependencyRevisionFormGroup() {
 		return new FormGroup<DependencyRevisionFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160)]),
 			revisionNumber: new FormControl<number | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetSystemInstanceRequest {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: string;
 	}
 	export interface GetSystemInstanceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSystemInstanceRequestFormGroup() {
 		return new FormGroup<GetSystemInstanceRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
 		});
 
 	}
@@ -903,16 +1216,28 @@ export namespace MyNS {
 	}
 
 	export interface GetSystemTemplateRequest {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: string;
 		revisionNumber?: number | null;
 	}
 	export interface GetSystemTemplateRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: FormControl<string | null | undefined>,
 		revisionNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateGetSystemTemplateRequestFormGroup() {
 		return new FormGroup<GetSystemTemplateRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
 			revisionNumber: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -933,62 +1258,120 @@ export namespace MyNS {
 	}
 
 	export interface GetSystemTemplateRevisionsRequest {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: string;
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 250
+		 */
 		maxResults?: number | null;
 	}
 	export interface GetSystemTemplateRevisionsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 250
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateGetSystemTemplateRevisionsRequestFormGroup() {
 		return new FormGroup<GetSystemTemplateRevisionsRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(250)]),
 		});
 
 	}
 
 	export interface GetUploadStatusResponse {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 */
 		uploadId: string;
+
+		/** Required */
 		uploadStatus: GetNamespaceDeletionStatusResponseStatus;
 		namespaceArn?: string | null;
+
+		/** Max length: 128 */
 		namespaceName?: string | null;
 		namespaceVersion?: number | null;
 		failureReason?: Array<string>;
+
+		/** Required */
 		createdDate: Date;
 	}
 	export interface GetUploadStatusResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 */
 		uploadId: FormControl<string | null | undefined>,
+
+		/** Required */
 		uploadStatus: FormControl<GetNamespaceDeletionStatusResponseStatus | null | undefined>,
 		namespaceArn: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		namespaceName: FormControl<string | null | undefined>,
 		namespaceVersion: FormControl<number | null | undefined>,
+
+		/** Required */
 		createdDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateGetUploadStatusResponseFormGroup() {
 		return new FormGroup<GetUploadStatusResponseFormProperties>({
-			uploadId: new FormControl<string | null | undefined>(undefined),
-			uploadStatus: new FormControl<GetNamespaceDeletionStatusResponseStatus | null | undefined>(undefined),
+			uploadId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1)]),
+			uploadStatus: new FormControl<GetNamespaceDeletionStatusResponseStatus | null | undefined>(undefined, [Validators.required]),
 			namespaceArn: new FormControl<string | null | undefined>(undefined),
-			namespaceName: new FormControl<string | null | undefined>(undefined),
+			namespaceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			namespaceVersion: new FormControl<number | null | undefined>(undefined),
-			createdDate: new FormControl<Date | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface GetUploadStatusRequest {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 */
 		uploadId: string;
 	}
 	export interface GetUploadStatusRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 */
 		uploadId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetUploadStatusRequestFormGroup() {
 		return new FormGroup<GetUploadStatusRequestFormProperties>({
-			uploadId: new FormControl<string | null | undefined>(undefined),
+			uploadId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1)]),
 		});
 
 	}
@@ -1036,25 +1419,44 @@ export namespace MyNS {
 	export enum FlowExecutionMessageEventType { EXECUTION_STARTED = 0, EXECUTION_FAILED = 1, EXECUTION_ABORTED = 2, EXECUTION_SUCCEEDED = 3, STEP_STARTED = 4, STEP_FAILED = 5, STEP_SUCCEEDED = 6, ACTIVITY_SCHEDULED = 7, ACTIVITY_STARTED = 8, ACTIVITY_FAILED = 9, ACTIVITY_SUCCEEDED = 10, START_FLOW_EXECUTION_TASK = 11, SCHEDULE_NEXT_READY_STEPS_TASK = 12, THING_ACTION_TASK = 13, THING_ACTION_TASK_FAILED = 14, THING_ACTION_TASK_SUCCEEDED = 15, ACKNOWLEDGE_TASK_MESSAGE = 16 }
 
 	export interface ListFlowExecutionMessagesRequest {
+
+		/** Required */
 		flowExecutionId: string;
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 250
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListFlowExecutionMessagesRequestFormProperties {
+
+		/** Required */
 		flowExecutionId: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 250
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListFlowExecutionMessagesRequestFormGroup() {
 		return new FormGroup<ListFlowExecutionMessagesRequestFormProperties>({
-			flowExecutionId: new FormControl<string | null | undefined>(undefined),
+			flowExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(250)]),
 		});
 
 	}
 
 	export interface ListTagsForResourceResponse {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<Tag>;
 		nextToken?: string | null;
 	}
@@ -1069,19 +1471,41 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceRequest {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 250
+		 */
 		maxResults?: number | null;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		resourceArn: string;
 		nextToken?: string | null;
 	}
 	export interface ListTagsForResourceRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 250
+		 */
 		maxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		resourceArn: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			maxResults: new FormControl<number | null | undefined>(undefined),
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(250)]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1102,21 +1526,33 @@ export namespace MyNS {
 	}
 
 	export interface SearchEntitiesRequest {
+
+		/** Required */
 		entityTypes: Array<EntityType>;
 		filters?: Array<EntityFilter>;
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 250
+		 */
 		maxResults?: number | null;
 		namespaceVersion?: number | null;
 	}
 	export interface SearchEntitiesRequestFormProperties {
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 250
+		 */
 		maxResults: FormControl<number | null | undefined>,
 		namespaceVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchEntitiesRequestFormGroup() {
 		return new FormGroup<SearchEntitiesRequestFormProperties>({
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(250)]),
 			namespaceVersion: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1163,7 +1599,17 @@ export namespace MyNS {
 	export interface FlowExecutionSummary {
 		flowExecutionId?: string | null;
 		status?: FlowExecutionSummaryStatus | null;
+
+		/**
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		systemInstanceId?: string | null;
+
+		/**
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		flowTemplateId?: string | null;
 		createdAt?: Date | null;
 		updatedAt?: Date | null;
@@ -1173,7 +1619,17 @@ export namespace MyNS {
 	export interface FlowExecutionSummaryFormProperties {
 		flowExecutionId: FormControl<string | null | undefined>,
 		status: FormControl<FlowExecutionSummaryStatus | null | undefined>,
+
+		/**
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		systemInstanceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		flowTemplateId: FormControl<string | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
 		updatedAt: FormControl<Date | null | undefined>,
@@ -1182,8 +1638,8 @@ export namespace MyNS {
 		return new FormGroup<FlowExecutionSummaryFormProperties>({
 			flowExecutionId: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<FlowExecutionSummaryStatus | null | undefined>(undefined),
-			systemInstanceId: new FormControl<string | null | undefined>(undefined),
-			flowTemplateId: new FormControl<string | null | undefined>(undefined),
+			systemInstanceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160)]),
+			flowTemplateId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160)]),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			updatedAt: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1193,29 +1649,51 @@ export namespace MyNS {
 	export enum FlowExecutionSummaryStatus { RUNNING = 0, ABORTED = 1, SUCCEEDED = 2, FAILED = 3 }
 
 	export interface SearchFlowExecutionsRequest {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		systemInstanceId: string;
 		flowExecutionId?: string | null;
 		startTime?: Date | null;
 		endTime?: Date | null;
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 250
+		 */
 		maxResults?: number | null;
 	}
 	export interface SearchFlowExecutionsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		systemInstanceId: FormControl<string | null | undefined>,
 		flowExecutionId: FormControl<string | null | undefined>,
 		startTime: FormControl<Date | null | undefined>,
 		endTime: FormControl<Date | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 250
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchFlowExecutionsRequestFormGroup() {
 		return new FormGroup<SearchFlowExecutionsRequestFormProperties>({
-			systemInstanceId: new FormControl<string | null | undefined>(undefined),
+			systemInstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
 			flowExecutionId: new FormControl<string | null | undefined>(undefined),
 			startTime: new FormControl<Date | null | undefined>(undefined),
 			endTime: new FormControl<Date | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(250)]),
 		});
 
 	}
@@ -1237,16 +1715,26 @@ export namespace MyNS {
 	export interface SearchFlowTemplatesRequest {
 		filters?: Array<FlowTemplateFilter>;
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 250
+		 */
 		maxResults?: number | null;
 	}
 	export interface SearchFlowTemplatesRequestFormProperties {
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 250
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchFlowTemplatesRequestFormGroup() {
 		return new FormGroup<SearchFlowTemplatesRequestFormProperties>({
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(250)]),
 		});
 
 	}
@@ -1254,17 +1742,23 @@ export namespace MyNS {
 
 	/** An object that filters a workflow search. */
 	export interface FlowTemplateFilter {
+
+		/** Required */
 		name: FlowTemplateFilterName;
+
+		/** Required */
 		value: Array<string>;
 	}
 
 	/** An object that filters a workflow search. */
 	export interface FlowTemplateFilterFormProperties {
+
+		/** Required */
 		name: FormControl<FlowTemplateFilterName | null | undefined>,
 	}
 	export function CreateFlowTemplateFilterFormGroup() {
 		return new FormGroup<FlowTemplateFilterFormProperties>({
-			name: new FormControl<FlowTemplateFilterName | null | undefined>(undefined),
+			name: new FormControl<FlowTemplateFilterName | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1288,16 +1782,26 @@ export namespace MyNS {
 	export interface SearchSystemInstancesRequest {
 		filters?: Array<SystemInstanceFilter>;
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 250
+		 */
 		maxResults?: number | null;
 	}
 	export interface SearchSystemInstancesRequestFormProperties {
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 250
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchSystemInstancesRequestFormGroup() {
 		return new FormGroup<SearchSystemInstancesRequestFormProperties>({
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(250)]),
 		});
 
 	}
@@ -1339,16 +1843,26 @@ export namespace MyNS {
 	export interface SearchSystemTemplatesRequest {
 		filters?: Array<SystemTemplateFilter>;
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 250
+		 */
 		maxResults?: number | null;
 	}
 	export interface SearchSystemTemplatesRequestFormProperties {
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 250
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchSystemTemplatesRequestFormGroup() {
 		return new FormGroup<SearchSystemTemplatesRequestFormProperties>({
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(250)]),
 		});
 
 	}
@@ -1356,17 +1870,23 @@ export namespace MyNS {
 
 	/** An object that filters a system search. */
 	export interface SystemTemplateFilter {
+
+		/** Required */
 		name: SystemTemplateFilterName;
+
+		/** Required */
 		value: Array<string>;
 	}
 
 	/** An object that filters a system search. */
 	export interface SystemTemplateFilterFormProperties {
+
+		/** Required */
 		name: FormControl<SystemTemplateFilterName | null | undefined>,
 	}
 	export function CreateSystemTemplateFilterFormGroup() {
 		return new FormGroup<SystemTemplateFilterFormProperties>({
-			name: new FormControl<SystemTemplateFilterName | null | undefined>(undefined),
+			name: new FormControl<SystemTemplateFilterName | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1391,39 +1911,73 @@ export namespace MyNS {
 	/** An AWS IoT thing. */
 	export interface Thing {
 		thingArn?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
 		thingName?: string | null;
 	}
 
 	/** An AWS IoT thing. */
 	export interface ThingFormProperties {
 		thingArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
 		thingName: FormControl<string | null | undefined>,
 	}
 	export function CreateThingFormGroup() {
 		return new FormGroup<ThingFormProperties>({
 			thingArn: new FormControl<string | null | undefined>(undefined),
-			thingName: new FormControl<string | null | undefined>(undefined),
+			thingName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface SearchThingsRequest {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		entityId: string;
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 250
+		 */
 		maxResults?: number | null;
 		namespaceVersion?: number | null;
 	}
 	export interface SearchThingsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		entityId: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 250
+		 */
 		maxResults: FormControl<number | null | undefined>,
 		namespaceVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchThingsRequestFormGroup() {
 		return new FormGroup<SearchThingsRequestFormProperties>({
-			entityId: new FormControl<string | null | undefined>(undefined),
+			entityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(250)]),
 			namespaceVersion: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1440,15 +1994,33 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		resourceArn: string;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1467,14 +2039,24 @@ export namespace MyNS {
 	}
 
 	export interface UndeploySystemInstanceRequest {
+
+		/**
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id?: string | null;
 	}
 	export interface UndeploySystemInstanceRequestFormProperties {
+
+		/**
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreateUndeploySystemInstanceRequestFormGroup() {
 		return new FormGroup<UndeploySystemInstanceRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160)]),
 		});
 
 	}
@@ -1490,15 +2072,33 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		resourceArn: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		tagKeys: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1517,6 +2117,12 @@ export namespace MyNS {
 	}
 
 	export interface UpdateFlowTemplateRequest {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: string;
 
 		/**
@@ -1527,12 +2133,18 @@ export namespace MyNS {
 		compatibleNamespaceVersion?: number | null;
 	}
 	export interface UpdateFlowTemplateRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: FormControl<string | null | undefined>,
 		compatibleNamespaceVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateFlowTemplateRequestFormGroup() {
 		return new FormGroup<UpdateFlowTemplateRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
 			compatibleNamespaceVersion: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1552,6 +2164,12 @@ export namespace MyNS {
 	}
 
 	export interface UpdateSystemTemplateRequest {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: string;
 
 		/**
@@ -1562,26 +2180,44 @@ export namespace MyNS {
 		compatibleNamespaceVersion?: number | null;
 	}
 	export interface UpdateSystemTemplateRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 160
+		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
+		 */
 		id: FormControl<string | null | undefined>,
 		compatibleNamespaceVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateSystemTemplateRequestFormGroup() {
 		return new FormGroup<UpdateSystemTemplateRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
 			compatibleNamespaceVersion: new FormControl<number | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface UploadEntityDefinitionsResponse {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 */
 		uploadId: string;
 	}
 	export interface UploadEntityDefinitionsResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 */
 		uploadId: FormControl<string | null | undefined>,
 	}
 	export function CreateUploadEntityDefinitionsResponseFormGroup() {
 		return new FormGroup<UploadEntityDefinitionsResponseFormProperties>({
-			uploadId: new FormControl<string | null | undefined>(undefined),
+			uploadId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1)]),
 		});
 
 	}

@@ -77,7 +77,7 @@ export namespace MyNS {
 	}
 	export function CreateScheduleActionFormGroup() {
 		return new FormGroup<ScheduleActionFormProperties>({
-			ActionName: new FormControl<string | null | undefined>(undefined),
+			ActionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -145,7 +145,7 @@ export namespace MyNS {
 	}
 	export function CreateHlsId3SegmentTaggingScheduleActionSettingsFormGroup() {
 		return new FormGroup<HlsId3SegmentTaggingScheduleActionSettingsFormProperties>({
-			Tag: new FormControl<string | null | undefined>(undefined),
+			Tag: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -172,7 +172,7 @@ export namespace MyNS {
 	}
 	export function CreateHlsTimedMetadataScheduleActionSettingsFormGroup() {
 		return new FormGroup<HlsTimedMetadataScheduleActionSettingsFormProperties>({
-			Id3: new FormControl<string | null | undefined>(undefined),
+			Id3: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -205,7 +205,7 @@ export namespace MyNS {
 	}
 	export function CreateInputSwitchScheduleActionSettingsFormGroup() {
 		return new FormGroup<InputSwitchScheduleActionSettingsFormProperties>({
-			InputAttachmentNameReference: new FormControl<string | null | undefined>(undefined),
+			InputAttachmentNameReference: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -238,7 +238,7 @@ export namespace MyNS {
 	}
 	export function CreateInputClippingSettingsFormGroup() {
 		return new FormGroup<InputClippingSettingsFormProperties>({
-			InputTimecodeSource: new FormControl<InputClippingSettingsInputTimecodeSource | null | undefined>(undefined),
+			InputTimecodeSource: new FormControl<InputClippingSettingsInputTimecodeSource | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -335,7 +335,7 @@ export namespace MyNS {
 	}
 	export function CreatePipelinePauseStateSettingsFormGroup() {
 		return new FormGroup<PipelinePauseStateSettingsFormProperties>({
-			PipelineId: new FormControl<PipelinePauseStateSettingsPipelineId | null | undefined>(undefined),
+			PipelineId: new FormControl<PipelinePauseStateSettingsPipelineId | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -368,7 +368,7 @@ export namespace MyNS {
 	}
 	export function CreateScte35ReturnToNetworkScheduleActionSettingsFormGroup() {
 		return new FormGroup<Scte35ReturnToNetworkScheduleActionSettingsFormProperties>({
-			SpliceEventId: new FormControl<number | null | undefined>(undefined),
+			SpliceEventId: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(4294967295)]),
 		});
 
 	}
@@ -413,8 +413,8 @@ export namespace MyNS {
 	}
 	export function CreateScte35SpliceInsertScheduleActionSettingsFormGroup() {
 		return new FormGroup<Scte35SpliceInsertScheduleActionSettingsFormProperties>({
-			Duration: new FormControl<number | null | undefined>(undefined),
-			SpliceEventId: new FormControl<number | null | undefined>(undefined),
+			Duration: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(8589934591)]),
+			SpliceEventId: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(4294967295)]),
 		});
 
 	}
@@ -624,16 +624,16 @@ export namespace MyNS {
 	}
 	export function CreateScte35SegmentationDescriptorFormGroup() {
 		return new FormGroup<Scte35SegmentationDescriptorFormProperties>({
-			SegmentNum: new FormControl<number | null | undefined>(undefined),
-			SegmentationCancelIndicator: new FormControl<Scte35SegmentationDescriptorSegmentationCancelIndicator | null | undefined>(undefined),
-			SegmentationDuration: new FormControl<number | null | undefined>(undefined),
-			SegmentationEventId: new FormControl<number | null | undefined>(undefined),
-			SegmentationTypeId: new FormControl<number | null | undefined>(undefined),
+			SegmentNum: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(255)]),
+			SegmentationCancelIndicator: new FormControl<Scte35SegmentationDescriptorSegmentationCancelIndicator | null | undefined>(undefined, [Validators.required]),
+			SegmentationDuration: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1099511627775)]),
+			SegmentationEventId: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(4294967295)]),
+			SegmentationTypeId: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(255)]),
 			SegmentationUpid: new FormControl<string | null | undefined>(undefined),
-			SegmentationUpidType: new FormControl<number | null | undefined>(undefined),
-			SegmentsExpected: new FormControl<number | null | undefined>(undefined),
-			SubSegmentNum: new FormControl<number | null | undefined>(undefined),
-			SubSegmentsExpected: new FormControl<number | null | undefined>(undefined),
+			SegmentationUpidType: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(255)]),
+			SegmentsExpected: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(255)]),
+			SubSegmentNum: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(255)]),
+			SubSegmentsExpected: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(255)]),
 		});
 
 	}
@@ -696,10 +696,10 @@ export namespace MyNS {
 	}
 	export function CreateScte35DeliveryRestrictionsFormGroup() {
 		return new FormGroup<Scte35DeliveryRestrictionsFormProperties>({
-			ArchiveAllowedFlag: new FormControl<Scte35DeliveryRestrictionsArchiveAllowedFlag | null | undefined>(undefined),
-			DeviceRestrictions: new FormControl<Scte35DeliveryRestrictionsDeviceRestrictions | null | undefined>(undefined),
-			NoRegionalBlackoutFlag: new FormControl<Scte35DeliveryRestrictionsNoRegionalBlackoutFlag | null | undefined>(undefined),
-			WebDeliveryAllowedFlag: new FormControl<Scte35DeliveryRestrictionsWebDeliveryAllowedFlag | null | undefined>(undefined),
+			ArchiveAllowedFlag: new FormControl<Scte35DeliveryRestrictionsArchiveAllowedFlag | null | undefined>(undefined, [Validators.required]),
+			DeviceRestrictions: new FormControl<Scte35DeliveryRestrictionsDeviceRestrictions | null | undefined>(undefined, [Validators.required]),
+			NoRegionalBlackoutFlag: new FormControl<Scte35DeliveryRestrictionsNoRegionalBlackoutFlag | null | undefined>(undefined, [Validators.required]),
+			WebDeliveryAllowedFlag: new FormControl<Scte35DeliveryRestrictionsWebDeliveryAllowedFlag | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -842,15 +842,15 @@ export namespace MyNS {
 	}
 	export function CreateStaticImageActivateScheduleActionSettingsFormGroup() {
 		return new FormGroup<StaticImageActivateScheduleActionSettingsFormProperties>({
-			Duration: new FormControl<number | null | undefined>(undefined),
-			FadeIn: new FormControl<number | null | undefined>(undefined),
-			FadeOut: new FormControl<number | null | undefined>(undefined),
-			Height: new FormControl<number | null | undefined>(undefined),
-			ImageX: new FormControl<number | null | undefined>(undefined),
-			ImageY: new FormControl<number | null | undefined>(undefined),
-			Layer: new FormControl<number | null | undefined>(undefined),
-			Opacity: new FormControl<number | null | undefined>(undefined),
-			Width: new FormControl<number | null | undefined>(undefined),
+			Duration: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			FadeIn: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			FadeOut: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			Height: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			ImageX: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			ImageY: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			Layer: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(7)]),
+			Opacity: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			Width: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -890,7 +890,7 @@ export namespace MyNS {
 	export function CreateInputLocationFormGroup() {
 		return new FormGroup<InputLocationFormProperties>({
 			PasswordParam: new FormControl<string | null | undefined>(undefined),
-			Uri: new FormControl<string | null | undefined>(undefined),
+			Uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Username: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -932,8 +932,8 @@ export namespace MyNS {
 	}
 	export function CreateStaticImageDeactivateScheduleActionSettingsFormGroup() {
 		return new FormGroup<StaticImageDeactivateScheduleActionSettingsFormProperties>({
-			FadeOut: new FormControl<number | null | undefined>(undefined),
-			Layer: new FormControl<number | null | undefined>(undefined),
+			FadeOut: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			Layer: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(7)]),
 		});
 
 	}
@@ -983,7 +983,7 @@ export namespace MyNS {
 	}
 	export function CreateFixedModeScheduleActionStartSettingsFormGroup() {
 		return new FormGroup<FixedModeScheduleActionStartSettingsFormProperties>({
-			Time: new FormControl<string | null | undefined>(undefined),
+			Time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1022,8 +1022,8 @@ export namespace MyNS {
 	}
 	export function CreateFollowModeScheduleActionStartSettingsFormGroup() {
 		return new FormGroup<FollowModeScheduleActionStartSettingsFormProperties>({
-			FollowPoint: new FormControl<FollowModeScheduleActionStartSettingsFollowPoint | null | undefined>(undefined),
-			ReferenceActionName: new FormControl<string | null | undefined>(undefined),
+			FollowPoint: new FormControl<FollowModeScheduleActionStartSettingsFollowPoint | null | undefined>(undefined, [Validators.required]),
+			ReferenceActionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1306,7 +1306,7 @@ export namespace MyNS {
 	}
 	export function CreateMediaPackageOutputDestinationSettingsFormGroup() {
 		return new FormGroup<MediaPackageOutputDestinationSettingsFormProperties>({
-			ChannelId: new FormControl<string | null | undefined>(undefined),
+			ChannelId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1345,8 +1345,8 @@ export namespace MyNS {
 	}
 	export function CreateMultiplexProgramChannelDestinationSettingsFormGroup() {
 		return new FormGroup<MultiplexProgramChannelDestinationSettingsFormProperties>({
-			MultiplexId: new FormControl<string | null | undefined>(undefined),
-			ProgramName: new FormControl<string | null | undefined>(undefined),
+			MultiplexId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			ProgramName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1551,12 +1551,12 @@ export namespace MyNS {
 	}
 	export function CreateAudioDescriptionFormGroup() {
 		return new FormGroup<AudioDescriptionFormProperties>({
-			AudioSelectorName: new FormControl<string | null | undefined>(undefined),
+			AudioSelectorName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			AudioType: new FormControl<AudioDescriptionAudioType | null | undefined>(undefined),
 			AudioTypeControl: new FormControl<AudioDescriptionAudioTypeControl | null | undefined>(undefined),
-			LanguageCode: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3)]),
 			LanguageCodeControl: new FormControl<AudioDescriptionAudioTypeControl | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			StreamName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1788,7 +1788,7 @@ export namespace MyNS {
 			Bitrate: new FormControl<number | null | undefined>(undefined),
 			BitstreamMode: new FormControl<Ac3SettingsBitstreamMode | null | undefined>(undefined),
 			CodingMode: new FormControl<Ac3SettingsCodingMode | null | undefined>(undefined),
-			Dialnorm: new FormControl<number | null | undefined>(undefined),
+			Dialnorm: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(31)]),
 			DrcProfile: new FormControl<Ac3SettingsDrcProfile | null | undefined>(undefined),
 			LfeFilter: new FormControl<Ac3SettingsLfeFilter | null | undefined>(undefined),
 			MetadataControl: new FormControl<AudioDescriptionAudioTypeControl | null | undefined>(undefined),
@@ -1947,7 +1947,7 @@ export namespace MyNS {
 			BitstreamMode: new FormControl<Eac3SettingsBitstreamMode | null | undefined>(undefined),
 			CodingMode: new FormControl<Eac3SettingsCodingMode | null | undefined>(undefined),
 			DcFilter: new FormControl<Ac3SettingsLfeFilter | null | undefined>(undefined),
-			Dialnorm: new FormControl<number | null | undefined>(undefined),
+			Dialnorm: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(31)]),
 			DrcLine: new FormControl<Eac3SettingsDrcLine | null | undefined>(undefined),
 			DrcRf: new FormControl<Eac3SettingsDrcLine | null | undefined>(undefined),
 			LfeControl: new FormControl<Eac3SettingsLfeControl | null | undefined>(undefined),
@@ -2079,8 +2079,8 @@ export namespace MyNS {
 	}
 	export function CreateRemixSettingsFormGroup() {
 		return new FormGroup<RemixSettingsFormProperties>({
-			ChannelsIn: new FormControl<number | null | undefined>(undefined),
-			ChannelsOut: new FormControl<number | null | undefined>(undefined),
+			ChannelsIn: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(16)]),
+			ChannelsOut: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(8)]),
 		});
 
 	}
@@ -2117,7 +2117,7 @@ export namespace MyNS {
 	}
 	export function CreateAudioChannelMappingFormGroup() {
 		return new FormGroup<AudioChannelMappingFormProperties>({
-			OutputChannel: new FormControl<number | null | undefined>(undefined),
+			OutputChannel: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(7)]),
 		});
 
 	}
@@ -2164,8 +2164,8 @@ export namespace MyNS {
 	}
 	export function CreateInputChannelLevelFormGroup() {
 		return new FormGroup<InputChannelLevelFormProperties>({
-			Gain: new FormControl<number | null | undefined>(undefined),
-			InputChannel: new FormControl<number | null | undefined>(undefined),
+			Gain: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(-60), Validators.max(6)]),
+			InputChannel: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(15)]),
 		});
 
 	}
@@ -2267,7 +2267,7 @@ export namespace MyNS {
 	}
 	export function CreateScte35SpliceInsertFormGroup() {
 		return new FormGroup<Scte35SpliceInsertFormProperties>({
-			AdAvailOffset: new FormControl<number | null | undefined>(undefined),
+			AdAvailOffset: new FormControl<number | null | undefined>(undefined, [Validators.min(-1000), Validators.max(1000)]),
 			NoRegionalBlackoutFlag: new FormControl<Scte35SpliceInsertNoRegionalBlackoutFlag | null | undefined>(undefined),
 			WebDeliveryAllowedFlag: new FormControl<Scte35SpliceInsertNoRegionalBlackoutFlag | null | undefined>(undefined),
 		});
@@ -2312,7 +2312,7 @@ export namespace MyNS {
 	}
 	export function CreateScte35TimeSignalAposFormGroup() {
 		return new FormGroup<Scte35TimeSignalAposFormProperties>({
-			AdAvailOffset: new FormControl<number | null | undefined>(undefined),
+			AdAvailOffset: new FormControl<number | null | undefined>(undefined, [Validators.min(-1000), Validators.max(1000)]),
 			NoRegionalBlackoutFlag: new FormControl<Scte35SpliceInsertNoRegionalBlackoutFlag | null | undefined>(undefined),
 			WebDeliveryAllowedFlag: new FormControl<Scte35SpliceInsertNoRegionalBlackoutFlag | null | undefined>(undefined),
 		});
@@ -2362,7 +2362,7 @@ export namespace MyNS {
 	export function CreateBlackoutSlateFormGroup() {
 		return new FormGroup<BlackoutSlateFormProperties>({
 			NetworkEndBlackout: new FormControl<Ac3SettingsLfeFilter | null | undefined>(undefined),
-			NetworkId: new FormControl<string | null | undefined>(undefined),
+			NetworkId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(34), Validators.minLength(34)]),
 			State: new FormControl<Ac3SettingsLfeFilter | null | undefined>(undefined),
 		});
 
@@ -2417,10 +2417,10 @@ export namespace MyNS {
 	}
 	export function CreateCaptionDescriptionFormGroup() {
 		return new FormGroup<CaptionDescriptionFormProperties>({
-			CaptionSelectorName: new FormControl<string | null | undefined>(undefined),
+			CaptionSelectorName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			LanguageCode: new FormControl<string | null | undefined>(undefined),
 			LanguageDescription: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2652,20 +2652,20 @@ export namespace MyNS {
 		return new FormGroup<BurnInDestinationSettingsFormProperties>({
 			Alignment: new FormControl<BurnInDestinationSettingsAlignment | null | undefined>(undefined),
 			BackgroundColor: new FormControl<BurnInDestinationSettingsBackgroundColor | null | undefined>(undefined),
-			BackgroundOpacity: new FormControl<number | null | undefined>(undefined),
+			BackgroundOpacity: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(255)]),
 			FontColor: new FormControl<BurnInDestinationSettingsFontColor | null | undefined>(undefined),
-			FontOpacity: new FormControl<number | null | undefined>(undefined),
-			FontResolution: new FormControl<number | null | undefined>(undefined),
+			FontOpacity: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(255)]),
+			FontResolution: new FormControl<number | null | undefined>(undefined, [Validators.min(96), Validators.max(600)]),
 			FontSize: new FormControl<string | null | undefined>(undefined),
 			OutlineColor: new FormControl<BurnInDestinationSettingsFontColor | null | undefined>(undefined),
-			OutlineSize: new FormControl<number | null | undefined>(undefined),
+			OutlineSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(10)]),
 			ShadowColor: new FormControl<BurnInDestinationSettingsBackgroundColor | null | undefined>(undefined),
-			ShadowOpacity: new FormControl<number | null | undefined>(undefined),
+			ShadowOpacity: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(255)]),
 			ShadowXOffset: new FormControl<number | null | undefined>(undefined),
 			ShadowYOffset: new FormControl<number | null | undefined>(undefined),
 			TeletextGridControl: new FormControl<BurnInDestinationSettingsTeletextGridControl | null | undefined>(undefined),
-			XPosition: new FormControl<number | null | undefined>(undefined),
-			YPosition: new FormControl<number | null | undefined>(undefined),
+			XPosition: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			YPosition: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -2841,20 +2841,20 @@ export namespace MyNS {
 		return new FormGroup<DvbSubDestinationSettingsFormProperties>({
 			Alignment: new FormControl<BurnInDestinationSettingsAlignment | null | undefined>(undefined),
 			BackgroundColor: new FormControl<BurnInDestinationSettingsBackgroundColor | null | undefined>(undefined),
-			BackgroundOpacity: new FormControl<number | null | undefined>(undefined),
+			BackgroundOpacity: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(255)]),
 			FontColor: new FormControl<BurnInDestinationSettingsFontColor | null | undefined>(undefined),
-			FontOpacity: new FormControl<number | null | undefined>(undefined),
-			FontResolution: new FormControl<number | null | undefined>(undefined),
+			FontOpacity: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(255)]),
+			FontResolution: new FormControl<number | null | undefined>(undefined, [Validators.min(96), Validators.max(600)]),
 			FontSize: new FormControl<string | null | undefined>(undefined),
 			OutlineColor: new FormControl<BurnInDestinationSettingsFontColor | null | undefined>(undefined),
-			OutlineSize: new FormControl<number | null | undefined>(undefined),
+			OutlineSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(10)]),
 			ShadowColor: new FormControl<BurnInDestinationSettingsBackgroundColor | null | undefined>(undefined),
-			ShadowOpacity: new FormControl<number | null | undefined>(undefined),
+			ShadowOpacity: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(255)]),
 			ShadowXOffset: new FormControl<number | null | undefined>(undefined),
 			ShadowYOffset: new FormControl<number | null | undefined>(undefined),
 			TeletextGridControl: new FormControl<BurnInDestinationSettingsTeletextGridControl | null | undefined>(undefined),
-			XPosition: new FormControl<number | null | undefined>(undefined),
-			YPosition: new FormControl<number | null | undefined>(undefined),
+			XPosition: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			YPosition: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -3045,7 +3045,7 @@ export namespace MyNS {
 	}
 	export function CreateGlobalConfigurationFormGroup() {
 		return new FormGroup<GlobalConfigurationFormProperties>({
-			InitialAudioGain: new FormControl<number | null | undefined>(undefined),
+			InitialAudioGain: new FormControl<number | null | undefined>(undefined, [Validators.min(-60), Validators.max(60)]),
 			InputEndAction: new FormControl<GlobalConfigurationInputEndAction | null | undefined>(undefined),
 			OutputLockingMode: new FormControl<GlobalConfigurationOutputLockingMode | null | undefined>(undefined),
 			OutputTimingSource: new FormControl<GlobalConfigurationOutputTimingSource | null | undefined>(undefined),
@@ -3117,10 +3117,10 @@ export namespace MyNS {
 	}
 	export function CreateInputLossBehaviorFormGroup() {
 		return new FormGroup<InputLossBehaviorFormProperties>({
-			BlackFrameMsec: new FormControl<number | null | undefined>(undefined),
-			InputLossImageColor: new FormControl<string | null | undefined>(undefined),
+			BlackFrameMsec: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000000)]),
+			InputLossImageColor: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6), Validators.minLength(6)]),
 			InputLossImageType: new FormControl<InputLossBehaviorInputLossImageType | null | undefined>(undefined),
-			RepeatFrameMsec: new FormControl<number | null | undefined>(undefined),
+			RepeatFrameMsec: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000000)]),
 		});
 
 	}
@@ -3193,7 +3193,7 @@ export namespace MyNS {
 	}
 	export function CreateOutputGroupFormGroup() {
 		return new FormGroup<OutputGroupFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32)]),
 		});
 
 	}
@@ -3264,7 +3264,7 @@ export namespace MyNS {
 	}
 	export function CreateArchiveGroupSettingsFormGroup() {
 		return new FormGroup<ArchiveGroupSettingsFormProperties>({
-			RolloverInterval: new FormControl<number | null | undefined>(undefined),
+			RolloverInterval: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -3613,33 +3613,33 @@ export namespace MyNS {
 			CaptionLanguageSetting: new FormControl<HlsGroupSettingsCaptionLanguageSetting | null | undefined>(undefined),
 			ClientCache: new FormControl<Ac3SettingsLfeFilter | null | undefined>(undefined),
 			CodecSpecification: new FormControl<HlsGroupSettingsCodecSpecification | null | undefined>(undefined),
-			ConstantIv: new FormControl<string | null | undefined>(undefined),
+			ConstantIv: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(32)]),
 			DirectoryStructure: new FormControl<HlsGroupSettingsDirectoryStructure | null | undefined>(undefined),
 			EncryptionType: new FormControl<HlsGroupSettingsEncryptionType | null | undefined>(undefined),
 			HlsId3SegmentTagging: new FormControl<Ac3SettingsLfeFilter | null | undefined>(undefined),
 			IFrameOnlyPlaylists: new FormControl<HlsGroupSettingsIFrameOnlyPlaylists | null | undefined>(undefined),
-			IndexNSegments: new FormControl<number | null | undefined>(undefined),
+			IndexNSegments: new FormControl<number | null | undefined>(undefined, [Validators.min(3)]),
 			InputLossAction: new FormControl<HlsGroupSettingsInputLossAction | null | undefined>(undefined),
 			IvInManifest: new FormControl<HlsGroupSettingsIvInManifest | null | undefined>(undefined),
 			IvSource: new FormControl<HlsGroupSettingsIvSource | null | undefined>(undefined),
-			KeepSegments: new FormControl<number | null | undefined>(undefined),
+			KeepSegments: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			KeyFormat: new FormControl<string | null | undefined>(undefined),
 			KeyFormatVersions: new FormControl<string | null | undefined>(undefined),
 			ManifestCompression: new FormControl<HlsGroupSettingsManifestCompression | null | undefined>(undefined),
 			ManifestDurationFormat: new FormControl<HlsGroupSettingsManifestDurationFormat | null | undefined>(undefined),
-			MinSegmentLength: new FormControl<number | null | undefined>(undefined),
+			MinSegmentLength: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			Mode: new FormControl<HlsGroupSettingsMode | null | undefined>(undefined),
 			OutputSelection: new FormControl<HlsGroupSettingsOutputSelection | null | undefined>(undefined),
 			ProgramDateTime: new FormControl<HlsGroupSettingsIvInManifest | null | undefined>(undefined),
-			ProgramDateTimePeriod: new FormControl<number | null | undefined>(undefined),
+			ProgramDateTimePeriod: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(3600)]),
 			RedundantManifest: new FormControl<Ac3SettingsLfeFilter | null | undefined>(undefined),
-			SegmentLength: new FormControl<number | null | undefined>(undefined),
+			SegmentLength: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			SegmentationMode: new FormControl<HlsGroupSettingsSegmentationMode | null | undefined>(undefined),
-			SegmentsPerSubdirectory: new FormControl<number | null | undefined>(undefined),
+			SegmentsPerSubdirectory: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			StreamInfResolution: new FormControl<HlsGroupSettingsIvInManifest | null | undefined>(undefined),
 			TimedMetadataId3Frame: new FormControl<HlsGroupSettingsTimedMetadataId3Frame | null | undefined>(undefined),
-			TimedMetadataId3Period: new FormControl<number | null | undefined>(undefined),
-			TimestampDeltaMilliseconds: new FormControl<number | null | undefined>(undefined),
+			TimedMetadataId3Period: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			TimestampDeltaMilliseconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			TsFileMode: new FormControl<HlsGroupSettingsTsFileMode | null | undefined>(undefined),
 		});
 
@@ -3705,9 +3705,9 @@ export namespace MyNS {
 	}
 	export function CreateCaptionLanguageMappingFormGroup() {
 		return new FormGroup<CaptionLanguageMappingFormProperties>({
-			CaptionChannel: new FormControl<number | null | undefined>(undefined),
-			LanguageCode: new FormControl<string | null | undefined>(undefined),
-			LanguageDescription: new FormControl<string | null | undefined>(undefined),
+			CaptionChannel: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(4)]),
+			LanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(3), Validators.minLength(3)]),
+			LanguageDescription: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -3826,11 +3826,11 @@ export namespace MyNS {
 	}
 	export function CreateHlsAkamaiSettingsFormGroup() {
 		return new FormGroup<HlsAkamaiSettingsFormProperties>({
-			ConnectionRetryInterval: new FormControl<number | null | undefined>(undefined),
-			FilecacheDuration: new FormControl<number | null | undefined>(undefined),
+			ConnectionRetryInterval: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			FilecacheDuration: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(600)]),
 			HttpTransferMode: new FormControl<HlsAkamaiSettingsHttpTransferMode | null | undefined>(undefined),
-			NumRetries: new FormControl<number | null | undefined>(undefined),
-			RestartDelay: new FormControl<number | null | undefined>(undefined),
+			NumRetries: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			RestartDelay: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(15)]),
 			Salt: new FormControl<string | null | undefined>(undefined),
 			Token: new FormControl<string | null | undefined>(undefined),
 		});
@@ -3901,10 +3901,10 @@ export namespace MyNS {
 	}
 	export function CreateHlsBasicPutSettingsFormGroup() {
 		return new FormGroup<HlsBasicPutSettingsFormProperties>({
-			ConnectionRetryInterval: new FormControl<number | null | undefined>(undefined),
-			FilecacheDuration: new FormControl<number | null | undefined>(undefined),
-			NumRetries: new FormControl<number | null | undefined>(undefined),
-			RestartDelay: new FormControl<number | null | undefined>(undefined),
+			ConnectionRetryInterval: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			FilecacheDuration: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(600)]),
+			NumRetries: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			RestartDelay: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(15)]),
 		});
 
 	}
@@ -3977,11 +3977,11 @@ export namespace MyNS {
 	}
 	export function CreateHlsMediaStoreSettingsFormGroup() {
 		return new FormGroup<HlsMediaStoreSettingsFormProperties>({
-			ConnectionRetryInterval: new FormControl<number | null | undefined>(undefined),
-			FilecacheDuration: new FormControl<number | null | undefined>(undefined),
+			ConnectionRetryInterval: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			FilecacheDuration: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(600)]),
 			MediaStoreStorageClass: new FormControl<HlsMediaStoreSettingsMediaStoreStorageClass | null | undefined>(undefined),
-			NumRetries: new FormControl<number | null | undefined>(undefined),
-			RestartDelay: new FormControl<number | null | undefined>(undefined),
+			NumRetries: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			RestartDelay: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(15)]),
 		});
 
 	}
@@ -4056,11 +4056,11 @@ export namespace MyNS {
 	}
 	export function CreateHlsWebdavSettingsFormGroup() {
 		return new FormGroup<HlsWebdavSettingsFormProperties>({
-			ConnectionRetryInterval: new FormControl<number | null | undefined>(undefined),
-			FilecacheDuration: new FormControl<number | null | undefined>(undefined),
+			ConnectionRetryInterval: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			FilecacheDuration: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(600)]),
 			HttpTransferMode: new FormControl<HlsAkamaiSettingsHttpTransferMode | null | undefined>(undefined),
-			NumRetries: new FormControl<number | null | undefined>(undefined),
-			RestartDelay: new FormControl<number | null | undefined>(undefined),
+			NumRetries: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			RestartDelay: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(15)]),
 		});
 
 	}
@@ -4119,7 +4119,7 @@ export namespace MyNS {
 	}
 	export function CreateStaticKeySettingsFormGroup() {
 		return new FormGroup<StaticKeySettingsFormProperties>({
-			StaticKeyValue: new FormControl<string | null | undefined>(undefined),
+			StaticKeyValue: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(32)]),
 		});
 
 	}
@@ -4323,17 +4323,17 @@ export namespace MyNS {
 			AcquisitionPointId: new FormControl<string | null | undefined>(undefined),
 			AudioOnlyTimecodeControl: new FormControl<MsSmoothGroupSettingsAudioOnlyTimecodeControl | null | undefined>(undefined),
 			CertificateMode: new FormControl<MsSmoothGroupSettingsCertificateMode | null | undefined>(undefined),
-			ConnectionRetryInterval: new FormControl<number | null | undefined>(undefined),
+			ConnectionRetryInterval: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			EventId: new FormControl<string | null | undefined>(undefined),
 			EventIdMode: new FormControl<MsSmoothGroupSettingsEventIdMode | null | undefined>(undefined),
 			EventStopBehavior: new FormControl<MsSmoothGroupSettingsEventStopBehavior | null | undefined>(undefined),
-			FilecacheDuration: new FormControl<number | null | undefined>(undefined),
-			FragmentLength: new FormControl<number | null | undefined>(undefined),
+			FilecacheDuration: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			FragmentLength: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			InputLossAction: new FormControl<HlsGroupSettingsInputLossAction | null | undefined>(undefined),
-			NumRetries: new FormControl<number | null | undefined>(undefined),
-			RestartDelay: new FormControl<number | null | undefined>(undefined),
+			NumRetries: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			RestartDelay: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			SegmentationMode: new FormControl<HlsGroupSettingsSegmentationMode | null | undefined>(undefined),
-			SendDelayMs: new FormControl<number | null | undefined>(undefined),
+			SendDelayMs: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(10000)]),
 			SparseTrackType: new FormControl<MsSmoothGroupSettingsSparseTrackType | null | undefined>(undefined),
 			StreamManifestBehavior: new FormControl<MsSmoothGroupSettingsStreamManifestBehavior | null | undefined>(undefined),
 			TimestampOffset: new FormControl<string | null | undefined>(undefined),
@@ -4430,10 +4430,10 @@ export namespace MyNS {
 		return new FormGroup<RtmpGroupSettingsFormProperties>({
 			AuthenticationScheme: new FormControl<RtmpGroupSettingsAuthenticationScheme | null | undefined>(undefined),
 			CacheFullBehavior: new FormControl<RtmpGroupSettingsCacheFullBehavior | null | undefined>(undefined),
-			CacheLength: new FormControl<number | null | undefined>(undefined),
+			CacheLength: new FormControl<number | null | undefined>(undefined, [Validators.min(30)]),
 			CaptionData: new FormControl<RtmpGroupSettingsCaptionData | null | undefined>(undefined),
 			InputLossAction: new FormControl<HlsGroupSettingsInputLossAction | null | undefined>(undefined),
-			RestartDelay: new FormControl<number | null | undefined>(undefined),
+			RestartDelay: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -4480,7 +4480,7 @@ export namespace MyNS {
 		return new FormGroup<UdpGroupSettingsFormProperties>({
 			InputLossAction: new FormControl<UdpGroupSettingsInputLossAction | null | undefined>(undefined),
 			TimedMetadataId3Frame: new FormControl<HlsGroupSettingsTimedMetadataId3Frame | null | undefined>(undefined),
-			TimedMetadataId3Period: new FormControl<number | null | undefined>(undefined),
+			TimedMetadataId3Period: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -4529,7 +4529,7 @@ export namespace MyNS {
 	}
 	export function CreateOutputFormGroup() {
 		return new FormGroup<OutputFormProperties>({
-			OutputName: new FormControl<string | null | undefined>(undefined),
+			OutputName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 			VideoDescriptionName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4972,17 +4972,17 @@ export namespace MyNS {
 			AribCaptionsPid: new FormControl<string | null | undefined>(undefined),
 			AribCaptionsPidControl: new FormControl<M2tsSettingsAribCaptionsPidControl | null | undefined>(undefined),
 			AudioBufferModel: new FormControl<M2tsSettingsAudioBufferModel | null | undefined>(undefined),
-			AudioFramesPerPes: new FormControl<number | null | undefined>(undefined),
+			AudioFramesPerPes: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			AudioPids: new FormControl<string | null | undefined>(undefined),
 			AudioStreamType: new FormControl<M2tsSettingsAudioBufferModel | null | undefined>(undefined),
-			Bitrate: new FormControl<number | null | undefined>(undefined),
+			Bitrate: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			BufferModel: new FormControl<M2tsSettingsBufferModel | null | undefined>(undefined),
 			CcDescriptor: new FormControl<Ac3SettingsLfeFilter | null | undefined>(undefined),
 			DvbSubPids: new FormControl<string | null | undefined>(undefined),
 			DvbTeletextPid: new FormControl<string | null | undefined>(undefined),
 			Ebif: new FormControl<M2tsSettingsEbif | null | undefined>(undefined),
 			EbpAudioInterval: new FormControl<M2tsSettingsEbpAudioInterval | null | undefined>(undefined),
-			EbpLookaheadMs: new FormControl<number | null | undefined>(undefined),
+			EbpLookaheadMs: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(10000)]),
 			EbpPlacement: new FormControl<M2tsSettingsEbpPlacement | null | undefined>(undefined),
 			EcmPid: new FormControl<string | null | undefined>(undefined),
 			EsRateInPes: new FormControl<HlsGroupSettingsIvInManifest | null | undefined>(undefined),
@@ -4993,13 +4993,13 @@ export namespace MyNS {
 			KlvDataPids: new FormControl<string | null | undefined>(undefined),
 			NielsenId3Behavior: new FormControl<M2tsSettingsNielsenId3Behavior | null | undefined>(undefined),
 			NullPacketBitrate: new FormControl<number | null | undefined>(undefined),
-			PatInterval: new FormControl<number | null | undefined>(undefined),
+			PatInterval: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 			PcrControl: new FormControl<M2tsSettingsPcrControl | null | undefined>(undefined),
-			PcrPeriod: new FormControl<number | null | undefined>(undefined),
+			PcrPeriod: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(500)]),
 			PcrPid: new FormControl<string | null | undefined>(undefined),
-			PmtInterval: new FormControl<number | null | undefined>(undefined),
+			PmtInterval: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 			PmtPid: new FormControl<string | null | undefined>(undefined),
-			ProgramNum: new FormControl<number | null | undefined>(undefined),
+			ProgramNum: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(65535)]),
 			RateMode: new FormControl<AacSettingsRateControlMode | null | undefined>(undefined),
 			Scte27Pids: new FormControl<string | null | undefined>(undefined),
 			Scte35Control: new FormControl<M2tsSettingsEbif | null | undefined>(undefined),
@@ -5009,7 +5009,7 @@ export namespace MyNS {
 			SegmentationTime: new FormControl<number | null | undefined>(undefined),
 			TimedMetadataBehavior: new FormControl<M2tsSettingsNielsenId3Behavior | null | undefined>(undefined),
 			TimedMetadataPid: new FormControl<string | null | undefined>(undefined),
-			TransportStreamId: new FormControl<number | null | undefined>(undefined),
+			TransportStreamId: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(65535)]),
 			VideoPid: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5079,9 +5079,9 @@ export namespace MyNS {
 	}
 	export function CreateDvbNitSettingsFormGroup() {
 		return new FormGroup<DvbNitSettingsFormProperties>({
-			NetworkId: new FormControl<number | null | undefined>(undefined),
-			NetworkName: new FormControl<string | null | undefined>(undefined),
-			RepInterval: new FormControl<number | null | undefined>(undefined),
+			NetworkId: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(65536)]),
+			NetworkName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			RepInterval: new FormControl<number | null | undefined>(undefined, [Validators.min(25), Validators.max(10000)]),
 		});
 
 	}
@@ -5145,9 +5145,9 @@ export namespace MyNS {
 	export function CreateDvbSdtSettingsFormGroup() {
 		return new FormGroup<DvbSdtSettingsFormProperties>({
 			OutputSdt: new FormControl<DvbSdtSettingsOutputSdt | null | undefined>(undefined),
-			RepInterval: new FormControl<number | null | undefined>(undefined),
-			ServiceName: new FormControl<string | null | undefined>(undefined),
-			ServiceProviderName: new FormControl<string | null | undefined>(undefined),
+			RepInterval: new FormControl<number | null | undefined>(undefined, [Validators.min(25), Validators.max(2000)]),
+			ServiceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ServiceProviderName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -5178,7 +5178,7 @@ export namespace MyNS {
 	}
 	export function CreateDvbTdtSettingsFormGroup() {
 		return new FormGroup<DvbTdtSettingsFormProperties>({
-			RepInterval: new FormControl<number | null | undefined>(undefined),
+			RepInterval: new FormControl<number | null | undefined>(undefined, [Validators.min(1000), Validators.max(30000)]),
 		});
 
 	}
@@ -5259,7 +5259,7 @@ export namespace MyNS {
 	export function CreateHlsOutputSettingsFormGroup() {
 		return new FormGroup<HlsOutputSettingsFormProperties>({
 			H265PackagingType: new FormControl<HlsOutputSettingsH265PackagingType | null | undefined>(undefined),
-			NameModifier: new FormControl<string | null | undefined>(undefined),
+			NameModifier: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			SegmentModifier: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5552,22 +5552,22 @@ export namespace MyNS {
 	}
 	export function CreateM3u8SettingsFormGroup() {
 		return new FormGroup<M3u8SettingsFormProperties>({
-			AudioFramesPerPes: new FormControl<number | null | undefined>(undefined),
+			AudioFramesPerPes: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			AudioPids: new FormControl<string | null | undefined>(undefined),
 			EcmPid: new FormControl<string | null | undefined>(undefined),
 			NielsenId3Behavior: new FormControl<M2tsSettingsNielsenId3Behavior | null | undefined>(undefined),
-			PatInterval: new FormControl<number | null | undefined>(undefined),
+			PatInterval: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 			PcrControl: new FormControl<M2tsSettingsPcrControl | null | undefined>(undefined),
-			PcrPeriod: new FormControl<number | null | undefined>(undefined),
+			PcrPeriod: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(500)]),
 			PcrPid: new FormControl<string | null | undefined>(undefined),
-			PmtInterval: new FormControl<number | null | undefined>(undefined),
+			PmtInterval: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 			PmtPid: new FormControl<string | null | undefined>(undefined),
-			ProgramNum: new FormControl<number | null | undefined>(undefined),
+			ProgramNum: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(65535)]),
 			Scte35Behavior: new FormControl<M2tsSettingsNielsenId3Behavior | null | undefined>(undefined),
 			Scte35Pid: new FormControl<string | null | undefined>(undefined),
 			TimedMetadataBehavior: new FormControl<M2tsSettingsNielsenId3Behavior | null | undefined>(undefined),
 			TimedMetadataPid: new FormControl<string | null | undefined>(undefined),
-			TransportStreamId: new FormControl<number | null | undefined>(undefined),
+			TransportStreamId: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(65535)]),
 			VideoPid: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5682,8 +5682,8 @@ export namespace MyNS {
 	export function CreateRtmpOutputSettingsFormGroup() {
 		return new FormGroup<RtmpOutputSettingsFormProperties>({
 			CertificateMode: new FormControl<MsSmoothGroupSettingsCertificateMode | null | undefined>(undefined),
-			ConnectionRetryInterval: new FormControl<number | null | undefined>(undefined),
-			NumRetries: new FormControl<number | null | undefined>(undefined),
+			ConnectionRetryInterval: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			NumRetries: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -5727,7 +5727,7 @@ export namespace MyNS {
 	}
 	export function CreateUdpOutputSettingsFormGroup() {
 		return new FormGroup<UdpOutputSettingsFormProperties>({
-			BufferMsec: new FormControl<number | null | undefined>(undefined),
+			BufferMsec: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(10000)]),
 		});
 
 	}
@@ -5793,9 +5793,9 @@ export namespace MyNS {
 	}
 	export function CreateFecOutputSettingsFormGroup() {
 		return new FormGroup<FecOutputSettingsFormProperties>({
-			ColumnDepth: new FormControl<number | null | undefined>(undefined),
+			ColumnDepth: new FormControl<number | null | undefined>(undefined, [Validators.min(4), Validators.max(20)]),
 			IncludeFec: new FormControl<FecOutputSettingsIncludeFec | null | undefined>(undefined),
-			RowLength: new FormControl<number | null | undefined>(undefined),
+			RowLength: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(20)]),
 		});
 
 	}
@@ -5838,8 +5838,8 @@ export namespace MyNS {
 	}
 	export function CreateTimecodeConfigFormGroup() {
 		return new FormGroup<TimecodeConfigFormProperties>({
-			Source: new FormControl<TimecodeConfigSource | null | undefined>(undefined),
-			SyncThreshold: new FormControl<number | null | undefined>(undefined),
+			Source: new FormControl<TimecodeConfigSource | null | undefined>(undefined, [Validators.required]),
+			SyncThreshold: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000000)]),
 		});
 
 	}
@@ -5910,10 +5910,10 @@ export namespace MyNS {
 	export function CreateVideoDescriptionFormGroup() {
 		return new FormGroup<VideoDescriptionFormProperties>({
 			Height: new FormControl<number | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RespondToAfd: new FormControl<VideoDescriptionRespondToAfd | null | undefined>(undefined),
 			ScalingBehavior: new FormControl<VideoDescriptionScalingBehavior | null | undefined>(undefined),
-			Sharpness: new FormControl<number | null | undefined>(undefined),
+			Sharpness: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			Width: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -5974,7 +5974,7 @@ export namespace MyNS {
 	}
 	export function CreateFrameCaptureSettingsFormGroup() {
 		return new FormGroup<FrameCaptureSettingsFormProperties>({
-			CaptureInterval: new FormControl<number | null | undefined>(undefined),
+			CaptureInterval: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(3600000)]),
 			CaptureIntervalUnits: new FormControl<FrameCaptureSettingsCaptureIntervalUnits | null | undefined>(undefined),
 		});
 
@@ -6332,38 +6332,38 @@ export namespace MyNS {
 		return new FormGroup<H264SettingsFormProperties>({
 			AdaptiveQuantization: new FormControl<H264SettingsAdaptiveQuantization | null | undefined>(undefined),
 			AfdSignaling: new FormControl<H264SettingsAfdSignaling | null | undefined>(undefined),
-			Bitrate: new FormControl<number | null | undefined>(undefined),
-			BufFillPct: new FormControl<number | null | undefined>(undefined),
-			BufSize: new FormControl<number | null | undefined>(undefined),
+			Bitrate: new FormControl<number | null | undefined>(undefined, [Validators.min(1000)]),
+			BufFillPct: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			BufSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			ColorMetadata: new FormControl<H264SettingsColorMetadata | null | undefined>(undefined),
 			EntropyEncoding: new FormControl<H264SettingsEntropyEncoding | null | undefined>(undefined),
 			FixedAfd: new FormControl<H264SettingsFixedAfd | null | undefined>(undefined),
 			FlickerAq: new FormControl<Ac3SettingsLfeFilter | null | undefined>(undefined),
 			ForceFieldPictures: new FormControl<Ac3SettingsLfeFilter | null | undefined>(undefined),
 			FramerateControl: new FormControl<H264SettingsFramerateControl | null | undefined>(undefined),
-			FramerateDenominator: new FormControl<number | null | undefined>(undefined),
-			FramerateNumerator: new FormControl<number | null | undefined>(undefined),
+			FramerateDenominator: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			FramerateNumerator: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			GopBReference: new FormControl<Ac3SettingsLfeFilter | null | undefined>(undefined),
-			GopClosedCadence: new FormControl<number | null | undefined>(undefined),
-			GopNumBFrames: new FormControl<number | null | undefined>(undefined),
+			GopClosedCadence: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			GopNumBFrames: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(7)]),
 			GopSize: new FormControl<number | null | undefined>(undefined),
 			GopSizeUnits: new FormControl<H264SettingsGopSizeUnits | null | undefined>(undefined),
 			Level: new FormControl<H264SettingsLevel | null | undefined>(undefined),
 			LookAheadRateControl: new FormControl<H264SettingsLookAheadRateControl | null | undefined>(undefined),
-			MaxBitrate: new FormControl<number | null | undefined>(undefined),
-			MinIInterval: new FormControl<number | null | undefined>(undefined),
-			NumRefFrames: new FormControl<number | null | undefined>(undefined),
+			MaxBitrate: new FormControl<number | null | undefined>(undefined, [Validators.min(1000)]),
+			MinIInterval: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(30)]),
+			NumRefFrames: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(6)]),
 			ParControl: new FormControl<H264SettingsFramerateControl | null | undefined>(undefined),
-			ParDenominator: new FormControl<number | null | undefined>(undefined),
+			ParDenominator: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			ParNumerator: new FormControl<number | null | undefined>(undefined),
 			Profile: new FormControl<H264SettingsProfile | null | undefined>(undefined),
 			QualityLevel: new FormControl<H264SettingsQualityLevel | null | undefined>(undefined),
-			QvbrQualityLevel: new FormControl<number | null | undefined>(undefined),
+			QvbrQualityLevel: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10)]),
 			RateControlMode: new FormControl<H264SettingsRateControlMode | null | undefined>(undefined),
 			ScanType: new FormControl<H264SettingsScanType | null | undefined>(undefined),
 			SceneChangeDetect: new FormControl<Ac3SettingsLfeFilter | null | undefined>(undefined),
-			Slices: new FormControl<number | null | undefined>(undefined),
-			Softness: new FormControl<number | null | undefined>(undefined),
+			Slices: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(32)]),
+			Softness: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(128)]),
 			SpatialAq: new FormControl<Ac3SettingsLfeFilter | null | undefined>(undefined),
 			SubgopLength: new FormControl<H264SettingsSubgopLength | null | undefined>(undefined),
 			Syntax: new FormControl<H264SettingsSyntax | null | undefined>(undefined),
@@ -6781,28 +6781,28 @@ export namespace MyNS {
 			AdaptiveQuantization: new FormControl<H264SettingsAdaptiveQuantization | null | undefined>(undefined),
 			AfdSignaling: new FormControl<H264SettingsAfdSignaling | null | undefined>(undefined),
 			AlternativeTransferFunction: new FormControl<H265SettingsAlternativeTransferFunction | null | undefined>(undefined),
-			Bitrate: new FormControl<number | null | undefined>(undefined),
-			BufSize: new FormControl<number | null | undefined>(undefined),
+			Bitrate: new FormControl<number | null | undefined>(undefined, [Validators.min(100000), Validators.max(40000000)]),
+			BufSize: new FormControl<number | null | undefined>(undefined, [Validators.min(100000), Validators.max(80000000)]),
 			ColorMetadata: new FormControl<H264SettingsColorMetadata | null | undefined>(undefined),
 			FixedAfd: new FormControl<H264SettingsFixedAfd | null | undefined>(undefined),
 			FlickerAq: new FormControl<Ac3SettingsLfeFilter | null | undefined>(undefined),
-			FramerateDenominator: new FormControl<number | null | undefined>(undefined),
-			FramerateNumerator: new FormControl<number | null | undefined>(undefined),
-			GopClosedCadence: new FormControl<number | null | undefined>(undefined),
+			FramerateDenominator: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(3003)]),
+			FramerateNumerator: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
+			GopClosedCadence: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			GopSize: new FormControl<number | null | undefined>(undefined),
 			GopSizeUnits: new FormControl<H264SettingsGopSizeUnits | null | undefined>(undefined),
 			Level: new FormControl<H265SettingsLevel | null | undefined>(undefined),
 			LookAheadRateControl: new FormControl<H264SettingsLookAheadRateControl | null | undefined>(undefined),
-			MaxBitrate: new FormControl<number | null | undefined>(undefined),
-			MinIInterval: new FormControl<number | null | undefined>(undefined),
-			ParDenominator: new FormControl<number | null | undefined>(undefined),
-			ParNumerator: new FormControl<number | null | undefined>(undefined),
+			MaxBitrate: new FormControl<number | null | undefined>(undefined, [Validators.min(100000), Validators.max(40000000)]),
+			MinIInterval: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(30)]),
+			ParDenominator: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			ParNumerator: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			Profile: new FormControl<H265SettingsProfile | null | undefined>(undefined),
-			QvbrQualityLevel: new FormControl<number | null | undefined>(undefined),
+			QvbrQualityLevel: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10)]),
 			RateControlMode: new FormControl<H265SettingsRateControlMode | null | undefined>(undefined),
 			ScanType: new FormControl<H265SettingsScanType | null | undefined>(undefined),
 			SceneChangeDetect: new FormControl<Ac3SettingsLfeFilter | null | undefined>(undefined),
-			Slices: new FormControl<number | null | undefined>(undefined),
+			Slices: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(16)]),
 			Tier: new FormControl<H265SettingsTier | null | undefined>(undefined),
 			TimecodeInsertion: new FormControl<H264SettingsTimecodeInsertion | null | undefined>(undefined),
 		});
@@ -6875,8 +6875,8 @@ export namespace MyNS {
 	}
 	export function CreateHdr10SettingsFormGroup() {
 		return new FormGroup<Hdr10SettingsFormProperties>({
-			MaxCll: new FormControl<number | null | undefined>(undefined),
-			MaxFall: new FormControl<number | null | undefined>(undefined),
+			MaxCll: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(32768)]),
+			MaxFall: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(32768)]),
 		});
 
 	}
@@ -6966,7 +6966,7 @@ export namespace MyNS {
 	export function CreateAutomaticInputFailoverSettingsFormGroup() {
 		return new FormGroup<AutomaticInputFailoverSettingsFormProperties>({
 			InputPreference: new FormControl<AutomaticInputFailoverSettingsInputPreference | null | undefined>(undefined),
-			SecondaryInputId: new FormControl<string | null | undefined>(undefined),
+			SecondaryInputId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7041,7 +7041,7 @@ export namespace MyNS {
 		return new FormGroup<InputSettingsFormProperties>({
 			DeblockFilter: new FormControl<Ac3SettingsLfeFilter | null | undefined>(undefined),
 			DenoiseFilter: new FormControl<Ac3SettingsLfeFilter | null | undefined>(undefined),
-			FilterStrength: new FormControl<number | null | undefined>(undefined),
+			FilterStrength: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(5)]),
 			InputFilter: new FormControl<InputSettingsInputFilter | null | undefined>(undefined),
 			Smpte2038DataPreference: new FormControl<InputSettingsSmpte2038DataPreference | null | undefined>(undefined),
 			SourceEndBehavior: new FormControl<InputSettingsSourceEndBehavior | null | undefined>(undefined),
@@ -7076,7 +7076,7 @@ export namespace MyNS {
 	}
 	export function CreateAudioSelectorFormGroup() {
 		return new FormGroup<AudioSelectorFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -7132,7 +7132,7 @@ export namespace MyNS {
 	}
 	export function CreateAudioLanguageSelectionFormGroup() {
 		return new FormGroup<AudioLanguageSelectionFormProperties>({
-			LanguageCode: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			LanguageSelectionPolicy: new FormControl<AudioLanguageSelectionLanguageSelectionPolicy | null | undefined>(undefined),
 		});
 
@@ -7166,7 +7166,7 @@ export namespace MyNS {
 	}
 	export function CreateAudioPidSelectionFormGroup() {
 		return new FormGroup<AudioPidSelectionFormProperties>({
-			Pid: new FormControl<number | null | undefined>(undefined),
+			Pid: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(8191)]),
 		});
 
 	}
@@ -7215,7 +7215,7 @@ export namespace MyNS {
 	}
 	export function CreateAudioTrackFormGroup() {
 		return new FormGroup<AudioTrackFormProperties>({
-			Track: new FormControl<number | null | undefined>(undefined),
+			Track: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 		});
 
 	}
@@ -7254,7 +7254,7 @@ export namespace MyNS {
 	export function CreateCaptionSelectorFormGroup() {
 		return new FormGroup<CaptionSelectorFormProperties>({
 			LanguageCode: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -7327,7 +7327,7 @@ export namespace MyNS {
 	}
 	export function CreateDvbSubSourceSettingsFormGroup() {
 		return new FormGroup<DvbSubSourceSettingsFormProperties>({
-			Pid: new FormControl<number | null | undefined>(undefined),
+			Pid: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -7384,8 +7384,8 @@ export namespace MyNS {
 		return new FormGroup<EmbeddedSourceSettingsFormProperties>({
 			Convert608To708: new FormControl<EmbeddedSourceSettingsConvert608To708 | null | undefined>(undefined),
 			Scte20Detection: new FormControl<EmbeddedSourceSettingsScte20Detection | null | undefined>(undefined),
-			Source608ChannelNumber: new FormControl<number | null | undefined>(undefined),
-			Source608TrackNumber: new FormControl<number | null | undefined>(undefined),
+			Source608ChannelNumber: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(4)]),
+			Source608TrackNumber: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(5)]),
 		});
 
 	}
@@ -7425,7 +7425,7 @@ export namespace MyNS {
 	export function CreateScte20SourceSettingsFormGroup() {
 		return new FormGroup<Scte20SourceSettingsFormProperties>({
 			Convert608To708: new FormControl<EmbeddedSourceSettingsConvert608To708 | null | undefined>(undefined),
-			Source608ChannelNumber: new FormControl<number | null | undefined>(undefined),
+			Source608ChannelNumber: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(4)]),
 		});
 
 	}
@@ -7452,7 +7452,7 @@ export namespace MyNS {
 	}
 	export function CreateScte27SourceSettingsFormGroup() {
 		return new FormGroup<Scte27SourceSettingsFormProperties>({
-			Pid: new FormControl<number | null | undefined>(undefined),
+			Pid: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -7562,10 +7562,10 @@ export namespace MyNS {
 	}
 	export function CreateHlsInputSettingsFormGroup() {
 		return new FormGroup<HlsInputSettingsFormProperties>({
-			Bandwidth: new FormControl<number | null | undefined>(undefined),
-			BufferSegments: new FormControl<number | null | undefined>(undefined),
-			Retries: new FormControl<number | null | undefined>(undefined),
-			RetryInterval: new FormControl<number | null | undefined>(undefined),
+			Bandwidth: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			BufferSegments: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			Retries: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			RetryInterval: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -7655,7 +7655,7 @@ export namespace MyNS {
 	}
 	export function CreateVideoSelectorPidFormGroup() {
 		return new FormGroup<VideoSelectorPidFormProperties>({
-			Pid: new FormControl<number | null | undefined>(undefined),
+			Pid: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(8191)]),
 		});
 
 	}
@@ -7684,7 +7684,7 @@ export namespace MyNS {
 	}
 	export function CreateVideoSelectorProgramIdFormGroup() {
 		return new FormGroup<VideoSelectorProgramIdFormProperties>({
-			ProgramId: new FormControl<number | null | undefined>(undefined),
+			ProgramId: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(65536)]),
 		});
 
 	}
@@ -8382,7 +8382,7 @@ export namespace MyNS {
 	}
 	export function CreateMultiplexMediaConnectOutputDestinationSettingsFormGroup() {
 		return new FormGroup<MultiplexMediaConnectOutputDestinationSettingsFormProperties>({
-			EntitlementArn: new FormControl<string | null | undefined>(undefined),
+			EntitlementArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -8457,10 +8457,10 @@ export namespace MyNS {
 	}
 	export function CreateMultiplexSettingsFormGroup() {
 		return new FormGroup<MultiplexSettingsFormProperties>({
-			MaximumVideoBufferDelayMilliseconds: new FormControl<number | null | undefined>(undefined),
-			TransportStreamBitrate: new FormControl<number | null | undefined>(undefined),
-			TransportStreamId: new FormControl<number | null | undefined>(undefined),
-			TransportStreamReservedBitrate: new FormControl<number | null | undefined>(undefined),
+			MaximumVideoBufferDelayMilliseconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1000), Validators.max(3000)]),
+			TransportStreamBitrate: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1000000), Validators.max(100000000)]),
+			TransportStreamId: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(65535)]),
+			TransportStreamReservedBitrate: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100000000)]),
 		});
 
 	}
@@ -8569,7 +8569,7 @@ export namespace MyNS {
 	export function CreateMultiplexProgramSettingsFormGroup() {
 		return new FormGroup<MultiplexProgramSettingsFormProperties>({
 			PreferredChannelPipeline: new FormControl<MultiplexProgramSettingsPreferredChannelPipeline | null | undefined>(undefined),
-			ProgramNumber: new FormControl<number | null | undefined>(undefined),
+			ProgramNumber: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(65535)]),
 		});
 
 	}
@@ -8614,8 +8614,8 @@ export namespace MyNS {
 	}
 	export function CreateMultiplexProgramServiceDescriptorFormGroup() {
 		return new FormGroup<MultiplexProgramServiceDescriptorFormProperties>({
-			ProviderName: new FormControl<string | null | undefined>(undefined),
-			ServiceName: new FormControl<string | null | undefined>(undefined),
+			ProviderName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			ServiceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
@@ -8647,7 +8647,7 @@ export namespace MyNS {
 	}
 	export function CreateMultiplexVideoSettingsFormGroup() {
 		return new FormGroup<MultiplexVideoSettingsFormProperties>({
-			ConstantBitrate: new FormControl<number | null | undefined>(undefined),
+			ConstantBitrate: new FormControl<number | null | undefined>(undefined, [Validators.min(100000), Validators.max(100000000)]),
 		});
 
 	}
@@ -8690,8 +8690,8 @@ export namespace MyNS {
 	}
 	export function CreateMultiplexStatmuxVideoSettingsFormGroup() {
 		return new FormGroup<MultiplexStatmuxVideoSettingsFormProperties>({
-			MaximumBitrate: new FormControl<number | null | undefined>(undefined),
-			MinimumBitrate: new FormControl<number | null | undefined>(undefined),
+			MaximumBitrate: new FormControl<number | null | undefined>(undefined, [Validators.min(100000), Validators.max(100000000)]),
+			MinimumBitrate: new FormControl<number | null | undefined>(undefined, [Validators.min(100000), Validators.max(100000000)]),
 		});
 
 	}
@@ -10460,7 +10460,7 @@ export namespace MyNS {
 	}
 	export function CreateMultiplexSettingsSummaryFormGroup() {
 		return new FormGroup<MultiplexSettingsSummaryFormProperties>({
-			TransportStreamBitrate: new FormControl<number | null | undefined>(undefined),
+			TransportStreamBitrate: new FormControl<number | null | undefined>(undefined, [Validators.min(1000000), Validators.max(100000000)]),
 		});
 
 	}
@@ -11732,8 +11732,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateMultiplexProgramRequestFormGroup() {
 		return new FormGroup<CreateMultiplexProgramRequestFormProperties>({
-			ProgramName: new FormControl<string | null | undefined>(undefined),
-			RequestId: new FormControl<string | null | undefined>(undefined),
+			ProgramName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -11787,8 +11787,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateMultiplexRequestFormGroup() {
 		return new FormGroup<CreateMultiplexRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			RequestId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -12839,7 +12839,7 @@ export namespace MyNS {
 	}
 	export function CreatePurchaseOfferingRequestFormGroup() {
 		return new FormGroup<PurchaseOfferingRequestFormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 			Name: new FormControl<string | null | undefined>(undefined),
 			RequestId: new FormControl<string | null | undefined>(undefined),
 			Start: new FormControl<string | null | undefined>(undefined),
@@ -13026,7 +13026,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateChannelClassRequestFormGroup() {
 		return new FormGroup<UpdateChannelClassRequestFormProperties>({
-			ChannelClass: new FormControl<ChannelChannelClass | null | undefined>(undefined),
+			ChannelClass: new FormControl<ChannelChannelClass | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -14063,8 +14063,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateMultiplexPostBodyFormGroup() {
 		return new FormGroup<CreateMultiplexPostBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			requestId: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -14132,10 +14132,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateMultiplexPostBodyMultiplexSettingsFormGroup() {
 		return new FormGroup<CreateMultiplexPostBodyMultiplexSettingsFormProperties>({
-			MaximumVideoBufferDelayMilliseconds: new FormControl<number | null | undefined>(undefined),
-			TransportStreamBitrate: new FormControl<number | null | undefined>(undefined),
-			TransportStreamId: new FormControl<number | null | undefined>(undefined),
-			TransportStreamReservedBitrate: new FormControl<number | null | undefined>(undefined),
+			MaximumVideoBufferDelayMilliseconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1000), Validators.max(3000)]),
+			TransportStreamBitrate: new FormControl<number | null | undefined>(undefined, [Validators.min(1000000), Validators.max(100000000)]),
+			TransportStreamId: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(65535)]),
+			TransportStreamReservedBitrate: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100000000)]),
 		});
 
 	}
@@ -14176,8 +14176,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateMultiplexProgramPostBodyFormGroup() {
 		return new FormGroup<CreateMultiplexProgramPostBodyFormProperties>({
-			programName: new FormControl<string | null | undefined>(undefined),
-			requestId: new FormControl<string | null | undefined>(undefined),
+			programName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -14227,7 +14227,7 @@ export namespace MyNS {
 	export function CreateCreateMultiplexProgramPostBodyMultiplexProgramSettingsFormGroup() {
 		return new FormGroup<CreateMultiplexProgramPostBodyMultiplexProgramSettingsFormProperties>({
 			PreferredChannelPipeline: new FormControl<MultiplexProgramSettingsPreferredChannelPipeline | null | undefined>(undefined),
-			ProgramNumber: new FormControl<number | null | undefined>(undefined),
+			ProgramNumber: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(65535)]),
 		});
 
 	}
@@ -14508,10 +14508,10 @@ export namespace MyNS {
 	}
 	export function CreateUpdateMultiplexPutBodyMultiplexSettingsFormGroup() {
 		return new FormGroup<UpdateMultiplexPutBodyMultiplexSettingsFormProperties>({
-			MaximumVideoBufferDelayMilliseconds: new FormControl<number | null | undefined>(undefined),
-			TransportStreamBitrate: new FormControl<number | null | undefined>(undefined),
-			TransportStreamId: new FormControl<number | null | undefined>(undefined),
-			TransportStreamReservedBitrate: new FormControl<number | null | undefined>(undefined),
+			MaximumVideoBufferDelayMilliseconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1000), Validators.max(3000)]),
+			TransportStreamBitrate: new FormControl<number | null | undefined>(undefined, [Validators.min(1000000), Validators.max(100000000)]),
+			TransportStreamId: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(65535)]),
+			TransportStreamReservedBitrate: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100000000)]),
 		});
 
 	}
@@ -14574,7 +14574,7 @@ export namespace MyNS {
 	export function CreateUpdateMultiplexProgramPutBodyMultiplexProgramSettingsFormGroup() {
 		return new FormGroup<UpdateMultiplexProgramPutBodyMultiplexProgramSettingsFormProperties>({
 			PreferredChannelPipeline: new FormControl<MultiplexProgramSettingsPreferredChannelPipeline | null | undefined>(undefined),
-			ProgramNumber: new FormControl<number | null | undefined>(undefined),
+			ProgramNumber: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(65535)]),
 		});
 
 	}
@@ -14684,7 +14684,7 @@ export namespace MyNS {
 	}
 	export function CreatePurchaseOfferingPostBodyFormGroup() {
 		return new FormGroup<PurchaseOfferingPostBodyFormProperties>({
-			count: new FormControl<number | null | undefined>(undefined),
+			count: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 			name: new FormControl<string | null | undefined>(undefined),
 			requestId: new FormControl<string | null | undefined>(undefined),
 			start: new FormControl<string | null | undefined>(undefined),
@@ -14714,7 +14714,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateChannelClassPutBodyFormGroup() {
 		return new FormGroup<UpdateChannelClassPutBodyFormProperties>({
-			channelClass: new FormControl<ChannelChannelClass | null | undefined>(undefined),
+			channelClass: new FormControl<ChannelChannelClass | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

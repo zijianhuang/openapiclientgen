@@ -22,6 +22,12 @@ export namespace MyNS {
 
 	/** An object that represents a service mesh returned by a describe operation. */
 	export interface MeshData {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		meshName: string;
 
 		/**
@@ -45,11 +51,17 @@ export namespace MyNS {
 
 	/** An object that represents a service mesh returned by a describe operation. */
 	export interface MeshDataFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		meshName: FormControl<string | null | undefined>,
 	}
 	export function CreateMeshDataFormGroup() {
 		return new FormGroup<MeshDataFormProperties>({
-			meshName: new FormControl<string | null | undefined>(undefined),
+			meshName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -57,34 +69,78 @@ export namespace MyNS {
 
 	/** An object that represents metadata for a resource. */
 	export interface ResourceMetadata {
+
+		/** Required */
 		arn: string;
+
+		/** Required */
 		createdAt: Date;
+
+		/** Required */
 		lastUpdatedAt: Date;
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		meshOwner: string;
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		resourceOwner: string;
+
+		/** Required */
 		uid: string;
+
+		/** Required */
 		version: number;
 	}
 
 	/** An object that represents metadata for a resource. */
 	export interface ResourceMetadataFormProperties {
+
+		/** Required */
 		arn: FormControl<string | null | undefined>,
+
+		/** Required */
 		createdAt: FormControl<Date | null | undefined>,
+
+		/** Required */
 		lastUpdatedAt: FormControl<Date | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		meshOwner: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		resourceOwner: FormControl<string | null | undefined>,
+
+		/** Required */
 		uid: FormControl<string | null | undefined>,
+
+		/** Required */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateResourceMetadataFormGroup() {
 		return new FormGroup<ResourceMetadataFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			createdAt: new FormControl<Date | null | undefined>(undefined),
-			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
-			meshOwner: new FormControl<string | null | undefined>(undefined),
-			resourceOwner: new FormControl<string | null | undefined>(undefined),
-			uid: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<number | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			meshOwner: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
+			resourceOwner: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
+			uid: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			version: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -109,16 +165,20 @@ export namespace MyNS {
 
 	/** An object that represents the egress filter rules for a service mesh. */
 	export interface EgressFilter {
+
+		/** Required */
 		type: EgressFilterType;
 	}
 
 	/** An object that represents the egress filter rules for a service mesh. */
 	export interface EgressFilterFormProperties {
+
+		/** Required */
 		type: FormControl<EgressFilterType | null | undefined>,
 	}
 	export function CreateEgressFilterFormGroup() {
 		return new FormGroup<EgressFilterFormProperties>({
-			type: new FormControl<EgressFilterType | null | undefined>(undefined),
+			type: new FormControl<EgressFilterType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -152,7 +212,18 @@ export namespace MyNS {
 	 *             a maximum length of 256 characters.
 	 */
 	export interface TagRef {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		key: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		value?: string | null;
 	}
 
@@ -163,13 +234,24 @@ export namespace MyNS {
 	 *             a maximum length of 256 characters.
 	 */
 	export interface TagRefFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagRefFormGroup() {
 		return new FormGroup<TagRefFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -273,6 +355,12 @@ export namespace MyNS {
 
 	/** An object that represents a route returned by a describe operation. */
 	export interface RouteData {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		meshName: string;
 
 		/**
@@ -280,6 +368,12 @@ export namespace MyNS {
 		 * Required
 		 */
 		metadata: ResourceMetadata;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		routeName: string;
 
 		/**
@@ -293,20 +387,44 @@ export namespace MyNS {
 		 * Required
 		 */
 		status: RouteStatus;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		virtualRouterName: string;
 	}
 
 	/** An object that represents a route returned by a describe operation. */
 	export interface RouteDataFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		meshName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		routeName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		virtualRouterName: FormControl<string | null | undefined>,
 	}
 	export function CreateRouteDataFormGroup() {
 		return new FormGroup<RouteDataFormProperties>({
-			meshName: new FormControl<string | null | undefined>(undefined),
-			routeName: new FormControl<string | null | undefined>(undefined),
-			virtualRouterName: new FormControl<string | null | undefined>(undefined),
+			meshName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			routeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			virtualRouterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -323,6 +441,11 @@ export namespace MyNS {
 
 		/** An object that represents an HTTP or HTTP/2 route type. */
 		httpRoute?: HttpRoute;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		priority?: number | null;
 
 		/** An object that represents a TCP route type. */
@@ -331,11 +454,16 @@ export namespace MyNS {
 
 	/** An object that represents a route specification. Specify one route type. */
 	export interface RouteSpecFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		priority: FormControl<number | null | undefined>,
 	}
 	export function CreateRouteSpecFormGroup() {
 		return new FormGroup<RouteSpecFormProperties>({
-			priority: new FormControl<number | null | undefined>(undefined),
+			priority: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 		});
 
 	}
@@ -372,6 +500,12 @@ export namespace MyNS {
 
 	/** An object that represents the action to take if a match is determined. */
 	export interface GrpcRouteAction {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		weightedTargets: Array<WeightedTarget>;
 	}
 
@@ -392,7 +526,19 @@ export namespace MyNS {
 	 *          10. The total weight for all targets combined must be less than or equal to 100.
 	 */
 	export interface WeightedTarget {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		virtualNode: string;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		weight: number;
 	}
 
@@ -403,13 +549,25 @@ export namespace MyNS {
 	 *          10. The total weight for all targets combined must be less than or equal to 100.
 	 */
 	export interface WeightedTargetFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		virtualNode: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateWeightedTargetFormGroup() {
 		return new FormGroup<WeightedTargetFormProperties>({
-			virtualNode: new FormControl<string | null | undefined>(undefined),
-			weight: new FormControl<number | null | undefined>(undefined),
+			virtualNode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			weight: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -417,19 +575,34 @@ export namespace MyNS {
 
 	/** An object that represents the criteria for determining a request match. */
 	export interface GrpcRouteMatch {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		metadata?: Array<GrpcRouteMetadata>;
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		methodName?: string | null;
 		serviceName?: string | null;
 	}
 
 	/** An object that represents the criteria for determining a request match. */
 	export interface GrpcRouteMatchFormProperties {
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		methodName: FormControl<string | null | undefined>,
 		serviceName: FormControl<string | null | undefined>,
 	}
 	export function CreateGrpcRouteMatchFormGroup() {
 		return new FormGroup<GrpcRouteMatchFormProperties>({
-			methodName: new FormControl<string | null | undefined>(undefined),
+			methodName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
 			serviceName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -442,18 +615,30 @@ export namespace MyNS {
 
 		/** An object that represents the match method. Specify one of the match values. */
 		match?: GrpcRouteMetadataMatchMethod;
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		name: string;
 	}
 
 	/** An object that represents the match metadata for the route. */
 	export interface GrpcRouteMetadataFormProperties {
 		invert: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateGrpcRouteMetadataFormGroup() {
 		return new FormGroup<GrpcRouteMetadataFormProperties>({
 			invert: new FormControl<boolean | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
 		});
 
 	}
@@ -461,28 +646,68 @@ export namespace MyNS {
 
 	/** An object that represents the match method. Specify one of the match values. */
 	export interface GrpcRouteMetadataMatchMethod {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		exact?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		prefix?: string | null;
 
 		/** An object that represents the range of values to match on. The first character of the range is included in the range, though the last character is not. For example, if the range specified were 1-100, only values 1-99 would be matched. */
 		range?: MatchRange;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		regex?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		suffix?: string | null;
 	}
 
 	/** An object that represents the match method. Specify one of the match values. */
 	export interface GrpcRouteMetadataMatchMethodFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		exact: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		prefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		regex: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		suffix: FormControl<string | null | undefined>,
 	}
 	export function CreateGrpcRouteMetadataMatchMethodFormGroup() {
 		return new FormGroup<GrpcRouteMetadataMatchMethodFormProperties>({
-			exact: new FormControl<string | null | undefined>(undefined),
-			prefix: new FormControl<string | null | undefined>(undefined),
-			regex: new FormControl<string | null | undefined>(undefined),
-			suffix: new FormControl<string | null | undefined>(undefined),
+			exact: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			regex: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			suffix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -490,19 +715,27 @@ export namespace MyNS {
 
 	/** An object that represents the range of values to match on. The first character of the range is included in the range, though the last character is not. For example, if the range specified were 1-100, only values 1-99 would be matched. */
 	export interface MatchRange {
+
+		/** Required */
 		end: number;
+
+		/** Required */
 		start: number;
 	}
 
 	/** An object that represents the range of values to match on. The first character of the range is included in the range, though the last character is not. For example, if the range specified were 1-100, only values 1-99 would be matched. */
 	export interface MatchRangeFormProperties {
+
+		/** Required */
 		end: FormControl<number | null | undefined>,
+
+		/** Required */
 		start: FormControl<number | null | undefined>,
 	}
 	export function CreateMatchRangeFormGroup() {
 		return new FormGroup<MatchRangeFormProperties>({
-			end: new FormControl<number | null | undefined>(undefined),
-			start: new FormControl<number | null | undefined>(undefined),
+			end: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			start: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -510,8 +743,23 @@ export namespace MyNS {
 
 	/** An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>. */
 	export interface GrpcRetryPolicy {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 5
+		 */
 		grpcRetryEvents?: Array<GrpcRetryPolicyEvent>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 25
+		 */
 		httpRetryEvents?: Array<string>;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		maxRetries: number;
 
 		/**
@@ -519,16 +767,26 @@ export namespace MyNS {
 		 * Required
 		 */
 		perRetryTimeout: Duration;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 1
+		 */
 		tcpRetryEvents?: Array<TcpRetryPolicyEvent>;
 	}
 
 	/** An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>. */
 	export interface GrpcRetryPolicyFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		maxRetries: FormControl<number | null | undefined>,
 	}
 	export function CreateGrpcRetryPolicyFormGroup() {
 		return new FormGroup<GrpcRetryPolicyFormProperties>({
-			maxRetries: new FormControl<number | null | undefined>(undefined),
+			maxRetries: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 		});
 
 	}
@@ -539,18 +797,22 @@ export namespace MyNS {
 	/** An object that represents a duration of time. */
 	export interface Duration {
 		unit?: DurationUnit | null;
+
+		/** Minimum: 0 */
 		value?: number | null;
 	}
 
 	/** An object that represents a duration of time. */
 	export interface DurationFormProperties {
 		unit: FormControl<DurationUnit | null | undefined>,
+
+		/** Minimum: 0 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateDurationFormGroup() {
 		return new FormGroup<DurationFormProperties>({
 			unit: new FormControl<DurationUnit | null | undefined>(undefined),
-			value: new FormControl<number | null | undefined>(undefined),
+			value: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -592,6 +854,12 @@ export namespace MyNS {
 
 	/** An object that represents the action to take if a match is determined. */
 	export interface HttpRouteAction {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		weightedTargets: Array<WeightedTarget>;
 	}
 
@@ -610,8 +878,15 @@ export namespace MyNS {
 	 *          virtual router.
 	 */
 	export interface HttpRouteMatch {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		headers?: Array<HttpRouteHeader>;
 		method?: HttpRouteMatchMethod | null;
+
+		/** Required */
 		prefix: string;
 		scheme?: HttpRouteMatchScheme | null;
 	}
@@ -622,13 +897,15 @@ export namespace MyNS {
 	 */
 	export interface HttpRouteMatchFormProperties {
 		method: FormControl<HttpRouteMatchMethod | null | undefined>,
+
+		/** Required */
 		prefix: FormControl<string | null | undefined>,
 		scheme: FormControl<HttpRouteMatchScheme | null | undefined>,
 	}
 	export function CreateHttpRouteMatchFormGroup() {
 		return new FormGroup<HttpRouteMatchFormProperties>({
 			method: new FormControl<HttpRouteMatchMethod | null | undefined>(undefined),
-			prefix: new FormControl<string | null | undefined>(undefined),
+			prefix: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			scheme: new FormControl<HttpRouteMatchScheme | null | undefined>(undefined),
 		});
 
@@ -644,18 +921,30 @@ export namespace MyNS {
 		 * request. Specify one match method.
 		 */
 		match?: HeaderMatchMethod;
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		name: string;
 	}
 
 	/** An object that represents the HTTP header in the request. */
 	export interface HttpRouteHeaderFormProperties {
 		invert: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateHttpRouteHeaderFormGroup() {
 		return new FormGroup<HttpRouteHeaderFormProperties>({
 			invert: new FormControl<boolean | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
 		});
 
 	}
@@ -666,12 +955,32 @@ export namespace MyNS {
 	 *          request. Specify one match method.
 	 */
 	export interface HeaderMatchMethod {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		exact?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		prefix?: string | null;
 
 		/** An object that represents the range of values to match on. The first character of the range is included in the range, though the last character is not. For example, if the range specified were 1-100, only values 1-99 would be matched. */
 		range?: MatchRange;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		regex?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		suffix?: string | null;
 	}
 
@@ -680,17 +989,37 @@ export namespace MyNS {
 	 *          request. Specify one match method.
 	 */
 	export interface HeaderMatchMethodFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		exact: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		prefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		regex: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		suffix: FormControl<string | null | undefined>,
 	}
 	export function CreateHeaderMatchMethodFormGroup() {
 		return new FormGroup<HeaderMatchMethodFormProperties>({
-			exact: new FormControl<string | null | undefined>(undefined),
-			prefix: new FormControl<string | null | undefined>(undefined),
-			regex: new FormControl<string | null | undefined>(undefined),
-			suffix: new FormControl<string | null | undefined>(undefined),
+			exact: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			regex: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			suffix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -702,7 +1031,17 @@ export namespace MyNS {
 
 	/** An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>. */
 	export interface HttpRetryPolicy {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 25
+		 */
 		httpRetryEvents?: Array<string>;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		maxRetries: number;
 
 		/**
@@ -710,16 +1049,26 @@ export namespace MyNS {
 		 * Required
 		 */
 		perRetryTimeout: Duration;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 1
+		 */
 		tcpRetryEvents?: Array<TcpRetryPolicyEvent>;
 	}
 
 	/** An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>. */
 	export interface HttpRetryPolicyFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		maxRetries: FormControl<number | null | undefined>,
 	}
 	export function CreateHttpRetryPolicyFormGroup() {
 		return new FormGroup<HttpRetryPolicyFormProperties>({
-			maxRetries: new FormControl<number | null | undefined>(undefined),
+			maxRetries: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 		});
 
 	}
@@ -747,6 +1096,12 @@ export namespace MyNS {
 
 	/** An object that represents the action to take if a match is determined. */
 	export interface TcpRouteAction {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		weightedTargets: Array<WeightedTarget>;
 	}
 
@@ -762,16 +1117,20 @@ export namespace MyNS {
 
 	/** An object that represents the current status of a route. */
 	export interface RouteStatus {
+
+		/** Required */
 		status: MeshStatusStatus;
 	}
 
 	/** An object that represents the current status of a route. */
 	export interface RouteStatusFormProperties {
+
+		/** Required */
 		status: FormControl<MeshStatusStatus | null | undefined>,
 	}
 	export function CreateRouteStatusFormGroup() {
 		return new FormGroup<RouteStatusFormProperties>({
-			status: new FormControl<MeshStatusStatus | null | undefined>(undefined),
+			status: new FormControl<MeshStatusStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -795,6 +1154,12 @@ export namespace MyNS {
 
 	/** An object that represents a virtual node returned by a describe operation. */
 	export interface VirtualNodeData {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		meshName: string;
 
 		/**
@@ -814,18 +1179,36 @@ export namespace MyNS {
 		 * Required
 		 */
 		status: VirtualNodeStatus;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		virtualNodeName: string;
 	}
 
 	/** An object that represents a virtual node returned by a describe operation. */
 	export interface VirtualNodeDataFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		meshName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		virtualNodeName: FormControl<string | null | undefined>,
 	}
 	export function CreateVirtualNodeDataFormGroup() {
 		return new FormGroup<VirtualNodeDataFormProperties>({
-			meshName: new FormControl<string | null | undefined>(undefined),
-			virtualNodeName: new FormControl<string | null | undefined>(undefined),
+			meshName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			virtualNodeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -837,6 +1220,11 @@ export namespace MyNS {
 		/** An object that represents the default properties for a backend. */
 		backendDefaults?: BackendDefaults;
 		backends?: Array<Backend>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 1
+		 */
 		listeners?: Array<Listener>;
 
 		/** An object that represents the logging information for a virtual node. */
@@ -962,6 +1350,12 @@ export namespace MyNS {
 	 *          certificate.
 	 */
 	export interface TlsValidationContextAcmTrust {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 3
+		 */
 		certificateAuthorityArns: Array<string>;
 	}
 
@@ -980,16 +1374,28 @@ export namespace MyNS {
 
 	/** An object that represents a Transport Layer Security (TLS) validation context trust for a local file. */
 	export interface TlsValidationContextFileTrust {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		certificateChain: string;
 	}
 
 	/** An object that represents a Transport Layer Security (TLS) validation context trust for a local file. */
 	export interface TlsValidationContextFileTrustFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		certificateChain: FormControl<string | null | undefined>,
 	}
 	export function CreateTlsValidationContextFileTrustFormGroup() {
 		return new FormGroup<TlsValidationContextFileTrustFormProperties>({
-			certificateChain: new FormControl<string | null | undefined>(undefined),
+			certificateChain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -1023,16 +1429,20 @@ export namespace MyNS {
 
 		/** An object that represents a client policy. */
 		clientPolicy?: ClientPolicy;
+
+		/** Required */
 		virtualServiceName: string;
 	}
 
 	/** An object that represents a virtual service backend for a virtual node. */
 	export interface VirtualServiceBackendFormProperties {
+
+		/** Required */
 		virtualServiceName: FormControl<string | null | undefined>,
 	}
 	export function CreateVirtualServiceBackendFormGroup() {
 		return new FormGroup<VirtualServiceBackendFormProperties>({
-			virtualServiceName: new FormControl<string | null | undefined>(undefined),
+			virtualServiceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1066,34 +1476,96 @@ export namespace MyNS {
 
 	/** An object that represents the health check policy for a virtual node's listener. */
 	export interface HealthCheckPolicy {
+
+		/**
+		 * Required
+		 * Minimum: 2
+		 * Maximum: 10
+		 */
 		healthyThreshold: number;
+
+		/**
+		 * Required
+		 * Minimum: 5000
+		 * Maximum: 300000
+		 */
 		intervalMillis: number;
 		path?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		port?: number | null;
+
+		/** Required */
 		protocol: HealthCheckPolicyProtocol;
+
+		/**
+		 * Required
+		 * Minimum: 2000
+		 * Maximum: 60000
+		 */
 		timeoutMillis: number;
+
+		/**
+		 * Required
+		 * Minimum: 2
+		 * Maximum: 10
+		 */
 		unhealthyThreshold: number;
 	}
 
 	/** An object that represents the health check policy for a virtual node's listener. */
 	export interface HealthCheckPolicyFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 2
+		 * Maximum: 10
+		 */
 		healthyThreshold: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 5000
+		 * Maximum: 300000
+		 */
 		intervalMillis: FormControl<number | null | undefined>,
 		path: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		port: FormControl<number | null | undefined>,
+
+		/** Required */
 		protocol: FormControl<HealthCheckPolicyProtocol | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 2000
+		 * Maximum: 60000
+		 */
 		timeoutMillis: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 2
+		 * Maximum: 10
+		 */
 		unhealthyThreshold: FormControl<number | null | undefined>,
 	}
 	export function CreateHealthCheckPolicyFormGroup() {
 		return new FormGroup<HealthCheckPolicyFormProperties>({
-			healthyThreshold: new FormControl<number | null | undefined>(undefined),
-			intervalMillis: new FormControl<number | null | undefined>(undefined),
+			healthyThreshold: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(2), Validators.max(10)]),
+			intervalMillis: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(5000), Validators.max(300000)]),
 			path: new FormControl<string | null | undefined>(undefined),
-			port: new FormControl<number | null | undefined>(undefined),
-			protocol: new FormControl<HealthCheckPolicyProtocol | null | undefined>(undefined),
-			timeoutMillis: new FormControl<number | null | undefined>(undefined),
-			unhealthyThreshold: new FormControl<number | null | undefined>(undefined),
+			port: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(65535)]),
+			protocol: new FormControl<HealthCheckPolicyProtocol | null | undefined>(undefined, [Validators.required]),
+			timeoutMillis: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(2000), Validators.max(60000)]),
+			unhealthyThreshold: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(2), Validators.max(10)]),
 		});
 
 	}
@@ -1103,19 +1575,35 @@ export namespace MyNS {
 
 	/** An object that represents a port mapping. */
 	export interface PortMapping {
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		port: number;
+
+		/** Required */
 		protocol: HealthCheckPolicyProtocol;
 	}
 
 	/** An object that represents a port mapping. */
 	export interface PortMappingFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		port: FormControl<number | null | undefined>,
+
+		/** Required */
 		protocol: FormControl<HealthCheckPolicyProtocol | null | undefined>,
 	}
 	export function CreatePortMappingFormGroup() {
 		return new FormGroup<PortMappingFormProperties>({
-			port: new FormControl<number | null | undefined>(undefined),
-			protocol: new FormControl<HealthCheckPolicyProtocol | null | undefined>(undefined),
+			port: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(65535)]),
+			protocol: new FormControl<HealthCheckPolicyProtocol | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1129,16 +1617,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		certificate: ListenerTlsCertificate;
+
+		/** Required */
 		mode: ListenerTlsMode;
 	}
 
 	/** An object that represents the Transport Layer Security (TLS) properties for a listener. */
 	export interface ListenerTlsFormProperties {
+
+		/** Required */
 		mode: FormControl<ListenerTlsMode | null | undefined>,
 	}
 	export function CreateListenerTlsFormGroup() {
 		return new FormGroup<ListenerTlsFormProperties>({
-			mode: new FormControl<ListenerTlsMode | null | undefined>(undefined),
+			mode: new FormControl<ListenerTlsMode | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1169,16 +1661,20 @@ export namespace MyNS {
 
 	/** An object that represents an AWS Certicate Manager (ACM) certificate. */
 	export interface ListenerTlsAcmCertificate {
+
+		/** Required */
 		certificateArn: string;
 	}
 
 	/** An object that represents an AWS Certicate Manager (ACM) certificate. */
 	export interface ListenerTlsAcmCertificateFormProperties {
+
+		/** Required */
 		certificateArn: FormControl<string | null | undefined>,
 	}
 	export function CreateListenerTlsAcmCertificateFormGroup() {
 		return new FormGroup<ListenerTlsAcmCertificateFormProperties>({
-			certificateArn: new FormControl<string | null | undefined>(undefined),
+			certificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1189,7 +1685,19 @@ export namespace MyNS {
 	 *          The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.
 	 */
 	export interface ListenerTlsFileCertificate {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		certificateChain: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		privateKey: string;
 	}
 
@@ -1198,13 +1706,25 @@ export namespace MyNS {
 	 *          The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.
 	 */
 	export interface ListenerTlsFileCertificateFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		certificateChain: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		privateKey: FormControl<string | null | undefined>,
 	}
 	export function CreateListenerTlsFileCertificateFormGroup() {
 		return new FormGroup<ListenerTlsFileCertificateFormProperties>({
-			certificateChain: new FormControl<string | null | undefined>(undefined),
-			privateKey: new FormControl<string | null | undefined>(undefined),
+			certificateChain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			privateKey: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -1248,16 +1768,28 @@ export namespace MyNS {
 
 	/** An object that represents an access log file. */
 	export interface FileAccessLog {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		path: string;
 	}
 
 	/** An object that represents an access log file. */
 	export interface FileAccessLogFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		path: FormControl<string | null | undefined>,
 	}
 	export function CreateFileAccessLogFormGroup() {
 		return new FormGroup<FileAccessLogFormProperties>({
-			path: new FormControl<string | null | undefined>(undefined),
+			path: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -1295,7 +1827,21 @@ export namespace MyNS {
 	 */
 	export interface AwsCloudMapServiceDiscovery {
 		attributes?: Array<AwsCloudMapInstanceAttribute>;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^.$)
+		 */
 		namespaceName: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^.$)
+		 */
 		serviceName: string;
 	}
 
@@ -1304,13 +1850,27 @@ export namespace MyNS {
 	 *          node.
 	 */
 	export interface AwsCloudMapServiceDiscoveryFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^.$)
+		 */
 		namespaceName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^.$)
+		 */
 		serviceName: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsCloudMapServiceDiscoveryFormGroup() {
 		return new FormGroup<AwsCloudMapServiceDiscoveryFormProperties>({
-			namespaceName: new FormControl<string | null | undefined>(undefined),
-			serviceName: new FormControl<string | null | undefined>(undefined),
+			namespaceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			serviceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1321,7 +1881,21 @@ export namespace MyNS {
 	 *          node.
 	 */
 	export interface AwsCloudMapInstanceAttribute {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9!-~]+$
+		 */
 		key: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([a-zA-Z0-9!-~][ ta-zA-Z0-9!-~]*){0,1}[a-zA-Z0-9!-~]{0,1}$
+		 */
 		value: string;
 	}
 
@@ -1330,13 +1904,27 @@ export namespace MyNS {
 	 *          node.
 	 */
 	export interface AwsCloudMapInstanceAttributeFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9!-~]+$
+		 */
 		key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([a-zA-Z0-9!-~][ ta-zA-Z0-9!-~]*){0,1}[a-zA-Z0-9!-~]{0,1}$
+		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsCloudMapInstanceAttributeFormGroup() {
 		return new FormGroup<AwsCloudMapInstanceAttributeFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1347,6 +1935,8 @@ export namespace MyNS {
 	 *          node.
 	 */
 	export interface DnsServiceDiscovery {
+
+		/** Required */
 		hostname: string;
 	}
 
@@ -1355,11 +1945,13 @@ export namespace MyNS {
 	 *          node.
 	 */
 	export interface DnsServiceDiscoveryFormProperties {
+
+		/** Required */
 		hostname: FormControl<string | null | undefined>,
 	}
 	export function CreateDnsServiceDiscoveryFormGroup() {
 		return new FormGroup<DnsServiceDiscoveryFormProperties>({
-			hostname: new FormControl<string | null | undefined>(undefined),
+			hostname: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1367,16 +1959,20 @@ export namespace MyNS {
 
 	/** An object that represents the current status of the virtual node. */
 	export interface VirtualNodeStatus {
+
+		/** Required */
 		status: MeshStatusStatus;
 	}
 
 	/** An object that represents the current status of the virtual node. */
 	export interface VirtualNodeStatusFormProperties {
+
+		/** Required */
 		status: FormControl<MeshStatusStatus | null | undefined>,
 	}
 	export function CreateVirtualNodeStatusFormGroup() {
 		return new FormGroup<VirtualNodeStatusFormProperties>({
-			status: new FormControl<MeshStatusStatus | null | undefined>(undefined),
+			status: new FormControl<MeshStatusStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1400,6 +1996,12 @@ export namespace MyNS {
 
 	/** An object that represents a virtual router returned by a describe operation. */
 	export interface VirtualRouterData {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		meshName: string;
 
 		/**
@@ -1419,18 +2021,36 @@ export namespace MyNS {
 		 * Required
 		 */
 		status: VirtualRouterStatus;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		virtualRouterName: string;
 	}
 
 	/** An object that represents a virtual router returned by a describe operation. */
 	export interface VirtualRouterDataFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		meshName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		virtualRouterName: FormControl<string | null | undefined>,
 	}
 	export function CreateVirtualRouterDataFormGroup() {
 		return new FormGroup<VirtualRouterDataFormProperties>({
-			meshName: new FormControl<string | null | undefined>(undefined),
-			virtualRouterName: new FormControl<string | null | undefined>(undefined),
+			meshName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			virtualRouterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -1438,6 +2058,11 @@ export namespace MyNS {
 
 	/** An object that represents the specification of a virtual router. */
 	export interface VirtualRouterSpec {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 1
+		 */
 		listeners?: Array<VirtualRouterListener>;
 	}
 
@@ -1473,16 +2098,20 @@ export namespace MyNS {
 
 	/** An object that represents the status of a virtual router.  */
 	export interface VirtualRouterStatus {
+
+		/** Required */
 		status: MeshStatusStatus;
 	}
 
 	/** An object that represents the status of a virtual router.  */
 	export interface VirtualRouterStatusFormProperties {
+
+		/** Required */
 		status: FormControl<MeshStatusStatus | null | undefined>,
 	}
 	export function CreateVirtualRouterStatusFormGroup() {
 		return new FormGroup<VirtualRouterStatusFormProperties>({
-			status: new FormControl<MeshStatusStatus | null | undefined>(undefined),
+			status: new FormControl<MeshStatusStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1506,6 +2135,12 @@ export namespace MyNS {
 
 	/** An object that represents a virtual service returned by a describe operation. */
 	export interface VirtualServiceData {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		meshName: string;
 
 		/**
@@ -1525,18 +2160,28 @@ export namespace MyNS {
 		 * Required
 		 */
 		status: VirtualServiceStatus;
+
+		/** Required */
 		virtualServiceName: string;
 	}
 
 	/** An object that represents a virtual service returned by a describe operation. */
 	export interface VirtualServiceDataFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		meshName: FormControl<string | null | undefined>,
+
+		/** Required */
 		virtualServiceName: FormControl<string | null | undefined>,
 	}
 	export function CreateVirtualServiceDataFormGroup() {
 		return new FormGroup<VirtualServiceDataFormProperties>({
-			meshName: new FormControl<string | null | undefined>(undefined),
-			virtualServiceName: new FormControl<string | null | undefined>(undefined),
+			meshName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			virtualServiceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1581,16 +2226,28 @@ export namespace MyNS {
 
 	/** An object that represents a virtual node service provider. */
 	export interface VirtualNodeServiceProvider {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		virtualNodeName: string;
 	}
 
 	/** An object that represents a virtual node service provider. */
 	export interface VirtualNodeServiceProviderFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		virtualNodeName: FormControl<string | null | undefined>,
 	}
 	export function CreateVirtualNodeServiceProviderFormGroup() {
 		return new FormGroup<VirtualNodeServiceProviderFormProperties>({
-			virtualNodeName: new FormControl<string | null | undefined>(undefined),
+			virtualNodeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -1598,16 +2255,28 @@ export namespace MyNS {
 
 	/** An object that represents a virtual node service provider. */
 	export interface VirtualRouterServiceProvider {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		virtualRouterName: string;
 	}
 
 	/** An object that represents a virtual node service provider. */
 	export interface VirtualRouterServiceProviderFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		virtualRouterName: FormControl<string | null | undefined>,
 	}
 	export function CreateVirtualRouterServiceProviderFormGroup() {
 		return new FormGroup<VirtualRouterServiceProviderFormProperties>({
-			virtualRouterName: new FormControl<string | null | undefined>(undefined),
+			virtualRouterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -1615,16 +2284,20 @@ export namespace MyNS {
 
 	/** An object that represents the status of a virtual service. */
 	export interface VirtualServiceStatus {
+
+		/** Required */
 		status: MeshStatusStatus;
 	}
 
 	/** An object that represents the status of a virtual service. */
 	export interface VirtualServiceStatusFormProperties {
+
+		/** Required */
 		status: FormControl<MeshStatusStatus | null | undefined>,
 	}
 	export function CreateVirtualServiceStatusFormGroup() {
 		return new FormGroup<VirtualServiceStatusFormProperties>({
-			status: new FormControl<MeshStatusStatus | null | undefined>(undefined),
+			status: new FormControl<MeshStatusStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1800,6 +2473,8 @@ export namespace MyNS {
 	}
 
 	export interface ListMeshesOutput {
+
+		/** Required */
 		meshes: Array<MeshRef>;
 		nextToken?: string | null;
 	}
@@ -1816,40 +2491,94 @@ export namespace MyNS {
 
 	/** An object that represents a service mesh returned by a list operation. */
 	export interface MeshRef {
+
+		/** Required */
 		arn: string;
+
+		/** Required */
 		createdAt: Date;
+
+		/** Required */
 		lastUpdatedAt: Date;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		meshName: string;
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		meshOwner: string;
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		resourceOwner: string;
+
+		/** Required */
 		version: number;
 	}
 
 	/** An object that represents a service mesh returned by a list operation. */
 	export interface MeshRefFormProperties {
+
+		/** Required */
 		arn: FormControl<string | null | undefined>,
+
+		/** Required */
 		createdAt: FormControl<Date | null | undefined>,
+
+		/** Required */
 		lastUpdatedAt: FormControl<Date | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		meshName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		meshOwner: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		resourceOwner: FormControl<string | null | undefined>,
+
+		/** Required */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateMeshRefFormGroup() {
 		return new FormGroup<MeshRefFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			createdAt: new FormControl<Date | null | undefined>(undefined),
-			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
-			meshName: new FormControl<string | null | undefined>(undefined),
-			meshOwner: new FormControl<string | null | undefined>(undefined),
-			resourceOwner: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<number | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			meshName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			meshOwner: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
+			resourceOwner: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
+			version: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ListRoutesOutput {
 		nextToken?: string | null;
+
+		/** Required */
 		routes: Array<RouteRef>;
 	}
 	export interface ListRoutesOutputFormProperties {
@@ -1865,46 +2594,128 @@ export namespace MyNS {
 
 	/** An object that represents a route returned by a list operation. */
 	export interface RouteRef {
+
+		/** Required */
 		arn: string;
+
+		/** Required */
 		createdAt: Date;
+
+		/** Required */
 		lastUpdatedAt: Date;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		meshName: string;
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		meshOwner: string;
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		resourceOwner: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		routeName: string;
+
+		/** Required */
 		version: number;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		virtualRouterName: string;
 	}
 
 	/** An object that represents a route returned by a list operation. */
 	export interface RouteRefFormProperties {
+
+		/** Required */
 		arn: FormControl<string | null | undefined>,
+
+		/** Required */
 		createdAt: FormControl<Date | null | undefined>,
+
+		/** Required */
 		lastUpdatedAt: FormControl<Date | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		meshName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		meshOwner: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		resourceOwner: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		routeName: FormControl<string | null | undefined>,
+
+		/** Required */
 		version: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		virtualRouterName: FormControl<string | null | undefined>,
 	}
 	export function CreateRouteRefFormGroup() {
 		return new FormGroup<RouteRefFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			createdAt: new FormControl<Date | null | undefined>(undefined),
-			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
-			meshName: new FormControl<string | null | undefined>(undefined),
-			meshOwner: new FormControl<string | null | undefined>(undefined),
-			resourceOwner: new FormControl<string | null | undefined>(undefined),
-			routeName: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<number | null | undefined>(undefined),
-			virtualRouterName: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			meshName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			meshOwner: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
+			resourceOwner: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
+			routeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			version: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			virtualRouterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListTagsForResourceOutput {
 		nextToken?: string | null;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags: Array<TagRef>;
 	}
 	export interface ListTagsForResourceOutputFormProperties {
@@ -1919,6 +2730,8 @@ export namespace MyNS {
 
 	export interface ListVirtualNodesOutput {
 		nextToken?: string | null;
+
+		/** Required */
 		virtualNodes: Array<VirtualNodeRef>;
 	}
 	export interface ListVirtualNodesOutputFormProperties {
@@ -1934,43 +2747,109 @@ export namespace MyNS {
 
 	/** An object that represents a virtual node returned by a list operation. */
 	export interface VirtualNodeRef {
+
+		/** Required */
 		arn: string;
+
+		/** Required */
 		createdAt: Date;
+
+		/** Required */
 		lastUpdatedAt: Date;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		meshName: string;
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		meshOwner: string;
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		resourceOwner: string;
+
+		/** Required */
 		version: number;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		virtualNodeName: string;
 	}
 
 	/** An object that represents a virtual node returned by a list operation. */
 	export interface VirtualNodeRefFormProperties {
+
+		/** Required */
 		arn: FormControl<string | null | undefined>,
+
+		/** Required */
 		createdAt: FormControl<Date | null | undefined>,
+
+		/** Required */
 		lastUpdatedAt: FormControl<Date | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		meshName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		meshOwner: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		resourceOwner: FormControl<string | null | undefined>,
+
+		/** Required */
 		version: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		virtualNodeName: FormControl<string | null | undefined>,
 	}
 	export function CreateVirtualNodeRefFormGroup() {
 		return new FormGroup<VirtualNodeRefFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			createdAt: new FormControl<Date | null | undefined>(undefined),
-			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
-			meshName: new FormControl<string | null | undefined>(undefined),
-			meshOwner: new FormControl<string | null | undefined>(undefined),
-			resourceOwner: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<number | null | undefined>(undefined),
-			virtualNodeName: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			meshName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			meshOwner: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
+			resourceOwner: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
+			version: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			virtualNodeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListVirtualRoutersOutput {
 		nextToken?: string | null;
+
+		/** Required */
 		virtualRouters: Array<VirtualRouterRef>;
 	}
 	export interface ListVirtualRoutersOutputFormProperties {
@@ -1986,43 +2865,109 @@ export namespace MyNS {
 
 	/** An object that represents a virtual router returned by a list operation. */
 	export interface VirtualRouterRef {
+
+		/** Required */
 		arn: string;
+
+		/** Required */
 		createdAt: Date;
+
+		/** Required */
 		lastUpdatedAt: Date;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		meshName: string;
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		meshOwner: string;
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		resourceOwner: string;
+
+		/** Required */
 		version: number;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		virtualRouterName: string;
 	}
 
 	/** An object that represents a virtual router returned by a list operation. */
 	export interface VirtualRouterRefFormProperties {
+
+		/** Required */
 		arn: FormControl<string | null | undefined>,
+
+		/** Required */
 		createdAt: FormControl<Date | null | undefined>,
+
+		/** Required */
 		lastUpdatedAt: FormControl<Date | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		meshName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		meshOwner: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		resourceOwner: FormControl<string | null | undefined>,
+
+		/** Required */
 		version: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		virtualRouterName: FormControl<string | null | undefined>,
 	}
 	export function CreateVirtualRouterRefFormGroup() {
 		return new FormGroup<VirtualRouterRefFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			createdAt: new FormControl<Date | null | undefined>(undefined),
-			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
-			meshName: new FormControl<string | null | undefined>(undefined),
-			meshOwner: new FormControl<string | null | undefined>(undefined),
-			resourceOwner: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<number | null | undefined>(undefined),
-			virtualRouterName: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			meshName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			meshOwner: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
+			resourceOwner: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
+			version: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			virtualRouterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListVirtualServicesOutput {
 		nextToken?: string | null;
+
+		/** Required */
 		virtualServices: Array<VirtualServiceRef>;
 	}
 	export interface ListVirtualServicesOutputFormProperties {
@@ -2038,37 +2983,93 @@ export namespace MyNS {
 
 	/** An object that represents a virtual service returned by a list operation. */
 	export interface VirtualServiceRef {
+
+		/** Required */
 		arn: string;
+
+		/** Required */
 		createdAt: Date;
+
+		/** Required */
 		lastUpdatedAt: Date;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		meshName: string;
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		meshOwner: string;
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		resourceOwner: string;
+
+		/** Required */
 		version: number;
+
+		/** Required */
 		virtualServiceName: string;
 	}
 
 	/** An object that represents a virtual service returned by a list operation. */
 	export interface VirtualServiceRefFormProperties {
+
+		/** Required */
 		arn: FormControl<string | null | undefined>,
+
+		/** Required */
 		createdAt: FormControl<Date | null | undefined>,
+
+		/** Required */
 		lastUpdatedAt: FormControl<Date | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		meshName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		meshOwner: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 */
 		resourceOwner: FormControl<string | null | undefined>,
+
+		/** Required */
 		version: FormControl<number | null | undefined>,
+
+		/** Required */
 		virtualServiceName: FormControl<string | null | undefined>,
 	}
 	export function CreateVirtualServiceRefFormGroup() {
 		return new FormGroup<VirtualServiceRefFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			createdAt: new FormControl<Date | null | undefined>(undefined),
-			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
-			meshName: new FormControl<string | null | undefined>(undefined),
-			meshOwner: new FormControl<string | null | undefined>(undefined),
-			resourceOwner: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<number | null | undefined>(undefined),
-			virtualServiceName: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			meshName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			meshOwner: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
+			resourceOwner: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
+			version: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			virtualServiceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2231,17 +3232,34 @@ export namespace MyNS {
 		 * Required
 		 */
 		spec: VirtualRouterSpec;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<TagRef>;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		virtualRouterName: string;
 	}
 	export interface CreateVirtualRouterInputFormProperties {
 		clientToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		virtualRouterName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateVirtualRouterInputFormGroup() {
 		return new FormGroup<CreateVirtualRouterInputFormProperties>({
 			clientToken: new FormControl<string | null | undefined>(undefined),
-			virtualRouterName: new FormControl<string | null | undefined>(undefined),
+			virtualRouterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -2263,6 +3281,12 @@ export namespace MyNS {
 	export enum RouteStatusCode { ACTIVE = 0, DELETED = 1, INACTIVE = 2 }
 
 	export interface TagResourceInput {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags: Array<TagRef>;
 	}
 	export interface TagResourceInputFormProperties {
@@ -2283,17 +3307,34 @@ export namespace MyNS {
 		 * Required
 		 */
 		spec: VirtualNodeSpec;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<TagRef>;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		virtualNodeName: string;
 	}
 	export interface CreateVirtualNodeInputFormProperties {
 		clientToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		virtualNodeName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateVirtualNodeInputFormGroup() {
 		return new FormGroup<CreateVirtualNodeInputFormProperties>({
 			clientToken: new FormControl<string | null | undefined>(undefined),
-			virtualNodeName: new FormControl<string | null | undefined>(undefined),
+			virtualNodeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -2345,17 +3386,26 @@ export namespace MyNS {
 		 * Required
 		 */
 		spec: VirtualServiceSpec;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<TagRef>;
+
+		/** Required */
 		virtualServiceName: string;
 	}
 	export interface CreateVirtualServiceInputFormProperties {
 		clientToken: FormControl<string | null | undefined>,
+
+		/** Required */
 		virtualServiceName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateVirtualServiceInputFormGroup() {
 		return new FormGroup<CreateVirtualServiceInputFormProperties>({
 			clientToken: new FormControl<string | null | undefined>(undefined),
-			virtualServiceName: new FormControl<string | null | undefined>(undefined),
+			virtualServiceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2442,20 +3492,37 @@ export namespace MyNS {
 
 	export interface CreateMeshInput {
 		clientToken?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		meshName: string;
 
 		/** An object that represents the specification of a service mesh. */
 		spec?: MeshSpec;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<TagRef>;
 	}
 	export interface CreateMeshInputFormProperties {
 		clientToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		meshName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateMeshInputFormGroup() {
 		return new FormGroup<CreateMeshInputFormProperties>({
 			clientToken: new FormControl<string | null | undefined>(undefined),
-			meshName: new FormControl<string | null | undefined>(undefined),
+			meshName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -2524,6 +3591,12 @@ export namespace MyNS {
 
 	export interface CreateRouteInput {
 		clientToken?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		routeName: string;
 
 		/**
@@ -2531,16 +3604,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		spec: RouteSpec;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<TagRef>;
 	}
 	export interface CreateRouteInputFormProperties {
 		clientToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		routeName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateRouteInputFormGroup() {
 		return new FormGroup<CreateRouteInputFormProperties>({
 			clientToken: new FormControl<string | null | undefined>(undefined),
-			routeName: new FormControl<string | null | undefined>(undefined),
+			routeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -2575,6 +3659,12 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceInput {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tagKeys: Array<string>;
 	}
 	export interface UntagResourceInputFormProperties {
@@ -3106,7 +4196,7 @@ export namespace MyNS {
 	export function CreateCreateMeshPutBodyFormGroup() {
 		return new FormGroup<CreateMeshPutBodyFormProperties>({
 			clientToken: new FormControl<string | null | undefined>(undefined),
-			meshName: new FormControl<string | null | undefined>(undefined),
+			meshName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -3175,7 +4265,7 @@ export namespace MyNS {
 	export function CreateCreateRoutePutBodyFormGroup() {
 		return new FormGroup<CreateRoutePutBodyFormProperties>({
 			clientToken: new FormControl<string | null | undefined>(undefined),
-			routeName: new FormControl<string | null | undefined>(undefined),
+			routeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -3190,17 +4280,27 @@ export namespace MyNS {
 
 		/** An object that represents an HTTP or HTTP/2 route type. */
 		httpRoute?: HttpRoute;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		priority?: number | null;
 
 		/** An object that represents a TCP route type. */
 		tcpRoute?: TcpRoute;
 	}
 	export interface CreateRoutePutBodySpecFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		priority: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateRoutePutBodySpecFormGroup() {
 		return new FormGroup<CreateRoutePutBodySpecFormProperties>({
-			priority: new FormControl<number | null | undefined>(undefined),
+			priority: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 		});
 
 	}
@@ -3256,7 +4356,7 @@ export namespace MyNS {
 	export function CreateCreateVirtualNodePutBodyFormGroup() {
 		return new FormGroup<CreateVirtualNodePutBodyFormProperties>({
 			clientToken: new FormControl<string | null | undefined>(undefined),
-			virtualNodeName: new FormControl<string | null | undefined>(undefined),
+			virtualNodeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -3266,6 +4366,11 @@ export namespace MyNS {
 		/** An object that represents the default properties for a backend. */
 		backendDefaults?: BackendDefaults;
 		backends?: Array<Backend>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 1
+		 */
 		listeners?: Array<Listener>;
 
 		/** An object that represents the logging information for a virtual node. */
@@ -3333,12 +4438,17 @@ export namespace MyNS {
 	export function CreateCreateVirtualRouterPutBodyFormGroup() {
 		return new FormGroup<CreateVirtualRouterPutBodyFormProperties>({
 			clientToken: new FormControl<string | null | undefined>(undefined),
-			virtualRouterName: new FormControl<string | null | undefined>(undefined),
+			virtualRouterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateVirtualRouterPutBodySpec {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 1
+		 */
 		listeners?: Array<VirtualRouterListener>;
 	}
 	export interface CreateVirtualRouterPutBodySpecFormProperties {
@@ -3396,7 +4506,7 @@ export namespace MyNS {
 	export function CreateCreateVirtualServicePutBodyFormGroup() {
 		return new FormGroup<CreateVirtualServicePutBodyFormProperties>({
 			clientToken: new FormControl<string | null | undefined>(undefined),
-			virtualServiceName: new FormControl<string | null | undefined>(undefined),
+			virtualServiceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3492,17 +4602,27 @@ export namespace MyNS {
 
 		/** An object that represents an HTTP or HTTP/2 route type. */
 		httpRoute?: HttpRoute;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		priority?: number | null;
 
 		/** An object that represents a TCP route type. */
 		tcpRoute?: TcpRoute;
 	}
 	export interface UpdateRoutePutBodySpecFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		priority: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateRoutePutBodySpecFormGroup() {
 		return new FormGroup<UpdateRoutePutBodySpecFormProperties>({
-			priority: new FormControl<number | null | undefined>(undefined),
+			priority: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 		});
 
 	}
@@ -3541,6 +4661,11 @@ export namespace MyNS {
 		/** An object that represents the default properties for a backend. */
 		backendDefaults?: BackendDefaults;
 		backends?: Array<Backend>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 1
+		 */
 		listeners?: Array<Listener>;
 
 		/** An object that represents the logging information for a virtual node. */
@@ -3587,6 +4712,11 @@ export namespace MyNS {
 	}
 
 	export interface UpdateVirtualRouterPutBodySpec {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 1
+		 */
 		listeners?: Array<VirtualRouterListener>;
 	}
 	export interface UpdateVirtualRouterPutBodySpecFormProperties {

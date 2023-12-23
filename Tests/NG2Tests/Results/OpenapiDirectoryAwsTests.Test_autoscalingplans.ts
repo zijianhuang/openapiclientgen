@@ -4,19 +4,30 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateScalingPlanResponse {
+
+		/** Required */
 		ScalingPlanVersion: number;
 	}
 	export interface CreateScalingPlanResponseFormProperties {
+
+		/** Required */
 		ScalingPlanVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateScalingPlanResponseFormGroup() {
 		return new FormGroup<CreateScalingPlanResponseFormProperties>({
-			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined),
+			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface CreateScalingPlanRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{Print}&&[^|:/]]+
+		 */
 		ScalingPlanName: string;
 
 		/**
@@ -24,14 +35,23 @@ export namespace MyNS {
 		 * Required
 		 */
 		ApplicationSource: ApplicationSource;
+
+		/** Required */
 		ScalingInstructions: Array<ScalingInstruction>;
 	}
 	export interface CreateScalingPlanRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{Print}&&[^|:/]]+
+		 */
 		ScalingPlanName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateScalingPlanRequestFormGroup() {
 		return new FormGroup<CreateScalingPlanRequestFormProperties>({
-			ScalingPlanName: new FormControl<string | null | undefined>(undefined),
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -57,17 +77,27 @@ export namespace MyNS {
 
 	/** Represents a tag. */
 	export interface TagFilter {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key?: string | null;
 		Values?: Array<string>;
 	}
 
 	/** Represents a tag. */
 	export interface TagFilterFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFilterFormGroup() {
 		return new FormGroup<TagFilterFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -75,11 +105,27 @@ export namespace MyNS {
 
 	/** <p>Describes a scaling instruction for a scalable resource.</p> <p>The scaling instruction is used in combination with a scaling plan, which is a set of instructions for configuring dynamic scaling and predictive scaling for the scalable resources in your application. Each scaling instruction applies to one resource.</p> <p>AWS Auto Scaling creates target tracking scaling policies based on the scaling instructions. Target tracking scaling policies adjust the capacity of your scalable resource as required to maintain resource utilization at the target value that you specified. </p> <p>AWS Auto Scaling also configures predictive scaling for your Amazon EC2 Auto Scaling groups using a subset of parameters, including the load metric, the scaling metric, the target value for the scaling metric, the predictive scaling mode (forecast and scale or forecast only), and the desired behavior when the forecast capacity exceeds the maximum capacity of the resource. With predictive scaling, AWS Auto Scaling generates forecasts with traffic predictions for the two days ahead and schedules scaling actions that proactively add and remove resource capacity to match the forecast. </p> <p>We recommend waiting a minimum of 24 hours after creating an Auto Scaling group to configure predictive scaling. At minimum, there must be 24 hours of historical data to generate a forecast.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/userguide/auto-scaling-getting-started.html">Getting Started with AWS Auto Scaling</a>.</p> */
 	export interface ScalingInstruction {
+
+		/** Required */
 		ServiceNamespace: ScalingInstructionServiceNamespace;
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: string;
+
+		/** Required */
 		ScalableDimension: ScalingInstructionScalableDimension;
+
+		/** Required */
 		MinCapacity: number;
+
+		/** Required */
 		MaxCapacity: number;
+
+		/** Required */
 		TargetTrackingConfigurations: Array<TargetTrackingConfiguration>;
 
 		/** Represents a predefined metric that can be used for predictive scaling. */
@@ -87,6 +133,8 @@ export namespace MyNS {
 
 		/** <p>Represents a CloudWatch metric of your choosing that can be used for predictive scaling. </p> <p>For predictive scaling to work with a customized load metric specification, AWS Auto Scaling needs access to the <code>Sum</code> and <code>Average</code> statistics that CloudWatch computes from metric data. Statistics are calculations used to aggregate data over specified time periods.</p> <p>When you choose a load metric, make sure that the required <code>Sum</code> and <code>Average</code> statistics for your metric are available in CloudWatch and that they provide relevant data for predictive scaling. The <code>Sum</code> statistic must represent the total load on the resource, and the <code>Average</code> statistic must represent the average load per capacity unit of the resource. For example, there is a metric that counts the number of requests processed by your Auto Scaling group. If the <code>Sum</code> statistic represents the total request count processed by the group, then the <code>Average</code> statistic for the specified metric must represent the average request count processed by each instance of the group.</p> <p>For information about terminology, available metrics, or how to publish new metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a> in the <i>Amazon CloudWatch User Guide</i>. </p> */
 		CustomizedLoadMetricSpecification?: CustomizedLoadMetricSpecification;
+
+		/** Minimum: 0 */
 		ScheduledActionBufferTime?: number | null;
 		PredictiveScalingMaxCapacityBehavior?: ScalingInstructionPredictiveScalingMaxCapacityBehavior | null;
 		PredictiveScalingMaxCapacityBuffer?: number | null;
@@ -97,11 +145,27 @@ export namespace MyNS {
 
 	/** <p>Describes a scaling instruction for a scalable resource.</p> <p>The scaling instruction is used in combination with a scaling plan, which is a set of instructions for configuring dynamic scaling and predictive scaling for the scalable resources in your application. Each scaling instruction applies to one resource.</p> <p>AWS Auto Scaling creates target tracking scaling policies based on the scaling instructions. Target tracking scaling policies adjust the capacity of your scalable resource as required to maintain resource utilization at the target value that you specified. </p> <p>AWS Auto Scaling also configures predictive scaling for your Amazon EC2 Auto Scaling groups using a subset of parameters, including the load metric, the scaling metric, the target value for the scaling metric, the predictive scaling mode (forecast and scale or forecast only), and the desired behavior when the forecast capacity exceeds the maximum capacity of the resource. With predictive scaling, AWS Auto Scaling generates forecasts with traffic predictions for the two days ahead and schedules scaling actions that proactively add and remove resource capacity to match the forecast. </p> <p>We recommend waiting a minimum of 24 hours after creating an Auto Scaling group to configure predictive scaling. At minimum, there must be 24 hours of historical data to generate a forecast.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/userguide/auto-scaling-getting-started.html">Getting Started with AWS Auto Scaling</a>.</p> */
 	export interface ScalingInstructionFormProperties {
+
+		/** Required */
 		ServiceNamespace: FormControl<ScalingInstructionServiceNamespace | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ScalableDimension: FormControl<ScalingInstructionScalableDimension | null | undefined>,
+
+		/** Required */
 		MinCapacity: FormControl<number | null | undefined>,
+
+		/** Required */
 		MaxCapacity: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		ScheduledActionBufferTime: FormControl<number | null | undefined>,
 		PredictiveScalingMaxCapacityBehavior: FormControl<ScalingInstructionPredictiveScalingMaxCapacityBehavior | null | undefined>,
 		PredictiveScalingMaxCapacityBuffer: FormControl<number | null | undefined>,
@@ -111,12 +175,12 @@ export namespace MyNS {
 	}
 	export function CreateScalingInstructionFormGroup() {
 		return new FormGroup<ScalingInstructionFormProperties>({
-			ServiceNamespace: new FormControl<ScalingInstructionServiceNamespace | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
-			ScalableDimension: new FormControl<ScalingInstructionScalableDimension | null | undefined>(undefined),
-			MinCapacity: new FormControl<number | null | undefined>(undefined),
-			MaxCapacity: new FormControl<number | null | undefined>(undefined),
-			ScheduledActionBufferTime: new FormControl<number | null | undefined>(undefined),
+			ServiceNamespace: new FormControl<ScalingInstructionServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			ScalableDimension: new FormControl<ScalingInstructionScalableDimension | null | undefined>(undefined, [Validators.required]),
+			MinCapacity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			MaxCapacity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			ScheduledActionBufferTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			PredictiveScalingMaxCapacityBehavior: new FormControl<ScalingInstructionPredictiveScalingMaxCapacityBehavior | null | undefined>(undefined),
 			PredictiveScalingMaxCapacityBuffer: new FormControl<number | null | undefined>(undefined),
 			PredictiveScalingMode: new FormControl<ScalingInstructionPredictiveScalingMode | null | undefined>(undefined),
@@ -139,6 +203,8 @@ export namespace MyNS {
 
 		/** <p>Represents a CloudWatch metric of your choosing that can be used for dynamic scaling as part of a target tracking scaling policy. </p> <p>To create your customized scaling metric specification:</p> <ul> <li> <p>Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish Custom Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li> <li> <p>Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases. </p> </li> </ul> <p>For more information about CloudWatch, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a>. </p> */
 		CustomizedScalingMetricSpecification?: CustomizedScalingMetricSpecification;
+
+		/** Required */
 		TargetValue: number;
 		DisableScaleIn?: boolean | null;
 		ScaleOutCooldown?: number | null;
@@ -148,6 +214,8 @@ export namespace MyNS {
 
 	/** Describes a target tracking configuration to use with AWS Auto Scaling. Used with <a>ScalingInstruction</a> and <a>ScalingPolicy</a>. */
 	export interface TargetTrackingConfigurationFormProperties {
+
+		/** Required */
 		TargetValue: FormControl<number | null | undefined>,
 		DisableScaleIn: FormControl<boolean | null | undefined>,
 		ScaleOutCooldown: FormControl<number | null | undefined>,
@@ -156,7 +224,7 @@ export namespace MyNS {
 	}
 	export function CreateTargetTrackingConfigurationFormGroup() {
 		return new FormGroup<TargetTrackingConfigurationFormProperties>({
-			TargetValue: new FormControl<number | null | undefined>(undefined),
+			TargetValue: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			DisableScaleIn: new FormControl<boolean | null | undefined>(undefined),
 			ScaleOutCooldown: new FormControl<number | null | undefined>(undefined),
 			ScaleInCooldown: new FormControl<number | null | undefined>(undefined),
@@ -168,19 +236,33 @@ export namespace MyNS {
 
 	/** Represents a predefined metric that can be used for dynamic scaling as part of a target tracking scaling policy. */
 	export interface PredefinedScalingMetricSpecification {
+
+		/** Required */
 		PredefinedScalingMetricType: PredefinedScalingMetricSpecificationPredefinedScalingMetricType;
+
+		/**
+		 * Max length: 1023
+		 * Min length: 1
+		 */
 		ResourceLabel?: string | null;
 	}
 
 	/** Represents a predefined metric that can be used for dynamic scaling as part of a target tracking scaling policy. */
 	export interface PredefinedScalingMetricSpecificationFormProperties {
+
+		/** Required */
 		PredefinedScalingMetricType: FormControl<PredefinedScalingMetricSpecificationPredefinedScalingMetricType | null | undefined>,
+
+		/**
+		 * Max length: 1023
+		 * Min length: 1
+		 */
 		ResourceLabel: FormControl<string | null | undefined>,
 	}
 	export function CreatePredefinedScalingMetricSpecificationFormGroup() {
 		return new FormGroup<PredefinedScalingMetricSpecificationFormProperties>({
-			PredefinedScalingMetricType: new FormControl<PredefinedScalingMetricSpecificationPredefinedScalingMetricType | null | undefined>(undefined),
-			ResourceLabel: new FormControl<string | null | undefined>(undefined),
+			PredefinedScalingMetricType: new FormControl<PredefinedScalingMetricSpecificationPredefinedScalingMetricType | null | undefined>(undefined, [Validators.required]),
+			ResourceLabel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1023), Validators.minLength(1)]),
 		});
 
 	}
@@ -190,25 +272,37 @@ export namespace MyNS {
 
 	/** <p>Represents a CloudWatch metric of your choosing that can be used for dynamic scaling as part of a target tracking scaling policy. </p> <p>To create your customized scaling metric specification:</p> <ul> <li> <p>Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish Custom Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li> <li> <p>Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases. </p> </li> </ul> <p>For more information about CloudWatch, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a>. </p> */
 	export interface CustomizedScalingMetricSpecification {
+
+		/** Required */
 		MetricName: string;
+
+		/** Required */
 		Namespace: string;
 		Dimensions?: Array<MetricDimension>;
+
+		/** Required */
 		Statistic: CustomizedScalingMetricSpecificationStatistic;
 		Unit?: string | null;
 	}
 
 	/** <p>Represents a CloudWatch metric of your choosing that can be used for dynamic scaling as part of a target tracking scaling policy. </p> <p>To create your customized scaling metric specification:</p> <ul> <li> <p>Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish Custom Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li> <li> <p>Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases. </p> </li> </ul> <p>For more information about CloudWatch, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a>. </p> */
 	export interface CustomizedScalingMetricSpecificationFormProperties {
+
+		/** Required */
 		MetricName: FormControl<string | null | undefined>,
+
+		/** Required */
 		Namespace: FormControl<string | null | undefined>,
+
+		/** Required */
 		Statistic: FormControl<CustomizedScalingMetricSpecificationStatistic | null | undefined>,
 		Unit: FormControl<string | null | undefined>,
 	}
 	export function CreateCustomizedScalingMetricSpecificationFormGroup() {
 		return new FormGroup<CustomizedScalingMetricSpecificationFormProperties>({
-			MetricName: new FormControl<string | null | undefined>(undefined),
-			Namespace: new FormControl<string | null | undefined>(undefined),
-			Statistic: new FormControl<CustomizedScalingMetricSpecificationStatistic | null | undefined>(undefined),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Statistic: new FormControl<CustomizedScalingMetricSpecificationStatistic | null | undefined>(undefined, [Validators.required]),
 			Unit: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -217,19 +311,27 @@ export namespace MyNS {
 
 	/** Represents a dimension for a customized metric. */
 	export interface MetricDimension {
+
+		/** Required */
 		Name: string;
+
+		/** Required */
 		Value: string;
 	}
 
 	/** Represents a dimension for a customized metric. */
 	export interface MetricDimensionFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateMetricDimensionFormGroup() {
 		return new FormGroup<MetricDimensionFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -239,19 +341,33 @@ export namespace MyNS {
 
 	/** Represents a predefined metric that can be used for predictive scaling.  */
 	export interface PredefinedLoadMetricSpecification {
+
+		/** Required */
 		PredefinedLoadMetricType: PredefinedLoadMetricSpecificationPredefinedLoadMetricType;
+
+		/**
+		 * Max length: 1023
+		 * Min length: 1
+		 */
 		ResourceLabel?: string | null;
 	}
 
 	/** Represents a predefined metric that can be used for predictive scaling.  */
 	export interface PredefinedLoadMetricSpecificationFormProperties {
+
+		/** Required */
 		PredefinedLoadMetricType: FormControl<PredefinedLoadMetricSpecificationPredefinedLoadMetricType | null | undefined>,
+
+		/**
+		 * Max length: 1023
+		 * Min length: 1
+		 */
 		ResourceLabel: FormControl<string | null | undefined>,
 	}
 	export function CreatePredefinedLoadMetricSpecificationFormGroup() {
 		return new FormGroup<PredefinedLoadMetricSpecificationFormProperties>({
-			PredefinedLoadMetricType: new FormControl<PredefinedLoadMetricSpecificationPredefinedLoadMetricType | null | undefined>(undefined),
-			ResourceLabel: new FormControl<string | null | undefined>(undefined),
+			PredefinedLoadMetricType: new FormControl<PredefinedLoadMetricSpecificationPredefinedLoadMetricType | null | undefined>(undefined, [Validators.required]),
+			ResourceLabel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1023), Validators.minLength(1)]),
 		});
 
 	}
@@ -261,25 +377,37 @@ export namespace MyNS {
 
 	/** <p>Represents a CloudWatch metric of your choosing that can be used for predictive scaling. </p> <p>For predictive scaling to work with a customized load metric specification, AWS Auto Scaling needs access to the <code>Sum</code> and <code>Average</code> statistics that CloudWatch computes from metric data. Statistics are calculations used to aggregate data over specified time periods.</p> <p>When you choose a load metric, make sure that the required <code>Sum</code> and <code>Average</code> statistics for your metric are available in CloudWatch and that they provide relevant data for predictive scaling. The <code>Sum</code> statistic must represent the total load on the resource, and the <code>Average</code> statistic must represent the average load per capacity unit of the resource. For example, there is a metric that counts the number of requests processed by your Auto Scaling group. If the <code>Sum</code> statistic represents the total request count processed by the group, then the <code>Average</code> statistic for the specified metric must represent the average request count processed by each instance of the group.</p> <p>For information about terminology, available metrics, or how to publish new metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a> in the <i>Amazon CloudWatch User Guide</i>. </p> */
 	export interface CustomizedLoadMetricSpecification {
+
+		/** Required */
 		MetricName: string;
+
+		/** Required */
 		Namespace: string;
 		Dimensions?: Array<MetricDimension>;
+
+		/** Required */
 		Statistic: CustomizedScalingMetricSpecificationStatistic;
 		Unit?: string | null;
 	}
 
 	/** <p>Represents a CloudWatch metric of your choosing that can be used for predictive scaling. </p> <p>For predictive scaling to work with a customized load metric specification, AWS Auto Scaling needs access to the <code>Sum</code> and <code>Average</code> statistics that CloudWatch computes from metric data. Statistics are calculations used to aggregate data over specified time periods.</p> <p>When you choose a load metric, make sure that the required <code>Sum</code> and <code>Average</code> statistics for your metric are available in CloudWatch and that they provide relevant data for predictive scaling. The <code>Sum</code> statistic must represent the total load on the resource, and the <code>Average</code> statistic must represent the average load per capacity unit of the resource. For example, there is a metric that counts the number of requests processed by your Auto Scaling group. If the <code>Sum</code> statistic represents the total request count processed by the group, then the <code>Average</code> statistic for the specified metric must represent the average request count processed by each instance of the group.</p> <p>For information about terminology, available metrics, or how to publish new metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a> in the <i>Amazon CloudWatch User Guide</i>. </p> */
 	export interface CustomizedLoadMetricSpecificationFormProperties {
+
+		/** Required */
 		MetricName: FormControl<string | null | undefined>,
+
+		/** Required */
 		Namespace: FormControl<string | null | undefined>,
+
+		/** Required */
 		Statistic: FormControl<CustomizedScalingMetricSpecificationStatistic | null | undefined>,
 		Unit: FormControl<string | null | undefined>,
 	}
 	export function CreateCustomizedLoadMetricSpecificationFormGroup() {
 		return new FormGroup<CustomizedLoadMetricSpecificationFormProperties>({
-			MetricName: new FormControl<string | null | undefined>(undefined),
-			Namespace: new FormControl<string | null | undefined>(undefined),
-			Statistic: new FormControl<CustomizedScalingMetricSpecificationStatistic | null | undefined>(undefined),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Statistic: new FormControl<CustomizedScalingMetricSpecificationStatistic | null | undefined>(undefined, [Validators.required]),
 			Unit: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -342,17 +470,35 @@ export namespace MyNS {
 	}
 
 	export interface DeleteScalingPlanRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{Print}&&[^|:/]]+
+		 */
 		ScalingPlanName: string;
+
+		/** Required */
 		ScalingPlanVersion: number;
 	}
 	export interface DeleteScalingPlanRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{Print}&&[^|:/]]+
+		 */
 		ScalingPlanName: FormControl<string | null | undefined>,
+
+		/** Required */
 		ScalingPlanVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateDeleteScalingPlanRequestFormGroup() {
 		return new FormGroup<DeleteScalingPlanRequestFormProperties>({
-			ScalingPlanName: new FormControl<string | null | undefined>(undefined),
-			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined),
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -384,34 +530,76 @@ export namespace MyNS {
 
 	/** Represents a scalable resource. */
 	export interface ScalingPlanResource {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{Print}&&[^|:/]]+
+		 */
 		ScalingPlanName: string;
+
+		/** Required */
 		ScalingPlanVersion: number;
+
+		/** Required */
 		ServiceNamespace: ScalingInstructionServiceNamespace;
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: string;
+
+		/** Required */
 		ScalableDimension: ScalingPlanResourceScalableDimension;
 		ScalingPolicies?: Array<ScalingPolicy>;
+
+		/** Required */
 		ScalingStatusCode: ScalingPlanResourceScalingStatusCode;
 		ScalingStatusMessage?: string | null;
 	}
 
 	/** Represents a scalable resource. */
 	export interface ScalingPlanResourceFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{Print}&&[^|:/]]+
+		 */
 		ScalingPlanName: FormControl<string | null | undefined>,
+
+		/** Required */
 		ScalingPlanVersion: FormControl<number | null | undefined>,
+
+		/** Required */
 		ServiceNamespace: FormControl<ScalingInstructionServiceNamespace | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ScalableDimension: FormControl<ScalingPlanResourceScalableDimension | null | undefined>,
+
+		/** Required */
 		ScalingStatusCode: FormControl<ScalingPlanResourceScalingStatusCode | null | undefined>,
 		ScalingStatusMessage: FormControl<string | null | undefined>,
 	}
 	export function CreateScalingPlanResourceFormGroup() {
 		return new FormGroup<ScalingPlanResourceFormProperties>({
-			ScalingPlanName: new FormControl<string | null | undefined>(undefined),
-			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined),
-			ServiceNamespace: new FormControl<ScalingInstructionServiceNamespace | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
-			ScalableDimension: new FormControl<ScalingPlanResourceScalableDimension | null | undefined>(undefined),
-			ScalingStatusCode: new FormControl<ScalingPlanResourceScalingStatusCode | null | undefined>(undefined),
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			ServiceNamespace: new FormControl<ScalingInstructionServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			ScalableDimension: new FormControl<ScalingPlanResourceScalableDimension | null | undefined>(undefined, [Validators.required]),
+			ScalingStatusCode: new FormControl<ScalingPlanResourceScalingStatusCode | null | undefined>(undefined, [Validators.required]),
 			ScalingStatusMessage: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -422,7 +610,16 @@ export namespace MyNS {
 
 	/** Represents a scaling policy. */
 	export interface ScalingPolicy {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: \p{Print}+
+		 */
 		PolicyName: string;
+
+		/** Required */
 		PolicyType: ScalingPolicyPolicyType;
 
 		/** Describes a target tracking configuration to use with AWS Auto Scaling. Used with <a>ScalingInstruction</a> and <a>ScalingPolicy</a>. */
@@ -431,13 +628,22 @@ export namespace MyNS {
 
 	/** Represents a scaling policy. */
 	export interface ScalingPolicyFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: \p{Print}+
+		 */
 		PolicyName: FormControl<string | null | undefined>,
+
+		/** Required */
 		PolicyType: FormControl<ScalingPolicyPolicyType | null | undefined>,
 	}
 	export function CreateScalingPolicyFormGroup() {
 		return new FormGroup<ScalingPolicyFormProperties>({
-			PolicyName: new FormControl<string | null | undefined>(undefined),
-			PolicyType: new FormControl<ScalingPolicyPolicyType | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			PolicyType: new FormControl<ScalingPolicyPolicyType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -447,21 +653,39 @@ export namespace MyNS {
 	export enum ScalingPlanResourceScalingStatusCode { Inactive = 0, PartiallyActive = 1, Active = 2 }
 
 	export interface DescribeScalingPlanResourcesRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{Print}&&[^|:/]]+
+		 */
 		ScalingPlanName: string;
+
+		/** Required */
 		ScalingPlanVersion: number;
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeScalingPlanResourcesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{Print}&&[^|:/]]+
+		 */
 		ScalingPlanName: FormControl<string | null | undefined>,
+
+		/** Required */
 		ScalingPlanVersion: FormControl<number | null | undefined>,
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeScalingPlanResourcesRequestFormGroup() {
 		return new FormGroup<DescribeScalingPlanResourcesRequestFormProperties>({
-			ScalingPlanName: new FormControl<string | null | undefined>(undefined),
-			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined),
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			MaxResults: new FormControl<number | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -495,7 +719,16 @@ export namespace MyNS {
 
 	/** Represents a scaling plan. */
 	export interface ScalingPlan {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{Print}&&[^|:/]]+
+		 */
 		ScalingPlanName: string;
+
+		/** Required */
 		ScalingPlanVersion: number;
 
 		/**
@@ -503,7 +736,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		ApplicationSource: ApplicationSource;
+
+		/** Required */
 		ScalingInstructions: Array<ScalingInstruction>;
+
+		/** Required */
 		StatusCode: ScalingPlanStatusCode;
 		StatusMessage?: string | null;
 		StatusStartTime?: Date | null;
@@ -512,8 +749,19 @@ export namespace MyNS {
 
 	/** Represents a scaling plan. */
 	export interface ScalingPlanFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{Print}&&[^|:/]]+
+		 */
 		ScalingPlanName: FormControl<string | null | undefined>,
+
+		/** Required */
 		ScalingPlanVersion: FormControl<number | null | undefined>,
+
+		/** Required */
 		StatusCode: FormControl<ScalingPlanStatusCode | null | undefined>,
 		StatusMessage: FormControl<string | null | undefined>,
 		StatusStartTime: FormControl<Date | null | undefined>,
@@ -521,9 +769,9 @@ export namespace MyNS {
 	}
 	export function CreateScalingPlanFormGroup() {
 		return new FormGroup<ScalingPlanFormProperties>({
-			ScalingPlanName: new FormControl<string | null | undefined>(undefined),
-			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined),
-			StatusCode: new FormControl<ScalingPlanStatusCode | null | undefined>(undefined),
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			StatusCode: new FormControl<ScalingPlanStatusCode | null | undefined>(undefined, [Validators.required]),
 			StatusMessage: new FormControl<string | null | undefined>(undefined),
 			StatusStartTime: new FormControl<Date | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
@@ -555,6 +803,8 @@ export namespace MyNS {
 	}
 
 	export interface GetScalingPlanResourceForecastDataResponse {
+
+		/** Required */
 		Datapoints: Array<Datapoint>;
 	}
 	export interface GetScalingPlanResourceForecastDataResponseFormProperties {
@@ -586,35 +836,77 @@ export namespace MyNS {
 	}
 
 	export interface GetScalingPlanResourceForecastDataRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{Print}&&[^|:/]]+
+		 */
 		ScalingPlanName: string;
+
+		/** Required */
 		ScalingPlanVersion: number;
+
+		/** Required */
 		ServiceNamespace: ScalingInstructionServiceNamespace;
+
+		/** Required */
 		ResourceId: string;
+
+		/** Required */
 		ScalableDimension: GetScalingPlanResourceForecastDataRequestScalableDimension;
+
+		/** Required */
 		ForecastDataType: GetScalingPlanResourceForecastDataRequestForecastDataType;
+
+		/** Required */
 		StartTime: Date;
+
+		/** Required */
 		EndTime: Date;
 	}
 	export interface GetScalingPlanResourceForecastDataRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{Print}&&[^|:/]]+
+		 */
 		ScalingPlanName: FormControl<string | null | undefined>,
+
+		/** Required */
 		ScalingPlanVersion: FormControl<number | null | undefined>,
+
+		/** Required */
 		ServiceNamespace: FormControl<ScalingInstructionServiceNamespace | null | undefined>,
+
+		/** Required */
 		ResourceId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ScalableDimension: FormControl<GetScalingPlanResourceForecastDataRequestScalableDimension | null | undefined>,
+
+		/** Required */
 		ForecastDataType: FormControl<GetScalingPlanResourceForecastDataRequestForecastDataType | null | undefined>,
+
+		/** Required */
 		StartTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		EndTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateGetScalingPlanResourceForecastDataRequestFormGroup() {
 		return new FormGroup<GetScalingPlanResourceForecastDataRequestFormProperties>({
-			ScalingPlanName: new FormControl<string | null | undefined>(undefined),
-			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined),
-			ServiceNamespace: new FormControl<ScalingInstructionServiceNamespace | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
-			ScalableDimension: new FormControl<GetScalingPlanResourceForecastDataRequestScalableDimension | null | undefined>(undefined),
-			ForecastDataType: new FormControl<GetScalingPlanResourceForecastDataRequestForecastDataType | null | undefined>(undefined),
-			StartTime: new FormControl<Date | null | undefined>(undefined),
-			EndTime: new FormControl<Date | null | undefined>(undefined),
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			ServiceNamespace: new FormControl<ScalingInstructionServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ScalableDimension: new FormControl<GetScalingPlanResourceForecastDataRequestScalableDimension | null | undefined>(undefined, [Validators.required]),
+			ForecastDataType: new FormControl<GetScalingPlanResourceForecastDataRequestForecastDataType | null | undefined>(undefined, [Validators.required]),
+			StartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			EndTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -634,7 +926,16 @@ export namespace MyNS {
 	}
 
 	export interface UpdateScalingPlanRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{Print}&&[^|:/]]+
+		 */
 		ScalingPlanName: string;
+
+		/** Required */
 		ScalingPlanVersion: number;
 
 		/** Represents an application source. */
@@ -642,13 +943,22 @@ export namespace MyNS {
 		ScalingInstructions?: Array<ScalingInstruction>;
 	}
 	export interface UpdateScalingPlanRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{Print}&&[^|:/]]+
+		 */
 		ScalingPlanName: FormControl<string | null | undefined>,
+
+		/** Required */
 		ScalingPlanVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateScalingPlanRequestFormGroup() {
 		return new FormGroup<UpdateScalingPlanRequestFormProperties>({
-			ScalingPlanName: new FormControl<string | null | undefined>(undefined),
-			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined),
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

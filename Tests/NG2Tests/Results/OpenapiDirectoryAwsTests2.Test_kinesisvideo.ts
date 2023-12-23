@@ -4,14 +4,26 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateSignalingChannelOutput {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		ChannelARN?: string | null;
 	}
 	export interface CreateSignalingChannelOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		ChannelARN: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSignalingChannelOutputFormGroup() {
 		return new FormGroup<CreateSignalingChannelOutputFormProperties>({
-			ChannelARN: new FormControl<string | null | undefined>(undefined),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -19,19 +31,47 @@ export namespace MyNS {
 
 	/** A key and value pair that is associated with the specified signaling channel. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: [\p{L}\p{Z}\p{N}_.:/=+\-@]*
+		 */
 		Value: string;
 	}
 
 	/** A key and value pair that is associated with the specified signaling channel. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: [\p{L}\p{Z}\p{N}_.:/=+\-@]*
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -97,14 +137,26 @@ export namespace MyNS {
 	}
 
 	export interface CreateStreamOutput {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN?: string | null;
 	}
 	export interface CreateStreamOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateStreamOutputFormGroup() {
 		return new FormGroup<CreateStreamOutputFormProperties>({
-			StreamARN: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -205,7 +257,19 @@ export namespace MyNS {
 
 	/** A structure that encapsulates a signaling channel's metadata and properties. */
 	export interface ChannelInfo {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ChannelName?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		ChannelARN?: string | null;
 		ChannelType?: ChannelInfoChannelType | null;
 		ChannelStatus?: ChannelInfoChannelStatus | null;
@@ -213,26 +277,50 @@ export namespace MyNS {
 
 		/** A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type. */
 		SingleMasterConfiguration?: SingleMasterConfiguration;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9]+
+		 */
 		Version?: string | null;
 	}
 
 	/** A structure that encapsulates a signaling channel's metadata and properties. */
 	export interface ChannelInfoFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ChannelName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		ChannelARN: FormControl<string | null | undefined>,
 		ChannelType: FormControl<ChannelInfoChannelType | null | undefined>,
 		ChannelStatus: FormControl<ChannelInfoChannelStatus | null | undefined>,
 		CreationTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9]+
+		 */
 		Version: FormControl<string | null | undefined>,
 	}
 	export function CreateChannelInfoFormGroup() {
 		return new FormGroup<ChannelInfoFormProperties>({
-			ChannelName: new FormControl<string | null | undefined>(undefined),
-			ChannelARN: new FormControl<string | null | undefined>(undefined),
+			ChannelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			ChannelType: new FormControl<ChannelInfoChannelType | null | undefined>(undefined),
 			ChannelStatus: new FormControl<ChannelInfoChannelStatus | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
-			Version: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -244,16 +332,26 @@ export namespace MyNS {
 
 	/** A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type. */
 	export interface SingleMasterConfiguration {
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 120
+		 */
 		MessageTtlSeconds?: number | null;
 	}
 
 	/** A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type. */
 	export interface SingleMasterConfigurationFormProperties {
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 120
+		 */
 		MessageTtlSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateSingleMasterConfigurationFormGroup() {
 		return new FormGroup<SingleMasterConfigurationFormProperties>({
-			MessageTtlSeconds: new FormControl<number | null | undefined>(undefined),
+			MessageTtlSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(120)]),
 		});
 
 	}
@@ -274,40 +372,116 @@ export namespace MyNS {
 
 	/** An object describing a Kinesis video stream. */
 	export interface StreamInfo {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeviceName?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*
+		 */
 		MediaType?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: .+
+		 */
 		KmsKeyId?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9]+
+		 */
 		Version?: string | null;
 		Status?: ChannelInfoChannelStatus | null;
 		CreationTime?: Date | null;
+
+		/** Minimum: 0 */
 		DataRetentionInHours?: number | null;
 	}
 
 	/** An object describing a Kinesis video stream. */
 	export interface StreamInfoFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeviceName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*
+		 */
 		MediaType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: .+
+		 */
 		KmsKeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9]+
+		 */
 		Version: FormControl<string | null | undefined>,
 		Status: FormControl<ChannelInfoChannelStatus | null | undefined>,
 		CreationTime: FormControl<Date | null | undefined>,
+
+		/** Minimum: 0 */
 		DataRetentionInHours: FormControl<number | null | undefined>,
 	}
 	export function CreateStreamInfoFormGroup() {
 		return new FormGroup<StreamInfoFormProperties>({
-			DeviceName: new FormControl<string | null | undefined>(undefined),
-			StreamName: new FormControl<string | null | undefined>(undefined),
-			StreamARN: new FormControl<string | null | undefined>(undefined),
-			MediaType: new FormControl<string | null | undefined>(undefined),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined),
-			Version: new FormControl<string | null | undefined>(undefined),
+			DeviceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			MediaType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			Version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			Status: new FormControl<ChannelInfoChannelStatus | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
-			DataRetentionInHours: new FormControl<number | null | undefined>(undefined),
+			DataRetentionInHours: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -364,14 +538,26 @@ export namespace MyNS {
 
 	export interface ListSignalingChannelsOutput {
 		ChannelInfoList?: Array<ChannelInfo>;
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 * Pattern: [a-zA-Z0-9+/=]*
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListSignalingChannelsOutputFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 * Pattern: [a-zA-Z0-9+/=]*
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListSignalingChannelsOutputFormGroup() {
 		return new FormGroup<ListSignalingChannelsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
 		});
 
 	}
@@ -380,28 +566,52 @@ export namespace MyNS {
 
 	export interface ListStreamsOutput {
 		StreamInfoList?: Array<StreamInfo>;
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 * Pattern: [a-zA-Z0-9+/=]*
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListStreamsOutputFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 * Pattern: [a-zA-Z0-9+/=]*
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListStreamsOutputFormGroup() {
 		return new FormGroup<ListStreamsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface ListTagsForResourceOutput {
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 * Pattern: [a-zA-Z0-9+/=]*
+		 */
 		NextToken?: string | null;
 		Tags?: ResourceTags;
 	}
 	export interface ListTagsForResourceOutputFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 * Pattern: [a-zA-Z0-9+/=]*
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceOutputFormGroup() {
 		return new FormGroup<ListTagsForResourceOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
 		});
 
 	}
@@ -417,15 +627,27 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForStreamOutput {
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 * Pattern: [a-zA-Z0-9+/=]*
+		 */
 		NextToken?: string | null;
 		Tags?: ResourceTags;
 	}
 	export interface ListTagsForStreamOutputFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 * Pattern: [a-zA-Z0-9+/=]*
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForStreamOutputFormGroup() {
 		return new FormGroup<ListTagsForStreamOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
 		});
 
 	}
@@ -520,147 +742,360 @@ export namespace MyNS {
 	/** An optional input parameter for the <code>ListSignalingChannels</code> API. When this parameter is specified while invoking <code>ListSignalingChannels</code>, the API returns only the channels that satisfy a condition specified in <code>ChannelNameCondition</code>. */
 	export interface ChannelNameCondition {
 		ComparisonOperator?: ComparisonOperator | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ComparisonValue?: string | null;
 	}
 
 	/** An optional input parameter for the <code>ListSignalingChannels</code> API. When this parameter is specified while invoking <code>ListSignalingChannels</code>, the API returns only the channels that satisfy a condition specified in <code>ChannelNameCondition</code>. */
 	export interface ChannelNameConditionFormProperties {
 		ComparisonOperator: FormControl<ComparisonOperator | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ComparisonValue: FormControl<string | null | undefined>,
 	}
 	export function CreateChannelNameConditionFormGroup() {
 		return new FormGroup<ChannelNameConditionFormProperties>({
 			ComparisonOperator: new FormControl<ComparisonOperator | null | undefined>(undefined),
-			ComparisonValue: new FormControl<string | null | undefined>(undefined),
+			ComparisonValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateSignalingChannelInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ChannelName: string;
 		ChannelType?: ChannelInfoChannelType | null;
 
 		/** A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type. */
 		SingleMasterConfiguration?: SingleMasterConfiguration;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		Tags?: Array<Tag>;
 	}
 	export interface CreateSignalingChannelInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ChannelName: FormControl<string | null | undefined>,
 		ChannelType: FormControl<ChannelInfoChannelType | null | undefined>,
 	}
 	export function CreateCreateSignalingChannelInputFormGroup() {
 		return new FormGroup<CreateSignalingChannelInputFormProperties>({
-			ChannelName: new FormControl<string | null | undefined>(undefined),
+			ChannelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 			ChannelType: new FormControl<ChannelInfoChannelType | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CreateStreamInput {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeviceName?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName: string;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*
+		 */
 		MediaType?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: .+
+		 */
 		KmsKeyId?: string | null;
+
+		/** Minimum: 0 */
 		DataRetentionInHours?: number | null;
 		Tags?: ResourceTags;
 	}
 	export interface CreateStreamInputFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeviceName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*
+		 */
 		MediaType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: .+
+		 */
 		KmsKeyId: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		DataRetentionInHours: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateStreamInputFormGroup() {
 		return new FormGroup<CreateStreamInputFormProperties>({
-			DeviceName: new FormControl<string | null | undefined>(undefined),
-			StreamName: new FormControl<string | null | undefined>(undefined),
-			MediaType: new FormControl<string | null | undefined>(undefined),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined),
-			DataRetentionInHours: new FormControl<number | null | undefined>(undefined),
+			DeviceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			MediaType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			DataRetentionInHours: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
 
 	export interface DeleteSignalingChannelInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		ChannelARN: string;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9]+
+		 */
 		CurrentVersion?: string | null;
 	}
 	export interface DeleteSignalingChannelInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		ChannelARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9]+
+		 */
 		CurrentVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSignalingChannelInputFormGroup() {
 		return new FormGroup<DeleteSignalingChannelInputFormProperties>({
-			ChannelARN: new FormControl<string | null | undefined>(undefined),
-			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteStreamInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN: string;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9]+
+		 */
 		CurrentVersion?: string | null;
 	}
 	export interface DeleteStreamInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9]+
+		 */
 		CurrentVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteStreamInputFormGroup() {
 		return new FormGroup<DeleteStreamInputFormProperties>({
-			StreamARN: new FormControl<string | null | undefined>(undefined),
-			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeSignalingChannelInput {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ChannelName?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		ChannelARN?: string | null;
 	}
 	export interface DescribeSignalingChannelInputFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ChannelName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		ChannelARN: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeSignalingChannelInputFormGroup() {
 		return new FormGroup<DescribeSignalingChannelInputFormProperties>({
-			ChannelName: new FormControl<string | null | undefined>(undefined),
-			ChannelARN: new FormControl<string | null | undefined>(undefined),
+			ChannelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeStreamInput {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN?: string | null;
 	}
 	export interface DescribeStreamInputFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeStreamInputFormGroup() {
 		return new FormGroup<DescribeStreamInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined),
-			StreamARN: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetDataEndpointInput {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN?: string | null;
+
+		/** Required */
 		APIName: APIName;
 	}
 	export interface GetDataEndpointInputFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN: FormControl<string | null | undefined>,
+
+		/** Required */
 		APIName: FormControl<APIName | null | undefined>,
 	}
 	export function CreateGetDataEndpointInputFormGroup() {
 		return new FormGroup<GetDataEndpointInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined),
-			StreamARN: new FormControl<string | null | undefined>(undefined),
-			APIName: new FormControl<APIName | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			APIName: new FormControl<APIName | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -668,6 +1103,11 @@ export namespace MyNS {
 
 	/** An object that contains the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.  */
 	export interface SingleMasterChannelEndpointConfiguration {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 5
+		 */
 		Protocols?: Array<ChannelProtocol>;
 		Role?: ChannelRole | null;
 	}
@@ -684,36 +1124,72 @@ export namespace MyNS {
 	}
 
 	export interface GetSignalingChannelEndpointInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		ChannelARN: string;
 
 		/** An object that contains the endpoint configuration for the <code>SINGLE_MASTER</code> channel type. */
 		SingleMasterChannelEndpointConfiguration?: SingleMasterChannelEndpointConfiguration;
 	}
 	export interface GetSignalingChannelEndpointInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		ChannelARN: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSignalingChannelEndpointInputFormGroup() {
 		return new FormGroup<GetSignalingChannelEndpointInputFormProperties>({
-			ChannelARN: new FormControl<string | null | undefined>(undefined),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListSignalingChannelsInput {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
 		MaxResults?: number | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 * Pattern: [a-zA-Z0-9+/=]*
+		 */
 		NextToken?: string | null;
 
 		/** An optional input parameter for the <code>ListSignalingChannels</code> API. When this parameter is specified while invoking <code>ListSignalingChannels</code>, the API returns only the channels that satisfy a condition specified in <code>ChannelNameCondition</code>. */
 		ChannelNameCondition?: ChannelNameCondition;
 	}
 	export interface ListSignalingChannelsInputFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 * Pattern: [a-zA-Z0-9+/=]*
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListSignalingChannelsInputFormGroup() {
 		return new FormGroup<ListSignalingChannelsInputFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
 		});
 
 	}
@@ -722,134 +1198,326 @@ export namespace MyNS {
 	/** Specifies the condition that streams must satisfy to be returned when you list streams (see the <code>ListStreams</code> API). A condition has a comparison operation and a value. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix.  */
 	export interface StreamNameCondition {
 		ComparisonOperator?: ComparisonOperator | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ComparisonValue?: string | null;
 	}
 
 	/** Specifies the condition that streams must satisfy to be returned when you list streams (see the <code>ListStreams</code> API). A condition has a comparison operation and a value. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix.  */
 	export interface StreamNameConditionFormProperties {
 		ComparisonOperator: FormControl<ComparisonOperator | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ComparisonValue: FormControl<string | null | undefined>,
 	}
 	export function CreateStreamNameConditionFormGroup() {
 		return new FormGroup<StreamNameConditionFormProperties>({
 			ComparisonOperator: new FormControl<ComparisonOperator | null | undefined>(undefined),
-			ComparisonValue: new FormControl<string | null | undefined>(undefined),
+			ComparisonValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListStreamsInput {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
 		MaxResults?: number | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 * Pattern: [a-zA-Z0-9+/=]*
+		 */
 		NextToken?: string | null;
 
 		/** Specifies the condition that streams must satisfy to be returned when you list streams (see the <code>ListStreams</code> API). A condition has a comparison operation and a value. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix. */
 		StreamNameCondition?: StreamNameCondition;
 	}
 	export interface ListStreamsInputFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 * Pattern: [a-zA-Z0-9+/=]*
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListStreamsInputFormGroup() {
 		return new FormGroup<ListStreamsInputFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface ListTagsForResourceInput {
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 * Pattern: [a-zA-Z0-9+/=]*
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		ResourceARN: string;
 	}
 	export interface ListTagsForResourceInputFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 * Pattern: [a-zA-Z0-9+/=]*
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceInputFormGroup() {
 		return new FormGroup<ListTagsForResourceInputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListTagsForStreamInput {
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 * Pattern: [a-zA-Z0-9+/=]*
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName?: string | null;
 	}
 	export interface ListTagsForStreamInputFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 0
+		 * Pattern: [a-zA-Z0-9+/=]*
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForStreamInputFormGroup() {
 		return new FormGroup<ListTagsForStreamInputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			StreamARN: new FormControl<string | null | undefined>(undefined),
-			StreamName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface TagResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		ResourceARN: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Tags: Array<Tag>;
 	}
 	export interface TagResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceInputFormGroup() {
 		return new FormGroup<TagResourceInputFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface TagStreamInput {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName?: string | null;
+
+		/** Required */
 		Tags: ResourceTags;
 	}
 	export interface TagStreamInputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateTagStreamInputFormGroup() {
 		return new FormGroup<TagStreamInputFormProperties>({
-			StreamARN: new FormControl<string | null | undefined>(undefined),
-			StreamName: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UntagResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		ResourceARN: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		TagKeyList: Array<string>;
 	}
 	export interface UntagResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceInputFormGroup() {
 		return new FormGroup<UntagResourceInputFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UntagStreamInput {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName?: string | null;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		TagKeyList: Array<string>;
 	}
 	export interface UntagStreamInputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagStreamInputFormGroup() {
 		return new FormGroup<UntagStreamInputFormProperties>({
-			StreamARN: new FormControl<string | null | undefined>(undefined),
-			StreamName: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -857,70 +1525,212 @@ export namespace MyNS {
 	export enum UpdateDataRetentionOperation { INCREASE_DATA_RETENTION = 0, DECREASE_DATA_RETENTION = 1 }
 
 	export interface UpdateDataRetentionInput {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9]+
+		 */
 		CurrentVersion: string;
+
+		/** Required */
 		Operation: UpdateDataRetentionOperation;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		DataRetentionChangeInHours: number;
 	}
 	export interface UpdateDataRetentionInputFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9]+
+		 */
 		CurrentVersion: FormControl<string | null | undefined>,
+
+		/** Required */
 		Operation: FormControl<UpdateDataRetentionOperation | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		DataRetentionChangeInHours: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateDataRetentionInputFormGroup() {
 		return new FormGroup<UpdateDataRetentionInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined),
-			StreamARN: new FormControl<string | null | undefined>(undefined),
-			CurrentVersion: new FormControl<string | null | undefined>(undefined),
-			Operation: new FormControl<UpdateDataRetentionOperation | null | undefined>(undefined),
-			DataRetentionChangeInHours: new FormControl<number | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Operation: new FormControl<UpdateDataRetentionOperation | null | undefined>(undefined, [Validators.required]),
+			DataRetentionChangeInHours: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 		});
 
 	}
 
 	export interface UpdateSignalingChannelInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		ChannelARN: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9]+
+		 */
 		CurrentVersion: string;
 
 		/** A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type. */
 		SingleMasterConfiguration?: SingleMasterConfiguration;
 	}
 	export interface UpdateSignalingChannelInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		ChannelARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9]+
+		 */
 		CurrentVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateSignalingChannelInputFormGroup() {
 		return new FormGroup<UpdateSignalingChannelInputFormProperties>({
-			ChannelARN: new FormControl<string | null | undefined>(undefined),
-			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateStreamInput {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9]+
+		 */
 		CurrentVersion: string;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeviceName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*
+		 */
 		MediaType?: string | null;
 	}
 	export interface UpdateStreamInputFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9]+
+		 */
 		CurrentVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DeviceName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*
+		 */
 		MediaType: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateStreamInputFormGroup() {
 		return new FormGroup<UpdateStreamInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined),
-			StreamARN: new FormControl<string | null | undefined>(undefined),
-			CurrentVersion: new FormControl<string | null | undefined>(undefined),
-			DeviceName: new FormControl<string | null | undefined>(undefined),
-			MediaType: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			DeviceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			MediaType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -1146,21 +1956,31 @@ export namespace MyNS {
 	}
 	export function CreateCreateSignalingChannelPostBodyFormGroup() {
 		return new FormGroup<CreateSignalingChannelPostBodyFormProperties>({
-			ChannelName: new FormControl<string | null | undefined>(undefined),
+			ChannelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 			ChannelType: new FormControl<ChannelInfoChannelType | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CreateSignalingChannelPostBodySingleMasterConfiguration {
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 120
+		 */
 		MessageTtlSeconds?: number | null;
 	}
 	export interface CreateSignalingChannelPostBodySingleMasterConfigurationFormProperties {
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 120
+		 */
 		MessageTtlSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateSignalingChannelPostBodySingleMasterConfigurationFormGroup() {
 		return new FormGroup<CreateSignalingChannelPostBodySingleMasterConfigurationFormProperties>({
-			MessageTtlSeconds: new FormControl<number | null | undefined>(undefined),
+			MessageTtlSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(120)]),
 		});
 
 	}
@@ -1255,11 +2075,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateStreamPostBodyFormGroup() {
 		return new FormGroup<CreateStreamPostBodyFormProperties>({
-			DeviceName: new FormControl<string | null | undefined>(undefined),
-			StreamName: new FormControl<string | null | undefined>(undefined),
-			MediaType: new FormControl<string | null | undefined>(undefined),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined),
-			DataRetentionInHours: new FormControl<number | null | undefined>(undefined),
+			DeviceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			MediaType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			DataRetentionInHours: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -1305,8 +2125,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteSignalingChannelPostBodyFormGroup() {
 		return new FormGroup<DeleteSignalingChannelPostBodyFormProperties>({
-			ChannelARN: new FormControl<string | null | undefined>(undefined),
-			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1351,8 +2171,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteStreamPostBodyFormGroup() {
 		return new FormGroup<DeleteStreamPostBodyFormProperties>({
-			StreamARN: new FormControl<string | null | undefined>(undefined),
-			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1395,8 +2215,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeSignalingChannelPostBodyFormGroup() {
 		return new FormGroup<DescribeSignalingChannelPostBodyFormProperties>({
-			ChannelName: new FormControl<string | null | undefined>(undefined),
-			ChannelARN: new FormControl<string | null | undefined>(undefined),
+			ChannelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1439,8 +2259,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeStreamPostBodyFormGroup() {
 		return new FormGroup<DescribeStreamPostBodyFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined),
-			StreamARN: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1495,9 +2315,9 @@ export namespace MyNS {
 	}
 	export function CreateGetDataEndpointPostBodyFormGroup() {
 		return new FormGroup<GetDataEndpointPostBodyFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined),
-			StreamARN: new FormControl<string | null | undefined>(undefined),
-			APIName: new FormControl<APIName | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			APIName: new FormControl<APIName | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1529,12 +2349,17 @@ export namespace MyNS {
 	}
 	export function CreateGetSignalingChannelEndpointPostBodyFormGroup() {
 		return new FormGroup<GetSignalingChannelEndpointPostBodyFormProperties>({
-			ChannelARN: new FormControl<string | null | undefined>(undefined),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetSignalingChannelEndpointPostBodySingleMasterChannelEndpointConfiguration {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 5
+		 */
 		Protocols?: Array<ChannelProtocol>;
 		Role?: ChannelRole | null;
 	}
@@ -1587,24 +2412,36 @@ export namespace MyNS {
 	}
 	export function CreateListSignalingChannelsPostBodyFormGroup() {
 		return new FormGroup<ListSignalingChannelsPostBodyFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface ListSignalingChannelsPostBodyChannelNameCondition {
 		ComparisonOperator?: ComparisonOperator | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ComparisonValue?: string | null;
 	}
 	export interface ListSignalingChannelsPostBodyChannelNameConditionFormProperties {
 		ComparisonOperator: FormControl<ComparisonOperator | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ComparisonValue: FormControl<string | null | undefined>,
 	}
 	export function CreateListSignalingChannelsPostBodyChannelNameConditionFormGroup() {
 		return new FormGroup<ListSignalingChannelsPostBodyChannelNameConditionFormProperties>({
 			ComparisonOperator: new FormControl<ComparisonOperator | null | undefined>(undefined),
-			ComparisonValue: new FormControl<string | null | undefined>(undefined),
+			ComparisonValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -1648,24 +2485,36 @@ export namespace MyNS {
 	}
 	export function CreateListStreamsPostBodyFormGroup() {
 		return new FormGroup<ListStreamsPostBodyFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface ListStreamsPostBodyStreamNameCondition {
 		ComparisonOperator?: ComparisonOperator | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ComparisonValue?: string | null;
 	}
 	export interface ListStreamsPostBodyStreamNameConditionFormProperties {
 		ComparisonOperator: FormControl<ComparisonOperator | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ComparisonValue: FormControl<string | null | undefined>,
 	}
 	export function CreateListStreamsPostBodyStreamNameConditionFormGroup() {
 		return new FormGroup<ListStreamsPostBodyStreamNameConditionFormProperties>({
 			ComparisonOperator: new FormControl<ComparisonOperator | null | undefined>(undefined),
-			ComparisonValue: new FormControl<string | null | undefined>(undefined),
+			ComparisonValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -1710,8 +2559,8 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourcePostBodyFormGroup() {
 		return new FormGroup<ListTagsForResourcePostBodyFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1770,9 +2619,9 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForStreamPostBodyFormGroup() {
 		return new FormGroup<ListTagsForStreamPostBodyFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			StreamARN: new FormControl<string | null | undefined>(undefined),
-			StreamName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -1809,7 +2658,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1864,9 +2713,9 @@ export namespace MyNS {
 	}
 	export function CreateTagStreamPostBodyFormGroup() {
 		return new FormGroup<TagStreamPostBodyFormProperties>({
-			StreamARN: new FormControl<string | null | undefined>(undefined),
-			StreamName: new FormControl<string | null | undefined>(undefined),
-			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1903,7 +2752,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourcePostBodyFormGroup() {
 		return new FormGroup<UntagResourcePostBodyFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1954,8 +2803,8 @@ export namespace MyNS {
 	}
 	export function CreateUntagStreamPostBodyFormGroup() {
 		return new FormGroup<UntagStreamPostBodyFormProperties>({
-			StreamARN: new FormControl<string | null | undefined>(undefined),
-			StreamName: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -2042,11 +2891,11 @@ export namespace MyNS {
 	}
 	export function CreateUpdateDataRetentionPostBodyFormGroup() {
 		return new FormGroup<UpdateDataRetentionPostBodyFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined),
-			StreamARN: new FormControl<string | null | undefined>(undefined),
-			CurrentVersion: new FormControl<string | null | undefined>(undefined),
-			Operation: new FormControl<UpdateDataRetentionOperation | null | undefined>(undefined),
-			DataRetentionChangeInHours: new FormControl<number | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Operation: new FormControl<UpdateDataRetentionOperation | null | undefined>(undefined, [Validators.required]),
+			DataRetentionChangeInHours: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 		});
 
 	}
@@ -2096,21 +2945,31 @@ export namespace MyNS {
 	}
 	export function CreateUpdateSignalingChannelPostBodyFormGroup() {
 		return new FormGroup<UpdateSignalingChannelPostBodyFormProperties>({
-			ChannelARN: new FormControl<string | null | undefined>(undefined),
-			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateSignalingChannelPostBodySingleMasterConfiguration {
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 120
+		 */
 		MessageTtlSeconds?: number | null;
 	}
 	export interface UpdateSignalingChannelPostBodySingleMasterConfigurationFormProperties {
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 120
+		 */
 		MessageTtlSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateSignalingChannelPostBodySingleMasterConfigurationFormGroup() {
 		return new FormGroup<UpdateSignalingChannelPostBodySingleMasterConfigurationFormProperties>({
-			MessageTtlSeconds: new FormControl<number | null | undefined>(undefined),
+			MessageTtlSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(120)]),
 		});
 
 	}
@@ -2203,11 +3062,11 @@ export namespace MyNS {
 	}
 	export function CreateUpdateStreamPostBodyFormGroup() {
 		return new FormGroup<UpdateStreamPostBodyFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined),
-			StreamARN: new FormControl<string | null | undefined>(undefined),
-			CurrentVersion: new FormControl<string | null | undefined>(undefined),
-			DeviceName: new FormControl<string | null | undefined>(undefined),
-			MediaType: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			DeviceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			MediaType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}

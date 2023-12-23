@@ -8,7 +8,15 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 {
 	public static class ComponentsHelper
 	{
-		public static List<string> GetCommentsFromAnnotations(OpenApiSchema fieldSchema, string key, OpenApiSchema modelSchema)
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="fieldSchema"></param>
+		/// <param name="key"></param>
+		/// <param name="modelSchema"></param>
+		/// <param name="excludePattern">JsDoc does not support regex yet.</param>
+		/// <returns></returns>
+		public static List<string> GetCommentsFromAnnotations(OpenApiSchema fieldSchema, string key, OpenApiSchema modelSchema, bool excludePattern=false)
 		{
 			List<string> ss = new();
 			if (modelSchema.Required.Count > 0)
@@ -50,7 +58,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				ss.Add(String.Format(CultureInfo.CurrentCulture, "Maximum items: {0}", fieldSchema.MaxItems.Value));
 			}
 
-			if (!String.IsNullOrEmpty(fieldSchema.Pattern))
+			if (!String.IsNullOrEmpty(fieldSchema.Pattern) && !excludePattern)
 			{
 				ss.Add(String.Format(CultureInfo.CurrentCulture, "Pattern: {0}", fieldSchema.Pattern));
 			}

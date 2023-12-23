@@ -42,22 +42,54 @@ export namespace MyNS {
 
 	/** A unique identifier for an attribute. */
 	export interface AttributeKey {
+
+		/** Required */
 		SchemaArn: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		FacetName: string;
+
+		/**
+		 * Required
+		 * Max length: 230
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._:-]*$
+		 */
 		Name: string;
 	}
 
 	/** A unique identifier for an attribute. */
 	export interface AttributeKeyFormProperties {
+
+		/** Required */
 		SchemaArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		FacetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 230
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._:-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateAttributeKeyFormGroup() {
 		return new FormGroup<AttributeKeyFormProperties>({
-			SchemaArn: new FormControl<string | null | undefined>(undefined),
-			FacetName: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			SchemaArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			FacetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(230), Validators.minLength(1)]),
 		});
 
 	}
@@ -327,6 +359,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		TargetObjectReference: ObjectReference;
+
+		/** Required */
 		IdentityAttributeValues: Array<AttributeNameAndValue>;
 	}
 
@@ -342,19 +376,33 @@ export namespace MyNS {
 
 	/** Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link. */
 	export interface TypedLinkSchemaAndFacetName {
+
+		/** Required */
 		SchemaArn: string;
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		TypedLinkName: string;
 	}
 
 	/** Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link. */
 	export interface TypedLinkSchemaAndFacetNameFormProperties {
+
+		/** Required */
 		SchemaArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		TypedLinkName: FormControl<string | null | undefined>,
 	}
 	export function CreateTypedLinkSchemaAndFacetNameFormGroup() {
 		return new FormGroup<TypedLinkSchemaAndFacetNameFormProperties>({
-			SchemaArn: new FormControl<string | null | undefined>(undefined),
-			TypedLinkName: new FormControl<string | null | undefined>(undefined),
+			SchemaArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TypedLinkName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -379,6 +427,13 @@ export namespace MyNS {
 
 	/** Identifies the attribute name and value for a typed link. */
 	export interface AttributeNameAndValue {
+
+		/**
+		 * Required
+		 * Max length: 230
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._:-]*$
+		 */
 		AttributeName: string;
 
 		/**
@@ -390,11 +445,18 @@ export namespace MyNS {
 
 	/** Identifies the attribute name and value for a typed link. */
 	export interface AttributeNameAndValueFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 230
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._:-]*$
+		 */
 		AttributeName: FormControl<string | null | undefined>,
 	}
 	export function CreateAttributeNameAndValueFormGroup() {
 		return new FormGroup<AttributeNameAndValueFormProperties>({
-			AttributeName: new FormControl<string | null | undefined>(undefined),
+			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(230), Validators.minLength(1)]),
 		});
 
 	}
@@ -552,18 +614,30 @@ export namespace MyNS {
 	/** A facet. */
 	export interface SchemaFacet {
 		SchemaArn?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		FacetName?: string | null;
 	}
 
 	/** A facet. */
 	export interface SchemaFacetFormProperties {
 		SchemaArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		FacetName: FormControl<string | null | undefined>,
 	}
 	export function CreateSchemaFacetFormGroup() {
 		return new FormGroup<SchemaFacetFormProperties>({
 			SchemaArn: new FormControl<string | null | undefined>(undefined),
-			FacetName: new FormControl<string | null | undefined>(undefined),
+			FacetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -837,18 +911,30 @@ export namespace MyNS {
 	/** A pair of ObjectIdentifier and LinkName. */
 	export interface ObjectIdentifierAndLinkNameTuple {
 		ObjectIdentifier?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
+		 */
 		LinkName?: string | null;
 	}
 
 	/** A pair of ObjectIdentifier and LinkName. */
 	export interface ObjectIdentifierAndLinkNameTupleFormProperties {
 		ObjectIdentifier: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
+		 */
 		LinkName: FormControl<string | null | undefined>,
 	}
 	export function CreateObjectIdentifierAndLinkNameTupleFormGroup() {
 		return new FormGroup<ObjectIdentifierAndLinkNameTupleFormProperties>({
 			ObjectIdentifier: new FormControl<string | null | undefined>(undefined),
-			LinkName: new FormControl<string | null | undefined>(undefined),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -939,6 +1025,8 @@ export namespace MyNS {
 		 */
 		ObjectReference: ObjectReference;
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 
 		/** A facet. */
@@ -948,12 +1036,14 @@ export namespace MyNS {
 	/** Represents the output of a <a>ListObjectAttributes</a> operation. */
 	export interface BatchListObjectAttributesFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateBatchListObjectAttributesFormGroup() {
 		return new FormGroup<BatchListObjectAttributesFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -968,18 +1058,22 @@ export namespace MyNS {
 		 */
 		ObjectReference: ObjectReference;
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 
 	/** Represents the output of a <a>ListObjectChildren</a> operation. */
 	export interface BatchListObjectChildrenFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateBatchListObjectChildrenFormGroup() {
 		return new FormGroup<BatchListObjectChildrenFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -994,18 +1088,22 @@ export namespace MyNS {
 		 */
 		TargetReference: ObjectReference;
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 
 	/** Lists indices attached to an object inside a <a>BatchRead</a> operation. For more information, see <a>ListAttachedIndices</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchListAttachedIndicesFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateBatchListAttachedIndicesFormGroup() {
 		return new FormGroup<BatchListAttachedIndicesFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -1020,18 +1118,22 @@ export namespace MyNS {
 		 */
 		ObjectReference: ObjectReference;
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 
 	/** Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects inside a <a>BatchRead</a> operation. For more information, see <a>ListObjectParentPaths</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchListObjectParentPathsFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateBatchListObjectParentPathsFormGroup() {
 		return new FormGroup<BatchListObjectParentPathsFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -1071,6 +1173,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		SchemaFacet: SchemaFacet;
+
+		/** Required */
 		AttributeNames: Array<string>;
 	}
 
@@ -1091,16 +1195,20 @@ export namespace MyNS {
 		 */
 		ObjectReference: ObjectReference;
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 	export interface BatchListObjectParentsFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateBatchListObjectParentsFormGroup() {
 		return new FormGroup<BatchListObjectParentsFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -1115,18 +1223,22 @@ export namespace MyNS {
 		 */
 		ObjectReference: ObjectReference;
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 
 	/** Returns policies attached to an object in pagination fashion inside a <a>BatchRead</a> operation. For more information, see <a>ListObjectPolicies</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchListObjectPoliciesFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateBatchListObjectPoliciesFormGroup() {
 		return new FormGroup<BatchListObjectPoliciesFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -1141,18 +1253,22 @@ export namespace MyNS {
 		 */
 		PolicyReference: ObjectReference;
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 
 	/** Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached inside a <a>BatchRead</a> operation. For more information, see <a>ListPolicyAttachments</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchListPolicyAttachmentsFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateBatchListPolicyAttachmentsFormGroup() {
 		return new FormGroup<BatchListPolicyAttachmentsFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -1167,18 +1283,22 @@ export namespace MyNS {
 		 */
 		ObjectReference: ObjectReference;
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 
 	/** Lists all policies from the root of the Directory to the object specified inside a <a>BatchRead</a> operation. For more information, see <a>LookupPolicy</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchLookupPolicyFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateBatchLookupPolicyFormGroup() {
 		return new FormGroup<BatchLookupPolicyFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -1193,18 +1313,22 @@ export namespace MyNS {
 		 * Required
 		 */
 		IndexReference: ObjectReference;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 
 	/** Lists objects attached to the specified index inside a <a>BatchRead</a> operation. For more information, see <a>ListIndex</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchListIndexFormProperties {
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchListIndexFormGroup() {
 		return new FormGroup<BatchListIndexFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1233,10 +1357,14 @@ export namespace MyNS {
 
 	/** A range of attribute values. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_range_filters.html">Range Filters</a>. */
 	export interface TypedAttributeValueRange {
+
+		/** Required */
 		StartMode: TypedAttributeValueRangeStartMode;
 
 		/** Represents the data for a typed attribute. You can set one, and only one, of the elements. Each attribute in an item is a name-value pair. Attributes have a single value. */
 		StartValue?: TypedAttributeValue;
+
+		/** Required */
 		EndMode: TypedAttributeValueRangeStartMode;
 
 		/** Represents the data for a typed attribute. You can set one, and only one, of the elements. Each attribute in an item is a name-value pair. Attributes have a single value. */
@@ -1245,13 +1373,17 @@ export namespace MyNS {
 
 	/** A range of attribute values. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_range_filters.html">Range Filters</a>. */
 	export interface TypedAttributeValueRangeFormProperties {
+
+		/** Required */
 		StartMode: FormControl<TypedAttributeValueRangeStartMode | null | undefined>,
+
+		/** Required */
 		EndMode: FormControl<TypedAttributeValueRangeStartMode | null | undefined>,
 	}
 	export function CreateTypedAttributeValueRangeFormGroup() {
 		return new FormGroup<TypedAttributeValueRangeFormProperties>({
-			StartMode: new FormControl<TypedAttributeValueRangeStartMode | null | undefined>(undefined),
-			EndMode: new FormControl<TypedAttributeValueRangeStartMode | null | undefined>(undefined),
+			StartMode: new FormControl<TypedAttributeValueRangeStartMode | null | undefined>(undefined, [Validators.required]),
+			EndMode: new FormControl<TypedAttributeValueRangeStartMode | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1272,18 +1404,22 @@ export namespace MyNS {
 		/** Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link. */
 		FilterTypedLink?: TypedLinkSchemaAndFacetName;
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 
 	/** Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object inside a <a>BatchRead</a> operation. For more information, see <a>ListOutgoingTypedLinks</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchListOutgoingTypedLinksFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateBatchListOutgoingTypedLinksFormGroup() {
 		return new FormGroup<BatchListOutgoingTypedLinksFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -1291,6 +1427,12 @@ export namespace MyNS {
 
 	/** Identifies the range of attributes that are used by a specified filter. */
 	export interface TypedLinkAttributeRange {
+
+		/**
+		 * Max length: 230
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._:-]*$
+		 */
 		AttributeName?: string | null;
 
 		/**
@@ -1302,11 +1444,17 @@ export namespace MyNS {
 
 	/** Identifies the range of attributes that are used by a specified filter. */
 	export interface TypedLinkAttributeRangeFormProperties {
+
+		/**
+		 * Max length: 230
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._:-]*$
+		 */
 		AttributeName: FormControl<string | null | undefined>,
 	}
 	export function CreateTypedLinkAttributeRangeFormGroup() {
 		return new FormGroup<TypedLinkAttributeRangeFormProperties>({
-			AttributeName: new FormControl<string | null | undefined>(undefined),
+			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(230), Validators.minLength(1)]),
 		});
 
 	}
@@ -1325,18 +1473,22 @@ export namespace MyNS {
 		/** Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link. */
 		FilterTypedLink?: TypedLinkSchemaAndFacetName;
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 
 	/** Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object inside a <a>BatchRead</a> operation. For more information, see <a>ListIncomingTypedLinks</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchListIncomingTypedLinksFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateBatchListIncomingTypedLinksFormGroup() {
 		return new FormGroup<BatchListIncomingTypedLinksFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -1350,6 +1502,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		TypedLinkSpecifier: TypedLinkSpecifier;
+
+		/** Required */
 		AttributeNames: Array<string>;
 	}
 
@@ -1728,23 +1882,39 @@ export namespace MyNS {
 
 	/** Represents the output of a <a>CreateObject</a> operation. */
 	export interface BatchCreateObject {
+
+		/** Required */
 		SchemaFacet: Array<SchemaFacet>;
+
+		/** Required */
 		ObjectAttributeList: Array<AttributeKeyAndValue>;
 
 		/** The reference that identifies an object. */
 		ParentReference?: ObjectReference;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
+		 */
 		LinkName?: string | null;
 		BatchReferenceName?: string | null;
 	}
 
 	/** Represents the output of a <a>CreateObject</a> operation. */
 	export interface BatchCreateObjectFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
+		 */
 		LinkName: FormControl<string | null | undefined>,
 		BatchReferenceName: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchCreateObjectFormGroup() {
 		return new FormGroup<BatchCreateObjectFormProperties>({
-			LinkName: new FormControl<string | null | undefined>(undefined),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			BatchReferenceName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1765,16 +1935,30 @@ export namespace MyNS {
 		 * Required
 		 */
 		ChildReference: ObjectReference;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
+		 */
 		LinkName: string;
 	}
 
 	/** Represents the output of an <a>AttachObject</a> operation. */
 	export interface BatchAttachObjectFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
+		 */
 		LinkName: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchAttachObjectFormGroup() {
 		return new FormGroup<BatchAttachObjectFormProperties>({
-			LinkName: new FormControl<string | null | undefined>(undefined),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1788,18 +1972,32 @@ export namespace MyNS {
 		 * Required
 		 */
 		ParentReference: ObjectReference;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
+		 */
 		LinkName: string;
 		BatchReferenceName?: string | null;
 	}
 
 	/** Represents the output of a <a>DetachObject</a> operation. */
 	export interface BatchDetachObjectFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
+		 */
 		LinkName: FormControl<string | null | undefined>,
 		BatchReferenceName: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchDetachObjectFormGroup() {
 		return new FormGroup<BatchDetachObjectFormProperties>({
-			LinkName: new FormControl<string | null | undefined>(undefined),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 			BatchReferenceName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1814,6 +2012,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		ObjectReference: ObjectReference;
+
+		/** Required */
 		AttributeUpdates: Array<ObjectAttributeUpdate>;
 	}
 
@@ -1897,6 +2097,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		SchemaFacet: SchemaFacet;
+
+		/** Required */
 		ObjectAttributeList: Array<AttributeKeyAndValue>;
 
 		/**
@@ -1996,25 +2198,43 @@ export namespace MyNS {
 
 	/** Creates an index object inside of a <a>BatchRead</a> operation. For more information, see <a>CreateIndex</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchCreateIndex {
+
+		/** Required */
 		OrderedIndexedAttributeList: Array<AttributeKey>;
+
+		/** Required */
 		IsUnique: boolean;
 
 		/** The reference that identifies an object. */
 		ParentReference?: ObjectReference;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
+		 */
 		LinkName?: string | null;
 		BatchReferenceName?: string | null;
 	}
 
 	/** Creates an index object inside of a <a>BatchRead</a> operation. For more information, see <a>CreateIndex</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchCreateIndexFormProperties {
+
+		/** Required */
 		IsUnique: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
+		 */
 		LinkName: FormControl<string | null | undefined>,
 		BatchReferenceName: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchCreateIndexFormGroup() {
 		return new FormGroup<BatchCreateIndexFormProperties>({
-			IsUnique: new FormControl<boolean | null | undefined>(undefined),
-			LinkName: new FormControl<string | null | undefined>(undefined),
+			IsUnique: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			BatchReferenceName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2093,6 +2313,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		TypedLinkFacet: TypedLinkSchemaAndFacetName;
+
+		/** Required */
 		Attributes: Array<AttributeNameAndValue>;
 	}
 
@@ -2134,6 +2356,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		TypedLinkSpecifier: TypedLinkSpecifier;
+
+		/** Required */
 		AttributeUpdates: Array<LinkAttributeUpdate>;
 	}
 
@@ -2197,23 +2421,49 @@ export namespace MyNS {
 	}
 
 	export interface CreateDirectoryResponse {
+
+		/** Required */
 		DirectoryArn: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: string;
+
+		/** Required */
 		ObjectIdentifier: string;
+
+		/** Required */
 		AppliedSchemaArn: string;
 	}
 	export interface CreateDirectoryResponseFormProperties {
+
+		/** Required */
 		DirectoryArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		ObjectIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		AppliedSchemaArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDirectoryResponseFormGroup() {
 		return new FormGroup<CreateDirectoryResponseFormProperties>({
-			DirectoryArn: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			ObjectIdentifier: new FormControl<string | null | undefined>(undefined),
-			AppliedSchemaArn: new FormControl<string | null | undefined>(undefined),
+			DirectoryArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			ObjectIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			AppliedSchemaArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2241,6 +2491,13 @@ export namespace MyNS {
 
 	/** An attribute that is associated with the <a>Facet</a>. */
 	export interface FacetAttribute {
+
+		/**
+		 * Required
+		 * Max length: 230
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._:-]*$
+		 */
 		Name: string;
 
 		/** A facet attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information. */
@@ -2253,12 +2510,19 @@ export namespace MyNS {
 
 	/** An attribute that is associated with the <a>Facet</a>. */
 	export interface FacetAttributeFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 230
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._:-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
 		RequiredBehavior: FormControl<FacetAttributeRequiredBehavior | null | undefined>,
 	}
 	export function CreateFacetAttributeFormGroup() {
 		return new FormGroup<FacetAttributeFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(230), Validators.minLength(1)]),
 			RequiredBehavior: new FormControl<FacetAttributeRequiredBehavior | null | undefined>(undefined),
 		});
 
@@ -2267,6 +2531,8 @@ export namespace MyNS {
 
 	/** A facet attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information. */
 	export interface FacetAttributeDefinition {
+
+		/** Required */
 		Type: FacetAttributeDefinitionType;
 
 		/** Represents the data for a typed attribute. You can set one, and only one, of the elements. Each attribute in an item is a name-value pair. Attributes have a single value. */
@@ -2277,12 +2543,14 @@ export namespace MyNS {
 
 	/** A facet attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information. */
 	export interface FacetAttributeDefinitionFormProperties {
+
+		/** Required */
 		Type: FormControl<FacetAttributeDefinitionType | null | undefined>,
 		IsImmutable: FormControl<boolean | null | undefined>,
 	}
 	export function CreateFacetAttributeDefinitionFormGroup() {
 		return new FormGroup<FacetAttributeDefinitionFormProperties>({
-			Type: new FormControl<FacetAttributeDefinitionType | null | undefined>(undefined),
+			Type: new FormControl<FacetAttributeDefinitionType | null | undefined>(undefined, [Validators.required]),
 			IsImmutable: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2303,19 +2571,47 @@ export namespace MyNS {
 
 	/** The facet attribute reference that specifies the attribute definition that contains the attribute facet name and attribute name. */
 	export interface FacetAttributeReference {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		TargetFacetName: string;
+
+		/**
+		 * Required
+		 * Max length: 230
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._:-]*$
+		 */
 		TargetAttributeName: string;
 	}
 
 	/** The facet attribute reference that specifies the attribute definition that contains the attribute facet name and attribute name. */
 	export interface FacetAttributeReferenceFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		TargetFacetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 230
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._:-]*$
+		 */
 		TargetAttributeName: FormControl<string | null | undefined>,
 	}
 	export function CreateFacetAttributeReferenceFormGroup() {
 		return new FormGroup<FacetAttributeReferenceFormProperties>({
-			TargetFacetName: new FormControl<string | null | undefined>(undefined),
-			TargetAttributeName: new FormControl<string | null | undefined>(undefined),
+			TargetFacetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			TargetAttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(230), Validators.minLength(1)]),
 		});
 
 	}
@@ -2404,42 +2700,68 @@ export namespace MyNS {
 
 	/** A typed link attribute definition. */
 	export interface TypedLinkAttributeDefinition {
+
+		/**
+		 * Required
+		 * Max length: 230
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._:-]*$
+		 */
 		Name: string;
+
+		/** Required */
 		Type: FacetAttributeDefinitionType;
 
 		/** Represents the data for a typed attribute. You can set one, and only one, of the elements. Each attribute in an item is a name-value pair. Attributes have a single value. */
 		DefaultValue?: TypedAttributeValue;
 		IsImmutable?: boolean | null;
 		Rules?: RuleMap;
+
+		/** Required */
 		RequiredBehavior: FacetAttributeRequiredBehavior;
 	}
 
 	/** A typed link attribute definition. */
 	export interface TypedLinkAttributeDefinitionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 230
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._:-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Type: FormControl<FacetAttributeDefinitionType | null | undefined>,
 		IsImmutable: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		RequiredBehavior: FormControl<FacetAttributeRequiredBehavior | null | undefined>,
 	}
 	export function CreateTypedLinkAttributeDefinitionFormGroup() {
 		return new FormGroup<TypedLinkAttributeDefinitionFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Type: new FormControl<FacetAttributeDefinitionType | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(230), Validators.minLength(1)]),
+			Type: new FormControl<FacetAttributeDefinitionType | null | undefined>(undefined, [Validators.required]),
 			IsImmutable: new FormControl<boolean | null | undefined>(undefined),
-			RequiredBehavior: new FormControl<FacetAttributeRequiredBehavior | null | undefined>(undefined),
+			RequiredBehavior: new FormControl<FacetAttributeRequiredBehavior | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeleteDirectoryResponse {
+
+		/** Required */
 		DirectoryArn: string;
 	}
 	export interface DeleteDirectoryResponseFormProperties {
+
+		/** Required */
 		DirectoryArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDirectoryResponseFormGroup() {
 		return new FormGroup<DeleteDirectoryResponseFormProperties>({
-			DirectoryArn: new FormControl<string | null | undefined>(undefined),
+			DirectoryArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2604,27 +2926,35 @@ export namespace MyNS {
 	}
 
 	export interface DisableDirectoryResponse {
+
+		/** Required */
 		DirectoryArn: string;
 	}
 	export interface DisableDirectoryResponseFormProperties {
+
+		/** Required */
 		DirectoryArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDisableDirectoryResponseFormGroup() {
 		return new FormGroup<DisableDirectoryResponseFormProperties>({
-			DirectoryArn: new FormControl<string | null | undefined>(undefined),
+			DirectoryArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface EnableDirectoryResponse {
+
+		/** Required */
 		DirectoryArn: string;
 	}
 	export interface EnableDirectoryResponseFormProperties {
+
+		/** Required */
 		DirectoryArn: FormControl<string | null | undefined>,
 	}
 	export function CreateEnableDirectoryResponseFormGroup() {
 		return new FormGroup<EnableDirectoryResponseFormProperties>({
-			DirectoryArn: new FormControl<string | null | undefined>(undefined),
+			DirectoryArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2661,6 +2991,12 @@ export namespace MyNS {
 
 	/** Directory structure that includes the directory name and directory ARN. */
 	export interface Directory {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name?: string | null;
 		DirectoryArn?: string | null;
 		State?: DirectoryState | null;
@@ -2669,6 +3005,12 @@ export namespace MyNS {
 
 	/** Directory structure that includes the directory name and directory ARN. */
 	export interface DirectoryFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
 		DirectoryArn: FormControl<string | null | undefined>,
 		State: FormControl<DirectoryState | null | undefined>,
@@ -2676,7 +3018,7 @@ export namespace MyNS {
 	}
 	export function CreateDirectoryFormGroup() {
 		return new FormGroup<DirectoryFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			DirectoryArn: new FormControl<string | null | undefined>(undefined),
 			State: new FormControl<DirectoryState | null | undefined>(undefined),
 			CreationDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -2702,6 +3044,12 @@ export namespace MyNS {
 
 	/** A structure that contains <code>Name</code>, <code>ARN</code>, <code>Attributes</code>, <code> <a>Rule</a>s</code>, and <code>ObjectTypes</code>. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_whatarefacets.html">Facets</a> for more information. */
 	export interface Facet {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name?: string | null;
 		ObjectType?: FacetObjectType | null;
 		FacetStyle?: FacetFacetStyle | null;
@@ -2709,13 +3057,19 @@ export namespace MyNS {
 
 	/** A structure that contains <code>Name</code>, <code>ARN</code>, <code>Attributes</code>, <code> <a>Rule</a>s</code>, and <code>ObjectTypes</code>. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_whatarefacets.html">Facets</a> for more information. */
 	export interface FacetFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
 		ObjectType: FormControl<FacetObjectType | null | undefined>,
 		FacetStyle: FormControl<FacetFacetStyle | null | undefined>,
 	}
 	export function CreateFacetFormGroup() {
 		return new FormGroup<FacetFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			ObjectType: new FormControl<FacetObjectType | null | undefined>(undefined),
 			FacetStyle: new FormControl<FacetFacetStyle | null | undefined>(undefined),
 		});
@@ -2763,16 +3117,28 @@ export namespace MyNS {
 	}
 
 	export interface GetSchemaAsJsonResponse {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name?: string | null;
 		Document?: string | null;
 	}
 	export interface GetSchemaAsJsonResponseFormProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
 		Document: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSchemaAsJsonResponseFormGroup() {
 		return new FormGroup<GetSchemaAsJsonResponseFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 			Document: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2842,6 +3208,8 @@ export namespace MyNS {
 	}
 
 	export interface ListDirectoriesResponse {
+
+		/** Required */
 		Directories: Array<Directory>;
 		NextToken?: string | null;
 	}
@@ -3315,16 +3683,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		Attribute: TypedLinkAttributeDefinition;
+
+		/** Required */
 		Action: ObjectAttributeActionObjectAttributeActionType;
 	}
 
 	/** A typed link facet attribute update. */
 	export interface TypedLinkFacetAttributeUpdateFormProperties {
+
+		/** Required */
 		Action: FormControl<ObjectAttributeActionObjectAttributeActionType | null | undefined>,
 	}
 	export function CreateTypedLinkFacetAttributeUpdateFormGroup() {
 		return new FormGroup<TypedLinkFacetAttributeUpdateFormProperties>({
-			Action: new FormControl<ObjectAttributeActionObjectAttributeActionType | null | undefined>(undefined),
+			Action: new FormControl<ObjectAttributeActionObjectAttributeActionType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3392,14 +3764,18 @@ export namespace MyNS {
 	}
 
 	export interface ApplySchemaRequest {
+
+		/** Required */
 		PublishedSchemaArn: string;
 	}
 	export interface ApplySchemaRequestFormProperties {
+
+		/** Required */
 		PublishedSchemaArn: FormControl<string | null | undefined>,
 	}
 	export function CreateApplySchemaRequestFormGroup() {
 		return new FormGroup<ApplySchemaRequestFormProperties>({
-			PublishedSchemaArn: new FormControl<string | null | undefined>(undefined),
+			PublishedSchemaArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3417,14 +3793,28 @@ export namespace MyNS {
 		 * Required
 		 */
 		ChildReference: ObjectReference;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
+		 */
 		LinkName: string;
 	}
 	export interface AttachObjectRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
+		 */
 		LinkName: FormControl<string | null | undefined>,
 	}
 	export function CreateAttachObjectRequestFormGroup() {
 		return new FormGroup<AttachObjectRequestFormProperties>({
-			LinkName: new FormControl<string | null | undefined>(undefined),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -3492,6 +3882,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		TypedLinkFacet: TypedLinkSchemaAndFacetName;
+
+		/** Required */
 		Attributes: Array<AttributeNameAndValue>;
 	}
 	export interface AttachTypedLinkRequestFormProperties {
@@ -3505,6 +3897,8 @@ export namespace MyNS {
 	export enum ConsistencyLevel { SERIALIZABLE = 0, EVENTUAL = 1 }
 
 	export interface BatchReadRequest {
+
+		/** Required */
 		Operations: Array<BatchReadOperation>;
 	}
 	export interface BatchReadRequestFormProperties {
@@ -3516,6 +3910,8 @@ export namespace MyNS {
 	}
 
 	export interface BatchWriteRequest {
+
+		/** Required */
 		Operations: Array<BatchWriteOperation>;
 	}
 	export interface BatchWriteRequestFormProperties {
@@ -3527,14 +3923,28 @@ export namespace MyNS {
 	}
 
 	export interface CreateDirectoryRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: string;
 	}
 	export interface CreateDirectoryRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDirectoryRequestFormGroup() {
 		return new FormGroup<CreateDirectoryRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -3544,19 +3954,33 @@ export namespace MyNS {
 	export enum FacetStyle { STATIC = 0, DYNAMIC = 1 }
 
 	export interface CreateFacetRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: string;
 		Attributes?: Array<FacetAttribute>;
 		ObjectType?: FacetObjectType | null;
 		FacetStyle?: FacetFacetStyle | null;
 	}
 	export interface CreateFacetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
 		ObjectType: FormControl<FacetObjectType | null | undefined>,
 		FacetStyle: FormControl<FacetFacetStyle | null | undefined>,
 	}
 	export function CreateCreateFacetRequestFormGroup() {
 		return new FormGroup<CreateFacetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 			ObjectType: new FormControl<FacetObjectType | null | undefined>(undefined),
 			FacetStyle: new FormControl<FacetFacetStyle | null | undefined>(undefined),
 		});
@@ -3564,52 +3988,98 @@ export namespace MyNS {
 	}
 
 	export interface CreateIndexRequest {
+
+		/** Required */
 		OrderedIndexedAttributeList: Array<AttributeKey>;
+
+		/** Required */
 		IsUnique: boolean;
 
 		/** The reference that identifies an object. */
 		ParentReference?: ObjectReference;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
+		 */
 		LinkName?: string | null;
 	}
 	export interface CreateIndexRequestFormProperties {
+
+		/** Required */
 		IsUnique: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
+		 */
 		LinkName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateIndexRequestFormGroup() {
 		return new FormGroup<CreateIndexRequestFormProperties>({
-			IsUnique: new FormControl<boolean | null | undefined>(undefined),
-			LinkName: new FormControl<string | null | undefined>(undefined),
+			IsUnique: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateObjectRequest {
+
+		/** Required */
 		SchemaFacets: Array<SchemaFacet>;
 		ObjectAttributeList?: Array<AttributeKeyAndValue>;
 
 		/** The reference that identifies an object. */
 		ParentReference?: ObjectReference;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
+		 */
 		LinkName?: string | null;
 	}
 	export interface CreateObjectRequestFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
+		 */
 		LinkName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateObjectRequestFormGroup() {
 		return new FormGroup<CreateObjectRequestFormProperties>({
-			LinkName: new FormControl<string | null | undefined>(undefined),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateSchemaRequest {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: string;
 	}
 	export interface CreateSchemaRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSchemaRequestFormGroup() {
 		return new FormGroup<CreateSchemaRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
@@ -3617,18 +4087,32 @@ export namespace MyNS {
 
 	/** Defines the typed links structure and its attributes. To create a typed link facet, use the <a>CreateTypedLinkFacet</a> API. */
 	export interface TypedLinkFacet {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: string;
+
+		/** Required */
 		Attributes: Array<TypedLinkAttributeDefinition>;
+
+		/** Required */
 		IdentityAttributeOrder: Array<string>;
 	}
 
 	/** Defines the typed links structure and its attributes. To create a typed link facet, use the <a>CreateTypedLinkFacet</a> API. */
 	export interface TypedLinkFacetFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateTypedLinkFacetFormGroup() {
 		return new FormGroup<TypedLinkFacetFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3660,14 +4144,28 @@ export namespace MyNS {
 	}
 
 	export interface DeleteFacetRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: string;
 	}
 	export interface DeleteFacetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteFacetRequestFormGroup() {
 		return new FormGroup<DeleteFacetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -3699,14 +4197,24 @@ export namespace MyNS {
 	}
 
 	export interface DeleteTypedLinkFacetRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: string;
 	}
 	export interface DeleteTypedLinkFacetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteTypedLinkFacetRequestFormGroup() {
 		return new FormGroup<DeleteTypedLinkFacetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3740,14 +4248,28 @@ export namespace MyNS {
 		 * Required
 		 */
 		ParentReference: ObjectReference;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
+		 */
 		LinkName: string;
 	}
 	export interface DetachObjectRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
+		 */
 		LinkName: FormControl<string | null | undefined>,
 	}
 	export function CreateDetachObjectRequestFormGroup() {
 		return new FormGroup<DetachObjectRequestFormProperties>({
-			LinkName: new FormControl<string | null | undefined>(undefined),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -3817,14 +4339,18 @@ export namespace MyNS {
 	export enum UpdateActionType { CREATE_OR_UPDATE = 0, DELETE = 1 }
 
 	export interface GetAppliedSchemaVersionRequest {
+
+		/** Required */
 		SchemaArn: string;
 	}
 	export interface GetAppliedSchemaVersionRequestFormProperties {
+
+		/** Required */
 		SchemaArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetAppliedSchemaVersionRequestFormGroup() {
 		return new FormGroup<GetAppliedSchemaVersionRequestFormProperties>({
-			SchemaArn: new FormControl<string | null | undefined>(undefined),
+			SchemaArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3840,14 +4366,28 @@ export namespace MyNS {
 	}
 
 	export interface GetFacetRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: string;
 	}
 	export interface GetFacetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateGetFacetRequestFormGroup() {
 		return new FormGroup<GetFacetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -3859,6 +4399,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		TypedLinkSpecifier: TypedLinkSpecifier;
+
+		/** Required */
 		AttributeNames: Array<string>;
 		ConsistencyLevel?: ConsistencyLevel | null;
 	}
@@ -3885,6 +4427,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		SchemaFacet: SchemaFacet;
+
+		/** Required */
 		AttributeNames: Array<string>;
 	}
 	export interface GetObjectAttributesRequestFormProperties {
@@ -3922,36 +4466,54 @@ export namespace MyNS {
 	}
 
 	export interface GetTypedLinkFacetInformationRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: string;
 	}
 	export interface GetTypedLinkFacetInformationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTypedLinkFacetInformationRequestFormGroup() {
 		return new FormGroup<GetTypedLinkFacetInformationRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ListAppliedSchemaArnsRequest {
+
+		/** Required */
 		DirectoryArn: string;
 		SchemaArn?: string | null;
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 	export interface ListAppliedSchemaArnsRequestFormProperties {
+
+		/** Required */
 		DirectoryArn: FormControl<string | null | undefined>,
 		SchemaArn: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListAppliedSchemaArnsRequestFormGroup() {
 		return new FormGroup<ListAppliedSchemaArnsRequestFormProperties>({
-			DirectoryArn: new FormControl<string | null | undefined>(undefined),
+			DirectoryArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SchemaArn: new FormControl<string | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -3964,86 +4526,120 @@ export namespace MyNS {
 		 */
 		TargetReference: ObjectReference;
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 	export interface ListAttachedIndicesRequestFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListAttachedIndicesRequestFormGroup() {
 		return new FormGroup<ListAttachedIndicesRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
 
 	export interface ListDevelopmentSchemaArnsRequest {
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 	export interface ListDevelopmentSchemaArnsRequestFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListDevelopmentSchemaArnsRequestFormGroup() {
 		return new FormGroup<ListDevelopmentSchemaArnsRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
 
 	export interface ListDirectoriesRequest {
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 		state?: DirectoryState | null;
 	}
 	export interface ListDirectoriesRequestFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 		state: FormControl<DirectoryState | null | undefined>,
 	}
 	export function CreateListDirectoriesRequestFormGroup() {
 		return new FormGroup<ListDirectoriesRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			state: new FormControl<DirectoryState | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ListFacetAttributesRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: string;
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 	export interface ListFacetAttributesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListFacetAttributesRequestFormGroup() {
 		return new FormGroup<ListFacetAttributesRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
 
 	export interface ListFacetNamesRequest {
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 	export interface ListFacetNamesRequestFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListFacetNamesRequestFormGroup() {
 		return new FormGroup<ListFacetNamesRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -4060,18 +4656,22 @@ export namespace MyNS {
 		/** Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link. */
 		FilterTypedLink?: TypedLinkSchemaAndFacetName;
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 		ConsistencyLevel?: ConsistencyLevel | null;
 	}
 	export interface ListIncomingTypedLinksRequestFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 		ConsistencyLevel: FormControl<ConsistencyLevel | null | undefined>,
 	}
 	export function CreateListIncomingTypedLinksRequestFormGroup() {
 		return new FormGroup<ListIncomingTypedLinksRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			ConsistencyLevel: new FormControl<ConsistencyLevel | null | undefined>(undefined),
 		});
 
@@ -4085,16 +4685,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		IndexReference: ObjectReference;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface ListIndexRequestFormProperties {
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListIndexRequestFormGroup() {
 		return new FormGroup<ListIndexRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4103,18 +4707,22 @@ export namespace MyNS {
 	export interface ListManagedSchemaArnsRequest {
 		SchemaArn?: string | null;
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 	export interface ListManagedSchemaArnsRequestFormProperties {
 		SchemaArn: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListManagedSchemaArnsRequestFormGroup() {
 		return new FormGroup<ListManagedSchemaArnsRequestFormProperties>({
 			SchemaArn: new FormControl<string | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -4127,6 +4735,8 @@ export namespace MyNS {
 		 */
 		ObjectReference: ObjectReference;
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 
 		/** A facet. */
@@ -4134,12 +4744,14 @@ export namespace MyNS {
 	}
 	export interface ListObjectAttributesRequestFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListObjectAttributesRequestFormGroup() {
 		return new FormGroup<ListObjectAttributesRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -4152,16 +4764,20 @@ export namespace MyNS {
 		 */
 		ObjectReference: ObjectReference;
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 	export interface ListObjectChildrenRequestFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListObjectChildrenRequestFormGroup() {
 		return new FormGroup<ListObjectChildrenRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -4174,16 +4790,20 @@ export namespace MyNS {
 		 */
 		ObjectReference: ObjectReference;
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 	export interface ListObjectParentPathsRequestFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListObjectParentPathsRequestFormGroup() {
 		return new FormGroup<ListObjectParentPathsRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -4196,18 +4816,22 @@ export namespace MyNS {
 		 */
 		ObjectReference: ObjectReference;
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 		IncludeAllLinksToEachParent?: boolean | null;
 	}
 	export interface ListObjectParentsRequestFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 		IncludeAllLinksToEachParent: FormControl<boolean | null | undefined>,
 	}
 	export function CreateListObjectParentsRequestFormGroup() {
 		return new FormGroup<ListObjectParentsRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			IncludeAllLinksToEachParent: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -4221,16 +4845,20 @@ export namespace MyNS {
 		 */
 		ObjectReference: ObjectReference;
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 	export interface ListObjectPoliciesRequestFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListObjectPoliciesRequestFormGroup() {
 		return new FormGroup<ListObjectPoliciesRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -4247,18 +4875,22 @@ export namespace MyNS {
 		/** Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link. */
 		FilterTypedLink?: TypedLinkSchemaAndFacetName;
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 		ConsistencyLevel?: ConsistencyLevel | null;
 	}
 	export interface ListOutgoingTypedLinksRequestFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 		ConsistencyLevel: FormControl<ConsistencyLevel | null | undefined>,
 	}
 	export function CreateListOutgoingTypedLinksRequestFormGroup() {
 		return new FormGroup<ListOutgoingTypedLinksRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			ConsistencyLevel: new FormControl<ConsistencyLevel | null | undefined>(undefined),
 		});
 
@@ -4272,16 +4904,20 @@ export namespace MyNS {
 		 */
 		PolicyReference: ObjectReference;
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 	export interface ListPolicyAttachmentsRequestFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListPolicyAttachmentsRequestFormGroup() {
 		return new FormGroup<ListPolicyAttachmentsRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -4289,72 +4925,102 @@ export namespace MyNS {
 	export interface ListPublishedSchemaArnsRequest {
 		SchemaArn?: string | null;
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 	export interface ListPublishedSchemaArnsRequestFormProperties {
 		SchemaArn: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListPublishedSchemaArnsRequestFormGroup() {
 		return new FormGroup<ListPublishedSchemaArnsRequestFormProperties>({
 			SchemaArn: new FormControl<string | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
 
 	export interface ListTagsForResourceRequest {
+
+		/** Required */
 		ResourceArn: string;
 		NextToken?: string | null;
+
+		/** Minimum: 50 */
 		MaxResults?: number | null;
 	}
 	export interface ListTagsForResourceRequestFormProperties {
+
+		/** Required */
 		ResourceArn: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 50 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(50)]),
 		});
 
 	}
 
 	export interface ListTypedLinkFacetAttributesRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: string;
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 	export interface ListTypedLinkFacetAttributesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListTypedLinkFacetAttributesRequestFormGroup() {
 		return new FormGroup<ListTypedLinkFacetAttributesRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
 
 	export interface ListTypedLinkFacetNamesRequest {
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 	export interface ListTypedLinkFacetNamesRequestFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListTypedLinkFacetNamesRequestFormGroup() {
 		return new FormGroup<ListTypedLinkFacetNamesRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -4367,48 +5033,94 @@ export namespace MyNS {
 		 */
 		ObjectReference: ObjectReference;
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 	export interface LookupPolicyRequestFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateLookupPolicyRequestFormGroup() {
 		return new FormGroup<LookupPolicyRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
 
 	export interface PublishSchemaRequest {
+
+		/**
+		 * Required
+		 * Max length: 10
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Version: string;
+
+		/**
+		 * Max length: 10
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		MinorVersion?: string | null;
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name?: string | null;
 	}
 	export interface PublishSchemaRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 10
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Version: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		MinorVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreatePublishSchemaRequestFormGroup() {
 		return new FormGroup<PublishSchemaRequestFormProperties>({
-			Version: new FormControl<string | null | undefined>(undefined),
-			MinorVersion: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(1)]),
+			MinorVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface PutSchemaFromJsonRequest {
+
+		/** Required */
 		Document: string;
 	}
 	export interface PutSchemaFromJsonRequestFormProperties {
+
+		/** Required */
 		Document: FormControl<string | null | undefined>,
 	}
 	export function CreatePutSchemaFromJsonRequestFormGroup() {
 		return new FormGroup<PutSchemaFromJsonRequestFormProperties>({
-			Document: new FormControl<string | null | undefined>(undefined),
+			Document: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4468,45 +5180,71 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/** Required */
 		ResourceArn: string;
+
+		/** Required */
 		Tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/** Required */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface UntagResourceRequest {
+
+		/** Required */
 		ResourceArn: string;
+
+		/** Required */
 		TagKeys: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/** Required */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface UpdateFacetRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: string;
 		AttributeUpdates?: Array<FacetAttributeUpdate>;
 		ObjectType?: FacetObjectType | null;
 	}
 	export interface UpdateFacetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
 		ObjectType: FormControl<FacetObjectType | null | undefined>,
 	}
 	export function CreateUpdateFacetRequestFormGroup() {
 		return new FormGroup<UpdateFacetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 			ObjectType: new FormControl<FacetObjectType | null | undefined>(undefined),
 		});
 
@@ -4519,6 +5257,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		TypedLinkSpecifier: TypedLinkSpecifier;
+
+		/** Required */
 		AttributeUpdates: Array<LinkAttributeUpdate>;
 	}
 	export interface UpdateLinkAttributesRequestFormProperties {
@@ -4536,6 +5276,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		ObjectReference: ObjectReference;
+
+		/** Required */
 		AttributeUpdates: Array<ObjectAttributeUpdate>;
 	}
 	export interface UpdateObjectAttributesRequestFormProperties {
@@ -4547,69 +5289,127 @@ export namespace MyNS {
 	}
 
 	export interface UpdateSchemaRequest {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: string;
 	}
 	export interface UpdateSchemaRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateSchemaRequestFormGroup() {
 		return new FormGroup<UpdateSchemaRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateTypedLinkFacetRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: string;
+
+		/** Required */
 		AttributeUpdates: Array<TypedLinkFacetAttributeUpdate>;
+
+		/** Required */
 		IdentityAttributeOrder: Array<string>;
 	}
 	export interface UpdateTypedLinkFacetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateTypedLinkFacetRequestFormGroup() {
 		return new FormGroup<UpdateTypedLinkFacetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface UpgradeAppliedSchemaRequest {
+
+		/** Required */
 		PublishedSchemaArn: string;
+
+		/** Required */
 		DirectoryArn: string;
 		DryRun?: boolean | null;
 	}
 	export interface UpgradeAppliedSchemaRequestFormProperties {
+
+		/** Required */
 		PublishedSchemaArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		DirectoryArn: FormControl<string | null | undefined>,
 		DryRun: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpgradeAppliedSchemaRequestFormGroup() {
 		return new FormGroup<UpgradeAppliedSchemaRequestFormProperties>({
-			PublishedSchemaArn: new FormControl<string | null | undefined>(undefined),
-			DirectoryArn: new FormControl<string | null | undefined>(undefined),
+			PublishedSchemaArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DryRun: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface UpgradePublishedSchemaRequest {
+
+		/** Required */
 		DevelopmentSchemaArn: string;
+
+		/** Required */
 		PublishedSchemaArn: string;
+
+		/**
+		 * Required
+		 * Max length: 10
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		MinorVersion: string;
 		DryRun?: boolean | null;
 	}
 	export interface UpgradePublishedSchemaRequestFormProperties {
+
+		/** Required */
 		DevelopmentSchemaArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		PublishedSchemaArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 10
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		MinorVersion: FormControl<string | null | undefined>,
 		DryRun: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpgradePublishedSchemaRequestFormGroup() {
 		return new FormGroup<UpgradePublishedSchemaRequestFormProperties>({
-			DevelopmentSchemaArn: new FormControl<string | null | undefined>(undefined),
-			PublishedSchemaArn: new FormControl<string | null | undefined>(undefined),
-			MinorVersion: new FormControl<string | null | undefined>(undefined),
+			DevelopmentSchemaArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PublishedSchemaArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MinorVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(1)]),
 			DryRun: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -5280,16 +6080,28 @@ export namespace MyNS {
 
 	export interface AddFacetToObjectPutBodySchemaFacet {
 		SchemaArn?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		FacetName?: string | null;
 	}
 	export interface AddFacetToObjectPutBodySchemaFacetFormProperties {
 		SchemaArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		FacetName: FormControl<string | null | undefined>,
 	}
 	export function CreateAddFacetToObjectPutBodySchemaFacetFormGroup() {
 		return new FormGroup<AddFacetToObjectPutBodySchemaFacetFormProperties>({
 			SchemaArn: new FormControl<string | null | undefined>(undefined),
-			FacetName: new FormControl<string | null | undefined>(undefined),
+			FacetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -5325,7 +6137,7 @@ export namespace MyNS {
 	}
 	export function CreateApplySchemaPutBodyFormGroup() {
 		return new FormGroup<ApplySchemaPutBodyFormProperties>({
-			PublishedSchemaArn: new FormControl<string | null | undefined>(undefined),
+			PublishedSchemaArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5366,7 +6178,7 @@ export namespace MyNS {
 	}
 	export function CreateAttachObjectPutBodyFormGroup() {
 		return new FormGroup<AttachObjectPutBodyFormProperties>({
-			LinkName: new FormControl<string | null | undefined>(undefined),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -5555,10 +6367,14 @@ export namespace MyNS {
 
 	export interface AttachTypedLinkPutBodyTypedLinkFacet {
 		SchemaArn?: string | null;
+
+		/** Pattern: ^[a-zA-Z0-9._-]*$ */
 		TypedLinkName?: string | null;
 	}
 	export interface AttachTypedLinkPutBodyTypedLinkFacetFormProperties {
 		SchemaArn: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9._-]*$ */
 		TypedLinkName: FormControl<string | null | undefined>,
 	}
 	export function CreateAttachTypedLinkPutBodyTypedLinkFacetFormGroup() {
@@ -5625,7 +6441,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateDirectoryPutBodyFormGroup() {
 		return new FormGroup<CreateDirectoryPutBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -5669,7 +6485,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateFacetPutBodyFormGroup() {
 		return new FormGroup<CreateFacetPutBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 			ObjectType: new FormControl<FacetObjectType | null | undefined>(undefined),
 			FacetStyle: new FormControl<FacetFacetStyle | null | undefined>(undefined),
 		});
@@ -5719,8 +6535,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateIndexPutBodyFormGroup() {
 		return new FormGroup<CreateIndexPutBodyFormProperties>({
-			IsUnique: new FormControl<boolean | null | undefined>(undefined),
-			LinkName: new FormControl<string | null | undefined>(undefined),
+			IsUnique: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -5772,7 +6588,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateObjectPutBodyFormGroup() {
 		return new FormGroup<CreateObjectPutBodyFormProperties>({
-			LinkName: new FormControl<string | null | undefined>(undefined),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -5814,7 +6630,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateSchemaPutBodyFormGroup() {
 		return new FormGroup<CreateSchemaPutBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
@@ -5836,11 +6652,15 @@ export namespace MyNS {
 	}
 
 	export interface CreateTypedLinkFacetPutBodyFacet {
+
+		/** Pattern: ^[a-zA-Z0-9._-]*$ */
 		Name?: string | null;
 		Attributes?: Array<TypedLinkAttributeDefinition>;
 		IdentityAttributeOrder?: Array<string>;
 	}
 	export interface CreateTypedLinkFacetPutBodyFacetFormProperties {
+
+		/** Pattern: ^[a-zA-Z0-9._-]*$ */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateTypedLinkFacetPutBodyFacetFormGroup() {
@@ -5874,7 +6694,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteFacetPutBodyFormGroup() {
 		return new FormGroup<DeleteFacetPutBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -5928,7 +6748,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteTypedLinkFacetPutBodyFormGroup() {
 		return new FormGroup<DeleteTypedLinkFacetPutBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6011,7 +6831,7 @@ export namespace MyNS {
 	}
 	export function CreateDetachObjectPutBodyFormGroup() {
 		return new FormGroup<DetachObjectPutBodyFormProperties>({
-			LinkName: new FormControl<string | null | undefined>(undefined),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -6131,7 +6951,7 @@ export namespace MyNS {
 	}
 	export function CreateGetAppliedSchemaVersionPostBodyFormGroup() {
 		return new FormGroup<GetAppliedSchemaVersionPostBodyFormProperties>({
-			SchemaArn: new FormControl<string | null | undefined>(undefined),
+			SchemaArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6160,7 +6980,7 @@ export namespace MyNS {
 	}
 	export function CreateGetFacetPostBodyFormGroup() {
 		return new FormGroup<GetFacetPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -6198,7 +7018,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateFacetPutBodyFormGroup() {
 		return new FormGroup<UpdateFacetPutBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 			ObjectType: new FormControl<FacetObjectType | null | undefined>(undefined),
 		});
 
@@ -6296,16 +7116,28 @@ export namespace MyNS {
 
 	export interface GetObjectAttributesPostBodySchemaFacet {
 		SchemaArn?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		FacetName?: string | null;
 	}
 	export interface GetObjectAttributesPostBodySchemaFacetFormProperties {
 		SchemaArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		FacetName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetObjectAttributesPostBodySchemaFacetFormGroup() {
 		return new FormGroup<GetObjectAttributesPostBodySchemaFacetFormProperties>({
 			SchemaArn: new FormControl<string | null | undefined>(undefined),
-			FacetName: new FormControl<string | null | undefined>(undefined),
+			FacetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -6357,7 +7189,7 @@ export namespace MyNS {
 	}
 	export function CreatePutSchemaFromJsonPutBodyFormGroup() {
 		return new FormGroup<PutSchemaFromJsonPutBodyFormProperties>({
-			Document: new FormControl<string | null | undefined>(undefined),
+			Document: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6382,7 +7214,7 @@ export namespace MyNS {
 	}
 	export function CreateGetTypedLinkFacetInformationPostBodyFormGroup() {
 		return new FormGroup<GetTypedLinkFacetInformationPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6429,10 +7261,10 @@ export namespace MyNS {
 	}
 	export function CreateListAppliedSchemaArnsPostBodyFormGroup() {
 		return new FormGroup<ListAppliedSchemaArnsPostBodyFormProperties>({
-			DirectoryArn: new FormControl<string | null | undefined>(undefined),
+			DirectoryArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SchemaArn: new FormControl<string | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -6468,7 +7300,7 @@ export namespace MyNS {
 	export function CreateListAttachedIndicesPostBodyFormGroup() {
 		return new FormGroup<ListAttachedIndicesPostBodyFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -6511,7 +7343,7 @@ export namespace MyNS {
 	export function CreateListDevelopmentSchemaArnsPostBodyFormGroup() {
 		return new FormGroup<ListDevelopmentSchemaArnsPostBodyFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -6547,7 +7379,7 @@ export namespace MyNS {
 	export function CreateListDirectoriesPostBodyFormGroup() {
 		return new FormGroup<ListDirectoriesPostBodyFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			state: new FormControl<DirectoryState | null | undefined>(undefined),
 		});
 
@@ -6595,9 +7427,9 @@ export namespace MyNS {
 	}
 	export function CreateListFacetAttributesPostBodyFormGroup() {
 		return new FormGroup<ListFacetAttributesPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -6627,7 +7459,7 @@ export namespace MyNS {
 	export function CreateListFacetNamesPostBodyFormGroup() {
 		return new FormGroup<ListFacetNamesPostBodyFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -6675,7 +7507,7 @@ export namespace MyNS {
 	export function CreateListIncomingTypedLinksPostBodyFormGroup() {
 		return new FormGroup<ListIncomingTypedLinksPostBodyFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			ConsistencyLevel: new FormControl<ConsistencyLevel | null | undefined>(undefined),
 		});
 
@@ -6696,10 +7528,14 @@ export namespace MyNS {
 
 	export interface ListIncomingTypedLinksPostBodyFilterTypedLink {
 		SchemaArn?: string | null;
+
+		/** Pattern: ^[a-zA-Z0-9._-]*$ */
 		TypedLinkName?: string | null;
 	}
 	export interface ListIncomingTypedLinksPostBodyFilterTypedLinkFormProperties {
 		SchemaArn: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9._-]*$ */
 		TypedLinkName: FormControl<string | null | undefined>,
 	}
 	export function CreateListIncomingTypedLinksPostBodyFilterTypedLinkFormGroup() {
@@ -6743,7 +7579,7 @@ export namespace MyNS {
 	}
 	export function CreateListIndexPostBodyFormGroup() {
 		return new FormGroup<ListIndexPostBodyFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -6794,7 +7630,7 @@ export namespace MyNS {
 		return new FormGroup<ListManagedSchemaArnsPostBodyFormProperties>({
 			SchemaArn: new FormControl<string | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -6833,7 +7669,7 @@ export namespace MyNS {
 	export function CreateListObjectAttributesPostBodyFormGroup() {
 		return new FormGroup<ListObjectAttributesPostBodyFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -6853,16 +7689,28 @@ export namespace MyNS {
 
 	export interface ListObjectAttributesPostBodyFacetFilter {
 		SchemaArn?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		FacetName?: string | null;
 	}
 	export interface ListObjectAttributesPostBodyFacetFilterFormProperties {
 		SchemaArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		FacetName: FormControl<string | null | undefined>,
 	}
 	export function CreateListObjectAttributesPostBodyFacetFilterFormGroup() {
 		return new FormGroup<ListObjectAttributesPostBodyFacetFilterFormProperties>({
 			SchemaArn: new FormControl<string | null | undefined>(undefined),
-			FacetName: new FormControl<string | null | undefined>(undefined),
+			FacetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -6898,7 +7746,7 @@ export namespace MyNS {
 	export function CreateListObjectChildrenPostBodyFormGroup() {
 		return new FormGroup<ListObjectChildrenPostBodyFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -6947,7 +7795,7 @@ export namespace MyNS {
 	export function CreateListObjectParentPathsPostBodyFormGroup() {
 		return new FormGroup<ListObjectParentPathsPostBodyFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -7002,7 +7850,7 @@ export namespace MyNS {
 	export function CreateListObjectParentsPostBodyFormGroup() {
 		return new FormGroup<ListObjectParentsPostBodyFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			IncludeAllLinksToEachParent: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -7052,7 +7900,7 @@ export namespace MyNS {
 	export function CreateListObjectPoliciesPostBodyFormGroup() {
 		return new FormGroup<ListObjectPoliciesPostBodyFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -7113,7 +7961,7 @@ export namespace MyNS {
 	export function CreateListOutgoingTypedLinksPostBodyFormGroup() {
 		return new FormGroup<ListOutgoingTypedLinksPostBodyFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			ConsistencyLevel: new FormControl<ConsistencyLevel | null | undefined>(undefined),
 		});
 
@@ -7134,10 +7982,14 @@ export namespace MyNS {
 
 	export interface ListOutgoingTypedLinksPostBodyFilterTypedLink {
 		SchemaArn?: string | null;
+
+		/** Pattern: ^[a-zA-Z0-9._-]*$ */
 		TypedLinkName?: string | null;
 	}
 	export interface ListOutgoingTypedLinksPostBodyFilterTypedLinkFormProperties {
 		SchemaArn: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9._-]*$ */
 		TypedLinkName: FormControl<string | null | undefined>,
 	}
 	export function CreateListOutgoingTypedLinksPostBodyFilterTypedLinkFormGroup() {
@@ -7179,7 +8031,7 @@ export namespace MyNS {
 	export function CreateListPolicyAttachmentsPostBodyFormGroup() {
 		return new FormGroup<ListPolicyAttachmentsPostBodyFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -7229,7 +8081,7 @@ export namespace MyNS {
 		return new FormGroup<ListPublishedSchemaArnsPostBodyFormProperties>({
 			SchemaArn: new FormControl<string | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -7270,9 +8122,9 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourcePostBodyFormGroup() {
 		return new FormGroup<ListTagsForResourcePostBodyFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(50)]),
 		});
 
 	}
@@ -7315,9 +8167,9 @@ export namespace MyNS {
 	}
 	export function CreateListTypedLinkFacetAttributesPostBodyFormGroup() {
 		return new FormGroup<ListTypedLinkFacetAttributesPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -7347,7 +8199,7 @@ export namespace MyNS {
 	export function CreateListTypedLinkFacetNamesPostBodyFormGroup() {
 		return new FormGroup<ListTypedLinkFacetNamesPostBodyFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -7383,7 +8235,7 @@ export namespace MyNS {
 	export function CreateLookupPolicyPostBodyFormGroup() {
 		return new FormGroup<LookupPolicyPostBodyFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -7457,9 +8309,9 @@ export namespace MyNS {
 	}
 	export function CreatePublishSchemaPutBodyFormGroup() {
 		return new FormGroup<PublishSchemaPutBodyFormProperties>({
-			Version: new FormControl<string | null | undefined>(undefined),
-			MinorVersion: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(1)]),
+			MinorVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
@@ -7488,16 +8340,28 @@ export namespace MyNS {
 
 	export interface RemoveFacetFromObjectPutBodySchemaFacet {
 		SchemaArn?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		FacetName?: string | null;
 	}
 	export interface RemoveFacetFromObjectPutBodySchemaFacetFormProperties {
 		SchemaArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9._-]*$
+		 */
 		FacetName: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveFacetFromObjectPutBodySchemaFacetFormGroup() {
 		return new FormGroup<RemoveFacetFromObjectPutBodySchemaFacetFormProperties>({
 			SchemaArn: new FormControl<string | null | undefined>(undefined),
-			FacetName: new FormControl<string | null | undefined>(undefined),
+			FacetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -7539,7 +8403,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePutBodyFormGroup() {
 		return new FormGroup<TagResourcePutBodyFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7568,7 +8432,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourcePutBodyFormGroup() {
 		return new FormGroup<UntagResourcePutBodyFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7674,7 +8538,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateSchemaPutBodyFormGroup() {
 		return new FormGroup<UpdateSchemaPutBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
@@ -7711,7 +8575,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateTypedLinkFacetPutBodyFormGroup() {
 		return new FormGroup<UpdateTypedLinkFacetPutBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7752,8 +8616,8 @@ export namespace MyNS {
 	}
 	export function CreateUpgradeAppliedSchemaPutBodyFormGroup() {
 		return new FormGroup<UpgradeAppliedSchemaPutBodyFormProperties>({
-			PublishedSchemaArn: new FormControl<string | null | undefined>(undefined),
-			DirectoryArn: new FormControl<string | null | undefined>(undefined),
+			PublishedSchemaArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DryRun: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -7813,9 +8677,9 @@ export namespace MyNS {
 	}
 	export function CreateUpgradePublishedSchemaPutBodyFormGroup() {
 		return new FormGroup<UpgradePublishedSchemaPutBodyFormProperties>({
-			DevelopmentSchemaArn: new FormControl<string | null | undefined>(undefined),
-			PublishedSchemaArn: new FormControl<string | null | undefined>(undefined),
-			MinorVersion: new FormControl<string | null | undefined>(undefined),
+			DevelopmentSchemaArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PublishedSchemaArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MinorVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(1)]),
 			DryRun: new FormControl<boolean | null | undefined>(undefined),
 		});
 

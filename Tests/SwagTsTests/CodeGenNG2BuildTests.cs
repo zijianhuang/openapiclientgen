@@ -8,7 +8,7 @@ namespace SwagTests
 	{
 		public CodeGenNG2BuildTests(ITestOutputHelper output)
 		{
-			helper = new NG2TestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen), output);
+			helper = new NG2TestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen), output, TestHelpers.TestingSettings.Instance);
 		}
 
 		readonly NG2TestHelper helper;

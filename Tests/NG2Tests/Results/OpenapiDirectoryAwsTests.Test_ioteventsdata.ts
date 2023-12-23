@@ -17,6 +17,12 @@ export namespace MyNS {
 
 	/** Contains information about the errors encountered. */
 	export interface BatchPutMessageErrorEntry {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
 		messageId?: string | null;
 		errorCode?: BatchPutMessageErrorEntryErrorCode | null;
 		errorMessage?: string | null;
@@ -24,13 +30,19 @@ export namespace MyNS {
 
 	/** Contains information about the errors encountered. */
 	export interface BatchPutMessageErrorEntryFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
 		messageId: FormControl<string | null | undefined>,
 		errorCode: FormControl<BatchPutMessageErrorEntryErrorCode | null | undefined>,
 		errorMessage: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchPutMessageErrorEntryFormGroup() {
 		return new FormGroup<BatchPutMessageErrorEntryFormProperties>({
-			messageId: new FormControl<string | null | undefined>(undefined),
+			messageId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			errorCode: new FormControl<BatchPutMessageErrorEntryErrorCode | null | undefined>(undefined),
 			errorMessage: new FormControl<string | null | undefined>(undefined),
 		});
@@ -42,22 +54,54 @@ export namespace MyNS {
 
 	/** Information about a message. */
 	export interface Message {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
 		messageId: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		inputName: string;
+
+		/** Required */
 		payload: string;
 	}
 
 	/** Information about a message. */
 	export interface MessageFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
 		messageId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		inputName: FormControl<string | null | undefined>,
+
+		/** Required */
 		payload: FormControl<string | null | undefined>,
 	}
 	export function CreateMessageFormGroup() {
 		return new FormGroup<MessageFormProperties>({
-			messageId: new FormControl<string | null | undefined>(undefined),
-			inputName: new FormControl<string | null | undefined>(undefined),
-			payload: new FormControl<string | null | undefined>(undefined),
+			messageId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			inputName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			payload: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -116,6 +160,12 @@ export namespace MyNS {
 
 	/** Information about the error that occured when attempting to update a detector. */
 	export interface BatchUpdateDetectorErrorEntry {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
 		messageId?: string | null;
 		errorCode?: BatchPutMessageErrorEntryErrorCode | null;
 		errorMessage?: string | null;
@@ -123,13 +173,19 @@ export namespace MyNS {
 
 	/** Information about the error that occured when attempting to update a detector. */
 	export interface BatchUpdateDetectorErrorEntryFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
 		messageId: FormControl<string | null | undefined>,
 		errorCode: FormControl<BatchPutMessageErrorEntryErrorCode | null | undefined>,
 		errorMessage: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchUpdateDetectorErrorEntryFormGroup() {
 		return new FormGroup<BatchUpdateDetectorErrorEntryFormProperties>({
-			messageId: new FormControl<string | null | undefined>(undefined),
+			messageId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			errorCode: new FormControl<BatchPutMessageErrorEntryErrorCode | null | undefined>(undefined),
 			errorMessage: new FormControl<string | null | undefined>(undefined),
 		});
@@ -139,8 +195,28 @@ export namespace MyNS {
 
 	/** Information used to update the detector (instance). */
 	export interface UpdateDetectorRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
 		messageId: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
 		detectorModelName: string;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9\-_:]+$
+		 */
 		keyValue?: string | null;
 
 		/**
@@ -152,15 +228,35 @@ export namespace MyNS {
 
 	/** Information used to update the detector (instance). */
 	export interface UpdateDetectorRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
 		messageId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
 		detectorModelName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9\-_:]+$
+		 */
 		keyValue: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateDetectorRequestFormGroup() {
 		return new FormGroup<UpdateDetectorRequestFormProperties>({
-			messageId: new FormControl<string | null | undefined>(undefined),
-			detectorModelName: new FormControl<string | null | undefined>(undefined),
-			keyValue: new FormControl<string | null | undefined>(undefined),
+			messageId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			detectorModelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			keyValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -168,18 +264,34 @@ export namespace MyNS {
 
 	/** The new state, variable values, and timer settings of the detector (instance). */
 	export interface DetectorStateDefinition {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		stateName: string;
+
+		/** Required */
 		variables: Array<VariableDefinition>;
+
+		/** Required */
 		timers: Array<TimerDefinition>;
 	}
 
 	/** The new state, variable values, and timer settings of the detector (instance). */
 	export interface DetectorStateDefinitionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		stateName: FormControl<string | null | undefined>,
 	}
 	export function CreateDetectorStateDefinitionFormGroup() {
 		return new FormGroup<DetectorStateDefinitionFormProperties>({
-			stateName: new FormControl<string | null | undefined>(undefined),
+			stateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -187,19 +299,45 @@ export namespace MyNS {
 
 	/** The new value of the variable. */
 	export interface VariableDefinition {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		name: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		value: string;
 	}
 
 	/** The new value of the variable. */
 	export interface VariableDefinitionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateVariableDefinitionFormGroup() {
 		return new FormGroup<VariableDefinitionFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -207,19 +345,35 @@ export namespace MyNS {
 
 	/** The new setting of a timer. */
 	export interface TimerDefinition {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		name: string;
+
+		/** Required */
 		seconds: number;
 	}
 
 	/** The new setting of a timer. */
 	export interface TimerDefinitionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Required */
 		seconds: FormControl<number | null | undefined>,
 	}
 	export function CreateTimerDefinitionFormGroup() {
 		return new FormGroup<TimerDefinitionFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			seconds: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			seconds: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -240,8 +394,25 @@ export namespace MyNS {
 
 	/** Information about the detector (instance). */
 	export interface Detector {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
 		detectorModelName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9\-_:]+$
+		 */
 		keyValue?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		detectorModelVersion?: string | null;
 
 		/** Information about the current state of the detector instance. */
@@ -252,17 +423,34 @@ export namespace MyNS {
 
 	/** Information about the detector (instance). */
 	export interface DetectorFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
 		detectorModelName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9\-_:]+$
+		 */
 		keyValue: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		detectorModelVersion: FormControl<string | null | undefined>,
 		creationTime: FormControl<Date | null | undefined>,
 		lastUpdateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateDetectorFormGroup() {
 		return new FormGroup<DetectorFormProperties>({
-			detectorModelName: new FormControl<string | null | undefined>(undefined),
-			keyValue: new FormControl<string | null | undefined>(undefined),
-			detectorModelVersion: new FormControl<string | null | undefined>(undefined),
+			detectorModelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			keyValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			detectorModelVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			creationTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -272,18 +460,34 @@ export namespace MyNS {
 
 	/** Information about the current state of the detector instance. */
 	export interface DetectorState {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		stateName: string;
+
+		/** Required */
 		variables: Array<Variable>;
+
+		/** Required */
 		timers: Array<Timer>;
 	}
 
 	/** Information about the current state of the detector instance. */
 	export interface DetectorStateFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		stateName: FormControl<string | null | undefined>,
 	}
 	export function CreateDetectorStateFormGroup() {
 		return new FormGroup<DetectorStateFormProperties>({
-			stateName: new FormControl<string | null | undefined>(undefined),
+			stateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -291,19 +495,45 @@ export namespace MyNS {
 
 	/** The current state of the variable. */
 	export interface Variable {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		name: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		value: string;
 	}
 
 	/** The current state of the variable. */
 	export interface VariableFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateVariableFormGroup() {
 		return new FormGroup<VariableFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -311,19 +541,35 @@ export namespace MyNS {
 
 	/** The current state of a timer. */
 	export interface Timer {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		name: string;
+
+		/** Required */
 		timestamp: Date;
 	}
 
 	/** The current state of a timer. */
 	export interface TimerFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Required */
 		timestamp: FormControl<Date | null | undefined>,
 	}
 	export function CreateTimerFormGroup() {
 		return new FormGroup<TimerFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			timestamp: new FormControl<Date | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			timestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -355,8 +601,25 @@ export namespace MyNS {
 
 	/** Information about the detector (instance). */
 	export interface DetectorSummary {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
 		detectorModelName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9\-_:]+$
+		 */
 		keyValue?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		detectorModelVersion?: string | null;
 
 		/** Information about the detector state. */
@@ -367,17 +630,34 @@ export namespace MyNS {
 
 	/** Information about the detector (instance). */
 	export interface DetectorSummaryFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
 		detectorModelName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9\-_:]+$
+		 */
 		keyValue: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		detectorModelVersion: FormControl<string | null | undefined>,
 		creationTime: FormControl<Date | null | undefined>,
 		lastUpdateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateDetectorSummaryFormGroup() {
 		return new FormGroup<DetectorSummaryFormProperties>({
-			detectorModelName: new FormControl<string | null | undefined>(undefined),
-			keyValue: new FormControl<string | null | undefined>(undefined),
-			detectorModelVersion: new FormControl<string | null | undefined>(undefined),
+			detectorModelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			keyValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			detectorModelVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			creationTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -387,16 +667,26 @@ export namespace MyNS {
 
 	/** Information about the detector state. */
 	export interface DetectorStateSummary {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		stateName?: string | null;
 	}
 
 	/** Information about the detector state. */
 	export interface DetectorStateSummaryFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		stateName: FormControl<string | null | undefined>,
 	}
 	export function CreateDetectorStateSummaryFormGroup() {
 		return new FormGroup<DetectorStateSummaryFormProperties>({
-			stateName: new FormControl<string | null | undefined>(undefined),
+			stateName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -404,6 +694,11 @@ export namespace MyNS {
 	export enum ErrorCode { ResourceNotFoundException = 0, InvalidRequestException = 1, InternalFailureException = 2, ServiceUnavailableException = 3, ThrottlingException = 4 }
 
 	export interface BatchPutMessageRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 */
 		messages: Array<Message>;
 	}
 	export interface BatchPutMessageRequestFormProperties {
@@ -415,6 +710,11 @@ export namespace MyNS {
 	}
 
 	export interface BatchUpdateDetectorRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 */
 		detectors: Array<UpdateDetectorRequest>;
 	}
 	export interface BatchUpdateDetectorRequestFormProperties {

@@ -54,35 +54,81 @@ export namespace MyNS {
 	}
 
 	export interface DescribeHumanLoopResponse {
+
+		/** Required */
 		CreationTime: Date;
 		FailureReason?: string | null;
 		FailureCode?: string | null;
+
+		/** Required */
 		HumanLoopStatus: DescribeHumanLoopResponseHumanLoopStatus;
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-z0-9](-*[a-z0-9])*$
+		 */
 		HumanLoopName: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Pattern: arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:human-loop/.*
+		 */
 		HumanLoopArn: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Pattern: arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*
+		 */
 		FlowDefinitionArn: string;
 
 		/** Information about where the human output will be stored. */
 		HumanLoopOutput?: HumanLoopOutput;
 	}
 	export interface DescribeHumanLoopResponseFormProperties {
+
+		/** Required */
 		CreationTime: FormControl<Date | null | undefined>,
 		FailureReason: FormControl<string | null | undefined>,
 		FailureCode: FormControl<string | null | undefined>,
+
+		/** Required */
 		HumanLoopStatus: FormControl<DescribeHumanLoopResponseHumanLoopStatus | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-z0-9](-*[a-z0-9])*$
+		 */
 		HumanLoopName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Pattern: arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:human-loop/.*
+		 */
 		HumanLoopArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Pattern: arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*
+		 */
 		FlowDefinitionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeHumanLoopResponseFormGroup() {
 		return new FormGroup<DescribeHumanLoopResponseFormProperties>({
-			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			FailureReason: new FormControl<string | null | undefined>(undefined),
 			FailureCode: new FormControl<string | null | undefined>(undefined),
-			HumanLoopStatus: new FormControl<DescribeHumanLoopResponseHumanLoopStatus | null | undefined>(undefined),
-			HumanLoopName: new FormControl<string | null | undefined>(undefined),
-			HumanLoopArn: new FormControl<string | null | undefined>(undefined),
-			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined),
+			HumanLoopStatus: new FormControl<DescribeHumanLoopResponseHumanLoopStatus | null | undefined>(undefined, [Validators.required]),
+			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
+			HumanLoopArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
+			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
 		});
 
 	}
@@ -92,30 +138,46 @@ export namespace MyNS {
 
 	/** Information about where the human output will be stored. */
 	export interface HumanLoopOutput {
+
+		/** Required */
 		OutputS3Uri: string;
 	}
 
 	/** Information about where the human output will be stored. */
 	export interface HumanLoopOutputFormProperties {
+
+		/** Required */
 		OutputS3Uri: FormControl<string | null | undefined>,
 	}
 	export function CreateHumanLoopOutputFormGroup() {
 		return new FormGroup<HumanLoopOutputFormProperties>({
-			OutputS3Uri: new FormControl<string | null | undefined>(undefined),
+			OutputS3Uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ListHumanLoopsResponse {
+
+		/** Required */
 		HumanLoopSummaries: Array<HumanLoopSummary>;
+
+		/**
+		 * Max length: 8192
+		 * Pattern: .*
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListHumanLoopsResponseFormProperties {
+
+		/**
+		 * Max length: 8192
+		 * Pattern: .*
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListHumanLoopsResponseFormGroup() {
 		return new FormGroup<ListHumanLoopsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
 		});
 
 	}
@@ -123,41 +185,77 @@ export namespace MyNS {
 
 	/** Summary information about the human loop. */
 	export interface HumanLoopSummary {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-z0-9](-*[a-z0-9])*$
+		 */
 		HumanLoopName?: string | null;
 		HumanLoopStatus?: DescribeHumanLoopResponseHumanLoopStatus | null;
 		CreationTime?: Date | null;
+
+		/** Max length: 1024 */
 		FailureReason?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Pattern: arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*
+		 */
 		FlowDefinitionArn?: string | null;
 	}
 
 	/** Summary information about the human loop. */
 	export interface HumanLoopSummaryFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-z0-9](-*[a-z0-9])*$
+		 */
 		HumanLoopName: FormControl<string | null | undefined>,
 		HumanLoopStatus: FormControl<DescribeHumanLoopResponseHumanLoopStatus | null | undefined>,
 		CreationTime: FormControl<Date | null | undefined>,
+
+		/** Max length: 1024 */
 		FailureReason: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Pattern: arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*
+		 */
 		FlowDefinitionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateHumanLoopSummaryFormGroup() {
 		return new FormGroup<HumanLoopSummaryFormProperties>({
-			HumanLoopName: new FormControl<string | null | undefined>(undefined),
+			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
 			HumanLoopStatus: new FormControl<DescribeHumanLoopResponseHumanLoopStatus | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
-			FailureReason: new FormControl<string | null | undefined>(undefined),
-			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
 
 	export interface StartHumanLoopResponse {
+
+		/**
+		 * Max length: 1024
+		 * Pattern: arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:human-loop/.*
+		 */
 		HumanLoopArn?: string | null;
 	}
 	export interface StartHumanLoopResponseFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Pattern: arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:human-loop/.*
+		 */
 		HumanLoopArn: FormControl<string | null | undefined>,
 	}
 	export function CreateStartHumanLoopResponseFormGroup() {
 		return new FormGroup<StartHumanLoopResponseFormProperties>({
-			HumanLoopArn: new FormControl<string | null | undefined>(undefined),
+			HumanLoopArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
@@ -219,6 +317,11 @@ export namespace MyNS {
 
 	/** Attributes of the data specified by the customer. Use these to describe the data to be labeled. */
 	export interface HumanLoopDataAttributes {
+
+		/**
+		 * Required
+		 * Maximum items: 256
+		 */
 		ContentClassifiers: Array<ContentClassifier>;
 	}
 
@@ -234,16 +337,26 @@ export namespace MyNS {
 
 	/** An object containing the human loop input in JSON format. */
 	export interface HumanLoopInput {
+
+		/**
+		 * Required
+		 * Max length: 3145728
+		 */
 		InputContent: string;
 	}
 
 	/** An object containing the human loop input in JSON format. */
 	export interface HumanLoopInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 3145728
+		 */
 		InputContent: FormControl<string | null | undefined>,
 	}
 	export function CreateHumanLoopInputFormGroup() {
 		return new FormGroup<HumanLoopInputFormProperties>({
-			InputContent: new FormControl<string | null | undefined>(undefined),
+			InputContent: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(3145728)]),
 		});
 
 	}
@@ -261,7 +374,20 @@ export namespace MyNS {
 	}
 
 	export interface StartHumanLoopRequest {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-z0-9](-*[a-z0-9])*$
+		 */
 		HumanLoopName: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Pattern: arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*
+		 */
 		FlowDefinitionArn: string;
 
 		/**
@@ -274,26 +400,53 @@ export namespace MyNS {
 		DataAttributes?: HumanLoopDataAttributes;
 	}
 	export interface StartHumanLoopRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-z0-9](-*[a-z0-9])*$
+		 */
 		HumanLoopName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Pattern: arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*
+		 */
 		FlowDefinitionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateStartHumanLoopRequestFormGroup() {
 		return new FormGroup<StartHumanLoopRequestFormProperties>({
-			HumanLoopName: new FormControl<string | null | undefined>(undefined),
-			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined),
+			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
+			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
 		});
 
 	}
 
 	export interface StopHumanLoopRequest {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-z0-9](-*[a-z0-9])*$
+		 */
 		HumanLoopName: string;
 	}
 	export interface StopHumanLoopRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-z0-9](-*[a-z0-9])*$
+		 */
 		HumanLoopName: FormControl<string | null | undefined>,
 	}
 	export function CreateStopHumanLoopRequestFormGroup() {
 		return new FormGroup<StopHumanLoopRequestFormProperties>({
-			HumanLoopName: new FormControl<string | null | undefined>(undefined),
+			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
 		});
 
 	}
@@ -406,26 +559,32 @@ export namespace MyNS {
 	}
 	export function CreateStartHumanLoopPostBodyFormGroup() {
 		return new FormGroup<StartHumanLoopPostBodyFormProperties>({
-			HumanLoopName: new FormControl<string | null | undefined>(undefined),
-			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined),
+			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
+			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
 		});
 
 	}
 
 	export interface StartHumanLoopPostBodyHumanLoopInput {
+
+		/** Max length: 3145728 */
 		InputContent?: string | null;
 	}
 	export interface StartHumanLoopPostBodyHumanLoopInputFormProperties {
+
+		/** Max length: 3145728 */
 		InputContent: FormControl<string | null | undefined>,
 	}
 	export function CreateStartHumanLoopPostBodyHumanLoopInputFormGroup() {
 		return new FormGroup<StartHumanLoopPostBodyHumanLoopInputFormProperties>({
-			InputContent: new FormControl<string | null | undefined>(undefined),
+			InputContent: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3145728)]),
 		});
 
 	}
 
 	export interface StartHumanLoopPostBodyDataAttributes {
+
+		/** Maximum items: 256 */
 		ContentClassifiers?: Array<ContentClassifier>;
 	}
 	export interface StartHumanLoopPostBodyDataAttributesFormProperties {
@@ -460,7 +619,7 @@ export namespace MyNS {
 	}
 	export function CreateStopHumanLoopPostBodyFormGroup() {
 		return new FormGroup<StopHumanLoopPostBodyFormProperties>({
-			HumanLoopName: new FormControl<string | null | undefined>(undefined),
+			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
 		});
 
 	}

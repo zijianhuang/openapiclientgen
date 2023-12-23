@@ -106,21 +106,33 @@ export namespace MyNS {
 	}
 
 	export interface AcceptDirectConnectGatewayAssociationProposalRequest {
+
+		/** Required */
 		directConnectGatewayId: string;
+
+		/** Required */
 		proposalId: string;
+
+		/** Required */
 		associatedGatewayOwnerAccount: string;
 		overrideAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix>;
 	}
 	export interface AcceptDirectConnectGatewayAssociationProposalRequestFormProperties {
+
+		/** Required */
 		directConnectGatewayId: FormControl<string | null | undefined>,
+
+		/** Required */
 		proposalId: FormControl<string | null | undefined>,
+
+		/** Required */
 		associatedGatewayOwnerAccount: FormControl<string | null | undefined>,
 	}
 	export function CreateAcceptDirectConnectGatewayAssociationProposalRequestFormGroup() {
 		return new FormGroup<AcceptDirectConnectGatewayAssociationProposalRequestFormProperties>({
-			directConnectGatewayId: new FormControl<string | null | undefined>(undefined),
-			proposalId: new FormControl<string | null | undefined>(undefined),
-			associatedGatewayOwnerAccount: new FormControl<string | null | undefined>(undefined),
+			directConnectGatewayId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			proposalId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			associatedGatewayOwnerAccount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -163,6 +175,8 @@ export namespace MyNS {
 		jumboFrameCapable?: boolean | null;
 		awsDeviceV2?: string | null;
 		hasLogicalRedundancy?: ConnectionHasLogicalRedundancy | null;
+
+		/** Minimum items: 1 */
 		tags?: Array<Tag>;
 		providerName?: string | null;
 	}
@@ -215,70 +229,138 @@ export namespace MyNS {
 
 	/** Information about a tag. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		key: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		value?: string | null;
 	}
 
 	/** Information about a tag. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface AllocateConnectionOnInterconnectRequest {
+
+		/** Required */
 		bandwidth: string;
+
+		/** Required */
 		connectionName: string;
+
+		/** Required */
 		ownerAccount: string;
+
+		/** Required */
 		interconnectId: string;
+
+		/** Required */
 		vlan: number;
 	}
 	export interface AllocateConnectionOnInterconnectRequestFormProperties {
+
+		/** Required */
 		bandwidth: FormControl<string | null | undefined>,
+
+		/** Required */
 		connectionName: FormControl<string | null | undefined>,
+
+		/** Required */
 		ownerAccount: FormControl<string | null | undefined>,
+
+		/** Required */
 		interconnectId: FormControl<string | null | undefined>,
+
+		/** Required */
 		vlan: FormControl<number | null | undefined>,
 	}
 	export function CreateAllocateConnectionOnInterconnectRequestFormGroup() {
 		return new FormGroup<AllocateConnectionOnInterconnectRequestFormProperties>({
-			bandwidth: new FormControl<string | null | undefined>(undefined),
-			connectionName: new FormControl<string | null | undefined>(undefined),
-			ownerAccount: new FormControl<string | null | undefined>(undefined),
-			interconnectId: new FormControl<string | null | undefined>(undefined),
-			vlan: new FormControl<number | null | undefined>(undefined),
+			bandwidth: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			connectionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ownerAccount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			interconnectId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			vlan: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface AllocateHostedConnectionRequest {
+
+		/** Required */
 		connectionId: string;
+
+		/** Required */
 		ownerAccount: string;
+
+		/** Required */
 		bandwidth: string;
+
+		/** Required */
 		connectionName: string;
+
+		/** Required */
 		vlan: number;
+
+		/** Minimum items: 1 */
 		tags?: Array<Tag>;
 	}
 	export interface AllocateHostedConnectionRequestFormProperties {
+
+		/** Required */
 		connectionId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ownerAccount: FormControl<string | null | undefined>,
+
+		/** Required */
 		bandwidth: FormControl<string | null | undefined>,
+
+		/** Required */
 		connectionName: FormControl<string | null | undefined>,
+
+		/** Required */
 		vlan: FormControl<number | null | undefined>,
 	}
 	export function CreateAllocateHostedConnectionRequestFormGroup() {
 		return new FormGroup<AllocateHostedConnectionRequestFormProperties>({
-			connectionId: new FormControl<string | null | undefined>(undefined),
-			ownerAccount: new FormControl<string | null | undefined>(undefined),
-			bandwidth: new FormControl<string | null | undefined>(undefined),
-			connectionName: new FormControl<string | null | undefined>(undefined),
-			vlan: new FormControl<number | null | undefined>(undefined),
+			connectionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ownerAccount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			bandwidth: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			connectionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			vlan: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -329,6 +411,8 @@ export namespace MyNS {
 		bgpPeers?: Array<BGPPeer>;
 		region?: string | null;
 		awsDeviceV2?: string | null;
+
+		/** Minimum items: 1 */
 		tags?: Array<Tag>;
 	}
 
@@ -433,7 +517,11 @@ export namespace MyNS {
 	export enum BGPPeerBgpStatus { up = 0, down = 1, unknown = 2 }
 
 	export interface AllocatePrivateVirtualInterfaceRequest {
+
+		/** Required */
 		connectionId: string;
+
+		/** Required */
 		ownerAccount: string;
 
 		/**
@@ -443,13 +531,17 @@ export namespace MyNS {
 		newPrivateVirtualInterfaceAllocation: NewPrivateVirtualInterfaceAllocation;
 	}
 	export interface AllocatePrivateVirtualInterfaceRequestFormProperties {
+
+		/** Required */
 		connectionId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ownerAccount: FormControl<string | null | undefined>,
 	}
 	export function CreateAllocatePrivateVirtualInterfaceRequestFormGroup() {
 		return new FormGroup<AllocatePrivateVirtualInterfaceRequestFormProperties>({
-			connectionId: new FormControl<string | null | undefined>(undefined),
-			ownerAccount: new FormControl<string | null | undefined>(undefined),
+			connectionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ownerAccount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -457,21 +549,35 @@ export namespace MyNS {
 
 	/** Information about a private virtual interface to be provisioned on a connection. */
 	export interface NewPrivateVirtualInterfaceAllocation {
+
+		/** Required */
 		virtualInterfaceName: string;
+
+		/** Required */
 		vlan: number;
+
+		/** Required */
 		asn: number;
 		mtu?: number | null;
 		authKey?: string | null;
 		amazonAddress?: string | null;
 		addressFamily?: VirtualInterfaceAddressFamily | null;
 		customerAddress?: string | null;
+
+		/** Minimum items: 1 */
 		tags?: Array<Tag>;
 	}
 
 	/** Information about a private virtual interface to be provisioned on a connection. */
 	export interface NewPrivateVirtualInterfaceAllocationFormProperties {
+
+		/** Required */
 		virtualInterfaceName: FormControl<string | null | undefined>,
+
+		/** Required */
 		vlan: FormControl<number | null | undefined>,
+
+		/** Required */
 		asn: FormControl<number | null | undefined>,
 		mtu: FormControl<number | null | undefined>,
 		authKey: FormControl<string | null | undefined>,
@@ -481,9 +587,9 @@ export namespace MyNS {
 	}
 	export function CreateNewPrivateVirtualInterfaceAllocationFormGroup() {
 		return new FormGroup<NewPrivateVirtualInterfaceAllocationFormProperties>({
-			virtualInterfaceName: new FormControl<string | null | undefined>(undefined),
-			vlan: new FormControl<number | null | undefined>(undefined),
-			asn: new FormControl<number | null | undefined>(undefined),
+			virtualInterfaceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			vlan: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			asn: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			mtu: new FormControl<number | null | undefined>(undefined),
 			authKey: new FormControl<string | null | undefined>(undefined),
 			amazonAddress: new FormControl<string | null | undefined>(undefined),
@@ -494,7 +600,11 @@ export namespace MyNS {
 	}
 
 	export interface AllocatePublicVirtualInterfaceRequest {
+
+		/** Required */
 		connectionId: string;
+
+		/** Required */
 		ownerAccount: string;
 
 		/**
@@ -504,13 +614,17 @@ export namespace MyNS {
 		newPublicVirtualInterfaceAllocation: NewPublicVirtualInterfaceAllocation;
 	}
 	export interface AllocatePublicVirtualInterfaceRequestFormProperties {
+
+		/** Required */
 		connectionId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ownerAccount: FormControl<string | null | undefined>,
 	}
 	export function CreateAllocatePublicVirtualInterfaceRequestFormGroup() {
 		return new FormGroup<AllocatePublicVirtualInterfaceRequestFormProperties>({
-			connectionId: new FormControl<string | null | undefined>(undefined),
-			ownerAccount: new FormControl<string | null | undefined>(undefined),
+			connectionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ownerAccount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -518,21 +632,35 @@ export namespace MyNS {
 
 	/** Information about a public virtual interface to be provisioned on a connection. */
 	export interface NewPublicVirtualInterfaceAllocation {
+
+		/** Required */
 		virtualInterfaceName: string;
+
+		/** Required */
 		vlan: number;
+
+		/** Required */
 		asn: number;
 		authKey?: string | null;
 		amazonAddress?: string | null;
 		customerAddress?: string | null;
 		addressFamily?: VirtualInterfaceAddressFamily | null;
 		routeFilterPrefixes?: Array<RouteFilterPrefix>;
+
+		/** Minimum items: 1 */
 		tags?: Array<Tag>;
 	}
 
 	/** Information about a public virtual interface to be provisioned on a connection. */
 	export interface NewPublicVirtualInterfaceAllocationFormProperties {
+
+		/** Required */
 		virtualInterfaceName: FormControl<string | null | undefined>,
+
+		/** Required */
 		vlan: FormControl<number | null | undefined>,
+
+		/** Required */
 		asn: FormControl<number | null | undefined>,
 		authKey: FormControl<string | null | undefined>,
 		amazonAddress: FormControl<string | null | undefined>,
@@ -541,9 +669,9 @@ export namespace MyNS {
 	}
 	export function CreateNewPublicVirtualInterfaceAllocationFormGroup() {
 		return new FormGroup<NewPublicVirtualInterfaceAllocationFormProperties>({
-			virtualInterfaceName: new FormControl<string | null | undefined>(undefined),
-			vlan: new FormControl<number | null | undefined>(undefined),
-			asn: new FormControl<number | null | undefined>(undefined),
+			virtualInterfaceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			vlan: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			asn: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			authKey: new FormControl<string | null | undefined>(undefined),
 			amazonAddress: new FormControl<string | null | undefined>(undefined),
 			customerAddress: new FormControl<string | null | undefined>(undefined),
@@ -566,7 +694,11 @@ export namespace MyNS {
 	}
 
 	export interface AllocateTransitVirtualInterfaceRequest {
+
+		/** Required */
 		connectionId: string;
+
+		/** Required */
 		ownerAccount: string;
 
 		/**
@@ -576,13 +708,17 @@ export namespace MyNS {
 		newTransitVirtualInterfaceAllocation: NewTransitVirtualInterfaceAllocation;
 	}
 	export interface AllocateTransitVirtualInterfaceRequestFormProperties {
+
+		/** Required */
 		connectionId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ownerAccount: FormControl<string | null | undefined>,
 	}
 	export function CreateAllocateTransitVirtualInterfaceRequestFormGroup() {
 		return new FormGroup<AllocateTransitVirtualInterfaceRequestFormProperties>({
-			connectionId: new FormControl<string | null | undefined>(undefined),
-			ownerAccount: new FormControl<string | null | undefined>(undefined),
+			connectionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ownerAccount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -598,6 +734,8 @@ export namespace MyNS {
 		amazonAddress?: string | null;
 		customerAddress?: string | null;
 		addressFamily?: VirtualInterfaceAddressFamily | null;
+
+		/** Minimum items: 1 */
 		tags?: Array<Tag>;
 	}
 
@@ -627,49 +765,73 @@ export namespace MyNS {
 	}
 
 	export interface AssociateConnectionWithLagRequest {
+
+		/** Required */
 		connectionId: string;
+
+		/** Required */
 		lagId: string;
 	}
 	export interface AssociateConnectionWithLagRequestFormProperties {
+
+		/** Required */
 		connectionId: FormControl<string | null | undefined>,
+
+		/** Required */
 		lagId: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateConnectionWithLagRequestFormGroup() {
 		return new FormGroup<AssociateConnectionWithLagRequestFormProperties>({
-			connectionId: new FormControl<string | null | undefined>(undefined),
-			lagId: new FormControl<string | null | undefined>(undefined),
+			connectionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			lagId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface AssociateHostedConnectionRequest {
+
+		/** Required */
 		connectionId: string;
+
+		/** Required */
 		parentConnectionId: string;
 	}
 	export interface AssociateHostedConnectionRequestFormProperties {
+
+		/** Required */
 		connectionId: FormControl<string | null | undefined>,
+
+		/** Required */
 		parentConnectionId: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateHostedConnectionRequestFormGroup() {
 		return new FormGroup<AssociateHostedConnectionRequestFormProperties>({
-			connectionId: new FormControl<string | null | undefined>(undefined),
-			parentConnectionId: new FormControl<string | null | undefined>(undefined),
+			connectionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			parentConnectionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface AssociateVirtualInterfaceRequest {
+
+		/** Required */
 		virtualInterfaceId: string;
+
+		/** Required */
 		connectionId: string;
 	}
 	export interface AssociateVirtualInterfaceRequestFormProperties {
+
+		/** Required */
 		virtualInterfaceId: FormControl<string | null | undefined>,
+
+		/** Required */
 		connectionId: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateVirtualInterfaceRequestFormGroup() {
 		return new FormGroup<AssociateVirtualInterfaceRequestFormProperties>({
-			virtualInterfaceId: new FormControl<string | null | undefined>(undefined),
-			connectionId: new FormControl<string | null | undefined>(undefined),
+			virtualInterfaceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			connectionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -688,14 +850,18 @@ export namespace MyNS {
 	}
 
 	export interface ConfirmConnectionRequest {
+
+		/** Required */
 		connectionId: string;
 	}
 	export interface ConfirmConnectionRequestFormProperties {
+
+		/** Required */
 		connectionId: FormControl<string | null | undefined>,
 	}
 	export function CreateConfirmConnectionRequestFormGroup() {
 		return new FormGroup<ConfirmConnectionRequestFormProperties>({
-			connectionId: new FormControl<string | null | undefined>(undefined),
+			connectionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -714,18 +880,22 @@ export namespace MyNS {
 	}
 
 	export interface ConfirmPrivateVirtualInterfaceRequest {
+
+		/** Required */
 		virtualInterfaceId: string;
 		virtualGatewayId?: string | null;
 		directConnectGatewayId?: string | null;
 	}
 	export interface ConfirmPrivateVirtualInterfaceRequestFormProperties {
+
+		/** Required */
 		virtualInterfaceId: FormControl<string | null | undefined>,
 		virtualGatewayId: FormControl<string | null | undefined>,
 		directConnectGatewayId: FormControl<string | null | undefined>,
 	}
 	export function CreateConfirmPrivateVirtualInterfaceRequestFormGroup() {
 		return new FormGroup<ConfirmPrivateVirtualInterfaceRequestFormProperties>({
-			virtualInterfaceId: new FormControl<string | null | undefined>(undefined),
+			virtualInterfaceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			virtualGatewayId: new FormControl<string | null | undefined>(undefined),
 			directConnectGatewayId: new FormControl<string | null | undefined>(undefined),
 		});
@@ -746,14 +916,18 @@ export namespace MyNS {
 	}
 
 	export interface ConfirmPublicVirtualInterfaceRequest {
+
+		/** Required */
 		virtualInterfaceId: string;
 	}
 	export interface ConfirmPublicVirtualInterfaceRequestFormProperties {
+
+		/** Required */
 		virtualInterfaceId: FormControl<string | null | undefined>,
 	}
 	export function CreateConfirmPublicVirtualInterfaceRequestFormGroup() {
 		return new FormGroup<ConfirmPublicVirtualInterfaceRequestFormProperties>({
-			virtualInterfaceId: new FormControl<string | null | undefined>(undefined),
+			virtualInterfaceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -772,17 +946,25 @@ export namespace MyNS {
 	}
 
 	export interface ConfirmTransitVirtualInterfaceRequest {
+
+		/** Required */
 		virtualInterfaceId: string;
+
+		/** Required */
 		directConnectGatewayId: string;
 	}
 	export interface ConfirmTransitVirtualInterfaceRequestFormProperties {
+
+		/** Required */
 		virtualInterfaceId: FormControl<string | null | undefined>,
+
+		/** Required */
 		directConnectGatewayId: FormControl<string | null | undefined>,
 	}
 	export function CreateConfirmTransitVirtualInterfaceRequestFormGroup() {
 		return new FormGroup<ConfirmTransitVirtualInterfaceRequestFormProperties>({
-			virtualInterfaceId: new FormControl<string | null | undefined>(undefined),
-			directConnectGatewayId: new FormControl<string | null | undefined>(undefined),
+			virtualInterfaceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			directConnectGatewayId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -846,25 +1028,39 @@ export namespace MyNS {
 	}
 
 	export interface CreateConnectionRequest {
+
+		/** Required */
 		location: string;
+
+		/** Required */
 		bandwidth: string;
+
+		/** Required */
 		connectionName: string;
 		lagId?: string | null;
+
+		/** Minimum items: 1 */
 		tags?: Array<Tag>;
 		providerName?: string | null;
 	}
 	export interface CreateConnectionRequestFormProperties {
+
+		/** Required */
 		location: FormControl<string | null | undefined>,
+
+		/** Required */
 		bandwidth: FormControl<string | null | undefined>,
+
+		/** Required */
 		connectionName: FormControl<string | null | undefined>,
 		lagId: FormControl<string | null | undefined>,
 		providerName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateConnectionRequestFormGroup() {
 		return new FormGroup<CreateConnectionRequestFormProperties>({
-			location: new FormControl<string | null | undefined>(undefined),
-			bandwidth: new FormControl<string | null | undefined>(undefined),
-			connectionName: new FormControl<string | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			bandwidth: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			connectionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			lagId: new FormControl<string | null | undefined>(undefined),
 			providerName: new FormControl<string | null | undefined>(undefined),
 		});
@@ -919,16 +1115,20 @@ export namespace MyNS {
 	export enum DirectConnectGatewayDirectConnectGatewayState { pending = 0, available = 1, deleting = 2, deleted = 3 }
 
 	export interface CreateDirectConnectGatewayRequest {
+
+		/** Required */
 		directConnectGatewayName: string;
 		amazonSideAsn?: number | null;
 	}
 	export interface CreateDirectConnectGatewayRequestFormProperties {
+
+		/** Required */
 		directConnectGatewayName: FormControl<string | null | undefined>,
 		amazonSideAsn: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateDirectConnectGatewayRequestFormGroup() {
 		return new FormGroup<CreateDirectConnectGatewayRequestFormProperties>({
-			directConnectGatewayName: new FormControl<string | null | undefined>(undefined),
+			directConnectGatewayName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			amazonSideAsn: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -948,19 +1148,23 @@ export namespace MyNS {
 	}
 
 	export interface CreateDirectConnectGatewayAssociationRequest {
+
+		/** Required */
 		directConnectGatewayId: string;
 		gatewayId?: string | null;
 		addAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix>;
 		virtualGatewayId?: string | null;
 	}
 	export interface CreateDirectConnectGatewayAssociationRequestFormProperties {
+
+		/** Required */
 		directConnectGatewayId: FormControl<string | null | undefined>,
 		gatewayId: FormControl<string | null | undefined>,
 		virtualGatewayId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDirectConnectGatewayAssociationRequestFormGroup() {
 		return new FormGroup<CreateDirectConnectGatewayAssociationRequestFormProperties>({
-			directConnectGatewayId: new FormControl<string | null | undefined>(undefined),
+			directConnectGatewayId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			gatewayId: new FormControl<string | null | undefined>(undefined),
 			virtualGatewayId: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1014,22 +1218,34 @@ export namespace MyNS {
 	export enum DirectConnectGatewayAssociationProposalProposalState { requested = 0, accepted = 1, deleted = 2 }
 
 	export interface CreateDirectConnectGatewayAssociationProposalRequest {
+
+		/** Required */
 		directConnectGatewayId: string;
+
+		/** Required */
 		directConnectGatewayOwnerAccount: string;
+
+		/** Required */
 		gatewayId: string;
 		addAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix>;
 		removeAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix>;
 	}
 	export interface CreateDirectConnectGatewayAssociationProposalRequestFormProperties {
+
+		/** Required */
 		directConnectGatewayId: FormControl<string | null | undefined>,
+
+		/** Required */
 		directConnectGatewayOwnerAccount: FormControl<string | null | undefined>,
+
+		/** Required */
 		gatewayId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDirectConnectGatewayAssociationProposalRequestFormGroup() {
 		return new FormGroup<CreateDirectConnectGatewayAssociationProposalRequestFormProperties>({
-			directConnectGatewayId: new FormControl<string | null | undefined>(undefined),
-			directConnectGatewayOwnerAccount: new FormControl<string | null | undefined>(undefined),
-			gatewayId: new FormControl<string | null | undefined>(undefined),
+			directConnectGatewayId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			directConnectGatewayOwnerAccount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			gatewayId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1049,6 +1265,8 @@ export namespace MyNS {
 		jumboFrameCapable?: boolean | null;
 		awsDeviceV2?: string | null;
 		hasLogicalRedundancy?: ConnectionHasLogicalRedundancy | null;
+
+		/** Minimum items: 1 */
 		tags?: Array<Tag>;
 		providerName?: string | null;
 	}
@@ -1091,25 +1309,39 @@ export namespace MyNS {
 	export enum InterconnectInterconnectState { requested = 0, pending = 1, available = 2, down = 3, deleting = 4, deleted = 5, unknown = 6 }
 
 	export interface CreateInterconnectRequest {
+
+		/** Required */
 		interconnectName: string;
+
+		/** Required */
 		bandwidth: string;
+
+		/** Required */
 		location: string;
 		lagId?: string | null;
+
+		/** Minimum items: 1 */
 		tags?: Array<Tag>;
 		providerName?: string | null;
 	}
 	export interface CreateInterconnectRequestFormProperties {
+
+		/** Required */
 		interconnectName: FormControl<string | null | undefined>,
+
+		/** Required */
 		bandwidth: FormControl<string | null | undefined>,
+
+		/** Required */
 		location: FormControl<string | null | undefined>,
 		lagId: FormControl<string | null | undefined>,
 		providerName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateInterconnectRequestFormGroup() {
 		return new FormGroup<CreateInterconnectRequestFormProperties>({
-			interconnectName: new FormControl<string | null | undefined>(undefined),
-			bandwidth: new FormControl<string | null | undefined>(undefined),
-			location: new FormControl<string | null | undefined>(undefined),
+			interconnectName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			bandwidth: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			location: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			lagId: new FormControl<string | null | undefined>(undefined),
 			providerName: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1134,6 +1366,8 @@ export namespace MyNS {
 		allowsHostedConnections?: boolean | null;
 		jumboFrameCapable?: boolean | null;
 		hasLogicalRedundancy?: ConnectionHasLogicalRedundancy | null;
+
+		/** Minimum items: 1 */
 		tags?: Array<Tag>;
 		providerName?: string | null;
 	}
@@ -1178,29 +1412,49 @@ export namespace MyNS {
 	}
 
 	export interface CreateLagRequest {
+
+		/** Required */
 		numberOfConnections: number;
+
+		/** Required */
 		location: string;
+
+		/** Required */
 		connectionsBandwidth: string;
+
+		/** Required */
 		lagName: string;
 		connectionId?: string | null;
+
+		/** Minimum items: 1 */
 		tags?: Array<Tag>;
+
+		/** Minimum items: 1 */
 		childConnectionTags?: Array<Tag>;
 		providerName?: string | null;
 	}
 	export interface CreateLagRequestFormProperties {
+
+		/** Required */
 		numberOfConnections: FormControl<number | null | undefined>,
+
+		/** Required */
 		location: FormControl<string | null | undefined>,
+
+		/** Required */
 		connectionsBandwidth: FormControl<string | null | undefined>,
+
+		/** Required */
 		lagName: FormControl<string | null | undefined>,
 		connectionId: FormControl<string | null | undefined>,
 		providerName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateLagRequestFormGroup() {
 		return new FormGroup<CreateLagRequestFormProperties>({
-			numberOfConnections: new FormControl<number | null | undefined>(undefined),
-			location: new FormControl<string | null | undefined>(undefined),
-			connectionsBandwidth: new FormControl<string | null | undefined>(undefined),
-			lagName: new FormControl<string | null | undefined>(undefined),
+			numberOfConnections: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			location: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			connectionsBandwidth: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			lagName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			connectionId: new FormControl<string | null | undefined>(undefined),
 			providerName: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1208,6 +1462,8 @@ export namespace MyNS {
 	}
 
 	export interface CreatePrivateVirtualInterfaceRequest {
+
+		/** Required */
 		connectionId: string;
 
 		/**
@@ -1217,11 +1473,13 @@ export namespace MyNS {
 		newPrivateVirtualInterface: NewPrivateVirtualInterface;
 	}
 	export interface CreatePrivateVirtualInterfaceRequestFormProperties {
+
+		/** Required */
 		connectionId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePrivateVirtualInterfaceRequestFormGroup() {
 		return new FormGroup<CreatePrivateVirtualInterfaceRequestFormProperties>({
-			connectionId: new FormControl<string | null | undefined>(undefined),
+			connectionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1229,8 +1487,14 @@ export namespace MyNS {
 
 	/** Information about a private virtual interface. */
 	export interface NewPrivateVirtualInterface {
+
+		/** Required */
 		virtualInterfaceName: string;
+
+		/** Required */
 		vlan: number;
+
+		/** Required */
 		asn: number;
 		mtu?: number | null;
 		authKey?: string | null;
@@ -1239,13 +1503,21 @@ export namespace MyNS {
 		addressFamily?: VirtualInterfaceAddressFamily | null;
 		virtualGatewayId?: string | null;
 		directConnectGatewayId?: string | null;
+
+		/** Minimum items: 1 */
 		tags?: Array<Tag>;
 	}
 
 	/** Information about a private virtual interface. */
 	export interface NewPrivateVirtualInterfaceFormProperties {
+
+		/** Required */
 		virtualInterfaceName: FormControl<string | null | undefined>,
+
+		/** Required */
 		vlan: FormControl<number | null | undefined>,
+
+		/** Required */
 		asn: FormControl<number | null | undefined>,
 		mtu: FormControl<number | null | undefined>,
 		authKey: FormControl<string | null | undefined>,
@@ -1257,9 +1529,9 @@ export namespace MyNS {
 	}
 	export function CreateNewPrivateVirtualInterfaceFormGroup() {
 		return new FormGroup<NewPrivateVirtualInterfaceFormProperties>({
-			virtualInterfaceName: new FormControl<string | null | undefined>(undefined),
-			vlan: new FormControl<number | null | undefined>(undefined),
-			asn: new FormControl<number | null | undefined>(undefined),
+			virtualInterfaceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			vlan: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			asn: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			mtu: new FormControl<number | null | undefined>(undefined),
 			authKey: new FormControl<string | null | undefined>(undefined),
 			amazonAddress: new FormControl<string | null | undefined>(undefined),
@@ -1272,6 +1544,8 @@ export namespace MyNS {
 	}
 
 	export interface CreatePublicVirtualInterfaceRequest {
+
+		/** Required */
 		connectionId: string;
 
 		/**
@@ -1281,11 +1555,13 @@ export namespace MyNS {
 		newPublicVirtualInterface: NewPublicVirtualInterface;
 	}
 	export interface CreatePublicVirtualInterfaceRequestFormProperties {
+
+		/** Required */
 		connectionId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePublicVirtualInterfaceRequestFormGroup() {
 		return new FormGroup<CreatePublicVirtualInterfaceRequestFormProperties>({
-			connectionId: new FormControl<string | null | undefined>(undefined),
+			connectionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1293,21 +1569,35 @@ export namespace MyNS {
 
 	/** Information about a public virtual interface. */
 	export interface NewPublicVirtualInterface {
+
+		/** Required */
 		virtualInterfaceName: string;
+
+		/** Required */
 		vlan: number;
+
+		/** Required */
 		asn: number;
 		authKey?: string | null;
 		amazonAddress?: string | null;
 		customerAddress?: string | null;
 		addressFamily?: VirtualInterfaceAddressFamily | null;
 		routeFilterPrefixes?: Array<RouteFilterPrefix>;
+
+		/** Minimum items: 1 */
 		tags?: Array<Tag>;
 	}
 
 	/** Information about a public virtual interface. */
 	export interface NewPublicVirtualInterfaceFormProperties {
+
+		/** Required */
 		virtualInterfaceName: FormControl<string | null | undefined>,
+
+		/** Required */
 		vlan: FormControl<number | null | undefined>,
+
+		/** Required */
 		asn: FormControl<number | null | undefined>,
 		authKey: FormControl<string | null | undefined>,
 		amazonAddress: FormControl<string | null | undefined>,
@@ -1316,9 +1606,9 @@ export namespace MyNS {
 	}
 	export function CreateNewPublicVirtualInterfaceFormGroup() {
 		return new FormGroup<NewPublicVirtualInterfaceFormProperties>({
-			virtualInterfaceName: new FormControl<string | null | undefined>(undefined),
-			vlan: new FormControl<number | null | undefined>(undefined),
-			asn: new FormControl<number | null | undefined>(undefined),
+			virtualInterfaceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			vlan: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			asn: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			authKey: new FormControl<string | null | undefined>(undefined),
 			amazonAddress: new FormControl<string | null | undefined>(undefined),
 			customerAddress: new FormControl<string | null | undefined>(undefined),
@@ -1341,6 +1631,8 @@ export namespace MyNS {
 	}
 
 	export interface CreateTransitVirtualInterfaceRequest {
+
+		/** Required */
 		connectionId: string;
 
 		/**
@@ -1350,11 +1642,13 @@ export namespace MyNS {
 		newTransitVirtualInterface: NewTransitVirtualInterface;
 	}
 	export interface CreateTransitVirtualInterfaceRequestFormProperties {
+
+		/** Required */
 		connectionId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateTransitVirtualInterfaceRequestFormGroup() {
 		return new FormGroup<CreateTransitVirtualInterfaceRequestFormProperties>({
-			connectionId: new FormControl<string | null | undefined>(undefined),
+			connectionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1371,6 +1665,8 @@ export namespace MyNS {
 		customerAddress?: string | null;
 		addressFamily?: VirtualInterfaceAddressFamily | null;
 		directConnectGatewayId?: string | null;
+
+		/** Minimum items: 1 */
 		tags?: Array<Tag>;
 	}
 
@@ -1437,14 +1733,18 @@ export namespace MyNS {
 	}
 
 	export interface DeleteConnectionRequest {
+
+		/** Required */
 		connectionId: string;
 	}
 	export interface DeleteConnectionRequestFormProperties {
+
+		/** Required */
 		connectionId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteConnectionRequestFormGroup() {
 		return new FormGroup<DeleteConnectionRequestFormProperties>({
-			connectionId: new FormControl<string | null | undefined>(undefined),
+			connectionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1463,14 +1763,18 @@ export namespace MyNS {
 	}
 
 	export interface DeleteDirectConnectGatewayRequest {
+
+		/** Required */
 		directConnectGatewayId: string;
 	}
 	export interface DeleteDirectConnectGatewayRequestFormProperties {
+
+		/** Required */
 		directConnectGatewayId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDirectConnectGatewayRequestFormGroup() {
 		return new FormGroup<DeleteDirectConnectGatewayRequestFormProperties>({
-			directConnectGatewayId: new FormControl<string | null | undefined>(undefined),
+			directConnectGatewayId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1521,14 +1825,18 @@ export namespace MyNS {
 	}
 
 	export interface DeleteDirectConnectGatewayAssociationProposalRequest {
+
+		/** Required */
 		proposalId: string;
 	}
 	export interface DeleteDirectConnectGatewayAssociationProposalRequestFormProperties {
+
+		/** Required */
 		proposalId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDirectConnectGatewayAssociationProposalRequestFormGroup() {
 		return new FormGroup<DeleteDirectConnectGatewayAssociationProposalRequestFormProperties>({
-			proposalId: new FormControl<string | null | undefined>(undefined),
+			proposalId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1547,27 +1855,35 @@ export namespace MyNS {
 	}
 
 	export interface DeleteInterconnectRequest {
+
+		/** Required */
 		interconnectId: string;
 	}
 	export interface DeleteInterconnectRequestFormProperties {
+
+		/** Required */
 		interconnectId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteInterconnectRequestFormGroup() {
 		return new FormGroup<DeleteInterconnectRequestFormProperties>({
-			interconnectId: new FormControl<string | null | undefined>(undefined),
+			interconnectId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeleteLagRequest {
+
+		/** Required */
 		lagId: string;
 	}
 	export interface DeleteLagRequestFormProperties {
+
+		/** Required */
 		lagId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteLagRequestFormGroup() {
 		return new FormGroup<DeleteLagRequestFormProperties>({
-			lagId: new FormControl<string | null | undefined>(undefined),
+			lagId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1586,14 +1902,18 @@ export namespace MyNS {
 	}
 
 	export interface DeleteVirtualInterfaceRequest {
+
+		/** Required */
 		virtualInterfaceId: string;
 	}
 	export interface DeleteVirtualInterfaceRequestFormProperties {
+
+		/** Required */
 		virtualInterfaceId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteVirtualInterfaceRequestFormGroup() {
 		return new FormGroup<DeleteVirtualInterfaceRequestFormProperties>({
-			virtualInterfaceId: new FormControl<string | null | undefined>(undefined),
+			virtualInterfaceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1634,18 +1954,22 @@ export namespace MyNS {
 	export enum LoaLoaContentType { application_pdf = 0 }
 
 	export interface DescribeConnectionLoaRequest {
+
+		/** Required */
 		connectionId: string;
 		providerName?: string | null;
 		loaContentType?: DescribeConnectionLoaRequestLoaContentType | null;
 	}
 	export interface DescribeConnectionLoaRequestFormProperties {
+
+		/** Required */
 		connectionId: FormControl<string | null | undefined>,
 		providerName: FormControl<string | null | undefined>,
 		loaContentType: FormControl<DescribeConnectionLoaRequestLoaContentType | null | undefined>,
 	}
 	export function CreateDescribeConnectionLoaRequestFormGroup() {
 		return new FormGroup<DescribeConnectionLoaRequestFormProperties>({
-			connectionId: new FormControl<string | null | undefined>(undefined),
+			connectionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			providerName: new FormControl<string | null | undefined>(undefined),
 			loaContentType: new FormControl<DescribeConnectionLoaRequestLoaContentType | null | undefined>(undefined),
 		});
@@ -1679,14 +2003,18 @@ export namespace MyNS {
 	}
 
 	export interface DescribeConnectionsOnInterconnectRequest {
+
+		/** Required */
 		interconnectId: string;
 	}
 	export interface DescribeConnectionsOnInterconnectRequestFormProperties {
+
+		/** Required */
 		interconnectId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeConnectionsOnInterconnectRequestFormGroup() {
 		return new FormGroup<DescribeConnectionsOnInterconnectRequestFormProperties>({
-			interconnectId: new FormControl<string | null | undefined>(undefined),
+			interconnectId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1881,14 +2209,18 @@ export namespace MyNS {
 	}
 
 	export interface DescribeHostedConnectionsRequest {
+
+		/** Required */
 		connectionId: string;
 	}
 	export interface DescribeHostedConnectionsRequestFormProperties {
+
+		/** Required */
 		connectionId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeHostedConnectionsRequestFormGroup() {
 		return new FormGroup<DescribeHostedConnectionsRequestFormProperties>({
-			connectionId: new FormControl<string | null | undefined>(undefined),
+			connectionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1907,18 +2239,22 @@ export namespace MyNS {
 	}
 
 	export interface DescribeInterconnectLoaRequest {
+
+		/** Required */
 		interconnectId: string;
 		providerName?: string | null;
 		loaContentType?: DescribeInterconnectLoaRequestLoaContentType | null;
 	}
 	export interface DescribeInterconnectLoaRequestFormProperties {
+
+		/** Required */
 		interconnectId: FormControl<string | null | undefined>,
 		providerName: FormControl<string | null | undefined>,
 		loaContentType: FormControl<DescribeInterconnectLoaRequestLoaContentType | null | undefined>,
 	}
 	export function CreateDescribeInterconnectLoaRequestFormGroup() {
 		return new FormGroup<DescribeInterconnectLoaRequestFormProperties>({
-			interconnectId: new FormControl<string | null | undefined>(undefined),
+			interconnectId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			providerName: new FormControl<string | null | undefined>(undefined),
 			loaContentType: new FormControl<DescribeInterconnectLoaRequestLoaContentType | null | undefined>(undefined),
 		});
@@ -1976,18 +2312,22 @@ export namespace MyNS {
 	}
 
 	export interface DescribeLoaRequest {
+
+		/** Required */
 		connectionId: string;
 		providerName?: string | null;
 		loaContentType?: DescribeLoaRequestLoaContentType | null;
 	}
 	export interface DescribeLoaRequestFormProperties {
+
+		/** Required */
 		connectionId: FormControl<string | null | undefined>,
 		providerName: FormControl<string | null | undefined>,
 		loaContentType: FormControl<DescribeLoaRequestLoaContentType | null | undefined>,
 	}
 	export function CreateDescribeLoaRequestFormGroup() {
 		return new FormGroup<DescribeLoaRequestFormProperties>({
-			connectionId: new FormControl<string | null | undefined>(undefined),
+			connectionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			providerName: new FormControl<string | null | undefined>(undefined),
 			loaContentType: new FormControl<DescribeLoaRequestLoaContentType | null | undefined>(undefined),
 		});
@@ -2044,6 +2384,8 @@ export namespace MyNS {
 	/** Information about a tag associated with an AWS Direct Connect resource. */
 	export interface ResourceTag {
 		resourceArn?: string | null;
+
+		/** Minimum items: 1 */
 		tags?: Array<Tag>;
 	}
 
@@ -2059,6 +2401,8 @@ export namespace MyNS {
 	}
 
 	export interface DescribeTagsRequest {
+
+		/** Required */
 		resourceArns: Array<string>;
 	}
 	export interface DescribeTagsRequestFormProperties {
@@ -2128,17 +2472,25 @@ export namespace MyNS {
 	}
 
 	export interface DisassociateConnectionFromLagRequest {
+
+		/** Required */
 		connectionId: string;
+
+		/** Required */
 		lagId: string;
 	}
 	export interface DisassociateConnectionFromLagRequestFormProperties {
+
+		/** Required */
 		connectionId: FormControl<string | null | undefined>,
+
+		/** Required */
 		lagId: FormControl<string | null | undefined>,
 	}
 	export function CreateDisassociateConnectionFromLagRequestFormGroup() {
 		return new FormGroup<DisassociateConnectionFromLagRequestFormProperties>({
-			connectionId: new FormControl<string | null | undefined>(undefined),
-			lagId: new FormControl<string | null | undefined>(undefined),
+			connectionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			lagId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2233,17 +2585,21 @@ export namespace MyNS {
 	}
 
 	export interface StartBgpFailoverTestRequest {
+
+		/** Required */
 		virtualInterfaceId: string;
 		bgpPeers?: Array<string>;
 		testDurationInMinutes?: number | null;
 	}
 	export interface StartBgpFailoverTestRequestFormProperties {
+
+		/** Required */
 		virtualInterfaceId: FormControl<string | null | undefined>,
 		testDurationInMinutes: FormControl<number | null | undefined>,
 	}
 	export function CreateStartBgpFailoverTestRequestFormGroup() {
 		return new FormGroup<StartBgpFailoverTestRequestFormProperties>({
-			virtualInterfaceId: new FormControl<string | null | undefined>(undefined),
+			virtualInterfaceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			testDurationInMinutes: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -2263,14 +2619,18 @@ export namespace MyNS {
 	}
 
 	export interface StopBgpFailoverTestRequest {
+
+		/** Required */
 		virtualInterfaceId: string;
 	}
 	export interface StopBgpFailoverTestRequestFormProperties {
+
+		/** Required */
 		virtualInterfaceId: FormControl<string | null | undefined>,
 	}
 	export function CreateStopBgpFailoverTestRequestFormGroup() {
 		return new FormGroup<StopBgpFailoverTestRequestFormProperties>({
-			virtualInterfaceId: new FormControl<string | null | undefined>(undefined),
+			virtualInterfaceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2286,15 +2646,24 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/** Required */
 		resourceArn: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 */
 		tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/** Required */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2310,15 +2679,21 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceRequest {
+
+		/** Required */
 		resourceArn: string;
+
+		/** Required */
 		tagKeys: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/** Required */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2352,18 +2727,22 @@ export namespace MyNS {
 	}
 
 	export interface UpdateLagRequest {
+
+		/** Required */
 		lagId: string;
 		lagName?: string | null;
 		minimumLinks?: number | null;
 	}
 	export interface UpdateLagRequestFormProperties {
+
+		/** Required */
 		lagId: FormControl<string | null | undefined>,
 		lagName: FormControl<string | null | undefined>,
 		minimumLinks: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateLagRequestFormGroup() {
 		return new FormGroup<UpdateLagRequestFormProperties>({
-			lagId: new FormControl<string | null | undefined>(undefined),
+			lagId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			lagName: new FormControl<string | null | undefined>(undefined),
 			minimumLinks: new FormControl<number | null | undefined>(undefined),
 		});
@@ -2371,16 +2750,20 @@ export namespace MyNS {
 	}
 
 	export interface UpdateVirtualInterfaceAttributesRequest {
+
+		/** Required */
 		virtualInterfaceId: string;
 		mtu?: number | null;
 	}
 	export interface UpdateVirtualInterfaceAttributesRequestFormProperties {
+
+		/** Required */
 		virtualInterfaceId: FormControl<string | null | undefined>,
 		mtu: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateVirtualInterfaceAttributesRequestFormGroup() {
 		return new FormGroup<UpdateVirtualInterfaceAttributesRequestFormProperties>({
-			virtualInterfaceId: new FormControl<string | null | undefined>(undefined),
+			virtualInterfaceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			mtu: new FormControl<number | null | undefined>(undefined),
 		});
 

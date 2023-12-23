@@ -4,14 +4,18 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface GetRawMessageContentResponse {
+
+		/** Required */
 		messageContent: string;
 	}
 	export interface GetRawMessageContentResponseFormProperties {
+
+		/** Required */
 		messageContent: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRawMessageContentResponseFormGroup() {
 		return new FormGroup<GetRawMessageContentResponseFormProperties>({
-			messageContent: new FormControl<string | null | undefined>(undefined),
+			messageContent: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

@@ -127,19 +127,27 @@ export namespace MyNS {
 
 	/** Object that describes the frequency bandwidth. */
 	export interface FrequencyBandwidth {
+
+		/** Required */
 		units: FrequencyBandwidthUnits;
+
+		/** Required */
 		value: number;
 	}
 
 	/** Object that describes the frequency bandwidth. */
 	export interface FrequencyBandwidthFormProperties {
+
+		/** Required */
 		units: FormControl<FrequencyBandwidthUnits | null | undefined>,
+
+		/** Required */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateFrequencyBandwidthFormGroup() {
 		return new FormGroup<FrequencyBandwidthFormProperties>({
-			units: new FormControl<FrequencyBandwidthUnits | null | undefined>(undefined),
-			value: new FormControl<number | null | undefined>(undefined),
+			units: new FormControl<FrequencyBandwidthUnits | null | undefined>(undefined, [Validators.required]),
+			value: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -149,19 +157,27 @@ export namespace MyNS {
 
 	/** Object that describes the frequency. */
 	export interface Frequency {
+
+		/** Required */
 		units: FrequencyBandwidthUnits;
+
+		/** Required */
 		value: number;
 	}
 
 	/** Object that describes the frequency. */
 	export interface FrequencyFormProperties {
+
+		/** Required */
 		units: FormControl<FrequencyBandwidthUnits | null | undefined>,
+
+		/** Required */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateFrequencyFormGroup() {
 		return new FormGroup<FrequencyFormProperties>({
-			units: new FormControl<FrequencyBandwidthUnits | null | undefined>(undefined),
-			value: new FormControl<number | null | undefined>(undefined),
+			units: new FormControl<FrequencyBandwidthUnits | null | undefined>(undefined, [Validators.required]),
+			value: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -203,16 +219,30 @@ export namespace MyNS {
 
 	/** Information about the decode <code>Config</code>. */
 	export interface DecodeConfig {
+
+		/**
+		 * Required
+		 * Max length: 8192
+		 * Min length: 2
+		 * Pattern: ^[{}\[\]:.,"0-9A-z\-_\s]{2,8192}$
+		 */
 		unvalidatedJSON: string;
 	}
 
 	/** Information about the decode <code>Config</code>. */
 	export interface DecodeConfigFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 8192
+		 * Min length: 2
+		 * Pattern: ^[{}\[\]:.,"0-9A-z\-_\s]{2,8192}$
+		 */
 		unvalidatedJSON: FormControl<string | null | undefined>,
 	}
 	export function CreateDecodeConfigFormGroup() {
 		return new FormGroup<DecodeConfigFormProperties>({
-			unvalidatedJSON: new FormControl<string | null | undefined>(undefined),
+			unvalidatedJSON: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(2)]),
 		});
 
 	}
@@ -220,16 +250,30 @@ export namespace MyNS {
 
 	/** Information about the demodulation <code>Config</code>. */
 	export interface DemodulationConfig {
+
+		/**
+		 * Required
+		 * Max length: 8192
+		 * Min length: 2
+		 * Pattern: ^[{}\[\]:.,"0-9A-z\-_\s]{2,8192}$
+		 */
 		unvalidatedJSON: string;
 	}
 
 	/** Information about the demodulation <code>Config</code>. */
 	export interface DemodulationConfigFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 8192
+		 * Min length: 2
+		 * Pattern: ^[{}\[\]:.,"0-9A-z\-_\s]{2,8192}$
+		 */
 		unvalidatedJSON: FormControl<string | null | undefined>,
 	}
 	export function CreateDemodulationConfigFormGroup() {
 		return new FormGroup<DemodulationConfigFormProperties>({
-			unvalidatedJSON: new FormControl<string | null | undefined>(undefined),
+			unvalidatedJSON: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(2)]),
 		});
 
 	}
@@ -286,19 +330,27 @@ export namespace MyNS {
 
 	/** Object that represents EIRP. */
 	export interface Eirp {
+
+		/** Required */
 		units: EirpUnits;
+
+		/** Required */
 		value: number;
 	}
 
 	/** Object that represents EIRP. */
 	export interface EirpFormProperties {
+
+		/** Required */
 		units: FormControl<EirpUnits | null | undefined>,
+
+		/** Required */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateEirpFormGroup() {
 		return new FormGroup<EirpFormProperties>({
-			units: new FormControl<EirpUnits | null | undefined>(undefined),
-			value: new FormControl<number | null | undefined>(undefined),
+			units: new FormControl<EirpUnits | null | undefined>(undefined, [Validators.required]),
+			value: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -308,18 +360,22 @@ export namespace MyNS {
 
 	/** Information about the dataflow endpoint <code>Config</code>. */
 	export interface DataflowEndpointConfig {
+
+		/** Required */
 		dataflowEndpointName: string;
 		dataflowEndpointRegion?: string | null;
 	}
 
 	/** Information about the dataflow endpoint <code>Config</code>. */
 	export interface DataflowEndpointConfigFormProperties {
+
+		/** Required */
 		dataflowEndpointName: FormControl<string | null | undefined>,
 		dataflowEndpointRegion: FormControl<string | null | undefined>,
 	}
 	export function CreateDataflowEndpointConfigFormGroup() {
 		return new FormGroup<DataflowEndpointConfigFormProperties>({
-			dataflowEndpointName: new FormControl<string | null | undefined>(undefined),
+			dataflowEndpointName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			dataflowEndpointRegion: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -328,16 +384,20 @@ export namespace MyNS {
 
 	/** Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile. */
 	export interface TrackingConfig {
+
+		/** Required */
 		autotrack: TrackingConfigAutotrack;
 	}
 
 	/** Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile. */
 	export interface TrackingConfigFormProperties {
+
+		/** Required */
 		autotrack: FormControl<TrackingConfigAutotrack | null | undefined>,
 	}
 	export function CreateTrackingConfigFormGroup() {
 		return new FormGroup<TrackingConfigFormProperties>({
-			autotrack: new FormControl<TrackingConfigAutotrack | null | undefined>(undefined),
+			autotrack: new FormControl<TrackingConfigAutotrack | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -347,19 +407,27 @@ export namespace MyNS {
 
 	/** <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p> */
 	export interface UplinkEchoConfig {
+
+		/** Required */
 		antennaUplinkConfigArn: string;
+
+		/** Required */
 		enabled: boolean;
 	}
 
 	/** <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p> */
 	export interface UplinkEchoConfigFormProperties {
+
+		/** Required */
 		antennaUplinkConfigArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		enabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUplinkEchoConfigFormGroup() {
 		return new FormGroup<UplinkEchoConfigFormProperties>({
-			antennaUplinkConfigArn: new FormControl<string | null | undefined>(undefined),
-			enabled: new FormControl<boolean | null | undefined>(undefined),
+			antennaUplinkConfigArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -417,18 +485,30 @@ export namespace MyNS {
 
 		/** Information about the socket address. */
 		address?: SocketAddress;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+		 */
 		name?: string | null;
 		status?: DataflowEndpointStatus | null;
 	}
 
 	/** Information about a dataflow endpoint. */
 	export interface DataflowEndpointFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+		 */
 		name: FormControl<string | null | undefined>,
 		status: FormControl<DataflowEndpointStatus | null | undefined>,
 	}
 	export function CreateDataflowEndpointFormGroup() {
 		return new FormGroup<DataflowEndpointFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			status: new FormControl<DataflowEndpointStatus | null | undefined>(undefined),
 		});
 
@@ -437,19 +517,27 @@ export namespace MyNS {
 
 	/** Information about the socket address. */
 	export interface SocketAddress {
+
+		/** Required */
 		name: string;
+
+		/** Required */
 		port: number;
 	}
 
 	/** Information about the socket address. */
 	export interface SocketAddressFormProperties {
+
+		/** Required */
 		name: FormControl<string | null | undefined>,
+
+		/** Required */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateSocketAddressFormGroup() {
 		return new FormGroup<SocketAddressFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			port: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			port: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -459,18 +547,26 @@ export namespace MyNS {
 
 	/** Information about endpoints. */
 	export interface SecurityDetails {
+
+		/** Required */
 		roleArn: string;
+
+		/** Required */
 		securityGroupIds: Array<string>;
+
+		/** Required */
 		subnetIds: Array<string>;
 	}
 
 	/** Information about endpoints. */
 	export interface SecurityDetailsFormProperties {
+
+		/** Required */
 		roleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateSecurityDetailsFormGroup() {
 		return new FormGroup<SecurityDetailsFormProperties>({
-			roleArn: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -548,19 +644,27 @@ export namespace MyNS {
 
 	/** Elevation angle of the satellite in the sky during a contact. */
 	export interface Elevation {
+
+		/** Required */
 		unit: ElevationUnit;
+
+		/** Required */
 		value: number;
 	}
 
 	/** Elevation angle of the satellite in the sky during a contact. */
 	export interface ElevationFormProperties {
+
+		/** Required */
 		unit: FormControl<ElevationUnit | null | undefined>,
+
+		/** Required */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateElevationFormGroup() {
 		return new FormGroup<ElevationFormProperties>({
-			unit: new FormControl<ElevationUnit | null | undefined>(undefined),
-			value: new FormControl<number | null | undefined>(undefined),
+			unit: new FormControl<ElevationUnit | null | undefined>(undefined, [Validators.required]),
+			value: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -580,6 +684,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface GetConfigResponse {
+
+		/** Required */
 		configArn: string;
 
 		/**
@@ -587,25 +693,35 @@ export namespace MyNS {
 		 * Required
 		 */
 		configData: ConfigTypeData;
+
+		/** Required */
 		configId: string;
 		configType?: GetConfigResponseConfigType | null;
+
+		/** Required */
 		name: string;
 		tags?: TagsMap;
 	}
 
 	/** <p/> */
 	export interface GetConfigResponseFormProperties {
+
+		/** Required */
 		configArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		configId: FormControl<string | null | undefined>,
 		configType: FormControl<GetConfigResponseConfigType | null | undefined>,
+
+		/** Required */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateGetConfigResponseFormGroup() {
 		return new FormGroup<GetConfigResponseFormProperties>({
-			configArn: new FormControl<string | null | undefined>(undefined),
-			configId: new FormControl<string | null | undefined>(undefined),
+			configArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			configId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			configType: new FormControl<GetConfigResponseConfigType | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -698,9 +814,24 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface GetMissionProfileResponse {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 21600
+		 */
 		contactPostPassDurationSeconds?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 21600
+		 */
 		contactPrePassDurationSeconds?: number | null;
 		dataflowEdges?: Array<Array<string>>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 21600
+		 */
 		minimumViableContactDurationSeconds?: number | null;
 		missionProfileArn?: string | null;
 		missionProfileId?: string | null;
@@ -712,8 +843,23 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface GetMissionProfileResponseFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 21600
+		 */
 		contactPostPassDurationSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 21600
+		 */
 		contactPrePassDurationSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 21600
+		 */
 		minimumViableContactDurationSeconds: FormControl<number | null | undefined>,
 		missionProfileArn: FormControl<string | null | undefined>,
 		missionProfileId: FormControl<string | null | undefined>,
@@ -723,9 +869,9 @@ export namespace MyNS {
 	}
 	export function CreateGetMissionProfileResponseFormGroup() {
 		return new FormGroup<GetMissionProfileResponseFormProperties>({
-			contactPostPassDurationSeconds: new FormControl<number | null | undefined>(undefined),
-			contactPrePassDurationSeconds: new FormControl<number | null | undefined>(undefined),
-			minimumViableContactDurationSeconds: new FormControl<number | null | undefined>(undefined),
+			contactPostPassDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(21600)]),
+			contactPrePassDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(21600)]),
+			minimumViableContactDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(21600)]),
 			missionProfileArn: new FormControl<string | null | undefined>(undefined),
 			missionProfileId: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
@@ -739,22 +885,44 @@ export namespace MyNS {
 	/** <p/> */
 	export interface GetSatelliteResponse {
 		groundStations?: Array<string>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 99999
+		 */
 		noradSatelliteID?: number | null;
 		satelliteArn?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}
+		 */
 		satelliteId?: string | null;
 	}
 
 	/** <p/> */
 	export interface GetSatelliteResponseFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 99999
+		 */
 		noradSatelliteID: FormControl<number | null | undefined>,
 		satelliteArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}
+		 */
 		satelliteId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSatelliteResponseFormGroup() {
 		return new FormGroup<GetSatelliteResponseFormProperties>({
-			noradSatelliteID: new FormControl<number | null | undefined>(undefined),
+			noradSatelliteID: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(99999)]),
 			satelliteArn: new FormControl<string | null | undefined>(undefined),
-			satelliteId: new FormControl<string | null | undefined>(undefined),
+			satelliteId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -1021,22 +1189,44 @@ export namespace MyNS {
 	/** Item in a list of satellites. */
 	export interface SatelliteListItem {
 		groundStations?: Array<string>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 99999
+		 */
 		noradSatelliteID?: number | null;
 		satelliteArn?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}
+		 */
 		satelliteId?: string | null;
 	}
 
 	/** Item in a list of satellites. */
 	export interface SatelliteListItemFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 99999
+		 */
 		noradSatelliteID: FormControl<number | null | undefined>,
 		satelliteArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}
+		 */
 		satelliteId: FormControl<string | null | undefined>,
 	}
 	export function CreateSatelliteListItemFormGroup() {
 		return new FormGroup<SatelliteListItemFormProperties>({
-			noradSatelliteID: new FormControl<number | null | undefined>(undefined),
+			noradSatelliteID: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(99999)]),
 			satelliteArn: new FormControl<string | null | undefined>(undefined),
-			satelliteId: new FormControl<string | null | undefined>(undefined),
+			satelliteId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -1113,17 +1303,31 @@ export namespace MyNS {
 		 * Required
 		 */
 		configData: ConfigTypeData;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+		 */
 		name: string;
 		tags?: TagsMap;
 	}
 
 	/** <p/> */
 	export interface CreateConfigRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateConfigRequestFormGroup() {
 		return new FormGroup<CreateConfigRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -1131,6 +1335,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateDataflowEndpointGroupRequest {
+
+		/** Required */
 		endpointDetails: Array<EndpointDetails>;
 		tags?: TagsMap;
 	}
@@ -1147,30 +1353,82 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateMissionProfileRequest {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 21600
+		 */
 		contactPostPassDurationSeconds?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 21600
+		 */
 		contactPrePassDurationSeconds?: number | null;
+
+		/** Required */
 		dataflowEdges: Array<Array<string>>;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 21600
+		 */
 		minimumViableContactDurationSeconds: number;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+		 */
 		name: string;
 		tags?: TagsMap;
+
+		/** Required */
 		trackingConfigArn: string;
 	}
 
 	/** <p/> */
 	export interface CreateMissionProfileRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 21600
+		 */
 		contactPostPassDurationSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 21600
+		 */
 		contactPrePassDurationSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 21600
+		 */
 		minimumViableContactDurationSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Required */
 		trackingConfigArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateMissionProfileRequestFormGroup() {
 		return new FormGroup<CreateMissionProfileRequestFormProperties>({
-			contactPostPassDurationSeconds: new FormControl<number | null | undefined>(undefined),
-			contactPrePassDurationSeconds: new FormControl<number | null | undefined>(undefined),
-			minimumViableContactDurationSeconds: new FormControl<number | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			trackingConfigArn: new FormControl<string | null | undefined>(undefined),
+			contactPostPassDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(21600)]),
+			contactPrePassDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(21600)]),
+			minimumViableContactDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(21600)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			trackingConfigArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1268,19 +1526,27 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface GetMinuteUsageRequest {
+
+		/** Required */
 		month: number;
+
+		/** Required */
 		year: number;
 	}
 
 	/** <p/> */
 	export interface GetMinuteUsageRequestFormProperties {
+
+		/** Required */
 		month: FormControl<number | null | undefined>,
+
+		/** Required */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateGetMinuteUsageRequestFormGroup() {
 		return new FormGroup<GetMinuteUsageRequestFormProperties>({
-			month: new FormControl<number | null | undefined>(undefined),
-			year: new FormControl<number | null | undefined>(undefined),
+			month: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			year: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1330,35 +1596,45 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ListContactsRequest {
+
+		/** Required */
 		endTime: Date;
 		groundStation?: string | null;
 		maxResults?: number | null;
 		missionProfileArn?: string | null;
 		nextToken?: string | null;
 		satelliteArn?: string | null;
+
+		/** Required */
 		startTime: Date;
+
+		/** Required */
 		statusList: Array<ContactStatus>;
 	}
 
 	/** <p/> */
 	export interface ListContactsRequestFormProperties {
+
+		/** Required */
 		endTime: FormControl<Date | null | undefined>,
 		groundStation: FormControl<string | null | undefined>,
 		maxResults: FormControl<number | null | undefined>,
 		missionProfileArn: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
 		satelliteArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		startTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateListContactsRequestFormGroup() {
 		return new FormGroup<ListContactsRequestFormProperties>({
-			endTime: new FormControl<Date | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			groundStation: new FormControl<string | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined),
 			missionProfileArn: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 			satelliteArn: new FormControl<string | null | undefined>(undefined),
-			startTime: new FormControl<Date | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1438,29 +1714,49 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ReserveContactRequest {
+
+		/** Required */
 		endTime: Date;
+
+		/** Required */
 		groundStation: string;
+
+		/** Required */
 		missionProfileArn: string;
+
+		/** Required */
 		satelliteArn: string;
+
+		/** Required */
 		startTime: Date;
 		tags?: TagsMap;
 	}
 
 	/** <p/> */
 	export interface ReserveContactRequestFormProperties {
+
+		/** Required */
 		endTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		groundStation: FormControl<string | null | undefined>,
+
+		/** Required */
 		missionProfileArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		satelliteArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		startTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateReserveContactRequestFormGroup() {
 		return new FormGroup<ReserveContactRequestFormProperties>({
-			endTime: new FormControl<Date | null | undefined>(undefined),
-			groundStation: new FormControl<string | null | undefined>(undefined),
-			missionProfileArn: new FormControl<string | null | undefined>(undefined),
-			satelliteArn: new FormControl<string | null | undefined>(undefined),
-			startTime: new FormControl<Date | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			groundStation: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			missionProfileArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			satelliteArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			startTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1468,6 +1764,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface TagResourceRequest {
+
+		/** Required */
 		tags: TagsMap;
 	}
 
@@ -1503,16 +1801,30 @@ export namespace MyNS {
 		 * Required
 		 */
 		configData: ConfigTypeData;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+		 */
 		name: string;
 	}
 
 	/** <p/> */
 	export interface UpdateConfigRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateConfigRequestFormGroup() {
 		return new FormGroup<UpdateConfigRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -1520,28 +1832,70 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface UpdateMissionProfileRequest {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 21600
+		 */
 		contactPostPassDurationSeconds?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 21600
+		 */
 		contactPrePassDurationSeconds?: number | null;
 		dataflowEdges?: Array<Array<string>>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 21600
+		 */
 		minimumViableContactDurationSeconds?: number | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+		 */
 		name?: string | null;
 		trackingConfigArn?: string | null;
 	}
 
 	/** <p/> */
 	export interface UpdateMissionProfileRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 21600
+		 */
 		contactPostPassDurationSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 21600
+		 */
 		contactPrePassDurationSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 21600
+		 */
 		minimumViableContactDurationSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+		 */
 		name: FormControl<string | null | undefined>,
 		trackingConfigArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateMissionProfileRequestFormGroup() {
 		return new FormGroup<UpdateMissionProfileRequestFormProperties>({
-			contactPostPassDurationSeconds: new FormControl<number | null | undefined>(undefined),
-			contactPrePassDurationSeconds: new FormControl<number | null | undefined>(undefined),
-			minimumViableContactDurationSeconds: new FormControl<number | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			contactPostPassDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(21600)]),
+			contactPrePassDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(21600)]),
+			minimumViableContactDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(21600)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			trackingConfigArn: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1845,7 +2199,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateConfigPostBodyFormGroup() {
 		return new FormGroup<CreateConfigPostBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -1994,12 +2348,12 @@ export namespace MyNS {
 	}
 	export function CreateCreateMissionProfilePostBodyFormGroup() {
 		return new FormGroup<CreateMissionProfilePostBodyFormProperties>({
-			contactPostPassDurationSeconds: new FormControl<number | null | undefined>(undefined),
-			contactPrePassDurationSeconds: new FormControl<number | null | undefined>(undefined),
-			minimumViableContactDurationSeconds: new FormControl<number | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			contactPostPassDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(21600)]),
+			contactPrePassDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(21600)]),
+			minimumViableContactDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(21600)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
-			trackingConfigArn: new FormControl<string | null | undefined>(undefined),
+			trackingConfigArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2040,7 +2394,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateConfigPutBodyFormGroup() {
 		return new FormGroup<UpdateConfigPutBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -2146,10 +2500,10 @@ export namespace MyNS {
 	}
 	export function CreateUpdateMissionProfilePutBodyFormGroup() {
 		return new FormGroup<UpdateMissionProfilePutBodyFormProperties>({
-			contactPostPassDurationSeconds: new FormControl<number | null | undefined>(undefined),
-			contactPrePassDurationSeconds: new FormControl<number | null | undefined>(undefined),
-			minimumViableContactDurationSeconds: new FormControl<number | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			contactPostPassDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(21600)]),
+			contactPrePassDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(21600)]),
+			minimumViableContactDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(21600)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			trackingConfigArn: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2185,8 +2539,8 @@ export namespace MyNS {
 	}
 	export function CreateGetMinuteUsagePostBodyFormGroup() {
 		return new FormGroup<GetMinuteUsagePostBodyFormProperties>({
-			month: new FormControl<number | null | undefined>(undefined),
-			year: new FormControl<number | null | undefined>(undefined),
+			month: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			year: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2257,13 +2611,13 @@ export namespace MyNS {
 	}
 	export function CreateListContactsPostBodyFormGroup() {
 		return new FormGroup<ListContactsPostBodyFormProperties>({
-			endTime: new FormControl<Date | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			groundStation: new FormControl<string | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined),
 			missionProfileArn: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 			satelliteArn: new FormControl<string | null | undefined>(undefined),
-			startTime: new FormControl<Date | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2286,7 +2640,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2363,11 +2717,11 @@ export namespace MyNS {
 	}
 	export function CreateReserveContactPostBodyFormGroup() {
 		return new FormGroup<ReserveContactPostBodyFormProperties>({
-			endTime: new FormControl<Date | null | undefined>(undefined),
-			groundStation: new FormControl<string | null | undefined>(undefined),
-			missionProfileArn: new FormControl<string | null | undefined>(undefined),
-			satelliteArn: new FormControl<string | null | undefined>(undefined),
-			startTime: new FormControl<Date | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			groundStation: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			missionProfileArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			satelliteArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			startTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 

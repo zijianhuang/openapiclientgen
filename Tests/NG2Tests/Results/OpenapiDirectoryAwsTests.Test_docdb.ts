@@ -1148,17 +1148,23 @@ export namespace MyNS {
 
 	/** <p>A named set of filter values, used to return a more specific list of results. You can use a filter to match a set of resources by specific criteria, such as IDs.</p> <p>Wildcards are not supported in filters.</p> */
 	export interface Filter {
+
+		/** Required */
 		Name: string;
+
+		/** Required */
 		Values: Array<string>;
 	}
 
 	/** <p>A named set of filter values, used to return a more specific list of results. You can use a filter to match a set of resources by specific criteria, such as IDs.</p> <p>Wildcards are not supported in filters.</p> */
 	export interface FilterFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateFilterFormGroup() {
 		return new FormGroup<FilterFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1875,17 +1881,23 @@ export namespace MyNS {
 
 	/** Represents the input to <a>AddTagsToResource</a>. */
 	export interface AddTagsToResourceMessage {
+
+		/** Required */
 		ResourceName: string;
+
+		/** Required */
 		Tags: Array<Tag>;
 	}
 
 	/** Represents the input to <a>AddTagsToResource</a>. */
 	export interface AddTagsToResourceMessageFormProperties {
+
+		/** Required */
 		ResourceName: FormControl<string | null | undefined>,
 	}
 	export function CreateAddTagsToResourceMessageFormGroup() {
 		return new FormGroup<AddTagsToResourceMessageFormProperties>({
-			ResourceName: new FormControl<string | null | undefined>(undefined),
+			ResourceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1895,22 +1907,34 @@ export namespace MyNS {
 
 	/** Represents the input to <a>ApplyPendingMaintenanceAction</a>. */
 	export interface ApplyPendingMaintenanceActionMessage {
+
+		/** Required */
 		ResourceIdentifier: string;
+
+		/** Required */
 		ApplyAction: string;
+
+		/** Required */
 		OptInType: string;
 	}
 
 	/** Represents the input to <a>ApplyPendingMaintenanceAction</a>. */
 	export interface ApplyPendingMaintenanceActionMessageFormProperties {
+
+		/** Required */
 		ResourceIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		ApplyAction: FormControl<string | null | undefined>,
+
+		/** Required */
 		OptInType: FormControl<string | null | undefined>,
 	}
 	export function CreateApplyPendingMaintenanceActionMessageFormGroup() {
 		return new FormGroup<ApplyPendingMaintenanceActionMessageFormProperties>({
-			ResourceIdentifier: new FormControl<string | null | undefined>(undefined),
-			ApplyAction: new FormControl<string | null | undefined>(undefined),
-			OptInType: new FormControl<string | null | undefined>(undefined),
+			ResourceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ApplyAction: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			OptInType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1934,23 +1958,35 @@ export namespace MyNS {
 
 	/** Represents the input to <a>CopyDBClusterParameterGroup</a>. */
 	export interface CopyDBClusterParameterGroupMessage {
+
+		/** Required */
 		SourceDBClusterParameterGroupIdentifier: string;
+
+		/** Required */
 		TargetDBClusterParameterGroupIdentifier: string;
+
+		/** Required */
 		TargetDBClusterParameterGroupDescription: string;
 		Tags?: Array<Tag>;
 	}
 
 	/** Represents the input to <a>CopyDBClusterParameterGroup</a>. */
 	export interface CopyDBClusterParameterGroupMessageFormProperties {
+
+		/** Required */
 		SourceDBClusterParameterGroupIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		TargetDBClusterParameterGroupIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		TargetDBClusterParameterGroupDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateCopyDBClusterParameterGroupMessageFormGroup() {
 		return new FormGroup<CopyDBClusterParameterGroupMessageFormProperties>({
-			SourceDBClusterParameterGroupIdentifier: new FormControl<string | null | undefined>(undefined),
-			TargetDBClusterParameterGroupIdentifier: new FormControl<string | null | undefined>(undefined),
-			TargetDBClusterParameterGroupDescription: new FormControl<string | null | undefined>(undefined),
+			SourceDBClusterParameterGroupIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TargetDBClusterParameterGroupIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TargetDBClusterParameterGroupDescription: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1958,7 +1994,11 @@ export namespace MyNS {
 
 	/** Represents the input to <a>CopyDBClusterSnapshot</a>. */
 	export interface CopyDBClusterSnapshotMessage {
+
+		/** Required */
 		SourceDBClusterSnapshotIdentifier: string;
+
+		/** Required */
 		TargetDBClusterSnapshotIdentifier: string;
 		KmsKeyId?: string | null;
 		PreSignedUrl?: string | null;
@@ -1968,7 +2008,11 @@ export namespace MyNS {
 
 	/** Represents the input to <a>CopyDBClusterSnapshot</a>. */
 	export interface CopyDBClusterSnapshotMessageFormProperties {
+
+		/** Required */
 		SourceDBClusterSnapshotIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		TargetDBClusterSnapshotIdentifier: FormControl<string | null | undefined>,
 		KmsKeyId: FormControl<string | null | undefined>,
 		PreSignedUrl: FormControl<string | null | undefined>,
@@ -1976,8 +2020,8 @@ export namespace MyNS {
 	}
 	export function CreateCopyDBClusterSnapshotMessageFormGroup() {
 		return new FormGroup<CopyDBClusterSnapshotMessageFormProperties>({
-			SourceDBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
-			TargetDBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			SourceDBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TargetDBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			KmsKeyId: new FormControl<string | null | undefined>(undefined),
 			PreSignedUrl: new FormControl<string | null | undefined>(undefined),
 			CopyTags: new FormControl<boolean | null | undefined>(undefined),
@@ -1990,14 +2034,22 @@ export namespace MyNS {
 	export interface CreateDBClusterMessage {
 		AvailabilityZones?: Array<string>;
 		BackupRetentionPeriod?: number | null;
+
+		/** Required */
 		DBClusterIdentifier: string;
 		DBClusterParameterGroupName?: string | null;
 		VpcSecurityGroupIds?: Array<string>;
 		DBSubnetGroupName?: string | null;
+
+		/** Required */
 		Engine: string;
 		EngineVersion?: string | null;
 		Port?: number | null;
+
+		/** Required */
 		MasterUsername: string;
+
+		/** Required */
 		MasterUserPassword: string;
 		PreferredBackupWindow?: string | null;
 		PreferredMaintenanceWindow?: string | null;
@@ -2011,13 +2063,21 @@ export namespace MyNS {
 	/** Represents the input to <a>CreateDBCluster</a>. */
 	export interface CreateDBClusterMessageFormProperties {
 		BackupRetentionPeriod: FormControl<number | null | undefined>,
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
 		DBClusterParameterGroupName: FormControl<string | null | undefined>,
 		DBSubnetGroupName: FormControl<string | null | undefined>,
+
+		/** Required */
 		Engine: FormControl<string | null | undefined>,
 		EngineVersion: FormControl<string | null | undefined>,
 		Port: FormControl<number | null | undefined>,
+
+		/** Required */
 		MasterUsername: FormControl<string | null | undefined>,
+
+		/** Required */
 		MasterUserPassword: FormControl<string | null | undefined>,
 		PreferredBackupWindow: FormControl<string | null | undefined>,
 		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
@@ -2028,14 +2088,14 @@ export namespace MyNS {
 	export function CreateCreateDBClusterMessageFormGroup() {
 		return new FormGroup<CreateDBClusterMessageFormProperties>({
 			BackupRetentionPeriod: new FormControl<number | null | undefined>(undefined),
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
 			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined),
-			Engine: new FormControl<string | null | undefined>(undefined),
+			Engine: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			EngineVersion: new FormControl<string | null | undefined>(undefined),
 			Port: new FormControl<number | null | undefined>(undefined),
-			MasterUsername: new FormControl<string | null | undefined>(undefined),
-			MasterUserPassword: new FormControl<string | null | undefined>(undefined),
+			MasterUsername: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MasterUserPassword: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			PreferredBackupWindow: new FormControl<string | null | undefined>(undefined),
 			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
 			StorageEncrypted: new FormControl<boolean | null | undefined>(undefined),
@@ -2048,23 +2108,35 @@ export namespace MyNS {
 
 	/** Represents the input of <a>CreateDBClusterParameterGroup</a>. */
 	export interface CreateDBClusterParameterGroupMessage {
+
+		/** Required */
 		DBClusterParameterGroupName: string;
+
+		/** Required */
 		DBParameterGroupFamily: string;
+
+		/** Required */
 		Description: string;
 		Tags?: Array<Tag>;
 	}
 
 	/** Represents the input of <a>CreateDBClusterParameterGroup</a>. */
 	export interface CreateDBClusterParameterGroupMessageFormProperties {
+
+		/** Required */
 		DBClusterParameterGroupName: FormControl<string | null | undefined>,
+
+		/** Required */
 		DBParameterGroupFamily: FormControl<string | null | undefined>,
+
+		/** Required */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDBClusterParameterGroupMessageFormGroup() {
 		return new FormGroup<CreateDBClusterParameterGroupMessageFormProperties>({
-			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
-			DBParameterGroupFamily: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DBParameterGroupFamily: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2072,20 +2144,28 @@ export namespace MyNS {
 
 	/** Represents the input of <a>CreateDBClusterSnapshot</a>. */
 	export interface CreateDBClusterSnapshotMessage {
+
+		/** Required */
 		DBClusterSnapshotIdentifier: string;
+
+		/** Required */
 		DBClusterIdentifier: string;
 		Tags?: Array<Tag>;
 	}
 
 	/** Represents the input of <a>CreateDBClusterSnapshot</a>. */
 	export interface CreateDBClusterSnapshotMessageFormProperties {
+
+		/** Required */
 		DBClusterSnapshotIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDBClusterSnapshotMessageFormGroup() {
 		return new FormGroup<CreateDBClusterSnapshotMessageFormProperties>({
-			DBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2093,37 +2173,53 @@ export namespace MyNS {
 
 	/** Represents the input to <a>CreateDBInstance</a>. */
 	export interface CreateDBInstanceMessage {
+
+		/** Required */
 		DBInstanceIdentifier: string;
+
+		/** Required */
 		DBInstanceClass: string;
+
+		/** Required */
 		Engine: string;
 		AvailabilityZone?: string | null;
 		PreferredMaintenanceWindow?: string | null;
 		AutoMinorVersionUpgrade?: boolean | null;
 		Tags?: Array<Tag>;
+
+		/** Required */
 		DBClusterIdentifier: string;
 		PromotionTier?: number | null;
 	}
 
 	/** Represents the input to <a>CreateDBInstance</a>. */
 	export interface CreateDBInstanceMessageFormProperties {
+
+		/** Required */
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		DBInstanceClass: FormControl<string | null | undefined>,
+
+		/** Required */
 		Engine: FormControl<string | null | undefined>,
 		AvailabilityZone: FormControl<string | null | undefined>,
 		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
 		AutoMinorVersionUpgrade: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
 		PromotionTier: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateDBInstanceMessageFormGroup() {
 		return new FormGroup<CreateDBInstanceMessageFormProperties>({
-			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
-			DBInstanceClass: new FormControl<string | null | undefined>(undefined),
-			Engine: new FormControl<string | null | undefined>(undefined),
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DBInstanceClass: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Engine: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
 			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
 			AutoMinorVersionUpgrade: new FormControl<boolean | null | undefined>(undefined),
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			PromotionTier: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -2132,21 +2228,31 @@ export namespace MyNS {
 
 	/** Represents the input to <a>CreateDBSubnetGroup</a>. */
 	export interface CreateDBSubnetGroupMessage {
+
+		/** Required */
 		DBSubnetGroupName: string;
+
+		/** Required */
 		DBSubnetGroupDescription: string;
+
+		/** Required */
 		SubnetIds: Array<string>;
 		Tags?: Array<Tag>;
 	}
 
 	/** Represents the input to <a>CreateDBSubnetGroup</a>. */
 	export interface CreateDBSubnetGroupMessageFormProperties {
+
+		/** Required */
 		DBSubnetGroupName: FormControl<string | null | undefined>,
+
+		/** Required */
 		DBSubnetGroupDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDBSubnetGroupMessageFormGroup() {
 		return new FormGroup<CreateDBSubnetGroupMessageFormProperties>({
-			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined),
-			DBSubnetGroupDescription: new FormControl<string | null | undefined>(undefined),
+			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DBSubnetGroupDescription: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2154,6 +2260,8 @@ export namespace MyNS {
 
 	/** Represents the input to <a>DeleteDBCluster</a>. */
 	export interface DeleteDBClusterMessage {
+
+		/** Required */
 		DBClusterIdentifier: string;
 		SkipFinalSnapshot?: boolean | null;
 		FinalDBSnapshotIdentifier?: string | null;
@@ -2161,13 +2269,15 @@ export namespace MyNS {
 
 	/** Represents the input to <a>DeleteDBCluster</a>. */
 	export interface DeleteDBClusterMessageFormProperties {
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
 		SkipFinalSnapshot: FormControl<boolean | null | undefined>,
 		FinalDBSnapshotIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDBClusterMessageFormGroup() {
 		return new FormGroup<DeleteDBClusterMessageFormProperties>({
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SkipFinalSnapshot: new FormControl<boolean | null | undefined>(undefined),
 			FinalDBSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2177,16 +2287,20 @@ export namespace MyNS {
 
 	/** Represents the input to <a>DeleteDBClusterParameterGroup</a>. */
 	export interface DeleteDBClusterParameterGroupMessage {
+
+		/** Required */
 		DBClusterParameterGroupName: string;
 	}
 
 	/** Represents the input to <a>DeleteDBClusterParameterGroup</a>. */
 	export interface DeleteDBClusterParameterGroupMessageFormProperties {
+
+		/** Required */
 		DBClusterParameterGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDBClusterParameterGroupMessageFormGroup() {
 		return new FormGroup<DeleteDBClusterParameterGroupMessageFormProperties>({
-			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2194,16 +2308,20 @@ export namespace MyNS {
 
 	/** Represents the input to <a>DeleteDBClusterSnapshot</a>. */
 	export interface DeleteDBClusterSnapshotMessage {
+
+		/** Required */
 		DBClusterSnapshotIdentifier: string;
 	}
 
 	/** Represents the input to <a>DeleteDBClusterSnapshot</a>. */
 	export interface DeleteDBClusterSnapshotMessageFormProperties {
+
+		/** Required */
 		DBClusterSnapshotIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDBClusterSnapshotMessageFormGroup() {
 		return new FormGroup<DeleteDBClusterSnapshotMessageFormProperties>({
-			DBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2211,16 +2329,20 @@ export namespace MyNS {
 
 	/** Represents the input to <a>DeleteDBInstance</a>. */
 	export interface DeleteDBInstanceMessage {
+
+		/** Required */
 		DBInstanceIdentifier: string;
 	}
 
 	/** Represents the input to <a>DeleteDBInstance</a>. */
 	export interface DeleteDBInstanceMessageFormProperties {
+
+		/** Required */
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDBInstanceMessageFormGroup() {
 		return new FormGroup<DeleteDBInstanceMessageFormProperties>({
-			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2228,16 +2350,20 @@ export namespace MyNS {
 
 	/** Represents the input to <a>DeleteDBSubnetGroup</a>. */
 	export interface DeleteDBSubnetGroupMessage {
+
+		/** Required */
 		DBSubnetGroupName: string;
 	}
 
 	/** Represents the input to <a>DeleteDBSubnetGroup</a>. */
 	export interface DeleteDBSubnetGroupMessageFormProperties {
+
+		/** Required */
 		DBSubnetGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDBSubnetGroupMessageFormGroup() {
 		return new FormGroup<DeleteDBSubnetGroupMessageFormProperties>({
-			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2289,6 +2415,8 @@ export namespace MyNS {
 
 	/** Represents the input to <a>DescribeDBClusterParameters</a>. */
 	export interface DescribeDBClusterParametersMessage {
+
+		/** Required */
 		DBClusterParameterGroupName: string;
 		Source?: string | null;
 		Filters?: Array<Filter>;
@@ -2298,6 +2426,8 @@ export namespace MyNS {
 
 	/** Represents the input to <a>DescribeDBClusterParameters</a>. */
 	export interface DescribeDBClusterParametersMessageFormProperties {
+
+		/** Required */
 		DBClusterParameterGroupName: FormControl<string | null | undefined>,
 		Source: FormControl<string | null | undefined>,
 		MaxRecords: FormControl<number | null | undefined>,
@@ -2305,7 +2435,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeDBClusterParametersMessageFormGroup() {
 		return new FormGroup<DescribeDBClusterParametersMessageFormProperties>({
-			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Source: new FormControl<string | null | undefined>(undefined),
 			MaxRecords: new FormControl<number | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
@@ -2316,16 +2446,20 @@ export namespace MyNS {
 
 	/** Represents the input to <a>DescribeDBClusterSnapshotAttributes</a>. */
 	export interface DescribeDBClusterSnapshotAttributesMessage {
+
+		/** Required */
 		DBClusterSnapshotIdentifier: string;
 	}
 
 	/** Represents the input to <a>DescribeDBClusterSnapshotAttributes</a>. */
 	export interface DescribeDBClusterSnapshotAttributesMessageFormProperties {
+
+		/** Required */
 		DBClusterSnapshotIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeDBClusterSnapshotAttributesMessageFormGroup() {
 		return new FormGroup<DescribeDBClusterSnapshotAttributesMessageFormProperties>({
-			DBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2480,6 +2614,8 @@ export namespace MyNS {
 
 	/** Represents the input to <a>DescribeEngineDefaultClusterParameters</a>. */
 	export interface DescribeEngineDefaultClusterParametersMessage {
+
+		/** Required */
 		DBParameterGroupFamily: string;
 		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
@@ -2488,13 +2624,15 @@ export namespace MyNS {
 
 	/** Represents the input to <a>DescribeEngineDefaultClusterParameters</a>. */
 	export interface DescribeEngineDefaultClusterParametersMessageFormProperties {
+
+		/** Required */
 		DBParameterGroupFamily: FormControl<string | null | undefined>,
 		MaxRecords: FormControl<number | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeEngineDefaultClusterParametersMessageFormGroup() {
 		return new FormGroup<DescribeEngineDefaultClusterParametersMessageFormProperties>({
-			DBParameterGroupFamily: new FormControl<string | null | undefined>(undefined),
+			DBParameterGroupFamily: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			MaxRecords: new FormControl<number | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2563,6 +2701,8 @@ export namespace MyNS {
 
 	/** Represents the input to <a>DescribeOrderableDBInstanceOptions</a>. */
 	export interface DescribeOrderableDBInstanceOptionsMessage {
+
+		/** Required */
 		Engine: string;
 		EngineVersion?: string | null;
 		DBInstanceClass?: string | null;
@@ -2575,6 +2715,8 @@ export namespace MyNS {
 
 	/** Represents the input to <a>DescribeOrderableDBInstanceOptions</a>. */
 	export interface DescribeOrderableDBInstanceOptionsMessageFormProperties {
+
+		/** Required */
 		Engine: FormControl<string | null | undefined>,
 		EngineVersion: FormControl<string | null | undefined>,
 		DBInstanceClass: FormControl<string | null | undefined>,
@@ -2585,7 +2727,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeOrderableDBInstanceOptionsMessageFormGroup() {
 		return new FormGroup<DescribeOrderableDBInstanceOptionsMessageFormProperties>({
-			Engine: new FormControl<string | null | undefined>(undefined),
+			Engine: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			EngineVersion: new FormControl<string | null | undefined>(undefined),
 			DBInstanceClass: new FormControl<string | null | undefined>(undefined),
 			LicenseModel: new FormControl<string | null | undefined>(undefined),
@@ -2643,17 +2785,21 @@ export namespace MyNS {
 
 	/** Represents the input to <a>ListTagsForResource</a>. */
 	export interface ListTagsForResourceMessage {
+
+		/** Required */
 		ResourceName: string;
 		Filters?: Array<Filter>;
 	}
 
 	/** Represents the input to <a>ListTagsForResource</a>. */
 	export interface ListTagsForResourceMessageFormProperties {
+
+		/** Required */
 		ResourceName: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceMessageFormGroup() {
 		return new FormGroup<ListTagsForResourceMessageFormProperties>({
-			ResourceName: new FormControl<string | null | undefined>(undefined),
+			ResourceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2661,6 +2807,8 @@ export namespace MyNS {
 
 	/** Represents the input to <a>ModifyDBCluster</a>. */
 	export interface ModifyDBClusterMessage {
+
+		/** Required */
 		DBClusterIdentifier: string;
 		NewDBClusterIdentifier?: string | null;
 		ApplyImmediately?: boolean | null;
@@ -2680,6 +2828,8 @@ export namespace MyNS {
 
 	/** Represents the input to <a>ModifyDBCluster</a>. */
 	export interface ModifyDBClusterMessageFormProperties {
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
 		NewDBClusterIdentifier: FormControl<string | null | undefined>,
 		ApplyImmediately: FormControl<boolean | null | undefined>,
@@ -2694,7 +2844,7 @@ export namespace MyNS {
 	}
 	export function CreateModifyDBClusterMessageFormGroup() {
 		return new FormGroup<ModifyDBClusterMessageFormProperties>({
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NewDBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
 			ApplyImmediately: new FormControl<boolean | null | undefined>(undefined),
 			BackupRetentionPeriod: new FormControl<number | null | undefined>(undefined),
@@ -2712,17 +2862,23 @@ export namespace MyNS {
 
 	/** Represents the input to <a>ModifyDBClusterParameterGroup</a>. */
 	export interface ModifyDBClusterParameterGroupMessage {
+
+		/** Required */
 		DBClusterParameterGroupName: string;
+
+		/** Required */
 		Parameters: Array<Parameter>;
 	}
 
 	/** Represents the input to <a>ModifyDBClusterParameterGroup</a>. */
 	export interface ModifyDBClusterParameterGroupMessageFormProperties {
+
+		/** Required */
 		DBClusterParameterGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyDBClusterParameterGroupMessageFormGroup() {
 		return new FormGroup<ModifyDBClusterParameterGroupMessageFormProperties>({
-			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2730,7 +2886,11 @@ export namespace MyNS {
 
 	/** Represents the input to <a>ModifyDBClusterSnapshotAttribute</a>. */
 	export interface ModifyDBClusterSnapshotAttributeMessage {
+
+		/** Required */
 		DBClusterSnapshotIdentifier: string;
+
+		/** Required */
 		AttributeName: string;
 		ValuesToAdd?: Array<string>;
 		ValuesToRemove?: Array<string>;
@@ -2738,13 +2898,17 @@ export namespace MyNS {
 
 	/** Represents the input to <a>ModifyDBClusterSnapshotAttribute</a>. */
 	export interface ModifyDBClusterSnapshotAttributeMessageFormProperties {
+
+		/** Required */
 		DBClusterSnapshotIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		AttributeName: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyDBClusterSnapshotAttributeMessageFormGroup() {
 		return new FormGroup<ModifyDBClusterSnapshotAttributeMessageFormProperties>({
-			DBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
-			AttributeName: new FormControl<string | null | undefined>(undefined),
+			DBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2752,6 +2916,8 @@ export namespace MyNS {
 
 	/** Represents the input to <a>ModifyDBInstance</a>. */
 	export interface ModifyDBInstanceMessage {
+
+		/** Required */
 		DBInstanceIdentifier: string;
 		DBInstanceClass?: string | null;
 		ApplyImmediately?: boolean | null;
@@ -2764,6 +2930,8 @@ export namespace MyNS {
 
 	/** Represents the input to <a>ModifyDBInstance</a>. */
 	export interface ModifyDBInstanceMessageFormProperties {
+
+		/** Required */
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
 		DBInstanceClass: FormControl<string | null | undefined>,
 		ApplyImmediately: FormControl<boolean | null | undefined>,
@@ -2775,7 +2943,7 @@ export namespace MyNS {
 	}
 	export function CreateModifyDBInstanceMessageFormGroup() {
 		return new FormGroup<ModifyDBInstanceMessageFormProperties>({
-			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DBInstanceClass: new FormControl<string | null | undefined>(undefined),
 			ApplyImmediately: new FormControl<boolean | null | undefined>(undefined),
 			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
@@ -2790,19 +2958,25 @@ export namespace MyNS {
 
 	/** Represents the input to <a>ModifyDBSubnetGroup</a>. */
 	export interface ModifyDBSubnetGroupMessage {
+
+		/** Required */
 		DBSubnetGroupName: string;
 		DBSubnetGroupDescription?: string | null;
+
+		/** Required */
 		SubnetIds: Array<string>;
 	}
 
 	/** Represents the input to <a>ModifyDBSubnetGroup</a>. */
 	export interface ModifyDBSubnetGroupMessageFormProperties {
+
+		/** Required */
 		DBSubnetGroupName: FormControl<string | null | undefined>,
 		DBSubnetGroupDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyDBSubnetGroupMessageFormGroup() {
 		return new FormGroup<ModifyDBSubnetGroupMessageFormProperties>({
-			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DBSubnetGroupDescription: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2811,18 +2985,22 @@ export namespace MyNS {
 
 	/** Represents the input to <a>RebootDBInstance</a>. */
 	export interface RebootDBInstanceMessage {
+
+		/** Required */
 		DBInstanceIdentifier: string;
 		ForceFailover?: boolean | null;
 	}
 
 	/** Represents the input to <a>RebootDBInstance</a>. */
 	export interface RebootDBInstanceMessageFormProperties {
+
+		/** Required */
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
 		ForceFailover: FormControl<boolean | null | undefined>,
 	}
 	export function CreateRebootDBInstanceMessageFormGroup() {
 		return new FormGroup<RebootDBInstanceMessageFormProperties>({
-			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ForceFailover: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2831,17 +3009,23 @@ export namespace MyNS {
 
 	/** Represents the input to <a>RemoveTagsFromResource</a>. */
 	export interface RemoveTagsFromResourceMessage {
+
+		/** Required */
 		ResourceName: string;
+
+		/** Required */
 		TagKeys: Array<string>;
 	}
 
 	/** Represents the input to <a>RemoveTagsFromResource</a>. */
 	export interface RemoveTagsFromResourceMessageFormProperties {
+
+		/** Required */
 		ResourceName: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveTagsFromResourceMessageFormGroup() {
 		return new FormGroup<RemoveTagsFromResourceMessageFormProperties>({
-			ResourceName: new FormControl<string | null | undefined>(undefined),
+			ResourceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2849,6 +3033,8 @@ export namespace MyNS {
 
 	/** Represents the input to <a>ResetDBClusterParameterGroup</a>. */
 	export interface ResetDBClusterParameterGroupMessage {
+
+		/** Required */
 		DBClusterParameterGroupName: string;
 		ResetAllParameters?: boolean | null;
 		Parameters?: Array<Parameter>;
@@ -2856,12 +3042,14 @@ export namespace MyNS {
 
 	/** Represents the input to <a>ResetDBClusterParameterGroup</a>. */
 	export interface ResetDBClusterParameterGroupMessageFormProperties {
+
+		/** Required */
 		DBClusterParameterGroupName: FormControl<string | null | undefined>,
 		ResetAllParameters: FormControl<boolean | null | undefined>,
 	}
 	export function CreateResetDBClusterParameterGroupMessageFormGroup() {
 		return new FormGroup<ResetDBClusterParameterGroupMessageFormProperties>({
-			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ResetAllParameters: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2871,8 +3059,14 @@ export namespace MyNS {
 	/** Represents the input to <a>RestoreDBClusterFromSnapshot</a>. */
 	export interface RestoreDBClusterFromSnapshotMessage {
 		AvailabilityZones?: Array<string>;
+
+		/** Required */
 		DBClusterIdentifier: string;
+
+		/** Required */
 		SnapshotIdentifier: string;
+
+		/** Required */
 		Engine: string;
 		EngineVersion?: string | null;
 		Port?: number | null;
@@ -2886,8 +3080,14 @@ export namespace MyNS {
 
 	/** Represents the input to <a>RestoreDBClusterFromSnapshot</a>. */
 	export interface RestoreDBClusterFromSnapshotMessageFormProperties {
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		SnapshotIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		Engine: FormControl<string | null | undefined>,
 		EngineVersion: FormControl<string | null | undefined>,
 		Port: FormControl<number | null | undefined>,
@@ -2897,9 +3097,9 @@ export namespace MyNS {
 	}
 	export function CreateRestoreDBClusterFromSnapshotMessageFormGroup() {
 		return new FormGroup<RestoreDBClusterFromSnapshotMessageFormProperties>({
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
-			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
-			Engine: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Engine: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			EngineVersion: new FormControl<string | null | undefined>(undefined),
 			Port: new FormControl<number | null | undefined>(undefined),
 			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined),
@@ -2912,7 +3112,11 @@ export namespace MyNS {
 
 	/** Represents the input to <a>RestoreDBClusterToPointInTime</a>. */
 	export interface RestoreDBClusterToPointInTimeMessage {
+
+		/** Required */
 		DBClusterIdentifier: string;
+
+		/** Required */
 		SourceDBClusterIdentifier: string;
 		RestoreToTime?: Date | null;
 		UseLatestRestorableTime?: boolean | null;
@@ -2927,7 +3131,11 @@ export namespace MyNS {
 
 	/** Represents the input to <a>RestoreDBClusterToPointInTime</a>. */
 	export interface RestoreDBClusterToPointInTimeMessageFormProperties {
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		SourceDBClusterIdentifier: FormControl<string | null | undefined>,
 		RestoreToTime: FormControl<Date | null | undefined>,
 		UseLatestRestorableTime: FormControl<boolean | null | undefined>,
@@ -2938,8 +3146,8 @@ export namespace MyNS {
 	}
 	export function CreateRestoreDBClusterToPointInTimeMessageFormGroup() {
 		return new FormGroup<RestoreDBClusterToPointInTimeMessageFormProperties>({
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
-			SourceDBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SourceDBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RestoreToTime: new FormControl<Date | null | undefined>(undefined),
 			UseLatestRestorableTime: new FormControl<boolean | null | undefined>(undefined),
 			Port: new FormControl<number | null | undefined>(undefined),
@@ -2951,27 +3159,35 @@ export namespace MyNS {
 	}
 
 	export interface StartDBClusterMessage {
+
+		/** Required */
 		DBClusterIdentifier: string;
 	}
 	export interface StartDBClusterMessageFormProperties {
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateStartDBClusterMessageFormGroup() {
 		return new FormGroup<StartDBClusterMessageFormProperties>({
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface StopDBClusterMessage {
+
+		/** Required */
 		DBClusterIdentifier: string;
 	}
 	export interface StopDBClusterMessageFormProperties {
+
+		/** Required */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateStopDBClusterMessageFormGroup() {
 		return new FormGroup<StopDBClusterMessageFormProperties>({
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

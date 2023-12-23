@@ -4,9 +4,13 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateEnvironmentEC2Result {
+
+		/** Pattern: ^[a-zA-Z0-9]{8,32}$ */
 		environmentId?: string | null;
 	}
 	export interface CreateEnvironmentEC2ResultFormProperties {
+
+		/** Pattern: ^[a-zA-Z0-9]{8,32}$ */
 		environmentId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateEnvironmentEC2ResultFormGroup() {
@@ -17,32 +21,89 @@ export namespace MyNS {
 	}
 
 	export interface CreateEnvironmentEC2Request {
+
+		/**
+		 * Required
+		 * Max length: 60
+		 * Min length: 1
+		 */
 		name: string;
+
+		/** Max length: 200 */
 		description?: string | null;
+
+		/** Pattern: [\x20-\x7E]{10,128} */
 		clientRequestToken?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 5
+		 * Pattern: ^[a-z][1-9][.][a-z0-9]+$
+		 */
 		instanceType: string;
+
+		/**
+		 * Max length: 30
+		 * Min length: 5
+		 */
 		subnetId?: string | null;
+
+		/** Maximum: 20160 */
 		automaticStopTimeMinutes?: number | null;
+
+		/** Pattern: ^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=:,.@-]{1,64}\/[\w+=,.@-]{1,64}))$ */
 		ownerArn?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		tags?: Array<Tag>;
 	}
 	export interface CreateEnvironmentEC2RequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 60
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Max length: 200 */
 		description: FormControl<string | null | undefined>,
+
+		/** Pattern: [\x20-\x7E]{10,128} */
 		clientRequestToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 5
+		 * Pattern: ^[a-z][1-9][.][a-z0-9]+$
+		 */
 		instanceType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 30
+		 * Min length: 5
+		 */
 		subnetId: FormControl<string | null | undefined>,
+
+		/** Maximum: 20160 */
 		automaticStopTimeMinutes: FormControl<number | null | undefined>,
+
+		/** Pattern: ^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=:,.@-]{1,64}\/[\w+=,.@-]{1,64}))$ */
 		ownerArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateEnvironmentEC2RequestFormGroup() {
 		return new FormGroup<CreateEnvironmentEC2RequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(60), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200)]),
 			clientRequestToken: new FormControl<string | null | undefined>(undefined),
-			instanceType: new FormControl<string | null | undefined>(undefined),
-			subnetId: new FormControl<string | null | undefined>(undefined),
-			automaticStopTimeMinutes: new FormControl<number | null | undefined>(undefined),
+			instanceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20), Validators.minLength(5)]),
+			subnetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30), Validators.minLength(5)]),
+			automaticStopTimeMinutes: new FormControl<number | null | undefined>(undefined, [Validators.max(20160)]),
 			ownerArn: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -51,19 +112,43 @@ export namespace MyNS {
 
 	/** Metadata that is associated with AWS resources. In particular, a name-value pair that can be associated with an AWS Cloud9 development environment. There are two types of tags: <i>user tags</i> and <i>system tags</i>. A user tag is created by the user. A system tag is automatically created by AWS services. A system tag is prefixed with "aws:" and cannot be modified by the user. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Value: string;
 	}
 
 	/** Metadata that is associated with AWS resources. In particular, a name-value pair that can be associated with an AWS Cloud9 development environment. There are two types of tags: <i>user tags</i> and <i>system tags</i>. A user tag is created by the user. A system tag is automatically created by AWS services. A system tag is prefixed with "aws:" and cannot be modified by the user. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -156,7 +241,11 @@ export namespace MyNS {
 	export interface EnvironmentMember {
 		permissions?: EnvironmentMemberPermissions | null;
 		userId?: string | null;
+
+		/** Pattern: ^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=:,.@-]{1,64}\/[\w+=,.@-]{1,64}))$ */
 		userArn?: string | null;
+
+		/** Pattern: ^[a-zA-Z0-9]{8,32}$ */
 		environmentId?: string | null;
 		lastAccess?: Date | null;
 	}
@@ -165,7 +254,11 @@ export namespace MyNS {
 	export interface EnvironmentMemberFormProperties {
 		permissions: FormControl<EnvironmentMemberPermissions | null | undefined>,
 		userId: FormControl<string | null | undefined>,
+
+		/** Pattern: ^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=:,.@-]{1,64}\/[\w+=,.@-]{1,64}))$ */
 		userArn: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9]{8,32}$ */
 		environmentId: FormControl<string | null | undefined>,
 		lastAccess: FormControl<Date | null | undefined>,
 	}
@@ -183,20 +276,44 @@ export namespace MyNS {
 	export enum EnvironmentMemberPermissions { owner = 0, read_write = 1, read_only = 2 }
 
 	export interface CreateEnvironmentMembershipRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9]{8,32}$
+		 */
 		environmentId: string;
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=:,.@-]{1,64}\/[\w+=,.@-]{1,64}))$
+		 */
 		userArn: string;
+
+		/** Required */
 		permissions: CreateEnvironmentMembershipRequestPermissions;
 	}
 	export interface CreateEnvironmentMembershipRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9]{8,32}$
+		 */
 		environmentId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=:,.@-]{1,64}\/[\w+=,.@-]{1,64}))$
+		 */
 		userArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		permissions: FormControl<CreateEnvironmentMembershipRequestPermissions | null | undefined>,
 	}
 	export function CreateCreateEnvironmentMembershipRequestFormGroup() {
 		return new FormGroup<CreateEnvironmentMembershipRequestFormProperties>({
-			environmentId: new FormControl<string | null | undefined>(undefined),
-			userArn: new FormControl<string | null | undefined>(undefined),
-			permissions: new FormControl<CreateEnvironmentMembershipRequestPermissions | null | undefined>(undefined),
+			environmentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			userArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			permissions: new FormControl<CreateEnvironmentMembershipRequestPermissions | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -214,14 +331,24 @@ export namespace MyNS {
 	}
 
 	export interface DeleteEnvironmentRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9]{8,32}$
+		 */
 		environmentId: string;
 	}
 	export interface DeleteEnvironmentRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9]{8,32}$
+		 */
 		environmentId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteEnvironmentRequestFormGroup() {
 		return new FormGroup<DeleteEnvironmentRequestFormProperties>({
-			environmentId: new FormControl<string | null | undefined>(undefined),
+			environmentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -237,17 +364,37 @@ export namespace MyNS {
 	}
 
 	export interface DeleteEnvironmentMembershipRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9]{8,32}$
+		 */
 		environmentId: string;
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=:,.@-]{1,64}\/[\w+=,.@-]{1,64}))$
+		 */
 		userArn: string;
 	}
 	export interface DeleteEnvironmentMembershipRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9]{8,32}$
+		 */
 		environmentId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=:,.@-]{1,64}\/[\w+=,.@-]{1,64}))$
+		 */
 		userArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteEnvironmentMembershipRequestFormGroup() {
 		return new FormGroup<DeleteEnvironmentMembershipRequestFormProperties>({
-			environmentId: new FormControl<string | null | undefined>(undefined),
-			userArn: new FormControl<string | null | undefined>(undefined),
+			environmentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			userArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -267,16 +414,34 @@ export namespace MyNS {
 	}
 
 	export interface DescribeEnvironmentMembershipsRequest {
+
+		/** Pattern: ^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=:,.@-]{1,64}\/[\w+=,.@-]{1,64}))$ */
 		userArn?: string | null;
+
+		/** Pattern: ^[a-zA-Z0-9]{8,32}$ */
 		environmentId?: string | null;
 		permissions?: Array<Permissions>;
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 25
+		 */
 		maxResults?: number | null;
 	}
 	export interface DescribeEnvironmentMembershipsRequestFormProperties {
+
+		/** Pattern: ^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=:,.@-]{1,64}\/[\w+=,.@-]{1,64}))$ */
 		userArn: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9]{8,32}$ */
 		environmentId: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 25
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeEnvironmentMembershipsRequestFormGroup() {
@@ -284,7 +449,7 @@ export namespace MyNS {
 			userArn: new FormControl<string | null | undefined>(undefined),
 			environmentId: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(25)]),
 		});
 
 	}
@@ -310,14 +475,24 @@ export namespace MyNS {
 	export enum DescribeEnvironmentStatusResultStatus { error = 0, creating = 1, connecting = 2, ready = 3, stopping = 4, stopped = 5, deleting = 6 }
 
 	export interface DescribeEnvironmentStatusRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9]{8,32}$
+		 */
 		environmentId: string;
 	}
 	export interface DescribeEnvironmentStatusRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9]{8,32}$
+		 */
 		environmentId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeEnvironmentStatusRequestFormGroup() {
 		return new FormGroup<DescribeEnvironmentStatusRequestFormProperties>({
-			environmentId: new FormControl<string | null | undefined>(undefined),
+			environmentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -336,8 +511,17 @@ export namespace MyNS {
 
 	/** Information about an AWS Cloud9 development environment. */
 	export interface Environment {
+
+		/** Pattern: ^[a-zA-Z0-9]{8,32}$ */
 		id?: string | null;
+
+		/**
+		 * Max length: 60
+		 * Min length: 1
+		 */
 		name?: string | null;
+
+		/** Max length: 200 */
 		description?: string | null;
 		type?: EnvironmentType | null;
 		arn?: string | null;
@@ -349,8 +533,17 @@ export namespace MyNS {
 
 	/** Information about an AWS Cloud9 development environment. */
 	export interface EnvironmentFormProperties {
+
+		/** Pattern: ^[a-zA-Z0-9]{8,32}$ */
 		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 60
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Max length: 200 */
 		description: FormControl<string | null | undefined>,
 		type: FormControl<EnvironmentType | null | undefined>,
 		arn: FormControl<string | null | undefined>,
@@ -359,8 +552,8 @@ export namespace MyNS {
 	export function CreateEnvironmentFormGroup() {
 		return new FormGroup<EnvironmentFormProperties>({
 			id: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(60), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200)]),
 			type: new FormControl<EnvironmentType | null | undefined>(undefined),
 			arn: new FormControl<string | null | undefined>(undefined),
 			ownerArn: new FormControl<string | null | undefined>(undefined),
@@ -396,6 +589,12 @@ export namespace MyNS {
 	export enum EnvironmentLifecycleStatus { CREATING = 0, CREATED = 1, CREATE_FAILED = 2, DELETING = 3, DELETE_FAILED = 4 }
 
 	export interface DescribeEnvironmentsRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 25
+		 */
 		environmentIds: Array<string>;
 	}
 	export interface DescribeEnvironmentsRequestFormProperties {
@@ -422,21 +621,36 @@ export namespace MyNS {
 
 	export interface ListEnvironmentsRequest {
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 25
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListEnvironmentsRequestFormProperties {
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 25
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListEnvironmentsRequestFormGroup() {
 		return new FormGroup<ListEnvironmentsRequestFormProperties>({
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(25)]),
 		});
 
 	}
 
 	export interface ListTagsForResourceResponse {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		Tags?: Array<Tag>;
 	}
 	export interface ListTagsForResourceResponseFormProperties {
@@ -448,14 +662,24 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceRequest {
+
+		/**
+		 * Required
+		 * Pattern: arn:aws:cloud9:([a-z]{2}-[a-z]+-\d{1}):[0-9]{12}:environment:[a-zA-Z0-9]{8,32}
+		 */
 		ResourceARN: string;
 	}
 	export interface ListTagsForResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: arn:aws:cloud9:([a-z]{2}-[a-z]+-\d{1}):[0-9]{12}:environment:[a-zA-Z0-9]{8,32}
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -471,15 +695,31 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/**
+		 * Required
+		 * Pattern: arn:aws:cloud9:([a-z]{2}-[a-z]+-\d{1}):[0-9]{12}:environment:[a-zA-Z0-9]{8,32}
+		 */
 		ResourceARN: string;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		Tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: arn:aws:cloud9:([a-z]{2}-[a-z]+-\d{1}):[0-9]{12}:environment:[a-zA-Z0-9]{8,32}
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -495,15 +735,31 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceRequest {
+
+		/**
+		 * Required
+		 * Pattern: arn:aws:cloud9:([a-z]{2}-[a-z]+-\d{1}):[0-9]{12}:environment:[a-zA-Z0-9]{8,32}
+		 */
 		ResourceARN: string;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		TagKeys: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: arn:aws:cloud9:([a-z]{2}-[a-z]+-\d{1}):[0-9]{12}:environment:[a-zA-Z0-9]{8,32}
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -519,20 +775,44 @@ export namespace MyNS {
 	}
 
 	export interface UpdateEnvironmentRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9]{8,32}$
+		 */
 		environmentId: string;
+
+		/**
+		 * Max length: 60
+		 * Min length: 1
+		 */
 		name?: string | null;
+
+		/** Max length: 200 */
 		description?: string | null;
 	}
 	export interface UpdateEnvironmentRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9]{8,32}$
+		 */
 		environmentId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 60
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Max length: 200 */
 		description: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateEnvironmentRequestFormGroup() {
 		return new FormGroup<UpdateEnvironmentRequestFormProperties>({
-			environmentId: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			environmentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(60), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200)]),
 		});
 
 	}
@@ -551,20 +831,44 @@ export namespace MyNS {
 	}
 
 	export interface UpdateEnvironmentMembershipRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9]{8,32}$
+		 */
 		environmentId: string;
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=:,.@-]{1,64}\/[\w+=,.@-]{1,64}))$
+		 */
 		userArn: string;
+
+		/** Required */
 		permissions: UpdateEnvironmentMembershipRequestPermissions;
 	}
 	export interface UpdateEnvironmentMembershipRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9]{8,32}$
+		 */
 		environmentId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=:,.@-]{1,64}\/[\w+=,.@-]{1,64}))$
+		 */
 		userArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		permissions: FormControl<UpdateEnvironmentMembershipRequestPermissions | null | undefined>,
 	}
 	export function CreateUpdateEnvironmentMembershipRequestFormGroup() {
 		return new FormGroup<UpdateEnvironmentMembershipRequestFormProperties>({
-			environmentId: new FormControl<string | null | undefined>(undefined),
-			userArn: new FormControl<string | null | undefined>(undefined),
-			permissions: new FormControl<UpdateEnvironmentMembershipRequestPermissions | null | undefined>(undefined),
+			environmentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			userArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			permissions: new FormControl<UpdateEnvironmentMembershipRequestPermissions | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

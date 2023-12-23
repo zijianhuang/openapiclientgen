@@ -594,10 +594,10 @@ export namespace MyNS {
 			downloadFormat: new FormControl<string | null | undefined>(undefined),
 			includeDeletedEntities: new FormControl<boolean | null | undefined>(undefined),
 			includeRemovedEntities: new FormControl<boolean | null | undefined>(undefined),
-			maxRowsPerFile: new FormControl<number | null | undefined>(undefined),
+			maxRowsPerFile: new FormControl<number | null | undefined>(undefined, [Validators.min(1000000), Validators.max(100000000)]),
 			reportType: new FormControl<string | null | undefined>(undefined),
-			rowCount: new FormControl<number | null | undefined>(undefined),
-			startRow: new FormControl<number | null | undefined>(undefined),
+			rowCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(10000)]),
+			startRow: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(50000)]),
 			statisticsCurrency: new FormControl<string | null | undefined>(undefined),
 			verifySingleTimeZone: new FormControl<boolean | null | undefined>(undefined),
 		});

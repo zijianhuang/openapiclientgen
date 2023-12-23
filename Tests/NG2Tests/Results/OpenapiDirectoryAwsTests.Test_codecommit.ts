@@ -4,17 +4,43 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AssociateApprovalRuleTemplateWithRepositoryInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleTemplateName: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
 	}
 	export interface AssociateApprovalRuleTemplateWithRepositoryInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleTemplateName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateApprovalRuleTemplateWithRepositoryInputFormGroup() {
 		return new FormGroup<AssociateApprovalRuleTemplateWithRepositoryInputFormProperties>({
-			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -140,7 +166,11 @@ export namespace MyNS {
 	}
 
 	export interface BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
+
+		/** Required */
 		associatedRepositoryNames: Array<string>;
+
+		/** Required */
 		errors: Array<BatchAssociateApprovalRuleTemplateWithRepositoriesError>;
 	}
 	export interface BatchAssociateApprovalRuleTemplateWithRepositoriesOutputFormProperties {
@@ -154,6 +184,12 @@ export namespace MyNS {
 
 	/** Returns information about errors in a BatchAssociateApprovalRuleTemplateWithRepositories operation. */
 	export interface BatchAssociateApprovalRuleTemplateWithRepositoriesError {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName?: string | null;
 		errorCode?: string | null;
 		errorMessage?: string | null;
@@ -161,13 +197,19 @@ export namespace MyNS {
 
 	/** Returns information about errors in a BatchAssociateApprovalRuleTemplateWithRepositories operation. */
 	export interface BatchAssociateApprovalRuleTemplateWithRepositoriesErrorFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 		errorCode: FormControl<string | null | undefined>,
 		errorMessage: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchAssociateApprovalRuleTemplateWithRepositoriesErrorFormGroup() {
 		return new FormGroup<BatchAssociateApprovalRuleTemplateWithRepositoriesErrorFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			errorCode: new FormControl<string | null | undefined>(undefined),
 			errorMessage: new FormControl<string | null | undefined>(undefined),
 		});
@@ -175,15 +217,29 @@ export namespace MyNS {
 	}
 
 	export interface BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleTemplateName: string;
+
+		/** Required */
 		repositoryNames: Array<string>;
 	}
 	export interface BatchAssociateApprovalRuleTemplateWithRepositoriesInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleTemplateName: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchAssociateApprovalRuleTemplateWithRepositoriesInputFormGroup() {
 		return new FormGroup<BatchAssociateApprovalRuleTemplateWithRepositoriesInputFormProperties>({
-			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined),
+			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -209,24 +265,34 @@ export namespace MyNS {
 	}
 
 	export interface BatchDescribeMergeConflictsOutput {
+
+		/** Required */
 		conflicts: Array<Conflict>;
 		nextToken?: string | null;
 		errors?: Array<BatchDescribeMergeConflictsError>;
+
+		/** Required */
 		destinationCommitId: string;
+
+		/** Required */
 		sourceCommitId: string;
 		baseCommitId?: string | null;
 	}
 	export interface BatchDescribeMergeConflictsOutputFormProperties {
 		nextToken: FormControl<string | null | undefined>,
+
+		/** Required */
 		destinationCommitId: FormControl<string | null | undefined>,
+
+		/** Required */
 		sourceCommitId: FormControl<string | null | undefined>,
 		baseCommitId: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchDescribeMergeConflictsOutputFormGroup() {
 		return new FormGroup<BatchDescribeMergeConflictsOutputFormProperties>({
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			destinationCommitId: new FormControl<string | null | undefined>(undefined),
-			sourceCommitId: new FormControl<string | null | undefined>(undefined),
+			destinationCommitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			sourceCommitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			baseCommitId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -464,30 +530,55 @@ export namespace MyNS {
 
 	/** Returns information about errors in a BatchDescribeMergeConflicts operation. */
 	export interface BatchDescribeMergeConflictsError {
+
+		/** Required */
 		filePath: string;
+
+		/** Required */
 		exceptionName: string;
+
+		/** Required */
 		message: string;
 	}
 
 	/** Returns information about errors in a BatchDescribeMergeConflicts operation. */
 	export interface BatchDescribeMergeConflictsErrorFormProperties {
+
+		/** Required */
 		filePath: FormControl<string | null | undefined>,
+
+		/** Required */
 		exceptionName: FormControl<string | null | undefined>,
+
+		/** Required */
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchDescribeMergeConflictsErrorFormGroup() {
 		return new FormGroup<BatchDescribeMergeConflictsErrorFormProperties>({
-			filePath: new FormControl<string | null | undefined>(undefined),
-			exceptionName: new FormControl<string | null | undefined>(undefined),
-			message: new FormControl<string | null | undefined>(undefined),
+			filePath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			exceptionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface BatchDescribeMergeConflictsInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
+
+		/** Required */
 		destinationCommitSpecifier: string;
+
+		/** Required */
 		sourceCommitSpecifier: string;
+
+		/** Required */
 		mergeOption: BatchDescribeMergeConflictsInputMergeOption;
 		maxMergeHunks?: number | null;
 		maxConflictFiles?: number | null;
@@ -497,9 +588,22 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 	export interface BatchDescribeMergeConflictsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
+
+		/** Required */
 		destinationCommitSpecifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		sourceCommitSpecifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		mergeOption: FormControl<BatchDescribeMergeConflictsInputMergeOption | null | undefined>,
 		maxMergeHunks: FormControl<number | null | undefined>,
 		maxConflictFiles: FormControl<number | null | undefined>,
@@ -509,10 +613,10 @@ export namespace MyNS {
 	}
 	export function CreateBatchDescribeMergeConflictsInputFormGroup() {
 		return new FormGroup<BatchDescribeMergeConflictsInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
-			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined),
-			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined),
-			mergeOption: new FormControl<BatchDescribeMergeConflictsInputMergeOption | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			mergeOption: new FormControl<BatchDescribeMergeConflictsInputMergeOption | null | undefined>(undefined, [Validators.required]),
 			maxMergeHunks: new FormControl<number | null | undefined>(undefined),
 			maxConflictFiles: new FormControl<number | null | undefined>(undefined),
 			conflictDetailLevel: new FormControl<BatchDescribeMergeConflictsInputConflictDetailLevel | null | undefined>(undefined),
@@ -659,7 +763,11 @@ export namespace MyNS {
 	}
 
 	export interface BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
+
+		/** Required */
 		disassociatedRepositoryNames: Array<string>;
+
+		/** Required */
 		errors: Array<BatchDisassociateApprovalRuleTemplateFromRepositoriesError>;
 	}
 	export interface BatchDisassociateApprovalRuleTemplateFromRepositoriesOutputFormProperties {
@@ -673,6 +781,12 @@ export namespace MyNS {
 
 	/** Returns information about errors in a BatchDisassociateApprovalRuleTemplateFromRepositories operation. */
 	export interface BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName?: string | null;
 		errorCode?: string | null;
 		errorMessage?: string | null;
@@ -680,13 +794,19 @@ export namespace MyNS {
 
 	/** Returns information about errors in a BatchDisassociateApprovalRuleTemplateFromRepositories operation. */
 	export interface BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 		errorCode: FormControl<string | null | undefined>,
 		errorMessage: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchDisassociateApprovalRuleTemplateFromRepositoriesErrorFormGroup() {
 		return new FormGroup<BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			errorCode: new FormControl<string | null | undefined>(undefined),
 			errorMessage: new FormControl<string | null | undefined>(undefined),
 		});
@@ -694,15 +814,29 @@ export namespace MyNS {
 	}
 
 	export interface BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleTemplateName: string;
+
+		/** Required */
 		repositoryNames: Array<string>;
 	}
 	export interface BatchDisassociateApprovalRuleTemplateFromRepositoriesInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleTemplateName: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchDisassociateApprovalRuleTemplateFromRepositoriesInputFormGroup() {
 		return new FormGroup<BatchDisassociateApprovalRuleTemplateFromRepositoriesInputFormProperties>({
-			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined),
+			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -799,15 +933,31 @@ export namespace MyNS {
 	}
 
 	export interface BatchGetCommitsInput {
+
+		/** Required */
 		commitIds: Array<string>;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
 	}
 	export interface BatchGetCommitsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchGetCommitsInputFormGroup() {
 		return new FormGroup<BatchGetCommitsInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -853,8 +1003,21 @@ export namespace MyNS {
 	export interface RepositoryMetadata {
 		accountId?: string | null;
 		repositoryId?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName?: string | null;
+
+		/** Max length: 1000 */
 		repositoryDescription?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		defaultBranch?: string | null;
 		lastModifiedDate?: Date | null;
 		creationDate?: Date | null;
@@ -867,8 +1030,21 @@ export namespace MyNS {
 	export interface RepositoryMetadataFormProperties {
 		accountId: FormControl<string | null | undefined>,
 		repositoryId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
+
+		/** Max length: 1000 */
 		repositoryDescription: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		defaultBranch: FormControl<string | null | undefined>,
 		lastModifiedDate: FormControl<Date | null | undefined>,
 		creationDate: FormControl<Date | null | undefined>,
@@ -880,9 +1056,9 @@ export namespace MyNS {
 		return new FormGroup<RepositoryMetadataFormProperties>({
 			accountId: new FormControl<string | null | undefined>(undefined),
 			repositoryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined),
-			repositoryDescription: new FormControl<string | null | undefined>(undefined),
-			defaultBranch: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
+			defaultBranch: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			lastModifiedDate: new FormControl<Date | null | undefined>(undefined),
 			creationDate: new FormControl<Date | null | undefined>(undefined),
 			cloneUrlHttp: new FormControl<string | null | undefined>(undefined),
@@ -895,6 +1071,8 @@ export namespace MyNS {
 
 	/** Represents the input of a batch get repositories operation. */
 	export interface BatchGetRepositoriesInput {
+
+		/** Required */
 		repositoryNames: Array<string>;
 	}
 
@@ -927,8 +1105,23 @@ export namespace MyNS {
 	/** Returns information about an approval rule template. */
 	export interface ApprovalRuleTemplate {
 		approvalRuleTemplateId?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleTemplateName?: string | null;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 0
+		 */
 		approvalRuleTemplateDescription?: string | null;
+
+		/**
+		 * Max length: 3000
+		 * Min length: 1
+		 */
 		approvalRuleTemplateContent?: string | null;
 		ruleContentSha256?: string | null;
 		lastModifiedDate?: Date | null;
@@ -939,8 +1132,23 @@ export namespace MyNS {
 	/** Returns information about an approval rule template. */
 	export interface ApprovalRuleTemplateFormProperties {
 		approvalRuleTemplateId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleTemplateName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 0
+		 */
 		approvalRuleTemplateDescription: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 3000
+		 * Min length: 1
+		 */
 		approvalRuleTemplateContent: FormControl<string | null | undefined>,
 		ruleContentSha256: FormControl<string | null | undefined>,
 		lastModifiedDate: FormControl<Date | null | undefined>,
@@ -950,9 +1158,9 @@ export namespace MyNS {
 	export function CreateApprovalRuleTemplateFormGroup() {
 		return new FormGroup<ApprovalRuleTemplateFormProperties>({
 			approvalRuleTemplateId: new FormControl<string | null | undefined>(undefined),
-			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined),
-			approvalRuleTemplateDescription: new FormControl<string | null | undefined>(undefined),
-			approvalRuleTemplateContent: new FormControl<string | null | undefined>(undefined),
+			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			approvalRuleTemplateDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(0)]),
+			approvalRuleTemplateContent: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3000), Validators.minLength(1)]),
 			ruleContentSha256: new FormControl<string | null | undefined>(undefined),
 			lastModifiedDate: new FormControl<Date | null | undefined>(undefined),
 			creationDate: new FormControl<Date | null | undefined>(undefined),
@@ -962,20 +1170,54 @@ export namespace MyNS {
 	}
 
 	export interface CreateApprovalRuleTemplateInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleTemplateName: string;
+
+		/**
+		 * Required
+		 * Max length: 3000
+		 * Min length: 1
+		 */
 		approvalRuleTemplateContent: string;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 0
+		 */
 		approvalRuleTemplateDescription?: string | null;
 	}
 	export interface CreateApprovalRuleTemplateInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleTemplateName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 3000
+		 * Min length: 1
+		 */
 		approvalRuleTemplateContent: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 0
+		 */
 		approvalRuleTemplateDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateApprovalRuleTemplateInputFormGroup() {
 		return new FormGroup<CreateApprovalRuleTemplateInputFormProperties>({
-			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined),
-			approvalRuleTemplateContent: new FormControl<string | null | undefined>(undefined),
-			approvalRuleTemplateDescription: new FormControl<string | null | undefined>(undefined),
+			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			approvalRuleTemplateContent: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(3000), Validators.minLength(1)]),
+			approvalRuleTemplateDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(0)]),
 		});
 
 	}
@@ -1033,22 +1275,52 @@ export namespace MyNS {
 
 	/** Represents the input of a create branch operation. */
 	export interface CreateBranchInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		branchName: string;
+
+		/** Required */
 		commitId: string;
 	}
 
 	/** Represents the input of a create branch operation. */
 	export interface CreateBranchInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		branchName: FormControl<string | null | undefined>,
+
+		/** Required */
 		commitId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateBranchInputFormGroup() {
 		return new FormGroup<CreateBranchInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
-			branchName: new FormControl<string | null | undefined>(undefined),
-			commitId: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			commitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1146,7 +1418,20 @@ export namespace MyNS {
 	}
 
 	export interface CreateCommitInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		branchName: string;
 		parentCommitId?: string | null;
 		authorName?: string | null;
@@ -1158,7 +1443,20 @@ export namespace MyNS {
 		setFileModes?: Array<SetFileModeEntry>;
 	}
 	export interface CreateCommitInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		branchName: FormControl<string | null | undefined>,
 		parentCommitId: FormControl<string | null | undefined>,
 		authorName: FormControl<string | null | undefined>,
@@ -1168,8 +1466,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateCommitInputFormGroup() {
 		return new FormGroup<CreateCommitInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
-			branchName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 			parentCommitId: new FormControl<string | null | undefined>(undefined),
 			authorName: new FormControl<string | null | undefined>(undefined),
 			email: new FormControl<string | null | undefined>(undefined),
@@ -1182,8 +1480,12 @@ export namespace MyNS {
 
 	/** Information about a file added or updated as part of a commit. */
 	export interface PutFileEntry {
+
+		/** Required */
 		filePath: string;
 		fileMode?: FileModesSource | null;
+
+		/** Max length: 6291456 */
 		fileContent?: string | null;
 
 		/** Information about a source file that is part of changes made in a commit. */
@@ -1192,15 +1494,19 @@ export namespace MyNS {
 
 	/** Information about a file added or updated as part of a commit. */
 	export interface PutFileEntryFormProperties {
+
+		/** Required */
 		filePath: FormControl<string | null | undefined>,
 		fileMode: FormControl<FileModesSource | null | undefined>,
+
+		/** Max length: 6291456 */
 		fileContent: FormControl<string | null | undefined>,
 	}
 	export function CreatePutFileEntryFormGroup() {
 		return new FormGroup<PutFileEntryFormProperties>({
-			filePath: new FormControl<string | null | undefined>(undefined),
+			filePath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			fileMode: new FormControl<FileModesSource | null | undefined>(undefined),
-			fileContent: new FormControl<string | null | undefined>(undefined),
+			fileContent: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6291456)]),
 		});
 
 	}
@@ -1208,18 +1514,22 @@ export namespace MyNS {
 
 	/** Information about a source file that is part of changes made in a commit. */
 	export interface SourceFileSpecifier {
+
+		/** Required */
 		filePath: string;
 		isMove?: boolean | null;
 	}
 
 	/** Information about a source file that is part of changes made in a commit. */
 	export interface SourceFileSpecifierFormProperties {
+
+		/** Required */
 		filePath: FormControl<string | null | undefined>,
 		isMove: FormControl<boolean | null | undefined>,
 	}
 	export function CreateSourceFileSpecifierFormGroup() {
 		return new FormGroup<SourceFileSpecifierFormProperties>({
-			filePath: new FormControl<string | null | undefined>(undefined),
+			filePath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			isMove: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1228,16 +1538,20 @@ export namespace MyNS {
 
 	/** A file that is deleted as part of a commit. */
 	export interface DeleteFileEntry {
+
+		/** Required */
 		filePath: string;
 	}
 
 	/** A file that is deleted as part of a commit. */
 	export interface DeleteFileEntryFormProperties {
+
+		/** Required */
 		filePath: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteFileEntryFormGroup() {
 		return new FormGroup<DeleteFileEntryFormProperties>({
-			filePath: new FormControl<string | null | undefined>(undefined),
+			filePath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1245,19 +1559,27 @@ export namespace MyNS {
 
 	/** Information about the file mode changes. */
 	export interface SetFileModeEntry {
+
+		/** Required */
 		filePath: string;
+
+		/** Required */
 		fileMode: FileModesSource;
 	}
 
 	/** Information about the file mode changes. */
 	export interface SetFileModeEntryFormProperties {
+
+		/** Required */
 		filePath: FormControl<string | null | undefined>,
+
+		/** Required */
 		fileMode: FormControl<FileModesSource | null | undefined>,
 	}
 	export function CreateSetFileModeEntryFormGroup() {
 		return new FormGroup<SetFileModeEntryFormProperties>({
-			filePath: new FormControl<string | null | undefined>(undefined),
-			fileMode: new FormControl<FileModesSource | null | undefined>(undefined),
+			filePath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			fileMode: new FormControl<FileModesSource | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1562,7 +1884,11 @@ export namespace MyNS {
 	/** Returns information about a pull request. */
 	export interface PullRequest {
 		pullRequestId?: string | null;
+
+		/** Max length: 150 */
 		title?: string | null;
+
+		/** Max length: 10240 */
 		description?: string | null;
 		lastActivityDate?: Date | null;
 		creationDate?: Date | null;
@@ -1577,7 +1903,11 @@ export namespace MyNS {
 	/** Returns information about a pull request. */
 	export interface PullRequestFormProperties {
 		pullRequestId: FormControl<string | null | undefined>,
+
+		/** Max length: 150 */
 		title: FormControl<string | null | undefined>,
+
+		/** Max length: 10240 */
 		description: FormControl<string | null | undefined>,
 		lastActivityDate: FormControl<Date | null | undefined>,
 		creationDate: FormControl<Date | null | undefined>,
@@ -1589,8 +1919,8 @@ export namespace MyNS {
 	export function CreatePullRequestFormGroup() {
 		return new FormGroup<PullRequestFormProperties>({
 			pullRequestId: new FormControl<string | null | undefined>(undefined),
-			title: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(150)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10240)]),
 			lastActivityDate: new FormControl<Date | null | undefined>(undefined),
 			creationDate: new FormControl<Date | null | undefined>(undefined),
 			pullRequestStatus: new FormControl<PullRequestPullRequestStatus | null | undefined>(undefined),
@@ -1606,6 +1936,12 @@ export namespace MyNS {
 
 	/** Returns information about a pull request target. */
 	export interface PullRequestTarget {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName?: string | null;
 		sourceReference?: string | null;
 		destinationReference?: string | null;
@@ -1619,6 +1955,12 @@ export namespace MyNS {
 
 	/** Returns information about a pull request target. */
 	export interface PullRequestTargetFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 		sourceReference: FormControl<string | null | undefined>,
 		destinationReference: FormControl<string | null | undefined>,
@@ -1628,7 +1970,7 @@ export namespace MyNS {
 	}
 	export function CreatePullRequestTargetFormGroup() {
 		return new FormGroup<PullRequestTargetFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			sourceReference: new FormControl<string | null | undefined>(undefined),
 			destinationReference: new FormControl<string | null | undefined>(undefined),
 			destinationCommit: new FormControl<string | null | undefined>(undefined),
@@ -1668,7 +2010,17 @@ export namespace MyNS {
 	/** Returns information about an approval rule. */
 	export interface ApprovalRule {
 		approvalRuleId?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleName?: string | null;
+
+		/**
+		 * Max length: 3000
+		 * Min length: 1
+		 */
 		approvalRuleContent?: string | null;
 		ruleContentSha256?: string | null;
 		lastModifiedDate?: Date | null;
@@ -1682,7 +2034,17 @@ export namespace MyNS {
 	/** Returns information about an approval rule. */
 	export interface ApprovalRuleFormProperties {
 		approvalRuleId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 3000
+		 * Min length: 1
+		 */
 		approvalRuleContent: FormControl<string | null | undefined>,
 		ruleContentSha256: FormControl<string | null | undefined>,
 		lastModifiedDate: FormControl<Date | null | undefined>,
@@ -1692,8 +2054,8 @@ export namespace MyNS {
 	export function CreateApprovalRuleFormGroup() {
 		return new FormGroup<ApprovalRuleFormProperties>({
 			approvalRuleId: new FormControl<string | null | undefined>(undefined),
-			approvalRuleName: new FormControl<string | null | undefined>(undefined),
-			approvalRuleContent: new FormControl<string | null | undefined>(undefined),
+			approvalRuleName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			approvalRuleContent: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3000), Validators.minLength(1)]),
 			ruleContentSha256: new FormControl<string | null | undefined>(undefined),
 			lastModifiedDate: new FormControl<Date | null | undefined>(undefined),
 			creationDate: new FormControl<Date | null | undefined>(undefined),
@@ -1706,37 +2068,63 @@ export namespace MyNS {
 	/** Returns information about the template that created the approval rule for a pull request. */
 	export interface OriginApprovalRuleTemplate {
 		approvalRuleTemplateId?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleTemplateName?: string | null;
 	}
 
 	/** Returns information about the template that created the approval rule for a pull request. */
 	export interface OriginApprovalRuleTemplateFormProperties {
 		approvalRuleTemplateId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleTemplateName: FormControl<string | null | undefined>,
 	}
 	export function CreateOriginApprovalRuleTemplateFormGroup() {
 		return new FormGroup<OriginApprovalRuleTemplateFormProperties>({
 			approvalRuleTemplateId: new FormControl<string | null | undefined>(undefined),
-			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined),
+			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreatePullRequestInput {
+
+		/**
+		 * Required
+		 * Max length: 150
+		 */
 		title: string;
+
+		/** Max length: 10240 */
 		description?: string | null;
+
+		/** Required */
 		targets: Array<Target>;
 		clientRequestToken?: string | null;
 	}
 	export interface CreatePullRequestInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 150
+		 */
 		title: FormControl<string | null | undefined>,
+
+		/** Max length: 10240 */
 		description: FormControl<string | null | undefined>,
 		clientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePullRequestInputFormGroup() {
 		return new FormGroup<CreatePullRequestInputFormProperties>({
-			title: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(150)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10240)]),
 			clientRequestToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1745,21 +2133,39 @@ export namespace MyNS {
 
 	/** Returns information about a target for a pull request. */
 	export interface Target {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
+
+		/** Required */
 		sourceReference: string;
 		destinationReference?: string | null;
 	}
 
 	/** Returns information about a target for a pull request. */
 	export interface TargetFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
+
+		/** Required */
 		sourceReference: FormControl<string | null | undefined>,
 		destinationReference: FormControl<string | null | undefined>,
 	}
 	export function CreateTargetFormGroup() {
 		return new FormGroup<TargetFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
-			sourceReference: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			sourceReference: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			destinationReference: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1952,20 +2358,48 @@ export namespace MyNS {
 	}
 
 	export interface CreatePullRequestApprovalRuleInput {
+
+		/** Required */
 		pullRequestId: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleName: string;
+
+		/**
+		 * Required
+		 * Max length: 3000
+		 * Min length: 1
+		 */
 		approvalRuleContent: string;
 	}
 	export interface CreatePullRequestApprovalRuleInputFormProperties {
+
+		/** Required */
 		pullRequestId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 3000
+		 * Min length: 1
+		 */
 		approvalRuleContent: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePullRequestApprovalRuleInputFormGroup() {
 		return new FormGroup<CreatePullRequestApprovalRuleInputFormProperties>({
-			pullRequestId: new FormControl<string | null | undefined>(undefined),
-			approvalRuleName: new FormControl<string | null | undefined>(undefined),
-			approvalRuleContent: new FormControl<string | null | undefined>(undefined),
+			pullRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			approvalRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			approvalRuleContent: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(3000), Validators.minLength(1)]),
 		});
 
 	}
@@ -2090,20 +2524,38 @@ export namespace MyNS {
 
 	/** Represents the input of a create repository operation. */
 	export interface CreateRepositoryInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
+
+		/** Max length: 1000 */
 		repositoryDescription?: string | null;
 		tags?: TagsMap;
 	}
 
 	/** Represents the input of a create repository operation. */
 	export interface CreateRepositoryInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
+
+		/** Max length: 1000 */
 		repositoryDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateRepositoryInputFormGroup() {
 		return new FormGroup<CreateRepositoryInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
-			repositoryDescription: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 		});
 
 	}
@@ -2205,9 +2657,22 @@ export namespace MyNS {
 	}
 
 	export interface CreateUnreferencedMergeCommitInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
+
+		/** Required */
 		sourceCommitSpecifier: string;
+
+		/** Required */
 		destinationCommitSpecifier: string;
+
+		/** Required */
 		mergeOption: BatchDescribeMergeConflictsInputMergeOption;
 		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel | null;
 		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy | null;
@@ -2220,9 +2685,22 @@ export namespace MyNS {
 		conflictResolution?: ConflictResolution;
 	}
 	export interface CreateUnreferencedMergeCommitInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
+
+		/** Required */
 		sourceCommitSpecifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		destinationCommitSpecifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		mergeOption: FormControl<BatchDescribeMergeConflictsInputMergeOption | null | undefined>,
 		conflictDetailLevel: FormControl<BatchDescribeMergeConflictsInputConflictDetailLevel | null | undefined>,
 		conflictResolutionStrategy: FormControl<BatchDescribeMergeConflictsInputConflictResolutionStrategy | null | undefined>,
@@ -2233,10 +2711,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateUnreferencedMergeCommitInputFormGroup() {
 		return new FormGroup<CreateUnreferencedMergeCommitInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
-			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined),
-			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined),
-			mergeOption: new FormControl<BatchDescribeMergeConflictsInputMergeOption | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			mergeOption: new FormControl<BatchDescribeMergeConflictsInputMergeOption | null | undefined>(undefined, [Validators.required]),
 			conflictDetailLevel: new FormControl<BatchDescribeMergeConflictsInputConflictDetailLevel | null | undefined>(undefined),
 			conflictResolutionStrategy: new FormControl<BatchDescribeMergeConflictsInputConflictResolutionStrategy | null | undefined>(undefined),
 			authorName: new FormControl<string | null | undefined>(undefined),
@@ -2267,24 +2745,36 @@ export namespace MyNS {
 
 	/** Information about a replacement content entry in the conflict of a merge or pull request operation. */
 	export interface ReplaceContentEntry {
+
+		/** Required */
 		filePath: string;
+
+		/** Required */
 		replacementType: ReplaceContentEntryReplacementType;
+
+		/** Max length: 6291456 */
 		content?: string | null;
 		fileMode?: FileModesSource | null;
 	}
 
 	/** Information about a replacement content entry in the conflict of a merge or pull request operation. */
 	export interface ReplaceContentEntryFormProperties {
+
+		/** Required */
 		filePath: FormControl<string | null | undefined>,
+
+		/** Required */
 		replacementType: FormControl<ReplaceContentEntryReplacementType | null | undefined>,
+
+		/** Max length: 6291456 */
 		content: FormControl<string | null | undefined>,
 		fileMode: FormControl<FileModesSource | null | undefined>,
 	}
 	export function CreateReplaceContentEntryFormGroup() {
 		return new FormGroup<ReplaceContentEntryFormProperties>({
-			filePath: new FormControl<string | null | undefined>(undefined),
-			replacementType: new FormControl<ReplaceContentEntryReplacementType | null | undefined>(undefined),
-			content: new FormControl<string | null | undefined>(undefined),
+			filePath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			replacementType: new FormControl<ReplaceContentEntryReplacementType | null | undefined>(undefined, [Validators.required]),
+			content: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6291456)]),
 			fileMode: new FormControl<FileModesSource | null | undefined>(undefined),
 		});
 
@@ -2383,27 +2873,43 @@ export namespace MyNS {
 	}
 
 	export interface DeleteApprovalRuleTemplateOutput {
+
+		/** Required */
 		approvalRuleTemplateId: string;
 	}
 	export interface DeleteApprovalRuleTemplateOutputFormProperties {
+
+		/** Required */
 		approvalRuleTemplateId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteApprovalRuleTemplateOutputFormGroup() {
 		return new FormGroup<DeleteApprovalRuleTemplateOutputFormProperties>({
-			approvalRuleTemplateId: new FormControl<string | null | undefined>(undefined),
+			approvalRuleTemplateId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeleteApprovalRuleTemplateInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleTemplateName: string;
 	}
 	export interface DeleteApprovalRuleTemplateInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleTemplateName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteApprovalRuleTemplateInputFormGroup() {
 		return new FormGroup<DeleteApprovalRuleTemplateInputFormProperties>({
-			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined),
+			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -2438,18 +2944,28 @@ export namespace MyNS {
 
 	/** Returns information about a branch. */
 	export interface BranchInfo {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		branchName?: string | null;
 		commitId?: string | null;
 	}
 
 	/** Returns information about a branch. */
 	export interface BranchInfoFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		branchName: FormControl<string | null | undefined>,
 		commitId: FormControl<string | null | undefined>,
 	}
 	export function CreateBranchInfoFormGroup() {
 		return new FormGroup<BranchInfoFormProperties>({
-			branchName: new FormControl<string | null | undefined>(undefined),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			commitId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2458,19 +2974,45 @@ export namespace MyNS {
 
 	/** Represents the input of a delete branch operation. */
 	export interface DeleteBranchInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		branchName: string;
 	}
 
 	/** Represents the input of a delete branch operation. */
 	export interface DeleteBranchInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		branchName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteBranchInputFormGroup() {
 		return new FormGroup<DeleteBranchInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
-			branchName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -2537,14 +3079,18 @@ export namespace MyNS {
 	}
 
 	export interface DeleteCommentContentInput {
+
+		/** Required */
 		commentId: string;
 	}
 	export interface DeleteCommentContentInputFormProperties {
+
+		/** Required */
 		commentId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteCommentContentInputFormGroup() {
 		return new FormGroup<DeleteCommentContentInputFormProperties>({
-			commentId: new FormControl<string | null | undefined>(undefined),
+			commentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2590,31 +3136,64 @@ export namespace MyNS {
 	}
 
 	export interface DeleteFileOutput {
+
+		/** Required */
 		commitId: string;
+
+		/** Required */
 		blobId: string;
+
+		/** Required */
 		treeId: string;
+
+		/** Required */
 		filePath: string;
 	}
 	export interface DeleteFileOutputFormProperties {
+
+		/** Required */
 		commitId: FormControl<string | null | undefined>,
+
+		/** Required */
 		blobId: FormControl<string | null | undefined>,
+
+		/** Required */
 		treeId: FormControl<string | null | undefined>,
+
+		/** Required */
 		filePath: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteFileOutputFormGroup() {
 		return new FormGroup<DeleteFileOutputFormProperties>({
-			commitId: new FormControl<string | null | undefined>(undefined),
-			blobId: new FormControl<string | null | undefined>(undefined),
-			treeId: new FormControl<string | null | undefined>(undefined),
-			filePath: new FormControl<string | null | undefined>(undefined),
+			commitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			blobId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			treeId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			filePath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeleteFileInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		branchName: string;
+
+		/** Required */
 		filePath: string;
+
+		/** Required */
 		parentCommitId: string;
 		keepEmptyFolders?: boolean | null;
 		commitMessage?: string | null;
@@ -2622,9 +3201,26 @@ export namespace MyNS {
 		email?: string | null;
 	}
 	export interface DeleteFileInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		branchName: FormControl<string | null | undefined>,
+
+		/** Required */
 		filePath: FormControl<string | null | undefined>,
+
+		/** Required */
 		parentCommitId: FormControl<string | null | undefined>,
 		keepEmptyFolders: FormControl<boolean | null | undefined>,
 		commitMessage: FormControl<string | null | undefined>,
@@ -2633,10 +3229,10 @@ export namespace MyNS {
 	}
 	export function CreateDeleteFileInputFormGroup() {
 		return new FormGroup<DeleteFileInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
-			branchName: new FormControl<string | null | undefined>(undefined),
-			filePath: new FormControl<string | null | undefined>(undefined),
-			parentCommitId: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			filePath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			parentCommitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			keepEmptyFolders: new FormControl<boolean | null | undefined>(undefined),
 			commitMessage: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
@@ -2646,30 +3242,50 @@ export namespace MyNS {
 	}
 
 	export interface DeletePullRequestApprovalRuleOutput {
+
+		/** Required */
 		approvalRuleId: string;
 	}
 	export interface DeletePullRequestApprovalRuleOutputFormProperties {
+
+		/** Required */
 		approvalRuleId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeletePullRequestApprovalRuleOutputFormGroup() {
 		return new FormGroup<DeletePullRequestApprovalRuleOutputFormProperties>({
-			approvalRuleId: new FormControl<string | null | undefined>(undefined),
+			approvalRuleId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeletePullRequestApprovalRuleInput {
+
+		/** Required */
 		pullRequestId: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleName: string;
 	}
 	export interface DeletePullRequestApprovalRuleInputFormProperties {
+
+		/** Required */
 		pullRequestId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeletePullRequestApprovalRuleInputFormGroup() {
 		return new FormGroup<DeletePullRequestApprovalRuleInputFormProperties>({
-			pullRequestId: new FormControl<string | null | undefined>(undefined),
-			approvalRuleName: new FormControl<string | null | undefined>(undefined),
+			pullRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			approvalRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -2704,16 +3320,30 @@ export namespace MyNS {
 
 	/** Represents the input of a delete repository operation. */
 	export interface DeleteRepositoryInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
 	}
 
 	/** Represents the input of a delete repository operation. */
 	export interface DeleteRepositoryInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRepositoryInputFormGroup() {
 		return new FormGroup<DeleteRepositoryInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -2725,45 +3355,85 @@ export namespace MyNS {
 		 * Required
 		 */
 		conflictMetadata: ConflictMetadata;
+
+		/** Required */
 		mergeHunks: Array<MergeHunk>;
 		nextToken?: string | null;
+
+		/** Required */
 		destinationCommitId: string;
+
+		/** Required */
 		sourceCommitId: string;
 		baseCommitId?: string | null;
 	}
 	export interface DescribeMergeConflictsOutputFormProperties {
 		nextToken: FormControl<string | null | undefined>,
+
+		/** Required */
 		destinationCommitId: FormControl<string | null | undefined>,
+
+		/** Required */
 		sourceCommitId: FormControl<string | null | undefined>,
 		baseCommitId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeMergeConflictsOutputFormGroup() {
 		return new FormGroup<DescribeMergeConflictsOutputFormProperties>({
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			destinationCommitId: new FormControl<string | null | undefined>(undefined),
-			sourceCommitId: new FormControl<string | null | undefined>(undefined),
+			destinationCommitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			sourceCommitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			baseCommitId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface DescribeMergeConflictsInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
+
+		/** Required */
 		destinationCommitSpecifier: string;
+
+		/** Required */
 		sourceCommitSpecifier: string;
+
+		/** Required */
 		mergeOption: BatchDescribeMergeConflictsInputMergeOption;
 		maxMergeHunks?: number | null;
+
+		/** Required */
 		filePath: string;
 		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel | null;
 		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy | null;
 		nextToken?: string | null;
 	}
 	export interface DescribeMergeConflictsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
+
+		/** Required */
 		destinationCommitSpecifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		sourceCommitSpecifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		mergeOption: FormControl<BatchDescribeMergeConflictsInputMergeOption | null | undefined>,
 		maxMergeHunks: FormControl<number | null | undefined>,
+
+		/** Required */
 		filePath: FormControl<string | null | undefined>,
 		conflictDetailLevel: FormControl<BatchDescribeMergeConflictsInputConflictDetailLevel | null | undefined>,
 		conflictResolutionStrategy: FormControl<BatchDescribeMergeConflictsInputConflictResolutionStrategy | null | undefined>,
@@ -2771,12 +3441,12 @@ export namespace MyNS {
 	}
 	export function CreateDescribeMergeConflictsInputFormGroup() {
 		return new FormGroup<DescribeMergeConflictsInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
-			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined),
-			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined),
-			mergeOption: new FormControl<BatchDescribeMergeConflictsInputMergeOption | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			mergeOption: new FormControl<BatchDescribeMergeConflictsInputMergeOption | null | undefined>(undefined, [Validators.required]),
 			maxMergeHunks: new FormControl<number | null | undefined>(undefined),
-			filePath: new FormControl<string | null | undefined>(undefined),
+			filePath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			conflictDetailLevel: new FormControl<BatchDescribeMergeConflictsInputConflictDetailLevel | null | undefined>(undefined),
 			conflictResolutionStrategy: new FormControl<BatchDescribeMergeConflictsInputConflictResolutionStrategy | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
@@ -2785,6 +3455,8 @@ export namespace MyNS {
 	}
 
 	export interface DescribePullRequestEventsOutput {
+
+		/** Required */
 		pullRequestEvents: Array<PullRequestEvent>;
 		nextToken?: string | null;
 	}
@@ -2850,6 +3522,12 @@ export namespace MyNS {
 
 	/** Metadata about the pull request that is used when comparing the pull request source with its destination. */
 	export interface PullRequestCreatedEventMetadata {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName?: string | null;
 		sourceCommitId?: string | null;
 		destinationCommitId?: string | null;
@@ -2858,6 +3536,12 @@ export namespace MyNS {
 
 	/** Metadata about the pull request that is used when comparing the pull request source with its destination. */
 	export interface PullRequestCreatedEventMetadataFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 		sourceCommitId: FormControl<string | null | undefined>,
 		destinationCommitId: FormControl<string | null | undefined>,
@@ -2865,7 +3549,7 @@ export namespace MyNS {
 	}
 	export function CreatePullRequestCreatedEventMetadataFormGroup() {
 		return new FormGroup<PullRequestCreatedEventMetadataFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			sourceCommitId: new FormControl<string | null | undefined>(undefined),
 			destinationCommitId: new FormControl<string | null | undefined>(undefined),
 			mergeBase: new FormControl<string | null | undefined>(undefined),
@@ -2893,6 +3577,12 @@ export namespace MyNS {
 
 	/** Information about an update to the source branch of a pull request. */
 	export interface PullRequestSourceReferenceUpdatedEventMetadata {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName?: string | null;
 		beforeCommitId?: string | null;
 		afterCommitId?: string | null;
@@ -2901,6 +3591,12 @@ export namespace MyNS {
 
 	/** Information about an update to the source branch of a pull request. */
 	export interface PullRequestSourceReferenceUpdatedEventMetadataFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 		beforeCommitId: FormControl<string | null | undefined>,
 		afterCommitId: FormControl<string | null | undefined>,
@@ -2908,7 +3604,7 @@ export namespace MyNS {
 	}
 	export function CreatePullRequestSourceReferenceUpdatedEventMetadataFormGroup() {
 		return new FormGroup<PullRequestSourceReferenceUpdatedEventMetadataFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			beforeCommitId: new FormControl<string | null | undefined>(undefined),
 			afterCommitId: new FormControl<string | null | undefined>(undefined),
 			mergeBase: new FormControl<string | null | undefined>(undefined),
@@ -2919,6 +3615,12 @@ export namespace MyNS {
 
 	/** Returns information about the change in the merge state for a pull request event.  */
 	export interface PullRequestMergedStateChangedEventMetadata {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName?: string | null;
 		destinationReference?: string | null;
 
@@ -2928,12 +3630,18 @@ export namespace MyNS {
 
 	/** Returns information about the change in the merge state for a pull request event.  */
 	export interface PullRequestMergedStateChangedEventMetadataFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 		destinationReference: FormControl<string | null | undefined>,
 	}
 	export function CreatePullRequestMergedStateChangedEventMetadataFormGroup() {
 		return new FormGroup<PullRequestMergedStateChangedEventMetadataFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			destinationReference: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2942,22 +3650,42 @@ export namespace MyNS {
 
 	/** Returns information about an event for an approval rule. */
 	export interface ApprovalRuleEventMetadata {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleName?: string | null;
 		approvalRuleId?: string | null;
+
+		/**
+		 * Max length: 3000
+		 * Min length: 1
+		 */
 		approvalRuleContent?: string | null;
 	}
 
 	/** Returns information about an event for an approval rule. */
 	export interface ApprovalRuleEventMetadataFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleName: FormControl<string | null | undefined>,
 		approvalRuleId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 3000
+		 * Min length: 1
+		 */
 		approvalRuleContent: FormControl<string | null | undefined>,
 	}
 	export function CreateApprovalRuleEventMetadataFormGroup() {
 		return new FormGroup<ApprovalRuleEventMetadataFormProperties>({
-			approvalRuleName: new FormControl<string | null | undefined>(undefined),
+			approvalRuleName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			approvalRuleId: new FormControl<string | null | undefined>(undefined),
-			approvalRuleContent: new FormControl<string | null | undefined>(undefined),
+			approvalRuleContent: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3000), Validators.minLength(1)]),
 		});
 
 	}
@@ -3007,6 +3735,8 @@ export namespace MyNS {
 	export enum ApprovalRuleOverriddenEventMetadataOverrideStatus { OVERRIDE = 0, REVOKE = 1 }
 
 	export interface DescribePullRequestEventsInput {
+
+		/** Required */
 		pullRequestId: string;
 		pullRequestEventType?: PullRequestEventPullRequestEventType | null;
 		actorArn?: string | null;
@@ -3014,6 +3744,8 @@ export namespace MyNS {
 		maxResults?: number | null;
 	}
 	export interface DescribePullRequestEventsInputFormProperties {
+
+		/** Required */
 		pullRequestId: FormControl<string | null | undefined>,
 		pullRequestEventType: FormControl<PullRequestEventPullRequestEventType | null | undefined>,
 		actorArn: FormControl<string | null | undefined>,
@@ -3022,7 +3754,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribePullRequestEventsInputFormGroup() {
 		return new FormGroup<DescribePullRequestEventsInputFormProperties>({
-			pullRequestId: new FormControl<string | null | undefined>(undefined),
+			pullRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			pullRequestEventType: new FormControl<PullRequestEventPullRequestEventType | null | undefined>(undefined),
 			actorArn: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
@@ -3072,17 +3804,43 @@ export namespace MyNS {
 	}
 
 	export interface DisassociateApprovalRuleTemplateFromRepositoryInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleTemplateName: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
 	}
 	export interface DisassociateApprovalRuleTemplateFromRepositoryInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleTemplateName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateDisassociateApprovalRuleTemplateFromRepositoryInputFormGroup() {
 		return new FormGroup<DisassociateApprovalRuleTemplateFromRepositoryInputFormProperties>({
-			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -3126,17 +3884,25 @@ export namespace MyNS {
 	}
 
 	export interface EvaluatePullRequestApprovalRulesInput {
+
+		/** Required */
 		pullRequestId: string;
+
+		/** Required */
 		revisionId: string;
 	}
 	export interface EvaluatePullRequestApprovalRulesInputFormProperties {
+
+		/** Required */
 		pullRequestId: FormControl<string | null | undefined>,
+
+		/** Required */
 		revisionId: FormControl<string | null | undefined>,
 	}
 	export function CreateEvaluatePullRequestApprovalRulesInputFormGroup() {
 		return new FormGroup<EvaluatePullRequestApprovalRulesInputFormProperties>({
-			pullRequestId: new FormControl<string | null | undefined>(undefined),
-			revisionId: new FormControl<string | null | undefined>(undefined),
+			pullRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			revisionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3188,14 +3954,26 @@ export namespace MyNS {
 	}
 
 	export interface GetApprovalRuleTemplateInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleTemplateName: string;
 	}
 	export interface GetApprovalRuleTemplateInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleTemplateName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetApprovalRuleTemplateInputFormGroup() {
 		return new FormGroup<GetApprovalRuleTemplateInputFormProperties>({
-			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined),
+			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -3203,16 +3981,20 @@ export namespace MyNS {
 
 	/** Represents the output of a get blob operation. */
 	export interface GetBlobOutput {
+
+		/** Required */
 		content: string;
 	}
 
 	/** Represents the output of a get blob operation. */
 	export interface GetBlobOutputFormProperties {
+
+		/** Required */
 		content: FormControl<string | null | undefined>,
 	}
 	export function CreateGetBlobOutputFormGroup() {
 		return new FormGroup<GetBlobOutputFormProperties>({
-			content: new FormControl<string | null | undefined>(undefined),
+			content: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3220,19 +4002,37 @@ export namespace MyNS {
 
 	/** Represents the input of a get blob operation. */
 	export interface GetBlobInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
+
+		/** Required */
 		blobId: string;
 	}
 
 	/** Represents the input of a get blob operation. */
 	export interface GetBlobInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
+
+		/** Required */
 		blobId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetBlobInputFormGroup() {
 		return new FormGroup<GetBlobInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
-			blobId: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			blobId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3297,19 +4097,41 @@ export namespace MyNS {
 
 	/** Represents the input of a get branch operation. */
 	export interface GetBranchInput {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		branchName?: string | null;
 	}
 
 	/** Represents the input of a get branch operation. */
 	export interface GetBranchInputFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		branchName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetBranchInputFormGroup() {
 		return new FormGroup<GetBranchInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
-			branchName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -3328,14 +4150,18 @@ export namespace MyNS {
 	}
 
 	export interface GetCommentInput {
+
+		/** Required */
 		commentId: string;
 	}
 	export interface GetCommentInputFormProperties {
+
+		/** Required */
 		commentId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetCommentInputFormGroup() {
 		return new FormGroup<GetCommentInputFormProperties>({
-			commentId: new FormControl<string | null | undefined>(undefined),
+			commentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3357,6 +4183,12 @@ export namespace MyNS {
 
 	/** Returns information about comments on the comparison between two commits. */
 	export interface CommentsForComparedCommit {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName?: string | null;
 		beforeCommitId?: string | null;
 		afterCommitId?: string | null;
@@ -3370,6 +4202,12 @@ export namespace MyNS {
 
 	/** Returns information about comments on the comparison between two commits. */
 	export interface CommentsForComparedCommitFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 		beforeCommitId: FormControl<string | null | undefined>,
 		afterCommitId: FormControl<string | null | undefined>,
@@ -3378,7 +4216,7 @@ export namespace MyNS {
 	}
 	export function CreateCommentsForComparedCommitFormGroup() {
 		return new FormGroup<CommentsForComparedCommitFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			beforeCommitId: new FormControl<string | null | undefined>(undefined),
 			afterCommitId: new FormControl<string | null | undefined>(undefined),
 			beforeBlobId: new FormControl<string | null | undefined>(undefined),
@@ -3413,24 +4251,42 @@ export namespace MyNS {
 	export enum LocationRelativeFileVersion { BEFORE = 0, AFTER = 1 }
 
 	export interface GetCommentsForComparedCommitInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
 		beforeCommitId?: string | null;
+
+		/** Required */
 		afterCommitId: string;
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
 	export interface GetCommentsForComparedCommitInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 		beforeCommitId: FormControl<string | null | undefined>,
+
+		/** Required */
 		afterCommitId: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateGetCommentsForComparedCommitInputFormGroup() {
 		return new FormGroup<GetCommentsForComparedCommitInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			beforeCommitId: new FormControl<string | null | undefined>(undefined),
-			afterCommitId: new FormControl<string | null | undefined>(undefined),
+			afterCommitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined),
 		});
@@ -3455,6 +4311,12 @@ export namespace MyNS {
 	/** Returns information about comments on a pull request. */
 	export interface CommentsForPullRequest {
 		pullRequestId?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName?: string | null;
 		beforeCommitId?: string | null;
 		afterCommitId?: string | null;
@@ -3469,6 +4331,12 @@ export namespace MyNS {
 	/** Returns information about comments on a pull request. */
 	export interface CommentsForPullRequestFormProperties {
 		pullRequestId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 		beforeCommitId: FormControl<string | null | undefined>,
 		afterCommitId: FormControl<string | null | undefined>,
@@ -3478,7 +4346,7 @@ export namespace MyNS {
 	export function CreateCommentsForPullRequestFormGroup() {
 		return new FormGroup<CommentsForPullRequestFormProperties>({
 			pullRequestId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			beforeCommitId: new FormControl<string | null | undefined>(undefined),
 			afterCommitId: new FormControl<string | null | undefined>(undefined),
 			beforeBlobId: new FormControl<string | null | undefined>(undefined),
@@ -3488,7 +4356,15 @@ export namespace MyNS {
 	}
 
 	export interface GetCommentsForPullRequestInput {
+
+		/** Required */
 		pullRequestId: string;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName?: string | null;
 		beforeCommitId?: string | null;
 		afterCommitId?: string | null;
@@ -3496,7 +4372,15 @@ export namespace MyNS {
 		maxResults?: number | null;
 	}
 	export interface GetCommentsForPullRequestInputFormProperties {
+
+		/** Required */
 		pullRequestId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 		beforeCommitId: FormControl<string | null | undefined>,
 		afterCommitId: FormControl<string | null | undefined>,
@@ -3505,8 +4389,8 @@ export namespace MyNS {
 	}
 	export function CreateGetCommentsForPullRequestInputFormGroup() {
 		return new FormGroup<GetCommentsForPullRequestInputFormProperties>({
-			pullRequestId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			pullRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			beforeCommitId: new FormControl<string | null | undefined>(undefined),
 			afterCommitId: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
@@ -3548,19 +4432,37 @@ export namespace MyNS {
 
 	/** Represents the input of a get commit operation. */
 	export interface GetCommitInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
+
+		/** Required */
 		commitId: string;
 	}
 
 	/** Represents the input of a get commit operation. */
 	export interface GetCommitInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
+
+		/** Required */
 		commitId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetCommitInputFormGroup() {
 		return new FormGroup<GetCommitInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
-			commitId: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			commitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3636,8 +4538,17 @@ export namespace MyNS {
 	}
 
 	export interface GetDifferencesInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
 		beforeCommitSpecifier?: string | null;
+
+		/** Required */
 		afterCommitSpecifier: string;
 		beforePath?: string | null;
 		afterPath?: string | null;
@@ -3645,8 +4556,17 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 	export interface GetDifferencesInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 		beforeCommitSpecifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		afterCommitSpecifier: FormControl<string | null | undefined>,
 		beforePath: FormControl<string | null | undefined>,
 		afterPath: FormControl<string | null | undefined>,
@@ -3655,9 +4575,9 @@ export namespace MyNS {
 	}
 	export function CreateGetDifferencesInputFormGroup() {
 		return new FormGroup<GetDifferencesInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			beforeCommitSpecifier: new FormControl<string | null | undefined>(undefined),
-			afterCommitSpecifier: new FormControl<string | null | undefined>(undefined),
+			afterCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			beforePath: new FormControl<string | null | undefined>(undefined),
 			afterPath: new FormControl<string | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined),
@@ -3677,54 +4597,106 @@ export namespace MyNS {
 	}
 
 	export interface GetFileOutput {
+
+		/** Required */
 		commitId: string;
+
+		/** Required */
 		blobId: string;
+
+		/** Required */
 		filePath: string;
+
+		/** Required */
 		fileMode: FileModesSource;
+
+		/** Required */
 		fileSize: number;
+
+		/**
+		 * Required
+		 * Max length: 6291456
+		 */
 		fileContent: string;
 	}
 	export interface GetFileOutputFormProperties {
+
+		/** Required */
 		commitId: FormControl<string | null | undefined>,
+
+		/** Required */
 		blobId: FormControl<string | null | undefined>,
+
+		/** Required */
 		filePath: FormControl<string | null | undefined>,
+
+		/** Required */
 		fileMode: FormControl<FileModesSource | null | undefined>,
+
+		/** Required */
 		fileSize: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 6291456
+		 */
 		fileContent: FormControl<string | null | undefined>,
 	}
 	export function CreateGetFileOutputFormGroup() {
 		return new FormGroup<GetFileOutputFormProperties>({
-			commitId: new FormControl<string | null | undefined>(undefined),
-			blobId: new FormControl<string | null | undefined>(undefined),
-			filePath: new FormControl<string | null | undefined>(undefined),
-			fileMode: new FormControl<FileModesSource | null | undefined>(undefined),
-			fileSize: new FormControl<number | null | undefined>(undefined),
-			fileContent: new FormControl<string | null | undefined>(undefined),
+			commitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			blobId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			filePath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			fileMode: new FormControl<FileModesSource | null | undefined>(undefined, [Validators.required]),
+			fileSize: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			fileContent: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6291456)]),
 		});
 
 	}
 
 	export interface GetFileInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
 		commitSpecifier?: string | null;
+
+		/** Required */
 		filePath: string;
 	}
 	export interface GetFileInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 		commitSpecifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		filePath: FormControl<string | null | undefined>,
 	}
 	export function CreateGetFileInputFormGroup() {
 		return new FormGroup<GetFileInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			commitSpecifier: new FormControl<string | null | undefined>(undefined),
-			filePath: new FormControl<string | null | undefined>(undefined),
+			filePath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface GetFolderOutput {
+
+		/** Required */
 		commitId: string;
+
+		/** Required */
 		folderPath: string;
 		treeId?: string | null;
 		subFolders?: Array<Folder>;
@@ -3733,14 +4705,18 @@ export namespace MyNS {
 		subModules?: Array<SubModule>;
 	}
 	export interface GetFolderOutputFormProperties {
+
+		/** Required */
 		commitId: FormControl<string | null | undefined>,
+
+		/** Required */
 		folderPath: FormControl<string | null | undefined>,
 		treeId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetFolderOutputFormGroup() {
 		return new FormGroup<GetFolderOutputFormProperties>({
-			commitId: new FormControl<string | null | undefined>(undefined),
-			folderPath: new FormControl<string | null | undefined>(undefined),
+			commitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			folderPath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			treeId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3845,20 +4821,38 @@ export namespace MyNS {
 	}
 
 	export interface GetFolderInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
 		commitSpecifier?: string | null;
+
+		/** Required */
 		folderPath: string;
 	}
 	export interface GetFolderInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 		commitSpecifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		folderPath: FormControl<string | null | undefined>,
 	}
 	export function CreateGetFolderInputFormGroup() {
 		return new FormGroup<GetFolderInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			commitSpecifier: new FormControl<string | null | undefined>(undefined),
-			folderPath: new FormControl<string | null | undefined>(undefined),
+			folderPath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3896,24 +4890,46 @@ export namespace MyNS {
 	}
 
 	export interface GetMergeCommitInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
+
+		/** Required */
 		sourceCommitSpecifier: string;
+
+		/** Required */
 		destinationCommitSpecifier: string;
 		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel | null;
 		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy | null;
 	}
 	export interface GetMergeCommitInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
+
+		/** Required */
 		sourceCommitSpecifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		destinationCommitSpecifier: FormControl<string | null | undefined>,
 		conflictDetailLevel: FormControl<BatchDescribeMergeConflictsInputConflictDetailLevel | null | undefined>,
 		conflictResolutionStrategy: FormControl<BatchDescribeMergeConflictsInputConflictResolutionStrategy | null | undefined>,
 	}
 	export function CreateGetMergeCommitInputFormGroup() {
 		return new FormGroup<GetMergeCommitInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
-			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined),
-			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			conflictDetailLevel: new FormControl<BatchDescribeMergeConflictsInputConflictDetailLevel | null | undefined>(undefined),
 			conflictResolutionStrategy: new FormControl<BatchDescribeMergeConflictsInputConflictResolutionStrategy | null | undefined>(undefined),
 		});
@@ -3921,25 +4937,39 @@ export namespace MyNS {
 	}
 
 	export interface GetMergeConflictsOutput {
+
+		/** Required */
 		mergeable: boolean;
+
+		/** Required */
 		destinationCommitId: string;
+
+		/** Required */
 		sourceCommitId: string;
 		baseCommitId?: string | null;
+
+		/** Required */
 		conflictMetadataList: Array<ConflictMetadata>;
 		nextToken?: string | null;
 	}
 	export interface GetMergeConflictsOutputFormProperties {
+
+		/** Required */
 		mergeable: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		destinationCommitId: FormControl<string | null | undefined>,
+
+		/** Required */
 		sourceCommitId: FormControl<string | null | undefined>,
 		baseCommitId: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetMergeConflictsOutputFormGroup() {
 		return new FormGroup<GetMergeConflictsOutputFormProperties>({
-			mergeable: new FormControl<boolean | null | undefined>(undefined),
-			destinationCommitId: new FormControl<string | null | undefined>(undefined),
-			sourceCommitId: new FormControl<string | null | undefined>(undefined),
+			mergeable: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			destinationCommitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			sourceCommitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			baseCommitId: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -3947,9 +4977,22 @@ export namespace MyNS {
 	}
 
 	export interface GetMergeConflictsInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
+
+		/** Required */
 		destinationCommitSpecifier: string;
+
+		/** Required */
 		sourceCommitSpecifier: string;
+
+		/** Required */
 		mergeOption: BatchDescribeMergeConflictsInputMergeOption;
 		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel | null;
 		maxConflictFiles?: number | null;
@@ -3957,9 +5000,22 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 	export interface GetMergeConflictsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
+
+		/** Required */
 		destinationCommitSpecifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		sourceCommitSpecifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		mergeOption: FormControl<BatchDescribeMergeConflictsInputMergeOption | null | undefined>,
 		conflictDetailLevel: FormControl<BatchDescribeMergeConflictsInputConflictDetailLevel | null | undefined>,
 		maxConflictFiles: FormControl<number | null | undefined>,
@@ -3968,10 +5024,10 @@ export namespace MyNS {
 	}
 	export function CreateGetMergeConflictsInputFormGroup() {
 		return new FormGroup<GetMergeConflictsInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
-			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined),
-			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined),
-			mergeOption: new FormControl<BatchDescribeMergeConflictsInputMergeOption | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			mergeOption: new FormControl<BatchDescribeMergeConflictsInputMergeOption | null | undefined>(undefined, [Validators.required]),
 			conflictDetailLevel: new FormControl<BatchDescribeMergeConflictsInputConflictDetailLevel | null | undefined>(undefined),
 			maxConflictFiles: new FormControl<number | null | undefined>(undefined),
 			conflictResolutionStrategy: new FormControl<BatchDescribeMergeConflictsInputConflictResolutionStrategy | null | undefined>(undefined),
@@ -4001,21 +5057,35 @@ export namespace MyNS {
 	}
 
 	export interface GetMergeOptionsOutput {
+
+		/** Required */
 		mergeOptions: Array<MergeOptionTypeEnum>;
+
+		/** Required */
 		sourceCommitId: string;
+
+		/** Required */
 		destinationCommitId: string;
+
+		/** Required */
 		baseCommitId: string;
 	}
 	export interface GetMergeOptionsOutputFormProperties {
+
+		/** Required */
 		sourceCommitId: FormControl<string | null | undefined>,
+
+		/** Required */
 		destinationCommitId: FormControl<string | null | undefined>,
+
+		/** Required */
 		baseCommitId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetMergeOptionsOutputFormGroup() {
 		return new FormGroup<GetMergeOptionsOutputFormProperties>({
-			sourceCommitId: new FormControl<string | null | undefined>(undefined),
-			destinationCommitId: new FormControl<string | null | undefined>(undefined),
-			baseCommitId: new FormControl<string | null | undefined>(undefined),
+			sourceCommitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			destinationCommitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			baseCommitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4023,24 +5093,46 @@ export namespace MyNS {
 	export enum MergeOptionTypeEnum { FAST_FORWARD_MERGE = 0, SQUASH_MERGE = 1, THREE_WAY_MERGE = 2 }
 
 	export interface GetMergeOptionsInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
+
+		/** Required */
 		sourceCommitSpecifier: string;
+
+		/** Required */
 		destinationCommitSpecifier: string;
 		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel | null;
 		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy | null;
 	}
 	export interface GetMergeOptionsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
+
+		/** Required */
 		sourceCommitSpecifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		destinationCommitSpecifier: FormControl<string | null | undefined>,
 		conflictDetailLevel: FormControl<BatchDescribeMergeConflictsInputConflictDetailLevel | null | undefined>,
 		conflictResolutionStrategy: FormControl<BatchDescribeMergeConflictsInputConflictResolutionStrategy | null | undefined>,
 	}
 	export function CreateGetMergeOptionsInputFormGroup() {
 		return new FormGroup<GetMergeOptionsInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
-			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined),
-			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			conflictDetailLevel: new FormControl<BatchDescribeMergeConflictsInputConflictDetailLevel | null | undefined>(undefined),
 			conflictResolutionStrategy: new FormControl<BatchDescribeMergeConflictsInputConflictResolutionStrategy | null | undefined>(undefined),
 		});
@@ -4064,14 +5156,18 @@ export namespace MyNS {
 	}
 
 	export interface GetPullRequestInput {
+
+		/** Required */
 		pullRequestId: string;
 	}
 	export interface GetPullRequestInputFormProperties {
+
+		/** Required */
 		pullRequestId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetPullRequestInputFormGroup() {
 		return new FormGroup<GetPullRequestInputFormProperties>({
-			pullRequestId: new FormControl<string | null | undefined>(undefined),
+			pullRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4108,17 +5204,25 @@ export namespace MyNS {
 	}
 
 	export interface GetPullRequestApprovalStatesInput {
+
+		/** Required */
 		pullRequestId: string;
+
+		/** Required */
 		revisionId: string;
 	}
 	export interface GetPullRequestApprovalStatesInputFormProperties {
+
+		/** Required */
 		pullRequestId: FormControl<string | null | undefined>,
+
+		/** Required */
 		revisionId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetPullRequestApprovalStatesInputFormGroup() {
 		return new FormGroup<GetPullRequestApprovalStatesInputFormProperties>({
-			pullRequestId: new FormControl<string | null | undefined>(undefined),
-			revisionId: new FormControl<string | null | undefined>(undefined),
+			pullRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			revisionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4140,17 +5244,25 @@ export namespace MyNS {
 	}
 
 	export interface GetPullRequestOverrideStateInput {
+
+		/** Required */
 		pullRequestId: string;
+
+		/** Required */
 		revisionId: string;
 	}
 	export interface GetPullRequestOverrideStateInputFormProperties {
+
+		/** Required */
 		pullRequestId: FormControl<string | null | undefined>,
+
+		/** Required */
 		revisionId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetPullRequestOverrideStateInputFormGroup() {
 		return new FormGroup<GetPullRequestOverrideStateInputFormProperties>({
-			pullRequestId: new FormControl<string | null | undefined>(undefined),
-			revisionId: new FormControl<string | null | undefined>(undefined),
+			pullRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			revisionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4175,16 +5287,30 @@ export namespace MyNS {
 
 	/** Represents the input of a get repository operation. */
 	export interface GetRepositoryInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
 	}
 
 	/** Represents the input of a get repository operation. */
 	export interface GetRepositoryInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRepositoryInputFormGroup() {
 		return new FormGroup<GetRepositoryInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -4210,23 +5336,33 @@ export namespace MyNS {
 
 	/** Information about a trigger for a repository. */
 	export interface RepositoryTrigger {
+
+		/** Required */
 		name: string;
+
+		/** Required */
 		destinationArn: string;
 		customData?: string | null;
 		branches?: Array<string>;
+
+		/** Required */
 		events: Array<RepositoryTriggerEventEnum>;
 	}
 
 	/** Information about a trigger for a repository. */
 	export interface RepositoryTriggerFormProperties {
+
+		/** Required */
 		name: FormControl<string | null | undefined>,
+
+		/** Required */
 		destinationArn: FormControl<string | null | undefined>,
 		customData: FormControl<string | null | undefined>,
 	}
 	export function CreateRepositoryTriggerFormGroup() {
 		return new FormGroup<RepositoryTriggerFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			destinationArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			destinationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			customData: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4237,16 +5373,30 @@ export namespace MyNS {
 
 	/** Represents the input of a get repository triggers operation. */
 	export interface GetRepositoryTriggersInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
 	}
 
 	/** Represents the input of a get repository triggers operation. */
 	export interface GetRepositoryTriggersInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRepositoryTriggersInputFormGroup() {
 		return new FormGroup<GetRepositoryTriggersInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -4296,18 +5446,32 @@ export namespace MyNS {
 	}
 
 	export interface ListAssociatedApprovalRuleTemplatesForRepositoryInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
 	export interface ListAssociatedApprovalRuleTemplatesForRepositoryInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListAssociatedApprovalRuleTemplatesForRepositoryInputFormGroup() {
 		return new FormGroup<ListAssociatedApprovalRuleTemplatesForRepositoryInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined),
 		});
@@ -4335,24 +5499,40 @@ export namespace MyNS {
 
 	/** Represents the input of a list branches operation. */
 	export interface ListBranchesInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
 		nextToken?: string | null;
 	}
 
 	/** Represents the input of a list branches operation. */
 	export interface ListBranchesInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListBranchesInputFormGroup() {
 		return new FormGroup<ListBranchesInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ListPullRequestsOutput {
+
+		/** Required */
 		pullRequestIds: Array<string>;
 		nextToken?: string | null;
 	}
@@ -4367,6 +5547,13 @@ export namespace MyNS {
 	}
 
 	export interface ListPullRequestsInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
 		authorArn?: string | null;
 		pullRequestStatus?: PullRequestPullRequestStatus | null;
@@ -4374,6 +5561,13 @@ export namespace MyNS {
 		maxResults?: number | null;
 	}
 	export interface ListPullRequestsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 		authorArn: FormControl<string | null | undefined>,
 		pullRequestStatus: FormControl<PullRequestPullRequestStatus | null | undefined>,
@@ -4382,7 +5576,7 @@ export namespace MyNS {
 	}
 	export function CreateListPullRequestsInputFormGroup() {
 		return new FormGroup<ListPullRequestsInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			authorArn: new FormControl<string | null | undefined>(undefined),
 			pullRequestStatus: new FormControl<PullRequestPullRequestStatus | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
@@ -4442,18 +5636,30 @@ export namespace MyNS {
 
 	/** Information about a repository name and ID. */
 	export interface RepositoryNameIdPair {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName?: string | null;
 		repositoryId?: string | null;
 	}
 
 	/** Information about a repository name and ID. */
 	export interface RepositoryNameIdPairFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 		repositoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateRepositoryNameIdPairFormGroup() {
 		return new FormGroup<RepositoryNameIdPairFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			repositoryId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4521,18 +5727,30 @@ export namespace MyNS {
 	}
 
 	export interface ListRepositoriesForApprovalRuleTemplateInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleTemplateName: string;
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
 	export interface ListRepositoriesForApprovalRuleTemplateInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleTemplateName: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListRepositoriesForApprovalRuleTemplateInputFormGroup() {
 		return new FormGroup<ListRepositoriesForApprovalRuleTemplateInputFormProperties>({
-			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined),
+			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined),
 		});
@@ -4554,16 +5772,20 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceInput {
+
+		/** Required */
 		resourceArn: string;
 		nextToken?: string | null;
 	}
 	export interface ListTagsForResourceInputFormProperties {
+
+		/** Required */
 		resourceArn: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceInputFormGroup() {
 		return new FormGroup<ListTagsForResourceInputFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4606,23 +5828,55 @@ export namespace MyNS {
 	}
 
 	export interface MergeBranchesByFastForwardInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
+
+		/** Required */
 		sourceCommitSpecifier: string;
+
+		/** Required */
 		destinationCommitSpecifier: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		targetBranch?: string | null;
 	}
 	export interface MergeBranchesByFastForwardInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
+
+		/** Required */
 		sourceCommitSpecifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		destinationCommitSpecifier: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		targetBranch: FormControl<string | null | undefined>,
 	}
 	export function CreateMergeBranchesByFastForwardInputFormGroup() {
 		return new FormGroup<MergeBranchesByFastForwardInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
-			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined),
-			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined),
-			targetBranch: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			targetBranch: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -4654,9 +5908,25 @@ export namespace MyNS {
 	}
 
 	export interface MergeBranchesBySquashInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
+
+		/** Required */
 		sourceCommitSpecifier: string;
+
+		/** Required */
 		destinationCommitSpecifier: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		targetBranch?: string | null;
 		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel | null;
 		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy | null;
@@ -4669,9 +5939,25 @@ export namespace MyNS {
 		conflictResolution?: ConflictResolution;
 	}
 	export interface MergeBranchesBySquashInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
+
+		/** Required */
 		sourceCommitSpecifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		destinationCommitSpecifier: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		targetBranch: FormControl<string | null | undefined>,
 		conflictDetailLevel: FormControl<BatchDescribeMergeConflictsInputConflictDetailLevel | null | undefined>,
 		conflictResolutionStrategy: FormControl<BatchDescribeMergeConflictsInputConflictResolutionStrategy | null | undefined>,
@@ -4682,10 +5968,10 @@ export namespace MyNS {
 	}
 	export function CreateMergeBranchesBySquashInputFormGroup() {
 		return new FormGroup<MergeBranchesBySquashInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
-			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined),
-			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined),
-			targetBranch: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			targetBranch: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			conflictDetailLevel: new FormControl<BatchDescribeMergeConflictsInputConflictDetailLevel | null | undefined>(undefined),
 			conflictResolutionStrategy: new FormControl<BatchDescribeMergeConflictsInputConflictResolutionStrategy | null | undefined>(undefined),
 			authorName: new FormControl<string | null | undefined>(undefined),
@@ -4713,9 +5999,25 @@ export namespace MyNS {
 	}
 
 	export interface MergeBranchesByThreeWayInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
+
+		/** Required */
 		sourceCommitSpecifier: string;
+
+		/** Required */
 		destinationCommitSpecifier: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		targetBranch?: string | null;
 		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel | null;
 		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy | null;
@@ -4728,9 +6030,25 @@ export namespace MyNS {
 		conflictResolution?: ConflictResolution;
 	}
 	export interface MergeBranchesByThreeWayInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
+
+		/** Required */
 		sourceCommitSpecifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		destinationCommitSpecifier: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		targetBranch: FormControl<string | null | undefined>,
 		conflictDetailLevel: FormControl<BatchDescribeMergeConflictsInputConflictDetailLevel | null | undefined>,
 		conflictResolutionStrategy: FormControl<BatchDescribeMergeConflictsInputConflictResolutionStrategy | null | undefined>,
@@ -4741,10 +6059,10 @@ export namespace MyNS {
 	}
 	export function CreateMergeBranchesByThreeWayInputFormGroup() {
 		return new FormGroup<MergeBranchesByThreeWayInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
-			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined),
-			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined),
-			targetBranch: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			targetBranch: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			conflictDetailLevel: new FormControl<BatchDescribeMergeConflictsInputConflictDetailLevel | null | undefined>(undefined),
 			conflictResolutionStrategy: new FormControl<BatchDescribeMergeConflictsInputConflictResolutionStrategy | null | undefined>(undefined),
 			authorName: new FormControl<string | null | undefined>(undefined),
@@ -4769,19 +6087,37 @@ export namespace MyNS {
 	}
 
 	export interface MergePullRequestByFastForwardInput {
+
+		/** Required */
 		pullRequestId: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
 		sourceCommitId?: string | null;
 	}
 	export interface MergePullRequestByFastForwardInputFormProperties {
+
+		/** Required */
 		pullRequestId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 		sourceCommitId: FormControl<string | null | undefined>,
 	}
 	export function CreateMergePullRequestByFastForwardInputFormGroup() {
 		return new FormGroup<MergePullRequestByFastForwardInputFormProperties>({
-			pullRequestId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			pullRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			sourceCommitId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4821,7 +6157,16 @@ export namespace MyNS {
 	}
 
 	export interface MergePullRequestBySquashInput {
+
+		/** Required */
 		pullRequestId: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
 		sourceCommitId?: string | null;
 		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel | null;
@@ -4835,7 +6180,16 @@ export namespace MyNS {
 		conflictResolution?: ConflictResolution;
 	}
 	export interface MergePullRequestBySquashInputFormProperties {
+
+		/** Required */
 		pullRequestId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 		sourceCommitId: FormControl<string | null | undefined>,
 		conflictDetailLevel: FormControl<BatchDescribeMergeConflictsInputConflictDetailLevel | null | undefined>,
@@ -4847,8 +6201,8 @@ export namespace MyNS {
 	}
 	export function CreateMergePullRequestBySquashInputFormGroup() {
 		return new FormGroup<MergePullRequestBySquashInputFormProperties>({
-			pullRequestId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			pullRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			sourceCommitId: new FormControl<string | null | undefined>(undefined),
 			conflictDetailLevel: new FormControl<BatchDescribeMergeConflictsInputConflictDetailLevel | null | undefined>(undefined),
 			conflictResolutionStrategy: new FormControl<BatchDescribeMergeConflictsInputConflictResolutionStrategy | null | undefined>(undefined),
@@ -4874,7 +6228,16 @@ export namespace MyNS {
 	}
 
 	export interface MergePullRequestByThreeWayInput {
+
+		/** Required */
 		pullRequestId: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
 		sourceCommitId?: string | null;
 		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel | null;
@@ -4888,7 +6251,16 @@ export namespace MyNS {
 		conflictResolution?: ConflictResolution;
 	}
 	export interface MergePullRequestByThreeWayInputFormProperties {
+
+		/** Required */
 		pullRequestId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 		sourceCommitId: FormControl<string | null | undefined>,
 		conflictDetailLevel: FormControl<BatchDescribeMergeConflictsInputConflictDetailLevel | null | undefined>,
@@ -4900,8 +6272,8 @@ export namespace MyNS {
 	}
 	export function CreateMergePullRequestByThreeWayInputFormGroup() {
 		return new FormGroup<MergePullRequestByThreeWayInputFormProperties>({
-			pullRequestId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			pullRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			sourceCommitId: new FormControl<string | null | undefined>(undefined),
 			conflictDetailLevel: new FormControl<BatchDescribeMergeConflictsInputConflictDetailLevel | null | undefined>(undefined),
 			conflictResolutionStrategy: new FormControl<BatchDescribeMergeConflictsInputConflictResolutionStrategy | null | undefined>(undefined),
@@ -4914,20 +6286,32 @@ export namespace MyNS {
 	}
 
 	export interface OverridePullRequestApprovalRulesInput {
+
+		/** Required */
 		pullRequestId: string;
+
+		/** Required */
 		revisionId: string;
+
+		/** Required */
 		overrideStatus: ApprovalRuleOverriddenEventMetadataOverrideStatus;
 	}
 	export interface OverridePullRequestApprovalRulesInputFormProperties {
+
+		/** Required */
 		pullRequestId: FormControl<string | null | undefined>,
+
+		/** Required */
 		revisionId: FormControl<string | null | undefined>,
+
+		/** Required */
 		overrideStatus: FormControl<ApprovalRuleOverriddenEventMetadataOverrideStatus | null | undefined>,
 	}
 	export function CreateOverridePullRequestApprovalRulesInputFormGroup() {
 		return new FormGroup<OverridePullRequestApprovalRulesInputFormProperties>({
-			pullRequestId: new FormControl<string | null | undefined>(undefined),
-			revisionId: new FormControl<string | null | undefined>(undefined),
-			overrideStatus: new FormControl<ApprovalRuleOverriddenEventMetadataOverrideStatus | null | undefined>(undefined),
+			pullRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			revisionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			overrideStatus: new FormControl<ApprovalRuleOverriddenEventMetadataOverrideStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4963,6 +6347,12 @@ export namespace MyNS {
 	}
 
 	export interface PostCommentForComparedCommitOutput {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName?: string | null;
 		beforeCommitId?: string | null;
 		afterCommitId?: string | null;
@@ -4976,6 +6366,12 @@ export namespace MyNS {
 		comment?: Comment;
 	}
 	export interface PostCommentForComparedCommitOutputFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 		beforeCommitId: FormControl<string | null | undefined>,
 		afterCommitId: FormControl<string | null | undefined>,
@@ -4984,7 +6380,7 @@ export namespace MyNS {
 	}
 	export function CreatePostCommentForComparedCommitOutputFormGroup() {
 		return new FormGroup<PostCommentForComparedCommitOutputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			beforeCommitId: new FormControl<string | null | undefined>(undefined),
 			afterCommitId: new FormControl<string | null | undefined>(undefined),
 			beforeBlobId: new FormControl<string | null | undefined>(undefined),
@@ -4994,28 +6390,50 @@ export namespace MyNS {
 	}
 
 	export interface PostCommentForComparedCommitInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
 		beforeCommitId?: string | null;
+
+		/** Required */
 		afterCommitId: string;
 
 		/** Returns information about the location of a change or comment in the comparison between two commits or a pull request. */
 		location?: Location;
+
+		/** Required */
 		content: string;
 		clientRequestToken?: string | null;
 	}
 	export interface PostCommentForComparedCommitInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 		beforeCommitId: FormControl<string | null | undefined>,
+
+		/** Required */
 		afterCommitId: FormControl<string | null | undefined>,
+
+		/** Required */
 		content: FormControl<string | null | undefined>,
 		clientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreatePostCommentForComparedCommitInputFormGroup() {
 		return new FormGroup<PostCommentForComparedCommitInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			beforeCommitId: new FormControl<string | null | undefined>(undefined),
-			afterCommitId: new FormControl<string | null | undefined>(undefined),
-			content: new FormControl<string | null | undefined>(undefined),
+			afterCommitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			content: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientRequestToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5082,6 +6500,12 @@ export namespace MyNS {
 	}
 
 	export interface PostCommentForPullRequestOutput {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName?: string | null;
 		pullRequestId?: string | null;
 		beforeCommitId?: string | null;
@@ -5096,6 +6520,12 @@ export namespace MyNS {
 		comment?: Comment;
 	}
 	export interface PostCommentForPullRequestOutputFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 		pullRequestId: FormControl<string | null | undefined>,
 		beforeCommitId: FormControl<string | null | undefined>,
@@ -5105,7 +6535,7 @@ export namespace MyNS {
 	}
 	export function CreatePostCommentForPullRequestOutputFormGroup() {
 		return new FormGroup<PostCommentForPullRequestOutputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			pullRequestId: new FormControl<string | null | undefined>(undefined),
 			beforeCommitId: new FormControl<string | null | undefined>(undefined),
 			afterCommitId: new FormControl<string | null | undefined>(undefined),
@@ -5116,31 +6546,61 @@ export namespace MyNS {
 	}
 
 	export interface PostCommentForPullRequestInput {
+
+		/** Required */
 		pullRequestId: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
+
+		/** Required */
 		beforeCommitId: string;
+
+		/** Required */
 		afterCommitId: string;
 
 		/** Returns information about the location of a change or comment in the comparison between two commits or a pull request. */
 		location?: Location;
+
+		/** Required */
 		content: string;
 		clientRequestToken?: string | null;
 	}
 	export interface PostCommentForPullRequestInputFormProperties {
+
+		/** Required */
 		pullRequestId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
+
+		/** Required */
 		beforeCommitId: FormControl<string | null | undefined>,
+
+		/** Required */
 		afterCommitId: FormControl<string | null | undefined>,
+
+		/** Required */
 		content: FormControl<string | null | undefined>,
 		clientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreatePostCommentForPullRequestInputFormGroup() {
 		return new FormGroup<PostCommentForPullRequestInputFormProperties>({
-			pullRequestId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined),
-			beforeCommitId: new FormControl<string | null | undefined>(undefined),
-			afterCommitId: new FormControl<string | null | undefined>(undefined),
-			content: new FormControl<string | null | undefined>(undefined),
+			pullRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			beforeCommitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			afterCommitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			content: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientRequestToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5160,47 +6620,87 @@ export namespace MyNS {
 	}
 
 	export interface PostCommentReplyInput {
+
+		/** Required */
 		inReplyTo: string;
 		clientRequestToken?: string | null;
+
+		/** Required */
 		content: string;
 	}
 	export interface PostCommentReplyInputFormProperties {
+
+		/** Required */
 		inReplyTo: FormControl<string | null | undefined>,
 		clientRequestToken: FormControl<string | null | undefined>,
+
+		/** Required */
 		content: FormControl<string | null | undefined>,
 	}
 	export function CreatePostCommentReplyInputFormGroup() {
 		return new FormGroup<PostCommentReplyInputFormProperties>({
-			inReplyTo: new FormControl<string | null | undefined>(undefined),
+			inReplyTo: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientRequestToken: new FormControl<string | null | undefined>(undefined),
-			content: new FormControl<string | null | undefined>(undefined),
+			content: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface PutFileOutput {
+
+		/** Required */
 		commitId: string;
+
+		/** Required */
 		blobId: string;
+
+		/** Required */
 		treeId: string;
 	}
 	export interface PutFileOutputFormProperties {
+
+		/** Required */
 		commitId: FormControl<string | null | undefined>,
+
+		/** Required */
 		blobId: FormControl<string | null | undefined>,
+
+		/** Required */
 		treeId: FormControl<string | null | undefined>,
 	}
 	export function CreatePutFileOutputFormGroup() {
 		return new FormGroup<PutFileOutputFormProperties>({
-			commitId: new FormControl<string | null | undefined>(undefined),
-			blobId: new FormControl<string | null | undefined>(undefined),
-			treeId: new FormControl<string | null | undefined>(undefined),
+			commitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			blobId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			treeId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface PutFileInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		branchName: string;
+
+		/**
+		 * Required
+		 * Max length: 6291456
+		 */
 		fileContent: string;
+
+		/** Required */
 		filePath: string;
 		fileMode?: FileModesSource | null;
 		parentCommitId?: string | null;
@@ -5209,9 +6709,29 @@ export namespace MyNS {
 		email?: string | null;
 	}
 	export interface PutFileInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		branchName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 6291456
+		 */
 		fileContent: FormControl<string | null | undefined>,
+
+		/** Required */
 		filePath: FormControl<string | null | undefined>,
 		fileMode: FormControl<FileModesSource | null | undefined>,
 		parentCommitId: FormControl<string | null | undefined>,
@@ -5221,10 +6741,10 @@ export namespace MyNS {
 	}
 	export function CreatePutFileInputFormGroup() {
 		return new FormGroup<PutFileInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
-			branchName: new FormControl<string | null | undefined>(undefined),
-			fileContent: new FormControl<string | null | undefined>(undefined),
-			filePath: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			fileContent: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6291456)]),
+			filePath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			fileMode: new FormControl<FileModesSource | null | undefined>(undefined),
 			parentCommitId: new FormControl<string | null | undefined>(undefined),
 			commitMessage: new FormControl<string | null | undefined>(undefined),
@@ -5274,17 +6794,33 @@ export namespace MyNS {
 
 	/** Represents the input of a put repository triggers operation. */
 	export interface PutRepositoryTriggersInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
+
+		/** Required */
 		triggers: Array<RepositoryTrigger>;
 	}
 
 	/** Represents the input of a put repository triggers operation. */
 	export interface PutRepositoryTriggersInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreatePutRepositoryTriggersInputFormGroup() {
 		return new FormGroup<PutRepositoryTriggersInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -5420,15 +6956,21 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceInput {
+
+		/** Required */
 		resourceArn: string;
+
+		/** Required */
 		tags: TagsMap;
 	}
 	export interface TagResourceInputFormProperties {
+
+		/** Required */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceInputFormGroup() {
 		return new FormGroup<TagResourceInputFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5482,31 +7024,53 @@ export namespace MyNS {
 
 	/** Represents the input of a test repository triggers operation. */
 	export interface TestRepositoryTriggersInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
+
+		/** Required */
 		triggers: Array<RepositoryTrigger>;
 	}
 
 	/** Represents the input of a test repository triggers operation. */
 	export interface TestRepositoryTriggersInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateTestRepositoryTriggersInputFormGroup() {
 		return new FormGroup<TestRepositoryTriggersInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UntagResourceInput {
+
+		/** Required */
 		resourceArn: string;
+
+		/** Required */
 		tagKeys: Array<string>;
 	}
 	export interface UntagResourceInputFormProperties {
+
+		/** Required */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceInputFormGroup() {
 		return new FormGroup<UntagResourceInputFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5548,19 +7112,43 @@ export namespace MyNS {
 	}
 
 	export interface UpdateApprovalRuleTemplateContentInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleTemplateName: string;
+
+		/**
+		 * Required
+		 * Max length: 3000
+		 * Min length: 1
+		 */
 		newRuleContent: string;
 		existingRuleContentSha256?: string | null;
 	}
 	export interface UpdateApprovalRuleTemplateContentInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleTemplateName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 3000
+		 * Min length: 1
+		 */
 		newRuleContent: FormControl<string | null | undefined>,
 		existingRuleContentSha256: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateApprovalRuleTemplateContentInputFormGroup() {
 		return new FormGroup<UpdateApprovalRuleTemplateContentInputFormProperties>({
-			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined),
-			newRuleContent: new FormControl<string | null | undefined>(undefined),
+			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			newRuleContent: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(3000), Validators.minLength(1)]),
 			existingRuleContentSha256: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5593,17 +7181,41 @@ export namespace MyNS {
 	}
 
 	export interface UpdateApprovalRuleTemplateDescriptionInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleTemplateName: string;
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 0
+		 */
 		approvalRuleTemplateDescription: string;
 	}
 	export interface UpdateApprovalRuleTemplateDescriptionInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleTemplateName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 0
+		 */
 		approvalRuleTemplateDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateApprovalRuleTemplateDescriptionInputFormGroup() {
 		return new FormGroup<UpdateApprovalRuleTemplateDescriptionInputFormProperties>({
-			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined),
-			approvalRuleTemplateDescription: new FormControl<string | null | undefined>(undefined),
+			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			approvalRuleTemplateDescription: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000), Validators.minLength(0)]),
 		});
 
 	}
@@ -5625,17 +7237,41 @@ export namespace MyNS {
 	}
 
 	export interface UpdateApprovalRuleTemplateNameInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		oldApprovalRuleTemplateName: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		newApprovalRuleTemplateName: string;
 	}
 	export interface UpdateApprovalRuleTemplateNameInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		oldApprovalRuleTemplateName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		newApprovalRuleTemplateName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateApprovalRuleTemplateNameInputFormGroup() {
 		return new FormGroup<UpdateApprovalRuleTemplateNameInputFormProperties>({
-			oldApprovalRuleTemplateName: new FormControl<string | null | undefined>(undefined),
-			newApprovalRuleTemplateName: new FormControl<string | null | undefined>(undefined),
+			oldApprovalRuleTemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			newApprovalRuleTemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -5654,17 +7290,25 @@ export namespace MyNS {
 	}
 
 	export interface UpdateCommentInput {
+
+		/** Required */
 		commentId: string;
+
+		/** Required */
 		content: string;
 	}
 	export interface UpdateCommentInputFormProperties {
+
+		/** Required */
 		commentId: FormControl<string | null | undefined>,
+
+		/** Required */
 		content: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateCommentInputFormGroup() {
 		return new FormGroup<UpdateCommentInputFormProperties>({
-			commentId: new FormControl<string | null | undefined>(undefined),
-			content: new FormControl<string | null | undefined>(undefined),
+			commentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			content: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5682,19 +7326,45 @@ export namespace MyNS {
 
 	/** Represents the input of an update default branch operation. */
 	export interface UpdateDefaultBranchInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		defaultBranchName: string;
 	}
 
 	/** Represents the input of an update default branch operation. */
 	export interface UpdateDefaultBranchInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		defaultBranchName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateDefaultBranchInputFormGroup() {
 		return new FormGroup<UpdateDefaultBranchInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
-			defaultBranchName: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			defaultBranchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -5716,23 +7386,51 @@ export namespace MyNS {
 	}
 
 	export interface UpdatePullRequestApprovalRuleContentInput {
+
+		/** Required */
 		pullRequestId: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleName: string;
 		existingRuleContentSha256?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 3000
+		 * Min length: 1
+		 */
 		newRuleContent: string;
 	}
 	export interface UpdatePullRequestApprovalRuleContentInputFormProperties {
+
+		/** Required */
 		pullRequestId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		approvalRuleName: FormControl<string | null | undefined>,
 		existingRuleContentSha256: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 3000
+		 * Min length: 1
+		 */
 		newRuleContent: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdatePullRequestApprovalRuleContentInputFormGroup() {
 		return new FormGroup<UpdatePullRequestApprovalRuleContentInputFormProperties>({
-			pullRequestId: new FormControl<string | null | undefined>(undefined),
-			approvalRuleName: new FormControl<string | null | undefined>(undefined),
+			pullRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			approvalRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			existingRuleContentSha256: new FormControl<string | null | undefined>(undefined),
-			newRuleContent: new FormControl<string | null | undefined>(undefined),
+			newRuleContent: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(3000), Validators.minLength(1)]),
 		});
 
 	}
@@ -5758,20 +7456,32 @@ export namespace MyNS {
 	}
 
 	export interface UpdatePullRequestApprovalStateInput {
+
+		/** Required */
 		pullRequestId: string;
+
+		/** Required */
 		revisionId: string;
+
+		/** Required */
 		approvalState: ApprovalStateChangedEventMetadataApprovalStatus;
 	}
 	export interface UpdatePullRequestApprovalStateInputFormProperties {
+
+		/** Required */
 		pullRequestId: FormControl<string | null | undefined>,
+
+		/** Required */
 		revisionId: FormControl<string | null | undefined>,
+
+		/** Required */
 		approvalState: FormControl<ApprovalStateChangedEventMetadataApprovalStatus | null | undefined>,
 	}
 	export function CreateUpdatePullRequestApprovalStateInputFormGroup() {
 		return new FormGroup<UpdatePullRequestApprovalStateInputFormProperties>({
-			pullRequestId: new FormControl<string | null | undefined>(undefined),
-			revisionId: new FormControl<string | null | undefined>(undefined),
-			approvalState: new FormControl<ApprovalStateChangedEventMetadataApprovalStatus | null | undefined>(undefined),
+			pullRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			revisionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			approvalState: new FormControl<ApprovalStateChangedEventMetadataApprovalStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5833,17 +7543,31 @@ export namespace MyNS {
 	}
 
 	export interface UpdatePullRequestDescriptionInput {
+
+		/** Required */
 		pullRequestId: string;
+
+		/**
+		 * Required
+		 * Max length: 10240
+		 */
 		description: string;
 	}
 	export interface UpdatePullRequestDescriptionInputFormProperties {
+
+		/** Required */
 		pullRequestId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 10240
+		 */
 		description: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdatePullRequestDescriptionInputFormGroup() {
 		return new FormGroup<UpdatePullRequestDescriptionInputFormProperties>({
-			pullRequestId: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			pullRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10240)]),
 		});
 
 	}
@@ -5865,17 +7589,25 @@ export namespace MyNS {
 	}
 
 	export interface UpdatePullRequestStatusInput {
+
+		/** Required */
 		pullRequestId: string;
+
+		/** Required */
 		pullRequestStatus: PullRequestPullRequestStatus;
 	}
 	export interface UpdatePullRequestStatusInputFormProperties {
+
+		/** Required */
 		pullRequestId: FormControl<string | null | undefined>,
+
+		/** Required */
 		pullRequestStatus: FormControl<PullRequestPullRequestStatus | null | undefined>,
 	}
 	export function CreateUpdatePullRequestStatusInputFormGroup() {
 		return new FormGroup<UpdatePullRequestStatusInputFormProperties>({
-			pullRequestId: new FormControl<string | null | undefined>(undefined),
-			pullRequestStatus: new FormControl<PullRequestPullRequestStatus | null | undefined>(undefined),
+			pullRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			pullRequestStatus: new FormControl<PullRequestPullRequestStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5917,17 +7649,31 @@ export namespace MyNS {
 	}
 
 	export interface UpdatePullRequestTitleInput {
+
+		/** Required */
 		pullRequestId: string;
+
+		/**
+		 * Required
+		 * Max length: 150
+		 */
 		title: string;
 	}
 	export interface UpdatePullRequestTitleInputFormProperties {
+
+		/** Required */
 		pullRequestId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 150
+		 */
 		title: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdatePullRequestTitleInputFormGroup() {
 		return new FormGroup<UpdatePullRequestTitleInputFormProperties>({
-			pullRequestId: new FormControl<string | null | undefined>(undefined),
-			title: new FormControl<string | null | undefined>(undefined),
+			pullRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			title: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(150)]),
 		});
 
 	}
@@ -5935,19 +7681,37 @@ export namespace MyNS {
 
 	/** Represents the input of an update repository description operation. */
 	export interface UpdateRepositoryDescriptionInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: string;
+
+		/** Max length: 1000 */
 		repositoryDescription?: string | null;
 	}
 
 	/** Represents the input of an update repository description operation. */
 	export interface UpdateRepositoryDescriptionInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		repositoryName: FormControl<string | null | undefined>,
+
+		/** Max length: 1000 */
 		repositoryDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateRepositoryDescriptionInputFormGroup() {
 		return new FormGroup<UpdateRepositoryDescriptionInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined),
-			repositoryDescription: new FormControl<string | null | undefined>(undefined),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 		});
 
 	}
@@ -5955,19 +7719,47 @@ export namespace MyNS {
 
 	/** Represents the input of an update repository description operation. */
 	export interface UpdateRepositoryNameInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		oldName: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		newName: string;
 	}
 
 	/** Represents the input of an update repository description operation. */
 	export interface UpdateRepositoryNameInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		oldName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [\w\.-]+
+		 */
 		newName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateRepositoryNameInputFormGroup() {
 		return new FormGroup<UpdateRepositoryNameInputFormProperties>({
-			oldName: new FormControl<string | null | undefined>(undefined),
-			newName: new FormControl<string | null | undefined>(undefined),
+			oldName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			newName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}

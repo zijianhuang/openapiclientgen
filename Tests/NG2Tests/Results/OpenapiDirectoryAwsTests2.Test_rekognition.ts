@@ -30,16 +30,26 @@ export namespace MyNS {
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
 		BoundingBox?: BoundingBox;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence?: number | null;
 	}
 
 	/** Type that describes the face Amazon Rekognition chose to compare with the faces in the target. This contains a bounding box for the selected face and confidence level that the bounding box contains a face. Note that Amazon Rekognition selects the largest face in the source image for this comparison.  */
 	export interface ComparedSourceImageFaceFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateComparedSourceImageFaceFormGroup() {
 		return new FormGroup<ComparedSourceImageFaceFormProperties>({
-			Confidence: new FormControl<number | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -73,6 +83,11 @@ export namespace MyNS {
 
 	/** Provides information about a face in a target image that matches the source image face analyzed by <code>CompareFaces</code>. The <code>Face</code> property contains the bounding box of the face in the target image. The <code>Similarity</code> property is the confidence that the source image face matches the face in the bounding box. */
 	export interface CompareFacesMatch {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Similarity?: number | null;
 
 		/** Provides face metadata for target image faces that are analyzed by <code>CompareFaces</code> and <code>RecognizeCelebrities</code>. */
@@ -81,11 +96,16 @@ export namespace MyNS {
 
 	/** Provides information about a face in a target image that matches the source image face analyzed by <code>CompareFaces</code>. The <code>Face</code> property contains the bounding box of the face in the target image. The <code>Similarity</code> property is the confidence that the source image face matches the face in the bounding box. */
 	export interface CompareFacesMatchFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Similarity: FormControl<number | null | undefined>,
 	}
 	export function CreateCompareFacesMatchFormGroup() {
 		return new FormGroup<CompareFacesMatchFormProperties>({
-			Similarity: new FormControl<number | null | undefined>(undefined),
+			Similarity: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -96,6 +116,11 @@ export namespace MyNS {
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
 		BoundingBox?: BoundingBox;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence?: number | null;
 		Landmarks?: Array<Landmark>;
 
@@ -108,11 +133,16 @@ export namespace MyNS {
 
 	/** Provides face metadata for target image faces that are analyzed by <code>CompareFaces</code> and <code>RecognizeCelebrities</code>. */
 	export interface ComparedFaceFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateComparedFaceFormGroup() {
 		return new FormGroup<ComparedFaceFormProperties>({
-			Confidence: new FormControl<number | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -145,22 +175,52 @@ export namespace MyNS {
 
 	/** Indicates the pose of the face as determined by its pitch, roll, and yaw. */
 	export interface Pose {
+
+		/**
+		 * Minimum: -180
+		 * Maximum: 180
+		 */
 		Roll?: number | null;
+
+		/**
+		 * Minimum: -180
+		 * Maximum: 180
+		 */
 		Yaw?: number | null;
+
+		/**
+		 * Minimum: -180
+		 * Maximum: 180
+		 */
 		Pitch?: number | null;
 	}
 
 	/** Indicates the pose of the face as determined by its pitch, roll, and yaw. */
 	export interface PoseFormProperties {
+
+		/**
+		 * Minimum: -180
+		 * Maximum: 180
+		 */
 		Roll: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: -180
+		 * Maximum: 180
+		 */
 		Yaw: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: -180
+		 * Maximum: 180
+		 */
 		Pitch: FormControl<number | null | undefined>,
 	}
 	export function CreatePoseFormGroup() {
 		return new FormGroup<PoseFormProperties>({
-			Roll: new FormControl<number | null | undefined>(undefined),
-			Yaw: new FormControl<number | null | undefined>(undefined),
-			Pitch: new FormControl<number | null | undefined>(undefined),
+			Roll: new FormControl<number | null | undefined>(undefined, [Validators.min(-180), Validators.max(180)]),
+			Yaw: new FormControl<number | null | undefined>(undefined, [Validators.min(-180), Validators.max(180)]),
+			Pitch: new FormControl<number | null | undefined>(undefined, [Validators.min(-180), Validators.max(180)]),
 		});
 
 	}
@@ -200,16 +260,26 @@ export namespace MyNS {
 		 * Required
 		 */
 		TargetImage: Image;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		SimilarityThreshold?: number | null;
 		QualityFilter?: CompareFacesRequestQualityFilter | null;
 	}
 	export interface CompareFacesRequestFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		SimilarityThreshold: FormControl<number | null | undefined>,
 		QualityFilter: FormControl<CompareFacesRequestQualityFilter | null | undefined>,
 	}
 	export function CreateCompareFacesRequestFormGroup() {
 		return new FormGroup<CompareFacesRequestFormProperties>({
-			SimilarityThreshold: new FormControl<number | null | undefined>(undefined),
+			SimilarityThreshold: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			QualityFilter: new FormControl<CompareFacesRequestQualityFilter | null | undefined>(undefined),
 		});
 
@@ -218,6 +288,11 @@ export namespace MyNS {
 
 	/** <p>Provides the input image either as bytes or an S3 object.</p> <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations. </p> <p>For more information, see Analyzing an Image Loaded from a Local File System in the Amazon Rekognition Developer Guide.</p> <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the <code>S3Object</code> property. Images stored in an S3 bucket do not need to be base64-encoded.</p> <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p> <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide. </p> */
 	export interface Image {
+
+		/**
+		 * Max length: 5242880
+		 * Min length: 1
+		 */
 		Bytes?: string | null;
 
 		/** <p>Provides the S3 bucket name and object name.</p> <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource-Based Policies in the Amazon Rekognition Developer Guide. </p> */
@@ -226,11 +301,16 @@ export namespace MyNS {
 
 	/** <p>Provides the input image either as bytes or an S3 object.</p> <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations. </p> <p>For more information, see Analyzing an Image Loaded from a Local File System in the Amazon Rekognition Developer Guide.</p> <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the <code>S3Object</code> property. Images stored in an S3 bucket do not need to be base64-encoded.</p> <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p> <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide. </p> */
 	export interface ImageFormProperties {
+
+		/**
+		 * Max length: 5242880
+		 * Min length: 1
+		 */
 		Bytes: FormControl<string | null | undefined>,
 	}
 	export function CreateImageFormGroup() {
 		return new FormGroup<ImageFormProperties>({
-			Bytes: new FormControl<string | null | undefined>(undefined),
+			Bytes: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5242880), Validators.minLength(1)]),
 		});
 
 	}
@@ -238,22 +318,54 @@ export namespace MyNS {
 
 	/** <p>Provides the S3 bucket name and object name.</p> <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource-Based Policies in the Amazon Rekognition Developer Guide. </p> */
 	export interface S3Object {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [0-9A-Za-z\.\-_]*
+		 */
 		Bucket?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Version?: string | null;
 	}
 
 	/** <p>Provides the S3 bucket name and object name.</p> <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource-Based Policies in the Amazon Rekognition Developer Guide. </p> */
 	export interface S3ObjectFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [0-9A-Za-z\.\-_]*
+		 */
 		Bucket: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Version: FormControl<string | null | undefined>,
 	}
 	export function CreateS3ObjectFormGroup() {
 		return new FormGroup<S3ObjectFormProperties>({
-			Bucket: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Version: new FormControl<string | null | undefined>(undefined),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -341,18 +453,22 @@ export namespace MyNS {
 	}
 
 	export interface CreateCollectionResponse {
+
+		/** Minimum: 0 */
 		StatusCode?: number | null;
 		CollectionArn?: string | null;
 		FaceModelVersion?: string | null;
 	}
 	export interface CreateCollectionResponseFormProperties {
+
+		/** Minimum: 0 */
 		StatusCode: FormControl<number | null | undefined>,
 		CollectionArn: FormControl<string | null | undefined>,
 		FaceModelVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateCollectionResponseFormGroup() {
 		return new FormGroup<CreateCollectionResponseFormProperties>({
-			StatusCode: new FormControl<number | null | undefined>(undefined),
+			StatusCode: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			CollectionArn: new FormControl<string | null | undefined>(undefined),
 			FaceModelVersion: new FormControl<string | null | undefined>(undefined),
 		});
@@ -360,14 +476,28 @@ export namespace MyNS {
 	}
 
 	export interface CreateCollectionRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		CollectionId: string;
 	}
 	export interface CreateCollectionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		CollectionId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateCollectionRequestFormGroup() {
 		return new FormGroup<CreateCollectionRequestFormProperties>({
-			CollectionId: new FormControl<string | null | undefined>(undefined),
+			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -383,27 +513,53 @@ export namespace MyNS {
 	}
 
 	export interface CreateProjectResponse {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)
+		 */
 		ProjectArn?: string | null;
 	}
 	export interface CreateProjectResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)
+		 */
 		ProjectArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateProjectResponseFormGroup() {
 		return new FormGroup<CreateProjectResponseFormProperties>({
-			ProjectArn: new FormControl<string | null | undefined>(undefined),
+			ProjectArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface CreateProjectRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		ProjectName: string;
 	}
 	export interface CreateProjectRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		ProjectName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateProjectRequestFormGroup() {
 		return new FormGroup<CreateProjectRequestFormProperties>({
-			ProjectName: new FormControl<string | null | undefined>(undefined),
+			ProjectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -429,20 +585,46 @@ export namespace MyNS {
 	}
 
 	export interface CreateProjectVersionResponse {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)
+		 */
 		ProjectVersionArn?: string | null;
 	}
 	export interface CreateProjectVersionResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)
+		 */
 		ProjectVersionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateProjectVersionResponseFormGroup() {
 		return new FormGroup<CreateProjectVersionResponseFormProperties>({
-			ProjectVersionArn: new FormControl<string | null | undefined>(undefined),
+			ProjectVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface CreateProjectVersionRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)
+		 */
 		ProjectArn: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		VersionName: string;
 
 		/**
@@ -464,13 +646,27 @@ export namespace MyNS {
 		TestingData: TestingData;
 	}
 	export interface CreateProjectVersionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)
+		 */
 		ProjectArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		VersionName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateProjectVersionRequestFormGroup() {
 		return new FormGroup<CreateProjectVersionRequestFormProperties>({
-			ProjectArn: new FormControl<string | null | undefined>(undefined),
-			VersionName: new FormControl<string | null | undefined>(undefined),
+			ProjectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			VersionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -478,19 +674,35 @@ export namespace MyNS {
 
 	/** The S3 bucket and folder location where training output is placed. */
 	export interface OutputConfig {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [0-9A-Za-z\.\-_]*
+		 */
 		S3Bucket?: string | null;
+
+		/** Max length: 1024 */
 		S3KeyPrefix?: string | null;
 	}
 
 	/** The S3 bucket and folder location where training output is placed. */
 	export interface OutputConfigFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [0-9A-Za-z\.\-_]*
+		 */
 		S3Bucket: FormControl<string | null | undefined>,
+
+		/** Max length: 1024 */
 		S3KeyPrefix: FormControl<string | null | undefined>,
 	}
 	export function CreateOutputConfigFormGroup() {
 		return new FormGroup<OutputConfigFormProperties>({
-			S3Bucket: new FormControl<string | null | undefined>(undefined),
-			S3KeyPrefix: new FormControl<string | null | undefined>(undefined),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			S3KeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
@@ -573,9 +785,13 @@ export namespace MyNS {
 	}
 
 	export interface CreateStreamProcessorResponse {
+
+		/** Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:streamprocessor\/.+$) */
 		StreamProcessorArn?: string | null;
 	}
 	export interface CreateStreamProcessorResponseFormProperties {
+
+		/** Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:streamprocessor\/.+$) */
 		StreamProcessorArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateStreamProcessorResponseFormGroup() {
@@ -598,6 +814,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		Output: StreamProcessorOutput;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		Name: string;
 
 		/**
@@ -605,16 +828,33 @@ export namespace MyNS {
 		 * Required
 		 */
 		Settings: StreamProcessorSettings;
+
+		/**
+		 * Required
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleArn: string;
 	}
 	export interface CreateStreamProcessorRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateStreamProcessorRequestFormGroup() {
 		return new FormGroup<CreateStreamProcessorRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -639,11 +879,15 @@ export namespace MyNS {
 
 	/** Kinesis video stream stream that provides the source streaming video for a Amazon Rekognition Video stream processor. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide. */
 	export interface KinesisVideoStream {
+
+		/** Pattern: (^arn:([a-z\d-]+):kinesisvideo:([a-z\d-]+):\d{12}:.+$) */
 		Arn?: string | null;
 	}
 
 	/** Kinesis video stream stream that provides the source streaming video for a Amazon Rekognition Video stream processor. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide. */
 	export interface KinesisVideoStreamFormProperties {
+
+		/** Pattern: (^arn:([a-z\d-]+):kinesisvideo:([a-z\d-]+):\d{12}:.+$) */
 		Arn: FormControl<string | null | undefined>,
 	}
 	export function CreateKinesisVideoStreamFormGroup() {
@@ -673,11 +917,15 @@ export namespace MyNS {
 
 	/** The Kinesis data stream Amazon Rekognition to which the analysis results of a Amazon Rekognition stream processor are streamed. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide. */
 	export interface KinesisDataStream {
+
+		/** Pattern: (^arn:([a-z\d-]+):kinesis:([a-z\d-]+):\d{12}:.+$) */
 		Arn?: string | null;
 	}
 
 	/** The Kinesis data stream Amazon Rekognition to which the analysis results of a Amazon Rekognition stream processor are streamed. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide. */
 	export interface KinesisDataStreamFormProperties {
+
+		/** Pattern: (^arn:([a-z\d-]+):kinesis:([a-z\d-]+):\d{12}:.+$) */
 		Arn: FormControl<string | null | undefined>,
 	}
 	export function CreateKinesisDataStreamFormGroup() {
@@ -707,50 +955,95 @@ export namespace MyNS {
 
 	/** Input face recognition parameters for an Amazon Rekognition stream processor. <code>FaceRecognitionSettings</code> is a request parameter for <a>CreateStreamProcessor</a>. */
 	export interface FaceSearchSettings {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		CollectionId?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		FaceMatchThreshold?: number | null;
 	}
 
 	/** Input face recognition parameters for an Amazon Rekognition stream processor. <code>FaceRecognitionSettings</code> is a request parameter for <a>CreateStreamProcessor</a>. */
 	export interface FaceSearchSettingsFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		CollectionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		FaceMatchThreshold: FormControl<number | null | undefined>,
 	}
 	export function CreateFaceSearchSettingsFormGroup() {
 		return new FormGroup<FaceSearchSettingsFormProperties>({
-			CollectionId: new FormControl<string | null | undefined>(undefined),
-			FaceMatchThreshold: new FormControl<number | null | undefined>(undefined),
+			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			FaceMatchThreshold: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
 
 	export interface DeleteCollectionResponse {
+
+		/** Minimum: 0 */
 		StatusCode?: number | null;
 	}
 	export interface DeleteCollectionResponseFormProperties {
+
+		/** Minimum: 0 */
 		StatusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateDeleteCollectionResponseFormGroup() {
 		return new FormGroup<DeleteCollectionResponseFormProperties>({
-			StatusCode: new FormControl<number | null | undefined>(undefined),
+			StatusCode: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
 
 	export interface DeleteCollectionRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		CollectionId: string;
 	}
 	export interface DeleteCollectionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		CollectionId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteCollectionRequestFormGroup() {
 		return new FormGroup<DeleteCollectionRequestFormProperties>({
-			CollectionId: new FormControl<string | null | undefined>(undefined),
+			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteFacesResponse {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 4096
+		 */
 		DeletedFaces?: Array<string>;
 	}
 	export interface DeleteFacesResponseFormProperties {
@@ -762,15 +1055,35 @@ export namespace MyNS {
 	}
 
 	export interface DeleteFacesRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		CollectionId: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 4096
+		 */
 		FaceIds: Array<string>;
 	}
 	export interface DeleteFacesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		CollectionId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteFacesRequestFormGroup() {
 		return new FormGroup<DeleteFacesRequestFormProperties>({
-			CollectionId: new FormControl<string | null | undefined>(undefined),
+			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -791,14 +1104,28 @@ export namespace MyNS {
 	export enum DeleteProjectResponseStatus { CREATING = 0, CREATED = 1, DELETING = 2 }
 
 	export interface DeleteProjectRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)
+		 */
 		ProjectArn: string;
 	}
 	export interface DeleteProjectRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)
+		 */
 		ProjectArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteProjectRequestFormGroup() {
 		return new FormGroup<DeleteProjectRequestFormProperties>({
-			ProjectArn: new FormControl<string | null | undefined>(undefined),
+			ProjectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -819,14 +1146,28 @@ export namespace MyNS {
 	export enum DeleteProjectVersionResponseStatus { TRAINING_IN_PROGRESS = 0, TRAINING_COMPLETED = 1, TRAINING_FAILED = 2, STARTING = 3, RUNNING = 4, FAILED = 5, STOPPING = 6, STOPPED = 7, DELETING = 8 }
 
 	export interface DeleteProjectVersionRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)
+		 */
 		ProjectVersionArn: string;
 	}
 	export interface DeleteProjectVersionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)
+		 */
 		ProjectVersionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteProjectVersionRequestFormGroup() {
 		return new FormGroup<DeleteProjectVersionRequestFormProperties>({
-			ProjectVersionArn: new FormControl<string | null | undefined>(undefined),
+			ProjectVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -842,25 +1183,43 @@ export namespace MyNS {
 	}
 
 	export interface DeleteStreamProcessorRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		Name: string;
 	}
 	export interface DeleteStreamProcessorRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteStreamProcessorRequestFormGroup() {
 		return new FormGroup<DeleteStreamProcessorRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeCollectionResponse {
+
+		/** Minimum: 0 */
 		FaceCount?: number | null;
 		FaceModelVersion?: string | null;
 		CollectionARN?: string | null;
 		CreationTimestamp?: Date | null;
 	}
 	export interface DescribeCollectionResponseFormProperties {
+
+		/** Minimum: 0 */
 		FaceCount: FormControl<number | null | undefined>,
 		FaceModelVersion: FormControl<string | null | undefined>,
 		CollectionARN: FormControl<string | null | undefined>,
@@ -868,7 +1227,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeCollectionResponseFormGroup() {
 		return new FormGroup<DescribeCollectionResponseFormProperties>({
-			FaceCount: new FormControl<number | null | undefined>(undefined),
+			FaceCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			FaceModelVersion: new FormControl<string | null | undefined>(undefined),
 			CollectionARN: new FormControl<string | null | undefined>(undefined),
 			CreationTimestamp: new FormControl<Date | null | undefined>(undefined),
@@ -877,28 +1236,46 @@ export namespace MyNS {
 	}
 
 	export interface DescribeCollectionRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		CollectionId: string;
 	}
 	export interface DescribeCollectionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		CollectionId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeCollectionRequestFormGroup() {
 		return new FormGroup<DescribeCollectionRequestFormProperties>({
-			CollectionId: new FormControl<string | null | undefined>(undefined),
+			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeProjectVersionsResponse {
 		ProjectVersionDescriptions?: Array<ProjectVersionDescription>;
+
+		/** Max length: 1024 */
 		NextToken?: string | null;
 	}
 	export interface DescribeProjectVersionsResponseFormProperties {
+
+		/** Max length: 1024 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeProjectVersionsResponseFormGroup() {
 		return new FormGroup<DescribeProjectVersionsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
@@ -906,11 +1283,21 @@ export namespace MyNS {
 
 	/** The description of a version of a model. */
 	export interface ProjectVersionDescription {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)
+		 */
 		ProjectVersionArn?: string | null;
 		CreationTimestamp?: Date | null;
+
+		/** Minimum: 1 */
 		MinInferenceUnits?: number | null;
 		Status?: DeleteProjectVersionResponseStatus | null;
 		StatusMessage?: string | null;
+
+		/** Minimum: 0 */
 		BillableTrainingTimeInSeconds?: number | null;
 		TrainingEndTimestamp?: Date | null;
 
@@ -929,22 +1316,32 @@ export namespace MyNS {
 
 	/** The description of a version of a model. */
 	export interface ProjectVersionDescriptionFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)
+		 */
 		ProjectVersionArn: FormControl<string | null | undefined>,
 		CreationTimestamp: FormControl<Date | null | undefined>,
+
+		/** Minimum: 1 */
 		MinInferenceUnits: FormControl<number | null | undefined>,
 		Status: FormControl<DeleteProjectVersionResponseStatus | null | undefined>,
 		StatusMessage: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		BillableTrainingTimeInSeconds: FormControl<number | null | undefined>,
 		TrainingEndTimestamp: FormControl<Date | null | undefined>,
 	}
 	export function CreateProjectVersionDescriptionFormGroup() {
 		return new FormGroup<ProjectVersionDescriptionFormProperties>({
-			ProjectVersionArn: new FormControl<string | null | undefined>(undefined),
+			ProjectVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 			CreationTimestamp: new FormControl<Date | null | undefined>(undefined),
-			MinInferenceUnits: new FormControl<number | null | undefined>(undefined),
+			MinInferenceUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			Status: new FormControl<DeleteProjectVersionResponseStatus | null | undefined>(undefined),
 			StatusMessage: new FormControl<string | null | undefined>(undefined),
-			BillableTrainingTimeInSeconds: new FormControl<number | null | undefined>(undefined),
+			BillableTrainingTimeInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			TrainingEndTimestamp: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -1028,21 +1425,54 @@ export namespace MyNS {
 	}
 
 	export interface DescribeProjectVersionsRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)
+		 */
 		ProjectArn: string;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		VersionNames?: Array<string>;
+
+		/** Max length: 1024 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface DescribeProjectVersionsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)
+		 */
 		ProjectArn: FormControl<string | null | undefined>,
+
+		/** Max length: 1024 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeProjectVersionsRequestFormGroup() {
 		return new FormGroup<DescribeProjectVersionsRequestFormProperties>({
-			ProjectArn: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			ProjectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -1059,14 +1489,18 @@ export namespace MyNS {
 
 	export interface DescribeProjectsResponse {
 		ProjectDescriptions?: Array<ProjectDescription>;
+
+		/** Max length: 1024 */
 		NextToken?: string | null;
 	}
 	export interface DescribeProjectsResponseFormProperties {
+
+		/** Max length: 1024 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeProjectsResponseFormGroup() {
 		return new FormGroup<DescribeProjectsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1074,6 +1508,12 @@ export namespace MyNS {
 
 	/** A description of a Amazon Rekognition Custom Labels project. */
 	export interface ProjectDescription {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)
+		 */
 		ProjectArn?: string | null;
 		CreationTimestamp?: Date | null;
 		Status?: DeleteProjectResponseStatus | null;
@@ -1081,13 +1521,19 @@ export namespace MyNS {
 
 	/** A description of a Amazon Rekognition Custom Labels project. */
 	export interface ProjectDescriptionFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)
+		 */
 		ProjectArn: FormControl<string | null | undefined>,
 		CreationTimestamp: FormControl<Date | null | undefined>,
 		Status: FormControl<DeleteProjectResponseStatus | null | undefined>,
 	}
 	export function CreateProjectDescriptionFormGroup() {
 		return new FormGroup<ProjectDescriptionFormProperties>({
-			ProjectArn: new FormControl<string | null | undefined>(undefined),
+			ProjectArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 			CreationTimestamp: new FormControl<Date | null | undefined>(undefined),
 			Status: new FormControl<DeleteProjectResponseStatus | null | undefined>(undefined),
 		});
@@ -1095,23 +1541,45 @@ export namespace MyNS {
 	}
 
 	export interface DescribeProjectsRequest {
+
+		/** Max length: 1024 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface DescribeProjectsRequestFormProperties {
+
+		/** Max length: 1024 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeProjectsRequestFormGroup() {
 		return new FormGroup<DescribeProjectsRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface DescribeStreamProcessorResponse {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		Name?: string | null;
+
+		/** Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:streamprocessor\/.+$) */
 		StreamProcessorArn?: string | null;
 		Status?: DescribeStreamProcessorResponseStatus | null;
 		StatusMessage?: string | null;
@@ -1123,23 +1591,35 @@ export namespace MyNS {
 
 		/** Information about the Amazon Kinesis Data Streams stream to which a Amazon Rekognition Video stream processor streams the results of a video analysis. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide. */
 		Output?: StreamProcessorOutput;
+
+		/** Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+ */
 		RoleArn?: string | null;
 
 		/** Input parameters used to recognize faces in a streaming video analyzed by a Amazon Rekognition stream processor. */
 		Settings?: StreamProcessorSettings;
 	}
 	export interface DescribeStreamProcessorResponseFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:streamprocessor\/.+$) */
 		StreamProcessorArn: FormControl<string | null | undefined>,
 		Status: FormControl<DescribeStreamProcessorResponseStatus | null | undefined>,
 		StatusMessage: FormControl<string | null | undefined>,
 		CreationTimestamp: FormControl<Date | null | undefined>,
 		LastUpdateTimestamp: FormControl<Date | null | undefined>,
+
+		/** Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+ */
 		RoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeStreamProcessorResponseFormGroup() {
 		return new FormGroup<DescribeStreamProcessorResponseFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			StreamProcessorArn: new FormControl<string | null | undefined>(undefined),
 			Status: new FormControl<DescribeStreamProcessorResponseStatus | null | undefined>(undefined),
 			StatusMessage: new FormControl<string | null | undefined>(undefined),
@@ -1153,14 +1633,28 @@ export namespace MyNS {
 	export enum DescribeStreamProcessorResponseStatus { STOPPED = 0, STARTING = 1, RUNNING = 2, FAILED = 3, STOPPING = 4 }
 
 	export interface DescribeStreamProcessorRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		Name: string;
 	}
 	export interface DescribeStreamProcessorRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeStreamProcessorRequestFormGroup() {
 		return new FormGroup<DescribeStreamProcessorRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -1180,6 +1674,11 @@ export namespace MyNS {
 	/** A custom label detected in an image by a call to <a>DetectCustomLabels</a>. */
 	export interface CustomLabel {
 		Name?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence?: number | null;
 
 		/** Information about where an object (<a>DetectCustomLabels</a>) or text (<a>DetectText</a>) is located on an image. */
@@ -1189,12 +1688,17 @@ export namespace MyNS {
 	/** A custom label detected in an image by a call to <a>DetectCustomLabels</a>. */
 	export interface CustomLabelFormProperties {
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateCustomLabelFormGroup() {
 		return new FormGroup<CustomLabelFormProperties>({
 			Name: new FormControl<string | null | undefined>(undefined),
-			Confidence: new FormControl<number | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -1238,6 +1742,13 @@ export namespace MyNS {
 	}
 
 	export interface DetectCustomLabelsRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)
+		 */
 		ProjectVersionArn: string;
 
 		/**
@@ -1245,19 +1756,40 @@ export namespace MyNS {
 		 * Required
 		 */
 		Image: Image;
+
+		/** Minimum: 0 */
 		MaxResults?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		MinConfidence?: number | null;
 	}
 	export interface DetectCustomLabelsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)
+		 */
 		ProjectVersionArn: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		MinConfidence: FormControl<number | null | undefined>,
 	}
 	export function CreateDetectCustomLabelsRequestFormGroup() {
 		return new FormGroup<DetectCustomLabelsRequestFormProperties>({
-			ProjectVersionArn: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			MinConfidence: new FormControl<number | null | undefined>(undefined),
+			ProjectVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			MinConfidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -1327,16 +1859,26 @@ export namespace MyNS {
 
 		/** Identifies face image brightness and sharpness. */
 		Quality?: ImageQuality;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence?: number | null;
 	}
 
 	/** <p>Structure containing attributes of the face that the algorithm detected.</p> <p>A <code>FaceDetail</code> object contains either the default facial attributes or all facial attributes. The default attributes are <code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>.</p> <p> <a>GetFaceDetection</a> is the only Amazon Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for <a>StartFaceDetection</a>. The following Amazon Rekognition Video operations return only the default attributes. The corresponding Start operations don't have a <code>FaceAttributes</code> input parameter.</p> <ul> <li> <p>GetCelebrityRecognition</p> </li> <li> <p>GetPersonTracking</p> </li> <li> <p>GetFaceSearch</p> </li> </ul> <p>The Amazon Rekognition Image <a>DetectFaces</a> and <a>IndexFaces</a> operations can return all facial attributes. To specify which attributes to return, use the <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the <code>DetectAttributes</code> input parameter.</p> */
 	export interface FaceDetailFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateFaceDetailFormGroup() {
 		return new FormGroup<FaceDetailFormProperties>({
-			Confidence: new FormControl<number | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -1344,19 +1886,27 @@ export namespace MyNS {
 
 	/** <p>Structure containing the estimated age range, in years, for a face.</p> <p>Amazon Rekognition estimates an age range for faces detected in the input image. Estimated age ranges can overlap. A face of a 5-year-old might have an estimated range of 4-6, while the face of a 6-year-old might have an estimated range of 4-8.</p> */
 	export interface AgeRange {
+
+		/** Minimum: 0 */
 		Low?: number | null;
+
+		/** Minimum: 0 */
 		High?: number | null;
 	}
 
 	/** <p>Structure containing the estimated age range, in years, for a face.</p> <p>Amazon Rekognition estimates an age range for faces detected in the input image. Estimated age ranges can overlap. A face of a 5-year-old might have an estimated range of 4-6, while the face of a 6-year-old might have an estimated range of 4-8.</p> */
 	export interface AgeRangeFormProperties {
+
+		/** Minimum: 0 */
 		Low: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		High: FormControl<number | null | undefined>,
 	}
 	export function CreateAgeRangeFormGroup() {
 		return new FormGroup<AgeRangeFormProperties>({
-			Low: new FormControl<number | null | undefined>(undefined),
-			High: new FormControl<number | null | undefined>(undefined),
+			Low: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			High: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -1365,18 +1915,28 @@ export namespace MyNS {
 	/** Indicates whether or not the face is smiling, and the confidence level in the determination. */
 	export interface Smile {
 		Value?: boolean | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence?: number | null;
 	}
 
 	/** Indicates whether or not the face is smiling, and the confidence level in the determination. */
 	export interface SmileFormProperties {
 		Value: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateSmileFormGroup() {
 		return new FormGroup<SmileFormProperties>({
 			Value: new FormControl<boolean | null | undefined>(undefined),
-			Confidence: new FormControl<number | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -1385,18 +1945,28 @@ export namespace MyNS {
 	/** Indicates whether or not the face is wearing eye glasses, and the confidence level in the determination. */
 	export interface Eyeglasses {
 		Value?: boolean | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence?: number | null;
 	}
 
 	/** Indicates whether or not the face is wearing eye glasses, and the confidence level in the determination. */
 	export interface EyeglassesFormProperties {
 		Value: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateEyeglassesFormGroup() {
 		return new FormGroup<EyeglassesFormProperties>({
 			Value: new FormControl<boolean | null | undefined>(undefined),
-			Confidence: new FormControl<number | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -1405,18 +1975,28 @@ export namespace MyNS {
 	/** Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination. */
 	export interface Sunglasses {
 		Value?: boolean | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence?: number | null;
 	}
 
 	/** Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination. */
 	export interface SunglassesFormProperties {
 		Value: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateSunglassesFormGroup() {
 		return new FormGroup<SunglassesFormProperties>({
 			Value: new FormControl<boolean | null | undefined>(undefined),
-			Confidence: new FormControl<number | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -1425,18 +2005,28 @@ export namespace MyNS {
 	/** <p>The predicted gender of a detected face. </p> <p>Amazon Rekognition makes gender binary (male/female) predictions based on the physical appearance of a face in a particular image. This kind of prediction is not designed to categorize a person’s gender identity, and you shouldn't use Amazon Rekognition to make such a determination. For example, a male actor wearing a long-haired wig and earrings for a role might be predicted as female.</p> <p>Using Amazon Rekognition to make gender binary predictions is best suited for use cases where aggregate gender distribution statistics need to be analyzed without identifying specific users. For example, the percentage of female users compared to male users on a social media platform. </p> <p>We don't recommend using gender binary predictions to make decisions that impact&#x2028; an individual's rights, privacy, or access to services.</p> */
 	export interface Gender {
 		Value?: GenderValue | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence?: number | null;
 	}
 
 	/** <p>The predicted gender of a detected face. </p> <p>Amazon Rekognition makes gender binary (male/female) predictions based on the physical appearance of a face in a particular image. This kind of prediction is not designed to categorize a person’s gender identity, and you shouldn't use Amazon Rekognition to make such a determination. For example, a male actor wearing a long-haired wig and earrings for a role might be predicted as female.</p> <p>Using Amazon Rekognition to make gender binary predictions is best suited for use cases where aggregate gender distribution statistics need to be analyzed without identifying specific users. For example, the percentage of female users compared to male users on a social media platform. </p> <p>We don't recommend using gender binary predictions to make decisions that impact&#x2028; an individual's rights, privacy, or access to services.</p> */
 	export interface GenderFormProperties {
 		Value: FormControl<GenderValue | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGenderFormGroup() {
 		return new FormGroup<GenderFormProperties>({
 			Value: new FormControl<GenderValue | null | undefined>(undefined),
-			Confidence: new FormControl<number | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -1447,18 +2037,28 @@ export namespace MyNS {
 	/** Indicates whether or not the face has a beard, and the confidence level in the determination. */
 	export interface Beard {
 		Value?: boolean | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence?: number | null;
 	}
 
 	/** Indicates whether or not the face has a beard, and the confidence level in the determination. */
 	export interface BeardFormProperties {
 		Value: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateBeardFormGroup() {
 		return new FormGroup<BeardFormProperties>({
 			Value: new FormControl<boolean | null | undefined>(undefined),
-			Confidence: new FormControl<number | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -1467,18 +2067,28 @@ export namespace MyNS {
 	/** Indicates whether or not the face has a mustache, and the confidence level in the determination. */
 	export interface Mustache {
 		Value?: boolean | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence?: number | null;
 	}
 
 	/** Indicates whether or not the face has a mustache, and the confidence level in the determination. */
 	export interface MustacheFormProperties {
 		Value: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateMustacheFormGroup() {
 		return new FormGroup<MustacheFormProperties>({
 			Value: new FormControl<boolean | null | undefined>(undefined),
-			Confidence: new FormControl<number | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -1487,18 +2097,28 @@ export namespace MyNS {
 	/** Indicates whether or not the eyes on the face are open, and the confidence level in the determination. */
 	export interface EyeOpen {
 		Value?: boolean | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence?: number | null;
 	}
 
 	/** Indicates whether or not the eyes on the face are open, and the confidence level in the determination. */
 	export interface EyeOpenFormProperties {
 		Value: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateEyeOpenFormGroup() {
 		return new FormGroup<EyeOpenFormProperties>({
 			Value: new FormControl<boolean | null | undefined>(undefined),
-			Confidence: new FormControl<number | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -1507,18 +2127,28 @@ export namespace MyNS {
 	/** Indicates whether or not the mouth on the face is open, and the confidence level in the determination. */
 	export interface MouthOpen {
 		Value?: boolean | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence?: number | null;
 	}
 
 	/** Indicates whether or not the mouth on the face is open, and the confidence level in the determination. */
 	export interface MouthOpenFormProperties {
 		Value: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateMouthOpenFormGroup() {
 		return new FormGroup<MouthOpenFormProperties>({
 			Value: new FormControl<boolean | null | undefined>(undefined),
-			Confidence: new FormControl<number | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -1527,18 +2157,28 @@ export namespace MyNS {
 	/** The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally. */
 	export interface Emotion {
 		Type?: EmotionType | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence?: number | null;
 	}
 
 	/** The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally. */
 	export interface EmotionFormProperties {
 		Type: FormControl<EmotionType | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateEmotionFormGroup() {
 		return new FormGroup<EmotionFormProperties>({
 			Type: new FormControl<EmotionType | null | undefined>(undefined),
-			Confidence: new FormControl<number | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -1585,6 +2225,11 @@ export namespace MyNS {
 	/** <p>Structure containing details about the detected label, including the name, detected instances, parent labels, and level of confidence.</p> <p> </p> */
 	export interface Label {
 		Name?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence?: number | null;
 		Instances?: Array<Instance>;
 		Parents?: Array<Parent>;
@@ -1593,12 +2238,17 @@ export namespace MyNS {
 	/** <p>Structure containing details about the detected label, including the name, detected instances, parent labels, and level of confidence.</p> <p> </p> */
 	export interface LabelFormProperties {
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateLabelFormGroup() {
 		return new FormGroup<LabelFormProperties>({
 			Name: new FormControl<string | null | undefined>(undefined),
-			Confidence: new FormControl<number | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -1609,16 +2259,26 @@ export namespace MyNS {
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
 		BoundingBox?: BoundingBox;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence?: number | null;
 	}
 
 	/** An instance of a label returned by Amazon Rekognition Image (<a>DetectLabels</a>) or by Amazon Rekognition Video (<a>GetLabelDetection</a>). */
 	export interface InstanceFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateInstanceFormGroup() {
 		return new FormGroup<InstanceFormProperties>({
-			Confidence: new FormControl<number | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -1647,17 +2307,31 @@ export namespace MyNS {
 		 * Required
 		 */
 		Image: Image;
+
+		/** Minimum: 0 */
 		MaxLabels?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		MinConfidence?: number | null;
 	}
 	export interface DetectLabelsRequestFormProperties {
+
+		/** Minimum: 0 */
 		MaxLabels: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		MinConfidence: FormControl<number | null | undefined>,
 	}
 	export function CreateDetectLabelsRequestFormGroup() {
 		return new FormGroup<DetectLabelsRequestFormProperties>({
-			MaxLabels: new FormControl<number | null | undefined>(undefined),
-			MinConfidence: new FormControl<number | null | undefined>(undefined),
+			MaxLabels: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			MinConfidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -1682,6 +2356,11 @@ export namespace MyNS {
 
 	/** Provides information about a single type of unsafe content found in an image or video. Each type of moderated content has a label within a hierarchical taxonomy. For more information, see Detecting Unsafe Content in the Amazon Rekognition Developer Guide. */
 	export interface ModerationLabel {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence?: number | null;
 		Name?: string | null;
 		ParentName?: string | null;
@@ -1689,13 +2368,18 @@ export namespace MyNS {
 
 	/** Provides information about a single type of unsafe content found in an image or video. Each type of moderated content has a label within a hierarchical taxonomy. For more information, see Detecting Unsafe Content in the Amazon Rekognition Developer Guide. */
 	export interface ModerationLabelFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence: FormControl<number | null | undefined>,
 		Name: FormControl<string | null | undefined>,
 		ParentName: FormControl<string | null | undefined>,
 	}
 	export function CreateModerationLabelFormGroup() {
 		return new FormGroup<ModerationLabelFormProperties>({
-			Confidence: new FormControl<number | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			Name: new FormControl<string | null | undefined>(undefined),
 			ParentName: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1705,20 +2389,30 @@ export namespace MyNS {
 
 	/** Shows the results of the human in the loop evaluation. If there is no HumanLoopArn, the input did not trigger human review. */
 	export interface HumanLoopActivationOutput {
+
+		/** Max length: 256 */
 		HumanLoopArn?: string | null;
+
+		/** Minimum items: 1 */
 		HumanLoopActivationReasons?: Array<string>;
+
+		/** Max length: 10240 */
 		HumanLoopActivationConditionsEvaluationResults?: string | null;
 	}
 
 	/** Shows the results of the human in the loop evaluation. If there is no HumanLoopArn, the input did not trigger human review. */
 	export interface HumanLoopActivationOutputFormProperties {
+
+		/** Max length: 256 */
 		HumanLoopArn: FormControl<string | null | undefined>,
+
+		/** Max length: 10240 */
 		HumanLoopActivationConditionsEvaluationResults: FormControl<string | null | undefined>,
 	}
 	export function CreateHumanLoopActivationOutputFormGroup() {
 		return new FormGroup<HumanLoopActivationOutputFormProperties>({
-			HumanLoopArn: new FormControl<string | null | undefined>(undefined),
-			HumanLoopActivationConditionsEvaluationResults: new FormControl<string | null | undefined>(undefined),
+			HumanLoopArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			HumanLoopActivationConditionsEvaluationResults: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10240)]),
 		});
 
 	}
@@ -1730,17 +2424,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		Image: Image;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		MinConfidence?: number | null;
 
 		/** Sets up the flow definition the image will be sent to if one of the conditions is met. You can also set certain attributes of the image before review. */
 		HumanLoopConfig?: HumanLoopConfig;
 	}
 	export interface DetectModerationLabelsRequestFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		MinConfidence: FormControl<number | null | undefined>,
 	}
 	export function CreateDetectModerationLabelsRequestFormGroup() {
 		return new FormGroup<DetectModerationLabelsRequestFormProperties>({
-			MinConfidence: new FormControl<number | null | undefined>(undefined),
+			MinConfidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -1748,7 +2452,19 @@ export namespace MyNS {
 
 	/** Sets up the flow definition the image will be sent to if one of the conditions is met. You can also set certain attributes of the image before review. */
 	export interface HumanLoopConfig {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-z0-9](-*[a-z0-9])*
+		 */
 		HumanLoopName: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 */
 		FlowDefinitionArn: string;
 
 		/** Allows you to set attributes of the image. Currently, you can declare an image as free of personally identifiable information. */
@@ -1757,13 +2473,25 @@ export namespace MyNS {
 
 	/** Sets up the flow definition the image will be sent to if one of the conditions is met. You can also set certain attributes of the image before review. */
 	export interface HumanLoopConfigFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-z0-9](-*[a-z0-9])*
+		 */
 		HumanLoopName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 */
 		FlowDefinitionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateHumanLoopConfigFormGroup() {
 		return new FormGroup<HumanLoopConfigFormProperties>({
-			HumanLoopName: new FormControl<string | null | undefined>(undefined),
-			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined),
+			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
+			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
@@ -1771,6 +2499,8 @@ export namespace MyNS {
 
 	/** Allows you to set attributes of the image. Currently, you can declare an image as free of personally identifiable information. */
 	export interface HumanLoopDataAttributes {
+
+		/** Maximum items: 256 */
 		ContentClassifiers?: Array<ContentClassifier>;
 	}
 
@@ -1814,8 +2544,17 @@ export namespace MyNS {
 	export interface TextDetection {
 		DetectedText?: string | null;
 		Type?: TextDetectionType | null;
+
+		/** Minimum: 0 */
 		Id?: number | null;
+
+		/** Minimum: 0 */
 		ParentId?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence?: number | null;
 
 		/** Information about where an object (<a>DetectCustomLabels</a>) or text (<a>DetectText</a>) is located on an image. */
@@ -1826,17 +2565,26 @@ export namespace MyNS {
 	export interface TextDetectionFormProperties {
 		DetectedText: FormControl<string | null | undefined>,
 		Type: FormControl<TextDetectionType | null | undefined>,
+
+		/** Minimum: 0 */
 		Id: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		ParentId: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateTextDetectionFormGroup() {
 		return new FormGroup<TextDetectionFormProperties>({
 			DetectedText: new FormControl<string | null | undefined>(undefined),
 			Type: new FormControl<TextDetectionType | null | undefined>(undefined),
-			Id: new FormControl<number | null | undefined>(undefined),
-			ParentId: new FormControl<number | null | undefined>(undefined),
-			Confidence: new FormControl<number | null | undefined>(undefined),
+			Id: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			ParentId: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			Confidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -1868,6 +2616,11 @@ export namespace MyNS {
 
 		/** A set of parameters that allow you to filter out certain results from your returned results. */
 		WordFilter?: DetectionFilter;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		RegionsOfInterest?: Array<RegionOfInterest>;
 	}
 
@@ -1883,22 +2636,52 @@ export namespace MyNS {
 
 	/** A set of parameters that allow you to filter out certain results from your returned results. */
 	export interface DetectionFilter {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		MinConfidence?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1
+		 */
 		MinBoundingBoxHeight?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1
+		 */
 		MinBoundingBoxWidth?: number | null;
 	}
 
 	/** A set of parameters that allow you to filter out certain results from your returned results. */
 	export interface DetectionFilterFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		MinConfidence: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1
+		 */
 		MinBoundingBoxHeight: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1
+		 */
 		MinBoundingBoxWidth: FormControl<number | null | undefined>,
 	}
 	export function CreateDetectionFilterFormGroup() {
 		return new FormGroup<DetectionFilterFormProperties>({
-			MinConfidence: new FormControl<number | null | undefined>(undefined),
-			MinBoundingBoxHeight: new FormControl<number | null | undefined>(undefined),
-			MinBoundingBoxWidth: new FormControl<number | null | undefined>(undefined),
+			MinConfidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			MinBoundingBoxHeight: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1)]),
+			MinBoundingBoxWidth: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1)]),
 		});
 
 	}
@@ -1935,14 +2718,24 @@ export namespace MyNS {
 	}
 
 	export interface GetCelebrityInfoRequest {
+
+		/**
+		 * Required
+		 * Pattern: [0-9A-Za-z]*
+		 */
 		Id: string;
 	}
 	export interface GetCelebrityInfoRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: [0-9A-Za-z]*
+		 */
 		Id: FormControl<string | null | undefined>,
 	}
 	export function CreateGetCelebrityInfoRequestFormGroup() {
 		return new FormGroup<GetCelebrityInfoRequestFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1953,19 +2746,23 @@ export namespace MyNS {
 
 		/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
 		VideoMetadata?: VideoMetadata;
+
+		/** Max length: 255 */
 		NextToken?: string | null;
 		Celebrities?: Array<CelebrityRecognition>;
 	}
 	export interface GetCelebrityRecognitionResponseFormProperties {
 		JobStatus: FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>,
 		StatusMessage: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetCelebrityRecognitionResponseFormGroup() {
 		return new FormGroup<GetCelebrityRecognitionResponseFormProperties>({
 			JobStatus: new FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>(undefined),
 			StatusMessage: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -1976,30 +2773,42 @@ export namespace MyNS {
 	/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
 	export interface VideoMetadata {
 		Codec?: string | null;
+
+		/** Minimum: 0 */
 		DurationMillis?: number | null;
 		Format?: string | null;
 		FrameRate?: number | null;
+
+		/** Minimum: 0 */
 		FrameHeight?: number | null;
+
+		/** Minimum: 0 */
 		FrameWidth?: number | null;
 	}
 
 	/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
 	export interface VideoMetadataFormProperties {
 		Codec: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		DurationMillis: FormControl<number | null | undefined>,
 		Format: FormControl<string | null | undefined>,
 		FrameRate: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		FrameHeight: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		FrameWidth: FormControl<number | null | undefined>,
 	}
 	export function CreateVideoMetadataFormGroup() {
 		return new FormGroup<VideoMetadataFormProperties>({
 			Codec: new FormControl<string | null | undefined>(undefined),
-			DurationMillis: new FormControl<number | null | undefined>(undefined),
+			DurationMillis: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			Format: new FormControl<string | null | undefined>(undefined),
 			FrameRate: new FormControl<number | null | undefined>(undefined),
-			FrameHeight: new FormControl<number | null | undefined>(undefined),
-			FrameWidth: new FormControl<number | null | undefined>(undefined),
+			FrameHeight: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			FrameWidth: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -2029,7 +2838,14 @@ export namespace MyNS {
 	export interface CelebrityDetail {
 		Urls?: Array<string>;
 		Name?: string | null;
+
+		/** Pattern: [0-9A-Za-z]* */
 		Id?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence?: number | null;
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
@@ -2042,35 +2858,64 @@ export namespace MyNS {
 	/** Information about a recognized celebrity. */
 	export interface CelebrityDetailFormProperties {
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: [0-9A-Za-z]* */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateCelebrityDetailFormGroup() {
 		return new FormGroup<CelebrityDetailFormProperties>({
 			Name: new FormControl<string | null | undefined>(undefined),
 			Id: new FormControl<string | null | undefined>(undefined),
-			Confidence: new FormControl<number | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
 
 	export interface GetCelebrityRecognitionRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: string;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
+
+		/** Max length: 255 */
 		NextToken?: string | null;
 		SortBy?: GetCelebrityRecognitionRequestSortBy | null;
 	}
 	export interface GetCelebrityRecognitionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
 		SortBy: FormControl<GetCelebrityRecognitionRequestSortBy | null | undefined>,
 	}
 	export function CreateGetCelebrityRecognitionRequestFormGroup() {
 		return new FormGroup<GetCelebrityRecognitionRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			SortBy: new FormControl<GetCelebrityRecognitionRequestSortBy | null | undefined>(undefined),
 		});
 
@@ -2085,12 +2930,16 @@ export namespace MyNS {
 		/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
 		VideoMetadata?: VideoMetadata;
 		ModerationLabels?: Array<ContentModerationDetection>;
+
+		/** Max length: 255 */
 		NextToken?: string | null;
 		ModerationModelVersion?: string | null;
 	}
 	export interface GetContentModerationResponseFormProperties {
 		JobStatus: FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>,
 		StatusMessage: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
 		ModerationModelVersion: FormControl<string | null | undefined>,
 	}
@@ -2098,7 +2947,7 @@ export namespace MyNS {
 		return new FormGroup<GetContentModerationResponseFormProperties>({
 			JobStatus: new FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>(undefined),
 			StatusMessage: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			ModerationModelVersion: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2125,22 +2974,44 @@ export namespace MyNS {
 	}
 
 	export interface GetContentModerationRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: string;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
+
+		/** Max length: 255 */
 		NextToken?: string | null;
 		SortBy?: GetContentModerationRequestSortBy | null;
 	}
 	export interface GetContentModerationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
 		SortBy: FormControl<GetContentModerationRequestSortBy | null | undefined>,
 	}
 	export function CreateGetContentModerationRequestFormGroup() {
 		return new FormGroup<GetContentModerationRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			SortBy: new FormControl<GetContentModerationRequestSortBy | null | undefined>(undefined),
 		});
 
@@ -2154,19 +3025,23 @@ export namespace MyNS {
 
 		/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
 		VideoMetadata?: VideoMetadata;
+
+		/** Max length: 255 */
 		NextToken?: string | null;
 		Faces?: Array<FaceDetection>;
 	}
 	export interface GetFaceDetectionResponseFormProperties {
 		JobStatus: FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>,
 		StatusMessage: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetFaceDetectionResponseFormGroup() {
 		return new FormGroup<GetFaceDetectionResponseFormProperties>({
 			JobStatus: new FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>(undefined),
 			StatusMessage: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -2192,20 +3067,42 @@ export namespace MyNS {
 	}
 
 	export interface GetFaceDetectionRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: string;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
+
+		/** Max length: 255 */
 		NextToken?: string | null;
 	}
 	export interface GetFaceDetectionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetFaceDetectionRequestFormGroup() {
 		return new FormGroup<GetFaceDetectionRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -2213,6 +3110,8 @@ export namespace MyNS {
 	export interface GetFaceSearchResponse {
 		JobStatus?: GetCelebrityRecognitionResponseJobStatus | null;
 		StatusMessage?: string | null;
+
+		/** Max length: 255 */
 		NextToken?: string | null;
 
 		/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
@@ -2222,13 +3121,15 @@ export namespace MyNS {
 	export interface GetFaceSearchResponseFormProperties {
 		JobStatus: FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>,
 		StatusMessage: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetFaceSearchResponseFormGroup() {
 		return new FormGroup<GetFaceSearchResponseFormProperties>({
 			JobStatus: new FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>(undefined),
 			StatusMessage: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -2280,6 +3181,11 @@ export namespace MyNS {
 
 	/** Provides face metadata. In addition, it also provides the confidence in the match of this face with the input face. */
 	export interface FaceMatch {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Similarity?: number | null;
 
 		/** Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned. */
@@ -2288,11 +3194,16 @@ export namespace MyNS {
 
 	/** Provides face metadata. In addition, it also provides the confidence in the match of this face with the input face. */
 	export interface FaceMatchFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Similarity: FormControl<number | null | undefined>,
 	}
 	export function CreateFaceMatchFormGroup() {
 		return new FormGroup<FaceMatchFormProperties>({
-			Similarity: new FormControl<number | null | undefined>(undefined),
+			Similarity: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -2300,49 +3211,101 @@ export namespace MyNS {
 
 	/** Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned.  */
 	export interface Face {
+
+		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		FaceId?: string | null;
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
 		BoundingBox?: BoundingBox;
+
+		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		ImageId?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-:]+
+		 */
 		ExternalImageId?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence?: number | null;
 	}
 
 	/** Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned.  */
 	export interface FaceFormProperties {
+
+		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		FaceId: FormControl<string | null | undefined>,
+
+		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		ImageId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-:]+
+		 */
 		ExternalImageId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateFaceFormGroup() {
 		return new FormGroup<FaceFormProperties>({
 			FaceId: new FormControl<string | null | undefined>(undefined),
 			ImageId: new FormControl<string | null | undefined>(undefined),
-			ExternalImageId: new FormControl<string | null | undefined>(undefined),
-			Confidence: new FormControl<number | null | undefined>(undefined),
+			ExternalImageId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			Confidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
 
 	export interface GetFaceSearchRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: string;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
+
+		/** Max length: 255 */
 		NextToken?: string | null;
 		SortBy?: GetFaceSearchRequestSortBy | null;
 	}
 	export interface GetFaceSearchRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
 		SortBy: FormControl<GetFaceSearchRequestSortBy | null | undefined>,
 	}
 	export function CreateGetFaceSearchRequestFormGroup() {
 		return new FormGroup<GetFaceSearchRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			SortBy: new FormControl<GetFaceSearchRequestSortBy | null | undefined>(undefined),
 		});
 
@@ -2356,6 +3319,8 @@ export namespace MyNS {
 
 		/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
 		VideoMetadata?: VideoMetadata;
+
+		/** Max length: 255 */
 		NextToken?: string | null;
 		Labels?: Array<LabelDetection>;
 		LabelModelVersion?: string | null;
@@ -2363,6 +3328,8 @@ export namespace MyNS {
 	export interface GetLabelDetectionResponseFormProperties {
 		JobStatus: FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>,
 		StatusMessage: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
 		LabelModelVersion: FormControl<string | null | undefined>,
 	}
@@ -2370,7 +3337,7 @@ export namespace MyNS {
 		return new FormGroup<GetLabelDetectionResponseFormProperties>({
 			JobStatus: new FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>(undefined),
 			StatusMessage: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			LabelModelVersion: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2397,22 +3364,44 @@ export namespace MyNS {
 	}
 
 	export interface GetLabelDetectionRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: string;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
+
+		/** Max length: 255 */
 		NextToken?: string | null;
 		SortBy?: GetContentModerationRequestSortBy | null;
 	}
 	export interface GetLabelDetectionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
 		SortBy: FormControl<GetContentModerationRequestSortBy | null | undefined>,
 	}
 	export function CreateGetLabelDetectionRequestFormGroup() {
 		return new FormGroup<GetLabelDetectionRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			SortBy: new FormControl<GetContentModerationRequestSortBy | null | undefined>(undefined),
 		});
 
@@ -2424,19 +3413,23 @@ export namespace MyNS {
 
 		/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
 		VideoMetadata?: VideoMetadata;
+
+		/** Max length: 255 */
 		NextToken?: string | null;
 		Persons?: Array<PersonDetection>;
 	}
 	export interface GetPersonTrackingResponseFormProperties {
 		JobStatus: FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>,
 		StatusMessage: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetPersonTrackingResponseFormGroup() {
 		return new FormGroup<GetPersonTrackingResponseFormProperties>({
 			JobStatus: new FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>(undefined),
 			StatusMessage: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -2462,22 +3455,44 @@ export namespace MyNS {
 	}
 
 	export interface GetPersonTrackingRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: string;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
+
+		/** Max length: 255 */
 		NextToken?: string | null;
 		SortBy?: GetFaceSearchRequestSortBy | null;
 	}
 	export interface GetPersonTrackingRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
 		SortBy: FormControl<GetFaceSearchRequestSortBy | null | undefined>,
 	}
 	export function CreateGetPersonTrackingRequestFormGroup() {
 		return new FormGroup<GetPersonTrackingRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			SortBy: new FormControl<GetFaceSearchRequestSortBy | null | undefined>(undefined),
 		});
 
@@ -2490,12 +3505,16 @@ export namespace MyNS {
 		/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
 		VideoMetadata?: VideoMetadata;
 		TextDetections?: Array<TextDetectionResult>;
+
+		/** Max length: 255 */
 		NextToken?: string | null;
 		TextModelVersion?: string | null;
 	}
 	export interface GetTextDetectionResponseFormProperties {
 		JobStatus: FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>,
 		StatusMessage: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
 		TextModelVersion: FormControl<string | null | undefined>,
 	}
@@ -2503,7 +3522,7 @@ export namespace MyNS {
 		return new FormGroup<GetTextDetectionResponseFormProperties>({
 			JobStatus: new FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>(undefined),
 			StatusMessage: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			TextModelVersion: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2530,20 +3549,42 @@ export namespace MyNS {
 	}
 
 	export interface GetTextDetectionRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: string;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
+
+		/** Max length: 255 */
 		NextToken?: string | null;
 	}
 	export interface GetTextDetectionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTextDetectionRequestFormGroup() {
 		return new FormGroup<GetTextDetectionRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -2607,6 +3648,13 @@ export namespace MyNS {
 	export enum Reason { EXCEEDS_MAX_FACES = 0, EXTREME_POSE = 1, LOW_BRIGHTNESS = 2, LOW_SHARPNESS = 3, LOW_CONFIDENCE = 4, SMALL_BOUNDING_BOX = 5, LOW_FACE_QUALITY = 6 }
 
 	export interface IndexFacesRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		CollectionId: string;
 
 		/**
@@ -2614,22 +3662,45 @@ export namespace MyNS {
 		 * Required
 		 */
 		Image: Image;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-:]+
+		 */
 		ExternalImageId?: string | null;
 		DetectionAttributes?: Array<Attribute>;
+
+		/** Minimum: 1 */
 		MaxFaces?: number | null;
 		QualityFilter?: CompareFacesRequestQualityFilter | null;
 	}
 	export interface IndexFacesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		CollectionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-:]+
+		 */
 		ExternalImageId: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxFaces: FormControl<number | null | undefined>,
 		QualityFilter: FormControl<CompareFacesRequestQualityFilter | null | undefined>,
 	}
 	export function CreateIndexFacesRequestFormGroup() {
 		return new FormGroup<IndexFacesRequestFormProperties>({
-			CollectionId: new FormControl<string | null | undefined>(undefined),
-			ExternalImageId: new FormControl<string | null | undefined>(undefined),
-			MaxFaces: new FormControl<number | null | undefined>(undefined),
+			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			ExternalImageId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			MaxFaces: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			QualityFilter: new FormControl<CompareFacesRequestQualityFilter | null | undefined>(undefined),
 		});
 
@@ -2637,31 +3708,49 @@ export namespace MyNS {
 
 	export interface ListCollectionsResponse {
 		CollectionIds?: Array<string>;
+
+		/** Max length: 255 */
 		NextToken?: string | null;
 		FaceModelVersions?: Array<string>;
 	}
 	export interface ListCollectionsResponseFormProperties {
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListCollectionsResponseFormGroup() {
 		return new FormGroup<ListCollectionsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
 
 	export interface ListCollectionsRequest {
+
+		/** Max length: 255 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 4096
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListCollectionsRequestFormProperties {
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 4096
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListCollectionsRequestFormGroup() {
 		return new FormGroup<ListCollectionsRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(4096)]),
 		});
 
 	}
@@ -2684,34 +3773,66 @@ export namespace MyNS {
 	}
 
 	export interface ListFacesRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		CollectionId: string;
+
+		/** Max length: 255 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 4096
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListFacesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		CollectionId: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 4096
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListFacesRequestFormGroup() {
 		return new FormGroup<ListFacesRequestFormProperties>({
-			CollectionId: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(4096)]),
 		});
 
 	}
 
 	export interface ListStreamProcessorsResponse {
+
+		/** Max length: 255 */
 		NextToken?: string | null;
 		StreamProcessors?: Array<StreamProcessor>;
 	}
 	export interface ListStreamProcessorsResponseFormProperties {
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListStreamProcessorsResponseFormGroup() {
 		return new FormGroup<ListStreamProcessorsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -2719,35 +3840,55 @@ export namespace MyNS {
 
 	/** An object that recognizes faces in a streaming video. An Amazon Rekognition stream processor is created by a call to <a>CreateStreamProcessor</a>. The request parameters for <code>CreateStreamProcessor</code> describe the Kinesis video stream source for the streaming video, face recognition parameters, and where to stream the analysis resullts.  */
 	export interface StreamProcessor {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		Name?: string | null;
 		Status?: DescribeStreamProcessorResponseStatus | null;
 	}
 
 	/** An object that recognizes faces in a streaming video. An Amazon Rekognition stream processor is created by a call to <a>CreateStreamProcessor</a>. The request parameters for <code>CreateStreamProcessor</code> describe the Kinesis video stream source for the streaming video, face recognition parameters, and where to stream the analysis resullts.  */
 	export interface StreamProcessorFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		Name: FormControl<string | null | undefined>,
 		Status: FormControl<DescribeStreamProcessorResponseStatus | null | undefined>,
 	}
 	export function CreateStreamProcessorFormGroup() {
 		return new FormGroup<StreamProcessorFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			Status: new FormControl<DescribeStreamProcessorResponseStatus | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ListStreamProcessorsRequest {
+
+		/** Max length: 255 */
 		NextToken?: string | null;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 	}
 	export interface ListStreamProcessorsRequestFormProperties {
+
+		/** Max length: 255 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListStreamProcessorsRequestFormGroup() {
 		return new FormGroup<ListStreamProcessorsRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -2772,24 +3913,38 @@ export namespace MyNS {
 	export interface Celebrity {
 		Urls?: Array<string>;
 		Name?: string | null;
+
+		/** Pattern: [0-9A-Za-z]* */
 		Id?: string | null;
 
 		/** Provides face metadata for target image faces that are analyzed by <code>CompareFaces</code> and <code>RecognizeCelebrities</code>. */
 		Face?: ComparedFace;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		MatchConfidence?: number | null;
 	}
 
 	/** Provides information about a celebrity recognized by the <a>RecognizeCelebrities</a> operation. */
 	export interface CelebrityFormProperties {
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: [0-9A-Za-z]* */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		MatchConfidence: FormControl<number | null | undefined>,
 	}
 	export function CreateCelebrityFormGroup() {
 		return new FormGroup<CelebrityFormProperties>({
 			Name: new FormControl<string | null | undefined>(undefined),
 			Id: new FormControl<string | null | undefined>(undefined),
-			MatchConfidence: new FormControl<number | null | undefined>(undefined),
+			MatchConfidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -2811,11 +3966,15 @@ export namespace MyNS {
 	}
 
 	export interface SearchFacesResponse {
+
+		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		SearchedFaceId?: string | null;
 		FaceMatches?: Array<FaceMatch>;
 		FaceModelVersion?: string | null;
 	}
 	export interface SearchFacesResponseFormProperties {
+
+		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		SearchedFaceId: FormControl<string | null | undefined>,
 		FaceModelVersion: FormControl<string | null | undefined>,
 	}
@@ -2828,23 +3987,67 @@ export namespace MyNS {
 	}
 
 	export interface SearchFacesRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		CollectionId: string;
+
+		/**
+		 * Required
+		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		FaceId: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 4096
+		 */
 		MaxFaces?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		FaceMatchThreshold?: number | null;
 	}
 	export interface SearchFacesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		CollectionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		FaceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 4096
+		 */
 		MaxFaces: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		FaceMatchThreshold: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchFacesRequestFormGroup() {
 		return new FormGroup<SearchFacesRequestFormProperties>({
-			CollectionId: new FormControl<string | null | undefined>(undefined),
-			FaceId: new FormControl<string | null | undefined>(undefined),
-			MaxFaces: new FormControl<number | null | undefined>(undefined),
-			FaceMatchThreshold: new FormControl<number | null | undefined>(undefined),
+			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			FaceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MaxFaces: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(4096)]),
+			FaceMatchThreshold: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -2853,23 +4056,40 @@ export namespace MyNS {
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
 		SearchedFaceBoundingBox?: BoundingBox;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		SearchedFaceConfidence?: number | null;
 		FaceMatches?: Array<FaceMatch>;
 		FaceModelVersion?: string | null;
 	}
 	export interface SearchFacesByImageResponseFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		SearchedFaceConfidence: FormControl<number | null | undefined>,
 		FaceModelVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateSearchFacesByImageResponseFormGroup() {
 		return new FormGroup<SearchFacesByImageResponseFormProperties>({
-			SearchedFaceConfidence: new FormControl<number | null | undefined>(undefined),
+			SearchedFaceConfidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			FaceModelVersion: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface SearchFacesByImageRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		CollectionId: string;
 
 		/**
@@ -2877,35 +4097,74 @@ export namespace MyNS {
 		 * Required
 		 */
 		Image: Image;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 4096
+		 */
 		MaxFaces?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		FaceMatchThreshold?: number | null;
 		QualityFilter?: CompareFacesRequestQualityFilter | null;
 	}
 	export interface SearchFacesByImageRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		CollectionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 4096
+		 */
 		MaxFaces: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		FaceMatchThreshold: FormControl<number | null | undefined>,
 		QualityFilter: FormControl<CompareFacesRequestQualityFilter | null | undefined>,
 	}
 	export function CreateSearchFacesByImageRequestFormGroup() {
 		return new FormGroup<SearchFacesByImageRequestFormProperties>({
-			CollectionId: new FormControl<string | null | undefined>(undefined),
-			MaxFaces: new FormControl<number | null | undefined>(undefined),
-			FaceMatchThreshold: new FormControl<number | null | undefined>(undefined),
+			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			MaxFaces: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(4096)]),
+			FaceMatchThreshold: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			QualityFilter: new FormControl<CompareFacesRequestQualityFilter | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface StartCelebrityRecognitionResponse {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId?: string | null;
 	}
 	export interface StartCelebrityRecognitionResponseFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartCelebrityRecognitionResponseFormGroup() {
 		return new FormGroup<StartCelebrityRecognitionResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -2917,20 +4176,44 @@ export namespace MyNS {
 		 * Required
 		 */
 		Video: Video;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		ClientRequestToken?: string | null;
 
 		/** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. */
 		NotificationChannel?: NotificationChannel;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-:]+
+		 */
 		JobTag?: string | null;
 	}
 	export interface StartCelebrityRecognitionRequestFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-:]+
+		 */
 		JobTag: FormControl<string | null | undefined>,
 	}
 	export function CreateStartCelebrityRecognitionRequestFormGroup() {
 		return new FormGroup<StartCelebrityRecognitionRequestFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
-			JobTag: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -2955,19 +4238,39 @@ export namespace MyNS {
 
 	/** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. */
 	export interface NotificationChannel {
+
+		/**
+		 * Required
+		 * Pattern: (^arn:aws:sns:.*:\w{12}:.+$)
+		 */
 		SNSTopicArn: string;
+
+		/**
+		 * Required
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleArn: string;
 	}
 
 	/** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. */
 	export interface NotificationChannelFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: (^arn:aws:sns:.*:\w{12}:.+$)
+		 */
 		SNSTopicArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateNotificationChannelFormGroup() {
 		return new FormGroup<NotificationChannelFormProperties>({
-			SNSTopicArn: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			SNSTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2993,14 +4296,26 @@ export namespace MyNS {
 	}
 
 	export interface StartContentModerationResponse {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId?: string | null;
 	}
 	export interface StartContentModerationResponseFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartContentModerationResponseFormGroup() {
 		return new FormGroup<StartContentModerationResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -3012,36 +4327,82 @@ export namespace MyNS {
 		 * Required
 		 */
 		Video: Video;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		MinConfidence?: number | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		ClientRequestToken?: string | null;
 
 		/** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. */
 		NotificationChannel?: NotificationChannel;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-:]+
+		 */
 		JobTag?: string | null;
 	}
 	export interface StartContentModerationRequestFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		MinConfidence: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-:]+
+		 */
 		JobTag: FormControl<string | null | undefined>,
 	}
 	export function CreateStartContentModerationRequestFormGroup() {
 		return new FormGroup<StartContentModerationRequestFormProperties>({
-			MinConfidence: new FormControl<number | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
-			JobTag: new FormControl<string | null | undefined>(undefined),
+			MinConfidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface StartFaceDetectionResponse {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId?: string | null;
 	}
 	export interface StartFaceDetectionResponseFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartFaceDetectionResponseFormGroup() {
 		return new FormGroup<StartFaceDetectionResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -3053,36 +4414,72 @@ export namespace MyNS {
 		 * Required
 		 */
 		Video: Video;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		ClientRequestToken?: string | null;
 
 		/** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. */
 		NotificationChannel?: NotificationChannel;
 		FaceAttributes?: Attribute | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-:]+
+		 */
 		JobTag?: string | null;
 	}
 	export interface StartFaceDetectionRequestFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 		FaceAttributes: FormControl<Attribute | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-:]+
+		 */
 		JobTag: FormControl<string | null | undefined>,
 	}
 	export function CreateStartFaceDetectionRequestFormGroup() {
 		return new FormGroup<StartFaceDetectionRequestFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			FaceAttributes: new FormControl<Attribute | null | undefined>(undefined),
-			JobTag: new FormControl<string | null | undefined>(undefined),
+			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface StartFaceSearchResponse {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId?: string | null;
 	}
 	export interface StartFaceSearchResponseFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartFaceSearchResponseFormGroup() {
 		return new FormGroup<StartFaceSearchResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -3094,39 +4491,99 @@ export namespace MyNS {
 		 * Required
 		 */
 		Video: Video;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		ClientRequestToken?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		FaceMatchThreshold?: number | null;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		CollectionId: string;
 
 		/** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. */
 		NotificationChannel?: NotificationChannel;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-:]+
+		 */
 		JobTag?: string | null;
 	}
 	export interface StartFaceSearchRequestFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		FaceMatchThreshold: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		CollectionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-:]+
+		 */
 		JobTag: FormControl<string | null | undefined>,
 	}
 	export function CreateStartFaceSearchRequestFormGroup() {
 		return new FormGroup<StartFaceSearchRequestFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
-			FaceMatchThreshold: new FormControl<number | null | undefined>(undefined),
-			CollectionId: new FormControl<string | null | undefined>(undefined),
-			JobTag: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			FaceMatchThreshold: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface StartLabelDetectionResponse {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId?: string | null;
 	}
 	export interface StartLabelDetectionResponseFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartLabelDetectionResponseFormGroup() {
 		return new FormGroup<StartLabelDetectionResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -3138,36 +4595,82 @@ export namespace MyNS {
 		 * Required
 		 */
 		Video: Video;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		ClientRequestToken?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		MinConfidence?: number | null;
 
 		/** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. */
 		NotificationChannel?: NotificationChannel;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-:]+
+		 */
 		JobTag?: string | null;
 	}
 	export interface StartLabelDetectionRequestFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		MinConfidence: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-:]+
+		 */
 		JobTag: FormControl<string | null | undefined>,
 	}
 	export function CreateStartLabelDetectionRequestFormGroup() {
 		return new FormGroup<StartLabelDetectionRequestFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
-			MinConfidence: new FormControl<number | null | undefined>(undefined),
-			JobTag: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			MinConfidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface StartPersonTrackingResponse {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId?: string | null;
 	}
 	export interface StartPersonTrackingResponseFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartPersonTrackingResponseFormGroup() {
 		return new FormGroup<StartPersonTrackingResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -3179,20 +4682,44 @@ export namespace MyNS {
 		 * Required
 		 */
 		Video: Video;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		ClientRequestToken?: string | null;
 
 		/** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. */
 		NotificationChannel?: NotificationChannel;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-:]+
+		 */
 		JobTag?: string | null;
 	}
 	export interface StartPersonTrackingRequestFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-:]+
+		 */
 		JobTag: FormControl<string | null | undefined>,
 	}
 	export function CreateStartPersonTrackingRequestFormGroup() {
 		return new FormGroup<StartPersonTrackingRequestFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
-			JobTag: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -3211,17 +4738,41 @@ export namespace MyNS {
 	}
 
 	export interface StartProjectVersionRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)
+		 */
 		ProjectVersionArn: string;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		MinInferenceUnits: number;
 	}
 	export interface StartProjectVersionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)
+		 */
 		ProjectVersionArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		MinInferenceUnits: FormControl<number | null | undefined>,
 	}
 	export function CreateStartProjectVersionRequestFormGroup() {
 		return new FormGroup<StartProjectVersionRequestFormProperties>({
-			ProjectVersionArn: new FormControl<string | null | undefined>(undefined),
-			MinInferenceUnits: new FormControl<number | null | undefined>(undefined),
+			ProjectVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			MinInferenceUnits: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 		});
 
 	}
@@ -3237,27 +4788,53 @@ export namespace MyNS {
 	}
 
 	export interface StartStreamProcessorRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		Name: string;
 	}
 	export interface StartStreamProcessorRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateStartStreamProcessorRequestFormGroup() {
 		return new FormGroup<StartStreamProcessorRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface StartTextDetectionResponse {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId?: string | null;
 	}
 	export interface StartTextDetectionResponseFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartTextDetectionResponseFormGroup() {
 		return new FormGroup<StartTextDetectionResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -3269,23 +4846,47 @@ export namespace MyNS {
 		 * Required
 		 */
 		Video: Video;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		ClientRequestToken?: string | null;
 
 		/** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. */
 		NotificationChannel?: NotificationChannel;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-:]+
+		 */
 		JobTag?: string | null;
 
 		/** Set of optional parameters that let you set the criteria text must meet to be included in your response. <code>WordFilter</code> looks at a word's height, width and minimum confidence. <code>RegionOfInterest</code> lets you set a specific region of the screen to look for text in. */
 		Filters?: StartTextDetectionFilters;
 	}
 	export interface StartTextDetectionRequestFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-:]+
+		 */
 		JobTag: FormControl<string | null | undefined>,
 	}
 	export function CreateStartTextDetectionRequestFormGroup() {
 		return new FormGroup<StartTextDetectionRequestFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
-			JobTag: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -3296,6 +4897,11 @@ export namespace MyNS {
 
 		/** A set of parameters that allow you to filter out certain results from your returned results. */
 		WordFilter?: DetectionFilter;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		RegionsOfInterest?: Array<RegionOfInterest>;
 	}
 
@@ -3322,14 +4928,28 @@ export namespace MyNS {
 	}
 
 	export interface StopProjectVersionRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)
+		 */
 		ProjectVersionArn: string;
 	}
 	export interface StopProjectVersionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: (^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)
+		 */
 		ProjectVersionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateStopProjectVersionRequestFormGroup() {
 		return new FormGroup<StopProjectVersionRequestFormProperties>({
-			ProjectVersionArn: new FormControl<string | null | undefined>(undefined),
+			ProjectVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -3345,14 +4965,28 @@ export namespace MyNS {
 	}
 
 	export interface StopStreamProcessorRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		Name: string;
 	}
 	export interface StopStreamProcessorRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-]+
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateStopStreamProcessorRequestFormGroup() {
 		return new FormGroup<StopStreamProcessorRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}

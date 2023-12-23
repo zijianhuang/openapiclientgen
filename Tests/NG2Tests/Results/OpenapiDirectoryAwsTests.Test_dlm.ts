@@ -4,14 +4,26 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateLifecyclePolicyResponse {
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 * Pattern: policy-[A-Za-z0-9]+
+		 */
 		PolicyId?: string | null;
 	}
 	export interface CreateLifecyclePolicyResponseFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 * Pattern: policy-[A-Za-z0-9]+
+		 */
 		PolicyId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateLifecyclePolicyResponseFormGroup() {
 		return new FormGroup<CreateLifecyclePolicyResponseFormProperties>({
-			PolicyId: new FormControl<string | null | undefined>(undefined),
+			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
 		});
 
 	}
@@ -23,19 +35,47 @@ export namespace MyNS {
 
 	/** Specifies a tag for a resource. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: [\p{all}]*
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: [\p{all}]*
+		 */
 		Value: string;
 	}
 
 	/** Specifies a tag for a resource. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: [\p{all}]*
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: [\p{all}]*
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(0)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(0)]),
 		});
 
 	}
@@ -43,9 +83,25 @@ export namespace MyNS {
 
 	/** Specifies a backup schedule. */
 	export interface Schedule {
+
+		/**
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: [\p{all}]*
+		 */
 		Name?: string | null;
 		CopyTags?: boolean | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 45
+		 */
 		TagsToAdd?: Array<Tag>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 45
+		 */
 		VariableTags?: Array<Tag>;
 
 		/** <p>Specifies when to create snapshots of EBS volumes.</p> <p>You must specify either a Cron expression or an interval, interval unit, and start time. You cannot specify both.</p> */
@@ -56,17 +112,28 @@ export namespace MyNS {
 
 		/** Specifies a rule for enabling fast snapshot restore. You can enable fast snapshot restore based on either a count or a time interval. */
 		FastRestoreRule?: FastRestoreRule;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 3
+		 */
 		CrossRegionCopyRules?: Array<CrossRegionCopyRule>;
 	}
 
 	/** Specifies a backup schedule. */
 	export interface ScheduleFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: [\p{all}]*
+		 */
 		Name: FormControl<string | null | undefined>,
 		CopyTags: FormControl<boolean | null | undefined>,
 	}
 	export function CreateScheduleFormGroup() {
 		return new FormGroup<ScheduleFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(0)]),
 			CopyTags: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -75,23 +142,41 @@ export namespace MyNS {
 
 	/** <p>Specifies when to create snapshots of EBS volumes.</p> <p>You must specify either a Cron expression or an interval, interval unit, and start time. You cannot specify both.</p> */
 	export interface CreateRule {
+
+		/** Minimum: 1 */
 		Interval?: number | null;
 		IntervalUnit?: CreateRuleIntervalUnit | null;
+
+		/** Maximum items: 1 */
 		Times?: Array<string>;
+
+		/**
+		 * Max length: 106
+		 * Min length: 17
+		 * Pattern: cron\([^\n]{11,100}\)
+		 */
 		CronExpression?: string | null;
 	}
 
 	/** <p>Specifies when to create snapshots of EBS volumes.</p> <p>You must specify either a Cron expression or an interval, interval unit, and start time. You cannot specify both.</p> */
 	export interface CreateRuleFormProperties {
+
+		/** Minimum: 1 */
 		Interval: FormControl<number | null | undefined>,
 		IntervalUnit: FormControl<CreateRuleIntervalUnit | null | undefined>,
+
+		/**
+		 * Max length: 106
+		 * Min length: 17
+		 * Pattern: cron\([^\n]{11,100}\)
+		 */
 		CronExpression: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateRuleFormGroup() {
 		return new FormGroup<CreateRuleFormProperties>({
-			Interval: new FormControl<number | null | undefined>(undefined),
+			Interval: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			IntervalUnit: new FormControl<CreateRuleIntervalUnit | null | undefined>(undefined),
-			CronExpression: new FormControl<string | null | undefined>(undefined),
+			CronExpression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(106), Validators.minLength(17)]),
 		});
 
 	}
@@ -101,21 +186,35 @@ export namespace MyNS {
 
 	/** Specifies the retention rule for a lifecycle policy. You can retain snapshots based on either a count or a time interval. */
 	export interface RetainRule {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		Count?: number | null;
+
+		/** Minimum: 1 */
 		Interval?: number | null;
 		IntervalUnit?: RetainRuleIntervalUnit | null;
 	}
 
 	/** Specifies the retention rule for a lifecycle policy. You can retain snapshots based on either a count or a time interval. */
 	export interface RetainRuleFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		Count: FormControl<number | null | undefined>,
+
+		/** Minimum: 1 */
 		Interval: FormControl<number | null | undefined>,
 		IntervalUnit: FormControl<RetainRuleIntervalUnit | null | undefined>,
 	}
 	export function CreateRetainRuleFormGroup() {
 		return new FormGroup<RetainRuleFormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
-			Interval: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			Interval: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			IntervalUnit: new FormControl<RetainRuleIntervalUnit | null | undefined>(undefined),
 		});
 
@@ -126,22 +225,42 @@ export namespace MyNS {
 
 	/** Specifies a rule for enabling fast snapshot restore. You can enable fast snapshot restore based on either a count or a time interval. */
 	export interface FastRestoreRule {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		Count?: number | null;
+
+		/** Minimum: 1 */
 		Interval?: number | null;
 		IntervalUnit?: RetainRuleIntervalUnit | null;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		AvailabilityZones: Array<string>;
 	}
 
 	/** Specifies a rule for enabling fast snapshot restore. You can enable fast snapshot restore based on either a count or a time interval. */
 	export interface FastRestoreRuleFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		Count: FormControl<number | null | undefined>,
+
+		/** Minimum: 1 */
 		Interval: FormControl<number | null | undefined>,
 		IntervalUnit: FormControl<RetainRuleIntervalUnit | null | undefined>,
 	}
 	export function CreateFastRestoreRuleFormGroup() {
 		return new FormGroup<FastRestoreRuleFormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
-			Interval: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			Interval: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			IntervalUnit: new FormControl<RetainRuleIntervalUnit | null | undefined>(undefined),
 		});
 
@@ -150,8 +269,23 @@ export namespace MyNS {
 
 	/** Specifies a rule for cross-Region snapshot copies. */
 	export interface CrossRegionCopyRule {
+
+		/**
+		 * Required
+		 * Max length: 16
+		 * Min length: 0
+		 * Pattern: ([a-z]+-){2,3}\d
+		 */
 		TargetRegion: string;
+
+		/** Required */
 		Encrypted: boolean;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: arn:aws(-[a-z]{1,3}){0,2}:kms:([a-z]+-){2,3}\d:\d+:key/.*
+		 */
 		CmkArn?: string | null;
 		CopyTags?: boolean | null;
 
@@ -161,16 +295,31 @@ export namespace MyNS {
 
 	/** Specifies a rule for cross-Region snapshot copies. */
 	export interface CrossRegionCopyRuleFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 16
+		 * Min length: 0
+		 * Pattern: ([a-z]+-){2,3}\d
+		 */
 		TargetRegion: FormControl<string | null | undefined>,
+
+		/** Required */
 		Encrypted: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: arn:aws(-[a-z]{1,3}){0,2}:kms:([a-z]+-){2,3}\d:\d+:key/.*
+		 */
 		CmkArn: FormControl<string | null | undefined>,
 		CopyTags: FormControl<boolean | null | undefined>,
 	}
 	export function CreateCrossRegionCopyRuleFormGroup() {
 		return new FormGroup<CrossRegionCopyRuleFormProperties>({
-			TargetRegion: new FormControl<string | null | undefined>(undefined),
-			Encrypted: new FormControl<boolean | null | undefined>(undefined),
-			CmkArn: new FormControl<string | null | undefined>(undefined),
+			TargetRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(16), Validators.minLength(0)]),
+			Encrypted: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			CmkArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 			CopyTags: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -179,18 +328,22 @@ export namespace MyNS {
 
 	/** Specifies the retention rule for cross-Region snapshot copies. */
 	export interface CrossRegionCopyRetainRule {
+
+		/** Minimum: 1 */
 		Interval?: number | null;
 		IntervalUnit?: RetainRuleIntervalUnit | null;
 	}
 
 	/** Specifies the retention rule for cross-Region snapshot copies. */
 	export interface CrossRegionCopyRetainRuleFormProperties {
+
+		/** Minimum: 1 */
 		Interval: FormControl<number | null | undefined>,
 		IntervalUnit: FormControl<RetainRuleIntervalUnit | null | undefined>,
 	}
 	export function CreateCrossRegionCopyRetainRuleFormGroup() {
 		return new FormGroup<CrossRegionCopyRetainRuleFormProperties>({
-			Interval: new FormControl<number | null | undefined>(undefined),
+			Interval: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			IntervalUnit: new FormControl<RetainRuleIntervalUnit | null | undefined>(undefined),
 		});
 
@@ -277,7 +430,19 @@ export namespace MyNS {
 
 	/** Summary information about a lifecycle policy. */
 	export interface LifecyclePolicySummary {
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 * Pattern: policy-[A-Za-z0-9]+
+		 */
 		PolicyId?: string | null;
+
+		/**
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: [0-9A-Za-z _-]+
+		 */
 		Description?: string | null;
 		State?: LifecyclePolicySummaryState | null;
 		Tags?: TagMap;
@@ -285,14 +450,26 @@ export namespace MyNS {
 
 	/** Summary information about a lifecycle policy. */
 	export interface LifecyclePolicySummaryFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 * Pattern: policy-[A-Za-z0-9]+
+		 */
 		PolicyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: [0-9A-Za-z _-]+
+		 */
 		Description: FormControl<string | null | undefined>,
 		State: FormControl<LifecyclePolicySummaryState | null | undefined>,
 	}
 	export function CreateLifecyclePolicySummaryFormGroup() {
 		return new FormGroup<LifecyclePolicySummaryFormProperties>({
-			PolicyId: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(0)]),
 			State: new FormControl<LifecyclePolicySummaryState | null | undefined>(undefined),
 		});
 
@@ -326,10 +503,34 @@ export namespace MyNS {
 
 	/** Detailed information about a lifecycle policy. */
 	export interface LifecyclePolicy {
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 * Pattern: policy-[A-Za-z0-9]+
+		 */
 		PolicyId?: string | null;
+
+		/**
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: [0-9A-Za-z _-]+
+		 */
 		Description?: string | null;
 		State?: LifecyclePolicySummaryState | null;
+
+		/**
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: [\p{all}]*
+		 */
 		StatusMessage?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*
+		 */
 		ExecutionRoleArn?: string | null;
 		DateCreated?: Date | null;
 		DateModified?: Date | null;
@@ -337,30 +538,66 @@ export namespace MyNS {
 		/** Specifies the configuration of a lifecycle policy. */
 		PolicyDetails?: PolicyDetails;
 		Tags?: TagMap;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^arn:aws(-[a-z]{1,3}){0,2}:dlm:[A-Za-z0-9_/.-]{0,63}:\d+:policy/[0-9A-Za-z_-]{1,128}$
+		 */
 		PolicyArn?: string | null;
 	}
 
 	/** Detailed information about a lifecycle policy. */
 	export interface LifecyclePolicyFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 * Pattern: policy-[A-Za-z0-9]+
+		 */
 		PolicyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: [0-9A-Za-z _-]+
+		 */
 		Description: FormControl<string | null | undefined>,
 		State: FormControl<LifecyclePolicySummaryState | null | undefined>,
+
+		/**
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: [\p{all}]*
+		 */
 		StatusMessage: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*
+		 */
 		ExecutionRoleArn: FormControl<string | null | undefined>,
 		DateCreated: FormControl<Date | null | undefined>,
 		DateModified: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^arn:aws(-[a-z]{1,3}){0,2}:dlm:[A-Za-z0-9_/.-]{0,63}:\d+:policy/[0-9A-Za-z_-]{1,128}$
+		 */
 		PolicyArn: FormControl<string | null | undefined>,
 	}
 	export function CreateLifecyclePolicyFormGroup() {
 		return new FormGroup<LifecyclePolicyFormProperties>({
-			PolicyId: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(0)]),
 			State: new FormControl<LifecyclePolicySummaryState | null | undefined>(undefined),
-			StatusMessage: new FormControl<string | null | undefined>(undefined),
-			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(0)]),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 			DateCreated: new FormControl<Date | null | undefined>(undefined),
 			DateModified: new FormControl<Date | null | undefined>(undefined),
-			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 		});
 
 	}
@@ -369,8 +606,23 @@ export namespace MyNS {
 	/** Specifies the configuration of a lifecycle policy. */
 	export interface PolicyDetails {
 		PolicyType?: PolicyTypeValues | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 1
+		 */
 		ResourceTypes?: Array<ResourceTypeValues>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		TargetTags?: Array<Tag>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 1
+		 */
 		Schedules?: Array<Schedule>;
 
 		/** Specifies optional parameters to add to a policy. The set of valid parameters depends on the combination of policy type and resource type. */
@@ -432,8 +684,24 @@ export namespace MyNS {
 	export enum SettablePolicyStateValues { ENABLED = 0, DISABLED = 1 }
 
 	export interface CreateLifecyclePolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*
+		 */
 		ExecutionRoleArn: string;
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: [0-9A-Za-z _-]+
+		 */
 		Description: string;
+
+		/** Required */
 		State: SettablePolicyStateValues;
 
 		/**
@@ -444,15 +712,31 @@ export namespace MyNS {
 		Tags?: TagMap;
 	}
 	export interface CreateLifecyclePolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*
+		 */
 		ExecutionRoleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: [0-9A-Za-z _-]+
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/** Required */
 		State: FormControl<SettablePolicyStateValues | null | undefined>,
 	}
 	export function CreateCreateLifecyclePolicyRequestFormGroup() {
 		return new FormGroup<CreateLifecyclePolicyRequestFormProperties>({
-			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			State: new FormControl<SettablePolicyStateValues | null | undefined>(undefined),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(0)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(0)]),
+			State: new FormControl<SettablePolicyStateValues | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -504,6 +788,8 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/** Required */
 		Tags: TagMap;
 	}
 	export interface TagResourceRequestFormProperties {
@@ -525,23 +811,47 @@ export namespace MyNS {
 	}
 
 	export interface UpdateLifecyclePolicyRequest {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*
+		 */
 		ExecutionRoleArn?: string | null;
 		State?: SettablePolicyStateValues | null;
+
+		/**
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: [0-9A-Za-z _-]+
+		 */
 		Description?: string | null;
 
 		/** Specifies the configuration of a lifecycle policy. */
 		PolicyDetails?: PolicyDetails;
 	}
 	export interface UpdateLifecyclePolicyRequestFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*
+		 */
 		ExecutionRoleArn: FormControl<string | null | undefined>,
 		State: FormControl<SettablePolicyStateValues | null | undefined>,
+
+		/**
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: [0-9A-Za-z _-]+
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateLifecyclePolicyRequestFormGroup() {
 		return new FormGroup<UpdateLifecyclePolicyRequestFormProperties>({
-			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 			State: new FormControl<SettablePolicyStateValues | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(0)]),
 		});
 
 	}
@@ -702,9 +1012,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateLifecyclePolicyPostBodyFormGroup() {
 		return new FormGroup<CreateLifecyclePolicyPostBodyFormProperties>({
-			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			State: new FormControl<SettablePolicyStateValues | null | undefined>(undefined),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(0)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(0)]),
+			State: new FormControl<SettablePolicyStateValues | null | undefined>(undefined, [Validators.required]),
 			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -712,8 +1022,23 @@ export namespace MyNS {
 
 	export interface CreateLifecyclePolicyPostBodyPolicyDetails {
 		PolicyType?: PolicyTypeValues | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 1
+		 */
 		ResourceTypes?: Array<ResourceTypeValues>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		TargetTags?: Array<Tag>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 1
+		 */
 		Schedules?: Array<Schedule>;
 
 		/** Specifies optional parameters to add to a policy. The set of valid parameters depends on the combination of policy type and resource type. */
@@ -747,7 +1072,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -799,17 +1124,32 @@ export namespace MyNS {
 	}
 	export function CreateUpdateLifecyclePolicyPatchBodyFormGroup() {
 		return new FormGroup<UpdateLifecyclePolicyPatchBodyFormProperties>({
-			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 			State: new FormControl<SettablePolicyStateValues | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface UpdateLifecyclePolicyPatchBodyPolicyDetails {
 		PolicyType?: PolicyTypeValues | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 1
+		 */
 		ResourceTypes?: Array<ResourceTypeValues>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		TargetTags?: Array<Tag>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 1
+		 */
 		Schedules?: Array<Schedule>;
 
 		/** Specifies optional parameters to add to a policy. The set of valid parameters depends on the combination of policy type and resource type. */

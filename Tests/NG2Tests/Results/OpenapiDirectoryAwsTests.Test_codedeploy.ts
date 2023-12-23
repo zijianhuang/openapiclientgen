@@ -6,7 +6,11 @@ export namespace MyNS {
 
 	/** Represents the input of, and adds tags to, an on-premises instance operation. */
 	export interface AddTagsToOnPremisesInstancesInput {
+
+		/** Required */
 		tags: Array<Tag>;
+
+		/** Required */
 		instanceNames: Array<string>;
 	}
 
@@ -112,6 +116,11 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>BatchGetApplicationRevisions</code> operation. */
 	export interface BatchGetApplicationRevisionsOutput {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName?: string | null;
 		errorMessage?: string | null;
 		revisions?: Array<RevisionInfo>;
@@ -119,12 +128,17 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>BatchGetApplicationRevisions</code> operation. */
 	export interface BatchGetApplicationRevisionsOutputFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: FormControl<string | null | undefined>,
 		errorMessage: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchGetApplicationRevisionsOutputFormGroup() {
 		return new FormGroup<BatchGetApplicationRevisionsOutputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			errorMessage: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -302,17 +316,31 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>BatchGetApplicationRevisions</code> operation. */
 	export interface BatchGetApplicationRevisionsInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: string;
+
+		/** Required */
 		revisions: Array<RevisionLocation>;
 	}
 
 	/** Represents the input of a <code>BatchGetApplicationRevisions</code> operation. */
 	export interface BatchGetApplicationRevisionsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchGetApplicationRevisionsInputFormGroup() {
 		return new FormGroup<BatchGetApplicationRevisionsInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -396,6 +424,11 @@ export namespace MyNS {
 	/** Information about an application. */
 	export interface ApplicationInfo {
 		applicationId?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName?: string | null;
 		createTime?: Date | null;
 		linkedToGitHub?: boolean | null;
@@ -406,6 +439,11 @@ export namespace MyNS {
 	/** Information about an application. */
 	export interface ApplicationInfoFormProperties {
 		applicationId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: FormControl<string | null | undefined>,
 		createTime: FormControl<Date | null | undefined>,
 		linkedToGitHub: FormControl<boolean | null | undefined>,
@@ -415,7 +453,7 @@ export namespace MyNS {
 	export function CreateApplicationInfoFormGroup() {
 		return new FormGroup<ApplicationInfoFormProperties>({
 			applicationId: new FormControl<string | null | undefined>(undefined),
-			applicationName: new FormControl<string | null | undefined>(undefined),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			createTime: new FormControl<Date | null | undefined>(undefined),
 			linkedToGitHub: new FormControl<boolean | null | undefined>(undefined),
 			gitHubAccountName: new FormControl<string | null | undefined>(undefined),
@@ -429,6 +467,8 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>BatchGetApplications</code> operation. */
 	export interface BatchGetApplicationsInput {
+
+		/** Required */
 		applicationNames: Array<string>;
 	}
 
@@ -462,9 +502,24 @@ export namespace MyNS {
 
 	/** Information about a deployment group. */
 	export interface DeploymentGroupInfo {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName?: string | null;
 		deploymentGroupId?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentGroupName?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentConfigName?: string | null;
 		ec2TagFilters?: Array<EC2TagFilter>;
 		onPremisesInstanceTagFilters?: Array<TagFilter>;
@@ -507,19 +562,34 @@ export namespace MyNS {
 
 	/** Information about a deployment group. */
 	export interface DeploymentGroupInfoFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: FormControl<string | null | undefined>,
 		deploymentGroupId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentGroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentConfigName: FormControl<string | null | undefined>,
 		serviceRoleArn: FormControl<string | null | undefined>,
 		computePlatform: FormControl<ApplicationInfoComputePlatform | null | undefined>,
 	}
 	export function CreateDeploymentGroupInfoFormGroup() {
 		return new FormGroup<DeploymentGroupInfoFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			deploymentGroupId: new FormControl<string | null | undefined>(undefined),
-			deploymentGroupName: new FormControl<string | null | undefined>(undefined),
-			deploymentConfigName: new FormControl<string | null | undefined>(undefined),
+			deploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			serviceRoleArn: new FormControl<string | null | undefined>(undefined),
 			computePlatform: new FormControl<ApplicationInfoComputePlatform | null | undefined>(undefined),
 		});
@@ -953,17 +1023,31 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>BatchGetDeploymentGroups</code> operation. */
 	export interface BatchGetDeploymentGroupsInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: string;
+
+		/** Required */
 		deploymentGroupNames: Array<string>;
 	}
 
 	/** Represents the input of a <code>BatchGetDeploymentGroups</code> operation. */
 	export interface BatchGetDeploymentGroupsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchGetDeploymentGroupsInputFormGroup() {
 		return new FormGroup<BatchGetDeploymentGroupsInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -1116,17 +1200,23 @@ export namespace MyNS {
 
 	/**  Represents the input of a <code>BatchGetDeploymentInstances</code> operation.  */
 	export interface BatchGetDeploymentInstancesInput {
+
+		/** Required */
 		deploymentId: string;
+
+		/** Required */
 		instanceIds: Array<string>;
 	}
 
 	/**  Represents the input of a <code>BatchGetDeploymentInstances</code> operation.  */
 	export interface BatchGetDeploymentInstancesInputFormProperties {
+
+		/** Required */
 		deploymentId: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchGetDeploymentInstancesInputFormGroup() {
 		return new FormGroup<BatchGetDeploymentInstancesInputFormProperties>({
-			deploymentId: new FormControl<string | null | undefined>(undefined),
+			deploymentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1512,8 +1602,23 @@ export namespace MyNS {
 
 	/** Information about a deployment. */
 	export interface DeploymentInfo {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentGroupName?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentConfigName?: string | null;
 		deploymentId?: string | null;
 
@@ -1566,8 +1671,23 @@ export namespace MyNS {
 
 	/** Information about a deployment. */
 	export interface DeploymentInfoFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentGroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentConfigName: FormControl<string | null | undefined>,
 		deploymentId: FormControl<string | null | undefined>,
 		status: FormControl<LastDeploymentInfoStatus | null | undefined>,
@@ -1588,9 +1708,9 @@ export namespace MyNS {
 	}
 	export function CreateDeploymentInfoFormGroup() {
 		return new FormGroup<DeploymentInfoFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined),
-			deploymentGroupName: new FormControl<string | null | undefined>(undefined),
-			deploymentConfigName: new FormControl<string | null | undefined>(undefined),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			deploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			deploymentId: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<LastDeploymentInfoStatus | null | undefined>(undefined),
 			createTime: new FormControl<Date | null | undefined>(undefined),
@@ -1712,6 +1832,8 @@ export namespace MyNS {
 
 	/**  Represents the input of a <code>BatchGetDeployments</code> operation.  */
 	export interface BatchGetDeploymentsInput {
+
+		/** Required */
 		deploymentIds: Array<string>;
 	}
 
@@ -1775,6 +1897,8 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>BatchGetOnPremisesInstances</code> operation. */
 	export interface BatchGetOnPremisesInstancesInput {
+
+		/** Required */
 		instanceNames: Array<string>;
 	}
 
@@ -1875,6 +1999,12 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>CreateApplication</code> operation. */
 	export interface CreateApplicationInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: string;
 		computePlatform?: ApplicationInfoComputePlatform | null;
 		tags?: Array<Tag>;
@@ -1882,12 +2012,18 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>CreateApplication</code> operation. */
 	export interface CreateApplicationInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: FormControl<string | null | undefined>,
 		computePlatform: FormControl<ApplicationInfoComputePlatform | null | undefined>,
 	}
 	export function CreateCreateApplicationInputFormGroup() {
 		return new FormGroup<CreateApplicationInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			computePlatform: new FormControl<ApplicationInfoComputePlatform | null | undefined>(undefined),
 		});
 
@@ -1943,11 +2079,27 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>CreateDeployment</code> operation. */
 	export interface CreateDeploymentInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: string;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentGroupName?: string | null;
 
 		/** Information about the location of an application revision. */
 		revision?: RevisionLocation;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentConfigName?: string | null;
 		description?: string | null;
 		ignoreApplicationStopFailures?: boolean | null;
@@ -1963,8 +2115,24 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>CreateDeployment</code> operation. */
 	export interface CreateDeploymentInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentGroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentConfigName: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		ignoreApplicationStopFailures: FormControl<boolean | null | undefined>,
@@ -1973,9 +2141,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateDeploymentInputFormGroup() {
 		return new FormGroup<CreateDeploymentInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined),
-			deploymentGroupName: new FormControl<string | null | undefined>(undefined),
-			deploymentConfigName: new FormControl<string | null | undefined>(undefined),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			deploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			description: new FormControl<string | null | undefined>(undefined),
 			ignoreApplicationStopFailures: new FormControl<boolean | null | undefined>(undefined),
 			updateOutdatedInstancesOnly: new FormControl<boolean | null | undefined>(undefined),
@@ -2164,6 +2332,12 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>CreateDeploymentConfig</code> operation. */
 	export interface CreateDeploymentConfigInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentConfigName: string;
 
 		/** Information about minimum healthy instance. */
@@ -2176,12 +2350,18 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>CreateDeploymentConfig</code> operation. */
 	export interface CreateDeploymentConfigInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentConfigName: FormControl<string | null | undefined>,
 		computePlatform: FormControl<ApplicationInfoComputePlatform | null | undefined>,
 	}
 	export function CreateCreateDeploymentConfigInputFormGroup() {
 		return new FormGroup<CreateDeploymentConfigInputFormProperties>({
-			deploymentConfigName: new FormControl<string | null | undefined>(undefined),
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			computePlatform: new FormControl<ApplicationInfoComputePlatform | null | undefined>(undefined),
 		});
 
@@ -2334,12 +2514,31 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>CreateDeploymentGroup</code> operation. */
 	export interface CreateDeploymentGroupInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentGroupName: string;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentConfigName?: string | null;
 		ec2TagFilters?: Array<EC2TagFilter>;
 		onPremisesInstanceTagFilters?: Array<TagFilter>;
 		autoScalingGroups?: Array<string>;
+
+		/** Required */
 		serviceRoleArn: string;
 		triggerConfigurations?: Array<TriggerConfig>;
 
@@ -2369,17 +2568,36 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>CreateDeploymentGroup</code> operation. */
 	export interface CreateDeploymentGroupInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentGroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentConfigName: FormControl<string | null | undefined>,
+
+		/** Required */
 		serviceRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDeploymentGroupInputFormGroup() {
 		return new FormGroup<CreateDeploymentGroupInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined),
-			deploymentGroupName: new FormControl<string | null | undefined>(undefined),
-			deploymentConfigName: new FormControl<string | null | undefined>(undefined),
-			serviceRoleArn: new FormControl<string | null | undefined>(undefined),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			deploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			serviceRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2567,16 +2785,28 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>DeleteApplication</code> operation. */
 	export interface DeleteApplicationInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: string;
 	}
 
 	/** Represents the input of a <code>DeleteApplication</code> operation. */
 	export interface DeleteApplicationInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteApplicationInputFormGroup() {
 		return new FormGroup<DeleteApplicationInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -2584,16 +2814,28 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>DeleteDeploymentConfig</code> operation. */
 	export interface DeleteDeploymentConfigInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentConfigName: string;
 	}
 
 	/** Represents the input of a <code>DeleteDeploymentConfig</code> operation. */
 	export interface DeleteDeploymentConfigInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentConfigName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDeploymentConfigInputFormGroup() {
 		return new FormGroup<DeleteDeploymentConfigInputFormProperties>({
-			deploymentConfigName: new FormControl<string | null | undefined>(undefined),
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -2636,19 +2878,43 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>DeleteDeploymentGroup</code> operation. */
 	export interface DeleteDeploymentGroupInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentGroupName: string;
 	}
 
 	/** Represents the input of a <code>DeleteDeploymentGroup</code> operation. */
 	export interface DeleteDeploymentGroupInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDeploymentGroupInputFormGroup() {
 		return new FormGroup<DeleteDeploymentGroupInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined),
-			deploymentGroupName: new FormControl<string | null | undefined>(undefined),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			deploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -2763,16 +3029,20 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>DeregisterOnPremisesInstance</code> operation. */
 	export interface DeregisterOnPremisesInstanceInput {
+
+		/** Required */
 		instanceName: string;
 	}
 
 	/** Represents the input of a <code>DeregisterOnPremisesInstance</code> operation. */
 	export interface DeregisterOnPremisesInstanceInputFormProperties {
+
+		/** Required */
 		instanceName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeregisterOnPremisesInstanceInputFormGroup() {
 		return new FormGroup<DeregisterOnPremisesInstanceInputFormProperties>({
-			instanceName: new FormControl<string | null | undefined>(undefined),
+			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2797,16 +3067,28 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>GetApplication</code> operation. */
 	export interface GetApplicationInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: string;
 	}
 
 	/** Represents the input of a <code>GetApplication</code> operation. */
 	export interface GetApplicationInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetApplicationInputFormGroup() {
 		return new FormGroup<GetApplicationInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -2814,6 +3096,11 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>GetApplicationRevision</code> operation. */
 	export interface GetApplicationRevisionOutput {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName?: string | null;
 
 		/** Information about the location of an application revision. */
@@ -2825,11 +3112,16 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>GetApplicationRevision</code> operation. */
 	export interface GetApplicationRevisionOutputFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetApplicationRevisionOutputFormGroup() {
 		return new FormGroup<GetApplicationRevisionOutputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -2837,6 +3129,12 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>GetApplicationRevision</code> operation. */
 	export interface GetApplicationRevisionInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: string;
 
 		/**
@@ -2848,11 +3146,17 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>GetApplicationRevision</code> operation. */
 	export interface GetApplicationRevisionInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetApplicationRevisionInputFormGroup() {
 		return new FormGroup<GetApplicationRevisionInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -2877,16 +3181,20 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>GetDeployment</code> operation. */
 	export interface GetDeploymentInput {
+
+		/** Required */
 		deploymentId: string;
 	}
 
 	/** Represents the input of a <code>GetDeployment</code> operation. */
 	export interface GetDeploymentInputFormProperties {
+
+		/** Required */
 		deploymentId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetDeploymentInputFormGroup() {
 		return new FormGroup<GetDeploymentInputFormProperties>({
-			deploymentId: new FormControl<string | null | undefined>(undefined),
+			deploymentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2912,6 +3220,11 @@ export namespace MyNS {
 	/** Information about a deployment configuration. */
 	export interface DeploymentConfigInfo {
 		deploymentConfigId?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentConfigName?: string | null;
 
 		/** Information about minimum healthy instance. */
@@ -2926,6 +3239,11 @@ export namespace MyNS {
 	/** Information about a deployment configuration. */
 	export interface DeploymentConfigInfoFormProperties {
 		deploymentConfigId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentConfigName: FormControl<string | null | undefined>,
 		createTime: FormControl<Date | null | undefined>,
 		computePlatform: FormControl<ApplicationInfoComputePlatform | null | undefined>,
@@ -2933,7 +3251,7 @@ export namespace MyNS {
 	export function CreateDeploymentConfigInfoFormGroup() {
 		return new FormGroup<DeploymentConfigInfoFormProperties>({
 			deploymentConfigId: new FormControl<string | null | undefined>(undefined),
-			deploymentConfigName: new FormControl<string | null | undefined>(undefined),
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			createTime: new FormControl<Date | null | undefined>(undefined),
 			computePlatform: new FormControl<ApplicationInfoComputePlatform | null | undefined>(undefined),
 		});
@@ -2943,16 +3261,28 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>GetDeploymentConfig</code> operation. */
 	export interface GetDeploymentConfigInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentConfigName: string;
 	}
 
 	/** Represents the input of a <code>GetDeploymentConfig</code> operation. */
 	export interface GetDeploymentConfigInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentConfigName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetDeploymentConfigInputFormGroup() {
 		return new FormGroup<GetDeploymentConfigInputFormProperties>({
-			deploymentConfigName: new FormControl<string | null | undefined>(undefined),
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -2977,19 +3307,43 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>GetDeploymentGroup</code> operation. */
 	export interface GetDeploymentGroupInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentGroupName: string;
 	}
 
 	/** Represents the input of a <code>GetDeploymentGroup</code> operation. */
 	export interface GetDeploymentGroupInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetDeploymentGroupInputFormGroup() {
 		return new FormGroup<GetDeploymentGroupInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined),
-			deploymentGroupName: new FormControl<string | null | undefined>(undefined),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			deploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -3014,19 +3368,27 @@ export namespace MyNS {
 
 	/**  Represents the input of a <code>GetDeploymentInstance</code> operation.  */
 	export interface GetDeploymentInstanceInput {
+
+		/** Required */
 		deploymentId: string;
+
+		/** Required */
 		instanceId: string;
 	}
 
 	/**  Represents the input of a <code>GetDeploymentInstance</code> operation.  */
 	export interface GetDeploymentInstanceInputFormProperties {
+
+		/** Required */
 		deploymentId: FormControl<string | null | undefined>,
+
+		/** Required */
 		instanceId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetDeploymentInstanceInputFormGroup() {
 		return new FormGroup<GetDeploymentInstanceInputFormProperties>({
-			deploymentId: new FormControl<string | null | undefined>(undefined),
-			instanceId: new FormControl<string | null | undefined>(undefined),
+			deploymentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			instanceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3080,16 +3442,20 @@ export namespace MyNS {
 
 	/**  Represents the input of a <code>GetOnPremisesInstance</code> operation.  */
 	export interface GetOnPremisesInstanceInput {
+
+		/** Required */
 		instanceName: string;
 	}
 
 	/**  Represents the input of a <code>GetOnPremisesInstance</code> operation.  */
 	export interface GetOnPremisesInstanceInputFormProperties {
+
+		/** Required */
 		instanceName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetOnPremisesInstanceInputFormGroup() {
 		return new FormGroup<GetOnPremisesInstanceInputFormProperties>({
-			instanceName: new FormControl<string | null | undefined>(undefined),
+			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3115,6 +3481,12 @@ export namespace MyNS {
 
 	/**  Represents the input of a <code>ListApplicationRevisions</code> operation.  */
 	export interface ListApplicationRevisionsInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: string;
 		sortBy?: ListApplicationRevisionsInputSortBy | null;
 		sortOrder?: ListApplicationRevisionsInputSortOrder | null;
@@ -3126,6 +3498,12 @@ export namespace MyNS {
 
 	/**  Represents the input of a <code>ListApplicationRevisions</code> operation.  */
 	export interface ListApplicationRevisionsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: FormControl<string | null | undefined>,
 		sortBy: FormControl<ListApplicationRevisionsInputSortBy | null | undefined>,
 		sortOrder: FormControl<ListApplicationRevisionsInputSortOrder | null | undefined>,
@@ -3136,7 +3514,7 @@ export namespace MyNS {
 	}
 	export function CreateListApplicationRevisionsInputFormGroup() {
 		return new FormGroup<ListApplicationRevisionsInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			sortBy: new FormControl<ListApplicationRevisionsInputSortBy | null | undefined>(undefined),
 			sortOrder: new FormControl<ListApplicationRevisionsInputSortOrder | null | undefined>(undefined),
 			s3Bucket: new FormControl<string | null | undefined>(undefined),
@@ -3296,6 +3674,11 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>ListDeploymentGroups</code> operation. */
 	export interface ListDeploymentGroupsOutput {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName?: string | null;
 		deploymentGroups?: Array<string>;
 		nextToken?: string | null;
@@ -3303,12 +3686,17 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>ListDeploymentGroups</code> operation. */
 	export interface ListDeploymentGroupsOutputFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListDeploymentGroupsOutputFormGroup() {
 		return new FormGroup<ListDeploymentGroupsOutputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3317,18 +3705,30 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>ListDeploymentGroups</code> operation. */
 	export interface ListDeploymentGroupsInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: string;
 		nextToken?: string | null;
 	}
 
 	/** Represents the input of a <code>ListDeploymentGroups</code> operation. */
 	export interface ListDeploymentGroupsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListDeploymentGroupsInputFormGroup() {
 		return new FormGroup<ListDeploymentGroupsInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3355,6 +3755,8 @@ export namespace MyNS {
 
 	/**  Represents the input of a <code>ListDeploymentInstances</code> operation.  */
 	export interface ListDeploymentInstancesInput {
+
+		/** Required */
 		deploymentId: string;
 		nextToken?: string | null;
 		instanceStatusFilter?: Array<InstanceStatus>;
@@ -3363,12 +3765,14 @@ export namespace MyNS {
 
 	/**  Represents the input of a <code>ListDeploymentInstances</code> operation.  */
 	export interface ListDeploymentInstancesInputFormProperties {
+
+		/** Required */
 		deploymentId: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListDeploymentInstancesInputFormGroup() {
 		return new FormGroup<ListDeploymentInstancesInputFormProperties>({
-			deploymentId: new FormControl<string | null | undefined>(undefined),
+			deploymentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3482,7 +3886,17 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>ListDeployments</code> operation. */
 	export interface ListDeploymentsInput {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentGroupName?: string | null;
 		externalId?: string | null;
 		includeOnlyStatuses?: Array<DeploymentStatus>;
@@ -3494,15 +3908,25 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>ListDeployments</code> operation. */
 	export interface ListDeploymentsInputFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentGroupName: FormControl<string | null | undefined>,
 		externalId: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListDeploymentsInputFormGroup() {
 		return new FormGroup<ListDeploymentsInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined),
-			deploymentGroupName: new FormControl<string | null | undefined>(undefined),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			deploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			externalId: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -3662,16 +4086,28 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceArn: string;
 		NextToken?: string | null;
 	}
 	export interface ListTagsForResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceInputFormGroup() {
 		return new FormGroup<ListTagsForResourceInputFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3772,6 +4208,12 @@ export namespace MyNS {
 
 	/** Represents the input of a RegisterApplicationRevision operation. */
 	export interface RegisterApplicationRevisionInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: string;
 		description?: string | null;
 
@@ -3784,12 +4226,18 @@ export namespace MyNS {
 
 	/** Represents the input of a RegisterApplicationRevision operation. */
 	export interface RegisterApplicationRevisionInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterApplicationRevisionInputFormGroup() {
 		return new FormGroup<RegisterApplicationRevisionInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			description: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3798,6 +4246,8 @@ export namespace MyNS {
 
 	/** Represents the input of the register on-premises instance operation. */
 	export interface RegisterOnPremisesInstanceInput {
+
+		/** Required */
 		instanceName: string;
 		iamSessionArn?: string | null;
 		iamUserArn?: string | null;
@@ -3805,13 +4255,15 @@ export namespace MyNS {
 
 	/** Represents the input of the register on-premises instance operation. */
 	export interface RegisterOnPremisesInstanceInputFormProperties {
+
+		/** Required */
 		instanceName: FormControl<string | null | undefined>,
 		iamSessionArn: FormControl<string | null | undefined>,
 		iamUserArn: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterOnPremisesInstanceInputFormGroup() {
 		return new FormGroup<RegisterOnPremisesInstanceInputFormProperties>({
-			instanceName: new FormControl<string | null | undefined>(undefined),
+			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			iamSessionArn: new FormControl<string | null | undefined>(undefined),
 			iamUserArn: new FormControl<string | null | undefined>(undefined),
 		});
@@ -3901,7 +4353,11 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>RemoveTagsFromOnPremisesInstances</code> operation. */
 	export interface RemoveTagsFromOnPremisesInstancesInput {
+
+		/** Required */
 		tags: Array<Tag>;
+
+		/** Required */
 		instanceNames: Array<string>;
 	}
 
@@ -3952,18 +4408,22 @@ export namespace MyNS {
 
 	/**  Represents the input of a <code>StopDeployment</code> operation.  */
 	export interface StopDeploymentInput {
+
+		/** Required */
 		deploymentId: string;
 		autoRollbackEnabled?: boolean | null;
 	}
 
 	/**  Represents the input of a <code>StopDeployment</code> operation.  */
 	export interface StopDeploymentInputFormProperties {
+
+		/** Required */
 		deploymentId: FormControl<string | null | undefined>,
 		autoRollbackEnabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateStopDeploymentInputFormGroup() {
 		return new FormGroup<StopDeploymentInputFormProperties>({
-			deploymentId: new FormControl<string | null | undefined>(undefined),
+			deploymentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			autoRollbackEnabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -3980,15 +4440,29 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceArn: string;
+
+		/** Required */
 		Tags: Array<Tag>;
 	}
 	export interface TagResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceInputFormGroup() {
 		return new FormGroup<TagResourceInputFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
 		});
 
 	}
@@ -4004,15 +4478,29 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceArn: string;
+
+		/** Required */
 		TagKeys: Array<string>;
 	}
 	export interface UntagResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceInputFormGroup() {
 		return new FormGroup<UntagResourceInputFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
 		});
 
 	}
@@ -4020,19 +4508,39 @@ export namespace MyNS {
 
 	/** Represents the input of an <code>UpdateApplication</code> operation. */
 	export interface UpdateApplicationInput {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		newApplicationName?: string | null;
 	}
 
 	/** Represents the input of an <code>UpdateApplication</code> operation. */
 	export interface UpdateApplicationInputFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		newApplicationName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateApplicationInputFormGroup() {
 		return new FormGroup<UpdateApplicationInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined),
-			newApplicationName: new FormControl<string | null | undefined>(undefined),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			newApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -4055,9 +4563,31 @@ export namespace MyNS {
 
 	/** Represents the input of an <code>UpdateDeploymentGroup</code> operation. */
 	export interface UpdateDeploymentGroupInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		currentDeploymentGroupName: string;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		newDeploymentGroupName?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentConfigName?: string | null;
 		ec2TagFilters?: Array<EC2TagFilter>;
 		onPremisesInstanceTagFilters?: Array<TagFilter>;
@@ -4090,18 +4620,40 @@ export namespace MyNS {
 
 	/** Represents the input of an <code>UpdateDeploymentGroup</code> operation. */
 	export interface UpdateDeploymentGroupInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		applicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		currentDeploymentGroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		newDeploymentGroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		deploymentConfigName: FormControl<string | null | undefined>,
 		serviceRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateDeploymentGroupInputFormGroup() {
 		return new FormGroup<UpdateDeploymentGroupInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined),
-			currentDeploymentGroupName: new FormControl<string | null | undefined>(undefined),
-			newDeploymentGroupName: new FormControl<string | null | undefined>(undefined),
-			deploymentConfigName: new FormControl<string | null | undefined>(undefined),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			currentDeploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			newDeploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			serviceRoleArn: new FormControl<string | null | undefined>(undefined),
 		});
 

@@ -6,16 +6,20 @@ export namespace MyNS {
 
 	/** The AcceptDomainTransferFromAnotherAwsAccount response includes the following element. */
 	export interface AcceptDomainTransferFromAnotherAwsAccountResponse {
+
+		/** Max length: 255 */
 		OperationId?: string | null;
 	}
 
 	/** The AcceptDomainTransferFromAnotherAwsAccount response includes the following element. */
 	export interface AcceptDomainTransferFromAnotherAwsAccountResponseFormProperties {
+
+		/** Max length: 255 */
 		OperationId: FormControl<string | null | undefined>,
 	}
 	export function CreateAcceptDomainTransferFromAnotherAwsAccountResponseFormGroup() {
 		return new FormGroup<AcceptDomainTransferFromAnotherAwsAccountResponseFormProperties>({
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -23,19 +27,33 @@ export namespace MyNS {
 
 	/** The AcceptDomainTransferFromAnotherAwsAccount request includes the following elements. */
 	export interface AcceptDomainTransferFromAnotherAwsAccountRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: string;
+
+		/** Required */
 		Password: string;
 	}
 
 	/** The AcceptDomainTransferFromAnotherAwsAccount request includes the following elements. */
 	export interface AcceptDomainTransferFromAnotherAwsAccountRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: FormControl<string | null | undefined>,
+
+		/** Required */
 		Password: FormControl<string | null | undefined>,
 	}
 	export function CreateAcceptDomainTransferFromAnotherAwsAccountRequestFormGroup() {
 		return new FormGroup<AcceptDomainTransferFromAnotherAwsAccountRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
-			Password: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -73,16 +91,20 @@ export namespace MyNS {
 
 	/** The <code>CancelDomainTransferToAnotherAwsAccount</code> response includes the following element. */
 	export interface CancelDomainTransferToAnotherAwsAccountResponse {
+
+		/** Max length: 255 */
 		OperationId?: string | null;
 	}
 
 	/** The <code>CancelDomainTransferToAnotherAwsAccount</code> response includes the following element. */
 	export interface CancelDomainTransferToAnotherAwsAccountResponseFormProperties {
+
+		/** Max length: 255 */
 		OperationId: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelDomainTransferToAnotherAwsAccountResponseFormGroup() {
 		return new FormGroup<CancelDomainTransferToAnotherAwsAccountResponseFormProperties>({
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -90,16 +112,26 @@ export namespace MyNS {
 
 	/** The CancelDomainTransferToAnotherAwsAccount request includes the following element. */
 	export interface CancelDomainTransferToAnotherAwsAccountRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: string;
 	}
 
 	/** The CancelDomainTransferToAnotherAwsAccount request includes the following element. */
 	export interface CancelDomainTransferToAnotherAwsAccountRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelDomainTransferToAnotherAwsAccountRequestFormGroup() {
 		return new FormGroup<CancelDomainTransferToAnotherAwsAccountRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -107,16 +139,20 @@ export namespace MyNS {
 
 	/** The CheckDomainAvailability response includes the following elements. */
 	export interface CheckDomainAvailabilityResponse {
+
+		/** Required */
 		Availability: CheckDomainAvailabilityResponseAvailability;
 	}
 
 	/** The CheckDomainAvailability response includes the following elements. */
 	export interface CheckDomainAvailabilityResponseFormProperties {
+
+		/** Required */
 		Availability: FormControl<CheckDomainAvailabilityResponseAvailability | null | undefined>,
 	}
 	export function CreateCheckDomainAvailabilityResponseFormGroup() {
 		return new FormGroup<CheckDomainAvailabilityResponseFormProperties>({
-			Availability: new FormControl<CheckDomainAvailabilityResponseAvailability | null | undefined>(undefined),
+			Availability: new FormControl<CheckDomainAvailabilityResponseAvailability | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -126,19 +162,33 @@ export namespace MyNS {
 
 	/** The CheckDomainAvailability request contains the following elements. */
 	export interface CheckDomainAvailabilityRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: string;
+
+		/** Max length: 3 */
 		IdnLangCode?: string | null;
 	}
 
 	/** The CheckDomainAvailability request contains the following elements. */
 	export interface CheckDomainAvailabilityRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: FormControl<string | null | undefined>,
+
+		/** Max length: 3 */
 		IdnLangCode: FormControl<string | null | undefined>,
 	}
 	export function CreateCheckDomainAvailabilityRequestFormGroup() {
 		return new FormGroup<CheckDomainAvailabilityRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
-			IdnLangCode: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			IdnLangCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3)]),
 		});
 
 	}
@@ -199,19 +249,33 @@ export namespace MyNS {
 
 	/** The CheckDomainTransferability request contains the following elements. */
 	export interface CheckDomainTransferabilityRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: string;
+
+		/** Max length: 1024 */
 		AuthCode?: string | null;
 	}
 
 	/** The CheckDomainTransferability request contains the following elements. */
 	export interface CheckDomainTransferabilityRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: FormControl<string | null | undefined>,
+
+		/** Max length: 1024 */
 		AuthCode: FormControl<string | null | undefined>,
 	}
 	export function CreateCheckDomainTransferabilityRequestFormGroup() {
 		return new FormGroup<CheckDomainTransferabilityRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
-			AuthCode: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			AuthCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
@@ -229,17 +293,29 @@ export namespace MyNS {
 
 	/** The DeleteTagsForDomainRequest includes the following elements. */
 	export interface DeleteTagsForDomainRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: string;
+
+		/** Required */
 		TagsToDelete: Array<string>;
 	}
 
 	/** The DeleteTagsForDomainRequest includes the following elements. */
 	export interface DeleteTagsForDomainRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteTagsForDomainRequestFormGroup() {
 		return new FormGroup<DeleteTagsForDomainRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -255,14 +331,24 @@ export namespace MyNS {
 	}
 
 	export interface DisableDomainAutoRenewRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: string;
 	}
 	export interface DisableDomainAutoRenewRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateDisableDomainAutoRenewRequestFormGroup() {
 		return new FormGroup<DisableDomainAutoRenewRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -270,16 +356,26 @@ export namespace MyNS {
 
 	/** The DisableDomainTransferLock response includes the following element. */
 	export interface DisableDomainTransferLockResponse {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		OperationId: string;
 	}
 
 	/** The DisableDomainTransferLock response includes the following element. */
 	export interface DisableDomainTransferLockResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		OperationId: FormControl<string | null | undefined>,
 	}
 	export function CreateDisableDomainTransferLockResponseFormGroup() {
 		return new FormGroup<DisableDomainTransferLockResponseFormProperties>({
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -287,16 +383,26 @@ export namespace MyNS {
 
 	/** The DisableDomainTransferLock request includes the following element. */
 	export interface DisableDomainTransferLockRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: string;
 	}
 
 	/** The DisableDomainTransferLock request includes the following element. */
 	export interface DisableDomainTransferLockRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateDisableDomainTransferLockRequestFormGroup() {
 		return new FormGroup<DisableDomainTransferLockRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -332,14 +438,24 @@ export namespace MyNS {
 	}
 
 	export interface EnableDomainAutoRenewRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: string;
 	}
 	export interface EnableDomainAutoRenewRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateEnableDomainAutoRenewRequestFormGroup() {
 		return new FormGroup<EnableDomainAutoRenewRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -347,16 +463,26 @@ export namespace MyNS {
 
 	/** The EnableDomainTransferLock response includes the following elements. */
 	export interface EnableDomainTransferLockResponse {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		OperationId: string;
 	}
 
 	/** The EnableDomainTransferLock response includes the following elements. */
 	export interface EnableDomainTransferLockResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		OperationId: FormControl<string | null | undefined>,
 	}
 	export function CreateEnableDomainTransferLockResponseFormGroup() {
 		return new FormGroup<EnableDomainTransferLockResponseFormProperties>({
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -364,31 +490,45 @@ export namespace MyNS {
 
 	/** A request to set the transfer lock for the specified domain. */
 	export interface EnableDomainTransferLockRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: string;
 	}
 
 	/** A request to set the transfer lock for the specified domain. */
 	export interface EnableDomainTransferLockRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateEnableDomainTransferLockRequestFormGroup() {
 		return new FormGroup<EnableDomainTransferLockRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
 
 	export interface GetContactReachabilityStatusResponse {
+
+		/** Max length: 255 */
 		domainName?: string | null;
 		status?: GetContactReachabilityStatusResponseStatus | null;
 	}
 	export interface GetContactReachabilityStatusResponseFormProperties {
+
+		/** Max length: 255 */
 		domainName: FormControl<string | null | undefined>,
 		status: FormControl<GetContactReachabilityStatusResponseStatus | null | undefined>,
 	}
 	export function CreateGetContactReachabilityStatusResponseFormGroup() {
 		return new FormGroup<GetContactReachabilityStatusResponseFormProperties>({
-			domainName: new FormControl<string | null | undefined>(undefined),
+			domainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			status: new FormControl<GetContactReachabilityStatusResponseStatus | null | undefined>(undefined),
 		});
 
@@ -397,14 +537,18 @@ export namespace MyNS {
 	export enum GetContactReachabilityStatusResponseStatus { PENDING = 0, DONE = 1, EXPIRED = 2 }
 
 	export interface GetContactReachabilityStatusRequest {
+
+		/** Max length: 255 */
 		domainName?: string | null;
 	}
 	export interface GetContactReachabilityStatusRequestFormProperties {
+
+		/** Max length: 255 */
 		domainName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetContactReachabilityStatusRequestFormGroup() {
 		return new FormGroup<GetContactReachabilityStatusRequestFormProperties>({
-			domainName: new FormControl<string | null | undefined>(undefined),
+			domainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -412,7 +556,14 @@ export namespace MyNS {
 
 	/** The GetDomainDetail response includes the following elements. */
 	export interface GetDomainDetailResponse {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: string;
+
+		/** Required */
 		Nameservers: Array<Nameserver>;
 		AutoRenew?: boolean | null;
 
@@ -439,7 +590,11 @@ export namespace MyNS {
 		RegistrarName?: string | null;
 		WhoIsServer?: string | null;
 		RegistrarUrl?: string | null;
+
+		/** Max length: 254 */
 		AbuseContactEmail?: string | null;
+
+		/** Max length: 30 */
 		AbuseContactPhone?: string | null;
 		RegistryDomainId?: string | null;
 		CreationDate?: Date | null;
@@ -452,6 +607,11 @@ export namespace MyNS {
 
 	/** The GetDomainDetail response includes the following elements. */
 	export interface GetDomainDetailResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: FormControl<string | null | undefined>,
 		AutoRenew: FormControl<boolean | null | undefined>,
 		AdminPrivacy: FormControl<boolean | null | undefined>,
@@ -460,7 +620,11 @@ export namespace MyNS {
 		RegistrarName: FormControl<string | null | undefined>,
 		WhoIsServer: FormControl<string | null | undefined>,
 		RegistrarUrl: FormControl<string | null | undefined>,
+
+		/** Max length: 254 */
 		AbuseContactEmail: FormControl<string | null | undefined>,
+
+		/** Max length: 30 */
 		AbuseContactPhone: FormControl<string | null | undefined>,
 		RegistryDomainId: FormControl<string | null | undefined>,
 		CreationDate: FormControl<Date | null | undefined>,
@@ -471,7 +635,7 @@ export namespace MyNS {
 	}
 	export function CreateGetDomainDetailResponseFormGroup() {
 		return new FormGroup<GetDomainDetailResponseFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 			AutoRenew: new FormControl<boolean | null | undefined>(undefined),
 			AdminPrivacy: new FormControl<boolean | null | undefined>(undefined),
 			RegistrantPrivacy: new FormControl<boolean | null | undefined>(undefined),
@@ -479,8 +643,8 @@ export namespace MyNS {
 			RegistrarName: new FormControl<string | null | undefined>(undefined),
 			WhoIsServer: new FormControl<string | null | undefined>(undefined),
 			RegistrarUrl: new FormControl<string | null | undefined>(undefined),
-			AbuseContactEmail: new FormControl<string | null | undefined>(undefined),
-			AbuseContactPhone: new FormControl<string | null | undefined>(undefined),
+			AbuseContactEmail: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(254)]),
+			AbuseContactPhone: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30)]),
 			RegistryDomainId: new FormControl<string | null | undefined>(undefined),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
 			UpdatedDate: new FormControl<Date | null | undefined>(undefined),
@@ -494,17 +658,29 @@ export namespace MyNS {
 
 	/** Nameserver includes the following elements. */
 	export interface Nameserver {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Pattern: [a-zA-Z0-9_\-.]*
+		 */
 		Name: string;
 		GlueIps?: Array<string>;
 	}
 
 	/** Nameserver includes the following elements. */
 	export interface NameserverFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Pattern: [a-zA-Z0-9_\-.]*
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateNameserverFormGroup() {
 		return new FormGroup<NameserverFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -512,53 +688,97 @@ export namespace MyNS {
 
 	/** ContactDetail includes the following elements. */
 	export interface ContactDetail {
+
+		/** Max length: 255 */
 		FirstName?: string | null;
+
+		/** Max length: 255 */
 		LastName?: string | null;
 		ContactType?: ContactDetailContactType | null;
+
+		/** Max length: 255 */
 		OrganizationName?: string | null;
+
+		/** Max length: 255 */
 		AddressLine1?: string | null;
+
+		/** Max length: 255 */
 		AddressLine2?: string | null;
+
+		/** Max length: 255 */
 		City?: string | null;
+
+		/** Max length: 255 */
 		State?: string | null;
 		CountryCode?: ContactDetailCountryCode | null;
+
+		/** Max length: 255 */
 		ZipCode?: string | null;
+
+		/** Max length: 30 */
 		PhoneNumber?: string | null;
+
+		/** Max length: 254 */
 		Email?: string | null;
+
+		/** Max length: 30 */
 		Fax?: string | null;
 		ExtraParams?: Array<ExtraParam>;
 	}
 
 	/** ContactDetail includes the following elements. */
 	export interface ContactDetailFormProperties {
+
+		/** Max length: 255 */
 		FirstName: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		LastName: FormControl<string | null | undefined>,
 		ContactType: FormControl<ContactDetailContactType | null | undefined>,
+
+		/** Max length: 255 */
 		OrganizationName: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		AddressLine1: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		AddressLine2: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		City: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		State: FormControl<string | null | undefined>,
 		CountryCode: FormControl<ContactDetailCountryCode | null | undefined>,
+
+		/** Max length: 255 */
 		ZipCode: FormControl<string | null | undefined>,
+
+		/** Max length: 30 */
 		PhoneNumber: FormControl<string | null | undefined>,
+
+		/** Max length: 254 */
 		Email: FormControl<string | null | undefined>,
+
+		/** Max length: 30 */
 		Fax: FormControl<string | null | undefined>,
 	}
 	export function CreateContactDetailFormGroup() {
 		return new FormGroup<ContactDetailFormProperties>({
-			FirstName: new FormControl<string | null | undefined>(undefined),
-			LastName: new FormControl<string | null | undefined>(undefined),
+			FirstName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			LastName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			ContactType: new FormControl<ContactDetailContactType | null | undefined>(undefined),
-			OrganizationName: new FormControl<string | null | undefined>(undefined),
-			AddressLine1: new FormControl<string | null | undefined>(undefined),
-			AddressLine2: new FormControl<string | null | undefined>(undefined),
-			City: new FormControl<string | null | undefined>(undefined),
-			State: new FormControl<string | null | undefined>(undefined),
+			OrganizationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			AddressLine1: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			AddressLine2: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			City: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			State: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			CountryCode: new FormControl<ContactDetailCountryCode | null | undefined>(undefined),
-			ZipCode: new FormControl<string | null | undefined>(undefined),
-			PhoneNumber: new FormControl<string | null | undefined>(undefined),
-			Email: new FormControl<string | null | undefined>(undefined),
-			Fax: new FormControl<string | null | undefined>(undefined),
+			ZipCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			PhoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30)]),
+			Email: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(254)]),
+			Fax: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30)]),
 		});
 
 	}
@@ -570,19 +790,33 @@ export namespace MyNS {
 
 	/** ExtraParam includes the following elements. */
 	export interface ExtraParam {
+
+		/** Required */
 		Name: ExtraParamName;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 */
 		Value: string;
 	}
 
 	/** ExtraParam includes the following elements. */
 	export interface ExtraParamFormProperties {
+
+		/** Required */
 		Name: FormControl<ExtraParamName | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateExtraParamFormGroup() {
 		return new FormGroup<ExtraParamFormProperties>({
-			Name: new FormControl<ExtraParamName | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<ExtraParamName | null | undefined>(undefined, [Validators.required]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048)]),
 		});
 
 	}
@@ -592,16 +826,26 @@ export namespace MyNS {
 
 	/** The GetDomainDetail request includes the following element. */
 	export interface GetDomainDetailRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: string;
 	}
 
 	/** The GetDomainDetail request includes the following element. */
 	export interface GetDomainDetailRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetDomainDetailRequestFormGroup() {
 		return new FormGroup<GetDomainDetailRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -620,38 +864,60 @@ export namespace MyNS {
 
 	/** Information about one suggested domain name. */
 	export interface DomainSuggestion {
+
+		/** Max length: 255 */
 		DomainName?: string | null;
 		Availability?: string | null;
 	}
 
 	/** Information about one suggested domain name. */
 	export interface DomainSuggestionFormProperties {
+
+		/** Max length: 255 */
 		DomainName: FormControl<string | null | undefined>,
 		Availability: FormControl<string | null | undefined>,
 	}
 	export function CreateDomainSuggestionFormGroup() {
 		return new FormGroup<DomainSuggestionFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			Availability: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetDomainSuggestionsRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: string;
+
+		/** Required */
 		SuggestionCount: number;
+
+		/** Required */
 		OnlyAvailable: boolean;
 	}
 	export interface GetDomainSuggestionsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: FormControl<string | null | undefined>,
+
+		/** Required */
 		SuggestionCount: FormControl<number | null | undefined>,
+
+		/** Required */
 		OnlyAvailable: FormControl<boolean | null | undefined>,
 	}
 	export function CreateGetDomainSuggestionsRequestFormGroup() {
 		return new FormGroup<GetDomainSuggestionsRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
-			SuggestionCount: new FormControl<number | null | undefined>(undefined),
-			OnlyAvailable: new FormControl<boolean | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			SuggestionCount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			OnlyAvailable: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -659,9 +925,13 @@ export namespace MyNS {
 
 	/** The GetOperationDetail response includes the following elements. */
 	export interface GetOperationDetailResponse {
+
+		/** Max length: 255 */
 		OperationId?: string | null;
 		Status?: GetOperationDetailResponseStatus | null;
 		Message?: string | null;
+
+		/** Max length: 255 */
 		DomainName?: string | null;
 		Type?: GetOperationDetailResponseType | null;
 		SubmittedDate?: Date | null;
@@ -669,19 +939,23 @@ export namespace MyNS {
 
 	/** The GetOperationDetail response includes the following elements. */
 	export interface GetOperationDetailResponseFormProperties {
+
+		/** Max length: 255 */
 		OperationId: FormControl<string | null | undefined>,
 		Status: FormControl<GetOperationDetailResponseStatus | null | undefined>,
 		Message: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		DomainName: FormControl<string | null | undefined>,
 		Type: FormControl<GetOperationDetailResponseType | null | undefined>,
 		SubmittedDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateGetOperationDetailResponseFormGroup() {
 		return new FormGroup<GetOperationDetailResponseFormProperties>({
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			Status: new FormControl<GetOperationDetailResponseStatus | null | undefined>(undefined),
 			Message: new FormControl<string | null | undefined>(undefined),
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			Type: new FormControl<GetOperationDetailResponseType | null | undefined>(undefined),
 			SubmittedDate: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -695,16 +969,26 @@ export namespace MyNS {
 
 	/** The <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a> request includes the following element. */
 	export interface GetOperationDetailRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		OperationId: string;
 	}
 
 	/** The <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a> request includes the following element. */
 	export interface GetOperationDetailRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		OperationId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetOperationDetailRequestFormGroup() {
 		return new FormGroup<GetOperationDetailRequestFormProperties>({
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -712,17 +996,23 @@ export namespace MyNS {
 
 	/** The ListDomains response includes the following elements. */
 	export interface ListDomainsResponse {
+
+		/** Required */
 		Domains: Array<DomainSummary>;
+
+		/** Max length: 4096 */
 		NextPageMarker?: string | null;
 	}
 
 	/** The ListDomains response includes the following elements. */
 	export interface ListDomainsResponseFormProperties {
+
+		/** Max length: 4096 */
 		NextPageMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListDomainsResponseFormGroup() {
 		return new FormGroup<ListDomainsResponseFormProperties>({
-			NextPageMarker: new FormControl<string | null | undefined>(undefined),
+			NextPageMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
 		});
 
 	}
@@ -730,6 +1020,11 @@ export namespace MyNS {
 
 	/** Summary information about one domain. */
 	export interface DomainSummary {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: string;
 		AutoRenew?: boolean | null;
 		TransferLock?: boolean | null;
@@ -738,6 +1033,11 @@ export namespace MyNS {
 
 	/** Summary information about one domain. */
 	export interface DomainSummaryFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: FormControl<string | null | undefined>,
 		AutoRenew: FormControl<boolean | null | undefined>,
 		TransferLock: FormControl<boolean | null | undefined>,
@@ -745,7 +1045,7 @@ export namespace MyNS {
 	}
 	export function CreateDomainSummaryFormGroup() {
 		return new FormGroup<DomainSummaryFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 			AutoRenew: new FormControl<boolean | null | undefined>(undefined),
 			TransferLock: new FormControl<boolean | null | undefined>(undefined),
 			Expiry: new FormControl<Date | null | undefined>(undefined),
@@ -756,19 +1056,27 @@ export namespace MyNS {
 
 	/** The ListDomains request includes the following elements. */
 	export interface ListDomainsRequest {
+
+		/** Max length: 4096 */
 		Marker?: string | null;
+
+		/** Maximum: 100 */
 		MaxItems?: number | null;
 	}
 
 	/** The ListDomains request includes the following elements. */
 	export interface ListDomainsRequestFormProperties {
+
+		/** Max length: 4096 */
 		Marker: FormControl<string | null | undefined>,
+
+		/** Maximum: 100 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListDomainsRequestFormGroup() {
 		return new FormGroup<ListDomainsRequestFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.max(100)]),
 		});
 
 	}
@@ -776,17 +1084,23 @@ export namespace MyNS {
 
 	/** The ListOperations response includes the following elements. */
 	export interface ListOperationsResponse {
+
+		/** Required */
 		Operations: Array<OperationSummary>;
+
+		/** Max length: 4096 */
 		NextPageMarker?: string | null;
 	}
 
 	/** The ListOperations response includes the following elements. */
 	export interface ListOperationsResponseFormProperties {
+
+		/** Max length: 4096 */
 		NextPageMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListOperationsResponseFormGroup() {
 		return new FormGroup<ListOperationsResponseFormProperties>({
-			NextPageMarker: new FormControl<string | null | undefined>(undefined),
+			NextPageMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
 		});
 
 	}
@@ -794,25 +1108,47 @@ export namespace MyNS {
 
 	/** OperationSummary includes the following elements. */
 	export interface OperationSummary {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		OperationId: string;
+
+		/** Required */
 		Status: GetOperationDetailResponseStatus;
+
+		/** Required */
 		Type: GetOperationDetailResponseType;
+
+		/** Required */
 		SubmittedDate: Date;
 	}
 
 	/** OperationSummary includes the following elements. */
 	export interface OperationSummaryFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		OperationId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Status: FormControl<GetOperationDetailResponseStatus | null | undefined>,
+
+		/** Required */
 		Type: FormControl<GetOperationDetailResponseType | null | undefined>,
+
+		/** Required */
 		SubmittedDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateOperationSummaryFormGroup() {
 		return new FormGroup<OperationSummaryFormProperties>({
-			OperationId: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<GetOperationDetailResponseStatus | null | undefined>(undefined),
-			Type: new FormControl<GetOperationDetailResponseType | null | undefined>(undefined),
-			SubmittedDate: new FormControl<Date | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			Status: new FormControl<GetOperationDetailResponseStatus | null | undefined>(undefined, [Validators.required]),
+			Type: new FormControl<GetOperationDetailResponseType | null | undefined>(undefined, [Validators.required]),
+			SubmittedDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -821,21 +1157,29 @@ export namespace MyNS {
 	/** The ListOperations request includes the following elements. */
 	export interface ListOperationsRequest {
 		SubmittedSince?: Date | null;
+
+		/** Max length: 4096 */
 		Marker?: string | null;
+
+		/** Maximum: 100 */
 		MaxItems?: number | null;
 	}
 
 	/** The ListOperations request includes the following elements. */
 	export interface ListOperationsRequestFormProperties {
 		SubmittedSince: FormControl<Date | null | undefined>,
+
+		/** Max length: 4096 */
 		Marker: FormControl<string | null | undefined>,
+
+		/** Maximum: 100 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateListOperationsRequestFormGroup() {
 		return new FormGroup<ListOperationsRequestFormProperties>({
 			SubmittedSince: new FormControl<Date | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.max(100)]),
 		});
 
 	}
@@ -843,6 +1187,8 @@ export namespace MyNS {
 
 	/** The ListTagsForDomain response includes the following elements. */
 	export interface ListTagsForDomainResponse {
+
+		/** Required */
 		TagList: Array<Tag>;
 	}
 
@@ -878,16 +1224,26 @@ export namespace MyNS {
 
 	/** The ListTagsForDomainRequest includes the following elements. */
 	export interface ListTagsForDomainRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: string;
 	}
 
 	/** The ListTagsForDomainRequest includes the following elements. */
 	export interface ListTagsForDomainRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForDomainRequestFormGroup() {
 		return new FormGroup<ListTagsForDomainRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -895,16 +1251,26 @@ export namespace MyNS {
 
 	/** The RegisterDomain response includes the following element. */
 	export interface RegisterDomainResponse {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		OperationId: string;
 	}
 
 	/** The RegisterDomain response includes the following element. */
 	export interface RegisterDomainResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		OperationId: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterDomainResponseFormGroup() {
 		return new FormGroup<RegisterDomainResponseFormProperties>({
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -912,8 +1278,21 @@ export namespace MyNS {
 
 	/** The RegisterDomain request includes the following elements. */
 	export interface RegisterDomainRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: string;
+
+		/** Max length: 3 */
 		IdnLangCode?: string | null;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		DurationInYears: number;
 		AutoRenew?: boolean | null;
 
@@ -941,8 +1320,21 @@ export namespace MyNS {
 
 	/** The RegisterDomain request includes the following elements. */
 	export interface RegisterDomainRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: FormControl<string | null | undefined>,
+
+		/** Max length: 3 */
 		IdnLangCode: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		DurationInYears: FormControl<number | null | undefined>,
 		AutoRenew: FormControl<boolean | null | undefined>,
 		PrivacyProtectAdminContact: FormControl<boolean | null | undefined>,
@@ -951,9 +1343,9 @@ export namespace MyNS {
 	}
 	export function CreateRegisterDomainRequestFormGroup() {
 		return new FormGroup<RegisterDomainRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
-			IdnLangCode: new FormControl<string | null | undefined>(undefined),
-			DurationInYears: new FormControl<number | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			IdnLangCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3)]),
+			DurationInYears: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(10)]),
 			AutoRenew: new FormControl<boolean | null | undefined>(undefined),
 			PrivacyProtectAdminContact: new FormControl<boolean | null | undefined>(undefined),
 			PrivacyProtectRegistrantContact: new FormControl<boolean | null | undefined>(undefined),
@@ -965,16 +1357,20 @@ export namespace MyNS {
 
 	/** The RejectDomainTransferFromAnotherAwsAccount response includes the following element. */
 	export interface RejectDomainTransferFromAnotherAwsAccountResponse {
+
+		/** Max length: 255 */
 		OperationId?: string | null;
 	}
 
 	/** The RejectDomainTransferFromAnotherAwsAccount response includes the following element. */
 	export interface RejectDomainTransferFromAnotherAwsAccountResponseFormProperties {
+
+		/** Max length: 255 */
 		OperationId: FormControl<string | null | undefined>,
 	}
 	export function CreateRejectDomainTransferFromAnotherAwsAccountResponseFormGroup() {
 		return new FormGroup<RejectDomainTransferFromAnotherAwsAccountResponseFormProperties>({
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -982,29 +1378,49 @@ export namespace MyNS {
 
 	/** The RejectDomainTransferFromAnotherAwsAccount request includes the following element. */
 	export interface RejectDomainTransferFromAnotherAwsAccountRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: string;
 	}
 
 	/** The RejectDomainTransferFromAnotherAwsAccount request includes the following element. */
 	export interface RejectDomainTransferFromAnotherAwsAccountRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateRejectDomainTransferFromAnotherAwsAccountRequestFormGroup() {
 		return new FormGroup<RejectDomainTransferFromAnotherAwsAccountRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
 
 	export interface RenewDomainResponse {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		OperationId: string;
 	}
 	export interface RenewDomainResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		OperationId: FormControl<string | null | undefined>,
 	}
 	export function CreateRenewDomainResponseFormGroup() {
 		return new FormGroup<RenewDomainResponseFormProperties>({
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -1012,54 +1428,90 @@ export namespace MyNS {
 
 	/** A <code>RenewDomain</code> request includes the number of years that you want to renew for and the current expiration year. */
 	export interface RenewDomainRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		DurationInYears?: number | null;
+
+		/** Required */
 		CurrentExpiryYear: number;
 	}
 
 	/** A <code>RenewDomain</code> request includes the number of years that you want to renew for and the current expiration year. */
 	export interface RenewDomainRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		DurationInYears: FormControl<number | null | undefined>,
+
+		/** Required */
 		CurrentExpiryYear: FormControl<number | null | undefined>,
 	}
 	export function CreateRenewDomainRequestFormGroup() {
 		return new FormGroup<RenewDomainRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
-			DurationInYears: new FormControl<number | null | undefined>(undefined),
-			CurrentExpiryYear: new FormControl<number | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			DurationInYears: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10)]),
+			CurrentExpiryYear: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ResendContactReachabilityEmailResponse {
+
+		/** Max length: 255 */
 		domainName?: string | null;
+
+		/** Max length: 254 */
 		emailAddress?: string | null;
 		isAlreadyVerified?: boolean | null;
 	}
 	export interface ResendContactReachabilityEmailResponseFormProperties {
+
+		/** Max length: 255 */
 		domainName: FormControl<string | null | undefined>,
+
+		/** Max length: 254 */
 		emailAddress: FormControl<string | null | undefined>,
 		isAlreadyVerified: FormControl<boolean | null | undefined>,
 	}
 	export function CreateResendContactReachabilityEmailResponseFormGroup() {
 		return new FormGroup<ResendContactReachabilityEmailResponseFormProperties>({
-			domainName: new FormControl<string | null | undefined>(undefined),
-			emailAddress: new FormControl<string | null | undefined>(undefined),
+			domainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			emailAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(254)]),
 			isAlreadyVerified: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ResendContactReachabilityEmailRequest {
+
+		/** Max length: 255 */
 		domainName?: string | null;
 	}
 	export interface ResendContactReachabilityEmailRequestFormProperties {
+
+		/** Max length: 255 */
 		domainName: FormControl<string | null | undefined>,
 	}
 	export function CreateResendContactReachabilityEmailRequestFormGroup() {
 		return new FormGroup<ResendContactReachabilityEmailRequestFormProperties>({
-			domainName: new FormControl<string | null | undefined>(undefined),
+			domainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -1067,16 +1519,26 @@ export namespace MyNS {
 
 	/** The RetrieveDomainAuthCode response includes the following element. */
 	export interface RetrieveDomainAuthCodeResponse {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 */
 		AuthCode: string;
 	}
 
 	/** The RetrieveDomainAuthCode response includes the following element. */
 	export interface RetrieveDomainAuthCodeResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 */
 		AuthCode: FormControl<string | null | undefined>,
 	}
 	export function CreateRetrieveDomainAuthCodeResponseFormGroup() {
 		return new FormGroup<RetrieveDomainAuthCodeResponseFormProperties>({
-			AuthCode: new FormControl<string | null | undefined>(undefined),
+			AuthCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1084,16 +1546,26 @@ export namespace MyNS {
 
 	/** A request for the authorization code for the specified domain. To transfer a domain to another registrar, you provide this value to the new registrar. */
 	export interface RetrieveDomainAuthCodeRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: string;
 	}
 
 	/** A request for the authorization code for the specified domain. To transfer a domain to another registrar, you provide this value to the new registrar. */
 	export interface RetrieveDomainAuthCodeRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateRetrieveDomainAuthCodeRequestFormGroup() {
 		return new FormGroup<RetrieveDomainAuthCodeRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -1101,16 +1573,26 @@ export namespace MyNS {
 
 	/** The TransferDomain response includes the following element. */
 	export interface TransferDomainResponse {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		OperationId: string;
 	}
 
 	/** The TransferDomain response includes the following element. */
 	export interface TransferDomainResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		OperationId: FormControl<string | null | undefined>,
 	}
 	export function CreateTransferDomainResponseFormGroup() {
 		return new FormGroup<TransferDomainResponseFormProperties>({
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -1118,10 +1600,25 @@ export namespace MyNS {
 
 	/** The TransferDomain request includes the following elements. */
 	export interface TransferDomainRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: string;
+
+		/** Max length: 3 */
 		IdnLangCode?: string | null;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		DurationInYears: number;
 		Nameservers?: Array<Nameserver>;
+
+		/** Max length: 1024 */
 		AuthCode?: string | null;
 		AutoRenew?: boolean | null;
 
@@ -1149,9 +1646,24 @@ export namespace MyNS {
 
 	/** The TransferDomain request includes the following elements. */
 	export interface TransferDomainRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: FormControl<string | null | undefined>,
+
+		/** Max length: 3 */
 		IdnLangCode: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		DurationInYears: FormControl<number | null | undefined>,
+
+		/** Max length: 1024 */
 		AuthCode: FormControl<string | null | undefined>,
 		AutoRenew: FormControl<boolean | null | undefined>,
 		PrivacyProtectAdminContact: FormControl<boolean | null | undefined>,
@@ -1160,10 +1672,10 @@ export namespace MyNS {
 	}
 	export function CreateTransferDomainRequestFormGroup() {
 		return new FormGroup<TransferDomainRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
-			IdnLangCode: new FormControl<string | null | undefined>(undefined),
-			DurationInYears: new FormControl<number | null | undefined>(undefined),
-			AuthCode: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			IdnLangCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3)]),
+			DurationInYears: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(10)]),
+			AuthCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			AutoRenew: new FormControl<boolean | null | undefined>(undefined),
 			PrivacyProtectAdminContact: new FormControl<boolean | null | undefined>(undefined),
 			PrivacyProtectRegistrantContact: new FormControl<boolean | null | undefined>(undefined),
@@ -1175,18 +1687,22 @@ export namespace MyNS {
 
 	/** The <code>TransferDomainToAnotherAwsAccount</code> response includes the following elements. */
 	export interface TransferDomainToAnotherAwsAccountResponse {
+
+		/** Max length: 255 */
 		OperationId?: string | null;
 		Password?: string | null;
 	}
 
 	/** The <code>TransferDomainToAnotherAwsAccount</code> response includes the following elements. */
 	export interface TransferDomainToAnotherAwsAccountResponseFormProperties {
+
+		/** Max length: 255 */
 		OperationId: FormControl<string | null | undefined>,
 		Password: FormControl<string | null | undefined>,
 	}
 	export function CreateTransferDomainToAnotherAwsAccountResponseFormGroup() {
 		return new FormGroup<TransferDomainToAnotherAwsAccountResponseFormProperties>({
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			Password: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1195,19 +1711,39 @@ export namespace MyNS {
 
 	/** The TransferDomainToAnotherAwsAccount request includes the following elements. */
 	export interface TransferDomainToAnotherAwsAccountRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: string;
+
+		/**
+		 * Required
+		 * Pattern: ^(\d{12})$
+		 */
 		AccountId: string;
 	}
 
 	/** The TransferDomainToAnotherAwsAccount request includes the following elements. */
 	export interface TransferDomainToAnotherAwsAccountRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: ^(\d{12})$
+		 */
 		AccountId: FormControl<string | null | undefined>,
 	}
 	export function CreateTransferDomainToAnotherAwsAccountRequestFormGroup() {
 		return new FormGroup<TransferDomainToAnotherAwsAccountRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
-			AccountId: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1215,16 +1751,26 @@ export namespace MyNS {
 
 	/** The UpdateDomainContact response includes the following element. */
 	export interface UpdateDomainContactResponse {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		OperationId: string;
 	}
 
 	/** The UpdateDomainContact response includes the following element. */
 	export interface UpdateDomainContactResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		OperationId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateDomainContactResponseFormGroup() {
 		return new FormGroup<UpdateDomainContactResponseFormProperties>({
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -1232,6 +1778,11 @@ export namespace MyNS {
 
 	/** The UpdateDomainContact request includes the following elements. */
 	export interface UpdateDomainContactRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: string;
 
 		/** ContactDetail includes the following elements. */
@@ -1246,11 +1797,16 @@ export namespace MyNS {
 
 	/** The UpdateDomainContact request includes the following elements. */
 	export interface UpdateDomainContactRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateDomainContactRequestFormGroup() {
 		return new FormGroup<UpdateDomainContactRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -1258,16 +1814,26 @@ export namespace MyNS {
 
 	/** The UpdateDomainContactPrivacy response includes the following element. */
 	export interface UpdateDomainContactPrivacyResponse {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		OperationId: string;
 	}
 
 	/** The UpdateDomainContactPrivacy response includes the following element. */
 	export interface UpdateDomainContactPrivacyResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		OperationId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateDomainContactPrivacyResponseFormGroup() {
 		return new FormGroup<UpdateDomainContactPrivacyResponseFormProperties>({
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -1275,6 +1841,11 @@ export namespace MyNS {
 
 	/** The UpdateDomainContactPrivacy request includes the following elements. */
 	export interface UpdateDomainContactPrivacyRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: string;
 		AdminPrivacy?: boolean | null;
 		RegistrantPrivacy?: boolean | null;
@@ -1283,6 +1854,11 @@ export namespace MyNS {
 
 	/** The UpdateDomainContactPrivacy request includes the following elements. */
 	export interface UpdateDomainContactPrivacyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: FormControl<string | null | undefined>,
 		AdminPrivacy: FormControl<boolean | null | undefined>,
 		RegistrantPrivacy: FormControl<boolean | null | undefined>,
@@ -1290,7 +1866,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateDomainContactPrivacyRequestFormGroup() {
 		return new FormGroup<UpdateDomainContactPrivacyRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 			AdminPrivacy: new FormControl<boolean | null | undefined>(undefined),
 			RegistrantPrivacy: new FormControl<boolean | null | undefined>(undefined),
 			TechPrivacy: new FormControl<boolean | null | undefined>(undefined),
@@ -1301,16 +1877,26 @@ export namespace MyNS {
 
 	/** The UpdateDomainNameservers response includes the following element. */
 	export interface UpdateDomainNameserversResponse {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		OperationId: string;
 	}
 
 	/** The UpdateDomainNameservers response includes the following element. */
 	export interface UpdateDomainNameserversResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		OperationId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateDomainNameserversResponseFormGroup() {
 		return new FormGroup<UpdateDomainNameserversResponseFormProperties>({
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -1318,19 +1904,31 @@ export namespace MyNS {
 
 	/** <p>Replaces the current set of name servers for the domain with the specified set of name servers. If you use Amazon Route 53 as your DNS service, specify the four name servers in the delegation set for the hosted zone for the domain.</p> <p>If successful, this operation returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email. </p> */
 	export interface UpdateDomainNameserversRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: string;
 		FIAuthKey?: string | null;
+
+		/** Required */
 		Nameservers: Array<Nameserver>;
 	}
 
 	/** <p>Replaces the current set of name servers for the domain with the specified set of name servers. If you use Amazon Route 53 as your DNS service, specify the four name servers in the delegation set for the hosted zone for the domain.</p> <p>If successful, this operation returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email. </p> */
 	export interface UpdateDomainNameserversRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: FormControl<string | null | undefined>,
 		FIAuthKey: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateDomainNameserversRequestFormGroup() {
 		return new FormGroup<UpdateDomainNameserversRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 			FIAuthKey: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1349,17 +1947,27 @@ export namespace MyNS {
 
 	/** The UpdateTagsForDomainRequest includes the following elements. */
 	export interface UpdateTagsForDomainRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: string;
 		TagsToUpdate?: Array<Tag>;
 	}
 
 	/** The UpdateTagsForDomainRequest includes the following elements. */
 	export interface UpdateTagsForDomainRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateTagsForDomainRequestFormGroup() {
 		return new FormGroup<UpdateTagsForDomainRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
@@ -1367,17 +1975,21 @@ export namespace MyNS {
 
 	/** The ViewBilling response includes the following elements. */
 	export interface ViewBillingResponse {
+
+		/** Max length: 4096 */
 		NextPageMarker?: string | null;
 		BillingRecords?: Array<BillingRecord>;
 	}
 
 	/** The ViewBilling response includes the following elements. */
 	export interface ViewBillingResponseFormProperties {
+
+		/** Max length: 4096 */
 		NextPageMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateViewBillingResponseFormGroup() {
 		return new FormGroup<ViewBillingResponseFormProperties>({
-			NextPageMarker: new FormControl<string | null | undefined>(undefined),
+			NextPageMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
 		});
 
 	}
@@ -1385,6 +1997,8 @@ export namespace MyNS {
 
 	/** Information for one billing record. */
 	export interface BillingRecord {
+
+		/** Max length: 255 */
 		DomainName?: string | null;
 		Operation?: GetOperationDetailResponseType | null;
 		InvoiceId?: string | null;
@@ -1394,6 +2008,8 @@ export namespace MyNS {
 
 	/** Information for one billing record. */
 	export interface BillingRecordFormProperties {
+
+		/** Max length: 255 */
 		DomainName: FormControl<string | null | undefined>,
 		Operation: FormControl<GetOperationDetailResponseType | null | undefined>,
 		InvoiceId: FormControl<string | null | undefined>,
@@ -1402,7 +2018,7 @@ export namespace MyNS {
 	}
 	export function CreateBillingRecordFormGroup() {
 		return new FormGroup<BillingRecordFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			Operation: new FormControl<GetOperationDetailResponseType | null | undefined>(undefined),
 			InvoiceId: new FormControl<string | null | undefined>(undefined),
 			BillDate: new FormControl<Date | null | undefined>(undefined),
@@ -1416,7 +2032,11 @@ export namespace MyNS {
 	export interface ViewBillingRequest {
 		Start?: Date | null;
 		End?: Date | null;
+
+		/** Max length: 4096 */
 		Marker?: string | null;
+
+		/** Maximum: 100 */
 		MaxItems?: number | null;
 	}
 
@@ -1424,15 +2044,19 @@ export namespace MyNS {
 	export interface ViewBillingRequestFormProperties {
 		Start: FormControl<Date | null | undefined>,
 		End: FormControl<Date | null | undefined>,
+
+		/** Max length: 4096 */
 		Marker: FormControl<string | null | undefined>,
+
+		/** Maximum: 100 */
 		MaxItems: FormControl<number | null | undefined>,
 	}
 	export function CreateViewBillingRequestFormGroup() {
 		return new FormGroup<ViewBillingRequestFormProperties>({
 			Start: new FormControl<Date | null | undefined>(undefined),
 			End: new FormControl<Date | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
+			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.max(100)]),
 		});
 
 	}

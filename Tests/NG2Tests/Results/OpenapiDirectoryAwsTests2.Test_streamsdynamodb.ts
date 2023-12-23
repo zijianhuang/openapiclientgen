@@ -23,36 +23,73 @@ export namespace MyNS {
 
 	/** Represents all of the data describing a particular stream. */
 	export interface StreamDescription {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		StreamArn?: string | null;
 		StreamLabel?: string | null;
 		StreamStatus?: StreamDescriptionStreamStatus | null;
 		StreamViewType?: StreamDescriptionStreamViewType | null;
 		CreationRequestDateTime?: Date | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 2
+		 */
 		KeySchema?: Array<KeySchemaElement>;
 		Shards?: Array<Shard>;
+
+		/**
+		 * Max length: 65
+		 * Min length: 28
+		 */
 		LastEvaluatedShardId?: string | null;
 	}
 
 	/** Represents all of the data describing a particular stream. */
 	export interface StreamDescriptionFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		StreamArn: FormControl<string | null | undefined>,
 		StreamLabel: FormControl<string | null | undefined>,
 		StreamStatus: FormControl<StreamDescriptionStreamStatus | null | undefined>,
 		StreamViewType: FormControl<StreamDescriptionStreamViewType | null | undefined>,
 		CreationRequestDateTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 65
+		 * Min length: 28
+		 */
 		LastEvaluatedShardId: FormControl<string | null | undefined>,
 	}
 	export function CreateStreamDescriptionFormGroup() {
 		return new FormGroup<StreamDescriptionFormProperties>({
-			StreamArn: new FormControl<string | null | undefined>(undefined),
+			StreamArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(37)]),
 			StreamLabel: new FormControl<string | null | undefined>(undefined),
 			StreamStatus: new FormControl<StreamDescriptionStreamStatus | null | undefined>(undefined),
 			StreamViewType: new FormControl<StreamDescriptionStreamViewType | null | undefined>(undefined),
 			CreationRequestDateTime: new FormControl<Date | null | undefined>(undefined),
-			TableName: new FormControl<string | null | undefined>(undefined),
-			LastEvaluatedShardId: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			LastEvaluatedShardId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65), Validators.minLength(28)]),
 		});
 
 	}
@@ -64,19 +101,35 @@ export namespace MyNS {
 
 	/** <p>Represents <i>a single element</i> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.</p> <p>A <code>KeySchemaElement</code> represents exactly one attribute of the primary key. For example, a simple primary key (partition key) would be represented by one <code>KeySchemaElement</code>. A composite primary key (partition key and sort key) would require one <code>KeySchemaElement</code> for the partition key, and another <code>KeySchemaElement</code> for the sort key.</p> <note> <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p> <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p> </note> */
 	export interface KeySchemaElement {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		AttributeName: string;
+
+		/** Required */
 		KeyType: KeySchemaElementKeyType;
 	}
 
 	/** <p>Represents <i>a single element</i> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.</p> <p>A <code>KeySchemaElement</code> represents exactly one attribute of the primary key. For example, a simple primary key (partition key) would be represented by one <code>KeySchemaElement</code>. A composite primary key (partition key and sort key) would require one <code>KeySchemaElement</code> for the partition key, and another <code>KeySchemaElement</code> for the sort key.</p> <note> <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p> <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p> </note> */
 	export interface KeySchemaElementFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		AttributeName: FormControl<string | null | undefined>,
+
+		/** Required */
 		KeyType: FormControl<KeySchemaElementKeyType | null | undefined>,
 	}
 	export function CreateKeySchemaElementFormGroup() {
 		return new FormGroup<KeySchemaElementFormProperties>({
-			AttributeName: new FormControl<string | null | undefined>(undefined),
-			KeyType: new FormControl<KeySchemaElementKeyType | null | undefined>(undefined),
+			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			KeyType: new FormControl<KeySchemaElementKeyType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -86,22 +139,42 @@ export namespace MyNS {
 
 	/** A uniquely identified group of stream records within a stream. */
 	export interface Shard {
+
+		/**
+		 * Max length: 65
+		 * Min length: 28
+		 */
 		ShardId?: string | null;
 
 		/** The beginning and ending sequence numbers for the stream records contained within a shard. */
 		SequenceNumberRange?: SequenceNumberRange;
+
+		/**
+		 * Max length: 65
+		 * Min length: 28
+		 */
 		ParentShardId?: string | null;
 	}
 
 	/** A uniquely identified group of stream records within a stream. */
 	export interface ShardFormProperties {
+
+		/**
+		 * Max length: 65
+		 * Min length: 28
+		 */
 		ShardId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 65
+		 * Min length: 28
+		 */
 		ParentShardId: FormControl<string | null | undefined>,
 	}
 	export function CreateShardFormGroup() {
 		return new FormGroup<ShardFormProperties>({
-			ShardId: new FormControl<string | null | undefined>(undefined),
-			ParentShardId: new FormControl<string | null | undefined>(undefined),
+			ShardId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65), Validators.minLength(28)]),
+			ParentShardId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65), Validators.minLength(28)]),
 		});
 
 	}
@@ -109,19 +182,39 @@ export namespace MyNS {
 
 	/** The beginning and ending sequence numbers for the stream records contained within a shard. */
 	export interface SequenceNumberRange {
+
+		/**
+		 * Max length: 40
+		 * Min length: 21
+		 */
 		StartingSequenceNumber?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 21
+		 */
 		EndingSequenceNumber?: string | null;
 	}
 
 	/** The beginning and ending sequence numbers for the stream records contained within a shard. */
 	export interface SequenceNumberRangeFormProperties {
+
+		/**
+		 * Max length: 40
+		 * Min length: 21
+		 */
 		StartingSequenceNumber: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 21
+		 */
 		EndingSequenceNumber: FormControl<string | null | undefined>,
 	}
 	export function CreateSequenceNumberRangeFormGroup() {
 		return new FormGroup<SequenceNumberRangeFormProperties>({
-			StartingSequenceNumber: new FormControl<string | null | undefined>(undefined),
-			EndingSequenceNumber: new FormControl<string | null | undefined>(undefined),
+			StartingSequenceNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(21)]),
+			EndingSequenceNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(21)]),
 		});
 
 	}
@@ -129,22 +222,48 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>DescribeStream</code> operation. */
 	export interface DescribeStreamInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		StreamArn: string;
+
+		/** Minimum: 1 */
 		Limit?: number | null;
+
+		/**
+		 * Max length: 65
+		 * Min length: 28
+		 */
 		ExclusiveStartShardId?: string | null;
 	}
 
 	/** Represents the input of a <code>DescribeStream</code> operation. */
 	export interface DescribeStreamInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		StreamArn: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		Limit: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 65
+		 * Min length: 28
+		 */
 		ExclusiveStartShardId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeStreamInputFormGroup() {
 		return new FormGroup<DescribeStreamInputFormProperties>({
-			StreamArn: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
-			ExclusiveStartShardId: new FormControl<string | null | undefined>(undefined),
+			StreamArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(37)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			ExclusiveStartShardId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65), Validators.minLength(28)]),
 		});
 
 	}
@@ -187,16 +306,26 @@ export namespace MyNS {
 	/** Represents the output of a <code>GetRecords</code> operation. */
 	export interface GetRecordsOutput {
 		Records?: Array<Record>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextShardIterator?: string | null;
 	}
 
 	/** Represents the output of a <code>GetRecords</code> operation. */
 	export interface GetRecordsOutputFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextShardIterator: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRecordsOutputFormGroup() {
 		return new FormGroup<GetRecordsOutputFormProperties>({
-			NextShardIterator: new FormControl<string | null | undefined>(undefined),
+			NextShardIterator: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -245,7 +374,14 @@ export namespace MyNS {
 		Keys?: AttributeMap;
 		NewImage?: AttributeMap;
 		OldImage?: AttributeMap;
+
+		/**
+		 * Max length: 40
+		 * Min length: 21
+		 */
 		SequenceNumber?: string | null;
+
+		/** Minimum: 1 */
 		SizeBytes?: number | null;
 		StreamViewType?: StreamDescriptionStreamViewType | null;
 	}
@@ -253,15 +389,22 @@ export namespace MyNS {
 	/** A description of a single data modification that was performed on an item in a DynamoDB table. */
 	export interface StreamRecordFormProperties {
 		ApproximateCreationDateTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 21
+		 */
 		SequenceNumber: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		SizeBytes: FormControl<number | null | undefined>,
 		StreamViewType: FormControl<StreamDescriptionStreamViewType | null | undefined>,
 	}
 	export function CreateStreamRecordFormGroup() {
 		return new FormGroup<StreamRecordFormProperties>({
 			ApproximateCreationDateTime: new FormControl<Date | null | undefined>(undefined),
-			SequenceNumber: new FormControl<string | null | undefined>(undefined),
-			SizeBytes: new FormControl<number | null | undefined>(undefined),
+			SequenceNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(21)]),
+			SizeBytes: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			StreamViewType: new FormControl<StreamDescriptionStreamViewType | null | undefined>(undefined),
 		});
 
@@ -300,19 +443,35 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>GetRecords</code> operation. */
 	export interface GetRecordsInput {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		ShardIterator: string;
+
+		/** Minimum: 1 */
 		Limit?: number | null;
 	}
 
 	/** Represents the input of a <code>GetRecords</code> operation. */
 	export interface GetRecordsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		ShardIterator: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateGetRecordsInputFormGroup() {
 		return new FormGroup<GetRecordsInputFormProperties>({
-			ShardIterator: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			ShardIterator: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -371,16 +530,26 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>GetShardIterator</code> operation. */
 	export interface GetShardIteratorOutput {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		ShardIterator?: string | null;
 	}
 
 	/** Represents the output of a <code>GetShardIterator</code> operation. */
 	export interface GetShardIteratorOutputFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		ShardIterator: FormControl<string | null | undefined>,
 	}
 	export function CreateGetShardIteratorOutputFormGroup() {
 		return new FormGroup<GetShardIteratorOutputFormProperties>({
-			ShardIterator: new FormControl<string | null | undefined>(undefined),
+			ShardIterator: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -388,25 +557,63 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>GetShardIterator</code> operation. */
 	export interface GetShardIteratorInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		StreamArn: string;
+
+		/**
+		 * Required
+		 * Max length: 65
+		 * Min length: 28
+		 */
 		ShardId: string;
+
+		/** Required */
 		ShardIteratorType: GetShardIteratorInputShardIteratorType;
+
+		/**
+		 * Max length: 40
+		 * Min length: 21
+		 */
 		SequenceNumber?: string | null;
 	}
 
 	/** Represents the input of a <code>GetShardIterator</code> operation. */
 	export interface GetShardIteratorInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		StreamArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 65
+		 * Min length: 28
+		 */
 		ShardId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ShardIteratorType: FormControl<GetShardIteratorInputShardIteratorType | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 21
+		 */
 		SequenceNumber: FormControl<string | null | undefined>,
 	}
 	export function CreateGetShardIteratorInputFormGroup() {
 		return new FormGroup<GetShardIteratorInputFormProperties>({
-			StreamArn: new FormControl<string | null | undefined>(undefined),
-			ShardId: new FormControl<string | null | undefined>(undefined),
-			ShardIteratorType: new FormControl<GetShardIteratorInputShardIteratorType | null | undefined>(undefined),
-			SequenceNumber: new FormControl<string | null | undefined>(undefined),
+			StreamArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(37)]),
+			ShardId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65), Validators.minLength(28)]),
+			ShardIteratorType: new FormControl<GetShardIteratorInputShardIteratorType | null | undefined>(undefined, [Validators.required]),
+			SequenceNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(21)]),
 		});
 
 	}
@@ -417,16 +624,26 @@ export namespace MyNS {
 	/** Represents the output of a <code>ListStreams</code> operation. */
 	export interface ListStreamsOutput {
 		Streams?: Array<Stream>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		LastEvaluatedStreamArn?: string | null;
 	}
 
 	/** Represents the output of a <code>ListStreams</code> operation. */
 	export interface ListStreamsOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		LastEvaluatedStreamArn: FormControl<string | null | undefined>,
 	}
 	export function CreateListStreamsOutputFormGroup() {
 		return new FormGroup<ListStreamsOutputFormProperties>({
-			LastEvaluatedStreamArn: new FormControl<string | null | undefined>(undefined),
+			LastEvaluatedStreamArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(37)]),
 		});
 
 	}
@@ -434,21 +651,43 @@ export namespace MyNS {
 
 	/** Represents all of the data describing a particular stream. */
 	export interface Stream {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		StreamArn?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName?: string | null;
 		StreamLabel?: string | null;
 	}
 
 	/** Represents all of the data describing a particular stream. */
 	export interface StreamFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		StreamArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
 		StreamLabel: FormControl<string | null | undefined>,
 	}
 	export function CreateStreamFormGroup() {
 		return new FormGroup<StreamFormProperties>({
-			StreamArn: new FormControl<string | null | undefined>(undefined),
-			TableName: new FormControl<string | null | undefined>(undefined),
+			StreamArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(37)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 			StreamLabel: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -457,22 +696,48 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>ListStreams</code> operation. */
 	export interface ListStreamsInput {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName?: string | null;
+
+		/** Minimum: 1 */
 		Limit?: number | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		ExclusiveStartStreamArn?: string | null;
 	}
 
 	/** Represents the input of a <code>ListStreams</code> operation. */
 	export interface ListStreamsInputFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		Limit: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		ExclusiveStartStreamArn: FormControl<string | null | undefined>,
 	}
 	export function CreateListStreamsInputFormGroup() {
 		return new FormGroup<ListStreamsInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
-			ExclusiveStartStreamArn: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			ExclusiveStartStreamArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(37)]),
 		});
 
 	}

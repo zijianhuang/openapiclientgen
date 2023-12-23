@@ -19,13 +19,47 @@ export namespace MyNS {
 
 	/** Information about a repository association. */
 	export interface RepositoryAssociation {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		AssociationId?: string | null;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
+		 */
 		AssociationArn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
+		 */
 		ConnectionArn?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S[\w.-]*$
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		Owner?: string | null;
 		ProviderType?: RepositoryAssociationProviderType | null;
 		State?: RepositoryAssociationState | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		StateReason?: string | null;
 		LastUpdatedTimeStamp?: Date | null;
 		CreatedTimeStamp?: Date | null;
@@ -33,27 +67,61 @@ export namespace MyNS {
 
 	/** Information about a repository association. */
 	export interface RepositoryAssociationFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		AssociationId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
+		 */
 		AssociationArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
+		 */
 		ConnectionArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S[\w.-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		Owner: FormControl<string | null | undefined>,
 		ProviderType: FormControl<RepositoryAssociationProviderType | null | undefined>,
 		State: FormControl<RepositoryAssociationState | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		StateReason: FormControl<string | null | undefined>,
 		LastUpdatedTimeStamp: FormControl<Date | null | undefined>,
 		CreatedTimeStamp: FormControl<Date | null | undefined>,
 	}
 	export function CreateRepositoryAssociationFormGroup() {
 		return new FormGroup<RepositoryAssociationFormProperties>({
-			AssociationId: new FormControl<string | null | undefined>(undefined),
-			AssociationArn: new FormControl<string | null | undefined>(undefined),
-			ConnectionArn: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Owner: new FormControl<string | null | undefined>(undefined),
+			AssociationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			AssociationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			Owner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			ProviderType: new FormControl<RepositoryAssociationProviderType | null | undefined>(undefined),
 			State: new FormControl<RepositoryAssociationState | null | undefined>(undefined),
-			StateReason: new FormControl<string | null | undefined>(undefined),
+			StateReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			LastUpdatedTimeStamp: new FormControl<Date | null | undefined>(undefined),
 			CreatedTimeStamp: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -67,16 +135,30 @@ export namespace MyNS {
 
 	/** Information about an AWS CodeCommit repository. */
 	export interface CodeCommitRepository {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S[\w.-]*$
+		 */
 		Name: string;
 	}
 
 	/** Information about an AWS CodeCommit repository. */
 	export interface CodeCommitRepositoryFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S[\w.-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateCodeCommitRepositoryFormGroup() {
 		return new FormGroup<CodeCommitRepositoryFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -84,22 +166,64 @@ export namespace MyNS {
 
 	/**  Information about a third party source repository connected through CodeStar Connections.  */
 	export interface ThirdPartySourceRepository {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S[\w.-]*$
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
+		 */
 		ConnectionArn: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		Owner: string;
 	}
 
 	/**  Information about a third party source repository connected through CodeStar Connections.  */
 	export interface ThirdPartySourceRepositoryFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S[\w.-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
+		 */
 		ConnectionArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		Owner: FormControl<string | null | undefined>,
 	}
 	export function CreateThirdPartySourceRepositoryFormGroup() {
 		return new FormGroup<ThirdPartySourceRepositoryFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			ConnectionArn: new FormControl<string | null | undefined>(undefined),
-			Owner: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			Owner: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -170,16 +294,50 @@ export namespace MyNS {
 
 	/**  Information about a code review.  */
 	export interface CodeReview {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S[\w.-]*$
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
+		 */
 		CodeReviewArn?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S[\w.-]*$
+		 */
 		RepositoryName?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		Owner?: string | null;
 		ProviderType?: RepositoryAssociationProviderType | null;
 		State?: CodeReviewState | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		StateReason?: string | null;
 		CreatedTimeStamp?: Date | null;
 		LastUpdatedTimeStamp?: Date | null;
 		Type?: CodeReviewType | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		PullRequestId?: string | null;
 
 		/** Information about the source code type. */
@@ -191,31 +349,65 @@ export namespace MyNS {
 
 	/**  Information about a code review.  */
 	export interface CodeReviewFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S[\w.-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
+		 */
 		CodeReviewArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S[\w.-]*$
+		 */
 		RepositoryName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		Owner: FormControl<string | null | undefined>,
 		ProviderType: FormControl<RepositoryAssociationProviderType | null | undefined>,
 		State: FormControl<CodeReviewState | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		StateReason: FormControl<string | null | undefined>,
 		CreatedTimeStamp: FormControl<Date | null | undefined>,
 		LastUpdatedTimeStamp: FormControl<Date | null | undefined>,
 		Type: FormControl<CodeReviewType | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		PullRequestId: FormControl<string | null | undefined>,
 	}
 	export function CreateCodeReviewFormGroup() {
 		return new FormGroup<CodeReviewFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			CodeReviewArn: new FormControl<string | null | undefined>(undefined),
-			RepositoryName: new FormControl<string | null | undefined>(undefined),
-			Owner: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			CodeReviewArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			RepositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			Owner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			ProviderType: new FormControl<RepositoryAssociationProviderType | null | undefined>(undefined),
 			State: new FormControl<CodeReviewState | null | undefined>(undefined),
-			StateReason: new FormControl<string | null | undefined>(undefined),
+			StateReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			CreatedTimeStamp: new FormControl<Date | null | undefined>(undefined),
 			LastUpdatedTimeStamp: new FormControl<Date | null | undefined>(undefined),
 			Type: new FormControl<CodeReviewType | null | undefined>(undefined),
-			PullRequestId: new FormControl<string | null | undefined>(undefined),
+			PullRequestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -244,19 +436,39 @@ export namespace MyNS {
 
 	/**  The commit diff for the pull request.  */
 	export interface CommitDiffSourceCodeType {
+
+		/**
+		 * Max length: 64
+		 * Min length: 6
+		 */
 		SourceCommit?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 6
+		 */
 		DestinationCommit?: string | null;
 	}
 
 	/**  The commit diff for the pull request.  */
 	export interface CommitDiffSourceCodeTypeFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 6
+		 */
 		SourceCommit: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 6
+		 */
 		DestinationCommit: FormControl<string | null | undefined>,
 	}
 	export function CreateCommitDiffSourceCodeTypeFormGroup() {
 		return new FormGroup<CommitDiffSourceCodeTypeFormProperties>({
-			SourceCommit: new FormControl<string | null | undefined>(undefined),
-			DestinationCommit: new FormControl<string | null | undefined>(undefined),
+			SourceCommit: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(6)]),
+			DestinationCommit: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(6)]),
 		});
 
 	}
@@ -307,9 +519,30 @@ export namespace MyNS {
 
 	/**  Information about the recommendation feedback.  */
 	export interface RecommendationFeedback {
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
+		 */
 		CodeReviewArn?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		RecommendationId?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 1
+		 */
 		Reactions?: Array<Reaction>;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		UserId?: string | null;
 		CreatedTimeStamp?: Date | null;
 		LastUpdatedTimeStamp?: Date | null;
@@ -317,17 +550,33 @@ export namespace MyNS {
 
 	/**  Information about the recommendation feedback.  */
 	export interface RecommendationFeedbackFormProperties {
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
+		 */
 		CodeReviewArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		RecommendationId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		UserId: FormControl<string | null | undefined>,
 		CreatedTimeStamp: FormControl<Date | null | undefined>,
 		LastUpdatedTimeStamp: FormControl<Date | null | undefined>,
 	}
 	export function CreateRecommendationFeedbackFormGroup() {
 		return new FormGroup<RecommendationFeedbackFormProperties>({
-			CodeReviewArn: new FormControl<string | null | undefined>(undefined),
-			RecommendationId: new FormControl<string | null | undefined>(undefined),
-			UserId: new FormControl<string | null | undefined>(undefined),
+			CodeReviewArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			RecommendationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			UserId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			CreatedTimeStamp: new FormControl<Date | null | undefined>(undefined),
 			LastUpdatedTimeStamp: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -374,14 +623,24 @@ export namespace MyNS {
 
 	export interface ListCodeReviewsResponse {
 		CodeReviewSummaries?: Array<CodeReviewSummary>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListCodeReviewsResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListCodeReviewsResponseFormGroup() {
 		return new FormGroup<ListCodeReviewsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -389,15 +648,44 @@ export namespace MyNS {
 
 	/**  Information about the summary of the code review.  */
 	export interface CodeReviewSummary {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S[\w.-]*$
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
+		 */
 		CodeReviewArn?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S[\w.-]*$
+		 */
 		RepositoryName?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		Owner?: string | null;
 		ProviderType?: RepositoryAssociationProviderType | null;
 		State?: CodeReviewState | null;
 		CreatedTimeStamp?: Date | null;
 		LastUpdatedTimeStamp?: Date | null;
 		Type?: CodeReviewType | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		PullRequestId?: string | null;
 
 		/** Information about metrics summaries. */
@@ -406,29 +694,58 @@ export namespace MyNS {
 
 	/**  Information about the summary of the code review.  */
 	export interface CodeReviewSummaryFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S[\w.-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
+		 */
 		CodeReviewArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S[\w.-]*$
+		 */
 		RepositoryName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		Owner: FormControl<string | null | undefined>,
 		ProviderType: FormControl<RepositoryAssociationProviderType | null | undefined>,
 		State: FormControl<CodeReviewState | null | undefined>,
 		CreatedTimeStamp: FormControl<Date | null | undefined>,
 		LastUpdatedTimeStamp: FormControl<Date | null | undefined>,
 		Type: FormControl<CodeReviewType | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		PullRequestId: FormControl<string | null | undefined>,
 	}
 	export function CreateCodeReviewSummaryFormGroup() {
 		return new FormGroup<CodeReviewSummaryFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			CodeReviewArn: new FormControl<string | null | undefined>(undefined),
-			RepositoryName: new FormControl<string | null | undefined>(undefined),
-			Owner: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			CodeReviewArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			RepositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			Owner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			ProviderType: new FormControl<RepositoryAssociationProviderType | null | undefined>(undefined),
 			State: new FormControl<CodeReviewState | null | undefined>(undefined),
 			CreatedTimeStamp: new FormControl<Date | null | undefined>(undefined),
 			LastUpdatedTimeStamp: new FormControl<Date | null | undefined>(undefined),
 			Type: new FormControl<CodeReviewType | null | undefined>(undefined),
-			PullRequestId: new FormControl<string | null | undefined>(undefined),
+			PullRequestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -459,14 +776,24 @@ export namespace MyNS {
 
 	export interface ListRecommendationFeedbackResponse {
 		RecommendationFeedbackSummaries?: Array<RecommendationFeedbackSummary>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListRecommendationFeedbackResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListRecommendationFeedbackResponseFormGroup() {
 		return new FormGroup<ListRecommendationFeedbackResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -474,34 +801,69 @@ export namespace MyNS {
 
 	/**  Information about recommendation feedback summaries.  */
 	export interface RecommendationFeedbackSummary {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		RecommendationId?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 1
+		 */
 		Reactions?: Array<Reaction>;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		UserId?: string | null;
 	}
 
 	/**  Information about recommendation feedback summaries.  */
 	export interface RecommendationFeedbackSummaryFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		RecommendationId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		UserId: FormControl<string | null | undefined>,
 	}
 	export function CreateRecommendationFeedbackSummaryFormGroup() {
 		return new FormGroup<RecommendationFeedbackSummaryFormProperties>({
-			RecommendationId: new FormControl<string | null | undefined>(undefined),
-			UserId: new FormControl<string | null | undefined>(undefined),
+			RecommendationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			UserId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListRecommendationsResponse {
 		RecommendationSummaries?: Array<RecommendationSummary>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListRecommendationsResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListRecommendationsResponseFormGroup() {
 		return new FormGroup<ListRecommendationsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -509,42 +871,82 @@ export namespace MyNS {
 
 	/**  Information about recommendations.  */
 	export interface RecommendationSummary {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		FilePath?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		RecommendationId?: string | null;
 		StartLine?: number | null;
 		EndLine?: number | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Description?: string | null;
 	}
 
 	/**  Information about recommendations.  */
 	export interface RecommendationSummaryFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		FilePath: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		RecommendationId: FormControl<string | null | undefined>,
 		StartLine: FormControl<number | null | undefined>,
 		EndLine: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateRecommendationSummaryFormGroup() {
 		return new FormGroup<RecommendationSummaryFormProperties>({
-			FilePath: new FormControl<string | null | undefined>(undefined),
-			RecommendationId: new FormControl<string | null | undefined>(undefined),
+			FilePath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			RecommendationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			StartLine: new FormControl<number | null | undefined>(undefined),
 			EndLine: new FormControl<number | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListRepositoryAssociationsResponse {
 		RepositoryAssociationSummaries?: Array<RepositoryAssociationSummary>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListRepositoryAssociationsResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListRepositoryAssociationsResponseFormGroup() {
 		return new FormGroup<ListRepositoryAssociationsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -552,11 +954,40 @@ export namespace MyNS {
 
 	/** Information about a repository association. */
 	export interface RepositoryAssociationSummary {
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
+		 */
 		AssociationArn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
+		 */
 		ConnectionArn?: string | null;
 		LastUpdatedTimeStamp?: Date | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		AssociationId?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S[\w.-]*$
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		Owner?: string | null;
 		ProviderType?: RepositoryAssociationProviderType | null;
 		State?: RepositoryAssociationState | null;
@@ -564,23 +995,52 @@ export namespace MyNS {
 
 	/** Information about a repository association. */
 	export interface RepositoryAssociationSummaryFormProperties {
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
+		 */
 		AssociationArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
+		 */
 		ConnectionArn: FormControl<string | null | undefined>,
 		LastUpdatedTimeStamp: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		AssociationId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S[\w.-]*$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		Owner: FormControl<string | null | undefined>,
 		ProviderType: FormControl<RepositoryAssociationProviderType | null | undefined>,
 		State: FormControl<RepositoryAssociationState | null | undefined>,
 	}
 	export function CreateRepositoryAssociationSummaryFormGroup() {
 		return new FormGroup<RepositoryAssociationSummaryFormProperties>({
-			AssociationArn: new FormControl<string | null | undefined>(undefined),
-			ConnectionArn: new FormControl<string | null | undefined>(undefined),
+			AssociationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			LastUpdatedTimeStamp: new FormControl<Date | null | undefined>(undefined),
-			AssociationId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Owner: new FormControl<string | null | undefined>(undefined),
+			AssociationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			Owner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			ProviderType: new FormControl<RepositoryAssociationProviderType | null | undefined>(undefined),
 			State: new FormControl<RepositoryAssociationState | null | undefined>(undefined),
 		});
@@ -624,14 +1084,26 @@ export namespace MyNS {
 		 * Required
 		 */
 		Repository: Repository;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[\w-]+$
+		 */
 		ClientRequestToken?: string | null;
 	}
 	export interface AssociateRepositoryRequestFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[\w-]+$
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateRepositoryRequestFormGroup() {
 		return new FormGroup<AssociateRepositoryRequestFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -719,18 +1191,50 @@ export namespace MyNS {
 	}
 
 	export interface PutRecommendationFeedbackRequest {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
+		 */
 		CodeReviewArn: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		RecommendationId: string;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 1
+		 */
 		Reactions: Array<Reaction>;
 	}
 	export interface PutRecommendationFeedbackRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
+		 */
 		CodeReviewArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		RecommendationId: FormControl<string | null | undefined>,
 	}
 	export function CreatePutRecommendationFeedbackRequestFormGroup() {
 		return new FormGroup<PutRecommendationFeedbackRequestFormProperties>({
-			CodeReviewArn: new FormControl<string | null | undefined>(undefined),
-			RecommendationId: new FormControl<string | null | undefined>(undefined),
+			CodeReviewArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			RecommendationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -885,7 +1389,7 @@ export namespace MyNS {
 	}
 	export function CreateAssociateRepositoryPostBodyFormGroup() {
 		return new FormGroup<AssociateRepositoryPostBodyFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -954,8 +1458,8 @@ export namespace MyNS {
 	}
 	export function CreatePutRecommendationFeedbackPutBodyFormGroup() {
 		return new FormGroup<PutRecommendationFeedbackPutBodyFormProperties>({
-			CodeReviewArn: new FormControl<string | null | undefined>(undefined),
-			RecommendationId: new FormControl<string | null | undefined>(undefined),
+			CodeReviewArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			RecommendationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}

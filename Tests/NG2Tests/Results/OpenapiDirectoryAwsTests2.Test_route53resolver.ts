@@ -19,47 +19,121 @@ export namespace MyNS {
 
 	/** In the response to a <a>CreateResolverEndpoint</a>, <a>DeleteResolverEndpoint</a>, <a>GetResolverEndpoint</a>, <a>ListResolverEndpoints</a>, or <a>UpdateResolverEndpoint</a> request, a complex type that contains settings for an existing inbound or outbound resolver endpoint. */
 	export interface ResolverEndpoint {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Id?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		CreatorRequestId?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		Arn?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
+		 */
 		Name?: string | null;
 		SecurityGroupIds?: Array<string>;
 		Direction?: ResolverEndpointDirection | null;
 		IpAddressCount?: number | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		HostVPCId?: string | null;
 		Status?: ResolverEndpointStatus | null;
+
+		/** Max length: 255 */
 		StatusMessage?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 20
+		 */
 		CreationTime?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 20
+		 */
 		ModificationTime?: string | null;
 	}
 
 	/** In the response to a <a>CreateResolverEndpoint</a>, <a>DeleteResolverEndpoint</a>, <a>GetResolverEndpoint</a>, <a>ListResolverEndpoints</a>, or <a>UpdateResolverEndpoint</a> request, a complex type that contains settings for an existing inbound or outbound resolver endpoint. */
 	export interface ResolverEndpointFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		CreatorRequestId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		Arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
+		 */
 		Name: FormControl<string | null | undefined>,
 		Direction: FormControl<ResolverEndpointDirection | null | undefined>,
 		IpAddressCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		HostVPCId: FormControl<string | null | undefined>,
 		Status: FormControl<ResolverEndpointStatus | null | undefined>,
+
+		/** Max length: 255 */
 		StatusMessage: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 20
+		 */
 		CreationTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 20
+		 */
 		ModificationTime: FormControl<string | null | undefined>,
 	}
 	export function CreateResolverEndpointFormGroup() {
 		return new FormGroup<ResolverEndpointFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			CreatorRequestId: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			CreatorRequestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
 			Direction: new FormControl<ResolverEndpointDirection | null | undefined>(undefined),
 			IpAddressCount: new FormControl<number | null | undefined>(undefined),
-			HostVPCId: new FormControl<string | null | undefined>(undefined),
+			HostVPCId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			Status: new FormControl<ResolverEndpointStatus | null | undefined>(undefined),
-			StatusMessage: new FormControl<string | null | undefined>(undefined),
-			CreationTime: new FormControl<string | null | undefined>(undefined),
-			ModificationTime: new FormControl<string | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			CreationTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(20)]),
+			ModificationTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(20)]),
 		});
 
 	}
@@ -69,6 +143,12 @@ export namespace MyNS {
 	export enum ResolverEndpointStatus { CREATING = 0, OPERATIONAL = 1, UPDATING = 2, AUTO_RECOVERING = 3, ACTION_NEEDED = 4, DELETING = 5 }
 
 	export interface AssociateResolverEndpointIpAddressRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverEndpointId: string;
 
 		/**
@@ -78,11 +158,17 @@ export namespace MyNS {
 		IpAddress: IpAddressUpdate;
 	}
 	export interface AssociateResolverEndpointIpAddressRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverEndpointId: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateResolverEndpointIpAddressRequestFormGroup() {
 		return new FormGroup<AssociateResolverEndpointIpAddressRequestFormProperties>({
-			ResolverEndpointId: new FormControl<string | null | undefined>(undefined),
+			ResolverEndpointId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -90,22 +176,52 @@ export namespace MyNS {
 
 	/** In an <a>UpdateResolverEndpoint</a> request, information about an IP address to update. */
 	export interface IpAddressUpdate {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		IpId?: string | null;
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		SubnetId?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 7
+		 */
 		Ip?: string | null;
 	}
 
 	/** In an <a>UpdateResolverEndpoint</a> request, information about an IP address to update. */
 	export interface IpAddressUpdateFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		IpId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		SubnetId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 7
+		 */
 		Ip: FormControl<string | null | undefined>,
 	}
 	export function CreateIpAddressUpdateFormGroup() {
 		return new FormGroup<IpAddressUpdateFormProperties>({
-			IpId: new FormControl<string | null | undefined>(undefined),
-			SubnetId: new FormControl<string | null | undefined>(undefined),
-			Ip: new FormControl<string | null | undefined>(undefined),
+			IpId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			SubnetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			Ip: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(7)]),
 		});
 
 	}
@@ -196,31 +312,75 @@ export namespace MyNS {
 
 	/** In the response to an <a>AssociateResolverRule</a>, <a>DisassociateResolverRule</a>, or <a>ListResolverRuleAssociations</a> request, information about an association between a resolver rule and a VPC. */
 	export interface ResolverRuleAssociation {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Id?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverRuleId?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		VPCId?: string | null;
 		Status?: ResolverRuleAssociationStatus | null;
+
+		/** Max length: 255 */
 		StatusMessage?: string | null;
 	}
 
 	/** In the response to an <a>AssociateResolverRule</a>, <a>DisassociateResolverRule</a>, or <a>ListResolverRuleAssociations</a> request, information about an association between a resolver rule and a VPC. */
 	export interface ResolverRuleAssociationFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverRuleId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		VPCId: FormControl<string | null | undefined>,
 		Status: FormControl<ResolverRuleAssociationStatus | null | undefined>,
+
+		/** Max length: 255 */
 		StatusMessage: FormControl<string | null | undefined>,
 	}
 	export function CreateResolverRuleAssociationFormGroup() {
 		return new FormGroup<ResolverRuleAssociationFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			ResolverRuleId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			VPCId: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			ResolverRuleId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			VPCId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			Status: new FormControl<ResolverRuleAssociationStatus | null | undefined>(undefined),
-			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -228,20 +388,54 @@ export namespace MyNS {
 	export enum ResolverRuleAssociationStatus { CREATING = 0, COMPLETE = 1, DELETING = 2, FAILED = 3, OVERRIDDEN = 4 }
 
 	export interface AssociateResolverRuleRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverRuleId: string;
+
+		/**
+		 * Max length: 64
+		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
+		 */
 		Name?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		VPCId: string;
 	}
 	export interface AssociateResolverRuleRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverRuleId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		VPCId: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateResolverRuleRequestFormGroup() {
 		return new FormGroup<AssociateResolverRuleRequestFormProperties>({
-			ResolverRuleId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			VPCId: new FormControl<string | null | undefined>(undefined),
+			ResolverRuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			VPCId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -270,23 +464,57 @@ export namespace MyNS {
 	}
 
 	export interface CreateResolverEndpointRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		CreatorRequestId: string;
+
+		/**
+		 * Max length: 64
+		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
+		 */
 		Name?: string | null;
+
+		/** Required */
 		SecurityGroupIds: Array<string>;
+
+		/** Required */
 		Direction: ResolverEndpointDirection;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		IpAddresses: Array<IpAddressRequest>;
 		Tags?: Array<Tag>;
 	}
 	export interface CreateResolverEndpointRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		CreatorRequestId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Direction: FormControl<ResolverEndpointDirection | null | undefined>,
 	}
 	export function CreateCreateResolverEndpointRequestFormGroup() {
 		return new FormGroup<CreateResolverEndpointRequestFormProperties>({
-			CreatorRequestId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Direction: new FormControl<ResolverEndpointDirection | null | undefined>(undefined),
+			CreatorRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			Direction: new FormControl<ResolverEndpointDirection | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -294,19 +522,41 @@ export namespace MyNS {
 
 	/** In an <a>CreateResolverEndpoint</a> request, a subnet and IP address that you want to use for DNS queries. */
 	export interface IpAddressRequest {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		SubnetId: string;
+
+		/**
+		 * Max length: 36
+		 * Min length: 7
+		 */
 		Ip?: string | null;
 	}
 
 	/** In an <a>CreateResolverEndpoint</a> request, a subnet and IP address that you want to use for DNS queries. */
 	export interface IpAddressRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		SubnetId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 7
+		 */
 		Ip: FormControl<string | null | undefined>,
 	}
 	export function CreateIpAddressRequestFormGroup() {
 		return new FormGroup<IpAddressRequestFormProperties>({
-			SubnetId: new FormControl<string | null | undefined>(undefined),
-			Ip: new FormControl<string | null | undefined>(undefined),
+			SubnetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
+			Ip: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(7)]),
 		});
 
 	}
@@ -347,46 +597,122 @@ export namespace MyNS {
 
 	/** For queries that originate in your VPC, detailed information about a resolver rule, which specifies how to route DNS queries out of the VPC. The <code>ResolverRule</code> parameter appears in the response to a <a>CreateResolverRule</a>, <a>DeleteResolverRule</a>, <a>GetResolverRule</a>, <a>ListResolverRules</a>, or <a>UpdateResolverRule</a> request. */
 	export interface ResolverRule {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Id?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		CreatorRequestId?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		Arn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		DomainName?: string | null;
 		Status?: ResolverRuleStatus | null;
+
+		/** Max length: 255 */
 		StatusMessage?: string | null;
 		RuleType?: ResolverRuleRuleType | null;
+
+		/**
+		 * Max length: 64
+		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
+		 */
 		Name?: string | null;
+
+		/** Minimum items: 1 */
 		TargetIps?: Array<TargetAddress>;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverEndpointId?: string | null;
+
+		/**
+		 * Max length: 32
+		 * Min length: 12
+		 */
 		OwnerId?: string | null;
 		ShareStatus?: ResolverRuleShareStatus | null;
 	}
 
 	/** For queries that originate in your VPC, detailed information about a resolver rule, which specifies how to route DNS queries out of the VPC. The <code>ResolverRule</code> parameter appears in the response to a <a>CreateResolverRule</a>, <a>DeleteResolverRule</a>, <a>GetResolverRule</a>, <a>ListResolverRules</a>, or <a>UpdateResolverRule</a> request. */
 	export interface ResolverRuleFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		CreatorRequestId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		Arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		DomainName: FormControl<string | null | undefined>,
 		Status: FormControl<ResolverRuleStatus | null | undefined>,
+
+		/** Max length: 255 */
 		StatusMessage: FormControl<string | null | undefined>,
 		RuleType: FormControl<ResolverRuleRuleType | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverEndpointId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 12
+		 */
 		OwnerId: FormControl<string | null | undefined>,
 		ShareStatus: FormControl<ResolverRuleShareStatus | null | undefined>,
 	}
 	export function CreateResolverRuleFormGroup() {
 		return new FormGroup<ResolverRuleFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			CreatorRequestId: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			CreatorRequestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			Status: new FormControl<ResolverRuleStatus | null | undefined>(undefined),
-			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			RuleType: new FormControl<ResolverRuleRuleType | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			ResolverEndpointId: new FormControl<string | null | undefined>(undefined),
-			OwnerId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			ResolverEndpointId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			OwnerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(12)]),
 			ShareStatus: new FormControl<ResolverRuleShareStatus | null | undefined>(undefined),
 		});
 
@@ -399,19 +725,41 @@ export namespace MyNS {
 
 	/** In a <a>CreateResolverRule</a> request, an array of the IPs that you want to forward DNS queries to. */
 	export interface TargetAddress {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 7
+		 */
 		Ip: string;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 65535
+		 */
 		Port?: number | null;
 	}
 
 	/** In a <a>CreateResolverRule</a> request, an array of the IPs that you want to forward DNS queries to. */
 	export interface TargetAddressFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 7
+		 */
 		Ip: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 65535
+		 */
 		Port: FormControl<number | null | undefined>,
 	}
 	export function CreateTargetAddressFormGroup() {
 		return new FormGroup<TargetAddressFormProperties>({
-			Ip: new FormControl<string | null | undefined>(undefined),
-			Port: new FormControl<number | null | undefined>(undefined),
+			Ip: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(7)]),
+			Port: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(65535)]),
 		});
 
 	}
@@ -419,28 +767,78 @@ export namespace MyNS {
 	export enum ResolverRuleShareStatus { NOT_SHARED = 0, SHARED_WITH_ME = 1, SHARED_BY_ME = 2 }
 
 	export interface CreateResolverRuleRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		CreatorRequestId: string;
+
+		/**
+		 * Max length: 64
+		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
+		 */
 		Name?: string | null;
+
+		/** Required */
 		RuleType: ResolverRuleRuleType;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		DomainName: string;
+
+		/** Minimum items: 1 */
 		TargetIps?: Array<TargetAddress>;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverEndpointId?: string | null;
 		Tags?: Array<Tag>;
 	}
 	export interface CreateResolverRuleRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		CreatorRequestId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		RuleType: FormControl<ResolverRuleRuleType | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		DomainName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverEndpointId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateResolverRuleRequestFormGroup() {
 		return new FormGroup<CreateResolverRuleRequestFormProperties>({
-			CreatorRequestId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			RuleType: new FormControl<ResolverRuleRuleType | null | undefined>(undefined),
-			DomainName: new FormControl<string | null | undefined>(undefined),
-			ResolverEndpointId: new FormControl<string | null | undefined>(undefined),
+			CreatorRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			RuleType: new FormControl<ResolverRuleRuleType | null | undefined>(undefined, [Validators.required]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			ResolverEndpointId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -459,14 +857,26 @@ export namespace MyNS {
 	}
 
 	export interface DeleteResolverEndpointRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverEndpointId: string;
 	}
 	export interface DeleteResolverEndpointRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverEndpointId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteResolverEndpointRequestFormGroup() {
 		return new FormGroup<DeleteResolverEndpointRequestFormProperties>({
-			ResolverEndpointId: new FormControl<string | null | undefined>(undefined),
+			ResolverEndpointId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -485,14 +895,26 @@ export namespace MyNS {
 	}
 
 	export interface DeleteResolverRuleRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverRuleId: string;
 	}
 	export interface DeleteResolverRuleRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverRuleId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteResolverRuleRequestFormGroup() {
 		return new FormGroup<DeleteResolverRuleRequestFormProperties>({
-			ResolverRuleId: new FormControl<string | null | undefined>(undefined),
+			ResolverRuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -521,6 +943,12 @@ export namespace MyNS {
 	}
 
 	export interface DisassociateResolverEndpointIpAddressRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverEndpointId: string;
 
 		/**
@@ -530,11 +958,17 @@ export namespace MyNS {
 		IpAddress: IpAddressUpdate;
 	}
 	export interface DisassociateResolverEndpointIpAddressRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverEndpointId: FormControl<string | null | undefined>,
 	}
 	export function CreateDisassociateResolverEndpointIpAddressRequestFormGroup() {
 		return new FormGroup<DisassociateResolverEndpointIpAddressRequestFormProperties>({
-			ResolverEndpointId: new FormControl<string | null | undefined>(undefined),
+			ResolverEndpointId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -553,17 +987,41 @@ export namespace MyNS {
 	}
 
 	export interface DisassociateResolverRuleRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		VPCId: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverRuleId: string;
 	}
 	export interface DisassociateResolverRuleRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		VPCId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverRuleId: FormControl<string | null | undefined>,
 	}
 	export function CreateDisassociateResolverRuleRequestFormGroup() {
 		return new FormGroup<DisassociateResolverRuleRequestFormProperties>({
-			VPCId: new FormControl<string | null | undefined>(undefined),
-			ResolverRuleId: new FormControl<string | null | undefined>(undefined),
+			VPCId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			ResolverRuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -582,14 +1040,26 @@ export namespace MyNS {
 	}
 
 	export interface GetResolverEndpointRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverEndpointId: string;
 	}
 	export interface GetResolverEndpointRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverEndpointId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetResolverEndpointRequestFormGroup() {
 		return new FormGroup<GetResolverEndpointRequestFormProperties>({
-			ResolverEndpointId: new FormControl<string | null | undefined>(undefined),
+			ResolverEndpointId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -608,14 +1078,26 @@ export namespace MyNS {
 	}
 
 	export interface GetResolverRuleRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverRuleId: string;
 	}
 	export interface GetResolverRuleRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverRuleId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetResolverRuleRequestFormGroup() {
 		return new FormGroup<GetResolverRuleRequestFormProperties>({
-			ResolverRuleId: new FormControl<string | null | undefined>(undefined),
+			ResolverRuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -634,40 +1116,68 @@ export namespace MyNS {
 	}
 
 	export interface GetResolverRuleAssociationRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverRuleAssociationId: string;
 	}
 	export interface GetResolverRuleAssociationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverRuleAssociationId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetResolverRuleAssociationRequestFormGroup() {
 		return new FormGroup<GetResolverRuleAssociationRequestFormProperties>({
-			ResolverRuleAssociationId: new FormControl<string | null | undefined>(undefined),
+			ResolverRuleAssociationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetResolverRulePolicyResponse {
+
+		/** Max length: 5000 */
 		ResolverRulePolicy?: string | null;
 	}
 	export interface GetResolverRulePolicyResponseFormProperties {
+
+		/** Max length: 5000 */
 		ResolverRulePolicy: FormControl<string | null | undefined>,
 	}
 	export function CreateGetResolverRulePolicyResponseFormGroup() {
 		return new FormGroup<GetResolverRulePolicyResponseFormProperties>({
-			ResolverRulePolicy: new FormControl<string | null | undefined>(undefined),
+			ResolverRulePolicy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5000)]),
 		});
 
 	}
 
 	export interface GetResolverRulePolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		Arn: string;
 	}
 	export interface GetResolverRulePolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		Arn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetResolverRulePolicyRequestFormGroup() {
 		return new FormGroup<GetResolverRulePolicyRequestFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -684,17 +1194,27 @@ export namespace MyNS {
 
 	export interface ListResolverEndpointIpAddressesResponse {
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 		IpAddresses?: Array<IpAddressResponse>;
 	}
 	export interface ListResolverEndpointIpAddressesResponseFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListResolverEndpointIpAddressesResponseFormGroup() {
 		return new FormGroup<ListResolverEndpointIpAddressesResponseFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -702,34 +1222,88 @@ export namespace MyNS {
 
 	/** In the response to a <a>GetResolverEndpoint</a> request, information about the IP addresses that the resolver endpoint uses for DNS queries. */
 	export interface IpAddressResponse {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		IpId?: string | null;
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		SubnetId?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 7
+		 */
 		Ip?: string | null;
 		Status?: IpAddressResponseStatus | null;
+
+		/** Max length: 255 */
 		StatusMessage?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 20
+		 */
 		CreationTime?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 20
+		 */
 		ModificationTime?: string | null;
 	}
 
 	/** In the response to a <a>GetResolverEndpoint</a> request, information about the IP addresses that the resolver endpoint uses for DNS queries. */
 	export interface IpAddressResponseFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		IpId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		SubnetId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 7
+		 */
 		Ip: FormControl<string | null | undefined>,
 		Status: FormControl<IpAddressResponseStatus | null | undefined>,
+
+		/** Max length: 255 */
 		StatusMessage: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 20
+		 */
 		CreationTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 20
+		 */
 		ModificationTime: FormControl<string | null | undefined>,
 	}
 	export function CreateIpAddressResponseFormGroup() {
 		return new FormGroup<IpAddressResponseFormProperties>({
-			IpId: new FormControl<string | null | undefined>(undefined),
-			SubnetId: new FormControl<string | null | undefined>(undefined),
-			Ip: new FormControl<string | null | undefined>(undefined),
+			IpId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			SubnetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			Ip: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(7)]),
 			Status: new FormControl<IpAddressResponseStatus | null | undefined>(undefined),
-			StatusMessage: new FormControl<string | null | undefined>(undefined),
-			CreationTime: new FormControl<string | null | undefined>(undefined),
-			ModificationTime: new FormControl<string | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			CreationTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(20)]),
+			ModificationTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(20)]),
 		});
 
 	}
@@ -737,19 +1311,41 @@ export namespace MyNS {
 	export enum IpAddressResponseStatus { CREATING = 0, FAILED_CREATION = 1, ATTACHING = 2, ATTACHED = 3, REMAP_DETACHING = 4, REMAP_ATTACHING = 5, DETACHING = 6, FAILED_RESOURCE_GONE = 7, DELETING = 8, DELETE_FAILED_FAS_EXPIRED = 9 }
 
 	export interface ListResolverEndpointIpAddressesRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverEndpointId: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface ListResolverEndpointIpAddressesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverEndpointId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListResolverEndpointIpAddressesRequestFormGroup() {
 		return new FormGroup<ListResolverEndpointIpAddressesRequestFormProperties>({
-			ResolverEndpointId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			ResolverEndpointId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -767,33 +1363,53 @@ export namespace MyNS {
 
 	export interface ListResolverEndpointsResponse {
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 		ResolverEndpoints?: Array<ResolverEndpoint>;
 	}
 	export interface ListResolverEndpointsResponseFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListResolverEndpointsResponseFormGroup() {
 		return new FormGroup<ListResolverEndpointsResponseFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListResolverEndpointsRequest {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 		Filters?: Array<Filter>;
 	}
 	export interface ListResolverEndpointsRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListResolverEndpointsRequestFormGroup() {
 		return new FormGroup<ListResolverEndpointsRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -802,50 +1418,80 @@ export namespace MyNS {
 
 	/** For <code>List</code> operations, an optional specification to return a subset of objects, such as resolver endpoints or resolver rules. */
 	export interface Filter {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name?: string | null;
 		Values?: Array<string>;
 	}
 
 	/** For <code>List</code> operations, an optional specification to return a subset of objects, such as resolver endpoints or resolver rules. */
 	export interface FilterFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateFilterFormGroup() {
 		return new FormGroup<FilterFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListResolverRuleAssociationsResponse {
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 		ResolverRuleAssociations?: Array<ResolverRuleAssociation>;
 	}
 	export interface ListResolverRuleAssociationsResponseFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListResolverRuleAssociationsResponseFormGroup() {
 		return new FormGroup<ListResolverRuleAssociationsResponseFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListResolverRuleAssociationsRequest {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 		Filters?: Array<Filter>;
 	}
 	export interface ListResolverRuleAssociationsRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListResolverRuleAssociationsRequestFormGroup() {
 		return new FormGroup<ListResolverRuleAssociationsRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -853,33 +1499,53 @@ export namespace MyNS {
 
 	export interface ListResolverRulesResponse {
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 		ResolverRules?: Array<ResolverRule>;
 	}
 	export interface ListResolverRulesResponseFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListResolverRulesResponseFormGroup() {
 		return new FormGroup<ListResolverRulesResponseFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListResolverRulesRequest {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 		Filters?: Array<Filter>;
 	}
 	export interface ListResolverRulesRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListResolverRulesRequestFormGroup() {
 		return new FormGroup<ListResolverRulesRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -900,19 +1566,41 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		ResourceArn: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface ListTagsForResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -936,17 +1624,39 @@ export namespace MyNS {
 	}
 
 	export interface PutResolverRulePolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		Arn: string;
+
+		/**
+		 * Required
+		 * Max length: 5000
+		 */
 		ResolverRulePolicy: string;
 	}
 	export interface PutResolverRulePolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		Arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 5000
+		 */
 		ResolverRulePolicy: FormControl<string | null | undefined>,
 	}
 	export function CreatePutResolverRulePolicyRequestFormGroup() {
 		return new FormGroup<PutResolverRulePolicyRequestFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
-			ResolverRulePolicy: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			ResolverRulePolicy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(5000)]),
 		});
 
 	}
@@ -972,15 +1682,29 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		ResourceArn: string;
+
+		/** Required */
 		Tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -1006,15 +1730,29 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		ResourceArn: string;
+
+		/** Required */
 		TagKeys: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -1033,17 +1771,39 @@ export namespace MyNS {
 	}
 
 	export interface UpdateResolverEndpointRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverEndpointId: string;
+
+		/**
+		 * Max length: 64
+		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
+		 */
 		Name?: string | null;
 	}
 	export interface UpdateResolverEndpointRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverEndpointId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateResolverEndpointRequestFormGroup() {
 		return new FormGroup<UpdateResolverEndpointRequestFormProperties>({
-			ResolverEndpointId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			ResolverEndpointId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
 		});
 
 	}
@@ -1062,6 +1822,12 @@ export namespace MyNS {
 	}
 
 	export interface UpdateResolverRuleRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverRuleId: string;
 
 		/**
@@ -1071,11 +1837,17 @@ export namespace MyNS {
 		Config: ResolverRuleConfig;
 	}
 	export interface UpdateResolverRuleRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverRuleId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateResolverRuleRequestFormGroup() {
 		return new FormGroup<UpdateResolverRuleRequestFormProperties>({
-			ResolverRuleId: new FormControl<string | null | undefined>(undefined),
+			ResolverRuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1083,20 +1855,42 @@ export namespace MyNS {
 
 	/** In an <a>UpdateResolverRule</a> request, information about the changes that you want to make. */
 	export interface ResolverRuleConfig {
+
+		/**
+		 * Max length: 64
+		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
+		 */
 		Name?: string | null;
+
+		/** Minimum items: 1 */
 		TargetIps?: Array<TargetAddress>;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverEndpointId?: string | null;
 	}
 
 	/** In an <a>UpdateResolverRule</a> request, information about the changes that you want to make. */
 	export interface ResolverRuleConfigFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResolverEndpointId: FormControl<string | null | undefined>,
 	}
 	export function CreateResolverRuleConfigFormGroup() {
 		return new FormGroup<ResolverRuleConfigFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			ResolverEndpointId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			ResolverEndpointId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}

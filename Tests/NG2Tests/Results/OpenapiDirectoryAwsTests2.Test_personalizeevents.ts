@@ -6,25 +6,63 @@ export namespace MyNS {
 
 	/** Represents user interaction event information sent using the <code>PutEvents</code> API. */
 	export interface Event {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		eventId?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		eventType: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		properties: string;
+
+		/** Required */
 		sentAt: Date;
 	}
 
 	/** Represents user interaction event information sent using the <code>PutEvents</code> API. */
 	export interface EventFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		eventId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		eventType: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		properties: FormControl<string | null | undefined>,
+
+		/** Required */
 		sentAt: FormControl<Date | null | undefined>,
 	}
 	export function CreateEventFormGroup() {
 		return new FormGroup<EventFormProperties>({
-			eventId: new FormControl<string | null | undefined>(undefined),
-			eventType: new FormControl<string | null | undefined>(undefined),
-			properties: new FormControl<string | null | undefined>(undefined),
-			sentAt: new FormControl<Date | null | undefined>(undefined),
+			eventId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			eventType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			properties: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			sentAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -40,21 +78,61 @@ export namespace MyNS {
 	}
 
 	export interface PutEventsRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		trackingId: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		userId?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		sessionId: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		eventList: Array<Event>;
 	}
 	export interface PutEventsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		trackingId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		userId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		sessionId: FormControl<string | null | undefined>,
 	}
 	export function CreatePutEventsRequestFormGroup() {
 		return new FormGroup<PutEventsRequestFormProperties>({
-			trackingId: new FormControl<string | null | undefined>(undefined),
-			userId: new FormControl<string | null | undefined>(undefined),
-			sessionId: new FormControl<string | null | undefined>(undefined),
+			trackingId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			userId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			sessionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -134,9 +212,9 @@ export namespace MyNS {
 	}
 	export function CreatePutEventsPostBodyFormGroup() {
 		return new FormGroup<PutEventsPostBodyFormProperties>({
-			trackingId: new FormControl<string | null | undefined>(undefined),
-			userId: new FormControl<string | null | undefined>(undefined),
-			sessionId: new FormControl<string | null | undefined>(undefined),
+			trackingId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			userId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			sessionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}

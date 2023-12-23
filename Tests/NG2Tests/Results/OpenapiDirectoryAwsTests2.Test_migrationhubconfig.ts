@@ -19,7 +19,19 @@ export namespace MyNS {
 
 	/** A home region control is an object that specifies the home region for an account, with some additional information. It contains a target (always of type <code>ACCOUNT</code>), an ID, and a time at which the home region was set. */
 	export interface HomeRegionControl {
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: ^hrc-[a-z0-9]{12}$
+		 */
 		ControlId?: string | null;
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: ^([a-z]+)-([a-z]+)-([0-9]+)$
+		 */
 		HomeRegion?: string | null;
 
 		/** The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>. */
@@ -29,14 +41,26 @@ export namespace MyNS {
 
 	/** A home region control is an object that specifies the home region for an account, with some additional information. It contains a target (always of type <code>ACCOUNT</code>), an ID, and a time at which the home region was set. */
 	export interface HomeRegionControlFormProperties {
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: ^hrc-[a-z0-9]{12}$
+		 */
 		ControlId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: ^([a-z]+)-([a-z]+)-([0-9]+)$
+		 */
 		HomeRegion: FormControl<string | null | undefined>,
 		RequestedTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateHomeRegionControlFormGroup() {
 		return new FormGroup<HomeRegionControlFormProperties>({
-			ControlId: new FormControl<string | null | undefined>(undefined),
-			HomeRegion: new FormControl<string | null | undefined>(undefined),
+			ControlId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
+			HomeRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
 			RequestedTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -45,19 +69,35 @@ export namespace MyNS {
 
 	/** The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>. */
 	export interface Target {
+
+		/** Required */
 		Type: TargetType;
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: ^\d{12}$
+		 */
 		Id?: string | null;
 	}
 
 	/** The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>. */
 	export interface TargetFormProperties {
+
+		/** Required */
 		Type: FormControl<TargetType | null | undefined>,
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: ^\d{12}$
+		 */
 		Id: FormControl<string | null | undefined>,
 	}
 	export function CreateTargetFormGroup() {
 		return new FormGroup<TargetFormProperties>({
-			Type: new FormControl<TargetType | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<TargetType | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
 		});
 
 	}
@@ -65,6 +105,13 @@ export namespace MyNS {
 	export enum TargetType { ACCOUNT = 0 }
 
 	export interface CreateHomeRegionControlRequest {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: ^([a-z]+)-([a-z]+)-([0-9]+)$
+		 */
 		HomeRegion: string;
 
 		/**
@@ -75,12 +122,19 @@ export namespace MyNS {
 		DryRun?: boolean | null;
 	}
 	export interface CreateHomeRegionControlRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: ^([a-z]+)-([a-z]+)-([0-9]+)$
+		 */
 		HomeRegion: FormControl<string | null | undefined>,
 		DryRun: FormControl<boolean | null | undefined>,
 	}
 	export function CreateCreateHomeRegionControlRequestFormGroup() {
 		return new FormGroup<CreateHomeRegionControlRequestFormProperties>({
-			HomeRegion: new FormControl<string | null | undefined>(undefined),
+			HomeRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
 			DryRun: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -147,53 +201,125 @@ export namespace MyNS {
 	}
 
 	export interface DescribeHomeRegionControlsResult {
+
+		/** Maximum items: 100 */
 		HomeRegionControls?: Array<HomeRegionControl>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+		 */
 		NextToken?: string | null;
 	}
 	export interface DescribeHomeRegionControlsResultFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeHomeRegionControlsResultFormGroup() {
 		return new FormGroup<DescribeHomeRegionControlsResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface DescribeHomeRegionControlsRequest {
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: ^hrc-[a-z0-9]{12}$
+		 */
 		ControlId?: string | null;
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: ^([a-z]+)-([a-z]+)-([0-9]+)$
+		 */
 		HomeRegion?: string | null;
 
 		/** The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>. */
 		Target?: Target;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+		 */
 		NextToken?: string | null;
 	}
 	export interface DescribeHomeRegionControlsRequestFormProperties {
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: ^hrc-[a-z0-9]{12}$
+		 */
 		ControlId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: ^([a-z]+)-([a-z]+)-([0-9]+)$
+		 */
 		HomeRegion: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeHomeRegionControlsRequestFormGroup() {
 		return new FormGroup<DescribeHomeRegionControlsRequestFormProperties>({
-			ControlId: new FormControl<string | null | undefined>(undefined),
-			HomeRegion: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			ControlId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
+			HomeRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface GetHomeRegionResult {
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: ^([a-z]+)-([a-z]+)-([0-9]+)$
+		 */
 		HomeRegion?: string | null;
 	}
 	export interface GetHomeRegionResultFormProperties {
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: ^([a-z]+)-([a-z]+)-([0-9]+)$
+		 */
 		HomeRegion: FormControl<string | null | undefined>,
 	}
 	export function CreateGetHomeRegionResultFormGroup() {
 		return new FormGroup<GetHomeRegionResultFormProperties>({
-			HomeRegion: new FormControl<string | null | undefined>(undefined),
+			HomeRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
 		});
 
 	}

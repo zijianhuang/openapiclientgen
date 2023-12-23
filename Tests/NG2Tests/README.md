@@ -2,7 +2,7 @@ Walk through OpenApi definition files, generate NG TS codes and run `ng build`.
 
 **Remarks:**
 
-Since all test cases are generated and there's no comparison with past code generation. All tests are to build the generated codes. Thus appsettings.json is ignored, however, the file is kept there to make the parent class work. Not nice regarding SOLID though.
+Since all test cases are generated and there's no comparison with past code generation. All tests are to build the generated codes.
 
 
 Each ng guild upon generated codes of a definition file may take around 15 seconds to 20 seconds on an Intel i7 NUC box, or around 5.5 seconds on "13th Gen Intel Core i7-13700KF 3.40 GHz". The total time estimated should be multiplication by the total number of cases.

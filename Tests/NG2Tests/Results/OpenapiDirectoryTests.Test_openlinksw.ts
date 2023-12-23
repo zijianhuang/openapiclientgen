@@ -13,6 +13,8 @@ export namespace MyNS {
 
 		/** A short description of the action. */
 		description?: string | null;
+
+		/** Required */
 		entry_point: EntryPoint;
 	}
 	export interface ActionDescriptionFormProperties {
@@ -28,7 +30,7 @@ export namespace MyNS {
 	}
 	export function CreateActionDescriptionFormGroup() {
 		return new FormGroup<ActionDescriptionFormProperties>({
-			action_id: new FormControl<string | null | undefined>(undefined),
+			action_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			description: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -118,11 +120,11 @@ export namespace MyNS {
 	}
 	export function CreateEntryPointFormGroup() {
 		return new FormGroup<EntryPointFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined),
-			http_method: new FormControl<EntryPointHttp_method | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			url: new FormControl<string | null | undefined>(undefined),
-			url_template: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			http_method: new FormControl<EntryPointHttp_method | null | undefined>(undefined, [Validators.required]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			url_template: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -205,11 +207,11 @@ export namespace MyNS {
 	}
 	export function CreateEntryPointParameterFormGroup() {
 		return new FormGroup<EntryPointParameterFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined),
-			display_name: new FormControl<string | null | undefined>(undefined),
-			parameter_name: new FormControl<string | null | undefined>(undefined),
-			required: new FormControl<number | null | undefined>(undefined),
-			type: new FormControl<EntryPointParameterType | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			display_name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			parameter_name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			required: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(1)]),
+			type: new FormControl<EntryPointParameterType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -258,9 +260,9 @@ export namespace MyNS {
 	}
 	export function CreateActionHelpFormGroup() {
 		return new FormGroup<ActionHelpFormProperties>({
-			action_id: new FormControl<string | null | undefined>(undefined),
-			help_text: new FormControl<string | null | undefined>(undefined),
-			service_id: new FormControl<string | null | undefined>(undefined),
+			action_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			help_text: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			service_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -278,7 +280,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		method: string;
+
+		/** Required */
 		response: ActionHelp;
+
+		/** Required */
 		status: ActionHelpResponseStatus;
 	}
 	export interface ActionHelpResponseFormProperties {
@@ -294,13 +300,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		method: FormControl<string | null | undefined>,
+
+		/** Required */
 		status: FormControl<ActionHelpResponseStatus | null | undefined>,
 	}
 	export function CreateActionHelpResponseFormGroup() {
 		return new FormGroup<ActionHelpResponseFormProperties>({
-			api: new FormControl<string | null | undefined>(undefined),
-			method: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined),
+			api: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			method: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -320,7 +328,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		method: string;
+
+		/** Required */
 		response: ActionDescription;
+
+		/** Required */
 		status: ActionHelpResponseStatus;
 	}
 	export interface DescribeActionResponseFormProperties {
@@ -336,13 +348,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		method: FormControl<string | null | undefined>,
+
+		/** Required */
 		status: FormControl<ActionHelpResponseStatus | null | undefined>,
 	}
 	export function CreateDescribeActionResponseFormGroup() {
 		return new FormGroup<DescribeActionResponseFormProperties>({
-			api: new FormControl<string | null | undefined>(undefined),
-			method: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined),
+			api: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			method: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -360,7 +374,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		method: string;
+
+		/** Required */
 		response: ServiceDescription;
+
+		/** Required */
 		status: ActionHelpResponseStatus;
 	}
 	export interface DescribeServiceResponseFormProperties {
@@ -376,13 +394,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		method: FormControl<string | null | undefined>,
+
+		/** Required */
 		status: FormControl<ActionHelpResponseStatus | null | undefined>,
 	}
 	export function CreateDescribeServiceResponseFormGroup() {
 		return new FormGroup<DescribeServiceResponseFormProperties>({
-			api: new FormControl<string | null | undefined>(undefined),
-			method: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined),
+			api: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			method: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -436,9 +456,9 @@ export namespace MyNS {
 	export function CreateServiceDescriptionFormGroup() {
 		return new FormGroup<ServiceDescriptionFormProperties>({
 			description: new FormControl<string | null | undefined>(undefined),
-			import_source_uri: new FormControl<string | null | undefined>(undefined),
-			service_id: new FormControl<string | null | undefined>(undefined),
-			service_name: new FormControl<string | null | undefined>(undefined),
+			import_source_uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			service_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			service_name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -553,7 +573,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		method: string;
+
+		/** Required */
 		response: Array<ActionDescription>;
+
+		/** Required */
 		status: ActionHelpResponseStatus;
 	}
 	export interface ListActionsResponseFormProperties {
@@ -569,13 +593,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		method: FormControl<string | null | undefined>,
+
+		/** Required */
 		status: FormControl<ActionHelpResponseStatus | null | undefined>,
 	}
 	export function CreateListActionsResponseFormGroup() {
 		return new FormGroup<ListActionsResponseFormProperties>({
-			api: new FormControl<string | null | undefined>(undefined),
-			method: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined),
+			api: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			method: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -593,7 +619,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		method: string;
+
+		/** Required */
 		response: Array<ServiceDescription>;
+
+		/** Required */
 		status: ActionHelpResponseStatus;
 	}
 	export interface ListServicesResponseFormProperties {
@@ -609,13 +639,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		method: FormControl<string | null | undefined>,
+
+		/** Required */
 		status: FormControl<ActionHelpResponseStatus | null | undefined>,
 	}
 	export function CreateListServicesResponseFormGroup() {
 		return new FormGroup<ListServicesResponseFormProperties>({
-			api: new FormControl<string | null | undefined>(undefined),
-			method: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined),
+			api: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			method: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -633,7 +665,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		method: string;
+
+		/** Required */
 		response: LoginResponseResponse;
+
+		/** Required */
 		status: ActionHelpResponseStatus;
 	}
 	export interface LoginResponseFormProperties {
@@ -649,13 +685,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		method: FormControl<string | null | undefined>,
+
+		/** Required */
 		status: FormControl<ActionHelpResponseStatus | null | undefined>,
 	}
 	export function CreateLoginResponseFormGroup() {
 		return new FormGroup<LoginResponseFormProperties>({
-			api: new FormControl<string | null | undefined>(undefined),
-			method: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined),
+			api: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			method: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -678,7 +716,7 @@ export namespace MyNS {
 	}
 	export function CreateLoginResponseResponseFormGroup() {
 		return new FormGroup<LoginResponseResponseFormProperties>({
-			user: new FormControl<string | null | undefined>(undefined),
+			user: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -696,7 +734,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		method: string;
+
+		/** Required */
 		response: LogoutResponseResponse;
+
+		/** Required */
 		status: ActionHelpResponseStatus;
 	}
 	export interface LogoutResponseFormProperties {
@@ -712,13 +754,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		method: FormControl<string | null | undefined>,
+
+		/** Required */
 		status: FormControl<ActionHelpResponseStatus | null | undefined>,
 	}
 	export function CreateLogoutResponseFormGroup() {
 		return new FormGroup<LogoutResponseFormProperties>({
-			api: new FormControl<string | null | undefined>(undefined),
-			method: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined),
+			api: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			method: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -741,7 +785,7 @@ export namespace MyNS {
 	}
 	export function CreateLogoutResponseResponseFormGroup() {
 		return new FormGroup<LogoutResponseResponseFormProperties>({
-			user: new FormControl<string | null | undefined>(undefined),
+			user: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -900,7 +944,7 @@ export namespace MyNS {
 	}
 	export function CreateLoadServicePostBodyFormGroup() {
 		return new FormGroup<LoadServicePostBodyFormProperties>({
-			service_description_url: new FormControl<string | null | undefined>(undefined),
+			service_description_url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			service_moniker: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -925,6 +969,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		response: string;
+
+		/** Required */
 		status: ActionHelpResponseStatus;
 	}
 	export interface LoadServiceReturnFormProperties {
@@ -946,14 +992,16 @@ export namespace MyNS {
 		 * Required
 		 */
 		response: FormControl<string | null | undefined>,
+
+		/** Required */
 		status: FormControl<ActionHelpResponseStatus | null | undefined>,
 	}
 	export function CreateLoadServiceReturnFormGroup() {
 		return new FormGroup<LoadServiceReturnFormProperties>({
-			api: new FormControl<string | null | undefined>(undefined),
-			method: new FormControl<string | null | undefined>(undefined),
-			response: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined),
+			api: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			method: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			response: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -977,6 +1025,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		response: string;
+
+		/** Required */
 		status: ActionHelpResponseStatus;
 	}
 	export interface UnloadServiceReturnFormProperties {
@@ -998,14 +1048,16 @@ export namespace MyNS {
 		 * Required
 		 */
 		response: FormControl<string | null | undefined>,
+
+		/** Required */
 		status: FormControl<ActionHelpResponseStatus | null | undefined>,
 	}
 	export function CreateUnloadServiceReturnFormGroup() {
 		return new FormGroup<UnloadServiceReturnFormProperties>({
-			api: new FormControl<string | null | undefined>(undefined),
-			method: new FormControl<string | null | undefined>(undefined),
-			response: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined),
+			api: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			method: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			response: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

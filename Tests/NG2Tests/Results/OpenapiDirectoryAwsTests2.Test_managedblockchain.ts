@@ -4,14 +4,24 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateMemberOutput {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		MemberId?: string | null;
 	}
 	export interface CreateMemberOutputFormProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		MemberId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateMemberOutputFormGroup() {
 		return new FormGroup<CreateMemberOutputFormProperties>({
-			MemberId: new FormControl<string | null | undefined>(undefined),
+			MemberId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
@@ -36,19 +46,47 @@ export namespace MyNS {
 
 	/** Configuration properties for Hyperledger Fabric for a member in a Managed Blockchain network using the Hyperledger Fabric framework. */
 	export interface MemberFabricConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 16
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9]*$
+		 */
 		AdminUsername: string;
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 8
+		 * Pattern: ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*[@'\\"/])[a-zA-Z0-9\S]*$
+		 */
 		AdminPassword: string;
 	}
 
 	/** Configuration properties for Hyperledger Fabric for a member in a Managed Blockchain network using the Hyperledger Fabric framework. */
 	export interface MemberFabricConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 16
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9]*$
+		 */
 		AdminUsername: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 8
+		 * Pattern: ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*[@'\\"/])[a-zA-Z0-9\S]*$
+		 */
 		AdminPassword: FormControl<string | null | undefined>,
 	}
 	export function CreateMemberFabricConfigurationFormGroup() {
 		return new FormGroup<MemberFabricConfigurationFormProperties>({
-			AdminUsername: new FormControl<string | null | undefined>(undefined),
-			AdminPassword: new FormControl<string | null | undefined>(undefined),
+			AdminUsername: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(16), Validators.minLength(1)]),
+			AdminPassword: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(8)]),
 		});
 
 	}
@@ -202,17 +240,37 @@ export namespace MyNS {
 	}
 
 	export interface CreateNetworkOutput {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		NetworkId?: string | null;
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		MemberId?: string | null;
 	}
 	export interface CreateNetworkOutputFormProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		NetworkId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		MemberId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateNetworkOutputFormGroup() {
 		return new FormGroup<CreateNetworkOutputFormProperties>({
-			NetworkId: new FormControl<string | null | undefined>(undefined),
-			MemberId: new FormControl<string | null | undefined>(undefined),
+			NetworkId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			MemberId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
@@ -220,16 +278,20 @@ export namespace MyNS {
 
 	/** Hyperledger Fabric configuration properties for the network. */
 	export interface NetworkFabricConfiguration {
+
+		/** Required */
 		Edition: NetworkFabricConfigurationEdition;
 	}
 
 	/** Hyperledger Fabric configuration properties for the network. */
 	export interface NetworkFabricConfigurationFormProperties {
+
+		/** Required */
 		Edition: FormControl<NetworkFabricConfigurationEdition | null | undefined>,
 	}
 	export function CreateNetworkFabricConfigurationFormGroup() {
 		return new FormGroup<NetworkFabricConfigurationFormProperties>({
-			Edition: new FormControl<NetworkFabricConfigurationEdition | null | undefined>(undefined),
+			Edition: new FormControl<NetworkFabricConfigurationEdition | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -239,21 +301,41 @@ export namespace MyNS {
 
 	/** A policy type that defines the voting rules for the network. The rules decide if a proposal is approved. Approval may be based on criteria such as the percentage of <code>YES</code> votes and the duration of the proposal. The policy applies to all proposals and is specified when the network is created. */
 	export interface ApprovalThresholdPolicy {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		ThresholdPercentage?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 168
+		 */
 		ProposalDurationInHours?: number | null;
 		ThresholdComparator?: ApprovalThresholdPolicyThresholdComparator | null;
 	}
 
 	/** A policy type that defines the voting rules for the network. The rules decide if a proposal is approved. Approval may be based on criteria such as the percentage of <code>YES</code> votes and the duration of the proposal. The policy applies to all proposals and is specified when the network is created. */
 	export interface ApprovalThresholdPolicyFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		ThresholdPercentage: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 168
+		 */
 		ProposalDurationInHours: FormControl<number | null | undefined>,
 		ThresholdComparator: FormControl<ApprovalThresholdPolicyThresholdComparator | null | undefined>,
 	}
 	export function CreateApprovalThresholdPolicyFormGroup() {
 		return new FormGroup<ApprovalThresholdPolicyFormProperties>({
-			ThresholdPercentage: new FormControl<number | null | undefined>(undefined),
-			ProposalDurationInHours: new FormControl<number | null | undefined>(undefined),
+			ThresholdPercentage: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			ProposalDurationInHours: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(168)]),
 			ThresholdComparator: new FormControl<ApprovalThresholdPolicyThresholdComparator | null | undefined>(undefined),
 		});
 
@@ -262,14 +344,24 @@ export namespace MyNS {
 	export enum ApprovalThresholdPolicyThresholdComparator { GREATER_THAN = 0, GREATER_THAN_OR_EQUAL_TO = 1 }
 
 	export interface CreateNodeOutput {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		NodeId?: string | null;
 	}
 	export interface CreateNodeOutputFormProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		NodeId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateNodeOutputFormGroup() {
 		return new FormGroup<CreateNodeOutputFormProperties>({
-			NodeId: new FormControl<string | null | undefined>(undefined),
+			NodeId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
@@ -312,14 +404,24 @@ export namespace MyNS {
 	}
 
 	export interface CreateProposalOutput {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		ProposalId?: string | null;
 	}
 	export interface CreateProposalOutputFormProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		ProposalId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateProposalOutputFormGroup() {
 		return new FormGroup<CreateProposalOutputFormProperties>({
-			ProposalId: new FormControl<string | null | undefined>(undefined),
+			ProposalId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
@@ -327,16 +429,20 @@ export namespace MyNS {
 
 	/** An action to invite a specific AWS account to create a member and join the network. The <code>InviteAction</code> is carried out when a <code>Proposal</code> is <code>APPROVED</code>. */
 	export interface InviteAction {
+
+		/** Required */
 		Principal: string;
 	}
 
 	/** An action to invite a specific AWS account to create a member and join the network. The <code>InviteAction</code> is carried out when a <code>Proposal</code> is <code>APPROVED</code>. */
 	export interface InviteActionFormProperties {
+
+		/** Required */
 		Principal: FormControl<string | null | undefined>,
 	}
 	export function CreateInviteActionFormGroup() {
 		return new FormGroup<InviteActionFormProperties>({
-			Principal: new FormControl<string | null | undefined>(undefined),
+			Principal: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -344,16 +450,28 @@ export namespace MyNS {
 
 	/** An action to remove a member from a Managed Blockchain network as the result of a removal proposal that is <code>APPROVED</code>. The member and all associated resources are deleted from the network. */
 	export interface RemoveAction {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		MemberId: string;
 	}
 
 	/** An action to remove a member from a Managed Blockchain network as the result of a removal proposal that is <code>APPROVED</code>. The member and all associated resources are deleted from the network. */
 	export interface RemoveActionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		MemberId: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveActionFormGroup() {
 		return new FormGroup<RemoveActionFormProperties>({
-			MemberId: new FormControl<string | null | undefined>(undefined),
+			MemberId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
@@ -394,9 +512,27 @@ export namespace MyNS {
 
 	/** Member configuration properties. */
 	export interface Member {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		NetworkId?: string | null;
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		Id?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
+		 */
 		Name?: string | null;
+
+		/** Max length: 128 */
 		Description?: string | null;
 
 		/** Attributes relevant to a member for the blockchain framework that the Managed Blockchain network uses. */
@@ -410,19 +546,37 @@ export namespace MyNS {
 
 	/** Member configuration properties. */
 	export interface MemberFormProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		NetworkId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		Description: FormControl<string | null | undefined>,
 		Status: FormControl<MemberStatus | null | undefined>,
 		CreationDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateMemberFormGroup() {
 		return new FormGroup<MemberFormProperties>({
-			NetworkId: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			NetworkId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			Status: new FormControl<MemberStatus | null | undefined>(undefined),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -449,18 +603,30 @@ export namespace MyNS {
 
 	/** Attributes of Hyperledger Fabric for a member in a Managed Blockchain network using the Hyperledger Fabric framework. */
 	export interface MemberFabricAttributes {
+
+		/**
+		 * Max length: 16
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9]*$
+		 */
 		AdminUsername?: string | null;
 		CaEndpoint?: string | null;
 	}
 
 	/** Attributes of Hyperledger Fabric for a member in a Managed Blockchain network using the Hyperledger Fabric framework. */
 	export interface MemberFabricAttributesFormProperties {
+
+		/**
+		 * Max length: 16
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9]*$
+		 */
 		AdminUsername: FormControl<string | null | undefined>,
 		CaEndpoint: FormControl<string | null | undefined>,
 	}
 	export function CreateMemberFabricAttributesFormGroup() {
 		return new FormGroup<MemberFabricAttributesFormProperties>({
-			AdminUsername: new FormControl<string | null | undefined>(undefined),
+			AdminUsername: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16), Validators.minLength(1)]),
 			CaEndpoint: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -484,10 +650,28 @@ export namespace MyNS {
 
 	/** Network configuration properties. */
 	export interface Network {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		Id?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		Name?: string | null;
+
+		/** Max length: 128 */
 		Description?: string | null;
 		Framework?: NetworkFramework | null;
+
+		/**
+		 * Max length: 8
+		 * Min length: 1
+		 */
 		FrameworkVersion?: string | null;
 
 		/** Attributes relevant to the network for the blockchain framework that the network uses. */
@@ -502,10 +686,28 @@ export namespace MyNS {
 
 	/** Network configuration properties. */
 	export interface NetworkFormProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		Description: FormControl<string | null | undefined>,
 		Framework: FormControl<NetworkFramework | null | undefined>,
+
+		/**
+		 * Max length: 8
+		 * Min length: 1
+		 */
 		FrameworkVersion: FormControl<string | null | undefined>,
 		VpcEndpointServiceName: FormControl<string | null | undefined>,
 		Status: FormControl<NetworkStatus | null | undefined>,
@@ -513,11 +715,11 @@ export namespace MyNS {
 	}
 	export function CreateNetworkFormGroup() {
 		return new FormGroup<NetworkFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			Framework: new FormControl<NetworkFramework | null | undefined>(undefined),
-			FrameworkVersion: new FormControl<string | null | undefined>(undefined),
+			FrameworkVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(1)]),
 			VpcEndpointServiceName: new FormControl<string | null | undefined>(undefined),
 			Status: new FormControl<NetworkStatus | null | undefined>(undefined),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
@@ -599,8 +801,23 @@ export namespace MyNS {
 
 	/** Configuration properties of a peer node. */
 	export interface Node {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		NetworkId?: string | null;
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		MemberId?: string | null;
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		Id?: string | null;
 		InstanceType?: string | null;
 		AvailabilityZone?: string | null;
@@ -616,8 +833,23 @@ export namespace MyNS {
 
 	/** Configuration properties of a peer node. */
 	export interface NodeFormProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		NetworkId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		MemberId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		Id: FormControl<string | null | undefined>,
 		InstanceType: FormControl<string | null | undefined>,
 		AvailabilityZone: FormControl<string | null | undefined>,
@@ -626,9 +858,9 @@ export namespace MyNS {
 	}
 	export function CreateNodeFormGroup() {
 		return new FormGroup<NodeFormProperties>({
-			NetworkId: new FormControl<string | null | undefined>(undefined),
-			MemberId: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			NetworkId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			MemberId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 			InstanceType: new FormControl<string | null | undefined>(undefined),
 			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
 			Status: new FormControl<NodeStatus | null | undefined>(undefined),
@@ -692,13 +924,36 @@ export namespace MyNS {
 
 	/** Properties of a proposal on a Managed Blockchain network. */
 	export interface Proposal {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		ProposalId?: string | null;
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		NetworkId?: string | null;
+
+		/** Max length: 128 */
 		Description?: string | null;
 
 		/** The actions to carry out if a proposal is <code>APPROVED</code>. */
 		Actions?: ProposalActions;
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		ProposedByMemberId?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
+		 */
 		ProposedByMemberName?: string | null;
 		Status?: ProposalStatus | null;
 		CreationDate?: Date | null;
@@ -710,10 +965,33 @@ export namespace MyNS {
 
 	/** Properties of a proposal on a Managed Blockchain network. */
 	export interface ProposalFormProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		ProposalId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		NetworkId: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		ProposedByMemberId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
+		 */
 		ProposedByMemberName: FormControl<string | null | undefined>,
 		Status: FormControl<ProposalStatus | null | undefined>,
 		CreationDate: FormControl<Date | null | undefined>,
@@ -724,11 +1002,11 @@ export namespace MyNS {
 	}
 	export function CreateProposalFormGroup() {
 		return new FormGroup<ProposalFormProperties>({
-			ProposalId: new FormControl<string | null | undefined>(undefined),
-			NetworkId: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			ProposedByMemberId: new FormControl<string | null | undefined>(undefined),
-			ProposedByMemberName: new FormControl<string | null | undefined>(undefined),
+			ProposalId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			NetworkId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			ProposedByMemberId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			ProposedByMemberName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			Status: new FormControl<ProposalStatus | null | undefined>(undefined),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
 			ExpirationDate: new FormControl<Date | null | undefined>(undefined),
@@ -759,14 +1037,18 @@ export namespace MyNS {
 
 	export interface ListInvitationsOutput {
 		Invitations?: Array<Invitation>;
+
+		/** Max length: 128 */
 		NextToken?: string | null;
 	}
 	export interface ListInvitationsOutputFormProperties {
+
+		/** Max length: 128 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListInvitationsOutputFormGroup() {
 		return new FormGroup<ListInvitationsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 		});
 
 	}
@@ -774,6 +1056,11 @@ export namespace MyNS {
 
 	/** An invitation to an AWS account to create a member and join the network. */
 	export interface Invitation {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		InvitationId?: string | null;
 		CreationDate?: Date | null;
 		ExpirationDate?: Date | null;
@@ -785,6 +1072,11 @@ export namespace MyNS {
 
 	/** An invitation to an AWS account to create a member and join the network. */
 	export interface InvitationFormProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		InvitationId: FormControl<string | null | undefined>,
 		CreationDate: FormControl<Date | null | undefined>,
 		ExpirationDate: FormControl<Date | null | undefined>,
@@ -792,7 +1084,7 @@ export namespace MyNS {
 	}
 	export function CreateInvitationFormGroup() {
 		return new FormGroup<InvitationFormProperties>({
-			InvitationId: new FormControl<string | null | undefined>(undefined),
+			InvitationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
 			ExpirationDate: new FormControl<Date | null | undefined>(undefined),
 			Status: new FormControl<InvitationStatus | null | undefined>(undefined),
@@ -805,10 +1097,28 @@ export namespace MyNS {
 
 	/** A summary of network configuration properties. */
 	export interface NetworkSummary {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		Id?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		Name?: string | null;
+
+		/** Max length: 128 */
 		Description?: string | null;
 		Framework?: NetworkFramework | null;
+
+		/**
+		 * Max length: 8
+		 * Min length: 1
+		 */
 		FrameworkVersion?: string | null;
 		Status?: NetworkStatus | null;
 		CreationDate?: Date | null;
@@ -816,21 +1126,39 @@ export namespace MyNS {
 
 	/** A summary of network configuration properties. */
 	export interface NetworkSummaryFormProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		Description: FormControl<string | null | undefined>,
 		Framework: FormControl<NetworkFramework | null | undefined>,
+
+		/**
+		 * Max length: 8
+		 * Min length: 1
+		 */
 		FrameworkVersion: FormControl<string | null | undefined>,
 		Status: FormControl<NetworkStatus | null | undefined>,
 		CreationDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateNetworkSummaryFormGroup() {
 		return new FormGroup<NetworkSummaryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			Framework: new FormControl<NetworkFramework | null | undefined>(undefined),
-			FrameworkVersion: new FormControl<string | null | undefined>(undefined),
+			FrameworkVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(1)]),
 			Status: new FormControl<NetworkStatus | null | undefined>(undefined),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -839,14 +1167,18 @@ export namespace MyNS {
 
 	export interface ListMembersOutput {
 		Members?: Array<MemberSummary>;
+
+		/** Max length: 128 */
 		NextToken?: string | null;
 	}
 	export interface ListMembersOutputFormProperties {
+
+		/** Max length: 128 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListMembersOutputFormGroup() {
 		return new FormGroup<ListMembersOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 		});
 
 	}
@@ -854,8 +1186,21 @@ export namespace MyNS {
 
 	/** A summary of configuration properties for a member. */
 	export interface MemberSummary {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		Id?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
+		 */
 		Name?: string | null;
+
+		/** Max length: 128 */
 		Description?: string | null;
 		Status?: MemberStatus | null;
 		CreationDate?: Date | null;
@@ -864,8 +1209,21 @@ export namespace MyNS {
 
 	/** A summary of configuration properties for a member. */
 	export interface MemberSummaryFormProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		Description: FormControl<string | null | undefined>,
 		Status: FormControl<MemberStatus | null | undefined>,
 		CreationDate: FormControl<Date | null | undefined>,
@@ -873,9 +1231,9 @@ export namespace MyNS {
 	}
 	export function CreateMemberSummaryFormGroup() {
 		return new FormGroup<MemberSummaryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			Status: new FormControl<MemberStatus | null | undefined>(undefined),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
 			IsOwned: new FormControl<boolean | null | undefined>(undefined),
@@ -885,28 +1243,36 @@ export namespace MyNS {
 
 	export interface ListNetworksOutput {
 		Networks?: Array<NetworkSummary>;
+
+		/** Max length: 128 */
 		NextToken?: string | null;
 	}
 	export interface ListNetworksOutputFormProperties {
+
+		/** Max length: 128 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListNetworksOutputFormGroup() {
 		return new FormGroup<ListNetworksOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 		});
 
 	}
 
 	export interface ListNodesOutput {
 		Nodes?: Array<NodeSummary>;
+
+		/** Max length: 128 */
 		NextToken?: string | null;
 	}
 	export interface ListNodesOutputFormProperties {
+
+		/** Max length: 128 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListNodesOutputFormGroup() {
 		return new FormGroup<ListNodesOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 		});
 
 	}
@@ -914,6 +1280,11 @@ export namespace MyNS {
 
 	/** A summary of configuration properties for a peer node. */
 	export interface NodeSummary {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		Id?: string | null;
 		Status?: NodeStatus | null;
 		CreationDate?: Date | null;
@@ -923,6 +1294,11 @@ export namespace MyNS {
 
 	/** A summary of configuration properties for a peer node. */
 	export interface NodeSummaryFormProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		Id: FormControl<string | null | undefined>,
 		Status: FormControl<NodeStatus | null | undefined>,
 		CreationDate: FormControl<Date | null | undefined>,
@@ -931,7 +1307,7 @@ export namespace MyNS {
 	}
 	export function CreateNodeSummaryFormGroup() {
 		return new FormGroup<NodeSummaryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 			Status: new FormControl<NodeStatus | null | undefined>(undefined),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
 			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
@@ -942,14 +1318,18 @@ export namespace MyNS {
 
 	export interface ListProposalVotesOutput {
 		ProposalVotes?: Array<VoteSummary>;
+
+		/** Max length: 128 */
 		NextToken?: string | null;
 	}
 	export interface ListProposalVotesOutputFormProperties {
+
+		/** Max length: 128 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListProposalVotesOutputFormGroup() {
 		return new FormGroup<ListProposalVotesOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 		});
 
 	}
@@ -958,21 +1338,43 @@ export namespace MyNS {
 	/**  Properties of an individual vote that a member cast for a proposal.  */
 	export interface VoteSummary {
 		Vote?: VoteSummaryVote | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
+		 */
 		MemberName?: string | null;
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		MemberId?: string | null;
 	}
 
 	/**  Properties of an individual vote that a member cast for a proposal.  */
 	export interface VoteSummaryFormProperties {
 		Vote: FormControl<VoteSummaryVote | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
+		 */
 		MemberName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		MemberId: FormControl<string | null | undefined>,
 	}
 	export function CreateVoteSummaryFormGroup() {
 		return new FormGroup<VoteSummaryFormProperties>({
 			Vote: new FormControl<VoteSummaryVote | null | undefined>(undefined),
-			MemberName: new FormControl<string | null | undefined>(undefined),
-			MemberId: new FormControl<string | null | undefined>(undefined),
+			MemberName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			MemberId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
@@ -981,14 +1383,18 @@ export namespace MyNS {
 
 	export interface ListProposalsOutput {
 		Proposals?: Array<ProposalSummary>;
+
+		/** Max length: 128 */
 		NextToken?: string | null;
 	}
 	export interface ListProposalsOutputFormProperties {
+
+		/** Max length: 128 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListProposalsOutputFormGroup() {
 		return new FormGroup<ListProposalsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 		});
 
 	}
@@ -996,9 +1402,27 @@ export namespace MyNS {
 
 	/** Properties of a proposal. */
 	export interface ProposalSummary {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		ProposalId?: string | null;
+
+		/** Max length: 128 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		ProposedByMemberId?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
+		 */
 		ProposedByMemberName?: string | null;
 		Status?: ProposalStatus | null;
 		CreationDate?: Date | null;
@@ -1007,9 +1431,27 @@ export namespace MyNS {
 
 	/** Properties of a proposal. */
 	export interface ProposalSummaryFormProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		ProposalId: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		ProposedByMemberId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
+		 */
 		ProposedByMemberName: FormControl<string | null | undefined>,
 		Status: FormControl<ProposalStatus | null | undefined>,
 		CreationDate: FormControl<Date | null | undefined>,
@@ -1017,10 +1459,10 @@ export namespace MyNS {
 	}
 	export function CreateProposalSummaryFormGroup() {
 		return new FormGroup<ProposalSummaryFormProperties>({
-			ProposalId: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			ProposedByMemberId: new FormControl<string | null | undefined>(undefined),
-			ProposedByMemberName: new FormControl<string | null | undefined>(undefined),
+			ProposalId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			ProposedByMemberId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			ProposedByMemberName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			Status: new FormControl<ProposalStatus | null | undefined>(undefined),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
 			ExpirationDate: new FormControl<Date | null | undefined>(undefined),
@@ -1083,7 +1525,16 @@ export namespace MyNS {
 
 	/** Configuration properties of the member. */
 	export interface MemberConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
+		 */
 		Name: string;
+
+		/** Max length: 128 */
 		Description?: string | null;
 
 		/**
@@ -1098,19 +1549,40 @@ export namespace MyNS {
 
 	/** Configuration properties of the member. */
 	export interface MemberConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateMemberConfigurationFormGroup() {
 		return new FormGroup<MemberConfigurationFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 		});
 
 	}
 
 	export interface CreateMemberInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ClientRequestToken: string;
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		InvitationId: string;
 
 		/**
@@ -1120,13 +1592,25 @@ export namespace MyNS {
 		MemberConfiguration: MemberConfiguration;
 	}
 	export interface CreateMemberInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		InvitationId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateMemberInputFormGroup() {
 		return new FormGroup<CreateMemberInputFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
-			InvitationId: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			InvitationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
@@ -1151,10 +1635,33 @@ export namespace MyNS {
 	}
 
 	export interface CreateNetworkInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ClientRequestToken: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		Name: string;
+
+		/** Max length: 128 */
 		Description?: string | null;
+
+		/** Required */
 		Framework: NetworkFramework;
+
+		/**
+		 * Required
+		 * Max length: 8
+		 * Min length: 1
+		 */
 		FrameworkVersion: string;
 
 		/** Configuration properties relevant to the network for the blockchain framework that the network uses. */
@@ -1173,19 +1680,42 @@ export namespace MyNS {
 		MemberConfiguration: MemberConfiguration;
 	}
 	export interface CreateNetworkInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		Description: FormControl<string | null | undefined>,
+
+		/** Required */
 		Framework: FormControl<NetworkFramework | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 8
+		 * Min length: 1
+		 */
 		FrameworkVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateNetworkInputFormGroup() {
 		return new FormGroup<CreateNetworkInputFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			Framework: new FormControl<NetworkFramework | null | undefined>(undefined),
-			FrameworkVersion: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			Framework: new FormControl<NetworkFramework | null | undefined>(undefined, [Validators.required]),
+			FrameworkVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8), Validators.minLength(1)]),
 		});
 
 	}
@@ -1193,7 +1723,11 @@ export namespace MyNS {
 
 	/** Configuration properties of a peer node. */
 	export interface NodeConfiguration {
+
+		/** Required */
 		InstanceType: string;
+
+		/** Required */
 		AvailabilityZone: string;
 
 		/** Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain network. */
@@ -1202,18 +1736,28 @@ export namespace MyNS {
 
 	/** Configuration properties of a peer node. */
 	export interface NodeConfigurationFormProperties {
+
+		/** Required */
 		InstanceType: FormControl<string | null | undefined>,
+
+		/** Required */
 		AvailabilityZone: FormControl<string | null | undefined>,
 	}
 	export function CreateNodeConfigurationFormGroup() {
 		return new FormGroup<NodeConfigurationFormProperties>({
-			InstanceType: new FormControl<string | null | undefined>(undefined),
-			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface CreateNodeInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ClientRequestToken: string;
 
 		/**
@@ -1223,17 +1767,35 @@ export namespace MyNS {
 		NodeConfiguration: NodeConfiguration;
 	}
 	export interface CreateNodeInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateNodeInputFormGroup() {
 		return new FormGroup<CreateNodeInputFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateProposalInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ClientRequestToken: string;
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		MemberId: string;
 
 		/**
@@ -1241,18 +1803,34 @@ export namespace MyNS {
 		 * Required
 		 */
 		Actions: ProposalActions;
+
+		/** Max length: 128 */
 		Description?: string | null;
 	}
 	export interface CreateProposalInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		MemberId: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateProposalInputFormGroup() {
 		return new FormGroup<CreateProposalInputFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
-			MemberId: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			MemberId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 		});
 
 	}
@@ -1418,17 +1996,33 @@ export namespace MyNS {
 	export enum VoteValue { YES = 0, NO = 1 }
 
 	export interface VoteOnProposalInput {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		VoterMemberId: string;
+
+		/** Required */
 		Vote: VoteSummaryVote;
 	}
 	export interface VoteOnProposalInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		VoterMemberId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Vote: FormControl<VoteSummaryVote | null | undefined>,
 	}
 	export function CreateVoteOnProposalInputFormGroup() {
 		return new FormGroup<VoteOnProposalInputFormProperties>({
-			VoterMemberId: new FormControl<string | null | undefined>(undefined),
-			Vote: new FormControl<VoteSummaryVote | null | undefined>(undefined),
+			VoterMemberId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
+			Vote: new FormControl<VoteSummaryVote | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1725,14 +2319,22 @@ export namespace MyNS {
 	}
 	export function CreateCreateMemberPostBodyFormGroup() {
 		return new FormGroup<CreateMemberPostBodyFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
-			InvitationId: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			InvitationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateMemberPostBodyMemberConfiguration {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
+		 */
 		Name?: string | null;
+
+		/** Max length: 128 */
 		Description?: string | null;
 
 		/** Configuration properties relevant to a member for the blockchain framework that the Managed Blockchain network uses. */
@@ -1742,13 +2344,21 @@ export namespace MyNS {
 		LogPublishingConfiguration?: MemberLogPublishingConfiguration;
 	}
 	export interface CreateMemberPostBodyMemberConfigurationFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateMemberPostBodyMemberConfigurationFormGroup() {
 		return new FormGroup<CreateMemberPostBodyMemberConfigurationFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 		});
 
 	}
@@ -1848,11 +2458,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateNetworkPostBodyFormGroup() {
 		return new FormGroup<CreateNetworkPostBodyFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			Framework: new FormControl<NetworkFramework | null | undefined>(undefined),
-			FrameworkVersion: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			Framework: new FormControl<NetworkFramework | null | undefined>(undefined, [Validators.required]),
+			FrameworkVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8), Validators.minLength(1)]),
 		});
 
 	}
@@ -1884,7 +2494,15 @@ export namespace MyNS {
 	}
 
 	export interface CreateNetworkPostBodyMemberConfiguration {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
+		 */
 		Name?: string | null;
+
+		/** Max length: 128 */
 		Description?: string | null;
 
 		/** Configuration properties relevant to a member for the blockchain framework that the Managed Blockchain network uses. */
@@ -1894,13 +2512,21 @@ export namespace MyNS {
 		LogPublishingConfiguration?: MemberLogPublishingConfiguration;
 	}
 	export interface CreateNetworkPostBodyMemberConfigurationFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateNetworkPostBodyMemberConfigurationFormGroup() {
 		return new FormGroup<CreateNetworkPostBodyMemberConfigurationFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 		});
 
 	}
@@ -1933,7 +2559,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateNodePostBodyFormGroup() {
 		return new FormGroup<CreateNodePostBodyFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -2013,9 +2639,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateProposalPostBodyFormGroup() {
 		return new FormGroup<CreateProposalPostBodyFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
-			MemberId: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			MemberId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 		});
 
 	}
@@ -2118,8 +2744,8 @@ export namespace MyNS {
 	}
 	export function CreateVoteOnProposalPostBodyFormGroup() {
 		return new FormGroup<VoteOnProposalPostBodyFormProperties>({
-			VoterMemberId: new FormControl<string | null | undefined>(undefined),
-			Vote: new FormControl<VoteSummaryVote | null | undefined>(undefined),
+			VoterMemberId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
+			Vote: new FormControl<VoteSummaryVote | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

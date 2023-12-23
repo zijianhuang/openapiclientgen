@@ -37,16 +37,28 @@ export namespace MyNS {
 
 	/** Contains the details of the started session. */
 	export interface StartSessionResult {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 * Pattern: ^[A-Za-z-0-9+/=]+$
+		 */
 		SessionToken?: string | null;
 	}
 
 	/** Contains the details of the started session. */
 	export interface StartSessionResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 * Pattern: ^[A-Za-z-0-9+/=]+$
+		 */
 		SessionToken: FormControl<string | null | undefined>,
 	}
 	export function CreateStartSessionResultFormGroup() {
 		return new FormGroup<StartSessionResultFormProperties>({
-			SessionToken: new FormControl<string | null | undefined>(undefined),
+			SessionToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -54,16 +66,28 @@ export namespace MyNS {
 
 	/** Contains the details of the started transaction. */
 	export interface StartTransactionResult {
+
+		/**
+		 * Max length: 22
+		 * Min length: 22
+		 * Pattern: ^[A-Za-z-0-9]+$
+		 */
 		TransactionId?: string | null;
 	}
 
 	/** Contains the details of the started transaction. */
 	export interface StartTransactionResultFormProperties {
+
+		/**
+		 * Max length: 22
+		 * Min length: 22
+		 * Pattern: ^[A-Za-z-0-9]+$
+		 */
 		TransactionId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartTransactionResultFormGroup() {
 		return new FormGroup<StartTransactionResultFormProperties>({
-			TransactionId: new FormControl<string | null | undefined>(undefined),
+			TransactionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(22), Validators.minLength(22)]),
 		});
 
 	}
@@ -85,18 +109,30 @@ export namespace MyNS {
 
 	/** Contains the details of the committed transaction. */
 	export interface CommitTransactionResult {
+
+		/**
+		 * Max length: 22
+		 * Min length: 22
+		 * Pattern: ^[A-Za-z-0-9]+$
+		 */
 		TransactionId?: string | null;
 		CommitDigest?: string | null;
 	}
 
 	/** Contains the details of the committed transaction. */
 	export interface CommitTransactionResultFormProperties {
+
+		/**
+		 * Max length: 22
+		 * Min length: 22
+		 * Pattern: ^[A-Za-z-0-9]+$
+		 */
 		TransactionId: FormControl<string | null | undefined>,
 		CommitDigest: FormControl<string | null | undefined>,
 	}
 	export function CreateCommitTransactionResultFormGroup() {
 		return new FormGroup<CommitTransactionResultFormProperties>({
-			TransactionId: new FormControl<string | null | undefined>(undefined),
+			TransactionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(22), Validators.minLength(22)]),
 			CommitDigest: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -137,16 +173,28 @@ export namespace MyNS {
 	/** Contains details of the fetched page. */
 	export interface Page {
 		Values?: Array<ValueHolder>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 * Pattern: ^[A-Za-z-0-9+/=]+$
+		 */
 		NextPageToken?: string | null;
 	}
 
 	/** Contains details of the fetched page. */
 	export interface PageFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 * Pattern: ^[A-Za-z-0-9+/=]+$
+		 */
 		NextPageToken: FormControl<string | null | undefined>,
 	}
 	export function CreatePageFormGroup() {
 		return new FormGroup<PageFormProperties>({
-			NextPageToken: new FormControl<string | null | undefined>(undefined),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -154,19 +202,39 @@ export namespace MyNS {
 
 	/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
 	export interface ValueHolder {
+
+		/**
+		 * Max length: 131072
+		 * Min length: 1
+		 */
 		IonBinary?: string | null;
+
+		/**
+		 * Max length: 1048576
+		 * Min length: 1
+		 */
 		IonText?: string | null;
 	}
 
 	/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
 	export interface ValueHolderFormProperties {
+
+		/**
+		 * Max length: 131072
+		 * Min length: 1
+		 */
 		IonBinary: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1048576
+		 * Min length: 1
+		 */
 		IonText: FormControl<string | null | undefined>,
 	}
 	export function CreateValueHolderFormGroup() {
 		return new FormGroup<ValueHolderFormProperties>({
-			IonBinary: new FormControl<string | null | undefined>(undefined),
-			IonText: new FormControl<string | null | undefined>(undefined),
+			IonBinary: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(131072), Validators.minLength(1)]),
+			IonText: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1048576), Validators.minLength(1)]),
 		});
 
 	}
@@ -189,6 +257,12 @@ export namespace MyNS {
 	}
 
 	export interface SendCommandRequest {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 * Pattern: ^[A-Za-z-0-9+/=]+$
+		 */
 		SessionToken?: string | null;
 
 		/** Specifies a request to start a new session. */
@@ -213,11 +287,17 @@ export namespace MyNS {
 		FetchPage?: FetchPageRequest;
 	}
 	export interface SendCommandRequestFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 * Pattern: ^[A-Za-z-0-9+/=]+$
+		 */
 		SessionToken: FormControl<string | null | undefined>,
 	}
 	export function CreateSendCommandRequestFormGroup() {
 		return new FormGroup<SendCommandRequestFormProperties>({
-			SessionToken: new FormControl<string | null | undefined>(undefined),
+			SessionToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -225,16 +305,30 @@ export namespace MyNS {
 
 	/** Specifies a request to start a new session. */
 	export interface StartSessionRequest {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
+		 */
 		LedgerName: string;
 	}
 
 	/** Specifies a request to start a new session. */
 	export interface StartSessionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
+		 */
 		LedgerName: FormControl<string | null | undefined>,
 	}
 	export function CreateStartSessionRequestFormGroup() {
 		return new FormGroup<StartSessionRequestFormProperties>({
-			LedgerName: new FormControl<string | null | undefined>(undefined),
+			LedgerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
@@ -270,19 +364,37 @@ export namespace MyNS {
 
 	/** Contains the details of the transaction to commit. */
 	export interface CommitTransactionRequest {
+
+		/**
+		 * Required
+		 * Max length: 22
+		 * Min length: 22
+		 * Pattern: ^[A-Za-z-0-9]+$
+		 */
 		TransactionId: string;
+
+		/** Required */
 		CommitDigest: string;
 	}
 
 	/** Contains the details of the transaction to commit. */
 	export interface CommitTransactionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 22
+		 * Min length: 22
+		 * Pattern: ^[A-Za-z-0-9]+$
+		 */
 		TransactionId: FormControl<string | null | undefined>,
+
+		/** Required */
 		CommitDigest: FormControl<string | null | undefined>,
 	}
 	export function CreateCommitTransactionRequestFormGroup() {
 		return new FormGroup<CommitTransactionRequestFormProperties>({
-			TransactionId: new FormControl<string | null | undefined>(undefined),
-			CommitDigest: new FormControl<string | null | undefined>(undefined),
+			TransactionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(22), Validators.minLength(22)]),
+			CommitDigest: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -304,20 +416,46 @@ export namespace MyNS {
 
 	/** Specifies a request to execute a statement. */
 	export interface ExecuteStatementRequest {
+
+		/**
+		 * Required
+		 * Max length: 22
+		 * Min length: 22
+		 * Pattern: ^[A-Za-z-0-9]+$
+		 */
 		TransactionId: string;
+
+		/**
+		 * Required
+		 * Max length: 100000
+		 * Min length: 1
+		 */
 		Statement: string;
 		Parameters?: Array<ValueHolder>;
 	}
 
 	/** Specifies a request to execute a statement. */
 	export interface ExecuteStatementRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 22
+		 * Min length: 22
+		 * Pattern: ^[A-Za-z-0-9]+$
+		 */
 		TransactionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100000
+		 * Min length: 1
+		 */
 		Statement: FormControl<string | null | undefined>,
 	}
 	export function CreateExecuteStatementRequestFormGroup() {
 		return new FormGroup<ExecuteStatementRequestFormProperties>({
-			TransactionId: new FormControl<string | null | undefined>(undefined),
-			Statement: new FormControl<string | null | undefined>(undefined),
+			TransactionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(22), Validators.minLength(22)]),
+			Statement: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100000), Validators.minLength(1)]),
 		});
 
 	}
@@ -325,19 +463,47 @@ export namespace MyNS {
 
 	/** Specifies the details of the page to be fetched. */
 	export interface FetchPageRequest {
+
+		/**
+		 * Required
+		 * Max length: 22
+		 * Min length: 22
+		 * Pattern: ^[A-Za-z-0-9]+$
+		 */
 		TransactionId: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 4
+		 * Pattern: ^[A-Za-z-0-9+/=]+$
+		 */
 		NextPageToken: string;
 	}
 
 	/** Specifies the details of the page to be fetched. */
 	export interface FetchPageRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 22
+		 * Min length: 22
+		 * Pattern: ^[A-Za-z-0-9]+$
+		 */
 		TransactionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 4
+		 * Pattern: ^[A-Za-z-0-9+/=]+$
+		 */
 		NextPageToken: FormControl<string | null | undefined>,
 	}
 	export function CreateFetchPageRequestFormGroup() {
 		return new FormGroup<FetchPageRequestFormProperties>({
-			TransactionId: new FormControl<string | null | undefined>(undefined),
-			NextPageToken: new FormControl<string | null | undefined>(undefined),
+			TransactionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(22), Validators.minLength(22)]),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}

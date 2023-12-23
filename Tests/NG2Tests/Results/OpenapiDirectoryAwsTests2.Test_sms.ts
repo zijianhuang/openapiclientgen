@@ -320,7 +320,11 @@ export namespace MyNS {
 	}
 
 	export interface CreateReplicationJobRequest {
+
+		/** Required */
 		serverId: string;
+
+		/** Required */
 		seedReplicationTime: Date;
 		frequency?: number | null;
 		runOnce?: boolean | null;
@@ -332,7 +336,11 @@ export namespace MyNS {
 		kmsKeyId?: string | null;
 	}
 	export interface CreateReplicationJobRequestFormProperties {
+
+		/** Required */
 		serverId: FormControl<string | null | undefined>,
+
+		/** Required */
 		seedReplicationTime: FormControl<Date | null | undefined>,
 		frequency: FormControl<number | null | undefined>,
 		runOnce: FormControl<boolean | null | undefined>,
@@ -345,8 +353,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateReplicationJobRequestFormGroup() {
 		return new FormGroup<CreateReplicationJobRequestFormProperties>({
-			serverId: new FormControl<string | null | undefined>(undefined),
-			seedReplicationTime: new FormControl<Date | null | undefined>(undefined),
+			serverId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			seedReplicationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			frequency: new FormControl<number | null | undefined>(undefined),
 			runOnce: new FormControl<boolean | null | undefined>(undefined),
 			licenseType: new FormControl<CreateReplicationJobRequestLicenseType | null | undefined>(undefined),
@@ -487,14 +495,18 @@ export namespace MyNS {
 	}
 
 	export interface DeleteReplicationJobRequest {
+
+		/** Required */
 		replicationJobId: string;
 	}
 	export interface DeleteReplicationJobRequestFormProperties {
+
+		/** Required */
 		replicationJobId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteReplicationJobRequestFormGroup() {
 		return new FormGroup<DeleteReplicationJobRequestFormProperties>({
-			replicationJobId: new FormControl<string | null | undefined>(undefined),
+			replicationJobId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -540,14 +552,18 @@ export namespace MyNS {
 	}
 
 	export interface DisassociateConnectorRequest {
+
+		/** Required */
 		connectorId: string;
 	}
 	export interface DisassociateConnectorRequestFormProperties {
+
+		/** Required */
 		connectorId: FormControl<string | null | undefined>,
 	}
 	export function CreateDisassociateConnectorRequestFormGroup() {
 		return new FormGroup<DisassociateConnectorRequestFormProperties>({
-			connectorId: new FormControl<string | null | undefined>(undefined),
+			connectorId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1134,18 +1150,22 @@ export namespace MyNS {
 	}
 
 	export interface GetReplicationRunsRequest {
+
+		/** Required */
 		replicationJobId: string;
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
 	export interface GetReplicationRunsRequestFormProperties {
+
+		/** Required */
 		replicationJobId: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateGetReplicationRunsRequestFormGroup() {
 		return new FormGroup<GetReplicationRunsRequestFormProperties>({
-			replicationJobId: new FormControl<string | null | undefined>(undefined),
+			replicationJobId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined),
 		});
@@ -1353,16 +1373,20 @@ export namespace MyNS {
 	}
 
 	export interface StartOnDemandReplicationRunRequest {
+
+		/** Required */
 		replicationJobId: string;
 		description?: string | null;
 	}
 	export interface StartOnDemandReplicationRunRequestFormProperties {
+
+		/** Required */
 		replicationJobId: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 	}
 	export function CreateStartOnDemandReplicationRunRequestFormGroup() {
 		return new FormGroup<StartOnDemandReplicationRunRequestFormProperties>({
-			replicationJobId: new FormControl<string | null | undefined>(undefined),
+			replicationJobId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			description: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1474,6 +1498,8 @@ export namespace MyNS {
 	}
 
 	export interface UpdateReplicationJobRequest {
+
+		/** Required */
 		replicationJobId: string;
 		frequency?: number | null;
 		nextReplicationRunStartTime?: Date | null;
@@ -1485,6 +1511,8 @@ export namespace MyNS {
 		kmsKeyId?: string | null;
 	}
 	export interface UpdateReplicationJobRequestFormProperties {
+
+		/** Required */
 		replicationJobId: FormControl<string | null | undefined>,
 		frequency: FormControl<number | null | undefined>,
 		nextReplicationRunStartTime: FormControl<Date | null | undefined>,
@@ -1497,7 +1525,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateReplicationJobRequestFormGroup() {
 		return new FormGroup<UpdateReplicationJobRequestFormProperties>({
-			replicationJobId: new FormControl<string | null | undefined>(undefined),
+			replicationJobId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			frequency: new FormControl<number | null | undefined>(undefined),
 			nextReplicationRunStartTime: new FormControl<Date | null | undefined>(undefined),
 			licenseType: new FormControl<CreateReplicationJobRequestLicenseType | null | undefined>(undefined),

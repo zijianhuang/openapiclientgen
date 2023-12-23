@@ -8,7 +8,7 @@ namespace SwagTests
 	{
 		public CodeGenJqTests()
 		{
-			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsJqClientApiGen));
+			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsJqClientApiGen), TestHelpers.TestingSettings.Instance);
 		}
 
 		readonly TsTestHelper helper;

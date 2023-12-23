@@ -692,6 +692,12 @@ export namespace MyNS {
 
 	/** Node group (shard) configuration options. Each node group (shard) configuration has the following: <code>Slots</code>, <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>, <code>ReplicaCount</code>. */
 	export interface NodeGroupConfiguration {
+
+		/**
+		 * Max length: 4
+		 * Min length: 1
+		 * Pattern: \d+
+		 */
 		NodeGroupId?: string | null;
 		Slots?: string | null;
 		ReplicaCount?: number | null;
@@ -701,6 +707,12 @@ export namespace MyNS {
 
 	/** Node group (shard) configuration options. Each node group (shard) configuration has the following: <code>Slots</code>, <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>, <code>ReplicaCount</code>. */
 	export interface NodeGroupConfigurationFormProperties {
+
+		/**
+		 * Max length: 4
+		 * Min length: 1
+		 * Pattern: \d+
+		 */
 		NodeGroupId: FormControl<string | null | undefined>,
 		Slots: FormControl<string | null | undefined>,
 		ReplicaCount: FormControl<number | null | undefined>,
@@ -708,7 +720,7 @@ export namespace MyNS {
 	}
 	export function CreateNodeGroupConfigurationFormGroup() {
 		return new FormGroup<NodeGroupConfigurationFormProperties>({
-			NodeGroupId: new FormControl<string | null | undefined>(undefined),
+			NodeGroupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4), Validators.minLength(1)]),
 			Slots: new FormControl<string | null | undefined>(undefined),
 			ReplicaCount: new FormControl<number | null | undefined>(undefined),
 			PrimaryAvailabilityZone: new FormControl<string | null | undefined>(undefined),
@@ -1539,20 +1551,38 @@ export namespace MyNS {
 
 	/** Node group (shard) configuration options when adding or removing replicas. Each node group (shard) configuration has the following members: NodeGroupId, NewReplicaCount, and PreferredAvailabilityZones.  */
 	export interface ConfigureShard {
+
+		/**
+		 * Required
+		 * Max length: 4
+		 * Min length: 1
+		 * Pattern: \d+
+		 */
 		NodeGroupId: string;
+
+		/** Required */
 		NewReplicaCount: number;
 		PreferredAvailabilityZones?: Array<string>;
 	}
 
 	/** Node group (shard) configuration options when adding or removing replicas. Each node group (shard) configuration has the following members: NodeGroupId, NewReplicaCount, and PreferredAvailabilityZones.  */
 	export interface ConfigureShardFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 4
+		 * Min length: 1
+		 * Pattern: \d+
+		 */
 		NodeGroupId: FormControl<string | null | undefined>,
+
+		/** Required */
 		NewReplicaCount: FormControl<number | null | undefined>,
 	}
 	export function CreateConfigureShardFormGroup() {
 		return new FormGroup<ConfigureShardFormProperties>({
-			NodeGroupId: new FormControl<string | null | undefined>(undefined),
-			NewReplicaCount: new FormControl<number | null | undefined>(undefined),
+			NodeGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4), Validators.minLength(1)]),
+			NewReplicaCount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2465,20 +2495,30 @@ export namespace MyNS {
 
 	/** A list of the replication groups  */
 	export interface RegionalConfiguration {
+
+		/** Required */
 		ReplicationGroupId: string;
+
+		/** Required */
 		ReplicationGroupRegion: string;
+
+		/** Required */
 		ReshardingConfiguration: Array<ReshardingConfiguration>;
 	}
 
 	/** A list of the replication groups  */
 	export interface RegionalConfigurationFormProperties {
+
+		/** Required */
 		ReplicationGroupId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ReplicationGroupRegion: FormControl<string | null | undefined>,
 	}
 	export function CreateRegionalConfigurationFormGroup() {
 		return new FormGroup<RegionalConfigurationFormProperties>({
-			ReplicationGroupId: new FormControl<string | null | undefined>(undefined),
-			ReplicationGroupRegion: new FormControl<string | null | undefined>(undefined),
+			ReplicationGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ReplicationGroupRegion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2486,17 +2526,29 @@ export namespace MyNS {
 
 	/** A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration of a node group in the resharded cluster. */
 	export interface ReshardingConfiguration {
+
+		/**
+		 * Max length: 4
+		 * Min length: 1
+		 * Pattern: \d+
+		 */
 		NodeGroupId?: string | null;
 		PreferredAvailabilityZones?: Array<string>;
 	}
 
 	/** A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration of a node group in the resharded cluster. */
 	export interface ReshardingConfigurationFormProperties {
+
+		/**
+		 * Max length: 4
+		 * Min length: 1
+		 * Pattern: \d+
+		 */
 		NodeGroupId: FormControl<string | null | undefined>,
 	}
 	export function CreateReshardingConfigurationFormGroup() {
 		return new FormGroup<ReshardingConfigurationFormProperties>({
-			NodeGroupId: new FormControl<string | null | undefined>(undefined),
+			NodeGroupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4), Validators.minLength(1)]),
 		});
 
 	}
@@ -2835,17 +2887,23 @@ export namespace MyNS {
 
 	/** Represents the input of an AddTagsToResource operation. */
 	export interface AddTagsToResourceMessage {
+
+		/** Required */
 		ResourceName: string;
+
+		/** Required */
 		Tags: Array<Tag>;
 	}
 
 	/** Represents the input of an AddTagsToResource operation. */
 	export interface AddTagsToResourceMessageFormProperties {
+
+		/** Required */
 		ResourceName: FormControl<string | null | undefined>,
 	}
 	export function CreateAddTagsToResourceMessageFormGroup() {
 		return new FormGroup<AddTagsToResourceMessageFormProperties>({
-			ResourceName: new FormControl<string | null | undefined>(undefined),
+			ResourceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2857,22 +2915,34 @@ export namespace MyNS {
 
 	/** Represents the input of an AuthorizeCacheSecurityGroupIngress operation. */
 	export interface AuthorizeCacheSecurityGroupIngressMessage {
+
+		/** Required */
 		CacheSecurityGroupName: string;
+
+		/** Required */
 		EC2SecurityGroupName: string;
+
+		/** Required */
 		EC2SecurityGroupOwnerId: string;
 	}
 
 	/** Represents the input of an AuthorizeCacheSecurityGroupIngress operation. */
 	export interface AuthorizeCacheSecurityGroupIngressMessageFormProperties {
+
+		/** Required */
 		CacheSecurityGroupName: FormControl<string | null | undefined>,
+
+		/** Required */
 		EC2SecurityGroupName: FormControl<string | null | undefined>,
+
+		/** Required */
 		EC2SecurityGroupOwnerId: FormControl<string | null | undefined>,
 	}
 	export function CreateAuthorizeCacheSecurityGroupIngressMessageFormGroup() {
 		return new FormGroup<AuthorizeCacheSecurityGroupIngressMessageFormProperties>({
-			CacheSecurityGroupName: new FormControl<string | null | undefined>(undefined),
-			EC2SecurityGroupName: new FormControl<string | null | undefined>(undefined),
-			EC2SecurityGroupOwnerId: new FormControl<string | null | undefined>(undefined),
+			CacheSecurityGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			EC2SecurityGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			EC2SecurityGroupOwnerId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2880,31 +2950,47 @@ export namespace MyNS {
 	export enum AutomaticFailoverStatus { enabled = 0, disabled = 1, enabling = 2, disabling = 3 }
 
 	export interface BatchApplyUpdateActionMessage {
+
+		/** Maximum items: 20 */
 		ReplicationGroupIds?: Array<string>;
+
+		/** Maximum items: 20 */
 		CacheClusterIds?: Array<string>;
+
+		/** Required */
 		ServiceUpdateName: string;
 	}
 	export interface BatchApplyUpdateActionMessageFormProperties {
+
+		/** Required */
 		ServiceUpdateName: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchApplyUpdateActionMessageFormGroup() {
 		return new FormGroup<BatchApplyUpdateActionMessageFormProperties>({
-			ServiceUpdateName: new FormControl<string | null | undefined>(undefined),
+			ServiceUpdateName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface BatchStopUpdateActionMessage {
+
+		/** Maximum items: 20 */
 		ReplicationGroupIds?: Array<string>;
+
+		/** Maximum items: 20 */
 		CacheClusterIds?: Array<string>;
+
+		/** Required */
 		ServiceUpdateName: string;
 	}
 	export interface BatchStopUpdateActionMessageFormProperties {
+
+		/** Required */
 		ServiceUpdateName: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchStopUpdateActionMessageFormGroup() {
 		return new FormGroup<BatchStopUpdateActionMessageFormProperties>({
-			ServiceUpdateName: new FormControl<string | null | undefined>(undefined),
+			ServiceUpdateName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2916,16 +3002,20 @@ export namespace MyNS {
 	export enum NodeUpdateInitiatedBy { system = 0, customer = 1 }
 
 	export interface CompleteMigrationMessage {
+
+		/** Required */
 		ReplicationGroupId: string;
 		Force?: boolean | null;
 	}
 	export interface CompleteMigrationMessageFormProperties {
+
+		/** Required */
 		ReplicationGroupId: FormControl<string | null | undefined>,
 		Force: FormControl<boolean | null | undefined>,
 	}
 	export function CreateCompleteMigrationMessageFormGroup() {
 		return new FormGroup<CompleteMigrationMessageFormProperties>({
-			ReplicationGroupId: new FormControl<string | null | undefined>(undefined),
+			ReplicationGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Force: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2934,7 +3024,11 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>CopySnapshotMessage</code> operation. */
 	export interface CopySnapshotMessage {
+
+		/** Required */
 		SourceSnapshotName: string;
+
+		/** Required */
 		TargetSnapshotName: string;
 		TargetBucket?: string | null;
 		KmsKeyId?: string | null;
@@ -2942,15 +3036,19 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>CopySnapshotMessage</code> operation. */
 	export interface CopySnapshotMessageFormProperties {
+
+		/** Required */
 		SourceSnapshotName: FormControl<string | null | undefined>,
+
+		/** Required */
 		TargetSnapshotName: FormControl<string | null | undefined>,
 		TargetBucket: FormControl<string | null | undefined>,
 		KmsKeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateCopySnapshotMessageFormGroup() {
 		return new FormGroup<CopySnapshotMessageFormProperties>({
-			SourceSnapshotName: new FormControl<string | null | undefined>(undefined),
-			TargetSnapshotName: new FormControl<string | null | undefined>(undefined),
+			SourceSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TargetSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TargetBucket: new FormControl<string | null | undefined>(undefined),
 			KmsKeyId: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2960,6 +3058,8 @@ export namespace MyNS {
 
 	/** Represents the input of a CreateCacheCluster operation. */
 	export interface CreateCacheClusterMessage {
+
+		/** Required */
 		CacheClusterId: string;
 		ReplicationGroupId?: string | null;
 		AZMode?: CreateCacheClusterMessageAZMode | null;
@@ -2987,6 +3087,8 @@ export namespace MyNS {
 
 	/** Represents the input of a CreateCacheCluster operation. */
 	export interface CreateCacheClusterMessageFormProperties {
+
+		/** Required */
 		CacheClusterId: FormControl<string | null | undefined>,
 		ReplicationGroupId: FormControl<string | null | undefined>,
 		AZMode: FormControl<CreateCacheClusterMessageAZMode | null | undefined>,
@@ -3008,7 +3110,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateCacheClusterMessageFormGroup() {
 		return new FormGroup<CreateCacheClusterMessageFormProperties>({
-			CacheClusterId: new FormControl<string | null | undefined>(undefined),
+			CacheClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ReplicationGroupId: new FormControl<string | null | undefined>(undefined),
 			AZMode: new FormControl<CreateCacheClusterMessageAZMode | null | undefined>(undefined),
 			PreferredAvailabilityZone: new FormControl<string | null | undefined>(undefined),
@@ -3035,22 +3137,34 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>CreateCacheParameterGroup</code> operation. */
 	export interface CreateCacheParameterGroupMessage {
+
+		/** Required */
 		CacheParameterGroupName: string;
+
+		/** Required */
 		CacheParameterGroupFamily: string;
+
+		/** Required */
 		Description: string;
 	}
 
 	/** Represents the input of a <code>CreateCacheParameterGroup</code> operation. */
 	export interface CreateCacheParameterGroupMessageFormProperties {
+
+		/** Required */
 		CacheParameterGroupName: FormControl<string | null | undefined>,
+
+		/** Required */
 		CacheParameterGroupFamily: FormControl<string | null | undefined>,
+
+		/** Required */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateCacheParameterGroupMessageFormGroup() {
 		return new FormGroup<CreateCacheParameterGroupMessageFormProperties>({
-			CacheParameterGroupName: new FormControl<string | null | undefined>(undefined),
-			CacheParameterGroupFamily: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			CacheParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			CacheParameterGroupFamily: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3058,19 +3172,27 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>CreateCacheSecurityGroup</code> operation. */
 	export interface CreateCacheSecurityGroupMessage {
+
+		/** Required */
 		CacheSecurityGroupName: string;
+
+		/** Required */
 		Description: string;
 	}
 
 	/** Represents the input of a <code>CreateCacheSecurityGroup</code> operation. */
 	export interface CreateCacheSecurityGroupMessageFormProperties {
+
+		/** Required */
 		CacheSecurityGroupName: FormControl<string | null | undefined>,
+
+		/** Required */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateCacheSecurityGroupMessageFormGroup() {
 		return new FormGroup<CreateCacheSecurityGroupMessageFormProperties>({
-			CacheSecurityGroupName: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			CacheSecurityGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3078,39 +3200,57 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>CreateCacheSubnetGroup</code> operation. */
 	export interface CreateCacheSubnetGroupMessage {
+
+		/** Required */
 		CacheSubnetGroupName: string;
+
+		/** Required */
 		CacheSubnetGroupDescription: string;
+
+		/** Required */
 		SubnetIds: Array<string>;
 	}
 
 	/** Represents the input of a <code>CreateCacheSubnetGroup</code> operation. */
 	export interface CreateCacheSubnetGroupMessageFormProperties {
+
+		/** Required */
 		CacheSubnetGroupName: FormControl<string | null | undefined>,
+
+		/** Required */
 		CacheSubnetGroupDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateCacheSubnetGroupMessageFormGroup() {
 		return new FormGroup<CreateCacheSubnetGroupMessageFormProperties>({
-			CacheSubnetGroupName: new FormControl<string | null | undefined>(undefined),
-			CacheSubnetGroupDescription: new FormControl<string | null | undefined>(undefined),
+			CacheSubnetGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			CacheSubnetGroupDescription: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface CreateGlobalReplicationGroupMessage {
+
+		/** Required */
 		GlobalReplicationGroupIdSuffix: string;
 		GlobalReplicationGroupDescription?: string | null;
+
+		/** Required */
 		PrimaryReplicationGroupId: string;
 	}
 	export interface CreateGlobalReplicationGroupMessageFormProperties {
+
+		/** Required */
 		GlobalReplicationGroupIdSuffix: FormControl<string | null | undefined>,
 		GlobalReplicationGroupDescription: FormControl<string | null | undefined>,
+
+		/** Required */
 		PrimaryReplicationGroupId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateGlobalReplicationGroupMessageFormGroup() {
 		return new FormGroup<CreateGlobalReplicationGroupMessageFormProperties>({
-			GlobalReplicationGroupIdSuffix: new FormControl<string | null | undefined>(undefined),
+			GlobalReplicationGroupIdSuffix: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			GlobalReplicationGroupDescription: new FormControl<string | null | undefined>(undefined),
-			PrimaryReplicationGroupId: new FormControl<string | null | undefined>(undefined),
+			PrimaryReplicationGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3118,7 +3258,11 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>CreateReplicationGroup</code> operation. */
 	export interface CreateReplicationGroupMessage {
+
+		/** Required */
 		ReplicationGroupId: string;
+
+		/** Required */
 		ReplicationGroupDescription: string;
 		GlobalReplicationGroupId?: string | null;
 		PrimaryClusterId?: string | null;
@@ -3153,7 +3297,11 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>CreateReplicationGroup</code> operation. */
 	export interface CreateReplicationGroupMessageFormProperties {
+
+		/** Required */
 		ReplicationGroupId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ReplicationGroupDescription: FormControl<string | null | undefined>,
 		GlobalReplicationGroupId: FormControl<string | null | undefined>,
 		PrimaryClusterId: FormControl<string | null | undefined>,
@@ -3181,8 +3329,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateReplicationGroupMessageFormGroup() {
 		return new FormGroup<CreateReplicationGroupMessageFormProperties>({
-			ReplicationGroupId: new FormControl<string | null | undefined>(undefined),
-			ReplicationGroupDescription: new FormControl<string | null | undefined>(undefined),
+			ReplicationGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ReplicationGroupDescription: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			GlobalReplicationGroupId: new FormControl<string | null | undefined>(undefined),
 			PrimaryClusterId: new FormControl<string | null | undefined>(undefined),
 			AutomaticFailoverEnabled: new FormControl<boolean | null | undefined>(undefined),
@@ -3215,6 +3363,8 @@ export namespace MyNS {
 	export interface CreateSnapshotMessage {
 		ReplicationGroupId?: string | null;
 		CacheClusterId?: string | null;
+
+		/** Required */
 		SnapshotName: string;
 		KmsKeyId?: string | null;
 	}
@@ -3223,6 +3373,8 @@ export namespace MyNS {
 	export interface CreateSnapshotMessageFormProperties {
 		ReplicationGroupId: FormControl<string | null | undefined>,
 		CacheClusterId: FormControl<string | null | undefined>,
+
+		/** Required */
 		SnapshotName: FormControl<string | null | undefined>,
 		KmsKeyId: FormControl<string | null | undefined>,
 	}
@@ -3230,50 +3382,70 @@ export namespace MyNS {
 		return new FormGroup<CreateSnapshotMessageFormProperties>({
 			ReplicationGroupId: new FormControl<string | null | undefined>(undefined),
 			CacheClusterId: new FormControl<string | null | undefined>(undefined),
-			SnapshotName: new FormControl<string | null | undefined>(undefined),
+			SnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			KmsKeyId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface DecreaseNodeGroupsInGlobalReplicationGroupMessage {
+
+		/** Required */
 		GlobalReplicationGroupId: string;
+
+		/** Required */
 		NodeGroupCount: number;
 		GlobalNodeGroupsToRemove?: Array<string>;
 		GlobalNodeGroupsToRetain?: Array<string>;
+
+		/** Required */
 		ApplyImmediately: boolean;
 	}
 	export interface DecreaseNodeGroupsInGlobalReplicationGroupMessageFormProperties {
+
+		/** Required */
 		GlobalReplicationGroupId: FormControl<string | null | undefined>,
+
+		/** Required */
 		NodeGroupCount: FormControl<number | null | undefined>,
+
+		/** Required */
 		ApplyImmediately: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDecreaseNodeGroupsInGlobalReplicationGroupMessageFormGroup() {
 		return new FormGroup<DecreaseNodeGroupsInGlobalReplicationGroupMessageFormProperties>({
-			GlobalReplicationGroupId: new FormControl<string | null | undefined>(undefined),
-			NodeGroupCount: new FormControl<number | null | undefined>(undefined),
-			ApplyImmediately: new FormControl<boolean | null | undefined>(undefined),
+			GlobalReplicationGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			NodeGroupCount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			ApplyImmediately: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DecreaseReplicaCountMessage {
+
+		/** Required */
 		ReplicationGroupId: string;
 		NewReplicaCount?: number | null;
 		ReplicaConfiguration?: Array<ConfigureShard>;
 		ReplicasToRemove?: Array<string>;
+
+		/** Required */
 		ApplyImmediately: boolean;
 	}
 	export interface DecreaseReplicaCountMessageFormProperties {
+
+		/** Required */
 		ReplicationGroupId: FormControl<string | null | undefined>,
 		NewReplicaCount: FormControl<number | null | undefined>,
+
+		/** Required */
 		ApplyImmediately: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDecreaseReplicaCountMessageFormGroup() {
 		return new FormGroup<DecreaseReplicaCountMessageFormProperties>({
-			ReplicationGroupId: new FormControl<string | null | undefined>(undefined),
+			ReplicationGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NewReplicaCount: new FormControl<number | null | undefined>(undefined),
-			ApplyImmediately: new FormControl<boolean | null | undefined>(undefined),
+			ApplyImmediately: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3281,18 +3453,22 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>DeleteCacheCluster</code> operation. */
 	export interface DeleteCacheClusterMessage {
+
+		/** Required */
 		CacheClusterId: string;
 		FinalSnapshotIdentifier?: string | null;
 	}
 
 	/** Represents the input of a <code>DeleteCacheCluster</code> operation. */
 	export interface DeleteCacheClusterMessageFormProperties {
+
+		/** Required */
 		CacheClusterId: FormControl<string | null | undefined>,
 		FinalSnapshotIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteCacheClusterMessageFormGroup() {
 		return new FormGroup<DeleteCacheClusterMessageFormProperties>({
-			CacheClusterId: new FormControl<string | null | undefined>(undefined),
+			CacheClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			FinalSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3301,16 +3477,20 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>DeleteCacheParameterGroup</code> operation. */
 	export interface DeleteCacheParameterGroupMessage {
+
+		/** Required */
 		CacheParameterGroupName: string;
 	}
 
 	/** Represents the input of a <code>DeleteCacheParameterGroup</code> operation. */
 	export interface DeleteCacheParameterGroupMessageFormProperties {
+
+		/** Required */
 		CacheParameterGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteCacheParameterGroupMessageFormGroup() {
 		return new FormGroup<DeleteCacheParameterGroupMessageFormProperties>({
-			CacheParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			CacheParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3318,16 +3498,20 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>DeleteCacheSecurityGroup</code> operation. */
 	export interface DeleteCacheSecurityGroupMessage {
+
+		/** Required */
 		CacheSecurityGroupName: string;
 	}
 
 	/** Represents the input of a <code>DeleteCacheSecurityGroup</code> operation. */
 	export interface DeleteCacheSecurityGroupMessageFormProperties {
+
+		/** Required */
 		CacheSecurityGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteCacheSecurityGroupMessageFormGroup() {
 		return new FormGroup<DeleteCacheSecurityGroupMessageFormProperties>({
-			CacheSecurityGroupName: new FormControl<string | null | undefined>(undefined),
+			CacheSecurityGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3335,32 +3519,44 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>DeleteCacheSubnetGroup</code> operation. */
 	export interface DeleteCacheSubnetGroupMessage {
+
+		/** Required */
 		CacheSubnetGroupName: string;
 	}
 
 	/** Represents the input of a <code>DeleteCacheSubnetGroup</code> operation. */
 	export interface DeleteCacheSubnetGroupMessageFormProperties {
+
+		/** Required */
 		CacheSubnetGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteCacheSubnetGroupMessageFormGroup() {
 		return new FormGroup<DeleteCacheSubnetGroupMessageFormProperties>({
-			CacheSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			CacheSubnetGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeleteGlobalReplicationGroupMessage {
+
+		/** Required */
 		GlobalReplicationGroupId: string;
+
+		/** Required */
 		RetainPrimaryReplicationGroup: boolean;
 	}
 	export interface DeleteGlobalReplicationGroupMessageFormProperties {
+
+		/** Required */
 		GlobalReplicationGroupId: FormControl<string | null | undefined>,
+
+		/** Required */
 		RetainPrimaryReplicationGroup: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDeleteGlobalReplicationGroupMessageFormGroup() {
 		return new FormGroup<DeleteGlobalReplicationGroupMessageFormProperties>({
-			GlobalReplicationGroupId: new FormControl<string | null | undefined>(undefined),
-			RetainPrimaryReplicationGroup: new FormControl<boolean | null | undefined>(undefined),
+			GlobalReplicationGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RetainPrimaryReplicationGroup: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3368,6 +3564,8 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>DeleteReplicationGroup</code> operation. */
 	export interface DeleteReplicationGroupMessage {
+
+		/** Required */
 		ReplicationGroupId: string;
 		RetainPrimaryCluster?: boolean | null;
 		FinalSnapshotIdentifier?: string | null;
@@ -3375,13 +3573,15 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>DeleteReplicationGroup</code> operation. */
 	export interface DeleteReplicationGroupMessageFormProperties {
+
+		/** Required */
 		ReplicationGroupId: FormControl<string | null | undefined>,
 		RetainPrimaryCluster: FormControl<boolean | null | undefined>,
 		FinalSnapshotIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteReplicationGroupMessageFormGroup() {
 		return new FormGroup<DeleteReplicationGroupMessageFormProperties>({
-			ReplicationGroupId: new FormControl<string | null | undefined>(undefined),
+			ReplicationGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RetainPrimaryCluster: new FormControl<boolean | null | undefined>(undefined),
 			FinalSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
 		});
@@ -3391,16 +3591,20 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>DeleteSnapshot</code> operation. */
 	export interface DeleteSnapshotMessage {
+
+		/** Required */
 		SnapshotName: string;
 	}
 
 	/** Represents the input of a <code>DeleteSnapshot</code> operation. */
 	export interface DeleteSnapshotMessageFormProperties {
+
+		/** Required */
 		SnapshotName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSnapshotMessageFormGroup() {
 		return new FormGroup<DeleteSnapshotMessageFormProperties>({
-			SnapshotName: new FormControl<string | null | undefined>(undefined),
+			SnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3492,6 +3696,8 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>DescribeCacheParameters</code> operation. */
 	export interface DescribeCacheParametersMessage {
+
+		/** Required */
 		CacheParameterGroupName: string;
 		Source?: string | null;
 		MaxRecords?: number | null;
@@ -3500,6 +3706,8 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>DescribeCacheParameters</code> operation. */
 	export interface DescribeCacheParametersMessageFormProperties {
+
+		/** Required */
 		CacheParameterGroupName: FormControl<string | null | undefined>,
 		Source: FormControl<string | null | undefined>,
 		MaxRecords: FormControl<number | null | undefined>,
@@ -3507,7 +3715,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeCacheParametersMessageFormGroup() {
 		return new FormGroup<DescribeCacheParametersMessageFormProperties>({
-			CacheParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			CacheParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Source: new FormControl<string | null | undefined>(undefined),
 			MaxRecords: new FormControl<number | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
@@ -3564,6 +3772,8 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>DescribeEngineDefaultParameters</code> operation. */
 	export interface DescribeEngineDefaultParametersMessage {
+
+		/** Required */
 		CacheParameterGroupFamily: string;
 		MaxRecords?: number | null;
 		Marker?: string | null;
@@ -3571,13 +3781,15 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>DescribeEngineDefaultParameters</code> operation. */
 	export interface DescribeEngineDefaultParametersMessageFormProperties {
+
+		/** Required */
 		CacheParameterGroupFamily: FormControl<string | null | undefined>,
 		MaxRecords: FormControl<number | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeEngineDefaultParametersMessageFormGroup() {
 		return new FormGroup<DescribeEngineDefaultParametersMessageFormProperties>({
-			CacheParameterGroupFamily: new FormControl<string | null | undefined>(undefined),
+			CacheParameterGroupFamily: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			MaxRecords: new FormControl<number | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
 		});
@@ -3743,6 +3955,8 @@ export namespace MyNS {
 
 	export interface DescribeServiceUpdatesMessage {
 		ServiceUpdateName?: string | null;
+
+		/** Maximum items: 3 */
 		ServiceUpdateStatus?: Array<ServiceUpdateStatus>;
 		MaxRecords?: number | null;
 		Marker?: string | null;
@@ -3818,13 +4032,21 @@ export namespace MyNS {
 
 	export interface DescribeUpdateActionsMessage {
 		ServiceUpdateName?: string | null;
+
+		/** Maximum items: 20 */
 		ReplicationGroupIds?: Array<string>;
+
+		/** Maximum items: 20 */
 		CacheClusterIds?: Array<string>;
 		Engine?: string | null;
+
+		/** Maximum items: 3 */
 		ServiceUpdateStatus?: Array<ServiceUpdateStatus>;
 
 		/** Filters update actions from the service updates that are in available status during the time range. */
 		ServiceUpdateTimeRange?: TimeRangeFilter;
+
+		/** Maximum items: 9 */
 		UpdateActionStatus?: Array<UpdateActionStatus>;
 		ShowNodeLevelUpdateStatus?: boolean | null;
 		MaxRecords?: number | null;
@@ -3849,79 +4071,123 @@ export namespace MyNS {
 	}
 
 	export interface DisassociateGlobalReplicationGroupMessage {
+
+		/** Required */
 		GlobalReplicationGroupId: string;
+
+		/** Required */
 		ReplicationGroupId: string;
+
+		/** Required */
 		ReplicationGroupRegion: string;
 	}
 	export interface DisassociateGlobalReplicationGroupMessageFormProperties {
+
+		/** Required */
 		GlobalReplicationGroupId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ReplicationGroupId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ReplicationGroupRegion: FormControl<string | null | undefined>,
 	}
 	export function CreateDisassociateGlobalReplicationGroupMessageFormGroup() {
 		return new FormGroup<DisassociateGlobalReplicationGroupMessageFormProperties>({
-			GlobalReplicationGroupId: new FormControl<string | null | undefined>(undefined),
-			ReplicationGroupId: new FormControl<string | null | undefined>(undefined),
-			ReplicationGroupRegion: new FormControl<string | null | undefined>(undefined),
+			GlobalReplicationGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ReplicationGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ReplicationGroupRegion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface FailoverGlobalReplicationGroupMessage {
+
+		/** Required */
 		GlobalReplicationGroupId: string;
+
+		/** Required */
 		PrimaryRegion: string;
+
+		/** Required */
 		PrimaryReplicationGroupId: string;
 	}
 	export interface FailoverGlobalReplicationGroupMessageFormProperties {
+
+		/** Required */
 		GlobalReplicationGroupId: FormControl<string | null | undefined>,
+
+		/** Required */
 		PrimaryRegion: FormControl<string | null | undefined>,
+
+		/** Required */
 		PrimaryReplicationGroupId: FormControl<string | null | undefined>,
 	}
 	export function CreateFailoverGlobalReplicationGroupMessageFormGroup() {
 		return new FormGroup<FailoverGlobalReplicationGroupMessageFormProperties>({
-			GlobalReplicationGroupId: new FormControl<string | null | undefined>(undefined),
-			PrimaryRegion: new FormControl<string | null | undefined>(undefined),
-			PrimaryReplicationGroupId: new FormControl<string | null | undefined>(undefined),
+			GlobalReplicationGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PrimaryRegion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PrimaryReplicationGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface IncreaseNodeGroupsInGlobalReplicationGroupMessage {
+
+		/** Required */
 		GlobalReplicationGroupId: string;
+
+		/** Required */
 		NodeGroupCount: number;
 		RegionalConfigurations?: Array<RegionalConfiguration>;
+
+		/** Required */
 		ApplyImmediately: boolean;
 	}
 	export interface IncreaseNodeGroupsInGlobalReplicationGroupMessageFormProperties {
+
+		/** Required */
 		GlobalReplicationGroupId: FormControl<string | null | undefined>,
+
+		/** Required */
 		NodeGroupCount: FormControl<number | null | undefined>,
+
+		/** Required */
 		ApplyImmediately: FormControl<boolean | null | undefined>,
 	}
 	export function CreateIncreaseNodeGroupsInGlobalReplicationGroupMessageFormGroup() {
 		return new FormGroup<IncreaseNodeGroupsInGlobalReplicationGroupMessageFormProperties>({
-			GlobalReplicationGroupId: new FormControl<string | null | undefined>(undefined),
-			NodeGroupCount: new FormControl<number | null | undefined>(undefined),
-			ApplyImmediately: new FormControl<boolean | null | undefined>(undefined),
+			GlobalReplicationGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			NodeGroupCount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			ApplyImmediately: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface IncreaseReplicaCountMessage {
+
+		/** Required */
 		ReplicationGroupId: string;
 		NewReplicaCount?: number | null;
 		ReplicaConfiguration?: Array<ConfigureShard>;
+
+		/** Required */
 		ApplyImmediately: boolean;
 	}
 	export interface IncreaseReplicaCountMessageFormProperties {
+
+		/** Required */
 		ReplicationGroupId: FormControl<string | null | undefined>,
 		NewReplicaCount: FormControl<number | null | undefined>,
+
+		/** Required */
 		ApplyImmediately: FormControl<boolean | null | undefined>,
 	}
 	export function CreateIncreaseReplicaCountMessageFormGroup() {
 		return new FormGroup<IncreaseReplicaCountMessageFormProperties>({
-			ReplicationGroupId: new FormControl<string | null | undefined>(undefined),
+			ReplicationGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NewReplicaCount: new FormControl<number | null | undefined>(undefined),
-			ApplyImmediately: new FormControl<boolean | null | undefined>(undefined),
+			ApplyImmediately: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3949,16 +4215,20 @@ export namespace MyNS {
 
 	/** The input parameters for the <code>ListTagsForResource</code> operation. */
 	export interface ListTagsForResourceMessage {
+
+		/** Required */
 		ResourceName: string;
 	}
 
 	/** The input parameters for the <code>ListTagsForResource</code> operation. */
 	export interface ListTagsForResourceMessageFormProperties {
+
+		/** Required */
 		ResourceName: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceMessageFormGroup() {
 		return new FormGroup<ListTagsForResourceMessageFormProperties>({
-			ResourceName: new FormControl<string | null | undefined>(undefined),
+			ResourceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3966,6 +4236,8 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>ModifyCacheCluster</code> operation. */
 	export interface ModifyCacheClusterMessage {
+
+		/** Required */
 		CacheClusterId: string;
 		NumCacheNodes?: number | null;
 		CacheNodeIdsToRemove?: Array<string>;
@@ -3989,6 +4261,8 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>ModifyCacheCluster</code> operation. */
 	export interface ModifyCacheClusterMessageFormProperties {
+
+		/** Required */
 		CacheClusterId: FormControl<string | null | undefined>,
 		NumCacheNodes: FormControl<number | null | undefined>,
 		AZMode: FormControl<ModifyCacheClusterMessageAZMode | null | undefined>,
@@ -4007,7 +4281,7 @@ export namespace MyNS {
 	}
 	export function CreateModifyCacheClusterMessageFormGroup() {
 		return new FormGroup<ModifyCacheClusterMessageFormProperties>({
-			CacheClusterId: new FormControl<string | null | undefined>(undefined),
+			CacheClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NumCacheNodes: new FormControl<number | null | undefined>(undefined),
 			AZMode: new FormControl<ModifyCacheClusterMessageAZMode | null | undefined>(undefined),
 			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
@@ -4031,17 +4305,23 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>ModifyCacheParameterGroup</code> operation. */
 	export interface ModifyCacheParameterGroupMessage {
+
+		/** Required */
 		CacheParameterGroupName: string;
+
+		/** Required */
 		ParameterNameValues: Array<ParameterNameValue>;
 	}
 
 	/** Represents the input of a <code>ModifyCacheParameterGroup</code> operation. */
 	export interface ModifyCacheParameterGroupMessageFormProperties {
+
+		/** Required */
 		CacheParameterGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyCacheParameterGroupMessageFormGroup() {
 		return new FormGroup<ModifyCacheParameterGroupMessageFormProperties>({
-			CacheParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			CacheParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4049,6 +4329,8 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>ModifyCacheSubnetGroup</code> operation. */
 	export interface ModifyCacheSubnetGroupMessage {
+
+		/** Required */
 		CacheSubnetGroupName: string;
 		CacheSubnetGroupDescription?: string | null;
 		SubnetIds?: Array<string>;
@@ -4056,19 +4338,25 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>ModifyCacheSubnetGroup</code> operation. */
 	export interface ModifyCacheSubnetGroupMessageFormProperties {
+
+		/** Required */
 		CacheSubnetGroupName: FormControl<string | null | undefined>,
 		CacheSubnetGroupDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyCacheSubnetGroupMessageFormGroup() {
 		return new FormGroup<ModifyCacheSubnetGroupMessageFormProperties>({
-			CacheSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			CacheSubnetGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			CacheSubnetGroupDescription: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ModifyGlobalReplicationGroupMessage {
+
+		/** Required */
 		GlobalReplicationGroupId: string;
+
+		/** Required */
 		ApplyImmediately: boolean;
 		CacheNodeType?: string | null;
 		EngineVersion?: string | null;
@@ -4076,7 +4364,11 @@ export namespace MyNS {
 		AutomaticFailoverEnabled?: boolean | null;
 	}
 	export interface ModifyGlobalReplicationGroupMessageFormProperties {
+
+		/** Required */
 		GlobalReplicationGroupId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ApplyImmediately: FormControl<boolean | null | undefined>,
 		CacheNodeType: FormControl<string | null | undefined>,
 		EngineVersion: FormControl<string | null | undefined>,
@@ -4085,8 +4377,8 @@ export namespace MyNS {
 	}
 	export function CreateModifyGlobalReplicationGroupMessageFormGroup() {
 		return new FormGroup<ModifyGlobalReplicationGroupMessageFormProperties>({
-			GlobalReplicationGroupId: new FormControl<string | null | undefined>(undefined),
-			ApplyImmediately: new FormControl<boolean | null | undefined>(undefined),
+			GlobalReplicationGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ApplyImmediately: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			CacheNodeType: new FormControl<string | null | undefined>(undefined),
 			EngineVersion: new FormControl<string | null | undefined>(undefined),
 			GlobalReplicationGroupDescription: new FormControl<string | null | undefined>(undefined),
@@ -4098,6 +4390,8 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>ModifyReplicationGroups</code> operation. */
 	export interface ModifyReplicationGroupMessage {
+
+		/** Required */
 		ReplicationGroupId: string;
 		ReplicationGroupDescription?: string | null;
 		PrimaryClusterId?: string | null;
@@ -4123,6 +4417,8 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>ModifyReplicationGroups</code> operation. */
 	export interface ModifyReplicationGroupMessageFormProperties {
+
+		/** Required */
 		ReplicationGroupId: FormControl<string | null | undefined>,
 		ReplicationGroupDescription: FormControl<string | null | undefined>,
 		PrimaryClusterId: FormControl<string | null | undefined>,
@@ -4145,7 +4441,7 @@ export namespace MyNS {
 	}
 	export function CreateModifyReplicationGroupMessageFormGroup() {
 		return new FormGroup<ModifyReplicationGroupMessageFormProperties>({
-			ReplicationGroupId: new FormControl<string | null | undefined>(undefined),
+			ReplicationGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ReplicationGroupDescription: new FormControl<string | null | undefined>(undefined),
 			PrimaryClusterId: new FormControl<string | null | undefined>(undefined),
 			SnapshottingClusterId: new FormControl<string | null | undefined>(undefined),
@@ -4171,8 +4467,14 @@ export namespace MyNS {
 
 	/** Represents the input for a <code>ModifyReplicationGroupShardConfiguration</code> operation. */
 	export interface ModifyReplicationGroupShardConfigurationMessage {
+
+		/** Required */
 		ReplicationGroupId: string;
+
+		/** Required */
 		NodeGroupCount: number;
+
+		/** Required */
 		ApplyImmediately: boolean;
 		ReshardingConfiguration?: Array<ReshardingConfiguration>;
 		NodeGroupsToRemove?: Array<string>;
@@ -4181,15 +4483,21 @@ export namespace MyNS {
 
 	/** Represents the input for a <code>ModifyReplicationGroupShardConfiguration</code> operation. */
 	export interface ModifyReplicationGroupShardConfigurationMessageFormProperties {
+
+		/** Required */
 		ReplicationGroupId: FormControl<string | null | undefined>,
+
+		/** Required */
 		NodeGroupCount: FormControl<number | null | undefined>,
+
+		/** Required */
 		ApplyImmediately: FormControl<boolean | null | undefined>,
 	}
 	export function CreateModifyReplicationGroupShardConfigurationMessageFormGroup() {
 		return new FormGroup<ModifyReplicationGroupShardConfigurationMessageFormProperties>({
-			ReplicationGroupId: new FormControl<string | null | undefined>(undefined),
-			NodeGroupCount: new FormControl<number | null | undefined>(undefined),
-			ApplyImmediately: new FormControl<boolean | null | undefined>(undefined),
+			ReplicationGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			NodeGroupCount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			ApplyImmediately: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4201,6 +4509,8 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>PurchaseReservedCacheNodesOffering</code> operation. */
 	export interface PurchaseReservedCacheNodesOfferingMessage {
+
+		/** Required */
 		ReservedCacheNodesOfferingId: string;
 		ReservedCacheNodeId?: string | null;
 		CacheNodeCount?: number | null;
@@ -4208,13 +4518,15 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>PurchaseReservedCacheNodesOffering</code> operation. */
 	export interface PurchaseReservedCacheNodesOfferingMessageFormProperties {
+
+		/** Required */
 		ReservedCacheNodesOfferingId: FormControl<string | null | undefined>,
 		ReservedCacheNodeId: FormControl<string | null | undefined>,
 		CacheNodeCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePurchaseReservedCacheNodesOfferingMessageFormGroup() {
 		return new FormGroup<PurchaseReservedCacheNodesOfferingMessageFormProperties>({
-			ReservedCacheNodesOfferingId: new FormControl<string | null | undefined>(undefined),
+			ReservedCacheNodesOfferingId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ReservedCacheNodeId: new FormControl<string | null | undefined>(undefined),
 			CacheNodeCount: new FormControl<number | null | undefined>(undefined),
 		});
@@ -4222,17 +4534,25 @@ export namespace MyNS {
 	}
 
 	export interface RebalanceSlotsInGlobalReplicationGroupMessage {
+
+		/** Required */
 		GlobalReplicationGroupId: string;
+
+		/** Required */
 		ApplyImmediately: boolean;
 	}
 	export interface RebalanceSlotsInGlobalReplicationGroupMessageFormProperties {
+
+		/** Required */
 		GlobalReplicationGroupId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ApplyImmediately: FormControl<boolean | null | undefined>,
 	}
 	export function CreateRebalanceSlotsInGlobalReplicationGroupMessageFormGroup() {
 		return new FormGroup<RebalanceSlotsInGlobalReplicationGroupMessageFormProperties>({
-			GlobalReplicationGroupId: new FormControl<string | null | undefined>(undefined),
-			ApplyImmediately: new FormControl<boolean | null | undefined>(undefined),
+			GlobalReplicationGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ApplyImmediately: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4240,17 +4560,23 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>RebootCacheCluster</code> operation. */
 	export interface RebootCacheClusterMessage {
+
+		/** Required */
 		CacheClusterId: string;
+
+		/** Required */
 		CacheNodeIdsToReboot: Array<string>;
 	}
 
 	/** Represents the input of a <code>RebootCacheCluster</code> operation. */
 	export interface RebootCacheClusterMessageFormProperties {
+
+		/** Required */
 		CacheClusterId: FormControl<string | null | undefined>,
 	}
 	export function CreateRebootCacheClusterMessageFormGroup() {
 		return new FormGroup<RebootCacheClusterMessageFormProperties>({
-			CacheClusterId: new FormControl<string | null | undefined>(undefined),
+			CacheClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4258,17 +4584,23 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>RemoveTagsFromResource</code> operation. */
 	export interface RemoveTagsFromResourceMessage {
+
+		/** Required */
 		ResourceName: string;
+
+		/** Required */
 		TagKeys: Array<string>;
 	}
 
 	/** Represents the input of a <code>RemoveTagsFromResource</code> operation. */
 	export interface RemoveTagsFromResourceMessageFormProperties {
+
+		/** Required */
 		ResourceName: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveTagsFromResourceMessageFormGroup() {
 		return new FormGroup<RemoveTagsFromResourceMessageFormProperties>({
-			ResourceName: new FormControl<string | null | undefined>(undefined),
+			ResourceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4276,6 +4608,8 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>ResetCacheParameterGroup</code> operation. */
 	export interface ResetCacheParameterGroupMessage {
+
+		/** Required */
 		CacheParameterGroupName: string;
 		ResetAllParameters?: boolean | null;
 		ParameterNameValues?: Array<ParameterNameValue>;
@@ -4283,12 +4617,14 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>ResetCacheParameterGroup</code> operation. */
 	export interface ResetCacheParameterGroupMessageFormProperties {
+
+		/** Required */
 		CacheParameterGroupName: FormControl<string | null | undefined>,
 		ResetAllParameters: FormControl<boolean | null | undefined>,
 	}
 	export function CreateResetCacheParameterGroupMessageFormGroup() {
 		return new FormGroup<ResetCacheParameterGroupMessageFormProperties>({
-			CacheParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			CacheParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ResetAllParameters: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -4297,22 +4633,34 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>RevokeCacheSecurityGroupIngress</code> operation. */
 	export interface RevokeCacheSecurityGroupIngressMessage {
+
+		/** Required */
 		CacheSecurityGroupName: string;
+
+		/** Required */
 		EC2SecurityGroupName: string;
+
+		/** Required */
 		EC2SecurityGroupOwnerId: string;
 	}
 
 	/** Represents the input of a <code>RevokeCacheSecurityGroupIngress</code> operation. */
 	export interface RevokeCacheSecurityGroupIngressMessageFormProperties {
+
+		/** Required */
 		CacheSecurityGroupName: FormControl<string | null | undefined>,
+
+		/** Required */
 		EC2SecurityGroupName: FormControl<string | null | undefined>,
+
+		/** Required */
 		EC2SecurityGroupOwnerId: FormControl<string | null | undefined>,
 	}
 	export function CreateRevokeCacheSecurityGroupIngressMessageFormGroup() {
 		return new FormGroup<RevokeCacheSecurityGroupIngressMessageFormProperties>({
-			CacheSecurityGroupName: new FormControl<string | null | undefined>(undefined),
-			EC2SecurityGroupName: new FormControl<string | null | undefined>(undefined),
-			EC2SecurityGroupOwnerId: new FormControl<string | null | undefined>(undefined),
+			CacheSecurityGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			EC2SecurityGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			EC2SecurityGroupOwnerId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4324,31 +4672,55 @@ export namespace MyNS {
 	export enum SlaMet { yes = 0, no = 1, n_a = 2 }
 
 	export interface StartMigrationMessage {
+
+		/** Required */
 		ReplicationGroupId: string;
+
+		/** Required */
 		CustomerNodeEndpointList: Array<CustomerNodeEndpoint>;
 	}
 	export interface StartMigrationMessageFormProperties {
+
+		/** Required */
 		ReplicationGroupId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartMigrationMessageFormGroup() {
 		return new FormGroup<StartMigrationMessageFormProperties>({
-			ReplicationGroupId: new FormControl<string | null | undefined>(undefined),
+			ReplicationGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface TestFailoverMessage {
+
+		/** Required */
 		ReplicationGroupId: string;
+
+		/**
+		 * Required
+		 * Max length: 4
+		 * Min length: 1
+		 * Pattern: \d+
+		 */
 		NodeGroupId: string;
 	}
 	export interface TestFailoverMessageFormProperties {
+
+		/** Required */
 		ReplicationGroupId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 4
+		 * Min length: 1
+		 * Pattern: \d+
+		 */
 		NodeGroupId: FormControl<string | null | undefined>,
 	}
 	export function CreateTestFailoverMessageFormGroup() {
 		return new FormGroup<TestFailoverMessageFormProperties>({
-			ReplicationGroupId: new FormControl<string | null | undefined>(undefined),
-			NodeGroupId: new FormControl<string | null | undefined>(undefined),
+			ReplicationGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			NodeGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4), Validators.minLength(1)]),
 		});
 
 	}

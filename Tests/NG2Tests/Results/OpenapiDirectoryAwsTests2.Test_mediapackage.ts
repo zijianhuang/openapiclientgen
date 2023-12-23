@@ -187,8 +187,14 @@ export namespace MyNS {
 	 * Configuration parameters for where in an S3 bucket to place the harvested content
 	 */
 	export interface S3Destination {
+
+		/** Required */
 		BucketName: string;
+
+		/** Required */
 		ManifestKey: string;
+
+		/** Required */
 		RoleArn: string;
 	}
 
@@ -196,15 +202,21 @@ export namespace MyNS {
 	 * Configuration parameters for where in an S3 bucket to place the harvested content
 	 */
 	export interface S3DestinationFormProperties {
+
+		/** Required */
 		BucketName: FormControl<string | null | undefined>,
+
+		/** Required */
 		ManifestKey: FormControl<string | null | undefined>,
+
+		/** Required */
 		RoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateS3DestinationFormGroup() {
 		return new FormGroup<S3DestinationFormProperties>({
-			BucketName: new FormControl<string | null | undefined>(undefined),
-			ManifestKey: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ManifestKey: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -270,19 +282,27 @@ export namespace MyNS {
 
 	/** CDN Authorization credentials */
 	export interface Authorization {
+
+		/** Required */
 		CdnIdentifierSecret: string;
+
+		/** Required */
 		SecretsRoleArn: string;
 	}
 
 	/** CDN Authorization credentials */
 	export interface AuthorizationFormProperties {
+
+		/** Required */
 		CdnIdentifierSecret: FormControl<string | null | undefined>,
+
+		/** Required */
 		SecretsRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateAuthorizationFormGroup() {
 		return new FormGroup<AuthorizationFormProperties>({
-			CdnIdentifierSecret: new FormControl<string | null | undefined>(undefined),
-			SecretsRoleArn: new FormControl<string | null | undefined>(undefined),
+			CdnIdentifierSecret: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SecretsRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -341,25 +361,39 @@ export namespace MyNS {
 	/** A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys. */
 	export interface SpekeKeyProvider {
 		CertificateArn?: string | null;
+
+		/** Required */
 		ResourceId: string;
+
+		/** Required */
 		RoleArn: string;
+
+		/** Required */
 		SystemIds: Array<string>;
+
+		/** Required */
 		Url: string;
 	}
 
 	/** A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys. */
 	export interface SpekeKeyProviderFormProperties {
 		CertificateArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		ResourceId: FormControl<string | null | undefined>,
+
+		/** Required */
 		RoleArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		Url: FormControl<string | null | undefined>,
 	}
 	export function CreateSpekeKeyProviderFormGroup() {
 		return new FormGroup<SpekeKeyProviderFormProperties>({
 			CertificateArn: new FormControl<string | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
-			Url: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -368,6 +402,8 @@ export namespace MyNS {
 	/** A HTTP Live Streaming (HLS) manifest configuration. */
 	export interface HlsManifest {
 		AdMarkers?: HlsManifestAdMarkers | null;
+
+		/** Required */
 		Id: string;
 		IncludeIframeOnlyStream?: boolean | null;
 		ManifestName?: string | null;
@@ -380,6 +416,8 @@ export namespace MyNS {
 	/** A HTTP Live Streaming (HLS) manifest configuration. */
 	export interface HlsManifestFormProperties {
 		AdMarkers: FormControl<HlsManifestAdMarkers | null | undefined>,
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
 		IncludeIframeOnlyStream: FormControl<boolean | null | undefined>,
 		ManifestName: FormControl<string | null | undefined>,
@@ -391,7 +429,7 @@ export namespace MyNS {
 	export function CreateHlsManifestFormGroup() {
 		return new FormGroup<HlsManifestFormProperties>({
 			AdMarkers: new FormControl<HlsManifestAdMarkers | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			IncludeIframeOnlyStream: new FormControl<boolean | null | undefined>(undefined),
 			ManifestName: new FormControl<string | null | undefined>(undefined),
 			PlaylistType: new FormControl<HlsManifestPlaylistType | null | undefined>(undefined),
@@ -721,6 +759,8 @@ export namespace MyNS {
 		 * and are always treated as ads if specified in AdTriggers.
 		 */
 		AdsOnDeliveryRestrictions?: DashPackageAdsOnDeliveryRestrictions | null;
+
+		/** Required */
 		Id: string;
 		IncludeIframeOnlyStream?: boolean | null;
 		ManifestName?: string | null;
@@ -744,6 +784,8 @@ export namespace MyNS {
 		 * and are always treated as ads if specified in AdTriggers.
 		 */
 		AdsOnDeliveryRestrictions: FormControl<DashPackageAdsOnDeliveryRestrictions | null | undefined>,
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
 		IncludeIframeOnlyStream: FormControl<boolean | null | undefined>,
 		ManifestName: FormControl<string | null | undefined>,
@@ -755,7 +797,7 @@ export namespace MyNS {
 		return new FormGroup<HlsManifestCreateOrUpdateParametersFormProperties>({
 			AdMarkers: new FormControl<HlsManifestAdMarkers | null | undefined>(undefined),
 			AdsOnDeliveryRestrictions: new FormControl<DashPackageAdsOnDeliveryRestrictions | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			IncludeIframeOnlyStream: new FormControl<boolean | null | undefined>(undefined),
 			ManifestName: new FormControl<string | null | undefined>(undefined),
 			PlaylistType: new FormControl<HlsManifestPlaylistType | null | undefined>(undefined),
@@ -1285,6 +1327,8 @@ export namespace MyNS {
 	/** A new Channel configuration. */
 	export interface CreateChannelRequest {
 		Description?: string | null;
+
+		/** Required */
 		Id: string;
 
 		/** A collection of tags associated with a resource */
@@ -1294,12 +1338,14 @@ export namespace MyNS {
 	/** A new Channel configuration. */
 	export interface CreateChannelRequestFormProperties {
 		Description: FormControl<string | null | undefined>,
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateChannelRequestFormGroup() {
 		return new FormGroup<CreateChannelRequestFormProperties>({
 			Description: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1307,8 +1353,14 @@ export namespace MyNS {
 
 	/** Configuration parameters used to create a new HarvestJob. */
 	export interface CreateHarvestJobRequest {
+
+		/** Required */
 		EndTime: string;
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		OriginEndpointId: string;
 
 		/**
@@ -1316,22 +1368,32 @@ export namespace MyNS {
 		 * Required
 		 */
 		S3Destination: S3Destination;
+
+		/** Required */
 		StartTime: string;
 	}
 
 	/** Configuration parameters used to create a new HarvestJob. */
 	export interface CreateHarvestJobRequestFormProperties {
+
+		/** Required */
 		EndTime: FormControl<string | null | undefined>,
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		OriginEndpointId: FormControl<string | null | undefined>,
+
+		/** Required */
 		StartTime: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateHarvestJobRequestFormGroup() {
 		return new FormGroup<CreateHarvestJobRequestFormProperties>({
-			EndTime: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			OriginEndpointId: new FormControl<string | null | undefined>(undefined),
-			StartTime: new FormControl<string | null | undefined>(undefined),
+			EndTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			OriginEndpointId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			StartTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1346,6 +1408,8 @@ export namespace MyNS {
 
 		/** CDN Authorization credentials */
 		Authorization?: Authorization;
+
+		/** Required */
 		ChannelId: string;
 
 		/** A Common Media Application Format (CMAF) packaging configuration. */
@@ -1357,6 +1421,8 @@ export namespace MyNS {
 
 		/** An HTTP Live Streaming (HLS) packaging configuration. */
 		HlsPackage?: HlsPackage;
+
+		/** Required */
 		Id: string;
 		ManifestName?: string | null;
 
@@ -1373,8 +1439,12 @@ export namespace MyNS {
 
 	/** Configuration parameters used to create a new OriginEndpoint. */
 	export interface CreateOriginEndpointRequestFormProperties {
+
+		/** Required */
 		ChannelId: FormControl<string | null | undefined>,
 		Description: FormControl<string | null | undefined>,
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
 		ManifestName: FormControl<string | null | undefined>,
 		Origination: FormControl<CreateOriginEndpointResponseOrigination | null | undefined>,
@@ -1383,9 +1453,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateOriginEndpointRequestFormGroup() {
 		return new FormGroup<CreateOriginEndpointRequestFormProperties>({
-			ChannelId: new FormControl<string | null | undefined>(undefined),
+			ChannelId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Description: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ManifestName: new FormControl<string | null | undefined>(undefined),
 			Origination: new FormControl<CreateOriginEndpointResponseOrigination | null | undefined>(undefined),
 			StartoverWindowSeconds: new FormControl<number | null | undefined>(undefined),
@@ -1509,6 +1579,8 @@ export namespace MyNS {
 	export enum StreamOrder { ORIGINAL = 0, VIDEO_BITRATE_ASCENDING = 1, VIDEO_BITRATE_DESCENDING = 2 }
 
 	export interface TagResourceRequest {
+
+		/** Required */
 		Tags: __mapOf__string;
 	}
 	export interface TagResourceRequestFormProperties {
@@ -1815,7 +1887,7 @@ export namespace MyNS {
 	export function CreateCreateChannelPostBodyFormGroup() {
 		return new FormGroup<CreateChannelPostBodyFormProperties>({
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -1885,10 +1957,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateHarvestJobPostBodyFormGroup() {
 		return new FormGroup<CreateHarvestJobPostBodyFormProperties>({
-			endTime: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<string | null | undefined>(undefined),
-			originEndpointId: new FormControl<string | null | undefined>(undefined),
-			startTime: new FormControl<string | null | undefined>(undefined),
+			endTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			originEndpointId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			startTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2020,9 +2092,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateOriginEndpointPostBodyFormGroup() {
 		return new FormGroup<CreateOriginEndpointPostBodyFormProperties>({
-			channelId: new FormControl<string | null | undefined>(undefined),
+			channelId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			manifestName: new FormControl<string | null | undefined>(undefined),
 			origination: new FormControl<CreateOriginEndpointResponseOrigination | null | undefined>(undefined),
 			startoverWindowSeconds: new FormControl<number | null | undefined>(undefined),
@@ -2539,14 +2611,18 @@ export namespace MyNS {
 	}
 
 	export interface TagResourcePostBody {
+
+		/** Required */
 		tags: {[id: string]: string };
 	}
 	export interface TagResourcePostBodyFormProperties {
+
+		/** Required */
 		tags: FormControl<{[id: string]: string } | null | undefined>,
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

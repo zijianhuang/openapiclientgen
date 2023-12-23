@@ -20,16 +20,28 @@ export namespace MyNS {
 	/** Contains information about the backup that will be copied and created by the <a>CopyBackupToRegion</a> operation. */
 	export interface DestinationBackup {
 		CreateTimestamp?: Date | null;
+
+		/** Pattern: [a-z]{2}(-(gov))?-(east|west|north|south|central){1,2}-\d */
 		SourceRegion?: string | null;
+
+		/** Pattern: backup-[2-7a-zA-Z]{11,16} */
 		SourceBackup?: string | null;
+
+		/** Pattern: cluster-[2-7a-zA-Z]{11,16} */
 		SourceCluster?: string | null;
 	}
 
 	/** Contains information about the backup that will be copied and created by the <a>CopyBackupToRegion</a> operation. */
 	export interface DestinationBackupFormProperties {
 		CreateTimestamp: FormControl<Date | null | undefined>,
+
+		/** Pattern: [a-z]{2}(-(gov))?-(east|west|north|south|central){1,2}-\d */
 		SourceRegion: FormControl<string | null | undefined>,
+
+		/** Pattern: backup-[2-7a-zA-Z]{11,16} */
 		SourceBackup: FormControl<string | null | undefined>,
+
+		/** Pattern: cluster-[2-7a-zA-Z]{11,16} */
 		SourceCluster: FormControl<string | null | undefined>,
 	}
 	export function CreateDestinationBackupFormGroup() {
@@ -43,18 +55,43 @@ export namespace MyNS {
 	}
 
 	export interface CopyBackupToRegionRequest {
+
+		/**
+		 * Required
+		 * Pattern: [a-z]{2}(-(gov))?-(east|west|north|south|central){1,2}-\d
+		 */
 		DestinationRegion: string;
+
+		/**
+		 * Required
+		 * Pattern: backup-[2-7a-zA-Z]{11,16}
+		 */
 		BackupId: string;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		TagList?: Array<Tag>;
 	}
 	export interface CopyBackupToRegionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: [a-z]{2}(-(gov))?-(east|west|north|south|central){1,2}-\d
+		 */
 		DestinationRegion: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: backup-[2-7a-zA-Z]{11,16}
+		 */
 		BackupId: FormControl<string | null | undefined>,
 	}
 	export function CreateCopyBackupToRegionRequestFormGroup() {
 		return new FormGroup<CopyBackupToRegionRequestFormProperties>({
-			DestinationRegion: new FormControl<string | null | undefined>(undefined),
-			BackupId: new FormControl<string | null | undefined>(undefined),
+			DestinationRegion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			BackupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -62,19 +99,47 @@ export namespace MyNS {
 
 	/** Contains a tag. A tag is a key-value pair. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Value: string;
 	}
 
 	/** Contains a tag. A tag is a key-value pair. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -156,34 +221,79 @@ export namespace MyNS {
 	/** Contains information about an AWS CloudHSM cluster. */
 	export interface Cluster {
 		BackupPolicy?: ClusterBackupPolicy | null;
+
+		/** Pattern: cluster-[2-7a-zA-Z]{11,16} */
 		ClusterId?: string | null;
 		CreateTimestamp?: Date | null;
 		Hsms?: Array<Hsm>;
+
+		/** Pattern: (hsm1\.medium) */
 		HsmType?: string | null;
+
+		/**
+		 * Max length: 32
+		 * Min length: 7
+		 */
 		PreCoPassword?: string | null;
+
+		/** Pattern: sg-[0-9a-fA-F]{8,17} */
 		SecurityGroup?: string | null;
+
+		/** Pattern: backup-[2-7a-zA-Z]{11,16} */
 		SourceBackupId?: string | null;
 		State?: ClusterState | null;
+
+		/**
+		 * Max length: 300
+		 * Pattern: .*
+		 */
 		StateMessage?: string | null;
 		SubnetMapping?: ExternalSubnetMapping;
+
+		/** Pattern: vpc-[0-9a-fA-F] */
 		VpcId?: string | null;
 
 		/** Contains one or more certificates or a certificate signing request (CSR). */
 		Certificates?: Certificates;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		TagList?: Array<Tag>;
 	}
 
 	/** Contains information about an AWS CloudHSM cluster. */
 	export interface ClusterFormProperties {
 		BackupPolicy: FormControl<ClusterBackupPolicy | null | undefined>,
+
+		/** Pattern: cluster-[2-7a-zA-Z]{11,16} */
 		ClusterId: FormControl<string | null | undefined>,
 		CreateTimestamp: FormControl<Date | null | undefined>,
+
+		/** Pattern: (hsm1\.medium) */
 		HsmType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 7
+		 */
 		PreCoPassword: FormControl<string | null | undefined>,
+
+		/** Pattern: sg-[0-9a-fA-F]{8,17} */
 		SecurityGroup: FormControl<string | null | undefined>,
+
+		/** Pattern: backup-[2-7a-zA-Z]{11,16} */
 		SourceBackupId: FormControl<string | null | undefined>,
 		State: FormControl<ClusterState | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Pattern: .*
+		 */
 		StateMessage: FormControl<string | null | undefined>,
+
+		/** Pattern: vpc-[0-9a-fA-F] */
 		VpcId: FormControl<string | null | undefined>,
 	}
 	export function CreateClusterFormGroup() {
@@ -192,11 +302,11 @@ export namespace MyNS {
 			ClusterId: new FormControl<string | null | undefined>(undefined),
 			CreateTimestamp: new FormControl<Date | null | undefined>(undefined),
 			HsmType: new FormControl<string | null | undefined>(undefined),
-			PreCoPassword: new FormControl<string | null | undefined>(undefined),
+			PreCoPassword: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(7)]),
 			SecurityGroup: new FormControl<string | null | undefined>(undefined),
 			SourceBackupId: new FormControl<string | null | undefined>(undefined),
 			State: new FormControl<ClusterState | null | undefined>(undefined),
-			StateMessage: new FormControl<string | null | undefined>(undefined),
+			StateMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300)]),
 			VpcId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -207,11 +317,26 @@ export namespace MyNS {
 
 	/** Contains information about a hardware security module (HSM) in an AWS CloudHSM cluster. */
 	export interface Hsm {
+
+		/** Pattern: [a-z]{2}(-(gov))?-(east|west|north|south|central){1,2}-\d[a-z] */
 		AvailabilityZone?: string | null;
+
+		/** Pattern: cluster-[2-7a-zA-Z]{11,16} */
 		ClusterId?: string | null;
+
+		/** Pattern: subnet-[0-9a-fA-F]{8,17} */
 		SubnetId?: string | null;
+
+		/** Pattern: eni-[0-9a-fA-F]{8,17} */
 		EniId?: string | null;
+
+		/** Pattern: \d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3} */
 		EniIp?: string | null;
+
+		/**
+		 * Required
+		 * Pattern: hsm-[2-7a-zA-Z]{11,16}
+		 */
 		HsmId: string;
 		State?: HsmState | null;
 		StateMessage?: string | null;
@@ -219,11 +344,26 @@ export namespace MyNS {
 
 	/** Contains information about a hardware security module (HSM) in an AWS CloudHSM cluster. */
 	export interface HsmFormProperties {
+
+		/** Pattern: [a-z]{2}(-(gov))?-(east|west|north|south|central){1,2}-\d[a-z] */
 		AvailabilityZone: FormControl<string | null | undefined>,
+
+		/** Pattern: cluster-[2-7a-zA-Z]{11,16} */
 		ClusterId: FormControl<string | null | undefined>,
+
+		/** Pattern: subnet-[0-9a-fA-F]{8,17} */
 		SubnetId: FormControl<string | null | undefined>,
+
+		/** Pattern: eni-[0-9a-fA-F]{8,17} */
 		EniId: FormControl<string | null | undefined>,
+
+		/** Pattern: \d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3} */
 		EniIp: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: hsm-[2-7a-zA-Z]{11,16}
+		 */
 		HsmId: FormControl<string | null | undefined>,
 		State: FormControl<HsmState | null | undefined>,
 		StateMessage: FormControl<string | null | undefined>,
@@ -235,7 +375,7 @@ export namespace MyNS {
 			SubnetId: new FormControl<string | null | undefined>(undefined),
 			EniId: new FormControl<string | null | undefined>(undefined),
 			EniIp: new FormControl<string | null | undefined>(undefined),
-			HsmId: new FormControl<string | null | undefined>(undefined),
+			HsmId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			State: new FormControl<HsmState | null | undefined>(undefined),
 			StateMessage: new FormControl<string | null | undefined>(undefined),
 		});
@@ -259,45 +399,120 @@ export namespace MyNS {
 
 	/** Contains one or more certificates or a certificate signing request (CSR). */
 	export interface Certificates {
+
+		/**
+		 * Max length: 5000
+		 * Pattern: [a-zA-Z0-9+-/=\s]*
+		 */
 		ClusterCsr?: string | null;
+
+		/**
+		 * Max length: 5000
+		 * Pattern: [a-zA-Z0-9+-/=\s]*
+		 */
 		HsmCertificate?: string | null;
+
+		/**
+		 * Max length: 5000
+		 * Pattern: [a-zA-Z0-9+-/=\s]*
+		 */
 		AwsHardwareCertificate?: string | null;
+
+		/**
+		 * Max length: 5000
+		 * Pattern: [a-zA-Z0-9+-/=\s]*
+		 */
 		ManufacturerHardwareCertificate?: string | null;
+
+		/**
+		 * Max length: 5000
+		 * Pattern: [a-zA-Z0-9+-/=\s]*
+		 */
 		ClusterCertificate?: string | null;
 	}
 
 	/** Contains one or more certificates or a certificate signing request (CSR). */
 	export interface CertificatesFormProperties {
+
+		/**
+		 * Max length: 5000
+		 * Pattern: [a-zA-Z0-9+-/=\s]*
+		 */
 		ClusterCsr: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 5000
+		 * Pattern: [a-zA-Z0-9+-/=\s]*
+		 */
 		HsmCertificate: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 5000
+		 * Pattern: [a-zA-Z0-9+-/=\s]*
+		 */
 		AwsHardwareCertificate: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 5000
+		 * Pattern: [a-zA-Z0-9+-/=\s]*
+		 */
 		ManufacturerHardwareCertificate: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 5000
+		 * Pattern: [a-zA-Z0-9+-/=\s]*
+		 */
 		ClusterCertificate: FormControl<string | null | undefined>,
 	}
 	export function CreateCertificatesFormGroup() {
 		return new FormGroup<CertificatesFormProperties>({
-			ClusterCsr: new FormControl<string | null | undefined>(undefined),
-			HsmCertificate: new FormControl<string | null | undefined>(undefined),
-			AwsHardwareCertificate: new FormControl<string | null | undefined>(undefined),
-			ManufacturerHardwareCertificate: new FormControl<string | null | undefined>(undefined),
-			ClusterCertificate: new FormControl<string | null | undefined>(undefined),
+			ClusterCsr: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5000)]),
+			HsmCertificate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5000)]),
+			AwsHardwareCertificate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5000)]),
+			ManufacturerHardwareCertificate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5000)]),
+			ClusterCertificate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5000)]),
 		});
 
 	}
 
 	export interface CreateClusterRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		SubnetIds: Array<string>;
+
+		/**
+		 * Required
+		 * Pattern: (hsm1\.medium)
+		 */
 		HsmType: string;
+
+		/** Pattern: backup-[2-7a-zA-Z]{11,16} */
 		SourceBackupId?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		TagList?: Array<Tag>;
 	}
 	export interface CreateClusterRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: (hsm1\.medium)
+		 */
 		HsmType: FormControl<string | null | undefined>,
+
+		/** Pattern: backup-[2-7a-zA-Z]{11,16} */
 		SourceBackupId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateClusterRequestFormGroup() {
 		return new FormGroup<CreateClusterRequestFormProperties>({
-			HsmType: new FormControl<string | null | undefined>(undefined),
+			HsmType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SourceBackupId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -317,19 +532,43 @@ export namespace MyNS {
 	}
 
 	export interface CreateHsmRequest {
+
+		/**
+		 * Required
+		 * Pattern: cluster-[2-7a-zA-Z]{11,16}
+		 */
 		ClusterId: string;
+
+		/**
+		 * Required
+		 * Pattern: [a-z]{2}(-(gov))?-(east|west|north|south|central){1,2}-\d[a-z]
+		 */
 		AvailabilityZone: string;
+
+		/** Pattern: \d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3} */
 		IpAddress?: string | null;
 	}
 	export interface CreateHsmRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: cluster-[2-7a-zA-Z]{11,16}
+		 */
 		ClusterId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: [a-z]{2}(-(gov))?-(east|west|north|south|central){1,2}-\d[a-z]
+		 */
 		AvailabilityZone: FormControl<string | null | undefined>,
+
+		/** Pattern: \d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3} */
 		IpAddress: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateHsmRequestFormGroup() {
 		return new FormGroup<CreateHsmRequestFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
-			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			IpAddress: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -351,33 +590,64 @@ export namespace MyNS {
 
 	/** Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the BackupId, BackupState, ClusterId, and CreateTimestamp parameters. Backups that were copied into a destination region additionally contain the CopyTimestamp, SourceBackup, SourceCluster, and SourceRegion paramters. A backup that is pending deletion will include the DeleteTimestamp parameter. */
 	export interface Backup {
+
+		/**
+		 * Required
+		 * Pattern: backup-[2-7a-zA-Z]{11,16}
+		 */
 		BackupId: string;
 		BackupState?: BackupBackupState | null;
+
+		/** Pattern: cluster-[2-7a-zA-Z]{11,16} */
 		ClusterId?: string | null;
 		CreateTimestamp?: Date | null;
 		CopyTimestamp?: Date | null;
+
+		/** Pattern: [a-z]{2}(-(gov))?-(east|west|north|south|central){1,2}-\d */
 		SourceRegion?: string | null;
+
+		/** Pattern: backup-[2-7a-zA-Z]{11,16} */
 		SourceBackup?: string | null;
+
+		/** Pattern: cluster-[2-7a-zA-Z]{11,16} */
 		SourceCluster?: string | null;
 		DeleteTimestamp?: Date | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		TagList?: Array<Tag>;
 	}
 
 	/** Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the BackupId, BackupState, ClusterId, and CreateTimestamp parameters. Backups that were copied into a destination region additionally contain the CopyTimestamp, SourceBackup, SourceCluster, and SourceRegion paramters. A backup that is pending deletion will include the DeleteTimestamp parameter. */
 	export interface BackupFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: backup-[2-7a-zA-Z]{11,16}
+		 */
 		BackupId: FormControl<string | null | undefined>,
 		BackupState: FormControl<BackupBackupState | null | undefined>,
+
+		/** Pattern: cluster-[2-7a-zA-Z]{11,16} */
 		ClusterId: FormControl<string | null | undefined>,
 		CreateTimestamp: FormControl<Date | null | undefined>,
 		CopyTimestamp: FormControl<Date | null | undefined>,
+
+		/** Pattern: [a-z]{2}(-(gov))?-(east|west|north|south|central){1,2}-\d */
 		SourceRegion: FormControl<string | null | undefined>,
+
+		/** Pattern: backup-[2-7a-zA-Z]{11,16} */
 		SourceBackup: FormControl<string | null | undefined>,
+
+		/** Pattern: cluster-[2-7a-zA-Z]{11,16} */
 		SourceCluster: FormControl<string | null | undefined>,
 		DeleteTimestamp: FormControl<Date | null | undefined>,
 	}
 	export function CreateBackupFormGroup() {
 		return new FormGroup<BackupFormProperties>({
-			BackupId: new FormControl<string | null | undefined>(undefined),
+			BackupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			BackupState: new FormControl<BackupBackupState | null | undefined>(undefined),
 			ClusterId: new FormControl<string | null | undefined>(undefined),
 			CreateTimestamp: new FormControl<Date | null | undefined>(undefined),
@@ -393,14 +663,24 @@ export namespace MyNS {
 	export enum BackupBackupState { CREATE_IN_PROGRESS = 0, READY = 1, DELETED = 2, PENDING_DELETION = 3 }
 
 	export interface DeleteBackupRequest {
+
+		/**
+		 * Required
+		 * Pattern: backup-[2-7a-zA-Z]{11,16}
+		 */
 		BackupId: string;
 	}
 	export interface DeleteBackupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: backup-[2-7a-zA-Z]{11,16}
+		 */
 		BackupId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteBackupRequestFormGroup() {
 		return new FormGroup<DeleteBackupRequestFormProperties>({
-			BackupId: new FormControl<string | null | undefined>(undefined),
+			BackupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -419,22 +699,36 @@ export namespace MyNS {
 	}
 
 	export interface DeleteClusterRequest {
+
+		/**
+		 * Required
+		 * Pattern: cluster-[2-7a-zA-Z]{11,16}
+		 */
 		ClusterId: string;
 	}
 	export interface DeleteClusterRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: cluster-[2-7a-zA-Z]{11,16}
+		 */
 		ClusterId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteClusterRequestFormGroup() {
 		return new FormGroup<DeleteClusterRequestFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeleteHsmResponse {
+
+		/** Pattern: hsm-[2-7a-zA-Z]{11,16} */
 		HsmId?: string | null;
 	}
 	export interface DeleteHsmResponseFormProperties {
+
+		/** Pattern: hsm-[2-7a-zA-Z]{11,16} */
 		HsmId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteHsmResponseFormGroup() {
@@ -445,20 +739,42 @@ export namespace MyNS {
 	}
 
 	export interface DeleteHsmRequest {
+
+		/**
+		 * Required
+		 * Pattern: cluster-[2-7a-zA-Z]{11,16}
+		 */
 		ClusterId: string;
+
+		/** Pattern: hsm-[2-7a-zA-Z]{11,16} */
 		HsmId?: string | null;
+
+		/** Pattern: eni-[0-9a-fA-F]{8,17} */
 		EniId?: string | null;
+
+		/** Pattern: \d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3} */
 		EniIp?: string | null;
 	}
 	export interface DeleteHsmRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: cluster-[2-7a-zA-Z]{11,16}
+		 */
 		ClusterId: FormControl<string | null | undefined>,
+
+		/** Pattern: hsm-[2-7a-zA-Z]{11,16} */
 		HsmId: FormControl<string | null | undefined>,
+
+		/** Pattern: eni-[0-9a-fA-F]{8,17} */
 		EniId: FormControl<string | null | undefined>,
+
+		/** Pattern: \d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3} */
 		EniIp: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteHsmRequestFormGroup() {
 		return new FormGroup<DeleteHsmRequestFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			HsmId: new FormControl<string | null | undefined>(undefined),
 			EniId: new FormControl<string | null | undefined>(undefined),
 			EniIp: new FormControl<string | null | undefined>(undefined),
@@ -468,33 +784,63 @@ export namespace MyNS {
 
 	export interface DescribeBackupsResponse {
 		Backups?: Array<Backup>;
+
+		/**
+		 * Max length: 256
+		 * Pattern: .*
+		 */
 		NextToken?: string | null;
 	}
 	export interface DescribeBackupsResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: .*
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeBackupsResponseFormGroup() {
 		return new FormGroup<DescribeBackupsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface DescribeBackupsRequest {
+
+		/**
+		 * Max length: 256
+		 * Pattern: .*
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 		Filters?: Filters;
 		SortAscending?: boolean | null;
 	}
 	export interface DescribeBackupsRequestFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: .*
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		SortAscending: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDescribeBackupsRequestFormGroup() {
 		return new FormGroup<DescribeBackupsRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			SortAscending: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -512,99 +858,219 @@ export namespace MyNS {
 
 	export interface DescribeClustersResponse {
 		Clusters?: Array<Cluster>;
+
+		/**
+		 * Max length: 256
+		 * Pattern: .*
+		 */
 		NextToken?: string | null;
 	}
 	export interface DescribeClustersResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: .*
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeClustersResponseFormGroup() {
 		return new FormGroup<DescribeClustersResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface DescribeClustersRequest {
 		Filters?: Filters;
+
+		/**
+		 * Max length: 256
+		 * Pattern: .*
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface DescribeClustersRequestFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: .*
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeClustersRequestFormGroup() {
 		return new FormGroup<DescribeClustersRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface InitializeClusterResponse {
 		State?: ClusterState | null;
+
+		/**
+		 * Max length: 300
+		 * Pattern: .*
+		 */
 		StateMessage?: string | null;
 	}
 	export interface InitializeClusterResponseFormProperties {
 		State: FormControl<ClusterState | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Pattern: .*
+		 */
 		StateMessage: FormControl<string | null | undefined>,
 	}
 	export function CreateInitializeClusterResponseFormGroup() {
 		return new FormGroup<InitializeClusterResponseFormProperties>({
 			State: new FormControl<ClusterState | null | undefined>(undefined),
-			StateMessage: new FormControl<string | null | undefined>(undefined),
+			StateMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300)]),
 		});
 
 	}
 
 	export interface InitializeClusterRequest {
+
+		/**
+		 * Required
+		 * Pattern: cluster-[2-7a-zA-Z]{11,16}
+		 */
 		ClusterId: string;
+
+		/**
+		 * Required
+		 * Max length: 5000
+		 * Pattern: [a-zA-Z0-9+-/=\s]*
+		 */
 		SignedCert: string;
+
+		/**
+		 * Required
+		 * Max length: 5000
+		 * Pattern: [a-zA-Z0-9+-/=\s]*
+		 */
 		TrustAnchor: string;
 	}
 	export interface InitializeClusterRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: cluster-[2-7a-zA-Z]{11,16}
+		 */
 		ClusterId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 5000
+		 * Pattern: [a-zA-Z0-9+-/=\s]*
+		 */
 		SignedCert: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 5000
+		 * Pattern: [a-zA-Z0-9+-/=\s]*
+		 */
 		TrustAnchor: FormControl<string | null | undefined>,
 	}
 	export function CreateInitializeClusterRequestFormGroup() {
 		return new FormGroup<InitializeClusterRequestFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
-			SignedCert: new FormControl<string | null | undefined>(undefined),
-			TrustAnchor: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SignedCert: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(5000)]),
+			TrustAnchor: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(5000)]),
 		});
 
 	}
 
 	export interface ListTagsResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		TagList: Array<Tag>;
+
+		/**
+		 * Max length: 256
+		 * Pattern: .*
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListTagsResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: .*
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsResponseFormGroup() {
 		return new FormGroup<ListTagsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface ListTagsRequest {
+
+		/**
+		 * Required
+		 * Pattern: (?:cluster|backup)-[2-7a-zA-Z]{11,16}
+		 */
 		ResourceId: string;
+
+		/**
+		 * Max length: 256
+		 * Pattern: .*
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListTagsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: (?:cluster|backup)-[2-7a-zA-Z]{11,16}
+		 */
 		ResourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: .*
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListTagsRequestFormGroup() {
 		return new FormGroup<ListTagsRequestFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -623,14 +1089,24 @@ export namespace MyNS {
 	}
 
 	export interface RestoreBackupRequest {
+
+		/**
+		 * Required
+		 * Pattern: backup-[2-7a-zA-Z]{11,16}
+		 */
 		BackupId: string;
 	}
 	export interface RestoreBackupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: backup-[2-7a-zA-Z]{11,16}
+		 */
 		BackupId: FormControl<string | null | undefined>,
 	}
 	export function CreateRestoreBackupRequestFormGroup() {
 		return new FormGroup<RestoreBackupRequestFormProperties>({
-			BackupId: new FormControl<string | null | undefined>(undefined),
+			BackupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -646,15 +1122,31 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/**
+		 * Required
+		 * Pattern: (?:cluster|backup)-[2-7a-zA-Z]{11,16}
+		 */
 		ResourceId: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		TagList: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: (?:cluster|backup)-[2-7a-zA-Z]{11,16}
+		 */
 		ResourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -670,15 +1162,31 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceRequest {
+
+		/**
+		 * Required
+		 * Pattern: (?:cluster|backup)-[2-7a-zA-Z]{11,16}
+		 */
 		ResourceId: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		TagKeyList: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: (?:cluster|backup)-[2-7a-zA-Z]{11,16}
+		 */
 		ResourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

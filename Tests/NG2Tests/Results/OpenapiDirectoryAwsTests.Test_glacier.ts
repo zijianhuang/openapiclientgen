@@ -417,6 +417,8 @@ export namespace MyNS {
 
 	/** Contains information about the grantee. */
 	export interface Grantee {
+
+		/** Required */
 		Type: GranteeType;
 		DisplayName?: string | null;
 		URI?: string | null;
@@ -426,6 +428,8 @@ export namespace MyNS {
 
 	/** Contains information about the grantee. */
 	export interface GranteeFormProperties {
+
+		/** Required */
 		Type: FormControl<GranteeType | null | undefined>,
 		DisplayName: FormControl<string | null | undefined>,
 		URI: FormControl<string | null | undefined>,
@@ -434,7 +438,7 @@ export namespace MyNS {
 	}
 	export function CreateGranteeFormGroup() {
 		return new FormGroup<GranteeFormProperties>({
-			Type: new FormControl<GranteeType | null | undefined>(undefined),
+			Type: new FormControl<GranteeType | null | undefined>(undefined, [Validators.required]),
 			DisplayName: new FormControl<string | null | undefined>(undefined),
 			URI: new FormControl<string | null | undefined>(undefined),
 			ID: new FormControl<string | null | undefined>(undefined),

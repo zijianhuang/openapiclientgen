@@ -6,16 +6,28 @@ export namespace MyNS {
 
 	/** The output for the BulkPublish operation. */
 	export interface BulkPublishResponse {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId?: string | null;
 	}
 
 	/** The output for the BulkPublish operation. */
 	export interface BulkPublishResponseFormProperties {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
 	}
 	export function CreateBulkPublishResponseFormGroup() {
 		return new FormGroup<BulkPublishResponseFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
 		});
 
 	}
@@ -23,16 +35,20 @@ export namespace MyNS {
 
 	/** Thrown when a user is not authorized to access the requested resource. */
 	export interface NotAuthorizedException {
+
+		/** Required */
 		message: string;
 	}
 
 	/** Thrown when a user is not authorized to access the requested resource. */
 	export interface NotAuthorizedExceptionFormProperties {
+
+		/** Required */
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateNotAuthorizedExceptionFormGroup() {
 		return new FormGroup<NotAuthorizedExceptionFormProperties>({
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -40,16 +56,20 @@ export namespace MyNS {
 
 	/** Thrown when a request parameter does not comply with the associated constraints. */
 	export interface InvalidParameterException {
+
+		/** Required */
 		message: string;
 	}
 
 	/** Thrown when a request parameter does not comply with the associated constraints. */
 	export interface InvalidParameterExceptionFormProperties {
+
+		/** Required */
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateInvalidParameterExceptionFormGroup() {
 		return new FormGroup<InvalidParameterExceptionFormProperties>({
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -57,16 +77,20 @@ export namespace MyNS {
 
 	/** Thrown if the resource doesn't exist. */
 	export interface ResourceNotFoundException {
+
+		/** Required */
 		message: string;
 	}
 
 	/** Thrown if the resource doesn't exist. */
 	export interface ResourceNotFoundExceptionFormProperties {
+
+		/** Required */
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateResourceNotFoundExceptionFormGroup() {
 		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -74,16 +98,20 @@ export namespace MyNS {
 
 	/** Indicates an internal service error. */
 	export interface InternalErrorException {
+
+		/** Required */
 		message: string;
 	}
 
 	/** Indicates an internal service error. */
 	export interface InternalErrorExceptionFormProperties {
+
+		/** Required */
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateInternalErrorExceptionFormGroup() {
 		return new FormGroup<InternalErrorExceptionFormProperties>({
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -91,16 +119,20 @@ export namespace MyNS {
 
 	/** An exception thrown when there is an IN_PROGRESS bulk publish operation for the given identity pool. */
 	export interface DuplicateRequestException {
+
+		/** Required */
 		message: string;
 	}
 
 	/** An exception thrown when there is an IN_PROGRESS bulk publish operation for the given identity pool. */
 	export interface DuplicateRequestExceptionFormProperties {
+
+		/** Required */
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateDuplicateRequestExceptionFormGroup() {
 		return new FormGroup<DuplicateRequestExceptionFormProperties>({
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -108,16 +140,20 @@ export namespace MyNS {
 
 	/** An exception thrown when a bulk publish operation is requested less than 24 hours after a previous bulk publish operation completed successfully. */
 	export interface AlreadyStreamedException {
+
+		/** Required */
 		message: string;
 	}
 
 	/** An exception thrown when a bulk publish operation is requested less than 24 hours after a previous bulk publish operation completed successfully. */
 	export interface AlreadyStreamedExceptionFormProperties {
+
+		/** Required */
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateAlreadyStreamedExceptionFormGroup() {
 		return new FormGroup<AlreadyStreamedExceptionFormProperties>({
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -142,7 +178,19 @@ export namespace MyNS {
 
 	/** A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs. */
 	export interface Dataset {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.:-]+
+		 */
 		DatasetName?: string | null;
 		CreationDate?: Date | null;
 		LastModifiedDate?: Date | null;
@@ -153,7 +201,19 @@ export namespace MyNS {
 
 	/** A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs. */
 	export interface DatasetFormProperties {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.:-]+
+		 */
 		DatasetName: FormControl<string | null | undefined>,
 		CreationDate: FormControl<Date | null | undefined>,
 		LastModifiedDate: FormControl<Date | null | undefined>,
@@ -163,8 +223,8 @@ export namespace MyNS {
 	}
 	export function CreateDatasetFormGroup() {
 		return new FormGroup<DatasetFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined),
-			DatasetName: new FormControl<string | null | undefined>(undefined),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
+			DatasetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
 			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
 			LastModifiedBy: new FormControl<string | null | undefined>(undefined),
@@ -177,16 +237,20 @@ export namespace MyNS {
 
 	/** Thrown if the request is throttled. */
 	export interface TooManyRequestsException {
+
+		/** Required */
 		message: string;
 	}
 
 	/** Thrown if the request is throttled. */
 	export interface TooManyRequestsExceptionFormProperties {
+
+		/** Required */
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateTooManyRequestsExceptionFormGroup() {
 		return new FormGroup<TooManyRequestsExceptionFormProperties>({
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -194,16 +258,20 @@ export namespace MyNS {
 
 	/** Thrown if an update can't be applied because the resource was changed by another call and this would result in a conflict. */
 	export interface ResourceConflictException {
+
+		/** Required */
 		message: string;
 	}
 
 	/** Thrown if an update can't be applied because the resource was changed by another call and this would result in a conflict. */
 	export interface ResourceConflictExceptionFormProperties {
+
+		/** Required */
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateResourceConflictExceptionFormGroup() {
 		return new FormGroup<ResourceConflictExceptionFormProperties>({
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -245,6 +313,12 @@ export namespace MyNS {
 
 	/** Usage information for the identity pool. */
 	export interface IdentityPoolUsage {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId?: string | null;
 		SyncSessionsCount?: number | null;
 		DataStorage?: number | null;
@@ -253,6 +327,12 @@ export namespace MyNS {
 
 	/** Usage information for the identity pool. */
 	export interface IdentityPoolUsageFormProperties {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
 		SyncSessionsCount: FormControl<number | null | undefined>,
 		DataStorage: FormControl<number | null | undefined>,
@@ -260,7 +340,7 @@ export namespace MyNS {
 	}
 	export function CreateIdentityPoolUsageFormGroup() {
 		return new FormGroup<IdentityPoolUsageFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
 			SyncSessionsCount: new FormControl<number | null | undefined>(undefined),
 			DataStorage: new FormControl<number | null | undefined>(undefined),
 			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
@@ -288,7 +368,19 @@ export namespace MyNS {
 
 	/** Usage information for the identity. */
 	export interface IdentityUsage {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId?: string | null;
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId?: string | null;
 		LastModifiedDate?: Date | null;
 		DatasetCount?: number | null;
@@ -297,7 +389,19 @@ export namespace MyNS {
 
 	/** Usage information for the identity. */
 	export interface IdentityUsageFormProperties {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
 		LastModifiedDate: FormControl<Date | null | undefined>,
 		DatasetCount: FormControl<number | null | undefined>,
@@ -305,8 +409,8 @@ export namespace MyNS {
 	}
 	export function CreateIdentityUsageFormGroup() {
 		return new FormGroup<IdentityUsageFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined),
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
 			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
 			DatasetCount: new FormControl<number | null | undefined>(undefined),
 			DataStorage: new FormControl<number | null | undefined>(undefined),
@@ -317,6 +421,12 @@ export namespace MyNS {
 
 	/** The output for the GetBulkPublishDetails operation. */
 	export interface GetBulkPublishDetailsResponse {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId?: string | null;
 		BulkPublishStartTime?: Date | null;
 		BulkPublishCompleteTime?: Date | null;
@@ -326,6 +436,12 @@ export namespace MyNS {
 
 	/** The output for the GetBulkPublishDetails operation. */
 	export interface GetBulkPublishDetailsResponseFormProperties {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
 		BulkPublishStartTime: FormControl<Date | null | undefined>,
 		BulkPublishCompleteTime: FormControl<Date | null | undefined>,
@@ -334,7 +450,7 @@ export namespace MyNS {
 	}
 	export function CreateGetBulkPublishDetailsResponseFormGroup() {
 		return new FormGroup<GetBulkPublishDetailsResponseFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
 			BulkPublishStartTime: new FormControl<Date | null | undefined>(undefined),
 			BulkPublishCompleteTime: new FormControl<Date | null | undefined>(undefined),
 			BulkPublishStatus: new FormControl<GetBulkPublishDetailsResponseBulkPublishStatus | null | undefined>(undefined),
@@ -373,6 +489,12 @@ export namespace MyNS {
 
 	/** The output for the GetIdentityPoolConfiguration operation. */
 	export interface GetIdentityPoolConfigurationResponse {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId?: string | null;
 
 		/** Configuration options to be applied to the identity pool. */
@@ -384,11 +506,17 @@ export namespace MyNS {
 
 	/** The output for the GetIdentityPoolConfiguration operation. */
 	export interface GetIdentityPoolConfigurationResponseFormProperties {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetIdentityPoolConfigurationResponseFormGroup() {
 		return new FormGroup<GetIdentityPoolConfigurationResponseFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
 		});
 
 	}
@@ -397,16 +525,28 @@ export namespace MyNS {
 	/** Configuration options to be applied to the identity pool. */
 	export interface PushSync {
 		ApplicationArns?: Array<string>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:aws:iam::\d+:role/.*
+		 */
 		RoleArn?: string | null;
 	}
 
 	/** Configuration options to be applied to the identity pool. */
 	export interface PushSyncFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:aws:iam::\d+:role/.*
+		 */
 		RoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreatePushSyncFormGroup() {
 		return new FormGroup<PushSyncFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -414,21 +554,43 @@ export namespace MyNS {
 
 	/** Configuration options for configure Cognito streams. */
 	export interface CognitoStreams {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		StreamName?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:aws:iam::\d+:role/.*
+		 */
 		RoleArn?: string | null;
 		StreamingStatus?: CognitoStreamsStreamingStatus | null;
 	}
 
 	/** Configuration options for configure Cognito streams. */
 	export interface CognitoStreamsFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		StreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:aws:iam::\d+:role/.*
+		 */
 		RoleArn: FormControl<string | null | undefined>,
 		StreamingStatus: FormControl<CognitoStreamsStreamingStatus | null | undefined>,
 	}
 	export function CreateCognitoStreamsFormGroup() {
 		return new FormGroup<CognitoStreamsFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 			StreamingStatus: new FormControl<CognitoStreamsStreamingStatus | null | undefined>(undefined),
 		});
 
@@ -521,7 +683,14 @@ export namespace MyNS {
 
 	/** The basic data structure of a dataset. */
 	export interface Record {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Key?: string | null;
+
+		/** Max length: 1048575 */
 		Value?: string | null;
 		SyncCount?: number | null;
 		LastModifiedDate?: Date | null;
@@ -531,7 +700,14 @@ export namespace MyNS {
 
 	/** The basic data structure of a dataset. */
 	export interface RecordFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/** Max length: 1048575 */
 		Value: FormControl<string | null | undefined>,
 		SyncCount: FormControl<number | null | undefined>,
 		LastModifiedDate: FormControl<Date | null | undefined>,
@@ -540,8 +716,8 @@ export namespace MyNS {
 	}
 	export function CreateRecordFormGroup() {
 		return new FormGroup<RecordFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1048575)]),
 			SyncCount: new FormControl<number | null | undefined>(undefined),
 			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
 			LastModifiedBy: new FormControl<string | null | undefined>(undefined),
@@ -553,29 +729,43 @@ export namespace MyNS {
 
 	/** Response to a RegisterDevice request. */
 	export interface RegisterDeviceResponse {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		DeviceId?: string | null;
 	}
 
 	/** Response to a RegisterDevice request. */
 	export interface RegisterDeviceResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		DeviceId: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterDeviceResponseFormGroup() {
 		return new FormGroup<RegisterDeviceResponseFormProperties>({
-			DeviceId: new FormControl<string | null | undefined>(undefined),
+			DeviceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface InvalidConfigurationException {
+
+		/** Required */
 		message: string;
 	}
 	export interface InvalidConfigurationExceptionFormProperties {
+
+		/** Required */
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateInvalidConfigurationExceptionFormGroup() {
 		return new FormGroup<InvalidConfigurationExceptionFormProperties>({
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -583,6 +773,12 @@ export namespace MyNS {
 
 	/** The output for the SetIdentityPoolConfiguration operation */
 	export interface SetIdentityPoolConfigurationResponse {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId?: string | null;
 
 		/** Configuration options to be applied to the identity pool. */
@@ -594,11 +790,17 @@ export namespace MyNS {
 
 	/** The output for the SetIdentityPoolConfiguration operation */
 	export interface SetIdentityPoolConfigurationResponseFormProperties {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
 	}
 	export function CreateSetIdentityPoolConfigurationResponseFormGroup() {
 		return new FormGroup<SetIdentityPoolConfigurationResponseFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
 		});
 
 	}
@@ -608,16 +810,20 @@ export namespace MyNS {
 
 	/** Thrown if there are parallel requests to modify a resource. */
 	export interface ConcurrentModificationException {
+
+		/** Required */
 		message: string;
 	}
 
 	/** Thrown if there are parallel requests to modify a resource. */
 	export interface ConcurrentModificationExceptionFormProperties {
+
+		/** Required */
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateConcurrentModificationExceptionFormGroup() {
 		return new FormGroup<ConcurrentModificationExceptionFormProperties>({
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -668,27 +874,51 @@ export namespace MyNS {
 
 	/** An update operation for a record. */
 	export interface RecordPatch {
+
+		/** Required */
 		Op: RecordPatchOp;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Key: string;
+
+		/** Max length: 1048575 */
 		Value?: string | null;
+
+		/** Required */
 		SyncCount: number;
 		DeviceLastModifiedDate?: Date | null;
 	}
 
 	/** An update operation for a record. */
 	export interface RecordPatchFormProperties {
+
+		/** Required */
 		Op: FormControl<RecordPatchOp | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/** Max length: 1048575 */
 		Value: FormControl<string | null | undefined>,
+
+		/** Required */
 		SyncCount: FormControl<number | null | undefined>,
 		DeviceLastModifiedDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateRecordPatchFormGroup() {
 		return new FormGroup<RecordPatchFormProperties>({
-			Op: new FormControl<RecordPatchOp | null | undefined>(undefined),
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
-			SyncCount: new FormControl<number | null | undefined>(undefined),
+			Op: new FormControl<RecordPatchOp | null | undefined>(undefined, [Validators.required]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1048575)]),
+			SyncCount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			DeviceLastModifiedDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -699,16 +929,20 @@ export namespace MyNS {
 
 	/** Thrown when the limit on the number of objects or operations has been exceeded. */
 	export interface LimitExceededException {
+
+		/** Required */
 		message: string;
 	}
 
 	/** Thrown when the limit on the number of objects or operations has been exceeded. */
 	export interface LimitExceededExceptionFormProperties {
+
+		/** Required */
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateLimitExceededExceptionFormGroup() {
 		return new FormGroup<LimitExceededExceptionFormProperties>({
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -716,16 +950,20 @@ export namespace MyNS {
 
 	/** The AWS Lambda function returned invalid output or an exception. */
 	export interface InvalidLambdaFunctionOutputException {
+
+		/** Required */
 		message: string;
 	}
 
 	/** The AWS Lambda function returned invalid output or an exception. */
 	export interface InvalidLambdaFunctionOutputExceptionFormProperties {
+
+		/** Required */
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateInvalidLambdaFunctionOutputExceptionFormGroup() {
 		return new FormGroup<InvalidLambdaFunctionOutputExceptionFormProperties>({
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -733,16 +971,20 @@ export namespace MyNS {
 
 	/** AWS Lambda throttled your account, please contact AWS Support */
 	export interface LambdaThrottledException {
+
+		/** Required */
 		message: string;
 	}
 
 	/** AWS Lambda throttled your account, please contact AWS Support */
 	export interface LambdaThrottledExceptionFormProperties {
+
+		/** Required */
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateLambdaThrottledExceptionFormGroup() {
 		return new FormGroup<LambdaThrottledExceptionFormProperties>({
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -910,19 +1152,27 @@ export namespace MyNS {
 
 	/** A request to RegisterDevice. */
 	export interface RegisterDeviceRequest {
+
+		/** Required */
 		Platform: Platform;
+
+		/** Required */
 		Token: string;
 	}
 
 	/** A request to RegisterDevice. */
 	export interface RegisterDeviceRequestFormProperties {
+
+		/** Required */
 		Platform: FormControl<Platform | null | undefined>,
+
+		/** Required */
 		Token: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterDeviceRequestFormGroup() {
 		return new FormGroup<RegisterDeviceRequestFormProperties>({
-			Platform: new FormControl<Platform | null | undefined>(undefined),
-			Token: new FormControl<string | null | undefined>(undefined),
+			Platform: new FormControl<Platform | null | undefined>(undefined, [Validators.required]),
+			Token: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -930,6 +1180,8 @@ export namespace MyNS {
 
 	/** <p>A request to configure Cognito Events"</p>" */
 	export interface SetCognitoEventsRequest {
+
+		/** Required */
 		Events: Events;
 	}
 
@@ -993,20 +1245,34 @@ export namespace MyNS {
 
 	/** A request to post updates to records or add and delete records for a dataset and user. */
 	export interface UpdateRecordsRequest {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		DeviceId?: string | null;
 		RecordPatches?: Array<RecordPatch>;
+
+		/** Required */
 		SyncSessionToken: string;
 	}
 
 	/** A request to post updates to records or add and delete records for a dataset and user. */
 	export interface UpdateRecordsRequestFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		DeviceId: FormControl<string | null | undefined>,
+
+		/** Required */
 		SyncSessionToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateRecordsRequestFormGroup() {
 		return new FormGroup<UpdateRecordsRequestFormProperties>({
-			DeviceId: new FormControl<string | null | undefined>(undefined),
-			SyncSessionToken: new FormControl<string | null | undefined>(undefined),
+			DeviceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			SyncSessionToken: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1246,8 +1512,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateRecordsPostBodyFormGroup() {
 		return new FormGroup<UpdateRecordsPostBodyFormProperties>({
-			DeviceId: new FormControl<string | null | undefined>(undefined),
-			SyncSessionToken: new FormControl<string | null | undefined>(undefined),
+			DeviceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			SyncSessionToken: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1270,7 +1536,7 @@ export namespace MyNS {
 	}
 	export function CreateSetCognitoEventsPostBodyFormGroup() {
 		return new FormGroup<SetCognitoEventsPostBodyFormProperties>({
-			Events: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			Events: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1293,32 +1559,66 @@ export namespace MyNS {
 
 	export interface SetIdentityPoolConfigurationPostBodyPushSync {
 		ApplicationArns?: Array<string>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:aws:iam::\d+:role/.*
+		 */
 		RoleArn?: string | null;
 	}
 	export interface SetIdentityPoolConfigurationPostBodyPushSyncFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:aws:iam::\d+:role/.*
+		 */
 		RoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateSetIdentityPoolConfigurationPostBodyPushSyncFormGroup() {
 		return new FormGroup<SetIdentityPoolConfigurationPostBodyPushSyncFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface SetIdentityPoolConfigurationPostBodyCognitoStreams {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		StreamName?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:aws:iam::\d+:role/.*
+		 */
 		RoleArn?: string | null;
 		StreamingStatus?: CognitoStreamsStreamingStatus | null;
 	}
 	export interface SetIdentityPoolConfigurationPostBodyCognitoStreamsFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		StreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:aws:iam::\d+:role/.*
+		 */
 		RoleArn: FormControl<string | null | undefined>,
 		StreamingStatus: FormControl<CognitoStreamsStreamingStatus | null | undefined>,
 	}
 	export function CreateSetIdentityPoolConfigurationPostBodyCognitoStreamsFormGroup() {
 		return new FormGroup<SetIdentityPoolConfigurationPostBodyCognitoStreamsFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 			StreamingStatus: new FormControl<CognitoStreamsStreamingStatus | null | undefined>(undefined),
 		});
 
@@ -1354,8 +1654,8 @@ export namespace MyNS {
 	}
 	export function CreateRegisterDevicePostBodyFormGroup() {
 		return new FormGroup<RegisterDevicePostBodyFormProperties>({
-			Platform: new FormControl<Platform | null | undefined>(undefined),
-			Token: new FormControl<string | null | undefined>(undefined),
+			Platform: new FormControl<Platform | null | undefined>(undefined, [Validators.required]),
+			Token: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

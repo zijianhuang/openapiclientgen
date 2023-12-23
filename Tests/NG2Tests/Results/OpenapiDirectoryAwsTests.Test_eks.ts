@@ -41,6 +41,8 @@ export namespace MyNS {
 		clientRequestToken?: string | null;
 		platformVersion?: string | null;
 		tags?: TagMap;
+
+		/** Maximum items: 1 */
 		encryptionConfig?: Array<EncryptionConfig>;
 	}
 
@@ -472,22 +474,34 @@ export namespace MyNS {
 
 	/** An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group. */
 	export interface NodegroupScalingConfig {
+
+		/** Minimum: 1 */
 		minSize?: number | null;
+
+		/** Minimum: 1 */
 		maxSize?: number | null;
+
+		/** Minimum: 1 */
 		desiredSize?: number | null;
 	}
 
 	/** An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group. */
 	export interface NodegroupScalingConfigFormProperties {
+
+		/** Minimum: 1 */
 		minSize: FormControl<number | null | undefined>,
+
+		/** Minimum: 1 */
 		maxSize: FormControl<number | null | undefined>,
+
+		/** Minimum: 1 */
 		desiredSize: FormControl<number | null | undefined>,
 	}
 	export function CreateNodegroupScalingConfigFormGroup() {
 		return new FormGroup<NodegroupScalingConfigFormProperties>({
-			minSize: new FormControl<number | null | undefined>(undefined),
-			maxSize: new FormControl<number | null | undefined>(undefined),
-			desiredSize: new FormControl<number | null | undefined>(undefined),
+			minSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			maxSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			desiredSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -958,8 +972,17 @@ export namespace MyNS {
 	}
 
 	export interface CreateClusterRequest {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[0-9A-Za-z][A-Za-z0-9\-_]*
+		 */
 		name: string;
 		version?: string | null;
+
+		/** Required */
 		roleArn: string;
 
 		/**
@@ -972,26 +995,41 @@ export namespace MyNS {
 		logging?: Logging;
 		clientRequestToken?: string | null;
 		tags?: TagMap;
+
+		/** Maximum items: 1 */
 		encryptionConfig?: Array<EncryptionConfig>;
 	}
 	export interface CreateClusterRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[0-9A-Za-z][A-Za-z0-9\-_]*
+		 */
 		name: FormControl<string | null | undefined>,
 		version: FormControl<string | null | undefined>,
+
+		/** Required */
 		roleArn: FormControl<string | null | undefined>,
 		clientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateClusterRequestFormGroup() {
 		return new FormGroup<CreateClusterRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			version: new FormControl<string | null | undefined>(undefined),
-			roleArn: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientRequestToken: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CreateFargateProfileRequest {
+
+		/** Required */
 		fargateProfileName: string;
+
+		/** Required */
 		podExecutionRoleArn: string;
 		subnets?: Array<string>;
 		selectors?: Array<FargateProfileSelector>;
@@ -999,31 +1037,41 @@ export namespace MyNS {
 		tags?: TagMap;
 	}
 	export interface CreateFargateProfileRequestFormProperties {
+
+		/** Required */
 		fargateProfileName: FormControl<string | null | undefined>,
+
+		/** Required */
 		podExecutionRoleArn: FormControl<string | null | undefined>,
 		clientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateFargateProfileRequestFormGroup() {
 		return new FormGroup<CreateFargateProfileRequestFormProperties>({
-			fargateProfileName: new FormControl<string | null | undefined>(undefined),
-			podExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
+			fargateProfileName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			podExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientRequestToken: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CreateNodegroupRequest {
+
+		/** Required */
 		nodegroupName: string;
 
 		/** An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group. */
 		scalingConfig?: NodegroupScalingConfig;
 		diskSize?: number | null;
+
+		/** Required */
 		subnets: Array<string>;
 		instanceTypes?: Array<string>;
 		amiType?: NodegroupAmiType | null;
 
 		/** An object representing the remote access configuration for the managed node group. */
 		remoteAccess?: RemoteAccessConfig;
+
+		/** Required */
 		nodeRole: string;
 		labels?: LabelsMap;
 		tags?: TagMap;
@@ -1032,9 +1080,13 @@ export namespace MyNS {
 		releaseVersion?: string | null;
 	}
 	export interface CreateNodegroupRequestFormProperties {
+
+		/** Required */
 		nodegroupName: FormControl<string | null | undefined>,
 		diskSize: FormControl<number | null | undefined>,
 		amiType: FormControl<NodegroupAmiType | null | undefined>,
+
+		/** Required */
 		nodeRole: FormControl<string | null | undefined>,
 		clientRequestToken: FormControl<string | null | undefined>,
 		version: FormControl<string | null | undefined>,
@@ -1042,10 +1094,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateNodegroupRequestFormGroup() {
 		return new FormGroup<CreateNodegroupRequestFormProperties>({
-			nodegroupName: new FormControl<string | null | undefined>(undefined),
+			nodegroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			diskSize: new FormControl<number | null | undefined>(undefined),
 			amiType: new FormControl<NodegroupAmiType | null | undefined>(undefined),
-			nodeRole: new FormControl<string | null | undefined>(undefined),
+			nodeRole: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientRequestToken: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<string | null | undefined>(undefined),
 			releaseVersion: new FormControl<string | null | undefined>(undefined),
@@ -1178,6 +1230,8 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/** Required */
 		tags: TagMap;
 	}
 	export interface TagResourceRequestFormProperties {
@@ -1218,16 +1272,20 @@ export namespace MyNS {
 	}
 
 	export interface UpdateClusterVersionRequest {
+
+		/** Required */
 		version: string;
 		clientRequestToken?: string | null;
 	}
 	export interface UpdateClusterVersionRequestFormProperties {
+
+		/** Required */
 		version: FormControl<string | null | undefined>,
 		clientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateClusterVersionRequestFormGroup() {
 		return new FormGroup<UpdateClusterVersionRequestFormProperties>({
-			version: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientRequestToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1591,9 +1649,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateClusterPostBodyFormGroup() {
 		return new FormGroup<CreateClusterPostBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			version: new FormControl<string | null | undefined>(undefined),
-			roleArn: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientRequestToken: new FormControl<string | null | undefined>(undefined),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
@@ -1678,8 +1736,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateFargateProfilePostBodyFormGroup() {
 		return new FormGroup<CreateFargateProfilePostBodyFormProperties>({
-			fargateProfileName: new FormControl<string | null | undefined>(undefined),
-			podExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
+			fargateProfileName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			podExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientRequestToken: new FormControl<string | null | undefined>(undefined),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
@@ -1773,10 +1831,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateNodegroupPostBodyFormGroup() {
 		return new FormGroup<CreateNodegroupPostBodyFormProperties>({
-			nodegroupName: new FormControl<string | null | undefined>(undefined),
+			nodegroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			diskSize: new FormControl<number | null | undefined>(undefined),
 			amiType: new FormControl<NodegroupAmiType | null | undefined>(undefined),
-			nodeRole: new FormControl<string | null | undefined>(undefined),
+			nodeRole: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			labels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			clientRequestToken: new FormControl<string | null | undefined>(undefined),
@@ -1787,20 +1845,32 @@ export namespace MyNS {
 	}
 
 	export interface CreateNodegroupPostBodyScalingConfig {
+
+		/** Minimum: 1 */
 		minSize?: number | null;
+
+		/** Minimum: 1 */
 		maxSize?: number | null;
+
+		/** Minimum: 1 */
 		desiredSize?: number | null;
 	}
 	export interface CreateNodegroupPostBodyScalingConfigFormProperties {
+
+		/** Minimum: 1 */
 		minSize: FormControl<number | null | undefined>,
+
+		/** Minimum: 1 */
 		maxSize: FormControl<number | null | undefined>,
+
+		/** Minimum: 1 */
 		desiredSize: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNodegroupPostBodyScalingConfigFormGroup() {
 		return new FormGroup<CreateNodegroupPostBodyScalingConfigFormProperties>({
-			minSize: new FormControl<number | null | undefined>(undefined),
-			maxSize: new FormControl<number | null | undefined>(undefined),
-			desiredSize: new FormControl<number | null | undefined>(undefined),
+			minSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			maxSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			desiredSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -1837,7 +1907,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1866,7 +1936,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateClusterVersionPostBodyFormGroup() {
 		return new FormGroup<UpdateClusterVersionPostBodyFormProperties>({
-			version: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientRequestToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1961,20 +2031,32 @@ export namespace MyNS {
 	}
 
 	export interface UpdateNodegroupConfigPostBodyScalingConfig {
+
+		/** Minimum: 1 */
 		minSize?: number | null;
+
+		/** Minimum: 1 */
 		maxSize?: number | null;
+
+		/** Minimum: 1 */
 		desiredSize?: number | null;
 	}
 	export interface UpdateNodegroupConfigPostBodyScalingConfigFormProperties {
+
+		/** Minimum: 1 */
 		minSize: FormControl<number | null | undefined>,
+
+		/** Minimum: 1 */
 		maxSize: FormControl<number | null | undefined>,
+
+		/** Minimum: 1 */
 		desiredSize: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNodegroupConfigPostBodyScalingConfigFormGroup() {
 		return new FormGroup<UpdateNodegroupConfigPostBodyScalingConfigFormProperties>({
-			minSize: new FormControl<number | null | undefined>(undefined),
-			maxSize: new FormControl<number | null | undefined>(undefined),
-			desiredSize: new FormControl<number | null | undefined>(undefined),
+			minSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			maxSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			desiredSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}

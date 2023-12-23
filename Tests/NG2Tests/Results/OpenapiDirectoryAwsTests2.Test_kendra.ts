@@ -17,22 +17,44 @@ export namespace MyNS {
 
 	/** Provides information about documents that could not be removed from an index by the <a>BatchDeleteDocument</a> operation. */
 	export interface BatchDeleteDocumentResponseFailedDocument {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Id?: string | null;
 		ErrorCode?: BatchDeleteDocumentResponseFailedDocumentErrorCode | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		ErrorMessage?: string | null;
 	}
 
 	/** Provides information about documents that could not be removed from an index by the <a>BatchDeleteDocument</a> operation. */
 	export interface BatchDeleteDocumentResponseFailedDocumentFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Id: FormControl<string | null | undefined>,
 		ErrorCode: FormControl<BatchDeleteDocumentResponseFailedDocumentErrorCode | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		ErrorMessage: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchDeleteDocumentResponseFailedDocumentFormGroup() {
 		return new FormGroup<BatchDeleteDocumentResponseFailedDocumentFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 			ErrorCode: new FormControl<BatchDeleteDocumentResponseFailedDocumentErrorCode | null | undefined>(undefined),
-			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -40,18 +62,38 @@ export namespace MyNS {
 	export enum BatchDeleteDocumentResponseFailedDocumentErrorCode { InternalError = 0, InvalidRequest = 1 }
 
 	export interface BatchDeleteDocumentRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		DocumentIdList: Array<string>;
 
 		/** Maps a particular data source sync job to a particular data source. */
 		DataSourceSyncJobMetricTarget?: DataSourceSyncJobMetricTarget;
 	}
 	export interface BatchDeleteDocumentRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchDeleteDocumentRequestFormGroup() {
 		return new FormGroup<BatchDeleteDocumentRequestFormProperties>({
-			IndexId: new FormControl<string | null | undefined>(undefined),
+			IndexId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
@@ -59,19 +101,47 @@ export namespace MyNS {
 
 	/** Maps a particular data source sync job to a particular data source. */
 	export interface DataSourceSyncJobMetricTarget {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		DataSourceId: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		DataSourceSyncJobId: string;
 	}
 
 	/** Maps a particular data source sync job to a particular data source. */
 	export interface DataSourceSyncJobMetricTargetFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		DataSourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		DataSourceSyncJobId: FormControl<string | null | undefined>,
 	}
 	export function CreateDataSourceSyncJobMetricTargetFormGroup() {
 		return new FormGroup<DataSourceSyncJobMetricTargetFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined),
-			DataSourceSyncJobId: new FormControl<string | null | undefined>(undefined),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			DataSourceSyncJobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -150,39 +220,93 @@ export namespace MyNS {
 
 	/** Provides information about a document that could not be indexed. */
 	export interface BatchPutDocumentResponseFailedDocument {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Id?: string | null;
 		ErrorCode?: BatchDeleteDocumentResponseFailedDocumentErrorCode | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		ErrorMessage?: string | null;
 	}
 
 	/** Provides information about a document that could not be indexed. */
 	export interface BatchPutDocumentResponseFailedDocumentFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Id: FormControl<string | null | undefined>,
 		ErrorCode: FormControl<BatchDeleteDocumentResponseFailedDocumentErrorCode | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		ErrorMessage: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchPutDocumentResponseFailedDocumentFormGroup() {
 		return new FormGroup<BatchPutDocumentResponseFailedDocumentFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 			ErrorCode: new FormControl<BatchDeleteDocumentResponseFailedDocumentErrorCode | null | undefined>(undefined),
-			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface BatchPutDocumentRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: string;
+
+		/**
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		RoleArn?: string | null;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		Documents: Array<Document>;
 	}
 	export interface BatchPutDocumentRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		RoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchPutDocumentRequestFormGroup() {
 		return new FormGroup<BatchPutDocumentRequestFormProperties>({
-			IndexId: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			IndexId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1284), Validators.minLength(1)]),
 		});
 
 	}
@@ -190,6 +314,12 @@ export namespace MyNS {
 
 	/** A document in an index. */
 	export interface Document {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Id: string;
 		Title?: string | null;
 		Blob?: string | null;
@@ -203,6 +333,12 @@ export namespace MyNS {
 
 	/** A document in an index. */
 	export interface DocumentFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Id: FormControl<string | null | undefined>,
 		Title: FormControl<string | null | undefined>,
 		Blob: FormControl<string | null | undefined>,
@@ -210,7 +346,7 @@ export namespace MyNS {
 	}
 	export function CreateDocumentFormGroup() {
 		return new FormGroup<DocumentFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 			Title: new FormControl<string | null | undefined>(undefined),
 			Blob: new FormControl<string | null | undefined>(undefined),
 			ContentType: new FormControl<DocumentContentType | null | undefined>(undefined),
@@ -221,19 +357,45 @@ export namespace MyNS {
 
 	/** Information required to find a specific file in an Amazon S3 bucket. */
 	export interface S3Path {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 3
+		 * Pattern: [a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]
+		 */
 		Bucket: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Key: string;
 	}
 
 	/** Information required to find a specific file in an Amazon S3 bucket. */
 	export interface S3PathFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 3
+		 * Pattern: [a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]
+		 */
 		Bucket: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
 	}
 	export function CreateS3PathFormGroup() {
 		return new FormGroup<S3PathFormProperties>({
-			Bucket: new FormControl<string | null | undefined>(undefined),
-			Key: new FormControl<string | null | undefined>(undefined),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(3)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -241,6 +403,13 @@ export namespace MyNS {
 
 	/** A custom attribute value assigned to a document.  */
 	export interface DocumentAttribute {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_][a-zA-Z0-9_-]*
+		 */
 		Key: string;
 
 		/**
@@ -252,11 +421,18 @@ export namespace MyNS {
 
 	/** A custom attribute value assigned to a document.  */
 	export interface DocumentAttributeFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_][a-zA-Z0-9_-]*
+		 */
 		Key: FormControl<string | null | undefined>,
 	}
 	export function CreateDocumentAttributeFormGroup() {
 		return new FormGroup<DocumentAttributeFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
 		});
 
 	}
@@ -264,6 +440,11 @@ export namespace MyNS {
 
 	/** The value of a custom document attribute. You can only provide one value for a custom attribute. */
 	export interface DocumentAttributeValue {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		StringValue?: string | null;
 		StringListValue?: Array<string>;
 		LongValue?: number | null;
@@ -272,13 +453,18 @@ export namespace MyNS {
 
 	/** The value of a custom document attribute. You can only provide one value for a custom attribute. */
 	export interface DocumentAttributeValueFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		StringValue: FormControl<string | null | undefined>,
 		LongValue: FormControl<number | null | undefined>,
 		DateValue: FormControl<Date | null | undefined>,
 	}
 	export function CreateDocumentAttributeValueFormGroup() {
 		return new FormGroup<DocumentAttributeValueFormProperties>({
-			StringValue: new FormControl<string | null | undefined>(undefined),
+			StringValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 			LongValue: new FormControl<number | null | undefined>(undefined),
 			DateValue: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -288,22 +474,44 @@ export namespace MyNS {
 
 	/** Provides user and group information for document access filtering. */
 	export interface Principal {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		Name: string;
+
+		/** Required */
 		Type: PrincipalType;
+
+		/** Required */
 		Access: PrincipalAccess;
 	}
 
 	/** Provides user and group information for document access filtering. */
 	export interface PrincipalFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Type: FormControl<PrincipalType | null | undefined>,
+
+		/** Required */
 		Access: FormControl<PrincipalAccess | null | undefined>,
 	}
 	export function CreatePrincipalFormGroup() {
 		return new FormGroup<PrincipalFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Type: new FormControl<PrincipalType | null | undefined>(undefined),
-			Access: new FormControl<PrincipalAccess | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
+			Type: new FormControl<PrincipalType | null | undefined>(undefined, [Validators.required]),
+			Access: new FormControl<PrincipalAccess | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -325,21 +533,51 @@ export namespace MyNS {
 	}
 
 	export interface CreateDataSourceResponse {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id: string;
 	}
 	export interface CreateDataSourceResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDataSourceResponseFormGroup() {
 		return new FormGroup<CreateDataSourceResponseFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateDataSourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: string;
+
+		/** Required */
 		Type: CreateDataSourceRequestType;
 
 		/**
@@ -347,27 +585,74 @@ export namespace MyNS {
 		 * Required
 		 */
 		Configuration: DataSourceConfiguration;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		Description?: string | null;
 		Schedule?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		RoleArn: string;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		Tags?: Array<Tag>;
 	}
 	export interface CreateDataSourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Type: FormControl<CreateDataSourceRequestType | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		Description: FormControl<string | null | undefined>,
 		Schedule: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		RoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDataSourceRequestFormGroup() {
 		return new FormGroup<CreateDataSourceRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			IndexId: new FormControl<string | null | undefined>(undefined),
-			Type: new FormControl<CreateDataSourceRequestType | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000), Validators.minLength(1)]),
+			IndexId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			Type: new FormControl<CreateDataSourceRequestType | null | undefined>(undefined, [Validators.required]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 			Schedule: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1284), Validators.minLength(1)]),
 		});
 
 	}
@@ -409,8 +694,25 @@ export namespace MyNS {
 
 	/** Provides configuration information for a data source to index documents in an Amazon S3 bucket. */
 	export interface S3DataSourceConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 3
+		 * Pattern: [a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]
+		 */
 		BucketName: string;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		InclusionPrefixes?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		ExclusionPatterns?: Array<string>;
 
 		/** Document metadata files that contain information such as the document access control information, source URI, document author, and custom attributes. Each metadata file contains metadata about a single document. */
@@ -422,11 +724,18 @@ export namespace MyNS {
 
 	/** Provides configuration information for a data source to index documents in an Amazon S3 bucket. */
 	export interface S3DataSourceConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 3
+		 * Pattern: [a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]
+		 */
 		BucketName: FormControl<string | null | undefined>,
 	}
 	export function CreateS3DataSourceConfigurationFormGroup() {
 		return new FormGroup<S3DataSourceConfigurationFormProperties>({
-			BucketName: new FormControl<string | null | undefined>(undefined),
+			BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(3)]),
 		});
 
 	}
@@ -434,16 +743,26 @@ export namespace MyNS {
 
 	/** Document metadata files that contain information such as the document access control information, source URI, document author, and custom attributes. Each metadata file contains metadata about a single document. */
 	export interface DocumentsMetadataConfiguration {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Prefix?: string | null;
 	}
 
 	/** Document metadata files that contain information such as the document access control information, source URI, document author, and custom attributes. Each metadata file contains metadata about a single document. */
 	export interface DocumentsMetadataConfigurationFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Prefix: FormControl<string | null | undefined>,
 	}
 	export function CreateDocumentsMetadataConfigurationFormGroup() {
 		return new FormGroup<DocumentsMetadataConfigurationFormProperties>({
-			S3Prefix: new FormControl<string | null | undefined>(undefined),
+			S3Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -451,16 +770,26 @@ export namespace MyNS {
 
 	/** Access Control List files for the documents in a data source. */
 	export interface AccessControlListConfiguration {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		KeyPath?: string | null;
 	}
 
 	/** Access Control List files for the documents in a data source. */
 	export interface AccessControlListConfigurationFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		KeyPath: FormControl<string | null | undefined>,
 	}
 	export function CreateAccessControlListConfigurationFormGroup() {
 		return new FormGroup<AccessControlListConfigurationFormProperties>({
-			KeyPath: new FormControl<string | null | undefined>(undefined),
+			KeyPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -468,35 +797,86 @@ export namespace MyNS {
 
 	/** Provides configuration information for connecting to a Microsoft SharePoint data source. */
 	export interface SharePointConfiguration {
+
+		/** Required */
 		SharePointVersion: SharePointConfigurationSharePointVersion;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		Urls: Array<string>;
+
+		/**
+		 * Required
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		SecretArn: string;
 		CrawlAttachments?: boolean | null;
 		UseChangeLog?: boolean | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		InclusionPatterns?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		ExclusionPatterns?: Array<string>;
 
 		/** Provides information for connecting to an Amazon VPC. */
 		VpcConfiguration?: DataSourceVpcConfiguration;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		FieldMappings?: Array<DataSourceToIndexFieldMapping>;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentTitleFieldName?: string | null;
 	}
 
 	/** Provides configuration information for connecting to a Microsoft SharePoint data source. */
 	export interface SharePointConfigurationFormProperties {
+
+		/** Required */
 		SharePointVersion: FormControl<SharePointConfigurationSharePointVersion | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		SecretArn: FormControl<string | null | undefined>,
 		CrawlAttachments: FormControl<boolean | null | undefined>,
 		UseChangeLog: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentTitleFieldName: FormControl<string | null | undefined>,
 	}
 	export function CreateSharePointConfigurationFormGroup() {
 		return new FormGroup<SharePointConfigurationFormProperties>({
-			SharePointVersion: new FormControl<SharePointConfigurationSharePointVersion | null | undefined>(undefined),
-			SecretArn: new FormControl<string | null | undefined>(undefined),
+			SharePointVersion: new FormControl<SharePointConfigurationSharePointVersion | null | undefined>(undefined, [Validators.required]),
+			SecretArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1284), Validators.minLength(1)]),
 			CrawlAttachments: new FormControl<boolean | null | undefined>(undefined),
 			UseChangeLog: new FormControl<boolean | null | undefined>(undefined),
-			DocumentTitleFieldName: new FormControl<string | null | undefined>(undefined),
+			DocumentTitleFieldName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -506,7 +886,19 @@ export namespace MyNS {
 
 	/** Provides information for connecting to an Amazon VPC. */
 	export interface DataSourceVpcConfiguration {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 6
+		 */
 		SubnetIds: Array<string>;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		SecurityGroupIds: Array<string>;
 	}
 
@@ -522,22 +914,62 @@ export namespace MyNS {
 
 	/** Maps a column or attribute in the data source to an index field. You must first create the fields in the index using the <a>UpdateIndex</a> operation. */
 	export interface DataSourceToIndexFieldMapping {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DataSourceFieldName: string;
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 * Pattern: ^(?!\s).*(?<!\s)$
+		 */
 		DateFieldFormat?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 30
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		IndexFieldName: string;
 	}
 
 	/** Maps a column or attribute in the data source to an index field. You must first create the fields in the index using the <a>UpdateIndex</a> operation. */
 	export interface DataSourceToIndexFieldMappingFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DataSourceFieldName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 * Pattern: ^(?!\s).*(?<!\s)$
+		 */
 		DateFieldFormat: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 30
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		IndexFieldName: FormControl<string | null | undefined>,
 	}
 	export function CreateDataSourceToIndexFieldMappingFormGroup() {
 		return new FormGroup<DataSourceToIndexFieldMappingFormProperties>({
-			DataSourceFieldName: new FormControl<string | null | undefined>(undefined),
-			DateFieldFormat: new FormControl<string | null | undefined>(undefined),
-			IndexFieldName: new FormControl<string | null | undefined>(undefined),
+			DataSourceFieldName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			DateFieldFormat: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(4)]),
+			IndexFieldName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(30), Validators.minLength(1)]),
 		});
 
 	}
@@ -545,6 +977,8 @@ export namespace MyNS {
 
 	/** Provides the information necessary to connect a database to an index.  */
 	export interface DatabaseConfiguration {
+
+		/** Required */
 		DatabaseEngineType: DatabaseConfigurationDatabaseEngineType;
 
 		/**
@@ -568,11 +1002,13 @@ export namespace MyNS {
 
 	/** Provides the information necessary to connect a database to an index.  */
 	export interface DatabaseConfigurationFormProperties {
+
+		/** Required */
 		DatabaseEngineType: FormControl<DatabaseConfigurationDatabaseEngineType | null | undefined>,
 	}
 	export function CreateDatabaseConfigurationFormGroup() {
 		return new FormGroup<DatabaseConfigurationFormProperties>({
-			DatabaseEngineType: new FormControl<DatabaseConfigurationDatabaseEngineType | null | undefined>(undefined),
+			DatabaseEngineType: new FormControl<DatabaseConfigurationDatabaseEngineType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -582,28 +1018,94 @@ export namespace MyNS {
 
 	/** Provides the information necessary to connect to a database. */
 	export interface ConnectionConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 253
+		 * Min length: 1
+		 */
 		DatabaseHost: string;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		DatabasePort: number;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		DatabaseName: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		TableName: string;
+
+		/**
+		 * Required
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		SecretArn: string;
 	}
 
 	/** Provides the information necessary to connect to a database. */
 	export interface ConnectionConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 253
+		 * Min length: 1
+		 */
 		DatabaseHost: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		DatabasePort: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		DatabaseName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		TableName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		SecretArn: FormControl<string | null | undefined>,
 	}
 	export function CreateConnectionConfigurationFormGroup() {
 		return new FormGroup<ConnectionConfigurationFormProperties>({
-			DatabaseHost: new FormControl<string | null | undefined>(undefined),
-			DatabasePort: new FormControl<number | null | undefined>(undefined),
-			DatabaseName: new FormControl<string | null | undefined>(undefined),
-			TableName: new FormControl<string | null | undefined>(undefined),
-			SecretArn: new FormControl<string | null | undefined>(undefined),
+			DatabaseHost: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1)]),
+			DatabasePort: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(65535)]),
+			DatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			SecretArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1284), Validators.minLength(1)]),
 		});
 
 	}
@@ -611,24 +1113,75 @@ export namespace MyNS {
 
 	/** Provides information about how Amazon Kendra should use the columns of a database in an index. */
 	export interface ColumnConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		DocumentIdColumnName: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		DocumentDataColumnName: string;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		DocumentTitleColumnName?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		FieldMappings?: Array<DataSourceToIndexFieldMapping>;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 5
+		 */
 		ChangeDetectingColumns: Array<string>;
 	}
 
 	/** Provides information about how Amazon Kendra should use the columns of a database in an index. */
 	export interface ColumnConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		DocumentIdColumnName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		DocumentDataColumnName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		DocumentTitleColumnName: FormControl<string | null | undefined>,
 	}
 	export function CreateColumnConfigurationFormGroup() {
 		return new FormGroup<ColumnConfigurationFormProperties>({
-			DocumentIdColumnName: new FormControl<string | null | undefined>(undefined),
-			DocumentDataColumnName: new FormControl<string | null | undefined>(undefined),
-			DocumentTitleColumnName: new FormControl<string | null | undefined>(undefined),
+			DocumentIdColumnName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			DocumentDataColumnName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			DocumentTitleColumnName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -636,16 +1189,30 @@ export namespace MyNS {
 
 	/** Provides information about the column that should be used for filtering the query response by groups. */
 	export interface AclConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		AllowedGroupsColumnName: string;
 	}
 
 	/** Provides information about the column that should be used for filtering the query response by groups. */
 	export interface AclConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		AllowedGroupsColumnName: FormControl<string | null | undefined>,
 	}
 	export function CreateAclConfigurationFormGroup() {
 		return new FormGroup<AclConfigurationFormProperties>({
-			AllowedGroupsColumnName: new FormControl<string | null | undefined>(undefined),
+			AllowedGroupsColumnName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -653,8 +1220,27 @@ export namespace MyNS {
 
 	/** Provides configuration information for connecting to a Salesforce data source. */
 	export interface SalesforceConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^(https?|ftp|file):\/\/([^\s]*)
+		 */
 		ServerUrl: string;
+
+		/**
+		 * Required
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		SecretArn: string;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 17
+		 */
 		StandardObjectConfigurations?: Array<SalesforceStandardObjectConfiguration>;
 
 		/** Specifies configuration information for the knowlege article types that Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom knowledge articles, but not both */
@@ -666,20 +1252,44 @@ export namespace MyNS {
 
 		/** Provides configuration information for processing attachments to Salesforce standard objects. */
 		StandardObjectAttachmentConfiguration?: SalesforceStandardObjectAttachmentConfiguration;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		IncludeAttachmentFilePatterns?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		ExcludeAttachmentFilePatterns?: Array<string>;
 	}
 
 	/** Provides configuration information for connecting to a Salesforce data source. */
 	export interface SalesforceConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^(https?|ftp|file):\/\/([^\s]*)
+		 */
 		ServerUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		SecretArn: FormControl<string | null | undefined>,
 		CrawlAttachments: FormControl<boolean | null | undefined>,
 	}
 	export function CreateSalesforceConfigurationFormGroup() {
 		return new FormGroup<SalesforceConfigurationFormProperties>({
-			ServerUrl: new FormControl<string | null | undefined>(undefined),
-			SecretArn: new FormControl<string | null | undefined>(undefined),
+			ServerUrl: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			SecretArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1284), Validators.minLength(1)]),
 			CrawlAttachments: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -688,23 +1298,58 @@ export namespace MyNS {
 
 	/** Specifies confguration information for indexing a single standard object. */
 	export interface SalesforceStandardObjectConfiguration {
+
+		/** Required */
 		Name: SalesforceStandardObjectConfigurationName;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentDataFieldName: string;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentTitleFieldName?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		FieldMappings?: Array<DataSourceToIndexFieldMapping>;
 	}
 
 	/** Specifies confguration information for indexing a single standard object. */
 	export interface SalesforceStandardObjectConfigurationFormProperties {
+
+		/** Required */
 		Name: FormControl<SalesforceStandardObjectConfigurationName | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentDataFieldName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentTitleFieldName: FormControl<string | null | undefined>,
 	}
 	export function CreateSalesforceStandardObjectConfigurationFormGroup() {
 		return new FormGroup<SalesforceStandardObjectConfigurationFormProperties>({
-			Name: new FormControl<SalesforceStandardObjectConfigurationName | null | undefined>(undefined),
-			DocumentDataFieldName: new FormControl<string | null | undefined>(undefined),
-			DocumentTitleFieldName: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<SalesforceStandardObjectConfigurationName | null | undefined>(undefined, [Validators.required]),
+			DocumentDataFieldName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			DocumentTitleFieldName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -714,10 +1359,21 @@ export namespace MyNS {
 
 	/** Specifies configuration information for the knowlege article types that Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom knowledge articles, but not both  */
 	export interface SalesforceKnowledgeArticleConfiguration {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 3
+		 */
 		IncludedStates: Array<SalesforceKnowledgeArticleState>;
 
 		/** Provides configuration information for standard Salesforce knowledge articles. */
 		StandardKnowledgeArticleTypeConfiguration?: SalesforceStandardKnowledgeArticleTypeConfiguration;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		CustomKnowledgeArticleTypeConfigurations?: Array<SalesforceCustomKnowledgeArticleTypeConfiguration>;
 	}
 
@@ -735,20 +1391,51 @@ export namespace MyNS {
 
 	/** Provides configuration information for standard Salesforce knowledge articles. */
 	export interface SalesforceStandardKnowledgeArticleTypeConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentDataFieldName: string;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentTitleFieldName?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		FieldMappings?: Array<DataSourceToIndexFieldMapping>;
 	}
 
 	/** Provides configuration information for standard Salesforce knowledge articles. */
 	export interface SalesforceStandardKnowledgeArticleTypeConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentDataFieldName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentTitleFieldName: FormControl<string | null | undefined>,
 	}
 	export function CreateSalesforceStandardKnowledgeArticleTypeConfigurationFormGroup() {
 		return new FormGroup<SalesforceStandardKnowledgeArticleTypeConfigurationFormProperties>({
-			DocumentDataFieldName: new FormControl<string | null | undefined>(undefined),
-			DocumentTitleFieldName: new FormControl<string | null | undefined>(undefined),
+			DocumentDataFieldName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			DocumentTitleFieldName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -756,23 +1443,68 @@ export namespace MyNS {
 
 	/** Provides configuration information for indexing Salesforce custom articles. */
 	export interface SalesforceCustomKnowledgeArticleTypeConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentDataFieldName: string;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentTitleFieldName?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		FieldMappings?: Array<DataSourceToIndexFieldMapping>;
 	}
 
 	/** Provides configuration information for indexing Salesforce custom articles. */
 	export interface SalesforceCustomKnowledgeArticleTypeConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentDataFieldName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentTitleFieldName: FormControl<string | null | undefined>,
 	}
 	export function CreateSalesforceCustomKnowledgeArticleTypeConfigurationFormGroup() {
 		return new FormGroup<SalesforceCustomKnowledgeArticleTypeConfigurationFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			DocumentDataFieldName: new FormControl<string | null | undefined>(undefined),
-			DocumentTitleFieldName: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			DocumentDataFieldName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			DocumentTitleFieldName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -780,21 +1512,57 @@ export namespace MyNS {
 
 	/** Defines configuration for syncing a Salesforce chatter feed. The contents of the object comes from the Salesforce FeedItem table. */
 	export interface SalesforceChatterFeedConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentDataFieldName: string;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentTitleFieldName?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		FieldMappings?: Array<DataSourceToIndexFieldMapping>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 2
+		 */
 		IncludeFilterTypes?: Array<SalesforceChatterFeedIncludeFilterType>;
 	}
 
 	/** Defines configuration for syncing a Salesforce chatter feed. The contents of the object comes from the Salesforce FeedItem table. */
 	export interface SalesforceChatterFeedConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentDataFieldName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentTitleFieldName: FormControl<string | null | undefined>,
 	}
 	export function CreateSalesforceChatterFeedConfigurationFormGroup() {
 		return new FormGroup<SalesforceChatterFeedConfigurationFormProperties>({
-			DocumentDataFieldName: new FormControl<string | null | undefined>(undefined),
-			DocumentTitleFieldName: new FormControl<string | null | undefined>(undefined),
+			DocumentDataFieldName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			DocumentTitleFieldName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -804,17 +1572,34 @@ export namespace MyNS {
 
 	/** Provides configuration information for processing attachments to Salesforce standard objects.  */
 	export interface SalesforceStandardObjectAttachmentConfiguration {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentTitleFieldName?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		FieldMappings?: Array<DataSourceToIndexFieldMapping>;
 	}
 
 	/** Provides configuration information for processing attachments to Salesforce standard objects.  */
 	export interface SalesforceStandardObjectAttachmentConfigurationFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentTitleFieldName: FormControl<string | null | undefined>,
 	}
 	export function CreateSalesforceStandardObjectAttachmentConfigurationFormGroup() {
 		return new FormGroup<SalesforceStandardObjectAttachmentConfigurationFormProperties>({
-			DocumentTitleFieldName: new FormControl<string | null | undefined>(undefined),
+			DocumentTitleFieldName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -822,7 +1607,21 @@ export namespace MyNS {
 
 	/** Provides configuration information for data sources that connect to OneDrive. */
 	export interface OneDriveConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([a-zA-Z0-9]+(-[a-zA-Z0-9]+)*\.)+[a-z]{2,}$
+		 */
 		TenantDomain: string;
+
+		/**
+		 * Required
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		SecretArn: string;
 
 		/**
@@ -830,20 +1629,49 @@ export namespace MyNS {
 		 * Required
 		 */
 		OneDriveUsers: OneDriveUsers;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		InclusionPatterns?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		ExclusionPatterns?: Array<string>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		FieldMappings?: Array<DataSourceToIndexFieldMapping>;
 	}
 
 	/** Provides configuration information for data sources that connect to OneDrive. */
 	export interface OneDriveConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([a-zA-Z0-9]+(-[a-zA-Z0-9]+)*\.)+[a-z]{2,}$
+		 */
 		TenantDomain: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		SecretArn: FormControl<string | null | undefined>,
 	}
 	export function CreateOneDriveConfigurationFormGroup() {
 		return new FormGroup<OneDriveConfigurationFormProperties>({
-			TenantDomain: new FormControl<string | null | undefined>(undefined),
-			SecretArn: new FormControl<string | null | undefined>(undefined),
+			TenantDomain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			SecretArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1284), Validators.minLength(1)]),
 		});
 
 	}
@@ -851,6 +1679,11 @@ export namespace MyNS {
 
 	/** User accounts whose documents should be indexed. */
 	export interface OneDriveUsers {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		OneDriveUserList?: Array<string>;
 
 		/** Information required to find a specific file in an Amazon S3 bucket. */
@@ -869,8 +1702,24 @@ export namespace MyNS {
 
 	/** Provides configuration information required to connect to a ServiceNow data source. */
 	export interface ServiceNowConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^(?!(^(https?|ftp|file):\/\/))[a-z0-9-]+(\.service-now\.com)$
+		 */
 		HostUrl: string;
+
+		/**
+		 * Required
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		SecretArn: string;
+
+		/** Required */
 		ServiceNowBuildVersion: ServiceNowConfigurationServiceNowBuildVersion;
 
 		/** Provides configuration information for crawling knowledge articles in the ServiceNow site. */
@@ -882,15 +1731,31 @@ export namespace MyNS {
 
 	/** Provides configuration information required to connect to a ServiceNow data source. */
 	export interface ServiceNowConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^(?!(^(https?|ftp|file):\/\/))[a-z0-9-]+(\.service-now\.com)$
+		 */
 		HostUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		SecretArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		ServiceNowBuildVersion: FormControl<ServiceNowConfigurationServiceNowBuildVersion | null | undefined>,
 	}
 	export function CreateServiceNowConfigurationFormGroup() {
 		return new FormGroup<ServiceNowConfigurationFormProperties>({
-			HostUrl: new FormControl<string | null | undefined>(undefined),
-			SecretArn: new FormControl<string | null | undefined>(undefined),
-			ServiceNowBuildVersion: new FormControl<ServiceNowConfigurationServiceNowBuildVersion | null | undefined>(undefined),
+			HostUrl: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			SecretArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1284), Validators.minLength(1)]),
+			ServiceNowBuildVersion: new FormControl<ServiceNowConfigurationServiceNowBuildVersion | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -901,24 +1766,65 @@ export namespace MyNS {
 	/** Provides configuration information for crawling knowledge articles in the ServiceNow site. */
 	export interface ServiceNowKnowledgeArticleConfiguration {
 		CrawlAttachments?: boolean | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		IncludeAttachmentFilePatterns?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		ExcludeAttachmentFilePatterns?: Array<string>;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentDataFieldName: string;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentTitleFieldName?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		FieldMappings?: Array<DataSourceToIndexFieldMapping>;
 	}
 
 	/** Provides configuration information for crawling knowledge articles in the ServiceNow site. */
 	export interface ServiceNowKnowledgeArticleConfigurationFormProperties {
 		CrawlAttachments: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentDataFieldName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentTitleFieldName: FormControl<string | null | undefined>,
 	}
 	export function CreateServiceNowKnowledgeArticleConfigurationFormGroup() {
 		return new FormGroup<ServiceNowKnowledgeArticleConfigurationFormProperties>({
 			CrawlAttachments: new FormControl<boolean | null | undefined>(undefined),
-			DocumentDataFieldName: new FormControl<string | null | undefined>(undefined),
-			DocumentTitleFieldName: new FormControl<string | null | undefined>(undefined),
+			DocumentDataFieldName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			DocumentTitleFieldName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -927,24 +1833,65 @@ export namespace MyNS {
 	/** Provides configuration information for crawling service catalog items in the ServiceNow site */
 	export interface ServiceNowServiceCatalogConfiguration {
 		CrawlAttachments?: boolean | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		IncludeAttachmentFilePatterns?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		ExcludeAttachmentFilePatterns?: Array<string>;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentDataFieldName: string;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentTitleFieldName?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		FieldMappings?: Array<DataSourceToIndexFieldMapping>;
 	}
 
 	/** Provides configuration information for crawling service catalog items in the ServiceNow site */
 	export interface ServiceNowServiceCatalogConfigurationFormProperties {
 		CrawlAttachments: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentDataFieldName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_.]*$
+		 */
 		DocumentTitleFieldName: FormControl<string | null | undefined>,
 	}
 	export function CreateServiceNowServiceCatalogConfigurationFormGroup() {
 		return new FormGroup<ServiceNowServiceCatalogConfigurationFormProperties>({
 			CrawlAttachments: new FormControl<boolean | null | undefined>(undefined),
-			DocumentDataFieldName: new FormControl<string | null | undefined>(undefined),
-			DocumentTitleFieldName: new FormControl<string | null | undefined>(undefined),
+			DocumentDataFieldName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			DocumentTitleFieldName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -952,19 +1899,43 @@ export namespace MyNS {
 
 	/** A list of key/value pairs that identify an index, FAQ, or data source. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Value: string;
 	}
 
 	/** A list of key/value pairs that identify an index, FAQ, or data source. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -980,21 +1951,53 @@ export namespace MyNS {
 	}
 
 	export interface CreateFaqResponse {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id?: string | null;
 	}
 	export interface CreateFaqResponseFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateFaqResponseFormGroup() {
 		return new FormGroup<CreateFaqResponseFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateFaqRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Name: string;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		Description?: string | null;
 
 		/**
@@ -1002,63 +2005,169 @@ export namespace MyNS {
 		 * Required
 		 */
 		S3Path: S3Path;
+
+		/**
+		 * Required
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		RoleArn: string;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		Tags?: Array<Tag>;
 	}
 	export interface CreateFaqRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		RoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateFaqRequestFormGroup() {
 		return new FormGroup<CreateFaqRequestFormProperties>({
-			IndexId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			IndexId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1284), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateIndexResponse {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		Id?: string | null;
 	}
 	export interface CreateIndexResponseFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		Id: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateIndexResponseFormGroup() {
 		return new FormGroup<CreateIndexResponseFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
 
 	export interface CreateIndexRequest {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Name: string;
 		Edition?: CreateIndexRequestEdition | null;
+
+		/**
+		 * Required
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		RoleArn: string;
 
 		/** Provides the identifier of the AWS KMS customer master key (CMK) used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs. */
 		ServerSideEncryptionConfiguration?: ServerSideEncryptionConfiguration;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ClientToken?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		Tags?: Array<Tag>;
 	}
 	export interface CreateIndexRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Name: FormControl<string | null | undefined>,
 		Edition: FormControl<CreateIndexRequestEdition | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		RoleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ClientToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateIndexRequestFormGroup() {
 		return new FormGroup<CreateIndexRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000), Validators.minLength(1)]),
 			Edition: new FormControl<CreateIndexRequestEdition | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			ClientToken: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1284), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -1068,68 +2177,166 @@ export namespace MyNS {
 
 	/** Provides the identifier of the AWS KMS customer master key (CMK) used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs. */
 	export interface ServerSideEncryptionConfiguration {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KmsKeyId?: string | null;
 	}
 
 	/** Provides the identifier of the AWS KMS customer master key (CMK) used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs. */
 	export interface ServerSideEncryptionConfigurationFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		KmsKeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateServerSideEncryptionConfigurationFormGroup() {
 		return new FormGroup<ServerSideEncryptionConfigurationFormProperties>({
-			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteDataSourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: string;
 	}
 	export interface DeleteDataSourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDataSourceRequestFormGroup() {
 		return new FormGroup<DeleteDataSourceRequestFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			IndexId: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			IndexId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
 
 	export interface DeleteFaqRequest {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: string;
 	}
 	export interface DeleteFaqRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteFaqRequestFormGroup() {
 		return new FormGroup<DeleteFaqRequestFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			IndexId: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			IndexId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
 
 	export interface DeleteIndexRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		Id: string;
 	}
 	export interface DeleteIndexRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		Id: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteIndexRequestFormGroup() {
 		return new FormGroup<DeleteIndexRequestFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
 
 	export interface DescribeDataSourceResponse {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId?: string | null;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Name?: string | null;
 		Type?: CreateDataSourceRequestType | null;
 
@@ -1137,38 +2344,92 @@ export namespace MyNS {
 		Configuration?: DataSourceConfiguration;
 		CreatedAt?: Date | null;
 		UpdatedAt?: Date | null;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		Description?: string | null;
 		Status?: DescribeDataSourceResponseStatus | null;
 		Schedule?: string | null;
+
+		/**
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		RoleArn?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		ErrorMessage?: string | null;
 	}
 	export interface DescribeDataSourceResponseFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Name: FormControl<string | null | undefined>,
 		Type: FormControl<CreateDataSourceRequestType | null | undefined>,
 		CreatedAt: FormControl<Date | null | undefined>,
 		UpdatedAt: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		Description: FormControl<string | null | undefined>,
 		Status: FormControl<DescribeDataSourceResponseStatus | null | undefined>,
 		Schedule: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		RoleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		ErrorMessage: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeDataSourceResponseFormGroup() {
 		return new FormGroup<DescribeDataSourceResponseFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			IndexId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			IndexId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 			Type: new FormControl<CreateDataSourceRequestType | null | undefined>(undefined),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			UpdatedAt: new FormControl<Date | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 			Status: new FormControl<DescribeDataSourceResponseStatus | null | undefined>(undefined),
 			Schedule: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
-			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1284), Validators.minLength(1)]),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1176,25 +2437,77 @@ export namespace MyNS {
 	export enum DescribeDataSourceResponseStatus { CREATING = 0, DELETING = 1, FAILED = 2, UPDATING = 3, ACTIVE = 4 }
 
 	export interface DescribeDataSourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: string;
 	}
 	export interface DescribeDataSourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeDataSourceRequestFormGroup() {
 		return new FormGroup<DescribeDataSourceRequestFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			IndexId: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			IndexId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
 
 	export interface DescribeFaqResponse {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		Description?: string | null;
 		CreatedAt?: Date | null;
 		UpdatedAt?: Date | null;
@@ -1202,31 +2515,79 @@ export namespace MyNS {
 		/** Information required to find a specific file in an Amazon S3 bucket. */
 		S3Path?: S3Path;
 		Status?: DescribeFaqResponseStatus | null;
+
+		/**
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		RoleArn?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		ErrorMessage?: string | null;
 	}
 	export interface DescribeFaqResponseFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		Description: FormControl<string | null | undefined>,
 		CreatedAt: FormControl<Date | null | undefined>,
 		UpdatedAt: FormControl<Date | null | undefined>,
 		Status: FormControl<DescribeFaqResponseStatus | null | undefined>,
+
+		/**
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		RoleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		ErrorMessage: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeFaqResponseFormGroup() {
 		return new FormGroup<DescribeFaqResponseFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			IndexId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			IndexId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			UpdatedAt: new FormControl<Date | null | undefined>(undefined),
 			Status: new FormControl<DescribeFaqResponseStatus | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
-			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1284), Validators.minLength(1)]),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1234,64 +2595,157 @@ export namespace MyNS {
 	export enum DescribeFaqResponseStatus { CREATING = 0, UPDATING = 1, ACTIVE = 2, DELETING = 3, FAILED = 4 }
 
 	export interface DescribeFaqRequest {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: string;
 	}
 	export interface DescribeFaqRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeFaqRequestFormGroup() {
 		return new FormGroup<DescribeFaqRequestFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			IndexId: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			IndexId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
 
 	export interface DescribeIndexResponse {
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		Id?: string | null;
 		Edition?: CreateIndexRequestEdition | null;
+
+		/**
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		RoleArn?: string | null;
 
 		/** Provides the identifier of the AWS KMS customer master key (CMK) used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs. */
 		ServerSideEncryptionConfiguration?: ServerSideEncryptionConfiguration;
 		Status?: DescribeIndexResponseStatus | null;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		Description?: string | null;
 		CreatedAt?: Date | null;
 		UpdatedAt?: Date | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 500
+		 */
 		DocumentMetadataConfigurations?: Array<DocumentMetadataConfiguration>;
 
 		/** Provides information about the number of documents and the number of questions and answers in an index. */
 		IndexStatistics?: IndexStatistics;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		ErrorMessage?: string | null;
 
 		/** Specifies capacity units configured for your index. You can add and remove capacity units to tune an index to your requirements. */
 		CapacityUnits?: CapacityUnitsConfiguration;
 	}
 	export interface DescribeIndexResponseFormProperties {
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		Id: FormControl<string | null | undefined>,
 		Edition: FormControl<CreateIndexRequestEdition | null | undefined>,
+
+		/**
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		RoleArn: FormControl<string | null | undefined>,
 		Status: FormControl<DescribeIndexResponseStatus | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		Description: FormControl<string | null | undefined>,
 		CreatedAt: FormControl<Date | null | undefined>,
 		UpdatedAt: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		ErrorMessage: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeIndexResponseFormGroup() {
 		return new FormGroup<DescribeIndexResponseFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 			Edition: new FormControl<CreateIndexRequestEdition | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1284), Validators.minLength(1)]),
 			Status: new FormControl<DescribeIndexResponseStatus | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			UpdatedAt: new FormControl<Date | null | undefined>(undefined),
-			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1301,7 +2755,15 @@ export namespace MyNS {
 
 	/** Specifies the properties of a custom index field. */
 	export interface DocumentMetadataConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 30
+		 * Min length: 1
+		 */
 		Name: string;
+
+		/** Required */
 		Type: DocumentMetadataConfigurationType;
 
 		/** Provides information for manually tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters. */
@@ -1313,13 +2775,21 @@ export namespace MyNS {
 
 	/** Specifies the properties of a custom index field. */
 	export interface DocumentMetadataConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 30
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Type: FormControl<DocumentMetadataConfigurationType | null | undefined>,
 	}
 	export function CreateDocumentMetadataConfigurationFormGroup() {
 		return new FormGroup<DocumentMetadataConfigurationFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Type: new FormControl<DocumentMetadataConfigurationType | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(30), Validators.minLength(1)]),
+			Type: new FormControl<DocumentMetadataConfigurationType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1330,7 +2800,18 @@ export namespace MyNS {
 	/** Provides information for manually tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters. */
 	export interface Relevance {
 		Freshness?: boolean | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		Importance?: number | null;
+
+		/**
+		 * Max length: 10
+		 * Min length: 1
+		 * Pattern: [0-9]+[s]
+		 */
 		Duration?: string | null;
 		RankOrder?: RelevanceRankOrder | null;
 		ValueImportanceMap?: ValueImportanceMap;
@@ -1339,15 +2820,26 @@ export namespace MyNS {
 	/** Provides information for manually tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters. */
 	export interface RelevanceFormProperties {
 		Freshness: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		Importance: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 10
+		 * Min length: 1
+		 * Pattern: [0-9]+[s]
+		 */
 		Duration: FormControl<string | null | undefined>,
 		RankOrder: FormControl<RelevanceRankOrder | null | undefined>,
 	}
 	export function CreateRelevanceFormGroup() {
 		return new FormGroup<RelevanceFormProperties>({
 			Freshness: new FormControl<boolean | null | undefined>(undefined),
-			Importance: new FormControl<number | null | undefined>(undefined),
-			Duration: new FormControl<string | null | undefined>(undefined),
+			Importance: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10)]),
+			Duration: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10), Validators.minLength(1)]),
 			RankOrder: new FormControl<RelevanceRankOrder | null | undefined>(undefined),
 		});
 
@@ -1417,16 +2909,26 @@ export namespace MyNS {
 
 	/** Provides statistical information about the FAQ questions and answers contained in an index. */
 	export interface FaqStatistics {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		IndexedQuestionAnswersCount: number;
 	}
 
 	/** Provides statistical information about the FAQ questions and answers contained in an index. */
 	export interface FaqStatisticsFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		IndexedQuestionAnswersCount: FormControl<number | null | undefined>,
 	}
 	export function CreateFaqStatisticsFormGroup() {
 		return new FormGroup<FaqStatisticsFormProperties>({
-			IndexedQuestionAnswersCount: new FormControl<number | null | undefined>(undefined),
+			IndexedQuestionAnswersCount: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 		});
 
 	}
@@ -1434,19 +2936,39 @@ export namespace MyNS {
 
 	/** Provides information about text documents indexed in an index. */
 	export interface TextDocumentStatistics {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		IndexedTextDocumentsCount: number;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		IndexedTextBytes: number;
 	}
 
 	/** Provides information about text documents indexed in an index. */
 	export interface TextDocumentStatisticsFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		IndexedTextDocumentsCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		IndexedTextBytes: FormControl<number | null | undefined>,
 	}
 	export function CreateTextDocumentStatisticsFormGroup() {
 		return new FormGroup<TextDocumentStatisticsFormProperties>({
-			IndexedTextDocumentsCount: new FormControl<number | null | undefined>(undefined),
-			IndexedTextBytes: new FormControl<number | null | undefined>(undefined),
+			IndexedTextDocumentsCount: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			IndexedTextBytes: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 		});
 
 	}
@@ -1454,46 +2976,90 @@ export namespace MyNS {
 
 	/** Specifies capacity units configured for your index. You can add and remove capacity units to tune an index to your requirements. */
 	export interface CapacityUnitsConfiguration {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		StorageCapacityUnits: number;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		QueryCapacityUnits: number;
 	}
 
 	/** Specifies capacity units configured for your index. You can add and remove capacity units to tune an index to your requirements. */
 	export interface CapacityUnitsConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		StorageCapacityUnits: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		QueryCapacityUnits: FormControl<number | null | undefined>,
 	}
 	export function CreateCapacityUnitsConfigurationFormGroup() {
 		return new FormGroup<CapacityUnitsConfigurationFormProperties>({
-			StorageCapacityUnits: new FormControl<number | null | undefined>(undefined),
-			QueryCapacityUnits: new FormControl<number | null | undefined>(undefined),
+			StorageCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			QueryCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 		});
 
 	}
 
 	export interface DescribeIndexRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		Id: string;
 	}
 	export interface DescribeIndexRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		Id: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeIndexRequestFormGroup() {
 		return new FormGroup<DescribeIndexRequestFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
 
 	export interface ListDataSourceSyncJobsResponse {
 		History?: Array<DataSourceSyncJob>;
+
+		/**
+		 * Max length: 800
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListDataSourceSyncJobsResponseFormProperties {
+
+		/**
+		 * Max length: 800
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListDataSourceSyncJobsResponseFormGroup() {
 		return new FormGroup<ListDataSourceSyncJobsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(800), Validators.minLength(1)]),
 		});
 
 	}
@@ -1501,12 +3067,28 @@ export namespace MyNS {
 
 	/** Provides information about a synchronization job. */
 	export interface DataSourceSyncJob {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		ExecutionId?: string | null;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
 		Status?: DataSourceSyncJobStatus | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		ErrorMessage?: string | null;
 		ErrorCode?: BatchDeleteDocumentResponseFailedDocumentErrorCode | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		DataSourceErrorCode?: string | null;
 
 		/** Maps a batch delete document request to a specific data source sync job. This is optional and should only be supplied when documents are deleted by a connector. */
@@ -1515,23 +3097,39 @@ export namespace MyNS {
 
 	/** Provides information about a synchronization job. */
 	export interface DataSourceSyncJobFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		ExecutionId: FormControl<string | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
 		EndTime: FormControl<Date | null | undefined>,
 		Status: FormControl<DataSourceSyncJobStatus | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		ErrorMessage: FormControl<string | null | undefined>,
 		ErrorCode: FormControl<BatchDeleteDocumentResponseFailedDocumentErrorCode | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		DataSourceErrorCode: FormControl<string | null | undefined>,
 	}
 	export function CreateDataSourceSyncJobFormGroup() {
 		return new FormGroup<DataSourceSyncJobFormProperties>({
-			ExecutionId: new FormControl<string | null | undefined>(undefined),
+			ExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
 			Status: new FormControl<DataSourceSyncJobStatus | null | undefined>(undefined),
-			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 			ErrorCode: new FormControl<BatchDeleteDocumentResponseFailedDocumentErrorCode | null | undefined>(undefined),
-			DataSourceErrorCode: new FormControl<string | null | undefined>(undefined),
+			DataSourceErrorCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1541,19 +3139,39 @@ export namespace MyNS {
 
 	/** Maps a batch delete document request to a specific data source sync job. This is optional and should only be supplied when documents are deleted by a connector. */
 	export interface DataSourceSyncJobMetrics {
+
+		/** Pattern: (([1-9][0-9]*)|0) */
 		DocumentsAdded?: string | null;
+
+		/** Pattern: (([1-9][0-9]*)|0) */
 		DocumentsModified?: string | null;
+
+		/** Pattern: (([1-9][0-9]*)|0) */
 		DocumentsDeleted?: string | null;
+
+		/** Pattern: (([1-9][0-9]*)|0) */
 		DocumentsFailed?: string | null;
+
+		/** Pattern: (([1-9][0-9]*)|0) */
 		DocumentsScanned?: string | null;
 	}
 
 	/** Maps a batch delete document request to a specific data source sync job. This is optional and should only be supplied when documents are deleted by a connector. */
 	export interface DataSourceSyncJobMetricsFormProperties {
+
+		/** Pattern: (([1-9][0-9]*)|0) */
 		DocumentsAdded: FormControl<string | null | undefined>,
+
+		/** Pattern: (([1-9][0-9]*)|0) */
 		DocumentsModified: FormControl<string | null | undefined>,
+
+		/** Pattern: (([1-9][0-9]*)|0) */
 		DocumentsDeleted: FormControl<string | null | undefined>,
+
+		/** Pattern: (([1-9][0-9]*)|0) */
 		DocumentsFailed: FormControl<string | null | undefined>,
+
+		/** Pattern: (([1-9][0-9]*)|0) */
 		DocumentsScanned: FormControl<string | null | undefined>,
 	}
 	export function CreateDataSourceSyncJobMetricsFormGroup() {
@@ -1568,9 +3186,33 @@ export namespace MyNS {
 	}
 
 	export interface ListDataSourceSyncJobsRequest {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: string;
+
+		/**
+		 * Max length: 800
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		MaxResults?: number | null;
 
 		/** Provides a range of time. */
@@ -1578,18 +3220,42 @@ export namespace MyNS {
 		StatusFilter?: DataSourceSyncJobStatus | null;
 	}
 	export interface ListDataSourceSyncJobsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 800
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		StatusFilter: FormControl<DataSourceSyncJobStatus | null | undefined>,
 	}
 	export function CreateListDataSourceSyncJobsRequestFormGroup() {
 		return new FormGroup<ListDataSourceSyncJobsRequestFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			IndexId: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			IndexId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(800), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10)]),
 			StatusFilter: new FormControl<DataSourceSyncJobStatus | null | undefined>(undefined),
 		});
 
@@ -1617,14 +3283,24 @@ export namespace MyNS {
 
 	export interface ListDataSourcesResponse {
 		SummaryItems?: Array<DataSourceSummary>;
+
+		/**
+		 * Max length: 800
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListDataSourcesResponseFormProperties {
+
+		/**
+		 * Max length: 800
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListDataSourcesResponseFormGroup() {
 		return new FormGroup<ListDataSourcesResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(800), Validators.minLength(1)]),
 		});
 
 	}
@@ -1632,7 +3308,19 @@ export namespace MyNS {
 
 	/** Summary information for a Amazon Kendra data source. Returned in a call to . */
 	export interface DataSourceSummary {
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id?: string | null;
 		Type?: CreateDataSourceRequestType | null;
 		CreatedAt?: Date | null;
@@ -1642,7 +3330,19 @@ export namespace MyNS {
 
 	/** Summary information for a Amazon Kendra data source. Returned in a call to . */
 	export interface DataSourceSummaryFormProperties {
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id: FormControl<string | null | undefined>,
 		Type: FormControl<CreateDataSourceRequestType | null | undefined>,
 		CreatedAt: FormControl<Date | null | undefined>,
@@ -1651,8 +3351,8 @@ export namespace MyNS {
 	}
 	export function CreateDataSourceSummaryFormGroup() {
 		return new FormGroup<DataSourceSummaryFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			Type: new FormControl<CreateDataSourceRequestType | null | undefined>(undefined),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			UpdatedAt: new FormControl<Date | null | undefined>(undefined),
@@ -1662,34 +3362,78 @@ export namespace MyNS {
 	}
 
 	export interface ListDataSourcesRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: string;
+
+		/**
+		 * Max length: 800
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListDataSourcesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 800
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListDataSourcesRequestFormGroup() {
 		return new FormGroup<ListDataSourcesRequestFormProperties>({
-			IndexId: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			IndexId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(800), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListFaqsResponse {
+
+		/**
+		 * Max length: 800
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 		FaqSummaryItems?: Array<FaqSummary>;
 	}
 	export interface ListFaqsResponseFormProperties {
+
+		/**
+		 * Max length: 800
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListFaqsResponseFormGroup() {
 		return new FormGroup<ListFaqsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(800), Validators.minLength(1)]),
 		});
 
 	}
@@ -1697,7 +3441,19 @@ export namespace MyNS {
 
 	/** Provides information about a frequently asked questions and answer contained in an index. */
 	export interface FaqSummary {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Name?: string | null;
 		Status?: DescribeFaqResponseStatus | null;
 		CreatedAt?: Date | null;
@@ -1706,7 +3462,19 @@ export namespace MyNS {
 
 	/** Provides information about a frequently asked questions and answer contained in an index. */
 	export interface FaqSummaryFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Name: FormControl<string | null | undefined>,
 		Status: FormControl<DescribeFaqResponseStatus | null | undefined>,
 		CreatedAt: FormControl<Date | null | undefined>,
@@ -1714,8 +3482,8 @@ export namespace MyNS {
 	}
 	export function CreateFaqSummaryFormGroup() {
 		return new FormGroup<FaqSummaryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			Status: new FormControl<DescribeFaqResponseStatus | null | undefined>(undefined),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			UpdatedAt: new FormControl<Date | null | undefined>(undefined),
@@ -1724,34 +3492,78 @@ export namespace MyNS {
 	}
 
 	export interface ListFaqsRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: string;
+
+		/**
+		 * Max length: 800
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListFaqsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 800
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListFaqsRequestFormGroup() {
 		return new FormGroup<ListFaqsRequestFormProperties>({
-			IndexId: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			IndexId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(800), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListIndicesResponse {
 		IndexConfigurationSummaryItems?: Array<IndexConfigurationSummary>;
+
+		/**
+		 * Max length: 800
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListIndicesResponseFormProperties {
+
+		/**
+		 * Max length: 800
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListIndicesResponseFormGroup() {
 		return new FormGroup<ListIndicesResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(800), Validators.minLength(1)]),
 		});
 
 	}
@@ -1759,52 +3571,113 @@ export namespace MyNS {
 
 	/** A summary of information about an index. */
 	export interface IndexConfigurationSummary {
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		Id?: string | null;
 		Edition?: CreateIndexRequestEdition | null;
+
+		/** Required */
 		CreatedAt: Date;
+
+		/** Required */
 		UpdatedAt: Date;
+
+		/** Required */
 		Status: DescribeIndexResponseStatus;
 	}
 
 	/** A summary of information about an index. */
 	export interface IndexConfigurationSummaryFormProperties {
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		Id: FormControl<string | null | undefined>,
 		Edition: FormControl<CreateIndexRequestEdition | null | undefined>,
+
+		/** Required */
 		CreatedAt: FormControl<Date | null | undefined>,
+
+		/** Required */
 		UpdatedAt: FormControl<Date | null | undefined>,
+
+		/** Required */
 		Status: FormControl<DescribeIndexResponseStatus | null | undefined>,
 	}
 	export function CreateIndexConfigurationSummaryFormGroup() {
 		return new FormGroup<IndexConfigurationSummaryFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 			Edition: new FormControl<CreateIndexRequestEdition | null | undefined>(undefined),
-			CreatedAt: new FormControl<Date | null | undefined>(undefined),
-			UpdatedAt: new FormControl<Date | null | undefined>(undefined),
-			Status: new FormControl<DescribeIndexResponseStatus | null | undefined>(undefined),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			UpdatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			Status: new FormControl<DescribeIndexResponseStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ListIndicesRequest {
+
+		/**
+		 * Max length: 800
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListIndicesRequestFormProperties {
+
+		/**
+		 * Max length: 800
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListIndicesRequestFormGroup() {
 		return new FormGroup<ListIndicesRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(800), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListTagsForResourceResponse {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		Tags?: Array<Tag>;
 	}
 	export interface ListTagsForResourceResponseFormProperties {
@@ -1816,14 +3689,26 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceARN: string;
 	}
 	export interface ListTagsForResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
 		});
 
 	}
@@ -1839,18 +3724,28 @@ export namespace MyNS {
 	}
 
 	export interface QueryResult {
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		QueryId?: string | null;
 		ResultItems?: Array<QueryResultItem>;
 		FacetResults?: Array<FacetResult>;
 		TotalNumberOfResults?: number | null;
 	}
 	export interface QueryResultFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		QueryId: FormControl<string | null | undefined>,
 		TotalNumberOfResults: FormControl<number | null | undefined>,
 	}
 	export function CreateQueryResultFormGroup() {
 		return new FormGroup<QueryResultFormProperties>({
-			QueryId: new FormControl<string | null | undefined>(undefined),
+			QueryId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
 			TotalNumberOfResults: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1859,9 +3754,19 @@ export namespace MyNS {
 
 	/** <p>A single query result.</p> <p>A query result contains information about a document returned by the query. This includes the original location of the document, a list of attributes assigned to the document, and relevant text from the document that satisfies the query.</p> */
 	export interface QueryResultItem {
+
+		/**
+		 * Max length: 73
+		 * Min length: 1
+		 */
 		Id?: string | null;
 		Type?: QueryResultItemType | null;
 		AdditionalAttributes?: Array<AdditionalResultAttribute>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		DocumentId?: string | null;
 
 		/** Provides text and information about where to highlight the text. */
@@ -1869,23 +3774,45 @@ export namespace MyNS {
 
 		/** Provides text and information about where to highlight the text. */
 		DocumentExcerpt?: TextWithHighlights;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^(https?|ftp|file):\/\/([^\s]*)
+		 */
 		DocumentURI?: string | null;
 		DocumentAttributes?: Array<DocumentAttribute>;
 	}
 
 	/** <p>A single query result.</p> <p>A query result contains information about a document returned by the query. This includes the original location of the document, a list of attributes assigned to the document, and relevant text from the document that satisfies the query.</p> */
 	export interface QueryResultItemFormProperties {
+
+		/**
+		 * Max length: 73
+		 * Min length: 1
+		 */
 		Id: FormControl<string | null | undefined>,
 		Type: FormControl<QueryResultItemType | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		DocumentId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^(https?|ftp|file):\/\/([^\s]*)
+		 */
 		DocumentURI: FormControl<string | null | undefined>,
 	}
 	export function CreateQueryResultItemFormGroup() {
 		return new FormGroup<QueryResultItemFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(73), Validators.minLength(1)]),
 			Type: new FormControl<QueryResultItemType | null | undefined>(undefined),
-			DocumentId: new FormControl<string | null | undefined>(undefined),
-			DocumentURI: new FormControl<string | null | undefined>(undefined),
+			DocumentId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			DocumentURI: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1895,7 +3822,15 @@ export namespace MyNS {
 
 	/** An attribute returned from an index query. */
 	export interface AdditionalResultAttribute {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Key: string;
+
+		/** Required */
 		ValueType: AdditionalResultAttributeValueType;
 
 		/**
@@ -1907,13 +3842,21 @@ export namespace MyNS {
 
 	/** An attribute returned from an index query. */
 	export interface AdditionalResultAttributeFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/** Required */
 		ValueType: FormControl<AdditionalResultAttributeValueType | null | undefined>,
 	}
 	export function CreateAdditionalResultAttributeFormGroup() {
 		return new FormGroup<AdditionalResultAttributeFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			ValueType: new FormControl<AdditionalResultAttributeValueType | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			ValueType: new FormControl<AdditionalResultAttributeValueType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1940,17 +3883,27 @@ export namespace MyNS {
 
 	/** Provides text and information about where to highlight the text. */
 	export interface TextWithHighlights {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Text?: string | null;
 		Highlights?: Array<Highlight>;
 	}
 
 	/** Provides text and information about where to highlight the text. */
 	export interface TextWithHighlightsFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Text: FormControl<string | null | undefined>,
 	}
 	export function CreateTextWithHighlightsFormGroup() {
 		return new FormGroup<TextWithHighlightsFormProperties>({
-			Text: new FormControl<string | null | undefined>(undefined),
+			Text: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1958,21 +3911,29 @@ export namespace MyNS {
 
 	/** Provides information that you can use to highlight a search result so that your users can quickly identify terms in the response. */
 	export interface Highlight {
+
+		/** Required */
 		BeginOffset: number;
+
+		/** Required */
 		EndOffset: number;
 		TopAnswer?: boolean | null;
 	}
 
 	/** Provides information that you can use to highlight a search result so that your users can quickly identify terms in the response. */
 	export interface HighlightFormProperties {
+
+		/** Required */
 		BeginOffset: FormControl<number | null | undefined>,
+
+		/** Required */
 		EndOffset: FormControl<number | null | undefined>,
 		TopAnswer: FormControl<boolean | null | undefined>,
 	}
 	export function CreateHighlightFormGroup() {
 		return new FormGroup<HighlightFormProperties>({
-			BeginOffset: new FormControl<number | null | undefined>(undefined),
-			EndOffset: new FormControl<number | null | undefined>(undefined),
+			BeginOffset: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			EndOffset: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			TopAnswer: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1981,17 +3942,29 @@ export namespace MyNS {
 
 	/** The facet values for the documents in the response. */
 	export interface FacetResult {
+
+		/**
+		 * Max length: 200
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_][a-zA-Z0-9_-]*
+		 */
 		DocumentAttributeKey?: string | null;
 		DocumentAttributeValueCountPairs?: Array<DocumentAttributeValueCountPair>;
 	}
 
 	/** The facet values for the documents in the response. */
 	export interface FacetResultFormProperties {
+
+		/**
+		 * Max length: 200
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_][a-zA-Z0-9_-]*
+		 */
 		DocumentAttributeKey: FormControl<string | null | undefined>,
 	}
 	export function CreateFacetResultFormGroup() {
 		return new FormGroup<FacetResultFormProperties>({
-			DocumentAttributeKey: new FormControl<string | null | undefined>(undefined),
+			DocumentAttributeKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
 		});
 
 	}
@@ -2017,19 +3990,52 @@ export namespace MyNS {
 	}
 
 	export interface QueryRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: string;
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		QueryText: string;
 
 		/** <p>Provides filtering the query results based on document attributes.</p> <p>When you use the <code>AndAllFilters</code> or <code>OrAllFilters</code>, filters you can use 2 layers under the first attribute filter. For example, you can use:</p> <p> <code>&lt;AndAllFilters&gt;</code> </p> <ol> <li> <p> <code> &lt;OrAllFilters&gt;</code> </p> </li> <li> <p> <code> &lt;EqualTo&gt;</code> </p> </li> </ol> <p>If you use more than 2 layers, you receive a <code>ValidationException</code> exception with the message "<code>AttributeFilter</code> cannot have a depth of more than 2."</p> */
 		AttributeFilter?: AttributeFilter;
 		Facets?: Array<Facet>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		RequestedDocumentAttributes?: Array<string>;
 		QueryResultTypeFilter?: QueryResultItemType | null;
 		PageNumber?: number | null;
 		PageSize?: number | null;
 	}
 	export interface QueryRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		QueryText: FormControl<string | null | undefined>,
 		QueryResultTypeFilter: FormControl<QueryResultItemType | null | undefined>,
 		PageNumber: FormControl<number | null | undefined>,
@@ -2037,8 +4043,8 @@ export namespace MyNS {
 	}
 	export function CreateQueryRequestFormGroup() {
 		return new FormGroup<QueryRequestFormProperties>({
-			IndexId: new FormControl<string | null | undefined>(undefined),
-			QueryText: new FormControl<string | null | undefined>(undefined),
+			IndexId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			QueryText: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000), Validators.minLength(1)]),
 			QueryResultTypeFilter: new FormControl<QueryResultItemType | null | undefined>(undefined),
 			PageNumber: new FormControl<number | null | undefined>(undefined),
 			PageSize: new FormControl<number | null | undefined>(undefined),
@@ -2089,45 +4095,95 @@ export namespace MyNS {
 
 	/** Information about a document attribute */
 	export interface Facet {
+
+		/**
+		 * Max length: 200
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_][a-zA-Z0-9_-]*
+		 */
 		DocumentAttributeKey?: string | null;
 	}
 
 	/** Information about a document attribute */
 	export interface FacetFormProperties {
+
+		/**
+		 * Max length: 200
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_][a-zA-Z0-9_-]*
+		 */
 		DocumentAttributeKey: FormControl<string | null | undefined>,
 	}
 	export function CreateFacetFormGroup() {
 		return new FormGroup<FacetFormProperties>({
-			DocumentAttributeKey: new FormControl<string | null | undefined>(undefined),
+			DocumentAttributeKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface StartDataSourceSyncJobResponse {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		ExecutionId?: string | null;
 	}
 	export interface StartDataSourceSyncJobResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		ExecutionId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartDataSourceSyncJobResponseFormGroup() {
 		return new FormGroup<StartDataSourceSyncJobResponseFormProperties>({
-			ExecutionId: new FormControl<string | null | undefined>(undefined),
+			ExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface StartDataSourceSyncJobRequest {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: string;
 	}
 	export interface StartDataSourceSyncJobRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartDataSourceSyncJobRequestFormGroup() {
 		return new FormGroup<StartDataSourceSyncJobRequestFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			IndexId: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			IndexId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
@@ -2143,35 +4199,89 @@ export namespace MyNS {
 	}
 
 	export interface StopDataSourceSyncJobRequest {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: string;
 	}
 	export interface StopDataSourceSyncJobRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: FormControl<string | null | undefined>,
 	}
 	export function CreateStopDataSourceSyncJobRequestFormGroup() {
 		return new FormGroup<StopDataSourceSyncJobRequestFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			IndexId: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			IndexId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
 
 	export interface SubmitFeedbackRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		QueryId: string;
 		ClickFeedbackItems?: Array<ClickFeedback>;
 		RelevanceFeedbackItems?: Array<RelevanceFeedback>;
 	}
 	export interface SubmitFeedbackRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		QueryId: FormControl<string | null | undefined>,
 	}
 	export function CreateSubmitFeedbackRequestFormGroup() {
 		return new FormGroup<SubmitFeedbackRequestFormProperties>({
-			IndexId: new FormControl<string | null | undefined>(undefined),
-			QueryId: new FormControl<string | null | undefined>(undefined),
+			IndexId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			QueryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
@@ -2179,19 +4289,35 @@ export namespace MyNS {
 
 	/** Gathers information about when a particular result was clicked by a user. Your application uses the <a>SubmitFeedback</a> operation to provide click information. */
 	export interface ClickFeedback {
+
+		/**
+		 * Required
+		 * Max length: 73
+		 * Min length: 1
+		 */
 		ResultId: string;
+
+		/** Required */
 		ClickTime: Date;
 	}
 
 	/** Gathers information about when a particular result was clicked by a user. Your application uses the <a>SubmitFeedback</a> operation to provide click information. */
 	export interface ClickFeedbackFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 73
+		 * Min length: 1
+		 */
 		ResultId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ClickTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateClickFeedbackFormGroup() {
 		return new FormGroup<ClickFeedbackFormProperties>({
-			ResultId: new FormControl<string | null | undefined>(undefined),
-			ClickTime: new FormControl<Date | null | undefined>(undefined),
+			ResultId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(73), Validators.minLength(1)]),
+			ClickTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2199,19 +4325,35 @@ export namespace MyNS {
 
 	/** Provides feedback on how relevant a document is to a search. Your application uses the <a>SubmitFeedback</a> operation to provide relevance information. */
 	export interface RelevanceFeedback {
+
+		/**
+		 * Required
+		 * Max length: 73
+		 * Min length: 1
+		 */
 		ResultId: string;
+
+		/** Required */
 		RelevanceValue: RelevanceFeedbackRelevanceValue;
 	}
 
 	/** Provides feedback on how relevant a document is to a search. Your application uses the <a>SubmitFeedback</a> operation to provide relevance information. */
 	export interface RelevanceFeedbackFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 73
+		 * Min length: 1
+		 */
 		ResultId: FormControl<string | null | undefined>,
+
+		/** Required */
 		RelevanceValue: FormControl<RelevanceFeedbackRelevanceValue | null | undefined>,
 	}
 	export function CreateRelevanceFeedbackFormGroup() {
 		return new FormGroup<RelevanceFeedbackFormProperties>({
-			ResultId: new FormControl<string | null | undefined>(undefined),
-			RelevanceValue: new FormControl<RelevanceFeedbackRelevanceValue | null | undefined>(undefined),
+			ResultId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(73), Validators.minLength(1)]),
+			RelevanceValue: new FormControl<RelevanceFeedbackRelevanceValue | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2229,15 +4371,33 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceARN: string;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		Tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
 		});
 
 	}
@@ -2253,72 +4413,209 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceARN: string;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		TagKeys: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateDataSourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id: string;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Name?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: string;
 
 		/** Configuration information for a Amazon Kendra data source. */
 		Configuration?: DataSourceConfiguration;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		Description?: string | null;
 		Schedule?: string | null;
+
+		/**
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		RoleArn?: string | null;
 	}
 	export interface UpdateDataSourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		IndexId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		Description: FormControl<string | null | undefined>,
 		Schedule: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		RoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateDataSourceRequestFormGroup() {
 		return new FormGroup<UpdateDataSourceRequestFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			IndexId: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			IndexId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 			Schedule: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1284), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateIndexRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		Id: string;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		RoleArn?: string | null;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		Description?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 500
+		 */
 		DocumentMetadataConfigurationUpdates?: Array<DocumentMetadataConfiguration>;
 
 		/** Specifies capacity units configured for your index. You can add and remove capacity units to tune an index to your requirements. */
 		CapacityUnits?: CapacityUnitsConfiguration;
 	}
 	export interface UpdateIndexRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9-]*
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1284
+		 * Min length: 1
+		 * Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
+		 */
 		RoleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: ^\P{C}*$
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateIndexRequestFormGroup() {
 		return new FormGroup<UpdateIndexRequestFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1284), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}

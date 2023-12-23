@@ -60,8 +60,8 @@ export namespace MyNS {
 	}
 	export function CreateActivity_3_1FormGroup() {
 		return new FormGroup<Activity_3_1FormProperties>({
-			time: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<Activity_3_1Type | null | undefined>(undefined),
+			time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<Activity_3_1Type | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -168,12 +168,12 @@ export namespace MyNS {
 	}
 	export function CreateCategoryFormGroup() {
 		return new FormGroup<CategoryFormProperties>({
-			last_video_featured_time: new FormControl<string | null | undefined>(undefined),
-			link: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			resource_key: new FormControl<string | null | undefined>(undefined),
-			top_level: new FormControl<boolean | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			last_video_featured_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			resource_key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			top_level: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -252,11 +252,11 @@ export namespace MyNS {
 	}
 	export function CreatePictureFormGroup() {
 		return new FormGroup<PictureFormProperties>({
-			active: new FormControl<boolean | null | undefined>(undefined),
+			active: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			link: new FormControl<string | null | undefined>(undefined),
-			resource_key: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<PictureType | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			resource_key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<PictureType | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -309,10 +309,10 @@ export namespace MyNS {
 	}
 	export function CreatePictureSizesFormGroup() {
 		return new FormGroup<PictureSizesFormProperties>({
-			height: new FormControl<number | null | undefined>(undefined),
-			link: new FormControl<string | null | undefined>(undefined),
+			height: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			link_with_play_button: new FormControl<string | null | undefined>(undefined),
-			width: new FormControl<number | null | undefined>(undefined),
+			width: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -411,8 +411,8 @@ export namespace MyNS {
 	}
 	export function CreateCategoryMetadataConnectionsChannelsFormGroup() {
 		return new FormGroup<CategoryMetadataConnectionsChannelsFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -453,8 +453,8 @@ export namespace MyNS {
 	}
 	export function CreateCategoryMetadataConnectionsGroupsFormGroup() {
 		return new FormGroup<CategoryMetadataConnectionsGroupsFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -495,8 +495,8 @@ export namespace MyNS {
 	}
 	export function CreateCategoryMetadataConnectionsUsersFormGroup() {
 		return new FormGroup<CategoryMetadataConnectionsUsersFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -537,8 +537,8 @@ export namespace MyNS {
 	}
 	export function CreateCategoryMetadataConnectionsVideosFormGroup() {
 		return new FormGroup<CategoryMetadataConnectionsVideosFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -601,9 +601,9 @@ export namespace MyNS {
 	}
 	export function CreateCategoryMetadataInteractionsFollowFormGroup() {
 		return new FormGroup<CategoryMetadataInteractionsFollowFormProperties>({
-			added: new FormControl<boolean | null | undefined>(undefined),
-			added_time: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			added: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			added_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -650,9 +650,9 @@ export namespace MyNS {
 	}
 	export function CreateCategoryParentFormGroup() {
 		return new FormGroup<CategoryParentFormProperties>({
-			link: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -699,9 +699,9 @@ export namespace MyNS {
 	}
 	export function CreateCategorySubcategoriesFormGroup() {
 		return new FormGroup<CategorySubcategoriesFormProperties>({
-			link: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -838,13 +838,13 @@ export namespace MyNS {
 	}
 	export function CreateChannelFormGroup() {
 		return new FormGroup<ChannelFormProperties>({
-			created_time: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			link: new FormControl<string | null | undefined>(undefined),
-			modified_time: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			resource_key: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			created_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			modified_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			resource_key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -935,8 +935,8 @@ export namespace MyNS {
 	}
 	export function CreateChannelMetadataConnectionsPrivacy_usersFormGroup() {
 		return new FormGroup<ChannelMetadataConnectionsPrivacy_usersFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -977,8 +977,8 @@ export namespace MyNS {
 	}
 	export function CreateChannelMetadataConnectionsUsersFormGroup() {
 		return new FormGroup<ChannelMetadataConnectionsUsersFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1019,8 +1019,8 @@ export namespace MyNS {
 	}
 	export function CreateChannelMetadataConnectionsVideosFormGroup() {
 		return new FormGroup<ChannelMetadataConnectionsVideosFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1083,7 +1083,7 @@ export namespace MyNS {
 	}
 	export function CreateChannelMetadataInteractionsAdd_moderatorsFormGroup() {
 		return new FormGroup<ChannelMetadataInteractionsAdd_moderatorsFormProperties>({
-			uri: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1112,7 +1112,7 @@ export namespace MyNS {
 	}
 	export function CreateChannelMetadataInteractionsAdd_toFormGroup() {
 		return new FormGroup<ChannelMetadataInteractionsAdd_toFormProperties>({
-			uri: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1177,10 +1177,10 @@ export namespace MyNS {
 	}
 	export function CreateChannelMetadataInteractionsFollowFormGroup() {
 		return new FormGroup<ChannelMetadataInteractionsFollowFormProperties>({
-			added: new FormControl<boolean | null | undefined>(undefined),
-			added_time: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<ChannelMetadataInteractionsFollowType | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			added: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			added_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<ChannelMetadataInteractionsFollowType | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1211,7 +1211,7 @@ export namespace MyNS {
 	}
 	export function CreateChannelMetadataInteractionsModerate_videosFormGroup() {
 		return new FormGroup<ChannelMetadataInteractionsModerate_videosFormProperties>({
-			uri: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1242,7 +1242,7 @@ export namespace MyNS {
 	}
 	export function CreateChannelPrivacyFormGroup() {
 		return new FormGroup<ChannelPrivacyFormProperties>({
-			view: new FormControl<ChannelPrivacyView | null | undefined>(undefined),
+			view: new FormControl<ChannelPrivacyView | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1309,10 +1309,10 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			canonical: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			resource_key: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			canonical: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			resource_key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1385,8 +1385,8 @@ export namespace MyNS {
 	}
 	export function CreateTagMetadataConnectionsVideosFormGroup() {
 		return new FormGroup<TagMetadataConnectionsVideosFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1556,15 +1556,15 @@ export namespace MyNS {
 	}
 	export function CreateUserFormGroup() {
 		return new FormGroup<UserFormProperties>({
-			account: new FormControl<UserAccount | null | undefined>(undefined),
-			bio: new FormControl<string | null | undefined>(undefined),
-			created_time: new FormControl<string | null | undefined>(undefined),
+			account: new FormControl<UserAccount | null | undefined>(undefined, [Validators.required]),
+			bio: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			created_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			email: new FormControl<string | null | undefined>(undefined),
-			link: new FormControl<string | null | undefined>(undefined),
-			location: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			resource_key: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			location: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			resource_key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1578,6 +1578,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		connections: UserMetadataConnections;
+
+		/** Required */
 		interactions: UserMetadataInteractions;
 	}
 	export interface UserMetadataFormProperties {
@@ -1754,8 +1756,8 @@ export namespace MyNS {
 	}
 	export function CreateUserMetadataConnectionsAlbumsFormGroup() {
 		return new FormGroup<UserMetadataConnectionsAlbumsFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1796,8 +1798,8 @@ export namespace MyNS {
 	}
 	export function CreateUserMetadataConnectionsAppearancesFormGroup() {
 		return new FormGroup<UserMetadataConnectionsAppearancesFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1838,8 +1840,8 @@ export namespace MyNS {
 	}
 	export function CreateUserMetadataConnectionsBlockFormGroup() {
 		return new FormGroup<UserMetadataConnectionsBlockFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1880,8 +1882,8 @@ export namespace MyNS {
 	}
 	export function CreateUserMetadataConnectionsCategoriesFormGroup() {
 		return new FormGroup<UserMetadataConnectionsCategoriesFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1922,8 +1924,8 @@ export namespace MyNS {
 	}
 	export function CreateUserMetadataConnectionsChannelsFormGroup() {
 		return new FormGroup<UserMetadataConnectionsChannelsFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1952,7 +1954,7 @@ export namespace MyNS {
 	}
 	export function CreateUserMetadataConnectionsFeedFormGroup() {
 		return new FormGroup<UserMetadataConnectionsFeedFormProperties>({
-			uri: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1993,8 +1995,8 @@ export namespace MyNS {
 	}
 	export function CreateUserMetadataConnectionsFoldersFormGroup() {
 		return new FormGroup<UserMetadataConnectionsFoldersFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2035,8 +2037,8 @@ export namespace MyNS {
 	}
 	export function CreateUserMetadataConnectionsFollowersFormGroup() {
 		return new FormGroup<UserMetadataConnectionsFollowersFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2077,8 +2079,8 @@ export namespace MyNS {
 	}
 	export function CreateUserMetadataConnectionsFollowingFormGroup() {
 		return new FormGroup<UserMetadataConnectionsFollowingFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2119,8 +2121,8 @@ export namespace MyNS {
 	}
 	export function CreateUserMetadataConnectionsGroupsFormGroup() {
 		return new FormGroup<UserMetadataConnectionsGroupsFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2161,8 +2163,8 @@ export namespace MyNS {
 	}
 	export function CreateUserMetadataConnectionsLikesFormGroup() {
 		return new FormGroup<UserMetadataConnectionsLikesFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2203,8 +2205,8 @@ export namespace MyNS {
 	}
 	export function CreateUserMetadataConnectionsModerated_channelsFormGroup() {
 		return new FormGroup<UserMetadataConnectionsModerated_channelsFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2245,8 +2247,8 @@ export namespace MyNS {
 	}
 	export function CreateUserMetadataConnectionsPicturesFormGroup() {
 		return new FormGroup<UserMetadataConnectionsPicturesFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2287,8 +2289,8 @@ export namespace MyNS {
 	}
 	export function CreateUserMetadataConnectionsPortfoliosFormGroup() {
 		return new FormGroup<UserMetadataConnectionsPortfoliosFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2329,8 +2331,8 @@ export namespace MyNS {
 	}
 	export function CreateUserMetadataConnectionsRecommended_channelsFormGroup() {
 		return new FormGroup<UserMetadataConnectionsRecommended_channelsFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2371,8 +2373,8 @@ export namespace MyNS {
 	}
 	export function CreateUserMetadataConnectionsRecommended_usersFormGroup() {
 		return new FormGroup<UserMetadataConnectionsRecommended_usersFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2413,8 +2415,8 @@ export namespace MyNS {
 	}
 	export function CreateUserMetadataConnectionsSharedFormGroup() {
 		return new FormGroup<UserMetadataConnectionsSharedFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2455,8 +2457,8 @@ export namespace MyNS {
 	}
 	export function CreateUserMetadataConnectionsVideosFormGroup() {
 		return new FormGroup<UserMetadataConnectionsVideosFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2497,8 +2499,8 @@ export namespace MyNS {
 	}
 	export function CreateUserMetadataConnectionsWatched_videosFormGroup() {
 		return new FormGroup<UserMetadataConnectionsWatched_videosFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2539,8 +2541,8 @@ export namespace MyNS {
 	}
 	export function CreateUserMetadataConnectionsWatchlaterFormGroup() {
 		return new FormGroup<UserMetadataConnectionsWatchlaterFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2642,9 +2644,9 @@ export namespace MyNS {
 	}
 	export function CreateUserMetadataInteractionsBlockFormGroup() {
 		return new FormGroup<UserMetadataInteractionsBlockFormProperties>({
-			added: new FormControl<boolean | null | undefined>(undefined),
-			added_time: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			added: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			added_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2685,8 +2687,8 @@ export namespace MyNS {
 	}
 	export function CreateUserMetadataInteractionsFollowFormGroup() {
 		return new FormGroup<UserMetadataInteractionsFollowFormProperties>({
-			added: new FormControl<boolean | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			added: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2721,7 +2723,7 @@ export namespace MyNS {
 	}
 	export function CreateUserMetadataInteractionsReportFormGroup() {
 		return new FormGroup<UserMetadataInteractionsReportFormProperties>({
-			uri: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2913,9 +2915,9 @@ export namespace MyNS {
 	}
 	export function CreateUserUpload_quotaLifetimeFormGroup() {
 		return new FormGroup<UserUpload_quotaLifetimeFormProperties>({
-			free: new FormControl<number | null | undefined>(undefined),
-			max: new FormControl<number | null | undefined>(undefined),
-			used: new FormControl<number | null | undefined>(undefined),
+			free: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			max: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			used: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2974,10 +2976,10 @@ export namespace MyNS {
 	}
 	export function CreateUserUpload_quotaPeriodicFormGroup() {
 		return new FormGroup<UserUpload_quotaPeriodicFormProperties>({
-			free: new FormControl<number | null | undefined>(undefined),
-			max: new FormControl<number | null | undefined>(undefined),
-			reset_date: new FormControl<string | null | undefined>(undefined),
-			used: new FormControl<number | null | undefined>(undefined),
+			free: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			max: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			reset_date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			used: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3036,10 +3038,10 @@ export namespace MyNS {
 	}
 	export function CreateUserUpload_quotaSpaceFormGroup() {
 		return new FormGroup<UserUpload_quotaSpaceFormProperties>({
-			free: new FormControl<number | null | undefined>(undefined),
-			max: new FormControl<number | null | undefined>(undefined),
-			showing: new FormControl<UserUpload_quotaSpaceShowing | null | undefined>(undefined),
-			used: new FormControl<number | null | undefined>(undefined),
+			free: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			max: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			showing: new FormControl<UserUpload_quotaSpaceShowing | null | undefined>(undefined, [Validators.required]),
+			used: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3088,9 +3090,9 @@ export namespace MyNS {
 	}
 	export function CreateUserWebsitesFormGroup() {
 		return new FormGroup<UserWebsitesFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined),
-			link: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3398,22 +3400,22 @@ export namespace MyNS {
 	}
 	export function CreateVideoFormGroup() {
 		return new FormGroup<VideoFormProperties>({
-			created_time: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			duration: new FormControl<number | null | undefined>(undefined),
-			height: new FormControl<number | null | undefined>(undefined),
-			language: new FormControl<string | null | undefined>(undefined),
+			created_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			duration: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			height: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			language: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			last_user_action_event_date: new FormControl<string | null | undefined>(undefined),
-			license: new FormControl<VideoLicense | null | undefined>(undefined),
-			link: new FormControl<string | null | undefined>(undefined),
-			modified_time: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			license: new FormControl<VideoLicense | null | undefined>(undefined, [Validators.required]),
+			link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			modified_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			password: new FormControl<string | null | undefined>(undefined),
-			release_time: new FormControl<string | null | undefined>(undefined),
-			resource_key: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<VideoStatus | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
-			width: new FormControl<number | null | undefined>(undefined),
+			release_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			resource_key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			status: new FormControl<VideoStatus | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			width: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3470,9 +3472,9 @@ export namespace MyNS {
 	}
 	export function CreateVideoContextFormGroup() {
 		return new FormGroup<VideoContextFormProperties>({
-			action: new FormControl<VideoContextAction | null | undefined>(undefined),
-			resource: new FormControl<string | null | undefined>(undefined),
-			resource_type: new FormControl<string | null | undefined>(undefined),
+			action: new FormControl<VideoContextAction | null | undefined>(undefined, [Validators.required]),
+			resource: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			resource_type: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3557,11 +3559,11 @@ export namespace MyNS {
 	}
 	export function CreateEmbed_settingsFormGroup() {
 		return new FormGroup<Embed_settingsFormProperties>({
-			color: new FormControl<string | null | undefined>(undefined),
-			playbar: new FormControl<boolean | null | undefined>(undefined),
-			speed: new FormControl<boolean | null | undefined>(undefined),
+			color: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			playbar: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			speed: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			uri: new FormControl<string | null | undefined>(undefined),
-			volume: new FormControl<boolean | null | undefined>(undefined),
+			volume: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3656,13 +3658,13 @@ export namespace MyNS {
 	}
 	export function CreateEmbed_settingsButtonsFormGroup() {
 		return new FormGroup<Embed_settingsButtonsFormProperties>({
-			embed: new FormControl<boolean | null | undefined>(undefined),
-			fullscreen: new FormControl<boolean | null | undefined>(undefined),
-			hd: new FormControl<boolean | null | undefined>(undefined),
-			like: new FormControl<boolean | null | undefined>(undefined),
-			scaling: new FormControl<boolean | null | undefined>(undefined),
-			share: new FormControl<boolean | null | undefined>(undefined),
-			watchlater: new FormControl<boolean | null | undefined>(undefined),
+			embed: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			fullscreen: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			hd: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			like: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			scaling: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			share: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			watchlater: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3691,7 +3693,7 @@ export namespace MyNS {
 	}
 	export function CreateEmbed_settingsLogosFormGroup() {
 		return new FormGroup<Embed_settingsLogosFormProperties>({
-			vimeo: new FormControl<boolean | null | undefined>(undefined),
+			vimeo: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3738,9 +3740,9 @@ export namespace MyNS {
 	}
 	export function CreateEmbed_settingsLogosCustomFormGroup() {
 		return new FormGroup<Embed_settingsLogosCustomFormProperties>({
-			active: new FormControl<boolean | null | undefined>(undefined),
-			link: new FormControl<string | null | undefined>(undefined),
-			sticky: new FormControl<boolean | null | undefined>(undefined),
+			active: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			sticky: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3805,9 +3807,9 @@ export namespace MyNS {
 	}
 	export function CreateEmbed_settingsTitleFormGroup() {
 		return new FormGroup<Embed_settingsTitleFormProperties>({
-			name: new FormControl<Embed_settingsTitleName | null | undefined>(undefined),
-			owner: new FormControl<Embed_settingsTitleName | null | undefined>(undefined),
-			portrait: new FormControl<Embed_settingsTitleName | null | undefined>(undefined),
+			name: new FormControl<Embed_settingsTitleName | null | undefined>(undefined, [Validators.required]),
+			owner: new FormControl<Embed_settingsTitleName | null | undefined>(undefined, [Validators.required]),
+			portrait: new FormControl<Embed_settingsTitleName | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3962,8 +3964,8 @@ export namespace MyNS {
 	}
 	export function CreateVideoMetadataConnectionsCommentsFormGroup() {
 		return new FormGroup<VideoMetadataConnectionsCommentsFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4031,8 +4033,8 @@ export namespace MyNS {
 	}
 	export function CreateVideoMetadataConnectionsLikesFormGroup() {
 		return new FormGroup<VideoMetadataConnectionsLikesFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4073,8 +4075,8 @@ export namespace MyNS {
 	}
 	export function CreateVideoMetadataConnectionsOndemandFormGroup() {
 		return new FormGroup<VideoMetadataConnectionsOndemandFormProperties>({
-			resource_key: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			resource_key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4115,8 +4117,8 @@ export namespace MyNS {
 	}
 	export function CreateVideoMetadataConnectionsPicturesFormGroup() {
 		return new FormGroup<VideoMetadataConnectionsPicturesFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4145,7 +4147,7 @@ export namespace MyNS {
 	}
 	export function CreateVideoMetadataConnectionsPlaybackFormGroup() {
 		return new FormGroup<VideoMetadataConnectionsPlaybackFormProperties>({
-			uri: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4226,8 +4228,8 @@ export namespace MyNS {
 	}
 	export function CreateVideoMetadataConnectionsSeasonFormGroup() {
 		return new FormGroup<VideoMetadataConnectionsSeasonFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4268,8 +4270,8 @@ export namespace MyNS {
 	}
 	export function CreateVideoMetadataConnectionsTexttracksFormGroup() {
 		return new FormGroup<VideoMetadataConnectionsTexttracksFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4310,8 +4312,8 @@ export namespace MyNS {
 	}
 	export function CreateVideoMetadataConnectionsTrailerFormGroup() {
 		return new FormGroup<VideoMetadataConnectionsTrailerFormProperties>({
-			resource_key: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			resource_key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4352,8 +4354,8 @@ export namespace MyNS {
 	}
 	export function CreateVideoMetadataConnectionsUsers_with_accessFormGroup() {
 		return new FormGroup<VideoMetadataConnectionsUsers_with_accessFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4401,8 +4403,8 @@ export namespace MyNS {
 	export function CreateVideoMetadataConnectionsVersionsFormGroup() {
 		return new FormGroup<VideoMetadataConnectionsVersionsFormProperties>({
 			current_uri: new FormControl<string | null | undefined>(undefined),
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4596,15 +4598,15 @@ export namespace MyNS {
 	}
 	export function CreateVideoMetadataInteractionsBuyFormGroup() {
 		return new FormGroup<VideoMetadataInteractionsBuyFormProperties>({
-			currency: new FormControl<string | null | undefined>(undefined),
-			display_price: new FormControl<string | null | undefined>(undefined),
-			download: new FormControl<VideoMetadataInteractionsBuyDownload | null | undefined>(undefined),
-			drm: new FormControl<boolean | null | undefined>(undefined),
-			link: new FormControl<string | null | undefined>(undefined),
-			price: new FormControl<number | null | undefined>(undefined),
-			purchase_time: new FormControl<string | null | undefined>(undefined),
-			stream: new FormControl<VideoMetadataInteractionsBuyDownload | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			currency: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			display_price: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			download: new FormControl<VideoMetadataInteractionsBuyDownload | null | undefined>(undefined, [Validators.required]),
+			drm: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			price: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			purchase_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			stream: new FormControl<VideoMetadataInteractionsBuyDownload | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4635,7 +4637,7 @@ export namespace MyNS {
 	}
 	export function CreateVideoMetadataInteractionsChannelFormGroup() {
 		return new FormGroup<VideoMetadataInteractionsChannelFormProperties>({
-			uri: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4688,9 +4690,9 @@ export namespace MyNS {
 	}
 	export function CreateVideoMetadataInteractionsLikeFormGroup() {
 		return new FormGroup<VideoMetadataInteractionsLikeFormProperties>({
-			added: new FormControl<boolean | null | undefined>(undefined),
-			added_time: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			added: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			added_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4819,15 +4821,15 @@ export namespace MyNS {
 	}
 	export function CreateVideoMetadataInteractionsRentFormGroup() {
 		return new FormGroup<VideoMetadataInteractionsRentFormProperties>({
-			currency: new FormControl<string | null | undefined>(undefined),
-			display_price: new FormControl<string | null | undefined>(undefined),
-			drm: new FormControl<boolean | null | undefined>(undefined),
-			expires_time: new FormControl<string | null | undefined>(undefined),
-			link: new FormControl<string | null | undefined>(undefined),
-			price: new FormControl<number | null | undefined>(undefined),
-			purchase_time: new FormControl<string | null | undefined>(undefined),
-			stream: new FormControl<VideoMetadataInteractionsBuyDownload | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			currency: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			display_price: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			drm: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			expires_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			price: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			purchase_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			stream: new FormControl<VideoMetadataInteractionsBuyDownload | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4862,7 +4864,7 @@ export namespace MyNS {
 	}
 	export function CreateVideoMetadataInteractionsReportFormGroup() {
 		return new FormGroup<VideoMetadataInteractionsReportFormProperties>({
-			uri: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4953,9 +4955,9 @@ export namespace MyNS {
 	}
 	export function CreateVideoMetadataInteractionsWatchedFormGroup() {
 		return new FormGroup<VideoMetadataInteractionsWatchedFormProperties>({
-			added: new FormControl<boolean | null | undefined>(undefined),
-			added_time: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			added: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			added_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5008,9 +5010,9 @@ export namespace MyNS {
 	}
 	export function CreateVideoMetadataInteractionsWatchlaterFormGroup() {
 		return new FormGroup<VideoMetadataInteractionsWatchlaterFormProperties>({
-			added: new FormControl<boolean | null | undefined>(undefined),
-			added_time: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			added: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			added_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5093,11 +5095,11 @@ export namespace MyNS {
 	}
 	export function CreateProjectFormGroup() {
 		return new FormGroup<ProjectFormProperties>({
-			created_time: new FormControl<string | null | undefined>(undefined),
-			modified_time: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			resource_key: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			created_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			modified_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			resource_key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5170,8 +5172,8 @@ export namespace MyNS {
 	}
 	export function CreateProjectMetadataConnectionsVideosFormGroup() {
 		return new FormGroup<ProjectMetadataConnectionsVideosFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5272,11 +5274,11 @@ export namespace MyNS {
 	}
 	export function CreateVideoPrivacyFormGroup() {
 		return new FormGroup<VideoPrivacyFormProperties>({
-			add: new FormControl<boolean | null | undefined>(undefined),
-			comments: new FormControl<UserPreferencesVideosPrivacyComments | null | undefined>(undefined),
-			download: new FormControl<boolean | null | undefined>(undefined),
-			embed: new FormControl<VideoPrivacyEmbed | null | undefined>(undefined),
-			view: new FormControl<UserPreferencesVideosPrivacyView | null | undefined>(undefined),
+			add: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			comments: new FormControl<UserPreferencesVideosPrivacyComments | null | undefined>(undefined, [Validators.required]),
+			download: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			embed: new FormControl<VideoPrivacyEmbed | null | undefined>(undefined, [Validators.required]),
+			view: new FormControl<UserPreferencesVideosPrivacyView | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5351,9 +5353,9 @@ export namespace MyNS {
 	}
 	export function CreateVideoSpatialFormGroup() {
 		return new FormGroup<VideoSpatialFormProperties>({
-			field_of_view: new FormControl<number | null | undefined>(undefined),
-			projection: new FormControl<VideoSpatialProjection | null | undefined>(undefined),
-			stereo_format: new FormControl<VideoSpatialStereo_format | null | undefined>(undefined),
+			field_of_view: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			projection: new FormControl<VideoSpatialProjection | null | undefined>(undefined, [Validators.required]),
+			stereo_format: new FormControl<VideoSpatialStereo_format | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5418,7 +5420,7 @@ export namespace MyNS {
 	}
 	export function CreateVideoStatsFormGroup() {
 		return new FormGroup<VideoStatsFormProperties>({
-			plays: new FormControl<number | null | undefined>(undefined),
+			plays: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5518,7 +5520,7 @@ export namespace MyNS {
 			link: new FormControl<string | null | undefined>(undefined),
 			redirect_url: new FormControl<string | null | undefined>(undefined),
 			size: new FormControl<number | null | undefined>(undefined),
-			status: new FormControl<VideoTranscodeStatus | null | undefined>(undefined),
+			status: new FormControl<VideoTranscodeStatus | null | undefined>(undefined, [Validators.required]),
 			upload_link: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5637,13 +5639,13 @@ export namespace MyNS {
 	}
 	export function CreateGroupFormGroup() {
 		return new FormGroup<GroupFormProperties>({
-			created_time: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			link: new FormControl<string | null | undefined>(undefined),
-			modified_time: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			resource_key: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			created_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			modified_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			resource_key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5728,8 +5730,8 @@ export namespace MyNS {
 	}
 	export function CreateGroupMetadataConnectionsUsersFormGroup() {
 		return new FormGroup<GroupMetadataConnectionsUsersFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5770,8 +5772,8 @@ export namespace MyNS {
 	}
 	export function CreateGroupMetadataConnectionsVideosFormGroup() {
 		return new FormGroup<GroupMetadataConnectionsVideosFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5864,11 +5866,11 @@ export namespace MyNS {
 	}
 	export function CreateGroupMetadataInteractionsJoinFormGroup() {
 		return new FormGroup<GroupMetadataInteractionsJoinFormProperties>({
-			added: new FormControl<boolean | null | undefined>(undefined),
-			added_time: new FormControl<string | null | undefined>(undefined),
-			title: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<GroupMetadataInteractionsJoinType | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			added: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			added_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			title: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<GroupMetadataInteractionsJoinType | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5971,11 +5973,11 @@ export namespace MyNS {
 	}
 	export function CreateGroupPrivacyFormGroup() {
 		return new FormGroup<GroupPrivacyFormProperties>({
-			comment: new FormControl<GroupPrivacyComment | null | undefined>(undefined),
-			invite: new FormControl<GroupPrivacyComment | null | undefined>(undefined),
-			join: new FormControl<GroupPrivacyJoin | null | undefined>(undefined),
-			videos: new FormControl<GroupPrivacyComment | null | undefined>(undefined),
-			view: new FormControl<GroupPrivacyJoin | null | undefined>(undefined),
+			comment: new FormControl<GroupPrivacyComment | null | undefined>(undefined, [Validators.required]),
+			invite: new FormControl<GroupPrivacyComment | null | undefined>(undefined, [Validators.required]),
+			join: new FormControl<GroupPrivacyJoin | null | undefined>(undefined, [Validators.required]),
+			videos: new FormControl<GroupPrivacyComment | null | undefined>(undefined, [Validators.required]),
+			view: new FormControl<GroupPrivacyJoin | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6040,7 +6042,7 @@ export namespace MyNS {
 	}
 	export function CreateActivity_3_1MetadataConnectionsRelatedFormGroup() {
 		return new FormGroup<Activity_3_1MetadataConnectionsRelatedFormProperties>({
-			uri: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6389,31 +6391,31 @@ export namespace MyNS {
 	}
 	export function CreateAlbumFormGroup() {
 		return new FormGroup<AlbumFormProperties>({
-			allow_continuous_play: new FormControl<boolean | null | undefined>(undefined),
-			allow_downloads: new FormControl<boolean | null | undefined>(undefined),
-			allow_share: new FormControl<boolean | null | undefined>(undefined),
-			brand_color: new FormControl<string | null | undefined>(undefined),
-			created_time: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			domain: new FormControl<string | null | undefined>(undefined),
-			duration: new FormControl<number | null | undefined>(undefined),
-			embed_brand_color: new FormControl<boolean | null | undefined>(undefined),
-			embed_custom_logo: new FormControl<boolean | null | undefined>(undefined),
-			hide_nav: new FormControl<boolean | null | undefined>(undefined),
-			hide_vimeo_logo: new FormControl<boolean | null | undefined>(undefined),
-			layout: new FormControl<AlbumLayout | null | undefined>(undefined),
-			link: new FormControl<string | null | undefined>(undefined),
-			modified_time: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			resource_key: new FormControl<string | null | undefined>(undefined),
-			review_mode: new FormControl<boolean | null | undefined>(undefined),
-			sort: new FormControl<AlbumSort | null | undefined>(undefined),
-			theme: new FormControl<AlbumTheme | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
-			url: new FormControl<string | null | undefined>(undefined),
-			use_custom_domain: new FormControl<boolean | null | undefined>(undefined),
-			web_brand_color: new FormControl<boolean | null | undefined>(undefined),
-			web_custom_logo: new FormControl<boolean | null | undefined>(undefined),
+			allow_continuous_play: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			allow_downloads: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			allow_share: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			brand_color: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			created_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			duration: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			embed_brand_color: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			embed_custom_logo: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			hide_nav: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			hide_vimeo_logo: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			layout: new FormControl<AlbumLayout | null | undefined>(undefined, [Validators.required]),
+			link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			modified_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			resource_key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			review_mode: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			sort: new FormControl<AlbumSort | null | undefined>(undefined, [Validators.required]),
+			theme: new FormControl<AlbumTheme | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			use_custom_domain: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			web_brand_color: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			web_custom_logo: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6436,7 +6438,7 @@ export namespace MyNS {
 	}
 	export function CreateAlbumEmbedFormGroup() {
 		return new FormGroup<AlbumEmbedFormProperties>({
-			html: new FormControl<string | null | undefined>(undefined),
+			html: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6517,8 +6519,8 @@ export namespace MyNS {
 	}
 	export function CreateAlbumMetadataConnectionsVideosFormGroup() {
 		return new FormGroup<AlbumMetadataConnectionsVideosFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6575,7 +6577,7 @@ export namespace MyNS {
 	}
 	export function CreateAlbumMetadataInteractionsAdd_custom_thumbnailsFormGroup() {
 		return new FormGroup<AlbumMetadataInteractionsAdd_custom_thumbnailsFormProperties>({
-			uri: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6604,7 +6606,7 @@ export namespace MyNS {
 	}
 	export function CreateAlbumMetadataInteractionsAdd_logosFormGroup() {
 		return new FormGroup<AlbumMetadataInteractionsAdd_logosFormProperties>({
-			uri: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6633,7 +6635,7 @@ export namespace MyNS {
 	}
 	export function CreateAlbumMetadataInteractionsAdd_videosFormGroup() {
 		return new FormGroup<AlbumMetadataInteractionsAdd_videosFormProperties>({
-			uri: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6671,7 +6673,7 @@ export namespace MyNS {
 	export function CreateAlbumPrivacyFormGroup() {
 		return new FormGroup<AlbumPrivacyFormProperties>({
 			password: new FormControl<string | null | undefined>(undefined),
-			view: new FormControl<AlbumPrivacyView | null | undefined>(undefined),
+			view: new FormControl<AlbumPrivacyView | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6712,8 +6714,8 @@ export namespace MyNS {
 	}
 	export function CreateApi_appFormGroup() {
 		return new FormGroup<Api_appFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6785,11 +6787,11 @@ export namespace MyNS {
 	}
 	export function CreateAuthFormGroup() {
 		return new FormGroup<AuthFormProperties>({
-			access_token: new FormControl<string | null | undefined>(undefined),
+			access_token: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			expires_on: new FormControl<string | null | undefined>(undefined),
 			refresh_token: new FormControl<string | null | undefined>(undefined),
-			scope: new FormControl<string | null | undefined>(undefined),
-			token_type: new FormControl<AuthToken_type | null | undefined>(undefined),
+			scope: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			token_type: new FormControl<AuthToken_type | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6826,8 +6828,8 @@ export namespace MyNS {
 	}
 	export function CreateAuth_errorFormGroup() {
 		return new FormGroup<Auth_errorFormProperties>({
-			error: new FormControl<string | null | undefined>(undefined),
-			error_description: new FormControl<string | null | undefined>(undefined),
+			error: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			error_description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6839,6 +6841,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		created_on: string;
+
+		/** Required */
 		metadata: CommentMetadata;
 
 		/**
@@ -6909,16 +6913,18 @@ export namespace MyNS {
 	}
 	export function CreateCommentFormGroup() {
 		return new FormGroup<CommentFormProperties>({
-			created_on: new FormControl<string | null | undefined>(undefined),
-			resource_key: new FormControl<string | null | undefined>(undefined),
-			text: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<CommentType | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			created_on: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			resource_key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			text: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<CommentType | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface CommentMetadata {
+
+		/** Required */
 		connections: CommentMetadataConnections;
 	}
 	export interface CommentMetadataFormProperties {
@@ -6981,8 +6987,8 @@ export namespace MyNS {
 	}
 	export function CreateCommentMetadataConnectionsRepliesFormGroup() {
 		return new FormGroup<CommentMetadataConnectionsRepliesFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7045,9 +7051,9 @@ export namespace MyNS {
 	}
 	export function CreateContent_ratingFormGroup() {
 		return new FormGroup<Content_ratingFormProperties>({
-			code: new FormControl<Content_ratingCode | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			code: new FormControl<Content_ratingCode | null | undefined>(undefined, [Validators.required]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7112,9 +7118,9 @@ export namespace MyNS {
 	}
 	export function CreateCreative_commonsFormGroup() {
 		return new FormGroup<Creative_commonsFormProperties>({
-			code: new FormControl<Creative_commonsCode | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			code: new FormControl<Creative_commonsCode | null | undefined>(undefined, [Validators.required]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7169,9 +7175,9 @@ export namespace MyNS {
 	}
 	export function CreateCreditFormGroup() {
 		return new FormGroup<CreditFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			role: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			role: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7218,9 +7224,9 @@ export namespace MyNS {
 	}
 	export function CreateDomainFormGroup() {
 		return new FormGroup<DomainFormProperties>({
-			allow_hd: new FormControl<boolean | null | undefined>(undefined),
-			domain: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			allow_hd: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7249,7 +7255,7 @@ export namespace MyNS {
 	}
 	export function CreateEndpointFormGroup() {
 		return new FormGroup<EndpointFormProperties>({
-			path: new FormControl<string | null | undefined>(undefined),
+			path: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7308,10 +7314,10 @@ export namespace MyNS {
 	}
 	export function CreateErrorFormGroup() {
 		return new FormGroup<ErrorFormProperties>({
-			developer_message: new FormControl<string | null | undefined>(undefined),
-			error: new FormControl<string | null | undefined>(undefined),
-			error_code: new FormControl<number | null | undefined>(undefined),
-			link: new FormControl<string | null | undefined>(undefined),
+			developer_message: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			error: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			error_code: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7346,8 +7352,8 @@ export namespace MyNS {
 	}
 	export function CreateLanguageFormGroup() {
 		return new FormGroup<LanguageFormProperties>({
-			code: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			code: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7370,7 +7376,7 @@ export namespace MyNS {
 	}
 	export function CreateLegacy_errorFormGroup() {
 		return new FormGroup<Legacy_errorFormProperties>({
-			error: new FormControl<string | null | undefined>(undefined),
+			error: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7382,6 +7388,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		canonical: string;
+
+		/** Required */
 		interactions: On_demand_genreInteractions;
 
 		/**
@@ -7389,6 +7397,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		link: string;
+
+		/** Required */
 		metadata: On_demand_genreMetadata;
 
 		/**
@@ -7431,10 +7441,10 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_genreFormGroup() {
 		return new FormGroup<On_demand_genreFormProperties>({
-			canonical: new FormControl<string | null | undefined>(undefined),
-			link: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			canonical: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7491,8 +7501,8 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_genreInteractionsPageFormGroup() {
 		return new FormGroup<On_demand_genreInteractionsPageFormProperties>({
-			added: new FormControl<boolean | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			added: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7553,7 +7563,7 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_genreMetadataConnectionsPagesFormGroup() {
 		return new FormGroup<On_demand_genreMetadataConnectionsPagesFormProperties>({
-			uri: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7634,7 +7644,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		pictures: Picture;
+
+		/** Required */
 		preorder: On_demand_pagePreorder;
+
+		/** Required */
 		published: On_demand_pagePublished;
 
 		/**
@@ -7768,17 +7782,17 @@ export namespace MyNS {
 	export function CreateOn_demand_pageFormGroup() {
 		return new FormGroup<On_demand_pageFormProperties>({
 			created_time: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			domain_link: new FormControl<string | null | undefined>(undefined),
-			link: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			domain_link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			modified_time: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			rating: new FormControl<number | null | undefined>(undefined),
-			resource_key: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			rating: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			resource_key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			sku: new FormControl<string | null | undefined>(undefined),
-			theme: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<On_demand_pageType | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			theme: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<On_demand_pageType | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7813,14 +7827,18 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_pageColorsFormGroup() {
 		return new FormGroup<On_demand_pageColorsFormProperties>({
-			primary: new FormControl<string | null | undefined>(undefined),
-			secondary: new FormControl<string | null | undefined>(undefined),
+			primary: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			secondary: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface On_demand_pageEpisodes {
+
+		/** Required */
 		buy: On_demand_pageEpisodesBuy;
+
+		/** Required */
 		rent: On_demand_pageEpisodesRent;
 	}
 	export interface On_demand_pageEpisodesFormProperties {
@@ -7861,8 +7879,8 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_pageEpisodesBuyFormGroup() {
 		return new FormGroup<On_demand_pageEpisodesBuyFormProperties>({
-			active: new FormControl<boolean | null | undefined>(undefined),
-			price: new FormControl<number | null | undefined>(undefined),
+			active: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			price: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7939,9 +7957,9 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_pageEpisodesRentFormGroup() {
 		return new FormGroup<On_demand_pageEpisodesRentFormProperties>({
-			active: new FormControl<boolean | null | undefined>(undefined),
-			period: new FormControl<On_demand_pageEpisodesRentPeriod | null | undefined>(undefined),
-			price: new FormControl<number | null | undefined>(undefined),
+			active: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			period: new FormControl<On_demand_pageEpisodesRentPeriod | null | undefined>(undefined, [Validators.required]),
+			price: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7971,6 +7989,8 @@ export namespace MyNS {
 	}
 
 	export interface On_demand_pageMetadataConnections {
+
+		/** Required */
 		metadata: On_demand_pageMetadataConnectionsMetadata;
 	}
 	export interface On_demand_pageMetadataConnectionsFormProperties {
@@ -7982,6 +8002,8 @@ export namespace MyNS {
 	}
 
 	export interface On_demand_pageMetadataConnectionsMetadata {
+
+		/** Required */
 		connections: On_demand_pageMetadataConnectionsMetadataConnections;
 	}
 	export interface On_demand_pageMetadataConnectionsMetadataFormProperties {
@@ -8074,8 +8096,8 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_pageMetadataConnectionsMetadataConnectionsCommentsFormGroup() {
 		return new FormGroup<On_demand_pageMetadataConnectionsMetadataConnectionsCommentsFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8116,8 +8138,8 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_pageMetadataConnectionsMetadataConnectionsGenresFormGroup() {
 		return new FormGroup<On_demand_pageMetadataConnectionsMetadataConnectionsGenresFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8158,8 +8180,8 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_pageMetadataConnectionsMetadataConnectionsLikesFormGroup() {
 		return new FormGroup<On_demand_pageMetadataConnectionsMetadataConnectionsLikesFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8200,8 +8222,8 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_pageMetadataConnectionsMetadataConnectionsPicturesFormGroup() {
 		return new FormGroup<On_demand_pageMetadataConnectionsMetadataConnectionsPicturesFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8242,8 +8264,8 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_pageMetadataConnectionsMetadataConnectionsSeasonsFormGroup() {
 		return new FormGroup<On_demand_pageMetadataConnectionsMetadataConnectionsSeasonsFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8320,11 +8342,11 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_pageMetadataConnectionsMetadataConnectionsVideosFormGroup() {
 		return new FormGroup<On_demand_pageMetadataConnectionsMetadataConnectionsVideosFormProperties>({
-			extra_total: new FormControl<number | null | undefined>(undefined),
-			main_total: new FormControl<number | null | undefined>(undefined),
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
-			viewable_total: new FormControl<number | null | undefined>(undefined),
+			extra_total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			main_total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			viewable_total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8489,10 +8511,10 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_pagePreorderFormGroup() {
 		return new FormGroup<On_demand_pagePreorderFormProperties>({
-			active: new FormControl<boolean | null | undefined>(undefined),
-			cancel_time: new FormControl<string | null | undefined>(undefined),
-			publish_time: new FormControl<string | null | undefined>(undefined),
-			time: new FormControl<string | null | undefined>(undefined),
+			active: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			cancel_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			publish_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8527,8 +8549,8 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_pagePublishedFormGroup() {
 		return new FormGroup<On_demand_pagePublishedFormProperties>({
-			enabled: new FormControl<boolean | null | undefined>(undefined),
-			time: new FormControl<string | null | undefined>(undefined),
+			enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8581,10 +8603,10 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_pageSubscriptionFormGroup() {
 		return new FormGroup<On_demand_pageSubscriptionFormProperties>({
-			active: new FormControl<boolean | null | undefined>(undefined),
-			link: new FormControl<string | null | undefined>(undefined),
+			active: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			period: new FormControl<string | null | undefined>(undefined),
-			price: new FormControl<string | null | undefined>(undefined),
+			price: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8777,16 +8799,16 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_promotionFormGroup() {
 		return new FormGroup<On_demand_promotionFormProperties>({
-			access_type: new FormControl<On_demand_promotionAccess_type | null | undefined>(undefined),
-			discount_type: new FormControl<On_demand_promotionDiscount_type | null | undefined>(undefined),
-			download: new FormControl<boolean | null | undefined>(undefined),
-			label: new FormControl<string | null | undefined>(undefined),
-			percent_off: new FormControl<number | null | undefined>(undefined),
-			product_type: new FormControl<On_demand_promotionProduct_type | null | undefined>(undefined),
-			stream_period: new FormControl<On_demand_promotionStream_period | null | undefined>(undefined),
-			total: new FormControl<number | null | undefined>(undefined),
-			type: new FormControl<On_demand_promotionType | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			access_type: new FormControl<On_demand_promotionAccess_type | null | undefined>(undefined, [Validators.required]),
+			discount_type: new FormControl<On_demand_promotionDiscount_type | null | undefined>(undefined, [Validators.required]),
+			download: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			label: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			percent_off: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			product_type: new FormControl<On_demand_promotionProduct_type | null | undefined>(undefined, [Validators.required]),
+			stream_period: new FormControl<On_demand_promotionStream_period | null | undefined>(undefined, [Validators.required]),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<On_demand_promotionType | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8863,8 +8885,8 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_promotionMetadataConnectionsCodesFormGroup() {
 		return new FormGroup<On_demand_promotionMetadataConnectionsCodesFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8929,10 +8951,10 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_promotion_codeFormGroup() {
 		return new FormGroup<On_demand_promotion_codeFormProperties>({
-			code: new FormControl<string | null | undefined>(undefined),
-			link: new FormControl<string | null | undefined>(undefined),
-			max_uses: new FormControl<number | null | undefined>(undefined),
-			uses: new FormControl<number | null | undefined>(undefined),
+			code: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			max_uses: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uses: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8979,9 +9001,9 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_regionFormGroup() {
 		return new FormGroup<On_demand_regionFormProperties>({
-			country_code: new FormControl<string | null | undefined>(undefined),
-			country_name: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			country_code: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			country_name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8993,6 +9015,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		description: string;
+
+		/** Required */
 		metadata: On_demand_seasonMetadata;
 
 		/**
@@ -9071,17 +9095,19 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_seasonFormGroup() {
 		return new FormGroup<On_demand_seasonFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			position: new FormControl<number | null | undefined>(undefined),
-			resource_key: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			position: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			resource_key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface On_demand_seasonMetadata {
+
+		/** Required */
 		connections: On_demand_seasonMetadataConnections;
 	}
 	export interface On_demand_seasonMetadataFormProperties {
@@ -9144,8 +9170,8 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_seasonMetadataConnectionsVideosFormGroup() {
 		return new FormGroup<On_demand_seasonMetadataConnectionsVideosFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -9296,14 +9322,14 @@ export namespace MyNS {
 			description: new FormControl<string | null | undefined>(undefined),
 			duration: new FormControl<string | null | undefined>(undefined),
 			episode: new FormControl<number | null | undefined>(undefined),
-			link: new FormControl<string | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined),
-			play_progress: new FormControl<number | null | undefined>(undefined),
+			play_progress: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			position: new FormControl<number | null | undefined>(undefined),
 			release_date: new FormControl<string | null | undefined>(undefined),
-			release_year: new FormControl<number | null | undefined>(undefined),
-			type: new FormControl<On_demand_videoType | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			release_year: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<On_demand_videoType | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -9344,8 +9370,8 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_videoBuyFormGroup() {
 		return new FormGroup<On_demand_videoBuyFormProperties>({
-			active: new FormControl<boolean | null | undefined>(undefined),
-			price: new FormControl<string | null | undefined>(undefined),
+			active: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			price: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			purchased: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -9403,14 +9429,18 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_videoInteractionsPageFormGroup() {
 		return new FormGroup<On_demand_videoInteractionsPageFormProperties>({
-			added: new FormControl<boolean | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			added: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface On_demand_videoMetadata {
+
+		/** Required */
 		connections: On_demand_videoMetadataConnections;
+
+		/** Required */
 		interactions: On_demand_videoMetadataInteractions;
 	}
 	export interface On_demand_videoMetadataFormProperties {
@@ -9473,8 +9503,8 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_videoMetadataConnectionsSeasonFormGroup() {
 		return new FormGroup<On_demand_videoMetadataConnectionsSeasonFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -9543,9 +9573,9 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_videoMetadataInteractionsLikesFormGroup() {
 		return new FormGroup<On_demand_videoMetadataInteractionsLikesFormProperties>({
-			added: new FormControl<boolean | null | undefined>(undefined),
-			added_time: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			added: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			added_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -9592,9 +9622,9 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_videoMetadataInteractionsWatchlaterFormGroup() {
 		return new FormGroup<On_demand_videoMetadataInteractionsWatchlaterFormProperties>({
-			added: new FormControl<boolean | null | undefined>(undefined),
-			added_time: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			added: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			added_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -9635,8 +9665,8 @@ export namespace MyNS {
 	}
 	export function CreateOn_demand_videoRentFormGroup() {
 		return new FormGroup<On_demand_videoRentFormProperties>({
-			active: new FormControl<boolean | null | undefined>(undefined),
-			price: new FormControl<string | null | undefined>(undefined),
+			active: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			price: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			purchased: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -9675,7 +9705,7 @@ export namespace MyNS {
 	}
 	export function CreatePlayFormGroup() {
 		return new FormGroup<PlayFormProperties>({
-			status: new FormControl<PlayStatus | null | undefined>(undefined),
+			status: new FormControl<PlayStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -9810,16 +9840,16 @@ export namespace MyNS {
 	}
 	export function CreatePlayProgressiveFormGroup() {
 		return new FormGroup<PlayProgressiveFormProperties>({
-			created_time: new FormControl<string | null | undefined>(undefined),
-			fps: new FormControl<number | null | undefined>(undefined),
-			height: new FormControl<number | null | undefined>(undefined),
-			link: new FormControl<string | null | undefined>(undefined),
-			link_expiration_time: new FormControl<string | null | undefined>(undefined),
+			created_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			fps: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			height: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			link_expiration_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			log: new FormControl<string | null | undefined>(undefined),
-			md5: new FormControl<string | null | undefined>(undefined),
-			size: new FormControl<number | null | undefined>(undefined),
-			type: new FormControl<PlayProgressiveType | null | undefined>(undefined),
-			width: new FormControl<number | null | undefined>(undefined),
+			md5: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			size: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<PlayProgressiveType | null | undefined>(undefined, [Validators.required]),
+			width: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -9934,13 +9964,13 @@ export namespace MyNS {
 	}
 	export function CreatePortfolioFormGroup() {
 		return new FormGroup<PortfolioFormProperties>({
-			created_time: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			link: new FormControl<string | null | undefined>(undefined),
-			modified_time: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			sort: new FormControl<PortfolioSort | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			created_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			modified_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			sort: new FormControl<PortfolioSort | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -10013,8 +10043,8 @@ export namespace MyNS {
 	}
 	export function CreatePortfolioMetadataConnectionsVideosFormGroup() {
 		return new FormGroup<PortfolioMetadataConnectionsVideosFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -10069,8 +10099,8 @@ export namespace MyNS {
 	}
 	export function CreatePresetsFormGroup() {
 		return new FormGroup<PresetsFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -10143,15 +10173,21 @@ export namespace MyNS {
 	}
 	export function CreatePresetsMetadataConnectionsVideosFormGroup() {
 		return new FormGroup<PresetsMetadataConnectionsVideosFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface PresetsSettings {
+
+		/** Required */
 		buttons: PresetsSettingsButtons;
+
+		/** Required */
 		logos: PresetsSettingsLogos;
+
+		/** Required */
 		outro: PresetsSettingsOutro;
 	}
 	export interface PresetsSettingsFormProperties {
@@ -10240,12 +10276,12 @@ export namespace MyNS {
 	}
 	export function CreatePresetsSettingsButtonsFormGroup() {
 		return new FormGroup<PresetsSettingsButtonsFormProperties>({
-			embed: new FormControl<boolean | null | undefined>(undefined),
-			hd: new FormControl<boolean | null | undefined>(undefined),
-			like: new FormControl<boolean | null | undefined>(undefined),
-			share: new FormControl<boolean | null | undefined>(undefined),
-			vote: new FormControl<boolean | null | undefined>(undefined),
-			watchlater: new FormControl<boolean | null | undefined>(undefined),
+			embed: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			hd: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			like: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			share: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			vote: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			watchlater: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -10292,9 +10328,9 @@ export namespace MyNS {
 	}
 	export function CreatePresetsSettingsLogosFormGroup() {
 		return new FormGroup<PresetsSettingsLogosFormProperties>({
-			custom: new FormControl<boolean | null | undefined>(undefined),
-			sticky_custom: new FormControl<boolean | null | undefined>(undefined),
-			vimeo: new FormControl<boolean | null | undefined>(undefined),
+			custom: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			sticky_custom: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			vimeo: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -10340,7 +10376,7 @@ export namespace MyNS {
 		return new FormGroup<PresetsSettingsOutroFormProperties>({
 			clips: new FormControl<string | null | undefined>(undefined),
 			text: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<PresetsSettingsOutroType | null | undefined>(undefined),
+			type: new FormControl<PresetsSettingsOutroType | null | undefined>(undefined, [Validators.required]),
 			videos: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -10494,15 +10530,15 @@ export namespace MyNS {
 	}
 	export function CreateText_trackFormGroup() {
 		return new FormGroup<Text_trackFormProperties>({
-			active: new FormControl<boolean | null | undefined>(undefined),
-			hls_link: new FormControl<string | null | undefined>(undefined),
-			hls_link_expires_time: new FormControl<string | null | undefined>(undefined),
-			language: new FormControl<string | null | undefined>(undefined),
-			link: new FormControl<string | null | undefined>(undefined),
-			link_expires_time: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<Text_trackType | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			active: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			hls_link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			hls_link_expires_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			language: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			link_expires_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<Text_trackType | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -10574,9 +10610,9 @@ export namespace MyNS {
 		return new FormGroup<Upload_attemptFormProperties>({
 			complete_uri: new FormControl<string | null | undefined>(undefined),
 			form: new FormControl<string | null | undefined>(undefined),
-			ticket_id: new FormControl<string | null | undefined>(undefined),
-			upload_link: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			ticket_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			upload_link: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -10713,19 +10749,21 @@ export namespace MyNS {
 	}
 	export function CreateVideo_versionsFormGroup() {
 		return new FormGroup<Video_versionsFormProperties>({
-			active: new FormControl<boolean | null | undefined>(undefined),
-			created_time: new FormControl<string | null | undefined>(undefined),
-			duration: new FormControl<number | null | undefined>(undefined),
-			filename: new FormControl<string | null | undefined>(undefined),
-			filesize: new FormControl<number | null | undefined>(undefined),
-			modified_time: new FormControl<string | null | undefined>(undefined),
-			upload_date: new FormControl<string | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			active: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			created_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			duration: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			filename: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			filesize: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			modified_time: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			upload_date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface Video_versionsMetadata {
+
+		/** Required */
 		connections: Video_versionsMetadataConnections;
 	}
 	export interface Video_versionsMetadataFormProperties {
@@ -10788,8 +10826,8 @@ export namespace MyNS {
 	}
 	export function CreateVideo_versionsMetadataConnectionsVideoFormGroup() {
 		return new FormGroup<Video_versionsMetadataConnectionsVideoFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -10868,7 +10906,7 @@ export namespace MyNS {
 			link: new FormControl<string | null | undefined>(undefined),
 			redirect_url: new FormControl<string | null | undefined>(undefined),
 			size: new FormControl<number | null | undefined>(undefined),
-			status: new FormControl<VideoTranscodeStatus | null | undefined>(undefined),
+			status: new FormControl<VideoTranscodeStatus | null | undefined>(undefined, [Validators.required]),
 			upload_link: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -14300,7 +14338,7 @@ export namespace MyNS {
 	}
 	export function CreateReplace_channel_moderatorsPatchBodyFormGroup() {
 		return new FormGroup<Replace_channel_moderatorsPatchBodyFormProperties>({
-			user_uri: new FormControl<string | null | undefined>(undefined),
+			user_uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -14323,7 +14361,7 @@ export namespace MyNS {
 	}
 	export function CreateAdd_channel_moderatorsPutBodyFormGroup() {
 		return new FormGroup<Add_channel_moderatorsPutBodyFormProperties>({
-			user_uri: new FormControl<string | null | undefined>(undefined),
+			user_uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -14352,7 +14390,7 @@ export namespace MyNS {
 	}
 	export function CreateAdd_videos_to_channelPutBodyFormGroup() {
 		return new FormGroup<Add_videos_to_channelPutBodyFormProperties>({
-			video_uri: new FormControl<string | null | undefined>(undefined),
+			video_uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -14383,7 +14421,7 @@ export namespace MyNS {
 	}
 	export function CreateReplace_videos_in_album_alt1PutBodyFormGroup() {
 		return new FormGroup<Replace_videos_in_album_alt1PutBodyFormProperties>({
-			videos: new FormControl<string | null | undefined>(undefined),
+			videos: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -14538,12 +14576,12 @@ export namespace MyNS {
 	export function CreateCreate_vod_alt1PostBodyFormGroup() {
 		return new FormGroup<Create_vod_alt1PostBodyFormProperties>({
 			accepted_currencies: new FormControl<Create_vod_alt1PostBodyAccepted_currencies | null | undefined>(undefined),
-			content_rating: new FormControl<Content_ratingCode | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			content_rating: new FormControl<Content_ratingCode | null | undefined>(undefined, [Validators.required]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			domain_link: new FormControl<string | null | undefined>(undefined),
 			link: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<On_demand_pageType | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<On_demand_pageType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -14960,7 +14998,7 @@ export namespace MyNS {
 	}
 	export function CreateCreate_project_alt1PostBodyFormGroup() {
 		return new FormGroup<Create_project_alt1PostBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -14983,7 +15021,7 @@ export namespace MyNS {
 	}
 	export function CreateEdit_project_alt1PatchBodyFormGroup() {
 		return new FormGroup<Edit_project_alt1PatchBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -15032,7 +15070,7 @@ export namespace MyNS {
 	}
 	export function CreateReplace_videos_in_albumPutBodyFormGroup() {
 		return new FormGroup<Replace_videos_in_albumPutBodyFormProperties>({
-			videos: new FormControl<string | null | undefined>(undefined),
+			videos: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -15179,12 +15217,12 @@ export namespace MyNS {
 	export function CreateCreate_vodPostBodyFormGroup() {
 		return new FormGroup<Create_vodPostBodyFormProperties>({
 			accepted_currencies: new FormControl<Create_vod_alt1PostBodyAccepted_currencies | null | undefined>(undefined),
-			content_rating: new FormControl<Content_ratingCode | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			content_rating: new FormControl<Content_ratingCode | null | undefined>(undefined, [Validators.required]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			domain_link: new FormControl<string | null | undefined>(undefined),
 			link: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<On_demand_pageType | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<On_demand_pageType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -15595,7 +15633,7 @@ export namespace MyNS {
 	}
 	export function CreateCreate_projectPostBodyFormGroup() {
 		return new FormGroup<Create_projectPostBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -15618,7 +15656,7 @@ export namespace MyNS {
 	}
 	export function CreateEdit_projectPatchBodyFormGroup() {
 		return new FormGroup<Edit_projectPatchBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

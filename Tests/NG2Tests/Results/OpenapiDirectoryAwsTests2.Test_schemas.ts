@@ -724,20 +724,42 @@ export namespace MyNS {
 	export enum CodeGenerationStatus { CREATE_IN_PROGRESS = 0, CREATE_COMPLETE = 1, CREATE_FAILED = 2 }
 
 	export interface CreateDiscovererRequest {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 20
+		 */
 		SourceArn: string;
 
 		/** Key-value pairs associated with a resource. */
 		Tags?: Tags;
 	}
 	export interface CreateDiscovererRequestFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 20
+		 */
 		SourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDiscovererRequestFormGroup() {
 		return new FormGroup<CreateDiscovererRequestFormProperties>({
-			Description: new FormControl<string | null | undefined>(undefined),
-			SourceArn: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			SourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(20)]),
 		});
 
 	}
@@ -745,17 +767,27 @@ export namespace MyNS {
 	export enum DiscovererState { STARTED = 0, STOPPED = 1 }
 
 	export interface CreateRegistryRequest {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description?: string | null;
 
 		/** Key-value pairs associated with a resource. */
 		Tags?: Tags;
 	}
 	export interface CreateRegistryRequestFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateRegistryRequestFormGroup() {
 		return new FormGroup<CreateRegistryRequestFormProperties>({
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -763,23 +795,49 @@ export namespace MyNS {
 	export enum Type { OpenApi3 = 0 }
 
 	export interface CreateSchemaRequest {
+
+		/**
+		 * Required
+		 * Max length: 100000
+		 * Min length: 1
+		 */
 		Content: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description?: string | null;
 
 		/** Key-value pairs associated with a resource. */
 		Tags?: Tags;
+
+		/** Required */
 		Type: Type;
 	}
 	export interface CreateSchemaRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100000
+		 * Min length: 1
+		 */
 		Content: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/** Required */
 		Type: FormControl<Type | null | undefined>,
 	}
 	export function CreateCreateSchemaRequestFormGroup() {
 		return new FormGroup<CreateSchemaRequestFormProperties>({
-			Content: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			Type: new FormControl<Type | null | undefined>(undefined),
+			Content: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100000), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			Type: new FormControl<Type | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -885,15 +943,25 @@ export namespace MyNS {
 	}
 
 	export interface GetDiscoveredSchemaRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		Events: Array<string>;
+
+		/** Required */
 		Type: Type;
 	}
 	export interface GetDiscoveredSchemaRequestFormProperties {
+
+		/** Required */
 		Type: FormControl<Type | null | undefined>,
 	}
 	export function CreateGetDiscoveredSchemaRequestFormGroup() {
 		return new FormGroup<GetDiscoveredSchemaRequestFormProperties>({
-			Type: new FormControl<Type | null | undefined>(undefined),
+			Type: new FormControl<Type | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -971,18 +1039,22 @@ export namespace MyNS {
 
 	/** The name of the policy. */
 	export interface PutResourcePolicyRequest {
+
+		/** Required */
 		Policy: string;
 		RevisionId?: string | null;
 	}
 
 	/** The name of the policy. */
 	export interface PutResourcePolicyRequestFormProperties {
+
+		/** Required */
 		Policy: FormControl<string | null | undefined>,
 		RevisionId: FormControl<string | null | undefined>,
 	}
 	export function CreatePutResourcePolicyRequestFormGroup() {
 		return new FormGroup<PutResourcePolicyRequestFormProperties>({
-			Policy: new FormControl<string | null | undefined>(undefined),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RevisionId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1045,14 +1117,24 @@ export namespace MyNS {
 	}
 
 	export interface UpdateDiscovererRequest {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description?: string | null;
 	}
 	export interface UpdateDiscovererRequestFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateDiscovererRequestFormGroup() {
 		return new FormGroup<UpdateDiscovererRequestFormProperties>({
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -1060,37 +1142,77 @@ export namespace MyNS {
 
 	/** Updates the registry. */
 	export interface UpdateRegistryRequest {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description?: string | null;
 	}
 
 	/** Updates the registry. */
 	export interface UpdateRegistryRequestFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateRegistryRequestFormGroup() {
 		return new FormGroup<UpdateRegistryRequestFormProperties>({
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface UpdateSchemaRequest {
+
+		/**
+		 * Max length: 36
+		 * Min length: 0
+		 */
 		ClientTokenId?: string | null;
+
+		/**
+		 * Max length: 100000
+		 * Min length: 1
+		 */
 		Content?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description?: string | null;
 		Type?: Type | null;
 	}
 	export interface UpdateSchemaRequestFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 0
+		 */
 		ClientTokenId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100000
+		 * Min length: 1
+		 */
 		Content: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
 		Type: FormControl<Type | null | undefined>,
 	}
 	export function CreateUpdateSchemaRequestFormGroup() {
 		return new FormGroup<UpdateSchemaRequestFormProperties>({
-			ClientTokenId: new FormControl<string | null | undefined>(undefined),
-			Content: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			ClientTokenId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(0)]),
+			Content: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100000), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			Type: new FormControl<Type | null | undefined>(undefined),
 		});
 
@@ -1479,8 +1601,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateDiscovererPostBodyFormGroup() {
 		return new FormGroup<CreateDiscovererPostBodyFormProperties>({
-			Description: new FormControl<string | null | undefined>(undefined),
-			SourceArn: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			SourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(20)]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -1512,7 +1634,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateRegistryPostBodyFormGroup() {
 		return new FormGroup<CreateRegistryPostBodyFormProperties>({
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -1538,7 +1660,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateRegistryPutBodyFormGroup() {
 		return new FormGroup<UpdateRegistryPutBodyFormProperties>({
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -1597,10 +1719,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateSchemaPostBodyFormGroup() {
 		return new FormGroup<CreateSchemaPostBodyFormProperties>({
-			Content: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Content: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100000), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
-			Type: new FormControl<Type | null | undefined>(undefined),
+			Type: new FormControl<Type | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1659,9 +1781,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateSchemaPutBodyFormGroup() {
 		return new FormGroup<UpdateSchemaPutBodyFormProperties>({
-			ClientTokenId: new FormControl<string | null | undefined>(undefined),
-			Content: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			ClientTokenId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(0)]),
+			Content: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100000), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			Type: new FormControl<Type | null | undefined>(undefined),
 		});
 
@@ -1687,7 +1809,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateDiscovererPutBodyFormGroup() {
 		return new FormGroup<UpdateDiscovererPutBodyFormProperties>({
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -1716,7 +1838,7 @@ export namespace MyNS {
 	}
 	export function CreatePutResourcePolicyPutBodyFormGroup() {
 		return new FormGroup<PutResourcePolicyPutBodyFormProperties>({
-			Policy: new FormControl<string | null | undefined>(undefined),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RevisionId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1748,7 +1870,7 @@ export namespace MyNS {
 	}
 	export function CreateGetDiscoveredSchemaPostBodyFormGroup() {
 		return new FormGroup<GetDiscoveredSchemaPostBodyFormProperties>({
-			Type: new FormControl<Type | null | undefined>(undefined),
+			Type: new FormControl<Type | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1771,7 +1893,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

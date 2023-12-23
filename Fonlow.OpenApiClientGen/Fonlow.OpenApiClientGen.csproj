@@ -11,7 +11,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <NeutralLanguage>en</NeutralLanguage>
     <Copyright>Copyright © Zijian Huang 2021-2023</Copyright>
-    <Version>2.6.1</Version>
+    <Version>2.7</Version>
     <PackageTags>Swagger, Open API Specification, C#, .NET Core, Web API, TypeScript, Angular, YAML</PackageTags>
     <PackageReleaseNotes>* Angular FormGroup; * optional null type.</PackageReleaseNotes>
   </PropertyGroup>

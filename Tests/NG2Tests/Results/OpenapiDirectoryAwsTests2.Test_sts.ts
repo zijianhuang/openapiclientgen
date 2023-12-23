@@ -12,16 +12,20 @@ export namespace MyNS {
 
 		/** The identifiers for the temporary security credentials that the operation returns. */
 		AssumedRoleUser?: AssumedRoleUser;
+
+		/** Minimum: 0 */
 		PackedPolicySize?: number | null;
 	}
 
 	/** Contains the response to a successful <a>AssumeRole</a> request, including temporary AWS credentials that can be used to make AWS requests.  */
 	export interface AssumeRoleResponseFormProperties {
+
+		/** Minimum: 0 */
 		PackedPolicySize: FormControl<number | null | undefined>,
 	}
 	export function CreateAssumeRoleResponseFormGroup() {
 		return new FormGroup<AssumeRoleResponseFormProperties>({
-			PackedPolicySize: new FormControl<number | null | undefined>(undefined),
+			PackedPolicySize: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -29,25 +33,51 @@ export namespace MyNS {
 
 	/** AWS credentials for API authentication. */
 	export interface Credentials {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]*
+		 */
 		AccessKeyId: string;
+
+		/** Required */
 		SecretAccessKey: string;
+
+		/** Required */
 		SessionToken: string;
+
+		/** Required */
 		Expiration: Date;
 	}
 
 	/** AWS credentials for API authentication. */
 	export interface CredentialsFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]*
+		 */
 		AccessKeyId: FormControl<string | null | undefined>,
+
+		/** Required */
 		SecretAccessKey: FormControl<string | null | undefined>,
+
+		/** Required */
 		SessionToken: FormControl<string | null | undefined>,
+
+		/** Required */
 		Expiration: FormControl<Date | null | undefined>,
 	}
 	export function CreateCredentialsFormGroup() {
 		return new FormGroup<CredentialsFormProperties>({
-			AccessKeyId: new FormControl<string | null | undefined>(undefined),
-			SecretAccessKey: new FormControl<string | null | undefined>(undefined),
-			SessionToken: new FormControl<string | null | undefined>(undefined),
-			Expiration: new FormControl<Date | null | undefined>(undefined),
+			AccessKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(16)]),
+			SecretAccessKey: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SessionToken: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Expiration: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -55,19 +85,47 @@ export namespace MyNS {
 
 	/** The identifiers for the temporary security credentials that the operation returns. */
 	export interface AssumedRoleUser {
+
+		/**
+		 * Required
+		 * Max length: 193
+		 * Min length: 2
+		 * Pattern: [\w+=,.@:-]*
+		 */
 		AssumedRoleId: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
+		 */
 		Arn: string;
 	}
 
 	/** The identifiers for the temporary security credentials that the operation returns. */
 	export interface AssumedRoleUserFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 193
+		 * Min length: 2
+		 * Pattern: [\w+=,.@:-]*
+		 */
 		AssumedRoleId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
+		 */
 		Arn: FormControl<string | null | undefined>,
 	}
 	export function CreateAssumedRoleUserFormGroup() {
 		return new FormGroup<AssumedRoleUserFormProperties>({
-			AssumedRoleId: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
+			AssumedRoleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(193), Validators.minLength(2)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -75,16 +133,28 @@ export namespace MyNS {
 
 	/** A reference to the IAM managed policy that is passed as a session policy for a role session or a federated user session. */
 	export interface PolicyDescriptorType {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
+		 */
 		arn?: string | null;
 	}
 
 	/** A reference to the IAM managed policy that is passed as a session policy for a role session or a federated user session. */
 	export interface PolicyDescriptorTypeFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreatePolicyDescriptorTypeFormGroup() {
 		return new FormGroup<PolicyDescriptorTypeFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -92,19 +162,47 @@ export namespace MyNS {
 
 	/** You can pass custom key-value pair attributes when you assume a role or federate a user. These are called session tags. You can then use the session tags to control access to resources. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging AWS STS Sessions</a> in the <i>IAM User Guide</i>. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{L}\p{Z}\p{N}_.:/=+\-@]+
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: [\p{L}\p{Z}\p{N}_.:/=+\-@]*
+		 */
 		Value: string;
 	}
 
 	/** You can pass custom key-value pair attributes when you assume a role or federate a user. These are called session tags. You can then use the session tags to control access to resources. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging AWS STS Sessions</a> in the <i>IAM User Guide</i>. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{L}\p{Z}\p{N}_.:/=+\-@]+
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: [\p{L}\p{Z}\p{N}_.:/=+\-@]*
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -148,6 +246,8 @@ export namespace MyNS {
 
 		/** The identifiers for the temporary security credentials that the operation returns. */
 		AssumedRoleUser?: AssumedRoleUser;
+
+		/** Minimum: 0 */
 		PackedPolicySize?: number | null;
 		Subject?: string | null;
 		SubjectType?: string | null;
@@ -158,6 +258,8 @@ export namespace MyNS {
 
 	/** Contains the response to a successful <a>AssumeRoleWithSAML</a> request, including temporary AWS credentials that can be used to make AWS requests.  */
 	export interface AssumeRoleWithSAMLResponseFormProperties {
+
+		/** Minimum: 0 */
 		PackedPolicySize: FormControl<number | null | undefined>,
 		Subject: FormControl<string | null | undefined>,
 		SubjectType: FormControl<string | null | undefined>,
@@ -167,7 +269,7 @@ export namespace MyNS {
 	}
 	export function CreateAssumeRoleWithSAMLResponseFormGroup() {
 		return new FormGroup<AssumeRoleWithSAMLResponseFormProperties>({
-			PackedPolicySize: new FormControl<number | null | undefined>(undefined),
+			PackedPolicySize: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			Subject: new FormControl<string | null | undefined>(undefined),
 			SubjectType: new FormControl<string | null | undefined>(undefined),
 			Issuer: new FormControl<string | null | undefined>(undefined),
@@ -213,10 +315,17 @@ export namespace MyNS {
 
 		/** AWS credentials for API authentication. */
 		Credentials?: Credentials;
+
+		/**
+		 * Max length: 255
+		 * Min length: 6
+		 */
 		SubjectFromWebIdentityToken?: string | null;
 
 		/** The identifiers for the temporary security credentials that the operation returns. */
 		AssumedRoleUser?: AssumedRoleUser;
+
+		/** Minimum: 0 */
 		PackedPolicySize?: number | null;
 		Provider?: string | null;
 		Audience?: string | null;
@@ -224,15 +333,22 @@ export namespace MyNS {
 
 	/** Contains the response to a successful <a>AssumeRoleWithWebIdentity</a> request, including temporary AWS credentials that can be used to make AWS requests.  */
 	export interface AssumeRoleWithWebIdentityResponseFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 6
+		 */
 		SubjectFromWebIdentityToken: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		PackedPolicySize: FormControl<number | null | undefined>,
 		Provider: FormControl<string | null | undefined>,
 		Audience: FormControl<string | null | undefined>,
 	}
 	export function CreateAssumeRoleWithWebIdentityResponseFormGroup() {
 		return new FormGroup<AssumeRoleWithWebIdentityResponseFormProperties>({
-			SubjectFromWebIdentityToken: new FormControl<string | null | undefined>(undefined),
-			PackedPolicySize: new FormControl<number | null | undefined>(undefined),
+			SubjectFromWebIdentityToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(6)]),
+			PackedPolicySize: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			Provider: new FormControl<string | null | undefined>(undefined),
 			Audience: new FormControl<string | null | undefined>(undefined),
 		});
@@ -294,6 +410,12 @@ export namespace MyNS {
 	export interface GetCallerIdentityResponse {
 		UserId?: string | null;
 		Account?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
+		 */
 		Arn?: string | null;
 	}
 
@@ -301,13 +423,19 @@ export namespace MyNS {
 	export interface GetCallerIdentityResponseFormProperties {
 		UserId: FormControl<string | null | undefined>,
 		Account: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
+		 */
 		Arn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetCallerIdentityResponseFormGroup() {
 		return new FormGroup<GetCallerIdentityResponseFormProperties>({
 			UserId: new FormControl<string | null | undefined>(undefined),
 			Account: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -321,16 +449,20 @@ export namespace MyNS {
 
 		/** Identifiers for the federated user that is associated with the credentials. */
 		FederatedUser?: FederatedUser;
+
+		/** Minimum: 0 */
 		PackedPolicySize?: number | null;
 	}
 
 	/** Contains the response to a successful <a>GetFederationToken</a> request, including temporary AWS credentials that can be used to make AWS requests.  */
 	export interface GetFederationTokenResponseFormProperties {
+
+		/** Minimum: 0 */
 		PackedPolicySize: FormControl<number | null | undefined>,
 	}
 	export function CreateGetFederationTokenResponseFormGroup() {
 		return new FormGroup<GetFederationTokenResponseFormProperties>({
-			PackedPolicySize: new FormControl<number | null | undefined>(undefined),
+			PackedPolicySize: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -338,19 +470,47 @@ export namespace MyNS {
 
 	/** Identifiers for the federated user that is associated with the credentials. */
 	export interface FederatedUser {
+
+		/**
+		 * Required
+		 * Max length: 193
+		 * Min length: 2
+		 * Pattern: [\w+=,.@\:-]*
+		 */
 		FederatedUserId: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
+		 */
 		Arn: string;
 	}
 
 	/** Identifiers for the federated user that is associated with the credentials. */
 	export interface FederatedUserFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 193
+		 * Min length: 2
+		 * Pattern: [\w+=,.@\:-]*
+		 */
 		FederatedUserId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
+		 */
 		Arn: FormControl<string | null | undefined>,
 	}
 	export function CreateFederatedUserFormGroup() {
 		return new FormGroup<FederatedUserFormProperties>({
-			FederatedUserId: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
+			FederatedUserId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(193), Validators.minLength(2)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -373,116 +533,366 @@ export namespace MyNS {
 	}
 
 	export interface AssumeRoleRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
+		 */
 		RoleArn: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 2
+		 * Pattern: [\w+=,.@-]*
+		 */
 		RoleSessionName: string;
 		PolicyArns?: Array<PolicyDescriptorType>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		Policy?: string | null;
+
+		/**
+		 * Minimum: 900
+		 * Maximum: 43200
+		 */
 		DurationSeconds?: number | null;
+
+		/** Maximum items: 50 */
 		Tags?: Array<Tag>;
+
+		/** Maximum items: 50 */
 		TransitiveTagKeys?: Array<string>;
+
+		/**
+		 * Max length: 1224
+		 * Min length: 2
+		 * Pattern: [\w+=,.@:\/-]*
+		 */
 		ExternalId?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 9
+		 * Pattern: [\w+=/:,.@-]*
+		 */
 		SerialNumber?: string | null;
+
+		/**
+		 * Max length: 6
+		 * Min length: 6
+		 * Pattern: [\d]*
+		 */
 		TokenCode?: string | null;
 	}
 	export interface AssumeRoleRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
+		 */
 		RoleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 2
+		 * Pattern: [\w+=,.@-]*
+		 */
 		RoleSessionName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		Policy: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 900
+		 * Maximum: 43200
+		 */
 		DurationSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1224
+		 * Min length: 2
+		 * Pattern: [\w+=,.@:\/-]*
+		 */
 		ExternalId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 9
+		 * Pattern: [\w+=/:,.@-]*
+		 */
 		SerialNumber: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 6
+		 * Min length: 6
+		 * Pattern: [\d]*
+		 */
 		TokenCode: FormControl<string | null | undefined>,
 	}
 	export function CreateAssumeRoleRequestFormGroup() {
 		return new FormGroup<AssumeRoleRequestFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined),
-			RoleSessionName: new FormControl<string | null | undefined>(undefined),
-			Policy: new FormControl<string | null | undefined>(undefined),
-			DurationSeconds: new FormControl<number | null | undefined>(undefined),
-			ExternalId: new FormControl<string | null | undefined>(undefined),
-			SerialNumber: new FormControl<string | null | undefined>(undefined),
-			TokenCode: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			RoleSessionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(2)]),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			DurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(900), Validators.max(43200)]),
+			ExternalId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(2)]),
+			SerialNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(9)]),
+			TokenCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6), Validators.minLength(6)]),
 		});
 
 	}
 
 	export interface AssumeRoleWithSAMLRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
+		 */
 		RoleArn: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
+		 */
 		PrincipalArn: string;
+
+		/**
+		 * Required
+		 * Max length: 100000
+		 * Min length: 4
+		 */
 		SAMLAssertion: string;
 		PolicyArns?: Array<PolicyDescriptorType>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		Policy?: string | null;
+
+		/**
+		 * Minimum: 900
+		 * Maximum: 43200
+		 */
 		DurationSeconds?: number | null;
 	}
 	export interface AssumeRoleWithSAMLRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
+		 */
 		RoleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
+		 */
 		PrincipalArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100000
+		 * Min length: 4
+		 */
 		SAMLAssertion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		Policy: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 900
+		 * Maximum: 43200
+		 */
 		DurationSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateAssumeRoleWithSAMLRequestFormGroup() {
 		return new FormGroup<AssumeRoleWithSAMLRequestFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined),
-			PrincipalArn: new FormControl<string | null | undefined>(undefined),
-			SAMLAssertion: new FormControl<string | null | undefined>(undefined),
-			Policy: new FormControl<string | null | undefined>(undefined),
-			DurationSeconds: new FormControl<number | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			PrincipalArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			SAMLAssertion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100000), Validators.minLength(4)]),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			DurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(900), Validators.max(43200)]),
 		});
 
 	}
 
 	export interface AssumeRoleWithWebIdentityRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
+		 */
 		RoleArn: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 2
+		 * Pattern: [\w+=,.@-]*
+		 */
 		RoleSessionName: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 4
+		 */
 		WebIdentityToken: string;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 4
+		 */
 		ProviderId?: string | null;
 		PolicyArns?: Array<PolicyDescriptorType>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		Policy?: string | null;
+
+		/**
+		 * Minimum: 900
+		 * Maximum: 43200
+		 */
 		DurationSeconds?: number | null;
 	}
 	export interface AssumeRoleWithWebIdentityRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
+		 */
 		RoleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 2
+		 * Pattern: [\w+=,.@-]*
+		 */
 		RoleSessionName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 4
+		 */
 		WebIdentityToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 4
+		 */
 		ProviderId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		Policy: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 900
+		 * Maximum: 43200
+		 */
 		DurationSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateAssumeRoleWithWebIdentityRequestFormGroup() {
 		return new FormGroup<AssumeRoleWithWebIdentityRequestFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined),
-			RoleSessionName: new FormControl<string | null | undefined>(undefined),
-			WebIdentityToken: new FormControl<string | null | undefined>(undefined),
-			ProviderId: new FormControl<string | null | undefined>(undefined),
-			Policy: new FormControl<string | null | undefined>(undefined),
-			DurationSeconds: new FormControl<number | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			RoleSessionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(2)]),
+			WebIdentityToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(4)]),
+			ProviderId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(4)]),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			DurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(900), Validators.max(43200)]),
 		});
 
 	}
 
 	export interface DecodeAuthorizationMessageRequest {
+
+		/**
+		 * Required
+		 * Max length: 10240
+		 * Min length: 1
+		 */
 		EncodedMessage: string;
 	}
 	export interface DecodeAuthorizationMessageRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 10240
+		 * Min length: 1
+		 */
 		EncodedMessage: FormControl<string | null | undefined>,
 	}
 	export function CreateDecodeAuthorizationMessageRequestFormGroup() {
 		return new FormGroup<DecodeAuthorizationMessageRequestFormProperties>({
-			EncodedMessage: new FormControl<string | null | undefined>(undefined),
+			EncodedMessage: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10240), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetAccessKeyInfoRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]*
+		 */
 		AccessKeyId: string;
 	}
 	export interface GetAccessKeyInfoRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 16
+		 * Pattern: [\w]*
+		 */
 		AccessKeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetAccessKeyInfoRequestFormGroup() {
 		return new FormGroup<GetAccessKeyInfoRequestFormProperties>({
-			AccessKeyId: new FormControl<string | null | undefined>(undefined),
+			AccessKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(16)]),
 		});
 
 	}
@@ -498,41 +908,113 @@ export namespace MyNS {
 	}
 
 	export interface GetFederationTokenRequest {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 2
+		 * Pattern: [\w+=,.@-]*
+		 */
 		Name: string;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		Policy?: string | null;
 		PolicyArns?: Array<PolicyDescriptorType>;
+
+		/**
+		 * Minimum: 900
+		 * Maximum: 129600
+		 */
 		DurationSeconds?: number | null;
+
+		/** Maximum items: 50 */
 		Tags?: Array<Tag>;
 	}
 	export interface GetFederationTokenRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 2
+		 * Pattern: [\w+=,.@-]*
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		Policy: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 900
+		 * Maximum: 129600
+		 */
 		DurationSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateGetFederationTokenRequestFormGroup() {
 		return new FormGroup<GetFederationTokenRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Policy: new FormControl<string | null | undefined>(undefined),
-			DurationSeconds: new FormControl<number | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(2)]),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			DurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(900), Validators.max(129600)]),
 		});
 
 	}
 
 	export interface GetSessionTokenRequest {
+
+		/**
+		 * Minimum: 900
+		 * Maximum: 129600
+		 */
 		DurationSeconds?: number | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 9
+		 * Pattern: [\w+=/:,.@-]*
+		 */
 		SerialNumber?: string | null;
+
+		/**
+		 * Max length: 6
+		 * Min length: 6
+		 * Pattern: [\d]*
+		 */
 		TokenCode?: string | null;
 	}
 	export interface GetSessionTokenRequestFormProperties {
+
+		/**
+		 * Minimum: 900
+		 * Maximum: 129600
+		 */
 		DurationSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 9
+		 * Pattern: [\w+=/:,.@-]*
+		 */
 		SerialNumber: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 6
+		 * Min length: 6
+		 * Pattern: [\d]*
+		 */
 		TokenCode: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSessionTokenRequestFormGroup() {
 		return new FormGroup<GetSessionTokenRequestFormProperties>({
-			DurationSeconds: new FormControl<number | null | undefined>(undefined),
-			SerialNumber: new FormControl<string | null | undefined>(undefined),
-			TokenCode: new FormControl<string | null | undefined>(undefined),
+			DurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(900), Validators.max(129600)]),
+			SerialNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(9)]),
+			TokenCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6), Validators.minLength(6)]),
 		});
 
 	}

@@ -25,6 +25,11 @@ export namespace MyNS {
 
 		/** The details of the Auto Scaling group for the capacity provider. */
 		autoScalingGroupProvider?: AutoScalingGroupProvider;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<Tag>;
 	}
 
@@ -48,6 +53,8 @@ export namespace MyNS {
 
 	/** The details of the Auto Scaling group for the capacity provider. */
 	export interface AutoScalingGroupProvider {
+
+		/** Required */
 		autoScalingGroupArn: string;
 
 		/** <p>The managed scaling settings for the Auto Scaling group capacity provider.</p> <p>When managed scaling is enabled, Amazon ECS manages the scale-in and scale-out actions of the Auto Scaling group. Amazon ECS manages a target tracking scaling policy using an Amazon ECS-managed CloudWatch metric with the specified <code>targetCapacity</code> value as the target value for the metric. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling">Using Managed Scaling</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <p>If managed scaling is disabled, the user must manage the scaling of the Auto Scaling group.</p> */
@@ -57,12 +64,14 @@ export namespace MyNS {
 
 	/** The details of the Auto Scaling group for the capacity provider. */
 	export interface AutoScalingGroupProviderFormProperties {
+
+		/** Required */
 		autoScalingGroupArn: FormControl<string | null | undefined>,
 		managedTerminationProtection: FormControl<ManagedScalingStatus | null | undefined>,
 	}
 	export function CreateAutoScalingGroupProviderFormGroup() {
 		return new FormGroup<AutoScalingGroupProviderFormProperties>({
-			autoScalingGroupArn: new FormControl<string | null | undefined>(undefined),
+			autoScalingGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			managedTerminationProtection: new FormControl<ManagedScalingStatus | null | undefined>(undefined),
 		});
 
@@ -72,24 +81,54 @@ export namespace MyNS {
 	/** <p>The managed scaling settings for the Auto Scaling group capacity provider.</p> <p>When managed scaling is enabled, Amazon ECS manages the scale-in and scale-out actions of the Auto Scaling group. Amazon ECS manages a target tracking scaling policy using an Amazon ECS-managed CloudWatch metric with the specified <code>targetCapacity</code> value as the target value for the metric. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling">Using Managed Scaling</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <p>If managed scaling is disabled, the user must manage the scaling of the Auto Scaling group.</p> */
 	export interface ManagedScaling {
 		status?: ManagedScalingStatus | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		targetCapacity?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
 		minimumScalingStepSize?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
 		maximumScalingStepSize?: number | null;
 	}
 
 	/** <p>The managed scaling settings for the Auto Scaling group capacity provider.</p> <p>When managed scaling is enabled, Amazon ECS manages the scale-in and scale-out actions of the Auto Scaling group. Amazon ECS manages a target tracking scaling policy using an Amazon ECS-managed CloudWatch metric with the specified <code>targetCapacity</code> value as the target value for the metric. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling">Using Managed Scaling</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <p>If managed scaling is disabled, the user must manage the scaling of the Auto Scaling group.</p> */
 	export interface ManagedScalingFormProperties {
 		status: FormControl<ManagedScalingStatus | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		targetCapacity: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
 		minimumScalingStepSize: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
 		maximumScalingStepSize: FormControl<number | null | undefined>,
 	}
 	export function CreateManagedScalingFormGroup() {
 		return new FormGroup<ManagedScalingFormProperties>({
 			status: new FormControl<ManagedScalingStatus | null | undefined>(undefined),
-			targetCapacity: new FormControl<number | null | undefined>(undefined),
-			minimumScalingStepSize: new FormControl<number | null | undefined>(undefined),
-			maximumScalingStepSize: new FormControl<number | null | undefined>(undefined),
+			targetCapacity: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
+			minimumScalingStepSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
+			maximumScalingStepSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
 		});
 
 	}
@@ -99,24 +138,50 @@ export namespace MyNS {
 
 	/** <p>The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li> </ul> */
 	export interface Tag {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		key?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		value?: string | null;
 	}
 
 	/** <p>The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li> </ul> */
 	export interface TagFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface CreateCapacityProviderRequest {
+
+		/** Required */
 		name: string;
 
 		/**
@@ -124,14 +189,21 @@ export namespace MyNS {
 		 * Required
 		 */
 		autoScalingGroupProvider: AutoScalingGroupProvider;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<Tag>;
 	}
 	export interface CreateCapacityProviderRequestFormProperties {
+
+		/** Required */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateCapacityProviderRequestFormGroup() {
 		return new FormGroup<CreateCapacityProviderRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -200,6 +272,11 @@ export namespace MyNS {
 		pendingTasksCount?: number | null;
 		activeServicesCount?: number | null;
 		statistics?: Array<KeyValuePair>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<Tag>;
 		settings?: Array<ClusterSetting>;
 		capacityProviders?: Array<string>;
@@ -278,22 +355,46 @@ export namespace MyNS {
 
 	/** The details of a capacity provider strategy. */
 	export interface CapacityProviderStrategyItem {
+
+		/** Required */
 		capacityProvider: string;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		weight?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100000
+		 */
 		base?: number | null;
 	}
 
 	/** The details of a capacity provider strategy. */
 	export interface CapacityProviderStrategyItemFormProperties {
+
+		/** Required */
 		capacityProvider: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		weight: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100000
+		 */
 		base: FormControl<number | null | undefined>,
 	}
 	export function CreateCapacityProviderStrategyItemFormGroup() {
 		return new FormGroup<CapacityProviderStrategyItemFormProperties>({
-			capacityProvider: new FormControl<string | null | undefined>(undefined),
-			weight: new FormControl<number | null | undefined>(undefined),
-			base: new FormControl<number | null | undefined>(undefined),
+			capacityProvider: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			weight: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
+			base: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100000)]),
 		});
 
 	}
@@ -324,6 +425,11 @@ export namespace MyNS {
 
 	export interface CreateClusterRequest {
 		clusterName?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<Tag>;
 		settings?: Array<ClusterSetting>;
 		capacityProviders?: Array<string>;
@@ -386,6 +492,11 @@ export namespace MyNS {
 
 		/** The deployment controller to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
 		deploymentController?: DeploymentController;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<Tag>;
 		createdBy?: string | null;
 		enableECSManagedTags?: boolean | null;
@@ -538,6 +649,11 @@ export namespace MyNS {
 		scale?: Scale;
 		stabilityStatus?: TaskSetStabilityStatus | null;
 		stabilityStatusAt?: Date | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<Tag>;
 	}
 
@@ -604,6 +720,8 @@ export namespace MyNS {
 
 	/** An object representing the networking details for a task or service. */
 	export interface AwsVpcConfiguration {
+
+		/** Required */
 		subnets: Array<string>;
 		securityGroups?: Array<string>;
 		assignPublicIp?: ManagedScalingStatus | null;
@@ -764,16 +882,20 @@ export namespace MyNS {
 
 	/** The deployment controller to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
 	export interface DeploymentController {
+
+		/** Required */
 		type: DeploymentControllerType;
 	}
 
 	/** The deployment controller to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
 	export interface DeploymentControllerFormProperties {
+
+		/** Required */
 		type: FormControl<DeploymentControllerType | null | undefined>,
 	}
 	export function CreateDeploymentControllerFormGroup() {
 		return new FormGroup<DeploymentControllerFormProperties>({
-			type: new FormControl<DeploymentControllerType | null | undefined>(undefined),
+			type: new FormControl<DeploymentControllerType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -784,6 +906,8 @@ export namespace MyNS {
 
 	export interface CreateServiceRequest {
 		cluster?: string | null;
+
+		/** Required */
 		serviceName: string;
 		taskDefinition?: string | null;
 		loadBalancers?: Array<LoadBalancer>;
@@ -807,12 +931,19 @@ export namespace MyNS {
 
 		/** The deployment controller to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
 		deploymentController?: DeploymentController;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<Tag>;
 		enableECSManagedTags?: boolean | null;
 		propagateTags?: ServicePropagateTags | null;
 	}
 	export interface CreateServiceRequestFormProperties {
 		cluster: FormControl<string | null | undefined>,
+
+		/** Required */
 		serviceName: FormControl<string | null | undefined>,
 		taskDefinition: FormControl<string | null | undefined>,
 		desiredCount: FormControl<number | null | undefined>,
@@ -828,7 +959,7 @@ export namespace MyNS {
 	export function CreateCreateServiceRequestFormGroup() {
 		return new FormGroup<CreateServiceRequestFormProperties>({
 			cluster: new FormControl<string | null | undefined>(undefined),
-			serviceName: new FormControl<string | null | undefined>(undefined),
+			serviceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			taskDefinition: new FormControl<string | null | undefined>(undefined),
 			desiredCount: new FormControl<number | null | undefined>(undefined),
 			clientToken: new FormControl<string | null | undefined>(undefined),
@@ -907,9 +1038,15 @@ export namespace MyNS {
 	}
 
 	export interface CreateTaskSetRequest {
+
+		/** Required */
 		service: string;
+
+		/** Required */
 		cluster: string;
 		externalId?: string | null;
+
+		/** Required */
 		taskDefinition: string;
 
 		/** An object representing the network configuration for a task or service. */
@@ -923,12 +1060,23 @@ export namespace MyNS {
 		/** A floating-point percentage of the desired number of tasks to place and keep running in the task set. */
 		scale?: Scale;
 		clientToken?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<Tag>;
 	}
 	export interface CreateTaskSetRequestFormProperties {
+
+		/** Required */
 		service: FormControl<string | null | undefined>,
+
+		/** Required */
 		cluster: FormControl<string | null | undefined>,
 		externalId: FormControl<string | null | undefined>,
+
+		/** Required */
 		taskDefinition: FormControl<string | null | undefined>,
 		launchType: FormControl<ServiceLaunchType | null | undefined>,
 		platformVersion: FormControl<string | null | undefined>,
@@ -936,10 +1084,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateTaskSetRequestFormGroup() {
 		return new FormGroup<CreateTaskSetRequestFormProperties>({
-			service: new FormControl<string | null | undefined>(undefined),
-			cluster: new FormControl<string | null | undefined>(undefined),
+			service: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			cluster: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			externalId: new FormControl<string | null | undefined>(undefined),
-			taskDefinition: new FormControl<string | null | undefined>(undefined),
+			taskDefinition: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			launchType: new FormControl<ServiceLaunchType | null | undefined>(undefined),
 			platformVersion: new FormControl<string | null | undefined>(undefined),
 			clientToken: new FormControl<string | null | undefined>(undefined),
@@ -1006,16 +1154,20 @@ export namespace MyNS {
 	export enum SettingName { serviceLongArnFormat = 0, taskLongArnFormat = 1, containerInstanceLongArnFormat = 2, awsvpcTrunking = 3, containerInsights = 4 }
 
 	export interface DeleteAccountSettingRequest {
+
+		/** Required */
 		name: SettingName;
 		principalArn?: string | null;
 	}
 	export interface DeleteAccountSettingRequestFormProperties {
+
+		/** Required */
 		name: FormControl<SettingName | null | undefined>,
 		principalArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteAccountSettingRequestFormGroup() {
 		return new FormGroup<DeleteAccountSettingRequestFormProperties>({
-			name: new FormControl<SettingName | null | undefined>(undefined),
+			name: new FormControl<SettingName | null | undefined>(undefined, [Validators.required]),
 			principalArn: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1035,6 +1187,8 @@ export namespace MyNS {
 
 	/** An attribute is a name-value pair associated with an Amazon ECS object. Attributes enable you to extend the Amazon ECS data model by adding custom metadata to your resources. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
 	export interface Attribute {
+
+		/** Required */
 		name: string;
 		value?: string | null;
 		targetType?: AttributeTargetType | null;
@@ -1043,6 +1197,8 @@ export namespace MyNS {
 
 	/** An attribute is a name-value pair associated with an Amazon ECS object. Attributes enable you to extend the Amazon ECS data model by adding custom metadata to your resources. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
 	export interface AttributeFormProperties {
+
+		/** Required */
 		name: FormControl<string | null | undefined>,
 		value: FormControl<string | null | undefined>,
 		targetType: FormControl<AttributeTargetType | null | undefined>,
@@ -1050,7 +1206,7 @@ export namespace MyNS {
 	}
 	export function CreateAttributeFormGroup() {
 		return new FormGroup<AttributeFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			value: new FormControl<string | null | undefined>(undefined),
 			targetType: new FormControl<AttributeTargetType | null | undefined>(undefined),
 			targetId: new FormControl<string | null | undefined>(undefined),
@@ -1062,6 +1218,8 @@ export namespace MyNS {
 
 	export interface DeleteAttributesRequest {
 		cluster?: string | null;
+
+		/** Required */
 		attributes: Array<Attribute>;
 	}
 	export interface DeleteAttributesRequestFormProperties {
@@ -1098,14 +1256,18 @@ export namespace MyNS {
 	}
 
 	export interface DeleteClusterRequest {
+
+		/** Required */
 		cluster: string;
 	}
 	export interface DeleteClusterRequestFormProperties {
+
+		/** Required */
 		cluster: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteClusterRequestFormGroup() {
 		return new FormGroup<DeleteClusterRequestFormProperties>({
-			cluster: new FormControl<string | null | undefined>(undefined),
+			cluster: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1165,18 +1327,22 @@ export namespace MyNS {
 
 	export interface DeleteServiceRequest {
 		cluster?: string | null;
+
+		/** Required */
 		service: string;
 		force?: boolean | null;
 	}
 	export interface DeleteServiceRequestFormProperties {
 		cluster: FormControl<string | null | undefined>,
+
+		/** Required */
 		service: FormControl<string | null | undefined>,
 		force: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDeleteServiceRequestFormGroup() {
 		return new FormGroup<DeleteServiceRequestFormProperties>({
 			cluster: new FormControl<string | null | undefined>(undefined),
-			service: new FormControl<string | null | undefined>(undefined),
+			service: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			force: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1196,22 +1362,34 @@ export namespace MyNS {
 	}
 
 	export interface DeleteTaskSetRequest {
+
+		/** Required */
 		cluster: string;
+
+		/** Required */
 		service: string;
+
+		/** Required */
 		taskSet: string;
 		force?: boolean | null;
 	}
 	export interface DeleteTaskSetRequestFormProperties {
+
+		/** Required */
 		cluster: FormControl<string | null | undefined>,
+
+		/** Required */
 		service: FormControl<string | null | undefined>,
+
+		/** Required */
 		taskSet: FormControl<string | null | undefined>,
 		force: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDeleteTaskSetRequestFormGroup() {
 		return new FormGroup<DeleteTaskSetRequestFormProperties>({
-			cluster: new FormControl<string | null | undefined>(undefined),
-			service: new FormControl<string | null | undefined>(undefined),
-			taskSet: new FormControl<string | null | undefined>(undefined),
+			cluster: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			service: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			taskSet: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			force: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1261,6 +1439,11 @@ export namespace MyNS {
 		attributes?: Array<Attribute>;
 		registeredAt?: Date | null;
 		attachments?: Array<Attachment>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<Tag>;
 	}
 
@@ -1352,18 +1535,22 @@ export namespace MyNS {
 
 	export interface DeregisterContainerInstanceRequest {
 		cluster?: string | null;
+
+		/** Required */
 		containerInstance: string;
 		force?: boolean | null;
 	}
 	export interface DeregisterContainerInstanceRequestFormProperties {
 		cluster: FormControl<string | null | undefined>,
+
+		/** Required */
 		containerInstance: FormControl<string | null | undefined>,
 		force: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDeregisterContainerInstanceRequestFormGroup() {
 		return new FormGroup<DeregisterContainerInstanceRequestFormProperties>({
 			cluster: new FormControl<string | null | undefined>(undefined),
-			containerInstance: new FormControl<string | null | undefined>(undefined),
+			containerInstance: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			force: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1537,16 +1724,20 @@ export namespace MyNS {
 
 	/** The repository credentials for private registry authentication. */
 	export interface RepositoryCredentials {
+
+		/** Required */
 		credentialsParameter: string;
 	}
 
 	/** The repository credentials for private registry authentication. */
 	export interface RepositoryCredentialsFormProperties {
+
+		/** Required */
 		credentialsParameter: FormControl<string | null | undefined>,
 	}
 	export function CreateRepositoryCredentialsFormGroup() {
 		return new FormGroup<RepositoryCredentialsFormProperties>({
-			credentialsParameter: new FormControl<string | null | undefined>(undefined),
+			credentialsParameter: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1579,19 +1770,27 @@ export namespace MyNS {
 
 	/** <p>A list of files containing the environment variables to pass to a container. You can specify up to ten environment files. The file must have a <code>.env</code> file extension. Each line in an environment file should contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning with <code>#</code> are treated as comments and are ignored. For more information on the environment variable file syntax, see <a href="https://docs.docker.com/compose/env-file/">Declare default environment variables in file</a>.</p> <p>If there are environment variables specified using the <code>environment</code> parameter in a container definition, they take precedence over the variables contained within an environment file. If multiple environment files are specified that contain the same variable, they are processed from the top down. It is recommended to use unique variable names. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying Environment Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <p>This field is not valid for containers in tasks using the Fargate launch type.</p> */
 	export interface EnvironmentFile {
+
+		/** Required */
 		value: string;
+
+		/** Required */
 		type: EnvironmentFileType;
 	}
 
 	/** <p>A list of files containing the environment variables to pass to a container. You can specify up to ten environment files. The file must have a <code>.env</code> file extension. Each line in an environment file should contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning with <code>#</code> are treated as comments and are ignored. For more information on the environment variable file syntax, see <a href="https://docs.docker.com/compose/env-file/">Declare default environment variables in file</a>.</p> <p>If there are environment variables specified using the <code>environment</code> parameter in a container definition, they take precedence over the variables contained within an environment file. If multiple environment files are specified that contain the same variable, they are processed from the top down. It is recommended to use unique variable names. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying Environment Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <p>This field is not valid for containers in tasks using the Fargate launch type.</p> */
 	export interface EnvironmentFileFormProperties {
+
+		/** Required */
 		value: FormControl<string | null | undefined>,
+
+		/** Required */
 		type: FormControl<EnvironmentFileType | null | undefined>,
 	}
 	export function CreateEnvironmentFileFormGroup() {
 		return new FormGroup<EnvironmentFileFormProperties>({
-			value: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<EnvironmentFileType | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<EnvironmentFileType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1691,6 +1890,8 @@ export namespace MyNS {
 
 	/** An object representing a container instance host device. */
 	export interface Device {
+
+		/** Required */
 		hostPath: string;
 		containerPath?: string | null;
 		permissions?: Array<DeviceCgroupPermission>;
@@ -1698,12 +1899,14 @@ export namespace MyNS {
 
 	/** An object representing a container instance host device. */
 	export interface DeviceFormProperties {
+
+		/** Required */
 		hostPath: FormControl<string | null | undefined>,
 		containerPath: FormControl<string | null | undefined>,
 	}
 	export function CreateDeviceFormGroup() {
 		return new FormGroup<DeviceFormProperties>({
-			hostPath: new FormControl<string | null | undefined>(undefined),
+			hostPath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			containerPath: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1714,20 +1917,28 @@ export namespace MyNS {
 
 	/** The container path, mount options, and size of the tmpfs mount. */
 	export interface Tmpfs {
+
+		/** Required */
 		containerPath: string;
+
+		/** Required */
 		size: number;
 		mountOptions?: Array<string>;
 	}
 
 	/** The container path, mount options, and size of the tmpfs mount. */
 	export interface TmpfsFormProperties {
+
+		/** Required */
 		containerPath: FormControl<string | null | undefined>,
+
+		/** Required */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateTmpfsFormGroup() {
 		return new FormGroup<TmpfsFormProperties>({
-			containerPath: new FormControl<string | null | undefined>(undefined),
-			size: new FormControl<number | null | undefined>(undefined),
+			containerPath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			size: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1735,19 +1946,27 @@ export namespace MyNS {
 
 	/** <p>An object representing the secret to expose to your container. Secrets can be exposed to a container in the following ways:</p> <ul> <li> <p>To inject sensitive data into your containers as environment variables, use the <code>secrets</code> container definition parameter.</p> </li> <li> <p>To reference sensitive information in the log configuration of a container, use the <code>secretOptions</code> container definition parameter.</p> </li> </ul> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> */
 	export interface Secret {
+
+		/** Required */
 		name: string;
+
+		/** Required */
 		valueFrom: string;
 	}
 
 	/** <p>An object representing the secret to expose to your container. Secrets can be exposed to a container in the following ways:</p> <ul> <li> <p>To inject sensitive data into your containers as environment variables, use the <code>secrets</code> container definition parameter.</p> </li> <li> <p>To reference sensitive information in the log configuration of a container, use the <code>secretOptions</code> container definition parameter.</p> </li> </ul> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> */
 	export interface SecretFormProperties {
+
+		/** Required */
 		name: FormControl<string | null | undefined>,
+
+		/** Required */
 		valueFrom: FormControl<string | null | undefined>,
 	}
 	export function CreateSecretFormGroup() {
 		return new FormGroup<SecretFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			valueFrom: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			valueFrom: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1755,19 +1974,27 @@ export namespace MyNS {
 
 	/** <p>The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When a dependency is defined for container startup, for container shutdown it is reversed.</p> <p>Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable container dependencies. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note> <p>For tasks using the Fargate launch type, this parameter requires that the task or service uses platform version 1.3.0 or later.</p> </note> */
 	export interface ContainerDependency {
+
+		/** Required */
 		containerName: string;
+
+		/** Required */
 		condition: ContainerDependencyCondition;
 	}
 
 	/** <p>The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When a dependency is defined for container startup, for container shutdown it is reversed.</p> <p>Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable container dependencies. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note> <p>For tasks using the Fargate launch type, this parameter requires that the task or service uses platform version 1.3.0 or later.</p> </note> */
 	export interface ContainerDependencyFormProperties {
+
+		/** Required */
 		containerName: FormControl<string | null | undefined>,
+
+		/** Required */
 		condition: FormControl<ContainerDependencyCondition | null | undefined>,
 	}
 	export function CreateContainerDependencyFormGroup() {
 		return new FormGroup<ContainerDependencyFormProperties>({
-			containerName: new FormControl<string | null | undefined>(undefined),
-			condition: new FormControl<ContainerDependencyCondition | null | undefined>(undefined),
+			containerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			condition: new FormControl<ContainerDependencyCondition | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1777,19 +2004,27 @@ export namespace MyNS {
 
 	/** Hostnames and IP address entries that are added to the <code>/etc/hosts</code> file of a container via the <code>extraHosts</code> parameter of its <a>ContainerDefinition</a>.  */
 	export interface HostEntry {
+
+		/** Required */
 		hostname: string;
+
+		/** Required */
 		ipAddress: string;
 	}
 
 	/** Hostnames and IP address entries that are added to the <code>/etc/hosts</code> file of a container via the <code>extraHosts</code> parameter of its <a>ContainerDefinition</a>.  */
 	export interface HostEntryFormProperties {
+
+		/** Required */
 		hostname: FormControl<string | null | undefined>,
+
+		/** Required */
 		ipAddress: FormControl<string | null | undefined>,
 	}
 	export function CreateHostEntryFormGroup() {
 		return new FormGroup<HostEntryFormProperties>({
-			hostname: new FormControl<string | null | undefined>(undefined),
-			ipAddress: new FormControl<string | null | undefined>(undefined),
+			hostname: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ipAddress: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1807,22 +2042,34 @@ export namespace MyNS {
 
 	/** The <code>ulimit</code> settings to pass to the container. */
 	export interface Ulimit {
+
+		/** Required */
 		name: UlimitName;
+
+		/** Required */
 		softLimit: number;
+
+		/** Required */
 		hardLimit: number;
 	}
 
 	/** The <code>ulimit</code> settings to pass to the container. */
 	export interface UlimitFormProperties {
+
+		/** Required */
 		name: FormControl<UlimitName | null | undefined>,
+
+		/** Required */
 		softLimit: FormControl<number | null | undefined>,
+
+		/** Required */
 		hardLimit: FormControl<number | null | undefined>,
 	}
 	export function CreateUlimitFormGroup() {
 		return new FormGroup<UlimitFormProperties>({
-			name: new FormControl<UlimitName | null | undefined>(undefined),
-			softLimit: new FormControl<number | null | undefined>(undefined),
-			hardLimit: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<UlimitName | null | undefined>(undefined, [Validators.required]),
+			softLimit: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			hardLimit: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1832,6 +2079,8 @@ export namespace MyNS {
 
 	/** <p>The log configuration specification for the container.</p> <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>. By default, containers use the same logging driver that the Docker daemon uses; however the container may use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance (or on a different log server for remote logging options). For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p> <p>The following should be noted when specifying a log configuration for your containers:</p> <ul> <li> <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in the valid values below). Additional log drivers may be available in future releases of the Amazon ECS container agent.</p> </li> <li> <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.</p> </li> <li> <p>For tasks using the EC2 launch type, the Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> </li> <li> <p>For tasks using the Fargate launch type, because you do not have access to the underlying infrastructure your tasks are hosted on, any additional software needed will have to be installed outside of the task. For example, the Fluentd output aggregators or a remote host running Logstash to send Gelf logs to.</p> </li> </ul> */
 	export interface LogConfiguration {
+
+		/** Required */
 		logDriver: LogConfigurationLogDriver;
 		options?: LogConfigurationOptionsMap;
 		secretOptions?: Array<Secret>;
@@ -1839,11 +2088,13 @@ export namespace MyNS {
 
 	/** <p>The log configuration specification for the container.</p> <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>. By default, containers use the same logging driver that the Docker daemon uses; however the container may use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance (or on a different log server for remote logging options). For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p> <p>The following should be noted when specifying a log configuration for your containers:</p> <ul> <li> <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in the valid values below). Additional log drivers may be available in future releases of the Amazon ECS container agent.</p> </li> <li> <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.</p> </li> <li> <p>For tasks using the EC2 launch type, the Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> </li> <li> <p>For tasks using the Fargate launch type, because you do not have access to the underlying infrastructure your tasks are hosted on, any additional software needed will have to be installed outside of the task. For example, the Fluentd output aggregators or a remote host running Logstash to send Gelf logs to.</p> </li> </ul> */
 	export interface LogConfigurationFormProperties {
+
+		/** Required */
 		logDriver: FormControl<LogConfigurationLogDriver | null | undefined>,
 	}
 	export function CreateLogConfigurationFormGroup() {
 		return new FormGroup<LogConfigurationFormProperties>({
-			logDriver: new FormControl<LogConfigurationLogDriver | null | undefined>(undefined),
+			logDriver: new FormControl<LogConfigurationLogDriver | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1863,6 +2114,8 @@ export namespace MyNS {
 
 	/** <p>An object representing a container health check. Health check parameters that are specified in a container definition override any Docker health checks that exist in the container image (such as those specified in a parent image or from the image's Dockerfile).</p> <p>You can view the health status of both individual containers and a task with the DescribeTasks API operation or when viewing the task details in the console.</p> <p>The following describes the possible <code>healthStatus</code> values for a container:</p> <ul> <li> <p> <code>HEALTHY</code>-The container health check has passed successfully.</p> </li> <li> <p> <code>UNHEALTHY</code>-The container health check has failed.</p> </li> <li> <p> <code>UNKNOWN</code>-The container health check is being evaluated or there is no container health check defined.</p> </li> </ul> <p>The following describes the possible <code>healthStatus</code> values for a task. The container health check status of nonessential containers do not have an effect on the health status of a task.</p> <ul> <li> <p> <code>HEALTHY</code>-All essential containers within the task have passed their health checks.</p> </li> <li> <p> <code>UNHEALTHY</code>-One or more essential containers have failed their health check.</p> </li> <li> <p> <code>UNKNOWN</code>-The essential containers within the task are still having their health checks evaluated or there are no container health checks defined.</p> </li> </ul> <p>If a task is run manually, and not as part of a service, the task will continue its lifecycle regardless of its health status. For tasks that are part of a service, if the task reports as unhealthy then the task will be stopped and the service scheduler will replace it.</p> <p>The following are notes about container health check support:</p> <ul> <li> <p>Container health checks require version 1.17.0 or greater of the Amazon ECS container agent. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a>.</p> </li> <li> <p>Container health checks are supported for Fargate tasks if you are using platform version 1.1.0 or greater. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform Versions</a>.</p> </li> <li> <p>Container health checks are not supported for tasks that are part of a service that is configured to use a Classic Load Balancer.</p> </li> </ul> */
 	export interface HealthCheck {
+
+		/** Required */
 		command: Array<string>;
 		interval?: number | null;
 		timeout?: number | null;
@@ -1910,19 +2163,27 @@ export namespace MyNS {
 
 	/** The type and amount of a resource to assign to a container. The supported resource types are GPUs and Elastic Inference accelerators. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html">Working with GPUs on Amazon ECS</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html">Working with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>  */
 	export interface ResourceRequirement {
+
+		/** Required */
 		value: string;
+
+		/** Required */
 		type: ResourceRequirementType;
 	}
 
 	/** The type and amount of a resource to assign to a container. The supported resource types are GPUs and Elastic Inference accelerators. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html">Working with GPUs on Amazon ECS</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html">Working with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>  */
 	export interface ResourceRequirementFormProperties {
+
+		/** Required */
 		value: FormControl<string | null | undefined>,
+
+		/** Required */
 		type: FormControl<ResourceRequirementType | null | undefined>,
 	}
 	export function CreateResourceRequirementFormGroup() {
 		return new FormGroup<ResourceRequirementFormProperties>({
-			value: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<ResourceRequirementType | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<ResourceRequirementType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1932,17 +2193,21 @@ export namespace MyNS {
 
 	/** The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
 	export interface FirelensConfiguration {
+
+		/** Required */
 		type: FirelensConfigurationType;
 		options?: FirelensConfigurationOptionsMap;
 	}
 
 	/** The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
 	export interface FirelensConfigurationFormProperties {
+
+		/** Required */
 		type: FormControl<FirelensConfigurationType | null | undefined>,
 	}
 	export function CreateFirelensConfigurationFormGroup() {
 		return new FormGroup<FirelensConfigurationFormProperties>({
-			type: new FormControl<FirelensConfigurationType | null | undefined>(undefined),
+			type: new FormControl<FirelensConfigurationType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2044,6 +2309,8 @@ export namespace MyNS {
 
 	/** This parameter is specified when you are using an Amazon Elastic File System file system for task storage. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html">Amazon EFS Volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
 	export interface EFSVolumeConfiguration {
+
+		/** Required */
 		fileSystemId: string;
 		rootDirectory?: string | null;
 		transitEncryption?: ManagedScalingStatus | null;
@@ -2055,6 +2322,8 @@ export namespace MyNS {
 
 	/** This parameter is specified when you are using an Amazon Elastic File System file system for task storage. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html">Amazon EFS Volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
 	export interface EFSVolumeConfigurationFormProperties {
+
+		/** Required */
 		fileSystemId: FormControl<string | null | undefined>,
 		rootDirectory: FormControl<string | null | undefined>,
 		transitEncryption: FormControl<ManagedScalingStatus | null | undefined>,
@@ -2062,7 +2331,7 @@ export namespace MyNS {
 	}
 	export function CreateEFSVolumeConfigurationFormGroup() {
 		return new FormGroup<EFSVolumeConfigurationFormProperties>({
-			fileSystemId: new FormControl<string | null | undefined>(undefined),
+			fileSystemId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			rootDirectory: new FormControl<string | null | undefined>(undefined),
 			transitEncryption: new FormControl<ManagedScalingStatus | null | undefined>(undefined),
 			transitEncryptionPort: new FormControl<number | null | undefined>(undefined),
@@ -2119,19 +2388,27 @@ export namespace MyNS {
 
 	/** Details on a Elastic Inference accelerator. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html">Working with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
 	export interface InferenceAccelerator {
+
+		/** Required */
 		deviceName: string;
+
+		/** Required */
 		deviceType: string;
 	}
 
 	/** Details on a Elastic Inference accelerator. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html">Working with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
 	export interface InferenceAcceleratorFormProperties {
+
+		/** Required */
 		deviceName: FormControl<string | null | undefined>,
+
+		/** Required */
 		deviceType: FormControl<string | null | undefined>,
 	}
 	export function CreateInferenceAcceleratorFormGroup() {
 		return new FormGroup<InferenceAcceleratorFormProperties>({
-			deviceName: new FormControl<string | null | undefined>(undefined),
-			deviceType: new FormControl<string | null | undefined>(undefined),
+			deviceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			deviceType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2144,6 +2421,8 @@ export namespace MyNS {
 	/** <p>The configuration details for the App Mesh proxy.</p> <p>For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service requires platform version 1.3.0 or later.</p> */
 	export interface ProxyConfiguration {
 		type?: ProxyConfigurationType | null;
+
+		/** Required */
 		containerName: string;
 		properties?: Array<KeyValuePair>;
 	}
@@ -2151,12 +2430,14 @@ export namespace MyNS {
 	/** <p>The configuration details for the App Mesh proxy.</p> <p>For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service requires platform version 1.3.0 or later.</p> */
 	export interface ProxyConfigurationFormProperties {
 		type: FormControl<ProxyConfigurationType | null | undefined>,
+
+		/** Required */
 		containerName: FormControl<string | null | undefined>,
 	}
 	export function CreateProxyConfigurationFormGroup() {
 		return new FormGroup<ProxyConfigurationFormProperties>({
 			type: new FormControl<ProxyConfigurationType | null | undefined>(undefined),
-			containerName: new FormControl<string | null | undefined>(undefined),
+			containerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2164,14 +2445,18 @@ export namespace MyNS {
 	export enum ProxyConfigurationType { APPMESH = 0 }
 
 	export interface DeregisterTaskDefinitionRequest {
+
+		/** Required */
 		taskDefinition: string;
 	}
 	export interface DeregisterTaskDefinitionRequestFormProperties {
+
+		/** Required */
 		taskDefinition: FormControl<string | null | undefined>,
 	}
 	export function CreateDeregisterTaskDefinitionRequestFormGroup() {
 		return new FormGroup<DeregisterTaskDefinitionRequestFormProperties>({
-			taskDefinition: new FormControl<string | null | undefined>(undefined),
+			taskDefinition: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2274,6 +2559,8 @@ export namespace MyNS {
 
 	export interface DescribeContainerInstancesRequest {
 		cluster?: string | null;
+
+		/** Required */
 		containerInstances: Array<string>;
 		include?: Array<ContainerInstanceField>;
 	}
@@ -2303,6 +2590,8 @@ export namespace MyNS {
 
 	export interface DescribeServicesRequest {
 		cluster?: string | null;
+
+		/** Required */
 		services: Array<string>;
 		include?: Array<ServiceField>;
 	}
@@ -2322,6 +2611,11 @@ export namespace MyNS {
 
 		/** The details of a task definition which describes the container and volume definitions of an Amazon Elastic Container Service task. You can specify which Docker images to use, the required resources, and other configurations related to launching the task definition through an Amazon ECS service or task. */
 		taskDefinition?: TaskDefinition;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<Tag>;
 	}
 	export interface DescribeTaskDefinitionResponseFormProperties {
@@ -2333,15 +2627,19 @@ export namespace MyNS {
 	}
 
 	export interface DescribeTaskDefinitionRequest {
+
+		/** Required */
 		taskDefinition: string;
 		include?: Array<TaskDefinitionField>;
 	}
 	export interface DescribeTaskDefinitionRequestFormProperties {
+
+		/** Required */
 		taskDefinition: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeTaskDefinitionRequestFormGroup() {
 		return new FormGroup<DescribeTaskDefinitionRequestFormProperties>({
-			taskDefinition: new FormControl<string | null | undefined>(undefined),
+			taskDefinition: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2361,19 +2659,27 @@ export namespace MyNS {
 	}
 
 	export interface DescribeTaskSetsRequest {
+
+		/** Required */
 		cluster: string;
+
+		/** Required */
 		service: string;
 		taskSets?: Array<string>;
 		include?: Array<TaskSetField>;
 	}
 	export interface DescribeTaskSetsRequestFormProperties {
+
+		/** Required */
 		cluster: FormControl<string | null | undefined>,
+
+		/** Required */
 		service: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeTaskSetsRequestFormGroup() {
 		return new FormGroup<DescribeTaskSetsRequestFormProperties>({
-			cluster: new FormControl<string | null | undefined>(undefined),
-			service: new FormControl<string | null | undefined>(undefined),
+			cluster: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			service: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2426,6 +2732,11 @@ export namespace MyNS {
 		stoppedAt?: Date | null;
 		stoppedReason?: string | null;
 		stoppingAt?: Date | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<Tag>;
 		taskArn?: string | null;
 		taskDefinitionArn?: string | null;
@@ -2686,6 +2997,8 @@ export namespace MyNS {
 
 	export interface DescribeTasksRequest {
 		cluster?: string | null;
+
+		/** Required */
 		tasks: Array<string>;
 		include?: Array<TaskField>;
 	}
@@ -2791,6 +3104,8 @@ export namespace MyNS {
 
 	export interface ListAttributesRequest {
 		cluster?: string | null;
+
+		/** Required */
 		targetType: ListAttributesRequestTargetType;
 		attributeName?: string | null;
 		attributeValue?: string | null;
@@ -2799,6 +3114,8 @@ export namespace MyNS {
 	}
 	export interface ListAttributesRequestFormProperties {
 		cluster: FormControl<string | null | undefined>,
+
+		/** Required */
 		targetType: FormControl<ListAttributesRequestTargetType | null | undefined>,
 		attributeName: FormControl<string | null | undefined>,
 		attributeValue: FormControl<string | null | undefined>,
@@ -2808,7 +3125,7 @@ export namespace MyNS {
 	export function CreateListAttributesRequestFormGroup() {
 		return new FormGroup<ListAttributesRequestFormProperties>({
 			cluster: new FormControl<string | null | undefined>(undefined),
-			targetType: new FormControl<ListAttributesRequestTargetType | null | undefined>(undefined),
+			targetType: new FormControl<ListAttributesRequestTargetType | null | undefined>(undefined, [Validators.required]),
 			attributeName: new FormControl<string | null | undefined>(undefined),
 			attributeValue: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
@@ -2930,6 +3247,11 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceResponse {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<Tag>;
 	}
 	export interface ListTagsForResourceResponseFormProperties {
@@ -2941,14 +3263,18 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceRequest {
+
+		/** Required */
 		resourceArn: string;
 	}
 	export interface ListTagsForResourceRequestFormProperties {
+
+		/** Required */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3099,19 +3425,27 @@ export namespace MyNS {
 	}
 
 	export interface PutAccountSettingRequest {
+
+		/** Required */
 		name: SettingName;
+
+		/** Required */
 		value: string;
 		principalArn?: string | null;
 	}
 	export interface PutAccountSettingRequestFormProperties {
+
+		/** Required */
 		name: FormControl<SettingName | null | undefined>,
+
+		/** Required */
 		value: FormControl<string | null | undefined>,
 		principalArn: FormControl<string | null | undefined>,
 	}
 	export function CreatePutAccountSettingRequestFormGroup() {
 		return new FormGroup<PutAccountSettingRequestFormProperties>({
-			name: new FormControl<SettingName | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<SettingName | null | undefined>(undefined, [Validators.required]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			principalArn: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3131,17 +3465,25 @@ export namespace MyNS {
 	}
 
 	export interface PutAccountSettingDefaultRequest {
+
+		/** Required */
 		name: SettingName;
+
+		/** Required */
 		value: string;
 	}
 	export interface PutAccountSettingDefaultRequestFormProperties {
+
+		/** Required */
 		name: FormControl<SettingName | null | undefined>,
+
+		/** Required */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreatePutAccountSettingDefaultRequestFormGroup() {
 		return new FormGroup<PutAccountSettingDefaultRequestFormProperties>({
-			name: new FormControl<SettingName | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<SettingName | null | undefined>(undefined, [Validators.required]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3159,6 +3501,8 @@ export namespace MyNS {
 
 	export interface PutAttributesRequest {
 		cluster?: string | null;
+
+		/** Required */
 		attributes: Array<Attribute>;
 	}
 	export interface PutAttributesRequestFormProperties {
@@ -3195,16 +3539,24 @@ export namespace MyNS {
 	}
 
 	export interface PutClusterCapacityProvidersRequest {
+
+		/** Required */
 		cluster: string;
+
+		/** Required */
 		capacityProviders: Array<string>;
+
+		/** Required */
 		defaultCapacityProviderStrategy: Array<CapacityProviderStrategyItem>;
 	}
 	export interface PutClusterCapacityProvidersRequestFormProperties {
+
+		/** Required */
 		cluster: FormControl<string | null | undefined>,
 	}
 	export function CreatePutClusterCapacityProvidersRequestFormGroup() {
 		return new FormGroup<PutClusterCapacityProvidersRequestFormProperties>({
-			cluster: new FormControl<string | null | undefined>(undefined),
+			cluster: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3243,6 +3595,11 @@ export namespace MyNS {
 		containerInstanceArn?: string | null;
 		attributes?: Array<Attribute>;
 		platformDevices?: Array<PlatformDevice>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<Tag>;
 	}
 	export interface RegisterContainerInstanceRequestFormProperties {
@@ -3264,19 +3621,27 @@ export namespace MyNS {
 
 	/** The devices that are available on the container instance. The only supported device type is a GPU. */
 	export interface PlatformDevice {
+
+		/** Required */
 		id: string;
+
+		/** Required */
 		type: PlatformDeviceType;
 	}
 
 	/** The devices that are available on the container instance. The only supported device type is a GPU. */
 	export interface PlatformDeviceFormProperties {
+
+		/** Required */
 		id: FormControl<string | null | undefined>,
+
+		/** Required */
 		type: FormControl<PlatformDeviceType | null | undefined>,
 	}
 	export function CreatePlatformDeviceFormGroup() {
 		return new FormGroup<PlatformDeviceFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<PlatformDeviceType | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<PlatformDeviceType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3287,6 +3652,11 @@ export namespace MyNS {
 
 		/** The details of a task definition which describes the container and volume definitions of an Amazon Elastic Container Service task. You can specify which Docker images to use, the required resources, and other configurations related to launching the task definition through an Amazon ECS service or task. */
 		taskDefinition?: TaskDefinition;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<Tag>;
 	}
 	export interface RegisterTaskDefinitionResponseFormProperties {
@@ -3298,16 +3668,25 @@ export namespace MyNS {
 	}
 
 	export interface RegisterTaskDefinitionRequest {
+
+		/** Required */
 		family: string;
 		taskRoleArn?: string | null;
 		executionRoleArn?: string | null;
 		networkMode?: TaskDefinitionNetworkMode | null;
+
+		/** Required */
 		containerDefinitions: Array<ContainerDefinition>;
 		volumes?: Array<Volume>;
 		placementConstraints?: Array<TaskDefinitionPlacementConstraint>;
 		requiresCompatibilities?: Array<Compatibility>;
 		cpu?: string | null;
 		memory?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<Tag>;
 		pidMode?: TaskDefinitionPidMode | null;
 		ipcMode?: TaskDefinitionIpcMode | null;
@@ -3317,6 +3696,8 @@ export namespace MyNS {
 		inferenceAccelerators?: Array<InferenceAccelerator>;
 	}
 	export interface RegisterTaskDefinitionRequestFormProperties {
+
+		/** Required */
 		family: FormControl<string | null | undefined>,
 		taskRoleArn: FormControl<string | null | undefined>,
 		executionRoleArn: FormControl<string | null | undefined>,
@@ -3328,7 +3709,7 @@ export namespace MyNS {
 	}
 	export function CreateRegisterTaskDefinitionRequestFormGroup() {
 		return new FormGroup<RegisterTaskDefinitionRequestFormProperties>({
-			family: new FormControl<string | null | undefined>(undefined),
+			family: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			taskRoleArn: new FormControl<string | null | undefined>(undefined),
 			executionRoleArn: new FormControl<string | null | undefined>(undefined),
 			networkMode: new FormControl<TaskDefinitionNetworkMode | null | undefined>(undefined),
@@ -3371,7 +3752,14 @@ export namespace MyNS {
 		propagateTags?: ServicePropagateTags | null;
 		referenceId?: string | null;
 		startedBy?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<Tag>;
+
+		/** Required */
 		taskDefinition: string;
 	}
 	export interface RunTaskRequestFormProperties {
@@ -3384,6 +3772,8 @@ export namespace MyNS {
 		propagateTags: FormControl<ServicePropagateTags | null | undefined>,
 		referenceId: FormControl<string | null | undefined>,
 		startedBy: FormControl<string | null | undefined>,
+
+		/** Required */
 		taskDefinition: FormControl<string | null | undefined>,
 	}
 	export function CreateRunTaskRequestFormGroup() {
@@ -3397,7 +3787,7 @@ export namespace MyNS {
 			propagateTags: new FormControl<ServicePropagateTags | null | undefined>(undefined),
 			referenceId: new FormControl<string | null | undefined>(undefined),
 			startedBy: new FormControl<string | null | undefined>(undefined),
-			taskDefinition: new FormControl<string | null | undefined>(undefined),
+			taskDefinition: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3426,6 +3816,8 @@ export namespace MyNS {
 
 	export interface StartTaskRequest {
 		cluster?: string | null;
+
+		/** Required */
 		containerInstances: Array<string>;
 		enableECSManagedTags?: boolean | null;
 		group?: string | null;
@@ -3438,7 +3830,14 @@ export namespace MyNS {
 		propagateTags?: ServicePropagateTags | null;
 		referenceId?: string | null;
 		startedBy?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<Tag>;
+
+		/** Required */
 		taskDefinition: string;
 	}
 	export interface StartTaskRequestFormProperties {
@@ -3448,6 +3847,8 @@ export namespace MyNS {
 		propagateTags: FormControl<ServicePropagateTags | null | undefined>,
 		referenceId: FormControl<string | null | undefined>,
 		startedBy: FormControl<string | null | undefined>,
+
+		/** Required */
 		taskDefinition: FormControl<string | null | undefined>,
 	}
 	export function CreateStartTaskRequestFormGroup() {
@@ -3458,7 +3859,7 @@ export namespace MyNS {
 			propagateTags: new FormControl<ServicePropagateTags | null | undefined>(undefined),
 			referenceId: new FormControl<string | null | undefined>(undefined),
 			startedBy: new FormControl<string | null | undefined>(undefined),
-			taskDefinition: new FormControl<string | null | undefined>(undefined),
+			taskDefinition: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3478,18 +3879,22 @@ export namespace MyNS {
 
 	export interface StopTaskRequest {
 		cluster?: string | null;
+
+		/** Required */
 		task: string;
 		reason?: string | null;
 	}
 	export interface StopTaskRequestFormProperties {
 		cluster: FormControl<string | null | undefined>,
+
+		/** Required */
 		task: FormControl<string | null | undefined>,
 		reason: FormControl<string | null | undefined>,
 	}
 	export function CreateStopTaskRequestFormGroup() {
 		return new FormGroup<StopTaskRequestFormProperties>({
 			cluster: new FormControl<string | null | undefined>(undefined),
-			task: new FormControl<string | null | undefined>(undefined),
+			task: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			reason: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3510,6 +3915,8 @@ export namespace MyNS {
 
 	export interface SubmitAttachmentStateChangesRequest {
 		cluster?: string | null;
+
+		/** Required */
 		attachments: Array<AttachmentStateChange>;
 	}
 	export interface SubmitAttachmentStateChangesRequestFormProperties {
@@ -3525,19 +3932,27 @@ export namespace MyNS {
 
 	/** An object representing a change in state for a task attachment. */
 	export interface AttachmentStateChange {
+
+		/** Required */
 		attachmentArn: string;
+
+		/** Required */
 		status: string;
 	}
 
 	/** An object representing a change in state for a task attachment. */
 	export interface AttachmentStateChangeFormProperties {
+
+		/** Required */
 		attachmentArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		status: FormControl<string | null | undefined>,
 	}
 	export function CreateAttachmentStateChangeFormGroup() {
 		return new FormGroup<AttachmentStateChangeFormProperties>({
-			attachmentArn: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
+			attachmentArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3677,15 +4092,25 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/** Required */
 		resourceArn: string;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/** Required */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3711,15 +4136,21 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceRequest {
+
+		/** Required */
 		resourceArn: string;
+
+		/** Required */
 		tagKeys: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/** Required */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3738,15 +4169,21 @@ export namespace MyNS {
 	}
 
 	export interface UpdateClusterSettingsRequest {
+
+		/** Required */
 		cluster: string;
+
+		/** Required */
 		settings: Array<ClusterSetting>;
 	}
 	export interface UpdateClusterSettingsRequestFormProperties {
+
+		/** Required */
 		cluster: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateClusterSettingsRequestFormGroup() {
 		return new FormGroup<UpdateClusterSettingsRequestFormProperties>({
-			cluster: new FormControl<string | null | undefined>(undefined),
+			cluster: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3766,16 +4203,20 @@ export namespace MyNS {
 
 	export interface UpdateContainerAgentRequest {
 		cluster?: string | null;
+
+		/** Required */
 		containerInstance: string;
 	}
 	export interface UpdateContainerAgentRequestFormProperties {
 		cluster: FormControl<string | null | undefined>,
+
+		/** Required */
 		containerInstance: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateContainerAgentRequestFormGroup() {
 		return new FormGroup<UpdateContainerAgentRequestFormProperties>({
 			cluster: new FormControl<string | null | undefined>(undefined),
-			containerInstance: new FormControl<string | null | undefined>(undefined),
+			containerInstance: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3814,17 +4255,23 @@ export namespace MyNS {
 
 	export interface UpdateContainerInstancesStateRequest {
 		cluster?: string | null;
+
+		/** Required */
 		containerInstances: Array<string>;
+
+		/** Required */
 		status: ListContainerInstancesRequestStatus;
 	}
 	export interface UpdateContainerInstancesStateRequestFormProperties {
 		cluster: FormControl<string | null | undefined>,
+
+		/** Required */
 		status: FormControl<ListContainerInstancesRequestStatus | null | undefined>,
 	}
 	export function CreateUpdateContainerInstancesStateRequestFormGroup() {
 		return new FormGroup<UpdateContainerInstancesStateRequestFormProperties>({
 			cluster: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<ListContainerInstancesRequestStatus | null | undefined>(undefined),
+			status: new FormControl<ListContainerInstancesRequestStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3844,6 +4291,8 @@ export namespace MyNS {
 
 	export interface UpdateServiceRequest {
 		cluster?: string | null;
+
+		/** Required */
 		service: string;
 		desiredCount?: number | null;
 		taskDefinition?: string | null;
@@ -3862,6 +4311,8 @@ export namespace MyNS {
 	}
 	export interface UpdateServiceRequestFormProperties {
 		cluster: FormControl<string | null | undefined>,
+
+		/** Required */
 		service: FormControl<string | null | undefined>,
 		desiredCount: FormControl<number | null | undefined>,
 		taskDefinition: FormControl<string | null | undefined>,
@@ -3872,7 +4323,7 @@ export namespace MyNS {
 	export function CreateUpdateServiceRequestFormGroup() {
 		return new FormGroup<UpdateServiceRequestFormProperties>({
 			cluster: new FormControl<string | null | undefined>(undefined),
-			service: new FormControl<string | null | undefined>(undefined),
+			service: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			desiredCount: new FormControl<number | null | undefined>(undefined),
 			taskDefinition: new FormControl<string | null | undefined>(undefined),
 			platformVersion: new FormControl<string | null | undefined>(undefined),
@@ -3896,20 +4347,32 @@ export namespace MyNS {
 	}
 
 	export interface UpdateServicePrimaryTaskSetRequest {
+
+		/** Required */
 		cluster: string;
+
+		/** Required */
 		service: string;
+
+		/** Required */
 		primaryTaskSet: string;
 	}
 	export interface UpdateServicePrimaryTaskSetRequestFormProperties {
+
+		/** Required */
 		cluster: FormControl<string | null | undefined>,
+
+		/** Required */
 		service: FormControl<string | null | undefined>,
+
+		/** Required */
 		primaryTaskSet: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateServicePrimaryTaskSetRequestFormGroup() {
 		return new FormGroup<UpdateServicePrimaryTaskSetRequestFormProperties>({
-			cluster: new FormControl<string | null | undefined>(undefined),
-			service: new FormControl<string | null | undefined>(undefined),
-			primaryTaskSet: new FormControl<string | null | undefined>(undefined),
+			cluster: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			service: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			primaryTaskSet: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3928,8 +4391,14 @@ export namespace MyNS {
 	}
 
 	export interface UpdateTaskSetRequest {
+
+		/** Required */
 		cluster: string;
+
+		/** Required */
 		service: string;
+
+		/** Required */
 		taskSet: string;
 
 		/**
@@ -3939,15 +4408,21 @@ export namespace MyNS {
 		scale: Scale;
 	}
 	export interface UpdateTaskSetRequestFormProperties {
+
+		/** Required */
 		cluster: FormControl<string | null | undefined>,
+
+		/** Required */
 		service: FormControl<string | null | undefined>,
+
+		/** Required */
 		taskSet: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateTaskSetRequestFormGroup() {
 		return new FormGroup<UpdateTaskSetRequestFormProperties>({
-			cluster: new FormControl<string | null | undefined>(undefined),
-			service: new FormControl<string | null | undefined>(undefined),
-			taskSet: new FormControl<string | null | undefined>(undefined),
+			cluster: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			service: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			taskSet: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

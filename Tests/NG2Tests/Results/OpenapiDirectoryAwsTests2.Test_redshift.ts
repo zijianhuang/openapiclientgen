@@ -521,18 +521,22 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteClusterSnapshotMessage {
+
+		/** Required */
 		SnapshotIdentifier: string;
 		SnapshotClusterIdentifier?: string | null;
 	}
 
 	/** <p/> */
 	export interface DeleteClusterSnapshotMessageFormProperties {
+
+		/** Required */
 		SnapshotIdentifier: FormControl<string | null | undefined>,
 		SnapshotClusterIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteClusterSnapshotMessageFormGroup() {
 		return new FormGroup<DeleteClusterSnapshotMessageFormProperties>({
-			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SnapshotClusterIdentifier: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1947,6 +1951,8 @@ export namespace MyNS {
 	}
 
 	export interface ResizeClusterMessage {
+
+		/** Required */
 		ClusterIdentifier: string;
 		ClusterType?: string | null;
 		NodeType?: string | null;
@@ -1954,6 +1960,8 @@ export namespace MyNS {
 		Classic?: boolean | null;
 	}
 	export interface ResizeClusterMessageFormProperties {
+
+		/** Required */
 		ClusterIdentifier: FormControl<string | null | undefined>,
 		ClusterType: FormControl<string | null | undefined>,
 		NodeType: FormControl<string | null | undefined>,
@@ -1962,7 +1970,7 @@ export namespace MyNS {
 	}
 	export function CreateResizeClusterMessageFormGroup() {
 		return new FormGroup<ResizeClusterMessageFormProperties>({
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ClusterType: new FormControl<string | null | undefined>(undefined),
 			NodeType: new FormControl<string | null | undefined>(undefined),
 			NumberOfNodes: new FormControl<number | null | undefined>(undefined),
@@ -1972,27 +1980,35 @@ export namespace MyNS {
 	}
 
 	export interface PauseClusterMessage {
+
+		/** Required */
 		ClusterIdentifier: string;
 	}
 	export interface PauseClusterMessageFormProperties {
+
+		/** Required */
 		ClusterIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreatePauseClusterMessageFormGroup() {
 		return new FormGroup<PauseClusterMessageFormProperties>({
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ResumeClusterMessage {
+
+		/** Required */
 		ClusterIdentifier: string;
 	}
 	export interface ResumeClusterMessageFormProperties {
+
+		/** Required */
 		ClusterIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateResumeClusterMessageFormGroup() {
 		return new FormGroup<ResumeClusterMessageFormProperties>({
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2615,18 +2631,22 @@ export namespace MyNS {
 
 	/** Describes a sorting entity */
 	export interface SnapshotSortingEntity {
+
+		/** Required */
 		Attribute: SnapshotSortingEntityAttribute;
 		SortOrder?: SnapshotSortingEntitySortOrder | null;
 	}
 
 	/** Describes a sorting entity */
 	export interface SnapshotSortingEntityFormProperties {
+
+		/** Required */
 		Attribute: FormControl<SnapshotSortingEntityAttribute | null | undefined>,
 		SortOrder: FormControl<SnapshotSortingEntitySortOrder | null | undefined>,
 	}
 	export function CreateSnapshotSortingEntityFormGroup() {
 		return new FormGroup<SnapshotSortingEntityFormProperties>({
-			Attribute: new FormControl<SnapshotSortingEntityAttribute | null | undefined>(undefined),
+			Attribute: new FormControl<SnapshotSortingEntityAttribute | null | undefined>(undefined, [Validators.required]),
 			SortOrder: new FormControl<SnapshotSortingEntitySortOrder | null | undefined>(undefined),
 		});
 
@@ -3227,17 +3247,23 @@ export namespace MyNS {
 
 	/** A set of elements to filter the returned scheduled actions.  */
 	export interface ScheduledActionFilter {
+
+		/** Required */
 		Name: ScheduledActionFilterName;
+
+		/** Required */
 		Values: Array<string>;
 	}
 
 	/** A set of elements to filter the returned scheduled actions.  */
 	export interface ScheduledActionFilterFormProperties {
+
+		/** Required */
 		Name: FormControl<ScheduledActionFilterName | null | undefined>,
 	}
 	export function CreateScheduledActionFilterFormGroup() {
 		return new FormGroup<ScheduledActionFilterFormProperties>({
-			Name: new FormControl<ScheduledActionFilterName | null | undefined>(undefined),
+			Name: new FormControl<ScheduledActionFilterName | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3951,17 +3977,25 @@ export namespace MyNS {
 	}
 
 	export interface AcceptReservedNodeExchangeInputMessage {
+
+		/** Required */
 		ReservedNodeId: string;
+
+		/** Required */
 		TargetReservedNodeOfferingId: string;
 	}
 	export interface AcceptReservedNodeExchangeInputMessageFormProperties {
+
+		/** Required */
 		ReservedNodeId: FormControl<string | null | undefined>,
+
+		/** Required */
 		TargetReservedNodeOfferingId: FormControl<string | null | undefined>,
 	}
 	export function CreateAcceptReservedNodeExchangeInputMessageFormGroup() {
 		return new FormGroup<AcceptReservedNodeExchangeInputMessageFormProperties>({
-			ReservedNodeId: new FormControl<string | null | undefined>(undefined),
-			TargetReservedNodeOfferingId: new FormControl<string | null | undefined>(undefined),
+			ReservedNodeId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TargetReservedNodeOfferingId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3971,6 +4005,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface AuthorizeClusterSecurityGroupIngressMessage {
+
+		/** Required */
 		ClusterSecurityGroupName: string;
 		CIDRIP?: string | null;
 		EC2SecurityGroupName?: string | null;
@@ -3979,6 +4015,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface AuthorizeClusterSecurityGroupIngressMessageFormProperties {
+
+		/** Required */
 		ClusterSecurityGroupName: FormControl<string | null | undefined>,
 		CIDRIP: FormControl<string | null | undefined>,
 		EC2SecurityGroupName: FormControl<string | null | undefined>,
@@ -3986,7 +4024,7 @@ export namespace MyNS {
 	}
 	export function CreateAuthorizeClusterSecurityGroupIngressMessageFormGroup() {
 		return new FormGroup<AuthorizeClusterSecurityGroupIngressMessageFormProperties>({
-			ClusterSecurityGroupName: new FormControl<string | null | undefined>(undefined),
+			ClusterSecurityGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			CIDRIP: new FormControl<string | null | undefined>(undefined),
 			EC2SecurityGroupName: new FormControl<string | null | undefined>(undefined),
 			EC2SecurityGroupOwnerId: new FormControl<string | null | undefined>(undefined),
@@ -3997,27 +4035,37 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface AuthorizeSnapshotAccessMessage {
+
+		/** Required */
 		SnapshotIdentifier: string;
 		SnapshotClusterIdentifier?: string | null;
+
+		/** Required */
 		AccountWithRestoreAccess: string;
 	}
 
 	/** <p/> */
 	export interface AuthorizeSnapshotAccessMessageFormProperties {
+
+		/** Required */
 		SnapshotIdentifier: FormControl<string | null | undefined>,
 		SnapshotClusterIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		AccountWithRestoreAccess: FormControl<string | null | undefined>,
 	}
 	export function CreateAuthorizeSnapshotAccessMessageFormGroup() {
 		return new FormGroup<AuthorizeSnapshotAccessMessageFormProperties>({
-			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SnapshotClusterIdentifier: new FormControl<string | null | undefined>(undefined),
-			AccountWithRestoreAccess: new FormControl<string | null | undefined>(undefined),
+			AccountWithRestoreAccess: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface BatchDeleteClusterSnapshotsRequest {
+
+		/** Required */
 		Identifiers: Array<DeleteClusterSnapshotMessage>;
 	}
 	export interface BatchDeleteClusterSnapshotsRequestFormProperties {
@@ -4029,6 +4077,8 @@ export namespace MyNS {
 	}
 
 	export interface BatchModifyClusterSnapshotsMessage {
+
+		/** Required */
 		SnapshotIdentifierList: Array<string>;
 		ManualSnapshotRetentionPeriod?: number | null;
 		Force?: boolean | null;
@@ -4046,14 +4096,18 @@ export namespace MyNS {
 	}
 
 	export interface CancelResizeMessage {
+
+		/** Required */
 		ClusterIdentifier: string;
 	}
 	export interface CancelResizeMessageFormProperties {
+
+		/** Required */
 		ClusterIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelResizeMessageFormGroup() {
 		return new FormGroup<CancelResizeMessageFormProperties>({
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4063,24 +4117,32 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CopyClusterSnapshotMessage {
+
+		/** Required */
 		SourceSnapshotIdentifier: string;
 		SourceSnapshotClusterIdentifier?: string | null;
+
+		/** Required */
 		TargetSnapshotIdentifier: string;
 		ManualSnapshotRetentionPeriod?: number | null;
 	}
 
 	/** <p/> */
 	export interface CopyClusterSnapshotMessageFormProperties {
+
+		/** Required */
 		SourceSnapshotIdentifier: FormControl<string | null | undefined>,
 		SourceSnapshotClusterIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		TargetSnapshotIdentifier: FormControl<string | null | undefined>,
 		ManualSnapshotRetentionPeriod: FormControl<number | null | undefined>,
 	}
 	export function CreateCopyClusterSnapshotMessageFormGroup() {
 		return new FormGroup<CopyClusterSnapshotMessageFormProperties>({
-			SourceSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			SourceSnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SourceSnapshotClusterIdentifier: new FormControl<string | null | undefined>(undefined),
-			TargetSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			TargetSnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ManualSnapshotRetentionPeriod: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -4090,10 +4152,18 @@ export namespace MyNS {
 	/** <p/> */
 	export interface CreateClusterMessage {
 		DBName?: string | null;
+
+		/** Required */
 		ClusterIdentifier: string;
 		ClusterType?: string | null;
+
+		/** Required */
 		NodeType: string;
+
+		/** Required */
 		MasterUsername: string;
+
+		/** Required */
 		MasterUserPassword: string;
 		ClusterSecurityGroups?: Array<string>;
 		VpcSecurityGroupIds?: Array<string>;
@@ -4124,10 +4194,18 @@ export namespace MyNS {
 	/** <p/> */
 	export interface CreateClusterMessageFormProperties {
 		DBName: FormControl<string | null | undefined>,
+
+		/** Required */
 		ClusterIdentifier: FormControl<string | null | undefined>,
 		ClusterType: FormControl<string | null | undefined>,
+
+		/** Required */
 		NodeType: FormControl<string | null | undefined>,
+
+		/** Required */
 		MasterUsername: FormControl<string | null | undefined>,
+
+		/** Required */
 		MasterUserPassword: FormControl<string | null | undefined>,
 		ClusterSubnetGroupName: FormControl<string | null | undefined>,
 		AvailabilityZone: FormControl<string | null | undefined>,
@@ -4153,11 +4231,11 @@ export namespace MyNS {
 	export function CreateCreateClusterMessageFormGroup() {
 		return new FormGroup<CreateClusterMessageFormProperties>({
 			DBName: new FormControl<string | null | undefined>(undefined),
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ClusterType: new FormControl<string | null | undefined>(undefined),
-			NodeType: new FormControl<string | null | undefined>(undefined),
-			MasterUsername: new FormControl<string | null | undefined>(undefined),
-			MasterUserPassword: new FormControl<string | null | undefined>(undefined),
+			NodeType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MasterUsername: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MasterUserPassword: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ClusterSubnetGroupName: new FormControl<string | null | undefined>(undefined),
 			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
 			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
@@ -4185,23 +4263,35 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateClusterParameterGroupMessage {
+
+		/** Required */
 		ParameterGroupName: string;
+
+		/** Required */
 		ParameterGroupFamily: string;
+
+		/** Required */
 		Description: string;
 		Tags?: Array<Tag>;
 	}
 
 	/** <p/> */
 	export interface CreateClusterParameterGroupMessageFormProperties {
+
+		/** Required */
 		ParameterGroupName: FormControl<string | null | undefined>,
+
+		/** Required */
 		ParameterGroupFamily: FormControl<string | null | undefined>,
+
+		/** Required */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateClusterParameterGroupMessageFormGroup() {
 		return new FormGroup<CreateClusterParameterGroupMessageFormProperties>({
-			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
-			ParameterGroupFamily: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ParameterGroupFamily: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4209,20 +4299,28 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateClusterSecurityGroupMessage {
+
+		/** Required */
 		ClusterSecurityGroupName: string;
+
+		/** Required */
 		Description: string;
 		Tags?: Array<Tag>;
 	}
 
 	/** <p/> */
 	export interface CreateClusterSecurityGroupMessageFormProperties {
+
+		/** Required */
 		ClusterSecurityGroupName: FormControl<string | null | undefined>,
+
+		/** Required */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateClusterSecurityGroupMessageFormGroup() {
 		return new FormGroup<CreateClusterSecurityGroupMessageFormProperties>({
-			ClusterSecurityGroupName: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			ClusterSecurityGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4230,7 +4328,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateClusterSnapshotMessage {
+
+		/** Required */
 		SnapshotIdentifier: string;
+
+		/** Required */
 		ClusterIdentifier: string;
 		ManualSnapshotRetentionPeriod?: number | null;
 		Tags?: Array<Tag>;
@@ -4238,14 +4340,18 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateClusterSnapshotMessageFormProperties {
+
+		/** Required */
 		SnapshotIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		ClusterIdentifier: FormControl<string | null | undefined>,
 		ManualSnapshotRetentionPeriod: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateClusterSnapshotMessageFormGroup() {
 		return new FormGroup<CreateClusterSnapshotMessageFormProperties>({
-			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ManualSnapshotRetentionPeriod: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -4254,21 +4360,31 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateClusterSubnetGroupMessage {
+
+		/** Required */
 		ClusterSubnetGroupName: string;
+
+		/** Required */
 		Description: string;
+
+		/** Required */
 		SubnetIds: Array<string>;
 		Tags?: Array<Tag>;
 	}
 
 	/** <p/> */
 	export interface CreateClusterSubnetGroupMessageFormProperties {
+
+		/** Required */
 		ClusterSubnetGroupName: FormControl<string | null | undefined>,
+
+		/** Required */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateClusterSubnetGroupMessageFormGroup() {
 		return new FormGroup<CreateClusterSubnetGroupMessageFormProperties>({
-			ClusterSubnetGroupName: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			ClusterSubnetGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4276,7 +4392,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateEventSubscriptionMessage {
+
+		/** Required */
 		SubscriptionName: string;
+
+		/** Required */
 		SnsTopicArn: string;
 		SourceType?: string | null;
 		SourceIds?: Array<string>;
@@ -4288,7 +4408,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateEventSubscriptionMessageFormProperties {
+
+		/** Required */
 		SubscriptionName: FormControl<string | null | undefined>,
+
+		/** Required */
 		SnsTopicArn: FormControl<string | null | undefined>,
 		SourceType: FormControl<string | null | undefined>,
 		Severity: FormControl<string | null | undefined>,
@@ -4296,8 +4420,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateEventSubscriptionMessageFormGroup() {
 		return new FormGroup<CreateEventSubscriptionMessageFormProperties>({
-			SubscriptionName: new FormControl<string | null | undefined>(undefined),
-			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
+			SubscriptionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SourceType: new FormControl<string | null | undefined>(undefined),
 			Severity: new FormControl<string | null | undefined>(undefined),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
@@ -4308,17 +4432,21 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateHsmClientCertificateMessage {
+
+		/** Required */
 		HsmClientCertificateIdentifier: string;
 		Tags?: Array<Tag>;
 	}
 
 	/** <p/> */
 	export interface CreateHsmClientCertificateMessageFormProperties {
+
+		/** Required */
 		HsmClientCertificateIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateHsmClientCertificateMessageFormGroup() {
 		return new FormGroup<CreateHsmClientCertificateMessageFormProperties>({
-			HsmClientCertificateIdentifier: new FormControl<string | null | undefined>(undefined),
+			HsmClientCertificateIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4326,37 +4454,63 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateHsmConfigurationMessage {
+
+		/** Required */
 		HsmConfigurationIdentifier: string;
+
+		/** Required */
 		Description: string;
+
+		/** Required */
 		HsmIpAddress: string;
+
+		/** Required */
 		HsmPartitionName: string;
+
+		/** Required */
 		HsmPartitionPassword: string;
+
+		/** Required */
 		HsmServerPublicCertificate: string;
 		Tags?: Array<Tag>;
 	}
 
 	/** <p/> */
 	export interface CreateHsmConfigurationMessageFormProperties {
+
+		/** Required */
 		HsmConfigurationIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		Description: FormControl<string | null | undefined>,
+
+		/** Required */
 		HsmIpAddress: FormControl<string | null | undefined>,
+
+		/** Required */
 		HsmPartitionName: FormControl<string | null | undefined>,
+
+		/** Required */
 		HsmPartitionPassword: FormControl<string | null | undefined>,
+
+		/** Required */
 		HsmServerPublicCertificate: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateHsmConfigurationMessageFormGroup() {
 		return new FormGroup<CreateHsmConfigurationMessageFormProperties>({
-			HsmConfigurationIdentifier: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			HsmIpAddress: new FormControl<string | null | undefined>(undefined),
-			HsmPartitionName: new FormControl<string | null | undefined>(undefined),
-			HsmPartitionPassword: new FormControl<string | null | undefined>(undefined),
-			HsmServerPublicCertificate: new FormControl<string | null | undefined>(undefined),
+			HsmConfigurationIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			HsmIpAddress: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			HsmPartitionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			HsmPartitionPassword: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			HsmServerPublicCertificate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface CreateScheduledActionMessage {
+
+		/** Required */
 		ScheduledActionName: string;
 
 		/**
@@ -4364,7 +4518,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		TargetAction: ScheduledActionType;
+
+		/** Required */
 		Schedule: string;
+
+		/** Required */
 		IamRole: string;
 		ScheduledActionDescription?: string | null;
 		StartTime?: Date | null;
@@ -4372,8 +4530,14 @@ export namespace MyNS {
 		Enable?: boolean | null;
 	}
 	export interface CreateScheduledActionMessageFormProperties {
+
+		/** Required */
 		ScheduledActionName: FormControl<string | null | undefined>,
+
+		/** Required */
 		Schedule: FormControl<string | null | undefined>,
+
+		/** Required */
 		IamRole: FormControl<string | null | undefined>,
 		ScheduledActionDescription: FormControl<string | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
@@ -4382,9 +4546,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateScheduledActionMessageFormGroup() {
 		return new FormGroup<CreateScheduledActionMessageFormProperties>({
-			ScheduledActionName: new FormControl<string | null | undefined>(undefined),
-			Schedule: new FormControl<string | null | undefined>(undefined),
-			IamRole: new FormControl<string | null | undefined>(undefined),
+			ScheduledActionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Schedule: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			IamRole: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ScheduledActionDescription: new FormControl<string | null | undefined>(undefined),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
@@ -4396,6 +4560,8 @@ export namespace MyNS {
 
 	/** The result of the <code>CreateSnapshotCopyGrant</code> action. */
 	export interface CreateSnapshotCopyGrantMessage {
+
+		/** Required */
 		SnapshotCopyGrantName: string;
 		KmsKeyId?: string | null;
 		Tags?: Array<Tag>;
@@ -4403,12 +4569,14 @@ export namespace MyNS {
 
 	/** The result of the <code>CreateSnapshotCopyGrant</code> action. */
 	export interface CreateSnapshotCopyGrantMessageFormProperties {
+
+		/** Required */
 		SnapshotCopyGrantName: FormControl<string | null | undefined>,
 		KmsKeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSnapshotCopyGrantMessageFormGroup() {
 		return new FormGroup<CreateSnapshotCopyGrantMessageFormProperties>({
-			SnapshotCopyGrantName: new FormControl<string | null | undefined>(undefined),
+			SnapshotCopyGrantName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			KmsKeyId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4441,44 +4609,66 @@ export namespace MyNS {
 
 	/** Contains the output from the <code>CreateTags</code> action.  */
 	export interface CreateTagsMessage {
+
+		/** Required */
 		ResourceName: string;
+
+		/** Required */
 		Tags: Array<Tag>;
 	}
 
 	/** Contains the output from the <code>CreateTags</code> action.  */
 	export interface CreateTagsMessageFormProperties {
+
+		/** Required */
 		ResourceName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateTagsMessageFormGroup() {
 		return new FormGroup<CreateTagsMessageFormProperties>({
-			ResourceName: new FormControl<string | null | undefined>(undefined),
+			ResourceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface CreateUsageLimitMessage {
+
+		/** Required */
 		ClusterIdentifier: string;
+
+		/** Required */
 		FeatureType: CreateUsageLimitMessageFeatureType;
+
+		/** Required */
 		LimitType: CreateUsageLimitMessageLimitType;
+
+		/** Required */
 		Amount: number;
 		Period?: UsageLimitPeriod | null;
 		BreachAction?: CreateUsageLimitMessageBreachAction | null;
 		Tags?: Array<Tag>;
 	}
 	export interface CreateUsageLimitMessageFormProperties {
+
+		/** Required */
 		ClusterIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		FeatureType: FormControl<CreateUsageLimitMessageFeatureType | null | undefined>,
+
+		/** Required */
 		LimitType: FormControl<CreateUsageLimitMessageLimitType | null | undefined>,
+
+		/** Required */
 		Amount: FormControl<number | null | undefined>,
 		Period: FormControl<UsageLimitPeriod | null | undefined>,
 		BreachAction: FormControl<CreateUsageLimitMessageBreachAction | null | undefined>,
 	}
 	export function CreateCreateUsageLimitMessageFormGroup() {
 		return new FormGroup<CreateUsageLimitMessageFormProperties>({
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
-			FeatureType: new FormControl<CreateUsageLimitMessageFeatureType | null | undefined>(undefined),
-			LimitType: new FormControl<CreateUsageLimitMessageLimitType | null | undefined>(undefined),
-			Amount: new FormControl<number | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			FeatureType: new FormControl<CreateUsageLimitMessageFeatureType | null | undefined>(undefined, [Validators.required]),
+			LimitType: new FormControl<CreateUsageLimitMessageLimitType | null | undefined>(undefined, [Validators.required]),
+			Amount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			Period: new FormControl<UsageLimitPeriod | null | undefined>(undefined),
 			BreachAction: new FormControl<CreateUsageLimitMessageBreachAction | null | undefined>(undefined),
 		});
@@ -4494,6 +4684,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteClusterMessage {
+
+		/** Required */
 		ClusterIdentifier: string;
 		SkipFinalClusterSnapshot?: boolean | null;
 		FinalClusterSnapshotIdentifier?: string | null;
@@ -4502,6 +4694,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteClusterMessageFormProperties {
+
+		/** Required */
 		ClusterIdentifier: FormControl<string | null | undefined>,
 		SkipFinalClusterSnapshot: FormControl<boolean | null | undefined>,
 		FinalClusterSnapshotIdentifier: FormControl<string | null | undefined>,
@@ -4509,7 +4703,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteClusterMessageFormGroup() {
 		return new FormGroup<DeleteClusterMessageFormProperties>({
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SkipFinalClusterSnapshot: new FormControl<boolean | null | undefined>(undefined),
 			FinalClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
 			FinalClusterSnapshotRetentionPeriod: new FormControl<number | null | undefined>(undefined),
@@ -4520,16 +4714,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteClusterParameterGroupMessage {
+
+		/** Required */
 		ParameterGroupName: string;
 	}
 
 	/** <p/> */
 	export interface DeleteClusterParameterGroupMessageFormProperties {
+
+		/** Required */
 		ParameterGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteClusterParameterGroupMessageFormGroup() {
 		return new FormGroup<DeleteClusterParameterGroupMessageFormProperties>({
-			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4537,16 +4735,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteClusterSecurityGroupMessage {
+
+		/** Required */
 		ClusterSecurityGroupName: string;
 	}
 
 	/** <p/> */
 	export interface DeleteClusterSecurityGroupMessageFormProperties {
+
+		/** Required */
 		ClusterSecurityGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteClusterSecurityGroupMessageFormGroup() {
 		return new FormGroup<DeleteClusterSecurityGroupMessageFormProperties>({
-			ClusterSecurityGroupName: new FormControl<string | null | undefined>(undefined),
+			ClusterSecurityGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4554,16 +4756,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteClusterSubnetGroupMessage {
+
+		/** Required */
 		ClusterSubnetGroupName: string;
 	}
 
 	/** <p/> */
 	export interface DeleteClusterSubnetGroupMessageFormProperties {
+
+		/** Required */
 		ClusterSubnetGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteClusterSubnetGroupMessageFormGroup() {
 		return new FormGroup<DeleteClusterSubnetGroupMessageFormProperties>({
-			ClusterSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			ClusterSubnetGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4571,16 +4777,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteEventSubscriptionMessage {
+
+		/** Required */
 		SubscriptionName: string;
 	}
 
 	/** <p/> */
 	export interface DeleteEventSubscriptionMessageFormProperties {
+
+		/** Required */
 		SubscriptionName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteEventSubscriptionMessageFormGroup() {
 		return new FormGroup<DeleteEventSubscriptionMessageFormProperties>({
-			SubscriptionName: new FormControl<string | null | undefined>(undefined),
+			SubscriptionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4588,16 +4798,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteHsmClientCertificateMessage {
+
+		/** Required */
 		HsmClientCertificateIdentifier: string;
 	}
 
 	/** <p/> */
 	export interface DeleteHsmClientCertificateMessageFormProperties {
+
+		/** Required */
 		HsmClientCertificateIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteHsmClientCertificateMessageFormGroup() {
 		return new FormGroup<DeleteHsmClientCertificateMessageFormProperties>({
-			HsmClientCertificateIdentifier: new FormControl<string | null | undefined>(undefined),
+			HsmClientCertificateIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4605,29 +4819,37 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteHsmConfigurationMessage {
+
+		/** Required */
 		HsmConfigurationIdentifier: string;
 	}
 
 	/** <p/> */
 	export interface DeleteHsmConfigurationMessageFormProperties {
+
+		/** Required */
 		HsmConfigurationIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteHsmConfigurationMessageFormGroup() {
 		return new FormGroup<DeleteHsmConfigurationMessageFormProperties>({
-			HsmConfigurationIdentifier: new FormControl<string | null | undefined>(undefined),
+			HsmConfigurationIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeleteScheduledActionMessage {
+
+		/** Required */
 		ScheduledActionName: string;
 	}
 	export interface DeleteScheduledActionMessageFormProperties {
+
+		/** Required */
 		ScheduledActionName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteScheduledActionMessageFormGroup() {
 		return new FormGroup<DeleteScheduledActionMessageFormProperties>({
-			ScheduledActionName: new FormControl<string | null | undefined>(undefined),
+			ScheduledActionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4635,29 +4857,37 @@ export namespace MyNS {
 
 	/** The result of the <code>DeleteSnapshotCopyGrant</code> action. */
 	export interface DeleteSnapshotCopyGrantMessage {
+
+		/** Required */
 		SnapshotCopyGrantName: string;
 	}
 
 	/** The result of the <code>DeleteSnapshotCopyGrant</code> action. */
 	export interface DeleteSnapshotCopyGrantMessageFormProperties {
+
+		/** Required */
 		SnapshotCopyGrantName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSnapshotCopyGrantMessageFormGroup() {
 		return new FormGroup<DeleteSnapshotCopyGrantMessageFormProperties>({
-			SnapshotCopyGrantName: new FormControl<string | null | undefined>(undefined),
+			SnapshotCopyGrantName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeleteSnapshotScheduleMessage {
+
+		/** Required */
 		ScheduleIdentifier: string;
 	}
 	export interface DeleteSnapshotScheduleMessageFormProperties {
+
+		/** Required */
 		ScheduleIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSnapshotScheduleMessageFormGroup() {
 		return new FormGroup<DeleteSnapshotScheduleMessageFormProperties>({
-			ScheduleIdentifier: new FormControl<string | null | undefined>(undefined),
+			ScheduleIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4665,30 +4895,40 @@ export namespace MyNS {
 
 	/** Contains the output from the <code>DeleteTags</code> action.  */
 	export interface DeleteTagsMessage {
+
+		/** Required */
 		ResourceName: string;
+
+		/** Required */
 		TagKeys: Array<string>;
 	}
 
 	/** Contains the output from the <code>DeleteTags</code> action.  */
 	export interface DeleteTagsMessageFormProperties {
+
+		/** Required */
 		ResourceName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteTagsMessageFormGroup() {
 		return new FormGroup<DeleteTagsMessageFormProperties>({
-			ResourceName: new FormControl<string | null | undefined>(undefined),
+			ResourceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeleteUsageLimitMessage {
+
+		/** Required */
 		UsageLimitId: string;
 	}
 	export interface DeleteUsageLimitMessageFormProperties {
+
+		/** Required */
 		UsageLimitId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteUsageLimitMessageFormGroup() {
 		return new FormGroup<DeleteUsageLimitMessageFormProperties>({
-			UsageLimitId: new FormControl<string | null | undefined>(undefined),
+			UsageLimitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4751,6 +4991,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeClusterParametersMessage {
+
+		/** Required */
 		ParameterGroupName: string;
 		Source?: string | null;
 		MaxRecords?: number | null;
@@ -4759,6 +5001,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeClusterParametersMessageFormProperties {
+
+		/** Required */
 		ParameterGroupName: FormControl<string | null | undefined>,
 		Source: FormControl<string | null | undefined>,
 		MaxRecords: FormControl<number | null | undefined>,
@@ -4766,7 +5010,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeClusterParametersMessageFormGroup() {
 		return new FormGroup<DescribeClusterParametersMessageFormProperties>({
-			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Source: new FormControl<string | null | undefined>(undefined),
 			MaxRecords: new FormControl<number | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
@@ -4941,6 +5185,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeDefaultClusterParametersMessage {
+
+		/** Required */
 		ParameterGroupFamily: string;
 		MaxRecords?: number | null;
 		Marker?: string | null;
@@ -4948,13 +5194,15 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeDefaultClusterParametersMessageFormProperties {
+
+		/** Required */
 		ParameterGroupFamily: FormControl<string | null | undefined>,
 		MaxRecords: FormControl<number | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeDefaultClusterParametersMessageFormGroup() {
 		return new FormGroup<DescribeDefaultClusterParametersMessageFormProperties>({
-			ParameterGroupFamily: new FormControl<string | null | undefined>(undefined),
+			ParameterGroupFamily: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			MaxRecords: new FormControl<number | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
 		});
@@ -5095,21 +5343,27 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeLoggingStatusMessage {
+
+		/** Required */
 		ClusterIdentifier: string;
 	}
 
 	/** <p/> */
 	export interface DescribeLoggingStatusMessageFormProperties {
+
+		/** Required */
 		ClusterIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeLoggingStatusMessageFormGroup() {
 		return new FormGroup<DescribeLoggingStatusMessageFormProperties>({
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DescribeNodeConfigurationOptionsMessage {
+
+		/** Required */
 		ActionType: DescribeNodeConfigurationOptionsMessageActionType;
 		ClusterIdentifier?: string | null;
 		SnapshotIdentifier?: string | null;
@@ -5119,6 +5373,8 @@ export namespace MyNS {
 		MaxRecords?: number | null;
 	}
 	export interface DescribeNodeConfigurationOptionsMessageFormProperties {
+
+		/** Required */
 		ActionType: FormControl<DescribeNodeConfigurationOptionsMessageActionType | null | undefined>,
 		ClusterIdentifier: FormControl<string | null | undefined>,
 		SnapshotIdentifier: FormControl<string | null | undefined>,
@@ -5128,7 +5384,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeNodeConfigurationOptionsMessageFormGroup() {
 		return new FormGroup<DescribeNodeConfigurationOptionsMessageFormProperties>({
-			ActionType: new FormControl<DescribeNodeConfigurationOptionsMessageActionType | null | undefined>(undefined),
+			ActionType: new FormControl<DescribeNodeConfigurationOptionsMessageActionType | null | undefined>(undefined, [Validators.required]),
 			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
 			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
 			OwnerAccount: new FormControl<string | null | undefined>(undefined),
@@ -5215,16 +5471,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeResizeMessage {
+
+		/** Required */
 		ClusterIdentifier: string;
 	}
 
 	/** <p/> */
 	export interface DescribeResizeMessageFormProperties {
+
+		/** Required */
 		ClusterIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeResizeMessageFormGroup() {
 		return new FormGroup<DescribeResizeMessageFormProperties>({
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5398,16 +5658,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DisableLoggingMessage {
+
+		/** Required */
 		ClusterIdentifier: string;
 	}
 
 	/** <p/> */
 	export interface DisableLoggingMessageFormProperties {
+
+		/** Required */
 		ClusterIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateDisableLoggingMessageFormGroup() {
 		return new FormGroup<DisableLoggingMessageFormProperties>({
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5415,16 +5679,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DisableSnapshotCopyMessage {
+
+		/** Required */
 		ClusterIdentifier: string;
 	}
 
 	/** <p/> */
 	export interface DisableSnapshotCopyMessageFormProperties {
+
+		/** Required */
 		ClusterIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateDisableSnapshotCopyMessageFormGroup() {
 		return new FormGroup<DisableSnapshotCopyMessageFormProperties>({
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5432,21 +5700,29 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface EnableLoggingMessage {
+
+		/** Required */
 		ClusterIdentifier: string;
+
+		/** Required */
 		BucketName: string;
 		S3KeyPrefix?: string | null;
 	}
 
 	/** <p/> */
 	export interface EnableLoggingMessageFormProperties {
+
+		/** Required */
 		ClusterIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		BucketName: FormControl<string | null | undefined>,
 		S3KeyPrefix: FormControl<string | null | undefined>,
 	}
 	export function CreateEnableLoggingMessageFormGroup() {
 		return new FormGroup<EnableLoggingMessageFormProperties>({
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
-			BucketName: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			S3KeyPrefix: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5455,7 +5731,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface EnableSnapshotCopyMessage {
+
+		/** Required */
 		ClusterIdentifier: string;
+
+		/** Required */
 		DestinationRegion: string;
 		RetentionPeriod?: number | null;
 		SnapshotCopyGrantName?: string | null;
@@ -5464,7 +5744,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface EnableSnapshotCopyMessageFormProperties {
+
+		/** Required */
 		ClusterIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		DestinationRegion: FormControl<string | null | undefined>,
 		RetentionPeriod: FormControl<number | null | undefined>,
 		SnapshotCopyGrantName: FormControl<string | null | undefined>,
@@ -5472,8 +5756,8 @@ export namespace MyNS {
 	}
 	export function CreateEnableSnapshotCopyMessageFormGroup() {
 		return new FormGroup<EnableSnapshotCopyMessageFormProperties>({
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
-			DestinationRegion: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DestinationRegion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RetentionPeriod: new FormControl<number | null | undefined>(undefined),
 			SnapshotCopyGrantName: new FormControl<string | null | undefined>(undefined),
 			ManualSnapshotRetentionPeriod: new FormControl<number | null | undefined>(undefined),
@@ -5484,8 +5768,12 @@ export namespace MyNS {
 
 	/** The request parameters to get cluster credentials. */
 	export interface GetClusterCredentialsMessage {
+
+		/** Required */
 		DbUser: string;
 		DbName?: string | null;
+
+		/** Required */
 		ClusterIdentifier: string;
 		DurationSeconds?: number | null;
 		AutoCreate?: boolean | null;
@@ -5494,17 +5782,21 @@ export namespace MyNS {
 
 	/** The request parameters to get cluster credentials. */
 	export interface GetClusterCredentialsMessageFormProperties {
+
+		/** Required */
 		DbUser: FormControl<string | null | undefined>,
 		DbName: FormControl<string | null | undefined>,
+
+		/** Required */
 		ClusterIdentifier: FormControl<string | null | undefined>,
 		DurationSeconds: FormControl<number | null | undefined>,
 		AutoCreate: FormControl<boolean | null | undefined>,
 	}
 	export function CreateGetClusterCredentialsMessageFormGroup() {
 		return new FormGroup<GetClusterCredentialsMessageFormProperties>({
-			DbUser: new FormControl<string | null | undefined>(undefined),
+			DbUser: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DbName: new FormControl<string | null | undefined>(undefined),
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DurationSeconds: new FormControl<number | null | undefined>(undefined),
 			AutoCreate: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -5514,6 +5806,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface GetReservedNodeExchangeOfferingsInputMessage {
+
+		/** Required */
 		ReservedNodeId: string;
 		MaxRecords?: number | null;
 		Marker?: string | null;
@@ -5521,13 +5815,15 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface GetReservedNodeExchangeOfferingsInputMessageFormProperties {
+
+		/** Required */
 		ReservedNodeId: FormControl<string | null | undefined>,
 		MaxRecords: FormControl<number | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateGetReservedNodeExchangeOfferingsInputMessageFormGroup() {
 		return new FormGroup<GetReservedNodeExchangeOfferingsInputMessageFormProperties>({
-			ReservedNodeId: new FormControl<string | null | undefined>(undefined),
+			ReservedNodeId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			MaxRecords: new FormControl<number | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
 		});
@@ -5537,17 +5833,25 @@ export namespace MyNS {
 	export enum Mode { standard = 0, high_performance = 1 }
 
 	export interface ModifyClusterDbRevisionMessage {
+
+		/** Required */
 		ClusterIdentifier: string;
+
+		/** Required */
 		RevisionTarget: string;
 	}
 	export interface ModifyClusterDbRevisionMessageFormProperties {
+
+		/** Required */
 		ClusterIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		RevisionTarget: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyClusterDbRevisionMessageFormGroup() {
 		return new FormGroup<ModifyClusterDbRevisionMessageFormProperties>({
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
-			RevisionTarget: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RevisionTarget: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5555,6 +5859,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyClusterIamRolesMessage {
+
+		/** Required */
 		ClusterIdentifier: string;
 		AddIamRoles?: Array<string>;
 		RemoveIamRoles?: Array<string>;
@@ -5562,16 +5868,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyClusterIamRolesMessageFormProperties {
+
+		/** Required */
 		ClusterIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyClusterIamRolesMessageFormGroup() {
 		return new FormGroup<ModifyClusterIamRolesMessageFormProperties>({
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ModifyClusterMaintenanceMessage {
+
+		/** Required */
 		ClusterIdentifier: string;
 		DeferMaintenance?: boolean | null;
 		DeferMaintenanceIdentifier?: string | null;
@@ -5580,6 +5890,8 @@ export namespace MyNS {
 		DeferMaintenanceDuration?: number | null;
 	}
 	export interface ModifyClusterMaintenanceMessageFormProperties {
+
+		/** Required */
 		ClusterIdentifier: FormControl<string | null | undefined>,
 		DeferMaintenance: FormControl<boolean | null | undefined>,
 		DeferMaintenanceIdentifier: FormControl<string | null | undefined>,
@@ -5589,7 +5901,7 @@ export namespace MyNS {
 	}
 	export function CreateModifyClusterMaintenanceMessageFormGroup() {
 		return new FormGroup<ModifyClusterMaintenanceMessageFormProperties>({
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DeferMaintenance: new FormControl<boolean | null | undefined>(undefined),
 			DeferMaintenanceIdentifier: new FormControl<string | null | undefined>(undefined),
 			DeferMaintenanceStartTime: new FormControl<Date | null | undefined>(undefined),
@@ -5602,6 +5914,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyClusterMessage {
+
+		/** Required */
 		ClusterIdentifier: string;
 		ClusterType?: string | null;
 		NodeType?: string | null;
@@ -5628,6 +5942,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyClusterMessageFormProperties {
+
+		/** Required */
 		ClusterIdentifier: FormControl<string | null | undefined>,
 		ClusterType: FormControl<string | null | undefined>,
 		NodeType: FormControl<string | null | undefined>,
@@ -5651,7 +5967,7 @@ export namespace MyNS {
 	}
 	export function CreateModifyClusterMessageFormGroup() {
 		return new FormGroup<ModifyClusterMessageFormProperties>({
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ClusterType: new FormControl<string | null | undefined>(undefined),
 			NodeType: new FormControl<string | null | undefined>(undefined),
 			NumberOfNodes: new FormControl<number | null | undefined>(undefined),
@@ -5678,34 +5994,44 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyClusterParameterGroupMessage {
+
+		/** Required */
 		ParameterGroupName: string;
+
+		/** Required */
 		Parameters: Array<Parameter>;
 	}
 
 	/** <p/> */
 	export interface ModifyClusterParameterGroupMessageFormProperties {
+
+		/** Required */
 		ParameterGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyClusterParameterGroupMessageFormGroup() {
 		return new FormGroup<ModifyClusterParameterGroupMessageFormProperties>({
-			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ModifyClusterSnapshotMessage {
+
+		/** Required */
 		SnapshotIdentifier: string;
 		ManualSnapshotRetentionPeriod?: number | null;
 		Force?: boolean | null;
 	}
 	export interface ModifyClusterSnapshotMessageFormProperties {
+
+		/** Required */
 		SnapshotIdentifier: FormControl<string | null | undefined>,
 		ManualSnapshotRetentionPeriod: FormControl<number | null | undefined>,
 		Force: FormControl<boolean | null | undefined>,
 	}
 	export function CreateModifyClusterSnapshotMessageFormGroup() {
 		return new FormGroup<ModifyClusterSnapshotMessageFormProperties>({
-			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ManualSnapshotRetentionPeriod: new FormControl<number | null | undefined>(undefined),
 			Force: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -5713,18 +6039,22 @@ export namespace MyNS {
 	}
 
 	export interface ModifyClusterSnapshotScheduleMessage {
+
+		/** Required */
 		ClusterIdentifier: string;
 		ScheduleIdentifier?: string | null;
 		DisassociateSchedule?: boolean | null;
 	}
 	export interface ModifyClusterSnapshotScheduleMessageFormProperties {
+
+		/** Required */
 		ClusterIdentifier: FormControl<string | null | undefined>,
 		ScheduleIdentifier: FormControl<string | null | undefined>,
 		DisassociateSchedule: FormControl<boolean | null | undefined>,
 	}
 	export function CreateModifyClusterSnapshotScheduleMessageFormGroup() {
 		return new FormGroup<ModifyClusterSnapshotScheduleMessageFormProperties>({
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ScheduleIdentifier: new FormControl<string | null | undefined>(undefined),
 			DisassociateSchedule: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -5734,19 +6064,25 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyClusterSubnetGroupMessage {
+
+		/** Required */
 		ClusterSubnetGroupName: string;
 		Description?: string | null;
+
+		/** Required */
 		SubnetIds: Array<string>;
 	}
 
 	/** <p/> */
 	export interface ModifyClusterSubnetGroupMessageFormProperties {
+
+		/** Required */
 		ClusterSubnetGroupName: FormControl<string | null | undefined>,
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyClusterSubnetGroupMessageFormGroup() {
 		return new FormGroup<ModifyClusterSubnetGroupMessageFormProperties>({
-			ClusterSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			ClusterSubnetGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Description: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5755,6 +6091,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyEventSubscriptionMessage {
+
+		/** Required */
 		SubscriptionName: string;
 		SnsTopicArn?: string | null;
 		SourceType?: string | null;
@@ -5766,6 +6104,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyEventSubscriptionMessageFormProperties {
+
+		/** Required */
 		SubscriptionName: FormControl<string | null | undefined>,
 		SnsTopicArn: FormControl<string | null | undefined>,
 		SourceType: FormControl<string | null | undefined>,
@@ -5774,7 +6114,7 @@ export namespace MyNS {
 	}
 	export function CreateModifyEventSubscriptionMessageFormGroup() {
 		return new FormGroup<ModifyEventSubscriptionMessageFormProperties>({
-			SubscriptionName: new FormControl<string | null | undefined>(undefined),
+			SubscriptionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
 			SourceType: new FormControl<string | null | undefined>(undefined),
 			Severity: new FormControl<string | null | undefined>(undefined),
@@ -5784,6 +6124,8 @@ export namespace MyNS {
 	}
 
 	export interface ModifyScheduledActionMessage {
+
+		/** Required */
 		ScheduledActionName: string;
 
 		/** The action type that specifies an Amazon Redshift API operation that is supported by the Amazon Redshift scheduler. */
@@ -5796,6 +6138,8 @@ export namespace MyNS {
 		Enable?: boolean | null;
 	}
 	export interface ModifyScheduledActionMessageFormProperties {
+
+		/** Required */
 		ScheduledActionName: FormControl<string | null | undefined>,
 		Schedule: FormControl<string | null | undefined>,
 		IamRole: FormControl<string | null | undefined>,
@@ -5806,7 +6150,7 @@ export namespace MyNS {
 	}
 	export function CreateModifyScheduledActionMessageFormGroup() {
 		return new FormGroup<ModifyScheduledActionMessageFormProperties>({
-			ScheduledActionName: new FormControl<string | null | undefined>(undefined),
+			ScheduledActionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Schedule: new FormControl<string | null | undefined>(undefined),
 			IamRole: new FormControl<string | null | undefined>(undefined),
 			ScheduledActionDescription: new FormControl<string | null | undefined>(undefined),
@@ -5820,53 +6164,71 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifySnapshotCopyRetentionPeriodMessage {
+
+		/** Required */
 		ClusterIdentifier: string;
+
+		/** Required */
 		RetentionPeriod: number;
 		Manual?: boolean | null;
 	}
 
 	/** <p/> */
 	export interface ModifySnapshotCopyRetentionPeriodMessageFormProperties {
+
+		/** Required */
 		ClusterIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		RetentionPeriod: FormControl<number | null | undefined>,
 		Manual: FormControl<boolean | null | undefined>,
 	}
 	export function CreateModifySnapshotCopyRetentionPeriodMessageFormGroup() {
 		return new FormGroup<ModifySnapshotCopyRetentionPeriodMessageFormProperties>({
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
-			RetentionPeriod: new FormControl<number | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RetentionPeriod: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			Manual: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ModifySnapshotScheduleMessage {
+
+		/** Required */
 		ScheduleIdentifier: string;
+
+		/** Required */
 		ScheduleDefinitions: Array<string>;
 	}
 	export interface ModifySnapshotScheduleMessageFormProperties {
+
+		/** Required */
 		ScheduleIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateModifySnapshotScheduleMessageFormGroup() {
 		return new FormGroup<ModifySnapshotScheduleMessageFormProperties>({
-			ScheduleIdentifier: new FormControl<string | null | undefined>(undefined),
+			ScheduleIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ModifyUsageLimitMessage {
+
+		/** Required */
 		UsageLimitId: string;
 		Amount?: number | null;
 		BreachAction?: ModifyUsageLimitMessageBreachAction | null;
 	}
 	export interface ModifyUsageLimitMessageFormProperties {
+
+		/** Required */
 		UsageLimitId: FormControl<string | null | undefined>,
 		Amount: FormControl<number | null | undefined>,
 		BreachAction: FormControl<ModifyUsageLimitMessageBreachAction | null | undefined>,
 	}
 	export function CreateModifyUsageLimitMessageFormGroup() {
 		return new FormGroup<ModifyUsageLimitMessageFormProperties>({
-			UsageLimitId: new FormControl<string | null | undefined>(undefined),
+			UsageLimitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Amount: new FormControl<number | null | undefined>(undefined),
 			BreachAction: new FormControl<ModifyUsageLimitMessageBreachAction | null | undefined>(undefined),
 		});
@@ -5880,18 +6242,22 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface PurchaseReservedNodeOfferingMessage {
+
+		/** Required */
 		ReservedNodeOfferingId: string;
 		NodeCount?: number | null;
 	}
 
 	/** <p/> */
 	export interface PurchaseReservedNodeOfferingMessageFormProperties {
+
+		/** Required */
 		ReservedNodeOfferingId: FormControl<string | null | undefined>,
 		NodeCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePurchaseReservedNodeOfferingMessageFormGroup() {
 		return new FormGroup<PurchaseReservedNodeOfferingMessageFormProperties>({
-			ReservedNodeOfferingId: new FormControl<string | null | undefined>(undefined),
+			ReservedNodeOfferingId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NodeCount: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -5900,16 +6266,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface RebootClusterMessage {
+
+		/** Required */
 		ClusterIdentifier: string;
 	}
 
 	/** <p/> */
 	export interface RebootClusterMessageFormProperties {
+
+		/** Required */
 		ClusterIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateRebootClusterMessageFormGroup() {
 		return new FormGroup<RebootClusterMessageFormProperties>({
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5919,6 +6289,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ResetClusterParameterGroupMessage {
+
+		/** Required */
 		ParameterGroupName: string;
 		ResetAllParameters?: boolean | null;
 		Parameters?: Array<Parameter>;
@@ -5926,12 +6298,14 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ResetClusterParameterGroupMessageFormProperties {
+
+		/** Required */
 		ParameterGroupName: FormControl<string | null | undefined>,
 		ResetAllParameters: FormControl<boolean | null | undefined>,
 	}
 	export function CreateResetClusterParameterGroupMessageFormGroup() {
 		return new FormGroup<ResetClusterParameterGroupMessageFormProperties>({
-			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ResetAllParameters: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -5940,7 +6314,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface RestoreFromClusterSnapshotMessage {
+
+		/** Required */
 		ClusterIdentifier: string;
+
+		/** Required */
 		SnapshotIdentifier: string;
 		SnapshotClusterIdentifier?: string | null;
 		Port?: number | null;
@@ -5970,7 +6348,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface RestoreFromClusterSnapshotMessageFormProperties {
+
+		/** Required */
 		ClusterIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		SnapshotIdentifier: FormControl<string | null | undefined>,
 		SnapshotClusterIdentifier: FormControl<string | null | undefined>,
 		Port: FormControl<number | null | undefined>,
@@ -5996,8 +6378,8 @@ export namespace MyNS {
 	}
 	export function CreateRestoreFromClusterSnapshotMessageFormGroup() {
 		return new FormGroup<RestoreFromClusterSnapshotMessageFormProperties>({
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
-			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SnapshotClusterIdentifier: new FormControl<string | null | undefined>(undefined),
 			Port: new FormControl<number | null | undefined>(undefined),
 			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
@@ -6026,37 +6408,57 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface RestoreTableFromClusterSnapshotMessage {
+
+		/** Required */
 		ClusterIdentifier: string;
+
+		/** Required */
 		SnapshotIdentifier: string;
+
+		/** Required */
 		SourceDatabaseName: string;
 		SourceSchemaName?: string | null;
+
+		/** Required */
 		SourceTableName: string;
 		TargetDatabaseName?: string | null;
 		TargetSchemaName?: string | null;
+
+		/** Required */
 		NewTableName: string;
 	}
 
 	/** <p/> */
 	export interface RestoreTableFromClusterSnapshotMessageFormProperties {
+
+		/** Required */
 		ClusterIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		SnapshotIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		SourceDatabaseName: FormControl<string | null | undefined>,
 		SourceSchemaName: FormControl<string | null | undefined>,
+
+		/** Required */
 		SourceTableName: FormControl<string | null | undefined>,
 		TargetDatabaseName: FormControl<string | null | undefined>,
 		TargetSchemaName: FormControl<string | null | undefined>,
+
+		/** Required */
 		NewTableName: FormControl<string | null | undefined>,
 	}
 	export function CreateRestoreTableFromClusterSnapshotMessageFormGroup() {
 		return new FormGroup<RestoreTableFromClusterSnapshotMessageFormProperties>({
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
-			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
-			SourceDatabaseName: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SourceDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SourceSchemaName: new FormControl<string | null | undefined>(undefined),
-			SourceTableName: new FormControl<string | null | undefined>(undefined),
+			SourceTableName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TargetDatabaseName: new FormControl<string | null | undefined>(undefined),
 			TargetSchemaName: new FormControl<string | null | undefined>(undefined),
-			NewTableName: new FormControl<string | null | undefined>(undefined),
+			NewTableName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6064,6 +6466,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface RevokeClusterSecurityGroupIngressMessage {
+
+		/** Required */
 		ClusterSecurityGroupName: string;
 		CIDRIP?: string | null;
 		EC2SecurityGroupName?: string | null;
@@ -6072,6 +6476,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface RevokeClusterSecurityGroupIngressMessageFormProperties {
+
+		/** Required */
 		ClusterSecurityGroupName: FormControl<string | null | undefined>,
 		CIDRIP: FormControl<string | null | undefined>,
 		EC2SecurityGroupName: FormControl<string | null | undefined>,
@@ -6079,7 +6485,7 @@ export namespace MyNS {
 	}
 	export function CreateRevokeClusterSecurityGroupIngressMessageFormGroup() {
 		return new FormGroup<RevokeClusterSecurityGroupIngressMessageFormProperties>({
-			ClusterSecurityGroupName: new FormControl<string | null | undefined>(undefined),
+			ClusterSecurityGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			CIDRIP: new FormControl<string | null | undefined>(undefined),
 			EC2SecurityGroupName: new FormControl<string | null | undefined>(undefined),
 			EC2SecurityGroupOwnerId: new FormControl<string | null | undefined>(undefined),
@@ -6090,22 +6496,30 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface RevokeSnapshotAccessMessage {
+
+		/** Required */
 		SnapshotIdentifier: string;
 		SnapshotClusterIdentifier?: string | null;
+
+		/** Required */
 		AccountWithRestoreAccess: string;
 	}
 
 	/** <p/> */
 	export interface RevokeSnapshotAccessMessageFormProperties {
+
+		/** Required */
 		SnapshotIdentifier: FormControl<string | null | undefined>,
 		SnapshotClusterIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		AccountWithRestoreAccess: FormControl<string | null | undefined>,
 	}
 	export function CreateRevokeSnapshotAccessMessageFormGroup() {
 		return new FormGroup<RevokeSnapshotAccessMessageFormProperties>({
-			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SnapshotClusterIdentifier: new FormControl<string | null | undefined>(undefined),
-			AccountWithRestoreAccess: new FormControl<string | null | undefined>(undefined),
+			AccountWithRestoreAccess: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6113,16 +6527,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface RotateEncryptionKeyMessage {
+
+		/** Required */
 		ClusterIdentifier: string;
 	}
 
 	/** <p/> */
 	export interface RotateEncryptionKeyMessageFormProperties {
+
+		/** Required */
 		ClusterIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateRotateEncryptionKeyMessageFormGroup() {
 		return new FormGroup<RotateEncryptionKeyMessageFormProperties>({
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

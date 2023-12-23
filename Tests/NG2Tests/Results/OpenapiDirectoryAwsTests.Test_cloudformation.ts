@@ -30,18 +30,28 @@ export namespace MyNS {
 
 	/** The output for the <a>CreateChangeSet</a> action. */
 	export interface CreateChangeSetOutput {
+
+		/**
+		 * Min length: 1
+		 * Pattern: arn:[-a-zA-Z0-9:/]*
+		 */
 		Id?: string | null;
 		StackId?: string | null;
 	}
 
 	/** The output for the <a>CreateChangeSet</a> action. */
 	export interface CreateChangeSetOutputFormProperties {
+
+		/**
+		 * Min length: 1
+		 * Pattern: arn:[-a-zA-Z0-9:/]*
+		 */
 		Id: FormControl<string | null | undefined>,
 		StackId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateChangeSetOutputFormGroup() {
 		return new FormGroup<CreateChangeSetOutputFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			StackId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -78,19 +88,27 @@ export namespace MyNS {
 
 	/** A rollback trigger AWS CloudFormation monitors during creation and updating of stacks. If any of the alarms you specify goes to ALARM state during the stack operation or within the specified monitoring period afterwards, CloudFormation rolls back the entire stack operation.  */
 	export interface RollbackTrigger {
+
+		/** Required */
 		Arn: string;
+
+		/** Required */
 		Type: string;
 	}
 
 	/** A rollback trigger AWS CloudFormation monitors during creation and updating of stacks. If any of the alarms you specify goes to ALARM state during the stack operation or within the specified monitoring period afterwards, CloudFormation rolls back the entire stack operation.  */
 	export interface RollbackTriggerFormProperties {
+
+		/** Required */
 		Arn: FormControl<string | null | undefined>,
+
+		/** Required */
 		Type: FormControl<string | null | undefined>,
 	}
 	export function CreateRollbackTriggerFormGroup() {
 		return new FormGroup<RollbackTriggerFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
-			Type: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Type: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -98,19 +116,43 @@ export namespace MyNS {
 
 	/** The Tag type enables you to specify a key-value pair that can be used to store information about an AWS CloudFormation stack. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Value: string;
 	}
 
 	/** The Tag type enables you to specify a key-value pair that can be used to store information about an AWS CloudFormation stack. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -118,20 +160,38 @@ export namespace MyNS {
 
 	/** Describes the target resource of an import operation. */
 	export interface ResourceToImport {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ResourceType: string;
+
+		/** Required */
 		LogicalResourceId: string;
+
+		/** Required */
 		ResourceIdentifier: ResourceIdentifierProperties;
 	}
 
 	/** Describes the target resource of an import operation. */
 	export interface ResourceToImportFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ResourceType: FormControl<string | null | undefined>,
+
+		/** Required */
 		LogicalResourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateResourceToImportFormGroup() {
 		return new FormGroup<ResourceToImportFormProperties>({
-			ResourceType: new FormControl<string | null | undefined>(undefined),
-			LogicalResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			LogicalResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -194,14 +254,26 @@ export namespace MyNS {
 	}
 
 	export interface CreateStackInstancesOutput {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId?: string | null;
 	}
 	export interface CreateStackInstancesOutputFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateStackInstancesOutputFormGroup() {
 		return new FormGroup<CreateStackInstancesOutputFormProperties>({
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -314,14 +386,26 @@ export namespace MyNS {
 	}
 
 	export interface DeleteStackInstancesOutput {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId?: string | null;
 	}
 	export interface DeleteStackInstancesOutputFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteStackInstancesOutputFormGroup() {
 		return new FormGroup<DeleteStackInstancesOutputFormProperties>({
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -380,16 +464,26 @@ export namespace MyNS {
 	/** The output for the <a>DescribeAccountLimits</a> action. */
 	export interface DescribeAccountLimitsOutput {
 		AccountLimits?: Array<AccountLimit>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 
 	/** The output for the <a>DescribeAccountLimits</a> action. */
 	export interface DescribeAccountLimitsOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeAccountLimitsOutputFormGroup() {
 		return new FormGroup<DescribeAccountLimitsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -417,51 +511,97 @@ export namespace MyNS {
 
 	/** The output for the <a>DescribeChangeSet</a> action. */
 	export interface DescribeChangeSetOutput {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][-a-zA-Z0-9]*
+		 */
 		ChangeSetName?: string | null;
+
+		/**
+		 * Min length: 1
+		 * Pattern: arn:[-a-zA-Z0-9:/]*
+		 */
 		ChangeSetId?: string | null;
 		StackId?: string | null;
 		StackName?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
 		Parameters?: Array<Parameter>;
 		CreationTime?: Date | null;
 		ExecutionStatus?: DescribeChangeSetOutputExecutionStatus | null;
 		Status?: DescribeChangeSetOutputStatus | null;
 		StatusReason?: string | null;
+
+		/** Maximum items: 5 */
 		NotificationARNs?: Array<string>;
 
 		/** <p>Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p> <p>Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p> */
 		RollbackConfiguration?: RollbackConfiguration;
 		Capabilities?: Array<Capability>;
+
+		/** Maximum items: 50 */
 		Tags?: Array<Tag>;
 		Changes?: Array<Change>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 
 	/** The output for the <a>DescribeChangeSet</a> action. */
 	export interface DescribeChangeSetOutputFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][-a-zA-Z0-9]*
+		 */
 		ChangeSetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Min length: 1
+		 * Pattern: arn:[-a-zA-Z0-9:/]*
+		 */
 		ChangeSetId: FormControl<string | null | undefined>,
 		StackId: FormControl<string | null | undefined>,
 		StackName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 		CreationTime: FormControl<Date | null | undefined>,
 		ExecutionStatus: FormControl<DescribeChangeSetOutputExecutionStatus | null | undefined>,
 		Status: FormControl<DescribeChangeSetOutputStatus | null | undefined>,
 		StatusReason: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeChangeSetOutputFormGroup() {
 		return new FormGroup<DescribeChangeSetOutputFormProperties>({
-			ChangeSetName: new FormControl<string | null | undefined>(undefined),
-			ChangeSetId: new FormControl<string | null | undefined>(undefined),
+			ChangeSetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeSetId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			StackId: new FormControl<string | null | undefined>(undefined),
 			StackName: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			ExecutionStatus: new FormControl<DescribeChangeSetOutputExecutionStatus | null | undefined>(undefined),
 			Status: new FormControl<DescribeChangeSetOutputStatus | null | undefined>(undefined),
 			StatusReason: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -473,17 +613,29 @@ export namespace MyNS {
 
 	/** <p>Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p> <p>Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p> */
 	export interface RollbackConfiguration {
+
+		/** Maximum items: 5 */
 		RollbackTriggers?: Array<RollbackTrigger>;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 180
+		 */
 		MonitoringTimeInMinutes?: number | null;
 	}
 
 	/** <p>Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p> <p>Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p> */
 	export interface RollbackConfigurationFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 180
+		 */
 		MonitoringTimeInMinutes: FormControl<number | null | undefined>,
 	}
 	export function CreateRollbackConfigurationFormGroup() {
 		return new FormGroup<RollbackConfigurationFormProperties>({
-			MonitoringTimeInMinutes: new FormControl<number | null | undefined>(undefined),
+			MonitoringTimeInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(180)]),
 		});
 
 	}
@@ -516,6 +668,11 @@ export namespace MyNS {
 		Action?: ResourceChangeAction | null;
 		LogicalResourceId?: string | null;
 		PhysicalResourceId?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ResourceType?: string | null;
 		Replacement?: ResourceChangeReplacement | null;
 		Scope?: Array<ResourceAttribute>;
@@ -527,6 +684,11 @@ export namespace MyNS {
 		Action: FormControl<ResourceChangeAction | null | undefined>,
 		LogicalResourceId: FormControl<string | null | undefined>,
 		PhysicalResourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ResourceType: FormControl<string | null | undefined>,
 		Replacement: FormControl<ResourceChangeReplacement | null | undefined>,
 	}
@@ -535,7 +697,7 @@ export namespace MyNS {
 			Action: new FormControl<ResourceChangeAction | null | undefined>(undefined),
 			LogicalResourceId: new FormControl<string | null | undefined>(undefined),
 			PhysicalResourceId: new FormControl<string | null | undefined>(undefined),
-			ResourceType: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			Replacement: new FormControl<ResourceChangeReplacement | null | undefined>(undefined),
 		});
 
@@ -613,32 +775,56 @@ export namespace MyNS {
 	}
 
 	export interface DescribeStackDriftDetectionStatusOutput {
+
+		/** Required */
 		StackId: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		StackDriftDetectionId: string;
 		StackDriftStatus?: DescribeStackDriftDetectionStatusOutputStackDriftStatus | null;
+
+		/** Required */
 		DetectionStatus: DescribeStackDriftDetectionStatusOutputDetectionStatus;
 		DetectionStatusReason?: string | null;
 		DriftedStackResourceCount?: number | null;
+
+		/** Required */
 		Timestamp: Date;
 	}
 	export interface DescribeStackDriftDetectionStatusOutputFormProperties {
+
+		/** Required */
 		StackId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		StackDriftDetectionId: FormControl<string | null | undefined>,
 		StackDriftStatus: FormControl<DescribeStackDriftDetectionStatusOutputStackDriftStatus | null | undefined>,
+
+		/** Required */
 		DetectionStatus: FormControl<DescribeStackDriftDetectionStatusOutputDetectionStatus | null | undefined>,
 		DetectionStatusReason: FormControl<string | null | undefined>,
 		DriftedStackResourceCount: FormControl<number | null | undefined>,
+
+		/** Required */
 		Timestamp: FormControl<Date | null | undefined>,
 	}
 	export function CreateDescribeStackDriftDetectionStatusOutputFormGroup() {
 		return new FormGroup<DescribeStackDriftDetectionStatusOutputFormProperties>({
-			StackId: new FormControl<string | null | undefined>(undefined),
-			StackDriftDetectionId: new FormControl<string | null | undefined>(undefined),
+			StackId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			StackDriftDetectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
 			StackDriftStatus: new FormControl<DescribeStackDriftDetectionStatusOutputStackDriftStatus | null | undefined>(undefined),
-			DetectionStatus: new FormControl<DescribeStackDriftDetectionStatusOutputDetectionStatus | null | undefined>(undefined),
+			DetectionStatus: new FormControl<DescribeStackDriftDetectionStatusOutputDetectionStatus | null | undefined>(undefined, [Validators.required]),
 			DetectionStatusReason: new FormControl<string | null | undefined>(undefined),
 			DriftedStackResourceCount: new FormControl<number | null | undefined>(undefined),
-			Timestamp: new FormControl<Date | null | undefined>(undefined),
+			Timestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -651,16 +837,26 @@ export namespace MyNS {
 	/** The output for a <a>DescribeStackEvents</a> action. */
 	export interface DescribeStackEventsOutput {
 		StackEvents?: Array<StackEvent>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 
 	/** The output for a <a>DescribeStackEvents</a> action. */
 	export interface DescribeStackEventsOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeStackEventsOutputFormGroup() {
 		return new FormGroup<DescribeStackEventsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -668,46 +864,84 @@ export namespace MyNS {
 
 	/** The StackEvent data type. */
 	export interface StackEvent {
+
+		/** Required */
 		StackId: string;
+
+		/** Required */
 		EventId: string;
+
+		/** Required */
 		StackName: string;
 		LogicalResourceId?: string | null;
 		PhysicalResourceId?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ResourceType?: string | null;
+
+		/** Required */
 		Timestamp: Date;
 		ResourceStatus?: StackEventResourceStatus | null;
 		ResourceStatusReason?: string | null;
 		ResourceProperties?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		ClientRequestToken?: string | null;
 	}
 
 	/** The StackEvent data type. */
 	export interface StackEventFormProperties {
+
+		/** Required */
 		StackId: FormControl<string | null | undefined>,
+
+		/** Required */
 		EventId: FormControl<string | null | undefined>,
+
+		/** Required */
 		StackName: FormControl<string | null | undefined>,
 		LogicalResourceId: FormControl<string | null | undefined>,
 		PhysicalResourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ResourceType: FormControl<string | null | undefined>,
+
+		/** Required */
 		Timestamp: FormControl<Date | null | undefined>,
 		ResourceStatus: FormControl<StackEventResourceStatus | null | undefined>,
 		ResourceStatusReason: FormControl<string | null | undefined>,
 		ResourceProperties: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateStackEventFormGroup() {
 		return new FormGroup<StackEventFormProperties>({
-			StackId: new FormControl<string | null | undefined>(undefined),
-			EventId: new FormControl<string | null | undefined>(undefined),
-			StackName: new FormControl<string | null | undefined>(undefined),
+			StackId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			EventId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			LogicalResourceId: new FormControl<string | null | undefined>(undefined),
 			PhysicalResourceId: new FormControl<string | null | undefined>(undefined),
-			ResourceType: new FormControl<string | null | undefined>(undefined),
-			Timestamp: new FormControl<Date | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Timestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			ResourceStatus: new FormControl<StackEventResourceStatus | null | undefined>(undefined),
 			ResourceStatusReason: new FormControl<string | null | undefined>(undefined),
 			ResourceProperties: new FormControl<string | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -731,12 +965,18 @@ export namespace MyNS {
 	/** An AWS CloudFormation stack, in a specific account and Region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given Region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status. */
 	export interface StackInstance {
 		StackSetId?: string | null;
+
+		/** Pattern: ^[a-zA-Z0-9-]{1,128}$ */
 		Region?: string | null;
+
+		/** Pattern: ^[0-9]{12}$ */
 		Account?: string | null;
 		StackId?: string | null;
 		ParameterOverrides?: Array<Parameter>;
 		Status?: StackInstanceStatus | null;
 		StatusReason?: string | null;
+
+		/** Pattern: ^(ou-[a-z0-9]{4,32}-[a-z0-9]{8,32}|r-[a-z0-9]{4,32})$ */
 		OrganizationalUnitId?: string | null;
 		DriftStatus?: DescribeStackDriftDetectionStatusOutputStackDriftStatus | null;
 		LastDriftCheckTimestamp?: Date | null;
@@ -745,11 +985,17 @@ export namespace MyNS {
 	/** An AWS CloudFormation stack, in a specific account and Region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given Region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status. */
 	export interface StackInstanceFormProperties {
 		StackSetId: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9-]{1,128}$ */
 		Region: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[0-9]{12}$ */
 		Account: FormControl<string | null | undefined>,
 		StackId: FormControl<string | null | undefined>,
 		Status: FormControl<StackInstanceStatus | null | undefined>,
 		StatusReason: FormControl<string | null | undefined>,
+
+		/** Pattern: ^(ou-[a-z0-9]{4,32}-[a-z0-9]{8,32}|r-[a-z0-9]{4,32})$ */
 		OrganizationalUnitId: FormControl<string | null | undefined>,
 		DriftStatus: FormControl<DescribeStackDriftDetectionStatusOutputStackDriftStatus | null | undefined>,
 		LastDriftCheckTimestamp: FormControl<Date | null | undefined>,
@@ -803,12 +1049,29 @@ export namespace MyNS {
 	export interface StackResourceDetail {
 		StackName?: string | null;
 		StackId?: string | null;
+
+		/** Required */
 		LogicalResourceId: string;
 		PhysicalResourceId?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ResourceType: string;
+
+		/** Required */
 		LastUpdatedTimestamp: Date;
+
+		/** Required */
 		ResourceStatus: StackEventResourceStatus;
 		ResourceStatusReason?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
 		Metadata?: string | null;
 
@@ -820,12 +1083,29 @@ export namespace MyNS {
 	export interface StackResourceDetailFormProperties {
 		StackName: FormControl<string | null | undefined>,
 		StackId: FormControl<string | null | undefined>,
+
+		/** Required */
 		LogicalResourceId: FormControl<string | null | undefined>,
 		PhysicalResourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ResourceType: FormControl<string | null | undefined>,
+
+		/** Required */
 		LastUpdatedTimestamp: FormControl<Date | null | undefined>,
+
+		/** Required */
 		ResourceStatus: FormControl<StackEventResourceStatus | null | undefined>,
 		ResourceStatusReason: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 		Metadata: FormControl<string | null | undefined>,
 	}
@@ -833,13 +1113,13 @@ export namespace MyNS {
 		return new FormGroup<StackResourceDetailFormProperties>({
 			StackName: new FormControl<string | null | undefined>(undefined),
 			StackId: new FormControl<string | null | undefined>(undefined),
-			LogicalResourceId: new FormControl<string | null | undefined>(undefined),
+			LogicalResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			PhysicalResourceId: new FormControl<string | null | undefined>(undefined),
-			ResourceType: new FormControl<string | null | undefined>(undefined),
-			LastUpdatedTimestamp: new FormControl<Date | null | undefined>(undefined),
-			ResourceStatus: new FormControl<StackEventResourceStatus | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			LastUpdatedTimestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			ResourceStatus: new FormControl<StackEventResourceStatus | null | undefined>(undefined, [Validators.required]),
 			ResourceStatusReason: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			Metadata: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -848,18 +1128,22 @@ export namespace MyNS {
 
 	/** Contains information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration. */
 	export interface StackResourceDriftInformation {
+
+		/** Required */
 		StackResourceDriftStatus: StackResourceDriftInformationStackResourceDriftStatus;
 		LastCheckTimestamp?: Date | null;
 	}
 
 	/** Contains information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration. */
 	export interface StackResourceDriftInformationFormProperties {
+
+		/** Required */
 		StackResourceDriftStatus: FormControl<StackResourceDriftInformationStackResourceDriftStatus | null | undefined>,
 		LastCheckTimestamp: FormControl<Date | null | undefined>,
 	}
 	export function CreateStackResourceDriftInformationFormGroup() {
 		return new FormGroup<StackResourceDriftInformationFormProperties>({
-			StackResourceDriftStatus: new FormControl<StackResourceDriftInformationStackResourceDriftStatus | null | undefined>(undefined),
+			StackResourceDriftStatus: new FormControl<StackResourceDriftInformationStackResourceDriftStatus | null | undefined>(undefined, [Validators.required]),
 			LastCheckTimestamp: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -868,15 +1152,27 @@ export namespace MyNS {
 	export enum StackResourceDriftInformationStackResourceDriftStatus { IN_SYNC = 0, MODIFIED = 1, DELETED = 2, NOT_CHECKED = 3 }
 
 	export interface DescribeStackResourceDriftsOutput {
+
+		/** Required */
 		StackResourceDrifts: Array<StackResourceDrift>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface DescribeStackResourceDriftsOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeStackResourceDriftsOutputFormGroup() {
 		return new FormGroup<DescribeStackResourceDriftsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -884,39 +1180,69 @@ export namespace MyNS {
 
 	/** <p>Contains the drift information for a resource that has been checked for drift. This includes actual and expected property values for resources in which AWS CloudFormation has detected drift. Only resource properties explicitly defined in the stack template are checked for drift. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p> <p>Resources that do not currently support drift detection cannot be checked. For a list of resources that support drift detection, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p> <p>Use <a>DetectStackResourceDrift</a> to detect drift on individual resources, or <a>DetectStackDrift</a> to detect drift on all resources in a given stack that support drift detection.</p> */
 	export interface StackResourceDrift {
+
+		/** Required */
 		StackId: string;
+
+		/** Required */
 		LogicalResourceId: string;
 		PhysicalResourceId?: string | null;
+
+		/** Maximum items: 5 */
 		PhysicalResourceIdContext?: Array<PhysicalResourceIdContextKeyValuePair>;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ResourceType: string;
 		ExpectedProperties?: string | null;
 		ActualProperties?: string | null;
 		PropertyDifferences?: Array<PropertyDifference>;
+
+		/** Required */
 		StackResourceDriftStatus: StackResourceDriftInformationStackResourceDriftStatus;
+
+		/** Required */
 		Timestamp: Date;
 	}
 
 	/** <p>Contains the drift information for a resource that has been checked for drift. This includes actual and expected property values for resources in which AWS CloudFormation has detected drift. Only resource properties explicitly defined in the stack template are checked for drift. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p> <p>Resources that do not currently support drift detection cannot be checked. For a list of resources that support drift detection, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p> <p>Use <a>DetectStackResourceDrift</a> to detect drift on individual resources, or <a>DetectStackDrift</a> to detect drift on all resources in a given stack that support drift detection.</p> */
 	export interface StackResourceDriftFormProperties {
+
+		/** Required */
 		StackId: FormControl<string | null | undefined>,
+
+		/** Required */
 		LogicalResourceId: FormControl<string | null | undefined>,
 		PhysicalResourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ResourceType: FormControl<string | null | undefined>,
 		ExpectedProperties: FormControl<string | null | undefined>,
 		ActualProperties: FormControl<string | null | undefined>,
+
+		/** Required */
 		StackResourceDriftStatus: FormControl<StackResourceDriftInformationStackResourceDriftStatus | null | undefined>,
+
+		/** Required */
 		Timestamp: FormControl<Date | null | undefined>,
 	}
 	export function CreateStackResourceDriftFormGroup() {
 		return new FormGroup<StackResourceDriftFormProperties>({
-			StackId: new FormControl<string | null | undefined>(undefined),
-			LogicalResourceId: new FormControl<string | null | undefined>(undefined),
+			StackId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			LogicalResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			PhysicalResourceId: new FormControl<string | null | undefined>(undefined),
-			ResourceType: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 			ExpectedProperties: new FormControl<string | null | undefined>(undefined),
 			ActualProperties: new FormControl<string | null | undefined>(undefined),
-			StackResourceDriftStatus: new FormControl<StackResourceDriftInformationStackResourceDriftStatus | null | undefined>(undefined),
-			Timestamp: new FormControl<Date | null | undefined>(undefined),
+			StackResourceDriftStatus: new FormControl<StackResourceDriftInformationStackResourceDriftStatus | null | undefined>(undefined, [Validators.required]),
+			Timestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -924,19 +1250,27 @@ export namespace MyNS {
 
 	/** Context information that enables AWS CloudFormation to uniquely identify a resource. AWS CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs are not enough to uniquely identify that resource. Each context key-value pair specifies a resource that contains the targeted resource. */
 	export interface PhysicalResourceIdContextKeyValuePair {
+
+		/** Required */
 		Key: string;
+
+		/** Required */
 		Value: string;
 	}
 
 	/** Context information that enables AWS CloudFormation to uniquely identify a resource. AWS CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs are not enough to uniquely identify that resource. Each context key-value pair specifies a resource that contains the targeted resource. */
 	export interface PhysicalResourceIdContextKeyValuePairFormProperties {
+
+		/** Required */
 		Key: FormControl<string | null | undefined>,
+
+		/** Required */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreatePhysicalResourceIdContextKeyValuePairFormGroup() {
 		return new FormGroup<PhysicalResourceIdContextKeyValuePairFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -944,25 +1278,41 @@ export namespace MyNS {
 
 	/** Information about a resource property whose actual value differs from its expected value, as defined in the stack template and any values specified as template parameters. These will be present only for resources whose <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>. */
 	export interface PropertyDifference {
+
+		/** Required */
 		PropertyPath: string;
+
+		/** Required */
 		ExpectedValue: string;
+
+		/** Required */
 		ActualValue: string;
+
+		/** Required */
 		DifferenceType: PropertyDifferenceDifferenceType;
 	}
 
 	/** Information about a resource property whose actual value differs from its expected value, as defined in the stack template and any values specified as template parameters. These will be present only for resources whose <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>. */
 	export interface PropertyDifferenceFormProperties {
+
+		/** Required */
 		PropertyPath: FormControl<string | null | undefined>,
+
+		/** Required */
 		ExpectedValue: FormControl<string | null | undefined>,
+
+		/** Required */
 		ActualValue: FormControl<string | null | undefined>,
+
+		/** Required */
 		DifferenceType: FormControl<PropertyDifferenceDifferenceType | null | undefined>,
 	}
 	export function CreatePropertyDifferenceFormGroup() {
 		return new FormGroup<PropertyDifferenceFormProperties>({
-			PropertyPath: new FormControl<string | null | undefined>(undefined),
-			ExpectedValue: new FormControl<string | null | undefined>(undefined),
-			ActualValue: new FormControl<string | null | undefined>(undefined),
-			DifferenceType: new FormControl<PropertyDifferenceDifferenceType | null | undefined>(undefined),
+			PropertyPath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ExpectedValue: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ActualValue: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DifferenceType: new FormControl<PropertyDifferenceDifferenceType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -991,12 +1341,29 @@ export namespace MyNS {
 	export interface StackResource {
 		StackName?: string | null;
 		StackId?: string | null;
+
+		/** Required */
 		LogicalResourceId: string;
 		PhysicalResourceId?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ResourceType: string;
+
+		/** Required */
 		Timestamp: Date;
+
+		/** Required */
 		ResourceStatus: StackEventResourceStatus;
 		ResourceStatusReason?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
 
 		/** Contains information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration. */
@@ -1007,25 +1374,42 @@ export namespace MyNS {
 	export interface StackResourceFormProperties {
 		StackName: FormControl<string | null | undefined>,
 		StackId: FormControl<string | null | undefined>,
+
+		/** Required */
 		LogicalResourceId: FormControl<string | null | undefined>,
 		PhysicalResourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ResourceType: FormControl<string | null | undefined>,
+
+		/** Required */
 		Timestamp: FormControl<Date | null | undefined>,
+
+		/** Required */
 		ResourceStatus: FormControl<StackEventResourceStatus | null | undefined>,
 		ResourceStatusReason: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateStackResourceFormGroup() {
 		return new FormGroup<StackResourceFormProperties>({
 			StackName: new FormControl<string | null | undefined>(undefined),
 			StackId: new FormControl<string | null | undefined>(undefined),
-			LogicalResourceId: new FormControl<string | null | undefined>(undefined),
+			LogicalResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			PhysicalResourceId: new FormControl<string | null | undefined>(undefined),
-			ResourceType: new FormControl<string | null | undefined>(undefined),
-			Timestamp: new FormControl<Date | null | undefined>(undefined),
-			ResourceStatus: new FormControl<StackEventResourceStatus | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			Timestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			ResourceStatus: new FormControl<StackEventResourceStatus | null | undefined>(undefined, [Validators.required]),
 			ResourceStatusReason: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1048,14 +1432,34 @@ export namespace MyNS {
 	export interface StackSet {
 		StackSetName?: string | null;
 		StackSetId?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
 		Status?: StackSetStatus | null;
+
+		/** Min length: 1 */
 		TemplateBody?: string | null;
 		Parameters?: Array<Parameter>;
 		Capabilities?: Array<Capability>;
+
+		/** Maximum items: 50 */
 		Tags?: Array<Tag>;
 		StackSetARN?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		AdministrationRoleARN?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z_0-9+=,.@-]+
+		 */
 		ExecutionRoleName?: string | null;
 
 		/** <p>Detailed information about the drift status of the stack set.</p> <p>For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set. Information about drift operations in-progress is not included. </p> <p>For stack set operations, includes information about drift operations currently being performed on the stack set.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the <i>AWS CloudFormation User Guide</i>.</p> */
@@ -1071,11 +1475,29 @@ export namespace MyNS {
 	export interface StackSetFormProperties {
 		StackSetName: FormControl<string | null | undefined>,
 		StackSetId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 		Status: FormControl<StackSetStatus | null | undefined>,
+
+		/** Min length: 1 */
 		TemplateBody: FormControl<string | null | undefined>,
 		StackSetARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		AdministrationRoleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z_0-9+=,.@-]+
+		 */
 		ExecutionRoleName: FormControl<string | null | undefined>,
 		PermissionModel: FormControl<StackSetPermissionModel | null | undefined>,
 	}
@@ -1083,12 +1505,12 @@ export namespace MyNS {
 		return new FormGroup<StackSetFormProperties>({
 			StackSetName: new FormControl<string | null | undefined>(undefined),
 			StackSetId: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			Status: new FormControl<StackSetStatus | null | undefined>(undefined),
-			TemplateBody: new FormControl<string | null | undefined>(undefined),
+			TemplateBody: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			StackSetARN: new FormControl<string | null | undefined>(undefined),
-			AdministrationRoleARN: new FormControl<string | null | undefined>(undefined),
-			ExecutionRoleName: new FormControl<string | null | undefined>(undefined),
+			AdministrationRoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			ExecutionRoleName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			PermissionModel: new FormControl<StackSetPermissionModel | null | undefined>(undefined),
 		});
 
@@ -1102,10 +1524,20 @@ export namespace MyNS {
 		DriftStatus?: StackSetDriftDetectionDetailsDriftStatus | null;
 		DriftDetectionStatus?: StackSetDriftDetectionDetailsDriftDetectionStatus | null;
 		LastDriftCheckTimestamp?: Date | null;
+
+		/** Minimum: 0 */
 		TotalStackInstancesCount?: number | null;
+
+		/** Minimum: 0 */
 		DriftedStackInstancesCount?: number | null;
+
+		/** Minimum: 0 */
 		InSyncStackInstancesCount?: number | null;
+
+		/** Minimum: 0 */
 		InProgressStackInstancesCount?: number | null;
+
+		/** Minimum: 0 */
 		FailedStackInstancesCount?: number | null;
 	}
 
@@ -1114,10 +1546,20 @@ export namespace MyNS {
 		DriftStatus: FormControl<StackSetDriftDetectionDetailsDriftStatus | null | undefined>,
 		DriftDetectionStatus: FormControl<StackSetDriftDetectionDetailsDriftDetectionStatus | null | undefined>,
 		LastDriftCheckTimestamp: FormControl<Date | null | undefined>,
+
+		/** Minimum: 0 */
 		TotalStackInstancesCount: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		DriftedStackInstancesCount: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		InSyncStackInstancesCount: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		InProgressStackInstancesCount: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		FailedStackInstancesCount: FormControl<number | null | undefined>,
 	}
 	export function CreateStackSetDriftDetectionDetailsFormGroup() {
@@ -1125,11 +1567,11 @@ export namespace MyNS {
 			DriftStatus: new FormControl<StackSetDriftDetectionDetailsDriftStatus | null | undefined>(undefined),
 			DriftDetectionStatus: new FormControl<StackSetDriftDetectionDetailsDriftDetectionStatus | null | undefined>(undefined),
 			LastDriftCheckTimestamp: new FormControl<Date | null | undefined>(undefined),
-			TotalStackInstancesCount: new FormControl<number | null | undefined>(undefined),
-			DriftedStackInstancesCount: new FormControl<number | null | undefined>(undefined),
-			InSyncStackInstancesCount: new FormControl<number | null | undefined>(undefined),
-			InProgressStackInstancesCount: new FormControl<number | null | undefined>(undefined),
-			FailedStackInstancesCount: new FormControl<number | null | undefined>(undefined),
+			TotalStackInstancesCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			DriftedStackInstancesCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			InSyncStackInstancesCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			InProgressStackInstancesCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			FailedStackInstancesCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -1176,6 +1618,12 @@ export namespace MyNS {
 
 	/** The structure that contains information about a stack set operation.  */
 	export interface StackSetOperation {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId?: string | null;
 		StackSetId?: string | null;
 		Action?: StackSetOperationAction | null;
@@ -1184,7 +1632,18 @@ export namespace MyNS {
 		/** <p>The user-specified preferences for how AWS CloudFormation performs a stack set operation. </p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p> */
 		OperationPreferences?: StackSetOperationPreferences;
 		RetainStacks?: boolean | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		AdministrationRoleARN?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z_0-9+=,.@-]+
+		 */
 		ExecutionRoleName?: string | null;
 		CreationTimestamp?: Date | null;
 		EndTimestamp?: Date | null;
@@ -1198,25 +1657,42 @@ export namespace MyNS {
 
 	/** The structure that contains information about a stack set operation.  */
 	export interface StackSetOperationFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId: FormControl<string | null | undefined>,
 		StackSetId: FormControl<string | null | undefined>,
 		Action: FormControl<StackSetOperationAction | null | undefined>,
 		Status: FormControl<StackSetOperationStatus | null | undefined>,
 		RetainStacks: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		AdministrationRoleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z_0-9+=,.@-]+
+		 */
 		ExecutionRoleName: FormControl<string | null | undefined>,
 		CreationTimestamp: FormControl<Date | null | undefined>,
 		EndTimestamp: FormControl<Date | null | undefined>,
 	}
 	export function CreateStackSetOperationFormGroup() {
 		return new FormGroup<StackSetOperationFormProperties>({
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			StackSetId: new FormControl<string | null | undefined>(undefined),
 			Action: new FormControl<StackSetOperationAction | null | undefined>(undefined),
 			Status: new FormControl<StackSetOperationStatus | null | undefined>(undefined),
 			RetainStacks: new FormControl<boolean | null | undefined>(undefined),
-			AdministrationRoleARN: new FormControl<string | null | undefined>(undefined),
-			ExecutionRoleName: new FormControl<string | null | undefined>(undefined),
+			AdministrationRoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			ExecutionRoleName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			CreationTimestamp: new FormControl<Date | null | undefined>(undefined),
 			EndTimestamp: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1231,25 +1707,53 @@ export namespace MyNS {
 	/** <p>The user-specified preferences for how AWS CloudFormation performs a stack set operation. </p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p> */
 	export interface StackSetOperationPreferences {
 		RegionOrder?: Array<string>;
+
+		/** Minimum: 0 */
 		FailureToleranceCount?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		FailureTolerancePercentage?: number | null;
+
+		/** Minimum: 1 */
 		MaxConcurrentCount?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxConcurrentPercentage?: number | null;
 	}
 
 	/** <p>The user-specified preferences for how AWS CloudFormation performs a stack set operation. </p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p> */
 	export interface StackSetOperationPreferencesFormProperties {
+
+		/** Minimum: 0 */
 		FailureToleranceCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		FailureTolerancePercentage: FormControl<number | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxConcurrentCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxConcurrentPercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateStackSetOperationPreferencesFormGroup() {
 		return new FormGroup<StackSetOperationPreferencesFormProperties>({
-			FailureToleranceCount: new FormControl<number | null | undefined>(undefined),
-			FailureTolerancePercentage: new FormControl<number | null | undefined>(undefined),
-			MaxConcurrentCount: new FormControl<number | null | undefined>(undefined),
-			MaxConcurrentPercentage: new FormControl<number | null | undefined>(undefined),
+			FailureToleranceCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			FailureTolerancePercentage: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			MaxConcurrentCount: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			MaxConcurrentPercentage: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -1284,16 +1788,26 @@ export namespace MyNS {
 	/** The output for a <a>DescribeStacks</a> action. */
 	export interface DescribeStacksOutput {
 		Stacks?: Array<Stack>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 
 	/** The output for a <a>DescribeStacks</a> action. */
 	export interface DescribeStacksOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeStacksOutputFormGroup() {
 		return new FormGroup<DescribeStacksOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1302,24 +1816,51 @@ export namespace MyNS {
 	/** The Stack data type. */
 	export interface Stack {
 		StackId?: string | null;
+
+		/** Required */
 		StackName: string;
+
+		/**
+		 * Min length: 1
+		 * Pattern: arn:[-a-zA-Z0-9:/]*
+		 */
 		ChangeSetId?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
 		Parameters?: Array<Parameter>;
+
+		/** Required */
 		CreationTime: Date;
 		DeletionTime?: Date | null;
 		LastUpdatedTime?: Date | null;
 
 		/** <p>Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p> <p>Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p> */
 		RollbackConfiguration?: RollbackConfiguration;
+
+		/** Required */
 		StackStatus: StackStackStatus;
 		StackStatusReason?: string | null;
 		DisableRollback?: boolean | null;
+
+		/** Maximum items: 5 */
 		NotificationARNs?: Array<string>;
+
+		/** Minimum: 1 */
 		TimeoutInMinutes?: number | null;
 		Capabilities?: Array<Capability>;
 		Outputs?: Array<Output>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		RoleARN?: string | null;
+
+		/** Maximum items: 50 */
 		Tags?: Array<Tag>;
 		EnableTerminationProtection?: boolean | null;
 		ParentId?: string | null;
@@ -1332,16 +1873,39 @@ export namespace MyNS {
 	/** The Stack data type. */
 	export interface StackFormProperties {
 		StackId: FormControl<string | null | undefined>,
+
+		/** Required */
 		StackName: FormControl<string | null | undefined>,
+
+		/**
+		 * Min length: 1
+		 * Pattern: arn:[-a-zA-Z0-9:/]*
+		 */
 		ChangeSetId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreationTime: FormControl<Date | null | undefined>,
 		DeletionTime: FormControl<Date | null | undefined>,
 		LastUpdatedTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		StackStatus: FormControl<StackStackStatus | null | undefined>,
 		StackStatusReason: FormControl<string | null | undefined>,
 		DisableRollback: FormControl<boolean | null | undefined>,
+
+		/** Minimum: 1 */
 		TimeoutInMinutes: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		RoleARN: FormControl<string | null | undefined>,
 		EnableTerminationProtection: FormControl<boolean | null | undefined>,
 		ParentId: FormControl<string | null | undefined>,
@@ -1350,17 +1914,17 @@ export namespace MyNS {
 	export function CreateStackFormGroup() {
 		return new FormGroup<StackFormProperties>({
 			StackId: new FormControl<string | null | undefined>(undefined),
-			StackName: new FormControl<string | null | undefined>(undefined),
-			ChangeSetId: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ChangeSetId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			DeletionTime: new FormControl<Date | null | undefined>(undefined),
 			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
-			StackStatus: new FormControl<StackStackStatus | null | undefined>(undefined),
+			StackStatus: new FormControl<StackStackStatus | null | undefined>(undefined, [Validators.required]),
 			StackStatusReason: new FormControl<string | null | undefined>(undefined),
 			DisableRollback: new FormControl<boolean | null | undefined>(undefined),
-			TimeoutInMinutes: new FormControl<number | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			TimeoutInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 			EnableTerminationProtection: new FormControl<boolean | null | undefined>(undefined),
 			ParentId: new FormControl<string | null | undefined>(undefined),
 			RootId: new FormControl<string | null | undefined>(undefined),
@@ -1375,6 +1939,11 @@ export namespace MyNS {
 	export interface Output {
 		OutputKey?: string | null;
 		OutputValue?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
 		ExportName?: string | null;
 	}
@@ -1383,6 +1952,11 @@ export namespace MyNS {
 	export interface OutputFormProperties {
 		OutputKey: FormControl<string | null | undefined>,
 		OutputValue: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 		ExportName: FormControl<string | null | undefined>,
 	}
@@ -1390,7 +1964,7 @@ export namespace MyNS {
 		return new FormGroup<OutputFormProperties>({
 			OutputKey: new FormControl<string | null | undefined>(undefined),
 			OutputValue: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			ExportName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1399,75 +1973,153 @@ export namespace MyNS {
 
 	/** Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted. */
 	export interface StackDriftInformation {
+
+		/** Required */
 		StackDriftStatus: DescribeStackDriftDetectionStatusOutputStackDriftStatus;
 		LastCheckTimestamp?: Date | null;
 	}
 
 	/** Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted. */
 	export interface StackDriftInformationFormProperties {
+
+		/** Required */
 		StackDriftStatus: FormControl<DescribeStackDriftDetectionStatusOutputStackDriftStatus | null | undefined>,
 		LastCheckTimestamp: FormControl<Date | null | undefined>,
 	}
 	export function CreateStackDriftInformationFormGroup() {
 		return new FormGroup<StackDriftInformationFormProperties>({
-			StackDriftStatus: new FormControl<DescribeStackDriftDetectionStatusOutputStackDriftStatus | null | undefined>(undefined),
+			StackDriftStatus: new FormControl<DescribeStackDriftDetectionStatusOutputStackDriftStatus | null | undefined>(undefined, [Validators.required]),
 			LastCheckTimestamp: new FormControl<Date | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface DescribeTypeOutput {
+
+		/**
+		 * Max length: 1024
+		 * Pattern: arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/.+
+		 */
 		Arn?: string | null;
 		Type?: DescribeTypeOutputType | null;
+
+		/**
+		 * Max length: 196
+		 * Min length: 10
+		 * Pattern: [A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}
+		 */
 		TypeName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [A-Za-z0-9-]+
+		 */
 		DefaultVersionId?: string | null;
 		IsDefaultVersion?: boolean | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 16777216
+		 * Min length: 1
+		 */
 		Schema?: string | null;
 		ProvisioningType?: DescribeTypeOutputProvisioningType | null;
 		DeprecatedStatus?: DescribeTypeOutputDeprecatedStatus | null;
 
 		/** Contains logging configuration information for a type. */
 		LoggingConfig?: LoggingConfig;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: arn:.+:iam::[0-9]{12}:role/.+
+		 */
 		ExecutionRoleArn?: string | null;
 		Visibility?: DescribeTypeOutputVisibility | null;
+
+		/** Max length: 4096 */
 		SourceUrl?: string | null;
+
+		/** Max length: 4096 */
 		DocumentationUrl?: string | null;
 		LastUpdated?: Date | null;
 		TimeCreated?: Date | null;
 	}
 	export interface DescribeTypeOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Pattern: arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/.+
+		 */
 		Arn: FormControl<string | null | undefined>,
 		Type: FormControl<DescribeTypeOutputType | null | undefined>,
+
+		/**
+		 * Max length: 196
+		 * Min length: 10
+		 * Pattern: [A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}
+		 */
 		TypeName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [A-Za-z0-9-]+
+		 */
 		DefaultVersionId: FormControl<string | null | undefined>,
 		IsDefaultVersion: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16777216
+		 * Min length: 1
+		 */
 		Schema: FormControl<string | null | undefined>,
 		ProvisioningType: FormControl<DescribeTypeOutputProvisioningType | null | undefined>,
 		DeprecatedStatus: FormControl<DescribeTypeOutputDeprecatedStatus | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: arn:.+:iam::[0-9]{12}:role/.+
+		 */
 		ExecutionRoleArn: FormControl<string | null | undefined>,
 		Visibility: FormControl<DescribeTypeOutputVisibility | null | undefined>,
+
+		/** Max length: 4096 */
 		SourceUrl: FormControl<string | null | undefined>,
+
+		/** Max length: 4096 */
 		DocumentationUrl: FormControl<string | null | undefined>,
 		LastUpdated: FormControl<Date | null | undefined>,
 		TimeCreated: FormControl<Date | null | undefined>,
 	}
 	export function CreateDescribeTypeOutputFormGroup() {
 		return new FormGroup<DescribeTypeOutputFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			Type: new FormControl<DescribeTypeOutputType | null | undefined>(undefined),
-			TypeName: new FormControl<string | null | undefined>(undefined),
-			DefaultVersionId: new FormControl<string | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(196), Validators.minLength(10)]),
+			DefaultVersionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			IsDefaultVersion: new FormControl<boolean | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			Schema: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Schema: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16777216), Validators.minLength(1)]),
 			ProvisioningType: new FormControl<DescribeTypeOutputProvisioningType | null | undefined>(undefined),
 			DeprecatedStatus: new FormControl<DescribeTypeOutputDeprecatedStatus | null | undefined>(undefined),
-			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			Visibility: new FormControl<DescribeTypeOutputVisibility | null | undefined>(undefined),
-			SourceUrl: new FormControl<string | null | undefined>(undefined),
-			DocumentationUrl: new FormControl<string | null | undefined>(undefined),
+			SourceUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
+			DocumentationUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
 			LastUpdated: new FormControl<Date | null | undefined>(undefined),
 			TimeCreated: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1483,19 +2135,47 @@ export namespace MyNS {
 
 	/** Contains logging configuration information for a type. */
 	export interface LoggingConfig {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: arn:.+:iam::[0-9]{12}:role/.+
+		 */
 		LogRoleArn: string;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		LogGroupName: string;
 	}
 
 	/** Contains logging configuration information for a type. */
 	export interface LoggingConfigFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: arn:.+:iam::[0-9]{12}:role/.+
+		 */
 		LogRoleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		LogGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateLoggingConfigFormGroup() {
 		return new FormGroup<LoggingConfigFormProperties>({
-			LogRoleArn: new FormControl<string | null | undefined>(undefined),
-			LogGroupName: new FormControl<string | null | undefined>(undefined),
+			LogRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			LogGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
@@ -1504,22 +2184,52 @@ export namespace MyNS {
 
 	export interface DescribeTypeRegistrationOutput {
 		ProgressStatus?: DescribeTypeRegistrationOutputProgressStatus | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Pattern: arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/.+
+		 */
 		TypeArn?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Pattern: arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/.+
+		 */
 		TypeVersionArn?: string | null;
 	}
 	export interface DescribeTypeRegistrationOutputFormProperties {
 		ProgressStatus: FormControl<DescribeTypeRegistrationOutputProgressStatus | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Pattern: arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/.+
+		 */
 		TypeArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Pattern: arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/.+
+		 */
 		TypeVersionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeTypeRegistrationOutputFormGroup() {
 		return new FormGroup<DescribeTypeRegistrationOutputFormProperties>({
 			ProgressStatus: new FormControl<DescribeTypeRegistrationOutputProgressStatus | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			TypeArn: new FormControl<string | null | undefined>(undefined),
-			TypeVersionArn: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			TypeArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			TypeVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1527,14 +2237,26 @@ export namespace MyNS {
 	export enum DescribeTypeRegistrationOutputProgressStatus { COMPLETE = 0, IN_PROGRESS = 1, FAILED = 2 }
 
 	export interface DetectStackDriftOutput {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		StackDriftDetectionId: string;
 	}
 	export interface DetectStackDriftOutputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		StackDriftDetectionId: FormControl<string | null | undefined>,
 	}
 	export function CreateDetectStackDriftOutputFormGroup() {
 		return new FormGroup<DetectStackDriftOutputFormProperties>({
-			StackDriftDetectionId: new FormControl<string | null | undefined>(undefined),
+			StackDriftDetectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
@@ -1556,14 +2278,26 @@ export namespace MyNS {
 	}
 
 	export interface DetectStackSetDriftOutput {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId?: string | null;
 	}
 	export interface DetectStackSetDriftOutputFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId: FormControl<string | null | undefined>,
 	}
 	export function CreateDetectStackSetDriftOutputFormGroup() {
 		return new FormGroup<DetectStackSetDriftOutputFormProperties>({
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -1602,16 +2336,26 @@ export namespace MyNS {
 
 	/** The output for the <a>GetStackPolicy</a> action. */
 	export interface GetStackPolicyOutput {
+
+		/**
+		 * Max length: 16384
+		 * Min length: 1
+		 */
 		StackPolicyBody?: string | null;
 	}
 
 	/** The output for the <a>GetStackPolicy</a> action. */
 	export interface GetStackPolicyOutputFormProperties {
+
+		/**
+		 * Max length: 16384
+		 * Min length: 1
+		 */
 		StackPolicyBody: FormControl<string | null | undefined>,
 	}
 	export function CreateGetStackPolicyOutputFormGroup() {
 		return new FormGroup<GetStackPolicyOutputFormProperties>({
-			StackPolicyBody: new FormControl<string | null | undefined>(undefined),
+			StackPolicyBody: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(1)]),
 		});
 
 	}
@@ -1619,17 +2363,21 @@ export namespace MyNS {
 
 	/** The output for <a>GetTemplate</a> action. */
 	export interface GetTemplateOutput {
+
+		/** Min length: 1 */
 		TemplateBody?: string | null;
 		StagesAvailable?: Array<TemplateStage>;
 	}
 
 	/** The output for <a>GetTemplate</a> action. */
 	export interface GetTemplateOutputFormProperties {
+
+		/** Min length: 1 */
 		TemplateBody: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTemplateOutputFormGroup() {
 		return new FormGroup<GetTemplateOutputFormProperties>({
-			TemplateBody: new FormControl<string | null | undefined>(undefined),
+			TemplateBody: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1640,6 +2388,11 @@ export namespace MyNS {
 	/** The output for the <a>GetTemplateSummary</a> action. */
 	export interface GetTemplateSummaryOutput {
 		Parameters?: Array<ParameterDeclaration>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
 		Capabilities?: Array<Capability>;
 		CapabilitiesReason?: string | null;
@@ -1652,6 +2405,11 @@ export namespace MyNS {
 
 	/** The output for the <a>GetTemplateSummary</a> action. */
 	export interface GetTemplateSummaryOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 		CapabilitiesReason: FormControl<string | null | undefined>,
 		Version: FormControl<string | null | undefined>,
@@ -1659,7 +2417,7 @@ export namespace MyNS {
 	}
 	export function CreateGetTemplateSummaryOutputFormGroup() {
 		return new FormGroup<GetTemplateSummaryOutputFormProperties>({
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			CapabilitiesReason: new FormControl<string | null | undefined>(undefined),
 			Version: new FormControl<string | null | undefined>(undefined),
 			Metadata: new FormControl<string | null | undefined>(undefined),
@@ -1674,6 +2432,11 @@ export namespace MyNS {
 		DefaultValue?: string | null;
 		ParameterType?: string | null;
 		NoEcho?: boolean | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
 
 		/** A set of criteria that AWS CloudFormation uses to validate parameter values. Although other constraints might be defined in the stack template, AWS CloudFormation returns only the <code>AllowedValues</code> property. */
@@ -1686,6 +2449,11 @@ export namespace MyNS {
 		DefaultValue: FormControl<string | null | undefined>,
 		ParameterType: FormControl<string | null | undefined>,
 		NoEcho: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateParameterDeclarationFormGroup() {
@@ -1694,7 +2462,7 @@ export namespace MyNS {
 			DefaultValue: new FormControl<string | null | undefined>(undefined),
 			ParameterType: new FormControl<string | null | undefined>(undefined),
 			NoEcho: new FormControl<boolean | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1717,18 +2485,33 @@ export namespace MyNS {
 
 	/** Describes the target resources of a specific type in your import template (for example, all <code>AWS::S3::Bucket</code> resources) and the properties you can provide during the import to identify resources of that type. */
 	export interface ResourceIdentifierSummary {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ResourceType?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 200
+		 */
 		LogicalResourceIds?: Array<string>;
 		ResourceIdentifiers?: Array<string>;
 	}
 
 	/** Describes the target resources of a specific type in your import template (for example, all <code>AWS::S3::Bucket</code> resources) and the properties you can provide during the import to identify resources of that type. */
 	export interface ResourceIdentifierSummaryFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ResourceType: FormControl<string | null | undefined>,
 	}
 	export function CreateResourceIdentifierSummaryFormGroup() {
 		return new FormGroup<ResourceIdentifierSummaryFormProperties>({
-			ResourceType: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -1737,16 +2520,26 @@ export namespace MyNS {
 	/** The output for the <a>ListChangeSets</a> action. */
 	export interface ListChangeSetsOutput {
 		Summaries?: Array<ChangeSetSummary>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 
 	/** The output for the <a>ListChangeSets</a> action. */
 	export interface ListChangeSetsOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListChangeSetsOutputFormGroup() {
 		return new FormGroup<ListChangeSetsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1756,12 +2549,28 @@ export namespace MyNS {
 	export interface ChangeSetSummary {
 		StackId?: string | null;
 		StackName?: string | null;
+
+		/**
+		 * Min length: 1
+		 * Pattern: arn:[-a-zA-Z0-9:/]*
+		 */
 		ChangeSetId?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][-a-zA-Z0-9]*
+		 */
 		ChangeSetName?: string | null;
 		ExecutionStatus?: DescribeChangeSetOutputExecutionStatus | null;
 		Status?: DescribeChangeSetOutputStatus | null;
 		StatusReason?: string | null;
 		CreationTime?: Date | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
 	}
 
@@ -1769,39 +2578,65 @@ export namespace MyNS {
 	export interface ChangeSetSummaryFormProperties {
 		StackId: FormControl<string | null | undefined>,
 		StackName: FormControl<string | null | undefined>,
+
+		/**
+		 * Min length: 1
+		 * Pattern: arn:[-a-zA-Z0-9:/]*
+		 */
 		ChangeSetId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][-a-zA-Z0-9]*
+		 */
 		ChangeSetName: FormControl<string | null | undefined>,
 		ExecutionStatus: FormControl<DescribeChangeSetOutputExecutionStatus | null | undefined>,
 		Status: FormControl<DescribeChangeSetOutputStatus | null | undefined>,
 		StatusReason: FormControl<string | null | undefined>,
 		CreationTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateChangeSetSummaryFormGroup() {
 		return new FormGroup<ChangeSetSummaryFormProperties>({
 			StackId: new FormControl<string | null | undefined>(undefined),
 			StackName: new FormControl<string | null | undefined>(undefined),
-			ChangeSetId: new FormControl<string | null | undefined>(undefined),
-			ChangeSetName: new FormControl<string | null | undefined>(undefined),
+			ChangeSetId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			ChangeSetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			ExecutionStatus: new FormControl<DescribeChangeSetOutputExecutionStatus | null | undefined>(undefined),
 			Status: new FormControl<DescribeChangeSetOutputStatus | null | undefined>(undefined),
 			StatusReason: new FormControl<string | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListExportsOutput {
 		Exports?: Array<Export>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListExportsOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListExportsOutputFormGroup() {
 		return new FormGroup<ListExportsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1831,28 +2666,48 @@ export namespace MyNS {
 
 	export interface ListImportsOutput {
 		Imports?: Array<string>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListImportsOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListImportsOutputFormGroup() {
 		return new FormGroup<ListImportsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListStackInstancesOutput {
 		Summaries?: Array<StackInstanceSummary>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListStackInstancesOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListStackInstancesOutputFormGroup() {
 		return new FormGroup<ListStackInstancesOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1861,11 +2716,17 @@ export namespace MyNS {
 	/** The structure that contains summary information about a stack instance. */
 	export interface StackInstanceSummary {
 		StackSetId?: string | null;
+
+		/** Pattern: ^[a-zA-Z0-9-]{1,128}$ */
 		Region?: string | null;
+
+		/** Pattern: ^[0-9]{12}$ */
 		Account?: string | null;
 		StackId?: string | null;
 		Status?: StackInstanceStatus | null;
 		StatusReason?: string | null;
+
+		/** Pattern: ^(ou-[a-z0-9]{4,32}-[a-z0-9]{8,32}|r-[a-z0-9]{4,32})$ */
 		OrganizationalUnitId?: string | null;
 		DriftStatus?: DescribeStackDriftDetectionStatusOutputStackDriftStatus | null;
 		LastDriftCheckTimestamp?: Date | null;
@@ -1874,11 +2735,17 @@ export namespace MyNS {
 	/** The structure that contains summary information about a stack instance. */
 	export interface StackInstanceSummaryFormProperties {
 		StackSetId: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9-]{1,128}$ */
 		Region: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[0-9]{12}$ */
 		Account: FormControl<string | null | undefined>,
 		StackId: FormControl<string | null | undefined>,
 		Status: FormControl<StackInstanceStatus | null | undefined>,
 		StatusReason: FormControl<string | null | undefined>,
+
+		/** Pattern: ^(ou-[a-z0-9]{4,32}-[a-z0-9]{8,32}|r-[a-z0-9]{4,32})$ */
 		OrganizationalUnitId: FormControl<string | null | undefined>,
 		DriftStatus: FormControl<DescribeStackDriftDetectionStatusOutputStackDriftStatus | null | undefined>,
 		LastDriftCheckTimestamp: FormControl<Date | null | undefined>,
@@ -1902,16 +2769,26 @@ export namespace MyNS {
 	/** The output for a <a>ListStackResources</a> action. */
 	export interface ListStackResourcesOutput {
 		StackResourceSummaries?: Array<StackResourceSummary>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 
 	/** The output for a <a>ListStackResources</a> action. */
 	export interface ListStackResourcesOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListStackResourcesOutputFormGroup() {
 		return new FormGroup<ListStackResourcesOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1919,10 +2796,22 @@ export namespace MyNS {
 
 	/** Contains high-level information about the specified stack resource. */
 	export interface StackResourceSummary {
+
+		/** Required */
 		LogicalResourceId: string;
 		PhysicalResourceId?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ResourceType: string;
+
+		/** Required */
 		LastUpdatedTimestamp: Date;
+
+		/** Required */
 		ResourceStatus: StackEventResourceStatus;
 		ResourceStatusReason?: string | null;
 
@@ -1932,20 +2821,32 @@ export namespace MyNS {
 
 	/** Contains high-level information about the specified stack resource. */
 	export interface StackResourceSummaryFormProperties {
+
+		/** Required */
 		LogicalResourceId: FormControl<string | null | undefined>,
 		PhysicalResourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ResourceType: FormControl<string | null | undefined>,
+
+		/** Required */
 		LastUpdatedTimestamp: FormControl<Date | null | undefined>,
+
+		/** Required */
 		ResourceStatus: FormControl<StackEventResourceStatus | null | undefined>,
 		ResourceStatusReason: FormControl<string | null | undefined>,
 	}
 	export function CreateStackResourceSummaryFormGroup() {
 		return new FormGroup<StackResourceSummaryFormProperties>({
-			LogicalResourceId: new FormControl<string | null | undefined>(undefined),
+			LogicalResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			PhysicalResourceId: new FormControl<string | null | undefined>(undefined),
-			ResourceType: new FormControl<string | null | undefined>(undefined),
-			LastUpdatedTimestamp: new FormControl<Date | null | undefined>(undefined),
-			ResourceStatus: new FormControl<StackEventResourceStatus | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			LastUpdatedTimestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			ResourceStatus: new FormControl<StackEventResourceStatus | null | undefined>(undefined, [Validators.required]),
 			ResourceStatusReason: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1954,18 +2855,22 @@ export namespace MyNS {
 
 	/** Summarizes information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration. */
 	export interface StackResourceDriftInformationSummary {
+
+		/** Required */
 		StackResourceDriftStatus: StackResourceDriftInformationStackResourceDriftStatus;
 		LastCheckTimestamp?: Date | null;
 	}
 
 	/** Summarizes information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration. */
 	export interface StackResourceDriftInformationSummaryFormProperties {
+
+		/** Required */
 		StackResourceDriftStatus: FormControl<StackResourceDriftInformationStackResourceDriftStatus | null | undefined>,
 		LastCheckTimestamp: FormControl<Date | null | undefined>,
 	}
 	export function CreateStackResourceDriftInformationSummaryFormGroup() {
 		return new FormGroup<StackResourceDriftInformationSummaryFormProperties>({
-			StackResourceDriftStatus: new FormControl<StackResourceDriftInformationStackResourceDriftStatus | null | undefined>(undefined),
+			StackResourceDriftStatus: new FormControl<StackResourceDriftInformationStackResourceDriftStatus | null | undefined>(undefined, [Validators.required]),
 			LastCheckTimestamp: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -1973,14 +2878,24 @@ export namespace MyNS {
 
 	export interface ListStackSetOperationResultsOutput {
 		Summaries?: Array<StackSetOperationResultSummary>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListStackSetOperationResultsOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListStackSetOperationResultsOutputFormGroup() {
 		return new FormGroup<ListStackSetOperationResultsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1988,22 +2903,34 @@ export namespace MyNS {
 
 	/** The structure that contains information about a specified operation's results for a given account in a given Region. */
 	export interface StackSetOperationResultSummary {
+
+		/** Pattern: ^[0-9]{12}$ */
 		Account?: string | null;
+
+		/** Pattern: ^[a-zA-Z0-9-]{1,128}$ */
 		Region?: string | null;
 		Status?: StackSetOperationResultSummaryStatus | null;
 		StatusReason?: string | null;
 
 		/** <p>Structure that contains the results of the account gate function which AWS CloudFormation invokes, if present, before proceeding with a stack set operation in an account and Region.</p> <p>For each account and Region, AWS CloudFormation lets you specify a Lamdba function that encapsulates any requirements that must be met before CloudFormation can proceed with a stack set operation in that account and Region. CloudFormation invokes the function each time a stack set operation is requested for that account and Region; if the function returns <code>FAILED</code>, CloudFormation cancels the operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>. </p> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-account-gating.html">Configuring a target account gate</a>.</p> */
 		AccountGateResult?: AccountGateResult;
+
+		/** Pattern: ^(ou-[a-z0-9]{4,32}-[a-z0-9]{8,32}|r-[a-z0-9]{4,32})$ */
 		OrganizationalUnitId?: string | null;
 	}
 
 	/** The structure that contains information about a specified operation's results for a given account in a given Region. */
 	export interface StackSetOperationResultSummaryFormProperties {
+
+		/** Pattern: ^[0-9]{12}$ */
 		Account: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9-]{1,128}$ */
 		Region: FormControl<string | null | undefined>,
 		Status: FormControl<StackSetOperationResultSummaryStatus | null | undefined>,
 		StatusReason: FormControl<string | null | undefined>,
+
+		/** Pattern: ^(ou-[a-z0-9]{4,32}-[a-z0-9]{8,32}|r-[a-z0-9]{4,32})$ */
 		OrganizationalUnitId: FormControl<string | null | undefined>,
 	}
 	export function CreateStackSetOperationResultSummaryFormGroup() {
@@ -2043,14 +2970,24 @@ export namespace MyNS {
 
 	export interface ListStackSetOperationsOutput {
 		Summaries?: Array<StackSetOperationSummary>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListStackSetOperationsOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListStackSetOperationsOutputFormGroup() {
 		return new FormGroup<ListStackSetOperationsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -2058,6 +2995,12 @@ export namespace MyNS {
 
 	/** The structures that contain summary information about the specified operation. */
 	export interface StackSetOperationSummary {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId?: string | null;
 		Action?: StackSetOperationAction | null;
 		Status?: StackSetOperationStatus | null;
@@ -2067,6 +3010,12 @@ export namespace MyNS {
 
 	/** The structures that contain summary information about the specified operation. */
 	export interface StackSetOperationSummaryFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId: FormControl<string | null | undefined>,
 		Action: FormControl<StackSetOperationAction | null | undefined>,
 		Status: FormControl<StackSetOperationStatus | null | undefined>,
@@ -2075,7 +3024,7 @@ export namespace MyNS {
 	}
 	export function CreateStackSetOperationSummaryFormGroup() {
 		return new FormGroup<StackSetOperationSummaryFormProperties>({
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			Action: new FormControl<StackSetOperationAction | null | undefined>(undefined),
 			Status: new FormControl<StackSetOperationStatus | null | undefined>(undefined),
 			CreationTimestamp: new FormControl<Date | null | undefined>(undefined),
@@ -2086,14 +3035,24 @@ export namespace MyNS {
 
 	export interface ListStackSetsOutput {
 		Summaries?: Array<StackSetSummary>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListStackSetsOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListStackSetsOutputFormGroup() {
 		return new FormGroup<ListStackSetsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -2103,6 +3062,11 @@ export namespace MyNS {
 	export interface StackSetSummary {
 		StackSetName?: string | null;
 		StackSetId?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
 		Status?: StackSetStatus | null;
 
@@ -2117,6 +3081,11 @@ export namespace MyNS {
 	export interface StackSetSummaryFormProperties {
 		StackSetName: FormControl<string | null | undefined>,
 		StackSetId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 		Status: FormControl<StackSetStatus | null | undefined>,
 		PermissionModel: FormControl<StackSetPermissionModel | null | undefined>,
@@ -2127,7 +3096,7 @@ export namespace MyNS {
 		return new FormGroup<StackSetSummaryFormProperties>({
 			StackSetName: new FormControl<string | null | undefined>(undefined),
 			StackSetId: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			Status: new FormControl<StackSetStatus | null | undefined>(undefined),
 			PermissionModel: new FormControl<StackSetPermissionModel | null | undefined>(undefined),
 			DriftStatus: new FormControl<DescribeStackDriftDetectionStatusOutputStackDriftStatus | null | undefined>(undefined),
@@ -2140,16 +3109,26 @@ export namespace MyNS {
 	/** The output for <a>ListStacks</a> action. */
 	export interface ListStacksOutput {
 		StackSummaries?: Array<StackSummary>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 
 	/** The output for <a>ListStacks</a> action. */
 	export interface ListStacksOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListStacksOutputFormGroup() {
 		return new FormGroup<ListStacksOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -2158,11 +3137,17 @@ export namespace MyNS {
 	/** The StackSummary Data Type */
 	export interface StackSummary {
 		StackId?: string | null;
+
+		/** Required */
 		StackName: string;
 		TemplateDescription?: string | null;
+
+		/** Required */
 		CreationTime: Date;
 		LastUpdatedTime?: Date | null;
 		DeletionTime?: Date | null;
+
+		/** Required */
 		StackStatus: StackStackStatus;
 		StackStatusReason?: string | null;
 		ParentId?: string | null;
@@ -2175,11 +3160,17 @@ export namespace MyNS {
 	/** The StackSummary Data Type */
 	export interface StackSummaryFormProperties {
 		StackId: FormControl<string | null | undefined>,
+
+		/** Required */
 		StackName: FormControl<string | null | undefined>,
 		TemplateDescription: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreationTime: FormControl<Date | null | undefined>,
 		LastUpdatedTime: FormControl<Date | null | undefined>,
 		DeletionTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		StackStatus: FormControl<StackStackStatus | null | undefined>,
 		StackStatusReason: FormControl<string | null | undefined>,
 		ParentId: FormControl<string | null | undefined>,
@@ -2188,12 +3179,12 @@ export namespace MyNS {
 	export function CreateStackSummaryFormGroup() {
 		return new FormGroup<StackSummaryFormProperties>({
 			StackId: new FormControl<string | null | undefined>(undefined),
-			StackName: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TemplateDescription: new FormControl<string | null | undefined>(undefined),
-			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
 			DeletionTime: new FormControl<Date | null | undefined>(undefined),
-			StackStatus: new FormControl<StackStackStatus | null | undefined>(undefined),
+			StackStatus: new FormControl<StackStackStatus | null | undefined>(undefined, [Validators.required]),
 			StackStatusReason: new FormControl<string | null | undefined>(undefined),
 			ParentId: new FormControl<string | null | undefined>(undefined),
 			RootId: new FormControl<string | null | undefined>(undefined),
@@ -2204,18 +3195,22 @@ export namespace MyNS {
 
 	/** Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted. */
 	export interface StackDriftInformationSummary {
+
+		/** Required */
 		StackDriftStatus: DescribeStackDriftDetectionStatusOutputStackDriftStatus;
 		LastCheckTimestamp?: Date | null;
 	}
 
 	/** Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted. */
 	export interface StackDriftInformationSummaryFormProperties {
+
+		/** Required */
 		StackDriftStatus: FormControl<DescribeStackDriftDetectionStatusOutputStackDriftStatus | null | undefined>,
 		LastCheckTimestamp: FormControl<Date | null | undefined>,
 	}
 	export function CreateStackDriftInformationSummaryFormGroup() {
 		return new FormGroup<StackDriftInformationSummaryFormProperties>({
-			StackDriftStatus: new FormControl<DescribeStackDriftDetectionStatusOutputStackDriftStatus | null | undefined>(undefined),
+			StackDriftStatus: new FormControl<DescribeStackDriftDetectionStatusOutputStackDriftStatus | null | undefined>(undefined, [Validators.required]),
 			LastCheckTimestamp: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -2225,28 +3220,48 @@ export namespace MyNS {
 
 	export interface ListTypeRegistrationsOutput {
 		RegistrationTokenList?: Array<string>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListTypeRegistrationsOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTypeRegistrationsOutputFormGroup() {
 		return new FormGroup<ListTypeRegistrationsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListTypeVersionsOutput {
 		TypeVersionSummaries?: Array<TypeVersionSummary>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListTypeVersionsOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTypeVersionsOutputFormGroup() {
 		return new FormGroup<ListTypeVersionsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -2255,47 +3270,101 @@ export namespace MyNS {
 	/** Contains summary information about a specific version of a CloudFormation type. */
 	export interface TypeVersionSummary {
 		Type?: DescribeTypeOutputType | null;
+
+		/**
+		 * Max length: 196
+		 * Min length: 10
+		 * Pattern: [A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}
+		 */
 		TypeName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [A-Za-z0-9-]+
+		 */
 		VersionId?: string | null;
 		IsDefaultVersion?: boolean | null;
+
+		/**
+		 * Max length: 1024
+		 * Pattern: arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/.+
+		 */
 		Arn?: string | null;
 		TimeCreated?: Date | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
 	}
 
 	/** Contains summary information about a specific version of a CloudFormation type. */
 	export interface TypeVersionSummaryFormProperties {
 		Type: FormControl<DescribeTypeOutputType | null | undefined>,
+
+		/**
+		 * Max length: 196
+		 * Min length: 10
+		 * Pattern: [A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}
+		 */
 		TypeName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [A-Za-z0-9-]+
+		 */
 		VersionId: FormControl<string | null | undefined>,
 		IsDefaultVersion: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Pattern: arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/.+
+		 */
 		Arn: FormControl<string | null | undefined>,
 		TimeCreated: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateTypeVersionSummaryFormGroup() {
 		return new FormGroup<TypeVersionSummaryFormProperties>({
 			Type: new FormControl<DescribeTypeOutputType | null | undefined>(undefined),
-			TypeName: new FormControl<string | null | undefined>(undefined),
-			VersionId: new FormControl<string | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(196), Validators.minLength(10)]),
+			VersionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			IsDefaultVersion: new FormControl<boolean | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			TimeCreated: new FormControl<Date | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListTypesOutput {
 		TypeSummaries?: Array<TypeSummary>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListTypesOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTypesOutputFormGroup() {
 		return new FormGroup<ListTypesOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -2304,30 +3373,74 @@ export namespace MyNS {
 	/** Contains summary information about the specified CloudFormation type. */
 	export interface TypeSummary {
 		Type?: DescribeTypeOutputType | null;
+
+		/**
+		 * Max length: 196
+		 * Min length: 10
+		 * Pattern: [A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}
+		 */
 		TypeName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [A-Za-z0-9-]+
+		 */
 		DefaultVersionId?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Pattern: arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/.+
+		 */
 		TypeArn?: string | null;
 		LastUpdated?: Date | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
 	}
 
 	/** Contains summary information about the specified CloudFormation type. */
 	export interface TypeSummaryFormProperties {
 		Type: FormControl<DescribeTypeOutputType | null | undefined>,
+
+		/**
+		 * Max length: 196
+		 * Min length: 10
+		 * Pattern: [A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}
+		 */
 		TypeName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [A-Za-z0-9-]+
+		 */
 		DefaultVersionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Pattern: arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/.+
+		 */
 		TypeArn: FormControl<string | null | undefined>,
 		LastUpdated: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateTypeSummaryFormGroup() {
 		return new FormGroup<TypeSummaryFormProperties>({
 			Type: new FormControl<DescribeTypeOutputType | null | undefined>(undefined),
-			TypeName: new FormControl<string | null | undefined>(undefined),
-			DefaultVersionId: new FormControl<string | null | undefined>(undefined),
-			TypeArn: new FormControl<string | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(196), Validators.minLength(10)]),
+			DefaultVersionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			TypeArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			LastUpdated: new FormControl<Date | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -2363,14 +3476,26 @@ export namespace MyNS {
 	}
 
 	export interface RegisterTypeOutput {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		RegistrationToken?: string | null;
 	}
 	export interface RegisterTypeOutputFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		RegistrationToken: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterTypeOutputFormGroup() {
 		return new FormGroup<RegisterTypeOutputFormProperties>({
-			RegistrationToken: new FormControl<string | null | undefined>(undefined),
+			RegistrationToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -2413,27 +3538,51 @@ export namespace MyNS {
 	}
 
 	export interface UpdateStackInstancesOutput {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId?: string | null;
 	}
 	export interface UpdateStackInstancesOutputFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateStackInstancesOutputFormGroup() {
 		return new FormGroup<UpdateStackInstancesOutputFormProperties>({
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateStackSetOutput {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId?: string | null;
 	}
 	export interface UpdateStackSetOutputFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateStackSetOutputFormGroup() {
 		return new FormGroup<UpdateStackSetOutputFormProperties>({
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -2455,6 +3604,11 @@ export namespace MyNS {
 	/** The output for <a>ValidateTemplate</a> action. */
 	export interface ValidateTemplateOutput {
 		Parameters?: Array<TemplateParameter>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
 		Capabilities?: Array<Capability>;
 		CapabilitiesReason?: string | null;
@@ -2463,12 +3617,17 @@ export namespace MyNS {
 
 	/** The output for <a>ValidateTemplate</a> action. */
 	export interface ValidateTemplateOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 		CapabilitiesReason: FormControl<string | null | undefined>,
 	}
 	export function CreateValidateTemplateOutputFormGroup() {
 		return new FormGroup<ValidateTemplateOutputFormProperties>({
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			CapabilitiesReason: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2480,6 +3639,11 @@ export namespace MyNS {
 		ParameterKey?: string | null;
 		DefaultValue?: string | null;
 		NoEcho?: boolean | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
 	}
 
@@ -2488,6 +3652,11 @@ export namespace MyNS {
 		ParameterKey: FormControl<string | null | undefined>,
 		DefaultValue: FormControl<string | null | undefined>,
 		NoEcho: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateTemplateParameterFormGroup() {
@@ -2495,7 +3664,7 @@ export namespace MyNS {
 			ParameterKey: new FormControl<string | null | undefined>(undefined),
 			DefaultValue: new FormControl<string | null | undefined>(undefined),
 			NoEcho: new FormControl<boolean | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -2505,19 +3674,35 @@ export namespace MyNS {
 
 	/** The input for the <a>CancelUpdateStack</a> action. */
 	export interface CancelUpdateStackInput {
+
+		/** Required */
 		StackName: string;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		ClientRequestToken?: string | null;
 	}
 
 	/** The input for the <a>CancelUpdateStack</a> action. */
 	export interface CancelUpdateStackInputFormProperties {
+
+		/** Required */
 		StackName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelUpdateStackInputFormGroup() {
 		return new FormGroup<CancelUpdateStackInputFormProperties>({
-			StackName: new FormControl<string | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -2535,23 +3720,57 @@ export namespace MyNS {
 
 	/** The input for the <a>ContinueUpdateRollback</a> action. */
 	export interface ContinueUpdateRollbackInput {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+		 */
 		StackName: string;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		RoleARN?: string | null;
 		ResourcesToSkip?: Array<string>;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		ClientRequestToken?: string | null;
 	}
 
 	/** The input for the <a>ContinueUpdateRollback</a> action. */
 	export interface ContinueUpdateRollbackInputFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+		 */
 		StackName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		RoleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateContinueUpdateRollbackInputFormGroup() {
 		return new FormGroup<ContinueUpdateRollbackInputFormProperties>({
-			StackName: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -2559,48 +3778,124 @@ export namespace MyNS {
 
 	/** The input for the <a>CreateChangeSet</a> action. */
 	export interface CreateChangeSetInput {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+		 */
 		StackName: string;
+
+		/** Min length: 1 */
 		TemplateBody?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		TemplateURL?: string | null;
 		UsePreviousTemplate?: boolean | null;
 		Parameters?: Array<Parameter>;
 		Capabilities?: Array<Capability>;
 		ResourceTypes?: Array<string>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		RoleARN?: string | null;
 
 		/** <p>Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p> <p>Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p> */
 		RollbackConfiguration?: RollbackConfiguration;
+
+		/** Maximum items: 5 */
 		NotificationARNs?: Array<string>;
+
+		/** Maximum items: 50 */
 		Tags?: Array<Tag>;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][-a-zA-Z0-9]*
+		 */
 		ChangeSetName: string;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		ClientToken?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
 		ChangeSetType?: ChangeSetType | null;
+
+		/** Maximum items: 200 */
 		ResourcesToImport?: Array<ResourceToImport>;
 	}
 
 	/** The input for the <a>CreateChangeSet</a> action. */
 	export interface CreateChangeSetInputFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+		 */
 		StackName: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		TemplateBody: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		TemplateURL: FormControl<string | null | undefined>,
 		UsePreviousTemplate: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		RoleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][-a-zA-Z0-9]*
+		 */
 		ChangeSetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		ClientToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 		ChangeSetType: FormControl<ChangeSetType | null | undefined>,
 	}
 	export function CreateCreateChangeSetInputFormGroup() {
 		return new FormGroup<CreateChangeSetInputFormProperties>({
-			StackName: new FormControl<string | null | undefined>(undefined),
-			TemplateBody: new FormControl<string | null | undefined>(undefined),
-			TemplateURL: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			TemplateBody: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			TemplateURL: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			UsePreviousTemplate: new FormControl<boolean | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
-			ChangeSetName: new FormControl<string | null | undefined>(undefined),
-			ClientToken: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			ChangeSetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			ChangeSetType: new FormControl<ChangeSetType | null | undefined>(undefined),
 		});
 
@@ -2611,79 +3906,165 @@ export namespace MyNS {
 
 	/** The input for <a>CreateStack</a> action. */
 	export interface CreateStackInput {
+
+		/** Required */
 		StackName: string;
+
+		/** Min length: 1 */
 		TemplateBody?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		TemplateURL?: string | null;
 		Parameters?: Array<Parameter>;
 		DisableRollback?: boolean | null;
 
 		/** <p>Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p> <p>Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p> */
 		RollbackConfiguration?: RollbackConfiguration;
+
+		/** Minimum: 1 */
 		TimeoutInMinutes?: number | null;
+
+		/** Maximum items: 5 */
 		NotificationARNs?: Array<string>;
 		Capabilities?: Array<Capability>;
 		ResourceTypes?: Array<string>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		RoleARN?: string | null;
 		OnFailure?: OnFailure | null;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 1
+		 */
 		StackPolicyBody?: string | null;
+
+		/**
+		 * Max length: 1350
+		 * Min length: 1
+		 */
 		StackPolicyURL?: string | null;
+
+		/** Maximum items: 50 */
 		Tags?: Array<Tag>;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		ClientRequestToken?: string | null;
 		EnableTerminationProtection?: boolean | null;
 	}
 
 	/** The input for <a>CreateStack</a> action. */
 	export interface CreateStackInputFormProperties {
+
+		/** Required */
 		StackName: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		TemplateBody: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		TemplateURL: FormControl<string | null | undefined>,
 		DisableRollback: FormControl<boolean | null | undefined>,
+
+		/** Minimum: 1 */
 		TimeoutInMinutes: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		RoleARN: FormControl<string | null | undefined>,
 		OnFailure: FormControl<OnFailure | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 1
+		 */
 		StackPolicyBody: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1350
+		 * Min length: 1
+		 */
 		StackPolicyURL: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 		EnableTerminationProtection: FormControl<boolean | null | undefined>,
 	}
 	export function CreateCreateStackInputFormGroup() {
 		return new FormGroup<CreateStackInputFormProperties>({
-			StackName: new FormControl<string | null | undefined>(undefined),
-			TemplateBody: new FormControl<string | null | undefined>(undefined),
-			TemplateURL: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TemplateBody: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			TemplateURL: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			DisableRollback: new FormControl<boolean | null | undefined>(undefined),
-			TimeoutInMinutes: new FormControl<number | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			TimeoutInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 			OnFailure: new FormControl<OnFailure | null | undefined>(undefined),
-			StackPolicyBody: new FormControl<string | null | undefined>(undefined),
-			StackPolicyURL: new FormControl<string | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			StackPolicyBody: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(1)]),
+			StackPolicyURL: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1350), Validators.minLength(1)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			EnableTerminationProtection: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CreateStackInstancesInput {
+
+		/** Required */
 		StackSetName: string;
 		Accounts?: Array<string>;
 
 		/** <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization master account, even if the master account is in your organization or in an OU in your organization.</p> <p>For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.</p> */
 		DeploymentTargets?: DeploymentTargets;
+
+		/** Required */
 		Regions: Array<string>;
 		ParameterOverrides?: Array<Parameter>;
 
 		/** <p>The user-specified preferences for how AWS CloudFormation performs a stack set operation. </p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p> */
 		OperationPreferences?: StackSetOperationPreferences;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId?: string | null;
 	}
 	export interface CreateStackInstancesInputFormProperties {
+
+		/** Required */
 		StackSetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateStackInstancesInputFormGroup() {
 		return new FormGroup<CreateStackInstancesInputFormProperties>({
-			StackSetName: new FormControl<string | null | undefined>(undefined),
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			StackSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -2691,41 +4072,105 @@ export namespace MyNS {
 	export enum PermissionModels { SERVICE_MANAGED = 0, SELF_MANAGED = 1 }
 
 	export interface CreateStackSetInput {
+
+		/** Required */
 		StackSetName: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
+
+		/** Min length: 1 */
 		TemplateBody?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		TemplateURL?: string | null;
 		Parameters?: Array<Parameter>;
 		Capabilities?: Array<Capability>;
+
+		/** Maximum items: 50 */
 		Tags?: Array<Tag>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		AdministrationRoleARN?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z_0-9+=,.@-]+
+		 */
 		ExecutionRoleName?: string | null;
 		PermissionModel?: StackSetPermissionModel | null;
 
 		/** [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to a target organization or organizational unit (OU). */
 		AutoDeployment?: AutoDeployment;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		ClientRequestToken?: string | null;
 	}
 	export interface CreateStackSetInputFormProperties {
+
+		/** Required */
 		StackSetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		TemplateBody: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		TemplateURL: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		AdministrationRoleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z_0-9+=,.@-]+
+		 */
 		ExecutionRoleName: FormControl<string | null | undefined>,
 		PermissionModel: FormControl<StackSetPermissionModel | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateStackSetInputFormGroup() {
 		return new FormGroup<CreateStackSetInputFormProperties>({
-			StackSetName: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			TemplateBody: new FormControl<string | null | undefined>(undefined),
-			TemplateURL: new FormControl<string | null | undefined>(undefined),
-			AdministrationRoleARN: new FormControl<string | null | undefined>(undefined),
-			ExecutionRoleName: new FormControl<string | null | undefined>(undefined),
+			StackSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			TemplateBody: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			TemplateURL: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			AdministrationRoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			ExecutionRoleName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			PermissionModel: new FormControl<StackSetPermissionModel | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -2733,19 +4178,43 @@ export namespace MyNS {
 
 	/** The input for the <a>DeleteChangeSet</a> action. */
 	export interface DeleteChangeSetInput {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][-a-zA-Z0-9]*|arn:[-a-zA-Z0-9:/]*
+		 */
 		ChangeSetName: string;
+
+		/**
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+		 */
 		StackName?: string | null;
 	}
 
 	/** The input for the <a>DeleteChangeSet</a> action. */
 	export interface DeleteChangeSetInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][-a-zA-Z0-9]*|arn:[-a-zA-Z0-9:/]*
+		 */
 		ChangeSetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+		 */
 		StackName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteChangeSetInputFormGroup() {
 		return new FormGroup<DeleteChangeSetInputFormProperties>({
-			ChangeSetName: new FormControl<string | null | undefined>(undefined),
-			StackName: new FormControl<string | null | undefined>(undefined),
+			ChangeSetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -2753,63 +4222,115 @@ export namespace MyNS {
 
 	/** The input for <a>DeleteStack</a> action. */
 	export interface DeleteStackInput {
+
+		/** Required */
 		StackName: string;
 		RetainResources?: Array<string>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		RoleARN?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		ClientRequestToken?: string | null;
 	}
 
 	/** The input for <a>DeleteStack</a> action. */
 	export interface DeleteStackInputFormProperties {
+
+		/** Required */
 		StackName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		RoleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteStackInputFormGroup() {
 		return new FormGroup<DeleteStackInputFormProperties>({
-			StackName: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteStackInstancesInput {
+
+		/** Required */
 		StackSetName: string;
 		Accounts?: Array<string>;
 
 		/** <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization master account, even if the master account is in your organization or in an OU in your organization.</p> <p>For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.</p> */
 		DeploymentTargets?: DeploymentTargets;
+
+		/** Required */
 		Regions: Array<string>;
 
 		/** <p>The user-specified preferences for how AWS CloudFormation performs a stack set operation. </p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p> */
 		OperationPreferences?: StackSetOperationPreferences;
+
+		/** Required */
 		RetainStacks: boolean;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId?: string | null;
 	}
 	export interface DeleteStackInstancesInputFormProperties {
+
+		/** Required */
 		StackSetName: FormControl<string | null | undefined>,
+
+		/** Required */
 		RetainStacks: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteStackInstancesInputFormGroup() {
 		return new FormGroup<DeleteStackInstancesInputFormProperties>({
-			StackSetName: new FormControl<string | null | undefined>(undefined),
-			RetainStacks: new FormControl<boolean | null | undefined>(undefined),
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			StackSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RetainStacks: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteStackSetInput {
+
+		/** Required */
 		StackSetName: string;
 	}
 	export interface DeleteStackSetInputFormProperties {
+
+		/** Required */
 		StackSetName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteStackSetInputFormGroup() {
 		return new FormGroup<DeleteStackSetInputFormProperties>({
-			StackSetName: new FormControl<string | null | undefined>(undefined),
+			StackSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2819,23 +4340,57 @@ export namespace MyNS {
 	export enum RegistryType { RESOURCE = 0 }
 
 	export interface DeregisterTypeInput {
+
+		/**
+		 * Max length: 1024
+		 * Pattern: arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:[0-9]{12}:type/.+
+		 */
 		Arn?: string | null;
 		Type?: DescribeTypeOutputType | null;
+
+		/**
+		 * Max length: 196
+		 * Min length: 10
+		 * Pattern: [A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}
+		 */
 		TypeName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [A-Za-z0-9-]+
+		 */
 		VersionId?: string | null;
 	}
 	export interface DeregisterTypeInputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Pattern: arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:[0-9]{12}:type/.+
+		 */
 		Arn: FormControl<string | null | undefined>,
 		Type: FormControl<DescribeTypeOutputType | null | undefined>,
+
+		/**
+		 * Max length: 196
+		 * Min length: 10
+		 * Pattern: [A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}
+		 */
 		TypeName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [A-Za-z0-9-]+
+		 */
 		VersionId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeregisterTypeInputFormGroup() {
 		return new FormGroup<DeregisterTypeInputFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			Type: new FormControl<DescribeTypeOutputType | null | undefined>(undefined),
-			TypeName: new FormControl<string | null | undefined>(undefined),
-			VersionId: new FormControl<string | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(196), Validators.minLength(10)]),
+			VersionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -2843,16 +4398,26 @@ export namespace MyNS {
 
 	/** The input for the <a>DescribeAccountLimits</a> action. */
 	export interface DescribeAccountLimitsInput {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 
 	/** The input for the <a>DescribeAccountLimits</a> action. */
 	export interface DescribeAccountLimitsInputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeAccountLimitsInputFormGroup() {
 		return new FormGroup<DescribeAccountLimitsInputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -2860,35 +4425,81 @@ export namespace MyNS {
 
 	/** The input for the <a>DescribeChangeSet</a> action. */
 	export interface DescribeChangeSetInput {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][-a-zA-Z0-9]*|arn:[-a-zA-Z0-9:/]*
+		 */
 		ChangeSetName: string;
+
+		/**
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+		 */
 		StackName?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 
 	/** The input for the <a>DescribeChangeSet</a> action. */
 	export interface DescribeChangeSetInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][-a-zA-Z0-9]*|arn:[-a-zA-Z0-9:/]*
+		 */
 		ChangeSetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+		 */
 		StackName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeChangeSetInputFormGroup() {
 		return new FormGroup<DescribeChangeSetInputFormProperties>({
-			ChangeSetName: new FormControl<string | null | undefined>(undefined),
-			StackName: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			ChangeSetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeStackDriftDetectionStatusInput {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		StackDriftDetectionId: string;
 	}
 	export interface DescribeStackDriftDetectionStatusInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		StackDriftDetectionId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeStackDriftDetectionStatusInputFormGroup() {
 		return new FormGroup<DescribeStackDriftDetectionStatusInputFormProperties>({
-			StackDriftDetectionId: new FormControl<string | null | undefined>(undefined),
+			StackDriftDetectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
@@ -2901,57 +4512,128 @@ export namespace MyNS {
 	/** The input for <a>DescribeStackEvents</a> action. */
 	export interface DescribeStackEventsInput {
 		StackName?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 
 	/** The input for <a>DescribeStackEvents</a> action. */
 	export interface DescribeStackEventsInputFormProperties {
 		StackName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeStackEventsInputFormGroup() {
 		return new FormGroup<DescribeStackEventsInputFormProperties>({
 			StackName: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeStackInstanceInput {
+
+		/** Required */
 		StackSetName: string;
+
+		/**
+		 * Required
+		 * Pattern: ^[0-9]{12}$
+		 */
 		StackInstanceAccount: string;
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9-]{1,128}$
+		 */
 		StackInstanceRegion: string;
 	}
 	export interface DescribeStackInstanceInputFormProperties {
+
+		/** Required */
 		StackSetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: ^[0-9]{12}$
+		 */
 		StackInstanceAccount: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9-]{1,128}$
+		 */
 		StackInstanceRegion: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeStackInstanceInputFormGroup() {
 		return new FormGroup<DescribeStackInstanceInputFormProperties>({
-			StackSetName: new FormControl<string | null | undefined>(undefined),
-			StackInstanceAccount: new FormControl<string | null | undefined>(undefined),
-			StackInstanceRegion: new FormControl<string | null | undefined>(undefined),
+			StackSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			StackInstanceAccount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			StackInstanceRegion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DescribeStackResourceDriftsInput {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+		 */
 		StackName: string;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 4
+		 */
 		StackResourceDriftStatusFilters?: Array<StackResourceDriftStatus>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface DescribeStackResourceDriftsInputFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+		 */
 		StackName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeStackResourceDriftsInputFormGroup() {
 		return new FormGroup<DescribeStackResourceDriftsInputFormProperties>({
-			StackName: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -2959,19 +4641,27 @@ export namespace MyNS {
 
 	/** The input for <a>DescribeStackResource</a> action. */
 	export interface DescribeStackResourceInput {
+
+		/** Required */
 		StackName: string;
+
+		/** Required */
 		LogicalResourceId: string;
 	}
 
 	/** The input for <a>DescribeStackResource</a> action. */
 	export interface DescribeStackResourceInputFormProperties {
+
+		/** Required */
 		StackName: FormControl<string | null | undefined>,
+
+		/** Required */
 		LogicalResourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeStackResourceInputFormGroup() {
 		return new FormGroup<DescribeStackResourceInputFormProperties>({
-			StackName: new FormControl<string | null | undefined>(undefined),
-			LogicalResourceId: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			LogicalResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3000,30 +4690,52 @@ export namespace MyNS {
 	}
 
 	export interface DescribeStackSetInput {
+
+		/** Required */
 		StackSetName: string;
 	}
 	export interface DescribeStackSetInputFormProperties {
+
+		/** Required */
 		StackSetName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeStackSetInputFormGroup() {
 		return new FormGroup<DescribeStackSetInputFormProperties>({
-			StackSetName: new FormControl<string | null | undefined>(undefined),
+			StackSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DescribeStackSetOperationInput {
+
+		/** Required */
 		StackSetName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId: string;
 	}
 	export interface DescribeStackSetOperationInputFormProperties {
+
+		/** Required */
 		StackSetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeStackSetOperationInputFormGroup() {
 		return new FormGroup<DescribeStackSetOperationInputFormProperties>({
-			StackSetName: new FormControl<string | null | undefined>(undefined),
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			StackSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -3032,40 +4744,84 @@ export namespace MyNS {
 	/** The input for <a>DescribeStacks</a> action. */
 	export interface DescribeStacksInput {
 		StackName?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 
 	/** The input for <a>DescribeStacks</a> action. */
 	export interface DescribeStacksInputFormProperties {
 		StackName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeStacksInputFormGroup() {
 		return new FormGroup<DescribeStacksInputFormProperties>({
 			StackName: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeTypeInput {
 		Type?: DescribeTypeOutputType | null;
+
+		/**
+		 * Max length: 196
+		 * Min length: 10
+		 * Pattern: [A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}
+		 */
 		TypeName?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Pattern: arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/.+
+		 */
 		Arn?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [A-Za-z0-9-]+
+		 */
 		VersionId?: string | null;
 	}
 	export interface DescribeTypeInputFormProperties {
 		Type: FormControl<DescribeTypeOutputType | null | undefined>,
+
+		/**
+		 * Max length: 196
+		 * Min length: 10
+		 * Pattern: [A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}
+		 */
 		TypeName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Pattern: arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/.+
+		 */
 		Arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [A-Za-z0-9-]+
+		 */
 		VersionId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeTypeInputFormGroup() {
 		return new FormGroup<DescribeTypeInputFormProperties>({
 			Type: new FormControl<DescribeTypeOutputType | null | undefined>(undefined),
-			TypeName: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
-			VersionId: new FormControl<string | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(196), Validators.minLength(10)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			VersionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -3075,14 +4831,28 @@ export namespace MyNS {
 	export enum Visibility { PUBLIC = 0, PRIVATE = 1 }
 
 	export interface DescribeTypeRegistrationInput {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		RegistrationToken: string;
 	}
 	export interface DescribeTypeRegistrationInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		RegistrationToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeTypeRegistrationInputFormGroup() {
 		return new FormGroup<DescribeTypeRegistrationInputFormProperties>({
-			RegistrationToken: new FormControl<string | null | undefined>(undefined),
+			RegistrationToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -3090,50 +4860,105 @@ export namespace MyNS {
 	export enum RegistrationStatus { COMPLETE = 0, IN_PROGRESS = 1, FAILED = 2 }
 
 	export interface DetectStackDriftInput {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+		 */
 		StackName: string;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 200
+		 */
 		LogicalResourceIds?: Array<string>;
 	}
 	export interface DetectStackDriftInputFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+		 */
 		StackName: FormControl<string | null | undefined>,
 	}
 	export function CreateDetectStackDriftInputFormGroup() {
 		return new FormGroup<DetectStackDriftInputFormProperties>({
-			StackName: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DetectStackResourceDriftInput {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+		 */
 		StackName: string;
+
+		/** Required */
 		LogicalResourceId: string;
 	}
 	export interface DetectStackResourceDriftInputFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+		 */
 		StackName: FormControl<string | null | undefined>,
+
+		/** Required */
 		LogicalResourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateDetectStackResourceDriftInputFormGroup() {
 		return new FormGroup<DetectStackResourceDriftInputFormProperties>({
-			StackName: new FormControl<string | null | undefined>(undefined),
-			LogicalResourceId: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			LogicalResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DetectStackSetDriftInput {
+
+		/**
+		 * Required
+		 * Pattern: [a-zA-Z][-a-zA-Z0-9]*(?::[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12})?
+		 */
 		StackSetName: string;
 
 		/** <p>The user-specified preferences for how AWS CloudFormation performs a stack set operation. </p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p> */
 		OperationPreferences?: StackSetOperationPreferences;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId?: string | null;
 	}
 	export interface DetectStackSetDriftInputFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: [a-zA-Z][-a-zA-Z0-9]*(?::[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12})?
+		 */
 		StackSetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId: FormControl<string | null | undefined>,
 	}
 	export function CreateDetectStackSetDriftInputFormGroup() {
 		return new FormGroup<DetectStackSetDriftInputFormProperties>({
-			StackSetName: new FormControl<string | null | undefined>(undefined),
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			StackSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -3143,20 +4968,34 @@ export namespace MyNS {
 
 	/** The input for an <a>EstimateTemplateCost</a> action. */
 	export interface EstimateTemplateCostInput {
+
+		/** Min length: 1 */
 		TemplateBody?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		TemplateURL?: string | null;
 		Parameters?: Array<Parameter>;
 	}
 
 	/** The input for an <a>EstimateTemplateCost</a> action. */
 	export interface EstimateTemplateCostInputFormProperties {
+
+		/** Min length: 1 */
 		TemplateBody: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		TemplateURL: FormControl<string | null | undefined>,
 	}
 	export function CreateEstimateTemplateCostInputFormGroup() {
 		return new FormGroup<EstimateTemplateCostInputFormProperties>({
-			TemplateBody: new FormControl<string | null | undefined>(undefined),
-			TemplateURL: new FormControl<string | null | undefined>(undefined),
+			TemplateBody: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			TemplateURL: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -3166,22 +5005,58 @@ export namespace MyNS {
 
 	/** The input for the <a>ExecuteChangeSet</a> action. */
 	export interface ExecuteChangeSetInput {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][-a-zA-Z0-9]*|arn:[-a-zA-Z0-9:/]*
+		 */
 		ChangeSetName: string;
+
+		/**
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+		 */
 		StackName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		ClientRequestToken?: string | null;
 	}
 
 	/** The input for the <a>ExecuteChangeSet</a> action. */
 	export interface ExecuteChangeSetInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][-a-zA-Z0-9]*|arn:[-a-zA-Z0-9:/]*
+		 */
 		ChangeSetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+		 */
 		StackName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateExecuteChangeSetInputFormGroup() {
 		return new FormGroup<ExecuteChangeSetInputFormProperties>({
-			ChangeSetName: new FormControl<string | null | undefined>(undefined),
-			StackName: new FormControl<string | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			ChangeSetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -3189,16 +5064,20 @@ export namespace MyNS {
 
 	/** The input for the <a>GetStackPolicy</a> action. */
 	export interface GetStackPolicyInput {
+
+		/** Required */
 		StackName: string;
 	}
 
 	/** The input for the <a>GetStackPolicy</a> action. */
 	export interface GetStackPolicyInputFormProperties {
+
+		/** Required */
 		StackName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetStackPolicyInputFormGroup() {
 		return new FormGroup<GetStackPolicyInputFormProperties>({
-			StackName: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3207,6 +5086,12 @@ export namespace MyNS {
 	/** The input for a <a>GetTemplate</a> action. */
 	export interface GetTemplateInput {
 		StackName?: string | null;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][-a-zA-Z0-9]*|arn:[-a-zA-Z0-9:/]*
+		 */
 		ChangeSetName?: string | null;
 		TemplateStage?: TemplateStage | null;
 	}
@@ -3214,13 +5099,19 @@ export namespace MyNS {
 	/** The input for a <a>GetTemplate</a> action. */
 	export interface GetTemplateInputFormProperties {
 		StackName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: [a-zA-Z][-a-zA-Z0-9]*|arn:[-a-zA-Z0-9:/]*
+		 */
 		ChangeSetName: FormControl<string | null | undefined>,
 		TemplateStage: FormControl<TemplateStage | null | undefined>,
 	}
 	export function CreateGetTemplateInputFormGroup() {
 		return new FormGroup<GetTemplateInputFormProperties>({
 			StackName: new FormControl<string | null | undefined>(undefined),
-			ChangeSetName: new FormControl<string | null | undefined>(undefined),
+			ChangeSetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 			TemplateStage: new FormControl<TemplateStage | null | undefined>(undefined),
 		});
 
@@ -3229,24 +5120,52 @@ export namespace MyNS {
 
 	/** The input for the <a>GetTemplateSummary</a> action. */
 	export interface GetTemplateSummaryInput {
+
+		/** Min length: 1 */
 		TemplateBody?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		TemplateURL?: string | null;
+
+		/**
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+		 */
 		StackName?: string | null;
+
+		/** Pattern: [a-zA-Z][-a-zA-Z0-9]*(?::[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12})? */
 		StackSetName?: string | null;
 	}
 
 	/** The input for the <a>GetTemplateSummary</a> action. */
 	export interface GetTemplateSummaryInputFormProperties {
+
+		/** Min length: 1 */
 		TemplateBody: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		TemplateURL: FormControl<string | null | undefined>,
+
+		/**
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+		 */
 		StackName: FormControl<string | null | undefined>,
+
+		/** Pattern: [a-zA-Z][-a-zA-Z0-9]*(?::[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12})? */
 		StackSetName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTemplateSummaryInputFormGroup() {
 		return new FormGroup<GetTemplateSummaryInputFormProperties>({
-			TemplateBody: new FormControl<string | null | undefined>(undefined),
-			TemplateURL: new FormControl<string | null | undefined>(undefined),
-			StackName: new FormControl<string | null | undefined>(undefined),
+			TemplateBody: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			TemplateURL: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			StackSetName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3257,71 +5176,149 @@ export namespace MyNS {
 
 	/** The input for the <a>ListChangeSets</a> action. */
 	export interface ListChangeSetsInput {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+		 */
 		StackName: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 
 	/** The input for the <a>ListChangeSets</a> action. */
 	export interface ListChangeSetsInputFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+		 */
 		StackName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListChangeSetsInputFormGroup() {
 		return new FormGroup<ListChangeSetsInputFormProperties>({
-			StackName: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListExportsInput {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListExportsInputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListExportsInputFormGroup() {
 		return new FormGroup<ListExportsInputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListImportsInput {
+
+		/** Required */
 		ExportName: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListImportsInputFormProperties {
+
+		/** Required */
 		ExportName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListImportsInputFormGroup() {
 		return new FormGroup<ListImportsInputFormProperties>({
-			ExportName: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			ExportName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListStackInstancesInput {
+
+		/** Required */
 		StackSetName: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
+
+		/** Pattern: ^[0-9]{12}$ */
 		StackInstanceAccount?: string | null;
+
+		/** Pattern: ^[a-zA-Z0-9-]{1,128}$ */
 		StackInstanceRegion?: string | null;
 	}
 	export interface ListStackInstancesInputFormProperties {
+
+		/** Required */
 		StackSetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/** Pattern: ^[0-9]{12}$ */
 		StackInstanceAccount: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9-]{1,128}$ */
 		StackInstanceRegion: FormControl<string | null | undefined>,
 	}
 	export function CreateListStackInstancesInputFormGroup() {
 		return new FormGroup<ListStackInstancesInputFormProperties>({
-			StackSetName: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			StackSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			StackInstanceAccount: new FormControl<string | null | undefined>(undefined),
 			StackInstanceRegion: new FormControl<string | null | undefined>(undefined),
 		});
@@ -3331,78 +5328,174 @@ export namespace MyNS {
 
 	/** The input for the <a>ListStackResource</a> action. */
 	export interface ListStackResourcesInput {
+
+		/** Required */
 		StackName: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 
 	/** The input for the <a>ListStackResource</a> action. */
 	export interface ListStackResourcesInputFormProperties {
+
+		/** Required */
 		StackName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListStackResourcesInputFormGroup() {
 		return new FormGroup<ListStackResourcesInputFormProperties>({
-			StackName: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListStackSetOperationResultsInput {
+
+		/** Required */
 		StackSetName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListStackSetOperationResultsInputFormProperties {
+
+		/** Required */
 		StackSetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListStackSetOperationResultsInputFormGroup() {
 		return new FormGroup<ListStackSetOperationResultsInputFormProperties>({
-			StackSetName: new FormControl<string | null | undefined>(undefined),
-			OperationId: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			StackSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListStackSetOperationsInput {
+
+		/** Required */
 		StackSetName: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListStackSetOperationsInputFormProperties {
+
+		/** Required */
 		StackSetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListStackSetOperationsInputFormGroup() {
 		return new FormGroup<ListStackSetOperationsInputFormProperties>({
-			StackSetName: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			StackSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListStackSetsInput {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 		Status?: StackSetStatus | null;
 	}
 	export interface ListStackSetsInputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		Status: FormControl<StackSetStatus | null | undefined>,
 	}
 	export function CreateListStackSetsInputFormGroup() {
 		return new FormGroup<ListStackSetsInputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			Status: new FormControl<StackSetStatus | null | undefined>(undefined),
 		});
 
@@ -3411,72 +5504,166 @@ export namespace MyNS {
 
 	/** The input for <a>ListStacks</a> action. */
 	export interface ListStacksInput {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 		StackStatusFilter?: Array<StackStatus>;
 	}
 
 	/** The input for <a>ListStacks</a> action. */
 	export interface ListStacksInputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListStacksInputFormGroup() {
 		return new FormGroup<ListStacksInputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListTypeRegistrationsInput {
 		Type?: DescribeTypeOutputType | null;
+
+		/**
+		 * Max length: 196
+		 * Min length: 10
+		 * Pattern: [A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}
+		 */
 		TypeName?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Pattern: arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/.+
+		 */
 		TypeArn?: string | null;
 		RegistrationStatusFilter?: DescribeTypeRegistrationOutputProgressStatus | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListTypeRegistrationsInputFormProperties {
 		Type: FormControl<DescribeTypeOutputType | null | undefined>,
+
+		/**
+		 * Max length: 196
+		 * Min length: 10
+		 * Pattern: [A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}
+		 */
 		TypeName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Pattern: arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:([0-9]{12})?:type/.+
+		 */
 		TypeArn: FormControl<string | null | undefined>,
 		RegistrationStatusFilter: FormControl<DescribeTypeRegistrationOutputProgressStatus | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTypeRegistrationsInputFormGroup() {
 		return new FormGroup<ListTypeRegistrationsInputFormProperties>({
 			Type: new FormControl<DescribeTypeOutputType | null | undefined>(undefined),
-			TypeName: new FormControl<string | null | undefined>(undefined),
-			TypeArn: new FormControl<string | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(196), Validators.minLength(10)]),
+			TypeArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			RegistrationStatusFilter: new FormControl<DescribeTypeRegistrationOutputProgressStatus | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListTypeVersionsInput {
 		Type?: DescribeTypeOutputType | null;
+
+		/**
+		 * Max length: 196
+		 * Min length: 10
+		 * Pattern: [A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}
+		 */
 		TypeName?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Pattern: arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:[0-9]{12}:type/.+
+		 */
 		Arn?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 		DeprecatedStatus?: DescribeTypeOutputDeprecatedStatus | null;
 	}
 	export interface ListTypeVersionsInputFormProperties {
 		Type: FormControl<DescribeTypeOutputType | null | undefined>,
+
+		/**
+		 * Max length: 196
+		 * Min length: 10
+		 * Pattern: [A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}
+		 */
 		TypeName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Pattern: arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:[0-9]{12}:type/.+
+		 */
 		Arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 		DeprecatedStatus: FormControl<DescribeTypeOutputDeprecatedStatus | null | undefined>,
 	}
 	export function CreateListTypeVersionsInputFormGroup() {
 		return new FormGroup<ListTypeVersionsInputFormProperties>({
 			Type: new FormControl<DescribeTypeOutputType | null | undefined>(undefined),
-			TypeName: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(196), Validators.minLength(10)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			DeprecatedStatus: new FormControl<DescribeTypeOutputDeprecatedStatus | null | undefined>(undefined),
 		});
 
@@ -3486,14 +5673,34 @@ export namespace MyNS {
 		Visibility?: DescribeTypeOutputVisibility | null;
 		ProvisioningType?: DescribeTypeOutputProvisioningType | null;
 		DeprecatedStatus?: DescribeTypeOutputDeprecatedStatus | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListTypesInputFormProperties {
 		Visibility: FormControl<DescribeTypeOutputVisibility | null | undefined>,
 		ProvisioningType: FormControl<DescribeTypeOutputProvisioningType | null | undefined>,
 		DeprecatedStatus: FormControl<DescribeTypeOutputDeprecatedStatus | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTypesInputFormGroup() {
@@ -3501,8 +5708,8 @@ export namespace MyNS {
 			Visibility: new FormControl<DescribeTypeOutputVisibility | null | undefined>(undefined),
 			ProvisioningType: new FormControl<DescribeTypeOutputProvisioningType | null | undefined>(undefined),
 			DeprecatedStatus: new FormControl<DescribeTypeOutputDeprecatedStatus | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -3510,60 +5717,152 @@ export namespace MyNS {
 	export enum OperationStatus { PENDING = 0, IN_PROGRESS = 1, SUCCESS = 2, FAILED = 3 }
 
 	export interface RecordHandlerProgressInput {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		BearerToken: string;
+
+		/** Required */
 		OperationStatus: OperationStatus;
 		CurrentOperationStatus?: OperationStatus | null;
+
+		/** Max length: 1024 */
 		StatusMessage?: string | null;
 		ErrorCode?: HandlerErrorCode | null;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 1
+		 */
 		ResourceModel?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		ClientRequestToken?: string | null;
 	}
 	export interface RecordHandlerProgressInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		BearerToken: FormControl<string | null | undefined>,
+
+		/** Required */
 		OperationStatus: FormControl<OperationStatus | null | undefined>,
 		CurrentOperationStatus: FormControl<OperationStatus | null | undefined>,
+
+		/** Max length: 1024 */
 		StatusMessage: FormControl<string | null | undefined>,
 		ErrorCode: FormControl<HandlerErrorCode | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 1
+		 */
 		ResourceModel: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateRecordHandlerProgressInputFormGroup() {
 		return new FormGroup<RecordHandlerProgressInputFormProperties>({
-			BearerToken: new FormControl<string | null | undefined>(undefined),
-			OperationStatus: new FormControl<OperationStatus | null | undefined>(undefined),
+			BearerToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			OperationStatus: new FormControl<OperationStatus | null | undefined>(undefined, [Validators.required]),
 			CurrentOperationStatus: new FormControl<OperationStatus | null | undefined>(undefined),
-			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			ErrorCode: new FormControl<HandlerErrorCode | null | undefined>(undefined),
-			ResourceModel: new FormControl<string | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			ResourceModel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(1)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface RegisterTypeInput {
 		Type?: DescribeTypeOutputType | null;
+
+		/**
+		 * Required
+		 * Max length: 196
+		 * Min length: 10
+		 * Pattern: [A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}
+		 */
 		TypeName: string;
+
+		/**
+		 * Required
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		SchemaHandlerPackage: string;
 
 		/** Contains logging configuration information for a type. */
 		LoggingConfig?: LoggingConfig;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: arn:.+:iam::[0-9]{12}:role/.+
+		 */
 		ExecutionRoleArn?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		ClientRequestToken?: string | null;
 	}
 	export interface RegisterTypeInputFormProperties {
 		Type: FormControl<DescribeTypeOutputType | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 196
+		 * Min length: 10
+		 * Pattern: [A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}
+		 */
 		TypeName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		SchemaHandlerPackage: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: arn:.+:iam::[0-9]{12}:role/.+
+		 */
 		ExecutionRoleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterTypeInputFormGroup() {
 		return new FormGroup<RegisterTypeInputFormProperties>({
 			Type: new FormControl<DescribeTypeOutputType | null | undefined>(undefined),
-			TypeName: new FormControl<string | null | undefined>(undefined),
-			SchemaHandlerPackage: new FormControl<string | null | undefined>(undefined),
-			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(196), Validators.minLength(10)]),
+			SchemaHandlerPackage: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4096), Validators.minLength(1)]),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -3579,44 +5878,102 @@ export namespace MyNS {
 
 	/** The input for the <a>SetStackPolicy</a> action. */
 	export interface SetStackPolicyInput {
+
+		/** Required */
 		StackName: string;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 1
+		 */
 		StackPolicyBody?: string | null;
+
+		/**
+		 * Max length: 1350
+		 * Min length: 1
+		 */
 		StackPolicyURL?: string | null;
 	}
 
 	/** The input for the <a>SetStackPolicy</a> action. */
 	export interface SetStackPolicyInputFormProperties {
+
+		/** Required */
 		StackName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 1
+		 */
 		StackPolicyBody: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1350
+		 * Min length: 1
+		 */
 		StackPolicyURL: FormControl<string | null | undefined>,
 	}
 	export function CreateSetStackPolicyInputFormGroup() {
 		return new FormGroup<SetStackPolicyInputFormProperties>({
-			StackName: new FormControl<string | null | undefined>(undefined),
-			StackPolicyBody: new FormControl<string | null | undefined>(undefined),
-			StackPolicyURL: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			StackPolicyBody: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(1)]),
+			StackPolicyURL: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1350), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface SetTypeDefaultVersionInput {
+
+		/**
+		 * Max length: 1024
+		 * Pattern: arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:[0-9]{12}:type/.+
+		 */
 		Arn?: string | null;
 		Type?: DescribeTypeOutputType | null;
+
+		/**
+		 * Max length: 196
+		 * Min length: 10
+		 * Pattern: [A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}
+		 */
 		TypeName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [A-Za-z0-9-]+
+		 */
 		VersionId?: string | null;
 	}
 	export interface SetTypeDefaultVersionInputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Pattern: arn:aws[A-Za-z0-9-]{0,64}:cloudformation:[A-Za-z0-9-]{1,64}:[0-9]{12}:type/.+
+		 */
 		Arn: FormControl<string | null | undefined>,
 		Type: FormControl<DescribeTypeOutputType | null | undefined>,
+
+		/**
+		 * Max length: 196
+		 * Min length: 10
+		 * Pattern: [A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}
+		 */
 		TypeName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [A-Za-z0-9-]+
+		 */
 		VersionId: FormControl<string | null | undefined>,
 	}
 	export function CreateSetTypeDefaultVersionInputFormGroup() {
 		return new FormGroup<SetTypeDefaultVersionInputFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			Type: new FormControl<DescribeTypeOutputType | null | undefined>(undefined),
-			TypeName: new FormControl<string | null | undefined>(undefined),
-			VersionId: new FormControl<string | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(196), Validators.minLength(10)]),
+			VersionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -3624,25 +5981,57 @@ export namespace MyNS {
 
 	/** The input for the <a>SignalResource</a> action. */
 	export interface SignalResourceInput {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+		 */
 		StackName: string;
+
+		/** Required */
 		LogicalResourceId: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		UniqueId: string;
+
+		/** Required */
 		Status: ResourceSignalStatus;
 	}
 
 	/** The input for the <a>SignalResource</a> action. */
 	export interface SignalResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+		 */
 		StackName: FormControl<string | null | undefined>,
+
+		/** Required */
 		LogicalResourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		UniqueId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Status: FormControl<ResourceSignalStatus | null | undefined>,
 	}
 	export function CreateSignalResourceInputFormGroup() {
 		return new FormGroup<SignalResourceInputFormProperties>({
-			StackName: new FormControl<string | null | undefined>(undefined),
-			LogicalResourceId: new FormControl<string | null | undefined>(undefined),
-			UniqueId: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<ResourceSignalStatus | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			LogicalResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			UniqueId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Status: new FormControl<ResourceSignalStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3654,17 +6043,35 @@ export namespace MyNS {
 	export enum StackSetOperationResultStatus { PENDING = 0, RUNNING = 1, SUCCEEDED = 2, FAILED = 3, CANCELLED = 4 }
 
 	export interface StopStackSetOperationInput {
+
+		/** Required */
 		StackSetName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId: string;
 	}
 	export interface StopStackSetOperationInputFormProperties {
+
+		/** Required */
 		StackSetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId: FormControl<string | null | undefined>,
 	}
 	export function CreateStopStackSetOperationInputFormGroup() {
 		return new FormGroup<StopStackSetOperationInputFormProperties>({
-			StackSetName: new FormControl<string | null | undefined>(undefined),
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			StackSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -3672,93 +6079,228 @@ export namespace MyNS {
 
 	/** The input for an <a>UpdateStack</a> action. */
 	export interface UpdateStackInput {
+
+		/** Required */
 		StackName: string;
+
+		/** Min length: 1 */
 		TemplateBody?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		TemplateURL?: string | null;
 		UsePreviousTemplate?: boolean | null;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 1
+		 */
 		StackPolicyDuringUpdateBody?: string | null;
+
+		/**
+		 * Max length: 1350
+		 * Min length: 1
+		 */
 		StackPolicyDuringUpdateURL?: string | null;
 		Parameters?: Array<Parameter>;
 		Capabilities?: Array<Capability>;
 		ResourceTypes?: Array<string>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		RoleARN?: string | null;
 
 		/** <p>Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p> <p>Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p> */
 		RollbackConfiguration?: RollbackConfiguration;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 1
+		 */
 		StackPolicyBody?: string | null;
+
+		/**
+		 * Max length: 1350
+		 * Min length: 1
+		 */
 		StackPolicyURL?: string | null;
+
+		/** Maximum items: 5 */
 		NotificationARNs?: Array<string>;
+
+		/** Maximum items: 50 */
 		Tags?: Array<Tag>;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		ClientRequestToken?: string | null;
 	}
 
 	/** The input for an <a>UpdateStack</a> action. */
 	export interface UpdateStackInputFormProperties {
+
+		/** Required */
 		StackName: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		TemplateBody: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		TemplateURL: FormControl<string | null | undefined>,
 		UsePreviousTemplate: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 1
+		 */
 		StackPolicyDuringUpdateBody: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1350
+		 * Min length: 1
+		 */
 		StackPolicyDuringUpdateURL: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		RoleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 1
+		 */
 		StackPolicyBody: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1350
+		 * Min length: 1
+		 */
 		StackPolicyURL: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateStackInputFormGroup() {
 		return new FormGroup<UpdateStackInputFormProperties>({
-			StackName: new FormControl<string | null | undefined>(undefined),
-			TemplateBody: new FormControl<string | null | undefined>(undefined),
-			TemplateURL: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TemplateBody: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			TemplateURL: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			UsePreviousTemplate: new FormControl<boolean | null | undefined>(undefined),
-			StackPolicyDuringUpdateBody: new FormControl<string | null | undefined>(undefined),
-			StackPolicyDuringUpdateURL: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
-			StackPolicyBody: new FormControl<string | null | undefined>(undefined),
-			StackPolicyURL: new FormControl<string | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			StackPolicyDuringUpdateBody: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(1)]),
+			StackPolicyDuringUpdateURL: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1350), Validators.minLength(1)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			StackPolicyBody: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(1)]),
+			StackPolicyURL: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1350), Validators.minLength(1)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateStackInstancesInput {
+
+		/**
+		 * Required
+		 * Pattern: [a-zA-Z][-a-zA-Z0-9]*(?::[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12})?
+		 */
 		StackSetName: string;
 		Accounts?: Array<string>;
 
 		/** <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization master account, even if the master account is in your organization or in an OU in your organization.</p> <p>For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.</p> */
 		DeploymentTargets?: DeploymentTargets;
+
+		/** Required */
 		Regions: Array<string>;
 		ParameterOverrides?: Array<Parameter>;
 
 		/** <p>The user-specified preferences for how AWS CloudFormation performs a stack set operation. </p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p> */
 		OperationPreferences?: StackSetOperationPreferences;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId?: string | null;
 	}
 	export interface UpdateStackInstancesInputFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: [a-zA-Z][-a-zA-Z0-9]*(?::[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12})?
+		 */
 		StackSetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateStackInstancesInputFormGroup() {
 		return new FormGroup<UpdateStackInstancesInputFormProperties>({
-			StackSetName: new FormControl<string | null | undefined>(undefined),
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			StackSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateStackSetInput {
+
+		/** Required */
 		StackSetName: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
+
+		/** Min length: 1 */
 		TemplateBody?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		TemplateURL?: string | null;
 		UsePreviousTemplate?: boolean | null;
 		Parameters?: Array<Parameter>;
 		Capabilities?: Array<Capability>;
+
+		/** Maximum items: 50 */
 		Tags?: Array<Tag>;
 
 		/** <p>The user-specified preferences for how AWS CloudFormation performs a stack set operation. </p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p> */
 		OperationPreferences?: StackSetOperationPreferences;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		AdministrationRoleARN?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z_0-9+=,.@-]+
+		 */
 		ExecutionRoleName?: string | null;
 
 		/** <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization master account, even if the master account is in your organization or in an OU in your organization.</p> <p>For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.</p> */
@@ -3767,48 +6309,101 @@ export namespace MyNS {
 
 		/** [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to a target organization or organizational unit (OU). */
 		AutoDeployment?: AutoDeployment;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId?: string | null;
 		Accounts?: Array<string>;
 		Regions?: Array<string>;
 	}
 	export interface UpdateStackSetInputFormProperties {
+
+		/** Required */
 		StackSetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		TemplateBody: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		TemplateURL: FormControl<string | null | undefined>,
 		UsePreviousTemplate: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		AdministrationRoleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z_0-9+=,.@-]+
+		 */
 		ExecutionRoleName: FormControl<string | null | undefined>,
 		PermissionModel: FormControl<StackSetPermissionModel | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9][-a-zA-Z0-9]*
+		 */
 		OperationId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateStackSetInputFormGroup() {
 		return new FormGroup<UpdateStackSetInputFormProperties>({
-			StackSetName: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			TemplateBody: new FormControl<string | null | undefined>(undefined),
-			TemplateURL: new FormControl<string | null | undefined>(undefined),
+			StackSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			TemplateBody: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			TemplateURL: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			UsePreviousTemplate: new FormControl<boolean | null | undefined>(undefined),
-			AdministrationRoleARN: new FormControl<string | null | undefined>(undefined),
-			ExecutionRoleName: new FormControl<string | null | undefined>(undefined),
+			AdministrationRoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			ExecutionRoleName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			PermissionModel: new FormControl<StackSetPermissionModel | null | undefined>(undefined),
-			OperationId: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateTerminationProtectionInput {
+
+		/** Required */
 		EnableTerminationProtection: boolean;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+		 */
 		StackName: string;
 	}
 	export interface UpdateTerminationProtectionInputFormProperties {
+
+		/** Required */
 		EnableTerminationProtection: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+		 */
 		StackName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateTerminationProtectionInputFormGroup() {
 		return new FormGroup<UpdateTerminationProtectionInputFormProperties>({
-			EnableTerminationProtection: new FormControl<boolean | null | undefined>(undefined),
-			StackName: new FormControl<string | null | undefined>(undefined),
+			EnableTerminationProtection: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -3816,19 +6411,33 @@ export namespace MyNS {
 
 	/** The input for <a>ValidateTemplate</a> action. */
 	export interface ValidateTemplateInput {
+
+		/** Min length: 1 */
 		TemplateBody?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		TemplateURL?: string | null;
 	}
 
 	/** The input for <a>ValidateTemplate</a> action. */
 	export interface ValidateTemplateInputFormProperties {
+
+		/** Min length: 1 */
 		TemplateBody: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		TemplateURL: FormControl<string | null | undefined>,
 	}
 	export function CreateValidateTemplateInputFormGroup() {
 		return new FormGroup<ValidateTemplateInputFormProperties>({
-			TemplateBody: new FormControl<string | null | undefined>(undefined),
-			TemplateURL: new FormControl<string | null | undefined>(undefined),
+			TemplateBody: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			TemplateURL: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -4583,15 +7192,27 @@ export namespace MyNS {
 	export enum POST_ContinueUpdateRollbackVersion { _2010_05_15 = 0 }
 
 	export interface GET_CreateChangeSetRollbackConfiguration {
+
+		/** Maximum items: 5 */
 		RollbackTriggers?: Array<RollbackTrigger>;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 180
+		 */
 		MonitoringTimeInMinutes?: number | null;
 	}
 	export interface GET_CreateChangeSetRollbackConfigurationFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 180
+		 */
 		MonitoringTimeInMinutes: FormControl<number | null | undefined>,
 	}
 	export function CreateGET_CreateChangeSetRollbackConfigurationFormGroup() {
 		return new FormGroup<GET_CreateChangeSetRollbackConfigurationFormProperties>({
-			MonitoringTimeInMinutes: new FormControl<number | null | undefined>(undefined),
+			MonitoringTimeInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(180)]),
 		});
 
 	}
@@ -4603,15 +7224,27 @@ export namespace MyNS {
 	export enum POST_CreateChangeSetVersion { _2010_05_15 = 0 }
 
 	export interface GET_CreateStackRollbackConfiguration {
+
+		/** Maximum items: 5 */
 		RollbackTriggers?: Array<RollbackTrigger>;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 180
+		 */
 		MonitoringTimeInMinutes?: number | null;
 	}
 	export interface GET_CreateStackRollbackConfigurationFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 180
+		 */
 		MonitoringTimeInMinutes: FormControl<number | null | undefined>,
 	}
 	export function CreateGET_CreateStackRollbackConfigurationFormGroup() {
 		return new FormGroup<GET_CreateStackRollbackConfigurationFormProperties>({
-			MonitoringTimeInMinutes: new FormControl<number | null | undefined>(undefined),
+			MonitoringTimeInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(180)]),
 		});
 
 	}
@@ -4636,23 +7269,51 @@ export namespace MyNS {
 
 	export interface GET_CreateStackInstancesOperationPreferences {
 		RegionOrder?: Array<string>;
+
+		/** Minimum: 0 */
 		FailureToleranceCount?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		FailureTolerancePercentage?: number | null;
+
+		/** Minimum: 1 */
 		MaxConcurrentCount?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxConcurrentPercentage?: number | null;
 	}
 	export interface GET_CreateStackInstancesOperationPreferencesFormProperties {
+
+		/** Minimum: 0 */
 		FailureToleranceCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		FailureTolerancePercentage: FormControl<number | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxConcurrentCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxConcurrentPercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateGET_CreateStackInstancesOperationPreferencesFormGroup() {
 		return new FormGroup<GET_CreateStackInstancesOperationPreferencesFormProperties>({
-			FailureToleranceCount: new FormControl<number | null | undefined>(undefined),
-			FailureTolerancePercentage: new FormControl<number | null | undefined>(undefined),
-			MaxConcurrentCount: new FormControl<number | null | undefined>(undefined),
-			MaxConcurrentPercentage: new FormControl<number | null | undefined>(undefined),
+			FailureToleranceCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			FailureTolerancePercentage: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			MaxConcurrentCount: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			MaxConcurrentPercentage: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -4711,23 +7372,51 @@ export namespace MyNS {
 
 	export interface GET_DeleteStackInstancesOperationPreferences {
 		RegionOrder?: Array<string>;
+
+		/** Minimum: 0 */
 		FailureToleranceCount?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		FailureTolerancePercentage?: number | null;
+
+		/** Minimum: 1 */
 		MaxConcurrentCount?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxConcurrentPercentage?: number | null;
 	}
 	export interface GET_DeleteStackInstancesOperationPreferencesFormProperties {
+
+		/** Minimum: 0 */
 		FailureToleranceCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		FailureTolerancePercentage: FormControl<number | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxConcurrentCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxConcurrentPercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateGET_DeleteStackInstancesOperationPreferencesFormGroup() {
 		return new FormGroup<GET_DeleteStackInstancesOperationPreferencesFormProperties>({
-			FailureToleranceCount: new FormControl<number | null | undefined>(undefined),
-			FailureTolerancePercentage: new FormControl<number | null | undefined>(undefined),
-			MaxConcurrentCount: new FormControl<number | null | undefined>(undefined),
-			MaxConcurrentPercentage: new FormControl<number | null | undefined>(undefined),
+			FailureToleranceCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			FailureTolerancePercentage: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			MaxConcurrentCount: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			MaxConcurrentPercentage: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -4842,23 +7531,51 @@ export namespace MyNS {
 
 	export interface GET_DetectStackSetDriftOperationPreferences {
 		RegionOrder?: Array<string>;
+
+		/** Minimum: 0 */
 		FailureToleranceCount?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		FailureTolerancePercentage?: number | null;
+
+		/** Minimum: 1 */
 		MaxConcurrentCount?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxConcurrentPercentage?: number | null;
 	}
 	export interface GET_DetectStackSetDriftOperationPreferencesFormProperties {
+
+		/** Minimum: 0 */
 		FailureToleranceCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		FailureTolerancePercentage: FormControl<number | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxConcurrentCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxConcurrentPercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateGET_DetectStackSetDriftOperationPreferencesFormGroup() {
 		return new FormGroup<GET_DetectStackSetDriftOperationPreferencesFormProperties>({
-			FailureToleranceCount: new FormControl<number | null | undefined>(undefined),
-			FailureTolerancePercentage: new FormControl<number | null | undefined>(undefined),
-			MaxConcurrentCount: new FormControl<number | null | undefined>(undefined),
-			MaxConcurrentPercentage: new FormControl<number | null | undefined>(undefined),
+			FailureToleranceCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			FailureTolerancePercentage: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			MaxConcurrentCount: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			MaxConcurrentPercentage: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -4978,17 +7695,45 @@ export namespace MyNS {
 	export enum POST_RecordHandlerProgressVersion { _2010_05_15 = 0 }
 
 	export interface GET_RegisterTypeLoggingConfig {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: arn:.+:iam::[0-9]{12}:role/.+
+		 */
 		LogRoleArn: string;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		LogGroupName: string;
 	}
 	export interface GET_RegisterTypeLoggingConfigFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: arn:.+:iam::[0-9]{12}:role/.+
+		 */
 		LogRoleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		LogGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateGET_RegisterTypeLoggingConfigFormGroup() {
 		return new FormGroup<GET_RegisterTypeLoggingConfigFormProperties>({
-			LogRoleArn: new FormControl<string | null | undefined>(undefined),
-			LogGroupName: new FormControl<string | null | undefined>(undefined),
+			LogRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			LogGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
@@ -5024,15 +7769,27 @@ export namespace MyNS {
 	export enum POST_StopStackSetOperationVersion { _2010_05_15 = 0 }
 
 	export interface GET_UpdateStackRollbackConfiguration {
+
+		/** Maximum items: 5 */
 		RollbackTriggers?: Array<RollbackTrigger>;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 180
+		 */
 		MonitoringTimeInMinutes?: number | null;
 	}
 	export interface GET_UpdateStackRollbackConfigurationFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 180
+		 */
 		MonitoringTimeInMinutes: FormControl<number | null | undefined>,
 	}
 	export function CreateGET_UpdateStackRollbackConfigurationFormGroup() {
 		return new FormGroup<GET_UpdateStackRollbackConfigurationFormProperties>({
-			MonitoringTimeInMinutes: new FormControl<number | null | undefined>(undefined),
+			MonitoringTimeInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(180)]),
 		});
 
 	}
@@ -5057,23 +7814,51 @@ export namespace MyNS {
 
 	export interface GET_UpdateStackInstancesOperationPreferences {
 		RegionOrder?: Array<string>;
+
+		/** Minimum: 0 */
 		FailureToleranceCount?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		FailureTolerancePercentage?: number | null;
+
+		/** Minimum: 1 */
 		MaxConcurrentCount?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxConcurrentPercentage?: number | null;
 	}
 	export interface GET_UpdateStackInstancesOperationPreferencesFormProperties {
+
+		/** Minimum: 0 */
 		FailureToleranceCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		FailureTolerancePercentage: FormControl<number | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxConcurrentCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxConcurrentPercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateGET_UpdateStackInstancesOperationPreferencesFormGroup() {
 		return new FormGroup<GET_UpdateStackInstancesOperationPreferencesFormProperties>({
-			FailureToleranceCount: new FormControl<number | null | undefined>(undefined),
-			FailureTolerancePercentage: new FormControl<number | null | undefined>(undefined),
-			MaxConcurrentCount: new FormControl<number | null | undefined>(undefined),
-			MaxConcurrentPercentage: new FormControl<number | null | undefined>(undefined),
+			FailureToleranceCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			FailureTolerancePercentage: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			MaxConcurrentCount: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			MaxConcurrentPercentage: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -5086,23 +7871,51 @@ export namespace MyNS {
 
 	export interface GET_UpdateStackSetOperationPreferences {
 		RegionOrder?: Array<string>;
+
+		/** Minimum: 0 */
 		FailureToleranceCount?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		FailureTolerancePercentage?: number | null;
+
+		/** Minimum: 1 */
 		MaxConcurrentCount?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxConcurrentPercentage?: number | null;
 	}
 	export interface GET_UpdateStackSetOperationPreferencesFormProperties {
+
+		/** Minimum: 0 */
 		FailureToleranceCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		FailureTolerancePercentage: FormControl<number | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxConcurrentCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxConcurrentPercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateGET_UpdateStackSetOperationPreferencesFormGroup() {
 		return new FormGroup<GET_UpdateStackSetOperationPreferencesFormProperties>({
-			FailureToleranceCount: new FormControl<number | null | undefined>(undefined),
-			FailureTolerancePercentage: new FormControl<number | null | undefined>(undefined),
-			MaxConcurrentCount: new FormControl<number | null | undefined>(undefined),
-			MaxConcurrentPercentage: new FormControl<number | null | undefined>(undefined),
+			FailureToleranceCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			FailureTolerancePercentage: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			MaxConcurrentCount: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			MaxConcurrentPercentage: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}

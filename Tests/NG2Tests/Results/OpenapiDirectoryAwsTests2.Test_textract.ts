@@ -26,16 +26,20 @@ export namespace MyNS {
 
 	/** Information about the input document. */
 	export interface DocumentMetadata {
+
+		/** Minimum: 0 */
 		Pages?: number | null;
 	}
 
 	/** Information about the input document. */
 	export interface DocumentMetadataFormProperties {
+
+		/** Minimum: 0 */
 		Pages: FormControl<number | null | undefined>,
 	}
 	export function CreateDocumentMetadataFormGroup() {
 		return new FormGroup<DocumentMetadataFormProperties>({
-			Pages: new FormControl<number | null | undefined>(undefined),
+			Pages: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -44,47 +48,81 @@ export namespace MyNS {
 	/** <p>A <code>Block</code> represents items that are recognized in a document within a group of pixels close to each other. The information returned in a <code>Block</code> object depends on the type of operation. In text detection for documents (for example <a>DetectDocumentText</a>), you get information about the detected words and lines of text. In text analysis (for example <a>AnalyzeDocument</a>), you can also get information about the fields, tables, and selection elements that are detected in the document.</p> <p>An array of <code>Block</code> objects is returned by both synchronous and asynchronous operations. In synchronous operations, such as <a>DetectDocumentText</a>, the array of <code>Block</code> objects is the entire set of results. In asynchronous operations, such as <a>GetDocumentAnalysis</a>, the array is returned over one or more responses.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works.html">How Amazon Textract Works</a>.</p> */
 	export interface Block {
 		BlockType?: BlockBlockType | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence?: number | null;
 		Text?: string | null;
+
+		/** Minimum: 0 */
 		RowIndex?: number | null;
+
+		/** Minimum: 0 */
 		ColumnIndex?: number | null;
+
+		/** Minimum: 0 */
 		RowSpan?: number | null;
+
+		/** Minimum: 0 */
 		ColumnSpan?: number | null;
 
 		/** Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements. */
 		Geometry?: Geometry;
+
+		/** Pattern: .*\S.* */
 		Id?: string | null;
 		Relationships?: Array<Relationship>;
 		EntityTypes?: Array<EntityType>;
 		SelectionStatus?: BlockSelectionStatus | null;
+
+		/** Minimum: 0 */
 		Page?: number | null;
 	}
 
 	/** <p>A <code>Block</code> represents items that are recognized in a document within a group of pixels close to each other. The information returned in a <code>Block</code> object depends on the type of operation. In text detection for documents (for example <a>DetectDocumentText</a>), you get information about the detected words and lines of text. In text analysis (for example <a>AnalyzeDocument</a>), you can also get information about the fields, tables, and selection elements that are detected in the document.</p> <p>An array of <code>Block</code> objects is returned by both synchronous and asynchronous operations. In synchronous operations, such as <a>DetectDocumentText</a>, the array of <code>Block</code> objects is the entire set of results. In asynchronous operations, such as <a>GetDocumentAnalysis</a>, the array is returned over one or more responses.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works.html">How Amazon Textract Works</a>.</p> */
 	export interface BlockFormProperties {
 		BlockType: FormControl<BlockBlockType | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		Confidence: FormControl<number | null | undefined>,
 		Text: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		RowIndex: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		ColumnIndex: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		RowSpan: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		ColumnSpan: FormControl<number | null | undefined>,
+
+		/** Pattern: .*\S.* */
 		Id: FormControl<string | null | undefined>,
 		SelectionStatus: FormControl<BlockSelectionStatus | null | undefined>,
+
+		/** Minimum: 0 */
 		Page: FormControl<number | null | undefined>,
 	}
 	export function CreateBlockFormGroup() {
 		return new FormGroup<BlockFormProperties>({
 			BlockType: new FormControl<BlockBlockType | null | undefined>(undefined),
-			Confidence: new FormControl<number | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			Text: new FormControl<string | null | undefined>(undefined),
-			RowIndex: new FormControl<number | null | undefined>(undefined),
-			ColumnIndex: new FormControl<number | null | undefined>(undefined),
-			RowSpan: new FormControl<number | null | undefined>(undefined),
-			ColumnSpan: new FormControl<number | null | undefined>(undefined),
+			RowIndex: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			ColumnIndex: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			RowSpan: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			ColumnSpan: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			Id: new FormControl<string | null | undefined>(undefined),
 			SelectionStatus: new FormControl<BlockSelectionStatus | null | undefined>(undefined),
-			Page: new FormControl<number | null | undefined>(undefined),
+			Page: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -182,20 +220,30 @@ export namespace MyNS {
 
 	/** Shows the results of the human in the loop evaluation. If there is no HumanLoopArn, the input did not trigger human review. */
 	export interface HumanLoopActivationOutput {
+
+		/** Max length: 256 */
 		HumanLoopArn?: string | null;
+
+		/** Minimum items: 1 */
 		HumanLoopActivationReasons?: Array<string>;
+
+		/** Max length: 10240 */
 		HumanLoopActivationConditionsEvaluationResults?: string | null;
 	}
 
 	/** Shows the results of the human in the loop evaluation. If there is no HumanLoopArn, the input did not trigger human review. */
 	export interface HumanLoopActivationOutputFormProperties {
+
+		/** Max length: 256 */
 		HumanLoopArn: FormControl<string | null | undefined>,
+
+		/** Max length: 10240 */
 		HumanLoopActivationConditionsEvaluationResults: FormControl<string | null | undefined>,
 	}
 	export function CreateHumanLoopActivationOutputFormGroup() {
 		return new FormGroup<HumanLoopActivationOutputFormProperties>({
-			HumanLoopArn: new FormControl<string | null | undefined>(undefined),
-			HumanLoopActivationConditionsEvaluationResults: new FormControl<string | null | undefined>(undefined),
+			HumanLoopArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			HumanLoopActivationConditionsEvaluationResults: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10240)]),
 		});
 
 	}
@@ -207,6 +255,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		Document: Document;
+
+		/** Required */
 		FeatureTypes: Array<FeatureType>;
 
 		/** Sets up the human review workflow the document will be sent to if one of the conditions is met. You can also set certain attributes of the image before review. */
@@ -223,6 +273,11 @@ export namespace MyNS {
 
 	/** <p>The input document, either as bytes or as an S3 object.</p> <p>You pass image bytes to an Amazon Textract API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass a document loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64 encoded. Your code might not need to encode document file bytes if you're using an AWS SDK to call Amazon Textract API operations. </p> <p>You pass images stored in an S3 bucket to an Amazon Textract API operation by using the <code>S3Object</code> property. Documents stored in an S3 bucket don't need to be base64 encoded.</p> <p>The AWS Region for the S3 bucket that contains the S3 object must match the AWS Region that you use for Amazon Textract operations.</p> <p>If you use the AWS CLI to call Amazon Textract operations, passing image bytes using the Bytes property isn't supported. You must first upload the document to an Amazon S3 bucket, and then call the operation using the S3Object property.</p> <p>For Amazon Textract to process an S3 object, the user must have permission to access the S3 object. </p> */
 	export interface Document {
+
+		/**
+		 * Max length: 10485760
+		 * Min length: 1
+		 */
 		Bytes?: string | null;
 
 		/** <p>The S3 bucket name and file name that identifies the document.</p> <p>The AWS Region for the S3 bucket that contains the document must match the Region that you use for Amazon Textract operations.</p> <p>For Amazon Textract to process a file in an S3 bucket, the user must have permission to access the S3 bucket and file. </p> */
@@ -231,11 +286,16 @@ export namespace MyNS {
 
 	/** <p>The input document, either as bytes or as an S3 object.</p> <p>You pass image bytes to an Amazon Textract API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass a document loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64 encoded. Your code might not need to encode document file bytes if you're using an AWS SDK to call Amazon Textract API operations. </p> <p>You pass images stored in an S3 bucket to an Amazon Textract API operation by using the <code>S3Object</code> property. Documents stored in an S3 bucket don't need to be base64 encoded.</p> <p>The AWS Region for the S3 bucket that contains the S3 object must match the AWS Region that you use for Amazon Textract operations.</p> <p>If you use the AWS CLI to call Amazon Textract operations, passing image bytes using the Bytes property isn't supported. You must first upload the document to an Amazon S3 bucket, and then call the operation using the S3Object property.</p> <p>For Amazon Textract to process an S3 object, the user must have permission to access the S3 object. </p> */
 	export interface DocumentFormProperties {
+
+		/**
+		 * Max length: 10485760
+		 * Min length: 1
+		 */
 		Bytes: FormControl<string | null | undefined>,
 	}
 	export function CreateDocumentFormGroup() {
 		return new FormGroup<DocumentFormProperties>({
-			Bytes: new FormControl<string | null | undefined>(undefined),
+			Bytes: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10485760), Validators.minLength(1)]),
 		});
 
 	}
@@ -243,22 +303,58 @@ export namespace MyNS {
 
 	/** <p>The S3 bucket name and file name that identifies the document.</p> <p>The AWS Region for the S3 bucket that contains the document must match the Region that you use for Amazon Textract operations.</p> <p>For Amazon Textract to process a file in an S3 bucket, the user must have permission to access the S3 bucket and file. </p> */
 	export interface S3Object {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [0-9A-Za-z\.\-_]*
+		 */
 		Bucket?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		Version?: string | null;
 	}
 
 	/** <p>The S3 bucket name and file name that identifies the document.</p> <p>The AWS Region for the S3 bucket that contains the document must match the Region that you use for Amazon Textract operations.</p> <p>For Amazon Textract to process a file in an S3 bucket, the user must have permission to access the S3 bucket and file. </p> */
 	export interface S3ObjectFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [0-9A-Za-z\.\-_]*
+		 */
 		Bucket: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		Version: FormControl<string | null | undefined>,
 	}
 	export function CreateS3ObjectFormGroup() {
 		return new FormGroup<S3ObjectFormProperties>({
-			Bucket: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Version: new FormControl<string | null | undefined>(undefined),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -268,7 +364,19 @@ export namespace MyNS {
 
 	/** Sets up the human review workflow the document will be sent to if one of the conditions is met. You can also set certain attributes of the image before review.  */
 	export interface HumanLoopConfig {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-z0-9](-*[a-z0-9])*
+		 */
 		HumanLoopName: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 */
 		FlowDefinitionArn: string;
 
 		/** Allows you to set attributes of the image. Currently, you can declare an image as free of personally identifiable information and adult content. */
@@ -277,13 +385,25 @@ export namespace MyNS {
 
 	/** Sets up the human review workflow the document will be sent to if one of the conditions is met. You can also set certain attributes of the image before review.  */
 	export interface HumanLoopConfigFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-z0-9](-*[a-z0-9])*
+		 */
 		HumanLoopName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 */
 		FlowDefinitionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateHumanLoopConfigFormGroup() {
 		return new FormGroup<HumanLoopConfigFormProperties>({
-			HumanLoopName: new FormControl<string | null | undefined>(undefined),
-			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined),
+			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
+			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
@@ -291,6 +411,8 @@ export namespace MyNS {
 
 	/** Allows you to set attributes of the image. Currently, you can declare an image as free of personally identifiable information and adult content.  */
 	export interface HumanLoopDataAttributes {
+
+		/** Maximum items: 256 */
 		ContentClassifiers?: Array<ContentClassifier>;
 	}
 
@@ -443,6 +565,12 @@ export namespace MyNS {
 		/** Information about the input document. */
 		DocumentMetadata?: DocumentMetadata;
 		JobStatus?: GetDocumentAnalysisResponseJobStatus | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextToken?: string | null;
 		Blocks?: Array<Block>;
 		Warnings?: Array<Warning>;
@@ -451,6 +579,12 @@ export namespace MyNS {
 	}
 	export interface GetDocumentAnalysisResponseFormProperties {
 		JobStatus: FormControl<GetDocumentAnalysisResponseJobStatus | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextToken: FormControl<string | null | undefined>,
 		StatusMessage: FormControl<string | null | undefined>,
 		AnalyzeDocumentModelVersion: FormControl<string | null | undefined>,
@@ -458,7 +592,7 @@ export namespace MyNS {
 	export function CreateGetDocumentAnalysisResponseFormGroup() {
 		return new FormGroup<GetDocumentAnalysisResponseFormProperties>({
 			JobStatus: new FormControl<GetDocumentAnalysisResponseJobStatus | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 			StatusMessage: new FormControl<string | null | undefined>(undefined),
 			AnalyzeDocumentModelVersion: new FormControl<string | null | undefined>(undefined),
 		});
@@ -486,20 +620,50 @@ export namespace MyNS {
 	}
 
 	export interface GetDocumentAnalysisRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: string;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextToken?: string | null;
 	}
 	export interface GetDocumentAnalysisRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetDocumentAnalysisRequestFormGroup() {
 		return new FormGroup<GetDocumentAnalysisRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -519,6 +683,12 @@ export namespace MyNS {
 		/** Information about the input document. */
 		DocumentMetadata?: DocumentMetadata;
 		JobStatus?: GetDocumentAnalysisResponseJobStatus | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextToken?: string | null;
 		Blocks?: Array<Block>;
 		Warnings?: Array<Warning>;
@@ -527,6 +697,12 @@ export namespace MyNS {
 	}
 	export interface GetDocumentTextDetectionResponseFormProperties {
 		JobStatus: FormControl<GetDocumentAnalysisResponseJobStatus | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextToken: FormControl<string | null | undefined>,
 		StatusMessage: FormControl<string | null | undefined>,
 		DetectDocumentTextModelVersion: FormControl<string | null | undefined>,
@@ -534,7 +710,7 @@ export namespace MyNS {
 	export function CreateGetDocumentTextDetectionResponseFormGroup() {
 		return new FormGroup<GetDocumentTextDetectionResponseFormProperties>({
 			JobStatus: new FormControl<GetDocumentAnalysisResponseJobStatus | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 			StatusMessage: new FormControl<string | null | undefined>(undefined),
 			DetectDocumentTextModelVersion: new FormControl<string | null | undefined>(undefined),
 		});
@@ -542,33 +718,75 @@ export namespace MyNS {
 	}
 
 	export interface GetDocumentTextDetectionRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: string;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextToken?: string | null;
 	}
 	export interface GetDocumentTextDetectionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetDocumentTextDetectionRequestFormGroup() {
 		return new FormGroup<GetDocumentTextDetectionRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface StartDocumentAnalysisResponse {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId?: string | null;
 	}
 	export interface StartDocumentAnalysisResponseFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartDocumentAnalysisResponseFormGroup() {
 		return new FormGroup<StartDocumentAnalysisResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -580,21 +798,47 @@ export namespace MyNS {
 		 * Required
 		 */
 		DocumentLocation: DocumentLocation;
+
+		/** Required */
 		FeatureTypes: Array<FeatureType>;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		ClientRequestToken?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-:]+
+		 */
 		JobTag?: string | null;
 
 		/** The Amazon Simple Notification Service (Amazon SNS) topic to which Amazon Textract publishes the completion status of an asynchronous document operation, such as <a>StartDocumentTextDetection</a>. */
 		NotificationChannel?: NotificationChannel;
 	}
 	export interface StartDocumentAnalysisRequestFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-:]+
+		 */
 		JobTag: FormControl<string | null | undefined>,
 	}
 	export function CreateStartDocumentAnalysisRequestFormGroup() {
 		return new FormGroup<StartDocumentAnalysisRequestFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
-			JobTag: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -619,19 +863,47 @@ export namespace MyNS {
 
 	/** The Amazon Simple Notification Service (Amazon SNS) topic to which Amazon Textract publishes the completion status of an asynchronous document operation, such as <a>StartDocumentTextDetection</a>.  */
 	export interface NotificationChannel {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 20
+		 * Pattern: (^arn:([a-z\d-]+):sns:[a-zA-Z\d-]{1,20}:\w{12}:.+$)
+		 */
 		SNSTopicArn: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:([a-z\d-]+):iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleArn: string;
 	}
 
 	/** The Amazon Simple Notification Service (Amazon SNS) topic to which Amazon Textract publishes the completion status of an asynchronous document operation, such as <a>StartDocumentTextDetection</a>.  */
 	export interface NotificationChannelFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 20
+		 * Pattern: (^arn:([a-z\d-]+):sns:[a-zA-Z\d-]{1,20}:\w{12}:.+$)
+		 */
 		SNSTopicArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:([a-z\d-]+):iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateNotificationChannelFormGroup() {
 		return new FormGroup<NotificationChannelFormProperties>({
-			SNSTopicArn: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			SNSTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(20)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -657,14 +929,26 @@ export namespace MyNS {
 	}
 
 	export interface StartDocumentTextDetectionResponse {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId?: string | null;
 	}
 	export interface StartDocumentTextDetectionResponseFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartDocumentTextDetectionResponseFormGroup() {
 		return new FormGroup<StartDocumentTextDetectionResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -676,20 +960,44 @@ export namespace MyNS {
 		 * Required
 		 */
 		DocumentLocation: DocumentLocation;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		ClientRequestToken?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-:]+
+		 */
 		JobTag?: string | null;
 
 		/** The Amazon Simple Notification Service (Amazon SNS) topic to which Amazon Textract publishes the completion status of an asynchronous document operation, such as <a>StartDocumentTextDetection</a>. */
 		NotificationChannel?: NotificationChannel;
 	}
 	export interface StartDocumentTextDetectionRequestFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.\-:]+
+		 */
 		JobTag: FormControl<string | null | undefined>,
 	}
 	export function CreateStartDocumentTextDetectionRequestFormGroup() {
 		return new FormGroup<StartDocumentTextDetectionRequestFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
-			JobTag: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}

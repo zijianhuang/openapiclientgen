@@ -59,16 +59,26 @@ export namespace MyNS {
 	export interface DescribeSavingsPlanRatesResponse {
 		savingsPlanId?: string | null;
 		searchResults?: Array<SavingsPlanRate>;
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^[A-Za-z0-9/=\+]+$
+		 */
 		nextToken?: string | null;
 	}
 	export interface DescribeSavingsPlanRatesResponseFormProperties {
 		savingsPlanId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^[A-Za-z0-9/=\+]+$
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeSavingsPlanRatesResponseFormGroup() {
 		return new FormGroup<DescribeSavingsPlanRatesResponseFormProperties>({
 			savingsPlanId: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
@@ -81,7 +91,17 @@ export namespace MyNS {
 		unit?: SavingsPlanRateUnit | null;
 		productType?: SavingsPlanRateProductType | null;
 		serviceCode?: SavingsPlanRateServiceCode | null;
+
+		/**
+		 * Max length: 255
+		 * Pattern: ^[a-zA-Z0-9_ \/.:-]+$
+		 */
 		usageType?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Pattern: ^[a-zA-Z0-9_ \/.:-]*$
+		 */
 		operation?: string | null;
 		properties?: Array<SavingsPlanRateProperty>;
 	}
@@ -93,7 +113,17 @@ export namespace MyNS {
 		unit: FormControl<SavingsPlanRateUnit | null | undefined>,
 		productType: FormControl<SavingsPlanRateProductType | null | undefined>,
 		serviceCode: FormControl<SavingsPlanRateServiceCode | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Pattern: ^[a-zA-Z0-9_ \/.:-]+$
+		 */
 		usageType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Pattern: ^[a-zA-Z0-9_ \/.:-]*$
+		 */
 		operation: FormControl<string | null | undefined>,
 	}
 	export function CreateSavingsPlanRateFormGroup() {
@@ -103,8 +133,8 @@ export namespace MyNS {
 			unit: new FormControl<SavingsPlanRateUnit | null | undefined>(undefined),
 			productType: new FormControl<SavingsPlanRateProductType | null | undefined>(undefined),
 			serviceCode: new FormControl<SavingsPlanRateServiceCode | null | undefined>(undefined),
-			usageType: new FormControl<string | null | undefined>(undefined),
-			operation: new FormControl<string | null | undefined>(undefined),
+			usageType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			operation: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -121,12 +151,16 @@ export namespace MyNS {
 	/** Information about a property. */
 	export interface SavingsPlanRateProperty {
 		name?: SavingsPlanRatePropertyName | null;
+
+		/** Pattern: ^[a-zA-Z0-9_ \/.\:\-\(\)]+$ */
 		value?: string | null;
 	}
 
 	/** Information about a property. */
 	export interface SavingsPlanRatePropertyFormProperties {
 		name: FormControl<SavingsPlanRatePropertyName | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_ \/.\:\-\(\)]+$ */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateSavingsPlanRatePropertyFormGroup() {
@@ -161,14 +195,24 @@ export namespace MyNS {
 
 	export interface DescribeSavingsPlansResponse {
 		savingsPlans?: Array<SavingsPlan>;
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^[A-Za-z0-9/=\+]+$
+		 */
 		nextToken?: string | null;
 	}
 	export interface DescribeSavingsPlansResponseFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^[A-Za-z0-9/=\+]+$
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeSavingsPlansResponseFormGroup() {
 		return new FormGroup<DescribeSavingsPlansResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
@@ -178,6 +222,8 @@ export namespace MyNS {
 	export interface SavingsPlan {
 		offeringId?: string | null;
 		savingsPlanId?: string | null;
+
+		/** Pattern: arn:aws:[a-z]+:([a-z]{2}-[a-z]+-\d{1}|):(\d{12}):savingsplan\/([0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})$ */
 		savingsPlanArn?: string | null;
 		description?: string | null;
 		start?: string | null;
@@ -200,6 +246,8 @@ export namespace MyNS {
 	export interface SavingsPlanFormProperties {
 		offeringId: FormControl<string | null | undefined>,
 		savingsPlanId: FormControl<string | null | undefined>,
+
+		/** Pattern: arn:aws:[a-z]+:([a-z]{2}-[a-z]+-\d{1}|):(\d{12}):savingsplan\/([0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})$ */
 		savingsPlanArn: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		start: FormControl<string | null | undefined>,
@@ -277,14 +325,24 @@ export namespace MyNS {
 
 	export interface DescribeSavingsPlansOfferingRatesResponse {
 		searchResults?: Array<SavingsPlanOfferingRate>;
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^[A-Za-z0-9/=\+]+$
+		 */
 		nextToken?: string | null;
 	}
 	export interface DescribeSavingsPlansOfferingRatesResponseFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^[A-Za-z0-9/=\+]+$
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeSavingsPlansOfferingRatesResponseFormGroup() {
 		return new FormGroup<DescribeSavingsPlansOfferingRatesResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
@@ -299,7 +357,17 @@ export namespace MyNS {
 		unit?: SavingsPlanOfferingRateUnit | null;
 		productType?: SavingsPlanRateProductType | null;
 		serviceCode?: SavingsPlanRateServiceCode | null;
+
+		/**
+		 * Max length: 255
+		 * Pattern: ^[a-zA-Z0-9_ \/.:-]+$
+		 */
 		usageType?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Pattern: ^[a-zA-Z0-9_ \/.:-]*$
+		 */
 		operation?: string | null;
 		properties?: Array<SavingsPlanOfferingRateProperty>;
 	}
@@ -310,7 +378,17 @@ export namespace MyNS {
 		unit: FormControl<SavingsPlanOfferingRateUnit | null | undefined>,
 		productType: FormControl<SavingsPlanRateProductType | null | undefined>,
 		serviceCode: FormControl<SavingsPlanRateServiceCode | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Pattern: ^[a-zA-Z0-9_ \/.:-]+$
+		 */
 		usageType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Pattern: ^[a-zA-Z0-9_ \/.:-]*$
+		 */
 		operation: FormControl<string | null | undefined>,
 	}
 	export function CreateSavingsPlanOfferingRateFormGroup() {
@@ -319,8 +397,8 @@ export namespace MyNS {
 			unit: new FormControl<SavingsPlanOfferingRateUnit | null | undefined>(undefined),
 			productType: new FormControl<SavingsPlanRateProductType | null | undefined>(undefined),
 			serviceCode: new FormControl<SavingsPlanRateServiceCode | null | undefined>(undefined),
-			usageType: new FormControl<string | null | undefined>(undefined),
-			operation: new FormControl<string | null | undefined>(undefined),
+			usageType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			operation: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -328,21 +406,33 @@ export namespace MyNS {
 
 	/** Information about a Savings Plan offering. */
 	export interface ParentSavingsPlanOffering {
+
+		/** Pattern: ^(([0-9a-f]+)(-?))+$ */
 		offeringId?: string | null;
 		paymentOption?: ParentSavingsPlanOfferingPaymentOption | null;
 		planType?: SavingsPlanSavingsPlanType | null;
+
+		/** Minimum: 0 */
 		durationSeconds?: number | null;
 		currency?: SavingsPlanRateCurrency | null;
+
+		/** Pattern: ^[a-zA-Z0-9_\- ]+$ */
 		planDescription?: string | null;
 	}
 
 	/** Information about a Savings Plan offering. */
 	export interface ParentSavingsPlanOfferingFormProperties {
+
+		/** Pattern: ^(([0-9a-f]+)(-?))+$ */
 		offeringId: FormControl<string | null | undefined>,
 		paymentOption: FormControl<ParentSavingsPlanOfferingPaymentOption | null | undefined>,
 		planType: FormControl<SavingsPlanSavingsPlanType | null | undefined>,
+
+		/** Minimum: 0 */
 		durationSeconds: FormControl<number | null | undefined>,
 		currency: FormControl<SavingsPlanRateCurrency | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\- ]+$ */
 		planDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateParentSavingsPlanOfferingFormGroup() {
@@ -350,7 +440,7 @@ export namespace MyNS {
 			offeringId: new FormControl<string | null | undefined>(undefined),
 			paymentOption: new FormControl<ParentSavingsPlanOfferingPaymentOption | null | undefined>(undefined),
 			planType: new FormControl<SavingsPlanSavingsPlanType | null | undefined>(undefined),
-			durationSeconds: new FormControl<number | null | undefined>(undefined),
+			durationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			currency: new FormControl<SavingsPlanRateCurrency | null | undefined>(undefined),
 			planDescription: new FormControl<string | null | undefined>(undefined),
 		});
@@ -364,13 +454,21 @@ export namespace MyNS {
 
 	/** Information about a property. */
 	export interface SavingsPlanOfferingRateProperty {
+
+		/** Pattern: ^[a-zA-Z0-9_ \/.\:\-\(\)]+$ */
 		name?: string | null;
+
+		/** Pattern: ^[a-zA-Z0-9_ \/.\:\-\(\)]+$ */
 		value?: string | null;
 	}
 
 	/** Information about a property. */
 	export interface SavingsPlanOfferingRatePropertyFormProperties {
+
+		/** Pattern: ^[a-zA-Z0-9_ \/.\:\-\(\)]+$ */
 		name: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_ \/.\:\-\(\)]+$ */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateSavingsPlanOfferingRatePropertyFormGroup() {
@@ -405,14 +503,24 @@ export namespace MyNS {
 
 	export interface DescribeSavingsPlansOfferingsResponse {
 		searchResults?: Array<SavingsPlanOffering>;
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^[A-Za-z0-9/=\+]+$
+		 */
 		nextToken?: string | null;
 	}
 	export interface DescribeSavingsPlansOfferingsResponseFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^[A-Za-z0-9/=\+]+$
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeSavingsPlansOfferingsResponseFormGroup() {
 		return new FormGroup<DescribeSavingsPlansOfferingsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
@@ -420,29 +528,71 @@ export namespace MyNS {
 
 	/** Information about a Savings Plan offering. */
 	export interface SavingsPlanOffering {
+
+		/** Pattern: ^(([0-9a-f]+)(-?))+$ */
 		offeringId?: string | null;
 		productTypes?: Array<SavingsPlanProductType>;
 		planType?: SavingsPlanSavingsPlanType | null;
+
+		/** Pattern: ^[a-zA-Z0-9_\- ]+$ */
 		description?: string | null;
 		paymentOption?: SavingsPlanOfferingPaymentOption | null;
+
+		/** Minimum: 0 */
 		durationSeconds?: number | null;
 		currency?: SavingsPlanRateCurrency | null;
+
+		/**
+		 * Max length: 255
+		 * Pattern: ^[a-zA-Z]+$
+		 */
 		serviceCode?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Pattern: ^[a-zA-Z0-9_ \/.:-]+$
+		 */
 		usageType?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Pattern: ^[a-zA-Z0-9_ \/.:-]*$
+		 */
 		operation?: string | null;
 		properties?: Array<SavingsPlanOfferingProperty>;
 	}
 
 	/** Information about a Savings Plan offering. */
 	export interface SavingsPlanOfferingFormProperties {
+
+		/** Pattern: ^(([0-9a-f]+)(-?))+$ */
 		offeringId: FormControl<string | null | undefined>,
 		planType: FormControl<SavingsPlanSavingsPlanType | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\- ]+$ */
 		description: FormControl<string | null | undefined>,
 		paymentOption: FormControl<SavingsPlanOfferingPaymentOption | null | undefined>,
+
+		/** Minimum: 0 */
 		durationSeconds: FormControl<number | null | undefined>,
 		currency: FormControl<SavingsPlanRateCurrency | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Pattern: ^[a-zA-Z]+$
+		 */
 		serviceCode: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Pattern: ^[a-zA-Z0-9_ \/.:-]+$
+		 */
 		usageType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Pattern: ^[a-zA-Z0-9_ \/.:-]*$
+		 */
 		operation: FormControl<string | null | undefined>,
 	}
 	export function CreateSavingsPlanOfferingFormGroup() {
@@ -451,11 +601,11 @@ export namespace MyNS {
 			planType: new FormControl<SavingsPlanSavingsPlanType | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
 			paymentOption: new FormControl<SavingsPlanOfferingPaymentOption | null | undefined>(undefined),
-			durationSeconds: new FormControl<number | null | undefined>(undefined),
+			durationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			currency: new FormControl<SavingsPlanRateCurrency | null | undefined>(undefined),
-			serviceCode: new FormControl<string | null | undefined>(undefined),
-			usageType: new FormControl<string | null | undefined>(undefined),
-			operation: new FormControl<string | null | undefined>(undefined),
+			serviceCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			usageType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			operation: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -466,12 +616,16 @@ export namespace MyNS {
 	/** Information about a property. */
 	export interface SavingsPlanOfferingProperty {
 		name?: SavingsPlanOfferingPropertyName | null;
+
+		/** Pattern: ^[a-zA-Z0-9_ \/.\:\-\(\)]+$ */
 		value?: string | null;
 	}
 
 	/** Information about a property. */
 	export interface SavingsPlanOfferingPropertyFormProperties {
 		name: FormControl<SavingsPlanOfferingPropertyName | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_ \/.\:\-\(\)]+$ */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateSavingsPlanOfferingPropertyFormGroup() {
@@ -536,22 +690,30 @@ export namespace MyNS {
 	}
 
 	export interface CreateSavingsPlanRequest {
+
+		/** Required */
 		savingsPlanOfferingId: string;
+
+		/** Required */
 		commitment: string;
 		upfrontPaymentAmount?: string | null;
 		clientToken?: string | null;
 		tags?: TagMap;
 	}
 	export interface CreateSavingsPlanRequestFormProperties {
+
+		/** Required */
 		savingsPlanOfferingId: FormControl<string | null | undefined>,
+
+		/** Required */
 		commitment: FormControl<string | null | undefined>,
 		upfrontPaymentAmount: FormControl<string | null | undefined>,
 		clientToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSavingsPlanRequestFormGroup() {
 		return new FormGroup<CreateSavingsPlanRequestFormProperties>({
-			savingsPlanOfferingId: new FormControl<string | null | undefined>(undefined),
-			commitment: new FormControl<string | null | undefined>(undefined),
+			savingsPlanOfferingId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			commitment: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			upfrontPaymentAmount: new FormControl<string | null | undefined>(undefined),
 			clientToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -559,21 +721,45 @@ export namespace MyNS {
 	}
 
 	export interface DescribeSavingsPlanRatesRequest {
+
+		/** Required */
 		savingsPlanId: string;
 		filters?: Array<SavingsPlanRateFilter>;
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^[A-Za-z0-9/=\+]+$
+		 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		maxResults?: number | null;
 	}
 	export interface DescribeSavingsPlanRatesRequestFormProperties {
+
+		/** Required */
 		savingsPlanId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^[A-Za-z0-9/=\+]+$
+		 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeSavingsPlanRatesRequestFormGroup() {
 		return new FormGroup<DescribeSavingsPlanRatesRequestFormProperties>({
-			savingsPlanId: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			savingsPlanId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
@@ -587,17 +773,37 @@ export namespace MyNS {
 		usageTypes?: Array<string>;
 		operations?: Array<string>;
 		filters?: Array<SavingsPlanOfferingRateFilterElement>;
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^[A-Za-z0-9/=\+]+$
+		 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maxResults?: number | null;
 	}
 	export interface DescribeSavingsPlansOfferingRatesRequestFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^[A-Za-z0-9/=\+]+$
+		 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeSavingsPlansOfferingRatesRequestFormGroup() {
 		return new FormGroup<DescribeSavingsPlansOfferingRatesRequestFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 		});
 
 	}
@@ -614,52 +820,104 @@ export namespace MyNS {
 		usageTypes?: Array<string>;
 		operations?: Array<string>;
 		filters?: Array<SavingsPlanOfferingFilterElement>;
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^[A-Za-z0-9/=\+]+$
+		 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maxResults?: number | null;
 	}
 	export interface DescribeSavingsPlansOfferingsRequestFormProperties {
 		productType: FormControl<SavingsPlanRateProductType | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^[A-Za-z0-9/=\+]+$
+		 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1000
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeSavingsPlansOfferingsRequestFormGroup() {
 		return new FormGroup<DescribeSavingsPlansOfferingsRequestFormProperties>({
 			productType: new FormControl<SavingsPlanRateProductType | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 		});
 
 	}
 
 	export interface DescribeSavingsPlansRequest {
+
+		/** Maximum items: 100 */
 		savingsPlanArns?: Array<string>;
 		savingsPlanIds?: Array<string>;
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^[A-Za-z0-9/=\+]+$
+		 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		maxResults?: number | null;
 		states?: Array<SavingsPlanState>;
 		filters?: Array<SavingsPlanFilter>;
 	}
 	export interface DescribeSavingsPlansRequestFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^[A-Za-z0-9/=\+]+$
+		 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeSavingsPlansRequestFormGroup() {
 		return new FormGroup<DescribeSavingsPlansRequestFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
 
 	export interface ListTagsForResourceRequest {
+
+		/**
+		 * Required
+		 * Pattern: arn:aws:[a-z]+:([a-z]{2}-[a-z]+-\d{1}|):(\d{12}):savingsplan\/([0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})$
+		 */
 		resourceArn: string;
 	}
 	export interface ListTagsForResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: arn:aws:[a-z]+:([a-z]{2}-[a-z]+-\d{1}|):(\d{12}):savingsplan\/([0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})$
+		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -675,29 +933,53 @@ export namespace MyNS {
 	export enum SavingsPlanRatePropertyKey { region = 0, instanceType = 1, instanceFamily = 2, productDescription = 3, tenancy = 4 }
 
 	export interface TagResourceRequest {
+
+		/**
+		 * Required
+		 * Pattern: arn:aws:[a-z]+:([a-z]{2}-[a-z]+-\d{1}|):(\d{12}):savingsplan\/([0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})$
+		 */
 		resourceArn: string;
+
+		/** Required */
 		tags: TagMap;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: arn:aws:[a-z]+:([a-z]{2}-[a-z]+-\d{1}|):(\d{12}):savingsplan\/([0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})$
+		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface UntagResourceRequest {
+
+		/**
+		 * Required
+		 * Pattern: arn:aws:[a-z]+:([a-z]{2}-[a-z]+-\d{1}|):(\d{12}):savingsplan\/([0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})$
+		 */
 		resourceArn: string;
+
+		/** Required */
 		tagKeys: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: arn:aws:[a-z]+:([a-z]{2}-[a-z]+-\d{1}|):(\d{12}):savingsplan\/([0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})$
+		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -828,8 +1110,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateSavingsPlanPostBodyFormGroup() {
 		return new FormGroup<CreateSavingsPlanPostBodyFormProperties>({
-			savingsPlanOfferingId: new FormControl<string | null | undefined>(undefined),
-			commitment: new FormControl<string | null | undefined>(undefined),
+			savingsPlanOfferingId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			commitment: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			upfrontPaymentAmount: new FormControl<string | null | undefined>(undefined),
 			clientToken: new FormControl<string | null | undefined>(undefined),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
@@ -886,9 +1168,9 @@ export namespace MyNS {
 	}
 	export function CreateDescribeSavingsPlanRatesPostBodyFormGroup() {
 		return new FormGroup<DescribeSavingsPlanRatesPostBodyFormProperties>({
-			savingsPlanId: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			savingsPlanId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
@@ -942,8 +1224,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeSavingsPlansPostBodyFormGroup() {
 		return new FormGroup<DescribeSavingsPlansPostBodyFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
@@ -1006,8 +1288,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeSavingsPlansOfferingRatesPostBodyFormGroup() {
 		return new FormGroup<DescribeSavingsPlansOfferingRatesPostBodyFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 		});
 
 	}
@@ -1083,8 +1365,8 @@ export namespace MyNS {
 	export function CreateDescribeSavingsPlansOfferingsPostBodyFormGroup() {
 		return new FormGroup<DescribeSavingsPlansOfferingsPostBodyFormProperties>({
 			productType: new FormControl<SavingsPlanRateProductType | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 		});
 
 	}
@@ -1109,7 +1391,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourcePostBodyFormGroup() {
 		return new FormGroup<ListTagsForResourcePostBodyFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1146,8 +1428,8 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
-			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1178,7 +1460,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourcePostBodyFormGroup() {
 		return new FormGroup<UntagResourcePostBodyFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

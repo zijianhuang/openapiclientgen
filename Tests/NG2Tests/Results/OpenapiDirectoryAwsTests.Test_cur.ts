@@ -48,7 +48,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteReportDefinitionRequestFormGroup() {
 		return new FormGroup<DeleteReportDefinitionRequestFormProperties>({
-			ReportName: new FormControl<string | null | undefined>(undefined),
+			ReportName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -214,13 +214,13 @@ export namespace MyNS {
 	}
 	export function CreateReportDefinitionFormGroup() {
 		return new FormGroup<ReportDefinitionFormProperties>({
-			ReportName: new FormControl<string | null | undefined>(undefined),
-			TimeUnit: new FormControl<ReportDefinitionTimeUnit | null | undefined>(undefined),
-			Format: new FormControl<ReportDefinitionFormat | null | undefined>(undefined),
-			Compression: new FormControl<ReportDefinitionCompression | null | undefined>(undefined),
-			S3Bucket: new FormControl<string | null | undefined>(undefined),
-			S3Prefix: new FormControl<string | null | undefined>(undefined),
-			S3Region: new FormControl<ReportDefinitionS3Region | null | undefined>(undefined),
+			ReportName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			TimeUnit: new FormControl<ReportDefinitionTimeUnit | null | undefined>(undefined, [Validators.required]),
+			Format: new FormControl<ReportDefinitionFormat | null | undefined>(undefined, [Validators.required]),
+			Compression: new FormControl<ReportDefinitionCompression | null | undefined>(undefined, [Validators.required]),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			S3Prefix: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			S3Region: new FormControl<ReportDefinitionS3Region | null | undefined>(undefined, [Validators.required]),
 			RefreshClosedReports: new FormControl<boolean | null | undefined>(undefined),
 			ReportVersioning: new FormControl<ReportDefinitionReportVersioning | null | undefined>(undefined),
 		});
@@ -275,7 +275,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeReportDefinitionsRequestFormGroup() {
 		return new FormGroup<DescribeReportDefinitionsRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(5)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -319,7 +319,7 @@ export namespace MyNS {
 	}
 	export function CreateModifyReportDefinitionRequestFormGroup() {
 		return new FormGroup<ModifyReportDefinitionRequestFormProperties>({
-			ReportName: new FormControl<string | null | undefined>(undefined),
+			ReportName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}

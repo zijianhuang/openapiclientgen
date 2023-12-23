@@ -81,31 +81,71 @@ export namespace MyNS {
 
 	/** <p>Identifies the chunk on the Kinesis video stream where you want the <code>GetMedia</code> API to start returning media data. You have the following options to identify the starting chunk: </p> <ul> <li> <p>Choose the latest (or oldest) chunk.</p> </li> <li> <p>Identify a specific chunk. You can identify a specific chunk either by providing a fragment number or timestamp (server or producer). </p> </li> <li> <p>Each chunk's metadata includes a continuation token as a Matroska (MKV) tag (<code>AWS_KINESISVIDEO_CONTINUATION_TOKEN</code>). If your previous <code>GetMedia</code> request terminated, you can use this tag value in your next <code>GetMedia</code> request. The API then starts returning chunks starting where the last API ended.</p> </li> </ul> */
 	export interface StartSelector {
+
+		/** Required */
 		StartSelectorType: StartSelectorType;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[0-9]+$
+		 */
 		AfterFragmentNumber?: string | null;
 		StartTimestamp?: Date | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_\.\-]+$
+		 */
 		ContinuationToken?: string | null;
 	}
 
 	/** <p>Identifies the chunk on the Kinesis video stream where you want the <code>GetMedia</code> API to start returning media data. You have the following options to identify the starting chunk: </p> <ul> <li> <p>Choose the latest (or oldest) chunk.</p> </li> <li> <p>Identify a specific chunk. You can identify a specific chunk either by providing a fragment number or timestamp (server or producer). </p> </li> <li> <p>Each chunk's metadata includes a continuation token as a Matroska (MKV) tag (<code>AWS_KINESISVIDEO_CONTINUATION_TOKEN</code>). If your previous <code>GetMedia</code> request terminated, you can use this tag value in your next <code>GetMedia</code> request. The API then starts returning chunks starting where the last API ended.</p> </li> </ul> */
 	export interface StartSelectorFormProperties {
+
+		/** Required */
 		StartSelectorType: FormControl<StartSelectorType | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[0-9]+$
+		 */
 		AfterFragmentNumber: FormControl<string | null | undefined>,
 		StartTimestamp: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_\.\-]+$
+		 */
 		ContinuationToken: FormControl<string | null | undefined>,
 	}
 	export function CreateStartSelectorFormGroup() {
 		return new FormGroup<StartSelectorFormProperties>({
-			StartSelectorType: new FormControl<StartSelectorType | null | undefined>(undefined),
-			AfterFragmentNumber: new FormControl<string | null | undefined>(undefined),
+			StartSelectorType: new FormControl<StartSelectorType | null | undefined>(undefined, [Validators.required]),
+			AfterFragmentNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			StartTimestamp: new FormControl<Date | null | undefined>(undefined),
-			ContinuationToken: new FormControl<string | null | undefined>(undefined),
+			ContinuationToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetMediaInput {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN?: string | null;
 
 		/**
@@ -115,13 +155,25 @@ export namespace MyNS {
 		StartSelector: StartSelector;
 	}
 	export interface GetMediaInputFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN: FormControl<string | null | undefined>,
 	}
 	export function CreateGetMediaInputFormGroup() {
 		return new FormGroup<GetMediaInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined),
-			StreamARN: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -185,30 +237,54 @@ export namespace MyNS {
 	}
 	export function CreateGetMediaPostBodyFormGroup() {
 		return new FormGroup<GetMediaPostBodyFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined),
-			StreamARN: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetMediaPostBodyStartSelector {
 		StartSelectorType?: StartSelectorType | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[0-9]+$
+		 */
 		AfterFragmentNumber?: string | null;
 		StartTimestamp?: Date | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_\.\-]+$
+		 */
 		ContinuationToken?: string | null;
 	}
 	export interface GetMediaPostBodyStartSelectorFormProperties {
 		StartSelectorType: FormControl<StartSelectorType | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[0-9]+$
+		 */
 		AfterFragmentNumber: FormControl<string | null | undefined>,
 		StartTimestamp: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_\.\-]+$
+		 */
 		ContinuationToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetMediaPostBodyStartSelectorFormGroup() {
 		return new FormGroup<GetMediaPostBodyStartSelectorFormProperties>({
 			StartSelectorType: new FormControl<StartSelectorType | null | undefined>(undefined),
-			AfterFragmentNumber: new FormControl<string | null | undefined>(undefined),
+			AfterFragmentNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			StartTimestamp: new FormControl<Date | null | undefined>(undefined),
-			ContinuationToken: new FormControl<string | null | undefined>(undefined),
+			ContinuationToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}

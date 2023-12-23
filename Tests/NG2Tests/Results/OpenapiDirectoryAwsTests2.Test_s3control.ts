@@ -4,14 +4,26 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateJobResult {
+
+		/**
+		 * Max length: 36
+		 * Min length: 5
+		 * Pattern: [a-zA-Z0-9\-\_]+
+		 */
 		JobId?: string | null;
 	}
 	export interface CreateJobResultFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 5
+		 * Pattern: [a-zA-Z0-9\-\_]+
+		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateJobResultFormGroup() {
 		return new FormGroup<CreateJobResultFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(5)]),
 		});
 
 	}
@@ -19,16 +31,28 @@ export namespace MyNS {
 
 	/** Contains the configuration parameters for a <code>Lambda Invoke</code> operation. */
 	export interface LambdaInvokeOperation {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
+		 */
 		FunctionArn?: string | null;
 	}
 
 	/** Contains the configuration parameters for a <code>Lambda Invoke</code> operation. */
 	export interface LambdaInvokeOperationFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
+		 */
 		FunctionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateLambdaInvokeOperationFormGroup() {
 		return new FormGroup<LambdaInvokeOperationFormProperties>({
-			FunctionArn: new FormControl<string | null | undefined>(undefined),
+			FunctionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -36,6 +60,12 @@ export namespace MyNS {
 
 	/** Contains the configuration parameters for a PUT Copy object operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Copy object API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">PUT Object - Copy</a>. */
 	export interface S3CopyObjectOperation {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: arn:[^:]+:s3:.*
+		 */
 		TargetResource?: string | null;
 		CannedAccessControlList?: S3CopyObjectOperationCannedAccessControlList | null;
 		AccessControlGrants?: Array<S3Grant>;
@@ -45,11 +75,26 @@ export namespace MyNS {
 		/** <p/> */
 		NewObjectMetadata?: S3ObjectMetadata;
 		NewObjectTagging?: Array<S3Tag>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		RedirectLocation?: string | null;
 		RequesterPays?: boolean | null;
 		StorageClass?: S3CopyObjectOperationStorageClass | null;
 		UnModifiedSinceConstraint?: Date | null;
+
+		/**
+		 * Max length: 2000
+		 * Min length: 1
+		 */
 		SSEAwsKmsKeyId?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		TargetKeyPrefix?: string | null;
 		ObjectLockLegalHoldStatus?: S3CopyObjectOperationObjectLockLegalHoldStatus | null;
 		ObjectLockMode?: S3CopyObjectOperationObjectLockMode | null;
@@ -58,15 +103,36 @@ export namespace MyNS {
 
 	/** Contains the configuration parameters for a PUT Copy object operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Copy object API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">PUT Object - Copy</a>. */
 	export interface S3CopyObjectOperationFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: arn:[^:]+:s3:.*
+		 */
 		TargetResource: FormControl<string | null | undefined>,
 		CannedAccessControlList: FormControl<S3CopyObjectOperationCannedAccessControlList | null | undefined>,
 		MetadataDirective: FormControl<S3CopyObjectOperationMetadataDirective | null | undefined>,
 		ModifiedSinceConstraint: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		RedirectLocation: FormControl<string | null | undefined>,
 		RequesterPays: FormControl<boolean | null | undefined>,
 		StorageClass: FormControl<S3CopyObjectOperationStorageClass | null | undefined>,
 		UnModifiedSinceConstraint: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 2000
+		 * Min length: 1
+		 */
 		SSEAwsKmsKeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		TargetKeyPrefix: FormControl<string | null | undefined>,
 		ObjectLockLegalHoldStatus: FormControl<S3CopyObjectOperationObjectLockLegalHoldStatus | null | undefined>,
 		ObjectLockMode: FormControl<S3CopyObjectOperationObjectLockMode | null | undefined>,
@@ -74,16 +140,16 @@ export namespace MyNS {
 	}
 	export function CreateS3CopyObjectOperationFormGroup() {
 		return new FormGroup<S3CopyObjectOperationFormProperties>({
-			TargetResource: new FormControl<string | null | undefined>(undefined),
+			TargetResource: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			CannedAccessControlList: new FormControl<S3CopyObjectOperationCannedAccessControlList | null | undefined>(undefined),
 			MetadataDirective: new FormControl<S3CopyObjectOperationMetadataDirective | null | undefined>(undefined),
 			ModifiedSinceConstraint: new FormControl<Date | null | undefined>(undefined),
-			RedirectLocation: new FormControl<string | null | undefined>(undefined),
+			RedirectLocation: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 			RequesterPays: new FormControl<boolean | null | undefined>(undefined),
 			StorageClass: new FormControl<S3CopyObjectOperationStorageClass | null | undefined>(undefined),
 			UnModifiedSinceConstraint: new FormControl<Date | null | undefined>(undefined),
-			SSEAwsKmsKeyId: new FormControl<string | null | undefined>(undefined),
-			TargetKeyPrefix: new FormControl<string | null | undefined>(undefined),
+			SSEAwsKmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
+			TargetKeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			ObjectLockLegalHoldStatus: new FormControl<S3CopyObjectOperationObjectLockLegalHoldStatus | null | undefined>(undefined),
 			ObjectLockMode: new FormControl<S3CopyObjectOperationObjectLockMode | null | undefined>(undefined),
 			ObjectLockRetainUntilDate: new FormControl<Date | null | undefined>(undefined),
@@ -117,21 +183,41 @@ export namespace MyNS {
 	/** <p/> */
 	export interface S3Grantee {
 		TypeIdentifier?: S3GranteeTypeIdentifier | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Identifier?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		DisplayName?: string | null;
 	}
 
 	/** <p/> */
 	export interface S3GranteeFormProperties {
 		TypeIdentifier: FormControl<S3GranteeTypeIdentifier | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Identifier: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		DisplayName: FormControl<string | null | undefined>,
 	}
 	export function CreateS3GranteeFormGroup() {
 		return new FormGroup<S3GranteeFormProperties>({
 			TypeIdentifier: new FormControl<S3GranteeTypeIdentifier | null | undefined>(undefined),
-			Identifier: new FormControl<string | null | undefined>(undefined),
-			DisplayName: new FormControl<string | null | undefined>(undefined),
+			Identifier: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -145,13 +231,45 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface S3ObjectMetadata {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		CacheControl?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		ContentDisposition?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		ContentEncoding?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		ContentLanguage?: string | null;
 		UserMetadata?: S3UserMetadata;
+
+		/** Minimum: 0 */
 		ContentLength?: number | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		ContentMD5?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		ContentType?: string | null;
 		HttpExpiresDate?: Date | null;
 		RequesterCharged?: boolean | null;
@@ -160,12 +278,44 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface S3ObjectMetadataFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		CacheControl: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		ContentDisposition: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		ContentEncoding: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		ContentLanguage: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		ContentLength: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		ContentMD5: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		ContentType: FormControl<string | null | undefined>,
 		HttpExpiresDate: FormControl<Date | null | undefined>,
 		RequesterCharged: FormControl<boolean | null | undefined>,
@@ -173,13 +323,13 @@ export namespace MyNS {
 	}
 	export function CreateS3ObjectMetadataFormGroup() {
 		return new FormGroup<S3ObjectMetadataFormProperties>({
-			CacheControl: new FormControl<string | null | undefined>(undefined),
-			ContentDisposition: new FormControl<string | null | undefined>(undefined),
-			ContentEncoding: new FormControl<string | null | undefined>(undefined),
-			ContentLanguage: new FormControl<string | null | undefined>(undefined),
-			ContentLength: new FormControl<number | null | undefined>(undefined),
-			ContentMD5: new FormControl<string | null | undefined>(undefined),
-			ContentType: new FormControl<string | null | undefined>(undefined),
+			CacheControl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ContentDisposition: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ContentEncoding: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ContentLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ContentLength: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			ContentMD5: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			HttpExpiresDate: new FormControl<Date | null | undefined>(undefined),
 			RequesterCharged: new FormControl<boolean | null | undefined>(undefined),
 			SSEAlgorithm: new FormControl<S3ObjectMetadataSSEAlgorithm | null | undefined>(undefined),
@@ -202,19 +352,45 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface S3Tag {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:=+\-@%]*)$
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:=+\-@%]*)$
+		 */
 		Value: string;
 	}
 
 	/** <p/> */
 	export interface S3TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:=+\-@%]*)$
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:=+\-@%]*)$
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateS3TagFormGroup() {
 		return new FormGroup<S3TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
 		});
 
 	}
@@ -286,19 +462,39 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface S3ObjectOwner {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		ID?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		DisplayName?: string | null;
 	}
 
 	/** <p/> */
 	export interface S3ObjectOwnerFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		ID: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		DisplayName: FormControl<string | null | undefined>,
 	}
 	export function CreateS3ObjectOwnerFormGroup() {
 		return new FormGroup<S3ObjectOwnerFormProperties>({
-			ID: new FormControl<string | null | undefined>(undefined),
-			DisplayName: new FormControl<string | null | undefined>(undefined),
+			ID: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -323,18 +519,22 @@ export namespace MyNS {
 
 	/** Contains the configuration parameters for an Initiate Glacier Restore job. Amazon S3 Batch Operations passes each value through to the underlying POST Object restore API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request">Restoring Archives</a>. */
 	export interface S3InitiateRestoreObjectOperation {
+
+		/** Minimum: 0 */
 		ExpirationInDays?: number | null;
 		GlacierJobTier?: S3InitiateRestoreObjectOperationGlacierJobTier | null;
 	}
 
 	/** Contains the configuration parameters for an Initiate Glacier Restore job. Amazon S3 Batch Operations passes each value through to the underlying POST Object restore API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request">Restoring Archives</a>. */
 	export interface S3InitiateRestoreObjectOperationFormProperties {
+
+		/** Minimum: 0 */
 		ExpirationInDays: FormControl<number | null | undefined>,
 		GlacierJobTier: FormControl<S3InitiateRestoreObjectOperationGlacierJobTier | null | undefined>,
 	}
 	export function CreateS3InitiateRestoreObjectOperationFormGroup() {
 		return new FormGroup<S3InitiateRestoreObjectOperationFormProperties>({
-			ExpirationInDays: new FormControl<number | null | undefined>(undefined),
+			ExpirationInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			GlacierJobTier: new FormControl<S3InitiateRestoreObjectOperationGlacierJobTier | null | undefined>(undefined),
 		});
 
@@ -365,16 +565,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface S3ObjectLockLegalHold {
+
+		/** Required */
 		Status: S3CopyObjectOperationObjectLockLegalHoldStatus;
 	}
 
 	/** <p/> */
 	export interface S3ObjectLockLegalHoldFormProperties {
+
+		/** Required */
 		Status: FormControl<S3CopyObjectOperationObjectLockLegalHoldStatus | null | undefined>,
 	}
 	export function CreateS3ObjectLockLegalHoldFormGroup() {
 		return new FormGroup<S3ObjectLockLegalHoldFormProperties>({
-			Status: new FormControl<S3CopyObjectOperationObjectLockLegalHoldStatus | null | undefined>(undefined),
+			Status: new FormControl<S3CopyObjectOperationObjectLockLegalHoldStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -429,17 +633,21 @@ export namespace MyNS {
 
 	/** Describes the format of a manifest. If the manifest is in CSV format, also describes the columns contained within the manifest. */
 	export interface JobManifestSpec {
+
+		/** Required */
 		Format: JobManifestSpecFormat;
 		Fields?: Array<JobManifestFieldName>;
 	}
 
 	/** Describes the format of a manifest. If the manifest is in CSV format, also describes the columns contained within the manifest. */
 	export interface JobManifestSpecFormProperties {
+
+		/** Required */
 		Format: FormControl<JobManifestSpecFormat | null | undefined>,
 	}
 	export function CreateJobManifestSpecFormGroup() {
 		return new FormGroup<JobManifestSpecFormProperties>({
-			Format: new FormControl<JobManifestSpecFormat | null | undefined>(undefined),
+			Format: new FormControl<JobManifestSpecFormat | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -451,22 +659,58 @@ export namespace MyNS {
 
 	/** Contains the information required to locate a manifest object. */
 	export interface JobManifestLocation {
+
+		/**
+		 * Required
+		 * Max length: 2000
+		 * Min length: 1
+		 * Pattern: arn:[^:]+:s3:.*
+		 */
 		ObjectArn: string;
+
+		/**
+		 * Max length: 2000
+		 * Min length: 1
+		 */
 		ObjectVersionId?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		ETag: string;
 	}
 
 	/** Contains the information required to locate a manifest object. */
 	export interface JobManifestLocationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2000
+		 * Min length: 1
+		 * Pattern: arn:[^:]+:s3:.*
+		 */
 		ObjectArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2000
+		 * Min length: 1
+		 */
 		ObjectVersionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		ETag: FormControl<string | null | undefined>,
 	}
 	export function CreateJobManifestLocationFormGroup() {
 		return new FormGroup<JobManifestLocationFormProperties>({
-			ObjectArn: new FormControl<string | null | undefined>(undefined),
-			ObjectVersionId: new FormControl<string | null | undefined>(undefined),
-			ETag: new FormControl<string | null | undefined>(undefined),
+			ObjectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2000), Validators.minLength(1)]),
+			ObjectVersionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
+			ETag: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -547,9 +791,26 @@ export namespace MyNS {
 
 	/** A container element for the job configuration and status information returned by a <code>Describe Job</code> request. */
 	export interface JobDescriptor {
+
+		/**
+		 * Max length: 36
+		 * Min length: 5
+		 * Pattern: [a-zA-Z0-9\-\_]+
+		 */
 		JobId?: string | null;
 		ConfirmationRequired?: boolean | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:[^:]+:s3:[a-zA-Z0-9\-]+:\d{12}:job\/.*
+		 */
 		JobArn?: string | null;
 		Status?: JobDescriptorStatus | null;
 
@@ -558,10 +819,20 @@ export namespace MyNS {
 
 		/** The operation that you want this job to perform on each object listed in the manifest. For more information about the available operations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Available Operations</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. */
 		Operation?: JobOperation;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 2147483647
+		 */
 		Priority?: number | null;
 
 		/** Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and the number of tasks that failed. */
 		ProgressSummary?: JobProgressSummary;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		StatusUpdateReason?: string | null;
 		FailureReasons?: Array<JobFailure>;
 
@@ -569,40 +840,89 @@ export namespace MyNS {
 		Report?: JobReport;
 		CreationTime?: Date | null;
 		TerminationDate?: Date | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:[^:]+:iam::\d{12}:role/.*
+		 */
 		RoleArn?: string | null;
 		SuspendedDate?: Date | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		SuspendedCause?: string | null;
 	}
 
 	/** A container element for the job configuration and status information returned by a <code>Describe Job</code> request. */
 	export interface JobDescriptorFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 5
+		 * Pattern: [a-zA-Z0-9\-\_]+
+		 */
 		JobId: FormControl<string | null | undefined>,
 		ConfirmationRequired: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:[^:]+:s3:[a-zA-Z0-9\-]+:\d{12}:job\/.*
+		 */
 		JobArn: FormControl<string | null | undefined>,
 		Status: FormControl<JobDescriptorStatus | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 2147483647
+		 */
 		Priority: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		StatusUpdateReason: FormControl<string | null | undefined>,
 		CreationTime: FormControl<Date | null | undefined>,
 		TerminationDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:[^:]+:iam::\d{12}:role/.*
+		 */
 		RoleArn: FormControl<string | null | undefined>,
 		SuspendedDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		SuspendedCause: FormControl<string | null | undefined>,
 	}
 	export function CreateJobDescriptorFormGroup() {
 		return new FormGroup<JobDescriptorFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(5)]),
 			ConfirmationRequired: new FormControl<boolean | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			JobArn: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			JobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			Status: new FormControl<JobDescriptorStatus | null | undefined>(undefined),
-			Priority: new FormControl<number | null | undefined>(undefined),
-			StatusUpdateReason: new FormControl<string | null | undefined>(undefined),
+			Priority: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
+			StatusUpdateReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			TerminationDate: new FormControl<Date | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 			SuspendedDate: new FormControl<Date | null | undefined>(undefined),
-			SuspendedCause: new FormControl<string | null | undefined>(undefined),
+			SuspendedCause: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -673,22 +993,34 @@ export namespace MyNS {
 
 	/** Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and the number of tasks that failed. */
 	export interface JobProgressSummary {
+
+		/** Minimum: 0 */
 		TotalNumberOfTasks?: number | null;
+
+		/** Minimum: 0 */
 		NumberOfTasksSucceeded?: number | null;
+
+		/** Minimum: 0 */
 		NumberOfTasksFailed?: number | null;
 	}
 
 	/** Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and the number of tasks that failed. */
 	export interface JobProgressSummaryFormProperties {
+
+		/** Minimum: 0 */
 		TotalNumberOfTasks: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		NumberOfTasksSucceeded: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		NumberOfTasksFailed: FormControl<number | null | undefined>,
 	}
 	export function CreateJobProgressSummaryFormGroup() {
 		return new FormGroup<JobProgressSummaryFormProperties>({
-			TotalNumberOfTasks: new FormControl<number | null | undefined>(undefined),
-			NumberOfTasksSucceeded: new FormControl<number | null | undefined>(undefined),
-			NumberOfTasksFailed: new FormControl<number | null | undefined>(undefined),
+			TotalNumberOfTasks: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			NumberOfTasksSucceeded: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			NumberOfTasksFailed: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -696,19 +1028,39 @@ export namespace MyNS {
 
 	/** If this job failed, this element indicates why the job failed. */
 	export interface JobFailure {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		FailureCode?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		FailureReason?: string | null;
 	}
 
 	/** If this job failed, this element indicates why the job failed. */
 	export interface JobFailureFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		FailureCode: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		FailureReason: FormControl<string | null | undefined>,
 	}
 	export function CreateJobFailureFormGroup() {
 		return new FormGroup<JobFailureFormProperties>({
-			FailureCode: new FormControl<string | null | undefined>(undefined),
-			FailureReason: new FormControl<string | null | undefined>(undefined),
+			FailureCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			FailureReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -716,34 +1068,70 @@ export namespace MyNS {
 
 	/** Contains the configuration parameters for a job-completion report. */
 	export interface JobReport {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: arn:[^:]+:s3:.*
+		 */
 		Bucket?: string | null;
 		Format?: JobReportFormat | null;
+
+		/** Required */
 		Enabled: boolean;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		Prefix?: string | null;
 		ReportScope?: JobReportScope | null;
 	}
 
 	/** Contains the configuration parameters for a job-completion report. */
 	export interface JobReportFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: arn:[^:]+:s3:.*
+		 */
 		Bucket: FormControl<string | null | undefined>,
 		Format: FormControl<JobReportFormat | null | undefined>,
+
+		/** Required */
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		Prefix: FormControl<string | null | undefined>,
 		ReportScope: FormControl<JobReportScope | null | undefined>,
 	}
 	export function CreateJobReportFormGroup() {
 		return new FormGroup<JobReportFormProperties>({
-			Bucket: new FormControl<string | null | undefined>(undefined),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			Format: new FormControl<JobReportFormat | null | undefined>(undefined),
-			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			Prefix: new FormControl<string | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 			ReportScope: new FormControl<JobReportScope | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetAccessPointResult {
+
+		/**
+		 * Max length: 50
+		 * Min length: 3
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 */
 		Bucket?: string | null;
 		NetworkOrigin?: GetAccessPointResultNetworkOrigin | null;
 
@@ -755,15 +1143,25 @@ export namespace MyNS {
 		CreationDate?: Date | null;
 	}
 	export interface GetAccessPointResultFormProperties {
+
+		/**
+		 * Max length: 50
+		 * Min length: 3
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 */
 		Bucket: FormControl<string | null | undefined>,
 		NetworkOrigin: FormControl<GetAccessPointResultNetworkOrigin | null | undefined>,
 		CreationDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateGetAccessPointResultFormGroup() {
 		return new FormGroup<GetAccessPointResultFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Bucket: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(3)]),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 			NetworkOrigin: new FormControl<GetAccessPointResultNetworkOrigin | null | undefined>(undefined),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -775,16 +1173,28 @@ export namespace MyNS {
 
 	/** The virtual private cloud (VPC) configuration for an access point. */
 	export interface VpcConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		VpcId: string;
 	}
 
 	/** The virtual private cloud (VPC) configuration for an access point. */
 	export interface VpcConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		VpcId: FormControl<string | null | undefined>,
 	}
 	export function CreateVpcConfigurationFormGroup() {
 		return new FormGroup<VpcConfigurationFormProperties>({
-			VpcId: new FormControl<string | null | undefined>(undefined),
+			VpcId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -894,14 +1304,24 @@ export namespace MyNS {
 
 	export interface ListAccessPointsResult {
 		AccessPointList?: Array<AccessPoint>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListAccessPointsResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListAccessPointsResultFormGroup() {
 		return new FormGroup<ListAccessPointsResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -909,39 +1329,79 @@ export namespace MyNS {
 
 	/** An access point used to access a bucket. */
 	export interface AccessPoint {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 3
+		 */
 		Name: string;
+
+		/** Required */
 		NetworkOrigin: GetAccessPointResultNetworkOrigin;
 
 		/** The virtual private cloud (VPC) configuration for an access point. */
 		VpcConfiguration?: VpcConfiguration;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 */
 		Bucket: string;
 	}
 
 	/** An access point used to access a bucket. */
 	export interface AccessPointFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 3
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		NetworkOrigin: FormControl<GetAccessPointResultNetworkOrigin | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 */
 		Bucket: FormControl<string | null | undefined>,
 	}
 	export function CreateAccessPointFormGroup() {
 		return new FormGroup<AccessPointFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			NetworkOrigin: new FormControl<GetAccessPointResultNetworkOrigin | null | undefined>(undefined),
-			Bucket: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(3)]),
+			NetworkOrigin: new FormControl<GetAccessPointResultNetworkOrigin | null | undefined>(undefined, [Validators.required]),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
 
 	export interface ListJobsResult {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^[A-Za-z0-9\+\:\/\=\?\#-_]+$
+		 */
 		NextToken?: string | null;
 		Jobs?: Array<JobListDescriptor>;
 	}
 	export interface ListJobsResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^[A-Za-z0-9\+\:\/\=\?\#-_]+$
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListJobsResultFormGroup() {
 		return new FormGroup<ListJobsResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -949,9 +1409,25 @@ export namespace MyNS {
 
 	/** Contains the configuration and status information for a single job retrieved as part of a job list. */
 	export interface JobListDescriptor {
+
+		/**
+		 * Max length: 36
+		 * Min length: 5
+		 * Pattern: [a-zA-Z0-9\-\_]+
+		 */
 		JobId?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Description?: string | null;
 		Operation?: JobListDescriptorOperation | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 2147483647
+		 */
 		Priority?: number | null;
 		Status?: JobDescriptorStatus | null;
 		CreationTime?: Date | null;
@@ -963,9 +1439,25 @@ export namespace MyNS {
 
 	/** Contains the configuration and status information for a single job retrieved as part of a job list. */
 	export interface JobListDescriptorFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 5
+		 * Pattern: [a-zA-Z0-9\-\_]+
+		 */
 		JobId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 		Operation: FormControl<JobListDescriptorOperation | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 2147483647
+		 */
 		Priority: FormControl<number | null | undefined>,
 		Status: FormControl<JobDescriptorStatus | null | undefined>,
 		CreationTime: FormControl<Date | null | undefined>,
@@ -973,10 +1465,10 @@ export namespace MyNS {
 	}
 	export function CreateJobListDescriptorFormGroup() {
 		return new FormGroup<JobListDescriptorFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(5)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			Operation: new FormControl<JobListDescriptorOperation | null | undefined>(undefined),
-			Priority: new FormControl<number | null | undefined>(undefined),
+			Priority: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
 			Status: new FormControl<JobDescriptorStatus | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			TerminationDate: new FormControl<Date | null | undefined>(undefined),
@@ -1029,36 +1521,84 @@ export namespace MyNS {
 	}
 
 	export interface UpdateJobPriorityResult {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 5
+		 * Pattern: [a-zA-Z0-9\-\_]+
+		 */
 		JobId: string;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 2147483647
+		 */
 		Priority: number;
 	}
 	export interface UpdateJobPriorityResultFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 5
+		 * Pattern: [a-zA-Z0-9\-\_]+
+		 */
 		JobId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 2147483647
+		 */
 		Priority: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateJobPriorityResultFormGroup() {
 		return new FormGroup<UpdateJobPriorityResultFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
-			Priority: new FormControl<number | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(5)]),
+			Priority: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(2147483647)]),
 		});
 
 	}
 
 	export interface UpdateJobStatusResult {
+
+		/**
+		 * Max length: 36
+		 * Min length: 5
+		 * Pattern: [a-zA-Z0-9\-\_]+
+		 */
 		JobId?: string | null;
 		Status?: JobDescriptorStatus | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		StatusUpdateReason?: string | null;
 	}
 	export interface UpdateJobStatusResultFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 5
+		 * Pattern: [a-zA-Z0-9\-\_]+
+		 */
 		JobId: FormControl<string | null | undefined>,
 		Status: FormControl<JobDescriptorStatus | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		StatusUpdateReason: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateJobStatusResultFormGroup() {
 		return new FormGroup<UpdateJobStatusResultFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(5)]),
 			Status: new FormControl<JobDescriptorStatus | null | undefined>(undefined),
-			StatusUpdateReason: new FormControl<string | null | undefined>(undefined),
+			StatusUpdateReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -1076,6 +1616,12 @@ export namespace MyNS {
 	export enum NetworkOrigin { Internet = 0, VPC = 1 }
 
 	export interface CreateAccessPointRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 */
 		Bucket: string;
 
 		/** The virtual private cloud (VPC) configuration for an access point. */
@@ -1085,11 +1631,17 @@ export namespace MyNS {
 		PublicAccessBlockConfiguration?: PublicAccessBlockConfiguration;
 	}
 	export interface CreateAccessPointRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 */
 		Bucket: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateAccessPointRequestFormGroup() {
 		return new FormGroup<CreateAccessPointRequestFormProperties>({
-			Bucket: new FormControl<string | null | undefined>(undefined),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -1108,6 +1660,12 @@ export namespace MyNS {
 		 * Required
 		 */
 		Report: JobReport;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ClientRequestToken: string;
 
 		/**
@@ -1115,25 +1673,67 @@ export namespace MyNS {
 		 * Required
 		 */
 		Manifest: JobManifest;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Description?: string | null;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 2147483647
+		 */
 		Priority: number;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:[^:]+:iam::\d{12}:role/.*
+		 */
 		RoleArn: string;
 		Tags?: Array<S3Tag>;
 	}
 	export interface CreateJobRequestFormProperties {
 		ConfirmationRequired: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 2147483647
+		 */
 		Priority: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:[^:]+:iam::\d{12}:role/.*
+		 */
 		RoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateJobRequestFormGroup() {
 		return new FormGroup<CreateJobRequestFormProperties>({
 			ConfirmationRequired: new FormControl<boolean | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			Priority: new FormControl<number | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Priority: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(2147483647)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1263,19 +1863,25 @@ export namespace MyNS {
 	}
 
 	export interface PutAccessPointPolicyRequest {
+
+		/** Required */
 		Policy: string;
 	}
 	export interface PutAccessPointPolicyRequestFormProperties {
+
+		/** Required */
 		Policy: FormControl<string | null | undefined>,
 	}
 	export function CreatePutAccessPointPolicyRequestFormGroup() {
 		return new FormGroup<PutAccessPointPolicyRequestFormProperties>({
-			Policy: new FormControl<string | null | undefined>(undefined),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface PutJobTaggingRequest {
+
+		/** Required */
 		Tags: Array<S3Tag>;
 	}
 	export interface PutJobTaggingRequestFormProperties {

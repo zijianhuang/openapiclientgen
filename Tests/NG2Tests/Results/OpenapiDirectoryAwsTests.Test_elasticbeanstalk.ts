@@ -65,18 +65,28 @@ export namespace MyNS {
 	/** Indicates if the specified CNAME is available. */
 	export interface CheckDNSAvailabilityResultMessage {
 		Available?: boolean | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		FullyQualifiedCNAME?: string | null;
 	}
 
 	/** Indicates if the specified CNAME is available. */
 	export interface CheckDNSAvailabilityResultMessageFormProperties {
 		Available: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		FullyQualifiedCNAME: FormControl<string | null | undefined>,
 	}
 	export function CreateCheckDNSAvailabilityResultMessageFormGroup() {
 		return new FormGroup<CheckDNSAvailabilityResultMessageFormProperties>({
 			Available: new FormControl<boolean | null | undefined>(undefined),
-			FullyQualifiedCNAME: new FormControl<string | null | undefined>(undefined),
+			FullyQualifiedCNAME: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -102,15 +112,42 @@ export namespace MyNS {
 
 	/** Describes the properties of an environment. */
 	export interface EnvironmentDescription {
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName?: string | null;
 		EnvironmentId?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		VersionLabel?: string | null;
 		SolutionStackName?: string | null;
 		PlatformArn?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName?: string | null;
+
+		/** Max length: 200 */
 		Description?: string | null;
 		EndpointURL?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		CNAME?: string | null;
 		DateCreated?: Date | null;
 		DateUpdated?: Date | null;
@@ -126,20 +163,52 @@ export namespace MyNS {
 		Tier?: EnvironmentTier;
 		EnvironmentLinks?: Array<EnvironmentLink>;
 		EnvironmentArn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		OperationsRole?: string | null;
 	}
 
 	/** Describes the properties of an environment. */
 	export interface EnvironmentDescriptionFormProperties {
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: FormControl<string | null | undefined>,
 		EnvironmentId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		VersionLabel: FormControl<string | null | undefined>,
 		SolutionStackName: FormControl<string | null | undefined>,
 		PlatformArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName: FormControl<string | null | undefined>,
+
+		/** Max length: 200 */
 		Description: FormControl<string | null | undefined>,
 		EndpointURL: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		CNAME: FormControl<string | null | undefined>,
 		DateCreated: FormControl<Date | null | undefined>,
 		DateUpdated: FormControl<Date | null | undefined>,
@@ -148,20 +217,25 @@ export namespace MyNS {
 		Health: FormControl<EnvironmentDescriptionHealth | null | undefined>,
 		HealthStatus: FormControl<EnvironmentDescriptionHealthStatus | null | undefined>,
 		EnvironmentArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		OperationsRole: FormControl<string | null | undefined>,
 	}
 	export function CreateEnvironmentDescriptionFormGroup() {
 		return new FormGroup<EnvironmentDescriptionFormProperties>({
-			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(4)]),
 			EnvironmentId: new FormControl<string | null | undefined>(undefined),
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			VersionLabel: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			VersionLabel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			SolutionStackName: new FormControl<string | null | undefined>(undefined),
 			PlatformArn: new FormControl<string | null | undefined>(undefined),
-			TemplateName: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200)]),
 			EndpointURL: new FormControl<string | null | undefined>(undefined),
-			CNAME: new FormControl<string | null | undefined>(undefined),
+			CNAME: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 			DateCreated: new FormControl<Date | null | undefined>(undefined),
 			DateUpdated: new FormControl<Date | null | undefined>(undefined),
 			Status: new FormControl<EnvironmentDescriptionStatus | null | undefined>(undefined),
@@ -169,7 +243,7 @@ export namespace MyNS {
 			Health: new FormControl<EnvironmentDescriptionHealth | null | undefined>(undefined),
 			HealthStatus: new FormControl<EnvironmentDescriptionHealthStatus | null | undefined>(undefined),
 			EnvironmentArn: new FormControl<string | null | undefined>(undefined),
-			OperationsRole: new FormControl<string | null | undefined>(undefined),
+			OperationsRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -312,7 +386,14 @@ export namespace MyNS {
 	/** Describes the properties of an application. */
 	export interface ApplicationDescription {
 		ApplicationArn?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName?: string | null;
+
+		/** Max length: 200 */
 		Description?: string | null;
 		DateCreated?: Date | null;
 		DateUpdated?: Date | null;
@@ -326,7 +407,14 @@ export namespace MyNS {
 	/** Describes the properties of an application. */
 	export interface ApplicationDescriptionFormProperties {
 		ApplicationArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/** Max length: 200 */
 		Description: FormControl<string | null | undefined>,
 		DateCreated: FormControl<Date | null | undefined>,
 		DateUpdated: FormControl<Date | null | undefined>,
@@ -334,8 +422,8 @@ export namespace MyNS {
 	export function CreateApplicationDescriptionFormGroup() {
 		return new FormGroup<ApplicationDescriptionFormProperties>({
 			ApplicationArn: new FormControl<string | null | undefined>(undefined),
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200)]),
 			DateCreated: new FormControl<Date | null | undefined>(undefined),
 			DateUpdated: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -385,6 +473,8 @@ export namespace MyNS {
 
 	/** A lifecycle rule that deletes the oldest application version when the maximum count is exceeded. */
 	export interface MaxCountRule {
+
+		/** Required */
 		Enabled: boolean;
 		MaxCount?: number | null;
 		DeleteSourceFromS3?: boolean | null;
@@ -392,13 +482,15 @@ export namespace MyNS {
 
 	/** A lifecycle rule that deletes the oldest application version when the maximum count is exceeded. */
 	export interface MaxCountRuleFormProperties {
+
+		/** Required */
 		Enabled: FormControl<boolean | null | undefined>,
 		MaxCount: FormControl<number | null | undefined>,
 		DeleteSourceFromS3: FormControl<boolean | null | undefined>,
 	}
 	export function CreateMaxCountRuleFormGroup() {
 		return new FormGroup<MaxCountRuleFormProperties>({
-			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			MaxCount: new FormControl<number | null | undefined>(undefined),
 			DeleteSourceFromS3: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -408,6 +500,8 @@ export namespace MyNS {
 
 	/** A lifecycle rule that deletes application versions after the specified number of days. */
 	export interface MaxAgeRule {
+
+		/** Required */
 		Enabled: boolean;
 		MaxAgeInDays?: number | null;
 		DeleteSourceFromS3?: boolean | null;
@@ -415,13 +509,15 @@ export namespace MyNS {
 
 	/** A lifecycle rule that deletes application versions after the specified number of days. */
 	export interface MaxAgeRuleFormProperties {
+
+		/** Required */
 		Enabled: FormControl<boolean | null | undefined>,
 		MaxAgeInDays: FormControl<number | null | undefined>,
 		DeleteSourceFromS3: FormControl<boolean | null | undefined>,
 	}
 	export function CreateMaxAgeRuleFormGroup() {
 		return new FormGroup<MaxAgeRuleFormProperties>({
-			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			MaxAgeInDays: new FormControl<number | null | undefined>(undefined),
 			DeleteSourceFromS3: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -431,19 +527,39 @@ export namespace MyNS {
 
 	/** Describes a tag applied to a resource in an environment. */
 	export interface Tag {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Value?: string | null;
 	}
 
 	/** Describes a tag applied to a resource in an environment. */
 	export interface TagFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -479,8 +595,20 @@ export namespace MyNS {
 	/** Describes the properties of an application version. */
 	export interface ApplicationVersionDescription {
 		ApplicationVersionArn?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName?: string | null;
+
+		/** Max length: 200 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		VersionLabel?: string | null;
 
 		/** Location of the source code for an application version. */
@@ -497,8 +625,20 @@ export namespace MyNS {
 	/** Describes the properties of an application version. */
 	export interface ApplicationVersionDescriptionFormProperties {
 		ApplicationVersionArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/** Max length: 200 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		VersionLabel: FormControl<string | null | undefined>,
 		BuildArn: FormControl<string | null | undefined>,
 		DateCreated: FormControl<Date | null | undefined>,
@@ -508,9 +648,9 @@ export namespace MyNS {
 	export function CreateApplicationVersionDescriptionFormGroup() {
 		return new FormGroup<ApplicationVersionDescriptionFormProperties>({
 			ApplicationVersionArn: new FormControl<string | null | undefined>(undefined),
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			VersionLabel: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200)]),
+			VersionLabel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			BuildArn: new FormControl<string | null | undefined>(undefined),
 			DateCreated: new FormControl<Date | null | undefined>(undefined),
 			DateUpdated: new FormControl<Date | null | undefined>(undefined),
@@ -522,22 +662,44 @@ export namespace MyNS {
 
 	/** Location of the source code for an application version. */
 	export interface SourceBuildInformation {
+
+		/** Required */
 		SourceType: SourceBuildInformationSourceType;
+
+		/** Required */
 		SourceRepository: SourceBuildInformationSourceRepository;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: .+/.+
+		 */
 		SourceLocation: string;
 	}
 
 	/** Location of the source code for an application version. */
 	export interface SourceBuildInformationFormProperties {
+
+		/** Required */
 		SourceType: FormControl<SourceBuildInformationSourceType | null | undefined>,
+
+		/** Required */
 		SourceRepository: FormControl<SourceBuildInformationSourceRepository | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: .+/.+
+		 */
 		SourceLocation: FormControl<string | null | undefined>,
 	}
 	export function CreateSourceBuildInformationFormGroup() {
 		return new FormGroup<SourceBuildInformationFormProperties>({
-			SourceType: new FormControl<SourceBuildInformationSourceType | null | undefined>(undefined),
-			SourceRepository: new FormControl<SourceBuildInformationSourceRepository | null | undefined>(undefined),
-			SourceLocation: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<SourceBuildInformationSourceType | null | undefined>(undefined, [Validators.required]),
+			SourceRepository: new FormControl<SourceBuildInformationSourceRepository | null | undefined>(undefined, [Validators.required]),
+			SourceLocation: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -549,19 +711,27 @@ export namespace MyNS {
 
 	/** The bucket and key of an item stored in Amazon S3. */
 	export interface S3Location {
+
+		/** Max length: 255 */
 		S3Bucket?: string | null;
+
+		/** Max length: 1024 */
 		S3Key?: string | null;
 	}
 
 	/** The bucket and key of an item stored in Amazon S3. */
 	export interface S3LocationFormProperties {
+
+		/** Max length: 255 */
 		S3Bucket: FormControl<string | null | undefined>,
+
+		/** Max length: 1024 */
 		S3Key: FormControl<string | null | undefined>,
 	}
 	export function CreateS3LocationFormGroup() {
 		return new FormGroup<S3LocationFormProperties>({
-			S3Bucket: new FormControl<string | null | undefined>(undefined),
-			S3Key: new FormControl<string | null | undefined>(undefined),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
@@ -609,9 +779,26 @@ export namespace MyNS {
 	export interface ConfigurationSettingsDescription {
 		SolutionStackName?: string | null;
 		PlatformArn?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName?: string | null;
+
+		/** Max length: 200 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName?: string | null;
 		DeploymentStatus?: ConfigurationSettingsDescriptionDeploymentStatus | null;
 		DateCreated?: Date | null;
@@ -623,9 +810,26 @@ export namespace MyNS {
 	export interface ConfigurationSettingsDescriptionFormProperties {
 		SolutionStackName: FormControl<string | null | undefined>,
 		PlatformArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName: FormControl<string | null | undefined>,
+
+		/** Max length: 200 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: FormControl<string | null | undefined>,
 		DeploymentStatus: FormControl<ConfigurationSettingsDescriptionDeploymentStatus | null | undefined>,
 		DateCreated: FormControl<Date | null | undefined>,
@@ -635,10 +839,10 @@ export namespace MyNS {
 		return new FormGroup<ConfigurationSettingsDescriptionFormProperties>({
 			SolutionStackName: new FormControl<string | null | undefined>(undefined),
 			PlatformArn: new FormControl<string | null | undefined>(undefined),
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			TemplateName: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200)]),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(4)]),
 			DeploymentStatus: new FormControl<ConfigurationSettingsDescriptionDeploymentStatus | null | undefined>(undefined),
 			DateCreated: new FormControl<Date | null | undefined>(undefined),
 			DateUpdated: new FormControl<Date | null | undefined>(undefined),
@@ -651,6 +855,11 @@ export namespace MyNS {
 
 	/** A specification identifying an individual configuration option along with its current value. For a list of possible namespaces and option values, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.  */
 	export interface ConfigurationOptionSetting {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ResourceName?: string | null;
 		Namespace?: string | null;
 		OptionName?: string | null;
@@ -659,6 +868,11 @@ export namespace MyNS {
 
 	/** A specification identifying an individual configuration option along with its current value. For a list of possible namespaces and option values, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.  */
 	export interface ConfigurationOptionSettingFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ResourceName: FormControl<string | null | undefined>,
 		Namespace: FormControl<string | null | undefined>,
 		OptionName: FormControl<string | null | undefined>,
@@ -666,7 +880,7 @@ export namespace MyNS {
 	}
 	export function CreateConfigurationOptionSettingFormGroup() {
 		return new FormGroup<ConfigurationOptionSettingFormProperties>({
-			ResourceName: new FormControl<string | null | undefined>(undefined),
+			ResourceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			Namespace: new FormControl<string | null | undefined>(undefined),
 			OptionName: new FormControl<string | null | undefined>(undefined),
 			Value: new FormControl<string | null | undefined>(undefined),
@@ -697,6 +911,11 @@ export namespace MyNS {
 
 	/** A specification identifying an individual configuration option. */
 	export interface OptionSpecification {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ResourceName?: string | null;
 		Namespace?: string | null;
 		OptionName?: string | null;
@@ -704,13 +923,18 @@ export namespace MyNS {
 
 	/** A specification identifying an individual configuration option. */
 	export interface OptionSpecificationFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ResourceName: FormControl<string | null | undefined>,
 		Namespace: FormControl<string | null | undefined>,
 		OptionName: FormControl<string | null | undefined>,
 	}
 	export function CreateOptionSpecificationFormGroup() {
 		return new FormGroup<OptionSpecificationFormProperties>({
-			ResourceName: new FormControl<string | null | undefined>(undefined),
+			ResourceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			Namespace: new FormControl<string | null | undefined>(undefined),
 			OptionName: new FormControl<string | null | undefined>(undefined),
 		});
@@ -811,16 +1035,20 @@ export namespace MyNS {
 
 	/** Results of a <a>CreateStorageLocationResult</a> call. */
 	export interface CreateStorageLocationResultMessage {
+
+		/** Max length: 255 */
 		S3Bucket?: string | null;
 	}
 
 	/** Results of a <a>CreateStorageLocationResult</a> call. */
 	export interface CreateStorageLocationResultMessageFormProperties {
+
+		/** Max length: 255 */
 		S3Bucket: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateStorageLocationResultMessageFormGroup() {
 		return new FormGroup<CreateStorageLocationResultMessageFormProperties>({
-			S3Bucket: new FormControl<string | null | undefined>(undefined),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -1076,6 +1304,11 @@ export namespace MyNS {
 
 	/** Health details for an AWS Elastic Beanstalk environment. */
 	export interface DescribeEnvironmentHealthResult {
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName?: string | null;
 		HealthStatus?: string | null;
 		Status?: EnvironmentDescriptionHealth | null;
@@ -1092,6 +1325,11 @@ export namespace MyNS {
 
 	/** Health details for an AWS Elastic Beanstalk environment. */
 	export interface DescribeEnvironmentHealthResultFormProperties {
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: FormControl<string | null | undefined>,
 		HealthStatus: FormControl<string | null | undefined>,
 		Status: FormControl<EnvironmentDescriptionHealth | null | undefined>,
@@ -1100,7 +1338,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeEnvironmentHealthResultFormGroup() {
 		return new FormGroup<DescribeEnvironmentHealthResultFormProperties>({
-			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(4)]),
 			HealthStatus: new FormControl<string | null | undefined>(undefined),
 			Status: new FormControl<EnvironmentDescriptionHealth | null | undefined>(undefined),
 			Color: new FormControl<string | null | undefined>(undefined),
@@ -1252,6 +1490,11 @@ export namespace MyNS {
 
 	/** A result message containing a list of completed and failed managed actions. */
 	export interface DescribeEnvironmentManagedActionHistoryResult {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		ManagedActionHistoryItems?: Array<ManagedActionHistoryItem>;
 		NextToken?: string | null;
 	}
@@ -1312,6 +1555,11 @@ export namespace MyNS {
 
 	/** The result message containing a list of managed actions. */
 	export interface DescribeEnvironmentManagedActionsResult {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		ManagedActions?: Array<ManagedAction>;
 	}
 
@@ -1375,6 +1623,11 @@ export namespace MyNS {
 
 	/** Describes the AWS resources in use by this environment. This data is live. */
 	export interface EnvironmentResourceDescription {
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName?: string | null;
 		AutoScalingGroups?: Array<AutoScalingGroup>;
 		Instances?: Array<Instance>;
@@ -1387,11 +1640,16 @@ export namespace MyNS {
 
 	/** Describes the AWS resources in use by this environment. This data is live. */
 	export interface EnvironmentResourceDescriptionFormProperties {
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: FormControl<string | null | undefined>,
 	}
 	export function CreateEnvironmentResourceDescriptionFormGroup() {
 		return new FormGroup<EnvironmentResourceDescriptionFormProperties>({
-			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(4)]),
 		});
 
 	}
@@ -1541,9 +1799,29 @@ export namespace MyNS {
 	export interface EventDescription {
 		EventDate?: Date | null;
 		Message?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		VersionLabel?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName?: string | null;
 		PlatformArn?: string | null;
 		RequestId?: string | null;
@@ -1554,9 +1832,29 @@ export namespace MyNS {
 	export interface EventDescriptionFormProperties {
 		EventDate: FormControl<Date | null | undefined>,
 		Message: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		VersionLabel: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: FormControl<string | null | undefined>,
 		PlatformArn: FormControl<string | null | undefined>,
 		RequestId: FormControl<string | null | undefined>,
@@ -1566,10 +1864,10 @@ export namespace MyNS {
 		return new FormGroup<EventDescriptionFormProperties>({
 			EventDate: new FormControl<Date | null | undefined>(undefined),
 			Message: new FormControl<string | null | undefined>(undefined),
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			VersionLabel: new FormControl<string | null | undefined>(undefined),
-			TemplateName: new FormControl<string | null | undefined>(undefined),
-			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			VersionLabel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(4)]),
 			PlatformArn: new FormControl<string | null | undefined>(undefined),
 			RequestId: new FormControl<string | null | undefined>(undefined),
 			Severity: new FormControl<EventDescriptionSeverity | null | undefined>(undefined),
@@ -1584,18 +1882,28 @@ export namespace MyNS {
 	export interface DescribeInstancesHealthResult {
 		InstanceHealthList?: Array<SingleInstanceHealth>;
 		RefreshedAt?: Date | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 
 	/** Detailed health information about the Amazon EC2 instances in an AWS Elastic Beanstalk environment. */
 	export interface DescribeInstancesHealthResultFormProperties {
 		RefreshedAt: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeInstancesHealthResultFormGroup() {
 		return new FormGroup<DescribeInstancesHealthResultFormProperties>({
 			RefreshedAt: new FormControl<Date | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -1603,6 +1911,11 @@ export namespace MyNS {
 
 	/** Detailed health information about an Amazon EC2 instance in your Elastic Beanstalk environment. */
 	export interface SingleInstanceHealth {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		InstanceId?: string | null;
 		HealthStatus?: string | null;
 		Color?: string | null;
@@ -1623,6 +1936,11 @@ export namespace MyNS {
 
 	/** Detailed health information about an Amazon EC2 instance in your Elastic Beanstalk environment. */
 	export interface SingleInstanceHealthFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		InstanceId: FormControl<string | null | undefined>,
 		HealthStatus: FormControl<string | null | undefined>,
 		Color: FormControl<string | null | undefined>,
@@ -1632,7 +1950,7 @@ export namespace MyNS {
 	}
 	export function CreateSingleInstanceHealthFormGroup() {
 		return new FormGroup<SingleInstanceHealthFormProperties>({
-			InstanceId: new FormControl<string | null | undefined>(undefined),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 			HealthStatus: new FormControl<string | null | undefined>(undefined),
 			Color: new FormControl<string | null | undefined>(undefined),
 			LaunchedAt: new FormControl<Date | null | undefined>(undefined),
@@ -1751,6 +2069,8 @@ export namespace MyNS {
 		DateCreated?: Date | null;
 		DateUpdated?: Date | null;
 		PlatformCategory?: string | null;
+
+		/** Max length: 200 */
 		Description?: string | null;
 		Maintainer?: string | null;
 		OperatingSystemName?: string | null;
@@ -1776,6 +2096,8 @@ export namespace MyNS {
 		DateCreated: FormControl<Date | null | undefined>,
 		DateUpdated: FormControl<Date | null | undefined>,
 		PlatformCategory: FormControl<string | null | undefined>,
+
+		/** Max length: 200 */
 		Description: FormControl<string | null | undefined>,
 		Maintainer: FormControl<string | null | undefined>,
 		OperatingSystemName: FormControl<string | null | undefined>,
@@ -1795,7 +2117,7 @@ export namespace MyNS {
 			DateCreated: new FormControl<Date | null | undefined>(undefined),
 			DateUpdated: new FormControl<Date | null | undefined>(undefined),
 			PlatformCategory: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200)]),
 			Maintainer: new FormControl<string | null | undefined>(undefined),
 			OperatingSystemName: new FormControl<string | null | undefined>(undefined),
 			OperatingSystemVersion: new FormControl<string | null | undefined>(undefined),
@@ -2075,17 +2397,27 @@ export namespace MyNS {
 	export enum EnvironmentInfoDescriptionInfoType { tail = 0, bundle = 1 }
 
 	export interface ApplicationResourceLifecycleDescriptionMessage {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName?: string | null;
 
 		/** The resource lifecycle configuration for an application. Defines lifecycle settings for resources that belong to the application, and the service role that AWS Elastic Beanstalk assumes in order to apply lifecycle settings. The version lifecycle configuration defines lifecycle settings for application versions. */
 		ResourceLifecycleConfig?: ApplicationResourceLifecycleConfig;
 	}
 	export interface ApplicationResourceLifecycleDescriptionMessageFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
 	}
 	export function CreateApplicationResourceLifecycleDescriptionMessageFormGroup() {
 		return new FormGroup<ApplicationResourceLifecycleDescriptionMessageFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -2147,18 +2479,28 @@ export namespace MyNS {
 	/** <p/> */
 	export interface AbortEnvironmentUpdateMessage {
 		EnvironmentId?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName?: string | null;
 	}
 
 	/** <p/> */
 	export interface AbortEnvironmentUpdateMessageFormProperties {
 		EnvironmentId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: FormControl<string | null | undefined>,
 	}
 	export function CreateAbortEnvironmentUpdateMessageFormGroup() {
 		return new FormGroup<AbortEnvironmentUpdateMessageFormProperties>({
 			EnvironmentId: new FormControl<string | null | undefined>(undefined),
-			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(4)]),
 		});
 
 	}
@@ -2176,6 +2518,8 @@ export namespace MyNS {
 	export interface ApplyEnvironmentManagedActionRequest {
 		EnvironmentName?: string | null;
 		EnvironmentId?: string | null;
+
+		/** Required */
 		ActionId: string;
 	}
 
@@ -2183,13 +2527,15 @@ export namespace MyNS {
 	export interface ApplyEnvironmentManagedActionRequestFormProperties {
 		EnvironmentName: FormControl<string | null | undefined>,
 		EnvironmentId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ActionId: FormControl<string | null | undefined>,
 	}
 	export function CreateApplyEnvironmentManagedActionRequestFormGroup() {
 		return new FormGroup<ApplyEnvironmentManagedActionRequestFormProperties>({
 			EnvironmentName: new FormControl<string | null | undefined>(undefined),
 			EnvironmentId: new FormControl<string | null | undefined>(undefined),
-			ActionId: new FormControl<string | null | undefined>(undefined),
+			ActionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2197,19 +2543,43 @@ export namespace MyNS {
 
 	/** Request to add or change the operations role used by an environment. */
 	export interface AssociateEnvironmentOperationsRoleMessage {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		OperationsRole: string;
 	}
 
 	/** Request to add or change the operations role used by an environment. */
 	export interface AssociateEnvironmentOperationsRoleMessageFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		OperationsRole: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateEnvironmentOperationsRoleMessageFormGroup() {
 		return new FormGroup<AssociateEnvironmentOperationsRoleMessageFormProperties>({
-			EnvironmentName: new FormControl<string | null | undefined>(undefined),
-			OperationsRole: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(4)]),
+			OperationsRole: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -2218,8 +2588,18 @@ export namespace MyNS {
 	/** Settings for an AWS CodeBuild build. */
 	export interface BuildConfiguration {
 		ArtifactName?: string | null;
+
+		/**
+		 * Required
+		 * Pattern: .*\S.*
+		 */
 		CodeBuildServiceRole: string;
 		ComputeType?: ComputeType | null;
+
+		/**
+		 * Required
+		 * Pattern: .*\S.*
+		 */
 		Image: string;
 		TimeoutInMinutes?: number | null;
 	}
@@ -2227,17 +2607,27 @@ export namespace MyNS {
 	/** Settings for an AWS CodeBuild build. */
 	export interface BuildConfigurationFormProperties {
 		ArtifactName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: .*\S.*
+		 */
 		CodeBuildServiceRole: FormControl<string | null | undefined>,
 		ComputeType: FormControl<ComputeType | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: .*\S.*
+		 */
 		Image: FormControl<string | null | undefined>,
 		TimeoutInMinutes: FormControl<number | null | undefined>,
 	}
 	export function CreateBuildConfigurationFormGroup() {
 		return new FormGroup<BuildConfigurationFormProperties>({
 			ArtifactName: new FormControl<string | null | undefined>(undefined),
-			CodeBuildServiceRole: new FormControl<string | null | undefined>(undefined),
+			CodeBuildServiceRole: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ComputeType: new FormControl<ComputeType | null | undefined>(undefined),
-			Image: new FormControl<string | null | undefined>(undefined),
+			Image: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TimeoutInMinutes: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -2246,16 +2636,28 @@ export namespace MyNS {
 
 	/** Results message indicating whether a CNAME is available. */
 	export interface CheckDNSAvailabilityMessage {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 4
+		 */
 		CNAMEPrefix: string;
 	}
 
 	/** Results message indicating whether a CNAME is available. */
 	export interface CheckDNSAvailabilityMessageFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 4
+		 */
 		CNAMEPrefix: FormControl<string | null | undefined>,
 	}
 	export function CreateCheckDNSAvailabilityMessageFormGroup() {
 		return new FormGroup<CheckDNSAvailabilityMessageFormProperties>({
-			CNAMEPrefix: new FormControl<string | null | undefined>(undefined),
+			CNAMEPrefix: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(4)]),
 		});
 
 	}
@@ -2263,20 +2665,40 @@ export namespace MyNS {
 
 	/** Request to create or update a group of environments. */
 	export interface ComposeEnvironmentsMessage {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName?: string | null;
+
+		/**
+		 * Max length: 19
+		 * Min length: 1
+		 */
 		GroupName?: string | null;
 		VersionLabels?: Array<string>;
 	}
 
 	/** Request to create or update a group of environments. */
 	export interface ComposeEnvironmentsMessageFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 19
+		 * Min length: 1
+		 */
 		GroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateComposeEnvironmentsMessageFormGroup() {
 		return new FormGroup<ComposeEnvironmentsMessageFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			GroupName: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(19), Validators.minLength(1)]),
 		});
 
 	}
@@ -2288,7 +2710,15 @@ export namespace MyNS {
 
 	/** Request to create an application. */
 	export interface CreateApplicationMessage {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: string;
+
+		/** Max length: 200 */
 		Description?: string | null;
 
 		/** The resource lifecycle configuration for an application. Defines lifecycle settings for resources that belong to the application, and the service role that AWS Elastic Beanstalk assumes in order to apply lifecycle settings. The version lifecycle configuration defines lifecycle settings for application versions. */
@@ -2298,13 +2728,21 @@ export namespace MyNS {
 
 	/** Request to create an application. */
 	export interface CreateApplicationMessageFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/** Max length: 200 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateApplicationMessageFormGroup() {
 		return new FormGroup<CreateApplicationMessageFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200)]),
 		});
 
 	}
@@ -2312,8 +2750,22 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateApplicationVersionMessage {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		VersionLabel: string;
+
+		/** Max length: 200 */
 		Description?: string | null;
 
 		/** Location of the source code for an application version. */
@@ -2331,17 +2783,31 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateApplicationVersionMessageFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		VersionLabel: FormControl<string | null | undefined>,
+
+		/** Max length: 200 */
 		Description: FormControl<string | null | undefined>,
 		AutoCreateApplication: FormControl<boolean | null | undefined>,
 		Process: FormControl<boolean | null | undefined>,
 	}
 	export function CreateCreateApplicationVersionMessageFormGroup() {
 		return new FormGroup<CreateApplicationVersionMessageFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			VersionLabel: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			VersionLabel: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200)]),
 			AutoCreateApplication: new FormControl<boolean | null | undefined>(undefined),
 			Process: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -2351,19 +2817,39 @@ export namespace MyNS {
 
 	/** A specification for an environment configuration. */
 	export interface SourceConfiguration {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName?: string | null;
 	}
 
 	/** A specification for an environment configuration. */
 	export interface SourceConfigurationFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName: FormControl<string | null | undefined>,
 	}
 	export function CreateSourceConfigurationFormGroup() {
 		return new FormGroup<SourceConfigurationFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			TemplateName: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -2371,7 +2857,19 @@ export namespace MyNS {
 
 	/** Request to create a configuration template. */
 	export interface CreateConfigurationTemplateMessage {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName: string;
 		SolutionStackName?: string | null;
 		PlatformArn?: string | null;
@@ -2379,6 +2877,8 @@ export namespace MyNS {
 		/** A specification for an environment configuration. */
 		SourceConfiguration?: SourceConfiguration;
 		EnvironmentId?: string | null;
+
+		/** Max length: 200 */
 		Description?: string | null;
 		OptionSettings?: Array<ConfigurationOptionSetting>;
 		Tags?: Array<Tag>;
@@ -2386,21 +2886,35 @@ export namespace MyNS {
 
 	/** Request to create a configuration template. */
 	export interface CreateConfigurationTemplateMessageFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName: FormControl<string | null | undefined>,
 		SolutionStackName: FormControl<string | null | undefined>,
 		PlatformArn: FormControl<string | null | undefined>,
 		EnvironmentId: FormControl<string | null | undefined>,
+
+		/** Max length: 200 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateConfigurationTemplateMessageFormGroup() {
 		return new FormGroup<CreateConfigurationTemplateMessageFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			TemplateName: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			SolutionStackName: new FormControl<string | null | undefined>(undefined),
 			PlatformArn: new FormControl<string | null | undefined>(undefined),
 			EnvironmentId: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200)]),
 		});
 
 	}
@@ -2408,49 +2922,125 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateEnvironmentMessage {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: string;
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName?: string | null;
+
+		/**
+		 * Max length: 19
+		 * Min length: 1
+		 */
 		GroupName?: string | null;
+
+		/** Max length: 200 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 63
+		 * Min length: 4
+		 */
 		CNAMEPrefix?: string | null;
 
 		/** Describes the properties of an environment tier */
 		Tier?: EnvironmentTier;
 		Tags?: Array<Tag>;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		VersionLabel?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName?: string | null;
 		SolutionStackName?: string | null;
 		PlatformArn?: string | null;
 		OptionSettings?: Array<ConfigurationOptionSetting>;
 		OptionsToRemove?: Array<OptionSpecification>;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		OperationsRole?: string | null;
 	}
 
 	/** <p/> */
 	export interface CreateEnvironmentMessageFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 19
+		 * Min length: 1
+		 */
 		GroupName: FormControl<string | null | undefined>,
+
+		/** Max length: 200 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 63
+		 * Min length: 4
+		 */
 		CNAMEPrefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		VersionLabel: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName: FormControl<string | null | undefined>,
 		SolutionStackName: FormControl<string | null | undefined>,
 		PlatformArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		OperationsRole: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateEnvironmentMessageFormGroup() {
 		return new FormGroup<CreateEnvironmentMessageFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			EnvironmentName: new FormControl<string | null | undefined>(undefined),
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			CNAMEPrefix: new FormControl<string | null | undefined>(undefined),
-			VersionLabel: new FormControl<string | null | undefined>(undefined),
-			TemplateName: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(4)]),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(19), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200)]),
+			CNAMEPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(4)]),
+			VersionLabel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			SolutionStackName: new FormControl<string | null | undefined>(undefined),
 			PlatformArn: new FormControl<string | null | undefined>(undefined),
-			OperationsRole: new FormControl<string | null | undefined>(undefined),
+			OperationsRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -2458,7 +3048,11 @@ export namespace MyNS {
 
 	/** Request to create a new platform version. */
 	export interface CreatePlatformVersionRequest {
+
+		/** Required */
 		PlatformName: string;
+
+		/** Required */
 		PlatformVersion: string;
 
 		/**
@@ -2466,6 +3060,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		PlatformDefinitionBundle: S3Location;
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName?: string | null;
 		OptionSettings?: Array<ConfigurationOptionSetting>;
 		Tags?: Array<Tag>;
@@ -2473,15 +3072,24 @@ export namespace MyNS {
 
 	/** Request to create a new platform version. */
 	export interface CreatePlatformVersionRequestFormProperties {
+
+		/** Required */
 		PlatformName: FormControl<string | null | undefined>,
+
+		/** Required */
 		PlatformVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePlatformVersionRequestFormGroup() {
 		return new FormGroup<CreatePlatformVersionRequestFormProperties>({
-			PlatformName: new FormControl<string | null | undefined>(undefined),
-			PlatformVersion: new FormControl<string | null | undefined>(undefined),
-			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			PlatformName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PlatformVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(4)]),
 		});
 
 	}
@@ -2489,18 +3097,30 @@ export namespace MyNS {
 
 	/** Request to delete an application. */
 	export interface DeleteApplicationMessage {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: string;
 		TerminateEnvByForce?: boolean | null;
 	}
 
 	/** Request to delete an application. */
 	export interface DeleteApplicationMessageFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
 		TerminateEnvByForce: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDeleteApplicationMessageFormGroup() {
 		return new FormGroup<DeleteApplicationMessageFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			TerminateEnvByForce: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2509,21 +3129,45 @@ export namespace MyNS {
 
 	/** Request to delete an application version. */
 	export interface DeleteApplicationVersionMessage {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		VersionLabel: string;
 		DeleteSourceBundle?: boolean | null;
 	}
 
 	/** Request to delete an application version. */
 	export interface DeleteApplicationVersionMessageFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		VersionLabel: FormControl<string | null | undefined>,
 		DeleteSourceBundle: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDeleteApplicationVersionMessageFormGroup() {
 		return new FormGroup<DeleteApplicationVersionMessageFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			VersionLabel: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			VersionLabel: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			DeleteSourceBundle: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2532,19 +3176,43 @@ export namespace MyNS {
 
 	/** Request to delete a configuration template. */
 	export interface DeleteConfigurationTemplateMessage {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName: string;
 	}
 
 	/** Request to delete a configuration template. */
 	export interface DeleteConfigurationTemplateMessageFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteConfigurationTemplateMessageFormGroup() {
 		return new FormGroup<DeleteConfigurationTemplateMessageFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			TemplateName: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -2552,19 +3220,43 @@ export namespace MyNS {
 
 	/** Request to delete a draft environment configuration. */
 	export interface DeleteEnvironmentConfigurationMessage {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: string;
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: string;
 	}
 
 	/** Request to delete a draft environment configuration. */
 	export interface DeleteEnvironmentConfigurationMessageFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteEnvironmentConfigurationMessageFormGroup() {
 		return new FormGroup<DeleteEnvironmentConfigurationMessageFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(4)]),
 		});
 
 	}
@@ -2585,22 +3277,42 @@ export namespace MyNS {
 
 	/** Request to describe application versions. */
 	export interface DescribeApplicationVersionsMessage {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName?: string | null;
 		VersionLabels?: Array<string>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxRecords?: number | null;
 		NextToken?: string | null;
 	}
 
 	/** Request to describe application versions. */
 	export interface DescribeApplicationVersionsMessageFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxRecords: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeApplicationVersionsMessageFormGroup() {
 		return new FormGroup<DescribeApplicationVersionsMessageFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			MaxRecords: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2624,8 +3336,23 @@ export namespace MyNS {
 
 	/** Result message containing a list of application version descriptions. */
 	export interface DescribeConfigurationOptionsMessage {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName?: string | null;
 		SolutionStackName?: string | null;
 		PlatformArn?: string | null;
@@ -2634,17 +3361,32 @@ export namespace MyNS {
 
 	/** Result message containing a list of application version descriptions. */
 	export interface DescribeConfigurationOptionsMessageFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: FormControl<string | null | undefined>,
 		SolutionStackName: FormControl<string | null | undefined>,
 		PlatformArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeConfigurationOptionsMessageFormGroup() {
 		return new FormGroup<DescribeConfigurationOptionsMessageFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			TemplateName: new FormControl<string | null | undefined>(undefined),
-			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(4)]),
 			SolutionStackName: new FormControl<string | null | undefined>(undefined),
 			PlatformArn: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2654,22 +3396,54 @@ export namespace MyNS {
 
 	/** Result message containing all of the configuration settings for a specified solution stack or configuration template. */
 	export interface DescribeConfigurationSettingsMessage {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: string;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName?: string | null;
 	}
 
 	/** Result message containing all of the configuration settings for a specified solution stack or configuration template. */
 	export interface DescribeConfigurationSettingsMessageFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeConfigurationSettingsMessageFormGroup() {
 		return new FormGroup<DescribeConfigurationSettingsMessageFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			TemplateName: new FormControl<string | null | undefined>(undefined),
-			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(4)]),
 		});
 
 	}
@@ -2677,6 +3451,11 @@ export namespace MyNS {
 
 	/** See the example below to learn how to create a request body. */
 	export interface DescribeEnvironmentHealthRequest {
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName?: string | null;
 		EnvironmentId?: string | null;
 		AttributeNames?: Array<EnvironmentHealthAttribute>;
@@ -2684,12 +3463,17 @@ export namespace MyNS {
 
 	/** See the example below to learn how to create a request body. */
 	export interface DescribeEnvironmentHealthRequestFormProperties {
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: FormControl<string | null | undefined>,
 		EnvironmentId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeEnvironmentHealthRequestFormGroup() {
 		return new FormGroup<DescribeEnvironmentHealthRequestFormProperties>({
-			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(4)]),
 			EnvironmentId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2701,6 +3485,11 @@ export namespace MyNS {
 	/** Request to list completed and failed managed actions. */
 	export interface DescribeEnvironmentManagedActionHistoryRequest {
 		EnvironmentId?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName?: string | null;
 		NextToken?: string | null;
 		MaxItems?: number | null;
@@ -2709,6 +3498,11 @@ export namespace MyNS {
 	/** Request to list completed and failed managed actions. */
 	export interface DescribeEnvironmentManagedActionHistoryRequestFormProperties {
 		EnvironmentId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 		MaxItems: FormControl<number | null | undefined>,
@@ -2716,7 +3510,7 @@ export namespace MyNS {
 	export function CreateDescribeEnvironmentManagedActionHistoryRequestFormGroup() {
 		return new FormGroup<DescribeEnvironmentManagedActionHistoryRequestFormProperties>({
 			EnvironmentId: new FormControl<string | null | undefined>(undefined),
-			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(4)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			MaxItems: new FormControl<number | null | undefined>(undefined),
 		});
@@ -2750,18 +3544,28 @@ export namespace MyNS {
 	/** Request to describe the resources in an environment. */
 	export interface DescribeEnvironmentResourcesMessage {
 		EnvironmentId?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName?: string | null;
 	}
 
 	/** Request to describe the resources in an environment. */
 	export interface DescribeEnvironmentResourcesMessageFormProperties {
 		EnvironmentId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeEnvironmentResourcesMessageFormGroup() {
 		return new FormGroup<DescribeEnvironmentResourcesMessageFormProperties>({
 			EnvironmentId: new FormControl<string | null | undefined>(undefined),
-			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(4)]),
 		});
 
 	}
@@ -2769,32 +3573,62 @@ export namespace MyNS {
 
 	/** Request to describe one or more environments. */
 	export interface DescribeEnvironmentsMessage {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		VersionLabel?: string | null;
 		EnvironmentIds?: Array<string>;
 		EnvironmentNames?: Array<string>;
 		IncludeDeleted?: boolean | null;
 		IncludedDeletedBackTo?: Date | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxRecords?: number | null;
 		NextToken?: string | null;
 	}
 
 	/** Request to describe one or more environments. */
 	export interface DescribeEnvironmentsMessageFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		VersionLabel: FormControl<string | null | undefined>,
 		IncludeDeleted: FormControl<boolean | null | undefined>,
 		IncludedDeletedBackTo: FormControl<Date | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxRecords: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeEnvironmentsMessageFormGroup() {
 		return new FormGroup<DescribeEnvironmentsMessageFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			VersionLabel: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			VersionLabel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			IncludeDeleted: new FormControl<boolean | null | undefined>(undefined),
 			IncludedDeletedBackTo: new FormControl<Date | null | undefined>(undefined),
-			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2805,48 +3639,98 @@ export namespace MyNS {
 
 	/** Request to retrieve a list of events for an environment. */
 	export interface DescribeEventsMessage {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		VersionLabel?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName?: string | null;
 		EnvironmentId?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName?: string | null;
 		PlatformArn?: string | null;
 		RequestId?: string | null;
 		Severity?: EventDescriptionSeverity | null;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxRecords?: number | null;
 		NextToken?: string | null;
 	}
 
 	/** Request to retrieve a list of events for an environment. */
 	export interface DescribeEventsMessageFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		VersionLabel: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName: FormControl<string | null | undefined>,
 		EnvironmentId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: FormControl<string | null | undefined>,
 		PlatformArn: FormControl<string | null | undefined>,
 		RequestId: FormControl<string | null | undefined>,
 		Severity: FormControl<EventDescriptionSeverity | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
 		EndTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxRecords: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeEventsMessageFormGroup() {
 		return new FormGroup<DescribeEventsMessageFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			VersionLabel: new FormControl<string | null | undefined>(undefined),
-			TemplateName: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			VersionLabel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			EnvironmentId: new FormControl<string | null | undefined>(undefined),
-			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(4)]),
 			PlatformArn: new FormControl<string | null | undefined>(undefined),
 			RequestId: new FormControl<string | null | undefined>(undefined),
 			Severity: new FormControl<EventDescriptionSeverity | null | undefined>(undefined),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
-			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2855,23 +3739,43 @@ export namespace MyNS {
 
 	/** Parameters for a call to <code>DescribeInstancesHealth</code>. */
 	export interface DescribeInstancesHealthRequest {
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName?: string | null;
 		EnvironmentId?: string | null;
 		AttributeNames?: Array<InstancesHealthAttribute>;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 
 	/** Parameters for a call to <code>DescribeInstancesHealth</code>. */
 	export interface DescribeInstancesHealthRequestFormProperties {
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: FormControl<string | null | undefined>,
 		EnvironmentId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeInstancesHealthRequestFormGroup() {
 		return new FormGroup<DescribeInstancesHealthRequestFormProperties>({
-			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(4)]),
 			EnvironmentId: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -2892,16 +3796,28 @@ export namespace MyNS {
 
 	/** Request to disassociate the operations role from an environment. */
 	export interface DisassociateEnvironmentOperationsRoleMessage {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: string;
 	}
 
 	/** Request to disassociate the operations role from an environment. */
 	export interface DisassociateEnvironmentOperationsRoleMessageFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: FormControl<string | null | undefined>,
 	}
 	export function CreateDisassociateEnvironmentOperationsRoleMessageFormGroup() {
 		return new FormGroup<DisassociateEnvironmentOperationsRoleMessageFormProperties>({
-			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(4)]),
 		});
 
 	}
@@ -2916,16 +3832,20 @@ export namespace MyNS {
 
 	export interface ListPlatformBranchesRequest {
 		Filters?: Array<SearchFilter>;
+
+		/** Minimum: 1 */
 		MaxRecords?: number | null;
 		NextToken?: string | null;
 	}
 	export interface ListPlatformBranchesRequestFormProperties {
+
+		/** Minimum: 1 */
 		MaxRecords: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListPlatformBranchesRequestFormGroup() {
 		return new FormGroup<ListPlatformBranchesRequestFormProperties>({
-			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2933,30 +3853,38 @@ export namespace MyNS {
 
 	export interface ListPlatformVersionsRequest {
 		Filters?: Array<PlatformFilter>;
+
+		/** Minimum: 1 */
 		MaxRecords?: number | null;
 		NextToken?: string | null;
 	}
 	export interface ListPlatformVersionsRequestFormProperties {
+
+		/** Minimum: 1 */
 		MaxRecords: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListPlatformVersionsRequestFormGroup() {
 		return new FormGroup<ListPlatformVersionsRequestFormProperties>({
-			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ListTagsForResourceMessage {
+
+		/** Required */
 		ResourceArn: string;
 	}
 	export interface ListTagsForResourceMessageFormProperties {
+
+		/** Required */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceMessageFormGroup() {
 		return new FormGroup<ListTagsForResourceMessageFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2967,18 +3895,28 @@ export namespace MyNS {
 	/** <p/> */
 	export interface RebuildEnvironmentMessage {
 		EnvironmentId?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName?: string | null;
 	}
 
 	/** <p/> */
 	export interface RebuildEnvironmentMessageFormProperties {
 		EnvironmentId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: FormControl<string | null | undefined>,
 	}
 	export function CreateRebuildEnvironmentMessageFormGroup() {
 		return new FormGroup<RebuildEnvironmentMessageFormProperties>({
 			EnvironmentId: new FormControl<string | null | undefined>(undefined),
-			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(4)]),
 		});
 
 	}
@@ -2987,21 +3925,35 @@ export namespace MyNS {
 	/** Request to retrieve logs from an environment and store them in your Elastic Beanstalk storage bucket. */
 	export interface RequestEnvironmentInfoMessage {
 		EnvironmentId?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName?: string | null;
+
+		/** Required */
 		InfoType: EnvironmentInfoDescriptionInfoType;
 	}
 
 	/** Request to retrieve logs from an environment and store them in your Elastic Beanstalk storage bucket. */
 	export interface RequestEnvironmentInfoMessageFormProperties {
 		EnvironmentId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: FormControl<string | null | undefined>,
+
+		/** Required */
 		InfoType: FormControl<EnvironmentInfoDescriptionInfoType | null | undefined>,
 	}
 	export function CreateRequestEnvironmentInfoMessageFormGroup() {
 		return new FormGroup<RequestEnvironmentInfoMessageFormProperties>({
 			EnvironmentId: new FormControl<string | null | undefined>(undefined),
-			EnvironmentName: new FormControl<string | null | undefined>(undefined),
-			InfoType: new FormControl<EnvironmentInfoDescriptionInfoType | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(4)]),
+			InfoType: new FormControl<EnvironmentInfoDescriptionInfoType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3010,18 +3962,28 @@ export namespace MyNS {
 	/** <p/> */
 	export interface RestartAppServerMessage {
 		EnvironmentId?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName?: string | null;
 	}
 
 	/** <p/> */
 	export interface RestartAppServerMessageFormProperties {
 		EnvironmentId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: FormControl<string | null | undefined>,
 	}
 	export function CreateRestartAppServerMessageFormGroup() {
 		return new FormGroup<RestartAppServerMessageFormProperties>({
 			EnvironmentId: new FormControl<string | null | undefined>(undefined),
-			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(4)]),
 		});
 
 	}
@@ -3030,21 +3992,35 @@ export namespace MyNS {
 	/** Request to download logs retrieved with <a>RequestEnvironmentInfo</a>. */
 	export interface RetrieveEnvironmentInfoMessage {
 		EnvironmentId?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName?: string | null;
+
+		/** Required */
 		InfoType: EnvironmentInfoDescriptionInfoType;
 	}
 
 	/** Request to download logs retrieved with <a>RequestEnvironmentInfo</a>. */
 	export interface RetrieveEnvironmentInfoMessageFormProperties {
 		EnvironmentId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: FormControl<string | null | undefined>,
+
+		/** Required */
 		InfoType: FormControl<EnvironmentInfoDescriptionInfoType | null | undefined>,
 	}
 	export function CreateRetrieveEnvironmentInfoMessageFormGroup() {
 		return new FormGroup<RetrieveEnvironmentInfoMessageFormProperties>({
 			EnvironmentId: new FormControl<string | null | undefined>(undefined),
-			EnvironmentName: new FormControl<string | null | undefined>(undefined),
-			InfoType: new FormControl<EnvironmentInfoDescriptionInfoType | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(4)]),
+			InfoType: new FormControl<EnvironmentInfoDescriptionInfoType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3053,24 +4029,44 @@ export namespace MyNS {
 	/** Swaps the CNAMEs of two environments. */
 	export interface SwapEnvironmentCNAMEsMessage {
 		SourceEnvironmentId?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		SourceEnvironmentName?: string | null;
 		DestinationEnvironmentId?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		DestinationEnvironmentName?: string | null;
 	}
 
 	/** Swaps the CNAMEs of two environments. */
 	export interface SwapEnvironmentCNAMEsMessageFormProperties {
 		SourceEnvironmentId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		SourceEnvironmentName: FormControl<string | null | undefined>,
 		DestinationEnvironmentId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		DestinationEnvironmentName: FormControl<string | null | undefined>,
 	}
 	export function CreateSwapEnvironmentCNAMEsMessageFormGroup() {
 		return new FormGroup<SwapEnvironmentCNAMEsMessageFormProperties>({
 			SourceEnvironmentId: new FormControl<string | null | undefined>(undefined),
-			SourceEnvironmentName: new FormControl<string | null | undefined>(undefined),
+			SourceEnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(4)]),
 			DestinationEnvironmentId: new FormControl<string | null | undefined>(undefined),
-			DestinationEnvironmentName: new FormControl<string | null | undefined>(undefined),
+			DestinationEnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(4)]),
 		});
 
 	}
@@ -3079,6 +4075,11 @@ export namespace MyNS {
 	/** Request to terminate an environment. */
 	export interface TerminateEnvironmentMessage {
 		EnvironmentId?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName?: string | null;
 		TerminateResources?: boolean | null;
 		ForceTerminate?: boolean | null;
@@ -3087,6 +4088,11 @@ export namespace MyNS {
 	/** Request to terminate an environment. */
 	export interface TerminateEnvironmentMessageFormProperties {
 		EnvironmentId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: FormControl<string | null | undefined>,
 		TerminateResources: FormControl<boolean | null | undefined>,
 		ForceTerminate: FormControl<boolean | null | undefined>,
@@ -3094,7 +4100,7 @@ export namespace MyNS {
 	export function CreateTerminateEnvironmentMessageFormGroup() {
 		return new FormGroup<TerminateEnvironmentMessageFormProperties>({
 			EnvironmentId: new FormControl<string | null | undefined>(undefined),
-			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(4)]),
 			TerminateResources: new FormControl<boolean | null | undefined>(undefined),
 			ForceTerminate: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -3104,24 +4110,46 @@ export namespace MyNS {
 
 	/** Request to update an application. */
 	export interface UpdateApplicationMessage {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: string;
+
+		/** Max length: 200 */
 		Description?: string | null;
 	}
 
 	/** Request to update an application. */
 	export interface UpdateApplicationMessageFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/** Max length: 200 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateApplicationMessageFormGroup() {
 		return new FormGroup<UpdateApplicationMessageFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200)]),
 		});
 
 	}
 
 	export interface UpdateApplicationResourceLifecycleMessage {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: string;
 
 		/**
@@ -3131,11 +4159,17 @@ export namespace MyNS {
 		ResourceLifecycleConfig: ApplicationResourceLifecycleConfig;
 	}
 	export interface UpdateApplicationResourceLifecycleMessageFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateApplicationResourceLifecycleMessageFormGroup() {
 		return new FormGroup<UpdateApplicationResourceLifecycleMessageFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -3143,22 +4177,50 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface UpdateApplicationVersionMessage {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		VersionLabel: string;
+
+		/** Max length: 200 */
 		Description?: string | null;
 	}
 
 	/** <p/> */
 	export interface UpdateApplicationVersionMessageFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		VersionLabel: FormControl<string | null | undefined>,
+
+		/** Max length: 200 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateApplicationVersionMessageFormGroup() {
 		return new FormGroup<UpdateApplicationVersionMessageFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			VersionLabel: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			VersionLabel: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200)]),
 		});
 
 	}
@@ -3166,8 +4228,22 @@ export namespace MyNS {
 
 	/** The result message containing the options for the specified solution stack. */
 	export interface UpdateConfigurationTemplateMessage {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName: string;
+
+		/** Max length: 200 */
 		Description?: string | null;
 		OptionSettings?: Array<ConfigurationOptionSetting>;
 		OptionsToRemove?: Array<OptionSpecification>;
@@ -3175,15 +4251,29 @@ export namespace MyNS {
 
 	/** The result message containing the options for the specified solution stack. */
 	export interface UpdateConfigurationTemplateMessageFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName: FormControl<string | null | undefined>,
+
+		/** Max length: 200 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateConfigurationTemplateMessageFormGroup() {
 		return new FormGroup<UpdateConfigurationTemplateMessageFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			TemplateName: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200)]),
 		});
 
 	}
@@ -3191,15 +4281,42 @@ export namespace MyNS {
 
 	/** Request to update an environment. */
 	export interface UpdateEnvironmentMessage {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName?: string | null;
 		EnvironmentId?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName?: string | null;
+
+		/**
+		 * Max length: 19
+		 * Min length: 1
+		 */
 		GroupName?: string | null;
+
+		/** Max length: 200 */
 		Description?: string | null;
 
 		/** Describes the properties of an environment tier */
 		Tier?: EnvironmentTier;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		VersionLabel?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName?: string | null;
 		SolutionStackName?: string | null;
 		PlatformArn?: string | null;
@@ -3209,25 +4326,52 @@ export namespace MyNS {
 
 	/** Request to update an environment. */
 	export interface UpdateEnvironmentMessageFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
 		EnvironmentId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 19
+		 * Min length: 1
+		 */
 		GroupName: FormControl<string | null | undefined>,
+
+		/** Max length: 200 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		VersionLabel: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName: FormControl<string | null | undefined>,
 		SolutionStackName: FormControl<string | null | undefined>,
 		PlatformArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateEnvironmentMessageFormGroup() {
 		return new FormGroup<UpdateEnvironmentMessageFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			EnvironmentId: new FormControl<string | null | undefined>(undefined),
-			EnvironmentName: new FormControl<string | null | undefined>(undefined),
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			VersionLabel: new FormControl<string | null | undefined>(undefined),
-			TemplateName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(4)]),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(19), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200)]),
+			VersionLabel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			SolutionStackName: new FormControl<string | null | undefined>(undefined),
 			PlatformArn: new FormControl<string | null | undefined>(undefined),
 		});
@@ -3235,16 +4379,20 @@ export namespace MyNS {
 	}
 
 	export interface UpdateTagsForResourceMessage {
+
+		/** Required */
 		ResourceArn: string;
 		TagsToAdd?: Array<Tag>;
 		TagsToRemove?: Array<string>;
 	}
 	export interface UpdateTagsForResourceMessageFormProperties {
+
+		/** Required */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateTagsForResourceMessageFormGroup() {
 		return new FormGroup<UpdateTagsForResourceMessageFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3252,23 +4400,57 @@ export namespace MyNS {
 
 	/** A list of validation messages for a specified configuration template. */
 	export interface ValidateConfigurationSettingsMessage {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: string;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName?: string | null;
+
+		/** Required */
 		OptionSettings: Array<ConfigurationOptionSetting>;
 	}
 
 	/** A list of validation messages for a specified configuration template. */
 	export interface ValidateConfigurationSettingsMessageFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 4
+		 */
 		EnvironmentName: FormControl<string | null | undefined>,
 	}
 	export function CreateValidateConfigurationSettingsMessageFormGroup() {
 		return new FormGroup<ValidateConfigurationSettingsMessageFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			TemplateName: new FormControl<string | null | undefined>(undefined),
-			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(4)]),
 		});
 
 	}
@@ -3955,60 +5137,110 @@ export namespace MyNS {
 	export enum POST_CreateApplicationVersion { _2010_12_01 = 0 }
 
 	export interface GET_CreateApplicationVersionSourceBuildInformation {
+
+		/** Required */
 		SourceType: SourceBuildInformationSourceType;
+
+		/** Required */
 		SourceRepository: SourceBuildInformationSourceRepository;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: .+/.+
+		 */
 		SourceLocation: string;
 	}
 	export interface GET_CreateApplicationVersionSourceBuildInformationFormProperties {
+
+		/** Required */
 		SourceType: FormControl<SourceBuildInformationSourceType | null | undefined>,
+
+		/** Required */
 		SourceRepository: FormControl<SourceBuildInformationSourceRepository | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: .+/.+
+		 */
 		SourceLocation: FormControl<string | null | undefined>,
 	}
 	export function CreateGET_CreateApplicationVersionSourceBuildInformationFormGroup() {
 		return new FormGroup<GET_CreateApplicationVersionSourceBuildInformationFormProperties>({
-			SourceType: new FormControl<SourceBuildInformationSourceType | null | undefined>(undefined),
-			SourceRepository: new FormControl<SourceBuildInformationSourceRepository | null | undefined>(undefined),
-			SourceLocation: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<SourceBuildInformationSourceType | null | undefined>(undefined, [Validators.required]),
+			SourceRepository: new FormControl<SourceBuildInformationSourceRepository | null | undefined>(undefined, [Validators.required]),
+			SourceLocation: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
 
 	export interface GET_CreateApplicationVersionSourceBundle {
+
+		/** Max length: 255 */
 		S3Bucket?: string | null;
+
+		/** Max length: 1024 */
 		S3Key?: string | null;
 	}
 	export interface GET_CreateApplicationVersionSourceBundleFormProperties {
+
+		/** Max length: 255 */
 		S3Bucket: FormControl<string | null | undefined>,
+
+		/** Max length: 1024 */
 		S3Key: FormControl<string | null | undefined>,
 	}
 	export function CreateGET_CreateApplicationVersionSourceBundleFormGroup() {
 		return new FormGroup<GET_CreateApplicationVersionSourceBundleFormProperties>({
-			S3Bucket: new FormControl<string | null | undefined>(undefined),
-			S3Key: new FormControl<string | null | undefined>(undefined),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
 
 	export interface GET_CreateApplicationVersionBuildConfiguration {
 		ArtifactName?: string | null;
+
+		/**
+		 * Required
+		 * Pattern: .*\S.*
+		 */
 		CodeBuildServiceRole: string;
 		ComputeType?: ComputeType | null;
+
+		/**
+		 * Required
+		 * Pattern: .*\S.*
+		 */
 		Image: string;
 		TimeoutInMinutes?: number | null;
 	}
 	export interface GET_CreateApplicationVersionBuildConfigurationFormProperties {
 		ArtifactName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: .*\S.*
+		 */
 		CodeBuildServiceRole: FormControl<string | null | undefined>,
 		ComputeType: FormControl<ComputeType | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: .*\S.*
+		 */
 		Image: FormControl<string | null | undefined>,
 		TimeoutInMinutes: FormControl<number | null | undefined>,
 	}
 	export function CreateGET_CreateApplicationVersionBuildConfigurationFormGroup() {
 		return new FormGroup<GET_CreateApplicationVersionBuildConfigurationFormProperties>({
 			ArtifactName: new FormControl<string | null | undefined>(undefined),
-			CodeBuildServiceRole: new FormControl<string | null | undefined>(undefined),
+			CodeBuildServiceRole: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ComputeType: new FormControl<ComputeType | null | undefined>(undefined),
-			Image: new FormControl<string | null | undefined>(undefined),
+			Image: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TimeoutInMinutes: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -4021,17 +5253,37 @@ export namespace MyNS {
 	export enum POST_CreateApplicationVersionVersion { _2010_12_01 = 0 }
 
 	export interface GET_CreateConfigurationTemplateSourceConfiguration {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName?: string | null;
 	}
 	export interface GET_CreateConfigurationTemplateSourceConfigurationFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ApplicationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		TemplateName: FormControl<string | null | undefined>,
 	}
 	export function CreateGET_CreateConfigurationTemplateSourceConfigurationFormGroup() {
 		return new FormGroup<GET_CreateConfigurationTemplateSourceConfigurationFormProperties>({
-			ApplicationName: new FormControl<string | null | undefined>(undefined),
-			TemplateName: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -4068,17 +5320,25 @@ export namespace MyNS {
 	export enum POST_CreateEnvironmentVersion { _2010_12_01 = 0 }
 
 	export interface GET_CreatePlatformVersionPlatformDefinitionBundle {
+
+		/** Max length: 255 */
 		S3Bucket?: string | null;
+
+		/** Max length: 1024 */
 		S3Key?: string | null;
 	}
 	export interface GET_CreatePlatformVersionPlatformDefinitionBundleFormProperties {
+
+		/** Max length: 255 */
 		S3Bucket: FormControl<string | null | undefined>,
+
+		/** Max length: 1024 */
 		S3Key: FormControl<string | null | undefined>,
 	}
 	export function CreateGET_CreatePlatformVersionPlatformDefinitionBundleFormGroup() {
 		return new FormGroup<GET_CreatePlatformVersionPlatformDefinitionBundleFormProperties>({
-			S3Bucket: new FormControl<string | null | undefined>(undefined),
-			S3Key: new FormControl<string | null | undefined>(undefined),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}

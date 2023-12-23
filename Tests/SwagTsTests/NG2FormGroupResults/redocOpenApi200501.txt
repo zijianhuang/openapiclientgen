@@ -351,14 +351,10 @@ export namespace MyNS {
 		/**
 		 * User password, MUST contain a mix of upper and lower case letters, as well as digits
 		 * Min length: 8
-		 * Pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/
 		 */
 		password?: string | null;
 
-		/**
-		 * User phone number in international format
-		 * Pattern: /^\+(?:[0-9]-?){6,14}[0-9]$/
-		 */
+		/** User phone number in international format */
 		phone?: string | null;
 
 		/** User status */
@@ -391,14 +387,10 @@ export namespace MyNS {
 		/**
 		 * User password, MUST contain a mix of upper and lower case letters, as well as digits
 		 * Min length: 8
-		 * Pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/
 		 */
 		password: FormControl<string | null | undefined>,
 
-		/**
-		 * User phone number in international format
-		 * Pattern: /^\+(?:[0-9]-?){6,14}[0-9]$/
-		 */
+		/** User phone number in international format */
 		phone: FormControl<string | null | undefined>,
 
 		/** User status */

@@ -4,7 +4,18 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateBotVersionResponse {
+
+		/**
+		 * Max length: 50
+		 * Min length: 2
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description?: string | null;
 		intents?: Array<Intent>;
 
@@ -17,24 +28,57 @@ export namespace MyNS {
 		failureReason?: string | null;
 		lastUpdatedDate?: Date | null;
 		createdDate?: Date | null;
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 86400
+		 */
 		idleSessionTTLInSeconds?: number | null;
 		voiceId?: string | null;
 		checksum?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		version?: string | null;
 		locale?: CreateBotVersionResponseLocale | null;
 		childDirected?: boolean | null;
 		detectSentiment?: boolean | null;
 	}
 	export interface CreateBotVersionResponseFormProperties {
+
+		/**
+		 * Max length: 50
+		 * Min length: 2
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		status: FormControl<CreateBotVersionResponseStatus | null | undefined>,
 		failureReason: FormControl<string | null | undefined>,
 		lastUpdatedDate: FormControl<Date | null | undefined>,
 		createdDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 86400
+		 */
 		idleSessionTTLInSeconds: FormControl<number | null | undefined>,
 		voiceId: FormControl<string | null | undefined>,
 		checksum: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		version: FormControl<string | null | undefined>,
 		locale: FormControl<CreateBotVersionResponseLocale | null | undefined>,
 		childDirected: FormControl<boolean | null | undefined>,
@@ -42,16 +86,16 @@ export namespace MyNS {
 	}
 	export function CreateCreateBotVersionResponseFormGroup() {
 		return new FormGroup<CreateBotVersionResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			status: new FormControl<CreateBotVersionResponseStatus | null | undefined>(undefined),
 			failureReason: new FormControl<string | null | undefined>(undefined),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			idleSessionTTLInSeconds: new FormControl<number | null | undefined>(undefined),
+			idleSessionTTLInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(86400)]),
 			voiceId: new FormControl<string | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			locale: new FormControl<CreateBotVersionResponseLocale | null | undefined>(undefined),
 			childDirected: new FormControl<boolean | null | undefined>(undefined),
 			detectSentiment: new FormControl<boolean | null | undefined>(undefined),
@@ -62,19 +106,47 @@ export namespace MyNS {
 
 	/** Identifies the specific version of an intent. */
 	export interface Intent {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		intentName: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		intentVersion: string;
 	}
 
 	/** Identifies the specific version of an intent. */
 	export interface IntentFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		intentName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		intentVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateIntentFormGroup() {
 		return new FormGroup<IntentFormProperties>({
-			intentName: new FormControl<string | null | undefined>(undefined),
-			intentVersion: new FormControl<string | null | undefined>(undefined),
+			intentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			intentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -82,20 +154,48 @@ export namespace MyNS {
 
 	/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
 	export interface Prompt {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 15
+		 */
 		messages: Array<Message>;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 5
+		 */
 		maxAttempts: number;
+
+		/**
+		 * Max length: 50000
+		 * Min length: 1
+		 */
 		responseCard?: string | null;
 	}
 
 	/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
 	export interface PromptFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 5
+		 */
 		maxAttempts: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 50000
+		 * Min length: 1
+		 */
 		responseCard: FormControl<string | null | undefined>,
 	}
 	export function CreatePromptFormGroup() {
 		return new FormGroup<PromptFormProperties>({
-			maxAttempts: new FormControl<number | null | undefined>(undefined),
-			responseCard: new FormControl<string | null | undefined>(undefined),
+			maxAttempts: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(5)]),
+			responseCard: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50000), Validators.minLength(1)]),
 		});
 
 	}
@@ -103,22 +203,48 @@ export namespace MyNS {
 
 	/** The message object that provides the message text and its type. */
 	export interface Message {
+
+		/** Required */
 		contentType: MessageContentType;
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		content: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 5
+		 */
 		groupNumber?: number | null;
 	}
 
 	/** The message object that provides the message text and its type. */
 	export interface MessageFormProperties {
+
+		/** Required */
 		contentType: FormControl<MessageContentType | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		content: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 5
+		 */
 		groupNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateMessageFormGroup() {
 		return new FormGroup<MessageFormProperties>({
-			contentType: new FormControl<MessageContentType | null | undefined>(undefined),
-			content: new FormControl<string | null | undefined>(undefined),
-			groupNumber: new FormControl<number | null | undefined>(undefined),
+			contentType: new FormControl<MessageContentType | null | undefined>(undefined, [Validators.required]),
+			content: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000), Validators.minLength(1)]),
+			groupNumber: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(5)]),
 		});
 
 	}
@@ -128,17 +254,33 @@ export namespace MyNS {
 
 	/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey.  */
 	export interface Statement {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 15
+		 */
 		messages: Array<Message>;
+
+		/**
+		 * Max length: 50000
+		 * Min length: 1
+		 */
 		responseCard?: string | null;
 	}
 
 	/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey.  */
 	export interface StatementFormProperties {
+
+		/**
+		 * Max length: 50000
+		 * Min length: 1
+		 */
 		responseCard: FormControl<string | null | undefined>,
 	}
 	export function CreateStatementFormGroup() {
 		return new FormGroup<StatementFormProperties>({
-			responseCard: new FormControl<string | null | undefined>(undefined),
+			responseCard: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50000), Validators.minLength(1)]),
 		});
 
 	}
@@ -208,9 +350,30 @@ export namespace MyNS {
 	}
 
 	export interface CreateIntentVersionResponse {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		slots?: Array<Slot>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 1500
+		 */
 		sampleUtterances?: Array<string>;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
@@ -233,26 +396,49 @@ export namespace MyNS {
 		parentIntentSignature?: string | null;
 		lastUpdatedDate?: Date | null;
 		createdDate?: Date | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		version?: string | null;
 		checksum?: string | null;
 	}
 	export interface CreateIntentVersionResponseFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		parentIntentSignature: FormControl<string | null | undefined>,
 		lastUpdatedDate: FormControl<Date | null | undefined>,
 		createdDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		version: FormControl<string | null | undefined>,
 		checksum: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateIntentVersionResponseFormGroup() {
 		return new FormGroup<CreateIntentVersionResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			parentIntentSignature: new FormControl<string | null | undefined>(undefined),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -261,40 +447,117 @@ export namespace MyNS {
 
 	/** Identifies the version of a specific slot. */
 	export interface Slot {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z](-|_|.)?)+$
+		 */
 		name: string;
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description?: string | null;
+
+		/** Required */
 		slotConstraint: SlotSlotConstraint;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^((AMAZON\.)_?|[A-Za-z]_?)+
+		 */
 		slotType?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		slotTypeVersion?: string | null;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
 		valueElicitationPrompt?: Prompt;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		priority?: number | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		sampleUtterances?: Array<string>;
+
+		/**
+		 * Max length: 50000
+		 * Min length: 1
+		 */
 		responseCard?: string | null;
 		obfuscationSetting?: SlotObfuscationSetting | null;
 	}
 
 	/** Identifies the version of a specific slot. */
 	export interface SlotFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z](-|_|.)?)+$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
+
+		/** Required */
 		slotConstraint: FormControl<SlotSlotConstraint | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^((AMAZON\.)_?|[A-Za-z]_?)+
+		 */
 		slotType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		slotTypeVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		priority: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 50000
+		 * Min length: 1
+		 */
 		responseCard: FormControl<string | null | undefined>,
 		obfuscationSetting: FormControl<SlotObfuscationSetting | null | undefined>,
 	}
 	export function CreateSlotFormGroup() {
 		return new FormGroup<SlotFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			slotConstraint: new FormControl<SlotSlotConstraint | null | undefined>(undefined),
-			slotType: new FormControl<string | null | undefined>(undefined),
-			slotTypeVersion: new FormControl<string | null | undefined>(undefined),
-			priority: new FormControl<number | null | undefined>(undefined),
-			responseCard: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			slotConstraint: new FormControl<SlotSlotConstraint | null | undefined>(undefined, [Validators.required]),
+			slotType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			slotTypeVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			priority: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			responseCard: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50000), Validators.minLength(1)]),
 			obfuscationSetting: new FormControl<SlotObfuscationSetting | null | undefined>(undefined),
 		});
 
@@ -333,19 +596,45 @@ export namespace MyNS {
 
 	/** Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.. */
 	export interface CodeHook {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:aws:lambda:[a-z]+-[a-z]+-[0-9]:[0-9]{12}:function:[a-zA-Z0-9-_]+(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?(:[a-zA-Z0-9-_]+)?
+		 */
 		uri: string;
+
+		/**
+		 * Required
+		 * Max length: 5
+		 * Min length: 1
+		 */
 		messageVersion: string;
 	}
 
 	/** Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.. */
 	export interface CodeHookFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:aws:lambda:[a-z]+-[a-z]+-[0-9]:[0-9]{12}:function:[a-zA-Z0-9-_]+(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?(:[a-zA-Z0-9-_]+)?
+		 */
 		uri: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 5
+		 * Min length: 1
+		 */
 		messageVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateCodeHookFormGroup() {
 		return new FormGroup<CodeHookFormProperties>({
-			uri: new FormControl<string | null | undefined>(undefined),
-			messageVersion: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			messageVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(5), Validators.minLength(1)]),
 		});
 
 	}
@@ -353,6 +642,8 @@ export namespace MyNS {
 
 	/** <p> Describes how the intent is fulfilled after the user provides all of the information required for the intent. You can provide a Lambda function to process the intent, or you can return the intent information to the client application. We recommend that you use a Lambda function so that the relevant logic lives in the Cloud and limit the client-side code primarily to presentation. If you need to update the logic, you only update the Lambda function; you don't need to upgrade your client application. </p> <p>Consider the following examples:</p> <ul> <li> <p>In a pizza ordering application, after the user provides all of the information for placing an order, you use a Lambda function to place an order with a pizzeria. </p> </li> <li> <p>In a gaming application, when a user says "pick up a rock," this information must go back to the client application so that it can perform the operation and update the graphics. In this case, you want Amazon Lex to return the intent data to the client. </p> </li> </ul> */
 	export interface FulfillmentActivity {
+
+		/** Required */
 		type: FulfillmentActivityType;
 
 		/** Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.. */
@@ -361,11 +652,13 @@ export namespace MyNS {
 
 	/** <p> Describes how the intent is fulfilled after the user provides all of the information required for the intent. You can provide a Lambda function to process the intent, or you can return the intent information to the client application. We recommend that you use a Lambda function so that the relevant logic lives in the Cloud and limit the client-side code primarily to presentation. If you need to update the logic, you only update the Lambda function; you don't need to upgrade your client application. </p> <p>Consider the following examples:</p> <ul> <li> <p>In a pizza ordering application, after the user provides all of the information for placing an order, you use a Lambda function to place an order with a pizzeria. </p> </li> <li> <p>In a gaming application, when a user says "pick up a rock," this information must go back to the client application so that it can perform the operation and update the graphics. In this case, you want Amazon Lex to return the intent data to the client. </p> </li> </ul> */
 	export interface FulfillmentActivityFormProperties {
+
+		/** Required */
 		type: FormControl<FulfillmentActivityType | null | undefined>,
 	}
 	export function CreateFulfillmentActivityFormGroup() {
 		return new FormGroup<FulfillmentActivityFormProperties>({
-			type: new FormControl<FulfillmentActivityType | null | undefined>(undefined),
+			type: new FormControl<FulfillmentActivityType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -373,37 +666,93 @@ export namespace MyNS {
 	export enum FulfillmentActivityType { ReturnIntent = 0, CodeHook = 1 }
 
 	export interface CreateSlotTypeVersionResponse {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10000
+		 */
 		enumerationValues?: Array<EnumerationValue>;
 		lastUpdatedDate?: Date | null;
 		createdDate?: Date | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		version?: string | null;
 		checksum?: string | null;
 		valueSelectionStrategy?: CreateSlotTypeVersionResponseValueSelectionStrategy | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^((AMAZON\.)_?|[A-Za-z]_?)+
+		 */
 		parentSlotTypeSignature?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		slotTypeConfigurations?: Array<SlotTypeConfiguration>;
 	}
 	export interface CreateSlotTypeVersionResponseFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		lastUpdatedDate: FormControl<Date | null | undefined>,
 		createdDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		version: FormControl<string | null | undefined>,
 		checksum: FormControl<string | null | undefined>,
 		valueSelectionStrategy: FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^((AMAZON\.)_?|[A-Za-z]_?)+
+		 */
 		parentSlotTypeSignature: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSlotTypeVersionResponseFormGroup() {
 		return new FormGroup<CreateSlotTypeVersionResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 			valueSelectionStrategy: new FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>(undefined),
-			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined),
+			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -411,17 +760,29 @@ export namespace MyNS {
 
 	/** <p>Each slot type can have a set of values. Each enumeration value represents a value the slot type can take. </p> <p>For example, a pizza ordering bot could have a slot type that specifies the type of crust that the pizza should have. The slot type could include the values </p> <ul> <li> <p>thick</p> </li> <li> <p>thin</p> </li> <li> <p>stuffed</p> </li> </ul> */
 	export interface EnumerationValue {
+
+		/**
+		 * Required
+		 * Max length: 140
+		 * Min length: 1
+		 */
 		value: string;
 		synonyms?: Array<string>;
 	}
 
 	/** <p>Each slot type can have a set of values. Each enumeration value represents a value the slot type can take. </p> <p>For example, a pizza ordering bot could have a slot type that specifies the type of crust that the pizza should have. The slot type could include the values </p> <ul> <li> <p>thick</p> </li> <li> <p>thin</p> </li> <li> <p>stuffed</p> </li> </ul> */
 	export interface EnumerationValueFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 140
+		 * Min length: 1
+		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateEnumerationValueFormGroup() {
 		return new FormGroup<EnumerationValueFormProperties>({
-			value: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(140), Validators.minLength(1)]),
 		});
 
 	}
@@ -448,16 +809,28 @@ export namespace MyNS {
 
 	/** Provides a regular expression used to validate the value of a slot. */
 	export interface SlotTypeRegexConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		pattern: string;
 	}
 
 	/** Provides a regular expression used to validate the value of a slot. */
 	export interface SlotTypeRegexConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		pattern: FormControl<string | null | undefined>,
 	}
 	export function CreateSlotTypeRegexConfigurationFormGroup() {
 		return new FormGroup<SlotTypeRegexConfigurationFormProperties>({
-			pattern: new FormControl<string | null | undefined>(undefined),
+			pattern: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -473,7 +846,18 @@ export namespace MyNS {
 	}
 
 	export interface GetBotResponse {
+
+		/**
+		 * Max length: 50
+		 * Min length: 2
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description?: string | null;
 		intents?: Array<Intent>;
 
@@ -486,24 +870,57 @@ export namespace MyNS {
 		failureReason?: string | null;
 		lastUpdatedDate?: Date | null;
 		createdDate?: Date | null;
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 86400
+		 */
 		idleSessionTTLInSeconds?: number | null;
 		voiceId?: string | null;
 		checksum?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		version?: string | null;
 		locale?: GetBotResponseLocale | null;
 		childDirected?: boolean | null;
 		detectSentiment?: boolean | null;
 	}
 	export interface GetBotResponseFormProperties {
+
+		/**
+		 * Max length: 50
+		 * Min length: 2
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		status: FormControl<CreateBotVersionResponseStatus | null | undefined>,
 		failureReason: FormControl<string | null | undefined>,
 		lastUpdatedDate: FormControl<Date | null | undefined>,
 		createdDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 86400
+		 */
 		idleSessionTTLInSeconds: FormControl<number | null | undefined>,
 		voiceId: FormControl<string | null | undefined>,
 		checksum: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		version: FormControl<string | null | undefined>,
 		locale: FormControl<GetBotResponseLocale | null | undefined>,
 		childDirected: FormControl<boolean | null | undefined>,
@@ -511,16 +928,16 @@ export namespace MyNS {
 	}
 	export function CreateGetBotResponseFormGroup() {
 		return new FormGroup<GetBotResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			status: new FormControl<CreateBotVersionResponseStatus | null | undefined>(undefined),
 			failureReason: new FormControl<string | null | undefined>(undefined),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			idleSessionTTLInSeconds: new FormControl<number | null | undefined>(undefined),
+			idleSessionTTLInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(86400)]),
 			voiceId: new FormControl<string | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			locale: new FormControl<GetBotResponseLocale | null | undefined>(undefined),
 			childDirected: new FormControl<boolean | null | undefined>(undefined),
 			detectSentiment: new FormControl<boolean | null | undefined>(undefined),
@@ -531,9 +948,32 @@ export namespace MyNS {
 	export enum GetBotResponseLocale { en_US = 0, en_GB = 1, de_DE = 2 }
 
 	export interface GetBotAliasResponse {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		botVersion?: string | null;
+
+		/**
+		 * Max length: 50
+		 * Min length: 2
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		botName?: string | null;
 		lastUpdatedDate?: Date | null;
 		createdDate?: Date | null;
@@ -543,9 +983,32 @@ export namespace MyNS {
 		conversationLogs?: ConversationLogsResponse;
 	}
 	export interface GetBotAliasResponseFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		botVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 50
+		 * Min length: 2
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		botName: FormControl<string | null | undefined>,
 		lastUpdatedDate: FormControl<Date | null | undefined>,
 		createdDate: FormControl<Date | null | undefined>,
@@ -553,10 +1016,10 @@ export namespace MyNS {
 	}
 	export function CreateGetBotAliasResponseFormGroup() {
 		return new FormGroup<GetBotAliasResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			botVersion: new FormControl<string | null | undefined>(undefined),
-			botName: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			botName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2)]),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
@@ -568,16 +1031,28 @@ export namespace MyNS {
 	/** Contains information about conversation log settings. */
 	export interface ConversationLogsResponse {
 		logSettings?: Array<LogSettingsResponse>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: ^arn:[\w\-]+:iam::[\d]{12}:role\/[\w+=,\.@\-]{1,64}$
+		 */
 		iamRoleArn?: string | null;
 	}
 
 	/** Contains information about conversation log settings. */
 	export interface ConversationLogsResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: ^arn:[\w\-]+:iam::[\d]{12}:role\/[\w+=,\.@\-]{1,64}$
+		 */
 		iamRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateConversationLogsResponseFormGroup() {
 		return new FormGroup<ConversationLogsResponseFormProperties>({
-			iamRoleArn: new FormControl<string | null | undefined>(undefined),
+			iamRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -587,8 +1062,22 @@ export namespace MyNS {
 	export interface LogSettingsResponse {
 		logType?: LogSettingsResponseLogType | null;
 		destination?: LogSettingsResponseDestination | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: ^arn:[\w\-]+:kms:[\w\-]+:[\d]{12}:(?:key\/[\w\-]+|alias\/[a-zA-Z0-9:\/_\-]{1,256})$
+		 */
 		kmsKeyArn?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^arn:[\w\-]+:(?:logs:[\w\-]+:[\d]{12}:log-group:[\.\-_/#A-Za-z0-9]{1,512}(?::\*)?|s3:::[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9])$
+		 */
 		resourceArn?: string | null;
+
+		/** Max length: 1024 */
 		resourcePrefix?: string | null;
 	}
 
@@ -596,17 +1085,31 @@ export namespace MyNS {
 	export interface LogSettingsResponseFormProperties {
 		logType: FormControl<LogSettingsResponseLogType | null | undefined>,
 		destination: FormControl<LogSettingsResponseDestination | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: ^arn:[\w\-]+:kms:[\w\-]+:[\d]{12}:(?:key\/[\w\-]+|alias\/[a-zA-Z0-9:\/_\-]{1,256})$
+		 */
 		kmsKeyArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^arn:[\w\-]+:(?:logs:[\w\-]+:[\d]{12}:log-group:[\.\-_/#A-Za-z0-9]{1,512}(?::\*)?|s3:::[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9])$
+		 */
 		resourceArn: FormControl<string | null | undefined>,
+
+		/** Max length: 1024 */
 		resourcePrefix: FormControl<string | null | undefined>,
 	}
 	export function CreateLogSettingsResponseFormGroup() {
 		return new FormGroup<LogSettingsResponseFormProperties>({
 			logType: new FormControl<LogSettingsResponseLogType | null | undefined>(undefined),
 			destination: new FormControl<LogSettingsResponseDestination | null | undefined>(undefined),
-			kmsKeyArn: new FormControl<string | null | undefined>(undefined),
-			resourceArn: new FormControl<string | null | undefined>(undefined),
-			resourcePrefix: new FormControl<string | null | undefined>(undefined),
+			kmsKeyArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			resourcePrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
@@ -632,9 +1135,32 @@ export namespace MyNS {
 
 	/** Provides information about a bot alias. */
 	export interface BotAliasMetadata {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		botVersion?: string | null;
+
+		/**
+		 * Max length: 50
+		 * Min length: 2
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		botName?: string | null;
 		lastUpdatedDate?: Date | null;
 		createdDate?: Date | null;
@@ -646,9 +1172,32 @@ export namespace MyNS {
 
 	/** Provides information about a bot alias. */
 	export interface BotAliasMetadataFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		botVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 50
+		 * Min length: 2
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		botName: FormControl<string | null | undefined>,
 		lastUpdatedDate: FormControl<Date | null | undefined>,
 		createdDate: FormControl<Date | null | undefined>,
@@ -656,10 +1205,10 @@ export namespace MyNS {
 	}
 	export function CreateBotAliasMetadataFormGroup() {
 		return new FormGroup<BotAliasMetadataFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			botVersion: new FormControl<string | null | undefined>(undefined),
-			botName: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			botName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2)]),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
@@ -668,9 +1217,32 @@ export namespace MyNS {
 	}
 
 	export interface GetBotChannelAssociationResponse {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		botAlias?: string | null;
+
+		/**
+		 * Max length: 50
+		 * Min length: 2
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		botName?: string | null;
 		createdDate?: Date | null;
 		type?: GetBotChannelAssociationResponseType | null;
@@ -679,9 +1251,32 @@ export namespace MyNS {
 		failureReason?: string | null;
 	}
 	export interface GetBotChannelAssociationResponseFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		botAlias: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 50
+		 * Min length: 2
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		botName: FormControl<string | null | undefined>,
 		createdDate: FormControl<Date | null | undefined>,
 		type: FormControl<GetBotChannelAssociationResponseType | null | undefined>,
@@ -690,10 +1285,10 @@ export namespace MyNS {
 	}
 	export function CreateGetBotChannelAssociationResponseFormGroup() {
 		return new FormGroup<GetBotChannelAssociationResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			botAlias: new FormControl<string | null | undefined>(undefined),
-			botName: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			botAlias: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			botName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2)]),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
 			type: new FormControl<GetBotChannelAssociationResponseType | null | undefined>(undefined),
 			status: new FormControl<GetBotChannelAssociationResponseStatus | null | undefined>(undefined),
@@ -733,9 +1328,32 @@ export namespace MyNS {
 
 	/** Represents an association between an Amazon Lex bot and an external messaging platform. */
 	export interface BotChannelAssociation {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		botAlias?: string | null;
+
+		/**
+		 * Max length: 50
+		 * Min length: 2
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		botName?: string | null;
 		createdDate?: Date | null;
 		type?: BotChannelAssociationType | null;
@@ -746,9 +1364,32 @@ export namespace MyNS {
 
 	/** Represents an association between an Amazon Lex bot and an external messaging platform. */
 	export interface BotChannelAssociationFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		botAlias: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 50
+		 * Min length: 2
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		botName: FormControl<string | null | undefined>,
 		createdDate: FormControl<Date | null | undefined>,
 		type: FormControl<BotChannelAssociationType | null | undefined>,
@@ -757,10 +1398,10 @@ export namespace MyNS {
 	}
 	export function CreateBotChannelAssociationFormGroup() {
 		return new FormGroup<BotChannelAssociationFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			botAlias: new FormControl<string | null | undefined>(undefined),
-			botName: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			botAlias: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			botName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2)]),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
 			type: new FormControl<BotChannelAssociationType | null | undefined>(undefined),
 			status: new FormControl<GetBotChannelAssociationResponseStatus | null | undefined>(undefined),
@@ -788,31 +1429,65 @@ export namespace MyNS {
 
 	/** Provides information about a bot. . */
 	export interface BotMetadata {
+
+		/**
+		 * Max length: 50
+		 * Min length: 2
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description?: string | null;
 		status?: CreateBotVersionResponseStatus | null;
 		lastUpdatedDate?: Date | null;
 		createdDate?: Date | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		version?: string | null;
 	}
 
 	/** Provides information about a bot. . */
 	export interface BotMetadataFormProperties {
+
+		/**
+		 * Max length: 50
+		 * Min length: 2
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		status: FormControl<CreateBotVersionResponseStatus | null | undefined>,
 		lastUpdatedDate: FormControl<Date | null | undefined>,
 		createdDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		version: FormControl<string | null | undefined>,
 	}
 	export function CreateBotMetadataFormGroup() {
 		return new FormGroup<BotMetadataFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			status: new FormControl<CreateBotVersionResponseStatus | null | undefined>(undefined),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -930,7 +1605,19 @@ export namespace MyNS {
 	}
 
 	export interface GetExportResponse {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z_]+
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [0-9]+
+		 */
 		version?: string | null;
 		resourceType?: GetExportResponseResourceType | null;
 		exportType?: GetExportResponseExportType | null;
@@ -939,7 +1626,19 @@ export namespace MyNS {
 		url?: string | null;
 	}
 	export interface GetExportResponseFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z_]+
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [0-9]+
+		 */
 		version: FormControl<string | null | undefined>,
 		resourceType: FormControl<GetExportResponseResourceType | null | undefined>,
 		exportType: FormControl<GetExportResponseExportType | null | undefined>,
@@ -949,8 +1648,8 @@ export namespace MyNS {
 	}
 	export function CreateGetExportResponseFormGroup() {
 		return new FormGroup<GetExportResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			resourceType: new FormControl<GetExportResponseResourceType | null | undefined>(undefined),
 			exportType: new FormControl<GetExportResponseExportType | null | undefined>(undefined),
 			exportStatus: new FormControl<GetExportResponseExportStatus | null | undefined>(undefined),
@@ -967,6 +1666,12 @@ export namespace MyNS {
 	export enum GetExportResponseExportStatus { IN_PROGRESS = 0, READY = 1, FAILED = 2 }
 
 	export interface GetImportResponse {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z_]+
+		 */
 		name?: string | null;
 		resourceType?: GetExportResponseResourceType | null;
 		mergeStrategy?: GetImportResponseMergeStrategy | null;
@@ -976,6 +1681,12 @@ export namespace MyNS {
 		createdDate?: Date | null;
 	}
 	export interface GetImportResponseFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z_]+
+		 */
 		name: FormControl<string | null | undefined>,
 		resourceType: FormControl<GetExportResponseResourceType | null | undefined>,
 		mergeStrategy: FormControl<GetImportResponseMergeStrategy | null | undefined>,
@@ -985,7 +1696,7 @@ export namespace MyNS {
 	}
 	export function CreateGetImportResponseFormGroup() {
 		return new FormGroup<GetImportResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			resourceType: new FormControl<GetExportResponseResourceType | null | undefined>(undefined),
 			mergeStrategy: new FormControl<GetImportResponseMergeStrategy | null | undefined>(undefined),
 			importId: new FormControl<string | null | undefined>(undefined),
@@ -1000,9 +1711,30 @@ export namespace MyNS {
 	export enum GetImportResponseImportStatus { IN_PROGRESS = 0, COMPLETE = 1, FAILED = 2 }
 
 	export interface GetIntentResponse {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		slots?: Array<Slot>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 1500
+		 */
 		sampleUtterances?: Array<string>;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
@@ -1025,26 +1757,49 @@ export namespace MyNS {
 		parentIntentSignature?: string | null;
 		lastUpdatedDate?: Date | null;
 		createdDate?: Date | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		version?: string | null;
 		checksum?: string | null;
 	}
 	export interface GetIntentResponseFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		parentIntentSignature: FormControl<string | null | undefined>,
 		lastUpdatedDate: FormControl<Date | null | undefined>,
 		createdDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		version: FormControl<string | null | undefined>,
 		checksum: FormControl<string | null | undefined>,
 	}
 	export function CreateGetIntentResponseFormGroup() {
 		return new FormGroup<GetIntentResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			parentIntentSignature: new FormControl<string | null | undefined>(undefined),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1067,28 +1822,62 @@ export namespace MyNS {
 
 	/** Provides information about an intent. */
 	export interface IntentMetadata {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description?: string | null;
 		lastUpdatedDate?: Date | null;
 		createdDate?: Date | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		version?: string | null;
 	}
 
 	/** Provides information about an intent. */
 	export interface IntentMetadataFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		lastUpdatedDate: FormControl<Date | null | undefined>,
 		createdDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		version: FormControl<string | null | undefined>,
 	}
 	export function CreateIntentMetadataFormGroup() {
 		return new FormGroup<IntentMetadataFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1108,37 +1897,93 @@ export namespace MyNS {
 	}
 
 	export interface GetSlotTypeResponse {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10000
+		 */
 		enumerationValues?: Array<EnumerationValue>;
 		lastUpdatedDate?: Date | null;
 		createdDate?: Date | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		version?: string | null;
 		checksum?: string | null;
 		valueSelectionStrategy?: CreateSlotTypeVersionResponseValueSelectionStrategy | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^((AMAZON\.)_?|[A-Za-z]_?)+
+		 */
 		parentSlotTypeSignature?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		slotTypeConfigurations?: Array<SlotTypeConfiguration>;
 	}
 	export interface GetSlotTypeResponseFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		lastUpdatedDate: FormControl<Date | null | undefined>,
 		createdDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		version: FormControl<string | null | undefined>,
 		checksum: FormControl<string | null | undefined>,
 		valueSelectionStrategy: FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^((AMAZON\.)_?|[A-Za-z]_?)+
+		 */
 		parentSlotTypeSignature: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSlotTypeResponseFormGroup() {
 		return new FormGroup<GetSlotTypeResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 			valueSelectionStrategy: new FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>(undefined),
-			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined),
+			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -1160,28 +2005,62 @@ export namespace MyNS {
 
 	/** Provides information about a slot type.. */
 	export interface SlotTypeMetadata {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description?: string | null;
 		lastUpdatedDate?: Date | null;
 		createdDate?: Date | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		version?: string | null;
 	}
 
 	/** Provides information about a slot type.. */
 	export interface SlotTypeMetadataFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		lastUpdatedDate: FormControl<Date | null | undefined>,
 		createdDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		version: FormControl<string | null | undefined>,
 	}
 	export function CreateSlotTypeMetadataFormGroup() {
 		return new FormGroup<SlotTypeMetadataFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1201,15 +2080,27 @@ export namespace MyNS {
 	}
 
 	export interface GetUtterancesViewResponse {
+
+		/**
+		 * Max length: 50
+		 * Min length: 2
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		botName?: string | null;
 		utterances?: Array<UtteranceList>;
 	}
 	export interface GetUtterancesViewResponseFormProperties {
+
+		/**
+		 * Max length: 50
+		 * Min length: 2
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		botName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetUtterancesViewResponseFormGroup() {
 		return new FormGroup<GetUtterancesViewResponseFormProperties>({
-			botName: new FormControl<string | null | undefined>(undefined),
+			botName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2)]),
 		});
 
 	}
@@ -1217,17 +2108,29 @@ export namespace MyNS {
 
 	/** Provides a list of utterances that have been made to a specific version of your bot. The list contains a maximum of 100 utterances. */
 	export interface UtteranceList {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		botVersion?: string | null;
 		utterances?: Array<UtteranceData>;
 	}
 
 	/** Provides a list of utterances that have been made to a specific version of your bot. The list contains a maximum of 100 utterances. */
 	export interface UtteranceListFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		botVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateUtteranceListFormGroup() {
 		return new FormGroup<UtteranceListFormProperties>({
-			botVersion: new FormControl<string | null | undefined>(undefined),
+			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1235,6 +2138,11 @@ export namespace MyNS {
 
 	/** Provides information about a single utterance that was made to your bot.  */
 	export interface UtteranceData {
+
+		/**
+		 * Max length: 2000
+		 * Min length: 1
+		 */
 		utteranceString?: string | null;
 		count?: number | null;
 		distinctUsers?: number | null;
@@ -1244,6 +2152,11 @@ export namespace MyNS {
 
 	/** Provides information about a single utterance that was made to your bot.  */
 	export interface UtteranceDataFormProperties {
+
+		/**
+		 * Max length: 2000
+		 * Min length: 1
+		 */
 		utteranceString: FormControl<string | null | undefined>,
 		count: FormControl<number | null | undefined>,
 		distinctUsers: FormControl<number | null | undefined>,
@@ -1252,7 +2165,7 @@ export namespace MyNS {
 	}
 	export function CreateUtteranceDataFormGroup() {
 		return new FormGroup<UtteranceDataFormProperties>({
-			utteranceString: new FormControl<string | null | undefined>(undefined),
+			utteranceString: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
 			count: new FormControl<number | null | undefined>(undefined),
 			distinctUsers: new FormControl<number | null | undefined>(undefined),
 			firstUtteredDate: new FormControl<Date | null | undefined>(undefined),
@@ -1262,6 +2175,11 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceResponse {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		tags?: Array<Tag>;
 	}
 	export interface ListTagsForResourceResponseFormProperties {
@@ -1275,25 +2193,60 @@ export namespace MyNS {
 
 	/** A list of key/value pairs that identify a bot, bot alias, or bot channel. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.  */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		value: string;
 	}
 
 	/** A list of key/value pairs that identify a bot, bot alias, or bot channel. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.  */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface PutBotResponse {
+
+		/**
+		 * Max length: 50
+		 * Min length: 2
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description?: string | null;
 		intents?: Array<Intent>;
 
@@ -1306,26 +2259,64 @@ export namespace MyNS {
 		failureReason?: string | null;
 		lastUpdatedDate?: Date | null;
 		createdDate?: Date | null;
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 86400
+		 */
 		idleSessionTTLInSeconds?: number | null;
 		voiceId?: string | null;
 		checksum?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		version?: string | null;
 		locale?: PutBotResponseLocale | null;
 		childDirected?: boolean | null;
 		createVersion?: boolean | null;
 		detectSentiment?: boolean | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		tags?: Array<Tag>;
 	}
 	export interface PutBotResponseFormProperties {
+
+		/**
+		 * Max length: 50
+		 * Min length: 2
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		status: FormControl<CreateBotVersionResponseStatus | null | undefined>,
 		failureReason: FormControl<string | null | undefined>,
 		lastUpdatedDate: FormControl<Date | null | undefined>,
 		createdDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 86400
+		 */
 		idleSessionTTLInSeconds: FormControl<number | null | undefined>,
 		voiceId: FormControl<string | null | undefined>,
 		checksum: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		version: FormControl<string | null | undefined>,
 		locale: FormControl<PutBotResponseLocale | null | undefined>,
 		childDirected: FormControl<boolean | null | undefined>,
@@ -1334,16 +2325,16 @@ export namespace MyNS {
 	}
 	export function CreatePutBotResponseFormGroup() {
 		return new FormGroup<PutBotResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			status: new FormControl<CreateBotVersionResponseStatus | null | undefined>(undefined),
 			failureReason: new FormControl<string | null | undefined>(undefined),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			idleSessionTTLInSeconds: new FormControl<number | null | undefined>(undefined),
+			idleSessionTTLInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(86400)]),
 			voiceId: new FormControl<string | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			locale: new FormControl<PutBotResponseLocale | null | undefined>(undefined),
 			childDirected: new FormControl<boolean | null | undefined>(undefined),
 			createVersion: new FormControl<boolean | null | undefined>(undefined),
@@ -1355,9 +2346,32 @@ export namespace MyNS {
 	export enum PutBotResponseLocale { en_US = 0, en_GB = 1, de_DE = 2 }
 
 	export interface PutBotAliasResponse {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		botVersion?: string | null;
+
+		/**
+		 * Max length: 50
+		 * Min length: 2
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		botName?: string | null;
 		lastUpdatedDate?: Date | null;
 		createdDate?: Date | null;
@@ -1365,12 +2379,40 @@ export namespace MyNS {
 
 		/** Contains information about conversation log settings. */
 		conversationLogs?: ConversationLogsResponse;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		tags?: Array<Tag>;
 	}
 	export interface PutBotAliasResponseFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		botVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 50
+		 * Min length: 2
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		botName: FormControl<string | null | undefined>,
 		lastUpdatedDate: FormControl<Date | null | undefined>,
 		createdDate: FormControl<Date | null | undefined>,
@@ -1378,10 +2420,10 @@ export namespace MyNS {
 	}
 	export function CreatePutBotAliasResponseFormGroup() {
 		return new FormGroup<PutBotAliasResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			botVersion: new FormControl<string | null | undefined>(undefined),
-			botName: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			botName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2)]),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
@@ -1392,33 +2434,88 @@ export namespace MyNS {
 
 	/** Settings used to configure delivery mode and destination for conversation logs. */
 	export interface LogSettingsRequest {
+
+		/** Required */
 		logType: LogSettingsResponseLogType;
+
+		/** Required */
 		destination: LogSettingsResponseDestination;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: ^arn:[\w\-]+:kms:[\w\-]+:[\d]{12}:(?:key\/[\w\-]+|alias\/[a-zA-Z0-9:\/_\-]{1,256})$
+		 */
 		kmsKeyArn?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^arn:[\w\-]+:(?:logs:[\w\-]+:[\d]{12}:log-group:[\.\-_/#A-Za-z0-9]{1,512}(?::\*)?|s3:::[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9])$
+		 */
 		resourceArn: string;
 	}
 
 	/** Settings used to configure delivery mode and destination for conversation logs. */
 	export interface LogSettingsRequestFormProperties {
+
+		/** Required */
 		logType: FormControl<LogSettingsResponseLogType | null | undefined>,
+
+		/** Required */
 		destination: FormControl<LogSettingsResponseDestination | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: ^arn:[\w\-]+:kms:[\w\-]+:[\d]{12}:(?:key\/[\w\-]+|alias\/[a-zA-Z0-9:\/_\-]{1,256})$
+		 */
 		kmsKeyArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^arn:[\w\-]+:(?:logs:[\w\-]+:[\d]{12}:log-group:[\.\-_/#A-Za-z0-9]{1,512}(?::\*)?|s3:::[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9])$
+		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateLogSettingsRequestFormGroup() {
 		return new FormGroup<LogSettingsRequestFormProperties>({
-			logType: new FormControl<LogSettingsResponseLogType | null | undefined>(undefined),
-			destination: new FormControl<LogSettingsResponseDestination | null | undefined>(undefined),
-			kmsKeyArn: new FormControl<string | null | undefined>(undefined),
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			logType: new FormControl<LogSettingsResponseLogType | null | undefined>(undefined, [Validators.required]),
+			destination: new FormControl<LogSettingsResponseDestination | null | undefined>(undefined, [Validators.required]),
+			kmsKeyArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface PutIntentResponse {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		slots?: Array<Slot>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 1500
+		 */
 		sampleUtterances?: Array<string>;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
@@ -1441,28 +2538,51 @@ export namespace MyNS {
 		parentIntentSignature?: string | null;
 		lastUpdatedDate?: Date | null;
 		createdDate?: Date | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		version?: string | null;
 		checksum?: string | null;
 		createVersion?: boolean | null;
 	}
 	export interface PutIntentResponseFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		parentIntentSignature: FormControl<string | null | undefined>,
 		lastUpdatedDate: FormControl<Date | null | undefined>,
 		createdDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		version: FormControl<string | null | undefined>,
 		checksum: FormControl<string | null | undefined>,
 		createVersion: FormControl<boolean | null | undefined>,
 	}
 	export function CreatePutIntentResponseFormGroup() {
 		return new FormGroup<PutIntentResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			parentIntentSignature: new FormControl<string | null | undefined>(undefined),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 			createVersion: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -1470,54 +2590,127 @@ export namespace MyNS {
 	}
 
 	export interface PutSlotTypeResponse {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10000
+		 */
 		enumerationValues?: Array<EnumerationValue>;
 		lastUpdatedDate?: Date | null;
 		createdDate?: Date | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		version?: string | null;
 		checksum?: string | null;
 		valueSelectionStrategy?: CreateSlotTypeVersionResponseValueSelectionStrategy | null;
 		createVersion?: boolean | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^((AMAZON\.)_?|[A-Za-z]_?)+
+		 */
 		parentSlotTypeSignature?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		slotTypeConfigurations?: Array<SlotTypeConfiguration>;
 	}
 	export interface PutSlotTypeResponseFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^([A-Za-z]_?)+$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		lastUpdatedDate: FormControl<Date | null | undefined>,
 		createdDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		version: FormControl<string | null | undefined>,
 		checksum: FormControl<string | null | undefined>,
 		valueSelectionStrategy: FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>,
 		createVersion: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^((AMAZON\.)_?|[A-Za-z]_?)+
+		 */
 		parentSlotTypeSignature: FormControl<string | null | undefined>,
 	}
 	export function CreatePutSlotTypeResponseFormGroup() {
 		return new FormGroup<PutSlotTypeResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 			valueSelectionStrategy: new FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>(undefined),
 			createVersion: new FormControl<boolean | null | undefined>(undefined),
-			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined),
+			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface StartImportResponse {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z_]+
+		 */
 		name?: string | null;
 		resourceType?: GetExportResponseResourceType | null;
 		mergeStrategy?: GetImportResponseMergeStrategy | null;
 		importId?: string | null;
 		importStatus?: GetImportResponseImportStatus | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		tags?: Array<Tag>;
 		createdDate?: Date | null;
 	}
 	export interface StartImportResponseFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [a-zA-Z_]+
+		 */
 		name: FormControl<string | null | undefined>,
 		resourceType: FormControl<GetExportResponseResourceType | null | undefined>,
 		mergeStrategy: FormControl<GetImportResponseMergeStrategy | null | undefined>,
@@ -1527,7 +2720,7 @@ export namespace MyNS {
 	}
 	export function CreateStartImportResponseFormGroup() {
 		return new FormGroup<StartImportResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			resourceType: new FormControl<GetExportResponseResourceType | null | undefined>(undefined),
 			mergeStrategy: new FormControl<GetImportResponseMergeStrategy | null | undefined>(undefined),
 			importId: new FormControl<string | null | undefined>(undefined),
@@ -1568,17 +2761,33 @@ export namespace MyNS {
 
 	/** Provides the settings needed for conversation logs. */
 	export interface ConversationLogsRequest {
+
+		/** Required */
 		logSettings: Array<LogSettingsRequest>;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: ^arn:[\w\-]+:iam::[\d]{12}:role\/[\w+=,\.@\-]{1,64}$
+		 */
 		iamRoleArn: string;
 	}
 
 	/** Provides the settings needed for conversation logs. */
 	export interface ConversationLogsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: ^arn:[\w\-]+:iam::[\d]{12}:role\/[\w+=,\.@\-]{1,64}$
+		 */
 		iamRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateConversationLogsRequestFormGroup() {
 		return new FormGroup<ConversationLogsRequestFormProperties>({
-			iamRoleArn: new FormControl<string | null | undefined>(undefined),
+			iamRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -1935,29 +3144,63 @@ export namespace MyNS {
 	export enum ProcessBehavior { SAVE = 0, BUILD = 1 }
 
 	export interface PutBotAliasRequest {
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		botVersion: string;
 		checksum?: string | null;
 
 		/** Provides the settings needed for conversation logs. */
 		conversationLogs?: ConversationLogsRequest;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		tags?: Array<Tag>;
 	}
 	export interface PutBotAliasRequestFormProperties {
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
 		botVersion: FormControl<string | null | undefined>,
 		checksum: FormControl<string | null | undefined>,
 	}
 	export function CreatePutBotAliasRequestFormGroup() {
 		return new FormGroup<PutBotAliasRequestFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined),
-			botVersion: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PutBotRequest {
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description?: string | null;
 		intents?: Array<Intent>;
 
@@ -1966,36 +3209,64 @@ export namespace MyNS {
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
 		abortStatement?: Statement;
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 86400
+		 */
 		idleSessionTTLInSeconds?: number | null;
 		voiceId?: string | null;
 		checksum?: string | null;
 		processBehavior?: ProcessBehavior | null;
+
+		/** Required */
 		locale: PutBotRequestLocale;
+
+		/** Required */
 		childDirected: boolean;
 		detectSentiment?: boolean | null;
 		createVersion?: boolean | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		tags?: Array<Tag>;
 	}
 	export interface PutBotRequestFormProperties {
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 86400
+		 */
 		idleSessionTTLInSeconds: FormControl<number | null | undefined>,
 		voiceId: FormControl<string | null | undefined>,
 		checksum: FormControl<string | null | undefined>,
 		processBehavior: FormControl<ProcessBehavior | null | undefined>,
+
+		/** Required */
 		locale: FormControl<PutBotRequestLocale | null | undefined>,
+
+		/** Required */
 		childDirected: FormControl<boolean | null | undefined>,
 		detectSentiment: FormControl<boolean | null | undefined>,
 		createVersion: FormControl<boolean | null | undefined>,
 	}
 	export function CreatePutBotRequestFormGroup() {
 		return new FormGroup<PutBotRequestFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined),
-			idleSessionTTLInSeconds: new FormControl<number | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			idleSessionTTLInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(86400)]),
 			voiceId: new FormControl<string | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
 			processBehavior: new FormControl<ProcessBehavior | null | undefined>(undefined),
-			locale: new FormControl<PutBotRequestLocale | null | undefined>(undefined),
-			childDirected: new FormControl<boolean | null | undefined>(undefined),
+			locale: new FormControl<PutBotRequestLocale | null | undefined>(undefined, [Validators.required]),
+			childDirected: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			detectSentiment: new FormControl<boolean | null | undefined>(undefined),
 			createVersion: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -2005,8 +3276,23 @@ export namespace MyNS {
 	export enum PutBotRequestLocale { en_US = 0, en_GB = 1, de_DE = 2 }
 
 	export interface PutIntentRequest {
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		slots?: Array<Slot>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 1500
+		 */
 		sampleUtterances?: Array<string>;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
@@ -2031,6 +3317,11 @@ export namespace MyNS {
 		createVersion?: boolean | null;
 	}
 	export interface PutIntentRequestFormProperties {
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		parentIntentSignature: FormControl<string | null | undefined>,
 		checksum: FormControl<string | null | undefined>,
@@ -2038,7 +3329,7 @@ export namespace MyNS {
 	}
 	export function CreatePutIntentRequestFormGroup() {
 		return new FormGroup<PutIntentRequestFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			parentIntentSignature: new FormControl<string | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
 			createVersion: new FormControl<boolean | null | undefined>(undefined),
@@ -2047,28 +3338,60 @@ export namespace MyNS {
 	}
 
 	export interface PutSlotTypeRequest {
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10000
+		 */
 		enumerationValues?: Array<EnumerationValue>;
 		checksum?: string | null;
 		valueSelectionStrategy?: CreateSlotTypeVersionResponseValueSelectionStrategy | null;
 		createVersion?: boolean | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^((AMAZON\.)_?|[A-Za-z]_?)+
+		 */
 		parentSlotTypeSignature?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		slotTypeConfigurations?: Array<SlotTypeConfiguration>;
 	}
 	export interface PutSlotTypeRequestFormProperties {
+
+		/**
+		 * Max length: 200
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		checksum: FormControl<string | null | undefined>,
 		valueSelectionStrategy: FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>,
 		createVersion: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^((AMAZON\.)_?|[A-Za-z]_?)+
+		 */
 		parentSlotTypeSignature: FormControl<string | null | undefined>,
 	}
 	export function CreatePutSlotTypeRequestFormGroup() {
 		return new FormGroup<PutSlotTypeRequestFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 			valueSelectionStrategy: new FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>(undefined),
 			createVersion: new FormControl<boolean | null | undefined>(undefined),
-			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined),
+			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -2076,26 +3399,49 @@ export namespace MyNS {
 	export enum SlotConstraint { Required = 0, Optional = 1 }
 
 	export interface StartImportRequest {
+
+		/** Required */
 		payload: string;
+
+		/** Required */
 		resourceType: GetExportResponseResourceType;
+
+		/** Required */
 		mergeStrategy: GetImportResponseMergeStrategy;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		tags?: Array<Tag>;
 	}
 	export interface StartImportRequestFormProperties {
+
+		/** Required */
 		payload: FormControl<string | null | undefined>,
+
+		/** Required */
 		resourceType: FormControl<GetExportResponseResourceType | null | undefined>,
+
+		/** Required */
 		mergeStrategy: FormControl<GetImportResponseMergeStrategy | null | undefined>,
 	}
 	export function CreateStartImportRequestFormGroup() {
 		return new FormGroup<StartImportRequestFormProperties>({
-			payload: new FormControl<string | null | undefined>(undefined),
-			resourceType: new FormControl<GetExportResponseResourceType | null | undefined>(undefined),
-			mergeStrategy: new FormControl<GetImportResponseMergeStrategy | null | undefined>(undefined),
+			payload: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			resourceType: new FormControl<GetExportResponseResourceType | null | undefined>(undefined, [Validators.required]),
+			mergeStrategy: new FormControl<GetImportResponseMergeStrategy | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface TagResourceRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
@@ -2661,8 +4007,8 @@ export namespace MyNS {
 	}
 	export function CreatePutBotAliasPutBodyFormGroup() {
 		return new FormGroup<PutBotAliasPutBodyFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined),
-			botVersion: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2670,14 +4016,26 @@ export namespace MyNS {
 
 	export interface PutBotAliasPutBodyConversationLogs {
 		logSettings?: Array<LogSettingsRequest>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: ^arn:[\w\-]+:iam::[\d]{12}:role\/[\w+=,\.@\-]{1,64}$
+		 */
 		iamRoleArn?: string | null;
 	}
 	export interface PutBotAliasPutBodyConversationLogsFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: ^arn:[\w\-]+:iam::[\d]{12}:role\/[\w+=,\.@\-]{1,64}$
+		 */
 		iamRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreatePutBotAliasPutBodyConversationLogsFormGroup() {
 		return new FormGroup<PutBotAliasPutBodyConversationLogsFormProperties>({
-			iamRoleArn: new FormControl<string | null | undefined>(undefined),
+			iamRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -2810,13 +4168,13 @@ export namespace MyNS {
 	}
 	export function CreatePutBotPutBodyFormGroup() {
 		return new FormGroup<PutBotPutBodyFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined),
-			idleSessionTTLInSeconds: new FormControl<number | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			idleSessionTTLInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(86400)]),
 			voiceId: new FormControl<string | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
 			processBehavior: new FormControl<ProcessBehavior | null | undefined>(undefined),
-			locale: new FormControl<PutBotPutBodyLocale | null | undefined>(undefined),
-			childDirected: new FormControl<boolean | null | undefined>(undefined),
+			locale: new FormControl<PutBotPutBodyLocale | null | undefined>(undefined, [Validators.required]),
+			childDirected: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			detectSentiment: new FormControl<boolean | null | undefined>(undefined),
 			createVersion: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -2824,32 +4182,72 @@ export namespace MyNS {
 	}
 
 	export interface PutBotPutBodyClarificationPrompt {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 15
+		 */
 		messages?: Array<Message>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 5
+		 */
 		maxAttempts?: number | null;
+
+		/**
+		 * Max length: 50000
+		 * Min length: 1
+		 */
 		responseCard?: string | null;
 	}
 	export interface PutBotPutBodyClarificationPromptFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 5
+		 */
 		maxAttempts: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 50000
+		 * Min length: 1
+		 */
 		responseCard: FormControl<string | null | undefined>,
 	}
 	export function CreatePutBotPutBodyClarificationPromptFormGroup() {
 		return new FormGroup<PutBotPutBodyClarificationPromptFormProperties>({
-			maxAttempts: new FormControl<number | null | undefined>(undefined),
-			responseCard: new FormControl<string | null | undefined>(undefined),
+			maxAttempts: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(5)]),
+			responseCard: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50000), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface PutBotPutBodyAbortStatement {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 15
+		 */
 		messages?: Array<Message>;
+
+		/**
+		 * Max length: 50000
+		 * Min length: 1
+		 */
 		responseCard?: string | null;
 	}
 	export interface PutBotPutBodyAbortStatementFormProperties {
+
+		/**
+		 * Max length: 50000
+		 * Min length: 1
+		 */
 		responseCard: FormControl<string | null | undefined>,
 	}
 	export function CreatePutBotPutBodyAbortStatementFormGroup() {
 		return new FormGroup<PutBotPutBodyAbortStatementFormProperties>({
-			responseCard: new FormControl<string | null | undefined>(undefined),
+			responseCard: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50000), Validators.minLength(1)]),
 		});
 
 	}
@@ -2926,7 +4324,7 @@ export namespace MyNS {
 	}
 	export function CreatePutIntentPutBodyFormGroup() {
 		return new FormGroup<PutIntentPutBodyFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			parentIntentSignature: new FormControl<string | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
 			createVersion: new FormControl<boolean | null | undefined>(undefined),
@@ -2935,32 +4333,72 @@ export namespace MyNS {
 	}
 
 	export interface PutIntentPutBodyConfirmationPrompt {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 15
+		 */
 		messages?: Array<Message>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 5
+		 */
 		maxAttempts?: number | null;
+
+		/**
+		 * Max length: 50000
+		 * Min length: 1
+		 */
 		responseCard?: string | null;
 	}
 	export interface PutIntentPutBodyConfirmationPromptFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 5
+		 */
 		maxAttempts: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 50000
+		 * Min length: 1
+		 */
 		responseCard: FormControl<string | null | undefined>,
 	}
 	export function CreatePutIntentPutBodyConfirmationPromptFormGroup() {
 		return new FormGroup<PutIntentPutBodyConfirmationPromptFormProperties>({
-			maxAttempts: new FormControl<number | null | undefined>(undefined),
-			responseCard: new FormControl<string | null | undefined>(undefined),
+			maxAttempts: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(5)]),
+			responseCard: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50000), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface PutIntentPutBodyRejectionStatement {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 15
+		 */
 		messages?: Array<Message>;
+
+		/**
+		 * Max length: 50000
+		 * Min length: 1
+		 */
 		responseCard?: string | null;
 	}
 	export interface PutIntentPutBodyRejectionStatementFormProperties {
+
+		/**
+		 * Max length: 50000
+		 * Min length: 1
+		 */
 		responseCard: FormControl<string | null | undefined>,
 	}
 	export function CreatePutIntentPutBodyRejectionStatementFormGroup() {
 		return new FormGroup<PutIntentPutBodyRejectionStatementFormProperties>({
-			responseCard: new FormControl<string | null | undefined>(undefined),
+			responseCard: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50000), Validators.minLength(1)]),
 		});
 
 	}
@@ -2982,31 +4420,68 @@ export namespace MyNS {
 	}
 
 	export interface PutIntentPutBodyConclusionStatement {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 15
+		 */
 		messages?: Array<Message>;
+
+		/**
+		 * Max length: 50000
+		 * Min length: 1
+		 */
 		responseCard?: string | null;
 	}
 	export interface PutIntentPutBodyConclusionStatementFormProperties {
+
+		/**
+		 * Max length: 50000
+		 * Min length: 1
+		 */
 		responseCard: FormControl<string | null | undefined>,
 	}
 	export function CreatePutIntentPutBodyConclusionStatementFormGroup() {
 		return new FormGroup<PutIntentPutBodyConclusionStatementFormProperties>({
-			responseCard: new FormControl<string | null | undefined>(undefined),
+			responseCard: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50000), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface PutIntentPutBodyDialogCodeHook {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:aws:lambda:[a-z]+-[a-z]+-[0-9]:[0-9]{12}:function:[a-zA-Z0-9-_]+(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?(:[a-zA-Z0-9-_]+)?
+		 */
 		uri?: string | null;
+
+		/**
+		 * Max length: 5
+		 * Min length: 1
+		 */
 		messageVersion?: string | null;
 	}
 	export interface PutIntentPutBodyDialogCodeHookFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:aws:lambda:[a-z]+-[a-z]+-[0-9]:[0-9]{12}:function:[a-zA-Z0-9-_]+(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?(:[a-zA-Z0-9-_]+)?
+		 */
 		uri: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 5
+		 * Min length: 1
+		 */
 		messageVersion: FormControl<string | null | undefined>,
 	}
 	export function CreatePutIntentPutBodyDialogCodeHookFormGroup() {
 		return new FormGroup<PutIntentPutBodyDialogCodeHookFormProperties>({
-			uri: new FormControl<string | null | undefined>(undefined),
-			messageVersion: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			messageVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5), Validators.minLength(1)]),
 		});
 
 	}
@@ -3095,11 +4570,11 @@ export namespace MyNS {
 	}
 	export function CreatePutSlotTypePutBodyFormGroup() {
 		return new FormGroup<PutSlotTypePutBodyFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 			valueSelectionStrategy: new FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>(undefined),
 			createVersion: new FormControl<boolean | null | undefined>(undefined),
-			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined),
+			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -3153,9 +4628,9 @@ export namespace MyNS {
 	}
 	export function CreateStartImportPostBodyFormGroup() {
 		return new FormGroup<StartImportPostBodyFormProperties>({
-			payload: new FormControl<string | null | undefined>(undefined),
-			resourceType: new FormControl<GetExportResponseResourceType | null | undefined>(undefined),
-			mergeStrategy: new FormControl<GetImportResponseMergeStrategy | null | undefined>(undefined),
+			payload: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			resourceType: new FormControl<GetExportResponseResourceType | null | undefined>(undefined, [Validators.required]),
+			mergeStrategy: new FormControl<GetImportResponseMergeStrategy | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

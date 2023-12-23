@@ -118,7 +118,7 @@ export namespace MyNS {
 	export function CreateCorsFormGroup() {
 		return new FormGroup<CorsFormProperties>({
 			AllowCredentials: new FormControl<boolean | null | undefined>(undefined),
-			MaxAge: new FormControl<number | null | undefined>(undefined),
+			MaxAge: new FormControl<number | null | undefined>(undefined, [Validators.min(-1), Validators.max(86400)]),
 		});
 
 	}
@@ -281,7 +281,7 @@ export namespace MyNS {
 		return new FormGroup<CreateAuthorizerResponseFormProperties>({
 			AuthorizerCredentialsArn: new FormControl<string | null | undefined>(undefined),
 			AuthorizerId: new FormControl<string | null | undefined>(undefined),
-			AuthorizerResultTtlInSeconds: new FormControl<number | null | undefined>(undefined),
+			AuthorizerResultTtlInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(3600)]),
 			AuthorizerType: new FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>(undefined),
 			AuthorizerUri: new FormControl<string | null | undefined>(undefined),
 			IdentityValidationExpression: new FormControl<string | null | undefined>(undefined),
@@ -586,7 +586,7 @@ export namespace MyNS {
 			PassthroughBehavior: new FormControl<CreateIntegrationResultPassthroughBehavior | null | undefined>(undefined),
 			PayloadFormatVersion: new FormControl<string | null | undefined>(undefined),
 			TemplateSelectionExpression: new FormControl<string | null | undefined>(undefined),
-			TimeoutInMillis: new FormControl<number | null | undefined>(undefined),
+			TimeoutInMillis: new FormControl<number | null | undefined>(undefined, [Validators.min(50), Validators.max(30000)]),
 		});
 
 	}
@@ -1331,10 +1331,10 @@ export namespace MyNS {
 	}
 	export function CreateApiMappingFormGroup() {
 		return new FormGroup<ApiMappingFormProperties>({
-			ApiId: new FormControl<string | null | undefined>(undefined),
+			ApiId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ApiMappingId: new FormControl<string | null | undefined>(undefined),
 			ApiMappingKey: new FormControl<string | null | undefined>(undefined),
-			Stage: new FormControl<string | null | undefined>(undefined),
+			Stage: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1447,9 +1447,9 @@ export namespace MyNS {
 			CreatedDate: new FormControl<Date | null | undefined>(undefined),
 			Description: new FormControl<string | null | undefined>(undefined),
 			DisableSchemaValidation: new FormControl<boolean | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			ProtocolType: new FormControl<CreateApiResponseProtocolType | null | undefined>(undefined),
-			RouteSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ProtocolType: new FormControl<CreateApiResponseProtocolType | null | undefined>(undefined, [Validators.required]),
+			RouteSelectionExpression: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Version: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1519,7 +1519,7 @@ export namespace MyNS {
 		return new FormGroup<GetAuthorizerResponseFormProperties>({
 			AuthorizerCredentialsArn: new FormControl<string | null | undefined>(undefined),
 			AuthorizerId: new FormControl<string | null | undefined>(undefined),
-			AuthorizerResultTtlInSeconds: new FormControl<number | null | undefined>(undefined),
+			AuthorizerResultTtlInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(3600)]),
 			AuthorizerType: new FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>(undefined),
 			AuthorizerUri: new FormControl<string | null | undefined>(undefined),
 			IdentityValidationExpression: new FormControl<string | null | undefined>(undefined),
@@ -1620,11 +1620,11 @@ export namespace MyNS {
 		return new FormGroup<AuthorizerFormProperties>({
 			AuthorizerCredentialsArn: new FormControl<string | null | undefined>(undefined),
 			AuthorizerId: new FormControl<string | null | undefined>(undefined),
-			AuthorizerResultTtlInSeconds: new FormControl<number | null | undefined>(undefined),
+			AuthorizerResultTtlInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(3600)]),
 			AuthorizerType: new FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>(undefined),
 			AuthorizerUri: new FormControl<string | null | undefined>(undefined),
 			IdentityValidationExpression: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1814,7 +1814,7 @@ export namespace MyNS {
 	export function CreateDomainNameFormGroup() {
 		return new FormGroup<DomainNameFormProperties>({
 			ApiMappingSelectionExpression: new FormControl<string | null | undefined>(undefined),
-			DomainName1: new FormControl<string | null | undefined>(undefined),
+			DomainName1: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1942,7 +1942,7 @@ export namespace MyNS {
 			PassthroughBehavior: new FormControl<CreateIntegrationResultPassthroughBehavior | null | undefined>(undefined),
 			PayloadFormatVersion: new FormControl<string | null | undefined>(undefined),
 			TemplateSelectionExpression: new FormControl<string | null | undefined>(undefined),
-			TimeoutInMillis: new FormControl<number | null | undefined>(undefined),
+			TimeoutInMillis: new FormControl<number | null | undefined>(undefined, [Validators.min(50), Validators.max(30000)]),
 		});
 
 	}
@@ -2057,7 +2057,7 @@ export namespace MyNS {
 		return new FormGroup<IntegrationResponseFormProperties>({
 			ContentHandlingStrategy: new FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>(undefined),
 			IntegrationResponseId: new FormControl<string | null | undefined>(undefined),
-			IntegrationResponseKey: new FormControl<string | null | undefined>(undefined),
+			IntegrationResponseKey: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TemplateSelectionExpression: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2208,7 +2208,7 @@ export namespace MyNS {
 			PassthroughBehavior: new FormControl<CreateIntegrationResultPassthroughBehavior | null | undefined>(undefined),
 			PayloadFormatVersion: new FormControl<string | null | undefined>(undefined),
 			TemplateSelectionExpression: new FormControl<string | null | undefined>(undefined),
-			TimeoutInMillis: new FormControl<number | null | undefined>(undefined),
+			TimeoutInMillis: new FormControl<number | null | undefined>(undefined, [Validators.min(50), Validators.max(30000)]),
 		});
 
 	}
@@ -2338,7 +2338,7 @@ export namespace MyNS {
 			ContentType: new FormControl<string | null | undefined>(undefined),
 			Description: new FormControl<string | null | undefined>(undefined),
 			ModelId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Schema: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2522,7 +2522,7 @@ export namespace MyNS {
 		return new FormGroup<RouteResponseFormProperties>({
 			ModelSelectionExpression: new FormControl<string | null | undefined>(undefined),
 			RouteResponseId: new FormControl<string | null | undefined>(undefined),
-			RouteResponseKey: new FormControl<string | null | undefined>(undefined),
+			RouteResponseKey: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2629,7 +2629,7 @@ export namespace MyNS {
 			ModelSelectionExpression: new FormControl<string | null | undefined>(undefined),
 			OperationName: new FormControl<string | null | undefined>(undefined),
 			RouteId: new FormControl<string | null | undefined>(undefined),
-			RouteKey: new FormControl<string | null | undefined>(undefined),
+			RouteKey: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RouteResponseSelectionExpression: new FormControl<string | null | undefined>(undefined),
 			Target: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2795,7 +2795,7 @@ export namespace MyNS {
 			Description: new FormControl<string | null | undefined>(undefined),
 			LastDeploymentStatusMessage: new FormControl<string | null | undefined>(undefined),
 			LastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
-			StageName: new FormControl<string | null | undefined>(undefined),
+			StageName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2958,8 +2958,8 @@ export namespace MyNS {
 	export function CreateVpcLinkFormGroup() {
 		return new FormGroup<VpcLinkFormProperties>({
 			CreatedDate: new FormControl<Date | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			VpcLinkId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			VpcLinkId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			VpcLinkStatus: new FormControl<CreateVpcLinkResponseVpcLinkStatus | null | undefined>(undefined),
 			VpcLinkStatusMessage: new FormControl<string | null | undefined>(undefined),
 			VpcLinkVersion: new FormControl<CreateVpcLinkResponseVpcLinkVersion | null | undefined>(undefined),
@@ -3307,7 +3307,7 @@ export namespace MyNS {
 		return new FormGroup<UpdateAuthorizerResponseFormProperties>({
 			AuthorizerCredentialsArn: new FormControl<string | null | undefined>(undefined),
 			AuthorizerId: new FormControl<string | null | undefined>(undefined),
-			AuthorizerResultTtlInSeconds: new FormControl<number | null | undefined>(undefined),
+			AuthorizerResultTtlInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(3600)]),
 			AuthorizerType: new FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>(undefined),
 			AuthorizerUri: new FormControl<string | null | undefined>(undefined),
 			IdentityValidationExpression: new FormControl<string | null | undefined>(undefined),
@@ -3509,7 +3509,7 @@ export namespace MyNS {
 			PassthroughBehavior: new FormControl<CreateIntegrationResultPassthroughBehavior | null | undefined>(undefined),
 			PayloadFormatVersion: new FormControl<string | null | undefined>(undefined),
 			TemplateSelectionExpression: new FormControl<string | null | undefined>(undefined),
-			TimeoutInMillis: new FormControl<number | null | undefined>(undefined),
+			TimeoutInMillis: new FormControl<number | null | undefined>(undefined, [Validators.min(50), Validators.max(30000)]),
 		});
 
 	}
@@ -3906,9 +3906,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateApiMappingRequestFormGroup() {
 		return new FormGroup<CreateApiMappingRequestFormProperties>({
-			ApiId: new FormControl<string | null | undefined>(undefined),
+			ApiId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ApiMappingKey: new FormControl<string | null | undefined>(undefined),
-			Stage: new FormControl<string | null | undefined>(undefined),
+			Stage: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4001,8 +4001,8 @@ export namespace MyNS {
 			CredentialsArn: new FormControl<string | null | undefined>(undefined),
 			Description: new FormControl<string | null | undefined>(undefined),
 			DisableSchemaValidation: new FormControl<boolean | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			ProtocolType: new FormControl<CreateApiResponseProtocolType | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ProtocolType: new FormControl<CreateApiResponseProtocolType | null | undefined>(undefined, [Validators.required]),
 			RouteKey: new FormControl<string | null | undefined>(undefined),
 			RouteSelectionExpression: new FormControl<string | null | undefined>(undefined),
 			Target: new FormControl<string | null | undefined>(undefined),
@@ -4087,11 +4087,11 @@ export namespace MyNS {
 	export function CreateCreateAuthorizerRequestFormGroup() {
 		return new FormGroup<CreateAuthorizerRequestFormProperties>({
 			AuthorizerCredentialsArn: new FormControl<string | null | undefined>(undefined),
-			AuthorizerResultTtlInSeconds: new FormControl<number | null | undefined>(undefined),
-			AuthorizerType: new FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>(undefined),
+			AuthorizerResultTtlInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(3600)]),
+			AuthorizerType: new FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>(undefined, [Validators.required]),
 			AuthorizerUri: new FormControl<string | null | undefined>(undefined),
 			IdentityValidationExpression: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4156,7 +4156,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateDomainNameRequestFormGroup() {
 		return new FormGroup<CreateDomainNameRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4301,12 +4301,12 @@ export namespace MyNS {
 			CredentialsArn: new FormControl<string | null | undefined>(undefined),
 			Description: new FormControl<string | null | undefined>(undefined),
 			IntegrationMethod: new FormControl<string | null | undefined>(undefined),
-			IntegrationType: new FormControl<CreateIntegrationResultIntegrationType | null | undefined>(undefined),
+			IntegrationType: new FormControl<CreateIntegrationResultIntegrationType | null | undefined>(undefined, [Validators.required]),
 			IntegrationUri: new FormControl<string | null | undefined>(undefined),
 			PassthroughBehavior: new FormControl<CreateIntegrationResultPassthroughBehavior | null | undefined>(undefined),
 			PayloadFormatVersion: new FormControl<string | null | undefined>(undefined),
 			TemplateSelectionExpression: new FormControl<string | null | undefined>(undefined),
-			TimeoutInMillis: new FormControl<number | null | undefined>(undefined),
+			TimeoutInMillis: new FormControl<number | null | undefined>(undefined, [Validators.min(50), Validators.max(30000)]),
 		});
 
 	}
@@ -4352,7 +4352,7 @@ export namespace MyNS {
 	export function CreateCreateIntegrationResponseRequestFormGroup() {
 		return new FormGroup<CreateIntegrationResponseRequestFormProperties>({
 			ContentHandlingStrategy: new FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>(undefined),
-			IntegrationResponseKey: new FormControl<string | null | undefined>(undefined),
+			IntegrationResponseKey: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TemplateSelectionExpression: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4406,8 +4406,8 @@ export namespace MyNS {
 		return new FormGroup<CreateModelRequestFormProperties>({
 			ContentType: new FormControl<string | null | undefined>(undefined),
 			Description: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Schema: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Schema: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4486,7 +4486,7 @@ export namespace MyNS {
 			AuthorizerId: new FormControl<string | null | undefined>(undefined),
 			ModelSelectionExpression: new FormControl<string | null | undefined>(undefined),
 			OperationName: new FormControl<string | null | undefined>(undefined),
-			RouteKey: new FormControl<string | null | undefined>(undefined),
+			RouteKey: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RouteResponseSelectionExpression: new FormControl<string | null | undefined>(undefined),
 			Target: new FormControl<string | null | undefined>(undefined),
 		});
@@ -4528,7 +4528,7 @@ export namespace MyNS {
 	export function CreateCreateRouteResponseRequestFormGroup() {
 		return new FormGroup<CreateRouteResponseRequestFormProperties>({
 			ModelSelectionExpression: new FormControl<string | null | undefined>(undefined),
-			RouteResponseKey: new FormControl<string | null | undefined>(undefined),
+			RouteResponseKey: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4594,7 +4594,7 @@ export namespace MyNS {
 			ClientCertificateId: new FormControl<string | null | undefined>(undefined),
 			DeploymentId: new FormControl<string | null | undefined>(undefined),
 			Description: new FormControl<string | null | undefined>(undefined),
-			StageName: new FormControl<string | null | undefined>(undefined),
+			StageName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4633,7 +4633,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateVpcLinkRequestFormGroup() {
 		return new FormGroup<CreateVpcLinkRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5089,27 +5089,35 @@ export namespace MyNS {
 	}
 
 	export interface ImportApiRequest {
+
+		/** Required */
 		Body: string;
 	}
 	export interface ImportApiRequestFormProperties {
+
+		/** Required */
 		Body: FormControl<string | null | undefined>,
 	}
 	export function CreateImportApiRequestFormGroup() {
 		return new FormGroup<ImportApiRequestFormProperties>({
-			Body: new FormControl<string | null | undefined>(undefined),
+			Body: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ReimportApiRequest {
+
+		/** Required */
 		Body: string;
 	}
 	export interface ReimportApiRequestFormProperties {
+
+		/** Required */
 		Body: FormControl<string | null | undefined>,
 	}
 	export function CreateReimportApiRequestFormGroup() {
 		return new FormGroup<ReimportApiRequestFormProperties>({
-			Body: new FormControl<string | null | undefined>(undefined),
+			Body: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5175,7 +5183,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateApiMappingRequestFormGroup() {
 		return new FormGroup<UpdateApiMappingRequestFormProperties>({
-			ApiId: new FormControl<string | null | undefined>(undefined),
+			ApiId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ApiMappingKey: new FormControl<string | null | undefined>(undefined),
 			Stage: new FormControl<string | null | undefined>(undefined),
 		});
@@ -5319,7 +5327,7 @@ export namespace MyNS {
 	export function CreateUpdateAuthorizerRequestFormGroup() {
 		return new FormGroup<UpdateAuthorizerRequestFormProperties>({
 			AuthorizerCredentialsArn: new FormControl<string | null | undefined>(undefined),
-			AuthorizerResultTtlInSeconds: new FormControl<number | null | undefined>(undefined),
+			AuthorizerResultTtlInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(3600)]),
 			AuthorizerType: new FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>(undefined),
 			AuthorizerUri: new FormControl<string | null | undefined>(undefined),
 			IdentityValidationExpression: new FormControl<string | null | undefined>(undefined),
@@ -5476,7 +5484,7 @@ export namespace MyNS {
 			PassthroughBehavior: new FormControl<CreateIntegrationResultPassthroughBehavior | null | undefined>(undefined),
 			PayloadFormatVersion: new FormControl<string | null | undefined>(undefined),
 			TemplateSelectionExpression: new FormControl<string | null | undefined>(undefined),
-			TimeoutInMillis: new FormControl<number | null | undefined>(undefined),
+			TimeoutInMillis: new FormControl<number | null | undefined>(undefined, [Validators.min(50), Validators.max(30000)]),
 		});
 
 	}
@@ -6620,8 +6628,8 @@ export namespace MyNS {
 			credentialsArn: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
 			disableSchemaValidation: new FormControl<boolean | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			protocolType: new FormControl<CreateApiResponseProtocolType | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			protocolType: new FormControl<CreateApiResponseProtocolType | null | undefined>(undefined, [Validators.required]),
 			routeKey: new FormControl<string | null | undefined>(undefined),
 			routeSelectionExpression: new FormControl<string | null | undefined>(undefined),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
@@ -6666,7 +6674,7 @@ export namespace MyNS {
 	export function CreateCreateApiPostBodyCorsConfigurationFormGroup() {
 		return new FormGroup<CreateApiPostBodyCorsConfigurationFormProperties>({
 			AllowCredentials: new FormControl<boolean | null | undefined>(undefined),
-			MaxAge: new FormControl<number | null | undefined>(undefined),
+			MaxAge: new FormControl<number | null | undefined>(undefined, [Validators.min(-1), Validators.max(86400)]),
 		});
 
 	}
@@ -6689,7 +6697,7 @@ export namespace MyNS {
 	}
 	export function CreateImportApiPutBodyFormGroup() {
 		return new FormGroup<ImportApiPutBodyFormProperties>({
-			body: new FormControl<string | null | undefined>(undefined),
+			body: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6730,9 +6738,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateApiMappingPostBodyFormGroup() {
 		return new FormGroup<CreateApiMappingPostBodyFormProperties>({
-			apiId: new FormControl<string | null | undefined>(undefined),
+			apiId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			apiMappingKey: new FormControl<string | null | undefined>(undefined),
-			stage: new FormControl<string | null | undefined>(undefined),
+			stage: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6809,11 +6817,11 @@ export namespace MyNS {
 	export function CreateCreateAuthorizerPostBodyFormGroup() {
 		return new FormGroup<CreateAuthorizerPostBodyFormProperties>({
 			authorizerCredentialsArn: new FormControl<string | null | undefined>(undefined),
-			authorizerResultTtlInSeconds: new FormControl<number | null | undefined>(undefined),
-			authorizerType: new FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>(undefined),
+			authorizerResultTtlInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(3600)]),
+			authorizerType: new FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>(undefined, [Validators.required]),
 			authorizerUri: new FormControl<string | null | undefined>(undefined),
 			identityValidationExpression: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6887,7 +6895,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateDomainNamePostBodyFormGroup() {
 		return new FormGroup<CreateDomainNamePostBodyFormProperties>({
-			domainName: new FormControl<string | null | undefined>(undefined),
+			domainName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -7006,14 +7014,14 @@ export namespace MyNS {
 			credentialsArn: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
 			integrationMethod: new FormControl<string | null | undefined>(undefined),
-			integrationType: new FormControl<CreateIntegrationResultIntegrationType | null | undefined>(undefined),
+			integrationType: new FormControl<CreateIntegrationResultIntegrationType | null | undefined>(undefined, [Validators.required]),
 			integrationUri: new FormControl<string | null | undefined>(undefined),
 			passthroughBehavior: new FormControl<CreateIntegrationResultPassthroughBehavior | null | undefined>(undefined),
 			payloadFormatVersion: new FormControl<string | null | undefined>(undefined),
 			requestParameters: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			requestTemplates: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			templateSelectionExpression: new FormControl<string | null | undefined>(undefined),
-			timeoutInMillis: new FormControl<number | null | undefined>(undefined),
+			timeoutInMillis: new FormControl<number | null | undefined>(undefined, [Validators.min(50), Validators.max(30000)]),
 		});
 
 	}
@@ -7078,7 +7086,7 @@ export namespace MyNS {
 	export function CreateCreateIntegrationResponsePostBodyFormGroup() {
 		return new FormGroup<CreateIntegrationResponsePostBodyFormProperties>({
 			contentHandlingStrategy: new FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>(undefined),
-			integrationResponseKey: new FormControl<string | null | undefined>(undefined),
+			integrationResponseKey: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			responseParameters: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			responseTemplates: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			templateSelectionExpression: new FormControl<string | null | undefined>(undefined),
@@ -7130,8 +7138,8 @@ export namespace MyNS {
 		return new FormGroup<CreateModelPostBodyFormProperties>({
 			contentType: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			schema: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			schema: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7218,7 +7226,7 @@ export namespace MyNS {
 			operationName: new FormControl<string | null | undefined>(undefined),
 			requestModels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			requestParameters: new FormControl<{[id: string]: ParameterConstraints } | null | undefined>(undefined),
-			routeKey: new FormControl<string | null | undefined>(undefined),
+			routeKey: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			routeResponseSelectionExpression: new FormControl<string | null | undefined>(undefined),
 			target: new FormControl<string | null | undefined>(undefined),
 		});
@@ -7264,7 +7272,7 @@ export namespace MyNS {
 			modelSelectionExpression: new FormControl<string | null | undefined>(undefined),
 			responseModels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			responseParameters: new FormControl<{[id: string]: ParameterConstraints } | null | undefined>(undefined),
-			routeResponseKey: new FormControl<string | null | undefined>(undefined),
+			routeResponseKey: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7340,7 +7348,7 @@ export namespace MyNS {
 			deploymentId: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
 			routeSettings: new FormControl<{[id: string]: RouteSettings } | null | undefined>(undefined),
-			stageName: new FormControl<string | null | undefined>(undefined),
+			stageName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			stageVariables: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
@@ -7433,7 +7441,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateVpcLinkPostBodyFormGroup() {
 		return new FormGroup<CreateVpcLinkPostBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -7457,7 +7465,7 @@ export namespace MyNS {
 	}
 	export function CreateReimportApiPutBodyFormGroup() {
 		return new FormGroup<ReimportApiPutBodyFormProperties>({
-			body: new FormControl<string | null | undefined>(undefined),
+			body: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -7573,7 +7581,7 @@ export namespace MyNS {
 	export function CreateUpdateApiPatchBodyCorsConfigurationFormGroup() {
 		return new FormGroup<UpdateApiPatchBodyCorsConfigurationFormProperties>({
 			AllowCredentials: new FormControl<boolean | null | undefined>(undefined),
-			MaxAge: new FormControl<number | null | undefined>(undefined),
+			MaxAge: new FormControl<number | null | undefined>(undefined, [Validators.min(-1), Validators.max(86400)]),
 		});
 
 	}
@@ -7608,7 +7616,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateApiMappingPatchBodyFormGroup() {
 		return new FormGroup<UpdateApiMappingPatchBodyFormProperties>({
-			apiId: new FormControl<string | null | undefined>(undefined),
+			apiId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			apiMappingKey: new FormControl<string | null | undefined>(undefined),
 			stage: new FormControl<string | null | undefined>(undefined),
 		});
@@ -7672,7 +7680,7 @@ export namespace MyNS {
 	export function CreateUpdateAuthorizerPatchBodyFormGroup() {
 		return new FormGroup<UpdateAuthorizerPatchBodyFormProperties>({
 			authorizerCredentialsArn: new FormControl<string | null | undefined>(undefined),
-			authorizerResultTtlInSeconds: new FormControl<number | null | undefined>(undefined),
+			authorizerResultTtlInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(3600)]),
 			authorizerType: new FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>(undefined),
 			authorizerUri: new FormControl<string | null | undefined>(undefined),
 			identityValidationExpression: new FormControl<string | null | undefined>(undefined),
@@ -7843,7 +7851,7 @@ export namespace MyNS {
 			requestParameters: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			requestTemplates: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			templateSelectionExpression: new FormControl<string | null | undefined>(undefined),
-			timeoutInMillis: new FormControl<number | null | undefined>(undefined),
+			timeoutInMillis: new FormControl<number | null | undefined>(undefined, [Validators.min(50), Validators.max(30000)]),
 		});
 
 	}

@@ -4,63 +4,85 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface DeletableItem {
+
+		/** Required */
 		Name: string;
 		Attributes?: Array<DeletableAttribute>;
 	}
 	export interface DeletableItemFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeletableItemFormGroup() {
 		return new FormGroup<DeletableItemFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeletableAttribute {
+
+		/** Required */
 		Name: string;
 		Value?: string | null;
 	}
 	export interface DeletableAttributeFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateDeletableAttributeFormGroup() {
 		return new FormGroup<DeletableAttributeFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Value: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ReplaceableItem {
+
+		/** Required */
 		Name: string;
+
+		/** Required */
 		Attributes: Array<ReplaceableAttribute>;
 	}
 	export interface ReplaceableItemFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateReplaceableItemFormGroup() {
 		return new FormGroup<ReplaceableItemFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ReplaceableAttribute {
+
+		/** Required */
 		Name: string;
+
+		/** Required */
 		Value: string;
 		Replace?: boolean | null;
 	}
 	export interface ReplaceableAttributeFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Value: FormControl<string | null | undefined>,
 		Replace: FormControl<boolean | null | undefined>,
 	}
 	export function CreateReplaceableAttributeFormGroup() {
 		return new FormGroup<ReplaceableAttributeFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Replace: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -296,22 +318,30 @@ export namespace MyNS {
 	}
 
 	export interface Attribute {
+
+		/** Required */
 		Name: string;
 		AlternateNameEncoding?: string | null;
+
+		/** Required */
 		Value: string;
 		AlternateValueEncoding?: string | null;
 	}
 	export interface AttributeFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 		AlternateNameEncoding: FormControl<string | null | undefined>,
+
+		/** Required */
 		Value: FormControl<string | null | undefined>,
 		AlternateValueEncoding: FormControl<string | null | undefined>,
 	}
 	export function CreateAttributeFormGroup() {
 		return new FormGroup<AttributeFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			AlternateNameEncoding: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			AlternateValueEncoding: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -363,17 +393,23 @@ export namespace MyNS {
 	}
 
 	export interface Item {
+
+		/** Required */
 		Name: string;
 		AlternateNameEncoding?: string | null;
+
+		/** Required */
 		Attributes: Array<Attribute>;
 	}
 	export interface ItemFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 		AlternateNameEncoding: FormControl<string | null | undefined>,
 	}
 	export function CreateItemFormGroup() {
 		return new FormGroup<ItemFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			AlternateNameEncoding: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -465,42 +501,58 @@ export namespace MyNS {
 	}
 
 	export interface BatchDeleteAttributesRequest {
+
+		/** Required */
 		DomainName: string;
+
+		/** Required */
 		Items: Array<DeletableItem>;
 	}
 	export interface BatchDeleteAttributesRequestFormProperties {
+
+		/** Required */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchDeleteAttributesRequestFormGroup() {
 		return new FormGroup<BatchDeleteAttributesRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface BatchPutAttributesRequest {
+
+		/** Required */
 		DomainName: string;
+
+		/** Required */
 		Items: Array<ReplaceableItem>;
 	}
 	export interface BatchPutAttributesRequestFormProperties {
+
+		/** Required */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchPutAttributesRequestFormGroup() {
 		return new FormGroup<BatchPutAttributesRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface CreateDomainRequest {
+
+		/** Required */
 		DomainName: string;
 	}
 	export interface CreateDomainRequestFormProperties {
+
+		/** Required */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDomainRequestFormGroup() {
 		return new FormGroup<CreateDomainRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -529,7 +581,11 @@ export namespace MyNS {
 	}
 
 	export interface DeleteAttributesRequest {
+
+		/** Required */
 		DomainName: string;
+
+		/** Required */
 		ItemName: string;
 		Attributes?: Array<DeletableAttribute>;
 
@@ -537,58 +593,78 @@ export namespace MyNS {
 		Expected?: UpdateCondition;
 	}
 	export interface DeleteAttributesRequestFormProperties {
+
+		/** Required */
 		DomainName: FormControl<string | null | undefined>,
+
+		/** Required */
 		ItemName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteAttributesRequestFormGroup() {
 		return new FormGroup<DeleteAttributesRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
-			ItemName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ItemName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeleteDomainRequest {
+
+		/** Required */
 		DomainName: string;
 	}
 	export interface DeleteDomainRequestFormProperties {
+
+		/** Required */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDomainRequestFormGroup() {
 		return new FormGroup<DeleteDomainRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DomainMetadataRequest {
+
+		/** Required */
 		DomainName: string;
 	}
 	export interface DomainMetadataRequestFormProperties {
+
+		/** Required */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateDomainMetadataRequestFormGroup() {
 		return new FormGroup<DomainMetadataRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface GetAttributesRequest {
+
+		/** Required */
 		DomainName: string;
+
+		/** Required */
 		ItemName: string;
 		AttributeNames?: Array<string>;
 		ConsistentRead?: boolean | null;
 	}
 	export interface GetAttributesRequestFormProperties {
+
+		/** Required */
 		DomainName: FormControl<string | null | undefined>,
+
+		/** Required */
 		ItemName: FormControl<string | null | undefined>,
 		ConsistentRead: FormControl<boolean | null | undefined>,
 	}
 	export function CreateGetAttributesRequestFormGroup() {
 		return new FormGroup<GetAttributesRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
-			ItemName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ItemName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ConsistentRead: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -611,38 +687,52 @@ export namespace MyNS {
 	}
 
 	export interface PutAttributesRequest {
+
+		/** Required */
 		DomainName: string;
+
+		/** Required */
 		ItemName: string;
+
+		/** Required */
 		Attributes: Array<ReplaceableAttribute>;
 
 		/** Specifies the conditions under which data should be updated. If an update condition is specified for a request, the data will only be updated if the condition is satisfied. For example, if an attribute with a specific name and value exists, or if a specific attribute doesn't exist. */
 		Expected?: UpdateCondition;
 	}
 	export interface PutAttributesRequestFormProperties {
+
+		/** Required */
 		DomainName: FormControl<string | null | undefined>,
+
+		/** Required */
 		ItemName: FormControl<string | null | undefined>,
 	}
 	export function CreatePutAttributesRequestFormGroup() {
 		return new FormGroup<PutAttributesRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
-			ItemName: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ItemName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface SelectRequest {
+
+		/** Required */
 		SelectExpression: string;
 		NextToken?: string | null;
 		ConsistentRead?: boolean | null;
 	}
 	export interface SelectRequestFormProperties {
+
+		/** Required */
 		SelectExpression: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 		ConsistentRead: FormControl<boolean | null | undefined>,
 	}
 	export function CreateSelectRequestFormGroup() {
 		return new FormGroup<SelectRequestFormProperties>({
-			SelectExpression: new FormControl<string | null | undefined>(undefined),
+			SelectExpression: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			ConsistentRead: new FormControl<boolean | null | undefined>(undefined),
 		});

@@ -4,14 +4,28 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AssociateAdminAccountRequest {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^[0-9]+$
+		 */
 		AdminAccount: string;
 	}
 	export interface AssociateAdminAccountRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^[0-9]+$
+		 */
 		AdminAccount: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateAdminAccountRequestFormGroup() {
 		return new FormGroup<AssociateAdminAccountRequestFormProperties>({
-			AdminAccount: new FormControl<string | null | undefined>(undefined),
+			AdminAccount: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -67,16 +81,30 @@ export namespace MyNS {
 	}
 
 	export interface DeletePolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[a-z0-9A-Z-]{36}$
+		 */
 		PolicyId: string;
 		DeleteAllPolicyResources?: boolean | null;
 	}
 	export interface DeletePolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[a-z0-9A-Z-]{36}$
+		 */
 		PolicyId: FormControl<string | null | undefined>,
 		DeleteAllPolicyResources: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDeletePolicyRequestFormGroup() {
 		return new FormGroup<DeletePolicyRequestFormProperties>({
-			PolicyId: new FormControl<string | null | undefined>(undefined),
+			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
 			DeleteAllPolicyResources: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -93,16 +121,28 @@ export namespace MyNS {
 	}
 
 	export interface GetAdminAccountResponse {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^[0-9]+$
+		 */
 		AdminAccount?: string | null;
 		RoleStatus?: GetAdminAccountResponseRoleStatus | null;
 	}
 	export interface GetAdminAccountResponseFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^[0-9]+$
+		 */
 		AdminAccount: FormControl<string | null | undefined>,
 		RoleStatus: FormControl<GetAdminAccountResponseRoleStatus | null | undefined>,
 	}
 	export function CreateGetAdminAccountResponseFormGroup() {
 		return new FormGroup<GetAdminAccountResponseFormProperties>({
-			AdminAccount: new FormControl<string | null | undefined>(undefined),
+			AdminAccount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			RoleStatus: new FormControl<GetAdminAccountResponseRoleStatus | null | undefined>(undefined),
 		});
 
@@ -136,8 +176,26 @@ export namespace MyNS {
 
 	/** Describes the noncompliant resources in a member account for a specific AWS Firewall Manager policy. A maximum of 100 entries are displayed. If more than 100 resources are noncompliant, <code>EvaluationLimitExceeded</code> is set to <code>True</code>. */
 	export interface PolicyComplianceDetail {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^[0-9]+$
+		 */
 		PolicyOwner?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[a-z0-9A-Z-]{36}$
+		 */
 		PolicyId?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^[0-9]+$
+		 */
 		MemberAccount?: string | null;
 		Violators?: Array<ComplianceViolator>;
 		EvaluationLimitExceeded?: boolean | null;
@@ -147,17 +205,35 @@ export namespace MyNS {
 
 	/** Describes the noncompliant resources in a member account for a specific AWS Firewall Manager policy. A maximum of 100 entries are displayed. If more than 100 resources are noncompliant, <code>EvaluationLimitExceeded</code> is set to <code>True</code>. */
 	export interface PolicyComplianceDetailFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^[0-9]+$
+		 */
 		PolicyOwner: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[a-z0-9A-Z-]{36}$
+		 */
 		PolicyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^[0-9]+$
+		 */
 		MemberAccount: FormControl<string | null | undefined>,
 		EvaluationLimitExceeded: FormControl<boolean | null | undefined>,
 		ExpiredAt: FormControl<Date | null | undefined>,
 	}
 	export function CreatePolicyComplianceDetailFormGroup() {
 		return new FormGroup<PolicyComplianceDetailFormProperties>({
-			PolicyOwner: new FormControl<string | null | undefined>(undefined),
-			PolicyId: new FormControl<string | null | undefined>(undefined),
-			MemberAccount: new FormControl<string | null | undefined>(undefined),
+			PolicyOwner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
+			MemberAccount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			EvaluationLimitExceeded: new FormControl<boolean | null | undefined>(undefined),
 			ExpiredAt: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -167,22 +243,46 @@ export namespace MyNS {
 
 	/** Details of the resource that is not protected by the policy. */
 	export interface ComplianceViolator {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		ResourceId?: string | null;
 		ViolationReason?: ComplianceViolatorViolationReason | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		ResourceType?: string | null;
 	}
 
 	/** Details of the resource that is not protected by the policy. */
 	export interface ComplianceViolatorFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		ResourceId: FormControl<string | null | undefined>,
 		ViolationReason: FormControl<ComplianceViolatorViolationReason | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		ResourceType: FormControl<string | null | undefined>,
 	}
 	export function CreateComplianceViolatorFormGroup() {
 		return new FormGroup<ComplianceViolatorFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			ViolationReason: new FormControl<ComplianceViolatorViolationReason | null | undefined>(undefined),
-			ResourceType: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -200,33 +300,85 @@ export namespace MyNS {
 	}
 
 	export interface GetComplianceDetailRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[a-z0-9A-Z-]{36}$
+		 */
 		PolicyId: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^[0-9]+$
+		 */
 		MemberAccount: string;
 	}
 	export interface GetComplianceDetailRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[a-z0-9A-Z-]{36}$
+		 */
 		PolicyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^[0-9]+$
+		 */
 		MemberAccount: FormControl<string | null | undefined>,
 	}
 	export function CreateGetComplianceDetailRequestFormGroup() {
 		return new FormGroup<GetComplianceDetailRequestFormProperties>({
-			PolicyId: new FormControl<string | null | undefined>(undefined),
-			MemberAccount: new FormControl<string | null | undefined>(undefined),
+			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			MemberAccount: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetNotificationChannelResponse {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		SnsTopicArn?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		SnsRoleName?: string | null;
 	}
 	export interface GetNotificationChannelResponseFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		SnsTopicArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		SnsRoleName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetNotificationChannelResponseFormGroup() {
 		return new FormGroup<GetNotificationChannelResponseFormProperties>({
-			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
-			SnsRoleName: new FormControl<string | null | undefined>(undefined),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			SnsRoleName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -245,14 +397,26 @@ export namespace MyNS {
 
 		/** An AWS Firewall Manager policy. */
 		Policy?: Policy;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PolicyArn?: string | null;
 	}
 	export interface GetPolicyResponseFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PolicyArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetPolicyResponseFormGroup() {
 		return new FormGroup<GetPolicyResponseFormProperties>({
-			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -260,8 +424,27 @@ export namespace MyNS {
 
 	/** An AWS Firewall Manager policy. */
 	export interface Policy {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[a-z0-9A-Z-]{36}$
+		 */
 		PolicyId?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PolicyName: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PolicyUpdateToken?: string | null;
 
 		/**
@@ -269,10 +452,26 @@ export namespace MyNS {
 		 * Required
 		 */
 		SecurityServicePolicyData: SecurityServicePolicyData;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		ResourceType: string;
 		ResourceTypeList?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 8
+		 */
 		ResourceTags?: Array<ResourceTag>;
+
+		/** Required */
 		ExcludeResourceTags: boolean;
+
+		/** Required */
 		RemediationEnabled: boolean;
 		IncludeMap?: CustomerPolicyScopeMap;
 		ExcludeMap?: CustomerPolicyScopeMap;
@@ -280,21 +479,51 @@ export namespace MyNS {
 
 	/** An AWS Firewall Manager policy. */
 	export interface PolicyFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[a-z0-9A-Z-]{36}$
+		 */
 		PolicyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PolicyName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PolicyUpdateToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		ResourceType: FormControl<string | null | undefined>,
+
+		/** Required */
 		ExcludeResourceTags: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		RemediationEnabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreatePolicyFormGroup() {
 		return new FormGroup<PolicyFormProperties>({
-			PolicyId: new FormControl<string | null | undefined>(undefined),
-			PolicyName: new FormControl<string | null | undefined>(undefined),
-			PolicyUpdateToken: new FormControl<string | null | undefined>(undefined),
-			ResourceType: new FormControl<string | null | undefined>(undefined),
-			ExcludeResourceTags: new FormControl<boolean | null | undefined>(undefined),
-			RemediationEnabled: new FormControl<boolean | null | undefined>(undefined),
+			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			PolicyUpdateToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ExcludeResourceTags: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			RemediationEnabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -302,19 +531,35 @@ export namespace MyNS {
 
 	/** Details about the security service that is being used to protect the resources. */
 	export interface SecurityServicePolicyData {
+
+		/** Required */
 		Type: SecurityServicePolicyDataType;
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: .*
+		 */
 		ManagedServiceData?: string | null;
 	}
 
 	/** Details about the security service that is being used to protect the resources. */
 	export interface SecurityServicePolicyDataFormProperties {
+
+		/** Required */
 		Type: FormControl<SecurityServicePolicyDataType | null | undefined>,
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: .*
+		 */
 		ManagedServiceData: FormControl<string | null | undefined>,
 	}
 	export function CreateSecurityServicePolicyDataFormGroup() {
 		return new FormGroup<SecurityServicePolicyDataFormProperties>({
-			Type: new FormControl<SecurityServicePolicyDataType | null | undefined>(undefined),
-			ManagedServiceData: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<SecurityServicePolicyDataType | null | undefined>(undefined, [Validators.required]),
+			ManagedServiceData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
 		});
 
 	}
@@ -324,19 +569,43 @@ export namespace MyNS {
 
 	/** The resource tags that AWS Firewall Manager uses to determine if a particular resource should be included or excluded from the AWS Firewall Manager policy. Tags enable you to categorize your AWS resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value. Firewall Manager combines the tags with "AND" so that, if you add more than one tag to a policy scope, a resource must have all the specified tags to be included or excluded. For more information, see <a href="https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html">Working with Tag Editor</a>. */
 	export interface ResourceTag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Key: string;
+
+		/**
+		 * Max length: 256
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Value?: string | null;
 	}
 
 	/** The resource tags that AWS Firewall Manager uses to determine if a particular resource should be included or excluded from the AWS Firewall Manager policy. Tags enable you to categorize your AWS resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value. Firewall Manager combines the tags with "AND" so that, if you add more than one tag to a policy scope, a resource must have all the specified tags to be included or excluded. For more information, see <a href="https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html">Working with Tag Editor</a>. */
 	export interface ResourceTagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateResourceTagFormGroup() {
 		return new FormGroup<ResourceTagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -352,14 +621,28 @@ export namespace MyNS {
 	}
 
 	export interface GetPolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[a-z0-9A-Z-]{36}$
+		 */
 		PolicyId: string;
 	}
 	export interface GetPolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[a-z0-9A-Z-]{36}$
+		 */
 		PolicyId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetPolicyRequestFormGroup() {
 		return new FormGroup<GetPolicyRequestFormProperties>({
-			PolicyId: new FormControl<string | null | undefined>(undefined),
+			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
@@ -375,65 +658,149 @@ export namespace MyNS {
 	}
 
 	export interface GetProtectionStatusResponse {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^[0-9]+$
+		 */
 		AdminAccountId?: string | null;
 		ServiceType?: SecurityServicePolicyDataType | null;
 		Data?: string | null;
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		NextToken?: string | null;
 	}
 	export interface GetProtectionStatusResponseFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^[0-9]+$
+		 */
 		AdminAccountId: FormControl<string | null | undefined>,
 		ServiceType: FormControl<SecurityServicePolicyDataType | null | undefined>,
 		Data: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetProtectionStatusResponseFormGroup() {
 		return new FormGroup<GetProtectionStatusResponseFormProperties>({
-			AdminAccountId: new FormControl<string | null | undefined>(undefined),
+			AdminAccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			ServiceType: new FormControl<SecurityServicePolicyDataType | null | undefined>(undefined),
 			Data: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetProtectionStatusRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[a-z0-9A-Z-]{36}$
+		 */
 		PolicyId: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^[0-9]+$
+		 */
 		MemberAccountId?: string | null;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface GetProtectionStatusRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[a-z0-9A-Z-]{36}$
+		 */
 		PolicyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^[0-9]+$
+		 */
 		MemberAccountId: FormControl<string | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
 		EndTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateGetProtectionStatusRequestFormGroup() {
 		return new FormGroup<GetProtectionStatusRequestFormProperties>({
-			PolicyId: new FormControl<string | null | undefined>(undefined),
-			MemberAccountId: new FormControl<string | null | undefined>(undefined),
+			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			MemberAccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListComplianceStatusResponse {
 		PolicyComplianceStatusList?: Array<PolicyComplianceStatus>;
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListComplianceStatusResponseFormProperties {
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListComplianceStatusResponseFormGroup() {
 		return new FormGroup<ListComplianceStatusResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
 		});
 
 	}
@@ -441,9 +808,33 @@ export namespace MyNS {
 
 	/** Indicates whether the account is compliant with the specified policy. An account is considered noncompliant if it includes resources that are not protected by the policy, for AWS WAF and Shield Advanced policies, or that are noncompliant with the policy, for security group policies. */
 	export interface PolicyComplianceStatus {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^[0-9]+$
+		 */
 		PolicyOwner?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[a-z0-9A-Z-]{36}$
+		 */
 		PolicyId?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PolicyName?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^[0-9]+$
+		 */
 		MemberAccount?: string | null;
 		EvaluationResults?: Array<EvaluationResult>;
 		LastUpdated?: Date | null;
@@ -452,18 +843,42 @@ export namespace MyNS {
 
 	/** Indicates whether the account is compliant with the specified policy. An account is considered noncompliant if it includes resources that are not protected by the policy, for AWS WAF and Shield Advanced policies, or that are noncompliant with the policy, for security group policies. */
 	export interface PolicyComplianceStatusFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^[0-9]+$
+		 */
 		PolicyOwner: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[a-z0-9A-Z-]{36}$
+		 */
 		PolicyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PolicyName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^[0-9]+$
+		 */
 		MemberAccount: FormControl<string | null | undefined>,
 		LastUpdated: FormControl<Date | null | undefined>,
 	}
 	export function CreatePolicyComplianceStatusFormGroup() {
 		return new FormGroup<PolicyComplianceStatusFormProperties>({
-			PolicyOwner: new FormControl<string | null | undefined>(undefined),
-			PolicyId: new FormControl<string | null | undefined>(undefined),
-			PolicyName: new FormControl<string | null | undefined>(undefined),
-			MemberAccount: new FormControl<string | null | undefined>(undefined),
+			PolicyOwner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			MemberAccount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			LastUpdated: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -473,6 +888,8 @@ export namespace MyNS {
 	/** Describes the compliance status for the account. An account is considered noncompliant if it includes resources that are not protected by the specified policy or that don't comply with the policy. */
 	export interface EvaluationResult {
 		ComplianceStatus?: EvaluationResultComplianceStatus | null;
+
+		/** Minimum: 0 */
 		ViolatorCount?: number | null;
 		EvaluationLimitExceeded?: boolean | null;
 	}
@@ -480,13 +897,15 @@ export namespace MyNS {
 	/** Describes the compliance status for the account. An account is considered noncompliant if it includes resources that are not protected by the specified policy or that don't comply with the policy. */
 	export interface EvaluationResultFormProperties {
 		ComplianceStatus: FormControl<EvaluationResultComplianceStatus | null | undefined>,
+
+		/** Minimum: 0 */
 		ViolatorCount: FormControl<number | null | undefined>,
 		EvaluationLimitExceeded: FormControl<boolean | null | undefined>,
 	}
 	export function CreateEvaluationResultFormGroup() {
 		return new FormGroup<EvaluationResultFormProperties>({
 			ComplianceStatus: new FormControl<EvaluationResultComplianceStatus | null | undefined>(undefined),
-			ViolatorCount: new FormControl<number | null | undefined>(undefined),
+			ViolatorCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			EvaluationLimitExceeded: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -495,64 +914,146 @@ export namespace MyNS {
 	export enum EvaluationResultComplianceStatus { COMPLIANT = 0, NON_COMPLIANT = 1 }
 
 	export interface ListComplianceStatusRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[a-z0-9A-Z-]{36}$
+		 */
 		PolicyId: string;
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListComplianceStatusRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[a-z0-9A-Z-]{36}$
+		 */
 		PolicyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListComplianceStatusRequestFormGroup() {
 		return new FormGroup<ListComplianceStatusRequestFormProperties>({
-			PolicyId: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListMemberAccountsResponse {
 		MemberAccounts?: Array<string>;
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListMemberAccountsResponseFormProperties {
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListMemberAccountsResponseFormGroup() {
 		return new FormGroup<ListMemberAccountsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListMemberAccountsRequest {
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListMemberAccountsRequestFormProperties {
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListMemberAccountsRequestFormGroup() {
 		return new FormGroup<ListMemberAccountsRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListPoliciesResponse {
 		PolicyList?: Array<PolicySummary>;
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListPoliciesResponseFormProperties {
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListPoliciesResponseFormGroup() {
 		return new FormGroup<ListPoliciesResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
 		});
 
 	}
@@ -560,9 +1061,33 @@ export namespace MyNS {
 
 	/** Details of the AWS Firewall Manager policy.  */
 	export interface PolicySummary {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PolicyArn?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[a-z0-9A-Z-]{36}$
+		 */
 		PolicyId?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PolicyName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		ResourceType?: string | null;
 		SecurityServiceType?: SecurityServicePolicyDataType | null;
 		RemediationEnabled?: boolean | null;
@@ -570,19 +1095,43 @@ export namespace MyNS {
 
 	/** Details of the AWS Firewall Manager policy.  */
 	export interface PolicySummaryFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PolicyArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[a-z0-9A-Z-]{36}$
+		 */
 		PolicyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PolicyName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		ResourceType: FormControl<string | null | undefined>,
 		SecurityServiceType: FormControl<SecurityServicePolicyDataType | null | undefined>,
 		RemediationEnabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreatePolicySummaryFormGroup() {
 		return new FormGroup<PolicySummaryFormProperties>({
-			PolicyArn: new FormControl<string | null | undefined>(undefined),
-			PolicyId: new FormControl<string | null | undefined>(undefined),
-			PolicyName: new FormControl<string | null | undefined>(undefined),
-			ResourceType: new FormControl<string | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			SecurityServiceType: new FormControl<SecurityServicePolicyDataType | null | undefined>(undefined),
 			RemediationEnabled: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -590,17 +1139,39 @@ export namespace MyNS {
 	}
 
 	export interface ListPoliciesRequest {
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListPoliciesRequestFormProperties {
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListPoliciesRequestFormGroup() {
 		return new FormGroup<ListPoliciesRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -616,6 +1187,11 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceResponse {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		TagList?: Array<Tag>;
 	}
 	export interface ListTagsForResourceResponseFormProperties {
@@ -629,48 +1205,118 @@ export namespace MyNS {
 
 	/** A collection of key:value pairs associated with an AWS resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each AWS resource.  */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Value: string;
 	}
 
 	/** A collection of key:value pairs associated with an AWS resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each AWS resource.  */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface ListTagsForResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		ResourceArn: string;
 	}
 	export interface ListTagsForResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface PutNotificationChannelRequest {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		SnsTopicArn: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		SnsRoleName: string;
 	}
 	export interface PutNotificationChannelRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		SnsTopicArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		SnsRoleName: FormControl<string | null | undefined>,
 	}
 	export function CreatePutNotificationChannelRequestFormGroup() {
 		return new FormGroup<PutNotificationChannelRequestFormProperties>({
-			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
-			SnsRoleName: new FormControl<string | null | undefined>(undefined),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			SnsRoleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -679,14 +1325,26 @@ export namespace MyNS {
 
 		/** An AWS Firewall Manager policy. */
 		Policy?: Policy;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PolicyArn?: string | null;
 	}
 	export interface PutPolicyResponseFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PolicyArn: FormControl<string | null | undefined>,
 	}
 	export function CreatePutPolicyResponseFormGroup() {
 		return new FormGroup<PutPolicyResponseFormProperties>({
-			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -698,6 +1356,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		Policy: Policy;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		TagList?: Array<Tag>;
 	}
 	export interface PutPolicyRequestFormProperties {
@@ -719,15 +1382,35 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		ResourceArn: string;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		TagList: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -743,15 +1426,35 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		ResourceArn: string;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		TagKeys: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}

@@ -1207,22 +1207,30 @@ export namespace MyNS {
 
 	/** Specifies an S3 bucket to export data classification results to, and the encryption settings to use when storing results in that bucket. */
 	export interface S3Destination {
+
+		/** Required */
 		bucketName: string;
 		keyPrefix?: string | null;
+
+		/** Required */
 		kmsKeyArn: string;
 	}
 
 	/** Specifies an S3 bucket to export data classification results to, and the encryption settings to use when storing results in that bucket. */
 	export interface S3DestinationFormProperties {
+
+		/** Required */
 		bucketName: FormControl<string | null | undefined>,
 		keyPrefix: FormControl<string | null | undefined>,
+
+		/** Required */
 		kmsKeyArn: FormControl<string | null | undefined>,
 	}
 	export function CreateS3DestinationFormGroup() {
 		return new FormGroup<S3DestinationFormProperties>({
-			bucketName: new FormControl<string | null | undefined>(undefined),
+			bucketName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			keyPrefix: new FormControl<string | null | undefined>(undefined),
-			kmsKeyArn: new FormControl<string | null | undefined>(undefined),
+			kmsKeyArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2988,17 +2996,25 @@ export namespace MyNS {
 	}
 
 	export interface AcceptInvitationRequest {
+
+		/** Required */
 		invitationId: string;
+
+		/** Required */
 		masterAccount: string;
 	}
 	export interface AcceptInvitationRequestFormProperties {
+
+		/** Required */
 		invitationId: FormControl<string | null | undefined>,
+
+		/** Required */
 		masterAccount: FormControl<string | null | undefined>,
 	}
 	export function CreateAcceptInvitationRequestFormGroup() {
 		return new FormGroup<AcceptInvitationRequestFormProperties>({
-			invitationId: new FormControl<string | null | undefined>(undefined),
-			masterAccount: new FormControl<string | null | undefined>(undefined),
+			invitationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			masterAccount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3006,19 +3022,27 @@ export namespace MyNS {
 
 	/** Specifies details for an account to associate with an Amazon Macie master account. */
 	export interface AccountDetail {
+
+		/** Required */
 		accountId: string;
+
+		/** Required */
 		email: string;
 	}
 
 	/** Specifies details for an account to associate with an Amazon Macie master account. */
 	export interface AccountDetailFormProperties {
+
+		/** Required */
 		accountId: FormControl<string | null | undefined>,
+
+		/** Required */
 		email: FormControl<string | null | undefined>,
 	}
 	export function CreateAccountDetailFormGroup() {
 		return new FormGroup<AccountDetailFormProperties>({
-			accountId: new FormControl<string | null | undefined>(undefined),
-			email: new FormControl<string | null | undefined>(undefined),
+			accountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			email: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3028,6 +3052,8 @@ export namespace MyNS {
 	export enum AdminStatus { ENABLED = 0, DISABLING_IN_PROGRESS = 1 }
 
 	export interface ArchiveFindingsRequest {
+
+		/** Required */
 		findingIds: Array<string>;
 	}
 	export interface ArchiveFindingsRequestFormProperties {
@@ -3092,6 +3118,8 @@ export namespace MyNS {
 	export enum JobType { ONE_TIME = 0, SCHEDULED = 1 }
 
 	export interface CreateClassificationJobRequest {
+
+		/** Required */
 		clientToken: string;
 		customDataIdentifierIds?: Array<string>;
 		description?: string | null;
@@ -3102,6 +3130,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		jobType: DescribeClassificationJobResponseJobType;
+
+		/** Required */
 		name: string;
 
 		/**
@@ -3118,6 +3148,8 @@ export namespace MyNS {
 		tags?: TagMap;
 	}
 	export interface CreateClassificationJobRequestFormProperties {
+
+		/** Required */
 		clientToken: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		initialRun: FormControl<boolean | null | undefined>,
@@ -3127,16 +3159,18 @@ export namespace MyNS {
 		 * Required
 		 */
 		jobType: FormControl<DescribeClassificationJobResponseJobType | null | undefined>,
+
+		/** Required */
 		name: FormControl<string | null | undefined>,
 		samplingPercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateClassificationJobRequestFormGroup() {
 		return new FormGroup<CreateClassificationJobRequestFormProperties>({
-			clientToken: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			description: new FormControl<string | null | undefined>(undefined),
 			initialRun: new FormControl<boolean | null | undefined>(undefined),
-			jobType: new FormControl<DescribeClassificationJobResponseJobType | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			jobType: new FormControl<DescribeClassificationJobResponseJobType | null | undefined>(undefined, [Validators.required]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			samplingPercentage: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -3191,6 +3225,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		findingCriteria: FindingCriteria;
+
+		/** Required */
 		name: string;
 		position?: number | null;
 
@@ -3206,21 +3242,25 @@ export namespace MyNS {
 		action: FormControl<GetFindingsFilterResponseAction | null | undefined>,
 		clientToken: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Required */
 		name: FormControl<string | null | undefined>,
 		position: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateFindingsFilterRequestFormGroup() {
 		return new FormGroup<CreateFindingsFilterRequestFormProperties>({
-			action: new FormControl<GetFindingsFilterResponseAction | null | undefined>(undefined),
+			action: new FormControl<GetFindingsFilterResponseAction | null | undefined>(undefined, [Validators.required]),
 			clientToken: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			position: new FormControl<number | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CreateInvitationsRequest {
+
+		/** Required */
 		accountIds: Array<string>;
 		disableEmailNotification?: boolean | null;
 		message?: string | null;
@@ -3302,6 +3342,8 @@ export namespace MyNS {
 	export enum DayOfWeek { SUNDAY = 0, MONDAY = 1, TUESDAY = 2, WEDNESDAY = 3, THURSDAY = 4, FRIDAY = 5, SATURDAY = 6 }
 
 	export interface DeclineInvitationsRequest {
+
+		/** Required */
 		accountIds: Array<string>;
 	}
 	export interface DeclineInvitationsRequestFormProperties {
@@ -3333,6 +3375,8 @@ export namespace MyNS {
 	}
 
 	export interface DeleteInvitationsRequest {
+
+		/** Required */
 		accountIds: Array<string>;
 	}
 	export interface DeleteInvitationsRequestFormProperties {
@@ -3475,16 +3519,20 @@ export namespace MyNS {
 	}
 
 	export interface EnableOrganizationAdminAccountRequest {
+
+		/** Required */
 		adminAccountId: string;
 		clientToken?: string | null;
 	}
 	export interface EnableOrganizationAdminAccountRequestFormProperties {
+
+		/** Required */
 		adminAccountId: FormControl<string | null | undefined>,
 		clientToken: FormControl<string | null | undefined>,
 	}
 	export function CreateEnableOrganizationAdminAccountRequestFormGroup() {
 		return new FormGroup<EnableOrganizationAdminAccountRequestFormProperties>({
-			adminAccountId: new FormControl<string | null | undefined>(undefined),
+			adminAccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3563,6 +3611,8 @@ export namespace MyNS {
 
 		/** Specifies, as a map, one or more property-based conditions that filter the results of a query for findings. */
 		findingCriteria?: FindingCriteria;
+
+		/** Required */
 		groupBy: GetFindingStatisticsRequestGroupBy;
 		size?: number | null;
 
@@ -3570,12 +3620,14 @@ export namespace MyNS {
 		sortCriteria?: FindingStatisticsSortCriteria;
 	}
 	export interface GetFindingStatisticsRequestFormProperties {
+
+		/** Required */
 		groupBy: FormControl<GetFindingStatisticsRequestGroupBy | null | undefined>,
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateGetFindingStatisticsRequestFormGroup() {
 		return new FormGroup<GetFindingStatisticsRequestFormProperties>({
-			groupBy: new FormControl<GetFindingStatisticsRequestGroupBy | null | undefined>(undefined),
+			groupBy: new FormControl<GetFindingStatisticsRequestGroupBy | null | undefined>(undefined, [Validators.required]),
 			size: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -3614,6 +3666,8 @@ export namespace MyNS {
 	}
 
 	export interface GetFindingsRequest {
+
+		/** Required */
 		findingIds: Array<string>;
 
 		/** Specifies criteria for sorting the results of a request for information about findings. */
@@ -3933,24 +3987,34 @@ export namespace MyNS {
 		ignoreWords?: Array<string>;
 		keywords?: Array<string>;
 		maximumMatchDistance?: number | null;
+
+		/** Required */
 		regex: string;
+
+		/** Required */
 		sampleText: string;
 	}
 	export interface TestCustomDataIdentifierRequestFormProperties {
 		maximumMatchDistance: FormControl<number | null | undefined>,
+
+		/** Required */
 		regex: FormControl<string | null | undefined>,
+
+		/** Required */
 		sampleText: FormControl<string | null | undefined>,
 	}
 	export function CreateTestCustomDataIdentifierRequestFormGroup() {
 		return new FormGroup<TestCustomDataIdentifierRequestFormProperties>({
 			maximumMatchDistance: new FormControl<number | null | undefined>(undefined),
-			regex: new FormControl<string | null | undefined>(undefined),
-			sampleText: new FormControl<string | null | undefined>(undefined),
+			regex: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			sampleText: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface UnarchiveFindingsRequest {
+
+		/** Required */
 		findingIds: Array<string>;
 	}
 	export interface UnarchiveFindingsRequestFormProperties {
@@ -3989,7 +4053,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateClassificationJobRequestFormGroup() {
 		return new FormGroup<UpdateClassificationJobRequestFormProperties>({
-			jobStatus: new FormControl<DescribeClassificationJobResponseJobStatus | null | undefined>(undefined),
+			jobStatus: new FormControl<DescribeClassificationJobResponseJobStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4065,20 +4129,24 @@ export namespace MyNS {
 	}
 	export function CreateUpdateMemberSessionRequestFormGroup() {
 		return new FormGroup<UpdateMemberSessionRequestFormProperties>({
-			status: new FormControl<GetMacieSessionResponseStatus | null | undefined>(undefined),
+			status: new FormControl<GetMacieSessionResponseStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface UpdateOrganizationConfigurationRequest {
+
+		/** Required */
 		autoEnable: boolean;
 	}
 	export interface UpdateOrganizationConfigurationRequestFormProperties {
+
+		/** Required */
 		autoEnable: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpdateOrganizationConfigurationRequestFormGroup() {
 		return new FormGroup<UpdateOrganizationConfigurationRequestFormProperties>({
-			autoEnable: new FormControl<boolean | null | undefined>(undefined),
+			autoEnable: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4625,8 +4693,8 @@ export namespace MyNS {
 	}
 	export function CreateAcceptInvitationPostBodyFormGroup() {
 		return new FormGroup<AcceptInvitationPostBodyFormProperties>({
-			invitationId: new FormControl<string | null | undefined>(undefined),
-			masterAccount: new FormControl<string | null | undefined>(undefined),
+			invitationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			masterAccount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4738,11 +4806,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateClassificationJobPostBodyFormGroup() {
 		return new FormGroup<CreateClassificationJobPostBodyFormProperties>({
-			clientToken: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			description: new FormControl<string | null | undefined>(undefined),
 			initialRun: new FormControl<boolean | null | undefined>(undefined),
-			jobType: new FormControl<DescribeClassificationJobResponseJobType | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			jobType: new FormControl<DescribeClassificationJobResponseJobType | null | undefined>(undefined, [Validators.required]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			samplingPercentage: new FormControl<number | null | undefined>(undefined),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
@@ -4900,10 +4968,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateFindingsFilterPostBodyFormGroup() {
 		return new FormGroup<CreateFindingsFilterPostBodyFormProperties>({
-			action: new FormControl<GetFindingsFilterResponseAction | null | undefined>(undefined),
+			action: new FormControl<GetFindingsFilterResponseAction | null | undefined>(undefined, [Validators.required]),
 			clientToken: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			position: new FormControl<number | null | undefined>(undefined),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
@@ -5159,7 +5227,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateClassificationJobPatchBodyFormGroup() {
 		return new FormGroup<UpdateClassificationJobPatchBodyFormProperties>({
-			jobStatus: new FormControl<DescribeClassificationJobResponseJobStatus | null | undefined>(undefined),
+			jobStatus: new FormControl<DescribeClassificationJobResponseJobStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5182,7 +5250,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateOrganizationConfigurationPatchBodyFormGroup() {
 		return new FormGroup<UpdateOrganizationConfigurationPatchBodyFormProperties>({
-			autoEnable: new FormControl<boolean | null | undefined>(undefined),
+			autoEnable: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5266,7 +5334,7 @@ export namespace MyNS {
 	}
 	export function CreateEnableOrganizationAdminAccountPostBodyFormGroup() {
 		return new FormGroup<EnableOrganizationAdminAccountPostBodyFormProperties>({
-			adminAccountId: new FormControl<string | null | undefined>(undefined),
+			adminAccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5348,7 +5416,7 @@ export namespace MyNS {
 	}
 	export function CreateGetFindingStatisticsPostBodyFormGroup() {
 		return new FormGroup<GetFindingStatisticsPostBodyFormProperties>({
-			groupBy: new FormControl<GetFindingStatisticsPostBodyGroupBy | null | undefined>(undefined),
+			groupBy: new FormControl<GetFindingStatisticsPostBodyGroupBy | null | undefined>(undefined, [Validators.required]),
 			size: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -5637,7 +5705,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5685,8 +5753,8 @@ export namespace MyNS {
 	export function CreateTestCustomDataIdentifierPostBodyFormGroup() {
 		return new FormGroup<TestCustomDataIdentifierPostBodyFormProperties>({
 			maximumMatchDistance: new FormControl<number | null | undefined>(undefined),
-			regex: new FormControl<string | null | undefined>(undefined),
-			sampleText: new FormControl<string | null | undefined>(undefined),
+			regex: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			sampleText: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5725,7 +5793,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateMemberSessionPatchBodyFormGroup() {
 		return new FormGroup<UpdateMemberSessionPatchBodyFormProperties>({
-			status: new FormControl<GetMacieSessionResponseStatus | null | undefined>(undefined),
+			status: new FormControl<GetMacieSessionResponseStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

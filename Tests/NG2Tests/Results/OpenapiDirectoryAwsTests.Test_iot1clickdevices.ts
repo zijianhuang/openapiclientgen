@@ -4,16 +4,26 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface ClaimDevicesByClaimCodeResponse {
+
+		/**
+		 * Max length: 40
+		 * Min length: 12
+		 */
 		ClaimCode?: string | null;
 		Total?: number | null;
 	}
 	export interface ClaimDevicesByClaimCodeResponseFormProperties {
+
+		/**
+		 * Max length: 40
+		 * Min length: 12
+		 */
 		ClaimCode: FormControl<string | null | undefined>,
 		Total: FormControl<number | null | undefined>,
 	}
 	export function CreateClaimDevicesByClaimCodeResponseFormGroup() {
 		return new FormGroup<ClaimDevicesByClaimCodeResponseFormProperties>({
-			ClaimCode: new FormControl<string | null | undefined>(undefined),
+			ClaimCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(12)]),
 			Total: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -424,6 +434,8 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/** Required */
 		Tags: __mapOf__string;
 	}
 	export interface TagResourceRequestFormProperties {
@@ -718,7 +730,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

@@ -8,7 +8,7 @@ namespace SwagTests
 	{
 		public ComponentsToTsTypesTests()
 		{
-			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen));
+			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen), new TestHelpers.CasualTestingSettings(false, false));
 		}
 
 		readonly TsTestHelper helper;

@@ -20,23 +20,77 @@ export namespace MyNS {
 	}
 
 	export interface SendSSHPublicKeyRequest {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 10
+		 * Pattern: ^i-[a-f0-9]+$
+		 */
 		InstanceId: string;
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 * Pattern: ^[A-Za-z_][A-Za-z0-9\@\._-]{0,30}[A-Za-z0-9\$_-]?$
+		 */
 		InstanceOSUser: string;
+
+		/**
+		 * Required
+		 * Max length: 4096
+		 * Min length: 256
+		 */
 		SSHPublicKey: string;
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 6
+		 * Pattern: ^(\w+-){2,3}\d+\w+$
+		 */
 		AvailabilityZone: string;
 	}
 	export interface SendSSHPublicKeyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 10
+		 * Pattern: ^i-[a-f0-9]+$
+		 */
 		InstanceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 * Pattern: ^[A-Za-z_][A-Za-z0-9\@\._-]{0,30}[A-Za-z0-9\$_-]?$
+		 */
 		InstanceOSUser: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 4096
+		 * Min length: 256
+		 */
 		SSHPublicKey: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 6
+		 * Pattern: ^(\w+-){2,3}\d+\w+$
+		 */
 		AvailabilityZone: FormControl<string | null | undefined>,
 	}
 	export function CreateSendSSHPublicKeyRequestFormGroup() {
 		return new FormGroup<SendSSHPublicKeyRequestFormProperties>({
-			InstanceId: new FormControl<string | null | undefined>(undefined),
-			InstanceOSUser: new FormControl<string | null | undefined>(undefined),
-			SSHPublicKey: new FormControl<string | null | undefined>(undefined),
-			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(10)]),
+			InstanceOSUser: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
+			SSHPublicKey: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4096), Validators.minLength(256)]),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(6)]),
 		});
 
 	}

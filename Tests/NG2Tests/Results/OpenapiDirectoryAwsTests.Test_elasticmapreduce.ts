@@ -4,25 +4,51 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AddInstanceFleetOutput {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		ClusterId?: string | null;
 		InstanceFleetId?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ClusterArn?: string | null;
 	}
 	export interface AddInstanceFleetOutputFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		ClusterId: FormControl<string | null | undefined>,
 		InstanceFleetId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ClusterArn: FormControl<string | null | undefined>,
 	}
 	export function CreateAddInstanceFleetOutputFormGroup() {
 		return new FormGroup<AddInstanceFleetOutputFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			InstanceFleetId: new FormControl<string | null | undefined>(undefined),
-			ClusterArn: new FormControl<string | null | undefined>(undefined),
+			ClusterArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface AddInstanceFleetInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		ClusterId: string;
 
 		/**
@@ -32,11 +58,17 @@ export namespace MyNS {
 		InstanceFleet: InstanceFleetConfig;
 	}
 	export interface AddInstanceFleetInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		ClusterId: FormControl<string | null | undefined>,
 	}
 	export function CreateAddInstanceFleetInputFormGroup() {
 		return new FormGroup<AddInstanceFleetInputFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -44,9 +76,20 @@ export namespace MyNS {
 
 	/** <p>The configuration that defines an instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
 	export interface InstanceFleetConfig {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Name?: string | null;
+
+		/** Required */
 		InstanceFleetType: InstanceFleetConfigInstanceFleetType;
+
+		/** Minimum: 0 */
 		TargetOnDemandCapacity?: number | null;
+
+		/** Minimum: 0 */
 		TargetSpotCapacity?: number | null;
 		InstanceTypeConfigs?: Array<InstanceTypeConfig>;
 
@@ -56,17 +99,28 @@ export namespace MyNS {
 
 	/** <p>The configuration that defines an instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
 	export interface InstanceFleetConfigFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		InstanceFleetType: FormControl<InstanceFleetConfigInstanceFleetType | null | undefined>,
+
+		/** Minimum: 0 */
 		TargetOnDemandCapacity: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		TargetSpotCapacity: FormControl<number | null | undefined>,
 	}
 	export function CreateInstanceFleetConfigFormGroup() {
 		return new FormGroup<InstanceFleetConfigFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			InstanceFleetType: new FormControl<InstanceFleetConfigInstanceFleetType | null | undefined>(undefined),
-			TargetOnDemandCapacity: new FormControl<number | null | undefined>(undefined),
-			TargetSpotCapacity: new FormControl<number | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			InstanceFleetType: new FormControl<InstanceFleetConfigInstanceFleetType | null | undefined>(undefined, [Validators.required]),
+			TargetOnDemandCapacity: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			TargetSpotCapacity: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -76,9 +130,24 @@ export namespace MyNS {
 
 	/** <p>An instance type configuration for each instance type in an instance fleet, which determines the EC2 instances Amazon EMR attempts to provision to fulfill On-Demand and Spot target capacities. There can be a maximum of 5 instance type configurations in a fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
 	export interface InstanceTypeConfig {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		InstanceType: string;
+
+		/** Minimum: 0 */
 		WeightedCapacity?: number | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		BidPrice?: string | null;
+
+		/** Minimum: 0 */
 		BidPriceAsPercentageOfOnDemandPrice?: number | null;
 
 		/** The Amazon EBS configuration of a cluster instance. */
@@ -88,17 +157,32 @@ export namespace MyNS {
 
 	/** <p>An instance type configuration for each instance type in an instance fleet, which determines the EC2 instances Amazon EMR attempts to provision to fulfill On-Demand and Spot target capacities. There can be a maximum of 5 instance type configurations in a fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
 	export interface InstanceTypeConfigFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		InstanceType: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		WeightedCapacity: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		BidPrice: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		BidPriceAsPercentageOfOnDemandPrice: FormControl<number | null | undefined>,
 	}
 	export function CreateInstanceTypeConfigFormGroup() {
 		return new FormGroup<InstanceTypeConfigFormProperties>({
-			InstanceType: new FormControl<string | null | undefined>(undefined),
-			WeightedCapacity: new FormControl<number | null | undefined>(undefined),
-			BidPrice: new FormControl<string | null | undefined>(undefined),
-			BidPriceAsPercentageOfOnDemandPrice: new FormControl<number | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			WeightedCapacity: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			BidPrice: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			BidPriceAsPercentageOfOnDemandPrice: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -147,22 +231,30 @@ export namespace MyNS {
 
 	/** EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster. */
 	export interface VolumeSpecification {
+
+		/** Required */
 		VolumeType: string;
 		Iops?: number | null;
+
+		/** Required */
 		SizeInGB: number;
 	}
 
 	/** EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster. */
 	export interface VolumeSpecificationFormProperties {
+
+		/** Required */
 		VolumeType: FormControl<string | null | undefined>,
 		Iops: FormControl<number | null | undefined>,
+
+		/** Required */
 		SizeInGB: FormControl<number | null | undefined>,
 	}
 	export function CreateVolumeSpecificationFormGroup() {
 		return new FormGroup<VolumeSpecificationFormProperties>({
-			VolumeType: new FormControl<string | null | undefined>(undefined),
+			VolumeType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Iops: new FormControl<number | null | undefined>(undefined),
-			SizeInGB: new FormControl<number | null | undefined>(undefined),
+			SizeInGB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -219,22 +311,40 @@ export namespace MyNS {
 
 	/** <p>The launch specification for Spot instances in the instance fleet, which determines the defined duration and provisioning timeout behavior.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
 	export interface SpotProvisioningSpecification {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		TimeoutDurationMinutes: number;
+
+		/** Required */
 		TimeoutAction: SpotProvisioningSpecificationTimeoutAction;
+
+		/** Minimum: 0 */
 		BlockDurationMinutes?: number | null;
 	}
 
 	/** <p>The launch specification for Spot instances in the instance fleet, which determines the defined duration and provisioning timeout behavior.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
 	export interface SpotProvisioningSpecificationFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		TimeoutDurationMinutes: FormControl<number | null | undefined>,
+
+		/** Required */
 		TimeoutAction: FormControl<SpotProvisioningSpecificationTimeoutAction | null | undefined>,
+
+		/** Minimum: 0 */
 		BlockDurationMinutes: FormControl<number | null | undefined>,
 	}
 	export function CreateSpotProvisioningSpecificationFormGroup() {
 		return new FormGroup<SpotProvisioningSpecificationFormProperties>({
-			TimeoutDurationMinutes: new FormControl<number | null | undefined>(undefined),
-			TimeoutAction: new FormControl<SpotProvisioningSpecificationTimeoutAction | null | undefined>(undefined),
-			BlockDurationMinutes: new FormControl<number | null | undefined>(undefined),
+			TimeoutDurationMinutes: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			TimeoutAction: new FormControl<SpotProvisioningSpecificationTimeoutAction | null | undefined>(undefined, [Validators.required]),
+			BlockDurationMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -264,20 +374,40 @@ export namespace MyNS {
 
 	/** Output from an AddInstanceGroups call. */
 	export interface AddInstanceGroupsOutput {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		JobFlowId?: string | null;
 		InstanceGroupIds?: Array<string>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ClusterArn?: string | null;
 	}
 
 	/** Output from an AddInstanceGroups call. */
 	export interface AddInstanceGroupsOutputFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		JobFlowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ClusterArn: FormControl<string | null | undefined>,
 	}
 	export function CreateAddInstanceGroupsOutputFormGroup() {
 		return new FormGroup<AddInstanceGroupsOutputFormProperties>({
-			JobFlowId: new FormControl<string | null | undefined>(undefined),
-			ClusterArn: new FormControl<string | null | undefined>(undefined),
+			JobFlowId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			ClusterArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -285,17 +415,31 @@ export namespace MyNS {
 
 	/** Input to an AddInstanceGroups call. */
 	export interface AddInstanceGroupsInput {
+
+		/** Required */
 		InstanceGroups: Array<InstanceGroupConfig>;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		JobFlowId: string;
 	}
 
 	/** Input to an AddInstanceGroups call. */
 	export interface AddInstanceGroupsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		JobFlowId: FormControl<string | null | undefined>,
 	}
 	export function CreateAddInstanceGroupsInputFormGroup() {
 		return new FormGroup<AddInstanceGroupsInputFormProperties>({
-			JobFlowId: new FormControl<string | null | undefined>(undefined),
+			JobFlowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -303,11 +447,31 @@ export namespace MyNS {
 
 	/** Configuration defining a new instance group. */
 	export interface InstanceGroupConfig {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Name?: string | null;
 		Market?: InstanceGroupConfigMarket | null;
+
+		/** Required */
 		InstanceRole: InstanceFleetConfigInstanceFleetType;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		BidPrice?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		InstanceType: string;
+
+		/** Required */
 		InstanceCount: number;
 		Configurations?: Array<Configuration>;
 
@@ -320,21 +484,41 @@ export namespace MyNS {
 
 	/** Configuration defining a new instance group. */
 	export interface InstanceGroupConfigFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Name: FormControl<string | null | undefined>,
 		Market: FormControl<InstanceGroupConfigMarket | null | undefined>,
+
+		/** Required */
 		InstanceRole: FormControl<InstanceFleetConfigInstanceFleetType | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		BidPrice: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		InstanceType: FormControl<string | null | undefined>,
+
+		/** Required */
 		InstanceCount: FormControl<number | null | undefined>,
 	}
 	export function CreateInstanceGroupConfigFormGroup() {
 		return new FormGroup<InstanceGroupConfigFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			Market: new FormControl<InstanceGroupConfigMarket | null | undefined>(undefined),
-			InstanceRole: new FormControl<InstanceFleetConfigInstanceFleetType | null | undefined>(undefined),
-			BidPrice: new FormControl<string | null | undefined>(undefined),
-			InstanceType: new FormControl<string | null | undefined>(undefined),
-			InstanceCount: new FormControl<number | null | undefined>(undefined),
+			InstanceRole: new FormControl<InstanceFleetConfigInstanceFleetType | null | undefined>(undefined, [Validators.required]),
+			BidPrice: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			InstanceCount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -350,6 +534,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		Constraints: ScalingConstraints;
+
+		/** Required */
 		Rules: Array<ScalingRule>;
 	}
 
@@ -365,19 +551,27 @@ export namespace MyNS {
 
 	/** The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activities triggered by automatic scaling rules will not cause an instance group to grow above or below these limits. */
 	export interface ScalingConstraints {
+
+		/** Required */
 		MinCapacity: number;
+
+		/** Required */
 		MaxCapacity: number;
 	}
 
 	/** The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activities triggered by automatic scaling rules will not cause an instance group to grow above or below these limits. */
 	export interface ScalingConstraintsFormProperties {
+
+		/** Required */
 		MinCapacity: FormControl<number | null | undefined>,
+
+		/** Required */
 		MaxCapacity: FormControl<number | null | undefined>,
 	}
 	export function CreateScalingConstraintsFormGroup() {
 		return new FormGroup<ScalingConstraintsFormProperties>({
-			MinCapacity: new FormControl<number | null | undefined>(undefined),
-			MaxCapacity: new FormControl<number | null | undefined>(undefined),
+			MinCapacity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			MaxCapacity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -385,6 +579,8 @@ export namespace MyNS {
 
 	/** A scale-in or scale-out rule that defines scaling activity, including the CloudWatch metric alarm that triggers activity, how EC2 instances are added or removed, and the periodicity of adjustments. The automatic scaling policy for an instance group can comprise one or more automatic scaling rules. */
 	export interface ScalingRule {
+
+		/** Required */
 		Name: string;
 		Description?: string | null;
 
@@ -403,12 +599,14 @@ export namespace MyNS {
 
 	/** A scale-in or scale-out rule that defines scaling activity, including the CloudWatch metric alarm that triggers activity, how EC2 instances are added or removed, and the periodicity of adjustments. The automatic scaling policy for an instance group can comprise one or more automatic scaling rules. */
 	export interface ScalingRuleFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateScalingRuleFormGroup() {
 		return new FormGroup<ScalingRuleFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Description: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -441,6 +639,8 @@ export namespace MyNS {
 	/** An automatic scaling configuration, which describes how the policy adds or removes instances, the cooldown period, and the number of EC2 instances that will be added each time the CloudWatch metric alarm condition is satisfied. */
 	export interface SimpleScalingPolicyConfiguration {
 		AdjustmentType?: SimpleScalingPolicyConfigurationAdjustmentType | null;
+
+		/** Required */
 		ScalingAdjustment: number;
 		CoolDown?: number | null;
 	}
@@ -448,13 +648,15 @@ export namespace MyNS {
 	/** An automatic scaling configuration, which describes how the policy adds or removes instances, the cooldown period, and the number of EC2 instances that will be added each time the CloudWatch metric alarm condition is satisfied. */
 	export interface SimpleScalingPolicyConfigurationFormProperties {
 		AdjustmentType: FormControl<SimpleScalingPolicyConfigurationAdjustmentType | null | undefined>,
+
+		/** Required */
 		ScalingAdjustment: FormControl<number | null | undefined>,
 		CoolDown: FormControl<number | null | undefined>,
 	}
 	export function CreateSimpleScalingPolicyConfigurationFormGroup() {
 		return new FormGroup<SimpleScalingPolicyConfigurationFormProperties>({
 			AdjustmentType: new FormControl<SimpleScalingPolicyConfigurationAdjustmentType | null | undefined>(undefined),
-			ScalingAdjustment: new FormControl<number | null | undefined>(undefined),
+			ScalingAdjustment: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			CoolDown: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -485,12 +687,23 @@ export namespace MyNS {
 
 	/** The definition of a CloudWatch metric alarm, which determines when an automatic scaling activity is triggered. When the defined alarm conditions are satisfied, scaling activity begins. */
 	export interface CloudWatchAlarmDefinition {
+
+		/** Required */
 		ComparisonOperator: CloudWatchAlarmDefinitionComparisonOperator;
 		EvaluationPeriods?: number | null;
+
+		/** Required */
 		MetricName: string;
 		Namespace?: string | null;
+
+		/** Required */
 		Period: number;
 		Statistic?: CloudWatchAlarmDefinitionStatistic | null;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		Threshold: number;
 		Unit?: CloudWatchAlarmDefinitionUnit | null;
 		Dimensions?: Array<MetricDimension>;
@@ -498,24 +711,35 @@ export namespace MyNS {
 
 	/** The definition of a CloudWatch metric alarm, which determines when an automatic scaling activity is triggered. When the defined alarm conditions are satisfied, scaling activity begins. */
 	export interface CloudWatchAlarmDefinitionFormProperties {
+
+		/** Required */
 		ComparisonOperator: FormControl<CloudWatchAlarmDefinitionComparisonOperator | null | undefined>,
 		EvaluationPeriods: FormControl<number | null | undefined>,
+
+		/** Required */
 		MetricName: FormControl<string | null | undefined>,
 		Namespace: FormControl<string | null | undefined>,
+
+		/** Required */
 		Period: FormControl<number | null | undefined>,
 		Statistic: FormControl<CloudWatchAlarmDefinitionStatistic | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		Threshold: FormControl<number | null | undefined>,
 		Unit: FormControl<CloudWatchAlarmDefinitionUnit | null | undefined>,
 	}
 	export function CreateCloudWatchAlarmDefinitionFormGroup() {
 		return new FormGroup<CloudWatchAlarmDefinitionFormProperties>({
-			ComparisonOperator: new FormControl<CloudWatchAlarmDefinitionComparisonOperator | null | undefined>(undefined),
+			ComparisonOperator: new FormControl<CloudWatchAlarmDefinitionComparisonOperator | null | undefined>(undefined, [Validators.required]),
 			EvaluationPeriods: new FormControl<number | null | undefined>(undefined),
-			MetricName: new FormControl<string | null | undefined>(undefined),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Namespace: new FormControl<string | null | undefined>(undefined),
-			Period: new FormControl<number | null | undefined>(undefined),
+			Period: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			Statistic: new FormControl<CloudWatchAlarmDefinitionStatistic | null | undefined>(undefined),
-			Threshold: new FormControl<number | null | undefined>(undefined),
+			Threshold: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			Unit: new FormControl<CloudWatchAlarmDefinitionUnit | null | undefined>(undefined),
 		});
 
@@ -575,17 +799,31 @@ export namespace MyNS {
 
 	/**  The input argument to the <a>AddJobFlowSteps</a> operation.  */
 	export interface AddJobFlowStepsInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		JobFlowId: string;
+
+		/** Required */
 		Steps: Array<StepConfig>;
 	}
 
 	/**  The input argument to the <a>AddJobFlowSteps</a> operation.  */
 	export interface AddJobFlowStepsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		JobFlowId: FormControl<string | null | undefined>,
 	}
 	export function CreateAddJobFlowStepsInputFormGroup() {
 		return new FormGroup<AddJobFlowStepsInputFormProperties>({
-			JobFlowId: new FormControl<string | null | undefined>(undefined),
+			JobFlowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -593,6 +831,12 @@ export namespace MyNS {
 
 	/** Specification of a cluster (job flow) step. */
 	export interface StepConfig {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Name: string;
 		ActionOnFailure?: StepConfigActionOnFailure | null;
 
@@ -605,12 +849,18 @@ export namespace MyNS {
 
 	/** Specification of a cluster (job flow) step. */
 	export interface StepConfigFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Name: FormControl<string | null | undefined>,
 		ActionOnFailure: FormControl<StepConfigActionOnFailure | null | undefined>,
 	}
 	export function CreateStepConfigFormGroup() {
 		return new FormGroup<StepConfigFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 			ActionOnFailure: new FormControl<StepConfigActionOnFailure | null | undefined>(undefined),
 		});
 
@@ -622,20 +872,42 @@ export namespace MyNS {
 	/** A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail. */
 	export interface HadoopJarStepConfig {
 		Properties?: Array<KeyValue>;
+
+		/**
+		 * Required
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		Jar: string;
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		MainClass?: string | null;
 		Args?: Array<string>;
 	}
 
 	/** A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail. */
 	export interface HadoopJarStepConfigFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		Jar: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		MainClass: FormControl<string | null | undefined>,
 	}
 	export function CreateHadoopJarStepConfigFormGroup() {
 		return new FormGroup<HadoopJarStepConfigFormProperties>({
-			Jar: new FormControl<string | null | undefined>(undefined),
-			MainClass: new FormControl<string | null | undefined>(undefined),
+			Jar: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10280), Validators.minLength(0)]),
+			MainClass: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10280), Validators.minLength(0)]),
 		});
 
 	}
@@ -643,19 +915,39 @@ export namespace MyNS {
 
 	/** A key value pair. */
 	export interface KeyValue {
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		Key?: string | null;
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		Value?: string | null;
 	}
 
 	/** A key value pair. */
 	export interface KeyValueFormProperties {
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateKeyValueFormGroup() {
 		return new FormGroup<KeyValueFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10280), Validators.minLength(0)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10280), Validators.minLength(0)]),
 		});
 
 	}
@@ -677,17 +969,23 @@ export namespace MyNS {
 
 	/** This input identifies a cluster and a list of tags to attach. */
 	export interface AddTagsInput {
+
+		/** Required */
 		ResourceId: string;
+
+		/** Required */
 		Tags: Array<Tag>;
 	}
 
 	/** This input identifies a cluster and a list of tags to attach. */
 	export interface AddTagsInputFormProperties {
+
+		/** Required */
 		ResourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateAddTagsInputFormGroup() {
 		return new FormGroup<AddTagsInputFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -755,19 +1053,33 @@ export namespace MyNS {
 
 	/** The input argument to the <a>CancelSteps</a> operation. */
 	export interface CancelStepsInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		ClusterId: string;
+
+		/** Required */
 		StepIds: Array<string>;
 		StepCancellationOption?: CancelStepsInputStepCancellationOption | null;
 	}
 
 	/** The input argument to the <a>CancelSteps</a> operation. */
 	export interface CancelStepsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		ClusterId: FormControl<string | null | undefined>,
 		StepCancellationOption: FormControl<CancelStepsInputStepCancellationOption | null | undefined>,
 	}
 	export function CreateCancelStepsInputFormGroup() {
 		return new FormGroup<CancelStepsInputFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 			StepCancellationOption: new FormControl<CancelStepsInputStepCancellationOption | null | undefined>(undefined),
 		});
 
@@ -776,33 +1088,65 @@ export namespace MyNS {
 	export enum CancelStepsInputStepCancellationOption { SEND_INTERRUPT = 0, TERMINATE_PROCESS = 1 }
 
 	export interface CreateSecurityConfigurationOutput {
+
+		/**
+		 * Required
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		Name: string;
+
+		/** Required */
 		CreationDateTime: Date;
 	}
 	export interface CreateSecurityConfigurationOutputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreationDateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateCreateSecurityConfigurationOutputFormGroup() {
 		return new FormGroup<CreateSecurityConfigurationOutputFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			CreationDateTime: new FormControl<Date | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10280), Validators.minLength(0)]),
+			CreationDateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface CreateSecurityConfigurationInput {
+
+		/**
+		 * Required
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		Name: string;
+
+		/** Required */
 		SecurityConfiguration: string;
 	}
 	export interface CreateSecurityConfigurationInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		SecurityConfiguration: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSecurityConfigurationInputFormGroup() {
 		return new FormGroup<CreateSecurityConfigurationInputFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			SecurityConfiguration: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10280), Validators.minLength(0)]),
+			SecurityConfiguration: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -818,14 +1162,26 @@ export namespace MyNS {
 	}
 
 	export interface DeleteSecurityConfigurationInput {
+
+		/**
+		 * Required
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		Name: string;
 	}
 	export interface DeleteSecurityConfigurationInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSecurityConfigurationInputFormGroup() {
 		return new FormGroup<DeleteSecurityConfigurationInputFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10280), Validators.minLength(0)]),
 		});
 
 	}
@@ -873,16 +1229,41 @@ export namespace MyNS {
 		NormalizedInstanceHours?: number | null;
 		MasterPublicDnsName?: string | null;
 		Configurations?: Array<Configuration>;
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		SecurityConfiguration?: string | null;
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		AutoScalingRole?: string | null;
 		ScaleDownBehavior?: ClusterScaleDownBehavior | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		CustomAmiId?: string | null;
 		EbsRootVolumeSize?: number | null;
 		RepoUpgradeOnBoot?: ClusterRepoUpgradeOnBoot | null;
 
 		/** Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>EMR Management Guide</i>. */
 		KerberosAttributes?: KerberosAttributes;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ClusterArn?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		OutpostArn?: string | null;
 		StepConcurrencyLevel?: number | null;
 	}
@@ -903,13 +1284,38 @@ export namespace MyNS {
 		ServiceRole: FormControl<string | null | undefined>,
 		NormalizedInstanceHours: FormControl<number | null | undefined>,
 		MasterPublicDnsName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		SecurityConfiguration: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		AutoScalingRole: FormControl<string | null | undefined>,
 		ScaleDownBehavior: FormControl<ClusterScaleDownBehavior | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		CustomAmiId: FormControl<string | null | undefined>,
 		EbsRootVolumeSize: FormControl<number | null | undefined>,
 		RepoUpgradeOnBoot: FormControl<ClusterRepoUpgradeOnBoot | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ClusterArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		OutpostArn: FormControl<string | null | undefined>,
 		StepConcurrencyLevel: FormControl<number | null | undefined>,
 	}
@@ -929,14 +1335,14 @@ export namespace MyNS {
 			ServiceRole: new FormControl<string | null | undefined>(undefined),
 			NormalizedInstanceHours: new FormControl<number | null | undefined>(undefined),
 			MasterPublicDnsName: new FormControl<string | null | undefined>(undefined),
-			SecurityConfiguration: new FormControl<string | null | undefined>(undefined),
-			AutoScalingRole: new FormControl<string | null | undefined>(undefined),
+			SecurityConfiguration: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10280), Validators.minLength(0)]),
+			AutoScalingRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10280), Validators.minLength(0)]),
 			ScaleDownBehavior: new FormControl<ClusterScaleDownBehavior | null | undefined>(undefined),
-			CustomAmiId: new FormControl<string | null | undefined>(undefined),
+			CustomAmiId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			EbsRootVolumeSize: new FormControl<number | null | undefined>(undefined),
 			RepoUpgradeOnBoot: new FormControl<ClusterRepoUpgradeOnBoot | null | undefined>(undefined),
-			ClusterArn: new FormControl<string | null | undefined>(undefined),
-			OutpostArn: new FormControl<string | null | undefined>(undefined),
+			ClusterArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			OutpostArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 			StepConcurrencyLevel: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1082,28 +1488,82 @@ export namespace MyNS {
 
 	/** Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>EMR Management Guide</i>. */
 	export interface KerberosAttributes {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Realm: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		KdcAdminPassword: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		CrossRealmTrustPrincipalPassword?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		ADDomainJoinUser?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		ADDomainJoinPassword?: string | null;
 	}
 
 	/** Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>EMR Management Guide</i>. */
 	export interface KerberosAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Realm: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		KdcAdminPassword: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		CrossRealmTrustPrincipalPassword: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		ADDomainJoinUser: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		ADDomainJoinPassword: FormControl<string | null | undefined>,
 	}
 	export function CreateKerberosAttributesFormGroup() {
 		return new FormGroup<KerberosAttributesFormProperties>({
-			Realm: new FormControl<string | null | undefined>(undefined),
-			KdcAdminPassword: new FormControl<string | null | undefined>(undefined),
-			CrossRealmTrustPrincipalPassword: new FormControl<string | null | undefined>(undefined),
-			ADDomainJoinUser: new FormControl<string | null | undefined>(undefined),
-			ADDomainJoinPassword: new FormControl<string | null | undefined>(undefined),
+			Realm: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			KdcAdminPassword: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			CrossRealmTrustPrincipalPassword: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			ADDomainJoinUser: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			ADDomainJoinPassword: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -1111,16 +1571,20 @@ export namespace MyNS {
 
 	/** This input determines which cluster to describe. */
 	export interface DescribeClusterInput {
+
+		/** Required */
 		ClusterId: string;
 	}
 
 	/** This input determines which cluster to describe. */
 	export interface DescribeClusterInputFormProperties {
+
+		/** Required */
 		ClusterId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeClusterInputFormGroup() {
 		return new FormGroup<DescribeClusterInputFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1143,10 +1607,37 @@ export namespace MyNS {
 
 	/** A description of a cluster (job flow). */
 	export interface JobFlowDetail {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		JobFlowId: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Name: string;
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		LogUri?: string | null;
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		LogEncryptionKmsKeyId?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		AmiVersion?: string | null;
 
 		/**
@@ -1164,36 +1655,93 @@ export namespace MyNS {
 		BootstrapActions?: Array<BootstrapActionDetail>;
 		SupportedProducts?: Array<string>;
 		VisibleToAllUsers?: boolean | null;
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		JobFlowRole?: string | null;
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		ServiceRole?: string | null;
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		AutoScalingRole?: string | null;
 		ScaleDownBehavior?: ClusterScaleDownBehavior | null;
 	}
 
 	/** A description of a cluster (job flow). */
 	export interface JobFlowDetailFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		JobFlowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		LogUri: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		LogEncryptionKmsKeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		AmiVersion: FormControl<string | null | undefined>,
 		VisibleToAllUsers: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		JobFlowRole: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		ServiceRole: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		AutoScalingRole: FormControl<string | null | undefined>,
 		ScaleDownBehavior: FormControl<ClusterScaleDownBehavior | null | undefined>,
 	}
 	export function CreateJobFlowDetailFormGroup() {
 		return new FormGroup<JobFlowDetailFormProperties>({
-			JobFlowId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			LogUri: new FormControl<string | null | undefined>(undefined),
-			LogEncryptionKmsKeyId: new FormControl<string | null | undefined>(undefined),
-			AmiVersion: new FormControl<string | null | undefined>(undefined),
+			JobFlowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			LogUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10280), Validators.minLength(0)]),
+			LogEncryptionKmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10280), Validators.minLength(0)]),
+			AmiVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			VisibleToAllUsers: new FormControl<boolean | null | undefined>(undefined),
-			JobFlowRole: new FormControl<string | null | undefined>(undefined),
-			ServiceRole: new FormControl<string | null | undefined>(undefined),
-			AutoScalingRole: new FormControl<string | null | undefined>(undefined),
+			JobFlowRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10280), Validators.minLength(0)]),
+			ServiceRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10280), Validators.minLength(0)]),
+			AutoScalingRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10280), Validators.minLength(0)]),
 			ScaleDownBehavior: new FormControl<ClusterScaleDownBehavior | null | undefined>(undefined),
 		});
 
@@ -1208,10 +1756,17 @@ export namespace MyNS {
 		 * Required
 		 */
 		State: JobFlowExecutionStatusDetailState;
+
+		/** Required */
 		CreationDateTime: Date;
 		StartDateTime?: Date | null;
 		ReadyDateTime?: Date | null;
 		EndDateTime?: Date | null;
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		LastStateChangeReason?: string | null;
 	}
 
@@ -1223,20 +1778,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		State: FormControl<JobFlowExecutionStatusDetailState | null | undefined>,
+
+		/** Required */
 		CreationDateTime: FormControl<Date | null | undefined>,
 		StartDateTime: FormControl<Date | null | undefined>,
 		ReadyDateTime: FormControl<Date | null | undefined>,
 		EndDateTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		LastStateChangeReason: FormControl<string | null | undefined>,
 	}
 	export function CreateJobFlowExecutionStatusDetailFormGroup() {
 		return new FormGroup<JobFlowExecutionStatusDetailFormProperties>({
-			State: new FormControl<JobFlowExecutionStatusDetailState | null | undefined>(undefined),
-			CreationDateTime: new FormControl<Date | null | undefined>(undefined),
+			State: new FormControl<JobFlowExecutionStatusDetailState | null | undefined>(undefined, [Validators.required]),
+			CreationDateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			StartDateTime: new FormControl<Date | null | undefined>(undefined),
 			ReadyDateTime: new FormControl<Date | null | undefined>(undefined),
 			EndDateTime: new FormControl<Date | null | undefined>(undefined),
-			LastStateChangeReason: new FormControl<string | null | undefined>(undefined),
+			LastStateChangeReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10280), Validators.minLength(0)]),
 		});
 
 	}
@@ -1246,50 +1808,128 @@ export namespace MyNS {
 
 	/** Specify the type of Amazon EC2 instances that the cluster (job flow) runs on. */
 	export interface JobFlowInstancesDetail {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		MasterInstanceType: string;
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		MasterPublicDnsName?: string | null;
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		MasterInstanceId?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		SlaveInstanceType: string;
+
+		/** Required */
 		InstanceCount: number;
 		InstanceGroups?: Array<InstanceGroupDetail>;
 		NormalizedInstanceHours?: number | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Ec2KeyName?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Ec2SubnetId?: string | null;
 
 		/** The Amazon EC2 Availability Zone configuration of the cluster (job flow). */
 		Placement?: PlacementType;
 		KeepJobFlowAliveWhenNoSteps?: boolean | null;
 		TerminationProtected?: boolean | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		HadoopVersion?: string | null;
 	}
 
 	/** Specify the type of Amazon EC2 instances that the cluster (job flow) runs on. */
 	export interface JobFlowInstancesDetailFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		MasterInstanceType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		MasterPublicDnsName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		MasterInstanceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		SlaveInstanceType: FormControl<string | null | undefined>,
+
+		/** Required */
 		InstanceCount: FormControl<number | null | undefined>,
 		NormalizedInstanceHours: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Ec2KeyName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Ec2SubnetId: FormControl<string | null | undefined>,
 		KeepJobFlowAliveWhenNoSteps: FormControl<boolean | null | undefined>,
 		TerminationProtected: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		HadoopVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateJobFlowInstancesDetailFormGroup() {
 		return new FormGroup<JobFlowInstancesDetailFormProperties>({
-			MasterInstanceType: new FormControl<string | null | undefined>(undefined),
-			MasterPublicDnsName: new FormControl<string | null | undefined>(undefined),
-			MasterInstanceId: new FormControl<string | null | undefined>(undefined),
-			SlaveInstanceType: new FormControl<string | null | undefined>(undefined),
-			InstanceCount: new FormControl<number | null | undefined>(undefined),
+			MasterInstanceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			MasterPublicDnsName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10280), Validators.minLength(0)]),
+			MasterInstanceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10280), Validators.minLength(0)]),
+			SlaveInstanceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			InstanceCount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			NormalizedInstanceHours: new FormControl<number | null | undefined>(undefined),
-			Ec2KeyName: new FormControl<string | null | undefined>(undefined),
-			Ec2SubnetId: new FormControl<string | null | undefined>(undefined),
+			Ec2KeyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			Ec2SubnetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			KeepJobFlowAliveWhenNoSteps: new FormControl<boolean | null | undefined>(undefined),
 			TerminationProtected: new FormControl<boolean | null | undefined>(undefined),
-			HadoopVersion: new FormControl<string | null | undefined>(undefined),
+			HadoopVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -1297,16 +1937,54 @@ export namespace MyNS {
 
 	/** Detailed information about an instance group. */
 	export interface InstanceGroupDetail {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		InstanceGroupId?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Name?: string | null;
+
+		/** Required */
 		Market: InstanceGroupConfigMarket;
+
+		/** Required */
 		InstanceRole: InstanceFleetConfigInstanceFleetType;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		BidPrice?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		InstanceType: string;
+
+		/** Required */
 		InstanceRequestCount: number;
+
+		/** Required */
 		InstanceRunningCount: number;
+
+		/** Required */
 		State: InstanceGroupDetailState;
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		LastStateChangeReason?: string | null;
+
+		/** Required */
 		CreationDateTime: Date;
 		StartDateTime?: Date | null;
 		ReadyDateTime?: Date | null;
@@ -1315,16 +1993,54 @@ export namespace MyNS {
 
 	/** Detailed information about an instance group. */
 	export interface InstanceGroupDetailFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		InstanceGroupId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Market: FormControl<InstanceGroupConfigMarket | null | undefined>,
+
+		/** Required */
 		InstanceRole: FormControl<InstanceFleetConfigInstanceFleetType | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		BidPrice: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		InstanceType: FormControl<string | null | undefined>,
+
+		/** Required */
 		InstanceRequestCount: FormControl<number | null | undefined>,
+
+		/** Required */
 		InstanceRunningCount: FormControl<number | null | undefined>,
+
+		/** Required */
 		State: FormControl<InstanceGroupDetailState | null | undefined>,
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		LastStateChangeReason: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreationDateTime: FormControl<Date | null | undefined>,
 		StartDateTime: FormControl<Date | null | undefined>,
 		ReadyDateTime: FormControl<Date | null | undefined>,
@@ -1332,17 +2048,17 @@ export namespace MyNS {
 	}
 	export function CreateInstanceGroupDetailFormGroup() {
 		return new FormGroup<InstanceGroupDetailFormProperties>({
-			InstanceGroupId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Market: new FormControl<InstanceGroupConfigMarket | null | undefined>(undefined),
-			InstanceRole: new FormControl<InstanceFleetConfigInstanceFleetType | null | undefined>(undefined),
-			BidPrice: new FormControl<string | null | undefined>(undefined),
-			InstanceType: new FormControl<string | null | undefined>(undefined),
-			InstanceRequestCount: new FormControl<number | null | undefined>(undefined),
-			InstanceRunningCount: new FormControl<number | null | undefined>(undefined),
-			State: new FormControl<InstanceGroupDetailState | null | undefined>(undefined),
-			LastStateChangeReason: new FormControl<string | null | undefined>(undefined),
-			CreationDateTime: new FormControl<Date | null | undefined>(undefined),
+			InstanceGroupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			Market: new FormControl<InstanceGroupConfigMarket | null | undefined>(undefined, [Validators.required]),
+			InstanceRole: new FormControl<InstanceFleetConfigInstanceFleetType | null | undefined>(undefined, [Validators.required]),
+			BidPrice: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			InstanceRequestCount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			InstanceRunningCount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			State: new FormControl<InstanceGroupDetailState | null | undefined>(undefined, [Validators.required]),
+			LastStateChangeReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10280), Validators.minLength(0)]),
+			CreationDateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			StartDateTime: new FormControl<Date | null | undefined>(undefined),
 			ReadyDateTime: new FormControl<Date | null | undefined>(undefined),
 			EndDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -1355,17 +2071,27 @@ export namespace MyNS {
 
 	/** The Amazon EC2 Availability Zone configuration of the cluster (job flow). */
 	export interface PlacementType {
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		AvailabilityZone?: string | null;
 		AvailabilityZones?: Array<string>;
 	}
 
 	/** The Amazon EC2 Availability Zone configuration of the cluster (job flow). */
 	export interface PlacementTypeFormProperties {
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		AvailabilityZone: FormControl<string | null | undefined>,
 	}
 	export function CreatePlacementTypeFormGroup() {
 		return new FormGroup<PlacementTypeFormProperties>({
-			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10280), Validators.minLength(0)]),
 		});
 
 	}
@@ -1399,28 +2125,46 @@ export namespace MyNS {
 
 	/** The execution state of a step. */
 	export interface StepExecutionStatusDetail {
+
+		/** Required */
 		State: StepExecutionStatusDetailState;
+
+		/** Required */
 		CreationDateTime: Date;
 		StartDateTime?: Date | null;
 		EndDateTime?: Date | null;
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		LastStateChangeReason?: string | null;
 	}
 
 	/** The execution state of a step. */
 	export interface StepExecutionStatusDetailFormProperties {
+
+		/** Required */
 		State: FormControl<StepExecutionStatusDetailState | null | undefined>,
+
+		/** Required */
 		CreationDateTime: FormControl<Date | null | undefined>,
 		StartDateTime: FormControl<Date | null | undefined>,
 		EndDateTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		LastStateChangeReason: FormControl<string | null | undefined>,
 	}
 	export function CreateStepExecutionStatusDetailFormGroup() {
 		return new FormGroup<StepExecutionStatusDetailFormProperties>({
-			State: new FormControl<StepExecutionStatusDetailState | null | undefined>(undefined),
-			CreationDateTime: new FormControl<Date | null | undefined>(undefined),
+			State: new FormControl<StepExecutionStatusDetailState | null | undefined>(undefined, [Validators.required]),
+			CreationDateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			StartDateTime: new FormControl<Date | null | undefined>(undefined),
 			EndDateTime: new FormControl<Date | null | undefined>(undefined),
-			LastStateChangeReason: new FormControl<string | null | undefined>(undefined),
+			LastStateChangeReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10280), Validators.minLength(0)]),
 		});
 
 	}
@@ -1447,6 +2191,12 @@ export namespace MyNS {
 
 	/** Configuration of a bootstrap action. */
 	export interface BootstrapActionConfig {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Name: string;
 
 		/**
@@ -1458,11 +2208,17 @@ export namespace MyNS {
 
 	/** Configuration of a bootstrap action. */
 	export interface BootstrapActionConfigFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateBootstrapActionConfigFormGroup() {
 		return new FormGroup<BootstrapActionConfigFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -1470,17 +2226,29 @@ export namespace MyNS {
 
 	/** Configuration of the script to run during a bootstrap action. */
 	export interface ScriptBootstrapActionConfig {
+
+		/**
+		 * Required
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		Path: string;
 		Args?: Array<string>;
 	}
 
 	/** Configuration of the script to run during a bootstrap action. */
 	export interface ScriptBootstrapActionConfigFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		Path: FormControl<string | null | undefined>,
 	}
 	export function CreateScriptBootstrapActionConfigFormGroup() {
 		return new FormGroup<ScriptBootstrapActionConfigFormProperties>({
-			Path: new FormControl<string | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10280), Validators.minLength(0)]),
 		});
 
 	}
@@ -1512,18 +2280,28 @@ export namespace MyNS {
 	export enum JobFlowExecutionState { STARTING = 0, BOOTSTRAPPING = 1, RUNNING = 2, WAITING = 3, SHUTTING_DOWN = 4, TERMINATED = 5, COMPLETED = 6, FAILED = 7 }
 
 	export interface DescribeSecurityConfigurationOutput {
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		Name?: string | null;
 		SecurityConfiguration?: string | null;
 		CreationDateTime?: Date | null;
 	}
 	export interface DescribeSecurityConfigurationOutputFormProperties {
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		Name: FormControl<string | null | undefined>,
 		SecurityConfiguration: FormControl<string | null | undefined>,
 		CreationDateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateDescribeSecurityConfigurationOutputFormGroup() {
 		return new FormGroup<DescribeSecurityConfigurationOutputFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10280), Validators.minLength(0)]),
 			SecurityConfiguration: new FormControl<string | null | undefined>(undefined),
 			CreationDateTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1531,14 +2309,26 @@ export namespace MyNS {
 	}
 
 	export interface DescribeSecurityConfigurationInput {
+
+		/**
+		 * Required
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		Name: string;
 	}
 	export interface DescribeSecurityConfigurationInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeSecurityConfigurationInputFormGroup() {
 		return new FormGroup<DescribeSecurityConfigurationInputFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10280), Validators.minLength(0)]),
 		});
 
 	}
@@ -1710,19 +2500,27 @@ export namespace MyNS {
 
 	/** This input determines which step to describe. */
 	export interface DescribeStepInput {
+
+		/** Required */
 		ClusterId: string;
+
+		/** Required */
 		StepId: string;
 	}
 
 	/** This input determines which step to describe. */
 	export interface DescribeStepInputFormProperties {
+
+		/** Required */
 		ClusterId: FormControl<string | null | undefined>,
+
+		/** Required */
 		StepId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeStepInputFormGroup() {
 		return new FormGroup<DescribeStepInputFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
-			StepId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			StepId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1752,17 +2550,21 @@ export namespace MyNS {
 
 	/** A configuration for Amazon EMR block public access. When <code>BlockPublicSecurityGroupRules</code> is set to <code>true</code>, Amazon EMR prevents cluster creation if one of the cluster's security groups has a rule that allows inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code>. */
 	export interface BlockPublicAccessConfiguration {
+
+		/** Required */
 		BlockPublicSecurityGroupRules: boolean;
 		PermittedPublicSecurityGroupRuleRanges?: Array<PortRange>;
 	}
 
 	/** A configuration for Amazon EMR block public access. When <code>BlockPublicSecurityGroupRules</code> is set to <code>true</code>, Amazon EMR prevents cluster creation if one of the cluster's security groups has a rule that allows inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code>. */
 	export interface BlockPublicAccessConfigurationFormProperties {
+
+		/** Required */
 		BlockPublicSecurityGroupRules: FormControl<boolean | null | undefined>,
 	}
 	export function CreateBlockPublicAccessConfigurationFormGroup() {
 		return new FormGroup<BlockPublicAccessConfigurationFormProperties>({
-			BlockPublicSecurityGroupRules: new FormControl<boolean | null | undefined>(undefined),
+			BlockPublicSecurityGroupRules: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1770,19 +2572,41 @@ export namespace MyNS {
 
 	/** A list of port ranges that are permitted to allow inbound traffic from all public IP addresses. To specify a single port, use the same value for <code>MinRange</code> and <code>MaxRange</code>. */
 	export interface PortRange {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 65535
+		 */
 		MinRange: number;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 65535
+		 */
 		MaxRange?: number | null;
 	}
 
 	/** A list of port ranges that are permitted to allow inbound traffic from all public IP addresses. To specify a single port, use the same value for <code>MinRange</code> and <code>MaxRange</code>. */
 	export interface PortRangeFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 65535
+		 */
 		MinRange: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 65535
+		 */
 		MaxRange: FormControl<number | null | undefined>,
 	}
 	export function CreatePortRangeFormGroup() {
 		return new FormGroup<PortRangeFormProperties>({
-			MinRange: new FormControl<number | null | undefined>(undefined),
-			MaxRange: new FormControl<number | null | undefined>(undefined),
+			MinRange: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(65535)]),
+			MaxRange: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(65535)]),
 		});
 
 	}
@@ -1790,19 +2614,35 @@ export namespace MyNS {
 
 	/** Properties that describe the AWS principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata. */
 	export interface BlockPublicAccessConfigurationMetadata {
+
+		/** Required */
 		CreationDateTime: Date;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		CreatedByArn: string;
 	}
 
 	/** Properties that describe the AWS principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata. */
 	export interface BlockPublicAccessConfigurationMetadataFormProperties {
+
+		/** Required */
 		CreationDateTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		CreatedByArn: FormControl<string | null | undefined>,
 	}
 	export function CreateBlockPublicAccessConfigurationMetadataFormGroup() {
 		return new FormGroup<BlockPublicAccessConfigurationMetadataFormProperties>({
-			CreationDateTime: new FormControl<Date | null | undefined>(undefined),
-			CreatedByArn: new FormControl<string | null | undefined>(undefined),
+			CreationDateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			CreatedByArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -1850,24 +2690,36 @@ export namespace MyNS {
 
 	/**  The EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster can not be above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.  */
 	export interface ComputeLimits {
+
+		/** Required */
 		UnitType: ComputeLimitsUnitType;
+
+		/** Required */
 		MinimumCapacityUnits: number;
+
+		/** Required */
 		MaximumCapacityUnits: number;
 		MaximumOnDemandCapacityUnits?: number | null;
 	}
 
 	/**  The EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster can not be above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.  */
 	export interface ComputeLimitsFormProperties {
+
+		/** Required */
 		UnitType: FormControl<ComputeLimitsUnitType | null | undefined>,
+
+		/** Required */
 		MinimumCapacityUnits: FormControl<number | null | undefined>,
+
+		/** Required */
 		MaximumCapacityUnits: FormControl<number | null | undefined>,
 		MaximumOnDemandCapacityUnits: FormControl<number | null | undefined>,
 	}
 	export function CreateComputeLimitsFormGroup() {
 		return new FormGroup<ComputeLimitsFormProperties>({
-			UnitType: new FormControl<ComputeLimitsUnitType | null | undefined>(undefined),
-			MinimumCapacityUnits: new FormControl<number | null | undefined>(undefined),
-			MaximumCapacityUnits: new FormControl<number | null | undefined>(undefined),
+			UnitType: new FormControl<ComputeLimitsUnitType | null | undefined>(undefined, [Validators.required]),
+			MinimumCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			MaximumCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			MaximumOnDemandCapacityUnits: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1876,14 +2728,18 @@ export namespace MyNS {
 	export enum ComputeLimitsUnitType { InstanceFleetUnits = 0, Instances = 1, VCPU = 2 }
 
 	export interface GetManagedScalingPolicyInput {
+
+		/** Required */
 		ClusterId: string;
 	}
 	export interface GetManagedScalingPolicyInputFormProperties {
+
+		/** Required */
 		ClusterId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetManagedScalingPolicyInputFormGroup() {
 		return new FormGroup<GetManagedScalingPolicyInputFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1930,18 +2786,22 @@ export namespace MyNS {
 
 	/** This input determines which bootstrap actions to retrieve. */
 	export interface ListBootstrapActionsInput {
+
+		/** Required */
 		ClusterId: string;
 		Marker?: string | null;
 	}
 
 	/** This input determines which bootstrap actions to retrieve. */
 	export interface ListBootstrapActionsInputFormProperties {
+
+		/** Required */
 		ClusterId: FormControl<string | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateListBootstrapActionsInputFormGroup() {
 		return new FormGroup<ListBootstrapActionsInputFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Marker: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1974,7 +2834,17 @@ export namespace MyNS {
 		/** The detailed status of the cluster. */
 		Status?: ClusterStatus;
 		NormalizedInstanceHours?: number | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ClusterArn?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		OutpostArn?: string | null;
 	}
 
@@ -1983,7 +2853,17 @@ export namespace MyNS {
 		Id: FormControl<string | null | undefined>,
 		Name: FormControl<string | null | undefined>,
 		NormalizedInstanceHours: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ClusterArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		OutpostArn: FormControl<string | null | undefined>,
 	}
 	export function CreateClusterSummaryFormGroup() {
@@ -1991,8 +2871,8 @@ export namespace MyNS {
 			Id: new FormControl<string | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined),
 			NormalizedInstanceHours: new FormControl<number | null | undefined>(undefined),
-			ClusterArn: new FormControl<string | null | undefined>(undefined),
-			OutpostArn: new FormControl<string | null | undefined>(undefined),
+			ClusterArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			OutpostArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 		});
 
 	}
@@ -2041,14 +2921,27 @@ export namespace MyNS {
 	/** <p>Describes an instance fleet, which is a group of EC2 instances that host a particular node type (master, core, or task) in an Amazon EMR cluster. Instance fleets can consist of a mix of instance types and On-Demand and Spot instances, which are provisioned to meet a defined target capacity. </p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
 	export interface InstanceFleet {
 		Id?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Name?: string | null;
 
 		/** <p>The status of the instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
 		Status?: InstanceFleetStatus;
 		InstanceFleetType?: InstanceFleetConfigInstanceFleetType | null;
+
+		/** Minimum: 0 */
 		TargetOnDemandCapacity?: number | null;
+
+		/** Minimum: 0 */
 		TargetSpotCapacity?: number | null;
+
+		/** Minimum: 0 */
 		ProvisionedOnDemandCapacity?: number | null;
+
+		/** Minimum: 0 */
 		ProvisionedSpotCapacity?: number | null;
 		InstanceTypeSpecifications?: Array<InstanceTypeSpecification>;
 
@@ -2059,22 +2952,35 @@ export namespace MyNS {
 	/** <p>Describes an instance fleet, which is a group of EC2 instances that host a particular node type (master, core, or task) in an Amazon EMR cluster. Instance fleets can consist of a mix of instance types and On-Demand and Spot instances, which are provisioned to meet a defined target capacity. </p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
 	export interface InstanceFleetFormProperties {
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Name: FormControl<string | null | undefined>,
 		InstanceFleetType: FormControl<InstanceFleetConfigInstanceFleetType | null | undefined>,
+
+		/** Minimum: 0 */
 		TargetOnDemandCapacity: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		TargetSpotCapacity: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		ProvisionedOnDemandCapacity: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		ProvisionedSpotCapacity: FormControl<number | null | undefined>,
 	}
 	export function CreateInstanceFleetFormGroup() {
 		return new FormGroup<InstanceFleetFormProperties>({
 			Id: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			InstanceFleetType: new FormControl<InstanceFleetConfigInstanceFleetType | null | undefined>(undefined),
-			TargetOnDemandCapacity: new FormControl<number | null | undefined>(undefined),
-			TargetSpotCapacity: new FormControl<number | null | undefined>(undefined),
-			ProvisionedOnDemandCapacity: new FormControl<number | null | undefined>(undefined),
-			ProvisionedSpotCapacity: new FormControl<number | null | undefined>(undefined),
+			TargetOnDemandCapacity: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			TargetSpotCapacity: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			ProvisionedOnDemandCapacity: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			ProvisionedSpotCapacity: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -2152,9 +3058,23 @@ export namespace MyNS {
 
 	/** <p>The configuration specification for each instance type in an instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
 	export interface InstanceTypeSpecification {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		InstanceType?: string | null;
+
+		/** Minimum: 0 */
 		WeightedCapacity?: number | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		BidPrice?: string | null;
+
+		/** Minimum: 0 */
 		BidPriceAsPercentageOfOnDemandPrice?: number | null;
 		Configurations?: Array<Configuration>;
 		EbsBlockDevices?: Array<EbsBlockDevice>;
@@ -2163,18 +3083,32 @@ export namespace MyNS {
 
 	/** <p>The configuration specification for each instance type in an instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
 	export interface InstanceTypeSpecificationFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		InstanceType: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		WeightedCapacity: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		BidPrice: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		BidPriceAsPercentageOfOnDemandPrice: FormControl<number | null | undefined>,
 		EbsOptimized: FormControl<boolean | null | undefined>,
 	}
 	export function CreateInstanceTypeSpecificationFormGroup() {
 		return new FormGroup<InstanceTypeSpecificationFormProperties>({
-			InstanceType: new FormControl<string | null | undefined>(undefined),
-			WeightedCapacity: new FormControl<number | null | undefined>(undefined),
-			BidPrice: new FormControl<string | null | undefined>(undefined),
-			BidPriceAsPercentageOfOnDemandPrice: new FormControl<number | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			WeightedCapacity: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			BidPrice: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			BidPriceAsPercentageOfOnDemandPrice: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			EbsOptimized: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2201,16 +3135,20 @@ export namespace MyNS {
 	}
 
 	export interface ListInstanceFleetsInput {
+
+		/** Required */
 		ClusterId: string;
 		Marker?: string | null;
 	}
 	export interface ListInstanceFleetsInputFormProperties {
+
+		/** Required */
 		ClusterId: FormControl<string | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateListInstanceFleetsInputFormGroup() {
 		return new FormGroup<ListInstanceFleetsInputFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Marker: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2242,6 +3180,11 @@ export namespace MyNS {
 		Market?: InstanceGroupConfigMarket | null;
 		InstanceGroupType?: InstanceFleetConfigInstanceFleetType | null;
 		BidPrice?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		InstanceType?: string | null;
 		RequestedInstanceCount?: number | null;
 		RunningInstanceCount?: number | null;
@@ -2269,6 +3212,11 @@ export namespace MyNS {
 		Market: FormControl<InstanceGroupConfigMarket | null | undefined>,
 		InstanceGroupType: FormControl<InstanceFleetConfigInstanceFleetType | null | undefined>,
 		BidPrice: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		InstanceType: FormControl<string | null | undefined>,
 		RequestedInstanceCount: FormControl<number | null | undefined>,
 		RunningInstanceCount: FormControl<number | null | undefined>,
@@ -2283,7 +3231,7 @@ export namespace MyNS {
 			Market: new FormControl<InstanceGroupConfigMarket | null | undefined>(undefined),
 			InstanceGroupType: new FormControl<InstanceFleetConfigInstanceFleetType | null | undefined>(undefined),
 			BidPrice: new FormControl<string | null | undefined>(undefined),
-			InstanceType: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			RequestedInstanceCount: new FormControl<number | null | undefined>(undefined),
 			RunningInstanceCount: new FormControl<number | null | undefined>(undefined),
 			ConfigurationsVersion: new FormControl<number | null | undefined>(undefined),
@@ -2466,18 +3414,22 @@ export namespace MyNS {
 
 	/** This input determines which instance groups to retrieve. */
 	export interface ListInstanceGroupsInput {
+
+		/** Required */
 		ClusterId: string;
 		Marker?: string | null;
 	}
 
 	/** This input determines which instance groups to retrieve. */
 	export interface ListInstanceGroupsInputFormProperties {
+
+		/** Required */
 		ClusterId: FormControl<string | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateListInstanceGroupsInputFormGroup() {
 		return new FormGroup<ListInstanceGroupsInputFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Marker: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2516,6 +3468,11 @@ export namespace MyNS {
 		InstanceGroupId?: string | null;
 		InstanceFleetId?: string | null;
 		Market?: InstanceGroupConfigMarket | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		InstanceType?: string | null;
 		EbsVolumes?: Array<EbsVolume>;
 	}
@@ -2531,6 +3488,11 @@ export namespace MyNS {
 		InstanceGroupId: FormControl<string | null | undefined>,
 		InstanceFleetId: FormControl<string | null | undefined>,
 		Market: FormControl<InstanceGroupConfigMarket | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		InstanceType: FormControl<string | null | undefined>,
 	}
 	export function CreateInstanceFormGroup() {
@@ -2544,7 +3506,7 @@ export namespace MyNS {
 			InstanceGroupId: new FormControl<string | null | undefined>(undefined),
 			InstanceFleetId: new FormControl<string | null | undefined>(undefined),
 			Market: new FormControl<InstanceGroupConfigMarket | null | undefined>(undefined),
-			InstanceType: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -2642,6 +3604,8 @@ export namespace MyNS {
 
 	/** This input determines which instances to list. */
 	export interface ListInstancesInput {
+
+		/** Required */
 		ClusterId: string;
 		InstanceGroupId?: string | null;
 		InstanceGroupTypes?: Array<InstanceGroupType>;
@@ -2653,6 +3617,8 @@ export namespace MyNS {
 
 	/** This input determines which instances to list. */
 	export interface ListInstancesInputFormProperties {
+
+		/** Required */
 		ClusterId: FormControl<string | null | undefined>,
 		InstanceGroupId: FormControl<string | null | undefined>,
 		InstanceFleetId: FormControl<string | null | undefined>,
@@ -2661,7 +3627,7 @@ export namespace MyNS {
 	}
 	export function CreateListInstancesInputFormGroup() {
 		return new FormGroup<ListInstancesInputFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			InstanceGroupId: new FormControl<string | null | undefined>(undefined),
 			InstanceFleetId: new FormControl<string | null | undefined>(undefined),
 			InstanceFleetType: new FormControl<InstanceFleetConfigInstanceFleetType | null | undefined>(undefined),
@@ -2691,18 +3657,28 @@ export namespace MyNS {
 
 	/** The creation date and time, and name, of a security configuration. */
 	export interface SecurityConfigurationSummary {
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		Name?: string | null;
 		CreationDateTime?: Date | null;
 	}
 
 	/** The creation date and time, and name, of a security configuration. */
 	export interface SecurityConfigurationSummaryFormProperties {
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		Name: FormControl<string | null | undefined>,
 		CreationDateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateSecurityConfigurationSummaryFormGroup() {
 		return new FormGroup<SecurityConfigurationSummaryFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10280), Validators.minLength(0)]),
 			CreationDateTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -2771,6 +3747,8 @@ export namespace MyNS {
 
 	/** This input determines which steps to list. */
 	export interface ListStepsInput {
+
+		/** Required */
 		ClusterId: string;
 		StepStates?: Array<StepState>;
 		StepIds?: Array<string>;
@@ -2779,12 +3757,14 @@ export namespace MyNS {
 
 	/** This input determines which steps to list. */
 	export interface ListStepsInputFormProperties {
+
+		/** Required */
 		ClusterId: FormControl<string | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateListStepsInputFormGroup() {
 		return new FormGroup<ListStepsInputFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Marker: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2806,22 +3786,28 @@ export namespace MyNS {
 	}
 
 	export interface ModifyClusterInput {
+
+		/** Required */
 		ClusterId: string;
 		StepConcurrencyLevel?: number | null;
 	}
 	export interface ModifyClusterInputFormProperties {
+
+		/** Required */
 		ClusterId: FormControl<string | null | undefined>,
 		StepConcurrencyLevel: FormControl<number | null | undefined>,
 	}
 	export function CreateModifyClusterInputFormGroup() {
 		return new FormGroup<ModifyClusterInputFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			StepConcurrencyLevel: new FormControl<number | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ModifyInstanceFleetInput {
+
+		/** Required */
 		ClusterId: string;
 
 		/**
@@ -2831,11 +3817,13 @@ export namespace MyNS {
 		InstanceFleet: InstanceFleetModifyConfig;
 	}
 	export interface ModifyInstanceFleetInputFormProperties {
+
+		/** Required */
 		ClusterId: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyInstanceFleetInputFormGroup() {
 		return new FormGroup<ModifyInstanceFleetInputFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2843,22 +3831,34 @@ export namespace MyNS {
 
 	/** <p>Configuration parameters for an instance fleet modification request.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
 	export interface InstanceFleetModifyConfig {
+
+		/** Required */
 		InstanceFleetId: string;
+
+		/** Minimum: 0 */
 		TargetOnDemandCapacity?: number | null;
+
+		/** Minimum: 0 */
 		TargetSpotCapacity?: number | null;
 	}
 
 	/** <p>Configuration parameters for an instance fleet modification request.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
 	export interface InstanceFleetModifyConfigFormProperties {
+
+		/** Required */
 		InstanceFleetId: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		TargetOnDemandCapacity: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		TargetSpotCapacity: FormControl<number | null | undefined>,
 	}
 	export function CreateInstanceFleetModifyConfigFormGroup() {
 		return new FormGroup<InstanceFleetModifyConfigFormProperties>({
-			InstanceFleetId: new FormControl<string | null | undefined>(undefined),
-			TargetOnDemandCapacity: new FormControl<number | null | undefined>(undefined),
-			TargetSpotCapacity: new FormControl<number | null | undefined>(undefined),
+			InstanceFleetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TargetOnDemandCapacity: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			TargetSpotCapacity: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -2884,6 +3884,12 @@ export namespace MyNS {
 
 	/** Modify the size or configurations of an instance group. */
 	export interface InstanceGroupModifyConfig {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		InstanceGroupId: string;
 		InstanceCount?: number | null;
 		EC2InstanceIdsToTerminate?: Array<string>;
@@ -2895,12 +3901,18 @@ export namespace MyNS {
 
 	/** Modify the size or configurations of an instance group. */
 	export interface InstanceGroupModifyConfigFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		InstanceGroupId: FormControl<string | null | undefined>,
 		InstanceCount: FormControl<number | null | undefined>,
 	}
 	export function CreateInstanceGroupModifyConfigFormGroup() {
 		return new FormGroup<InstanceGroupModifyConfigFormProperties>({
-			InstanceGroupId: new FormControl<string | null | undefined>(undefined),
+			InstanceGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 			InstanceCount: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -2912,24 +3924,38 @@ export namespace MyNS {
 
 		/** An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>. */
 		AutoScalingPolicy?: AutoScalingPolicyDescription;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ClusterArn?: string | null;
 	}
 	export interface PutAutoScalingPolicyOutputFormProperties {
 		ClusterId: FormControl<string | null | undefined>,
 		InstanceGroupId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ClusterArn: FormControl<string | null | undefined>,
 	}
 	export function CreatePutAutoScalingPolicyOutputFormGroup() {
 		return new FormGroup<PutAutoScalingPolicyOutputFormProperties>({
 			ClusterId: new FormControl<string | null | undefined>(undefined),
 			InstanceGroupId: new FormControl<string | null | undefined>(undefined),
-			ClusterArn: new FormControl<string | null | undefined>(undefined),
+			ClusterArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface PutAutoScalingPolicyInput {
+
+		/** Required */
 		ClusterId: string;
+
+		/** Required */
 		InstanceGroupId: string;
 
 		/**
@@ -2939,13 +3965,17 @@ export namespace MyNS {
 		AutoScalingPolicy: AutoScalingPolicy;
 	}
 	export interface PutAutoScalingPolicyInputFormProperties {
+
+		/** Required */
 		ClusterId: FormControl<string | null | undefined>,
+
+		/** Required */
 		InstanceGroupId: FormControl<string | null | undefined>,
 	}
 	export function CreatePutAutoScalingPolicyInputFormGroup() {
 		return new FormGroup<PutAutoScalingPolicyInputFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
-			InstanceGroupId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			InstanceGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2987,6 +4017,8 @@ export namespace MyNS {
 	}
 
 	export interface PutManagedScalingPolicyInput {
+
+		/** Required */
 		ClusterId: string;
 
 		/**
@@ -2996,11 +4028,13 @@ export namespace MyNS {
 		ManagedScalingPolicy: ManagedScalingPolicy;
 	}
 	export interface PutManagedScalingPolicyInputFormProperties {
+
+		/** Required */
 		ClusterId: FormControl<string | null | undefined>,
 	}
 	export function CreatePutManagedScalingPolicyInputFormGroup() {
 		return new FormGroup<PutManagedScalingPolicyInputFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3016,17 +4050,25 @@ export namespace MyNS {
 	}
 
 	export interface RemoveAutoScalingPolicyInput {
+
+		/** Required */
 		ClusterId: string;
+
+		/** Required */
 		InstanceGroupId: string;
 	}
 	export interface RemoveAutoScalingPolicyInputFormProperties {
+
+		/** Required */
 		ClusterId: FormControl<string | null | undefined>,
+
+		/** Required */
 		InstanceGroupId: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveAutoScalingPolicyInputFormGroup() {
 		return new FormGroup<RemoveAutoScalingPolicyInputFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
-			InstanceGroupId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			InstanceGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3042,14 +4084,18 @@ export namespace MyNS {
 	}
 
 	export interface RemoveManagedScalingPolicyInput {
+
+		/** Required */
 		ClusterId: string;
 	}
 	export interface RemoveManagedScalingPolicyInputFormProperties {
+
+		/** Required */
 		ClusterId: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveManagedScalingPolicyInputFormGroup() {
 		return new FormGroup<RemoveManagedScalingPolicyInputFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3071,17 +4117,23 @@ export namespace MyNS {
 
 	/** This input identifies a cluster and a list of tags to remove. */
 	export interface RemoveTagsInput {
+
+		/** Required */
 		ResourceId: string;
+
+		/** Required */
 		TagKeys: Array<string>;
 	}
 
 	/** This input identifies a cluster and a list of tags to remove. */
 	export interface RemoveTagsInputFormProperties {
+
+		/** Required */
 		ResourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveTagsInputFormGroup() {
 		return new FormGroup<RemoveTagsInputFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3089,19 +4141,39 @@ export namespace MyNS {
 
 	/**  The result of the <a>RunJobFlow</a> operation.  */
 	export interface RunJobFlowOutput {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		JobFlowId?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ClusterArn?: string | null;
 	}
 
 	/**  The result of the <a>RunJobFlow</a> operation.  */
 	export interface RunJobFlowOutputFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		JobFlowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ClusterArn: FormControl<string | null | undefined>,
 	}
 	export function CreateRunJobFlowOutputFormGroup() {
 		return new FormGroup<RunJobFlowOutputFormProperties>({
-			JobFlowId: new FormControl<string | null | undefined>(undefined),
-			ClusterArn: new FormControl<string | null | undefined>(undefined),
+			JobFlowId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			ClusterArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -3109,11 +4181,42 @@ export namespace MyNS {
 
 	/**  Input to the <a>RunJobFlow</a> operation.  */
 	export interface RunJobFlowInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Name: string;
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		LogUri?: string | null;
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		LogEncryptionKmsKeyId?: string | null;
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		AdditionalInfo?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		AmiVersion?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		ReleaseLabel?: string | null;
 
 		/**
@@ -3128,12 +4231,37 @@ export namespace MyNS {
 		Applications?: Array<Application>;
 		Configurations?: Array<Configuration>;
 		VisibleToAllUsers?: boolean | null;
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		JobFlowRole?: string | null;
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		ServiceRole?: string | null;
 		Tags?: Array<Tag>;
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		SecurityConfiguration?: string | null;
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		AutoScalingRole?: string | null;
 		ScaleDownBehavior?: ClusterScaleDownBehavior | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		CustomAmiId?: string | null;
 		EbsRootVolumeSize?: number | null;
 		RepoUpgradeOnBoot?: ClusterRepoUpgradeOnBoot | null;
@@ -3148,18 +4276,74 @@ export namespace MyNS {
 
 	/**  Input to the <a>RunJobFlow</a> operation.  */
 	export interface RunJobFlowInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		LogUri: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		LogEncryptionKmsKeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		AdditionalInfo: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		AmiVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		ReleaseLabel: FormControl<string | null | undefined>,
 		VisibleToAllUsers: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		JobFlowRole: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		ServiceRole: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		SecurityConfiguration: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10280
+		 * Min length: 0
+		 */
 		AutoScalingRole: FormControl<string | null | undefined>,
 		ScaleDownBehavior: FormControl<ClusterScaleDownBehavior | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		CustomAmiId: FormControl<string | null | undefined>,
 		EbsRootVolumeSize: FormControl<number | null | undefined>,
 		RepoUpgradeOnBoot: FormControl<ClusterRepoUpgradeOnBoot | null | undefined>,
@@ -3167,19 +4351,19 @@ export namespace MyNS {
 	}
 	export function CreateRunJobFlowInputFormGroup() {
 		return new FormGroup<RunJobFlowInputFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			LogUri: new FormControl<string | null | undefined>(undefined),
-			LogEncryptionKmsKeyId: new FormControl<string | null | undefined>(undefined),
-			AdditionalInfo: new FormControl<string | null | undefined>(undefined),
-			AmiVersion: new FormControl<string | null | undefined>(undefined),
-			ReleaseLabel: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			LogUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10280), Validators.minLength(0)]),
+			LogEncryptionKmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10280), Validators.minLength(0)]),
+			AdditionalInfo: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10280), Validators.minLength(0)]),
+			AmiVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			ReleaseLabel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			VisibleToAllUsers: new FormControl<boolean | null | undefined>(undefined),
-			JobFlowRole: new FormControl<string | null | undefined>(undefined),
-			ServiceRole: new FormControl<string | null | undefined>(undefined),
-			SecurityConfiguration: new FormControl<string | null | undefined>(undefined),
-			AutoScalingRole: new FormControl<string | null | undefined>(undefined),
+			JobFlowRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10280), Validators.minLength(0)]),
+			ServiceRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10280), Validators.minLength(0)]),
+			SecurityConfiguration: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10280), Validators.minLength(0)]),
+			AutoScalingRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10280), Validators.minLength(0)]),
 			ScaleDownBehavior: new FormControl<ClusterScaleDownBehavior | null | undefined>(undefined),
-			CustomAmiId: new FormControl<string | null | undefined>(undefined),
+			CustomAmiId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			EbsRootVolumeSize: new FormControl<number | null | undefined>(undefined),
 			RepoUpgradeOnBoot: new FormControl<ClusterRepoUpgradeOnBoot | null | undefined>(undefined),
 			StepConcurrencyLevel: new FormControl<number | null | undefined>(undefined),
@@ -3190,22 +4374,62 @@ export namespace MyNS {
 
 	/** A description of the Amazon EC2 instance on which the cluster (job flow) runs. A valid JobFlowInstancesConfig must contain either InstanceGroups or InstanceFleets, which is the recommended configuration. They cannot be used together. You may also have MasterInstanceType, SlaveInstanceType, and InstanceCount (all three must be present), but we don't recommend this configuration. */
 	export interface JobFlowInstancesConfig {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		MasterInstanceType?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		SlaveInstanceType?: string | null;
 		InstanceCount?: number | null;
 		InstanceGroups?: Array<InstanceGroupConfig>;
 		InstanceFleets?: Array<InstanceFleetConfig>;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Ec2KeyName?: string | null;
 
 		/** The Amazon EC2 Availability Zone configuration of the cluster (job flow). */
 		Placement?: PlacementType;
 		KeepJobFlowAliveWhenNoSteps?: boolean | null;
 		TerminationProtected?: boolean | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		HadoopVersion?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Ec2SubnetId?: string | null;
 		Ec2SubnetIds?: Array<string>;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		EmrManagedMasterSecurityGroup?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		EmrManagedSlaveSecurityGroup?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		ServiceAccessSecurityGroup?: string | null;
 		AdditionalMasterSecurityGroups?: Array<string>;
 		AdditionalSlaveSecurityGroups?: Array<string>;
@@ -3213,31 +4437,71 @@ export namespace MyNS {
 
 	/** A description of the Amazon EC2 instance on which the cluster (job flow) runs. A valid JobFlowInstancesConfig must contain either InstanceGroups or InstanceFleets, which is the recommended configuration. They cannot be used together. You may also have MasterInstanceType, SlaveInstanceType, and InstanceCount (all three must be present), but we don't recommend this configuration. */
 	export interface JobFlowInstancesConfigFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		MasterInstanceType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		SlaveInstanceType: FormControl<string | null | undefined>,
 		InstanceCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Ec2KeyName: FormControl<string | null | undefined>,
 		KeepJobFlowAliveWhenNoSteps: FormControl<boolean | null | undefined>,
 		TerminationProtected: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		HadoopVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Ec2SubnetId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		EmrManagedMasterSecurityGroup: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		EmrManagedSlaveSecurityGroup: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		ServiceAccessSecurityGroup: FormControl<string | null | undefined>,
 	}
 	export function CreateJobFlowInstancesConfigFormGroup() {
 		return new FormGroup<JobFlowInstancesConfigFormProperties>({
-			MasterInstanceType: new FormControl<string | null | undefined>(undefined),
-			SlaveInstanceType: new FormControl<string | null | undefined>(undefined),
+			MasterInstanceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			SlaveInstanceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			InstanceCount: new FormControl<number | null | undefined>(undefined),
-			Ec2KeyName: new FormControl<string | null | undefined>(undefined),
+			Ec2KeyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			KeepJobFlowAliveWhenNoSteps: new FormControl<boolean | null | undefined>(undefined),
 			TerminationProtected: new FormControl<boolean | null | undefined>(undefined),
-			HadoopVersion: new FormControl<string | null | undefined>(undefined),
-			Ec2SubnetId: new FormControl<string | null | undefined>(undefined),
-			EmrManagedMasterSecurityGroup: new FormControl<string | null | undefined>(undefined),
-			EmrManagedSlaveSecurityGroup: new FormControl<string | null | undefined>(undefined),
-			ServiceAccessSecurityGroup: new FormControl<string | null | undefined>(undefined),
+			HadoopVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			Ec2SubnetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			EmrManagedMasterSecurityGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			EmrManagedSlaveSecurityGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			ServiceAccessSecurityGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -3245,17 +4509,27 @@ export namespace MyNS {
 
 	/** The list of supported product configurations which allow user-supplied arguments. EMR accepts these arguments and forwards them to the corresponding installation script as bootstrap action arguments. */
 	export interface SupportedProductConfig {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Name?: string | null;
 		Args?: Array<string>;
 	}
 
 	/** The list of supported product configurations which allow user-supplied arguments. EMR accepts these arguments and forwards them to the corresponding installation script as bootstrap action arguments. */
 	export interface SupportedProductConfigFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateSupportedProductConfigFormGroup() {
 		return new FormGroup<SupportedProductConfigFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -3263,17 +4537,23 @@ export namespace MyNS {
 
 	/**  The input argument to the <a>TerminationProtection</a> operation.  */
 	export interface SetTerminationProtectionInput {
+
+		/** Required */
 		JobFlowIds: Array<string>;
+
+		/** Required */
 		TerminationProtected: boolean;
 	}
 
 	/**  The input argument to the <a>TerminationProtection</a> operation.  */
 	export interface SetTerminationProtectionInputFormProperties {
+
+		/** Required */
 		TerminationProtected: FormControl<boolean | null | undefined>,
 	}
 	export function CreateSetTerminationProtectionInputFormGroup() {
 		return new FormGroup<SetTerminationProtectionInputFormProperties>({
-			TerminationProtected: new FormControl<boolean | null | undefined>(undefined),
+			TerminationProtected: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3281,17 +4561,23 @@ export namespace MyNS {
 
 	/** The input to the SetVisibleToAllUsers action. */
 	export interface SetVisibleToAllUsersInput {
+
+		/** Required */
 		JobFlowIds: Array<string>;
+
+		/** Required */
 		VisibleToAllUsers: boolean;
 	}
 
 	/** The input to the SetVisibleToAllUsers action. */
 	export interface SetVisibleToAllUsersInputFormProperties {
+
+		/** Required */
 		VisibleToAllUsers: FormControl<boolean | null | undefined>,
 	}
 	export function CreateSetVisibleToAllUsersInputFormGroup() {
 		return new FormGroup<SetVisibleToAllUsersInputFormProperties>({
-			VisibleToAllUsers: new FormControl<boolean | null | undefined>(undefined),
+			VisibleToAllUsers: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3299,6 +4585,8 @@ export namespace MyNS {
 
 	/**  Input to the <a>TerminateJobFlows</a> operation.  */
 	export interface TerminateJobFlowsInput {
+
+		/** Required */
 		JobFlowIds: Array<string>;
 	}
 

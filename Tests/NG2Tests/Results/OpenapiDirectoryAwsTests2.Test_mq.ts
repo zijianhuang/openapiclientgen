@@ -342,18 +342,22 @@ export namespace MyNS {
 	/** Encryption options for the broker. */
 	export interface EncryptionOptions {
 		KmsKeyId?: string | null;
+
+		/** Required */
 		UseAwsOwnedKey: boolean;
 	}
 
 	/** Encryption options for the broker. */
 	export interface EncryptionOptionsFormProperties {
 		KmsKeyId: FormControl<string | null | undefined>,
+
+		/** Required */
 		UseAwsOwnedKey: FormControl<boolean | null | undefined>,
 	}
 	export function CreateEncryptionOptionsFormGroup() {
 		return new FormGroup<EncryptionOptionsFormProperties>({
 			KmsKeyId: new FormControl<string | null | undefined>(undefined),
-			UseAwsOwnedKey: new FormControl<boolean | null | undefined>(undefined),
+			UseAwsOwnedKey: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -472,16 +476,26 @@ export namespace MyNS {
 
 	export interface DescribeBrokerEngineTypesResponse {
 		BrokerEngineTypes?: Array<BrokerEngineType>;
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeBrokerEngineTypesResponseFormProperties {
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeBrokerEngineTypesResponseFormGroup() {
 		return new FormGroup<DescribeBrokerEngineTypesResponseFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -528,16 +542,26 @@ export namespace MyNS {
 
 	export interface DescribeBrokerInstanceOptionsResponse {
 		BrokerInstanceOptions?: Array<BrokerInstanceOption>;
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeBrokerInstanceOptionsResponseFormProperties {
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeBrokerInstanceOptionsResponseFormGroup() {
 		return new FormGroup<DescribeBrokerInstanceOptionsResponseFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -857,19 +881,29 @@ export namespace MyNS {
 
 	export interface ListUsersResponse {
 		BrokerId?: string | null;
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 		Users?: Array<UserSummary>;
 	}
 	export interface ListUsersResponseFormProperties {
 		BrokerId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListUsersResponseFormGroup() {
 		return new FormGroup<ListUsersResponseFormProperties>({
 			BrokerId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 

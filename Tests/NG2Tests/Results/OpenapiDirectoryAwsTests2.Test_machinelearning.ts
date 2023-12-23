@@ -6,18 +6,30 @@ export namespace MyNS {
 
 	/** Amazon ML returns the following elements.  */
 	export interface AddTagsOutput {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ResourceId?: string | null;
 		ResourceType?: AddTagsOutputResourceType | null;
 	}
 
 	/** Amazon ML returns the following elements.  */
 	export interface AddTagsOutputFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ResourceId: FormControl<string | null | undefined>,
 		ResourceType: FormControl<AddTagsOutputResourceType | null | undefined>,
 	}
 	export function CreateAddTagsOutputFormGroup() {
 		return new FormGroup<AddTagsOutputFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			ResourceType: new FormControl<AddTagsOutputResourceType | null | undefined>(undefined),
 		});
 
@@ -26,18 +38,41 @@ export namespace MyNS {
 	export enum AddTagsOutputResourceType { BatchPrediction = 0, DataSource = 1, Evaluation = 2, MLModel = 3 }
 
 	export interface AddTagsInput {
+
+		/**
+		 * Required
+		 * Maximum items: 100
+		 */
 		Tags: Array<Tag>;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ResourceId: string;
+
+		/** Required */
 		ResourceType: AddTagsOutputResourceType;
 	}
 	export interface AddTagsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ResourceId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ResourceType: FormControl<AddTagsOutputResourceType | null | undefined>,
 	}
 	export function CreateAddTagsInputFormGroup() {
 		return new FormGroup<AddTagsInputFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined),
-			ResourceType: new FormControl<AddTagsOutputResourceType | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			ResourceType: new FormControl<AddTagsOutputResourceType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -45,19 +80,43 @@ export namespace MyNS {
 
 	/** A custom key-value pair associated with an ML object, such as an ML model. */
 	export interface Tag {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Key?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Value?: string | null;
 	}
 
 	/** A custom key-value pair associated with an ML object, such as an ML model. */
 	export interface TagFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -65,45 +124,57 @@ export namespace MyNS {
 
 	/** An error on the client occurred. Typically, the cause is an invalid input value. */
 	export interface InvalidInputException {
+
+		/** Max length: 2048 */
 		message?: string | null;
 		code?: number | null;
 	}
 
 	/** An error on the client occurred. Typically, the cause is an invalid input value. */
 	export interface InvalidInputExceptionFormProperties {
+
+		/** Max length: 2048 */
 		message: FormControl<string | null | undefined>,
 		code: FormControl<number | null | undefined>,
 	}
 	export function CreateInvalidInputExceptionFormGroup() {
 		return new FormGroup<InvalidInputExceptionFormProperties>({
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 			code: new FormControl<number | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface InvalidTagException {
+
+		/** Max length: 2048 */
 		message?: string | null;
 	}
 	export interface InvalidTagExceptionFormProperties {
+
+		/** Max length: 2048 */
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateInvalidTagExceptionFormGroup() {
 		return new FormGroup<InvalidTagExceptionFormProperties>({
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 		});
 
 	}
 
 	export interface TagLimitExceededException {
+
+		/** Max length: 2048 */
 		message?: string | null;
 	}
 	export interface TagLimitExceededExceptionFormProperties {
+
+		/** Max length: 2048 */
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateTagLimitExceededExceptionFormGroup() {
 		return new FormGroup<TagLimitExceededExceptionFormProperties>({
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 		});
 
 	}
@@ -111,18 +182,22 @@ export namespace MyNS {
 
 	/** A specified resource cannot be located. */
 	export interface ResourceNotFoundException {
+
+		/** Max length: 2048 */
 		message?: string | null;
 		code?: number | null;
 	}
 
 	/** A specified resource cannot be located. */
 	export interface ResourceNotFoundExceptionFormProperties {
+
+		/** Max length: 2048 */
 		message: FormControl<string | null | undefined>,
 		code: FormControl<number | null | undefined>,
 	}
 	export function CreateResourceNotFoundExceptionFormGroup() {
 		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 			code: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -131,18 +206,22 @@ export namespace MyNS {
 
 	/** An error on the server occurred when trying to process a request. */
 	export interface InternalServerException {
+
+		/** Max length: 2048 */
 		message?: string | null;
 		code?: number | null;
 	}
 
 	/** An error on the server occurred when trying to process a request. */
 	export interface InternalServerExceptionFormProperties {
+
+		/** Max length: 2048 */
 		message: FormControl<string | null | undefined>,
 		code: FormControl<number | null | undefined>,
 	}
 	export function CreateInternalServerExceptionFormGroup() {
 		return new FormGroup<InternalServerExceptionFormProperties>({
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 			code: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -151,21 +230,40 @@ export namespace MyNS {
 
 	/** <p> Represents the output of a <code>CreateBatchPrediction</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateBatchPrediction</code> operation is asynchronous. You can poll for status updates by using the <code>&gt;GetBatchPrediction</code> operation and checking the <code>Status</code> parameter of the result. </p> */
 	export interface CreateBatchPredictionOutput {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BatchPredictionId?: string | null;
 	}
 
 	/** <p> Represents the output of a <code>CreateBatchPrediction</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateBatchPrediction</code> operation is asynchronous. You can poll for status updates by using the <code>&gt;GetBatchPrediction</code> operation and checking the <code>Status</code> parameter of the result. </p> */
 	export interface CreateBatchPredictionOutputFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BatchPredictionId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateBatchPredictionOutputFormGroup() {
 		return new FormGroup<CreateBatchPredictionOutputFormProperties>({
-			BatchPredictionId: new FormControl<string | null | undefined>(undefined),
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateBatchPredictionInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BatchPredictionId: string;
 
 		/**
@@ -174,7 +272,21 @@ export namespace MyNS {
 		 * Pattern: .*\S.*|^$
 		 */
 		BatchPredictionName?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BatchPredictionDataSourceId: string;
 
 		/**
@@ -186,6 +298,13 @@ export namespace MyNS {
 		OutputUri: string;
 	}
 	export interface CreateBatchPredictionInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BatchPredictionId: FormControl<string | null | undefined>,
 
 		/**
@@ -194,7 +313,21 @@ export namespace MyNS {
 		 * Pattern: .*\S.*|^$
 		 */
 		BatchPredictionName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BatchPredictionDataSourceId: FormControl<string | null | undefined>,
 
 		/**
@@ -207,11 +340,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateBatchPredictionInputFormGroup() {
 		return new FormGroup<CreateBatchPredictionInputFormProperties>({
-			BatchPredictionId: new FormControl<string | null | undefined>(undefined),
-			BatchPredictionName: new FormControl<string | null | undefined>(undefined),
-			MLModelId: new FormControl<string | null | undefined>(undefined),
-			BatchPredictionDataSourceId: new FormControl<string | null | undefined>(undefined),
-			OutputUri: new FormControl<string | null | undefined>(undefined),
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			BatchPredictionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			BatchPredictionDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			OutputUri: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048)]),
 		});
 
 	}
@@ -219,18 +352,22 @@ export namespace MyNS {
 
 	/** A second request to use or change an object was not allowed. This can result from retrying a request using a parameter that was not present in the original request. */
 	export interface IdempotentParameterMismatchException {
+
+		/** Max length: 2048 */
 		message?: string | null;
 		code?: number | null;
 	}
 
 	/** A second request to use or change an object was not allowed. This can result from retrying a request using a parameter that was not present in the original request. */
 	export interface IdempotentParameterMismatchExceptionFormProperties {
+
+		/** Max length: 2048 */
 		message: FormControl<string | null | undefined>,
 		code: FormControl<number | null | undefined>,
 	}
 	export function CreateIdempotentParameterMismatchExceptionFormGroup() {
 		return new FormGroup<IdempotentParameterMismatchExceptionFormProperties>({
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 			code: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -239,21 +376,40 @@ export namespace MyNS {
 
 	/** <p> Represents the output of a <code>CreateDataSourceFromRDS</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateDataSourceFromRDS</code>&gt; operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. You can inspect the <code>Message</code> when <code>Status</code> shows up as <code>FAILED</code>. You can also check the progress of the copy operation by going to the <code>DataPipeline</code> console and looking up the pipeline using the <code>pipelineId </code> from the describe call.</p> */
 	export interface CreateDataSourceFromRDSOutput {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId?: string | null;
 	}
 
 	/** <p> Represents the output of a <code>CreateDataSourceFromRDS</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateDataSourceFromRDS</code>&gt; operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. You can inspect the <code>Message</code> when <code>Status</code> shows up as <code>FAILED</code>. You can also check the progress of the copy operation by going to the <code>DataPipeline</code> console and looking up the pipeline using the <code>pipelineId </code> from the describe call.</p> */
 	export interface CreateDataSourceFromRDSOutputFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDataSourceFromRDSOutputFormGroup() {
 		return new FormGroup<CreateDataSourceFromRDSOutputFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateDataSourceFromRDSInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId: string;
 
 		/**
@@ -279,6 +435,13 @@ export namespace MyNS {
 		ComputeStatistics?: boolean | null;
 	}
 	export interface CreateDataSourceFromRDSInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId: FormControl<string | null | undefined>,
 
 		/**
@@ -299,9 +462,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateDataSourceFromRDSInputFormGroup() {
 		return new FormGroup<CreateDataSourceFromRDSInputFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined),
-			DataSourceName: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			DataSourceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(110), Validators.minLength(1)]),
 			ComputeStatistics: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -352,9 +515,29 @@ export namespace MyNS {
 		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		DataSchemaUri?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResourceRole: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ServiceRole: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		SubnetId: string;
+
+		/** Required */
 		SecurityGroupIds: Array<string>;
 	}
 
@@ -390,20 +573,38 @@ export namespace MyNS {
 		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		DataSchemaUri: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResourceRole: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ServiceRole: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		SubnetId: FormControl<string | null | undefined>,
 	}
 	export function CreateRDSDataSpecFormGroup() {
 		return new FormGroup<RDSDataSpecFormProperties>({
-			SelectSqlQuery: new FormControl<string | null | undefined>(undefined),
-			S3StagingLocation: new FormControl<string | null | undefined>(undefined),
+			SelectSqlQuery: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(16777216), Validators.minLength(1)]),
+			S3StagingLocation: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048)]),
 			DataRearrangement: new FormControl<string | null | undefined>(undefined),
-			DataSchema: new FormControl<string | null | undefined>(undefined),
-			DataSchemaUri: new FormControl<string | null | undefined>(undefined),
-			ResourceRole: new FormControl<string | null | undefined>(undefined),
-			ServiceRole: new FormControl<string | null | undefined>(undefined),
-			SubnetId: new FormControl<string | null | undefined>(undefined),
+			DataSchema: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(131071)]),
+			DataSchemaUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			ResourceRole: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			ServiceRole: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			SubnetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -452,8 +653,8 @@ export namespace MyNS {
 	}
 	export function CreateRDSDatabaseFormGroup() {
 		return new FormGroup<RDSDatabaseFormProperties>({
-			InstanceIdentifier: new FormControl<string | null | undefined>(undefined),
-			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			InstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
+			DatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -500,8 +701,8 @@ export namespace MyNS {
 	}
 	export function CreateRDSDatabaseCredentialsFormGroup() {
 		return new FormGroup<RDSDatabaseCredentialsFormProperties>({
-			Username: new FormControl<string | null | undefined>(undefined),
-			Password: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(8)]),
 		});
 
 	}
@@ -509,21 +710,40 @@ export namespace MyNS {
 
 	/** <p> Represents the output of a <code>CreateDataSourceFromRedshift</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateDataSourceFromRedshift</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. </p> */
 	export interface CreateDataSourceFromRedshiftOutput {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId?: string | null;
 	}
 
 	/** <p> Represents the output of a <code>CreateDataSourceFromRedshift</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateDataSourceFromRedshift</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. </p> */
 	export interface CreateDataSourceFromRedshiftOutputFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDataSourceFromRedshiftOutputFormGroup() {
 		return new FormGroup<CreateDataSourceFromRedshiftOutputFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateDataSourceFromRedshiftInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId: string;
 
 		/**
@@ -549,6 +769,13 @@ export namespace MyNS {
 		ComputeStatistics?: boolean | null;
 	}
 	export interface CreateDataSourceFromRedshiftInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId: FormControl<string | null | undefined>,
 
 		/**
@@ -569,9 +796,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateDataSourceFromRedshiftInputFormGroup() {
 		return new FormGroup<CreateDataSourceFromRedshiftInputFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined),
-			DataSourceName: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			DataSourceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(110), Validators.minLength(1)]),
 			ComputeStatistics: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -659,11 +886,11 @@ export namespace MyNS {
 	}
 	export function CreateRedshiftDataSpecFormGroup() {
 		return new FormGroup<RedshiftDataSpecFormProperties>({
-			SelectSqlQuery: new FormControl<string | null | undefined>(undefined),
-			S3StagingLocation: new FormControl<string | null | undefined>(undefined),
+			SelectSqlQuery: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(16777216), Validators.minLength(1)]),
+			S3StagingLocation: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048)]),
 			DataRearrangement: new FormControl<string | null | undefined>(undefined),
-			DataSchema: new FormControl<string | null | undefined>(undefined),
-			DataSchemaUri: new FormControl<string | null | undefined>(undefined),
+			DataSchema: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(131071)]),
+			DataSchemaUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 		});
 
 	}
@@ -714,8 +941,8 @@ export namespace MyNS {
 	}
 	export function CreateRedshiftDatabaseFormGroup() {
 		return new FormGroup<RedshiftDatabaseFormProperties>({
-			DatabaseName: new FormControl<string | null | undefined>(undefined),
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
 		});
 
 	}
@@ -762,8 +989,8 @@ export namespace MyNS {
 	}
 	export function CreateRedshiftDatabaseCredentialsFormGroup() {
 		return new FormGroup<RedshiftDatabaseCredentialsFormProperties>({
-			Username: new FormControl<string | null | undefined>(undefined),
-			Password: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(8)]),
 		});
 
 	}
@@ -771,21 +998,40 @@ export namespace MyNS {
 
 	/** <p> Represents the output of a <code>CreateDataSourceFromS3</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateDataSourceFromS3</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. </p> */
 	export interface CreateDataSourceFromS3Output {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId?: string | null;
 	}
 
 	/** <p> Represents the output of a <code>CreateDataSourceFromS3</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateDataSourceFromS3</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. </p> */
 	export interface CreateDataSourceFromS3OutputFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDataSourceFromS3OutputFormGroup() {
 		return new FormGroup<CreateDataSourceFromS3OutputFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateDataSourceFromS3Input {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId: string;
 
 		/**
@@ -803,6 +1049,13 @@ export namespace MyNS {
 		ComputeStatistics?: boolean | null;
 	}
 	export interface CreateDataSourceFromS3InputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId: FormControl<string | null | undefined>,
 
 		/**
@@ -815,8 +1068,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateDataSourceFromS3InputFormGroup() {
 		return new FormGroup<CreateDataSourceFromS3InputFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined),
-			DataSourceName: new FormControl<string | null | undefined>(undefined),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			DataSourceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			ComputeStatistics: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -876,10 +1129,10 @@ export namespace MyNS {
 	}
 	export function CreateS3DataSpecFormGroup() {
 		return new FormGroup<S3DataSpecFormProperties>({
-			DataLocationS3: new FormControl<string | null | undefined>(undefined),
+			DataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048)]),
 			DataRearrangement: new FormControl<string | null | undefined>(undefined),
-			DataSchema: new FormControl<string | null | undefined>(undefined),
-			DataSchemaLocationS3: new FormControl<string | null | undefined>(undefined),
+			DataSchema: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(131071)]),
+			DataSchemaLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 		});
 
 	}
@@ -887,21 +1140,40 @@ export namespace MyNS {
 
 	/** <p> Represents the output of a <code>CreateEvaluation</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p><code>CreateEvaluation</code> operation is asynchronous. You can poll for status updates by using the <code>GetEvcaluation</code> operation and checking the <code>Status</code> parameter. </p> */
 	export interface CreateEvaluationOutput {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		EvaluationId?: string | null;
 	}
 
 	/** <p> Represents the output of a <code>CreateEvaluation</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p><code>CreateEvaluation</code> operation is asynchronous. You can poll for status updates by using the <code>GetEvcaluation</code> operation and checking the <code>Status</code> parameter. </p> */
 	export interface CreateEvaluationOutputFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		EvaluationId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateEvaluationOutputFormGroup() {
 		return new FormGroup<CreateEvaluationOutputFormProperties>({
-			EvaluationId: new FormControl<string | null | undefined>(undefined),
+			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateEvaluationInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		EvaluationId: string;
 
 		/**
@@ -910,10 +1182,31 @@ export namespace MyNS {
 		 * Pattern: .*\S.*|^$
 		 */
 		EvaluationName?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		EvaluationDataSourceId: string;
 	}
 	export interface CreateEvaluationInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		EvaluationId: FormControl<string | null | undefined>,
 
 		/**
@@ -922,15 +1215,29 @@ export namespace MyNS {
 		 * Pattern: .*\S.*|^$
 		 */
 		EvaluationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		EvaluationDataSourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateEvaluationInputFormGroup() {
 		return new FormGroup<CreateEvaluationInputFormProperties>({
-			EvaluationId: new FormControl<string | null | undefined>(undefined),
-			EvaluationName: new FormControl<string | null | undefined>(undefined),
-			MLModelId: new FormControl<string | null | undefined>(undefined),
-			EvaluationDataSourceId: new FormControl<string | null | undefined>(undefined),
+			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			EvaluationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			EvaluationDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -938,21 +1245,40 @@ export namespace MyNS {
 
 	/** <p> Represents the output of a <code>CreateMLModel</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateMLModel</code> operation is asynchronous. You can poll for status updates by using the <code>GetMLModel</code> operation and checking the <code>Status</code> parameter. </p> */
 	export interface CreateMLModelOutput {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId?: string | null;
 	}
 
 	/** <p> Represents the output of a <code>CreateMLModel</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateMLModel</code> operation is asynchronous. You can poll for status updates by using the <code>GetMLModel</code> operation and checking the <code>Status</code> parameter. </p> */
 	export interface CreateMLModelOutputFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateMLModelOutputFormGroup() {
 		return new FormGroup<CreateMLModelOutputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateMLModelInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: string;
 
 		/**
@@ -961,9 +1287,20 @@ export namespace MyNS {
 		 * Pattern: .*\S.*|^$
 		 */
 		MLModelName?: string | null;
+
+		/** Required */
 		MLModelType: CreateMLModelInputMLModelType;
 		Parameters?: TrainingParameters;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TrainingDataSourceId: string;
+
+		/** Max length: 131071 */
 		Recipe?: string | null;
 
 		/**
@@ -974,6 +1311,13 @@ export namespace MyNS {
 		RecipeUri?: string | null;
 	}
 	export interface CreateMLModelInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: FormControl<string | null | undefined>,
 
 		/**
@@ -982,8 +1326,19 @@ export namespace MyNS {
 		 * Pattern: .*\S.*|^$
 		 */
 		MLModelName: FormControl<string | null | undefined>,
+
+		/** Required */
 		MLModelType: FormControl<CreateMLModelInputMLModelType | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TrainingDataSourceId: FormControl<string | null | undefined>,
+
+		/** Max length: 131071 */
 		Recipe: FormControl<string | null | undefined>,
 
 		/**
@@ -995,12 +1350,12 @@ export namespace MyNS {
 	}
 	export function CreateCreateMLModelInputFormGroup() {
 		return new FormGroup<CreateMLModelInputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined),
-			MLModelName: new FormControl<string | null | undefined>(undefined),
-			MLModelType: new FormControl<CreateMLModelInputMLModelType | null | undefined>(undefined),
-			TrainingDataSourceId: new FormControl<string | null | undefined>(undefined),
-			Recipe: new FormControl<string | null | undefined>(undefined),
-			RecipeUri: new FormControl<string | null | undefined>(undefined),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			MLModelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			MLModelType: new FormControl<CreateMLModelInputMLModelType | null | undefined>(undefined, [Validators.required]),
+			TrainingDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Recipe: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(131071)]),
+			RecipeUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 		});
 
 	}
@@ -1020,6 +1375,12 @@ export namespace MyNS {
 
 	/** <p>Represents the output of an <code>CreateRealtimeEndpoint</code> operation.</p> <p>The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>.</p> <note> <p>The endpoint information includes the URI of the <code>MLModel</code>; that is, the location to send online prediction requests for the specified <code>MLModel</code>.</p> </note> */
 	export interface CreateRealtimeEndpointOutput {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId?: string | null;
 
 		/** Describes the real-time endpoint information for an <code>MLModel</code>. */
@@ -1028,11 +1389,17 @@ export namespace MyNS {
 
 	/** <p>Represents the output of an <code>CreateRealtimeEndpoint</code> operation.</p> <p>The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>.</p> <note> <p>The endpoint information includes the URI of the <code>MLModel</code>; that is, the location to send online prediction requests for the specified <code>MLModel</code>.</p> </note> */
 	export interface CreateRealtimeEndpointOutputFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateRealtimeEndpointOutputFormGroup() {
 		return new FormGroup<CreateRealtimeEndpointOutputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1046,6 +1413,11 @@ export namespace MyNS {
 
 		/** A timestamp represented in epoch time. */
 		CreatedAt?: Date | null;
+
+		/**
+		 * Max length: 2048
+		 * Pattern: https://[a-zA-Z0-9-.]*\.amazon(aws)?\.com[/]?
+		 */
 		EndpointUrl?: string | null;
 		EndpointStatus?: RealtimeEndpointInfoEndpointStatus | null;
 	}
@@ -1058,6 +1430,11 @@ export namespace MyNS {
 
 		/** A timestamp represented in epoch time. */
 		CreatedAt: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Pattern: https://[a-zA-Z0-9-.]*\.amazon(aws)?\.com[/]?
+		 */
 		EndpointUrl: FormControl<string | null | undefined>,
 		EndpointStatus: FormControl<RealtimeEndpointInfoEndpointStatus | null | undefined>,
 	}
@@ -1065,7 +1442,7 @@ export namespace MyNS {
 		return new FormGroup<RealtimeEndpointInfoFormProperties>({
 			PeakRequestsPerSecond: new FormControl<number | null | undefined>(undefined),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
-			EndpointUrl: new FormControl<string | null | undefined>(undefined),
+			EndpointUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 			EndpointStatus: new FormControl<RealtimeEndpointInfoEndpointStatus | null | undefined>(undefined),
 		});
 
@@ -1074,14 +1451,28 @@ export namespace MyNS {
 	export enum RealtimeEndpointInfoEndpointStatus { NONE = 0, READY = 1, UPDATING = 2, FAILED = 3 }
 
 	export interface CreateRealtimeEndpointInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: string;
 	}
 	export interface CreateRealtimeEndpointInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateRealtimeEndpointInputFormGroup() {
 		return new FormGroup<CreateRealtimeEndpointInputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1089,29 +1480,55 @@ export namespace MyNS {
 
 	/** <p> Represents the output of a <code>DeleteBatchPrediction</code> operation.</p> <p>You can use the <code>GetBatchPrediction</code> operation and check the value of the <code>Status</code> parameter to see whether a <code>BatchPrediction</code> is marked as <code>DELETED</code>.</p> */
 	export interface DeleteBatchPredictionOutput {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BatchPredictionId?: string | null;
 	}
 
 	/** <p> Represents the output of a <code>DeleteBatchPrediction</code> operation.</p> <p>You can use the <code>GetBatchPrediction</code> operation and check the value of the <code>Status</code> parameter to see whether a <code>BatchPrediction</code> is marked as <code>DELETED</code>.</p> */
 	export interface DeleteBatchPredictionOutputFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BatchPredictionId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteBatchPredictionOutputFormGroup() {
 		return new FormGroup<DeleteBatchPredictionOutputFormProperties>({
-			BatchPredictionId: new FormControl<string | null | undefined>(undefined),
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteBatchPredictionInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BatchPredictionId: string;
 	}
 	export interface DeleteBatchPredictionInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BatchPredictionId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteBatchPredictionInputFormGroup() {
 		return new FormGroup<DeleteBatchPredictionInputFormProperties>({
-			BatchPredictionId: new FormControl<string | null | undefined>(undefined),
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1119,29 +1536,55 @@ export namespace MyNS {
 
 	/**  Represents the output of a <code>DeleteDataSource</code> operation. */
 	export interface DeleteDataSourceOutput {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId?: string | null;
 	}
 
 	/**  Represents the output of a <code>DeleteDataSource</code> operation. */
 	export interface DeleteDataSourceOutputFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDataSourceOutputFormGroup() {
 		return new FormGroup<DeleteDataSourceOutputFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteDataSourceInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId: string;
 	}
 	export interface DeleteDataSourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDataSourceInputFormGroup() {
 		return new FormGroup<DeleteDataSourceInputFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1149,29 +1592,55 @@ export namespace MyNS {
 
 	/** <p> Represents the output of a <code>DeleteEvaluation</code> operation. The output indicates that Amazon Machine Learning (Amazon ML) received the request.</p> <p>You can use the <code>GetEvaluation</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>Evaluation</code> is marked as <code>DELETED</code>.</p> */
 	export interface DeleteEvaluationOutput {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		EvaluationId?: string | null;
 	}
 
 	/** <p> Represents the output of a <code>DeleteEvaluation</code> operation. The output indicates that Amazon Machine Learning (Amazon ML) received the request.</p> <p>You can use the <code>GetEvaluation</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>Evaluation</code> is marked as <code>DELETED</code>.</p> */
 	export interface DeleteEvaluationOutputFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		EvaluationId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteEvaluationOutputFormGroup() {
 		return new FormGroup<DeleteEvaluationOutputFormProperties>({
-			EvaluationId: new FormControl<string | null | undefined>(undefined),
+			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteEvaluationInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		EvaluationId: string;
 	}
 	export interface DeleteEvaluationInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		EvaluationId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteEvaluationInputFormGroup() {
 		return new FormGroup<DeleteEvaluationInputFormProperties>({
-			EvaluationId: new FormControl<string | null | undefined>(undefined),
+			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1179,29 +1648,55 @@ export namespace MyNS {
 
 	/** <p>Represents the output of a <code>DeleteMLModel</code> operation.</p> <p>You can use the <code>GetMLModel</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>MLModel</code> is marked as <code>DELETED</code>.</p> */
 	export interface DeleteMLModelOutput {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId?: string | null;
 	}
 
 	/** <p>Represents the output of a <code>DeleteMLModel</code> operation.</p> <p>You can use the <code>GetMLModel</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>MLModel</code> is marked as <code>DELETED</code>.</p> */
 	export interface DeleteMLModelOutputFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteMLModelOutputFormGroup() {
 		return new FormGroup<DeleteMLModelOutputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteMLModelInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: string;
 	}
 	export interface DeleteMLModelInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteMLModelInputFormGroup() {
 		return new FormGroup<DeleteMLModelInputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1209,6 +1704,12 @@ export namespace MyNS {
 
 	/** <p>Represents the output of an <code>DeleteRealtimeEndpoint</code> operation.</p> <p>The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>. </p> */
 	export interface DeleteRealtimeEndpointOutput {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId?: string | null;
 
 		/** Describes the real-time endpoint information for an <code>MLModel</code>. */
@@ -1217,24 +1718,44 @@ export namespace MyNS {
 
 	/** <p>Represents the output of an <code>DeleteRealtimeEndpoint</code> operation.</p> <p>The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>. </p> */
 	export interface DeleteRealtimeEndpointOutputFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRealtimeEndpointOutputFormGroup() {
 		return new FormGroup<DeleteRealtimeEndpointOutputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteRealtimeEndpointInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: string;
 	}
 	export interface DeleteRealtimeEndpointInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRealtimeEndpointInputFormGroup() {
 		return new FormGroup<DeleteRealtimeEndpointInputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1242,36 +1763,71 @@ export namespace MyNS {
 
 	/** Amazon ML returns the following elements.  */
 	export interface DeleteTagsOutput {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ResourceId?: string | null;
 		ResourceType?: AddTagsOutputResourceType | null;
 	}
 
 	/** Amazon ML returns the following elements.  */
 	export interface DeleteTagsOutputFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ResourceId: FormControl<string | null | undefined>,
 		ResourceType: FormControl<AddTagsOutputResourceType | null | undefined>,
 	}
 	export function CreateDeleteTagsOutputFormGroup() {
 		return new FormGroup<DeleteTagsOutputFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			ResourceType: new FormControl<AddTagsOutputResourceType | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface DeleteTagsInput {
+
+		/**
+		 * Required
+		 * Maximum items: 100
+		 */
 		TagKeys: Array<string>;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ResourceId: string;
+
+		/** Required */
 		ResourceType: AddTagsOutputResourceType;
 	}
 	export interface DeleteTagsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ResourceId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ResourceType: FormControl<AddTagsOutputResourceType | null | undefined>,
 	}
 	export function CreateDeleteTagsInputFormGroup() {
 		return new FormGroup<DeleteTagsInputFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined),
-			ResourceType: new FormControl<AddTagsOutputResourceType | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			ResourceType: new FormControl<AddTagsOutputResourceType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1301,8 +1857,26 @@ export namespace MyNS {
 
 	/** <p> Represents the output of a <code>GetBatchPrediction</code> operation.</p> <p> The content consists of the detailed metadata, the status, and the data file information of a <code>Batch Prediction</code>.</p> */
 	export interface BatchPrediction {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BatchPredictionId?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BatchPredictionDataSourceId?: string | null;
 
 		/**
@@ -1365,8 +1939,26 @@ export namespace MyNS {
 
 	/** <p> Represents the output of a <code>GetBatchPrediction</code> operation.</p> <p> The content consists of the detailed metadata, the status, and the data file information of a <code>Batch Prediction</code>.</p> */
 	export interface BatchPredictionFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BatchPredictionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BatchPredictionDataSourceId: FormControl<string | null | undefined>,
 
 		/**
@@ -1428,17 +2020,17 @@ export namespace MyNS {
 	}
 	export function CreateBatchPredictionFormGroup() {
 		return new FormGroup<BatchPredictionFormProperties>({
-			BatchPredictionId: new FormControl<string | null | undefined>(undefined),
-			MLModelId: new FormControl<string | null | undefined>(undefined),
-			BatchPredictionDataSourceId: new FormControl<string | null | undefined>(undefined),
-			InputDataLocationS3: new FormControl<string | null | undefined>(undefined),
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			BatchPredictionDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			InputDataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 			CreatedByIamUser: new FormControl<string | null | undefined>(undefined),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			LastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			Status: new FormControl<BatchPredictionStatus | null | undefined>(undefined),
-			OutputUri: new FormControl<string | null | undefined>(undefined),
-			Message: new FormControl<string | null | undefined>(undefined),
+			OutputUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10240)]),
 			ComputeTime: new FormControl<number | null | undefined>(undefined),
 			FinishedAt: new FormControl<Date | null | undefined>(undefined),
 			StartedAt: new FormControl<Date | null | undefined>(undefined),
@@ -1509,6 +2101,11 @@ export namespace MyNS {
 
 		/** String type. */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit?: number | null;
 	}
 	export interface DescribeBatchPredictionsInputFormProperties {
@@ -1570,21 +2167,26 @@ export namespace MyNS {
 
 		/** String type. */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeBatchPredictionsInputFormGroup() {
 		return new FormGroup<DescribeBatchPredictionsInputFormProperties>({
 			FilterVariable: new FormControl<DescribeBatchPredictionsInputFilterVariable | null | undefined>(undefined),
-			EQ: new FormControl<string | null | undefined>(undefined),
-			GT: new FormControl<string | null | undefined>(undefined),
-			LT: new FormControl<string | null | undefined>(undefined),
-			GE: new FormControl<string | null | undefined>(undefined),
-			LE: new FormControl<string | null | undefined>(undefined),
-			NE: new FormControl<string | null | undefined>(undefined),
-			Prefix: new FormControl<string | null | undefined>(undefined),
+			EQ: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			GT: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			LT: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			GE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			LE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			NE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			SortOrder: new FormControl<DescribeBatchPredictionsInputSortOrder | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -1618,6 +2220,12 @@ export namespace MyNS {
 
 	/** <p> Represents the output of the <code>GetDataSource</code> operation. </p> <p> The content consists of the detailed metadata and data file information and the current status of the <code>DataSource</code>. </p> */
 	export interface DataSource {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId?: string | null;
 
 		/**
@@ -1688,6 +2296,12 @@ export namespace MyNS {
 
 	/** <p> Represents the output of the <code>GetDataSource</code> operation. </p> <p> The content consists of the detailed metadata and data file information and the current status of the <code>DataSource</code>. </p> */
 	export interface DataSourceFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId: FormControl<string | null | undefined>,
 
 		/**
@@ -1751,18 +2365,18 @@ export namespace MyNS {
 	}
 	export function CreateDataSourceFormGroup() {
 		return new FormGroup<DataSourceFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined),
-			DataLocationS3: new FormControl<string | null | undefined>(undefined),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			DataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 			DataRearrangement: new FormControl<string | null | undefined>(undefined),
 			CreatedByIamUser: new FormControl<string | null | undefined>(undefined),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			LastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
 			DataSizeInBytes: new FormControl<number | null | undefined>(undefined),
 			NumberOfFiles: new FormControl<number | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			Status: new FormControl<BatchPredictionStatus | null | undefined>(undefined),
-			Message: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10240)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(110), Validators.minLength(1)]),
 			ComputeStatistics: new FormControl<boolean | null | undefined>(undefined),
 			ComputeTime: new FormControl<number | null | undefined>(undefined),
 			FinishedAt: new FormControl<Date | null | undefined>(undefined),
@@ -1812,8 +2426,8 @@ export namespace MyNS {
 	}
 	export function CreateRedshiftMetadataFormGroup() {
 		return new FormGroup<RedshiftMetadataFormProperties>({
-			DatabaseUserName: new FormControl<string | null | undefined>(undefined),
-			SelectSqlQuery: new FormControl<string | null | undefined>(undefined),
+			DatabaseUserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			SelectSqlQuery: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16777216), Validators.minLength(1)]),
 		});
 
 	}
@@ -1838,8 +2452,23 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		SelectSqlQuery?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResourceRole?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ServiceRole?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		DataPipelineId?: string | null;
 	}
 
@@ -1859,17 +2488,32 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		SelectSqlQuery: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ResourceRole: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ServiceRole: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		DataPipelineId: FormControl<string | null | undefined>,
 	}
 	export function CreateRDSMetadataFormGroup() {
 		return new FormGroup<RDSMetadataFormProperties>({
-			DatabaseUserName: new FormControl<string | null | undefined>(undefined),
-			SelectSqlQuery: new FormControl<string | null | undefined>(undefined),
-			ResourceRole: new FormControl<string | null | undefined>(undefined),
-			ServiceRole: new FormControl<string | null | undefined>(undefined),
-			DataPipelineId: new FormControl<string | null | undefined>(undefined),
+			DatabaseUserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			SelectSqlQuery: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16777216), Validators.minLength(1)]),
+			ResourceRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			ServiceRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			DataPipelineId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1933,6 +2577,11 @@ export namespace MyNS {
 
 		/** String type. */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit?: number | null;
 	}
 	export interface DescribeDataSourcesInputFormProperties {
@@ -1994,21 +2643,26 @@ export namespace MyNS {
 
 		/** String type. */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeDataSourcesInputFormGroup() {
 		return new FormGroup<DescribeDataSourcesInputFormProperties>({
 			FilterVariable: new FormControl<DescribeDataSourcesInputFilterVariable | null | undefined>(undefined),
-			EQ: new FormControl<string | null | undefined>(undefined),
-			GT: new FormControl<string | null | undefined>(undefined),
-			LT: new FormControl<string | null | undefined>(undefined),
-			GE: new FormControl<string | null | undefined>(undefined),
-			LE: new FormControl<string | null | undefined>(undefined),
-			NE: new FormControl<string | null | undefined>(undefined),
-			Prefix: new FormControl<string | null | undefined>(undefined),
+			EQ: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			GT: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			LT: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			GE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			LE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			NE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			SortOrder: new FormControl<DescribeBatchPredictionsInputSortOrder | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -2040,8 +2694,26 @@ export namespace MyNS {
 
 	/** <p> Represents the output of <code>GetEvaluation</code> operation. </p> <p>The content consists of the detailed metadata and data file information and the current status of the <code>Evaluation</code>.</p> */
 	export interface Evaluation {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		EvaluationId?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		EvaluationDataSourceId?: string | null;
 
 		/**
@@ -2094,8 +2766,26 @@ export namespace MyNS {
 
 	/** <p> Represents the output of <code>GetEvaluation</code> operation. </p> <p>The content consists of the detailed metadata and data file information and the current status of the <code>Evaluation</code>.</p> */
 	export interface EvaluationFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		EvaluationId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		EvaluationDataSourceId: FormControl<string | null | undefined>,
 
 		/**
@@ -2144,16 +2834,16 @@ export namespace MyNS {
 	}
 	export function CreateEvaluationFormGroup() {
 		return new FormGroup<EvaluationFormProperties>({
-			EvaluationId: new FormControl<string | null | undefined>(undefined),
-			MLModelId: new FormControl<string | null | undefined>(undefined),
-			EvaluationDataSourceId: new FormControl<string | null | undefined>(undefined),
-			InputDataLocationS3: new FormControl<string | null | undefined>(undefined),
+			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			EvaluationDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			InputDataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 			CreatedByIamUser: new FormControl<string | null | undefined>(undefined),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			LastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			Status: new FormControl<BatchPredictionStatus | null | undefined>(undefined),
-			Message: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10240)]),
 			ComputeTime: new FormControl<number | null | undefined>(undefined),
 			FinishedAt: new FormControl<Date | null | undefined>(undefined),
 			StartedAt: new FormControl<Date | null | undefined>(undefined),
@@ -2245,6 +2935,11 @@ export namespace MyNS {
 
 		/** String type. */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit?: number | null;
 	}
 	export interface DescribeEvaluationsInputFormProperties {
@@ -2306,21 +3001,26 @@ export namespace MyNS {
 
 		/** String type. */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeEvaluationsInputFormGroup() {
 		return new FormGroup<DescribeEvaluationsInputFormProperties>({
 			FilterVariable: new FormControl<DescribeBatchPredictionsInputFilterVariable | null | undefined>(undefined),
-			EQ: new FormControl<string | null | undefined>(undefined),
-			GT: new FormControl<string | null | undefined>(undefined),
-			LT: new FormControl<string | null | undefined>(undefined),
-			GE: new FormControl<string | null | undefined>(undefined),
-			LE: new FormControl<string | null | undefined>(undefined),
-			NE: new FormControl<string | null | undefined>(undefined),
-			Prefix: new FormControl<string | null | undefined>(undefined),
+			EQ: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			GT: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			LT: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			GE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			LE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			NE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			SortOrder: new FormControl<DescribeBatchPredictionsInputSortOrder | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -2350,7 +3050,19 @@ export namespace MyNS {
 
 	/** <p> Represents the output of a <code>GetMLModel</code> operation. </p> <p>The content consists of the detailed metadata and the current status of the <code>MLModel</code>.</p> */
 	export interface MLModel {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TrainingDataSourceId?: string | null;
 
 		/**
@@ -2364,6 +3076,8 @@ export namespace MyNS {
 
 		/** A timestamp represented in epoch time. */
 		LastUpdatedAt?: Date | null;
+
+		/** Max length: 1024 */
 		Name?: string | null;
 
 		/** <p>Object status with the following possible values:</p> <ul> <li><code>PENDING</code></li> <li><code>INPROGRESS</code></li> <li><code>FAILED</code></li> <li><code>COMPLETED</code></li> <li><code>DELETED</code></li> </ul> */
@@ -2409,7 +3123,19 @@ export namespace MyNS {
 
 	/** <p> Represents the output of a <code>GetMLModel</code> operation. </p> <p>The content consists of the detailed metadata and the current status of the <code>MLModel</code>.</p> */
 	export interface MLModelFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TrainingDataSourceId: FormControl<string | null | undefined>,
 
 		/**
@@ -2423,6 +3149,8 @@ export namespace MyNS {
 
 		/** A timestamp represented in epoch time. */
 		LastUpdatedAt: FormControl<Date | null | undefined>,
+
+		/** Max length: 1024 */
 		Name: FormControl<string | null | undefined>,
 
 		/** <p>Object status with the following possible values:</p> <ul> <li><code>PENDING</code></li> <li><code>INPROGRESS</code></li> <li><code>FAILED</code></li> <li><code>COMPLETED</code></li> <li><code>DELETED</code></li> </ul> */
@@ -2463,20 +3191,20 @@ export namespace MyNS {
 	}
 	export function CreateMLModelFormGroup() {
 		return new FormGroup<MLModelFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined),
-			TrainingDataSourceId: new FormControl<string | null | undefined>(undefined),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			TrainingDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			CreatedByIamUser: new FormControl<string | null | undefined>(undefined),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			LastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			Status: new FormControl<BatchPredictionStatus | null | undefined>(undefined),
 			SizeInBytes: new FormControl<number | null | undefined>(undefined),
-			InputDataLocationS3: new FormControl<string | null | undefined>(undefined),
+			InputDataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 			Algorithm: new FormControl<MLModelAlgorithm | null | undefined>(undefined),
 			MLModelType: new FormControl<CreateMLModelInputMLModelType | null | undefined>(undefined),
 			ScoreThreshold: new FormControl<number | null | undefined>(undefined),
 			ScoreThresholdLastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
-			Message: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10240)]),
 			ComputeTime: new FormControl<number | null | undefined>(undefined),
 			FinishedAt: new FormControl<Date | null | undefined>(undefined),
 			StartedAt: new FormControl<Date | null | undefined>(undefined),
@@ -2543,6 +3271,11 @@ export namespace MyNS {
 
 		/** String type. */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit?: number | null;
 	}
 	export interface DescribeMLModelsInputFormProperties {
@@ -2602,21 +3335,26 @@ export namespace MyNS {
 
 		/** String type. */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeMLModelsInputFormGroup() {
 		return new FormGroup<DescribeMLModelsInputFormProperties>({
 			FilterVariable: new FormControl<DescribeMLModelsInputFilterVariable | null | undefined>(undefined),
-			EQ: new FormControl<string | null | undefined>(undefined),
-			GT: new FormControl<string | null | undefined>(undefined),
-			LT: new FormControl<string | null | undefined>(undefined),
-			GE: new FormControl<string | null | undefined>(undefined),
-			LE: new FormControl<string | null | undefined>(undefined),
-			NE: new FormControl<string | null | undefined>(undefined),
-			Prefix: new FormControl<string | null | undefined>(undefined),
+			EQ: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			GT: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			LT: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			GE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			LE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			NE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			SortOrder: new FormControl<DescribeBatchPredictionsInputSortOrder | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -2626,36 +3364,68 @@ export namespace MyNS {
 
 	/** Amazon ML returns the following elements.  */
 	export interface DescribeTagsOutput {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ResourceId?: string | null;
 		ResourceType?: AddTagsOutputResourceType | null;
+
+		/** Maximum items: 100 */
 		Tags?: Array<Tag>;
 	}
 
 	/** Amazon ML returns the following elements.  */
 	export interface DescribeTagsOutputFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ResourceId: FormControl<string | null | undefined>,
 		ResourceType: FormControl<AddTagsOutputResourceType | null | undefined>,
 	}
 	export function CreateDescribeTagsOutputFormGroup() {
 		return new FormGroup<DescribeTagsOutputFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			ResourceType: new FormControl<AddTagsOutputResourceType | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface DescribeTagsInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ResourceId: string;
+
+		/** Required */
 		ResourceType: AddTagsOutputResourceType;
 	}
 	export interface DescribeTagsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ResourceId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ResourceType: FormControl<AddTagsOutputResourceType | null | undefined>,
 	}
 	export function CreateDescribeTagsInputFormGroup() {
 		return new FormGroup<DescribeTagsInputFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined),
-			ResourceType: new FormControl<AddTagsOutputResourceType | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			ResourceType: new FormControl<AddTagsOutputResourceType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2663,8 +3433,26 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>GetBatchPrediction</code> operation and describes a <code>BatchPrediction</code>. */
 	export interface GetBatchPredictionOutput {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BatchPredictionId?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BatchPredictionDataSourceId?: string | null;
 
 		/**
@@ -2728,8 +3516,26 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>GetBatchPrediction</code> operation and describes a <code>BatchPrediction</code>. */
 	export interface GetBatchPredictionOutputFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BatchPredictionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BatchPredictionDataSourceId: FormControl<string | null | undefined>,
 
 		/**
@@ -2792,18 +3598,18 @@ export namespace MyNS {
 	}
 	export function CreateGetBatchPredictionOutputFormGroup() {
 		return new FormGroup<GetBatchPredictionOutputFormProperties>({
-			BatchPredictionId: new FormControl<string | null | undefined>(undefined),
-			MLModelId: new FormControl<string | null | undefined>(undefined),
-			BatchPredictionDataSourceId: new FormControl<string | null | undefined>(undefined),
-			InputDataLocationS3: new FormControl<string | null | undefined>(undefined),
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			BatchPredictionDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			InputDataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 			CreatedByIamUser: new FormControl<string | null | undefined>(undefined),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			LastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			Status: new FormControl<BatchPredictionStatus | null | undefined>(undefined),
-			OutputUri: new FormControl<string | null | undefined>(undefined),
+			OutputUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 			LogUri: new FormControl<string | null | undefined>(undefined),
-			Message: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10240)]),
 			ComputeTime: new FormControl<number | null | undefined>(undefined),
 			FinishedAt: new FormControl<Date | null | undefined>(undefined),
 			StartedAt: new FormControl<Date | null | undefined>(undefined),
@@ -2814,14 +3620,28 @@ export namespace MyNS {
 	}
 
 	export interface GetBatchPredictionInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BatchPredictionId: string;
 	}
 	export interface GetBatchPredictionInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BatchPredictionId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetBatchPredictionInputFormGroup() {
 		return new FormGroup<GetBatchPredictionInputFormProperties>({
-			BatchPredictionId: new FormControl<string | null | undefined>(undefined),
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -2829,6 +3649,12 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>GetDataSource</code> operation and describes a <code>DataSource</code>. */
 	export interface GetDataSourceOutput {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId?: string | null;
 
 		/**
@@ -2906,6 +3732,12 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>GetDataSource</code> operation and describes a <code>DataSource</code>. */
 	export interface GetDataSourceOutputFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId: FormControl<string | null | undefined>,
 
 		/**
@@ -2976,35 +3808,49 @@ export namespace MyNS {
 	}
 	export function CreateGetDataSourceOutputFormGroup() {
 		return new FormGroup<GetDataSourceOutputFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined),
-			DataLocationS3: new FormControl<string | null | undefined>(undefined),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			DataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 			DataRearrangement: new FormControl<string | null | undefined>(undefined),
 			CreatedByIamUser: new FormControl<string | null | undefined>(undefined),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			LastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
 			DataSizeInBytes: new FormControl<number | null | undefined>(undefined),
 			NumberOfFiles: new FormControl<number | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			Status: new FormControl<BatchPredictionStatus | null | undefined>(undefined),
 			LogUri: new FormControl<string | null | undefined>(undefined),
-			Message: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10240)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(110), Validators.minLength(1)]),
 			ComputeStatistics: new FormControl<boolean | null | undefined>(undefined),
 			ComputeTime: new FormControl<number | null | undefined>(undefined),
 			FinishedAt: new FormControl<Date | null | undefined>(undefined),
 			StartedAt: new FormControl<Date | null | undefined>(undefined),
-			DataSourceSchema: new FormControl<string | null | undefined>(undefined),
+			DataSourceSchema: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(131071)]),
 		});
 
 	}
 
 	export interface GetDataSourceInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId: string;
 
 		/** Specifies whether a describe operation should return exhaustive or abbreviated information. */
 		Verbose?: boolean | null;
 	}
 	export interface GetDataSourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId: FormControl<string | null | undefined>,
 
 		/** Specifies whether a describe operation should return exhaustive or abbreviated information. */
@@ -3012,7 +3858,7 @@ export namespace MyNS {
 	}
 	export function CreateGetDataSourceInputFormGroup() {
 		return new FormGroup<GetDataSourceInputFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 			Verbose: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -3021,8 +3867,26 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>GetEvaluation</code> operation and describes an <code>Evaluation</code>. */
 	export interface GetEvaluationOutput {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		EvaluationId?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		EvaluationDataSourceId?: string | null;
 
 		/**
@@ -3076,8 +3940,26 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>GetEvaluation</code> operation and describes an <code>Evaluation</code>. */
 	export interface GetEvaluationOutputFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		EvaluationId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		EvaluationDataSourceId: FormControl<string | null | undefined>,
 
 		/**
@@ -3127,17 +4009,17 @@ export namespace MyNS {
 	}
 	export function CreateGetEvaluationOutputFormGroup() {
 		return new FormGroup<GetEvaluationOutputFormProperties>({
-			EvaluationId: new FormControl<string | null | undefined>(undefined),
-			MLModelId: new FormControl<string | null | undefined>(undefined),
-			EvaluationDataSourceId: new FormControl<string | null | undefined>(undefined),
-			InputDataLocationS3: new FormControl<string | null | undefined>(undefined),
+			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			EvaluationDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			InputDataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 			CreatedByIamUser: new FormControl<string | null | undefined>(undefined),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			LastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			Status: new FormControl<BatchPredictionStatus | null | undefined>(undefined),
 			LogUri: new FormControl<string | null | undefined>(undefined),
-			Message: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10240)]),
 			ComputeTime: new FormControl<number | null | undefined>(undefined),
 			FinishedAt: new FormControl<Date | null | undefined>(undefined),
 			StartedAt: new FormControl<Date | null | undefined>(undefined),
@@ -3146,14 +4028,28 @@ export namespace MyNS {
 	}
 
 	export interface GetEvaluationInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		EvaluationId: string;
 	}
 	export interface GetEvaluationInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		EvaluationId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetEvaluationInputFormGroup() {
 		return new FormGroup<GetEvaluationInputFormProperties>({
-			EvaluationId: new FormControl<string | null | undefined>(undefined),
+			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -3161,7 +4057,19 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>GetMLModel</code> operation, and provides detailed information about a <code>MLModel</code>. */
 	export interface GetMLModelOutput {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TrainingDataSourceId?: string | null;
 
 		/**
@@ -3175,6 +4083,8 @@ export namespace MyNS {
 
 		/** A timestamp represented in epoch time. */
 		LastUpdatedAt?: Date | null;
+
+		/** Max length: 1024 */
 		Name?: string | null;
 
 		/** <p>Object status with the following possible values:</p> <ul> <li><code>PENDING</code></li> <li><code>INPROGRESS</code></li> <li><code>FAILED</code></li> <li><code>COMPLETED</code></li> <li><code>DELETED</code></li> </ul> */
@@ -3214,6 +4124,8 @@ export namespace MyNS {
 
 		/** A timestamp represented in epoch time. */
 		StartedAt?: Date | null;
+
+		/** Max length: 131071 */
 		Recipe?: string | null;
 
 		/**
@@ -3225,7 +4137,19 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>GetMLModel</code> operation, and provides detailed information about a <code>MLModel</code>. */
 	export interface GetMLModelOutputFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TrainingDataSourceId: FormControl<string | null | undefined>,
 
 		/**
@@ -3239,6 +4163,8 @@ export namespace MyNS {
 
 		/** A timestamp represented in epoch time. */
 		LastUpdatedAt: FormControl<Date | null | undefined>,
+
+		/** Max length: 1024 */
 		Name: FormControl<string | null | undefined>,
 
 		/** <p>Object status with the following possible values:</p> <ul> <li><code>PENDING</code></li> <li><code>INPROGRESS</code></li> <li><code>FAILED</code></li> <li><code>COMPLETED</code></li> <li><code>DELETED</code></li> </ul> */
@@ -3274,6 +4200,8 @@ export namespace MyNS {
 
 		/** A timestamp represented in epoch time. */
 		StartedAt: FormControl<Date | null | undefined>,
+
+		/** Max length: 131071 */
 		Recipe: FormControl<string | null | undefined>,
 
 		/**
@@ -3284,36 +4212,50 @@ export namespace MyNS {
 	}
 	export function CreateGetMLModelOutputFormGroup() {
 		return new FormGroup<GetMLModelOutputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined),
-			TrainingDataSourceId: new FormControl<string | null | undefined>(undefined),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			TrainingDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			CreatedByIamUser: new FormControl<string | null | undefined>(undefined),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			LastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			Status: new FormControl<BatchPredictionStatus | null | undefined>(undefined),
 			SizeInBytes: new FormControl<number | null | undefined>(undefined),
-			InputDataLocationS3: new FormControl<string | null | undefined>(undefined),
+			InputDataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 			MLModelType: new FormControl<CreateMLModelInputMLModelType | null | undefined>(undefined),
 			ScoreThreshold: new FormControl<number | null | undefined>(undefined),
 			ScoreThresholdLastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
 			LogUri: new FormControl<string | null | undefined>(undefined),
-			Message: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10240)]),
 			ComputeTime: new FormControl<number | null | undefined>(undefined),
 			FinishedAt: new FormControl<Date | null | undefined>(undefined),
 			StartedAt: new FormControl<Date | null | undefined>(undefined),
-			Recipe: new FormControl<string | null | undefined>(undefined),
-			Schema: new FormControl<string | null | undefined>(undefined),
+			Recipe: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(131071)]),
+			Schema: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(131071)]),
 		});
 
 	}
 
 	export interface GetMLModelInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: string;
 
 		/** Specifies whether a describe operation should return exhaustive or abbreviated information. */
 		Verbose?: boolean | null;
 	}
 	export interface GetMLModelInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: FormControl<string | null | undefined>,
 
 		/** Specifies whether a describe operation should return exhaustive or abbreviated information. */
@@ -3321,7 +4263,7 @@ export namespace MyNS {
 	}
 	export function CreateGetMLModelInputFormGroup() {
 		return new FormGroup<GetMLModelInputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 			Verbose: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -3343,6 +4285,8 @@ export namespace MyNS {
 
 	/** <p>The output from a <code>Predict</code> operation: </p> <ul> <li> <p> <code>Details</code> - Contains the following attributes: <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS</code> <code>DetailsAttributes.ALGORITHM - SGD</code> </p> </li> <li> <p> <code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code> request. </p> </li> <li> <p> <code>PredictedScores</code> - Contains the raw classification score corresponding to each label. </p> </li> <li> <p> <code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request. </p> </li> </ul> */
 	export interface Prediction {
+
+		/** Min length: 1 */
 		predictedLabel?: string | null;
 		predictedValue?: number | null;
 
@@ -3355,12 +4299,14 @@ export namespace MyNS {
 
 	/** <p>The output from a <code>Predict</code> operation: </p> <ul> <li> <p> <code>Details</code> - Contains the following attributes: <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS</code> <code>DetailsAttributes.ALGORITHM - SGD</code> </p> </li> <li> <p> <code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code> request. </p> </li> <li> <p> <code>PredictedScores</code> - Contains the raw classification score corresponding to each label. </p> </li> <li> <p> <code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request. </p> </li> </ul> */
 	export interface PredictionFormProperties {
+
+		/** Min length: 1 */
 		predictedLabel: FormControl<string | null | undefined>,
 		predictedValue: FormControl<number | null | undefined>,
 	}
 	export function CreatePredictionFormGroup() {
 		return new FormGroup<PredictionFormProperties>({
-			predictedLabel: new FormControl<string | null | undefined>(undefined),
+			predictedLabel: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			predictedValue: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -3395,6 +4341,13 @@ export namespace MyNS {
 	}
 
 	export interface PredictInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: string;
 
 		/**
@@ -3402,16 +4355,35 @@ export namespace MyNS {
 		 * Required
 		 */
 		Record: Record;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Pattern: https://[a-zA-Z0-9-.]*\.amazon(aws)?\.com[/]?
+		 */
 		PredictEndpoint: string;
 	}
 	export interface PredictInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Pattern: https://[a-zA-Z0-9-.]*\.amazon(aws)?\.com[/]?
+		 */
 		PredictEndpoint: FormControl<string | null | undefined>,
 	}
 	export function CreatePredictInputFormGroup() {
 		return new FormGroup<PredictInputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined),
-			PredictEndpoint: new FormControl<string | null | undefined>(undefined),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			PredictEndpoint: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048)]),
 		});
 
 	}
@@ -3433,18 +4405,22 @@ export namespace MyNS {
 
 	/** The subscriber exceeded the maximum number of operations. This exception can occur when listing objects such as <code>DataSource</code>. */
 	export interface LimitExceededException {
+
+		/** Max length: 2048 */
 		message?: string | null;
 		code?: number | null;
 	}
 
 	/** The subscriber exceeded the maximum number of operations. This exception can occur when listing objects such as <code>DataSource</code>. */
 	export interface LimitExceededExceptionFormProperties {
+
+		/** Max length: 2048 */
 		message: FormControl<string | null | undefined>,
 		code: FormControl<number | null | undefined>,
 	}
 	export function CreateLimitExceededExceptionFormGroup() {
 		return new FormGroup<LimitExceededExceptionFormProperties>({
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 			code: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -3453,16 +4429,20 @@ export namespace MyNS {
 
 	/** The exception is thrown when a predict request is made to an unmounted <code>MLModel</code>. */
 	export interface PredictorNotMountedException {
+
+		/** Max length: 2048 */
 		message?: string | null;
 	}
 
 	/** The exception is thrown when a predict request is made to an unmounted <code>MLModel</code>. */
 	export interface PredictorNotMountedExceptionFormProperties {
+
+		/** Max length: 2048 */
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreatePredictorNotMountedExceptionFormGroup() {
 		return new FormGroup<PredictorNotMountedExceptionFormProperties>({
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 		});
 
 	}
@@ -3470,21 +4450,40 @@ export namespace MyNS {
 
 	/** <p>Represents the output of an <code>UpdateBatchPrediction</code> operation.</p> <p>You can see the updated content by using the <code>GetBatchPrediction</code> operation.</p> */
 	export interface UpdateBatchPredictionOutput {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BatchPredictionId?: string | null;
 	}
 
 	/** <p>Represents the output of an <code>UpdateBatchPrediction</code> operation.</p> <p>You can see the updated content by using the <code>GetBatchPrediction</code> operation.</p> */
 	export interface UpdateBatchPredictionOutputFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BatchPredictionId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateBatchPredictionOutputFormGroup() {
 		return new FormGroup<UpdateBatchPredictionOutputFormProperties>({
-			BatchPredictionId: new FormControl<string | null | undefined>(undefined),
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateBatchPredictionInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BatchPredictionId: string;
 
 		/**
@@ -3496,6 +4495,13 @@ export namespace MyNS {
 		BatchPredictionName: string;
 	}
 	export interface UpdateBatchPredictionInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BatchPredictionId: FormControl<string | null | undefined>,
 
 		/**
@@ -3508,8 +4514,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateBatchPredictionInputFormGroup() {
 		return new FormGroup<UpdateBatchPredictionInputFormProperties>({
-			BatchPredictionId: new FormControl<string | null | undefined>(undefined),
-			BatchPredictionName: new FormControl<string | null | undefined>(undefined),
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			BatchPredictionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
 		});
 
 	}
@@ -3517,21 +4523,40 @@ export namespace MyNS {
 
 	/** <p>Represents the output of an <code>UpdateDataSource</code> operation.</p> <p>You can see the updated content by using the <code>GetBatchPrediction</code> operation.</p> */
 	export interface UpdateDataSourceOutput {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId?: string | null;
 	}
 
 	/** <p>Represents the output of an <code>UpdateDataSource</code> operation.</p> <p>You can see the updated content by using the <code>GetBatchPrediction</code> operation.</p> */
 	export interface UpdateDataSourceOutputFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateDataSourceOutputFormGroup() {
 		return new FormGroup<UpdateDataSourceOutputFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateDataSourceInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId: string;
 
 		/**
@@ -3543,6 +4568,13 @@ export namespace MyNS {
 		DataSourceName: string;
 	}
 	export interface UpdateDataSourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		DataSourceId: FormControl<string | null | undefined>,
 
 		/**
@@ -3555,8 +4587,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateDataSourceInputFormGroup() {
 		return new FormGroup<UpdateDataSourceInputFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined),
-			DataSourceName: new FormControl<string | null | undefined>(undefined),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			DataSourceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
 		});
 
 	}
@@ -3564,21 +4596,40 @@ export namespace MyNS {
 
 	/** <p>Represents the output of an <code>UpdateEvaluation</code> operation.</p> <p>You can see the updated content by using the <code>GetEvaluation</code> operation.</p> */
 	export interface UpdateEvaluationOutput {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		EvaluationId?: string | null;
 	}
 
 	/** <p>Represents the output of an <code>UpdateEvaluation</code> operation.</p> <p>You can see the updated content by using the <code>GetEvaluation</code> operation.</p> */
 	export interface UpdateEvaluationOutputFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		EvaluationId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateEvaluationOutputFormGroup() {
 		return new FormGroup<UpdateEvaluationOutputFormProperties>({
-			EvaluationId: new FormControl<string | null | undefined>(undefined),
+			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateEvaluationInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		EvaluationId: string;
 
 		/**
@@ -3590,6 +4641,13 @@ export namespace MyNS {
 		EvaluationName: string;
 	}
 	export interface UpdateEvaluationInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		EvaluationId: FormControl<string | null | undefined>,
 
 		/**
@@ -3602,8 +4660,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateEvaluationInputFormGroup() {
 		return new FormGroup<UpdateEvaluationInputFormProperties>({
-			EvaluationId: new FormControl<string | null | undefined>(undefined),
-			EvaluationName: new FormControl<string | null | undefined>(undefined),
+			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			EvaluationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
 		});
 
 	}
@@ -3611,21 +4669,40 @@ export namespace MyNS {
 
 	/** <p>Represents the output of an <code>UpdateMLModel</code> operation.</p> <p>You can see the updated content by using the <code>GetMLModel</code> operation.</p> */
 	export interface UpdateMLModelOutput {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId?: string | null;
 	}
 
 	/** <p>Represents the output of an <code>UpdateMLModel</code> operation.</p> <p>You can see the updated content by using the <code>GetMLModel</code> operation.</p> */
 	export interface UpdateMLModelOutputFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateMLModelOutputFormGroup() {
 		return new FormGroup<UpdateMLModelOutputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateMLModelInput {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: string;
 
 		/**
@@ -3637,6 +4714,13 @@ export namespace MyNS {
 		ScoreThreshold?: number | null;
 	}
 	export interface UpdateMLModelInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		MLModelId: FormControl<string | null | undefined>,
 
 		/**
@@ -3649,8 +4733,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateMLModelInputFormGroup() {
 		return new FormGroup<UpdateMLModelInputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined),
-			MLModelName: new FormControl<string | null | undefined>(undefined),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			MLModelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			ScoreThreshold: new FormControl<number | null | undefined>(undefined),
 		});
 

@@ -44,9 +44,13 @@ export namespace MyNS {
 	}
 
 	export interface CreateGraphResponse {
+
+		/** Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$ */
 		GraphArn?: string | null;
 	}
 	export interface CreateGraphResponseFormProperties {
+
+		/** Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$ */
 		GraphArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateGraphResponseFormGroup() {
@@ -81,9 +85,29 @@ export namespace MyNS {
 
 	/** Details about a member account that was invited to contribute to a behavior graph. */
 	export interface MemberDetail {
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: ^[0-9]+$
+		 */
 		AccountId?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^.+@.+$
+		 */
 		EmailAddress?: string | null;
+
+		/** Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$ */
 		GraphArn?: string | null;
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: ^[0-9]+$
+		 */
 		MasterId?: string | null;
 		Status?: MemberDetailStatus | null;
 		DisabledReason?: MemberDetailDisabledReason | null;
@@ -95,9 +119,29 @@ export namespace MyNS {
 
 	/** Details about a member account that was invited to contribute to a behavior graph. */
 	export interface MemberDetailFormProperties {
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: ^[0-9]+$
+		 */
 		AccountId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^.+@.+$
+		 */
 		EmailAddress: FormControl<string | null | undefined>,
+
+		/** Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$ */
 		GraphArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: ^[0-9]+$
+		 */
 		MasterId: FormControl<string | null | undefined>,
 		Status: FormControl<MemberDetailStatus | null | undefined>,
 		DisabledReason: FormControl<MemberDetailDisabledReason | null | undefined>,
@@ -108,10 +152,10 @@ export namespace MyNS {
 	}
 	export function CreateMemberDetailFormGroup() {
 		return new FormGroup<MemberDetailFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined),
-			EmailAddress: new FormControl<string | null | undefined>(undefined),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
+			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			GraphArn: new FormControl<string | null | undefined>(undefined),
-			MasterId: new FormControl<string | null | undefined>(undefined),
+			MasterId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
 			Status: new FormControl<MemberDetailStatus | null | undefined>(undefined),
 			DisabledReason: new FormControl<MemberDetailDisabledReason | null | undefined>(undefined),
 			InvitedTime: new FormControl<Date | null | undefined>(undefined),
@@ -129,18 +173,30 @@ export namespace MyNS {
 
 	/** A member account that was included in a request but for which the request could not be processed. */
 	export interface UnprocessedAccount {
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: ^[0-9]+$
+		 */
 		AccountId?: string | null;
 		Reason?: string | null;
 	}
 
 	/** A member account that was included in a request but for which the request could not be processed. */
 	export interface UnprocessedAccountFormProperties {
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: ^[0-9]+$
+		 */
 		AccountId: FormControl<string | null | undefined>,
 		Reason: FormControl<string | null | undefined>,
 	}
 	export function CreateUnprocessedAccountFormGroup() {
 		return new FormGroup<UnprocessedAccountFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
 			Reason: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -149,24 +205,57 @@ export namespace MyNS {
 
 	/** An AWS account that is the master of or a member of a behavior graph. */
 	export interface Account {
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: ^[0-9]+$
+		 */
 		AccountId: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^.+@.+$
+		 */
 		EmailAddress: string;
 	}
 
 	/** An AWS account that is the master of or a member of a behavior graph. */
 	export interface AccountFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: ^[0-9]+$
+		 */
 		AccountId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^.+@.+$
+		 */
 		EmailAddress: FormControl<string | null | undefined>,
 	}
 	export function CreateAccountFormGroup() {
 		return new FormGroup<AccountFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined),
-			EmailAddress: new FormControl<string | null | undefined>(undefined),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
+			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteMembersResponse {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		AccountIds?: Array<string>;
 		UnprocessedAccounts?: Array<UnprocessedAccount>;
 	}
@@ -192,14 +281,24 @@ export namespace MyNS {
 
 	export interface ListGraphsResponse {
 		GraphList?: Array<Graph>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListGraphsResponseFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListGraphsResponseFormGroup() {
 		return new FormGroup<ListGraphsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -207,12 +306,16 @@ export namespace MyNS {
 
 	/** A behavior graph in Detective. */
 	export interface Graph {
+
+		/** Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$ */
 		Arn?: string | null;
 		CreatedTime?: Date | null;
 	}
 
 	/** A behavior graph in Detective. */
 	export interface GraphFormProperties {
+
+		/** Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$ */
 		Arn: FormControl<string | null | undefined>,
 		CreatedTime: FormControl<Date | null | undefined>,
 	}
@@ -226,163 +329,341 @@ export namespace MyNS {
 
 	export interface ListInvitationsResponse {
 		Invitations?: Array<MemberDetail>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListInvitationsResponseFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListInvitationsResponseFormGroup() {
 		return new FormGroup<ListInvitationsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListMembersResponse {
 		MemberDetails?: Array<MemberDetail>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListMembersResponseFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListMembersResponseFormGroup() {
 		return new FormGroup<ListMembersResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface AcceptInvitationRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
 		GraphArn: string;
 	}
 	export interface AcceptInvitationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
 		GraphArn: FormControl<string | null | undefined>,
 	}
 	export function CreateAcceptInvitationRequestFormGroup() {
 		return new FormGroup<AcceptInvitationRequestFormProperties>({
-			GraphArn: new FormControl<string | null | undefined>(undefined),
+			GraphArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface CreateMembersRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
 		GraphArn: string;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Message?: string | null;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Accounts: Array<Account>;
 	}
 	export interface CreateMembersRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
 		GraphArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Message: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateMembersRequestFormGroup() {
 		return new FormGroup<CreateMembersRequestFormProperties>({
-			GraphArn: new FormControl<string | null | undefined>(undefined),
-			Message: new FormControl<string | null | undefined>(undefined),
+			GraphArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteGraphRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
 		GraphArn: string;
 	}
 	export interface DeleteGraphRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
 		GraphArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteGraphRequestFormGroup() {
 		return new FormGroup<DeleteGraphRequestFormProperties>({
-			GraphArn: new FormControl<string | null | undefined>(undefined),
+			GraphArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeleteMembersRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
 		GraphArn: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		AccountIds: Array<string>;
 	}
 	export interface DeleteMembersRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
 		GraphArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteMembersRequestFormGroup() {
 		return new FormGroup<DeleteMembersRequestFormProperties>({
-			GraphArn: new FormControl<string | null | undefined>(undefined),
+			GraphArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DisassociateMembershipRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
 		GraphArn: string;
 	}
 	export interface DisassociateMembershipRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
 		GraphArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDisassociateMembershipRequestFormGroup() {
 		return new FormGroup<DisassociateMembershipRequestFormProperties>({
-			GraphArn: new FormControl<string | null | undefined>(undefined),
+			GraphArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface GetMembersRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
 		GraphArn: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		AccountIds: Array<string>;
 	}
 	export interface GetMembersRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
 		GraphArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetMembersRequestFormGroup() {
 		return new FormGroup<GetMembersRequestFormProperties>({
-			GraphArn: new FormControl<string | null | undefined>(undefined),
+			GraphArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ListGraphsRequest {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 200
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListGraphsRequestFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 200
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListGraphsRequestFormGroup() {
 		return new FormGroup<ListGraphsRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(200)]),
 		});
 
 	}
 
 	export interface ListInvitationsRequest {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 200
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListInvitationsRequestFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 200
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListInvitationsRequestFormGroup() {
 		return new FormGroup<ListInvitationsRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(200)]),
 		});
 
 	}
 
 	export interface ListMembersRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
 		GraphArn: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 200
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListMembersRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
 		GraphArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 200
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListMembersRequestFormGroup() {
 		return new FormGroup<ListMembersRequestFormProperties>({
-			GraphArn: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			GraphArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(200)]),
 		});
 
 	}
@@ -392,30 +673,64 @@ export namespace MyNS {
 	export enum MemberDisabledReason { VOLUME_TOO_HIGH = 0, VOLUME_UNKNOWN = 1 }
 
 	export interface RejectInvitationRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
 		GraphArn: string;
 	}
 	export interface RejectInvitationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
 		GraphArn: FormControl<string | null | undefined>,
 	}
 	export function CreateRejectInvitationRequestFormGroup() {
 		return new FormGroup<RejectInvitationRequestFormProperties>({
-			GraphArn: new FormControl<string | null | undefined>(undefined),
+			GraphArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface StartMonitoringMemberRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
 		GraphArn: string;
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: ^[0-9]+$
+		 */
 		AccountId: string;
 	}
 	export interface StartMonitoringMemberRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
 		GraphArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: ^[0-9]+$
+		 */
 		AccountId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartMonitoringMemberRequestFormGroup() {
 		return new FormGroup<StartMonitoringMemberRequestFormProperties>({
-			GraphArn: new FormControl<string | null | undefined>(undefined),
-			AccountId: new FormControl<string | null | undefined>(undefined),
+			GraphArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
 		});
 
 	}
@@ -560,7 +875,7 @@ export namespace MyNS {
 	}
 	export function CreateAcceptInvitationPutBodyFormGroup() {
 		return new FormGroup<AcceptInvitationPutBodyFormProperties>({
-			GraphArn: new FormControl<string | null | undefined>(undefined),
+			GraphArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -607,8 +922,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateMembersPostBodyFormGroup() {
 		return new FormGroup<CreateMembersPostBodyFormProperties>({
-			GraphArn: new FormControl<string | null | undefined>(undefined),
-			Message: new FormControl<string | null | undefined>(undefined),
+			GraphArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
@@ -633,7 +948,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteGraphPostBodyFormGroup() {
 		return new FormGroup<DeleteGraphPostBodyFormProperties>({
-			GraphArn: new FormControl<string | null | undefined>(undefined),
+			GraphArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -666,7 +981,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteMembersPostBodyFormGroup() {
 		return new FormGroup<DeleteMembersPostBodyFormProperties>({
-			GraphArn: new FormControl<string | null | undefined>(undefined),
+			GraphArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -691,7 +1006,7 @@ export namespace MyNS {
 	}
 	export function CreateDisassociateMembershipPostBodyFormGroup() {
 		return new FormGroup<DisassociateMembershipPostBodyFormProperties>({
-			GraphArn: new FormControl<string | null | undefined>(undefined),
+			GraphArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -724,7 +1039,7 @@ export namespace MyNS {
 	}
 	export function CreateGetMembersPostBodyFormGroup() {
 		return new FormGroup<GetMembersPostBodyFormProperties>({
-			GraphArn: new FormControl<string | null | undefined>(undefined),
+			GraphArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -763,8 +1078,8 @@ export namespace MyNS {
 	}
 	export function CreateListGraphsPostBodyFormGroup() {
 		return new FormGroup<ListGraphsPostBodyFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(200)]),
 		});
 
 	}
@@ -803,8 +1118,8 @@ export namespace MyNS {
 	}
 	export function CreateListInvitationsPostBodyFormGroup() {
 		return new FormGroup<ListInvitationsPostBodyFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(200)]),
 		});
 
 	}
@@ -857,9 +1172,9 @@ export namespace MyNS {
 	}
 	export function CreateListMembersPostBodyFormGroup() {
 		return new FormGroup<ListMembersPostBodyFormProperties>({
-			GraphArn: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			GraphArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(200)]),
 		});
 
 	}
@@ -884,7 +1199,7 @@ export namespace MyNS {
 	}
 	export function CreateRejectInvitationPostBodyFormGroup() {
 		return new FormGroup<RejectInvitationPostBodyFormProperties>({
-			GraphArn: new FormControl<string | null | undefined>(undefined),
+			GraphArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -927,8 +1242,8 @@ export namespace MyNS {
 	}
 	export function CreateStartMonitoringMemberPostBodyFormGroup() {
 		return new FormGroup<StartMonitoringMemberPostBodyFormProperties>({
-			GraphArn: new FormControl<string | null | undefined>(undefined),
-			AccountId: new FormControl<string | null | undefined>(undefined),
+			GraphArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
 		});
 
 	}

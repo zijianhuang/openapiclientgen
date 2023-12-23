@@ -19,11 +19,21 @@ export namespace MyNS {
 
 	/** This structure contains all information about one canary in your account. */
 	export interface Canary {
+
+		/** Pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$ */
 		Id?: string | null;
+
+		/**
+		 * Max length: 21
+		 * Min length: 1
+		 * Pattern: ^[0-9a-z_\-]+$
+		 */
 		Name?: string | null;
 
 		/** This structure contains information about the canary's Lambda handler and where its code is stored by CloudWatch Synthetics. */
 		Code?: CanaryCodeOutput;
+
+		/** Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		ExecutionRoleArn?: string | null;
 
 		/** How long, in seconds, for the canary to continue making regular runs according to the schedule in the <code>Expression</code> value. */
@@ -31,7 +41,17 @@ export namespace MyNS {
 
 		/** A structure that contains information for a canary run. */
 		RunConfig?: CanaryRunConfigOutput;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1024
+		 */
 		SuccessRetentionPeriodInDays?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1024
+		 */
 		FailureRetentionPeriodInDays?: number | null;
 
 		/** A structure that contains the current state of the canary. */
@@ -39,8 +59,20 @@ export namespace MyNS {
 
 		/** This structure contains information about when the canary was created and modified. */
 		Timeline?: CanaryTimeline;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		ArtifactS3Location?: string | null;
+
+		/** Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		EngineArn?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		RuntimeVersion?: string | null;
 
 		/** If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>. */
@@ -50,25 +82,57 @@ export namespace MyNS {
 
 	/** This structure contains all information about one canary in your account. */
 	export interface CanaryFormProperties {
+
+		/** Pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$ */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 21
+		 * Min length: 1
+		 * Pattern: ^[0-9a-z_\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		ExecutionRoleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1024
+		 */
 		SuccessRetentionPeriodInDays: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1024
+		 */
 		FailureRetentionPeriodInDays: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		ArtifactS3Location: FormControl<string | null | undefined>,
+
+		/** Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		EngineArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		RuntimeVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateCanaryFormGroup() {
 		return new FormGroup<CanaryFormProperties>({
 			Id: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(21), Validators.minLength(1)]),
 			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
-			SuccessRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined),
-			FailureRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined),
-			ArtifactS3Location: new FormControl<string | null | undefined>(undefined),
+			SuccessRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
+			FailureRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
+			ArtifactS3Location: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			EngineArn: new FormControl<string | null | undefined>(undefined),
-			RuntimeVersion: new FormControl<string | null | undefined>(undefined),
+			RuntimeVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -76,19 +140,39 @@ export namespace MyNS {
 
 	/** This structure contains information about the canary's Lambda handler and where its code is stored by CloudWatch Synthetics. */
 	export interface CanaryCodeOutput {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		SourceLocationArn?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Handler?: string | null;
 	}
 
 	/** This structure contains information about the canary's Lambda handler and where its code is stored by CloudWatch Synthetics. */
 	export interface CanaryCodeOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		SourceLocationArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Handler: FormControl<string | null | undefined>,
 	}
 	export function CreateCanaryCodeOutputFormGroup() {
 		return new FormGroup<CanaryCodeOutputFormProperties>({
-			SourceLocationArn: new FormControl<string | null | undefined>(undefined),
-			Handler: new FormControl<string | null | undefined>(undefined),
+			SourceLocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Handler: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -96,19 +180,39 @@ export namespace MyNS {
 
 	/** How long, in seconds, for the canary to continue making regular runs according to the schedule in the <code>Expression</code> value. */
 	export interface CanaryScheduleOutput {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Expression?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 31622400
+		 */
 		DurationInSeconds?: number | null;
 	}
 
 	/** How long, in seconds, for the canary to continue making regular runs according to the schedule in the <code>Expression</code> value. */
 	export interface CanaryScheduleOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Expression: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 31622400
+		 */
 		DurationInSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateCanaryScheduleOutputFormGroup() {
 		return new FormGroup<CanaryScheduleOutputFormProperties>({
-			Expression: new FormControl<string | null | undefined>(undefined),
-			DurationInSeconds: new FormControl<number | null | undefined>(undefined),
+			Expression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			DurationInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(31622400)]),
 		});
 
 	}
@@ -116,19 +220,39 @@ export namespace MyNS {
 
 	/** A structure that contains information for a canary run. */
 	export interface CanaryRunConfigOutput {
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 900
+		 */
 		TimeoutInSeconds?: number | null;
+
+		/**
+		 * Minimum: 960
+		 * Maximum: 3008
+		 */
 		MemoryInMB?: number | null;
 	}
 
 	/** A structure that contains information for a canary run. */
 	export interface CanaryRunConfigOutputFormProperties {
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 900
+		 */
 		TimeoutInSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 960
+		 * Maximum: 3008
+		 */
 		MemoryInMB: FormControl<number | null | undefined>,
 	}
 	export function CreateCanaryRunConfigOutputFormGroup() {
 		return new FormGroup<CanaryRunConfigOutputFormProperties>({
-			TimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
-			MemoryInMB: new FormControl<number | null | undefined>(undefined),
+			TimeoutInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(900)]),
+			MemoryInMB: new FormControl<number | null | undefined>(undefined, [Validators.min(960), Validators.max(3008)]),
 		});
 
 	}
@@ -137,6 +261,11 @@ export namespace MyNS {
 	/** A structure that contains the current state of the canary. */
 	export interface CanaryStatus {
 		State?: CanaryStatusState | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		StateReason?: string | null;
 		StateReasonCode?: CanaryStatusStateReasonCode | null;
 	}
@@ -144,13 +273,18 @@ export namespace MyNS {
 	/** A structure that contains the current state of the canary. */
 	export interface CanaryStatusFormProperties {
 		State: FormControl<CanaryStatusState | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		StateReason: FormControl<string | null | undefined>,
 		StateReasonCode: FormControl<CanaryStatusStateReasonCode | null | undefined>,
 	}
 	export function CreateCanaryStatusFormGroup() {
 		return new FormGroup<CanaryStatusFormProperties>({
 			State: new FormControl<CanaryStatusState | null | undefined>(undefined),
-			StateReason: new FormControl<string | null | undefined>(undefined),
+			StateReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			StateReasonCode: new FormControl<CanaryStatusStateReasonCode | null | undefined>(undefined),
 		});
 
@@ -190,7 +324,17 @@ export namespace MyNS {
 	/** If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>. */
 	export interface VpcConfigOutput {
 		VpcId?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 16
+		 */
 		SubnetIds?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		SecurityGroupIds?: Array<string>;
 	}
 
@@ -267,9 +411,13 @@ export namespace MyNS {
 
 	export interface DescribeCanariesResponse {
 		Canaries?: Array<Canary>;
+
+		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken?: string | null;
 	}
 	export interface DescribeCanariesResponseFormProperties {
+
+		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeCanariesResponseFormGroup() {
@@ -281,9 +429,13 @@ export namespace MyNS {
 
 	export interface DescribeCanariesLastRunResponse {
 		CanariesLastRun?: Array<CanaryLastRun>;
+
+		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken?: string | null;
 	}
 	export interface DescribeCanariesLastRunResponseFormProperties {
+
+		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeCanariesLastRunResponseFormGroup() {
@@ -296,6 +448,12 @@ export namespace MyNS {
 
 	/** This structure contains information about the most recent run of a single canary. */
 	export interface CanaryLastRun {
+
+		/**
+		 * Max length: 21
+		 * Min length: 1
+		 * Pattern: ^[0-9a-z_\-]+$
+		 */
 		CanaryName?: string | null;
 
 		/** This structure contains the details about one run of one canary. */
@@ -304,11 +462,17 @@ export namespace MyNS {
 
 	/** This structure contains information about the most recent run of a single canary. */
 	export interface CanaryLastRunFormProperties {
+
+		/**
+		 * Max length: 21
+		 * Min length: 1
+		 * Pattern: ^[0-9a-z_\-]+$
+		 */
 		CanaryName: FormControl<string | null | undefined>,
 	}
 	export function CreateCanaryLastRunFormGroup() {
 		return new FormGroup<CanaryLastRunFormProperties>({
-			CanaryName: new FormControl<string | null | undefined>(undefined),
+			CanaryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(21), Validators.minLength(1)]),
 		});
 
 	}
@@ -316,6 +480,12 @@ export namespace MyNS {
 
 	/** This structure contains the details about one run of one canary. */
 	export interface CanaryRun {
+
+		/**
+		 * Max length: 21
+		 * Min length: 1
+		 * Pattern: ^[0-9a-z_\-]+$
+		 */
 		Name?: string | null;
 
 		/** This structure contains the status information about a canary run. */
@@ -323,18 +493,34 @@ export namespace MyNS {
 
 		/** This structure contains the start and end times of a single canary run. */
 		Timeline?: CanaryRunTimeline;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		ArtifactS3Location?: string | null;
 	}
 
 	/** This structure contains the details about one run of one canary. */
 	export interface CanaryRunFormProperties {
+
+		/**
+		 * Max length: 21
+		 * Min length: 1
+		 * Pattern: ^[0-9a-z_\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		ArtifactS3Location: FormControl<string | null | undefined>,
 	}
 	export function CreateCanaryRunFormGroup() {
 		return new FormGroup<CanaryRunFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			ArtifactS3Location: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(21), Validators.minLength(1)]),
+			ArtifactS3Location: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -343,6 +529,11 @@ export namespace MyNS {
 	/** This structure contains the status information about a canary run. */
 	export interface CanaryRunStatus {
 		State?: CanaryRunStatusState | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		StateReason?: string | null;
 		StateReasonCode?: CanaryRunStatusStateReasonCode | null;
 	}
@@ -350,13 +541,18 @@ export namespace MyNS {
 	/** This structure contains the status information about a canary run. */
 	export interface CanaryRunStatusFormProperties {
 		State: FormControl<CanaryRunStatusState | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		StateReason: FormControl<string | null | undefined>,
 		StateReasonCode: FormControl<CanaryRunStatusStateReasonCode | null | undefined>,
 	}
 	export function CreateCanaryRunStatusFormGroup() {
 		return new FormGroup<CanaryRunStatusFormProperties>({
 			State: new FormControl<CanaryRunStatusState | null | undefined>(undefined),
-			StateReason: new FormControl<string | null | undefined>(undefined),
+			StateReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			StateReasonCode: new FormControl<CanaryRunStatusStateReasonCode | null | undefined>(undefined),
 		});
 
@@ -388,9 +584,13 @@ export namespace MyNS {
 
 	export interface DescribeRuntimeVersionsResponse {
 		RuntimeVersions?: Array<RuntimeVersion>;
+
+		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken?: string | null;
 	}
 	export interface DescribeRuntimeVersionsResponseFormProperties {
+
+		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeRuntimeVersionsResponseFormGroup() {
@@ -403,7 +603,17 @@ export namespace MyNS {
 
 	/** This structure contains information about one canary runtime version. For more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>. */
 	export interface RuntimeVersion {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		VersionName?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
 		ReleaseDate?: Date | null;
 		DeprecationDate?: Date | null;
@@ -411,15 +621,25 @@ export namespace MyNS {
 
 	/** This structure contains information about one canary runtime version. For more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>. */
 	export interface RuntimeVersionFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		VersionName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 		ReleaseDate: FormControl<Date | null | undefined>,
 		DeprecationDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateRuntimeVersionFormGroup() {
 		return new FormGroup<RuntimeVersionFormProperties>({
-			VersionName: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			VersionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			ReleaseDate: new FormControl<Date | null | undefined>(undefined),
 			DeprecationDate: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -441,9 +661,13 @@ export namespace MyNS {
 
 	export interface GetCanaryRunsResponse {
 		CanaryRuns?: Array<CanaryRun>;
+
+		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken?: string | null;
 	}
 	export interface GetCanaryRunsResponseFormProperties {
+
+		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetCanaryRunsResponseFormGroup() {
@@ -517,28 +741,80 @@ export namespace MyNS {
 
 	/** Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>.  */
 	export interface CanaryCodeInput {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Bucket?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Key?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Version?: string | null;
+
+		/**
+		 * Max length: 10000000
+		 * Min length: 1
+		 */
 		ZipFile?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Handler: string;
 	}
 
 	/** Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>.  */
 	export interface CanaryCodeInputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Bucket: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Version: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000000
+		 * Min length: 1
+		 */
 		ZipFile: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Handler: FormControl<string | null | undefined>,
 	}
 	export function CreateCanaryCodeInputFormGroup() {
 		return new FormGroup<CanaryCodeInputFormProperties>({
-			S3Bucket: new FormControl<string | null | undefined>(undefined),
-			S3Key: new FormControl<string | null | undefined>(undefined),
-			S3Version: new FormControl<string | null | undefined>(undefined),
-			ZipFile: new FormControl<string | null | undefined>(undefined),
-			Handler: new FormControl<string | null | undefined>(undefined),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			S3Version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ZipFile: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000000), Validators.minLength(1)]),
+			Handler: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -546,19 +822,41 @@ export namespace MyNS {
 
 	/** A structure that contains input information for a canary run. */
 	export interface CanaryRunConfigInput {
+
+		/**
+		 * Required
+		 * Minimum: 60
+		 * Maximum: 900
+		 */
 		TimeoutInSeconds: number;
+
+		/**
+		 * Minimum: 960
+		 * Maximum: 3008
+		 */
 		MemoryInMB?: number | null;
 	}
 
 	/** A structure that contains input information for a canary run. */
 	export interface CanaryRunConfigInputFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 60
+		 * Maximum: 900
+		 */
 		TimeoutInSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 960
+		 * Maximum: 3008
+		 */
 		MemoryInMB: FormControl<number | null | undefined>,
 	}
 	export function CreateCanaryRunConfigInputFormGroup() {
 		return new FormGroup<CanaryRunConfigInputFormProperties>({
-			TimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
-			MemoryInMB: new FormControl<number | null | undefined>(undefined),
+			TimeoutInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(60), Validators.max(900)]),
+			MemoryInMB: new FormControl<number | null | undefined>(undefined, [Validators.min(960), Validators.max(3008)]),
 		});
 
 	}
@@ -570,19 +868,41 @@ export namespace MyNS {
 
 	/** This structure specifies how often a canary is to make runs and the date and time when it should stop making runs. */
 	export interface CanaryScheduleInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Expression: string;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 31622400
+		 */
 		DurationInSeconds?: number | null;
 	}
 
 	/** This structure specifies how often a canary is to make runs and the date and time when it should stop making runs. */
 	export interface CanaryScheduleInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Expression: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 31622400
+		 */
 		DurationInSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateCanaryScheduleInputFormGroup() {
 		return new FormGroup<CanaryScheduleInputFormProperties>({
-			Expression: new FormControl<string | null | undefined>(undefined),
-			DurationInSeconds: new FormControl<number | null | undefined>(undefined),
+			Expression: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			DurationInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(31622400)]),
 		});
 
 	}
@@ -594,7 +914,17 @@ export namespace MyNS {
 
 	/** If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>. */
 	export interface VpcConfigInput {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 16
+		 */
 		SubnetIds?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		SecurityGroupIds?: Array<string>;
 	}
 
@@ -608,6 +938,13 @@ export namespace MyNS {
 	}
 
 	export interface CreateCanaryRequest {
+
+		/**
+		 * Required
+		 * Max length: 21
+		 * Min length: 1
+		 * Pattern: ^[0-9a-z_\-]+$
+		 */
 		Name: string;
 
 		/**
@@ -615,7 +952,18 @@ export namespace MyNS {
 		 * Required
 		 */
 		Code: CanaryCodeInput;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		ArtifactS3Location: string;
+
+		/**
+		 * Required
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$
+		 */
 		ExecutionRoleArn: string;
 
 		/**
@@ -626,8 +974,24 @@ export namespace MyNS {
 
 		/** A structure that contains input information for a canary run. */
 		RunConfig?: CanaryRunConfigInput;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1024
+		 */
 		SuccessRetentionPeriodInDays?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1024
+		 */
 		FailureRetentionPeriodInDays?: number | null;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		RuntimeVersion: string;
 
 		/** If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>. */
@@ -635,21 +999,55 @@ export namespace MyNS {
 		Tags?: TagMap;
 	}
 	export interface CreateCanaryRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 21
+		 * Min length: 1
+		 * Pattern: ^[0-9a-z_\-]+$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		ArtifactS3Location: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$
+		 */
 		ExecutionRoleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1024
+		 */
 		SuccessRetentionPeriodInDays: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1024
+		 */
 		FailureRetentionPeriodInDays: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		RuntimeVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateCanaryRequestFormGroup() {
 		return new FormGroup<CreateCanaryRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			ArtifactS3Location: new FormControl<string | null | undefined>(undefined),
-			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
-			SuccessRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined),
-			FailureRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined),
-			RuntimeVersion: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(1)]),
+			ArtifactS3Location: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SuccessRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
+			FailureRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
+			RuntimeVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -665,49 +1063,91 @@ export namespace MyNS {
 	}
 
 	export interface DescribeCanariesLastRunRequest {
+
+		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface DescribeCanariesLastRunRequestFormProperties {
+
+		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeCanariesLastRunRequestFormGroup() {
 		return new FormGroup<DescribeCanariesLastRunRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface DescribeCanariesRequest {
+
+		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 20
+		 */
 		MaxResults?: number | null;
 	}
 	export interface DescribeCanariesRequestFormProperties {
+
+		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 20
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeCanariesRequestFormGroup() {
 		return new FormGroup<DescribeCanariesRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(20)]),
 		});
 
 	}
 
 	export interface DescribeRuntimeVersionsRequest {
+
+		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface DescribeRuntimeVersionsRequestFormProperties {
+
+		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeRuntimeVersionsRequestFormGroup() {
 		return new FormGroup<DescribeRuntimeVersionsRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -723,17 +1163,31 @@ export namespace MyNS {
 	}
 
 	export interface GetCanaryRunsRequest {
+
+		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface GetCanaryRunsRequestFormProperties {
+
+		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateGetCanaryRunsRequestFormGroup() {
 		return new FormGroup<GetCanaryRunsRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -769,6 +1223,8 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/** Required */
 		Tags: TagMap;
 	}
 	export interface TagResourceRequestFormProperties {
@@ -793,7 +1249,14 @@ export namespace MyNS {
 
 		/** Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>. */
 		Code?: CanaryCodeInput;
+
+		/** Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		ExecutionRoleArn?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		RuntimeVersion?: string | null;
 
 		/** This structure specifies how often a canary is to make runs and the date and time when it should stop making runs. */
@@ -801,24 +1264,51 @@ export namespace MyNS {
 
 		/** A structure that contains input information for a canary run. */
 		RunConfig?: CanaryRunConfigInput;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1024
+		 */
 		SuccessRetentionPeriodInDays?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1024
+		 */
 		FailureRetentionPeriodInDays?: number | null;
 
 		/** If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>. */
 		VpcConfig?: VpcConfigInput;
 	}
 	export interface UpdateCanaryRequestFormProperties {
+
+		/** Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		ExecutionRoleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		RuntimeVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1024
+		 */
 		SuccessRetentionPeriodInDays: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1024
+		 */
 		FailureRetentionPeriodInDays: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateCanaryRequestFormGroup() {
 		return new FormGroup<UpdateCanaryRequestFormProperties>({
 			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
-			RuntimeVersion: new FormControl<string | null | undefined>(undefined),
-			SuccessRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined),
-			FailureRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined),
+			RuntimeVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			SuccessRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
+			FailureRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
 		});
 
 	}
@@ -1086,76 +1576,176 @@ export namespace MyNS {
 	}
 	export function CreateCreateCanaryPostBodyFormGroup() {
 		return new FormGroup<CreateCanaryPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			ArtifactS3Location: new FormControl<string | null | undefined>(undefined),
-			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
-			SuccessRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined),
-			FailureRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined),
-			RuntimeVersion: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(1)]),
+			ArtifactS3Location: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SuccessRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
+			FailureRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
+			RuntimeVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CreateCanaryPostBodyCode {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Bucket?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Key?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Version?: string | null;
+
+		/**
+		 * Max length: 10000000
+		 * Min length: 1
+		 */
 		ZipFile?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Handler?: string | null;
 	}
 	export interface CreateCanaryPostBodyCodeFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Bucket: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Version: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000000
+		 * Min length: 1
+		 */
 		ZipFile: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Handler: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateCanaryPostBodyCodeFormGroup() {
 		return new FormGroup<CreateCanaryPostBodyCodeFormProperties>({
-			S3Bucket: new FormControl<string | null | undefined>(undefined),
-			S3Key: new FormControl<string | null | undefined>(undefined),
-			S3Version: new FormControl<string | null | undefined>(undefined),
-			ZipFile: new FormControl<string | null | undefined>(undefined),
-			Handler: new FormControl<string | null | undefined>(undefined),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			S3Version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ZipFile: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000000), Validators.minLength(1)]),
+			Handler: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateCanaryPostBodySchedule {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Expression?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 31622400
+		 */
 		DurationInSeconds?: number | null;
 	}
 	export interface CreateCanaryPostBodyScheduleFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Expression: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 31622400
+		 */
 		DurationInSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateCanaryPostBodyScheduleFormGroup() {
 		return new FormGroup<CreateCanaryPostBodyScheduleFormProperties>({
-			Expression: new FormControl<string | null | undefined>(undefined),
-			DurationInSeconds: new FormControl<number | null | undefined>(undefined),
+			Expression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			DurationInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(31622400)]),
 		});
 
 	}
 
 	export interface CreateCanaryPostBodyRunConfig {
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 900
+		 */
 		TimeoutInSeconds?: number | null;
+
+		/**
+		 * Minimum: 960
+		 * Maximum: 3008
+		 */
 		MemoryInMB?: number | null;
 	}
 	export interface CreateCanaryPostBodyRunConfigFormProperties {
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 900
+		 */
 		TimeoutInSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 960
+		 * Maximum: 3008
+		 */
 		MemoryInMB: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateCanaryPostBodyRunConfigFormGroup() {
 		return new FormGroup<CreateCanaryPostBodyRunConfigFormProperties>({
-			TimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
-			MemoryInMB: new FormControl<number | null | undefined>(undefined),
+			TimeoutInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(900)]),
+			MemoryInMB: new FormControl<number | null | undefined>(undefined, [Validators.min(960), Validators.max(3008)]),
 		});
 
 	}
 
 	export interface CreateCanaryPostBodyVpcConfig {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 16
+		 */
 		SubnetIds?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		SecurityGroupIds?: Array<string>;
 	}
 	export interface CreateCanaryPostBodyVpcConfigFormProperties {
@@ -1239,72 +1829,172 @@ export namespace MyNS {
 	export function CreateUpdateCanaryPatchBodyFormGroup() {
 		return new FormGroup<UpdateCanaryPatchBodyFormProperties>({
 			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
-			RuntimeVersion: new FormControl<string | null | undefined>(undefined),
-			SuccessRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined),
-			FailureRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined),
+			RuntimeVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			SuccessRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
+			FailureRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
 		});
 
 	}
 
 	export interface UpdateCanaryPatchBodyCode {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Bucket?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Key?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Version?: string | null;
+
+		/**
+		 * Max length: 10000000
+		 * Min length: 1
+		 */
 		ZipFile?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Handler?: string | null;
 	}
 	export interface UpdateCanaryPatchBodyCodeFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Bucket: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		S3Version: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000000
+		 * Min length: 1
+		 */
 		ZipFile: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Handler: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateCanaryPatchBodyCodeFormGroup() {
 		return new FormGroup<UpdateCanaryPatchBodyCodeFormProperties>({
-			S3Bucket: new FormControl<string | null | undefined>(undefined),
-			S3Key: new FormControl<string | null | undefined>(undefined),
-			S3Version: new FormControl<string | null | undefined>(undefined),
-			ZipFile: new FormControl<string | null | undefined>(undefined),
-			Handler: new FormControl<string | null | undefined>(undefined),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			S3Version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ZipFile: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000000), Validators.minLength(1)]),
+			Handler: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateCanaryPatchBodySchedule {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Expression?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 31622400
+		 */
 		DurationInSeconds?: number | null;
 	}
 	export interface UpdateCanaryPatchBodyScheduleFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Expression: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 31622400
+		 */
 		DurationInSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateCanaryPatchBodyScheduleFormGroup() {
 		return new FormGroup<UpdateCanaryPatchBodyScheduleFormProperties>({
-			Expression: new FormControl<string | null | undefined>(undefined),
-			DurationInSeconds: new FormControl<number | null | undefined>(undefined),
+			Expression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			DurationInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(31622400)]),
 		});
 
 	}
 
 	export interface UpdateCanaryPatchBodyRunConfig {
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 900
+		 */
 		TimeoutInSeconds?: number | null;
+
+		/**
+		 * Minimum: 960
+		 * Maximum: 3008
+		 */
 		MemoryInMB?: number | null;
 	}
 	export interface UpdateCanaryPatchBodyRunConfigFormProperties {
+
+		/**
+		 * Minimum: 60
+		 * Maximum: 900
+		 */
 		TimeoutInSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 960
+		 * Maximum: 3008
+		 */
 		MemoryInMB: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateCanaryPatchBodyRunConfigFormGroup() {
 		return new FormGroup<UpdateCanaryPatchBodyRunConfigFormProperties>({
-			TimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
-			MemoryInMB: new FormControl<number | null | undefined>(undefined),
+			TimeoutInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(900)]),
+			MemoryInMB: new FormControl<number | null | undefined>(undefined, [Validators.min(960), Validators.max(3008)]),
 		});
 
 	}
 
 	export interface UpdateCanaryPatchBodyVpcConfig {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 16
+		 */
 		SubnetIds?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		SecurityGroupIds?: Array<string>;
 	}
 	export interface UpdateCanaryPatchBodyVpcConfigFormProperties {
@@ -1348,7 +2038,7 @@ export namespace MyNS {
 	export function CreateDescribeCanariesPostBodyFormGroup() {
 		return new FormGroup<DescribeCanariesPostBodyFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(20)]),
 		});
 
 	}
@@ -1386,7 +2076,7 @@ export namespace MyNS {
 	export function CreateDescribeCanariesLastRunPostBodyFormGroup() {
 		return new FormGroup<DescribeCanariesLastRunPostBodyFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -1424,7 +2114,7 @@ export namespace MyNS {
 	export function CreateDescribeRuntimeVersionsPostBodyFormGroup() {
 		return new FormGroup<DescribeRuntimeVersionsPostBodyFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -1462,7 +2152,7 @@ export namespace MyNS {
 	export function CreateGetCanaryRunsPostBodyFormGroup() {
 		return new FormGroup<GetCanaryRunsPostBodyFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -1485,7 +2175,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

@@ -71,6 +71,11 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface EBSStorageInfo {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 16384
+		 */
 		VolumeSize?: number | null;
 	}
 
@@ -79,11 +84,16 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface EBSStorageInfoFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 16384
+		 */
 		VolumeSize: FormControl<number | null | undefined>,
 	}
 	export function CreateEBSStorageInfoFormGroup() {
 		return new FormGroup<EBSStorageInfoFormProperties>({
-			VolumeSize: new FormControl<number | null | undefined>(undefined),
+			VolumeSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(16384)]),
 		});
 
 	}
@@ -115,6 +125,8 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface EncryptionAtRest {
+
+		/** Required */
 		DataVolumeKMSKeyId: string;
 	}
 
@@ -123,11 +135,13 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface EncryptionAtRestFormProperties {
+
+		/** Required */
 		DataVolumeKMSKeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateEncryptionAtRestFormGroup() {
 		return new FormGroup<EncryptionAtRestFormProperties>({
-			DataVolumeKMSKeyId: new FormControl<string | null | undefined>(undefined),
+			DataVolumeKMSKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -204,6 +218,8 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface JmxExporterInfo {
+
+		/** Required */
 		EnabledInBroker: boolean;
 	}
 
@@ -212,11 +228,13 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface JmxExporterInfoFormProperties {
+
+		/** Required */
 		EnabledInBroker: FormControl<boolean | null | undefined>,
 	}
 	export function CreateJmxExporterInfoFormGroup() {
 		return new FormGroup<JmxExporterInfoFormProperties>({
-			EnabledInBroker: new FormControl<boolean | null | undefined>(undefined),
+			EnabledInBroker: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -227,6 +245,8 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface NodeExporterInfo {
+
+		/** Required */
 		EnabledInBroker: boolean;
 	}
 
@@ -235,11 +255,13 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface NodeExporterInfoFormProperties {
+
+		/** Required */
 		EnabledInBroker: FormControl<boolean | null | undefined>,
 	}
 	export function CreateNodeExporterInfoFormGroup() {
 		return new FormGroup<NodeExporterInfoFormProperties>({
-			EnabledInBroker: new FormControl<boolean | null | undefined>(undefined),
+			EnabledInBroker: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -258,16 +280,20 @@ export namespace MyNS {
 	}
 
 	export interface CloudWatchLogs {
+
+		/** Required */
 		Enabled: boolean;
 		LogGroup?: string | null;
 	}
 	export interface CloudWatchLogsFormProperties {
+
+		/** Required */
 		Enabled: FormControl<boolean | null | undefined>,
 		LogGroup: FormControl<string | null | undefined>,
 	}
 	export function CreateCloudWatchLogsFormGroup() {
 		return new FormGroup<CloudWatchLogsFormProperties>({
-			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			LogGroup: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -275,34 +301,42 @@ export namespace MyNS {
 
 	export interface Firehose {
 		DeliveryStream?: string | null;
+
+		/** Required */
 		Enabled: boolean;
 	}
 	export interface FirehoseFormProperties {
 		DeliveryStream: FormControl<string | null | undefined>,
+
+		/** Required */
 		Enabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateFirehoseFormGroup() {
 		return new FormGroup<FirehoseFormProperties>({
 			DeliveryStream: new FormControl<string | null | undefined>(undefined),
-			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface S3 {
 		Bucket?: string | null;
+
+		/** Required */
 		Enabled: boolean;
 		Prefix?: string | null;
 	}
 	export interface S3FormProperties {
 		Bucket: FormControl<string | null | undefined>,
+
+		/** Required */
 		Enabled: FormControl<boolean | null | undefined>,
 		Prefix: FormControl<string | null | undefined>,
 	}
 	export function CreateS3FormGroup() {
 		return new FormGroup<S3FormProperties>({
 			Bucket: new FormControl<string | null | undefined>(undefined),
-			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			Prefix: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -408,8 +442,12 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface ConfigurationRevision {
+
+		/** Required */
 		CreationTime: Date;
 		Description?: string | null;
+
+		/** Required */
 		Revision: number;
 	}
 
@@ -418,15 +456,19 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface ConfigurationRevisionFormProperties {
+
+		/** Required */
 		CreationTime: FormControl<Date | null | undefined>,
 		Description: FormControl<string | null | undefined>,
+
+		/** Required */
 		Revision: FormControl<number | null | undefined>,
 	}
 	export function CreateConfigurationRevisionFormGroup() {
 		return new FormGroup<ConfigurationRevisionFormProperties>({
-			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			Description: new FormControl<string | null | undefined>(undefined),
-			Revision: new FormControl<number | null | undefined>(undefined),
+			Revision: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -583,7 +625,15 @@ export namespace MyNS {
 		 * <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
 		 */
 		BrokerAZDistribution?: BrokerAZDistribution | null;
+
+		/** Required */
 		ClientSubnets: Array<string>;
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 5
+		 */
 		InstanceType: string;
 		SecurityGroups?: Array<string>;
 
@@ -604,12 +654,18 @@ export namespace MyNS {
 		 * <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
 		 */
 		BrokerAZDistribution: FormControl<BrokerAZDistribution | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 5
+		 */
 		InstanceType: FormControl<string | null | undefined>,
 	}
 	export function CreateBrokerNodeGroupInfoFormGroup() {
 		return new FormGroup<BrokerNodeGroupInfoFormProperties>({
 			BrokerAZDistribution: new FormControl<BrokerAZDistribution | null | undefined>(undefined),
-			InstanceType: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(5)]),
 		});
 
 	}
@@ -762,6 +818,8 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface JmxExporter {
+
+		/** Required */
 		EnabledInBroker: boolean;
 	}
 
@@ -770,11 +828,13 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface JmxExporterFormProperties {
+
+		/** Required */
 		EnabledInBroker: FormControl<boolean | null | undefined>,
 	}
 	export function CreateJmxExporterFormGroup() {
 		return new FormGroup<JmxExporterFormProperties>({
-			EnabledInBroker: new FormControl<boolean | null | undefined>(undefined),
+			EnabledInBroker: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -785,6 +845,8 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface NodeExporter {
+
+		/** Required */
 		EnabledInBroker: boolean;
 	}
 
@@ -793,16 +855,20 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface NodeExporterFormProperties {
+
+		/** Required */
 		EnabledInBroker: FormControl<boolean | null | undefined>,
 	}
 	export function CreateNodeExporterFormGroup() {
 		return new FormGroup<NodeExporterFormProperties>({
-			EnabledInBroker: new FormControl<boolean | null | undefined>(undefined),
+			EnabledInBroker: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface LoggingInfo {
+
+		/** Required */
 		BrokerLogs: BrokerLogs;
 	}
 	export interface LoggingInfoFormProperties {
@@ -1043,7 +1109,11 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface BrokerEBSVolumeInfo {
+
+		/** Required */
 		KafkaBrokerNodeId: string;
+
+		/** Required */
 		VolumeSizeGB: number;
 	}
 
@@ -1052,13 +1122,17 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface BrokerEBSVolumeInfoFormProperties {
+
+		/** Required */
 		KafkaBrokerNodeId: FormControl<string | null | undefined>,
+
+		/** Required */
 		VolumeSizeGB: FormControl<number | null | undefined>,
 	}
 	export function CreateBrokerEBSVolumeInfoFormGroup() {
 		return new FormGroup<BrokerEBSVolumeInfoFormProperties>({
-			KafkaBrokerNodeId: new FormControl<string | null | undefined>(undefined),
-			VolumeSizeGB: new FormControl<number | null | undefined>(undefined),
+			KafkaBrokerNodeId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			VolumeSizeGB: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1069,7 +1143,11 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface ConfigurationInfo {
+
+		/** Required */
 		Arn: string;
+
+		/** Required */
 		Revision: number;
 	}
 
@@ -1078,13 +1156,17 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface ConfigurationInfoFormProperties {
+
+		/** Required */
 		Arn: FormControl<string | null | undefined>,
+
+		/** Required */
 		Revision: FormControl<number | null | undefined>,
 	}
 	export function CreateConfigurationInfoFormGroup() {
 		return new FormGroup<ConfigurationInfoFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
-			Revision: new FormControl<number | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Revision: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1255,9 +1337,17 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface Configuration {
+
+		/** Required */
 		Arn: string;
+
+		/** Required */
 		CreationTime: Date;
+
+		/** Required */
 		Description: string;
+
+		/** Required */
 		KafkaVersions: Array<string>;
 
 		/**
@@ -1265,6 +1355,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		LatestRevision: ConfigurationRevision;
+
+		/** Required */
 		Name: string;
 	}
 
@@ -1273,17 +1365,25 @@ export namespace MyNS {
 	 *          
 	 */
 	export interface ConfigurationFormProperties {
+
+		/** Required */
 		Arn: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreationTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		Description: FormControl<string | null | undefined>,
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateConfigurationFormGroup() {
 		return new FormGroup<ConfigurationFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
-			CreationTime: new FormControl<Date | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1607,6 +1707,12 @@ export namespace MyNS {
 		 * <p>Includes all client authentication information.</p>
 		 */
 		ClientAuthentication?: ClientAuthentication;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ClusterName: string;
 
 		/**
@@ -1628,27 +1734,57 @@ export namespace MyNS {
 		 * <p>JMX and Node monitoring for the MSK cluster.</p>
 		 */
 		OpenMonitoring?: OpenMonitoringInfo;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		KafkaVersion: string;
 		LoggingInfo?: LoggingInfo;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 15
+		 */
 		NumberOfBrokerNodes: number;
 		Tags?: __mapOf__string;
 	}
 	export interface CreateClusterRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ClusterName: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
 		 */
 		EnhancedMonitoring: FormControl<ClusterInfoEnhancedMonitoring | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		KafkaVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 15
+		 */
 		NumberOfBrokerNodes: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateClusterRequestFormGroup() {
 		return new FormGroup<CreateClusterRequestFormProperties>({
-			ClusterName: new FormControl<string | null | undefined>(undefined),
+			ClusterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 			EnhancedMonitoring: new FormControl<ClusterInfoEnhancedMonitoring | null | undefined>(undefined),
-			KafkaVersion: new FormControl<string | null | undefined>(undefined),
-			NumberOfBrokerNodes: new FormControl<number | null | undefined>(undefined),
+			KafkaVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			NumberOfBrokerNodes: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(15)]),
 		});
 
 	}
@@ -1656,19 +1792,27 @@ export namespace MyNS {
 	export interface CreateConfigurationRequest {
 		Description?: string | null;
 		KafkaVersions?: Array<string>;
+
+		/** Required */
 		Name: string;
+
+		/** Required */
 		ServerProperties: string;
 	}
 	export interface CreateConfigurationRequestFormProperties {
 		Description: FormControl<string | null | undefined>,
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		ServerProperties: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateConfigurationRequestFormGroup() {
 		return new FormGroup<CreateConfigurationRequestFormProperties>({
 			Description: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			ServerProperties: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ServerProperties: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1821,6 +1965,8 @@ export namespace MyNS {
 	export enum NodeType { BROKER = 0 }
 
 	export interface TagResourceRequest {
+
+		/** Required */
 		Tags: __mapOf__string;
 	}
 	export interface TagResourceRequestFormProperties {
@@ -1842,31 +1988,53 @@ export namespace MyNS {
 	}
 
 	export interface UpdateBrokerCountRequest {
+
+		/** Required */
 		CurrentVersion: string;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 15
+		 */
 		TargetNumberOfBrokerNodes: number;
 	}
 	export interface UpdateBrokerCountRequestFormProperties {
+
+		/** Required */
 		CurrentVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 15
+		 */
 		TargetNumberOfBrokerNodes: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateBrokerCountRequestFormGroup() {
 		return new FormGroup<UpdateBrokerCountRequestFormProperties>({
-			CurrentVersion: new FormControl<string | null | undefined>(undefined),
-			TargetNumberOfBrokerNodes: new FormControl<number | null | undefined>(undefined),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TargetNumberOfBrokerNodes: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(15)]),
 		});
 
 	}
 
 	export interface UpdateBrokerStorageRequest {
+
+		/** Required */
 		CurrentVersion: string;
+
+		/** Required */
 		TargetBrokerEBSVolumeInfo: Array<BrokerEBSVolumeInfo>;
 	}
 	export interface UpdateBrokerStorageRequestFormProperties {
+
+		/** Required */
 		CurrentVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateBrokerStorageRequestFormGroup() {
 		return new FormGroup<UpdateBrokerStorageRequestFormProperties>({
-			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1878,14 +2046,18 @@ export namespace MyNS {
 		 * Required
 		 */
 		ConfigurationInfo: ConfigurationInfo;
+
+		/** Required */
 		CurrentVersion: string;
 	}
 	export interface UpdateClusterConfigurationRequestFormProperties {
+
+		/** Required */
 		CurrentVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateClusterConfigurationRequestFormGroup() {
 		return new FormGroup<UpdateClusterConfigurationRequestFormProperties>({
-			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1896,17 +2068,25 @@ export namespace MyNS {
 		 * <p>Specifies the configuration to use for the brokers.</p>
 		 */
 		ConfigurationInfo?: ConfigurationInfo;
+
+		/** Required */
 		CurrentVersion: string;
+
+		/** Required */
 		TargetKafkaVersion: string;
 	}
 	export interface UpdateClusterKafkaVersionRequestFormProperties {
+
+		/** Required */
 		CurrentVersion: FormControl<string | null | undefined>,
+
+		/** Required */
 		TargetKafkaVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateClusterKafkaVersionRequestFormGroup() {
 		return new FormGroup<UpdateClusterKafkaVersionRequestFormProperties>({
-			CurrentVersion: new FormControl<string | null | undefined>(undefined),
-			TargetKafkaVersion: new FormControl<string | null | undefined>(undefined),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TargetKafkaVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1914,6 +2094,8 @@ export namespace MyNS {
 
 	/** Request body for UpdateMonitoring. */
 	export interface UpdateMonitoringRequest {
+
+		/** Required */
 		CurrentVersion: string;
 
 		/**
@@ -1930,6 +2112,8 @@ export namespace MyNS {
 
 	/** Request body for UpdateMonitoring. */
 	export interface UpdateMonitoringRequestFormProperties {
+
+		/** Required */
 		CurrentVersion: FormControl<string | null | undefined>,
 
 		/**
@@ -1939,7 +2123,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateMonitoringRequestFormGroup() {
 		return new FormGroup<UpdateMonitoringRequestFormProperties>({
-			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			EnhancedMonitoring: new FormControl<ClusterInfoEnhancedMonitoring | null | undefined>(undefined),
 		});
 
@@ -2395,10 +2579,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateClusterPostBodyFormGroup() {
 		return new FormGroup<CreateClusterPostBodyFormProperties>({
-			clusterName: new FormControl<string | null | undefined>(undefined),
+			clusterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 			enhancedMonitoring: new FormControl<ClusterInfoEnhancedMonitoring | null | undefined>(undefined),
-			kafkaVersion: new FormControl<string | null | undefined>(undefined),
-			numberOfBrokerNodes: new FormControl<number | null | undefined>(undefined),
+			kafkaVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			numberOfBrokerNodes: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(15)]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -2412,6 +2596,11 @@ export namespace MyNS {
 		 */
 		BrokerAZDistribution?: BrokerAZDistribution | null;
 		ClientSubnets?: Array<string>;
+
+		/**
+		 * Max length: 32
+		 * Min length: 5
+		 */
 		InstanceType?: string | null;
 		SecurityGroups?: Array<string>;
 
@@ -2427,12 +2616,17 @@ export namespace MyNS {
 		 * <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
 		 */
 		BrokerAZDistribution: FormControl<BrokerAZDistribution | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 5
+		 */
 		InstanceType: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateClusterPostBodyBrokerNodeGroupInfoFormGroup() {
 		return new FormGroup<CreateClusterPostBodyBrokerNodeGroupInfoFormProperties>({
 			BrokerAZDistribution: new FormControl<BrokerAZDistribution | null | undefined>(undefined),
-			InstanceType: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(5)]),
 		});
 
 	}
@@ -2562,8 +2756,8 @@ export namespace MyNS {
 	export function CreateCreateConfigurationPostBodyFormGroup() {
 		return new FormGroup<CreateConfigurationPostBodyFormProperties>({
 			description: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			serverProperties: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			serverProperties: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2586,7 +2780,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2625,8 +2819,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateBrokerCountPutBodyFormGroup() {
 		return new FormGroup<UpdateBrokerCountPutBodyFormProperties>({
-			currentVersion: new FormControl<string | null | undefined>(undefined),
-			targetNumberOfBrokerNodes: new FormControl<number | null | undefined>(undefined),
+			currentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			targetNumberOfBrokerNodes: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(15)]),
 		});
 
 	}
@@ -2655,7 +2849,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateBrokerStoragePutBodyFormGroup() {
 		return new FormGroup<UpdateBrokerStoragePutBodyFormProperties>({
-			currentVersion: new FormControl<string | null | undefined>(undefined),
+			currentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2684,7 +2878,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateClusterConfigurationPutBodyFormGroup() {
 		return new FormGroup<UpdateClusterConfigurationPutBodyFormProperties>({
-			currentVersion: new FormControl<string | null | undefined>(undefined),
+			currentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2740,8 +2934,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateClusterKafkaVersionPutBodyFormGroup() {
 		return new FormGroup<UpdateClusterKafkaVersionPutBodyFormProperties>({
-			currentVersion: new FormControl<string | null | undefined>(undefined),
-			targetKafkaVersion: new FormControl<string | null | undefined>(undefined),
+			currentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			targetKafkaVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2796,7 +2990,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateMonitoringPutBodyFormGroup() {
 		return new FormGroup<UpdateMonitoringPutBodyFormProperties>({
-			currentVersion: new FormControl<string | null | undefined>(undefined),
+			currentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			enhancedMonitoring: new FormControl<ClusterInfoEnhancedMonitoring | null | undefined>(undefined),
 		});
 

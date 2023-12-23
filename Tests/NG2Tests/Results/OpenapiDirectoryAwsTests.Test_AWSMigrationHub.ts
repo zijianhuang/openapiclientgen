@@ -14,7 +14,21 @@ export namespace MyNS {
 	}
 
 	export interface AssociateCreatedArtifactRequest {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStream: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^:|]+
+		 */
 		MigrationTaskName: string;
 
 		/**
@@ -25,14 +39,28 @@ export namespace MyNS {
 		DryRun?: boolean | null;
 	}
 	export interface AssociateCreatedArtifactRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStream: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^:|]+
+		 */
 		MigrationTaskName: FormControl<string | null | undefined>,
 		DryRun: FormControl<boolean | null | undefined>,
 	}
 	export function CreateAssociateCreatedArtifactRequestFormGroup() {
 		return new FormGroup<AssociateCreatedArtifactRequestFormProperties>({
-			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined),
-			MigrationTaskName: new FormControl<string | null | undefined>(undefined),
+			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
+			MigrationTaskName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 			DryRun: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -41,19 +69,45 @@ export namespace MyNS {
 
 	/** An ARN of the AWS cloud resource target receiving the migration (e.g., AMI, EC2 instance, RDS instance, etc.). */
 	export interface CreatedArtifact {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: arn:[a-z-]+:[a-z0-9-]+:(?:[a-z0-9-]+|):(?:[0-9]{12}|):.*
+		 */
 		Name: string;
+
+		/**
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: ^.{0,500}$
+		 */
 		Description?: string | null;
 	}
 
 	/** An ARN of the AWS cloud resource target receiving the migration (e.g., AMI, EC2 instance, RDS instance, etc.). */
 	export interface CreatedArtifactFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: arn:[a-z-]+:[a-z0-9-]+:(?:[a-z0-9-]+|):(?:[0-9]{12}|):.*
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: ^.{0,500}$
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatedArtifactFormGroup() {
 		return new FormGroup<CreatedArtifactFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(0)]),
 		});
 
 	}
@@ -159,7 +213,21 @@ export namespace MyNS {
 	}
 
 	export interface AssociateDiscoveredResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStream: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^:|]+
+		 */
 		MigrationTaskName: string;
 
 		/**
@@ -170,14 +238,28 @@ export namespace MyNS {
 		DryRun?: boolean | null;
 	}
 	export interface AssociateDiscoveredResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStream: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^:|]+
+		 */
 		MigrationTaskName: FormControl<string | null | undefined>,
 		DryRun: FormControl<boolean | null | undefined>,
 	}
 	export function CreateAssociateDiscoveredResourceRequestFormGroup() {
 		return new FormGroup<AssociateDiscoveredResourceRequestFormProperties>({
-			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined),
-			MigrationTaskName: new FormControl<string | null | undefined>(undefined),
+			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
+			MigrationTaskName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 			DryRun: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -186,19 +268,45 @@ export namespace MyNS {
 
 	/** Object representing the on-premises resource being migrated. */
 	export interface DiscoveredResource {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: ^.{1,1600}$
+		 */
 		ConfigurationId: string;
+
+		/**
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: ^.{0,500}$
+		 */
 		Description?: string | null;
 	}
 
 	/** Object representing the on-premises resource being migrated. */
 	export interface DiscoveredResourceFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: ^.{1,1600}$
+		 */
 		ConfigurationId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: ^.{0,500}$
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateDiscoveredResourceFormGroup() {
 		return new FormGroup<DiscoveredResourceFormProperties>({
-			ConfigurationId: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			ConfigurationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(0)]),
 		});
 
 	}
@@ -224,16 +332,30 @@ export namespace MyNS {
 	}
 
 	export interface CreateProgressUpdateStreamRequest {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStreamName: string;
 		DryRun?: boolean | null;
 	}
 	export interface CreateProgressUpdateStreamRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStreamName: FormControl<string | null | undefined>,
 		DryRun: FormControl<boolean | null | undefined>,
 	}
 	export function CreateCreateProgressUpdateStreamRequestFormGroup() {
 		return new FormGroup<CreateProgressUpdateStreamRequestFormProperties>({
-			ProgressUpdateStreamName: new FormControl<string | null | undefined>(undefined),
+			ProgressUpdateStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
 			DryRun: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -250,16 +372,30 @@ export namespace MyNS {
 	}
 
 	export interface DeleteProgressUpdateStreamRequest {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStreamName: string;
 		DryRun?: boolean | null;
 	}
 	export interface DeleteProgressUpdateStreamRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStreamName: FormControl<string | null | undefined>,
 		DryRun: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDeleteProgressUpdateStreamRequestFormGroup() {
 		return new FormGroup<DeleteProgressUpdateStreamRequestFormProperties>({
-			ProgressUpdateStreamName: new FormControl<string | null | undefined>(undefined),
+			ProgressUpdateStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
 			DryRun: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -284,14 +420,28 @@ export namespace MyNS {
 	export enum DescribeApplicationStateResultApplicationStatus { NOT_STARTED = 0, IN_PROGRESS = 1, COMPLETED = 2 }
 
 	export interface DescribeApplicationStateRequest {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: ^.{1,1600}$
+		 */
 		ApplicationId: string;
 	}
 	export interface DescribeApplicationStateRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: ^.{1,1600}$
+		 */
 		ApplicationId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeApplicationStateRequestFormGroup() {
 		return new FormGroup<DescribeApplicationStateRequestFormProperties>({
-			ApplicationId: new FormControl<string | null | undefined>(undefined),
+			ApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
 		});
 
 	}
@@ -312,25 +462,54 @@ export namespace MyNS {
 
 	/** Represents a migration task in a migration tool. */
 	export interface MigrationTask {
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStream?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^:|]+
+		 */
 		MigrationTaskName?: string | null;
 
 		/** Task object encapsulating task information. */
 		Task?: Task_;
 		UpdateDateTime?: Date | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		ResourceAttributeList?: Array<ResourceAttribute>;
 	}
 
 	/** Represents a migration task in a migration tool. */
 	export interface MigrationTaskFormProperties {
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStream: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^:|]+
+		 */
 		MigrationTaskName: FormControl<string | null | undefined>,
 		UpdateDateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateMigrationTaskFormGroup() {
 		return new FormGroup<MigrationTaskFormProperties>({
-			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined),
-			MigrationTaskName: new FormControl<string | null | undefined>(undefined),
+			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
+			MigrationTaskName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			UpdateDateTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -339,22 +518,48 @@ export namespace MyNS {
 
 	/** Task object encapsulating task information. */
 	export interface Task_ {
+
+		/** Required */
 		Status: Task_Status;
+
+		/**
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: ^.{0,500}$
+		 */
 		StatusDetail?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		ProgressPercent?: number | null;
 	}
 
 	/** Task object encapsulating task information. */
 	export interface Task_FormProperties {
+
+		/** Required */
 		Status: FormControl<Task_Status | null | undefined>,
+
+		/**
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: ^.{0,500}$
+		 */
 		StatusDetail: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		ProgressPercent: FormControl<number | null | undefined>,
 	}
 	export function CreateTask_FormGroup() {
 		return new FormGroup<Task_FormProperties>({
-			Status: new FormControl<Task_Status | null | undefined>(undefined),
-			StatusDetail: new FormControl<string | null | undefined>(undefined),
-			ProgressPercent: new FormControl<number | null | undefined>(undefined),
+			Status: new FormControl<Task_Status | null | undefined>(undefined, [Validators.required]),
+			StatusDetail: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(0)]),
+			ProgressPercent: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -364,19 +569,37 @@ export namespace MyNS {
 
 	/** <p>Attribute associated with a resource.</p> <p>Note the corresponding format required per type listed below:</p> <dl> <dt>IPV4</dt> <dd> <p> <code>x.x.x.x</code> </p> <p> <i>where x is an integer in the range [0,255]</i> </p> </dd> <dt>IPV6</dt> <dd> <p> <code>y : y : y : y : y : y : y : y</code> </p> <p> <i>where y is a hexadecimal between 0 and FFFF. [0, FFFF]</i> </p> </dd> <dt>MAC_ADDRESS</dt> <dd> <p> <code>^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$</code> </p> </dd> <dt>FQDN</dt> <dd> <p> <code>^[^&lt;&gt;{}\\\\/?,=\\p{Cntrl}]{1,256}$</code> </p> </dd> </dl> */
 	export interface ResourceAttribute {
+
+		/** Required */
 		Type: ResourceAttributeType;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^.{1,256}$
+		 */
 		Value: string;
 	}
 
 	/** <p>Attribute associated with a resource.</p> <p>Note the corresponding format required per type listed below:</p> <dl> <dt>IPV4</dt> <dd> <p> <code>x.x.x.x</code> </p> <p> <i>where x is an integer in the range [0,255]</i> </p> </dd> <dt>IPV6</dt> <dd> <p> <code>y : y : y : y : y : y : y : y</code> </p> <p> <i>where y is a hexadecimal between 0 and FFFF. [0, FFFF]</i> </p> </dd> <dt>MAC_ADDRESS</dt> <dd> <p> <code>^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$</code> </p> </dd> <dt>FQDN</dt> <dd> <p> <code>^[^&lt;&gt;{}\\\\/?,=\\p{Cntrl}]{1,256}$</code> </p> </dd> </dl> */
 	export interface ResourceAttributeFormProperties {
+
+		/** Required */
 		Type: FormControl<ResourceAttributeType | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^.{1,256}$
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateResourceAttributeFormGroup() {
 		return new FormGroup<ResourceAttributeFormProperties>({
-			Type: new FormControl<ResourceAttributeType | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<ResourceAttributeType | null | undefined>(undefined, [Validators.required]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -384,17 +607,45 @@ export namespace MyNS {
 	export enum ResourceAttributeType { IPV4_ADDRESS = 0, IPV6_ADDRESS = 1, MAC_ADDRESS = 2, FQDN = 3, VM_MANAGER_ID = 4, VM_MANAGED_OBJECT_REFERENCE = 5, VM_NAME = 6, VM_PATH = 7, BIOS_ID = 8, MOTHERBOARD_SERIAL_NUMBER = 9 }
 
 	export interface DescribeMigrationTaskRequest {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStream: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^:|]+
+		 */
 		MigrationTaskName: string;
 	}
 	export interface DescribeMigrationTaskRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStream: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^:|]+
+		 */
 		MigrationTaskName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeMigrationTaskRequestFormGroup() {
 		return new FormGroup<DescribeMigrationTaskRequestFormProperties>({
-			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined),
-			MigrationTaskName: new FormControl<string | null | undefined>(undefined),
+			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
+			MigrationTaskName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -410,22 +661,64 @@ export namespace MyNS {
 	}
 
 	export interface DisassociateCreatedArtifactRequest {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStream: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^:|]+
+		 */
 		MigrationTaskName: string;
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: arn:[a-z-]+:[a-z0-9-]+:(?:[a-z0-9-]+|):(?:[0-9]{12}|):.*
+		 */
 		CreatedArtifactName: string;
 		DryRun?: boolean | null;
 	}
 	export interface DisassociateCreatedArtifactRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStream: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^:|]+
+		 */
 		MigrationTaskName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: arn:[a-z-]+:[a-z0-9-]+:(?:[a-z0-9-]+|):(?:[0-9]{12}|):.*
+		 */
 		CreatedArtifactName: FormControl<string | null | undefined>,
 		DryRun: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDisassociateCreatedArtifactRequestFormGroup() {
 		return new FormGroup<DisassociateCreatedArtifactRequestFormProperties>({
-			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined),
-			MigrationTaskName: new FormControl<string | null | undefined>(undefined),
-			CreatedArtifactName: new FormControl<string | null | undefined>(undefined),
+			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
+			MigrationTaskName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			CreatedArtifactName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
 			DryRun: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -442,22 +735,64 @@ export namespace MyNS {
 	}
 
 	export interface DisassociateDiscoveredResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStream: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^:|]+
+		 */
 		MigrationTaskName: string;
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: ^.{1,1600}$
+		 */
 		ConfigurationId: string;
 		DryRun?: boolean | null;
 	}
 	export interface DisassociateDiscoveredResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStream: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^:|]+
+		 */
 		MigrationTaskName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: ^.{1,1600}$
+		 */
 		ConfigurationId: FormControl<string | null | undefined>,
 		DryRun: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDisassociateDiscoveredResourceRequestFormGroup() {
 		return new FormGroup<DisassociateDiscoveredResourceRequestFormProperties>({
-			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined),
-			MigrationTaskName: new FormControl<string | null | undefined>(undefined),
-			ConfigurationId: new FormControl<string | null | undefined>(undefined),
+			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
+			MigrationTaskName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			ConfigurationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
 			DryRun: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -474,34 +809,79 @@ export namespace MyNS {
 	}
 
 	export interface ImportMigrationTaskRequest {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStream: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^:|]+
+		 */
 		MigrationTaskName: string;
 		DryRun?: boolean | null;
 	}
 	export interface ImportMigrationTaskRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStream: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^:|]+
+		 */
 		MigrationTaskName: FormControl<string | null | undefined>,
 		DryRun: FormControl<boolean | null | undefined>,
 	}
 	export function CreateImportMigrationTaskRequestFormGroup() {
 		return new FormGroup<ImportMigrationTaskRequestFormProperties>({
-			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined),
-			MigrationTaskName: new FormControl<string | null | undefined>(undefined),
+			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
+			MigrationTaskName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 			DryRun: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ListApplicationStatesResult {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 1000
+		 */
 		ApplicationStateList?: Array<ApplicationState>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListApplicationStatesResultFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListApplicationStatesResultFormGroup() {
 		return new FormGroup<ListApplicationStatesResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 		});
 
 	}
@@ -509,6 +889,12 @@ export namespace MyNS {
 
 	/** The state of an application discovered through Migration Hub import, the AWS Agentless Discovery Connector, or the AWS Application Discovery Agent. */
 	export interface ApplicationState {
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: ^.{1,1600}$
+		 */
 		ApplicationId?: string | null;
 		ApplicationStatus?: DescribeApplicationStateResultApplicationStatus | null;
 		LastUpdatedTime?: Date | null;
@@ -516,13 +902,19 @@ export namespace MyNS {
 
 	/** The state of an application discovered through Migration Hub import, the AWS Agentless Discovery Connector, or the AWS Application Discovery Agent. */
 	export interface ApplicationStateFormProperties {
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: ^.{1,1600}$
+		 */
 		ApplicationId: FormControl<string | null | undefined>,
 		ApplicationStatus: FormControl<DescribeApplicationStateResultApplicationStatus | null | undefined>,
 		LastUpdatedTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateApplicationStateFormGroup() {
 		return new FormGroup<ApplicationStateFormProperties>({
-			ApplicationId: new FormControl<string | null | undefined>(undefined),
+			ApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 			ApplicationStatus: new FormControl<DescribeApplicationStateResultApplicationStatus | null | undefined>(undefined),
 			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -530,104 +922,267 @@ export namespace MyNS {
 	}
 
 	export interface ListApplicationStatesRequest {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		ApplicationIds?: Array<string>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListApplicationStatesRequestFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListApplicationStatesRequestFormGroup() {
 		return new FormGroup<ListApplicationStatesRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListCreatedArtifactsResult {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+		 */
 		NextToken?: string | null;
 		CreatedArtifactList?: Array<CreatedArtifact>;
 	}
 	export interface ListCreatedArtifactsResultFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListCreatedArtifactsResultFormGroup() {
 		return new FormGroup<ListCreatedArtifactsResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface ListCreatedArtifactsRequest {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStream: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^:|]+
+		 */
 		MigrationTaskName: string;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListCreatedArtifactsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStream: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^:|]+
+		 */
 		MigrationTaskName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListCreatedArtifactsRequestFormGroup() {
 		return new FormGroup<ListCreatedArtifactsRequestFormProperties>({
-			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined),
-			MigrationTaskName: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
+			MigrationTaskName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10)]),
 		});
 
 	}
 
 	export interface ListDiscoveredResourcesResult {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+		 */
 		NextToken?: string | null;
 		DiscoveredResourceList?: Array<DiscoveredResource>;
 	}
 	export interface ListDiscoveredResourcesResultFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListDiscoveredResourcesResultFormGroup() {
 		return new FormGroup<ListDiscoveredResourcesResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface ListDiscoveredResourcesRequest {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStream: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^:|]+
+		 */
 		MigrationTaskName: string;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListDiscoveredResourcesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStream: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^:|]+
+		 */
 		MigrationTaskName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListDiscoveredResourcesRequestFormGroup() {
 		return new FormGroup<ListDiscoveredResourcesRequestFormProperties>({
-			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined),
-			MigrationTaskName: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
+			MigrationTaskName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10)]),
 		});
 
 	}
 
 	export interface ListMigrationTasksResult {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+		 */
 		NextToken?: string | null;
 		MigrationTaskSummaryList?: Array<MigrationTaskSummary>;
 	}
 	export interface ListMigrationTasksResultFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListMigrationTasksResultFormGroup() {
 		return new FormGroup<ListMigrationTasksResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 		});
 
 	}
@@ -635,64 +1190,156 @@ export namespace MyNS {
 
 	/** MigrationTaskSummary includes <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and <code>UpdateDateTime</code> for each task. */
 	export interface MigrationTaskSummary {
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStream?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^:|]+
+		 */
 		MigrationTaskName?: string | null;
 		Status?: Task_Status | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		ProgressPercent?: number | null;
+
+		/**
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: ^.{0,500}$
+		 */
 		StatusDetail?: string | null;
 		UpdateDateTime?: Date | null;
 	}
 
 	/** MigrationTaskSummary includes <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and <code>UpdateDateTime</code> for each task. */
 	export interface MigrationTaskSummaryFormProperties {
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStream: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^:|]+
+		 */
 		MigrationTaskName: FormControl<string | null | undefined>,
 		Status: FormControl<Task_Status | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		ProgressPercent: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: ^.{0,500}$
+		 */
 		StatusDetail: FormControl<string | null | undefined>,
 		UpdateDateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateMigrationTaskSummaryFormGroup() {
 		return new FormGroup<MigrationTaskSummaryFormProperties>({
-			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined),
-			MigrationTaskName: new FormControl<string | null | undefined>(undefined),
+			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
+			MigrationTaskName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			Status: new FormControl<Task_Status | null | undefined>(undefined),
-			ProgressPercent: new FormControl<number | null | undefined>(undefined),
-			StatusDetail: new FormControl<string | null | undefined>(undefined),
+			ProgressPercent: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			StatusDetail: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(0)]),
 			UpdateDateTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ListMigrationTasksRequest {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: ^.{1,1600}$
+		 */
 		ResourceName?: string | null;
 	}
 	export interface ListMigrationTasksRequestFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: ^.{1,1600}$
+		 */
 		ResourceName: FormControl<string | null | undefined>,
 	}
 	export function CreateListMigrationTasksRequestFormGroup() {
 		return new FormGroup<ListMigrationTasksRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			ResourceName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
+			ResourceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListProgressUpdateStreamsResult {
 		ProgressUpdateStreamSummaryList?: Array<ProgressUpdateStreamSummary>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListProgressUpdateStreamsResultFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListProgressUpdateStreamsResultFormGroup() {
 		return new FormGroup<ListProgressUpdateStreamsResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 		});
 
 	}
@@ -700,32 +1347,66 @@ export namespace MyNS {
 
 	/** Summary of the AWS resource used for access control that is implicitly linked to your AWS account. */
 	export interface ProgressUpdateStreamSummary {
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStreamName?: string | null;
 	}
 
 	/** Summary of the AWS resource used for access control that is implicitly linked to your AWS account. */
 	export interface ProgressUpdateStreamSummaryFormProperties {
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateProgressUpdateStreamSummaryFormGroup() {
 		return new FormGroup<ProgressUpdateStreamSummaryFormProperties>({
-			ProgressUpdateStreamName: new FormControl<string | null | undefined>(undefined),
+			ProgressUpdateStreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListProgressUpdateStreamsRequest {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListProgressUpdateStreamsRequestFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListProgressUpdateStreamsRequestFormGroup() {
 		return new FormGroup<ListProgressUpdateStreamsRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -741,21 +1422,39 @@ export namespace MyNS {
 	}
 
 	export interface NotifyApplicationStateRequest {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: ^.{1,1600}$
+		 */
 		ApplicationId: string;
+
+		/** Required */
 		Status: DescribeApplicationStateResultApplicationStatus;
 		UpdateDateTime?: Date | null;
 		DryRun?: boolean | null;
 	}
 	export interface NotifyApplicationStateRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: ^.{1,1600}$
+		 */
 		ApplicationId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Status: FormControl<DescribeApplicationStateResultApplicationStatus | null | undefined>,
 		UpdateDateTime: FormControl<Date | null | undefined>,
 		DryRun: FormControl<boolean | null | undefined>,
 	}
 	export function CreateNotifyApplicationStateRequestFormGroup() {
 		return new FormGroup<NotifyApplicationStateRequestFormProperties>({
-			ApplicationId: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<DescribeApplicationStateResultApplicationStatus | null | undefined>(undefined),
+			ApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			Status: new FormControl<DescribeApplicationStateResultApplicationStatus | null | undefined>(undefined, [Validators.required]),
 			UpdateDateTime: new FormControl<Date | null | undefined>(undefined),
 			DryRun: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -773,7 +1472,21 @@ export namespace MyNS {
 	}
 
 	export interface NotifyMigrationTaskStateRequest {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStream: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^:|]+
+		 */
 		MigrationTaskName: string;
 
 		/**
@@ -781,23 +1494,51 @@ export namespace MyNS {
 		 * Required
 		 */
 		Task: Task_;
+
+		/** Required */
 		UpdateDateTime: Date;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		NextUpdateSeconds: number;
 		DryRun?: boolean | null;
 	}
 	export interface NotifyMigrationTaskStateRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStream: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^:|]+
+		 */
 		MigrationTaskName: FormControl<string | null | undefined>,
+
+		/** Required */
 		UpdateDateTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		NextUpdateSeconds: FormControl<number | null | undefined>,
 		DryRun: FormControl<boolean | null | undefined>,
 	}
 	export function CreateNotifyMigrationTaskStateRequestFormGroup() {
 		return new FormGroup<NotifyMigrationTaskStateRequestFormProperties>({
-			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined),
-			MigrationTaskName: new FormControl<string | null | undefined>(undefined),
-			UpdateDateTime: new FormControl<Date | null | undefined>(undefined),
-			NextUpdateSeconds: new FormControl<number | null | undefined>(undefined),
+			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
+			MigrationTaskName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			UpdateDateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			NextUpdateSeconds: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			DryRun: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -814,20 +1555,54 @@ export namespace MyNS {
 	}
 
 	export interface PutResourceAttributesRequest {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStream: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^:|]+
+		 */
 		MigrationTaskName: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		ResourceAttributeList: Array<ResourceAttribute>;
 		DryRun?: boolean | null;
 	}
 	export interface PutResourceAttributesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 * Pattern: [^/:|\000-\037]+
+		 */
 		ProgressUpdateStream: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^:|]+
+		 */
 		MigrationTaskName: FormControl<string | null | undefined>,
 		DryRun: FormControl<boolean | null | undefined>,
 	}
 	export function CreatePutResourceAttributesRequestFormGroup() {
 		return new FormGroup<PutResourceAttributesRequestFormProperties>({
-			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined),
-			MigrationTaskName: new FormControl<string | null | undefined>(undefined),
+			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
+			MigrationTaskName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 			DryRun: new FormControl<boolean | null | undefined>(undefined),
 		});
 

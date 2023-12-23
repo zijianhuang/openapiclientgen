@@ -20,6 +20,8 @@ export namespace MyNS {
 
 	/** Specifies the tags to add to a trail. */
 	export interface AddTagsRequest {
+
+		/** Required */
 		ResourceId: string;
 
 		/** A list of tags. */
@@ -28,11 +30,13 @@ export namespace MyNS {
 
 	/** Specifies the tags to add to a trail. */
 	export interface AddTagsRequestFormProperties {
+
+		/** Required */
 		ResourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateAddTagsRequestFormGroup() {
 		return new FormGroup<AddTagsRequestFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -40,18 +44,22 @@ export namespace MyNS {
 
 	/** A custom key-value pair associated with a resource such as a CloudTrail trail. */
 	export interface Tag {
+
+		/** Required */
 		Key: string;
 		Value?: string | null;
 	}
 
 	/** A custom key-value pair associated with a resource such as a CloudTrail trail. */
 	export interface TagFormProperties {
+
+		/** Required */
 		Key: FormControl<string | null | undefined>,
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Value: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -203,7 +211,11 @@ export namespace MyNS {
 
 	/** Specifies the settings for each trail. */
 	export interface CreateTrailRequest {
+
+		/** Required */
 		Name: string;
+
+		/** Required */
 		S3BucketName: string;
 		S3KeyPrefix?: string | null;
 		SnsTopicName?: string | null;
@@ -221,7 +233,11 @@ export namespace MyNS {
 
 	/** Specifies the settings for each trail. */
 	export interface CreateTrailRequestFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		S3BucketName: FormControl<string | null | undefined>,
 		S3KeyPrefix: FormControl<string | null | undefined>,
 		SnsTopicName: FormControl<string | null | undefined>,
@@ -235,8 +251,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateTrailRequestFormGroup() {
 		return new FormGroup<CreateTrailRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			S3BucketName: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			S3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			S3KeyPrefix: new FormControl<string | null | undefined>(undefined),
 			SnsTopicName: new FormControl<string | null | undefined>(undefined),
 			IncludeGlobalServiceEvents: new FormControl<boolean | null | undefined>(undefined),
@@ -487,16 +503,20 @@ export namespace MyNS {
 
 	/** The request that specifies the name of a trail to delete. */
 	export interface DeleteTrailRequest {
+
+		/** Required */
 		Name: string;
 	}
 
 	/** The request that specifies the name of a trail to delete. */
 	export interface DeleteTrailRequestFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteTrailRequestFormGroup() {
 		return new FormGroup<DeleteTrailRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -673,14 +693,18 @@ export namespace MyNS {
 	}
 
 	export interface GetEventSelectorsRequest {
+
+		/** Required */
 		TrailName: string;
 	}
 	export interface GetEventSelectorsRequestFormProperties {
+
+		/** Required */
 		TrailName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetEventSelectorsRequestFormGroup() {
 		return new FormGroup<GetEventSelectorsRequestFormProperties>({
-			TrailName: new FormControl<string | null | undefined>(undefined),
+			TrailName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -719,14 +743,18 @@ export namespace MyNS {
 	export enum InsightSelectorInsightType { ApiCallRateInsight = 0 }
 
 	export interface GetInsightSelectorsRequest {
+
+		/** Required */
 		TrailName: string;
 	}
 	export interface GetInsightSelectorsRequestFormProperties {
+
+		/** Required */
 		TrailName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetInsightSelectorsRequestFormGroup() {
 		return new FormGroup<GetInsightSelectorsRequestFormProperties>({
-			TrailName: new FormControl<string | null | undefined>(undefined),
+			TrailName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -755,14 +783,18 @@ export namespace MyNS {
 	}
 
 	export interface GetTrailRequest {
+
+		/** Required */
 		Name: string;
 	}
 	export interface GetTrailRequestFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTrailRequestFormGroup() {
 		return new FormGroup<GetTrailRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -835,16 +867,20 @@ export namespace MyNS {
 
 	/** The name of a trail about which you want the current status. */
 	export interface GetTrailStatusRequest {
+
+		/** Required */
 		Name: string;
 	}
 
 	/** The name of a trail about which you want the current status. */
 	export interface GetTrailStatusRequestFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTrailStatusRequestFormGroup() {
 		return new FormGroup<GetTrailStatusRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -977,6 +1013,8 @@ export namespace MyNS {
 
 	/** Specifies a list of trail tags to return. */
 	export interface ListTagsRequest {
+
+		/** Required */
 		ResourceIdList: Array<string>;
 		NextToken?: string | null;
 	}
@@ -1128,6 +1166,11 @@ export namespace MyNS {
 		StartTime?: Date | null;
 		EndTime?: Date | null;
 		EventCategory?: LookupEventsRequestEventCategory | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
@@ -1137,6 +1180,11 @@ export namespace MyNS {
 		StartTime: FormControl<Date | null | undefined>,
 		EndTime: FormControl<Date | null | undefined>,
 		EventCategory: FormControl<LookupEventsRequestEventCategory | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -1145,7 +1193,7 @@ export namespace MyNS {
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
 			EventCategory: new FormControl<LookupEventsRequestEventCategory | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1154,19 +1202,27 @@ export namespace MyNS {
 
 	/** Specifies an attribute and value that filter the events returned. */
 	export interface LookupAttribute {
+
+		/** Required */
 		AttributeKey: LookupAttributeAttributeKey;
+
+		/** Required */
 		AttributeValue: string;
 	}
 
 	/** Specifies an attribute and value that filter the events returned. */
 	export interface LookupAttributeFormProperties {
+
+		/** Required */
 		AttributeKey: FormControl<LookupAttributeAttributeKey | null | undefined>,
+
+		/** Required */
 		AttributeValue: FormControl<string | null | undefined>,
 	}
 	export function CreateLookupAttributeFormGroup() {
 		return new FormGroup<LookupAttributeFormProperties>({
-			AttributeKey: new FormControl<LookupAttributeAttributeKey | null | undefined>(undefined),
-			AttributeValue: new FormControl<string | null | undefined>(undefined),
+			AttributeKey: new FormControl<LookupAttributeAttributeKey | null | undefined>(undefined, [Validators.required]),
+			AttributeValue: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1230,15 +1286,21 @@ export namespace MyNS {
 	}
 
 	export interface PutEventSelectorsRequest {
+
+		/** Required */
 		TrailName: string;
+
+		/** Required */
 		EventSelectors: Array<EventSelector>;
 	}
 	export interface PutEventSelectorsRequestFormProperties {
+
+		/** Required */
 		TrailName: FormControl<string | null | undefined>,
 	}
 	export function CreatePutEventSelectorsRequestFormGroup() {
 		return new FormGroup<PutEventSelectorsRequestFormProperties>({
-			TrailName: new FormControl<string | null | undefined>(undefined),
+			TrailName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1268,15 +1330,21 @@ export namespace MyNS {
 	}
 
 	export interface PutInsightSelectorsRequest {
+
+		/** Required */
 		TrailName: string;
+
+		/** Required */
 		InsightSelectors: Array<InsightSelector>;
 	}
 	export interface PutInsightSelectorsRequestFormProperties {
+
+		/** Required */
 		TrailName: FormControl<string | null | undefined>,
 	}
 	export function CreatePutInsightSelectorsRequestFormGroup() {
 		return new FormGroup<PutInsightSelectorsRequestFormProperties>({
-			TrailName: new FormControl<string | null | undefined>(undefined),
+			TrailName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1308,6 +1376,8 @@ export namespace MyNS {
 
 	/** Specifies the tags to remove from a trail. */
 	export interface RemoveTagsRequest {
+
+		/** Required */
 		ResourceId: string;
 
 		/** A list of tags. */
@@ -1316,11 +1386,13 @@ export namespace MyNS {
 
 	/** Specifies the tags to remove from a trail. */
 	export interface RemoveTagsRequestFormProperties {
+
+		/** Required */
 		ResourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveTagsRequestFormGroup() {
 		return new FormGroup<RemoveTagsRequestFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1342,16 +1414,20 @@ export namespace MyNS {
 
 	/** The request to CloudTrail to start logging AWS API calls for an account. */
 	export interface StartLoggingRequest {
+
+		/** Required */
 		Name: string;
 	}
 
 	/** The request to CloudTrail to start logging AWS API calls for an account. */
 	export interface StartLoggingRequestFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateStartLoggingRequestFormGroup() {
 		return new FormGroup<StartLoggingRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1373,16 +1449,20 @@ export namespace MyNS {
 
 	/** Passes the request to CloudTrail to stop logging AWS API calls for the specified account. */
 	export interface StopLoggingRequest {
+
+		/** Required */
 		Name: string;
 	}
 
 	/** Passes the request to CloudTrail to stop logging AWS API calls for the specified account. */
 	export interface StopLoggingRequestFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateStopLoggingRequestFormGroup() {
 		return new FormGroup<StopLoggingRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1443,6 +1523,8 @@ export namespace MyNS {
 
 	/** Specifies settings to update for the trail. */
 	export interface UpdateTrailRequest {
+
+		/** Required */
 		Name: string;
 		S3BucketName?: string | null;
 		S3KeyPrefix?: string | null;
@@ -1458,6 +1540,8 @@ export namespace MyNS {
 
 	/** Specifies settings to update for the trail. */
 	export interface UpdateTrailRequestFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 		S3BucketName: FormControl<string | null | undefined>,
 		S3KeyPrefix: FormControl<string | null | undefined>,
@@ -1472,7 +1556,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateTrailRequestFormGroup() {
 		return new FormGroup<UpdateTrailRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			S3BucketName: new FormControl<string | null | undefined>(undefined),
 			S3KeyPrefix: new FormControl<string | null | undefined>(undefined),
 			SnsTopicName: new FormControl<string | null | undefined>(undefined),

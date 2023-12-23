@@ -43,6 +43,12 @@ export namespace MyNS {
 
 	/** The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>. */
 	export interface ConsumedCapacity {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName?: string | null;
 		CapacityUnits?: number | null;
 		ReadCapacityUnits?: number | null;
@@ -56,6 +62,12 @@ export namespace MyNS {
 
 	/** The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>. */
 	export interface ConsumedCapacityFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
 		CapacityUnits: FormControl<number | null | undefined>,
 		ReadCapacityUnits: FormControl<number | null | undefined>,
@@ -63,7 +75,7 @@ export namespace MyNS {
 	}
 	export function CreateConsumedCapacityFormGroup() {
 		return new FormGroup<ConsumedCapacityFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 			CapacityUnits: new FormControl<number | null | undefined>(undefined),
 			ReadCapacityUnits: new FormControl<number | null | undefined>(undefined),
 			WriteCapacityUnits: new FormControl<number | null | undefined>(undefined),
@@ -107,6 +119,8 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>BatchGetItem</code> operation. */
 	export interface BatchGetItemInput {
+
+		/** Required */
 		RequestItems: BatchGetRequestMap;
 
 		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
@@ -208,6 +222,8 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>BatchWriteItem</code> operation. */
 	export interface BatchWriteItemInput {
+
+		/** Required */
 		RequestItems: BatchWriteItemRequestMap;
 
 		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
@@ -258,33 +274,75 @@ export namespace MyNS {
 
 	/** Contains the details of the backup created for the table. */
 	export interface BackupDetails {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		BackupArn: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BackupName: string;
+
+		/** Minimum: 0 */
 		BackupSizeBytes?: number | null;
+
+		/** Required */
 		BackupStatus: BackupDetailsBackupStatus;
+
+		/** Required */
 		BackupType: BackupDetailsBackupType;
+
+		/** Required */
 		BackupCreationDateTime: Date;
 		BackupExpiryDateTime?: Date | null;
 	}
 
 	/** Contains the details of the backup created for the table. */
 	export interface BackupDetailsFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		BackupArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BackupName: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		BackupSizeBytes: FormControl<number | null | undefined>,
+
+		/** Required */
 		BackupStatus: FormControl<BackupDetailsBackupStatus | null | undefined>,
+
+		/** Required */
 		BackupType: FormControl<BackupDetailsBackupType | null | undefined>,
+
+		/** Required */
 		BackupCreationDateTime: FormControl<Date | null | undefined>,
 		BackupExpiryDateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateBackupDetailsFormGroup() {
 		return new FormGroup<BackupDetailsFormProperties>({
-			BackupArn: new FormControl<string | null | undefined>(undefined),
-			BackupName: new FormControl<string | null | undefined>(undefined),
-			BackupSizeBytes: new FormControl<number | null | undefined>(undefined),
-			BackupStatus: new FormControl<BackupDetailsBackupStatus | null | undefined>(undefined),
-			BackupType: new FormControl<BackupDetailsBackupType | null | undefined>(undefined),
-			BackupCreationDateTime: new FormControl<Date | null | undefined>(undefined),
+			BackupArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(37)]),
+			BackupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			BackupSizeBytes: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			BackupStatus: new FormControl<BackupDetailsBackupStatus | null | undefined>(undefined, [Validators.required]),
+			BackupType: new FormControl<BackupDetailsBackupType | null | undefined>(undefined, [Validators.required]),
+			BackupCreationDateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			BackupExpiryDateTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -295,17 +353,45 @@ export namespace MyNS {
 	export enum BackupDetailsBackupType { USER = 0, SYSTEM = 1, AWS_BACKUP = 2 }
 
 	export interface CreateBackupInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BackupName: string;
 	}
 	export interface CreateBackupInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BackupName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateBackupInputFormGroup() {
 		return new FormGroup<CreateBackupInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
-			BackupName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			BackupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -380,6 +466,12 @@ export namespace MyNS {
 		GlobalTableArn?: string | null;
 		CreationDateTime?: Date | null;
 		GlobalTableStatus?: GlobalTableDescriptionGlobalTableStatus | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		GlobalTableName?: string | null;
 	}
 
@@ -388,6 +480,12 @@ export namespace MyNS {
 		GlobalTableArn: FormControl<string | null | undefined>,
 		CreationDateTime: FormControl<Date | null | undefined>,
 		GlobalTableStatus: FormControl<GlobalTableDescriptionGlobalTableStatus | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		GlobalTableName: FormControl<string | null | undefined>,
 	}
 	export function CreateGlobalTableDescriptionFormGroup() {
@@ -395,7 +493,7 @@ export namespace MyNS {
 			GlobalTableArn: new FormControl<string | null | undefined>(undefined),
 			CreationDateTime: new FormControl<Date | null | undefined>(undefined),
 			GlobalTableStatus: new FormControl<GlobalTableDescriptionGlobalTableStatus | null | undefined>(undefined),
-			GlobalTableName: new FormControl<string | null | undefined>(undefined),
+			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -438,16 +536,20 @@ export namespace MyNS {
 
 	/** Replica-specific provisioned throughput settings. If not specified, uses the source table's provisioned throughput settings. */
 	export interface ProvisionedThroughputOverride {
+
+		/** Minimum: 1 */
 		ReadCapacityUnits?: number | null;
 	}
 
 	/** Replica-specific provisioned throughput settings. If not specified, uses the source table's provisioned throughput settings. */
 	export interface ProvisionedThroughputOverrideFormProperties {
+
+		/** Minimum: 1 */
 		ReadCapacityUnits: FormControl<number | null | undefined>,
 	}
 	export function CreateProvisionedThroughputOverrideFormGroup() {
 		return new FormGroup<ProvisionedThroughputOverrideFormProperties>({
-			ReadCapacityUnits: new FormControl<number | null | undefined>(undefined),
+			ReadCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -455,6 +557,12 @@ export namespace MyNS {
 
 	/** Represents the properties of a replica global secondary index. */
 	export interface ReplicaGlobalSecondaryIndexDescription {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName?: string | null;
 
 		/** Replica-specific provisioned throughput settings. If not specified, uses the source table's provisioned throughput settings. */
@@ -463,11 +571,17 @@ export namespace MyNS {
 
 	/** Represents the properties of a replica global secondary index. */
 	export interface ReplicaGlobalSecondaryIndexDescriptionFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: FormControl<string | null | undefined>,
 	}
 	export function CreateReplicaGlobalSecondaryIndexDescriptionFormGroup() {
 		return new FormGroup<ReplicaGlobalSecondaryIndexDescriptionFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -475,15 +589,31 @@ export namespace MyNS {
 	export enum GlobalTableDescriptionGlobalTableStatus { CREATING = 0, ACTIVE = 1, DELETING = 2, UPDATING = 3 }
 
 	export interface CreateGlobalTableInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		GlobalTableName: string;
+
+		/** Required */
 		ReplicationGroup: Array<Replica>;
 	}
 	export interface CreateGlobalTableInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		GlobalTableName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateGlobalTableInputFormGroup() {
 		return new FormGroup<CreateGlobalTableInputFormProperties>({
-			GlobalTableName: new FormControl<string | null | undefined>(undefined),
+			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -536,7 +666,18 @@ export namespace MyNS {
 	/** Represents the properties of a table. */
 	export interface TableDescription {
 		AttributeDefinitions?: Array<AttributeDefinition>;
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 2
+		 */
 		KeySchema?: Array<KeySchemaElement>;
 		TableStatus?: TableDescriptionTableStatus | null;
 		CreationDateTime?: Date | null;
@@ -546,6 +687,8 @@ export namespace MyNS {
 		TableSizeBytes?: number | null;
 		ItemCount?: number | null;
 		TableArn?: string | null;
+
+		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		TableId?: string | null;
 
 		/** Contains the details for the read/write capacity mode. */
@@ -556,6 +699,11 @@ export namespace MyNS {
 		/** Represents the DynamoDB Streams configuration for a table in DynamoDB. */
 		StreamSpecification?: StreamSpecification;
 		LatestStreamLabel?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		LatestStreamArn?: string | null;
 		GlobalTableVersion?: string | null;
 		Replicas?: Array<ReplicaDescription>;
@@ -572,20 +720,33 @@ export namespace MyNS {
 
 	/** Represents the properties of a table. */
 	export interface TableDescriptionFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
 		TableStatus: FormControl<TableDescriptionTableStatus | null | undefined>,
 		CreationDateTime: FormControl<Date | null | undefined>,
 		TableSizeBytes: FormControl<number | null | undefined>,
 		ItemCount: FormControl<number | null | undefined>,
 		TableArn: FormControl<string | null | undefined>,
+
+		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		TableId: FormControl<string | null | undefined>,
 		LatestStreamLabel: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		LatestStreamArn: FormControl<string | null | undefined>,
 		GlobalTableVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateTableDescriptionFormGroup() {
 		return new FormGroup<TableDescriptionFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 			TableStatus: new FormControl<TableDescriptionTableStatus | null | undefined>(undefined),
 			CreationDateTime: new FormControl<Date | null | undefined>(undefined),
 			TableSizeBytes: new FormControl<number | null | undefined>(undefined),
@@ -593,7 +754,7 @@ export namespace MyNS {
 			TableArn: new FormControl<string | null | undefined>(undefined),
 			TableId: new FormControl<string | null | undefined>(undefined),
 			LatestStreamLabel: new FormControl<string | null | undefined>(undefined),
-			LatestStreamArn: new FormControl<string | null | undefined>(undefined),
+			LatestStreamArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(37)]),
 			GlobalTableVersion: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -602,19 +763,35 @@ export namespace MyNS {
 
 	/** Represents an attribute for describing the key schema for the table and indexes. */
 	export interface AttributeDefinition {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		AttributeName: string;
+
+		/** Required */
 		AttributeType: AttributeDefinitionAttributeType;
 	}
 
 	/** Represents an attribute for describing the key schema for the table and indexes. */
 	export interface AttributeDefinitionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		AttributeName: FormControl<string | null | undefined>,
+
+		/** Required */
 		AttributeType: FormControl<AttributeDefinitionAttributeType | null | undefined>,
 	}
 	export function CreateAttributeDefinitionFormGroup() {
 		return new FormGroup<AttributeDefinitionFormProperties>({
-			AttributeName: new FormControl<string | null | undefined>(undefined),
-			AttributeType: new FormControl<AttributeDefinitionAttributeType | null | undefined>(undefined),
+			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			AttributeType: new FormControl<AttributeDefinitionAttributeType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -624,19 +801,35 @@ export namespace MyNS {
 
 	/** <p>Represents <i>a single element</i> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.</p> <p>A <code>KeySchemaElement</code> represents exactly one attribute of the primary key. For example, a simple primary key would be represented by one <code>KeySchemaElement</code> (for the partition key). A composite primary key would require one <code>KeySchemaElement</code> for the partition key, and another <code>KeySchemaElement</code> for the sort key.</p> <p>A <code>KeySchemaElement</code> must be a scalar, top-level attribute (not a nested attribute). The data type must be one of String, Number, or Binary. The attribute cannot be nested within a List or a Map.</p> */
 	export interface KeySchemaElement {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		AttributeName: string;
+
+		/** Required */
 		KeyType: KeySchemaElementKeyType;
 	}
 
 	/** <p>Represents <i>a single element</i> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.</p> <p>A <code>KeySchemaElement</code> represents exactly one attribute of the primary key. For example, a simple primary key would be represented by one <code>KeySchemaElement</code> (for the partition key). A composite primary key would require one <code>KeySchemaElement</code> for the partition key, and another <code>KeySchemaElement</code> for the sort key.</p> <p>A <code>KeySchemaElement</code> must be a scalar, top-level attribute (not a nested attribute). The data type must be one of String, Number, or Binary. The attribute cannot be nested within a List or a Map.</p> */
 	export interface KeySchemaElementFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		AttributeName: FormControl<string | null | undefined>,
+
+		/** Required */
 		KeyType: FormControl<KeySchemaElementKeyType | null | undefined>,
 	}
 	export function CreateKeySchemaElementFormGroup() {
 		return new FormGroup<KeySchemaElementFormProperties>({
-			AttributeName: new FormControl<string | null | undefined>(undefined),
-			KeyType: new FormControl<KeySchemaElementKeyType | null | undefined>(undefined),
+			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			KeyType: new FormControl<KeySchemaElementKeyType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -650,8 +843,14 @@ export namespace MyNS {
 	export interface ProvisionedThroughputDescription {
 		LastIncreaseDateTime?: Date | null;
 		LastDecreaseDateTime?: Date | null;
+
+		/** Minimum: 1 */
 		NumberOfDecreasesToday?: number | null;
+
+		/** Minimum: 0 */
 		ReadCapacityUnits?: number | null;
+
+		/** Minimum: 0 */
 		WriteCapacityUnits?: number | null;
 	}
 
@@ -659,17 +858,23 @@ export namespace MyNS {
 	export interface ProvisionedThroughputDescriptionFormProperties {
 		LastIncreaseDateTime: FormControl<Date | null | undefined>,
 		LastDecreaseDateTime: FormControl<Date | null | undefined>,
+
+		/** Minimum: 1 */
 		NumberOfDecreasesToday: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		ReadCapacityUnits: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		WriteCapacityUnits: FormControl<number | null | undefined>,
 	}
 	export function CreateProvisionedThroughputDescriptionFormGroup() {
 		return new FormGroup<ProvisionedThroughputDescriptionFormProperties>({
 			LastIncreaseDateTime: new FormControl<Date | null | undefined>(undefined),
 			LastDecreaseDateTime: new FormControl<Date | null | undefined>(undefined),
-			NumberOfDecreasesToday: new FormControl<number | null | undefined>(undefined),
-			ReadCapacityUnits: new FormControl<number | null | undefined>(undefined),
-			WriteCapacityUnits: new FormControl<number | null | undefined>(undefined),
+			NumberOfDecreasesToday: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			ReadCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			WriteCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -699,7 +904,18 @@ export namespace MyNS {
 
 	/** Represents the properties of a local secondary index. */
 	export interface LocalSecondaryIndexDescription {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 2
+		 */
 		KeySchema?: Array<KeySchemaElement>;
 
 		/** Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. */
@@ -711,6 +927,12 @@ export namespace MyNS {
 
 	/** Represents the properties of a local secondary index. */
 	export interface LocalSecondaryIndexDescriptionFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: FormControl<string | null | undefined>,
 		IndexSizeBytes: FormControl<number | null | undefined>,
 		ItemCount: FormControl<number | null | undefined>,
@@ -718,7 +940,7 @@ export namespace MyNS {
 	}
 	export function CreateLocalSecondaryIndexDescriptionFormGroup() {
 		return new FormGroup<LocalSecondaryIndexDescriptionFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 			IndexSizeBytes: new FormControl<number | null | undefined>(undefined),
 			ItemCount: new FormControl<number | null | undefined>(undefined),
 			IndexArn: new FormControl<string | null | undefined>(undefined),
@@ -730,6 +952,11 @@ export namespace MyNS {
 	/** Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. */
 	export interface Projection {
 		ProjectionType?: ProjectionProjectionType | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 20
+		 */
 		NonKeyAttributes?: Array<string>;
 	}
 
@@ -749,7 +976,18 @@ export namespace MyNS {
 
 	/** Represents the properties of a global secondary index. */
 	export interface GlobalSecondaryIndexDescription {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 2
+		 */
 		KeySchema?: Array<KeySchemaElement>;
 
 		/** Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. */
@@ -766,6 +1004,12 @@ export namespace MyNS {
 
 	/** Represents the properties of a global secondary index. */
 	export interface GlobalSecondaryIndexDescriptionFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: FormControl<string | null | undefined>,
 		IndexStatus: FormControl<GlobalSecondaryIndexDescriptionIndexStatus | null | undefined>,
 		Backfilling: FormControl<boolean | null | undefined>,
@@ -775,7 +1019,7 @@ export namespace MyNS {
 	}
 	export function CreateGlobalSecondaryIndexDescriptionFormGroup() {
 		return new FormGroup<GlobalSecondaryIndexDescriptionFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 			IndexStatus: new FormControl<GlobalSecondaryIndexDescriptionIndexStatus | null | undefined>(undefined),
 			Backfilling: new FormControl<boolean | null | undefined>(undefined),
 			IndexSizeBytes: new FormControl<number | null | undefined>(undefined),
@@ -790,18 +1034,22 @@ export namespace MyNS {
 
 	/** Represents the DynamoDB Streams configuration for a table in DynamoDB. */
 	export interface StreamSpecification {
+
+		/** Required */
 		StreamEnabled: boolean;
 		StreamViewType?: StreamSpecificationStreamViewType | null;
 	}
 
 	/** Represents the DynamoDB Streams configuration for a table in DynamoDB. */
 	export interface StreamSpecificationFormProperties {
+
+		/** Required */
 		StreamEnabled: FormControl<boolean | null | undefined>,
 		StreamViewType: FormControl<StreamSpecificationStreamViewType | null | undefined>,
 	}
 	export function CreateStreamSpecificationFormGroup() {
 		return new FormGroup<StreamSpecificationFormProperties>({
-			StreamEnabled: new FormControl<boolean | null | undefined>(undefined),
+			StreamEnabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			StreamViewType: new FormControl<StreamSpecificationStreamViewType | null | undefined>(undefined),
 		});
 
@@ -812,25 +1060,43 @@ export namespace MyNS {
 
 	/** Contains details for the restore. */
 	export interface RestoreSummary {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		SourceBackupArn?: string | null;
 		SourceTableArn?: string | null;
+
+		/** Required */
 		RestoreDateTime: Date;
+
+		/** Required */
 		RestoreInProgress: boolean;
 	}
 
 	/** Contains details for the restore. */
 	export interface RestoreSummaryFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		SourceBackupArn: FormControl<string | null | undefined>,
 		SourceTableArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		RestoreDateTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		RestoreInProgress: FormControl<boolean | null | undefined>,
 	}
 	export function CreateRestoreSummaryFormGroup() {
 		return new FormGroup<RestoreSummaryFormProperties>({
-			SourceBackupArn: new FormControl<string | null | undefined>(undefined),
+			SourceBackupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(37)]),
 			SourceTableArn: new FormControl<string | null | undefined>(undefined),
-			RestoreDateTime: new FormControl<Date | null | undefined>(undefined),
-			RestoreInProgress: new FormControl<boolean | null | undefined>(undefined),
+			RestoreDateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			RestoreInProgress: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -870,6 +1136,11 @@ export namespace MyNS {
 	export interface ArchivalSummary {
 		ArchivalDateTime?: Date | null;
 		ArchivalReason?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		ArchivalBackupArn?: string | null;
 	}
 
@@ -877,13 +1148,18 @@ export namespace MyNS {
 	export interface ArchivalSummaryFormProperties {
 		ArchivalDateTime: FormControl<Date | null | undefined>,
 		ArchivalReason: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		ArchivalBackupArn: FormControl<string | null | undefined>,
 	}
 	export function CreateArchivalSummaryFormGroup() {
 		return new FormGroup<ArchivalSummaryFormProperties>({
 			ArchivalDateTime: new FormControl<Date | null | undefined>(undefined),
 			ArchivalReason: new FormControl<string | null | undefined>(undefined),
-			ArchivalBackupArn: new FormControl<string | null | undefined>(undefined),
+			ArchivalBackupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(37)]),
 		});
 
 	}
@@ -891,8 +1167,23 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>CreateTable</code> operation. */
 	export interface CreateTableInput {
+
+		/** Required */
 		AttributeDefinitions: Array<AttributeDefinition>;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 2
+		 */
 		KeySchema: Array<KeySchemaElement>;
 		LocalSecondaryIndexes?: Array<LocalSecondaryIndex>;
 		GlobalSecondaryIndexes?: Array<GlobalSecondaryIndex>;
@@ -911,12 +1202,19 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>CreateTable</code> operation. */
 	export interface CreateTableInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
 		BillingMode: FormControl<BillingModeSummaryBillingMode | null | undefined>,
 	}
 	export function CreateCreateTableInputFormGroup() {
 		return new FormGroup<CreateTableInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 			BillingMode: new FormControl<BillingModeSummaryBillingMode | null | undefined>(undefined),
 		});
 
@@ -925,7 +1223,20 @@ export namespace MyNS {
 
 	/** Represents the properties of a local secondary index. */
 	export interface LocalSecondaryIndex {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 2
+		 */
 		KeySchema: Array<KeySchemaElement>;
 
 		/**
@@ -937,11 +1248,18 @@ export namespace MyNS {
 
 	/** Represents the properties of a local secondary index. */
 	export interface LocalSecondaryIndexFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: FormControl<string | null | undefined>,
 	}
 	export function CreateLocalSecondaryIndexFormGroup() {
 		return new FormGroup<LocalSecondaryIndexFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -949,7 +1267,20 @@ export namespace MyNS {
 
 	/** Represents the properties of a global secondary index. */
 	export interface GlobalSecondaryIndex {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 2
+		 */
 		KeySchema: Array<KeySchemaElement>;
 
 		/**
@@ -964,11 +1295,18 @@ export namespace MyNS {
 
 	/** Represents the properties of a global secondary index. */
 	export interface GlobalSecondaryIndexFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: FormControl<string | null | undefined>,
 	}
 	export function CreateGlobalSecondaryIndexFormGroup() {
 		return new FormGroup<GlobalSecondaryIndexFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -976,19 +1314,39 @@ export namespace MyNS {
 
 	/** <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
 	export interface ProvisionedThroughput {
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		ReadCapacityUnits: number;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		WriteCapacityUnits: number;
 	}
 
 	/** <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
 	export interface ProvisionedThroughputFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		ReadCapacityUnits: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		WriteCapacityUnits: FormControl<number | null | undefined>,
 	}
 	export function CreateProvisionedThroughputFormGroup() {
 		return new FormGroup<ProvisionedThroughputFormProperties>({
-			ReadCapacityUnits: new FormControl<number | null | undefined>(undefined),
-			WriteCapacityUnits: new FormControl<number | null | undefined>(undefined),
+			ReadCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
+			WriteCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 		});
 
 	}
@@ -1019,19 +1377,43 @@ export namespace MyNS {
 
 	/** <p>Describes a tag. A tag is a key-value pair. You can add up to 50 tags to a single DynamoDB table. </p> <p> AWS-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot assign. AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code> in the Cost Allocation Report. You cannot backdate the application of a tag. </p> <p>For an overview on tagging DynamoDB resources, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Value: string;
 	}
 
 	/** <p>Describes a tag. A tag is a key-value pair. You can add up to 50 tags to a single DynamoDB table. </p> <p> AWS-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot assign. AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code> in the Cost Allocation Report. You cannot backdate the application of a tag. </p> <p>For an overview on tagging DynamoDB resources, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -1085,11 +1467,31 @@ export namespace MyNS {
 
 	/** Contains the details of the table when the backup was created.  */
 	export interface SourceTableDetails {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: string;
+
+		/**
+		 * Required
+		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		TableId: string;
 		TableArn?: string | null;
 		TableSizeBytes?: number | null;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 2
+		 */
 		KeySchema: Array<KeySchemaElement>;
+
+		/** Required */
 		TableCreationDateTime: Date;
 
 		/**
@@ -1097,28 +1499,46 @@ export namespace MyNS {
 		 * Required
 		 */
 		ProvisionedThroughput: ProvisionedThroughput;
+
+		/** Minimum: 0 */
 		ItemCount?: number | null;
 		BillingMode?: BillingModeSummaryBillingMode | null;
 	}
 
 	/** Contains the details of the table when the backup was created.  */
 	export interface SourceTableDetailsFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		TableId: FormControl<string | null | undefined>,
 		TableArn: FormControl<string | null | undefined>,
 		TableSizeBytes: FormControl<number | null | undefined>,
+
+		/** Required */
 		TableCreationDateTime: FormControl<Date | null | undefined>,
+
+		/** Minimum: 0 */
 		ItemCount: FormControl<number | null | undefined>,
 		BillingMode: FormControl<BillingModeSummaryBillingMode | null | undefined>,
 	}
 	export function CreateSourceTableDetailsFormGroup() {
 		return new FormGroup<SourceTableDetailsFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
-			TableId: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			TableId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TableArn: new FormControl<string | null | undefined>(undefined),
 			TableSizeBytes: new FormControl<number | null | undefined>(undefined),
-			TableCreationDateTime: new FormControl<Date | null | undefined>(undefined),
-			ItemCount: new FormControl<number | null | undefined>(undefined),
+			TableCreationDateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			ItemCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			BillingMode: new FormControl<BillingModeSummaryBillingMode | null | undefined>(undefined),
 		});
 
@@ -1152,7 +1572,18 @@ export namespace MyNS {
 
 	/** Represents the properties of a local secondary index for the table when the backup was created. */
 	export interface LocalSecondaryIndexInfo {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 2
+		 */
 		KeySchema?: Array<KeySchemaElement>;
 
 		/** Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. */
@@ -1161,11 +1592,17 @@ export namespace MyNS {
 
 	/** Represents the properties of a local secondary index for the table when the backup was created. */
 	export interface LocalSecondaryIndexInfoFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: FormControl<string | null | undefined>,
 	}
 	export function CreateLocalSecondaryIndexInfoFormGroup() {
 		return new FormGroup<LocalSecondaryIndexInfoFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -1173,7 +1610,18 @@ export namespace MyNS {
 
 	/** Represents the properties of a global secondary index for the table when the backup was created. */
 	export interface GlobalSecondaryIndexInfo {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 2
+		 */
 		KeySchema?: Array<KeySchemaElement>;
 
 		/** Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. */
@@ -1185,11 +1633,17 @@ export namespace MyNS {
 
 	/** Represents the properties of a global secondary index for the table when the backup was created. */
 	export interface GlobalSecondaryIndexInfoFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: FormControl<string | null | undefined>,
 	}
 	export function CreateGlobalSecondaryIndexInfoFormGroup() {
 		return new FormGroup<GlobalSecondaryIndexInfoFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -1198,18 +1652,28 @@ export namespace MyNS {
 	/** The description of the Time to Live (TTL) status on the specified table.  */
 	export interface TimeToLiveDescription {
 		TimeToLiveStatus?: TimeToLiveDescriptionTimeToLiveStatus | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		AttributeName?: string | null;
 	}
 
 	/** The description of the Time to Live (TTL) status on the specified table.  */
 	export interface TimeToLiveDescriptionFormProperties {
 		TimeToLiveStatus: FormControl<TimeToLiveDescriptionTimeToLiveStatus | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		AttributeName: FormControl<string | null | undefined>,
 	}
 	export function CreateTimeToLiveDescriptionFormGroup() {
 		return new FormGroup<TimeToLiveDescriptionFormProperties>({
 			TimeToLiveStatus: new FormControl<TimeToLiveDescriptionTimeToLiveStatus | null | undefined>(undefined),
-			AttributeName: new FormControl<string | null | undefined>(undefined),
+			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -1217,14 +1681,26 @@ export namespace MyNS {
 	export enum TimeToLiveDescriptionTimeToLiveStatus { ENABLING = 0, DISABLING = 1, ENABLED = 2, DISABLED = 3 }
 
 	export interface DeleteBackupInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		BackupArn: string;
 	}
 	export interface DeleteBackupInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		BackupArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteBackupInputFormGroup() {
 		return new FormGroup<DeleteBackupInputFormProperties>({
-			BackupArn: new FormControl<string | null | undefined>(undefined),
+			BackupArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(37)]),
 		});
 
 	}
@@ -1299,7 +1775,16 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>DeleteItem</code> operation. */
 	export interface DeleteItemInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: string;
+
+		/** Required */
 		Key: Key;
 		Expected?: ExpectedAttributeMap;
 		ConditionalOperator?: DeleteItemInputConditionalOperator | null;
@@ -1315,6 +1800,13 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>DeleteItem</code> operation. */
 	export interface DeleteItemInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
 		ConditionalOperator: FormControl<DeleteItemInputConditionalOperator | null | undefined>,
 		ReturnValues: FormControl<DeleteItemInputReturnValues | null | undefined>,
@@ -1326,7 +1818,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteItemInputFormGroup() {
 		return new FormGroup<DeleteItemInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 			ConditionalOperator: new FormControl<DeleteItemInputConditionalOperator | null | undefined>(undefined),
 			ReturnValues: new FormControl<DeleteItemInputReturnValues | null | undefined>(undefined),
 			ReturnConsumedCapacity: new FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>(undefined),
@@ -1420,16 +1912,30 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>DeleteTable</code> operation. */
 	export interface DeleteTableInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: string;
 	}
 
 	/** Represents the input of a <code>DeleteTable</code> operation. */
 	export interface DeleteTableInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteTableInputFormGroup() {
 		return new FormGroup<DeleteTableInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -1448,14 +1954,26 @@ export namespace MyNS {
 	}
 
 	export interface DescribeBackupInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		BackupArn: string;
 	}
 	export interface DescribeBackupInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		BackupArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeBackupInputFormGroup() {
 		return new FormGroup<DescribeBackupInputFormProperties>({
-			BackupArn: new FormControl<string | null | undefined>(undefined),
+			BackupArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(37)]),
 		});
 
 	}
@@ -1476,6 +1994,8 @@ export namespace MyNS {
 
 	/** Represents the continuous backups and point in time recovery settings on the table. */
 	export interface ContinuousBackupsDescription {
+
+		/** Required */
 		ContinuousBackupsStatus: ContinuousBackupsDescriptionContinuousBackupsStatus;
 
 		/** The description of the point in time settings applied to the table. */
@@ -1484,11 +2004,13 @@ export namespace MyNS {
 
 	/** Represents the continuous backups and point in time recovery settings on the table. */
 	export interface ContinuousBackupsDescriptionFormProperties {
+
+		/** Required */
 		ContinuousBackupsStatus: FormControl<ContinuousBackupsDescriptionContinuousBackupsStatus | null | undefined>,
 	}
 	export function CreateContinuousBackupsDescriptionFormGroup() {
 		return new FormGroup<ContinuousBackupsDescriptionFormProperties>({
-			ContinuousBackupsStatus: new FormControl<ContinuousBackupsDescriptionContinuousBackupsStatus | null | undefined>(undefined),
+			ContinuousBackupsStatus: new FormControl<ContinuousBackupsDescriptionContinuousBackupsStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1519,20 +2041,46 @@ export namespace MyNS {
 	}
 
 	export interface DescribeContinuousBackupsInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: string;
 	}
 	export interface DescribeContinuousBackupsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeContinuousBackupsInputFormGroup() {
 		return new FormGroup<DescribeContinuousBackupsInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
 
 	export interface DescribeContributorInsightsOutput {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName?: string | null;
 		ContributorInsightsRuleList?: Array<string>;
 		ContributorInsightsStatus?: DescribeContributorInsightsOutputContributorInsightsStatus | null;
@@ -1542,15 +2090,27 @@ export namespace MyNS {
 		FailureException?: FailureException;
 	}
 	export interface DescribeContributorInsightsOutputFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: FormControl<string | null | undefined>,
 		ContributorInsightsStatus: FormControl<DescribeContributorInsightsOutputContributorInsightsStatus | null | undefined>,
 		LastUpdateDateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateDescribeContributorInsightsOutputFormGroup() {
 		return new FormGroup<DescribeContributorInsightsOutputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
-			IndexName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 			ContributorInsightsStatus: new FormControl<DescribeContributorInsightsOutputContributorInsightsStatus | null | undefined>(undefined),
 			LastUpdateDateTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1580,22 +2140,50 @@ export namespace MyNS {
 	}
 
 	export interface DescribeContributorInsightsInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: string;
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName?: string | null;
 	}
 	export interface DescribeContributorInsightsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeContributorInsightsInputFormGroup() {
 		return new FormGroup<DescribeContributorInsightsInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
-			IndexName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
 
 	export interface DescribeEndpointsResponse {
+
+		/** Required */
 		Endpoints: Array<Endpoint>;
 	}
 	export interface DescribeEndpointsResponseFormProperties {
@@ -1609,19 +2197,27 @@ export namespace MyNS {
 
 	/** An endpoint information details. */
 	export interface Endpoint {
+
+		/** Required */
 		Address: string;
+
+		/** Required */
 		CachePeriodInMinutes: number;
 	}
 
 	/** An endpoint information details. */
 	export interface EndpointFormProperties {
+
+		/** Required */
 		Address: FormControl<string | null | undefined>,
+
+		/** Required */
 		CachePeriodInMinutes: FormControl<number | null | undefined>,
 	}
 	export function CreateEndpointFormGroup() {
 		return new FormGroup<EndpointFormProperties>({
-			Address: new FormControl<string | null | undefined>(undefined),
-			CachePeriodInMinutes: new FormControl<number | null | undefined>(undefined),
+			Address: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			CachePeriodInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1650,14 +2246,28 @@ export namespace MyNS {
 	}
 
 	export interface DescribeGlobalTableInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		GlobalTableName: string;
 	}
 	export interface DescribeGlobalTableInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		GlobalTableName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeGlobalTableInputFormGroup() {
 		return new FormGroup<DescribeGlobalTableInputFormProperties>({
-			GlobalTableName: new FormControl<string | null | undefined>(undefined),
+			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -1673,15 +2283,27 @@ export namespace MyNS {
 	}
 
 	export interface DescribeGlobalTableSettingsOutput {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		GlobalTableName?: string | null;
 		ReplicaSettings?: Array<ReplicaSettingsDescription>;
 	}
 	export interface DescribeGlobalTableSettingsOutputFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		GlobalTableName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeGlobalTableSettingsOutputFormGroup() {
 		return new FormGroup<DescribeGlobalTableSettingsOutputFormProperties>({
-			GlobalTableName: new FormControl<string | null | undefined>(undefined),
+			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -1689,15 +2311,21 @@ export namespace MyNS {
 
 	/** Represents the properties of a replica. */
 	export interface ReplicaSettingsDescription {
+
+		/** Required */
 		RegionName: string;
 		ReplicaStatus?: ReplicaDescriptionReplicaStatus | null;
 
 		/** Contains the details for the read/write capacity mode. */
 		ReplicaBillingModeSummary?: BillingModeSummary;
+
+		/** Minimum: 0 */
 		ReplicaProvisionedReadCapacityUnits?: number | null;
 
 		/** Represents the auto scaling settings for a global table or global secondary index. */
 		ReplicaProvisionedReadCapacityAutoScalingSettings?: AutoScalingSettingsDescription;
+
+		/** Minimum: 0 */
 		ReplicaProvisionedWriteCapacityUnits?: number | null;
 
 		/** Represents the auto scaling settings for a global table or global secondary index. */
@@ -1707,17 +2335,23 @@ export namespace MyNS {
 
 	/** Represents the properties of a replica. */
 	export interface ReplicaSettingsDescriptionFormProperties {
+
+		/** Required */
 		RegionName: FormControl<string | null | undefined>,
 		ReplicaStatus: FormControl<ReplicaDescriptionReplicaStatus | null | undefined>,
+
+		/** Minimum: 0 */
 		ReplicaProvisionedReadCapacityUnits: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		ReplicaProvisionedWriteCapacityUnits: FormControl<number | null | undefined>,
 	}
 	export function CreateReplicaSettingsDescriptionFormGroup() {
 		return new FormGroup<ReplicaSettingsDescriptionFormProperties>({
-			RegionName: new FormControl<string | null | undefined>(undefined),
+			RegionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ReplicaStatus: new FormControl<ReplicaDescriptionReplicaStatus | null | undefined>(undefined),
-			ReplicaProvisionedReadCapacityUnits: new FormControl<number | null | undefined>(undefined),
-			ReplicaProvisionedWriteCapacityUnits: new FormControl<number | null | undefined>(undefined),
+			ReplicaProvisionedReadCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			ReplicaProvisionedWriteCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -1725,7 +2359,11 @@ export namespace MyNS {
 
 	/** Represents the auto scaling settings for a global table or global secondary index. */
 	export interface AutoScalingSettingsDescription {
+
+		/** Minimum: 1 */
 		MinimumUnits?: number | null;
+
+		/** Minimum: 1 */
 		MaximumUnits?: number | null;
 		AutoScalingDisabled?: boolean | null;
 		AutoScalingRoleArn?: string | null;
@@ -1734,15 +2372,19 @@ export namespace MyNS {
 
 	/** Represents the auto scaling settings for a global table or global secondary index. */
 	export interface AutoScalingSettingsDescriptionFormProperties {
+
+		/** Minimum: 1 */
 		MinimumUnits: FormControl<number | null | undefined>,
+
+		/** Minimum: 1 */
 		MaximumUnits: FormControl<number | null | undefined>,
 		AutoScalingDisabled: FormControl<boolean | null | undefined>,
 		AutoScalingRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateAutoScalingSettingsDescriptionFormGroup() {
 		return new FormGroup<AutoScalingSettingsDescriptionFormProperties>({
-			MinimumUnits: new FormControl<number | null | undefined>(undefined),
-			MaximumUnits: new FormControl<number | null | undefined>(undefined),
+			MinimumUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			MaximumUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			AutoScalingDisabled: new FormControl<boolean | null | undefined>(undefined),
 			AutoScalingRoleArn: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1752,6 +2394,12 @@ export namespace MyNS {
 
 	/** Represents the properties of the scaling policy. */
 	export interface AutoScalingPolicyDescription {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: \p{Print}+
+		 */
 		PolicyName?: string | null;
 
 		/** Represents the properties of a target tracking scaling policy. */
@@ -1760,11 +2408,17 @@ export namespace MyNS {
 
 	/** Represents the properties of the scaling policy. */
 	export interface AutoScalingPolicyDescriptionFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: \p{Print}+
+		 */
 		PolicyName: FormControl<string | null | undefined>,
 	}
 	export function CreateAutoScalingPolicyDescriptionFormGroup() {
 		return new FormGroup<AutoScalingPolicyDescriptionFormProperties>({
-			PolicyName: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -1775,6 +2429,8 @@ export namespace MyNS {
 		DisableScaleIn?: boolean | null;
 		ScaleInCooldown?: number | null;
 		ScaleOutCooldown?: number | null;
+
+		/** Required */
 		TargetValue: number;
 	}
 
@@ -1783,6 +2439,8 @@ export namespace MyNS {
 		DisableScaleIn: FormControl<boolean | null | undefined>,
 		ScaleInCooldown: FormControl<number | null | undefined>,
 		ScaleOutCooldown: FormControl<number | null | undefined>,
+
+		/** Required */
 		TargetValue: FormControl<number | null | undefined>,
 	}
 	export function CreateAutoScalingTargetTrackingScalingPolicyConfigurationDescriptionFormGroup() {
@@ -1790,7 +2448,7 @@ export namespace MyNS {
 			DisableScaleIn: new FormControl<boolean | null | undefined>(undefined),
 			ScaleInCooldown: new FormControl<number | null | undefined>(undefined),
 			ScaleOutCooldown: new FormControl<number | null | undefined>(undefined),
-			TargetValue: new FormControl<number | null | undefined>(undefined),
+			TargetValue: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1798,12 +2456,23 @@ export namespace MyNS {
 
 	/** Represents the properties of a global secondary index. */
 	export interface ReplicaGlobalSecondaryIndexSettingsDescription {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: string;
 		IndexStatus?: GlobalSecondaryIndexDescriptionIndexStatus | null;
+
+		/** Minimum: 1 */
 		ProvisionedReadCapacityUnits?: number | null;
 
 		/** Represents the auto scaling settings for a global table or global secondary index. */
 		ProvisionedReadCapacityAutoScalingSettings?: AutoScalingSettingsDescription;
+
+		/** Minimum: 1 */
 		ProvisionedWriteCapacityUnits?: number | null;
 
 		/** Represents the auto scaling settings for a global table or global secondary index. */
@@ -1812,30 +2481,55 @@ export namespace MyNS {
 
 	/** Represents the properties of a global secondary index. */
 	export interface ReplicaGlobalSecondaryIndexSettingsDescriptionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: FormControl<string | null | undefined>,
 		IndexStatus: FormControl<GlobalSecondaryIndexDescriptionIndexStatus | null | undefined>,
+
+		/** Minimum: 1 */
 		ProvisionedReadCapacityUnits: FormControl<number | null | undefined>,
+
+		/** Minimum: 1 */
 		ProvisionedWriteCapacityUnits: FormControl<number | null | undefined>,
 	}
 	export function CreateReplicaGlobalSecondaryIndexSettingsDescriptionFormGroup() {
 		return new FormGroup<ReplicaGlobalSecondaryIndexSettingsDescriptionFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 			IndexStatus: new FormControl<GlobalSecondaryIndexDescriptionIndexStatus | null | undefined>(undefined),
-			ProvisionedReadCapacityUnits: new FormControl<number | null | undefined>(undefined),
-			ProvisionedWriteCapacityUnits: new FormControl<number | null | undefined>(undefined),
+			ProvisionedReadCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			ProvisionedWriteCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
 
 	export interface DescribeGlobalTableSettingsInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		GlobalTableName: string;
 	}
 	export interface DescribeGlobalTableSettingsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		GlobalTableName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeGlobalTableSettingsInputFormGroup() {
 		return new FormGroup<DescribeGlobalTableSettingsInputFormProperties>({
-			GlobalTableName: new FormControl<string | null | undefined>(undefined),
+			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -1843,25 +2537,41 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>DescribeLimits</code> operation. */
 	export interface DescribeLimitsOutput {
+
+		/** Minimum: 1 */
 		AccountMaxReadCapacityUnits?: number | null;
+
+		/** Minimum: 1 */
 		AccountMaxWriteCapacityUnits?: number | null;
+
+		/** Minimum: 1 */
 		TableMaxReadCapacityUnits?: number | null;
+
+		/** Minimum: 1 */
 		TableMaxWriteCapacityUnits?: number | null;
 	}
 
 	/** Represents the output of a <code>DescribeLimits</code> operation. */
 	export interface DescribeLimitsOutputFormProperties {
+
+		/** Minimum: 1 */
 		AccountMaxReadCapacityUnits: FormControl<number | null | undefined>,
+
+		/** Minimum: 1 */
 		AccountMaxWriteCapacityUnits: FormControl<number | null | undefined>,
+
+		/** Minimum: 1 */
 		TableMaxReadCapacityUnits: FormControl<number | null | undefined>,
+
+		/** Minimum: 1 */
 		TableMaxWriteCapacityUnits: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeLimitsOutputFormGroup() {
 		return new FormGroup<DescribeLimitsOutputFormProperties>({
-			AccountMaxReadCapacityUnits: new FormControl<number | null | undefined>(undefined),
-			AccountMaxWriteCapacityUnits: new FormControl<number | null | undefined>(undefined),
-			TableMaxReadCapacityUnits: new FormControl<number | null | undefined>(undefined),
-			TableMaxWriteCapacityUnits: new FormControl<number | null | undefined>(undefined),
+			AccountMaxReadCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			AccountMaxWriteCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			TableMaxReadCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			TableMaxWriteCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -1900,16 +2610,30 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>DescribeTable</code> operation. */
 	export interface DescribeTableInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: string;
 	}
 
 	/** Represents the input of a <code>DescribeTable</code> operation. */
 	export interface DescribeTableInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeTableInputFormGroup() {
 		return new FormGroup<DescribeTableInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -1930,6 +2654,12 @@ export namespace MyNS {
 
 	/** Represents the auto scaling configuration for a global table. */
 	export interface TableAutoScalingDescription {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName?: string | null;
 		TableStatus?: TableDescriptionTableStatus | null;
 		Replicas?: Array<ReplicaAutoScalingDescription>;
@@ -1937,12 +2667,18 @@ export namespace MyNS {
 
 	/** Represents the auto scaling configuration for a global table. */
 	export interface TableAutoScalingDescriptionFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
 		TableStatus: FormControl<TableDescriptionTableStatus | null | undefined>,
 	}
 	export function CreateTableAutoScalingDescriptionFormGroup() {
 		return new FormGroup<TableAutoScalingDescriptionFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 			TableStatus: new FormControl<TableDescriptionTableStatus | null | undefined>(undefined),
 		});
 
@@ -1978,6 +2714,12 @@ export namespace MyNS {
 
 	/** Represents the auto scaling configuration for a replica global secondary index. */
 	export interface ReplicaGlobalSecondaryIndexAutoScalingDescription {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName?: string | null;
 		IndexStatus?: GlobalSecondaryIndexDescriptionIndexStatus | null;
 
@@ -1990,26 +2732,46 @@ export namespace MyNS {
 
 	/** Represents the auto scaling configuration for a replica global secondary index. */
 	export interface ReplicaGlobalSecondaryIndexAutoScalingDescriptionFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: FormControl<string | null | undefined>,
 		IndexStatus: FormControl<GlobalSecondaryIndexDescriptionIndexStatus | null | undefined>,
 	}
 	export function CreateReplicaGlobalSecondaryIndexAutoScalingDescriptionFormGroup() {
 		return new FormGroup<ReplicaGlobalSecondaryIndexAutoScalingDescriptionFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 			IndexStatus: new FormControl<GlobalSecondaryIndexDescriptionIndexStatus | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface DescribeTableReplicaAutoScalingInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: string;
 	}
 	export interface DescribeTableReplicaAutoScalingInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeTableReplicaAutoScalingInputFormGroup() {
 		return new FormGroup<DescribeTableReplicaAutoScalingInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -2028,14 +2790,28 @@ export namespace MyNS {
 	}
 
 	export interface DescribeTimeToLiveInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: string;
 	}
 	export interface DescribeTimeToLiveInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeTimeToLiveInputFormGroup() {
 		return new FormGroup<DescribeTimeToLiveInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -2061,8 +2837,19 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>GetItem</code> operation. */
 	export interface GetItemInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: string;
+
+		/** Required */
 		Key: Key;
+
+		/** Minimum items: 1 */
 		AttributesToGet?: Array<string>;
 		ConsistentRead?: boolean | null;
 
@@ -2074,6 +2861,13 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>GetItem</code> operation. */
 	export interface GetItemInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
 		ConsistentRead: FormControl<boolean | null | undefined>,
 
@@ -2083,7 +2877,7 @@ export namespace MyNS {
 	}
 	export function CreateGetItemInputFormGroup() {
 		return new FormGroup<GetItemInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 			ConsistentRead: new FormControl<boolean | null | undefined>(undefined),
 			ReturnConsumedCapacity: new FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>(undefined),
 			ProjectionExpression: new FormControl<string | null | undefined>(undefined),
@@ -2093,14 +2887,24 @@ export namespace MyNS {
 
 	export interface ListBackupsOutput {
 		BackupSummaries?: Array<BackupSummary>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		LastEvaluatedBackupArn?: string | null;
 	}
 	export interface ListBackupsOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		LastEvaluatedBackupArn: FormControl<string | null | undefined>,
 	}
 	export function CreateListBackupsOutputFormGroup() {
 		return new FormGroup<ListBackupsOutputFormProperties>({
-			LastEvaluatedBackupArn: new FormControl<string | null | undefined>(undefined),
+			LastEvaluatedBackupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(37)]),
 		});
 
 	}
@@ -2108,70 +2912,144 @@ export namespace MyNS {
 
 	/** Contains details for the backup. */
 	export interface BackupSummary {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName?: string | null;
+
+		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		TableId?: string | null;
 		TableArn?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		BackupArn?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BackupName?: string | null;
 		BackupCreationDateTime?: Date | null;
 		BackupExpiryDateTime?: Date | null;
 		BackupStatus?: BackupDetailsBackupStatus | null;
 		BackupType?: BackupDetailsBackupType | null;
+
+		/** Minimum: 0 */
 		BackupSizeBytes?: number | null;
 	}
 
 	/** Contains details for the backup. */
 	export interface BackupSummaryFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
+
+		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		TableId: FormControl<string | null | undefined>,
 		TableArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		BackupArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		BackupName: FormControl<string | null | undefined>,
 		BackupCreationDateTime: FormControl<Date | null | undefined>,
 		BackupExpiryDateTime: FormControl<Date | null | undefined>,
 		BackupStatus: FormControl<BackupDetailsBackupStatus | null | undefined>,
 		BackupType: FormControl<BackupDetailsBackupType | null | undefined>,
+
+		/** Minimum: 0 */
 		BackupSizeBytes: FormControl<number | null | undefined>,
 	}
 	export function CreateBackupSummaryFormGroup() {
 		return new FormGroup<BackupSummaryFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 			TableId: new FormControl<string | null | undefined>(undefined),
 			TableArn: new FormControl<string | null | undefined>(undefined),
-			BackupArn: new FormControl<string | null | undefined>(undefined),
-			BackupName: new FormControl<string | null | undefined>(undefined),
+			BackupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(37)]),
+			BackupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 			BackupCreationDateTime: new FormControl<Date | null | undefined>(undefined),
 			BackupExpiryDateTime: new FormControl<Date | null | undefined>(undefined),
 			BackupStatus: new FormControl<BackupDetailsBackupStatus | null | undefined>(undefined),
 			BackupType: new FormControl<BackupDetailsBackupType | null | undefined>(undefined),
-			BackupSizeBytes: new FormControl<number | null | undefined>(undefined),
+			BackupSizeBytes: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
 
 	export interface ListBackupsInput {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit?: number | null;
 		TimeRangeLowerBound?: Date | null;
 		TimeRangeUpperBound?: Date | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		ExclusiveStartBackupArn?: string | null;
 		BackupType?: ListBackupsInputBackupType | null;
 	}
 	export interface ListBackupsInputFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit: FormControl<number | null | undefined>,
 		TimeRangeLowerBound: FormControl<Date | null | undefined>,
 		TimeRangeUpperBound: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		ExclusiveStartBackupArn: FormControl<string | null | undefined>,
 		BackupType: FormControl<ListBackupsInputBackupType | null | undefined>,
 	}
 	export function CreateListBackupsInputFormGroup() {
 		return new FormGroup<ListBackupsInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			TimeRangeLowerBound: new FormControl<Date | null | undefined>(undefined),
 			TimeRangeUpperBound: new FormControl<Date | null | undefined>(undefined),
-			ExclusiveStartBackupArn: new FormControl<string | null | undefined>(undefined),
+			ExclusiveStartBackupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(37)]),
 			BackupType: new FormControl<ListBackupsInputBackupType | null | undefined>(undefined),
 		});
 
@@ -2196,55 +3074,107 @@ export namespace MyNS {
 
 	/** Represents a Contributor Insights summary entry.. */
 	export interface ContributorInsightsSummary {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName?: string | null;
 		ContributorInsightsStatus?: DescribeContributorInsightsOutputContributorInsightsStatus | null;
 	}
 
 	/** Represents a Contributor Insights summary entry.. */
 	export interface ContributorInsightsSummaryFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: FormControl<string | null | undefined>,
 		ContributorInsightsStatus: FormControl<DescribeContributorInsightsOutputContributorInsightsStatus | null | undefined>,
 	}
 	export function CreateContributorInsightsSummaryFormGroup() {
 		return new FormGroup<ContributorInsightsSummaryFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
-			IndexName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 			ContributorInsightsStatus: new FormControl<DescribeContributorInsightsOutputContributorInsightsStatus | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ListContributorInsightsInput {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName?: string | null;
 		NextToken?: string | null;
+
+		/** Maximum: 100 */
 		MaxResults?: number | null;
 	}
 	export interface ListContributorInsightsInputFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
+
+		/** Maximum: 100 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListContributorInsightsInputFormGroup() {
 		return new FormGroup<ListContributorInsightsInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListGlobalTablesOutput {
 		GlobalTables?: Array<GlobalTable>;
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		LastEvaluatedGlobalTableName?: string | null;
 	}
 	export interface ListGlobalTablesOutputFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		LastEvaluatedGlobalTableName: FormControl<string | null | undefined>,
 	}
 	export function CreateListGlobalTablesOutputFormGroup() {
 		return new FormGroup<ListGlobalTablesOutputFormProperties>({
-			LastEvaluatedGlobalTableName: new FormControl<string | null | undefined>(undefined),
+			LastEvaluatedGlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -2252,35 +3182,63 @@ export namespace MyNS {
 
 	/** Represents the properties of a global table. */
 	export interface GlobalTable {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		GlobalTableName?: string | null;
 		ReplicationGroup?: Array<Replica>;
 	}
 
 	/** Represents the properties of a global table. */
 	export interface GlobalTableFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		GlobalTableName: FormControl<string | null | undefined>,
 	}
 	export function CreateGlobalTableFormGroup() {
 		return new FormGroup<GlobalTableFormProperties>({
-			GlobalTableName: new FormControl<string | null | undefined>(undefined),
+			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
 
 	export interface ListGlobalTablesInput {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ExclusiveStartGlobalTableName?: string | null;
+
+		/** Minimum: 1 */
 		Limit?: number | null;
 		RegionName?: string | null;
 	}
 	export interface ListGlobalTablesInputFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ExclusiveStartGlobalTableName: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		Limit: FormControl<number | null | undefined>,
 		RegionName: FormControl<string | null | undefined>,
 	}
 	export function CreateListGlobalTablesInputFormGroup() {
 		return new FormGroup<ListGlobalTablesInputFormProperties>({
-			ExclusiveStartGlobalTableName: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			ExclusiveStartGlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			RegionName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2290,16 +3248,28 @@ export namespace MyNS {
 	/** Represents the output of a <code>ListTables</code> operation. */
 	export interface ListTablesOutput {
 		TableNames?: Array<string>;
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		LastEvaluatedTableName?: string | null;
 	}
 
 	/** Represents the output of a <code>ListTables</code> operation. */
 	export interface ListTablesOutputFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		LastEvaluatedTableName: FormControl<string | null | undefined>,
 	}
 	export function CreateListTablesOutputFormGroup() {
 		return new FormGroup<ListTablesOutputFormProperties>({
-			LastEvaluatedTableName: new FormControl<string | null | undefined>(undefined),
+			LastEvaluatedTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -2307,19 +3277,41 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>ListTables</code> operation. */
 	export interface ListTablesInput {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ExclusiveStartTableName?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit?: number | null;
 	}
 
 	/** Represents the input of a <code>ListTables</code> operation. */
 	export interface ListTablesInputFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ExclusiveStartTableName: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateListTablesInputFormGroup() {
 		return new FormGroup<ListTablesInputFormProperties>({
-			ExclusiveStartTableName: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			ExclusiveStartTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -2339,16 +3331,28 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsOfResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 1283
+		 * Min length: 1
+		 */
 		ResourceArn: string;
 		NextToken?: string | null;
 	}
 	export interface ListTagsOfResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1283
+		 * Min length: 1
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsOfResourceInputFormGroup() {
 		return new FormGroup<ListTagsOfResourceInputFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1283), Validators.minLength(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2378,7 +3382,16 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>PutItem</code> operation. */
 	export interface PutItemInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: string;
+
+		/** Required */
 		Item: PutItemInputAttributeMap;
 		Expected?: ExpectedAttributeMap;
 		ReturnValues?: DeleteItemInputReturnValues | null;
@@ -2394,6 +3407,13 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>PutItem</code> operation. */
 	export interface PutItemInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
 		ReturnValues: FormControl<DeleteItemInputReturnValues | null | undefined>,
 
@@ -2405,7 +3425,7 @@ export namespace MyNS {
 	}
 	export function CreatePutItemInputFormGroup() {
 		return new FormGroup<PutItemInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 			ReturnValues: new FormControl<DeleteItemInputReturnValues | null | undefined>(undefined),
 			ReturnConsumedCapacity: new FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>(undefined),
 			ReturnItemCollectionMetrics: new FormControl<BatchWriteItemInputReturnItemCollectionMetrics | null | undefined>(undefined),
@@ -2453,10 +3473,27 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>Query</code> operation. */
 	export interface QueryInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: string;
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName?: string | null;
 		Select?: QueryInputSelect | null;
+
+		/** Minimum items: 1 */
 		AttributesToGet?: Array<string>;
+
+		/** Minimum: 1 */
 		Limit?: number | null;
 		ConsistentRead?: boolean | null;
 		KeyConditions?: KeyConditions;
@@ -2476,9 +3513,24 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>Query</code> operation. */
 	export interface QueryInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: FormControl<string | null | undefined>,
 		Select: FormControl<QueryInputSelect | null | undefined>,
+
+		/** Minimum: 1 */
 		Limit: FormControl<number | null | undefined>,
 		ConsistentRead: FormControl<boolean | null | undefined>,
 		ConditionalOperator: FormControl<DeleteItemInputConditionalOperator | null | undefined>,
@@ -2492,10 +3544,10 @@ export namespace MyNS {
 	}
 	export function CreateQueryInputFormGroup() {
 		return new FormGroup<QueryInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
-			IndexName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 			Select: new FormControl<QueryInputSelect | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			ConsistentRead: new FormControl<boolean | null | undefined>(undefined),
 			ConditionalOperator: new FormControl<DeleteItemInputConditionalOperator | null | undefined>(undefined),
 			ScanIndexForward: new FormControl<boolean | null | undefined>(undefined),
@@ -2543,7 +3595,20 @@ export namespace MyNS {
 	}
 
 	export interface RestoreTableFromBackupInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TargetTableName: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		BackupArn: string;
 		BillingModeOverride?: BillingModeSummaryBillingMode | null;
 		GlobalSecondaryIndexOverride?: Array<GlobalSecondaryIndex>;
@@ -2556,14 +3621,27 @@ export namespace MyNS {
 		SSESpecificationOverride?: SSESpecification;
 	}
 	export interface RestoreTableFromBackupInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TargetTableName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 37
+		 */
 		BackupArn: FormControl<string | null | undefined>,
 		BillingModeOverride: FormControl<BillingModeSummaryBillingMode | null | undefined>,
 	}
 	export function CreateRestoreTableFromBackupInputFormGroup() {
 		return new FormGroup<RestoreTableFromBackupInputFormProperties>({
-			TargetTableName: new FormControl<string | null | undefined>(undefined),
-			BackupArn: new FormControl<string | null | undefined>(undefined),
+			TargetTableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			BackupArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(37)]),
 			BillingModeOverride: new FormControl<BillingModeSummaryBillingMode | null | undefined>(undefined),
 		});
 
@@ -2594,7 +3672,20 @@ export namespace MyNS {
 
 	export interface RestoreTableToPointInTimeInput {
 		SourceTableArn?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		SourceTableName?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TargetTableName: string;
 		UseLatestRestorableTime?: boolean | null;
 		RestoreDateTime?: Date | null;
@@ -2610,7 +3701,20 @@ export namespace MyNS {
 	}
 	export interface RestoreTableToPointInTimeInputFormProperties {
 		SourceTableArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		SourceTableName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TargetTableName: FormControl<string | null | undefined>,
 		UseLatestRestorableTime: FormControl<boolean | null | undefined>,
 		RestoreDateTime: FormControl<Date | null | undefined>,
@@ -2619,8 +3723,8 @@ export namespace MyNS {
 	export function CreateRestoreTableToPointInTimeInputFormGroup() {
 		return new FormGroup<RestoreTableToPointInTimeInputFormProperties>({
 			SourceTableArn: new FormControl<string | null | undefined>(undefined),
-			SourceTableName: new FormControl<string | null | undefined>(undefined),
-			TargetTableName: new FormControl<string | null | undefined>(undefined),
+			SourceTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			TargetTableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 			UseLatestRestorableTime: new FormControl<boolean | null | undefined>(undefined),
 			RestoreDateTime: new FormControl<Date | null | undefined>(undefined),
 			BillingModeOverride: new FormControl<BillingModeSummaryBillingMode | null | undefined>(undefined),
@@ -2676,9 +3780,26 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>Scan</code> operation. */
 	export interface ScanInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: string;
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName?: string | null;
+
+		/** Minimum items: 1 */
 		AttributesToGet?: Array<string>;
+
+		/** Minimum: 1 */
 		Limit?: number | null;
 		Select?: QueryInputSelect | null;
 		ScanFilter?: FilterConditionMap;
@@ -2687,7 +3808,17 @@ export namespace MyNS {
 
 		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
 		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000000
+		 */
 		TotalSegments?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 999999
+		 */
 		Segment?: number | null;
 		ProjectionExpression?: string | null;
 		FilterExpression?: string | null;
@@ -2698,15 +3829,40 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>Scan</code> operation. */
 	export interface ScanInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		Limit: FormControl<number | null | undefined>,
 		Select: FormControl<QueryInputSelect | null | undefined>,
 		ConditionalOperator: FormControl<DeleteItemInputConditionalOperator | null | undefined>,
 
 		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
 		ReturnConsumedCapacity: FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000000
+		 */
 		TotalSegments: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 999999
+		 */
 		Segment: FormControl<number | null | undefined>,
 		ProjectionExpression: FormControl<string | null | undefined>,
 		FilterExpression: FormControl<string | null | undefined>,
@@ -2714,14 +3870,14 @@ export namespace MyNS {
 	}
 	export function CreateScanInputFormGroup() {
 		return new FormGroup<ScanInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
-			IndexName: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			Select: new FormControl<QueryInputSelect | null | undefined>(undefined),
 			ConditionalOperator: new FormControl<DeleteItemInputConditionalOperator | null | undefined>(undefined),
 			ReturnConsumedCapacity: new FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>(undefined),
-			TotalSegments: new FormControl<number | null | undefined>(undefined),
-			Segment: new FormControl<number | null | undefined>(undefined),
+			TotalSegments: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000000)]),
+			Segment: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(999999)]),
 			ProjectionExpression: new FormControl<string | null | undefined>(undefined),
 			FilterExpression: new FormControl<string | null | undefined>(undefined),
 			ConsistentRead: new FormControl<boolean | null | undefined>(undefined),
@@ -2730,21 +3886,40 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 1283
+		 * Min length: 1
+		 */
 		ResourceArn: string;
+
+		/** Required */
 		Tags: Array<Tag>;
 	}
 	export interface TagResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1283
+		 * Min length: 1
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceInputFormGroup() {
 		return new FormGroup<TagResourceInputFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1283), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface TransactGetItemsOutput {
 		ConsumedCapacity?: Array<ConsumedCapacity>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 25
+		 */
 		Responses?: Array<ItemResponse>;
 	}
 	export interface TransactGetItemsOutputFormProperties {
@@ -2771,6 +3946,12 @@ export namespace MyNS {
 	}
 
 	export interface TransactGetItemsInput {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 25
+		 */
 		TransactItems: Array<TransactGetItem>;
 
 		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
@@ -2811,7 +3992,16 @@ export namespace MyNS {
 
 	/** Specifies an item and related attribute values to retrieve in a <code>TransactGetItem</code> object. */
 	export interface Get {
+
+		/** Required */
 		Key: Key;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: string;
 		ProjectionExpression?: string | null;
 		ExpressionAttributeNames?: ExpressionAttributeNameMap;
@@ -2819,12 +4009,19 @@ export namespace MyNS {
 
 	/** Specifies an item and related attribute values to retrieve in a <code>TransactGetItem</code> object. */
 	export interface GetFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
 		ProjectionExpression: FormControl<string | null | undefined>,
 	}
 	export function CreateGetFormGroup() {
 		return new FormGroup<GetFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 			ProjectionExpression: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2853,11 +4050,22 @@ export namespace MyNS {
 	}
 
 	export interface TransactWriteItemsInput {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 25
+		 */
 		TransactItems: Array<TransactWriteItem>;
 
 		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
 		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity | null;
 		ReturnItemCollectionMetrics?: BatchWriteItemInputReturnItemCollectionMetrics | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		ClientRequestToken?: string | null;
 	}
 	export interface TransactWriteItemsInputFormProperties {
@@ -2865,13 +4073,18 @@ export namespace MyNS {
 		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
 		ReturnConsumedCapacity: FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>,
 		ReturnItemCollectionMetrics: FormControl<BatchWriteItemInputReturnItemCollectionMetrics | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateTransactWriteItemsInputFormGroup() {
 		return new FormGroup<TransactWriteItemsInputFormProperties>({
 			ReturnConsumedCapacity: new FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>(undefined),
 			ReturnItemCollectionMetrics: new FormControl<BatchWriteItemInputReturnItemCollectionMetrics | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
@@ -2905,8 +4118,19 @@ export namespace MyNS {
 
 	/** Represents a request to perform a check that an item exists or to check the condition of specific attributes of the item. */
 	export interface ConditionCheck {
+
+		/** Required */
 		Key: Key;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: string;
+
+		/** Required */
 		ConditionExpression: string;
 		ExpressionAttributeNames?: ExpressionAttributeNameMap;
 		ExpressionAttributeValues?: ExpressionAttributeValueMap;
@@ -2915,14 +4139,23 @@ export namespace MyNS {
 
 	/** Represents a request to perform a check that an item exists or to check the condition of specific attributes of the item. */
 	export interface ConditionCheckFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
+
+		/** Required */
 		ConditionExpression: FormControl<string | null | undefined>,
 		ReturnValuesOnConditionCheckFailure: FormControl<ConditionCheckReturnValuesOnConditionCheckFailure | null | undefined>,
 	}
 	export function CreateConditionCheckFormGroup() {
 		return new FormGroup<ConditionCheckFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
-			ConditionExpression: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			ConditionExpression: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ReturnValuesOnConditionCheckFailure: new FormControl<ConditionCheckReturnValuesOnConditionCheckFailure | null | undefined>(undefined),
 		});
 
@@ -2933,7 +4166,16 @@ export namespace MyNS {
 
 	/** Represents a request to perform a <code>PutItem</code> operation. */
 	export interface Put {
+
+		/** Required */
 		Item: PutItemInputAttributeMap;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: string;
 		ConditionExpression?: string | null;
 		ExpressionAttributeNames?: ExpressionAttributeNameMap;
@@ -2943,13 +4185,20 @@ export namespace MyNS {
 
 	/** Represents a request to perform a <code>PutItem</code> operation. */
 	export interface PutFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
 		ConditionExpression: FormControl<string | null | undefined>,
 		ReturnValuesOnConditionCheckFailure: FormControl<ConditionCheckReturnValuesOnConditionCheckFailure | null | undefined>,
 	}
 	export function CreatePutFormGroup() {
 		return new FormGroup<PutFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 			ConditionExpression: new FormControl<string | null | undefined>(undefined),
 			ReturnValuesOnConditionCheckFailure: new FormControl<ConditionCheckReturnValuesOnConditionCheckFailure | null | undefined>(undefined),
 		});
@@ -2959,7 +4208,16 @@ export namespace MyNS {
 
 	/** Represents a request to perform a <code>DeleteItem</code> operation. */
 	export interface Delete {
+
+		/** Required */
 		Key: Key;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: string;
 		ConditionExpression?: string | null;
 		ExpressionAttributeNames?: ExpressionAttributeNameMap;
@@ -2969,13 +4227,20 @@ export namespace MyNS {
 
 	/** Represents a request to perform a <code>DeleteItem</code> operation. */
 	export interface DeleteFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
 		ConditionExpression: FormControl<string | null | undefined>,
 		ReturnValuesOnConditionCheckFailure: FormControl<ConditionCheckReturnValuesOnConditionCheckFailure | null | undefined>,
 	}
 	export function CreateDeleteFormGroup() {
 		return new FormGroup<DeleteFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 			ConditionExpression: new FormControl<string | null | undefined>(undefined),
 			ReturnValuesOnConditionCheckFailure: new FormControl<ConditionCheckReturnValuesOnConditionCheckFailure | null | undefined>(undefined),
 		});
@@ -2985,8 +4250,19 @@ export namespace MyNS {
 
 	/** Represents a request to perform an <code>UpdateItem</code> operation. */
 	export interface Update {
+
+		/** Required */
 		Key: Key;
+
+		/** Required */
 		UpdateExpression: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: string;
 		ConditionExpression?: string | null;
 		ExpressionAttributeNames?: ExpressionAttributeNameMap;
@@ -2996,15 +4272,24 @@ export namespace MyNS {
 
 	/** Represents a request to perform an <code>UpdateItem</code> operation. */
 	export interface UpdateFormProperties {
+
+		/** Required */
 		UpdateExpression: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
 		ConditionExpression: FormControl<string | null | undefined>,
 		ReturnValuesOnConditionCheckFailure: FormControl<ConditionCheckReturnValuesOnConditionCheckFailure | null | undefined>,
 	}
 	export function CreateUpdateFormGroup() {
 		return new FormGroup<UpdateFormProperties>({
-			UpdateExpression: new FormControl<string | null | undefined>(undefined),
-			TableName: new FormControl<string | null | undefined>(undefined),
+			UpdateExpression: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 			ConditionExpression: new FormControl<string | null | undefined>(undefined),
 			ReturnValuesOnConditionCheckFailure: new FormControl<ConditionCheckReturnValuesOnConditionCheckFailure | null | undefined>(undefined),
 		});
@@ -3032,15 +4317,29 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 1283
+		 * Min length: 1
+		 */
 		ResourceArn: string;
+
+		/** Required */
 		TagKeys: Array<string>;
 	}
 	export interface UntagResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1283
+		 * Min length: 1
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceInputFormGroup() {
 		return new FormGroup<UntagResourceInputFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1283), Validators.minLength(1)]),
 		});
 
 	}
@@ -3059,6 +4358,13 @@ export namespace MyNS {
 	}
 
 	export interface UpdateContinuousBackupsInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: string;
 
 		/**
@@ -3068,11 +4374,18 @@ export namespace MyNS {
 		PointInTimeRecoverySpecification: PointInTimeRecoverySpecification;
 	}
 	export interface UpdateContinuousBackupsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateContinuousBackupsInputFormGroup() {
 		return new FormGroup<UpdateContinuousBackupsInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -3080,54 +4393,112 @@ export namespace MyNS {
 
 	/** Represents the settings used to enable point in time recovery. */
 	export interface PointInTimeRecoverySpecification {
+
+		/** Required */
 		PointInTimeRecoveryEnabled: boolean;
 	}
 
 	/** Represents the settings used to enable point in time recovery. */
 	export interface PointInTimeRecoverySpecificationFormProperties {
+
+		/** Required */
 		PointInTimeRecoveryEnabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreatePointInTimeRecoverySpecificationFormGroup() {
 		return new FormGroup<PointInTimeRecoverySpecificationFormProperties>({
-			PointInTimeRecoveryEnabled: new FormControl<boolean | null | undefined>(undefined),
+			PointInTimeRecoveryEnabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface UpdateContributorInsightsOutput {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName?: string | null;
 		ContributorInsightsStatus?: DescribeContributorInsightsOutputContributorInsightsStatus | null;
 	}
 	export interface UpdateContributorInsightsOutputFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: FormControl<string | null | undefined>,
 		ContributorInsightsStatus: FormControl<DescribeContributorInsightsOutputContributorInsightsStatus | null | undefined>,
 	}
 	export function CreateUpdateContributorInsightsOutputFormGroup() {
 		return new FormGroup<UpdateContributorInsightsOutputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
-			IndexName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 			ContributorInsightsStatus: new FormControl<DescribeContributorInsightsOutputContributorInsightsStatus | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface UpdateContributorInsightsInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: string;
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName?: string | null;
+
+		/** Required */
 		ContributorInsightsAction: UpdateContributorInsightsInputContributorInsightsAction;
 	}
 	export interface UpdateContributorInsightsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: FormControl<string | null | undefined>,
+
+		/** Required */
 		ContributorInsightsAction: FormControl<UpdateContributorInsightsInputContributorInsightsAction | null | undefined>,
 	}
 	export function CreateUpdateContributorInsightsInputFormGroup() {
 		return new FormGroup<UpdateContributorInsightsInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
-			IndexName: new FormControl<string | null | undefined>(undefined),
-			ContributorInsightsAction: new FormControl<UpdateContributorInsightsInputContributorInsightsAction | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			ContributorInsightsAction: new FormControl<UpdateContributorInsightsInputContributorInsightsAction | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3148,15 +4519,31 @@ export namespace MyNS {
 	}
 
 	export interface UpdateGlobalTableInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		GlobalTableName: string;
+
+		/** Required */
 		ReplicaUpdates: Array<ReplicaUpdate>;
 	}
 	export interface UpdateGlobalTableInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		GlobalTableName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateGlobalTableInputFormGroup() {
 		return new FormGroup<UpdateGlobalTableInputFormProperties>({
-			GlobalTableName: new FormControl<string | null | undefined>(undefined),
+			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -3184,16 +4571,20 @@ export namespace MyNS {
 
 	/** Represents a replica to be added. */
 	export interface CreateReplicaAction {
+
+		/** Required */
 		RegionName: string;
 	}
 
 	/** Represents a replica to be added. */
 	export interface CreateReplicaActionFormProperties {
+
+		/** Required */
 		RegionName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateReplicaActionFormGroup() {
 		return new FormGroup<CreateReplicaActionFormProperties>({
-			RegionName: new FormControl<string | null | undefined>(undefined),
+			RegionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3201,16 +4592,20 @@ export namespace MyNS {
 
 	/** Represents a replica to be removed. */
 	export interface DeleteReplicaAction {
+
+		/** Required */
 		RegionName: string;
 	}
 
 	/** Represents a replica to be removed. */
 	export interface DeleteReplicaActionFormProperties {
+
+		/** Required */
 		RegionName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteReplicaActionFormGroup() {
 		return new FormGroup<DeleteReplicaActionFormProperties>({
-			RegionName: new FormControl<string | null | undefined>(undefined),
+			RegionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3236,39 +4631,79 @@ export namespace MyNS {
 	}
 
 	export interface UpdateGlobalTableSettingsOutput {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		GlobalTableName?: string | null;
 		ReplicaSettings?: Array<ReplicaSettingsDescription>;
 	}
 	export interface UpdateGlobalTableSettingsOutputFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		GlobalTableName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateGlobalTableSettingsOutputFormGroup() {
 		return new FormGroup<UpdateGlobalTableSettingsOutputFormProperties>({
-			GlobalTableName: new FormControl<string | null | undefined>(undefined),
+			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
 
 	export interface UpdateGlobalTableSettingsInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		GlobalTableName: string;
 		GlobalTableBillingMode?: BillingModeSummaryBillingMode | null;
+
+		/** Minimum: 1 */
 		GlobalTableProvisionedWriteCapacityUnits?: number | null;
 
 		/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
 		GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate?: AutoScalingSettingsUpdate;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 20
+		 */
 		GlobalTableGlobalSecondaryIndexSettingsUpdate?: Array<GlobalTableGlobalSecondaryIndexSettingsUpdate>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		ReplicaSettingsUpdate?: Array<ReplicaSettingsUpdate>;
 	}
 	export interface UpdateGlobalTableSettingsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		GlobalTableName: FormControl<string | null | undefined>,
 		GlobalTableBillingMode: FormControl<BillingModeSummaryBillingMode | null | undefined>,
+
+		/** Minimum: 1 */
 		GlobalTableProvisionedWriteCapacityUnits: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateGlobalTableSettingsInputFormGroup() {
 		return new FormGroup<UpdateGlobalTableSettingsInputFormProperties>({
-			GlobalTableName: new FormControl<string | null | undefined>(undefined),
+			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 			GlobalTableBillingMode: new FormControl<BillingModeSummaryBillingMode | null | undefined>(undefined),
-			GlobalTableProvisionedWriteCapacityUnits: new FormControl<number | null | undefined>(undefined),
+			GlobalTableProvisionedWriteCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -3276,9 +4711,18 @@ export namespace MyNS {
 
 	/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
 	export interface AutoScalingSettingsUpdate {
+
+		/** Minimum: 1 */
 		MinimumUnits?: number | null;
+
+		/** Minimum: 1 */
 		MaximumUnits?: number | null;
 		AutoScalingDisabled?: boolean | null;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		AutoScalingRoleArn?: string | null;
 
 		/** Represents the auto scaling policy to be modified. */
@@ -3287,17 +4731,26 @@ export namespace MyNS {
 
 	/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
 	export interface AutoScalingSettingsUpdateFormProperties {
+
+		/** Minimum: 1 */
 		MinimumUnits: FormControl<number | null | undefined>,
+
+		/** Minimum: 1 */
 		MaximumUnits: FormControl<number | null | undefined>,
 		AutoScalingDisabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		AutoScalingRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateAutoScalingSettingsUpdateFormGroup() {
 		return new FormGroup<AutoScalingSettingsUpdateFormProperties>({
-			MinimumUnits: new FormControl<number | null | undefined>(undefined),
-			MaximumUnits: new FormControl<number | null | undefined>(undefined),
+			MinimumUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			MaximumUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			AutoScalingDisabled: new FormControl<boolean | null | undefined>(undefined),
-			AutoScalingRoleArn: new FormControl<string | null | undefined>(undefined),
+			AutoScalingRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 		});
 
 	}
@@ -3305,6 +4758,12 @@ export namespace MyNS {
 
 	/** Represents the auto scaling policy to be modified. */
 	export interface AutoScalingPolicyUpdate {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: \p{Print}+
+		 */
 		PolicyName?: string | null;
 
 		/**
@@ -3316,11 +4775,17 @@ export namespace MyNS {
 
 	/** Represents the auto scaling policy to be modified. */
 	export interface AutoScalingPolicyUpdateFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: \p{Print}+
+		 */
 		PolicyName: FormControl<string | null | undefined>,
 	}
 	export function CreateAutoScalingPolicyUpdateFormGroup() {
 		return new FormGroup<AutoScalingPolicyUpdateFormProperties>({
-			PolicyName: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -3331,6 +4796,8 @@ export namespace MyNS {
 		DisableScaleIn?: boolean | null;
 		ScaleInCooldown?: number | null;
 		ScaleOutCooldown?: number | null;
+
+		/** Required */
 		TargetValue: number;
 	}
 
@@ -3339,6 +4806,8 @@ export namespace MyNS {
 		DisableScaleIn: FormControl<boolean | null | undefined>,
 		ScaleInCooldown: FormControl<number | null | undefined>,
 		ScaleOutCooldown: FormControl<number | null | undefined>,
+
+		/** Required */
 		TargetValue: FormControl<number | null | undefined>,
 	}
 	export function CreateAutoScalingTargetTrackingScalingPolicyConfigurationUpdateFormGroup() {
@@ -3346,7 +4815,7 @@ export namespace MyNS {
 			DisableScaleIn: new FormControl<boolean | null | undefined>(undefined),
 			ScaleInCooldown: new FormControl<number | null | undefined>(undefined),
 			ScaleOutCooldown: new FormControl<number | null | undefined>(undefined),
-			TargetValue: new FormControl<number | null | undefined>(undefined),
+			TargetValue: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3354,7 +4823,16 @@ export namespace MyNS {
 
 	/** Represents the settings of a global secondary index for a global table that will be modified. */
 	export interface GlobalTableGlobalSecondaryIndexSettingsUpdate {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: string;
+
+		/** Minimum: 1 */
 		ProvisionedWriteCapacityUnits?: number | null;
 
 		/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
@@ -3363,13 +4841,22 @@ export namespace MyNS {
 
 	/** Represents the settings of a global secondary index for a global table that will be modified. */
 	export interface GlobalTableGlobalSecondaryIndexSettingsUpdateFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		ProvisionedWriteCapacityUnits: FormControl<number | null | undefined>,
 	}
 	export function CreateGlobalTableGlobalSecondaryIndexSettingsUpdateFormGroup() {
 		return new FormGroup<GlobalTableGlobalSecondaryIndexSettingsUpdateFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined),
-			ProvisionedWriteCapacityUnits: new FormControl<number | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			ProvisionedWriteCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -3377,23 +4864,36 @@ export namespace MyNS {
 
 	/** Represents the settings for a global table in a Region that will be modified. */
 	export interface ReplicaSettingsUpdate {
+
+		/** Required */
 		RegionName: string;
+
+		/** Minimum: 1 */
 		ReplicaProvisionedReadCapacityUnits?: number | null;
 
 		/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
 		ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate?: AutoScalingSettingsUpdate;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 20
+		 */
 		ReplicaGlobalSecondaryIndexSettingsUpdate?: Array<ReplicaGlobalSecondaryIndexSettingsUpdate>;
 	}
 
 	/** Represents the settings for a global table in a Region that will be modified. */
 	export interface ReplicaSettingsUpdateFormProperties {
+
+		/** Required */
 		RegionName: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		ReplicaProvisionedReadCapacityUnits: FormControl<number | null | undefined>,
 	}
 	export function CreateReplicaSettingsUpdateFormGroup() {
 		return new FormGroup<ReplicaSettingsUpdateFormProperties>({
-			RegionName: new FormControl<string | null | undefined>(undefined),
-			ReplicaProvisionedReadCapacityUnits: new FormControl<number | null | undefined>(undefined),
+			RegionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ReplicaProvisionedReadCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -3401,7 +4901,16 @@ export namespace MyNS {
 
 	/** Represents the settings of a global secondary index for a global table that will be modified. */
 	export interface ReplicaGlobalSecondaryIndexSettingsUpdate {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: string;
+
+		/** Minimum: 1 */
 		ProvisionedReadCapacityUnits?: number | null;
 
 		/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
@@ -3410,13 +4919,22 @@ export namespace MyNS {
 
 	/** Represents the settings of a global secondary index for a global table that will be modified. */
 	export interface ReplicaGlobalSecondaryIndexSettingsUpdateFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		ProvisionedReadCapacityUnits: FormControl<number | null | undefined>,
 	}
 	export function CreateReplicaGlobalSecondaryIndexSettingsUpdateFormGroup() {
 		return new FormGroup<ReplicaGlobalSecondaryIndexSettingsUpdateFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined),
-			ProvisionedReadCapacityUnits: new FormControl<number | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			ProvisionedReadCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -3455,7 +4973,16 @@ export namespace MyNS {
 
 	/** Represents the input of an <code>UpdateItem</code> operation. */
 	export interface UpdateItemInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: string;
+
+		/** Required */
 		Key: Key;
 		AttributeUpdates?: AttributeUpdates;
 		Expected?: ExpectedAttributeMap;
@@ -3473,6 +5000,13 @@ export namespace MyNS {
 
 	/** Represents the input of an <code>UpdateItem</code> operation. */
 	export interface UpdateItemInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
 		ConditionalOperator: FormControl<DeleteItemInputConditionalOperator | null | undefined>,
 		ReturnValues: FormControl<DeleteItemInputReturnValues | null | undefined>,
@@ -3485,7 +5019,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateItemInputFormGroup() {
 		return new FormGroup<UpdateItemInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 			ConditionalOperator: new FormControl<DeleteItemInputConditionalOperator | null | undefined>(undefined),
 			ReturnValues: new FormControl<DeleteItemInputReturnValues | null | undefined>(undefined),
 			ReturnConsumedCapacity: new FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>(undefined),
@@ -3527,6 +5061,13 @@ export namespace MyNS {
 	/** Represents the input of an <code>UpdateTable</code> operation. */
 	export interface UpdateTableInput {
 		AttributeDefinitions?: Array<AttributeDefinition>;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: string;
 		BillingMode?: BillingModeSummaryBillingMode | null;
 
@@ -3539,17 +5080,26 @@ export namespace MyNS {
 
 		/** Represents the settings used to enable server-side encryption. */
 		SSESpecification?: SSESpecification;
+
+		/** Minimum items: 1 */
 		ReplicaUpdates?: Array<ReplicationGroupUpdate>;
 	}
 
 	/** Represents the input of an <code>UpdateTable</code> operation. */
 	export interface UpdateTableInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
 		BillingMode: FormControl<BillingModeSummaryBillingMode | null | undefined>,
 	}
 	export function CreateUpdateTableInputFormGroup() {
 		return new FormGroup<UpdateTableInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 			BillingMode: new FormControl<BillingModeSummaryBillingMode | null | undefined>(undefined),
 		});
 
@@ -3581,6 +5131,13 @@ export namespace MyNS {
 
 	/** Represents the new provisioned throughput settings to be applied to a global secondary index. */
 	export interface UpdateGlobalSecondaryIndexAction {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: string;
 
 		/**
@@ -3592,11 +5149,18 @@ export namespace MyNS {
 
 	/** Represents the new provisioned throughput settings to be applied to a global secondary index. */
 	export interface UpdateGlobalSecondaryIndexActionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateGlobalSecondaryIndexActionFormGroup() {
 		return new FormGroup<UpdateGlobalSecondaryIndexActionFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -3604,7 +5168,20 @@ export namespace MyNS {
 
 	/** Represents a new global secondary index to be added to an existing table. */
 	export interface CreateGlobalSecondaryIndexAction {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 2
+		 */
 		KeySchema: Array<KeySchemaElement>;
 
 		/**
@@ -3619,11 +5196,18 @@ export namespace MyNS {
 
 	/** Represents a new global secondary index to be added to an existing table. */
 	export interface CreateGlobalSecondaryIndexActionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateGlobalSecondaryIndexActionFormGroup() {
 		return new FormGroup<CreateGlobalSecondaryIndexActionFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -3631,16 +5215,30 @@ export namespace MyNS {
 
 	/** Represents a global secondary index to be deleted from an existing table. */
 	export interface DeleteGlobalSecondaryIndexAction {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: string;
 	}
 
 	/** Represents a global secondary index to be deleted from an existing table. */
 	export interface DeleteGlobalSecondaryIndexActionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteGlobalSecondaryIndexActionFormGroup() {
 		return new FormGroup<DeleteGlobalSecondaryIndexActionFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -3671,22 +5269,28 @@ export namespace MyNS {
 
 	/** Represents a replica to be created. */
 	export interface CreateReplicationGroupMemberAction {
+
+		/** Required */
 		RegionName: string;
 		KMSMasterKeyId?: string | null;
 
 		/** Replica-specific provisioned throughput settings. If not specified, uses the source table's provisioned throughput settings. */
 		ProvisionedThroughputOverride?: ProvisionedThroughputOverride;
+
+		/** Minimum items: 1 */
 		GlobalSecondaryIndexes?: Array<ReplicaGlobalSecondaryIndex>;
 	}
 
 	/** Represents a replica to be created. */
 	export interface CreateReplicationGroupMemberActionFormProperties {
+
+		/** Required */
 		RegionName: FormControl<string | null | undefined>,
 		KMSMasterKeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateReplicationGroupMemberActionFormGroup() {
 		return new FormGroup<CreateReplicationGroupMemberActionFormProperties>({
-			RegionName: new FormControl<string | null | undefined>(undefined),
+			RegionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			KMSMasterKeyId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3695,6 +5299,13 @@ export namespace MyNS {
 
 	/** Represents the properties of a replica global secondary index. */
 	export interface ReplicaGlobalSecondaryIndex {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: string;
 
 		/** Replica-specific provisioned throughput settings. If not specified, uses the source table's provisioned throughput settings. */
@@ -3703,11 +5314,18 @@ export namespace MyNS {
 
 	/** Represents the properties of a replica global secondary index. */
 	export interface ReplicaGlobalSecondaryIndexFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: FormControl<string | null | undefined>,
 	}
 	export function CreateReplicaGlobalSecondaryIndexFormGroup() {
 		return new FormGroup<ReplicaGlobalSecondaryIndexFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -3715,22 +5333,28 @@ export namespace MyNS {
 
 	/** Represents a replica to be modified. */
 	export interface UpdateReplicationGroupMemberAction {
+
+		/** Required */
 		RegionName: string;
 		KMSMasterKeyId?: string | null;
 
 		/** Replica-specific provisioned throughput settings. If not specified, uses the source table's provisioned throughput settings. */
 		ProvisionedThroughputOverride?: ProvisionedThroughputOverride;
+
+		/** Minimum items: 1 */
 		GlobalSecondaryIndexes?: Array<ReplicaGlobalSecondaryIndex>;
 	}
 
 	/** Represents a replica to be modified. */
 	export interface UpdateReplicationGroupMemberActionFormProperties {
+
+		/** Required */
 		RegionName: FormControl<string | null | undefined>,
 		KMSMasterKeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateReplicationGroupMemberActionFormGroup() {
 		return new FormGroup<UpdateReplicationGroupMemberActionFormProperties>({
-			RegionName: new FormControl<string | null | undefined>(undefined),
+			RegionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			KMSMasterKeyId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3739,16 +5363,20 @@ export namespace MyNS {
 
 	/** Represents a replica to be deleted. */
 	export interface DeleteReplicationGroupMemberAction {
+
+		/** Required */
 		RegionName: string;
 	}
 
 	/** Represents a replica to be deleted. */
 	export interface DeleteReplicationGroupMemberActionFormProperties {
+
+		/** Required */
 		RegionName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteReplicationGroupMemberActionFormGroup() {
 		return new FormGroup<DeleteReplicationGroupMemberActionFormProperties>({
-			RegionName: new FormControl<string | null | undefined>(undefined),
+			RegionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3767,19 +5395,37 @@ export namespace MyNS {
 	}
 
 	export interface UpdateTableReplicaAutoScalingInput {
+
+		/** Minimum items: 1 */
 		GlobalSecondaryIndexUpdates?: Array<GlobalSecondaryIndexAutoScalingUpdate>;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: string;
 
 		/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
 		ProvisionedWriteCapacityAutoScalingUpdate?: AutoScalingSettingsUpdate;
+
+		/** Minimum items: 1 */
 		ReplicaUpdates?: Array<ReplicaAutoScalingUpdate>;
 	}
 	export interface UpdateTableReplicaAutoScalingInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateTableReplicaAutoScalingInputFormGroup() {
 		return new FormGroup<UpdateTableReplicaAutoScalingInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -3787,6 +5433,12 @@ export namespace MyNS {
 
 	/** Represents the auto scaling settings of a global secondary index for a global table that will be modified. */
 	export interface GlobalSecondaryIndexAutoScalingUpdate {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName?: string | null;
 
 		/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
@@ -3795,11 +5447,17 @@ export namespace MyNS {
 
 	/** Represents the auto scaling settings of a global secondary index for a global table that will be modified. */
 	export interface GlobalSecondaryIndexAutoScalingUpdateFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: FormControl<string | null | undefined>,
 	}
 	export function CreateGlobalSecondaryIndexAutoScalingUpdateFormGroup() {
 		return new FormGroup<GlobalSecondaryIndexAutoScalingUpdateFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -3807,6 +5465,8 @@ export namespace MyNS {
 
 	/** Represents the auto scaling settings of a replica that will be modified. */
 	export interface ReplicaAutoScalingUpdate {
+
+		/** Required */
 		RegionName: string;
 		ReplicaGlobalSecondaryIndexUpdates?: Array<ReplicaGlobalSecondaryIndexAutoScalingUpdate>;
 
@@ -3816,11 +5476,13 @@ export namespace MyNS {
 
 	/** Represents the auto scaling settings of a replica that will be modified. */
 	export interface ReplicaAutoScalingUpdateFormProperties {
+
+		/** Required */
 		RegionName: FormControl<string | null | undefined>,
 	}
 	export function CreateReplicaAutoScalingUpdateFormGroup() {
 		return new FormGroup<ReplicaAutoScalingUpdateFormProperties>({
-			RegionName: new FormControl<string | null | undefined>(undefined),
+			RegionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3828,6 +5490,12 @@ export namespace MyNS {
 
 	/** Represents the auto scaling settings of a global secondary index for a replica that will be modified. */
 	export interface ReplicaGlobalSecondaryIndexAutoScalingUpdate {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName?: string | null;
 
 		/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
@@ -3836,11 +5504,17 @@ export namespace MyNS {
 
 	/** Represents the auto scaling settings of a global secondary index for a replica that will be modified. */
 	export interface ReplicaGlobalSecondaryIndexAutoScalingUpdateFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		IndexName: FormControl<string | null | undefined>,
 	}
 	export function CreateReplicaGlobalSecondaryIndexAutoScalingUpdateFormGroup() {
 		return new FormGroup<ReplicaGlobalSecondaryIndexAutoScalingUpdateFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -3861,19 +5535,35 @@ export namespace MyNS {
 
 	/** Represents the settings used to enable or disable Time to Live (TTL) for the specified table. */
 	export interface TimeToLiveSpecification {
+
+		/** Required */
 		Enabled: boolean;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		AttributeName: string;
 	}
 
 	/** Represents the settings used to enable or disable Time to Live (TTL) for the specified table. */
 	export interface TimeToLiveSpecificationFormProperties {
+
+		/** Required */
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		AttributeName: FormControl<string | null | undefined>,
 	}
 	export function CreateTimeToLiveSpecificationFormGroup() {
 		return new FormGroup<TimeToLiveSpecificationFormProperties>({
-			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			AttributeName: new FormControl<string | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -3881,6 +5571,13 @@ export namespace MyNS {
 
 	/** Represents the input of an <code>UpdateTimeToLive</code> operation. */
 	export interface UpdateTimeToLiveInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: string;
 
 		/**
@@ -3892,11 +5589,18 @@ export namespace MyNS {
 
 	/** Represents the input of an <code>UpdateTimeToLive</code> operation. */
 	export interface UpdateTimeToLiveInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		TableName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateTimeToLiveInputFormGroup() {
 		return new FormGroup<UpdateTimeToLiveInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
 		});
 
 	}
@@ -3982,7 +5686,15 @@ export namespace MyNS {
 
 	/** <p>Represents a set of primary keys and, for each key, the attributes to retrieve from the table.</p> <p>For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key. For a composite primary key, you must provide <i>both</i> the partition key and the sort key.</p> */
 	export interface KeysAndAttributes {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		Keys: Array<Key>;
+
+		/** Minimum items: 1 */
 		AttributesToGet?: Array<string>;
 		ConsistentRead?: boolean | null;
 		ProjectionExpression?: string | null;
@@ -4027,6 +5739,8 @@ export namespace MyNS {
 
 	/** Represents a request to perform a <code>PutItem</code> operation on an item. */
 	export interface PutRequest {
+
+		/** Required */
 		Item: PutItemInputAttributeMap;
 	}
 
@@ -4042,6 +5756,8 @@ export namespace MyNS {
 
 	/** Represents a request to perform a <code>DeleteItem</code> operation on an item. */
 	export interface DeleteRequest {
+
+		/** Required */
 		Key: Key;
 	}
 
@@ -4062,16 +5778,20 @@ export namespace MyNS {
 	/** <p>Represents the selection criteria for a <code>Query</code> or <code>Scan</code> operation:</p> <ul> <li> <p>For a <code>Query</code> operation, <code>Condition</code> is used for specifying the <code>KeyConditions</code> to use when querying a table or an index. For <code>KeyConditions</code>, only the following comparison operators are supported:</p> <p> <code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> </p> <p> <code>Condition</code> is also used in a <code>QueryFilter</code>, which evaluates the query results and returns only the desired values.</p> </li> <li> <p>For a <code>Scan</code> operation, <code>Condition</code> is used in a <code>ScanFilter</code>, which evaluates the scan results and returns only the desired values.</p> </li> </ul> */
 	export interface Condition {
 		AttributeValueList?: Array<AttributeValue>;
+
+		/** Required */
 		ComparisonOperator: ComparisonOperator;
 	}
 
 	/** <p>Represents the selection criteria for a <code>Query</code> or <code>Scan</code> operation:</p> <ul> <li> <p>For a <code>Query</code> operation, <code>Condition</code> is used for specifying the <code>KeyConditions</code> to use when querying a table or an index. For <code>KeyConditions</code>, only the following comparison operators are supported:</p> <p> <code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> </p> <p> <code>Condition</code> is also used in a <code>QueryFilter</code>, which evaluates the query results and returns only the desired values.</p> </li> <li> <p>For a <code>Scan</code> operation, <code>Condition</code> is used in a <code>ScanFilter</code>, which evaluates the scan results and returns only the desired values.</p> </li> </ul> */
 	export interface ConditionFormProperties {
+
+		/** Required */
 		ComparisonOperator: FormControl<ComparisonOperator | null | undefined>,
 	}
 	export function CreateConditionFormGroup() {
 		return new FormGroup<ConditionFormProperties>({
-			ComparisonOperator: new FormControl<ComparisonOperator | null | undefined>(undefined),
+			ComparisonOperator: new FormControl<ComparisonOperator | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

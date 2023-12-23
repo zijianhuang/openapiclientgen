@@ -36,7 +36,11 @@ export namespace MyNS {
 
 	/** For each message in the batch, the response contains a <code> <a>ChangeMessageVisibilityBatchResultEntry</a> </code> tag if the message succeeds or a <code> <a>BatchResultErrorEntry</a> </code> tag if the message fails. */
 	export interface ChangeMessageVisibilityBatchResult {
+
+		/** Required */
 		Successful: Array<ChangeMessageVisibilityBatchResultEntry>;
+
+		/** Required */
 		Failed: Array<BatchResultErrorEntry>;
 	}
 
@@ -52,16 +56,20 @@ export namespace MyNS {
 
 	/** Encloses the <code>Id</code> of an entry in <code> <a>ChangeMessageVisibilityBatch</a>.</code>  */
 	export interface ChangeMessageVisibilityBatchResultEntry {
+
+		/** Required */
 		Id: string;
 	}
 
 	/** Encloses the <code>Id</code> of an entry in <code> <a>ChangeMessageVisibilityBatch</a>.</code>  */
 	export interface ChangeMessageVisibilityBatchResultEntryFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
 	}
 	export function CreateChangeMessageVisibilityBatchResultEntryFormGroup() {
 		return new FormGroup<ChangeMessageVisibilityBatchResultEntryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -69,24 +77,36 @@ export namespace MyNS {
 
 	/** Gives a detailed description of the result of an action on each entry in the request. */
 	export interface BatchResultErrorEntry {
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		SenderFault: boolean;
+
+		/** Required */
 		Code: string;
 		Message?: string | null;
 	}
 
 	/** Gives a detailed description of the result of an action on each entry in the request. */
 	export interface BatchResultErrorEntryFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		SenderFault: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		Code: FormControl<string | null | undefined>,
 		Message: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchResultErrorEntryFormGroup() {
 		return new FormGroup<BatchResultErrorEntryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			SenderFault: new FormControl<boolean | null | undefined>(undefined),
-			Code: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SenderFault: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			Code: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Message: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -95,21 +115,29 @@ export namespace MyNS {
 
 	/** <p>Encloses a receipt handle and an entry id for each message in <code> <a>ChangeMessageVisibilityBatch</a>.</code> </p> <important> <p>All of the following list parameters must be prefixed with <code>ChangeMessageVisibilityBatchRequestEntry.n</code>, where <code>n</code> is an integer value starting with <code>1</code>. For example, a parameter list for this action might look like this:</p> </important> <p> <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.Id=change_visibility_msg_2</code> </p> <p> <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.ReceiptHandle=your_receipt_handle</code> </p> <p> <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45</code> </p> */
 	export interface ChangeMessageVisibilityBatchRequestEntry {
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		ReceiptHandle: string;
 		VisibilityTimeout?: number | null;
 	}
 
 	/** <p>Encloses a receipt handle and an entry id for each message in <code> <a>ChangeMessageVisibilityBatch</a>.</code> </p> <important> <p>All of the following list parameters must be prefixed with <code>ChangeMessageVisibilityBatchRequestEntry.n</code>, where <code>n</code> is an integer value starting with <code>1</code>. For example, a parameter list for this action might look like this:</p> </important> <p> <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.Id=change_visibility_msg_2</code> </p> <p> <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.ReceiptHandle=your_receipt_handle</code> </p> <p> <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45</code> </p> */
 	export interface ChangeMessageVisibilityBatchRequestEntryFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		ReceiptHandle: FormControl<string | null | undefined>,
 		VisibilityTimeout: FormControl<number | null | undefined>,
 	}
 	export function CreateChangeMessageVisibilityBatchRequestEntryFormGroup() {
 		return new FormGroup<ChangeMessageVisibilityBatchRequestEntryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			ReceiptHandle: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ReceiptHandle: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			VisibilityTimeout: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -205,7 +233,11 @@ export namespace MyNS {
 
 	/** For each message in the batch, the response contains a <code> <a>DeleteMessageBatchResultEntry</a> </code> tag if the message is deleted or a <code> <a>BatchResultErrorEntry</a> </code> tag if the message can't be deleted. */
 	export interface DeleteMessageBatchResult {
+
+		/** Required */
 		Successful: Array<DeleteMessageBatchResultEntry>;
+
+		/** Required */
 		Failed: Array<BatchResultErrorEntry>;
 	}
 
@@ -221,16 +253,20 @@ export namespace MyNS {
 
 	/** Encloses the <code>Id</code> of an entry in <code> <a>DeleteMessageBatch</a>.</code>  */
 	export interface DeleteMessageBatchResultEntry {
+
+		/** Required */
 		Id: string;
 	}
 
 	/** Encloses the <code>Id</code> of an entry in <code> <a>DeleteMessageBatch</a>.</code>  */
 	export interface DeleteMessageBatchResultEntryFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteMessageBatchResultEntryFormGroup() {
 		return new FormGroup<DeleteMessageBatchResultEntryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -238,19 +274,27 @@ export namespace MyNS {
 
 	/** Encloses a receipt handle and an identifier for it. */
 	export interface DeleteMessageBatchRequestEntry {
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		ReceiptHandle: string;
 	}
 
 	/** Encloses a receipt handle and an identifier for it. */
 	export interface DeleteMessageBatchRequestEntryFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		ReceiptHandle: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteMessageBatchRequestEntryFormGroup() {
 		return new FormGroup<DeleteMessageBatchRequestEntryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			ReceiptHandle: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ReceiptHandle: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -322,6 +366,8 @@ export namespace MyNS {
 
 	/** A list of your dead letter source queues. */
 	export interface ListDeadLetterSourceQueuesResult {
+
+		/** Required */
 		queueUrls: Array<string>;
 	}
 
@@ -482,6 +528,8 @@ export namespace MyNS {
 		BinaryValue?: string | null;
 		StringListValues?: Array<string>;
 		BinaryListValues?: Array<string>;
+
+		/** Required */
 		DataType: string;
 	}
 
@@ -489,13 +537,15 @@ export namespace MyNS {
 	export interface MessageAttributeValueFormProperties {
 		StringValue: FormControl<string | null | undefined>,
 		BinaryValue: FormControl<string | null | undefined>,
+
+		/** Required */
 		DataType: FormControl<string | null | undefined>,
 	}
 	export function CreateMessageAttributeValueFormGroup() {
 		return new FormGroup<MessageAttributeValueFormProperties>({
 			StringValue: new FormControl<string | null | undefined>(undefined),
 			BinaryValue: new FormControl<string | null | undefined>(undefined),
-			DataType: new FormControl<string | null | undefined>(undefined),
+			DataType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -507,6 +557,8 @@ export namespace MyNS {
 		BinaryValue?: string | null;
 		StringListValues?: Array<string>;
 		BinaryListValues?: Array<string>;
+
+		/** Required */
 		DataType: string;
 	}
 
@@ -514,13 +566,15 @@ export namespace MyNS {
 	export interface MessageSystemAttributeValueFormProperties {
 		StringValue: FormControl<string | null | undefined>,
 		BinaryValue: FormControl<string | null | undefined>,
+
+		/** Required */
 		DataType: FormControl<string | null | undefined>,
 	}
 	export function CreateMessageSystemAttributeValueFormGroup() {
 		return new FormGroup<MessageSystemAttributeValueFormProperties>({
 			StringValue: new FormControl<string | null | undefined>(undefined),
 			BinaryValue: new FormControl<string | null | undefined>(undefined),
-			DataType: new FormControl<string | null | undefined>(undefined),
+			DataType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -548,7 +602,11 @@ export namespace MyNS {
 
 	/** For each message in the batch, the response contains a <code> <a>SendMessageBatchResultEntry</a> </code> tag if the message succeeds or a <code> <a>BatchResultErrorEntry</a> </code> tag if the message fails. */
 	export interface SendMessageBatchResult {
+
+		/** Required */
 		Successful: Array<SendMessageBatchResultEntry>;
+
+		/** Required */
 		Failed: Array<BatchResultErrorEntry>;
 	}
 
@@ -564,8 +622,14 @@ export namespace MyNS {
 
 	/** Encloses a <code>MessageId</code> for a successfully-enqueued message in a <code> <a>SendMessageBatch</a>.</code>  */
 	export interface SendMessageBatchResultEntry {
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		MessageId: string;
+
+		/** Required */
 		MD5OfMessageBody: string;
 		MD5OfMessageAttributes?: string | null;
 		MD5OfMessageSystemAttributes?: string | null;
@@ -574,8 +638,14 @@ export namespace MyNS {
 
 	/** Encloses a <code>MessageId</code> for a successfully-enqueued message in a <code> <a>SendMessageBatch</a>.</code>  */
 	export interface SendMessageBatchResultEntryFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		MessageId: FormControl<string | null | undefined>,
+
+		/** Required */
 		MD5OfMessageBody: FormControl<string | null | undefined>,
 		MD5OfMessageAttributes: FormControl<string | null | undefined>,
 		MD5OfMessageSystemAttributes: FormControl<string | null | undefined>,
@@ -583,9 +653,9 @@ export namespace MyNS {
 	}
 	export function CreateSendMessageBatchResultEntryFormGroup() {
 		return new FormGroup<SendMessageBatchResultEntryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			MessageId: new FormControl<string | null | undefined>(undefined),
-			MD5OfMessageBody: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MessageId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MD5OfMessageBody: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			MD5OfMessageAttributes: new FormControl<string | null | undefined>(undefined),
 			MD5OfMessageSystemAttributes: new FormControl<string | null | undefined>(undefined),
 			SequenceNumber: new FormControl<string | null | undefined>(undefined),
@@ -596,7 +666,11 @@ export namespace MyNS {
 
 	/** Contains the details of a single Amazon SQS message along with an <code>Id</code>. */
 	export interface SendMessageBatchRequestEntry {
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		MessageBody: string;
 		DelaySeconds?: number | null;
 		MessageAttributes?: MessageBodyAttributeMap;
@@ -607,7 +681,11 @@ export namespace MyNS {
 
 	/** Contains the details of a single Amazon SQS message along with an <code>Id</code>. */
 	export interface SendMessageBatchRequestEntryFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		MessageBody: FormControl<string | null | undefined>,
 		DelaySeconds: FormControl<number | null | undefined>,
 		MessageDeduplicationId: FormControl<string | null | undefined>,
@@ -615,8 +693,8 @@ export namespace MyNS {
 	}
 	export function CreateSendMessageBatchRequestEntryFormGroup() {
 		return new FormGroup<SendMessageBatchRequestEntryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			MessageBody: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MessageBody: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DelaySeconds: new FormControl<number | null | undefined>(undefined),
 			MessageDeduplicationId: new FormControl<string | null | undefined>(undefined),
 			MessageGroupId: new FormControl<string | null | undefined>(undefined),
@@ -647,21 +725,33 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface AddPermissionRequest {
+
+		/** Required */
 		QueueUrl: string;
+
+		/** Required */
 		Label: string;
+
+		/** Required */
 		AWSAccountIds: Array<string>;
+
+		/** Required */
 		Actions: Array<string>;
 	}
 
 	/** <p/> */
 	export interface AddPermissionRequestFormProperties {
+
+		/** Required */
 		QueueUrl: FormControl<string | null | undefined>,
+
+		/** Required */
 		Label: FormControl<string | null | undefined>,
 	}
 	export function CreateAddPermissionRequestFormGroup() {
 		return new FormGroup<AddPermissionRequestFormProperties>({
-			QueueUrl: new FormControl<string | null | undefined>(undefined),
-			Label: new FormControl<string | null | undefined>(undefined),
+			QueueUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Label: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -669,36 +759,54 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ChangeMessageVisibilityBatchRequest {
+
+		/** Required */
 		QueueUrl: string;
+
+		/** Required */
 		Entries: Array<ChangeMessageVisibilityBatchRequestEntry>;
 	}
 
 	/** <p/> */
 	export interface ChangeMessageVisibilityBatchRequestFormProperties {
+
+		/** Required */
 		QueueUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateChangeMessageVisibilityBatchRequestFormGroup() {
 		return new FormGroup<ChangeMessageVisibilityBatchRequestFormProperties>({
-			QueueUrl: new FormControl<string | null | undefined>(undefined),
+			QueueUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ChangeMessageVisibilityRequest {
+
+		/** Required */
 		QueueUrl: string;
+
+		/** Required */
 		ReceiptHandle: string;
+
+		/** Required */
 		VisibilityTimeout: number;
 	}
 	export interface ChangeMessageVisibilityRequestFormProperties {
+
+		/** Required */
 		QueueUrl: FormControl<string | null | undefined>,
+
+		/** Required */
 		ReceiptHandle: FormControl<string | null | undefined>,
+
+		/** Required */
 		VisibilityTimeout: FormControl<number | null | undefined>,
 	}
 	export function CreateChangeMessageVisibilityRequestFormGroup() {
 		return new FormGroup<ChangeMessageVisibilityRequestFormProperties>({
-			QueueUrl: new FormControl<string | null | undefined>(undefined),
-			ReceiptHandle: new FormControl<string | null | undefined>(undefined),
-			VisibilityTimeout: new FormControl<number | null | undefined>(undefined),
+			QueueUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ReceiptHandle: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			VisibilityTimeout: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -706,6 +814,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateQueueRequest {
+
+		/** Required */
 		QueueName: string;
 		Attributes?: QueueAttributeMap;
 		tags?: TagMap;
@@ -713,11 +823,13 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateQueueRequestFormProperties {
+
+		/** Required */
 		QueueName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateQueueRequestFormGroup() {
 		return new FormGroup<CreateQueueRequestFormProperties>({
-			QueueName: new FormControl<string | null | undefined>(undefined),
+			QueueName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -725,17 +837,23 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteMessageBatchRequest {
+
+		/** Required */
 		QueueUrl: string;
+
+		/** Required */
 		Entries: Array<DeleteMessageBatchRequestEntry>;
 	}
 
 	/** <p/> */
 	export interface DeleteMessageBatchRequestFormProperties {
+
+		/** Required */
 		QueueUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteMessageBatchRequestFormGroup() {
 		return new FormGroup<DeleteMessageBatchRequestFormProperties>({
-			QueueUrl: new FormControl<string | null | undefined>(undefined),
+			QueueUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -743,19 +861,27 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteMessageRequest {
+
+		/** Required */
 		QueueUrl: string;
+
+		/** Required */
 		ReceiptHandle: string;
 	}
 
 	/** <p/> */
 	export interface DeleteMessageRequestFormProperties {
+
+		/** Required */
 		QueueUrl: FormControl<string | null | undefined>,
+
+		/** Required */
 		ReceiptHandle: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteMessageRequestFormGroup() {
 		return new FormGroup<DeleteMessageRequestFormProperties>({
-			QueueUrl: new FormControl<string | null | undefined>(undefined),
-			ReceiptHandle: new FormControl<string | null | undefined>(undefined),
+			QueueUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ReceiptHandle: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -763,16 +889,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteQueueRequest {
+
+		/** Required */
 		QueueUrl: string;
 	}
 
 	/** <p/> */
 	export interface DeleteQueueRequestFormProperties {
+
+		/** Required */
 		QueueUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteQueueRequestFormGroup() {
 		return new FormGroup<DeleteQueueRequestFormProperties>({
-			QueueUrl: new FormControl<string | null | undefined>(undefined),
+			QueueUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -780,17 +910,21 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface GetQueueAttributesRequest {
+
+		/** Required */
 		QueueUrl: string;
 		AttributeNames?: Array<QueueAttributeName>;
 	}
 
 	/** <p/> */
 	export interface GetQueueAttributesRequestFormProperties {
+
+		/** Required */
 		QueueUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateGetQueueAttributesRequestFormGroup() {
 		return new FormGroup<GetQueueAttributesRequestFormProperties>({
-			QueueUrl: new FormControl<string | null | undefined>(undefined),
+			QueueUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -798,18 +932,22 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface GetQueueUrlRequest {
+
+		/** Required */
 		QueueName: string;
 		QueueOwnerAWSAccountId?: string | null;
 	}
 
 	/** <p/> */
 	export interface GetQueueUrlRequestFormProperties {
+
+		/** Required */
 		QueueName: FormControl<string | null | undefined>,
 		QueueOwnerAWSAccountId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetQueueUrlRequestFormGroup() {
 		return new FormGroup<GetQueueUrlRequestFormProperties>({
-			QueueName: new FormControl<string | null | undefined>(undefined),
+			QueueName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			QueueOwnerAWSAccountId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -818,29 +956,37 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ListDeadLetterSourceQueuesRequest {
+
+		/** Required */
 		QueueUrl: string;
 	}
 
 	/** <p/> */
 	export interface ListDeadLetterSourceQueuesRequestFormProperties {
+
+		/** Required */
 		QueueUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateListDeadLetterSourceQueuesRequestFormGroup() {
 		return new FormGroup<ListDeadLetterSourceQueuesRequestFormProperties>({
-			QueueUrl: new FormControl<string | null | undefined>(undefined),
+			QueueUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ListQueueTagsRequest {
+
+		/** Required */
 		QueueUrl: string;
 	}
 	export interface ListQueueTagsRequestFormProperties {
+
+		/** Required */
 		QueueUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateListQueueTagsRequestFormGroup() {
 		return new FormGroup<ListQueueTagsRequestFormProperties>({
-			QueueUrl: new FormControl<string | null | undefined>(undefined),
+			QueueUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -869,16 +1015,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface PurgeQueueRequest {
+
+		/** Required */
 		QueueUrl: string;
 	}
 
 	/** <p/> */
 	export interface PurgeQueueRequestFormProperties {
+
+		/** Required */
 		QueueUrl: FormControl<string | null | undefined>,
 	}
 	export function CreatePurgeQueueRequestFormGroup() {
 		return new FormGroup<PurgeQueueRequestFormProperties>({
-			QueueUrl: new FormControl<string | null | undefined>(undefined),
+			QueueUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -886,6 +1036,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ReceiveMessageRequest {
+
+		/** Required */
 		QueueUrl: string;
 		AttributeNames?: Array<QueueAttributeName>;
 		MessageAttributeNames?: Array<string>;
@@ -897,6 +1049,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ReceiveMessageRequestFormProperties {
+
+		/** Required */
 		QueueUrl: FormControl<string | null | undefined>,
 		MaxNumberOfMessages: FormControl<number | null | undefined>,
 		VisibilityTimeout: FormControl<number | null | undefined>,
@@ -905,7 +1059,7 @@ export namespace MyNS {
 	}
 	export function CreateReceiveMessageRequestFormGroup() {
 		return new FormGroup<ReceiveMessageRequestFormProperties>({
-			QueueUrl: new FormControl<string | null | undefined>(undefined),
+			QueueUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			MaxNumberOfMessages: new FormControl<number | null | undefined>(undefined),
 			VisibilityTimeout: new FormControl<number | null | undefined>(undefined),
 			WaitTimeSeconds: new FormControl<number | null | undefined>(undefined),
@@ -917,19 +1071,27 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface RemovePermissionRequest {
+
+		/** Required */
 		QueueUrl: string;
+
+		/** Required */
 		Label: string;
 	}
 
 	/** <p/> */
 	export interface RemovePermissionRequestFormProperties {
+
+		/** Required */
 		QueueUrl: FormControl<string | null | undefined>,
+
+		/** Required */
 		Label: FormControl<string | null | undefined>,
 	}
 	export function CreateRemovePermissionRequestFormGroup() {
 		return new FormGroup<RemovePermissionRequestFormProperties>({
-			QueueUrl: new FormControl<string | null | undefined>(undefined),
-			Label: new FormControl<string | null | undefined>(undefined),
+			QueueUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Label: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -937,17 +1099,23 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface SendMessageBatchRequest {
+
+		/** Required */
 		QueueUrl: string;
+
+		/** Required */
 		Entries: Array<SendMessageBatchRequestEntry>;
 	}
 
 	/** <p/> */
 	export interface SendMessageBatchRequestFormProperties {
+
+		/** Required */
 		QueueUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateSendMessageBatchRequestFormGroup() {
 		return new FormGroup<SendMessageBatchRequestFormProperties>({
-			QueueUrl: new FormControl<string | null | undefined>(undefined),
+			QueueUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -955,7 +1123,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface SendMessageRequest {
+
+		/** Required */
 		QueueUrl: string;
+
+		/** Required */
 		MessageBody: string;
 		DelaySeconds?: number | null;
 		MessageAttributes?: MessageBodyAttributeMap;
@@ -966,7 +1138,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface SendMessageRequestFormProperties {
+
+		/** Required */
 		QueueUrl: FormControl<string | null | undefined>,
+
+		/** Required */
 		MessageBody: FormControl<string | null | undefined>,
 		DelaySeconds: FormControl<number | null | undefined>,
 		MessageDeduplicationId: FormControl<string | null | undefined>,
@@ -974,8 +1150,8 @@ export namespace MyNS {
 	}
 	export function CreateSendMessageRequestFormGroup() {
 		return new FormGroup<SendMessageRequestFormProperties>({
-			QueueUrl: new FormControl<string | null | undefined>(undefined),
-			MessageBody: new FormControl<string | null | undefined>(undefined),
+			QueueUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MessageBody: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DelaySeconds: new FormControl<number | null | undefined>(undefined),
 			MessageDeduplicationId: new FormControl<string | null | undefined>(undefined),
 			MessageGroupId: new FormControl<string | null | undefined>(undefined),
@@ -986,45 +1162,63 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface SetQueueAttributesRequest {
+
+		/** Required */
 		QueueUrl: string;
+
+		/** Required */
 		Attributes: QueueAttributeMap;
 	}
 
 	/** <p/> */
 	export interface SetQueueAttributesRequestFormProperties {
+
+		/** Required */
 		QueueUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateSetQueueAttributesRequestFormGroup() {
 		return new FormGroup<SetQueueAttributesRequestFormProperties>({
-			QueueUrl: new FormControl<string | null | undefined>(undefined),
+			QueueUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface TagQueueRequest {
+
+		/** Required */
 		QueueUrl: string;
+
+		/** Required */
 		Tags: TagMap;
 	}
 	export interface TagQueueRequestFormProperties {
+
+		/** Required */
 		QueueUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateTagQueueRequestFormGroup() {
 		return new FormGroup<TagQueueRequestFormProperties>({
-			QueueUrl: new FormControl<string | null | undefined>(undefined),
+			QueueUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface UntagQueueRequest {
+
+		/** Required */
 		QueueUrl: string;
+
+		/** Required */
 		TagKeys: Array<string>;
 	}
 	export interface UntagQueueRequestFormProperties {
+
+		/** Required */
 		QueueUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagQueueRequestFormGroup() {
 		return new FormGroup<UntagQueueRequestFormProperties>({
-			QueueUrl: new FormControl<string | null | undefined>(undefined),
+			QueueUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

@@ -4,24 +4,42 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateServerResponse {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: string;
 	}
 	export interface CreateServerResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateServerResponseFormGroup() {
 		return new FormGroup<CreateServerResponseFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
 		});
 
 	}
 
 	export interface CreateServerRequest {
+
+		/** Max length: 1600 */
 		Certificate?: string | null;
 
 		/** The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled server. With a VPC endpoint, you can restrict access to your server and resources only within your VPC. To control incoming internet traffic, invoke the <code>UpdateServer</code> API and attach an Elastic IP to your server's endpoint. */
 		EndpointDetails?: EndpointDetails;
 		EndpointType?: CreateServerRequestEndpointType | null;
+
+		/** Max length: 4096 */
 		HostKey?: string | null;
 
 		/** Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. A server can have only one method of authentication. */
@@ -29,26 +47,52 @@ export namespace MyNS {
 
 		/** Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. For <code>SERVICE_MANAGED</code> authentication, the Secure Shell (SSH) public keys are stored with a user on the server instance. For <code>API_GATEWAY</code> authentication, your custom authentication method is implemented by using an API call. The server can have only one method of authentication. */
 		IdentityProviderType?: CreateServerRequestIdentityProviderType | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:.*role/.*
+		 */
 		LoggingRole?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 3
+		 */
 		Protocols?: Array<Protocol>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Tags?: Array<Tag>;
 	}
 	export interface CreateServerRequestFormProperties {
+
+		/** Max length: 1600 */
 		Certificate: FormControl<string | null | undefined>,
 		EndpointType: FormControl<CreateServerRequestEndpointType | null | undefined>,
+
+		/** Max length: 4096 */
 		HostKey: FormControl<string | null | undefined>,
 
 		/** Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. For <code>SERVICE_MANAGED</code> authentication, the Secure Shell (SSH) public keys are stored with a user on the server instance. For <code>API_GATEWAY</code> authentication, your custom authentication method is implemented by using an API call. The server can have only one method of authentication. */
 		IdentityProviderType: FormControl<CreateServerRequestIdentityProviderType | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:.*role/.*
+		 */
 		LoggingRole: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateServerRequestFormGroup() {
 		return new FormGroup<CreateServerRequestFormProperties>({
-			Certificate: new FormControl<string | null | undefined>(undefined),
+			Certificate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600)]),
 			EndpointType: new FormControl<CreateServerRequestEndpointType | null | undefined>(undefined),
-			HostKey: new FormControl<string | null | undefined>(undefined),
+			HostKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
 			IdentityProviderType: new FormControl<CreateServerRequestIdentityProviderType | null | undefined>(undefined),
-			LoggingRole: new FormControl<string | null | undefined>(undefined),
+			LoggingRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -58,18 +102,30 @@ export namespace MyNS {
 	export interface EndpointDetails {
 		AddressAllocationIds?: Array<string>;
 		SubnetIds?: Array<string>;
+
+		/**
+		 * Max length: 22
+		 * Min length: 22
+		 * Pattern: ^vpce-[0-9a-f]{17}$
+		 */
 		VpcEndpointId?: string | null;
 		VpcId?: string | null;
 	}
 
 	/** The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled server. With a VPC endpoint, you can restrict access to your server and resources only within your VPC. To control incoming internet traffic, invoke the <code>UpdateServer</code> API and attach an Elastic IP to your server's endpoint. */
 	export interface EndpointDetailsFormProperties {
+
+		/**
+		 * Max length: 22
+		 * Min length: 22
+		 * Pattern: ^vpce-[0-9a-f]{17}$
+		 */
 		VpcEndpointId: FormControl<string | null | undefined>,
 		VpcId: FormControl<string | null | undefined>,
 	}
 	export function CreateEndpointDetailsFormGroup() {
 		return new FormGroup<EndpointDetailsFormProperties>({
-			VpcEndpointId: new FormControl<string | null | undefined>(undefined),
+			VpcEndpointId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(22), Validators.minLength(22)]),
 			VpcId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -80,19 +136,35 @@ export namespace MyNS {
 
 	/** Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. A server can have only one method of authentication. */
 	export interface IdentityProviderDetails {
+
+		/** Max length: 255 */
 		Url?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:.*role/.*
+		 */
 		InvocationRole?: string | null;
 	}
 
 	/** Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. A server can have only one method of authentication. */
 	export interface IdentityProviderDetailsFormProperties {
+
+		/** Max length: 255 */
 		Url: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:.*role/.*
+		 */
 		InvocationRole: FormControl<string | null | undefined>,
 	}
 	export function CreateIdentityProviderDetailsFormGroup() {
 		return new FormGroup<IdentityProviderDetailsFormProperties>({
-			Url: new FormControl<string | null | undefined>(undefined),
-			InvocationRole: new FormControl<string | null | undefined>(undefined),
+			Url: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			InvocationRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -104,19 +176,39 @@ export namespace MyNS {
 
 	/** Creates a key-value pair for a specific resource. Tags are metadata that you can use to search for and group a resource for various purposes. You can apply tags to servers, users, and roles. A tag key can take more than one value. For example, to group servers for accounting purposes, you might create a tag called <code>Group</code> and assign the values <code>Research</code> and <code>Accounting</code> to that group. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 */
 		Value: string;
 	}
 
 	/** Creates a key-value pair for a specific resource. Tags are metadata that you can use to search for and group a resource for various purposes. You can apply tags to servers, users, and roles. A tag key can take more than one value. For example, to group servers for accounting purposes, you might create a tag called <code>Group</code> and assign the values <code>Research</code> and <code>Accounting</code> to that group. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
@@ -182,50 +274,154 @@ export namespace MyNS {
 	}
 
 	export interface CreateUserResponse {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: string;
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
+		 */
 		UserName: string;
 	}
 	export interface CreateUserResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
+		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateUserResponseFormGroup() {
 		return new FormGroup<CreateUserResponseFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined),
-			UserName: new FormControl<string | null | undefined>(undefined),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3)]),
 		});
 
 	}
 
 	export interface CreateUserRequest {
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^$|/.*
+		 */
 		HomeDirectory?: string | null;
 		HomeDirectoryType?: CreateUserRequestHomeDirectoryType | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		HomeDirectoryMappings?: Array<HomeDirectoryMapEntry>;
+
+		/** Max length: 2048 */
 		Policy?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:.*role/.*
+		 */
 		Role: string;
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: string;
+
+		/**
+		 * Max length: 2048
+		 * Pattern: ^ssh-rsa\s+[A-Za-z0-9+/]+[=]{0,3}(\s+.+)?\s*$
+		 */
 		SshPublicKeyBody?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Tags?: Array<Tag>;
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
+		 */
 		UserName: string;
 	}
 	export interface CreateUserRequestFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^$|/.*
+		 */
 		HomeDirectory: FormControl<string | null | undefined>,
 		HomeDirectoryType: FormControl<CreateUserRequestHomeDirectoryType | null | undefined>,
+
+		/** Max length: 2048 */
 		Policy: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:.*role/.*
+		 */
 		Role: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Pattern: ^ssh-rsa\s+[A-Za-z0-9+/]+[=]{0,3}(\s+.+)?\s*$
+		 */
 		SshPublicKeyBody: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
+		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateUserRequestFormGroup() {
 		return new FormGroup<CreateUserRequestFormProperties>({
-			HomeDirectory: new FormControl<string | null | undefined>(undefined),
+			HomeDirectory: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			HomeDirectoryType: new FormControl<CreateUserRequestHomeDirectoryType | null | undefined>(undefined),
-			Policy: new FormControl<string | null | undefined>(undefined),
-			Role: new FormControl<string | null | undefined>(undefined),
-			ServerId: new FormControl<string | null | undefined>(undefined),
-			SshPublicKeyBody: new FormControl<string | null | undefined>(undefined),
-			UserName: new FormControl<string | null | undefined>(undefined),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			Role: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
+			SshPublicKeyBody: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3)]),
 		});
 
 	}
@@ -235,19 +431,43 @@ export namespace MyNS {
 
 	/** Represents an object that contains entries and a targets for <code>HomeDirectoryMappings</code>. */
 	export interface HomeDirectoryMapEntry {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Pattern: ^/.*
+		 */
 		Entry: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Pattern: ^/.*
+		 */
 		Target: string;
 	}
 
 	/** Represents an object that contains entries and a targets for <code>HomeDirectoryMappings</code>. */
 	export interface HomeDirectoryMapEntryFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Pattern: ^/.*
+		 */
 		Entry: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Pattern: ^/.*
+		 */
 		Target: FormControl<string | null | undefined>,
 	}
 	export function CreateHomeDirectoryMapEntryFormGroup() {
 		return new FormGroup<HomeDirectoryMapEntryFormProperties>({
-			Entry: new FormControl<string | null | undefined>(undefined),
-			Target: new FormControl<string | null | undefined>(undefined),
+			Entry: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
+			Target: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
 		});
 
 	}
@@ -263,49 +483,133 @@ export namespace MyNS {
 	}
 
 	export interface DeleteServerRequest {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: string;
 	}
 	export interface DeleteServerRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteServerRequestFormGroup() {
 		return new FormGroup<DeleteServerRequestFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
 		});
 
 	}
 
 	export interface DeleteSshPublicKeyRequest {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: string;
+
+		/**
+		 * Required
+		 * Max length: 21
+		 * Min length: 21
+		 * Pattern: ^key-[0-9a-f]{17}$
+		 */
 		SshPublicKeyId: string;
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
+		 */
 		UserName: string;
 	}
 	export interface DeleteSshPublicKeyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 21
+		 * Min length: 21
+		 * Pattern: ^key-[0-9a-f]{17}$
+		 */
 		SshPublicKeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
+		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSshPublicKeyRequestFormGroup() {
 		return new FormGroup<DeleteSshPublicKeyRequestFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined),
-			SshPublicKeyId: new FormControl<string | null | undefined>(undefined),
-			UserName: new FormControl<string | null | undefined>(undefined),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
+			SshPublicKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(21)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3)]),
 		});
 
 	}
 
 	export interface DeleteUserRequest {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: string;
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
+		 */
 		UserName: string;
 	}
 	export interface DeleteUserRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
+		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteUserRequestFormGroup() {
 		return new FormGroup<DeleteUserRequestFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined),
-			UserName: new FormControl<string | null | undefined>(undefined),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3)]),
 		});
 
 	}
@@ -329,7 +633,16 @@ export namespace MyNS {
 
 	/** Describes the properties of a file transfer protocol-enabled server that was specified. Information returned includes the following: the server Amazon Resource Name (ARN), the certificate ARN (if the FTPS protocol was selected), the endpoint type and details, the authentication configuration and type, the logging role, the file transfer protocol or protocols, the server ID and state, and assigned tags or metadata. */
 	export interface DescribedServer {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 20
+		 * Pattern: arn:.*
+		 */
 		Arn: string;
+
+		/** Max length: 1600 */
 		Certificate?: string | null;
 
 		/** The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled server. With a VPC endpoint, you can restrict access to your server and resources only within your VPC. To control incoming internet traffic, invoke the <code>UpdateServer</code> API and attach an Elastic IP to your server's endpoint. */
@@ -342,26 +655,69 @@ export namespace MyNS {
 
 		/** Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. For <code>SERVICE_MANAGED</code> authentication, the Secure Shell (SSH) public keys are stored with a user on the server instance. For <code>API_GATEWAY</code> authentication, your custom authentication method is implemented by using an API call. The server can have only one method of authentication. */
 		IdentityProviderType?: CreateServerRequestIdentityProviderType | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:.*role/.*
+		 */
 		LoggingRole?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 3
+		 */
 		Protocols?: Array<Protocol>;
+
+		/**
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId?: string | null;
 
 		/** <p>Describes the condition of a file transfer protocol-enabled server with respect to its ability to perform file operations. There are six possible states: <code>OFFLINE</code>, <code>ONLINE</code>, <code>STARTING</code>, <code>STOPPING</code>, <code>START_FAILED</code>, and <code>STOP_FAILED</code>.</p> <p> <code>OFFLINE</code> indicates that the server exists, but that it is not available for file operations. <code>ONLINE</code> indicates that the server is available to perform file operations. <code>STARTING</code> indicates that the server's was instantiated, but the server is not yet available to perform file operations. Under normal conditions, it can take a couple of minutes for the server to be completely operational. Both <code>START_FAILED</code> and <code>STOP_FAILED</code> are error conditions.</p> */
 		State?: DescribedServerState | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Tags?: Array<Tag>;
 		UserCount?: number | null;
 	}
 
 	/** Describes the properties of a file transfer protocol-enabled server that was specified. Information returned includes the following: the server Amazon Resource Name (ARN), the certificate ARN (if the FTPS protocol was selected), the endpoint type and details, the authentication configuration and type, the logging role, the file transfer protocol or protocols, the server ID and state, and assigned tags or metadata. */
 	export interface DescribedServerFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 20
+		 * Pattern: arn:.*
+		 */
 		Arn: FormControl<string | null | undefined>,
+
+		/** Max length: 1600 */
 		Certificate: FormControl<string | null | undefined>,
 		EndpointType: FormControl<CreateServerRequestEndpointType | null | undefined>,
 		HostKeyFingerprint: FormControl<string | null | undefined>,
 
 		/** Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. For <code>SERVICE_MANAGED</code> authentication, the Secure Shell (SSH) public keys are stored with a user on the server instance. For <code>API_GATEWAY</code> authentication, your custom authentication method is implemented by using an API call. The server can have only one method of authentication. */
 		IdentityProviderType: FormControl<CreateServerRequestIdentityProviderType | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:.*role/.*
+		 */
 		LoggingRole: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: FormControl<string | null | undefined>,
 
 		/** <p>Describes the condition of a file transfer protocol-enabled server with respect to its ability to perform file operations. There are six possible states: <code>OFFLINE</code>, <code>ONLINE</code>, <code>STARTING</code>, <code>STOPPING</code>, <code>START_FAILED</code>, and <code>STOP_FAILED</code>.</p> <p> <code>OFFLINE</code> indicates that the server exists, but that it is not available for file operations. <code>ONLINE</code> indicates that the server is available to perform file operations. <code>STARTING</code> indicates that the server's was instantiated, but the server is not yet available to perform file operations. Under normal conditions, it can take a couple of minutes for the server to be completely operational. Both <code>START_FAILED</code> and <code>STOP_FAILED</code> are error conditions.</p> */
@@ -370,13 +726,13 @@ export namespace MyNS {
 	}
 	export function CreateDescribedServerFormGroup() {
 		return new FormGroup<DescribedServerFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
-			Certificate: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(20)]),
+			Certificate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600)]),
 			EndpointType: new FormControl<CreateServerRequestEndpointType | null | undefined>(undefined),
 			HostKeyFingerprint: new FormControl<string | null | undefined>(undefined),
 			IdentityProviderType: new FormControl<CreateServerRequestIdentityProviderType | null | undefined>(undefined),
-			LoggingRole: new FormControl<string | null | undefined>(undefined),
-			ServerId: new FormControl<string | null | undefined>(undefined),
+			LoggingRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(19), Validators.minLength(19)]),
 			State: new FormControl<DescribedServerState | null | undefined>(undefined),
 			UserCount: new FormControl<number | null | undefined>(undefined),
 		});
@@ -386,19 +742,40 @@ export namespace MyNS {
 	export enum DescribedServerState { OFFLINE = 0, ONLINE = 1, STARTING = 2, STOPPING = 3, START_FAILED = 4, STOP_FAILED = 5 }
 
 	export interface DescribeServerRequest {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: string;
 	}
 	export interface DescribeServerRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeServerRequestFormGroup() {
 		return new FormGroup<DescribeServerRequestFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
 		});
 
 	}
 
 	export interface DescribeUserResponse {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: string;
 
 		/**
@@ -408,11 +785,18 @@ export namespace MyNS {
 		User: DescribedUser;
 	}
 	export interface DescribeUserResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeUserResponseFormGroup() {
 		return new FormGroup<DescribeUserResponseFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
 		});
 
 	}
@@ -420,34 +804,98 @@ export namespace MyNS {
 
 	/** Returns properties of the user that you want to describe. */
 	export interface DescribedUser {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 20
+		 * Pattern: arn:.*
+		 */
 		Arn: string;
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^$|/.*
+		 */
 		HomeDirectory?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		HomeDirectoryMappings?: Array<HomeDirectoryMapEntry>;
 		HomeDirectoryType?: CreateUserRequestHomeDirectoryType | null;
+
+		/** Max length: 2048 */
 		Policy?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:.*role/.*
+		 */
 		Role?: string | null;
+
+		/** Maximum items: 5 */
 		SshPublicKeys?: Array<SshPublicKey>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Tags?: Array<Tag>;
+
+		/**
+		 * Max length: 32
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
+		 */
 		UserName?: string | null;
 	}
 
 	/** Returns properties of the user that you want to describe. */
 	export interface DescribedUserFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 20
+		 * Pattern: arn:.*
+		 */
 		Arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^$|/.*
+		 */
 		HomeDirectory: FormControl<string | null | undefined>,
 		HomeDirectoryType: FormControl<CreateUserRequestHomeDirectoryType | null | undefined>,
+
+		/** Max length: 2048 */
 		Policy: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:.*role/.*
+		 */
 		Role: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
+		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribedUserFormGroup() {
 		return new FormGroup<DescribedUserFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
-			HomeDirectory: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(20)]),
+			HomeDirectory: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			HomeDirectoryType: new FormControl<CreateUserRequestHomeDirectoryType | null | undefined>(undefined),
-			Policy: new FormControl<string | null | undefined>(undefined),
-			Role: new FormControl<string | null | undefined>(undefined),
-			UserName: new FormControl<string | null | undefined>(undefined),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			Role: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(3)]),
 		});
 
 	}
@@ -455,38 +903,96 @@ export namespace MyNS {
 
 	/** Provides information about the public Secure Shell (SSH) key that is associated with a user account for the specific file transfer protocol-enabled server (as identified by <code>ServerId</code>). The information returned includes the date the key was imported, the public key contents, and the public key ID. A user can store more than one SSH public key associated with their user name on a specific server. */
 	export interface SshPublicKey {
+
+		/** Required */
 		DateImported: Date;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Pattern: ^ssh-rsa\s+[A-Za-z0-9+/]+[=]{0,3}(\s+.+)?\s*$
+		 */
 		SshPublicKeyBody: string;
+
+		/**
+		 * Required
+		 * Max length: 21
+		 * Min length: 21
+		 * Pattern: ^key-[0-9a-f]{17}$
+		 */
 		SshPublicKeyId: string;
 	}
 
 	/** Provides information about the public Secure Shell (SSH) key that is associated with a user account for the specific file transfer protocol-enabled server (as identified by <code>ServerId</code>). The information returned includes the date the key was imported, the public key contents, and the public key ID. A user can store more than one SSH public key associated with their user name on a specific server. */
 	export interface SshPublicKeyFormProperties {
+
+		/** Required */
 		DateImported: FormControl<Date | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Pattern: ^ssh-rsa\s+[A-Za-z0-9+/]+[=]{0,3}(\s+.+)?\s*$
+		 */
 		SshPublicKeyBody: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 21
+		 * Min length: 21
+		 * Pattern: ^key-[0-9a-f]{17}$
+		 */
 		SshPublicKeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateSshPublicKeyFormGroup() {
 		return new FormGroup<SshPublicKeyFormProperties>({
-			DateImported: new FormControl<Date | null | undefined>(undefined),
-			SshPublicKeyBody: new FormControl<string | null | undefined>(undefined),
-			SshPublicKeyId: new FormControl<string | null | undefined>(undefined),
+			DateImported: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			SshPublicKeyBody: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048)]),
+			SshPublicKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(21)]),
 		});
 
 	}
 
 	export interface DescribeUserRequest {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: string;
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
+		 */
 		UserName: string;
 	}
 	export interface DescribeUserRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
+		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeUserRequestFormGroup() {
 		return new FormGroup<DescribeUserRequestFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined),
-			UserName: new FormControl<string | null | undefined>(undefined),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3)]),
 		});
 
 	}
@@ -494,55 +1000,149 @@ export namespace MyNS {
 
 	/** Identifies the user, the file transfer protocol-enabled server they belong to, and the identifier of the SSH public key associated with that user. A user can have more than one key on each server that they are associated with. */
 	export interface ImportSshPublicKeyResponse {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: string;
+
+		/**
+		 * Required
+		 * Max length: 21
+		 * Min length: 21
+		 * Pattern: ^key-[0-9a-f]{17}$
+		 */
 		SshPublicKeyId: string;
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
+		 */
 		UserName: string;
 	}
 
 	/** Identifies the user, the file transfer protocol-enabled server they belong to, and the identifier of the SSH public key associated with that user. A user can have more than one key on each server that they are associated with. */
 	export interface ImportSshPublicKeyResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 21
+		 * Min length: 21
+		 * Pattern: ^key-[0-9a-f]{17}$
+		 */
 		SshPublicKeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
+		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateImportSshPublicKeyResponseFormGroup() {
 		return new FormGroup<ImportSshPublicKeyResponseFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined),
-			SshPublicKeyId: new FormControl<string | null | undefined>(undefined),
-			UserName: new FormControl<string | null | undefined>(undefined),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
+			SshPublicKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(21)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3)]),
 		});
 
 	}
 
 	export interface ImportSshPublicKeyRequest {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Pattern: ^ssh-rsa\s+[A-Za-z0-9+/]+[=]{0,3}(\s+.+)?\s*$
+		 */
 		SshPublicKeyBody: string;
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
+		 */
 		UserName: string;
 	}
 	export interface ImportSshPublicKeyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Pattern: ^ssh-rsa\s+[A-Za-z0-9+/]+[=]{0,3}(\s+.+)?\s*$
+		 */
 		SshPublicKeyBody: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
+		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateImportSshPublicKeyRequestFormGroup() {
 		return new FormGroup<ImportSshPublicKeyRequestFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined),
-			SshPublicKeyBody: new FormControl<string | null | undefined>(undefined),
-			UserName: new FormControl<string | null | undefined>(undefined),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
+			SshPublicKeyBody: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3)]),
 		});
 
 	}
 
 	export interface ListServersResponse {
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/** Required */
 		Servers: Array<ListedServer>;
 	}
 	export interface ListServersResponseFormProperties {
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListServersResponseFormGroup() {
 		return new FormGroup<ListServersResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
 		});
 
 	}
@@ -550,12 +1150,31 @@ export namespace MyNS {
 
 	/** Returns properties of a file transfer protocol-enabled server that was specified. */
 	export interface ListedServer {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 20
+		 * Pattern: arn:.*
+		 */
 		Arn: string;
 
 		/** Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. For <code>SERVICE_MANAGED</code> authentication, the Secure Shell (SSH) public keys are stored with a user on the server instance. For <code>API_GATEWAY</code> authentication, your custom authentication method is implemented by using an API call. The server can have only one method of authentication. */
 		IdentityProviderType?: CreateServerRequestIdentityProviderType | null;
 		EndpointType?: CreateServerRequestEndpointType | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:.*role/.*
+		 */
 		LoggingRole?: string | null;
+
+		/**
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId?: string | null;
 
 		/** <p>Describes the condition of a file transfer protocol-enabled server with respect to its ability to perform file operations. There are six possible states: <code>OFFLINE</code>, <code>ONLINE</code>, <code>STARTING</code>, <code>STOPPING</code>, <code>START_FAILED</code>, and <code>STOP_FAILED</code>.</p> <p> <code>OFFLINE</code> indicates that the server exists, but that it is not available for file operations. <code>ONLINE</code> indicates that the server is available to perform file operations. <code>STARTING</code> indicates that the server's was instantiated, but the server is not yet available to perform file operations. Under normal conditions, it can take a couple of minutes for the server to be completely operational. Both <code>START_FAILED</code> and <code>STOP_FAILED</code> are error conditions.</p> */
@@ -565,12 +1184,31 @@ export namespace MyNS {
 
 	/** Returns properties of a file transfer protocol-enabled server that was specified. */
 	export interface ListedServerFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 20
+		 * Pattern: arn:.*
+		 */
 		Arn: FormControl<string | null | undefined>,
 
 		/** Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. For <code>SERVICE_MANAGED</code> authentication, the Secure Shell (SSH) public keys are stored with a user on the server instance. For <code>API_GATEWAY</code> authentication, your custom authentication method is implemented by using an API call. The server can have only one method of authentication. */
 		IdentityProviderType: FormControl<CreateServerRequestIdentityProviderType | null | undefined>,
 		EndpointType: FormControl<CreateServerRequestEndpointType | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:.*role/.*
+		 */
 		LoggingRole: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: FormControl<string | null | undefined>,
 
 		/** <p>Describes the condition of a file transfer protocol-enabled server with respect to its ability to perform file operations. There are six possible states: <code>OFFLINE</code>, <code>ONLINE</code>, <code>STARTING</code>, <code>STOPPING</code>, <code>START_FAILED</code>, and <code>STOP_FAILED</code>.</p> <p> <code>OFFLINE</code> indicates that the server exists, but that it is not available for file operations. <code>ONLINE</code> indicates that the server is available to perform file operations. <code>STARTING</code> indicates that the server's was instantiated, but the server is not yet available to perform file operations. Under normal conditions, it can take a couple of minutes for the server to be completely operational. Both <code>START_FAILED</code> and <code>STOP_FAILED</code> are error conditions.</p> */
@@ -579,11 +1217,11 @@ export namespace MyNS {
 	}
 	export function CreateListedServerFormGroup() {
 		return new FormGroup<ListedServerFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(20)]),
 			IdentityProviderType: new FormControl<CreateServerRequestIdentityProviderType | null | undefined>(undefined),
 			EndpointType: new FormControl<CreateServerRequestEndpointType | null | undefined>(undefined),
-			LoggingRole: new FormControl<string | null | undefined>(undefined),
-			ServerId: new FormControl<string | null | undefined>(undefined),
+			LoggingRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(19), Validators.minLength(19)]),
 			State: new FormControl<DescribedServerState | null | undefined>(undefined),
 			UserCount: new FormControl<number | null | undefined>(undefined),
 		});
@@ -591,17 +1229,37 @@ export namespace MyNS {
 	}
 
 	export interface ListServersRequest {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxResults?: number | null;
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListServersRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListServersRequestFormGroup() {
 		return new FormGroup<ListServersRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
 		});
 
 	}
@@ -617,54 +1275,141 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceResponse {
+
+		/**
+		 * Max length: 1600
+		 * Min length: 20
+		 * Pattern: arn:.*
+		 */
 		Arn?: string | null;
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Tags?: Array<Tag>;
 	}
 	export interface ListTagsForResourceResponseFormProperties {
+
+		/**
+		 * Max length: 1600
+		 * Min length: 20
+		 * Pattern: arn:.*
+		 */
 		Arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceResponseFormGroup() {
 		return new FormGroup<ListTagsForResourceResponseFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(20)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListTagsForResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 20
+		 * Pattern: arn:.*
+		 */
 		Arn: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxResults?: number | null;
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListTagsForResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 20
+		 * Pattern: arn:.*
+		 */
 		Arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(20)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListUsersResponse {
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: string;
+
+		/** Required */
 		Users: Array<ListedUser>;
 	}
 	export interface ListUsersResponseFormProperties {
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: FormControl<string | null | undefined>,
 	}
 	export function CreateListUsersResponseFormGroup() {
 		return new FormGroup<ListUsersResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			ServerId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
 		});
 
 	}
@@ -672,196 +1417,453 @@ export namespace MyNS {
 
 	/** Returns properties of the user that you specify. */
 	export interface ListedUser {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 20
+		 * Pattern: arn:.*
+		 */
 		Arn: string;
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^$|/.*
+		 */
 		HomeDirectory?: string | null;
 		HomeDirectoryType?: CreateUserRequestHomeDirectoryType | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:.*role/.*
+		 */
 		Role?: string | null;
 		SshPublicKeyCount?: number | null;
+
+		/**
+		 * Max length: 32
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
+		 */
 		UserName?: string | null;
 	}
 
 	/** Returns properties of the user that you specify. */
 	export interface ListedUserFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 20
+		 * Pattern: arn:.*
+		 */
 		Arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^$|/.*
+		 */
 		HomeDirectory: FormControl<string | null | undefined>,
 		HomeDirectoryType: FormControl<CreateUserRequestHomeDirectoryType | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:.*role/.*
+		 */
 		Role: FormControl<string | null | undefined>,
 		SshPublicKeyCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
+		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateListedUserFormGroup() {
 		return new FormGroup<ListedUserFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
-			HomeDirectory: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(20)]),
+			HomeDirectory: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			HomeDirectoryType: new FormControl<CreateUserRequestHomeDirectoryType | null | undefined>(undefined),
-			Role: new FormControl<string | null | undefined>(undefined),
+			Role: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 			SshPublicKeyCount: new FormControl<number | null | undefined>(undefined),
-			UserName: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(3)]),
 		});
 
 	}
 
 	export interface ListUsersRequest {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxResults?: number | null;
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: string;
 	}
 	export interface ListUsersRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 6144
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: FormControl<string | null | undefined>,
 	}
 	export function CreateListUsersRequestFormGroup() {
 		return new FormGroup<ListUsersRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			ServerId: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
 		});
 
 	}
 
 	export interface StartServerRequest {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: string;
 	}
 	export interface StartServerRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartServerRequestFormGroup() {
 		return new FormGroup<StartServerRequestFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
 		});
 
 	}
 
 	export interface StopServerRequest {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: string;
 	}
 	export interface StopServerRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: FormControl<string | null | undefined>,
 	}
 	export function CreateStopServerRequestFormGroup() {
 		return new FormGroup<StopServerRequestFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
 		});
 
 	}
 
 	export interface TagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 20
+		 * Pattern: arn:.*
+		 */
 		Arn: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 20
+		 * Pattern: arn:.*
+		 */
 		Arn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface TestIdentityProviderResponse {
 		Response?: string | null;
+
+		/** Required */
 		StatusCode: number;
 		Message?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		Url: string;
 	}
 	export interface TestIdentityProviderResponseFormProperties {
 		Response: FormControl<string | null | undefined>,
+
+		/** Required */
 		StatusCode: FormControl<number | null | undefined>,
 		Message: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 */
 		Url: FormControl<string | null | undefined>,
 	}
 	export function CreateTestIdentityProviderResponseFormGroup() {
 		return new FormGroup<TestIdentityProviderResponseFormProperties>({
 			Response: new FormControl<string | null | undefined>(undefined),
-			StatusCode: new FormControl<number | null | undefined>(undefined),
+			StatusCode: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			Message: new FormControl<string | null | undefined>(undefined),
-			Url: new FormControl<string | null | undefined>(undefined),
+			Url: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 		});
 
 	}
 
 	export interface TestIdentityProviderRequest {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: string;
 		ServerProtocol?: Protocol | null;
+
+		/**
+		 * Max length: 32
+		 * Pattern: ^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$
+		 */
 		SourceIp?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
+		 */
 		UserName: string;
+
+		/** Max length: 2048 */
 		UserPassword?: string | null;
 	}
 	export interface TestIdentityProviderRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: FormControl<string | null | undefined>,
 		ServerProtocol: FormControl<Protocol | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Pattern: ^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$
+		 */
 		SourceIp: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/** Max length: 2048 */
 		UserPassword: FormControl<string | null | undefined>,
 	}
 	export function CreateTestIdentityProviderRequestFormGroup() {
 		return new FormGroup<TestIdentityProviderRequestFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
 			ServerProtocol: new FormControl<Protocol | null | undefined>(undefined),
-			SourceIp: new FormControl<string | null | undefined>(undefined),
-			UserName: new FormControl<string | null | undefined>(undefined),
-			UserPassword: new FormControl<string | null | undefined>(undefined),
+			SourceIp: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3)]),
+			UserPassword: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 		});
 
 	}
 
 	export interface UntagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 20
+		 * Pattern: arn:.*
+		 */
 		Arn: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		TagKeys: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 20
+		 * Pattern: arn:.*
+		 */
 		Arn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface UpdateServerResponse {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: string;
 	}
 	export interface UpdateServerResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateServerResponseFormGroup() {
 		return new FormGroup<UpdateServerResponseFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
 		});
 
 	}
 
 	export interface UpdateServerRequest {
+
+		/** Max length: 1600 */
 		Certificate?: string | null;
 
 		/** The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled server. With a VPC endpoint, you can restrict access to your server and resources only within your VPC. To control incoming internet traffic, invoke the <code>UpdateServer</code> API and attach an Elastic IP to your server's endpoint. */
 		EndpointDetails?: EndpointDetails;
 		EndpointType?: CreateServerRequestEndpointType | null;
+
+		/** Max length: 4096 */
 		HostKey?: string | null;
 
 		/** Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. A server can have only one method of authentication. */
 		IdentityProviderDetails?: IdentityProviderDetails;
+
+		/**
+		 * Max length: 2048
+		 * Pattern: ^$|arn:.*role/.*
+		 */
 		LoggingRole?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 3
+		 */
 		Protocols?: Array<Protocol>;
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: string;
 	}
 	export interface UpdateServerRequestFormProperties {
+
+		/** Max length: 1600 */
 		Certificate: FormControl<string | null | undefined>,
 		EndpointType: FormControl<CreateServerRequestEndpointType | null | undefined>,
+
+		/** Max length: 4096 */
 		HostKey: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Pattern: ^$|arn:.*role/.*
+		 */
 		LoggingRole: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateServerRequestFormGroup() {
 		return new FormGroup<UpdateServerRequestFormProperties>({
-			Certificate: new FormControl<string | null | undefined>(undefined),
+			Certificate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600)]),
 			EndpointType: new FormControl<CreateServerRequestEndpointType | null | undefined>(undefined),
-			HostKey: new FormControl<string | null | undefined>(undefined),
-			LoggingRole: new FormControl<string | null | undefined>(undefined),
-			ServerId: new FormControl<string | null | undefined>(undefined),
+			HostKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
+			LoggingRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
 		});
 
 	}
@@ -879,48 +1881,135 @@ export namespace MyNS {
 
 	/**  <code>UpdateUserResponse</code> returns the user name and file transfer protocol-enabled server identifier for the request to update a user's properties. */
 	export interface UpdateUserResponse {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: string;
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
+		 */
 		UserName: string;
 	}
 
 	/**  <code>UpdateUserResponse</code> returns the user name and file transfer protocol-enabled server identifier for the request to update a user's properties. */
 	export interface UpdateUserResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
+		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateUserResponseFormGroup() {
 		return new FormGroup<UpdateUserResponseFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined),
-			UserName: new FormControl<string | null | undefined>(undefined),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3)]),
 		});
 
 	}
 
 	export interface UpdateUserRequest {
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^$|/.*
+		 */
 		HomeDirectory?: string | null;
 		HomeDirectoryType?: CreateUserRequestHomeDirectoryType | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		HomeDirectoryMappings?: Array<HomeDirectoryMapEntry>;
+
+		/** Max length: 2048 */
 		Policy?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:.*role/.*
+		 */
 		Role?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: string;
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
+		 */
 		UserName: string;
 	}
 	export interface UpdateUserRequestFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^$|/.*
+		 */
 		HomeDirectory: FormControl<string | null | undefined>,
 		HomeDirectoryType: FormControl<CreateUserRequestHomeDirectoryType | null | undefined>,
+
+		/** Max length: 2048 */
 		Policy: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 * Pattern: arn:.*role/.*
+		 */
 		Role: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 19
+		 * Min length: 19
+		 * Pattern: ^s-([0-9a-f]{17})$
+		 */
 		ServerId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
+		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateUserRequestFormGroup() {
 		return new FormGroup<UpdateUserRequestFormProperties>({
-			HomeDirectory: new FormControl<string | null | undefined>(undefined),
+			HomeDirectory: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			HomeDirectoryType: new FormControl<CreateUserRequestHomeDirectoryType | null | undefined>(undefined),
-			Policy: new FormControl<string | null | undefined>(undefined),
-			Role: new FormControl<string | null | undefined>(undefined),
-			ServerId: new FormControl<string | null | undefined>(undefined),
-			UserName: new FormControl<string | null | undefined>(undefined),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			Role: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3)]),
 		});
 
 	}

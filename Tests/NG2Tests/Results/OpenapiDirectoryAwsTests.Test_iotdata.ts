@@ -6,16 +6,20 @@ export namespace MyNS {
 
 	/** The output from the DeleteThingShadow operation. */
 	export interface DeleteThingShadowResponse {
+
+		/** Required */
 		payload: string;
 	}
 
 	/** The output from the DeleteThingShadow operation. */
 	export interface DeleteThingShadowResponseFormProperties {
+
+		/** Required */
 		payload: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteThingShadowResponseFormGroup() {
 		return new FormGroup<DeleteThingShadowResponseFormProperties>({
-			payload: new FormControl<string | null | undefined>(undefined),
+			payload: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -272,16 +276,20 @@ export namespace MyNS {
 
 	/** The input for the UpdateThingShadow operation. */
 	export interface UpdateThingShadowRequest {
+
+		/** Required */
 		payload: string;
 	}
 
 	/** The input for the UpdateThingShadow operation. */
 	export interface UpdateThingShadowRequestFormProperties {
+
+		/** Required */
 		payload: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateThingShadowRequestFormGroup() {
 		return new FormGroup<UpdateThingShadowRequestFormProperties>({
-			payload: new FormControl<string | null | undefined>(undefined),
+			payload: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -351,7 +359,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateThingShadowPostBodyFormGroup() {
 		return new FormGroup<UpdateThingShadowPostBodyFormProperties>({
-			payload: new FormControl<string | null | undefined>(undefined),
+			payload: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

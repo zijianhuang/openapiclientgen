@@ -8,7 +8,7 @@ namespace SwagTests
 	{
 		public ComponentsToTsTypesFormGroupTests()
 		{
-			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2FormGroupClientApiGen));
+			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2FormGroupClientApiGen), TestHelpers.TestingSettings.Instance);
 		}
 
 		readonly TsTestHelper helper;

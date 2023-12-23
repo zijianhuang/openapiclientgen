@@ -885,37 +885,49 @@ export namespace MyNS {
 	}
 
 	export interface AcceptResourceShareInvitationRequest {
+
+		/** Required */
 		resourceShareInvitationArn: string;
 		clientToken?: string | null;
 	}
 	export interface AcceptResourceShareInvitationRequestFormProperties {
+
+		/** Required */
 		resourceShareInvitationArn: FormControl<string | null | undefined>,
 		clientToken: FormControl<string | null | undefined>,
 	}
 	export function CreateAcceptResourceShareInvitationRequestFormGroup() {
 		return new FormGroup<AcceptResourceShareInvitationRequestFormProperties>({
-			resourceShareInvitationArn: new FormControl<string | null | undefined>(undefined),
+			resourceShareInvitationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientToken: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface AssociateResourceSharePermissionRequest {
+
+		/** Required */
 		resourceShareArn: string;
+
+		/** Required */
 		permissionArn: string;
 		replace?: boolean | null;
 		clientToken?: string | null;
 	}
 	export interface AssociateResourceSharePermissionRequestFormProperties {
+
+		/** Required */
 		resourceShareArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		permissionArn: FormControl<string | null | undefined>,
 		replace: FormControl<boolean | null | undefined>,
 		clientToken: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateResourceSharePermissionRequestFormGroup() {
 		return new FormGroup<AssociateResourceSharePermissionRequestFormProperties>({
-			resourceShareArn: new FormControl<string | null | undefined>(undefined),
-			permissionArn: new FormControl<string | null | undefined>(undefined),
+			resourceShareArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			permissionArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			replace: new FormControl<boolean | null | undefined>(undefined),
 			clientToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -923,24 +935,30 @@ export namespace MyNS {
 	}
 
 	export interface AssociateResourceShareRequest {
+
+		/** Required */
 		resourceShareArn: string;
 		resourceArns?: Array<string>;
 		principals?: Array<string>;
 		clientToken?: string | null;
 	}
 	export interface AssociateResourceShareRequestFormProperties {
+
+		/** Required */
 		resourceShareArn: FormControl<string | null | undefined>,
 		clientToken: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateResourceShareRequestFormGroup() {
 		return new FormGroup<AssociateResourceShareRequestFormProperties>({
-			resourceShareArn: new FormControl<string | null | undefined>(undefined),
+			resourceShareArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientToken: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CreateResourceShareRequest {
+
+		/** Required */
 		name: string;
 		resourceArns?: Array<string>;
 		principals?: Array<string>;
@@ -950,13 +968,15 @@ export namespace MyNS {
 		permissionArns?: Array<string>;
 	}
 	export interface CreateResourceShareRequestFormProperties {
+
+		/** Required */
 		name: FormControl<string | null | undefined>,
 		allowExternalPrincipals: FormControl<boolean | null | undefined>,
 		clientToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateResourceShareRequestFormGroup() {
 		return new FormGroup<CreateResourceShareRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			allowExternalPrincipals: new FormControl<boolean | null | undefined>(undefined),
 			clientToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -974,37 +994,49 @@ export namespace MyNS {
 	}
 
 	export interface DisassociateResourceSharePermissionRequest {
+
+		/** Required */
 		resourceShareArn: string;
+
+		/** Required */
 		permissionArn: string;
 		clientToken?: string | null;
 	}
 	export interface DisassociateResourceSharePermissionRequestFormProperties {
+
+		/** Required */
 		resourceShareArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		permissionArn: FormControl<string | null | undefined>,
 		clientToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDisassociateResourceSharePermissionRequestFormGroup() {
 		return new FormGroup<DisassociateResourceSharePermissionRequestFormProperties>({
-			resourceShareArn: new FormControl<string | null | undefined>(undefined),
-			permissionArn: new FormControl<string | null | undefined>(undefined),
+			resourceShareArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			permissionArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientToken: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface DisassociateResourceShareRequest {
+
+		/** Required */
 		resourceShareArn: string;
 		resourceArns?: Array<string>;
 		principals?: Array<string>;
 		clientToken?: string | null;
 	}
 	export interface DisassociateResourceShareRequestFormProperties {
+
+		/** Required */
 		resourceShareArn: FormControl<string | null | undefined>,
 		clientToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDisassociateResourceShareRequestFormGroup() {
 		return new FormGroup<DisassociateResourceShareRequestFormProperties>({
-			resourceShareArn: new FormControl<string | null | undefined>(undefined),
+			resourceShareArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1021,37 +1053,53 @@ export namespace MyNS {
 	}
 
 	export interface GetPermissionRequest {
+
+		/** Required */
 		permissionArn: string;
 		permissionVersion?: number | null;
 	}
 	export interface GetPermissionRequestFormProperties {
+
+		/** Required */
 		permissionArn: FormControl<string | null | undefined>,
 		permissionVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateGetPermissionRequestFormGroup() {
 		return new FormGroup<GetPermissionRequestFormProperties>({
-			permissionArn: new FormControl<string | null | undefined>(undefined),
+			permissionArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			permissionVersion: new FormControl<number | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetResourcePoliciesRequest {
+
+		/** Required */
 		resourceArns: Array<string>;
 		principal?: string | null;
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		maxResults?: number | null;
 	}
 	export interface GetResourcePoliciesRequestFormProperties {
 		principal: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateGetResourcePoliciesRequestFormGroup() {
 		return new FormGroup<GetResourcePoliciesRequestFormProperties>({
 			principal: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(500)]),
 		});
 
 	}
@@ -1059,30 +1107,44 @@ export namespace MyNS {
 	export enum ResourceShareAssociationType { PRINCIPAL = 0, RESOURCE = 1 }
 
 	export interface GetResourceShareAssociationsRequest {
+
+		/** Required */
 		associationType: ResourceShareAssociationAssociationType;
 		resourceShareArns?: Array<string>;
 		resourceArn?: string | null;
 		principal?: string | null;
 		associationStatus?: ResourceShareAssociationStatus | null;
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		maxResults?: number | null;
 	}
 	export interface GetResourceShareAssociationsRequestFormProperties {
+
+		/** Required */
 		associationType: FormControl<ResourceShareAssociationAssociationType | null | undefined>,
 		resourceArn: FormControl<string | null | undefined>,
 		principal: FormControl<string | null | undefined>,
 		associationStatus: FormControl<ResourceShareAssociationStatus | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateGetResourceShareAssociationsRequestFormGroup() {
 		return new FormGroup<GetResourceShareAssociationsRequestFormProperties>({
-			associationType: new FormControl<ResourceShareAssociationAssociationType | null | undefined>(undefined),
+			associationType: new FormControl<ResourceShareAssociationAssociationType | null | undefined>(undefined, [Validators.required]),
 			resourceArn: new FormControl<string | null | undefined>(undefined),
 			principal: new FormControl<string | null | undefined>(undefined),
 			associationStatus: new FormControl<ResourceShareAssociationStatus | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(500)]),
 		});
 
 	}
@@ -1091,16 +1153,26 @@ export namespace MyNS {
 		resourceShareInvitationArns?: Array<string>;
 		resourceShareArns?: Array<string>;
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		maxResults?: number | null;
 	}
 	export interface GetResourceShareInvitationsRequestFormProperties {
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateGetResourceShareInvitationsRequestFormGroup() {
 		return new FormGroup<GetResourceShareInvitationsRequestFormProperties>({
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(500)]),
 		});
 
 	}
@@ -1110,26 +1182,40 @@ export namespace MyNS {
 	export interface GetResourceSharesRequest {
 		resourceShareArns?: Array<string>;
 		resourceShareStatus?: ResourceShareStatus | null;
+
+		/** Required */
 		resourceOwner: GetResourceSharesRequestResourceOwner;
 		name?: string | null;
 		tagFilters?: Array<TagFilter>;
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		maxResults?: number | null;
 	}
 	export interface GetResourceSharesRequestFormProperties {
 		resourceShareStatus: FormControl<ResourceShareStatus | null | undefined>,
+
+		/** Required */
 		resourceOwner: FormControl<GetResourceSharesRequestResourceOwner | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateGetResourceSharesRequestFormGroup() {
 		return new FormGroup<GetResourceSharesRequestFormProperties>({
 			resourceShareStatus: new FormControl<ResourceShareStatus | null | undefined>(undefined),
-			resourceOwner: new FormControl<GetResourceSharesRequestResourceOwner | null | undefined>(undefined),
+			resourceOwner: new FormControl<GetResourceSharesRequestResourceOwner | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(500)]),
 		});
 
 	}
@@ -1137,20 +1223,34 @@ export namespace MyNS {
 	export enum GetResourceSharesRequestResourceOwner { SELF = 0, OTHER_ACCOUNTS = 1 }
 
 	export interface ListPendingInvitationResourcesRequest {
+
+		/** Required */
 		resourceShareInvitationArn: string;
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListPendingInvitationResourcesRequestFormProperties {
+
+		/** Required */
 		resourceShareInvitationArn: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListPendingInvitationResourcesRequestFormGroup() {
 		return new FormGroup<ListPendingInvitationResourcesRequestFormProperties>({
-			resourceShareInvitationArn: new FormControl<string | null | undefined>(undefined),
+			resourceShareInvitationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(500)]),
 		});
 
 	}
@@ -1158,45 +1258,69 @@ export namespace MyNS {
 	export interface ListPermissionsRequest {
 		resourceType?: string | null;
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListPermissionsRequestFormProperties {
 		resourceType: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListPermissionsRequestFormGroup() {
 		return new FormGroup<ListPermissionsRequestFormProperties>({
 			resourceType: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(500)]),
 		});
 
 	}
 
 	export interface ListPrincipalsRequest {
+
+		/** Required */
 		resourceOwner: ListPrincipalsRequestResourceOwner;
 		resourceArn?: string | null;
 		principals?: Array<string>;
 		resourceType?: string | null;
 		resourceShareArns?: Array<string>;
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListPrincipalsRequestFormProperties {
+
+		/** Required */
 		resourceOwner: FormControl<ListPrincipalsRequestResourceOwner | null | undefined>,
 		resourceArn: FormControl<string | null | undefined>,
 		resourceType: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListPrincipalsRequestFormGroup() {
 		return new FormGroup<ListPrincipalsRequestFormProperties>({
-			resourceOwner: new FormControl<ListPrincipalsRequestResourceOwner | null | undefined>(undefined),
+			resourceOwner: new FormControl<ListPrincipalsRequestResourceOwner | null | undefined>(undefined, [Validators.required]),
 			resourceArn: new FormControl<string | null | undefined>(undefined),
 			resourceType: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(500)]),
 		});
 
 	}
@@ -1204,63 +1328,101 @@ export namespace MyNS {
 	export enum ListPrincipalsRequestResourceOwner { SELF = 0, OTHER_ACCOUNTS = 1 }
 
 	export interface ListResourceSharePermissionsRequest {
+
+		/** Required */
 		resourceShareArn: string;
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListResourceSharePermissionsRequestFormProperties {
+
+		/** Required */
 		resourceShareArn: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListResourceSharePermissionsRequestFormGroup() {
 		return new FormGroup<ListResourceSharePermissionsRequestFormProperties>({
-			resourceShareArn: new FormControl<string | null | undefined>(undefined),
+			resourceShareArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(500)]),
 		});
 
 	}
 
 	export interface ListResourceTypesRequest {
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListResourceTypesRequestFormProperties {
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListResourceTypesRequestFormGroup() {
 		return new FormGroup<ListResourceTypesRequestFormProperties>({
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(500)]),
 		});
 
 	}
 
 	export interface ListResourcesRequest {
+
+		/** Required */
 		resourceOwner: ListResourcesRequestResourceOwner;
 		principal?: string | null;
 		resourceType?: string | null;
 		resourceArns?: Array<string>;
 		resourceShareArns?: Array<string>;
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListResourcesRequestFormProperties {
+
+		/** Required */
 		resourceOwner: FormControl<ListResourcesRequestResourceOwner | null | undefined>,
 		principal: FormControl<string | null | undefined>,
 		resourceType: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListResourcesRequestFormGroup() {
 		return new FormGroup<ListResourcesRequestFormProperties>({
-			resourceOwner: new FormControl<ListResourcesRequestResourceOwner | null | undefined>(undefined),
+			resourceOwner: new FormControl<ListResourcesRequestResourceOwner | null | undefined>(undefined, [Validators.required]),
 			principal: new FormControl<string | null | undefined>(undefined),
 			resourceType: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(500)]),
 		});
 
 	}
@@ -1278,56 +1440,76 @@ export namespace MyNS {
 	}
 
 	export interface RejectResourceShareInvitationRequest {
+
+		/** Required */
 		resourceShareInvitationArn: string;
 		clientToken?: string | null;
 	}
 	export interface RejectResourceShareInvitationRequestFormProperties {
+
+		/** Required */
 		resourceShareInvitationArn: FormControl<string | null | undefined>,
 		clientToken: FormControl<string | null | undefined>,
 	}
 	export function CreateRejectResourceShareInvitationRequestFormGroup() {
 		return new FormGroup<RejectResourceShareInvitationRequestFormProperties>({
-			resourceShareInvitationArn: new FormControl<string | null | undefined>(undefined),
+			resourceShareInvitationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientToken: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface TagResourceRequest {
+
+		/** Required */
 		resourceShareArn: string;
+
+		/** Required */
 		tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/** Required */
 		resourceShareArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			resourceShareArn: new FormControl<string | null | undefined>(undefined),
+			resourceShareArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface UntagResourceRequest {
+
+		/** Required */
 		resourceShareArn: string;
+
+		/** Required */
 		tagKeys: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/** Required */
 		resourceShareArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			resourceShareArn: new FormControl<string | null | undefined>(undefined),
+			resourceShareArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface UpdateResourceShareRequest {
+
+		/** Required */
 		resourceShareArn: string;
 		name?: string | null;
 		allowExternalPrincipals?: boolean | null;
 		clientToken?: string | null;
 	}
 	export interface UpdateResourceShareRequestFormProperties {
+
+		/** Required */
 		resourceShareArn: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		allowExternalPrincipals: FormControl<boolean | null | undefined>,
@@ -1335,7 +1517,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateResourceShareRequestFormGroup() {
 		return new FormGroup<UpdateResourceShareRequestFormProperties>({
-			resourceShareArn: new FormControl<string | null | undefined>(undefined),
+			resourceShareArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined),
 			allowExternalPrincipals: new FormControl<boolean | null | undefined>(undefined),
 			clientToken: new FormControl<string | null | undefined>(undefined),
@@ -1606,7 +1788,7 @@ export namespace MyNS {
 	}
 	export function CreateAcceptResourceShareInvitationPostBodyFormGroup() {
 		return new FormGroup<AcceptResourceShareInvitationPostBodyFormProperties>({
-			resourceShareInvitationArn: new FormControl<string | null | undefined>(undefined),
+			resourceShareInvitationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1642,7 +1824,7 @@ export namespace MyNS {
 	}
 	export function CreateAssociateResourceSharePostBodyFormGroup() {
 		return new FormGroup<AssociateResourceSharePostBodyFormProperties>({
-			resourceShareArn: new FormControl<string | null | undefined>(undefined),
+			resourceShareArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1690,8 +1872,8 @@ export namespace MyNS {
 	}
 	export function CreateAssociateResourceSharePermissionPostBodyFormGroup() {
 		return new FormGroup<AssociateResourceSharePermissionPostBodyFormProperties>({
-			resourceShareArn: new FormControl<string | null | undefined>(undefined),
-			permissionArn: new FormControl<string | null | undefined>(undefined),
+			resourceShareArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			permissionArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			replace: new FormControl<boolean | null | undefined>(undefined),
 			clientToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1740,7 +1922,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateResourceSharePostBodyFormGroup() {
 		return new FormGroup<CreateResourceSharePostBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			allowExternalPrincipals: new FormControl<boolean | null | undefined>(undefined),
 			clientToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1777,7 +1959,7 @@ export namespace MyNS {
 	}
 	export function CreateDisassociateResourceSharePostBodyFormGroup() {
 		return new FormGroup<DisassociateResourceSharePostBodyFormProperties>({
-			resourceShareArn: new FormControl<string | null | undefined>(undefined),
+			resourceShareArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1819,8 +2001,8 @@ export namespace MyNS {
 	}
 	export function CreateDisassociateResourceSharePermissionPostBodyFormGroup() {
 		return new FormGroup<DisassociateResourceSharePermissionPostBodyFormProperties>({
-			resourceShareArn: new FormControl<string | null | undefined>(undefined),
-			permissionArn: new FormControl<string | null | undefined>(undefined),
+			resourceShareArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			permissionArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1850,7 +2032,7 @@ export namespace MyNS {
 	}
 	export function CreateGetPermissionPostBodyFormGroup() {
 		return new FormGroup<GetPermissionPostBodyFormProperties>({
-			permissionArn: new FormControl<string | null | undefined>(undefined),
+			permissionArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			permissionVersion: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1896,7 +2078,7 @@ export namespace MyNS {
 		return new FormGroup<GetResourcePoliciesPostBodyFormProperties>({
 			principal: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(500)]),
 		});
 
 	}
@@ -1960,12 +2142,12 @@ export namespace MyNS {
 	}
 	export function CreateGetResourceShareAssociationsPostBodyFormGroup() {
 		return new FormGroup<GetResourceShareAssociationsPostBodyFormProperties>({
-			associationType: new FormControl<ResourceShareAssociationAssociationType | null | undefined>(undefined),
+			associationType: new FormControl<ResourceShareAssociationAssociationType | null | undefined>(undefined, [Validators.required]),
 			resourceArn: new FormControl<string | null | undefined>(undefined),
 			principal: new FormControl<string | null | undefined>(undefined),
 			associationStatus: new FormControl<ResourceShareAssociationStatus | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(500)]),
 		});
 
 	}
@@ -2003,7 +2185,7 @@ export namespace MyNS {
 	export function CreateGetResourceShareInvitationsPostBodyFormGroup() {
 		return new FormGroup<GetResourceShareInvitationsPostBodyFormProperties>({
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(500)]),
 		});
 
 	}
@@ -2065,10 +2247,10 @@ export namespace MyNS {
 	export function CreateGetResourceSharesPostBodyFormGroup() {
 		return new FormGroup<GetResourceSharesPostBodyFormProperties>({
 			resourceShareStatus: new FormControl<ResourceShareStatus | null | undefined>(undefined),
-			resourceOwner: new FormControl<GetResourceSharesPostBodyResourceOwner | null | undefined>(undefined),
+			resourceOwner: new FormControl<GetResourceSharesPostBodyResourceOwner | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(500)]),
 		});
 
 	}
@@ -2113,9 +2295,9 @@ export namespace MyNS {
 	}
 	export function CreateListPendingInvitationResourcesPostBodyFormGroup() {
 		return new FormGroup<ListPendingInvitationResourcesPostBodyFormProperties>({
-			resourceShareInvitationArn: new FormControl<string | null | undefined>(undefined),
+			resourceShareInvitationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(500)]),
 		});
 
 	}
@@ -2154,7 +2336,7 @@ export namespace MyNS {
 		return new FormGroup<ListPermissionsPostBodyFormProperties>({
 			resourceType: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(500)]),
 		});
 
 	}
@@ -2215,11 +2397,11 @@ export namespace MyNS {
 	}
 	export function CreateListPrincipalsPostBodyFormGroup() {
 		return new FormGroup<ListPrincipalsPostBodyFormProperties>({
-			resourceOwner: new FormControl<ListPrincipalsPostBodyResourceOwner | null | undefined>(undefined),
+			resourceOwner: new FormControl<ListPrincipalsPostBodyResourceOwner | null | undefined>(undefined, [Validators.required]),
 			resourceArn: new FormControl<string | null | undefined>(undefined),
 			resourceType: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(500)]),
 		});
 
 	}
@@ -2264,9 +2446,9 @@ export namespace MyNS {
 	}
 	export function CreateListResourceSharePermissionsPostBodyFormGroup() {
 		return new FormGroup<ListResourceSharePermissionsPostBodyFormProperties>({
-			resourceShareArn: new FormControl<string | null | undefined>(undefined),
+			resourceShareArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(500)]),
 		});
 
 	}
@@ -2298,7 +2480,7 @@ export namespace MyNS {
 	export function CreateListResourceTypesPostBodyFormGroup() {
 		return new FormGroup<ListResourceTypesPostBodyFormProperties>({
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(500)]),
 		});
 
 	}
@@ -2359,11 +2541,11 @@ export namespace MyNS {
 	}
 	export function CreateListResourcesPostBodyFormGroup() {
 		return new FormGroup<ListResourcesPostBodyFormProperties>({
-			resourceOwner: new FormControl<ListResourcesPostBodyResourceOwner | null | undefined>(undefined),
+			resourceOwner: new FormControl<ListResourcesPostBodyResourceOwner | null | undefined>(undefined, [Validators.required]),
 			principal: new FormControl<string | null | undefined>(undefined),
 			resourceType: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(500)]),
 		});
 
 	}
@@ -2394,7 +2576,7 @@ export namespace MyNS {
 	}
 	export function CreateRejectResourceShareInvitationPostBodyFormGroup() {
 		return new FormGroup<RejectResourceShareInvitationPostBodyFormProperties>({
-			resourceShareInvitationArn: new FormControl<string | null | undefined>(undefined),
+			resourceShareInvitationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2424,7 +2606,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			resourceShareArn: new FormControl<string | null | undefined>(undefined),
+			resourceShareArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2453,7 +2635,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourcePostBodyFormGroup() {
 		return new FormGroup<UntagResourcePostBodyFormProperties>({
-			resourceShareArn: new FormControl<string | null | undefined>(undefined),
+			resourceShareArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2494,7 +2676,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateResourceSharePostBodyFormGroup() {
 		return new FormGroup<UpdateResourceSharePostBodyFormProperties>({
-			resourceShareArn: new FormControl<string | null | undefined>(undefined),
+			resourceShareArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined),
 			allowExternalPrincipals: new FormControl<boolean | null | undefined>(undefined),
 			clientToken: new FormControl<string | null | undefined>(undefined),

@@ -107,6 +107,8 @@ export namespace MyNS {
 
 	/** If the phone number action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages. */
 	export interface PhoneNumberError {
+
+		/** Pattern: .*\S.* */
 		PhoneNumberId?: string | null;
 		ErrorCode?: PhoneNumberErrorErrorCode | null;
 		ErrorMessage?: string | null;
@@ -114,6 +116,8 @@ export namespace MyNS {
 
 	/** If the phone number action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages. */
 	export interface PhoneNumberErrorFormProperties {
+
+		/** Pattern: .*\S.* */
 		PhoneNumberId: FormControl<string | null | undefined>,
 		ErrorCode: FormControl<PhoneNumberErrorErrorCode | null | undefined>,
 		ErrorMessage: FormControl<string | null | undefined>,
@@ -153,11 +157,15 @@ export namespace MyNS {
 
 	/** An Active Directory (AD) group whose members are granted permission to act as delegates. */
 	export interface SigninDelegateGroup {
+
+		/** Pattern: .*\S.* */
 		GroupName?: string | null;
 	}
 
 	/** An Active Directory (AD) group whose members are granted permission to act as delegates. */
 	export interface SigninDelegateGroupFormProperties {
+
+		/** Pattern: .*\S.* */
 		GroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateSigninDelegateGroupFormGroup() {
@@ -182,22 +190,46 @@ export namespace MyNS {
 
 	/** <p>An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends or when <a>DeleteAttendee</a> is called. After that, the attendee is unable to join the meeting.</p> <p>We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.</p> */
 	export interface Attendee {
+
+		/**
+		 * Max length: 64
+		 * Min length: 2
+		 */
 		ExternalUserId?: string | null;
+
+		/** Pattern: [a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12} */
 		AttendeeId?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 2
+		 */
 		JoinToken?: string | null;
 	}
 
 	/** <p>An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends or when <a>DeleteAttendee</a> is called. After that, the attendee is unable to join the meeting.</p> <p>We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.</p> */
 	export interface AttendeeFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 2
+		 */
 		ExternalUserId: FormControl<string | null | undefined>,
+
+		/** Pattern: [a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12} */
 		AttendeeId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 2
+		 */
 		JoinToken: FormControl<string | null | undefined>,
 	}
 	export function CreateAttendeeFormGroup() {
 		return new FormGroup<AttendeeFormProperties>({
-			ExternalUserId: new FormControl<string | null | undefined>(undefined),
+			ExternalUserId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
 			AttendeeId: new FormControl<string | null | undefined>(undefined),
-			JoinToken: new FormControl<string | null | undefined>(undefined),
+			JoinToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(2)]),
 		});
 
 	}
@@ -205,6 +237,11 @@ export namespace MyNS {
 
 	/** The list of errors returned when errors are encountered during the BatchCreateAttendee and CreateAttendee actions. This includes external user IDs, error codes, and error messages. */
 	export interface CreateAttendeeError {
+
+		/**
+		 * Max length: 64
+		 * Min length: 2
+		 */
 		ExternalUserId?: string | null;
 		ErrorCode?: string | null;
 		ErrorMessage?: string | null;
@@ -212,13 +249,18 @@ export namespace MyNS {
 
 	/** The list of errors returned when errors are encountered during the BatchCreateAttendee and CreateAttendee actions. This includes external user IDs, error codes, and error messages. */
 	export interface CreateAttendeeErrorFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 2
+		 */
 		ExternalUserId: FormControl<string | null | undefined>,
 		ErrorCode: FormControl<string | null | undefined>,
 		ErrorMessage: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateAttendeeErrorFormGroup() {
 		return new FormGroup<CreateAttendeeErrorFormProperties>({
-			ExternalUserId: new FormControl<string | null | undefined>(undefined),
+			ExternalUserId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
 			ErrorCode: new FormControl<string | null | undefined>(undefined),
 			ErrorMessage: new FormControl<string | null | undefined>(undefined),
 		});
@@ -228,17 +270,34 @@ export namespace MyNS {
 
 	/** The Amazon Chime SDK attendee fields to create, used with the BatchCreateAttendee action. */
 	export interface CreateAttendeeRequestItem {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 2
+		 */
 		ExternalUserId: string;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		Tags?: Array<Tag>;
 	}
 
 	/** The Amazon Chime SDK attendee fields to create, used with the BatchCreateAttendee action. */
 	export interface CreateAttendeeRequestItemFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 2
+		 */
 		ExternalUserId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateAttendeeRequestItemFormGroup() {
 		return new FormGroup<CreateAttendeeRequestItemFormProperties>({
-			ExternalUserId: new FormControl<string | null | undefined>(undefined),
+			ExternalUserId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(2)]),
 		});
 
 	}
@@ -246,19 +305,43 @@ export namespace MyNS {
 
 	/** Describes a tag applied to a resource. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Value: string;
 	}
 
 	/** Describes a tag applied to a resource. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -287,6 +370,8 @@ export namespace MyNS {
 
 	/** The list of errors returned when a member action results in an error. */
 	export interface MemberError {
+
+		/** Pattern: .*\S.* */
 		MemberId?: string | null;
 		ErrorCode?: PhoneNumberErrorErrorCode | null;
 		ErrorMessage?: string | null;
@@ -294,6 +379,8 @@ export namespace MyNS {
 
 	/** The list of errors returned when a member action results in an error. */
 	export interface MemberErrorFormProperties {
+
+		/** Pattern: .*\S.* */
 		MemberId: FormControl<string | null | undefined>,
 		ErrorCode: FormControl<PhoneNumberErrorErrorCode | null | undefined>,
 		ErrorMessage: FormControl<string | null | undefined>,
@@ -310,12 +397,16 @@ export namespace MyNS {
 
 	/** Membership details, such as member ID and member role. */
 	export interface MembershipItem {
+
+		/** Pattern: .*\S.* */
 		MemberId?: string | null;
 		Role?: MembershipItemRole | null;
 	}
 
 	/** Membership details, such as member ID and member role. */
 	export interface MembershipItemFormProperties {
+
+		/** Pattern: .*\S.* */
 		MemberId: FormControl<string | null | undefined>,
 		Role: FormControl<MembershipItemRole | null | undefined>,
 	}
@@ -354,6 +445,8 @@ export namespace MyNS {
 
 	/** The list of errors returned when errors are encountered during the <a>BatchSuspendUser</a>, <a>BatchUnsuspendUser</a>, or <a>BatchUpdateUser</a> actions. This includes user IDs, error codes, and error messages. */
 	export interface UserError {
+
+		/** Pattern: .*\S.* */
 		UserId?: string | null;
 		ErrorCode?: PhoneNumberErrorErrorCode | null;
 		ErrorMessage?: string | null;
@@ -361,6 +454,8 @@ export namespace MyNS {
 
 	/** The list of errors returned when errors are encountered during the <a>BatchSuspendUser</a>, <a>BatchUnsuspendUser</a>, or <a>BatchUpdateUser</a> actions. This includes user IDs, error codes, and error messages. */
 	export interface UserErrorFormProperties {
+
+		/** Pattern: .*\S.* */
 		UserId: FormControl<string | null | undefined>,
 		ErrorCode: FormControl<PhoneNumberErrorErrorCode | null | undefined>,
 		ErrorMessage: FormControl<string | null | undefined>,
@@ -399,20 +494,34 @@ export namespace MyNS {
 
 	/** The phone number ID, product type, or calling name fields to update, used with the <a>BatchUpdatePhoneNumber</a> and <a>UpdatePhoneNumber</a> actions. */
 	export interface UpdatePhoneNumberRequestItem {
+
+		/**
+		 * Required
+		 * Pattern: .*\S.*
+		 */
 		PhoneNumberId: string;
 		ProductType?: UpdatePhoneNumberRequestItemProductType | null;
+
+		/** Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$ */
 		CallingName?: string | null;
 	}
 
 	/** The phone number ID, product type, or calling name fields to update, used with the <a>BatchUpdatePhoneNumber</a> and <a>UpdatePhoneNumber</a> actions. */
 	export interface UpdatePhoneNumberRequestItemFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: .*\S.*
+		 */
 		PhoneNumberId: FormControl<string | null | undefined>,
 		ProductType: FormControl<UpdatePhoneNumberRequestItemProductType | null | undefined>,
+
+		/** Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$ */
 		CallingName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdatePhoneNumberRequestItemFormGroup() {
 		return new FormGroup<UpdatePhoneNumberRequestItemFormProperties>({
-			PhoneNumberId: new FormControl<string | null | undefined>(undefined),
+			PhoneNumberId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ProductType: new FormControl<UpdatePhoneNumberRequestItemProductType | null | undefined>(undefined),
 			CallingName: new FormControl<string | null | undefined>(undefined),
 		});
@@ -435,6 +544,11 @@ export namespace MyNS {
 
 	/** The user ID and user fields to update, used with the <a>BatchUpdateUser</a> action. */
 	export interface UpdateUserRequestItem {
+
+		/**
+		 * Required
+		 * Pattern: .*\S.*
+		 */
 		UserId: string;
 		LicenseType?: UpdateUserRequestItemLicenseType | null;
 		UserType?: UpdateUserRequestItemUserType | null;
@@ -445,13 +559,18 @@ export namespace MyNS {
 
 	/** The user ID and user fields to update, used with the <a>BatchUpdateUser</a> action. */
 	export interface UpdateUserRequestItemFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: .*\S.*
+		 */
 		UserId: FormControl<string | null | undefined>,
 		LicenseType: FormControl<UpdateUserRequestItemLicenseType | null | undefined>,
 		UserType: FormControl<UpdateUserRequestItemUserType | null | undefined>,
 	}
 	export function CreateUpdateUserRequestItemFormGroup() {
 		return new FormGroup<UpdateUserRequestItemFormProperties>({
-			UserId: new FormControl<string | null | undefined>(undefined),
+			UserId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			LicenseType: new FormControl<UpdateUserRequestItemLicenseType | null | undefined>(undefined),
 			UserType: new FormControl<UpdateUserRequestItemUserType | null | undefined>(undefined),
 		});
@@ -498,8 +617,14 @@ export namespace MyNS {
 
 	/** The Amazon Chime account details. An AWS account can have multiple Amazon Chime accounts. */
 	export interface Account {
+
+		/** Required */
 		AwsAccountId: string;
+
+		/** Required */
 		AccountId: string;
+
+		/** Required */
 		Name: string;
 		AccountType?: AccountAccountType | null;
 		CreatedTimestamp?: Date | null;
@@ -510,8 +635,14 @@ export namespace MyNS {
 
 	/** The Amazon Chime account details. An AWS account can have multiple Amazon Chime accounts. */
 	export interface AccountFormProperties {
+
+		/** Required */
 		AwsAccountId: FormControl<string | null | undefined>,
+
+		/** Required */
 		AccountId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 		AccountType: FormControl<AccountAccountType | null | undefined>,
 		CreatedTimestamp: FormControl<Date | null | undefined>,
@@ -519,9 +650,9 @@ export namespace MyNS {
 	}
 	export function CreateAccountFormGroup() {
 		return new FormGroup<AccountFormProperties>({
-			AwsAccountId: new FormControl<string | null | undefined>(undefined),
-			AccountId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			AwsAccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			AccountType: new FormControl<AccountAccountType | null | undefined>(undefined),
 			CreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
 			DefaultLicense: new FormControl<UpdateUserRequestItemLicenseType | null | undefined>(undefined),
@@ -618,7 +749,14 @@ export namespace MyNS {
 
 	/** A meeting created using the Amazon Chime SDK. */
 	export interface Meeting {
+
+		/** Pattern: [a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12} */
 		MeetingId?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 2
+		 */
 		ExternalMeetingId?: string | null;
 
 		/** A set of endpoints used by clients to connect to the media service group for a Amazon Chime SDK meeting. */
@@ -628,14 +766,21 @@ export namespace MyNS {
 
 	/** A meeting created using the Amazon Chime SDK. */
 	export interface MeetingFormProperties {
+
+		/** Pattern: [a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12} */
 		MeetingId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 2
+		 */
 		ExternalMeetingId: FormControl<string | null | undefined>,
 		MediaRegion: FormControl<string | null | undefined>,
 	}
 	export function CreateMeetingFormGroup() {
 		return new FormGroup<MeetingFormProperties>({
 			MeetingId: new FormControl<string | null | undefined>(undefined),
-			ExternalMeetingId: new FormControl<string | null | undefined>(undefined),
+			ExternalMeetingId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
 			MediaRegion: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -644,34 +789,62 @@ export namespace MyNS {
 
 	/** A set of endpoints used by clients to connect to the media service group for a Amazon Chime SDK meeting. */
 	export interface MediaPlacement {
+
+		/** Max length: 4096 */
 		AudioHostUrl?: string | null;
+
+		/** Max length: 4096 */
 		AudioFallbackUrl?: string | null;
+
+		/** Max length: 4096 */
 		ScreenDataUrl?: string | null;
+
+		/** Max length: 4096 */
 		ScreenSharingUrl?: string | null;
+
+		/** Max length: 4096 */
 		ScreenViewingUrl?: string | null;
+
+		/** Max length: 4096 */
 		SignalingUrl?: string | null;
+
+		/** Max length: 4096 */
 		TurnControlUrl?: string | null;
 	}
 
 	/** A set of endpoints used by clients to connect to the media service group for a Amazon Chime SDK meeting. */
 	export interface MediaPlacementFormProperties {
+
+		/** Max length: 4096 */
 		AudioHostUrl: FormControl<string | null | undefined>,
+
+		/** Max length: 4096 */
 		AudioFallbackUrl: FormControl<string | null | undefined>,
+
+		/** Max length: 4096 */
 		ScreenDataUrl: FormControl<string | null | undefined>,
+
+		/** Max length: 4096 */
 		ScreenSharingUrl: FormControl<string | null | undefined>,
+
+		/** Max length: 4096 */
 		ScreenViewingUrl: FormControl<string | null | undefined>,
+
+		/** Max length: 4096 */
 		SignalingUrl: FormControl<string | null | undefined>,
+
+		/** Max length: 4096 */
 		TurnControlUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateMediaPlacementFormGroup() {
 		return new FormGroup<MediaPlacementFormProperties>({
-			AudioHostUrl: new FormControl<string | null | undefined>(undefined),
-			AudioFallbackUrl: new FormControl<string | null | undefined>(undefined),
-			ScreenDataUrl: new FormControl<string | null | undefined>(undefined),
-			ScreenSharingUrl: new FormControl<string | null | undefined>(undefined),
-			ScreenViewingUrl: new FormControl<string | null | undefined>(undefined),
-			SignalingUrl: new FormControl<string | null | undefined>(undefined),
-			TurnControlUrl: new FormControl<string | null | undefined>(undefined),
+			AudioHostUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
+			AudioFallbackUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
+			ScreenDataUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
+			ScreenSharingUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
+			ScreenViewingUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
+			SignalingUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
+			TurnControlUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
 		});
 
 	}
@@ -692,6 +865,8 @@ export namespace MyNS {
 
 	/** The details of a phone number order created for Amazon Chime. */
 	export interface PhoneNumberOrder {
+
+		/** Pattern: [a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12} */
 		PhoneNumberOrderId?: string | null;
 		ProductType?: UpdatePhoneNumberRequestItemProductType | null;
 		Status?: PhoneNumberOrderStatus | null;
@@ -702,6 +877,8 @@ export namespace MyNS {
 
 	/** The details of a phone number order created for Amazon Chime. */
 	export interface PhoneNumberOrderFormProperties {
+
+		/** Pattern: [a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12} */
 		PhoneNumberOrderId: FormControl<string | null | undefined>,
 		ProductType: FormControl<UpdatePhoneNumberRequestItemProductType | null | undefined>,
 		Status: FormControl<PhoneNumberOrderStatus | null | undefined>,
@@ -724,12 +901,16 @@ export namespace MyNS {
 
 	/** A phone number for which an order has been placed. */
 	export interface OrderedPhoneNumber {
+
+		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		E164PhoneNumber?: string | null;
 		Status?: OrderedPhoneNumberStatus | null;
 	}
 
 	/** A phone number for which an order has been placed. */
 	export interface OrderedPhoneNumberFormProperties {
+
+		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		E164PhoneNumber: FormControl<string | null | undefined>,
 		Status: FormControl<OrderedPhoneNumberStatus | null | undefined>,
 	}
@@ -759,10 +940,26 @@ export namespace MyNS {
 
 	/** The proxy session for an Amazon Chime Voice Connector. */
 	export interface ProxySession {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		VoiceConnectorId?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		ProxySessionId?: string | null;
+
+		/** Max length: 128 */
 		Name?: string | null;
 		Status?: ProxySessionStatus | null;
+
+		/** Minimum: 1 */
 		ExpiryMinutes?: number | null;
 		Capabilities?: Array<Capability>;
 		CreatedTimestamp?: Date | null;
@@ -778,10 +975,26 @@ export namespace MyNS {
 
 	/** The proxy session for an Amazon Chime Voice Connector. */
 	export interface ProxySessionFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		VoiceConnectorId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		ProxySessionId: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		Name: FormControl<string | null | undefined>,
 		Status: FormControl<ProxySessionStatus | null | undefined>,
+
+		/** Minimum: 1 */
 		ExpiryMinutes: FormControl<number | null | undefined>,
 		CreatedTimestamp: FormControl<Date | null | undefined>,
 		UpdatedTimestamp: FormControl<Date | null | undefined>,
@@ -791,11 +1004,11 @@ export namespace MyNS {
 	}
 	export function CreateProxySessionFormGroup() {
 		return new FormGroup<ProxySessionFormProperties>({
-			VoiceConnectorId: new FormControl<string | null | undefined>(undefined),
-			ProxySessionId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			VoiceConnectorId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ProxySessionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			Status: new FormControl<ProxySessionStatus | null | undefined>(undefined),
-			ExpiryMinutes: new FormControl<number | null | undefined>(undefined),
+			ExpiryMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			CreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
 			UpdatedTimestamp: new FormControl<Date | null | undefined>(undefined),
 			EndedTimestamp: new FormControl<Date | null | undefined>(undefined),
@@ -812,13 +1025,21 @@ export namespace MyNS {
 
 	/** The phone number and proxy phone number for a participant in an Amazon Chime Voice Connector proxy session. */
 	export interface Participant {
+
+		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		PhoneNumber?: string | null;
+
+		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		ProxyPhoneNumber?: string | null;
 	}
 
 	/** The phone number and proxy phone number for a participant in an Amazon Chime Voice Connector proxy session. */
 	export interface ParticipantFormProperties {
+
+		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		PhoneNumber: FormControl<string | null | undefined>,
+
+		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		ProxyPhoneNumber: FormControl<string | null | undefined>,
 	}
 	export function CreateParticipantFormGroup() {
@@ -836,19 +1057,39 @@ export namespace MyNS {
 
 	/** The country and area code for a proxy phone number in a proxy phone session. */
 	export interface GeoMatchParams {
+
+		/**
+		 * Required
+		 * Pattern: ^$|^[A-Z]{2,2}$
+		 */
 		Country: string;
+
+		/**
+		 * Required
+		 * Pattern: ^$|^[0-9]{3,3}$
+		 */
 		AreaCode: string;
 	}
 
 	/** The country and area code for a proxy phone number in a proxy phone session. */
 	export interface GeoMatchParamsFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^$|^[A-Z]{2,2}$
+		 */
 		Country: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: ^$|^[0-9]{3,3}$
+		 */
 		AreaCode: FormControl<string | null | undefined>,
 	}
 	export function CreateGeoMatchParamsFormGroup() {
 		return new FormGroup<GeoMatchParamsFormProperties>({
-			Country: new FormControl<string | null | undefined>(undefined),
-			AreaCode: new FormControl<string | null | undefined>(undefined),
+			Country: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			AreaCode: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -869,9 +1110,15 @@ export namespace MyNS {
 
 	/** The Amazon Chime chat room details. */
 	export interface Room {
+
+		/** Pattern: .*\S.* */
 		RoomId?: string | null;
 		Name?: string | null;
+
+		/** Pattern: .*\S.* */
 		AccountId?: string | null;
+
+		/** Pattern: .*\S.* */
 		CreatedBy?: string | null;
 		CreatedTimestamp?: Date | null;
 		UpdatedTimestamp?: Date | null;
@@ -879,9 +1126,15 @@ export namespace MyNS {
 
 	/** The Amazon Chime chat room details. */
 	export interface RoomFormProperties {
+
+		/** Pattern: .*\S.* */
 		RoomId: FormControl<string | null | undefined>,
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: .*\S.* */
 		AccountId: FormControl<string | null | undefined>,
+
+		/** Pattern: .*\S.* */
 		CreatedBy: FormControl<string | null | undefined>,
 		CreatedTimestamp: FormControl<Date | null | undefined>,
 		UpdatedTimestamp: FormControl<Date | null | undefined>,
@@ -914,19 +1167,27 @@ export namespace MyNS {
 
 	/** The room membership details. */
 	export interface RoomMembership {
+
+		/** Pattern: .*\S.* */
 		RoomId?: string | null;
 
 		/** The member details, such as email address, name, member ID, and member type. */
 		Member?: Member;
 		Role?: MembershipItemRole | null;
+
+		/** Pattern: .*\S.* */
 		InvitedBy?: string | null;
 		UpdatedTimestamp?: Date | null;
 	}
 
 	/** The room membership details. */
 	export interface RoomMembershipFormProperties {
+
+		/** Pattern: .*\S.* */
 		RoomId: FormControl<string | null | undefined>,
 		Role: FormControl<MembershipItemRole | null | undefined>,
+
+		/** Pattern: .*\S.* */
 		InvitedBy: FormControl<string | null | undefined>,
 		UpdatedTimestamp: FormControl<Date | null | undefined>,
 	}
@@ -943,19 +1204,27 @@ export namespace MyNS {
 
 	/** The member details, such as email address, name, member ID, and member type. */
 	export interface Member {
+
+		/** Pattern: .*\S.* */
 		MemberId?: string | null;
 		MemberType?: MemberMemberType | null;
 		Email?: string | null;
 		FullName?: string | null;
+
+		/** Pattern: .*\S.* */
 		AccountId?: string | null;
 	}
 
 	/** The member details, such as email address, name, member ID, and member type. */
 	export interface MemberFormProperties {
+
+		/** Pattern: .*\S.* */
 		MemberId: FormControl<string | null | undefined>,
 		MemberType: FormControl<MemberMemberType | null | undefined>,
 		Email: FormControl<string | null | undefined>,
 		FullName: FormControl<string | null | undefined>,
+
+		/** Pattern: .*\S.* */
 		AccountId: FormControl<string | null | undefined>,
 	}
 	export function CreateMemberFormGroup() {
@@ -997,8 +1266,12 @@ export namespace MyNS {
 
 	/** The user on the Amazon Chime account. */
 	export interface User {
+
+		/** Required */
 		UserId: string;
 		AccountId?: string | null;
+
+		/** Pattern: .+@.+\..+ */
 		PrimaryEmail?: string | null;
 		PrimaryProvisionedNumber?: string | null;
 		DisplayName?: string | null;
@@ -1016,8 +1289,12 @@ export namespace MyNS {
 
 	/** The user on the Amazon Chime account. */
 	export interface UserFormProperties {
+
+		/** Required */
 		UserId: FormControl<string | null | undefined>,
 		AccountId: FormControl<string | null | undefined>,
+
+		/** Pattern: .+@.+\..+ */
 		PrimaryEmail: FormControl<string | null | undefined>,
 		PrimaryProvisionedNumber: FormControl<string | null | undefined>,
 		DisplayName: FormControl<string | null | undefined>,
@@ -1031,7 +1308,7 @@ export namespace MyNS {
 	}
 	export function CreateUserFormGroup() {
 		return new FormGroup<UserFormProperties>({
-			UserId: new FormControl<string | null | undefined>(undefined),
+			UserId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			AccountId: new FormControl<string | null | undefined>(undefined),
 			PrimaryEmail: new FormControl<string | null | undefined>(undefined),
 			PrimaryProvisionedNumber: new FormControl<string | null | undefined>(undefined),
@@ -1067,8 +1344,15 @@ export namespace MyNS {
 
 	/** The Amazon Chime Voice Connector configuration, including outbound host name and encryption settings. */
 	export interface VoiceConnector {
+
+		/** Pattern: .*\S.* */
 		VoiceConnectorId?: string | null;
 		AwsRegion?: VoiceConnectorAwsRegion | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name?: string | null;
 		OutboundHostName?: string | null;
 		RequireEncryption?: boolean | null;
@@ -1078,8 +1362,15 @@ export namespace MyNS {
 
 	/** The Amazon Chime Voice Connector configuration, including outbound host name and encryption settings. */
 	export interface VoiceConnectorFormProperties {
+
+		/** Pattern: .*\S.* */
 		VoiceConnectorId: FormControl<string | null | undefined>,
 		AwsRegion: FormControl<VoiceConnectorAwsRegion | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 		OutboundHostName: FormControl<string | null | undefined>,
 		RequireEncryption: FormControl<boolean | null | undefined>,
@@ -1090,7 +1381,7 @@ export namespace MyNS {
 		return new FormGroup<VoiceConnectorFormProperties>({
 			VoiceConnectorId: new FormControl<string | null | undefined>(undefined),
 			AwsRegion: new FormControl<VoiceConnectorAwsRegion | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			OutboundHostName: new FormControl<string | null | undefined>(undefined),
 			RequireEncryption: new FormControl<boolean | null | undefined>(undefined),
 			CreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
@@ -1117,7 +1408,14 @@ export namespace MyNS {
 
 	/** The Amazon Chime Voice Connector group configuration, including associated Amazon Chime Voice Connectors. You can include Amazon Chime Voice Connectors from different AWS Regions in your group. This creates a fault tolerant mechanism for fallback in case of availability events. */
 	export interface VoiceConnectorGroup {
+
+		/** Pattern: .*\S.* */
 		VoiceConnectorGroupId?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name?: string | null;
 		VoiceConnectorItems?: Array<VoiceConnectorItem>;
 		CreatedTimestamp?: Date | null;
@@ -1126,7 +1424,14 @@ export namespace MyNS {
 
 	/** The Amazon Chime Voice Connector group configuration, including associated Amazon Chime Voice Connectors. You can include Amazon Chime Voice Connectors from different AWS Regions in your group. This creates a fault tolerant mechanism for fallback in case of availability events. */
 	export interface VoiceConnectorGroupFormProperties {
+
+		/** Pattern: .*\S.* */
 		VoiceConnectorGroupId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 		CreatedTimestamp: FormControl<Date | null | undefined>,
 		UpdatedTimestamp: FormControl<Date | null | undefined>,
@@ -1134,7 +1439,7 @@ export namespace MyNS {
 	export function CreateVoiceConnectorGroupFormGroup() {
 		return new FormGroup<VoiceConnectorGroupFormProperties>({
 			VoiceConnectorGroupId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			CreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
 			UpdatedTimestamp: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1144,19 +1449,41 @@ export namespace MyNS {
 
 	/** For Amazon Chime Voice Connector groups, the Amazon Chime Voice Connectors to which to route inbound calls. Includes priority configuration settings. Limit: 3 <code>VoiceConnectorItems</code> per Amazon Chime Voice Connector group. */
 	export interface VoiceConnectorItem {
+
+		/**
+		 * Required
+		 * Pattern: .*\S.*
+		 */
 		VoiceConnectorId: string;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 99
+		 */
 		Priority: number;
 	}
 
 	/** For Amazon Chime Voice Connector groups, the Amazon Chime Voice Connectors to which to route inbound calls. Includes priority configuration settings. Limit: 3 <code>VoiceConnectorItems</code> per Amazon Chime Voice Connector group. */
 	export interface VoiceConnectorItemFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: .*\S.*
+		 */
 		VoiceConnectorId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 99
+		 */
 		Priority: FormControl<number | null | undefined>,
 	}
 	export function CreateVoiceConnectorItemFormGroup() {
 		return new FormGroup<VoiceConnectorItemFormProperties>({
-			VoiceConnectorId: new FormControl<string | null | undefined>(undefined),
-			Priority: new FormControl<number | null | undefined>(undefined),
+			VoiceConnectorId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Priority: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(99)]),
 		});
 
 	}
@@ -1411,6 +1738,8 @@ export namespace MyNS {
 	/** A phone number used for Amazon Chime Business Calling or an Amazon Chime Voice Connector. */
 	export interface PhoneNumber {
 		PhoneNumberId?: string | null;
+
+		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		E164PhoneNumber?: string | null;
 		Type?: PhoneNumberType | null;
 		ProductType?: UpdatePhoneNumberRequestItemProductType | null;
@@ -1419,6 +1748,8 @@ export namespace MyNS {
 		/** The phone number capabilities for Amazon Chime Business Calling phone numbers, such as enabled inbound and outbound calling and text messaging. */
 		Capabilities?: PhoneNumberCapabilities;
 		Associations?: Array<PhoneNumberAssociation>;
+
+		/** Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$ */
 		CallingName?: string | null;
 		CallingNameStatus?: PhoneNumberCallingNameStatus | null;
 		CreatedTimestamp?: Date | null;
@@ -1429,10 +1760,14 @@ export namespace MyNS {
 	/** A phone number used for Amazon Chime Business Calling or an Amazon Chime Voice Connector. */
 	export interface PhoneNumberFormProperties {
 		PhoneNumberId: FormControl<string | null | undefined>,
+
+		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		E164PhoneNumber: FormControl<string | null | undefined>,
 		Type: FormControl<PhoneNumberType | null | undefined>,
 		ProductType: FormControl<UpdatePhoneNumberRequestItemProductType | null | undefined>,
 		Status: FormControl<PhoneNumberStatus | null | undefined>,
+
+		/** Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$ */
 		CallingName: FormControl<string | null | undefined>,
 		CallingNameStatus: FormControl<PhoneNumberCallingNameStatus | null | undefined>,
 		CreatedTimestamp: FormControl<Date | null | undefined>,
@@ -1532,10 +1867,14 @@ export namespace MyNS {
 	}
 
 	export interface GetPhoneNumberSettingsResponse {
+
+		/** Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$ */
 		CallingName?: string | null;
 		CallingNameUpdatedTimestamp?: Date | null;
 	}
 	export interface GetPhoneNumberSettingsResponseFormProperties {
+
+		/** Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$ */
 		CallingName: FormControl<string | null | undefined>,
 		CallingNameUpdatedTimestamp: FormControl<Date | null | undefined>,
 	}
@@ -1599,16 +1938,26 @@ export namespace MyNS {
 
 	/** The retention settings that determine how long to retain chat room messages for an Amazon Chime Enterprise account. */
 	export interface RoomRetentionSettings {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 5475
+		 */
 		RetentionDays?: number | null;
 	}
 
 	/** The retention settings that determine how long to retain chat room messages for an Amazon Chime Enterprise account. */
 	export interface RoomRetentionSettingsFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 5475
+		 */
 		RetentionDays: FormControl<number | null | undefined>,
 	}
 	export function CreateRoomRetentionSettingsFormGroup() {
 		return new FormGroup<RoomRetentionSettingsFormProperties>({
-			RetentionDays: new FormControl<number | null | undefined>(undefined),
+			RetentionDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(5475)]),
 		});
 
 	}
@@ -1616,16 +1965,26 @@ export namespace MyNS {
 
 	/** The retention settings that determine how long to retain chat conversation messages for an Amazon Chime Enterprise account. */
 	export interface ConversationRetentionSettings {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 5475
+		 */
 		RetentionDays?: number | null;
 	}
 
 	/** The retention settings that determine how long to retain chat conversation messages for an Amazon Chime Enterprise account. */
 	export interface ConversationRetentionSettingsFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 5475
+		 */
 		RetentionDays: FormControl<number | null | undefined>,
 	}
 	export function CreateConversationRetentionSettingsFormGroup() {
 		return new FormGroup<ConversationRetentionSettingsFormProperties>({
-			RetentionDays: new FormControl<number | null | undefined>(undefined),
+			RetentionDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(5475)]),
 		});
 
 	}
@@ -1692,22 +2051,34 @@ export namespace MyNS {
 
 	/** Settings that allow management of telephony permissions for an Amazon Chime user, such as inbound and outbound calling and text messaging. */
 	export interface TelephonySettings {
+
+		/** Required */
 		InboundCalling: boolean;
+
+		/** Required */
 		OutboundCalling: boolean;
+
+		/** Required */
 		SMS: boolean;
 	}
 
 	/** Settings that allow management of telephony permissions for an Amazon Chime user, such as inbound and outbound calling and text messaging. */
 	export interface TelephonySettingsFormProperties {
+
+		/** Required */
 		InboundCalling: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		OutboundCalling: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		SMS: FormControl<boolean | null | undefined>,
 	}
 	export function CreateTelephonySettingsFormGroup() {
 		return new FormGroup<TelephonySettingsFormProperties>({
-			InboundCalling: new FormControl<boolean | null | undefined>(undefined),
-			OutboundCalling: new FormControl<boolean | null | undefined>(undefined),
-			SMS: new FormControl<boolean | null | undefined>(undefined),
+			InboundCalling: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			OutboundCalling: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			SMS: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1803,27 +2174,57 @@ export namespace MyNS {
 	/** Origination routes define call distribution properties for your SIP hosts to receive inbound calls using your Amazon Chime Voice Connector. Limit: Ten origination routes for each Amazon Chime Voice Connector. */
 	export interface OriginationRoute {
 		Host?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 65535
+		 */
 		Port?: number | null;
 		Protocol?: OriginationRouteProtocol | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Priority?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Weight?: number | null;
 	}
 
 	/** Origination routes define call distribution properties for your SIP hosts to receive inbound calls using your Amazon Chime Voice Connector. Limit: Ten origination routes for each Amazon Chime Voice Connector. */
 	export interface OriginationRouteFormProperties {
 		Host: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 65535
+		 */
 		Port: FormControl<number | null | undefined>,
 		Protocol: FormControl<OriginationRouteProtocol | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Priority: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Weight: FormControl<number | null | undefined>,
 	}
 	export function CreateOriginationRouteFormGroup() {
 		return new FormGroup<OriginationRouteFormProperties>({
 			Host: new FormControl<string | null | undefined>(undefined),
-			Port: new FormControl<number | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(65535)]),
 			Protocol: new FormControl<OriginationRouteProtocol | null | undefined>(undefined),
-			Priority: new FormControl<number | null | undefined>(undefined),
-			Weight: new FormControl<number | null | undefined>(undefined),
+			Priority: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
+			Weight: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -1848,6 +2249,8 @@ export namespace MyNS {
 	export interface Proxy {
 		DefaultSessionExpiryMinutes?: number | null;
 		Disabled?: boolean | null;
+
+		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		FallBackPhoneNumber?: string | null;
 		PhoneNumberCountries?: Array<string>;
 	}
@@ -1856,6 +2259,8 @@ export namespace MyNS {
 	export interface ProxyFormProperties {
 		DefaultSessionExpiryMinutes: FormControl<number | null | undefined>,
 		Disabled: FormControl<boolean | null | undefined>,
+
+		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		FallBackPhoneNumber: FormControl<string | null | undefined>,
 	}
 	export function CreateProxyFormGroup() {
@@ -1883,19 +2288,34 @@ export namespace MyNS {
 
 	/** The streaming configuration associated with an Amazon Chime Voice Connector. Specifies whether media streaming is enabled for sending to Amazon Kinesis, and shows the retention period for the Amazon Kinesis data, in hours. */
 	export interface StreamingConfiguration {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		DataRetentionInHours: number;
 		Disabled?: boolean | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 3
+		 */
 		StreamingNotificationTargets?: Array<StreamingNotificationTarget>;
 	}
 
 	/** The streaming configuration associated with an Amazon Chime Voice Connector. Specifies whether media streaming is enabled for sending to Amazon Kinesis, and shows the retention period for the Amazon Kinesis data, in hours. */
 	export interface StreamingConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		DataRetentionInHours: FormControl<number | null | undefined>,
 		Disabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateStreamingConfigurationFormGroup() {
 		return new FormGroup<StreamingConfigurationFormProperties>({
-			DataRetentionInHours: new FormControl<number | null | undefined>(undefined),
+			DataRetentionInHours: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			Disabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1904,16 +2324,20 @@ export namespace MyNS {
 
 	/** The targeted recipient for a streaming configuration notification. */
 	export interface StreamingNotificationTarget {
+
+		/** Required */
 		NotificationTarget: StreamingNotificationTargetNotificationTarget;
 	}
 
 	/** The targeted recipient for a streaming configuration notification. */
 	export interface StreamingNotificationTargetFormProperties {
+
+		/** Required */
 		NotificationTarget: FormControl<StreamingNotificationTargetNotificationTarget | null | undefined>,
 	}
 	export function CreateStreamingNotificationTargetFormGroup() {
 		return new FormGroup<StreamingNotificationTargetFormProperties>({
-			NotificationTarget: new FormControl<StreamingNotificationTargetNotificationTarget | null | undefined>(undefined),
+			NotificationTarget: new FormControl<StreamingNotificationTargetNotificationTarget | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1936,7 +2360,11 @@ export namespace MyNS {
 
 	/** Termination settings enable your SIP hosts to make outbound calls using your Amazon Chime Voice Connector. */
 	export interface Termination {
+
+		/** Minimum: 1 */
 		CpsLimit?: number | null;
+
+		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		DefaultPhoneNumber?: string | null;
 		CallingRegions?: Array<string>;
 		CidrAllowedList?: Array<string>;
@@ -1945,13 +2373,17 @@ export namespace MyNS {
 
 	/** Termination settings enable your SIP hosts to make outbound calls using your Amazon Chime Voice Connector. */
 	export interface TerminationFormProperties {
+
+		/** Minimum: 1 */
 		CpsLimit: FormControl<number | null | undefined>,
+
+		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		DefaultPhoneNumber: FormControl<string | null | undefined>,
 		Disabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateTerminationFormGroup() {
 		return new FormGroup<TerminationFormProperties>({
-			CpsLimit: new FormControl<number | null | undefined>(undefined),
+			CpsLimit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			DefaultPhoneNumber: new FormControl<string | null | undefined>(undefined),
 			Disabled: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -2007,6 +2439,8 @@ export namespace MyNS {
 	export interface Invite {
 		InviteId?: string | null;
 		Status?: UserUserInvitationStatus | null;
+
+		/** Pattern: .+@.+\..+ */
 		EmailAddress?: string | null;
 		EmailStatus?: InviteEmailStatus | null;
 	}
@@ -2015,6 +2449,8 @@ export namespace MyNS {
 	export interface InviteFormProperties {
 		InviteId: FormControl<string | null | undefined>,
 		Status: FormControl<UserUserInvitationStatus | null | undefined>,
+
+		/** Pattern: .+@.+\..+ */
 		EmailAddress: FormControl<string | null | undefined>,
 		EmailStatus: FormControl<InviteEmailStatus | null | undefined>,
 	}
@@ -2045,6 +2481,11 @@ export namespace MyNS {
 	}
 
 	export interface ListAttendeeTagsResponse {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Tags?: Array<Tag>;
 	}
 	export interface ListAttendeeTagsResponseFormProperties {
@@ -2084,6 +2525,11 @@ export namespace MyNS {
 	}
 
 	export interface ListMeetingTagsResponse {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Tags?: Array<Tag>;
 	}
 	export interface ListMeetingTagsResponseFormProperties {
@@ -2138,14 +2584,18 @@ export namespace MyNS {
 
 	export interface ListProxySessionsResponse {
 		ProxySessions?: Array<ProxySession>;
+
+		/** Max length: 65535 */
 		NextToken?: string | null;
 	}
 	export interface ListProxySessionsResponseFormProperties {
+
+		/** Max length: 65535 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListProxySessionsResponseFormGroup() {
 		return new FormGroup<ListProxySessionsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65535)]),
 		});
 
 	}
@@ -2179,6 +2629,11 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceResponse {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Tags?: Array<Tag>;
 	}
 	export interface ListTagsForResourceResponseFormProperties {
@@ -2566,14 +3021,24 @@ export namespace MyNS {
 	export enum AccountType { Team = 0, EnterpriseDirectory = 1, EnterpriseLWA = 2, EnterpriseOIDC = 3 }
 
 	export interface AssociatePhoneNumberWithUserRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^\+?[1-9]\d{1,14}$
+		 */
 		E164PhoneNumber: string;
 	}
 	export interface AssociatePhoneNumberWithUserRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^\+?[1-9]\d{1,14}$
+		 */
 		E164PhoneNumber: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociatePhoneNumberWithUserRequestFormGroup() {
 		return new FormGroup<AssociatePhoneNumberWithUserRequestFormProperties>({
-			E164PhoneNumber: new FormControl<string | null | undefined>(undefined),
+			E164PhoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2607,6 +3072,8 @@ export namespace MyNS {
 	}
 
 	export interface AssociateSigninDelegateGroupsWithAccountRequest {
+
+		/** Required */
 		SigninDelegateGroups: Array<SigninDelegateGroup>;
 	}
 	export interface AssociateSigninDelegateGroupsWithAccountRequestFormProperties {
@@ -2618,6 +3085,8 @@ export namespace MyNS {
 	}
 
 	export interface BatchCreateAttendeeRequest {
+
+		/** Required */
 		Attendees: Array<CreateAttendeeRequestItem>;
 	}
 	export interface BatchCreateAttendeeRequestFormProperties {
@@ -2629,6 +3098,11 @@ export namespace MyNS {
 	}
 
 	export interface BatchCreateRoomMembershipRequest {
+
+		/**
+		 * Required
+		 * Maximum items: 50
+		 */
 		MembershipItemList: Array<MembershipItem>;
 	}
 	export interface BatchCreateRoomMembershipRequestFormProperties {
@@ -2640,6 +3114,11 @@ export namespace MyNS {
 	}
 
 	export interface BatchDeletePhoneNumberRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 */
 		PhoneNumberIds: Array<string>;
 	}
 	export interface BatchDeletePhoneNumberRequestFormProperties {
@@ -2651,6 +3130,11 @@ export namespace MyNS {
 	}
 
 	export interface BatchSuspendUserRequest {
+
+		/**
+		 * Required
+		 * Maximum items: 50
+		 */
 		UserIdList: Array<string>;
 	}
 	export interface BatchSuspendUserRequestFormProperties {
@@ -2662,6 +3146,11 @@ export namespace MyNS {
 	}
 
 	export interface BatchUnsuspendUserRequest {
+
+		/**
+		 * Required
+		 * Maximum items: 50
+		 */
 		UserIdList: Array<string>;
 	}
 	export interface BatchUnsuspendUserRequestFormProperties {
@@ -2673,6 +3162,8 @@ export namespace MyNS {
 	}
 
 	export interface BatchUpdatePhoneNumberRequest {
+
+		/** Required */
 		UpdatePhoneNumberRequestItems: Array<UpdatePhoneNumberRequestItem>;
 	}
 	export interface BatchUpdatePhoneNumberRequestFormProperties {
@@ -2684,6 +3175,11 @@ export namespace MyNS {
 	}
 
 	export interface BatchUpdateUserRequest {
+
+		/**
+		 * Required
+		 * Maximum items: 20
+		 */
 		UpdateUserRequestItems: Array<UpdateUserRequestItem>;
 	}
 	export interface BatchUpdateUserRequestFormProperties {
@@ -2699,43 +3195,82 @@ export namespace MyNS {
 	export enum CallingNameStatus { Unassigned = 0, UpdateInProgress = 1, UpdateSucceeded = 2, UpdateFailed = 3 }
 
 	export interface CreateAccountRequest {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		Name: string;
 	}
 	export interface CreateAccountRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateAccountRequestFormGroup() {
 		return new FormGroup<CreateAccountRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateAttendeeRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 2
+		 */
 		ExternalUserId: string;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		Tags?: Array<Tag>;
 	}
 	export interface CreateAttendeeRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 2
+		 */
 		ExternalUserId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateAttendeeRequestFormGroup() {
 		return new FormGroup<CreateAttendeeRequestFormProperties>({
-			ExternalUserId: new FormControl<string | null | undefined>(undefined),
+			ExternalUserId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(2)]),
 		});
 
 	}
 
 	export interface CreateBotRequest {
+
+		/** Required */
 		DisplayName: string;
+
+		/** Pattern: .*\S.* */
 		Domain?: string | null;
 	}
 	export interface CreateBotRequestFormProperties {
+
+		/** Required */
 		DisplayName: FormControl<string | null | undefined>,
+
+		/** Pattern: .*\S.* */
 		Domain: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateBotRequestFormGroup() {
 		return new FormGroup<CreateBotRequestFormProperties>({
-			DisplayName: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Domain: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2744,44 +3279,107 @@ export namespace MyNS {
 
 	/** The configuration for resource targets to receive notifications when Amazon Chime SDK meeting and attendee events occur. */
 	export interface MeetingNotificationConfiguration {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
+		 */
 		SnsTopicArn?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
+		 */
 		SqsQueueArn?: string | null;
 	}
 
 	/** The configuration for resource targets to receive notifications when Amazon Chime SDK meeting and attendee events occur. */
 	export interface MeetingNotificationConfigurationFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
+		 */
 		SnsTopicArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
+		 */
 		SqsQueueArn: FormControl<string | null | undefined>,
 	}
 	export function CreateMeetingNotificationConfigurationFormGroup() {
 		return new FormGroup<MeetingNotificationConfigurationFormProperties>({
-			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
-			SqsQueueArn: new FormControl<string | null | undefined>(undefined),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			SqsQueueArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateMeetingRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 2
+		 * Pattern: [-_a-zA-Z0-9]*
+		 */
 		ClientRequestToken: string;
+
+		/**
+		 * Max length: 64
+		 * Min length: 2
+		 */
 		ExternalMeetingId?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 2
+		 */
 		MeetingHostId?: string | null;
 		MediaRegion?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Tags?: Array<Tag>;
 
 		/** The configuration for resource targets to receive notifications when Amazon Chime SDK meeting and attendee events occur. */
 		NotificationsConfiguration?: MeetingNotificationConfiguration;
 	}
 	export interface CreateMeetingRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 2
+		 * Pattern: [-_a-zA-Z0-9]*
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 2
+		 */
 		ExternalMeetingId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 2
+		 */
 		MeetingHostId: FormControl<string | null | undefined>,
 		MediaRegion: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateMeetingRequestFormGroup() {
 		return new FormGroup<CreateMeetingRequestFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
-			ExternalMeetingId: new FormControl<string | null | undefined>(undefined),
-			MeetingHostId: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(2)]),
+			ExternalMeetingId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
+			MeetingHostId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
 			MediaRegion: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2790,15 +3388,21 @@ export namespace MyNS {
 	export enum PhoneNumberProductType { BusinessCalling = 0, VoiceConnector = 1 }
 
 	export interface CreatePhoneNumberOrderRequest {
+
+		/** Required */
 		ProductType: UpdatePhoneNumberRequestItemProductType;
+
+		/** Required */
 		E164PhoneNumbers: Array<string>;
 	}
 	export interface CreatePhoneNumberOrderRequestFormProperties {
+
+		/** Required */
 		ProductType: FormControl<UpdatePhoneNumberRequestItemProductType | null | undefined>,
 	}
 	export function CreateCreatePhoneNumberOrderRequestFormGroup() {
 		return new FormGroup<CreatePhoneNumberOrderRequestFormProperties>({
-			ProductType: new FormControl<UpdatePhoneNumberRequestItemProductType | null | undefined>(undefined),
+			ProductType: new FormControl<UpdatePhoneNumberRequestItemProductType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2808,9 +3412,21 @@ export namespace MyNS {
 	export enum GeoMatchLevel { Country = 0, AreaCode = 1 }
 
 	export interface CreateProxySessionRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 2
+		 * Maximum items: 2
+		 */
 		ParticipantPhoneNumbers: Array<string>;
+
+		/** Pattern: ^$|^[a-zA-Z0-9 ]{0,30}$ */
 		Name?: string | null;
+
+		/** Minimum: 1 */
 		ExpiryMinutes?: number | null;
+
+		/** Required */
 		Capabilities: Array<Capability>;
 		NumberSelectionBehavior?: ProxySessionNumberSelectionBehavior | null;
 		GeoMatchLevel?: ProxySessionGeoMatchLevel | null;
@@ -2819,7 +3435,11 @@ export namespace MyNS {
 		GeoMatchParams?: GeoMatchParams;
 	}
 	export interface CreateProxySessionRequestFormProperties {
+
+		/** Pattern: ^$|^[a-zA-Z0-9 ]{0,30}$ */
 		Name: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		ExpiryMinutes: FormControl<number | null | undefined>,
 		NumberSelectionBehavior: FormControl<ProxySessionNumberSelectionBehavior | null | undefined>,
 		GeoMatchLevel: FormControl<ProxySessionGeoMatchLevel | null | undefined>,
@@ -2827,7 +3447,7 @@ export namespace MyNS {
 	export function CreateCreateProxySessionRequestFormGroup() {
 		return new FormGroup<CreateProxySessionRequestFormProperties>({
 			Name: new FormControl<string | null | undefined>(undefined),
-			ExpiryMinutes: new FormControl<number | null | undefined>(undefined),
+			ExpiryMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			NumberSelectionBehavior: new FormControl<ProxySessionNumberSelectionBehavior | null | undefined>(undefined),
 			GeoMatchLevel: new FormControl<ProxySessionGeoMatchLevel | null | undefined>(undefined),
 		});
@@ -2837,33 +3457,59 @@ export namespace MyNS {
 	export enum RoomMembershipRole { Administrator = 0, Member = 1 }
 
 	export interface CreateRoomMembershipRequest {
+
+		/**
+		 * Required
+		 * Pattern: .*\S.*
+		 */
 		MemberId: string;
 		Role?: MembershipItemRole | null;
 	}
 	export interface CreateRoomMembershipRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: .*\S.*
+		 */
 		MemberId: FormControl<string | null | undefined>,
 		Role: FormControl<MembershipItemRole | null | undefined>,
 	}
 	export function CreateCreateRoomMembershipRequestFormGroup() {
 		return new FormGroup<CreateRoomMembershipRequestFormProperties>({
-			MemberId: new FormControl<string | null | undefined>(undefined),
+			MemberId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Role: new FormControl<MembershipItemRole | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CreateRoomRequest {
+
+		/** Required */
 		Name: string;
+
+		/**
+		 * Max length: 64
+		 * Min length: 2
+		 * Pattern: [-_a-zA-Z0-9]*
+		 */
 		ClientRequestToken?: string | null;
 	}
 	export interface CreateRoomRequestFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 2
+		 * Pattern: [-_a-zA-Z0-9]*
+		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateRoomRequestFormGroup() {
 		return new FormGroup<CreateRoomRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
 		});
 
 	}
@@ -2872,11 +3518,15 @@ export namespace MyNS {
 
 	export interface CreateUserRequest {
 		Username?: string | null;
+
+		/** Pattern: .+@.+\..+ */
 		Email?: string | null;
 		UserType?: UpdateUserRequestItemUserType | null;
 	}
 	export interface CreateUserRequestFormProperties {
 		Username: FormControl<string | null | undefined>,
+
+		/** Pattern: .+@.+\..+ */
 		Email: FormControl<string | null | undefined>,
 		UserType: FormControl<UpdateUserRequestItemUserType | null | undefined>,
 	}
@@ -2890,34 +3540,62 @@ export namespace MyNS {
 	}
 
 	export interface CreateVoiceConnectorGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name: string;
 		VoiceConnectorItems?: Array<VoiceConnectorItem>;
 	}
 	export interface CreateVoiceConnectorGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateVoiceConnectorGroupRequestFormGroup() {
 		return new FormGroup<CreateVoiceConnectorGroupRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateVoiceConnectorRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name: string;
 		AwsRegion?: CreateVoiceConnectorRequestAwsRegion | null;
+
+		/** Required */
 		RequireEncryption: boolean;
 	}
 	export interface CreateVoiceConnectorRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 		AwsRegion: FormControl<CreateVoiceConnectorRequestAwsRegion | null | undefined>,
+
+		/** Required */
 		RequireEncryption: FormControl<boolean | null | undefined>,
 	}
 	export function CreateCreateVoiceConnectorRequestFormGroup() {
 		return new FormGroup<CreateVoiceConnectorRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 			AwsRegion: new FormControl<CreateVoiceConnectorRequestAwsRegion | null | undefined>(undefined),
-			RequireEncryption: new FormControl<boolean | null | undefined>(undefined),
+			RequireEncryption: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3108,6 +3786,11 @@ export namespace MyNS {
 	}
 
 	export interface DisassociateSigninDelegateGroupsFromAccountRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 */
 		GroupNames: Array<string>;
 	}
 	export interface DisassociateSigninDelegateGroupsFromAccountRequestFormProperties {
@@ -3335,6 +4018,11 @@ export namespace MyNS {
 	export enum InviteStatus { Pending = 0, Accepted = 1, Failed = 2 }
 
 	export interface InviteUsersRequest {
+
+		/**
+		 * Required
+		 * Maximum items: 50
+		 */
 		UserEmailList: Array<string>;
 		UserType?: UpdateUserRequestItemUserType | null;
 	}
@@ -3587,19 +4275,33 @@ export namespace MyNS {
 	}
 
 	export interface PutVoiceConnectorProxyRequest {
+
+		/** Required */
 		DefaultSessionExpiryMinutes: number;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		PhoneNumberPoolCountries: Array<string>;
+
+		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		FallBackPhoneNumber?: string | null;
 		Disabled?: boolean | null;
 	}
 	export interface PutVoiceConnectorProxyRequestFormProperties {
+
+		/** Required */
 		DefaultSessionExpiryMinutes: FormControl<number | null | undefined>,
+
+		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		FallBackPhoneNumber: FormControl<string | null | undefined>,
 		Disabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreatePutVoiceConnectorProxyRequestFormGroup() {
 		return new FormGroup<PutVoiceConnectorProxyRequestFormProperties>({
-			DefaultSessionExpiryMinutes: new FormControl<number | null | undefined>(undefined),
+			DefaultSessionExpiryMinutes: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			FallBackPhoneNumber: new FormControl<string | null | undefined>(undefined),
 			Disabled: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -3712,6 +4414,12 @@ export namespace MyNS {
 	}
 
 	export interface TagAttendeeRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		Tags: Array<Tag>;
 	}
 	export interface TagAttendeeRequestFormProperties {
@@ -3723,6 +4431,12 @@ export namespace MyNS {
 	}
 
 	export interface TagMeetingRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Tags: Array<Tag>;
 	}
 	export interface TagMeetingRequestFormProperties {
@@ -3734,20 +4448,46 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
+		 */
 		ResourceARN: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UntagAttendeeRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		TagKeys: Array<string>;
 	}
 	export interface UntagAttendeeRequestFormProperties {
@@ -3759,6 +4499,12 @@ export namespace MyNS {
 	}
 
 	export interface UntagMeetingRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		TagKeys: Array<string>;
 	}
 	export interface UntagMeetingRequestFormProperties {
@@ -3770,28 +4516,60 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
+		 */
 		ResourceARN: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		TagKeys: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateAccountRequest {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		Name?: string | null;
 	}
 	export interface UpdateAccountRequestFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateAccountRequestFormGroup() {
 		return new FormGroup<UpdateAccountRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -3849,10 +4627,14 @@ export namespace MyNS {
 
 	export interface UpdatePhoneNumberRequest {
 		ProductType?: UpdatePhoneNumberRequestItemProductType | null;
+
+		/** Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$ */
 		CallingName?: string | null;
 	}
 	export interface UpdatePhoneNumberRequestFormProperties {
 		ProductType: FormControl<UpdatePhoneNumberRequestItemProductType | null | undefined>,
+
+		/** Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$ */
 		CallingName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdatePhoneNumberRequestFormGroup() {
@@ -3864,28 +4646,44 @@ export namespace MyNS {
 	}
 
 	export interface UpdatePhoneNumberSettingsRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$
+		 */
 		CallingName: string;
 	}
 	export interface UpdatePhoneNumberSettingsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$
+		 */
 		CallingName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdatePhoneNumberSettingsRequestFormGroup() {
 		return new FormGroup<UpdatePhoneNumberSettingsRequestFormProperties>({
-			CallingName: new FormControl<string | null | undefined>(undefined),
+			CallingName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface UpdateProxySessionRequest {
+
+		/** Required */
 		Capabilities: Array<Capability>;
+
+		/** Minimum: 1 */
 		ExpiryMinutes?: number | null;
 	}
 	export interface UpdateProxySessionRequestFormProperties {
+
+		/** Minimum: 1 */
 		ExpiryMinutes: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateProxySessionRequestFormGroup() {
 		return new FormGroup<UpdateProxySessionRequestFormProperties>({
-			ExpiryMinutes: new FormControl<number | null | undefined>(undefined),
+			ExpiryMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -3952,31 +4750,61 @@ export namespace MyNS {
 	}
 
 	export interface UpdateVoiceConnectorGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name: string;
+
+		/** Required */
 		VoiceConnectorItems: Array<VoiceConnectorItem>;
 	}
 	export interface UpdateVoiceConnectorGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateVoiceConnectorGroupRequestFormGroup() {
 		return new FormGroup<UpdateVoiceConnectorGroupRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateVoiceConnectorRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name: string;
+
+		/** Required */
 		RequireEncryption: boolean;
 	}
 	export interface UpdateVoiceConnectorRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		RequireEncryption: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpdateVoiceConnectorRequestFormGroup() {
 		return new FormGroup<UpdateVoiceConnectorRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			RequireEncryption: new FormControl<boolean | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			RequireEncryption: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5240,7 +6068,7 @@ export namespace MyNS {
 	}
 	export function CreateAssociatePhoneNumberWithUserPostBodyFormGroup() {
 		return new FormGroup<AssociatePhoneNumberWithUserPostBodyFormProperties>({
-			E164PhoneNumber: new FormControl<string | null | undefined>(undefined),
+			E164PhoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5460,7 +6288,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateAccountPostBodyFormGroup() {
 		return new FormGroup<CreateAccountPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -5494,7 +6322,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateAttendeePostBodyFormGroup() {
 		return new FormGroup<CreateAttendeePostBodyFormProperties>({
-			ExternalUserId: new FormControl<string | null | undefined>(undefined),
+			ExternalUserId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(2)]),
 		});
 
 	}
@@ -5529,7 +6357,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateBotPostBodyFormGroup() {
 		return new FormGroup<CreateBotPostBodyFormProperties>({
-			DisplayName: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Domain: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5603,26 +6431,50 @@ export namespace MyNS {
 	}
 	export function CreateCreateMeetingPostBodyFormGroup() {
 		return new FormGroup<CreateMeetingPostBodyFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
-			ExternalMeetingId: new FormControl<string | null | undefined>(undefined),
-			MeetingHostId: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(2)]),
+			ExternalMeetingId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
+			MeetingHostId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
 			MediaRegion: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CreateMeetingPostBodyNotificationsConfiguration {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
+		 */
 		SnsTopicArn?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
+		 */
 		SqsQueueArn?: string | null;
 	}
 	export interface CreateMeetingPostBodyNotificationsConfigurationFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
+		 */
 		SnsTopicArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
+		 */
 		SqsQueueArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateMeetingPostBodyNotificationsConfigurationFormGroup() {
 		return new FormGroup<CreateMeetingPostBodyNotificationsConfigurationFormProperties>({
-			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
-			SqsQueueArn: new FormControl<string | null | undefined>(undefined),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			SqsQueueArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -5651,7 +6503,7 @@ export namespace MyNS {
 	}
 	export function CreateCreatePhoneNumberOrderPostBodyFormGroup() {
 		return new FormGroup<CreatePhoneNumberOrderPostBodyFormProperties>({
-			ProductType: new FormControl<UpdatePhoneNumberRequestItemProductType | null | undefined>(undefined),
+			ProductType: new FormControl<UpdatePhoneNumberRequestItemProductType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5716,7 +6568,7 @@ export namespace MyNS {
 	export function CreateCreateProxySessionPostBodyFormGroup() {
 		return new FormGroup<CreateProxySessionPostBodyFormProperties>({
 			Name: new FormControl<string | null | undefined>(undefined),
-			ExpiryMinutes: new FormControl<number | null | undefined>(undefined),
+			ExpiryMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			NumberSelectionBehavior: new FormControl<ProxySessionNumberSelectionBehavior | null | undefined>(undefined),
 			GeoMatchLevel: new FormControl<ProxySessionGeoMatchLevel | null | undefined>(undefined),
 		});
@@ -5724,11 +6576,19 @@ export namespace MyNS {
 	}
 
 	export interface CreateProxySessionPostBodyGeoMatchParams {
+
+		/** Pattern: ^$|^[A-Z]{2,2}$ */
 		Country?: string | null;
+
+		/** Pattern: ^$|^[0-9]{3,3}$ */
 		AreaCode?: string | null;
 	}
 	export interface CreateProxySessionPostBodyGeoMatchParamsFormProperties {
+
+		/** Pattern: ^$|^[A-Z]{2,2}$ */
 		Country: FormControl<string | null | undefined>,
+
+		/** Pattern: ^$|^[0-9]{3,3}$ */
 		AreaCode: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateProxySessionPostBodyGeoMatchParamsFormGroup() {
@@ -5773,8 +6633,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateRoomPostBodyFormGroup() {
 		return new FormGroup<CreateRoomPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
 		});
 
 	}
@@ -5805,7 +6665,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateRoomMembershipPostBodyFormGroup() {
 		return new FormGroup<CreateRoomMembershipPostBodyFormProperties>({
-			MemberId: new FormControl<string | null | undefined>(undefined),
+			MemberId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Role: new FormControl<MembershipItemRole | null | undefined>(undefined),
 		});
 
@@ -5890,9 +6750,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateVoiceConnectorPostBodyFormGroup() {
 		return new FormGroup<CreateVoiceConnectorPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 			AwsRegion: new FormControl<CreateVoiceConnectorPostBodyAwsRegion | null | undefined>(undefined),
-			RequireEncryption: new FormControl<boolean | null | undefined>(undefined),
+			RequireEncryption: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5924,7 +6784,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateVoiceConnectorGroupPostBodyFormGroup() {
 		return new FormGroup<CreateVoiceConnectorGroupPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -5951,7 +6811,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateAccountPostBodyFormGroup() {
 		return new FormGroup<UpdateAccountPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -6034,7 +6894,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateProxySessionPostBodyFormGroup() {
 		return new FormGroup<UpdateProxySessionPostBodyFormProperties>({
-			ExpiryMinutes: new FormControl<number | null | undefined>(undefined),
+			ExpiryMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -6107,8 +6967,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateVoiceConnectorPutBodyFormGroup() {
 		return new FormGroup<UpdateVoiceConnectorPutBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			RequireEncryption: new FormControl<boolean | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			RequireEncryption: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6141,7 +7001,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateVoiceConnectorGroupPutBodyFormGroup() {
 		return new FormGroup<UpdateVoiceConnectorGroupPutBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -6220,7 +7080,7 @@ export namespace MyNS {
 	}
 	export function CreatePutVoiceConnectorProxyPutBodyFormGroup() {
 		return new FormGroup<PutVoiceConnectorProxyPutBodyFormProperties>({
-			DefaultSessionExpiryMinutes: new FormControl<number | null | undefined>(undefined),
+			DefaultSessionExpiryMinutes: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			FallBackPhoneNumber: new FormControl<string | null | undefined>(undefined),
 			Disabled: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -6244,17 +7104,26 @@ export namespace MyNS {
 	}
 
 	export interface PutVoiceConnectorStreamingConfigurationPutBodyStreamingConfiguration {
+
+		/** Minimum: 0 */
 		DataRetentionInHours?: number | null;
 		Disabled?: boolean | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 3
+		 */
 		StreamingNotificationTargets?: Array<StreamingNotificationTarget>;
 	}
 	export interface PutVoiceConnectorStreamingConfigurationPutBodyStreamingConfigurationFormProperties {
+
+		/** Minimum: 0 */
 		DataRetentionInHours: FormControl<number | null | undefined>,
 		Disabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreatePutVoiceConnectorStreamingConfigurationPutBodyStreamingConfigurationFormGroup() {
 		return new FormGroup<PutVoiceConnectorStreamingConfigurationPutBodyStreamingConfigurationFormProperties>({
-			DataRetentionInHours: new FormControl<number | null | undefined>(undefined),
+			DataRetentionInHours: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			Disabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -6277,20 +7146,28 @@ export namespace MyNS {
 	}
 
 	export interface PutVoiceConnectorTerminationPutBodyTermination {
+
+		/** Minimum: 1 */
 		CpsLimit?: number | null;
+
+		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		DefaultPhoneNumber?: string | null;
 		CallingRegions?: Array<string>;
 		CidrAllowedList?: Array<string>;
 		Disabled?: boolean | null;
 	}
 	export interface PutVoiceConnectorTerminationPutBodyTerminationFormProperties {
+
+		/** Minimum: 1 */
 		CpsLimit: FormControl<number | null | undefined>,
+
+		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		DefaultPhoneNumber: FormControl<string | null | undefined>,
 		Disabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreatePutVoiceConnectorTerminationPutBodyTerminationFormGroup() {
 		return new FormGroup<PutVoiceConnectorTerminationPutBodyTerminationFormProperties>({
-			CpsLimit: new FormControl<number | null | undefined>(undefined),
+			CpsLimit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			DefaultPhoneNumber: new FormControl<string | null | undefined>(undefined),
 			Disabled: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -6480,7 +7357,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdatePhoneNumberSettingsPutBodyFormGroup() {
 		return new FormGroup<UpdatePhoneNumberSettingsPutBodyFormProperties>({
-			CallingName: new FormControl<string | null | undefined>(undefined),
+			CallingName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6741,7 +7618,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -6816,7 +7693,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourcePostBodyFormGroup() {
 		return new FormGroup<UntagResourcePostBodyFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}

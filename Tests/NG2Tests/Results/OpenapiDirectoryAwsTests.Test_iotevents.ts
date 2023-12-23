@@ -19,42 +19,90 @@ export namespace MyNS {
 
 	/** Information about how the detector model is configured. */
 	export interface DetectorModelConfiguration {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
 		detectorModelName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		detectorModelVersion?: string | null;
+
+		/** Max length: 128 */
 		detectorModelDescription?: string | null;
 		detectorModelArn?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		roleArn?: string | null;
 		creationTime?: Date | null;
 		lastUpdateTime?: Date | null;
 		status?: DetectorModelConfigurationStatus | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$
+		 */
 		key?: string | null;
 		evaluationMethod?: DetectorModelConfigurationEvaluationMethod | null;
 	}
 
 	/** Information about how the detector model is configured. */
 	export interface DetectorModelConfigurationFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
 		detectorModelName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		detectorModelVersion: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		detectorModelDescription: FormControl<string | null | undefined>,
 		detectorModelArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		roleArn: FormControl<string | null | undefined>,
 		creationTime: FormControl<Date | null | undefined>,
 		lastUpdateTime: FormControl<Date | null | undefined>,
 		status: FormControl<DetectorModelConfigurationStatus | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$
+		 */
 		key: FormControl<string | null | undefined>,
 		evaluationMethod: FormControl<DetectorModelConfigurationEvaluationMethod | null | undefined>,
 	}
 	export function CreateDetectorModelConfigurationFormGroup() {
 		return new FormGroup<DetectorModelConfigurationFormProperties>({
-			detectorModelName: new FormControl<string | null | undefined>(undefined),
-			detectorModelVersion: new FormControl<string | null | undefined>(undefined),
-			detectorModelDescription: new FormControl<string | null | undefined>(undefined),
+			detectorModelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			detectorModelVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			detectorModelDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			detectorModelArn: new FormControl<string | null | undefined>(undefined),
-			roleArn: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 			creationTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
 			status: new FormControl<DetectorModelConfigurationStatus | null | undefined>(undefined),
-			key: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			evaluationMethod: new FormControl<DetectorModelConfigurationEvaluationMethod | null | undefined>(undefined),
 		});
 
@@ -67,6 +115,12 @@ export namespace MyNS {
 
 	/** Information that defines a state of a detector. */
 	export interface State {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		stateName: string;
 
 		/** Specifies the actions performed when the <code>condition</code> evaluates to TRUE. */
@@ -81,11 +135,17 @@ export namespace MyNS {
 
 	/** Information that defines a state of a detector. */
 	export interface StateFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		stateName: FormControl<string | null | undefined>,
 	}
 	export function CreateStateFormGroup() {
 		return new FormGroup<StateFormProperties>({
-			stateName: new FormControl<string | null | undefined>(undefined),
+			stateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -109,20 +169,34 @@ export namespace MyNS {
 
 	/** Specifies the <code>actions</code> to be performed when the <code>condition</code> evaluates to TRUE. */
 	export interface Event {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 */
 		eventName: string;
+
+		/** Max length: 512 */
 		condition?: string | null;
 		actions?: Array<Action>;
 	}
 
 	/** Specifies the <code>actions</code> to be performed when the <code>condition</code> evaluates to TRUE. */
 	export interface EventFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 */
 		eventName: FormControl<string | null | undefined>,
+
+		/** Max length: 512 */
 		condition: FormControl<string | null | undefined>,
 	}
 	export function CreateEventFormGroup() {
 		return new FormGroup<EventFormProperties>({
-			eventName: new FormControl<string | null | undefined>(undefined),
-			condition: new FormControl<string | null | undefined>(undefined),
+			eventName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			condition: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512)]),
 		});
 
 	}
@@ -183,19 +257,45 @@ export namespace MyNS {
 
 	/** Information about the variable and its new value. */
 	export interface SetVariableAction {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		variableName: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		value: string;
 	}
 
 	/** Information about the variable and its new value. */
 	export interface SetVariableActionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		variableName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateSetVariableActionFormGroup() {
 		return new FormGroup<SetVariableActionFormProperties>({
-			variableName: new FormControl<string | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			variableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -203,6 +303,12 @@ export namespace MyNS {
 
 	/** Information required to publish the Amazon SNS message. */
 	export interface SNSTopicPublishAction {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		targetArn: string;
 
 		/** <p>Information needed to configure the payload.</p> <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p> */
@@ -211,11 +317,17 @@ export namespace MyNS {
 
 	/** Information required to publish the Amazon SNS message. */
 	export interface SNSTopicPublishActionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		targetArn: FormControl<string | null | undefined>,
 	}
 	export function CreateSNSTopicPublishActionFormGroup() {
 		return new FormGroup<SNSTopicPublishActionFormProperties>({
-			targetArn: new FormControl<string | null | undefined>(undefined),
+			targetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -223,19 +335,33 @@ export namespace MyNS {
 
 	/** <p>Information needed to configure the payload.</p> <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p> */
 	export interface Payload {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		contentExpression: string;
+
+		/** Required */
 		type: PayloadType;
 	}
 
 	/** <p>Information needed to configure the payload.</p> <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p> */
 	export interface PayloadFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		contentExpression: FormControl<string | null | undefined>,
+
+		/** Required */
 		type: FormControl<PayloadType | null | undefined>,
 	}
 	export function CreatePayloadFormGroup() {
 		return new FormGroup<PayloadFormProperties>({
-			contentExpression: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<PayloadType | null | undefined>(undefined),
+			contentExpression: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			type: new FormControl<PayloadType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -245,6 +371,12 @@ export namespace MyNS {
 
 	/** Information required to publish the MQTT message through the AWS IoT message broker. */
 	export interface IotTopicPublishAction {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		mqttTopic: string;
 
 		/** <p>Information needed to configure the payload.</p> <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p> */
@@ -253,11 +385,17 @@ export namespace MyNS {
 
 	/** Information required to publish the MQTT message through the AWS IoT message broker. */
 	export interface IotTopicPublishActionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		mqttTopic: FormControl<string | null | undefined>,
 	}
 	export function CreateIotTopicPublishActionFormGroup() {
 		return new FormGroup<IotTopicPublishActionFormProperties>({
-			mqttTopic: new FormControl<string | null | undefined>(undefined),
+			mqttTopic: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -265,22 +403,54 @@ export namespace MyNS {
 
 	/** Information needed to set the timer. */
 	export interface SetTimerAction {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		timerName: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 31622400
+		 */
 		seconds?: number | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		durationExpression?: string | null;
 	}
 
 	/** Information needed to set the timer. */
 	export interface SetTimerActionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		timerName: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 31622400
+		 */
 		seconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		durationExpression: FormControl<string | null | undefined>,
 	}
 	export function CreateSetTimerActionFormGroup() {
 		return new FormGroup<SetTimerActionFormProperties>({
-			timerName: new FormControl<string | null | undefined>(undefined),
-			seconds: new FormControl<number | null | undefined>(undefined),
-			durationExpression: new FormControl<string | null | undefined>(undefined),
+			timerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			seconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(31622400)]),
+			durationExpression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -288,16 +458,28 @@ export namespace MyNS {
 
 	/** Information needed to clear the timer. */
 	export interface ClearTimerAction {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		timerName: string;
 	}
 
 	/** Information needed to clear the timer. */
 	export interface ClearTimerActionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		timerName: FormControl<string | null | undefined>,
 	}
 	export function CreateClearTimerActionFormGroup() {
 		return new FormGroup<ClearTimerActionFormProperties>({
-			timerName: new FormControl<string | null | undefined>(undefined),
+			timerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -305,16 +487,28 @@ export namespace MyNS {
 
 	/** Information required to reset the timer. The timer is reset to the previously evaluated result of the duration. The duration expression isn't reevaluated when you reset the timer. */
 	export interface ResetTimerAction {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		timerName: string;
 	}
 
 	/** Information required to reset the timer. The timer is reset to the previously evaluated result of the duration. The duration expression isn't reevaluated when you reset the timer. */
 	export interface ResetTimerActionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		timerName: FormControl<string | null | undefined>,
 	}
 	export function CreateResetTimerActionFormGroup() {
 		return new FormGroup<ResetTimerActionFormProperties>({
-			timerName: new FormControl<string | null | undefined>(undefined),
+			timerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -322,6 +516,12 @@ export namespace MyNS {
 
 	/** Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action. */
 	export interface LambdaAction {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		functionArn: string;
 
 		/** <p>Information needed to configure the payload.</p> <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p> */
@@ -330,11 +530,17 @@ export namespace MyNS {
 
 	/** Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action. */
 	export interface LambdaActionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		functionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateLambdaActionFormGroup() {
 		return new FormGroup<LambdaActionFormProperties>({
-			functionArn: new FormControl<string | null | undefined>(undefined),
+			functionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -342,6 +548,13 @@ export namespace MyNS {
 
 	/** Sends an AWS IoT Events input, passing in information about the detector model instance and the event that triggered the action. */
 	export interface IotEventsAction {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		inputName: string;
 
 		/** <p>Information needed to configure the payload.</p> <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p> */
@@ -350,11 +563,18 @@ export namespace MyNS {
 
 	/** Sends an AWS IoT Events input, passing in information about the detector model instance and the event that triggered the action. */
 	export interface IotEventsActionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		inputName: FormControl<string | null | undefined>,
 	}
 	export function CreateIotEventsActionFormGroup() {
 		return new FormGroup<IotEventsActionFormProperties>({
-			inputName: new FormControl<string | null | undefined>(undefined),
+			inputName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -362,6 +582,8 @@ export namespace MyNS {
 
 	/** Sends information about the detector model instance and the event that triggered the action to an Amazon SQS queue. */
 	export interface SqsAction {
+
+		/** Required */
 		queueUrl: string;
 		useBase64?: boolean | null;
 
@@ -371,12 +593,14 @@ export namespace MyNS {
 
 	/** Sends information about the detector model instance and the event that triggered the action to an Amazon SQS queue. */
 	export interface SqsActionFormProperties {
+
+		/** Required */
 		queueUrl: FormControl<string | null | undefined>,
 		useBase64: FormControl<boolean | null | undefined>,
 	}
 	export function CreateSqsActionFormGroup() {
 		return new FormGroup<SqsActionFormProperties>({
-			queueUrl: new FormControl<string | null | undefined>(undefined),
+			queueUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			useBase64: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -385,7 +609,11 @@ export namespace MyNS {
 
 	/** Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis Data Firehose delivery stream. */
 	export interface FirehoseAction {
+
+		/** Required */
 		deliveryStreamName: string;
+
+		/** Pattern: ([\n\t])|(\r\n)|(,) */
 		separator?: string | null;
 
 		/** <p>Information needed to configure the payload.</p> <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p> */
@@ -394,12 +622,16 @@ export namespace MyNS {
 
 	/** Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis Data Firehose delivery stream. */
 	export interface FirehoseActionFormProperties {
+
+		/** Required */
 		deliveryStreamName: FormControl<string | null | undefined>,
+
+		/** Pattern: ([\n\t])|(\r\n)|(,) */
 		separator: FormControl<string | null | undefined>,
 	}
 	export function CreateFirehoseActionFormGroup() {
 		return new FormGroup<FirehoseActionFormProperties>({
-			deliveryStreamName: new FormControl<string | null | undefined>(undefined),
+			deliveryStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			separator: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -409,13 +641,19 @@ export namespace MyNS {
 	/** <p>Defines an action to write to the Amazon DynamoDB table that you created. The standard action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can also customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify.</p> <p>The <code>tableName</code> and <code>hashKeyField</code> values must match the table name and the partition key of the DynamoDB table. </p> <note> <p>If the DynamoDB table also has a sort key, you must specify <code>rangeKeyField</code>. The <code>rangeKeyField</code> value must match the sort key.</p> </note> <p/> <p>The <code>hashKeyValue</code> and <code>rangeKeyValue</code> use substitution templates. These templates provide data at runtime. The syntax is <code>${sql-expression}</code>.</p> <p>You can use expressions for parameters that are string data type. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p> <note> <p>If the defined payload type is a string, <code>DynamoDBAction</code> writes non-JSON data to the DynamoDB table as binary data. The DynamoDB console displays the data as Base64-encoded text. The <code>payloadField</code> is <code>&lt;payload-field&gt;_raw</code>.</p> </note> */
 	export interface DynamoDBAction {
 		hashKeyType?: string | null;
+
+		/** Required */
 		hashKeyField: string;
+
+		/** Required */
 		hashKeyValue: string;
 		rangeKeyType?: string | null;
 		rangeKeyField?: string | null;
 		rangeKeyValue?: string | null;
 		operation?: string | null;
 		payloadField?: string | null;
+
+		/** Required */
 		tableName: string;
 
 		/** <p>Information needed to configure the payload.</p> <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p> */
@@ -425,26 +663,32 @@ export namespace MyNS {
 	/** <p>Defines an action to write to the Amazon DynamoDB table that you created. The standard action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can also customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify.</p> <p>The <code>tableName</code> and <code>hashKeyField</code> values must match the table name and the partition key of the DynamoDB table. </p> <note> <p>If the DynamoDB table also has a sort key, you must specify <code>rangeKeyField</code>. The <code>rangeKeyField</code> value must match the sort key.</p> </note> <p/> <p>The <code>hashKeyValue</code> and <code>rangeKeyValue</code> use substitution templates. These templates provide data at runtime. The syntax is <code>${sql-expression}</code>.</p> <p>You can use expressions for parameters that are string data type. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p> <note> <p>If the defined payload type is a string, <code>DynamoDBAction</code> writes non-JSON data to the DynamoDB table as binary data. The DynamoDB console displays the data as Base64-encoded text. The <code>payloadField</code> is <code>&lt;payload-field&gt;_raw</code>.</p> </note> */
 	export interface DynamoDBActionFormProperties {
 		hashKeyType: FormControl<string | null | undefined>,
+
+		/** Required */
 		hashKeyField: FormControl<string | null | undefined>,
+
+		/** Required */
 		hashKeyValue: FormControl<string | null | undefined>,
 		rangeKeyType: FormControl<string | null | undefined>,
 		rangeKeyField: FormControl<string | null | undefined>,
 		rangeKeyValue: FormControl<string | null | undefined>,
 		operation: FormControl<string | null | undefined>,
 		payloadField: FormControl<string | null | undefined>,
+
+		/** Required */
 		tableName: FormControl<string | null | undefined>,
 	}
 	export function CreateDynamoDBActionFormGroup() {
 		return new FormGroup<DynamoDBActionFormProperties>({
 			hashKeyType: new FormControl<string | null | undefined>(undefined),
-			hashKeyField: new FormControl<string | null | undefined>(undefined),
-			hashKeyValue: new FormControl<string | null | undefined>(undefined),
+			hashKeyField: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			hashKeyValue: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			rangeKeyType: new FormControl<string | null | undefined>(undefined),
 			rangeKeyField: new FormControl<string | null | undefined>(undefined),
 			rangeKeyValue: new FormControl<string | null | undefined>(undefined),
 			operation: new FormControl<string | null | undefined>(undefined),
 			payloadField: new FormControl<string | null | undefined>(undefined),
-			tableName: new FormControl<string | null | undefined>(undefined),
+			tableName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -452,6 +696,8 @@ export namespace MyNS {
 
 	/** <p>Defines an action to write to the Amazon DynamoDB table that you created. The default action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can also customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify.</p> <important> <p>The <code>type</code> value for <code>Payload</code> must be <code>JSON</code>.</p> </important> <p>You can use expressions for parameters that are strings. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p> */
 	export interface DynamoDBv2Action {
+
+		/** Required */
 		tableName: string;
 
 		/** <p>Information needed to configure the payload.</p> <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p> */
@@ -460,11 +706,13 @@ export namespace MyNS {
 
 	/** <p>Defines an action to write to the Amazon DynamoDB table that you created. The default action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can also customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify.</p> <important> <p>The <code>type</code> value for <code>Payload</code> must be <code>JSON</code>.</p> </important> <p>You can use expressions for parameters that are strings. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p> */
 	export interface DynamoDBv2ActionFormProperties {
+
+		/** Required */
 		tableName: FormControl<string | null | undefined>,
 	}
 	export function CreateDynamoDBv2ActionFormGroup() {
 		return new FormGroup<DynamoDBv2ActionFormProperties>({
-			tableName: new FormControl<string | null | undefined>(undefined),
+			tableName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -556,18 +804,22 @@ export namespace MyNS {
 
 	/** <p>A structure that contains timestamp information. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_TimeInNanos.html">TimeInNanos</a> in the <i>AWS IoT SiteWise API Reference</i>.</p> <p>For parameters that are string data type, you can specify the following options:</p> <ul> <li> <p>Use a string. For example, the <code>timeInSeconds</code> value can be <code>'1586400675'</code>.</p> </li> <li> <p>Use an expression. For example, the <code>timeInSeconds</code> value can be <code>'${$input.TemperatureInput.sensorData.timestamp/1000}'</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p> </li> </ul> */
 	export interface AssetPropertyTimestamp {
+
+		/** Required */
 		timeInSeconds: string;
 		offsetInNanos?: string | null;
 	}
 
 	/** <p>A structure that contains timestamp information. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_TimeInNanos.html">TimeInNanos</a> in the <i>AWS IoT SiteWise API Reference</i>.</p> <p>For parameters that are string data type, you can specify the following options:</p> <ul> <li> <p>Use a string. For example, the <code>timeInSeconds</code> value can be <code>'1586400675'</code>.</p> </li> <li> <p>Use an expression. For example, the <code>timeInSeconds</code> value can be <code>'${$input.TemperatureInput.sensorData.timestamp/1000}'</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p> </li> </ul> */
 	export interface AssetPropertyTimestampFormProperties {
+
+		/** Required */
 		timeInSeconds: FormControl<string | null | undefined>,
 		offsetInNanos: FormControl<string | null | undefined>,
 	}
 	export function CreateAssetPropertyTimestampFormGroup() {
 		return new FormGroup<AssetPropertyTimestampFormProperties>({
-			timeInSeconds: new FormControl<string | null | undefined>(undefined),
+			timeInSeconds: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			offsetInNanos: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -576,23 +828,55 @@ export namespace MyNS {
 
 	/** Specifies the actions performed and the next state entered when a <code>condition</code> evaluates to TRUE. */
 	export interface TransitionEvent {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 */
 		eventName: string;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 */
 		condition: string;
 		actions?: Array<Action>;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		nextState: string;
 	}
 
 	/** Specifies the actions performed and the next state entered when a <code>condition</code> evaluates to TRUE. */
 	export interface TransitionEventFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 */
 		eventName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 512
+		 */
 		condition: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		nextState: FormControl<string | null | undefined>,
 	}
 	export function CreateTransitionEventFormGroup() {
 		return new FormGroup<TransitionEventFormProperties>({
-			eventName: new FormControl<string | null | undefined>(undefined),
-			condition: new FormControl<string | null | undefined>(undefined),
-			nextState: new FormControl<string | null | undefined>(undefined),
+			eventName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			condition: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512)]),
+			nextState: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -630,19 +914,43 @@ export namespace MyNS {
 
 	/** Metadata that can be used to manage the resource. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		value: string;
 	}
 
 	/** Metadata that can be used to manage the resource. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -733,31 +1041,65 @@ export namespace MyNS {
 
 	/** Information about the configuration of an input. */
 	export interface InputConfiguration {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		inputName: string;
+
+		/** Max length: 128 */
 		inputDescription?: string | null;
+
+		/** Required */
 		inputArn: string;
+
+		/** Required */
 		creationTime: Date;
+
+		/** Required */
 		lastUpdateTime: Date;
+
+		/** Required */
 		status: InputConfigurationStatus;
 	}
 
 	/** Information about the configuration of an input. */
 	export interface InputConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		inputName: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		inputDescription: FormControl<string | null | undefined>,
+
+		/** Required */
 		inputArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		creationTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		lastUpdateTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		status: FormControl<InputConfigurationStatus | null | undefined>,
 	}
 	export function CreateInputConfigurationFormGroup() {
 		return new FormGroup<InputConfigurationFormProperties>({
-			inputName: new FormControl<string | null | undefined>(undefined),
-			inputDescription: new FormControl<string | null | undefined>(undefined),
-			inputArn: new FormControl<string | null | undefined>(undefined),
-			creationTime: new FormControl<Date | null | undefined>(undefined),
-			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
-			status: new FormControl<InputConfigurationStatus | null | undefined>(undefined),
+			inputName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			inputDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			inputArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			creationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			lastUpdateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			status: new FormControl<InputConfigurationStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -767,16 +1109,30 @@ export namespace MyNS {
 
 	/** The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload. Those attributes (and their paired values) specified here are available for use in the <code>condition</code> expressions used by detectors.  */
 	export interface Attribute {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$
+		 */
 		jsonPath: string;
 	}
 
 	/** The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload. Those attributes (and their paired values) specified here are available for use in the <code>condition</code> expressions used by detectors.  */
 	export interface AttributeFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$
+		 */
 		jsonPath: FormControl<string | null | undefined>,
 	}
 	export function CreateAttributeFormGroup() {
 		return new FormGroup<AttributeFormProperties>({
-			jsonPath: new FormControl<string | null | undefined>(undefined),
+			jsonPath: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -847,17 +1203,34 @@ export namespace MyNS {
 
 	/** Information that defines how a detector operates. */
 	export interface DetectorModelDefinition {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 */
 		states: Array<State>;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		initialStateName: string;
 	}
 
 	/** Information that defines how a detector operates. */
 	export interface DetectorModelDefinitionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		initialStateName: FormControl<string | null | undefined>,
 	}
 	export function CreateDetectorModelDefinitionFormGroup() {
 		return new FormGroup<DetectorModelDefinitionFormProperties>({
-			initialStateName: new FormControl<string | null | undefined>(undefined),
+			initialStateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -898,6 +1271,12 @@ export namespace MyNS {
 
 	/** The definition of the input. */
 	export interface InputDefinition {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 200
+		 */
 		attributes: Array<Attribute>;
 	}
 
@@ -926,23 +1305,45 @@ export namespace MyNS {
 
 	/** The values of the AWS IoT Events logging options. */
 	export interface LoggingOptions {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		roleArn: string;
+
+		/** Required */
 		level: LoggingOptionsLevel;
+
+		/** Required */
 		enabled: boolean;
+
+		/** Minimum items: 1 */
 		detectorDebugOptions?: Array<DetectorDebugOption>;
 	}
 
 	/** The values of the AWS IoT Events logging options. */
 	export interface LoggingOptionsFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		roleArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		level: FormControl<LoggingOptionsLevel | null | undefined>,
+
+		/** Required */
 		enabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateLoggingOptionsFormGroup() {
 		return new FormGroup<LoggingOptionsFormProperties>({
-			roleArn: new FormControl<string | null | undefined>(undefined),
-			level: new FormControl<LoggingOptionsLevel | null | undefined>(undefined),
-			enabled: new FormControl<boolean | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			level: new FormControl<LoggingOptionsLevel | null | undefined>(undefined, [Validators.required]),
+			enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -952,19 +1353,45 @@ export namespace MyNS {
 
 	/** The detector model and the specific detectors (instances) for which the logging level is given. */
 	export interface DetectorDebugOption {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
 		detectorModelName: string;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9\-_:]+$
+		 */
 		keyValue?: string | null;
 	}
 
 	/** The detector model and the specific detectors (instances) for which the logging level is given. */
 	export interface DetectorDebugOptionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
 		detectorModelName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9\-_:]+$
+		 */
 		keyValue: FormControl<string | null | undefined>,
 	}
 	export function CreateDetectorDebugOptionFormGroup() {
 		return new FormGroup<DetectorDebugOptionFormProperties>({
-			detectorModelName: new FormControl<string | null | undefined>(undefined),
-			keyValue: new FormControl<string | null | undefined>(undefined),
+			detectorModelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			keyValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -996,9 +1423,25 @@ export namespace MyNS {
 
 	/** Information about the detector model version. */
 	export interface DetectorModelVersionSummary {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
 		detectorModelName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		detectorModelVersion?: string | null;
 		detectorModelArn?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		roleArn?: string | null;
 		creationTime?: Date | null;
 		lastUpdateTime?: Date | null;
@@ -1008,9 +1451,25 @@ export namespace MyNS {
 
 	/** Information about the detector model version. */
 	export interface DetectorModelVersionSummaryFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
 		detectorModelName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		detectorModelVersion: FormControl<string | null | undefined>,
 		detectorModelArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		roleArn: FormControl<string | null | undefined>,
 		creationTime: FormControl<Date | null | undefined>,
 		lastUpdateTime: FormControl<Date | null | undefined>,
@@ -1019,10 +1478,10 @@ export namespace MyNS {
 	}
 	export function CreateDetectorModelVersionSummaryFormGroup() {
 		return new FormGroup<DetectorModelVersionSummaryFormProperties>({
-			detectorModelName: new FormControl<string | null | undefined>(undefined),
-			detectorModelVersion: new FormControl<string | null | undefined>(undefined),
+			detectorModelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			detectorModelVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			detectorModelArn: new FormControl<string | null | undefined>(undefined),
-			roleArn: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 			creationTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
 			status: new FormControl<DetectorModelConfigurationStatus | null | undefined>(undefined),
@@ -1048,21 +1507,37 @@ export namespace MyNS {
 
 	/** Information about the detector model. */
 	export interface DetectorModelSummary {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
 		detectorModelName?: string | null;
+
+		/** Max length: 128 */
 		detectorModelDescription?: string | null;
 		creationTime?: Date | null;
 	}
 
 	/** Information about the detector model. */
 	export interface DetectorModelSummaryFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
 		detectorModelName: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		detectorModelDescription: FormControl<string | null | undefined>,
 		creationTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateDetectorModelSummaryFormGroup() {
 		return new FormGroup<DetectorModelSummaryFormProperties>({
-			detectorModelName: new FormControl<string | null | undefined>(undefined),
-			detectorModelDescription: new FormControl<string | null | undefined>(undefined),
+			detectorModelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			detectorModelDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			creationTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -1085,7 +1560,15 @@ export namespace MyNS {
 
 	/** Information about the input. */
 	export interface InputSummary {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		inputName?: string | null;
+
+		/** Max length: 128 */
 		inputDescription?: string | null;
 		inputArn?: string | null;
 		creationTime?: Date | null;
@@ -1095,7 +1578,15 @@ export namespace MyNS {
 
 	/** Information about the input. */
 	export interface InputSummaryFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		inputName: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		inputDescription: FormControl<string | null | undefined>,
 		inputArn: FormControl<string | null | undefined>,
 		creationTime: FormControl<Date | null | undefined>,
@@ -1104,8 +1595,8 @@ export namespace MyNS {
 	}
 	export function CreateInputSummaryFormGroup() {
 		return new FormGroup<InputSummaryFormProperties>({
-			inputName: new FormControl<string | null | undefined>(undefined),
-			inputDescription: new FormControl<string | null | undefined>(undefined),
+			inputName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			inputDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			inputArn: new FormControl<string | null | undefined>(undefined),
 			creationTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
@@ -1176,6 +1667,13 @@ export namespace MyNS {
 	export enum EvaluationMethod { BATCH = 0, SERIAL = 1 }
 
 	export interface CreateDetectorModelRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
 		detectorModelName: string;
 
 		/**
@@ -1183,32 +1681,76 @@ export namespace MyNS {
 		 * Required
 		 */
 		detectorModelDefinition: DetectorModelDefinition;
+
+		/** Max length: 128 */
 		detectorModelDescription?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$
+		 */
 		key?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		roleArn: string;
 		tags?: Array<Tag>;
 		evaluationMethod?: DetectorModelConfigurationEvaluationMethod | null;
 	}
 	export interface CreateDetectorModelRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
 		detectorModelName: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		detectorModelDescription: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$
+		 */
 		key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		roleArn: FormControl<string | null | undefined>,
 		evaluationMethod: FormControl<DetectorModelConfigurationEvaluationMethod | null | undefined>,
 	}
 	export function CreateCreateDetectorModelRequestFormGroup() {
 		return new FormGroup<CreateDetectorModelRequestFormProperties>({
-			detectorModelName: new FormControl<string | null | undefined>(undefined),
-			detectorModelDescription: new FormControl<string | null | undefined>(undefined),
-			key: new FormControl<string | null | undefined>(undefined),
-			roleArn: new FormControl<string | null | undefined>(undefined),
+			detectorModelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			detectorModelDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 			evaluationMethod: new FormControl<DetectorModelConfigurationEvaluationMethod | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CreateInputRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		inputName: string;
+
+		/** Max length: 128 */
 		inputDescription?: string | null;
 
 		/**
@@ -1219,13 +1761,22 @@ export namespace MyNS {
 		tags?: Array<Tag>;
 	}
 	export interface CreateInputRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
 		inputName: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		inputDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateInputRequestFormGroup() {
 		return new FormGroup<CreateInputRequestFormProperties>({
-			inputName: new FormControl<string | null | undefined>(undefined),
-			inputDescription: new FormControl<string | null | undefined>(undefined),
+			inputName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			inputDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 		});
 
 	}
@@ -1341,6 +1892,8 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/** Required */
 		tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
@@ -1368,25 +1921,43 @@ export namespace MyNS {
 		 * Required
 		 */
 		detectorModelDefinition: DetectorModelDefinition;
+
+		/** Max length: 128 */
 		detectorModelDescription?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		roleArn: string;
 		evaluationMethod?: DetectorModelConfigurationEvaluationMethod | null;
 	}
 	export interface UpdateDetectorModelRequestFormProperties {
+
+		/** Max length: 128 */
 		detectorModelDescription: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		roleArn: FormControl<string | null | undefined>,
 		evaluationMethod: FormControl<DetectorModelConfigurationEvaluationMethod | null | undefined>,
 	}
 	export function CreateUpdateDetectorModelRequestFormGroup() {
 		return new FormGroup<UpdateDetectorModelRequestFormProperties>({
-			detectorModelDescription: new FormControl<string | null | undefined>(undefined),
-			roleArn: new FormControl<string | null | undefined>(undefined),
+			detectorModelDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 			evaluationMethod: new FormControl<DetectorModelConfigurationEvaluationMethod | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface UpdateInputRequest {
+
+		/** Max length: 128 */
 		inputDescription?: string | null;
 
 		/**
@@ -1396,11 +1967,13 @@ export namespace MyNS {
 		inputDefinition: InputDefinition;
 	}
 	export interface UpdateInputRequestFormProperties {
+
+		/** Max length: 128 */
 		inputDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateInputRequestFormGroup() {
 		return new FormGroup<UpdateInputRequestFormProperties>({
-			inputDescription: new FormControl<string | null | undefined>(undefined),
+			inputDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 		});
 
 	}
@@ -1656,25 +2229,37 @@ export namespace MyNS {
 	}
 	export function CreateCreateDetectorModelPostBodyFormGroup() {
 		return new FormGroup<CreateDetectorModelPostBodyFormProperties>({
-			detectorModelName: new FormControl<string | null | undefined>(undefined),
-			detectorModelDescription: new FormControl<string | null | undefined>(undefined),
-			key: new FormControl<string | null | undefined>(undefined),
-			roleArn: new FormControl<string | null | undefined>(undefined),
+			detectorModelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			detectorModelDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 			evaluationMethod: new FormControl<DetectorModelConfigurationEvaluationMethod | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CreateDetectorModelPostBodyDetectorModelDefinition {
+
+		/** Minimum items: 1 */
 		states?: Array<State>;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		initialStateName?: string | null;
 	}
 	export interface CreateDetectorModelPostBodyDetectorModelDefinitionFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		initialStateName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDetectorModelPostBodyDetectorModelDefinitionFormGroup() {
 		return new FormGroup<CreateDetectorModelPostBodyDetectorModelDefinitionFormProperties>({
-			initialStateName: new FormControl<string | null | undefined>(undefined),
+			initialStateName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -1724,13 +2309,18 @@ export namespace MyNS {
 	}
 	export function CreateCreateInputPostBodyFormGroup() {
 		return new FormGroup<CreateInputPostBodyFormProperties>({
-			inputName: new FormControl<string | null | undefined>(undefined),
-			inputDescription: new FormControl<string | null | undefined>(undefined),
+			inputName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			inputDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 		});
 
 	}
 
 	export interface CreateInputPostBodyInputDefinition {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 200
+		 */
 		attributes?: Array<Attribute>;
 	}
 	export interface CreateInputPostBodyInputDefinitionFormProperties {
@@ -1787,23 +2377,35 @@ export namespace MyNS {
 	}
 	export function CreateUpdateDetectorModelPostBodyFormGroup() {
 		return new FormGroup<UpdateDetectorModelPostBodyFormProperties>({
-			detectorModelDescription: new FormControl<string | null | undefined>(undefined),
-			roleArn: new FormControl<string | null | undefined>(undefined),
+			detectorModelDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 			evaluationMethod: new FormControl<DetectorModelConfigurationEvaluationMethod | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface UpdateDetectorModelPostBodyDetectorModelDefinition {
+
+		/** Minimum items: 1 */
 		states?: Array<State>;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		initialStateName?: string | null;
 	}
 	export interface UpdateDetectorModelPostBodyDetectorModelDefinitionFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		initialStateName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateDetectorModelPostBodyDetectorModelDefinitionFormGroup() {
 		return new FormGroup<UpdateDetectorModelPostBodyDetectorModelDefinitionFormProperties>({
-			initialStateName: new FormControl<string | null | undefined>(undefined),
+			initialStateName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -1832,12 +2434,17 @@ export namespace MyNS {
 	}
 	export function CreateUpdateInputPutBodyFormGroup() {
 		return new FormGroup<UpdateInputPutBodyFormProperties>({
-			inputDescription: new FormControl<string | null | undefined>(undefined),
+			inputDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 		});
 
 	}
 
 	export interface UpdateInputPutBodyInputDefinition {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 200
+		 */
 		attributes?: Array<Attribute>;
 	}
 	export interface UpdateInputPutBodyInputDefinitionFormProperties {
@@ -1865,19 +2472,31 @@ export namespace MyNS {
 	}
 
 	export interface PutLoggingOptionsPutBodyLoggingOptions {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		roleArn?: string | null;
 		level?: LoggingOptionsLevel | null;
 		enabled?: boolean | null;
+
+		/** Minimum items: 1 */
 		detectorDebugOptions?: Array<DetectorDebugOption>;
 	}
 	export interface PutLoggingOptionsPutBodyLoggingOptionsFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		roleArn: FormControl<string | null | undefined>,
 		level: FormControl<LoggingOptionsLevel | null | undefined>,
 		enabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreatePutLoggingOptionsPutBodyLoggingOptionsFormGroup() {
 		return new FormGroup<PutLoggingOptionsPutBodyLoggingOptionsFormProperties>({
-			roleArn: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 			level: new FormControl<LoggingOptionsLevel | null | undefined>(undefined),
 			enabled: new FormControl<boolean | null | undefined>(undefined),
 		});

@@ -26,25 +26,47 @@ export namespace MyNS {
 
 	/** A complex type that describes change information about changes made to your hosted zone. */
 	export interface ChangeInfo {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 */
 		Id: string;
+
+		/** Required */
 		Status: ChangeInfoStatus;
+
+		/** Required */
 		SubmittedAt: Date;
+
+		/** Max length: 256 */
 		Comment?: string | null;
 	}
 
 	/** A complex type that describes change information about changes made to your hosted zone. */
 	export interface ChangeInfoFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		Status: FormControl<ChangeInfoStatus | null | undefined>,
+
+		/** Required */
 		SubmittedAt: FormControl<Date | null | undefined>,
+
+		/** Max length: 256 */
 		Comment: FormControl<string | null | undefined>,
 	}
 	export function CreateChangeInfoFormGroup() {
 		return new FormGroup<ChangeInfoFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<ChangeInfoStatus | null | undefined>(undefined),
-			SubmittedAt: new FormControl<Date | null | undefined>(undefined),
-			Comment: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32)]),
+			Status: new FormControl<ChangeInfoStatus | null | undefined>(undefined, [Validators.required]),
+			SubmittedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -146,6 +168,8 @@ export namespace MyNS {
 
 	/** The information for each resource record set that you want to change. */
 	export interface Change {
+
+		/** Required */
 		Action: ChangeAction;
 
 		/**
@@ -157,11 +181,13 @@ export namespace MyNS {
 
 	/** The information for each resource record set that you want to change. */
 	export interface ChangeFormProperties {
+
+		/** Required */
 		Action: FormControl<ChangeAction | null | undefined>,
 	}
 	export function CreateChangeFormGroup() {
 		return new FormGroup<ChangeFormProperties>({
-			Action: new FormControl<ChangeAction | null | undefined>(undefined),
+			Action: new FormControl<ChangeAction | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -171,50 +197,120 @@ export namespace MyNS {
 
 	/** Information about the resource record set to create or delete. */
 	export interface ResourceRecordSet {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 */
 		Name: string;
+
+		/** Required */
 		Type: ResourceRecordSetType;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		SetIdentifier?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 255
+		 */
 		Weight?: number | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Region?: ResourceRecordSetRegion | null;
 
 		/** A complex type that contains information about a geographic location. */
 		GeoLocation?: GeoLocation;
 		Failover?: ResourceRecordSetFailover | null;
 		MultiValueAnswer?: boolean | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 2147483647
+		 */
 		TTL?: number | null;
+
+		/** Minimum items: 1 */
 		ResourceRecords?: Array<ResourceRecord>;
 
 		/** <p> <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to.</p> <p>When creating resource record sets for a private hosted zone, note the following:</p> <ul> <li> <p>Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is unsupported.</p> </li> <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a>.</p> </li> </ul> */
 		AliasTarget?: AliasTarget;
+
+		/** Max length: 64 */
 		HealthCheckId?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		TrafficPolicyInstanceId?: string | null;
 	}
 
 	/** Information about the resource record set to create or delete. */
 	export interface ResourceRecordSetFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Type: FormControl<ResourceRecordSetType | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		SetIdentifier: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 255
+		 */
 		Weight: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Region: FormControl<ResourceRecordSetRegion | null | undefined>,
 		Failover: FormControl<ResourceRecordSetFailover | null | undefined>,
 		MultiValueAnswer: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 2147483647
+		 */
 		TTL: FormControl<number | null | undefined>,
+
+		/** Max length: 64 */
 		HealthCheckId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		TrafficPolicyInstanceId: FormControl<string | null | undefined>,
 	}
 	export function CreateResourceRecordSetFormGroup() {
 		return new FormGroup<ResourceRecordSetFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Type: new FormControl<ResourceRecordSetType | null | undefined>(undefined),
-			SetIdentifier: new FormControl<string | null | undefined>(undefined),
-			Weight: new FormControl<number | null | undefined>(undefined),
-			Region: new FormControl<ResourceRecordSetRegion | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
+			Type: new FormControl<ResourceRecordSetType | null | undefined>(undefined, [Validators.required]),
+			SetIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Weight: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(255)]),
+			Region: new FormControl<ResourceRecordSetRegion | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			Failover: new FormControl<ResourceRecordSetFailover | null | undefined>(undefined),
 			MultiValueAnswer: new FormControl<boolean | null | undefined>(undefined),
-			TTL: new FormControl<number | null | undefined>(undefined),
-			HealthCheckId: new FormControl<string | null | undefined>(undefined),
-			TrafficPolicyInstanceId: new FormControl<string | null | undefined>(undefined),
+			TTL: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
+			HealthCheckId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			TrafficPolicyInstanceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
@@ -226,22 +322,52 @@ export namespace MyNS {
 
 	/** A complex type that contains information about a geographic location. */
 	export interface GeoLocation {
+
+		/**
+		 * Max length: 2
+		 * Min length: 2
+		 */
 		ContinentCode?: string | null;
+
+		/**
+		 * Max length: 2
+		 * Min length: 1
+		 */
 		CountryCode?: string | null;
+
+		/**
+		 * Max length: 3
+		 * Min length: 1
+		 */
 		SubdivisionCode?: string | null;
 	}
 
 	/** A complex type that contains information about a geographic location. */
 	export interface GeoLocationFormProperties {
+
+		/**
+		 * Max length: 2
+		 * Min length: 2
+		 */
 		ContinentCode: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2
+		 * Min length: 1
+		 */
 		CountryCode: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 3
+		 * Min length: 1
+		 */
 		SubdivisionCode: FormControl<string | null | undefined>,
 	}
 	export function CreateGeoLocationFormGroup() {
 		return new FormGroup<GeoLocationFormProperties>({
-			ContinentCode: new FormControl<string | null | undefined>(undefined),
-			CountryCode: new FormControl<string | null | undefined>(undefined),
-			SubdivisionCode: new FormControl<string | null | undefined>(undefined),
+			ContinentCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(2)]),
+			CountryCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(1)]),
+			SubdivisionCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(1)]),
 		});
 
 	}
@@ -251,16 +377,26 @@ export namespace MyNS {
 
 	/** <p>Information specific to the resource record.</p> <note> <p>If you're creating an alias resource record set, omit <code>ResourceRecord</code>.</p> </note> */
 	export interface ResourceRecord {
+
+		/**
+		 * Required
+		 * Max length: 4000
+		 */
 		Value: string;
 	}
 
 	/** <p>Information specific to the resource record.</p> <note> <p>If you're creating an alias resource record set, omit <code>ResourceRecord</code>.</p> </note> */
 	export interface ResourceRecordFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 4000
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateResourceRecordFormGroup() {
 		return new FormGroup<ResourceRecordFormProperties>({
-			Value: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4000)]),
 		});
 
 	}
@@ -268,22 +404,46 @@ export namespace MyNS {
 
 	/** <p> <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to.</p> <p>When creating resource record sets for a private hosted zone, note the following:</p> <ul> <li> <p>Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is unsupported.</p> </li> <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a>.</p> </li> </ul> */
 	export interface AliasTarget {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 */
 		HostedZoneId: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 */
 		DNSName: string;
+
+		/** Required */
 		EvaluateTargetHealth: boolean;
 	}
 
 	/** <p> <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to.</p> <p>When creating resource record sets for a private hosted zone, note the following:</p> <ul> <li> <p>Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is unsupported.</p> </li> <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a>.</p> </li> </ul> */
 	export interface AliasTargetFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 */
 		HostedZoneId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 */
 		DNSName: FormControl<string | null | undefined>,
+
+		/** Required */
 		EvaluateTargetHealth: FormControl<boolean | null | undefined>,
 	}
 	export function CreateAliasTargetFormGroup() {
 		return new FormGroup<AliasTargetFormProperties>({
-			HostedZoneId: new FormControl<string | null | undefined>(undefined),
-			DNSName: new FormControl<string | null | undefined>(undefined),
-			EvaluateTargetHealth: new FormControl<boolean | null | undefined>(undefined),
+			HostedZoneId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32)]),
+			DNSName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
+			EvaluateTargetHealth: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -335,19 +495,27 @@ export namespace MyNS {
 
 	/** A complex type that contains information about a tag that you want to add or edit for the specified health check or hosted zone. */
 	export interface Tag {
+
+		/** Max length: 128 */
 		Key?: string | null;
+
+		/** Max length: 256 */
 		Value?: string | null;
 	}
 
 	/** A complex type that contains information about a tag that you want to add or edit for the specified health check or hosted zone. */
 	export interface TagFormProperties {
+
+		/** Max length: 128 */
 		Key: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -385,7 +553,18 @@ export namespace MyNS {
 
 	/** A complex type that contains information about one health check that is associated with the current AWS account. */
 	export interface HealthCheck {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 */
 		Id: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CallerReference: string;
 
 		/** If a health check or hosted zone was created by another service, <code>LinkedService</code> is a complex type that describes the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53. */
@@ -396,6 +575,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		HealthCheckConfig: HealthCheckConfig;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		HealthCheckVersion: number;
 
 		/** A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check. */
@@ -404,15 +588,31 @@ export namespace MyNS {
 
 	/** A complex type that contains information about one health check that is associated with the current AWS account. */
 	export interface HealthCheckFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CallerReference: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		HealthCheckVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateHealthCheckFormGroup() {
 		return new FormGroup<HealthCheckFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			CallerReference: new FormControl<string | null | undefined>(undefined),
-			HealthCheckVersion: new FormControl<number | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64)]),
+			CallerReference: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			HealthCheckVersion: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 		});
 
 	}
@@ -420,19 +620,27 @@ export namespace MyNS {
 
 	/** If a health check or hosted zone was created by another service, <code>LinkedService</code> is a complex type that describes the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53.  */
 	export interface LinkedService {
+
+		/** Max length: 128 */
 		ServicePrincipal?: string | null;
+
+		/** Max length: 256 */
 		Description?: string | null;
 	}
 
 	/** If a health check or hosted zone was created by another service, <code>LinkedService</code> is a complex type that describes the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53.  */
 	export interface LinkedServiceFormProperties {
+
+		/** Max length: 128 */
 		ServicePrincipal: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateLinkedServiceFormGroup() {
 		return new FormGroup<LinkedServiceFormProperties>({
-			ServicePrincipal: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			ServicePrincipal: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -440,20 +648,60 @@ export namespace MyNS {
 
 	/** A complex type that contains information about the health check. */
 	export interface HealthCheckConfig {
+
+		/**
+		 * Max length: 45
+		 * Pattern: (^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))$|^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$)
+		 */
 		IPAddress?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		Port?: number | null;
+
+		/** Required */
 		Type: HealthCheckConfigType;
+
+		/** Max length: 255 */
 		ResourcePath?: string | null;
+
+		/** Max length: 255 */
 		FullyQualifiedDomainName?: string | null;
+
+		/** Max length: 255 */
 		SearchString?: string | null;
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 30
+		 */
 		RequestInterval?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		FailureThreshold?: number | null;
 		MeasureLatency?: boolean | null;
 		Inverted?: boolean | null;
 		Disabled?: boolean | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 256
+		 */
 		HealthThreshold?: number | null;
+
+		/** Maximum items: 256 */
 		ChildHealthChecks?: Array<string>;
 		EnableSNI?: boolean | null;
+
+		/**
+		 * Minimum items: 3
+		 * Maximum items: 64
+		 */
 		Regions?: Array<HealthCheckRegion>;
 
 		/** A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy. */
@@ -463,35 +711,68 @@ export namespace MyNS {
 
 	/** A complex type that contains information about the health check. */
 	export interface HealthCheckConfigFormProperties {
+
+		/**
+		 * Max length: 45
+		 * Pattern: (^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))$|^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$)
+		 */
 		IPAddress: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		Port: FormControl<number | null | undefined>,
+
+		/** Required */
 		Type: FormControl<HealthCheckConfigType | null | undefined>,
+
+		/** Max length: 255 */
 		ResourcePath: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		FullyQualifiedDomainName: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		SearchString: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 30
+		 */
 		RequestInterval: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		FailureThreshold: FormControl<number | null | undefined>,
 		MeasureLatency: FormControl<boolean | null | undefined>,
 		Inverted: FormControl<boolean | null | undefined>,
 		Disabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 256
+		 */
 		HealthThreshold: FormControl<number | null | undefined>,
 		EnableSNI: FormControl<boolean | null | undefined>,
 		InsufficientDataHealthStatus: FormControl<HealthCheckConfigInsufficientDataHealthStatus | null | undefined>,
 	}
 	export function CreateHealthCheckConfigFormGroup() {
 		return new FormGroup<HealthCheckConfigFormProperties>({
-			IPAddress: new FormControl<string | null | undefined>(undefined),
-			Port: new FormControl<number | null | undefined>(undefined),
-			Type: new FormControl<HealthCheckConfigType | null | undefined>(undefined),
-			ResourcePath: new FormControl<string | null | undefined>(undefined),
-			FullyQualifiedDomainName: new FormControl<string | null | undefined>(undefined),
-			SearchString: new FormControl<string | null | undefined>(undefined),
-			RequestInterval: new FormControl<number | null | undefined>(undefined),
-			FailureThreshold: new FormControl<number | null | undefined>(undefined),
+			IPAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(45)]),
+			Port: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(65535)]),
+			Type: new FormControl<HealthCheckConfigType | null | undefined>(undefined, [Validators.required]),
+			ResourcePath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			FullyQualifiedDomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			SearchString: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			RequestInterval: new FormControl<number | null | undefined>(undefined, [Validators.min(10), Validators.max(30)]),
+			FailureThreshold: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10)]),
 			MeasureLatency: new FormControl<boolean | null | undefined>(undefined),
 			Inverted: new FormControl<boolean | null | undefined>(undefined),
 			Disabled: new FormControl<boolean | null | undefined>(undefined),
-			HealthThreshold: new FormControl<number | null | undefined>(undefined),
+			HealthThreshold: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(256)]),
 			EnableSNI: new FormControl<boolean | null | undefined>(undefined),
 			InsufficientDataHealthStatus: new FormControl<HealthCheckConfigInsufficientDataHealthStatus | null | undefined>(undefined),
 		});
@@ -505,19 +786,43 @@ export namespace MyNS {
 
 	/** A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy. */
 	export interface AlarmIdentifier {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Region: AlarmIdentifierRegion;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name: string;
 	}
 
 	/** A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy. */
 	export interface AlarmIdentifierFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Region: FormControl<AlarmIdentifierRegion | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateAlarmIdentifierFormGroup() {
 		return new FormGroup<AlarmIdentifierFormProperties>({
-			Region: new FormControl<AlarmIdentifierRegion | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Region: new FormControl<AlarmIdentifierRegion | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -529,35 +834,93 @@ export namespace MyNS {
 
 	/** A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check. */
 	export interface CloudWatchAlarmConfiguration {
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		EvaluationPeriods: number;
+
+		/** Required */
 		Threshold: number;
+
+		/** Required */
 		ComparisonOperator: CloudWatchAlarmConfigurationComparisonOperator;
+
+		/**
+		 * Required
+		 * Minimum: 60
+		 */
 		Period: number;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		MetricName: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		Namespace: string;
+
+		/** Required */
 		Statistic: CloudWatchAlarmConfigurationStatistic;
+
+		/** Maximum items: 10 */
 		Dimensions?: Array<Dimension>;
 	}
 
 	/** A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check. */
 	export interface CloudWatchAlarmConfigurationFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		EvaluationPeriods: FormControl<number | null | undefined>,
+
+		/** Required */
 		Threshold: FormControl<number | null | undefined>,
+
+		/** Required */
 		ComparisonOperator: FormControl<CloudWatchAlarmConfigurationComparisonOperator | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 60
+		 */
 		Period: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		MetricName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		Namespace: FormControl<string | null | undefined>,
+
+		/** Required */
 		Statistic: FormControl<CloudWatchAlarmConfigurationStatistic | null | undefined>,
 	}
 	export function CreateCloudWatchAlarmConfigurationFormGroup() {
 		return new FormGroup<CloudWatchAlarmConfigurationFormProperties>({
-			EvaluationPeriods: new FormControl<number | null | undefined>(undefined),
-			Threshold: new FormControl<number | null | undefined>(undefined),
-			ComparisonOperator: new FormControl<CloudWatchAlarmConfigurationComparisonOperator | null | undefined>(undefined),
-			Period: new FormControl<number | null | undefined>(undefined),
-			MetricName: new FormControl<string | null | undefined>(undefined),
-			Namespace: new FormControl<string | null | undefined>(undefined),
-			Statistic: new FormControl<CloudWatchAlarmConfigurationStatistic | null | undefined>(undefined),
+			EvaluationPeriods: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
+			Threshold: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			ComparisonOperator: new FormControl<CloudWatchAlarmConfigurationComparisonOperator | null | undefined>(undefined, [Validators.required]),
+			Period: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(60)]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			Statistic: new FormControl<CloudWatchAlarmConfigurationStatistic | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -569,19 +932,43 @@ export namespace MyNS {
 
 	/** For the metric that the CloudWatch alarm is associated with, a complex type that contains information about one dimension. */
 	export interface Dimension {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		Value: string;
 	}
 
 	/** For the metric that the CloudWatch alarm is associated with, a complex type that contains information about one dimension. */
 	export interface DimensionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateDimensionFormGroup() {
 		return new FormGroup<DimensionFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -648,8 +1035,24 @@ export namespace MyNS {
 
 	/** A complex type that contains general information about the hosted zone. */
 	export interface HostedZone {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 */
 		Id: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		CallerReference: string;
 
 		/** A complex type that contains an optional comment about your hosted zone. If you don't want to specify a comment, omit both the <code>HostedZoneConfig</code> and <code>Comment</code> elements. */
@@ -662,16 +1065,32 @@ export namespace MyNS {
 
 	/** A complex type that contains general information about the hosted zone. */
 	export interface HostedZoneFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		CallerReference: FormControl<string | null | undefined>,
 		ResourceRecordSetCount: FormControl<number | null | undefined>,
 	}
 	export function CreateHostedZoneFormGroup() {
 		return new FormGroup<HostedZoneFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			CallerReference: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
+			CallerReference: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 			ResourceRecordSetCount: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -680,18 +1099,22 @@ export namespace MyNS {
 
 	/** A complex type that contains an optional comment about your hosted zone. If you don't want to specify a comment, omit both the <code>HostedZoneConfig</code> and <code>Comment</code> elements. */
 	export interface HostedZoneConfig {
+
+		/** Max length: 256 */
 		Comment?: string | null;
 		PrivateZone?: boolean | null;
 	}
 
 	/** A complex type that contains an optional comment about your hosted zone. If you don't want to specify a comment, omit both the <code>HostedZoneConfig</code> and <code>Comment</code> elements. */
 	export interface HostedZoneConfigFormProperties {
+
+		/** Max length: 256 */
 		Comment: FormControl<string | null | undefined>,
 		PrivateZone: FormControl<boolean | null | undefined>,
 	}
 	export function CreateHostedZoneConfigFormGroup() {
 		return new FormGroup<HostedZoneConfigFormProperties>({
-			Comment: new FormControl<string | null | undefined>(undefined),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			PrivateZone: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -700,20 +1123,39 @@ export namespace MyNS {
 
 	/** A complex type that lists the name servers in a delegation set, as well as the <code>CallerReference</code> and the <code>ID</code> for the delegation set. */
 	export interface DelegationSet {
+
+		/** Max length: 32 */
 		Id?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		CallerReference?: string | null;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 */
 		NameServers: Array<string>;
 	}
 
 	/** A complex type that lists the name servers in a delegation set, as well as the <code>CallerReference</code> and the <code>ID</code> for the delegation set. */
 	export interface DelegationSetFormProperties {
+
+		/** Max length: 32 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		CallerReference: FormControl<string | null | undefined>,
 	}
 	export function CreateDelegationSetFormGroup() {
 		return new FormGroup<DelegationSetFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			CallerReference: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32)]),
+			CallerReference: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -721,6 +1163,11 @@ export namespace MyNS {
 
 	/** (Private hosted zones only) A complex type that contains information about an Amazon VPC. */
 	export interface VPC {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		VPCRegion?: VPCVPCRegion | null;
 
 		/**
@@ -732,6 +1179,11 @@ export namespace MyNS {
 
 	/** (Private hosted zones only) A complex type that contains information about an Amazon VPC. */
 	export interface VPCFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		VPCRegion: FormControl<VPCVPCRegion | null | undefined>,
 
 		/**
@@ -742,8 +1194,8 @@ export namespace MyNS {
 	}
 	export function CreateVPCFormGroup() {
 		return new FormGroup<VPCFormProperties>({
-			VPCRegion: new FormControl<VPCVPCRegion | null | undefined>(undefined),
-			VPCId: new FormControl<string | null | undefined>(undefined),
+			VPCRegion: new FormControl<VPCVPCRegion | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			VPCId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
@@ -829,22 +1281,48 @@ export namespace MyNS {
 
 	/** A complex type that contains information about a configuration for DNS query logging. */
 	export interface QueryLoggingConfig {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		Id: string;
+
+		/**
+		 * Required
+		 * Max length: 32
+		 */
 		HostedZoneId: string;
+
+		/** Required */
 		CloudWatchLogsLogGroupArn: string;
 	}
 
 	/** A complex type that contains information about a configuration for DNS query logging. */
 	export interface QueryLoggingConfigFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32
+		 */
 		HostedZoneId: FormControl<string | null | undefined>,
+
+		/** Required */
 		CloudWatchLogsLogGroupArn: FormControl<string | null | undefined>,
 	}
 	export function CreateQueryLoggingConfigFormGroup() {
 		return new FormGroup<QueryLoggingConfigFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			HostedZoneId: new FormControl<string | null | undefined>(undefined),
-			CloudWatchLogsLogGroupArn: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			HostedZoneId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32)]),
+			CloudWatchLogsLogGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -968,31 +1446,83 @@ export namespace MyNS {
 
 	/** A complex type that contains settings for a traffic policy. */
 	export interface TrafficPolicy {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		Id: string;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		Version: number;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 */
 		Name: string;
+
+		/** Required */
 		Type: ResourceRecordSetType;
+
+		/**
+		 * Required
+		 * Max length: 102400
+		 */
 		Document: string;
+
+		/** Max length: 1024 */
 		Comment?: string | null;
 	}
 
 	/** A complex type that contains settings for a traffic policy. */
 	export interface TrafficPolicyFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		Version: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 512
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Type: FormControl<ResourceRecordSetType | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 102400
+		 */
 		Document: FormControl<string | null | undefined>,
+
+		/** Max length: 1024 */
 		Comment: FormControl<string | null | undefined>,
 	}
 	export function CreateTrafficPolicyFormGroup() {
 		return new FormGroup<TrafficPolicyFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			Version: new FormControl<number | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Type: new FormControl<ResourceRecordSetType | null | undefined>(undefined),
-			Document: new FormControl<string | null | undefined>(undefined),
-			Comment: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			Version: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(1000)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512)]),
+			Type: new FormControl<ResourceRecordSetType | null | undefined>(undefined, [Validators.required]),
+			Document: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(102400)]),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1050,40 +1580,126 @@ export namespace MyNS {
 
 	/** A complex type that contains settings for the new traffic policy instance. */
 	export interface TrafficPolicyInstance {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		Id: string;
+
+		/**
+		 * Required
+		 * Max length: 32
+		 */
 		HostedZoneId: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 2147483647
+		 */
 		TTL: number;
+
+		/** Required */
 		State: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 */
 		Message: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		TrafficPolicyId: string;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		TrafficPolicyVersion: number;
+
+		/** Required */
 		TrafficPolicyType: ResourceRecordSetType;
 	}
 
 	/** A complex type that contains settings for the new traffic policy instance. */
 	export interface TrafficPolicyInstanceFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32
+		 */
 		HostedZoneId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 2147483647
+		 */
 		TTL: FormControl<number | null | undefined>,
+
+		/** Required */
 		State: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 */
 		Message: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		TrafficPolicyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		TrafficPolicyVersion: FormControl<number | null | undefined>,
+
+		/** Required */
 		TrafficPolicyType: FormControl<ResourceRecordSetType | null | undefined>,
 	}
 	export function CreateTrafficPolicyInstanceFormGroup() {
 		return new FormGroup<TrafficPolicyInstanceFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			HostedZoneId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			TTL: new FormControl<number | null | undefined>(undefined),
-			State: new FormControl<string | null | undefined>(undefined),
-			Message: new FormControl<string | null | undefined>(undefined),
-			TrafficPolicyId: new FormControl<string | null | undefined>(undefined),
-			TrafficPolicyVersion: new FormControl<number | null | undefined>(undefined),
-			TrafficPolicyType: new FormControl<ResourceRecordSetType | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			HostedZoneId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
+			TTL: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(2147483647)]),
+			State: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
+			TrafficPolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			TrafficPolicyVersion: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(1000)]),
+			TrafficPolicyType: new FormControl<ResourceRecordSetType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1151,6 +1767,11 @@ export namespace MyNS {
 
 	/** A complex type that contains the response information from a <code>CreateVPCAssociationAuthorization</code> request. */
 	export interface CreateVPCAssociationAuthorizationResponse {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 */
 		HostedZoneId: string;
 
 		/**
@@ -1162,11 +1783,16 @@ export namespace MyNS {
 
 	/** A complex type that contains the response information from a <code>CreateVPCAssociationAuthorization</code> request. */
 	export interface CreateVPCAssociationAuthorizationResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 */
 		HostedZoneId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateVPCAssociationAuthorizationResponseFormGroup() {
 		return new FormGroup<CreateVPCAssociationAuthorizationResponseFormProperties>({
-			HostedZoneId: new FormControl<string | null | undefined>(undefined),
+			HostedZoneId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32)]),
 		});
 
 	}
@@ -1400,16 +2026,26 @@ export namespace MyNS {
 		 * Required
 		 */
 		Limit: AccountLimit;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		Count: number;
 	}
 
 	/** A complex type that contains the requested limit.  */
 	export interface GetAccountLimitResponseFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		Count: FormControl<number | null | undefined>,
 	}
 	export function CreateGetAccountLimitResponseFormGroup() {
 		return new FormGroup<GetAccountLimitResponseFormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 		});
 
 	}
@@ -1417,19 +2053,33 @@ export namespace MyNS {
 
 	/** A complex type that contains the type of limit that you specified in the request and the current value for that limit. */
 	export interface AccountLimit {
+
+		/** Required */
 		Type: AccountLimitType;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		Value: number;
 	}
 
 	/** A complex type that contains the type of limit that you specified in the request and the current value for that limit. */
 	export interface AccountLimitFormProperties {
+
+		/** Required */
 		Type: FormControl<AccountLimitType | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		Value: FormControl<number | null | undefined>,
 	}
 	export function CreateAccountLimitFormGroup() {
 		return new FormGroup<AccountLimitFormProperties>({
-			Type: new FormControl<AccountLimitType | null | undefined>(undefined),
-			Value: new FormControl<number | null | undefined>(undefined),
+			Type: new FormControl<AccountLimitType | null | undefined>(undefined, [Validators.required]),
+			Value: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 		});
 
 	}
@@ -1469,6 +2119,8 @@ export namespace MyNS {
 
 	/** A complex type that contains the <code>CheckerIpRanges</code> element. */
 	export interface GetCheckerIpRangesResponse {
+
+		/** Required */
 		CheckerIpRanges: Array<string>;
 	}
 
@@ -1504,31 +2156,91 @@ export namespace MyNS {
 
 	/** A complex type that contains the codes and full continent, country, and subdivision names for the specified <code>geolocation</code> code. */
 	export interface GeoLocationDetails {
+
+		/**
+		 * Max length: 2
+		 * Min length: 2
+		 */
 		ContinentCode?: string | null;
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		ContinentName?: string | null;
+
+		/**
+		 * Max length: 2
+		 * Min length: 1
+		 */
 		CountryCode?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CountryName?: string | null;
+
+		/**
+		 * Max length: 3
+		 * Min length: 1
+		 */
 		SubdivisionCode?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SubdivisionName?: string | null;
 	}
 
 	/** A complex type that contains the codes and full continent, country, and subdivision names for the specified <code>geolocation</code> code. */
 	export interface GeoLocationDetailsFormProperties {
+
+		/**
+		 * Max length: 2
+		 * Min length: 2
+		 */
 		ContinentCode: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		ContinentName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2
+		 * Min length: 1
+		 */
 		CountryCode: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CountryName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 3
+		 * Min length: 1
+		 */
 		SubdivisionCode: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SubdivisionName: FormControl<string | null | undefined>,
 	}
 	export function CreateGeoLocationDetailsFormGroup() {
 		return new FormGroup<GeoLocationDetailsFormProperties>({
-			ContinentCode: new FormControl<string | null | undefined>(undefined),
-			ContinentName: new FormControl<string | null | undefined>(undefined),
-			CountryCode: new FormControl<string | null | undefined>(undefined),
-			CountryName: new FormControl<string | null | undefined>(undefined),
-			SubdivisionCode: new FormControl<string | null | undefined>(undefined),
-			SubdivisionName: new FormControl<string | null | undefined>(undefined),
+			ContinentCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(2)]),
+			ContinentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			CountryCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(1)]),
+			CountryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			SubdivisionCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(1)]),
+			SubdivisionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1576,16 +2288,20 @@ export namespace MyNS {
 
 	/** A complex type that contains the response to a <code>GetHealthCheckCount</code> request. */
 	export interface GetHealthCheckCountResponse {
+
+		/** Required */
 		HealthCheckCount: number;
 	}
 
 	/** A complex type that contains the response to a <code>GetHealthCheckCount</code> request. */
 	export interface GetHealthCheckCountResponseFormProperties {
+
+		/** Required */
 		HealthCheckCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGetHealthCheckCountResponseFormGroup() {
 		return new FormGroup<GetHealthCheckCountResponseFormProperties>({
-			HealthCheckCount: new FormControl<number | null | undefined>(undefined),
+			HealthCheckCount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1593,6 +2309,8 @@ export namespace MyNS {
 
 	/** A complex type that contains the response to a <code>GetHealthCheckLastFailureReason</code> request. */
 	export interface GetHealthCheckLastFailureReasonResponse {
+
+		/** Required */
 		HealthCheckObservations: Array<HealthCheckObservation>;
 	}
 
@@ -1608,7 +2326,17 @@ export namespace MyNS {
 
 	/** A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker. */
 	export interface HealthCheckObservation {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Region?: HealthCheckObservationRegion | null;
+
+		/**
+		 * Max length: 45
+		 * Pattern: (^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))$|^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$)
+		 */
 		IPAddress?: string | null;
 
 		/** A complex type that contains the status that one Amazon Route 53 health checker reports and the time of the health check. */
@@ -1617,13 +2345,23 @@ export namespace MyNS {
 
 	/** A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker. */
 	export interface HealthCheckObservationFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Region: FormControl<HealthCheckObservationRegion | null | undefined>,
+
+		/**
+		 * Max length: 45
+		 * Pattern: (^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))$|^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$)
+		 */
 		IPAddress: FormControl<string | null | undefined>,
 	}
 	export function CreateHealthCheckObservationFormGroup() {
 		return new FormGroup<HealthCheckObservationFormProperties>({
-			Region: new FormControl<HealthCheckObservationRegion | null | undefined>(undefined),
-			IPAddress: new FormControl<string | null | undefined>(undefined),
+			Region: new FormControl<HealthCheckObservationRegion | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			IPAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(45)]),
 		});
 
 	}
@@ -1653,6 +2391,8 @@ export namespace MyNS {
 
 	/** A complex type that contains the response to a <code>GetHealthCheck</code> request. */
 	export interface GetHealthCheckStatusResponse {
+
+		/** Required */
 		HealthCheckObservations: Array<HealthCheckObservation>;
 	}
 
@@ -1697,16 +2437,20 @@ export namespace MyNS {
 
 	/** A complex type that contains the response to a <code>GetHostedZoneCount</code> request. */
 	export interface GetHostedZoneCountResponse {
+
+		/** Required */
 		HostedZoneCount: number;
 	}
 
 	/** A complex type that contains the response to a <code>GetHostedZoneCount</code> request. */
 	export interface GetHostedZoneCountResponseFormProperties {
+
+		/** Required */
 		HostedZoneCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGetHostedZoneCountResponseFormGroup() {
 		return new FormGroup<GetHostedZoneCountResponseFormProperties>({
-			HostedZoneCount: new FormControl<number | null | undefined>(undefined),
+			HostedZoneCount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1720,16 +2464,26 @@ export namespace MyNS {
 		 * Required
 		 */
 		Limit: HostedZoneLimit;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		Count: number;
 	}
 
 	/** A complex type that contains the requested limit.  */
 	export interface GetHostedZoneLimitResponseFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		Count: FormControl<number | null | undefined>,
 	}
 	export function CreateGetHostedZoneLimitResponseFormGroup() {
 		return new FormGroup<GetHostedZoneLimitResponseFormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 		});
 
 	}
@@ -1737,19 +2491,33 @@ export namespace MyNS {
 
 	/** A complex type that contains the type of limit that you specified in the request and the current value for that limit. */
 	export interface HostedZoneLimit {
+
+		/** Required */
 		Type: HostedZoneLimitType;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		Value: number;
 	}
 
 	/** A complex type that contains the type of limit that you specified in the request and the current value for that limit. */
 	export interface HostedZoneLimitFormProperties {
+
+		/** Required */
 		Type: FormControl<HostedZoneLimitType | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		Value: FormControl<number | null | undefined>,
 	}
 	export function CreateHostedZoneLimitFormGroup() {
 		return new FormGroup<HostedZoneLimitFormProperties>({
-			Type: new FormControl<HostedZoneLimitType | null | undefined>(undefined),
-			Value: new FormControl<number | null | undefined>(undefined),
+			Type: new FormControl<HostedZoneLimitType | null | undefined>(undefined, [Validators.required]),
+			Value: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 		});
 
 	}
@@ -1811,16 +2579,26 @@ export namespace MyNS {
 		 * Required
 		 */
 		Limit: ReusableDelegationSetLimit;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		Count: number;
 	}
 
 	/** A complex type that contains the requested limit.  */
 	export interface GetReusableDelegationSetLimitResponseFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		Count: FormControl<number | null | undefined>,
 	}
 	export function CreateGetReusableDelegationSetLimitResponseFormGroup() {
 		return new FormGroup<GetReusableDelegationSetLimitResponseFormProperties>({
-			Count: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 		});
 
 	}
@@ -1828,19 +2606,33 @@ export namespace MyNS {
 
 	/** A complex type that contains the type of limit that you specified in the request and the current value for that limit. */
 	export interface ReusableDelegationSetLimit {
+
+		/** Required */
 		Type: ReusableDelegationSetLimitType;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		Value: number;
 	}
 
 	/** A complex type that contains the type of limit that you specified in the request and the current value for that limit. */
 	export interface ReusableDelegationSetLimitFormProperties {
+
+		/** Required */
 		Type: FormControl<ReusableDelegationSetLimitType | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		Value: FormControl<number | null | undefined>,
 	}
 	export function CreateReusableDelegationSetLimitFormGroup() {
 		return new FormGroup<ReusableDelegationSetLimitFormProperties>({
-			Type: new FormControl<ReusableDelegationSetLimitType | null | undefined>(undefined),
-			Value: new FormControl<number | null | undefined>(undefined),
+			Type: new FormControl<ReusableDelegationSetLimitType | null | undefined>(undefined, [Validators.required]),
+			Value: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 		});
 
 	}
@@ -1890,16 +2682,20 @@ export namespace MyNS {
 
 	/** A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy. */
 	export interface GetTrafficPolicyInstanceCountResponse {
+
+		/** Required */
 		TrafficPolicyInstanceCount: number;
 	}
 
 	/** A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy. */
 	export interface GetTrafficPolicyInstanceCountResponseFormProperties {
+
+		/** Required */
 		TrafficPolicyInstanceCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGetTrafficPolicyInstanceCountResponseFormGroup() {
 		return new FormGroup<GetTrafficPolicyInstanceCountResponseFormProperties>({
-			TrafficPolicyInstanceCount: new FormControl<number | null | undefined>(undefined),
+			TrafficPolicyInstanceCount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1907,29 +2703,69 @@ export namespace MyNS {
 
 	/** A complex type containing the response information for the request. */
 	export interface ListGeoLocationsResponse {
+
+		/** Required */
 		GeoLocationDetailsList: Array<GeoLocationDetails>;
+
+		/** Required */
 		IsTruncated: boolean;
+
+		/**
+		 * Max length: 2
+		 * Min length: 2
+		 */
 		NextContinentCode?: string | null;
+
+		/**
+		 * Max length: 2
+		 * Min length: 1
+		 */
 		NextCountryCode?: string | null;
+
+		/**
+		 * Max length: 3
+		 * Min length: 1
+		 */
 		NextSubdivisionCode?: string | null;
+
+		/** Required */
 		MaxItems: string;
 	}
 
 	/** A complex type containing the response information for the request. */
 	export interface ListGeoLocationsResponseFormProperties {
+
+		/** Required */
 		IsTruncated: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 2
+		 * Min length: 2
+		 */
 		NextContinentCode: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2
+		 * Min length: 1
+		 */
 		NextCountryCode: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 3
+		 * Min length: 1
+		 */
 		NextSubdivisionCode: FormControl<string | null | undefined>,
+
+		/** Required */
 		MaxItems: FormControl<string | null | undefined>,
 	}
 	export function CreateListGeoLocationsResponseFormGroup() {
 		return new FormGroup<ListGeoLocationsResponseFormProperties>({
-			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
-			NextContinentCode: new FormControl<string | null | undefined>(undefined),
-			NextCountryCode: new FormControl<string | null | undefined>(undefined),
-			NextSubdivisionCode: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<string | null | undefined>(undefined),
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			NextContinentCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(2)]),
+			NextCountryCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(1)]),
+			NextSubdivisionCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(1)]),
+			MaxItems: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1937,49 +2773,97 @@ export namespace MyNS {
 
 	/** A complex type that contains the response to a <code>ListHealthChecks</code> request. */
 	export interface ListHealthChecksResponse {
+
+		/** Required */
 		HealthChecks: Array<HealthCheck>;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 */
 		Marker: string;
+
+		/** Required */
 		IsTruncated: boolean;
+
+		/** Max length: 64 */
 		NextMarker?: string | null;
+
+		/** Required */
 		MaxItems: string;
 	}
 
 	/** A complex type that contains the response to a <code>ListHealthChecks</code> request. */
 	export interface ListHealthChecksResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/** Required */
 		IsTruncated: FormControl<boolean | null | undefined>,
+
+		/** Max length: 64 */
 		NextMarker: FormControl<string | null | undefined>,
+
+		/** Required */
 		MaxItems: FormControl<string | null | undefined>,
 	}
 	export function CreateListHealthChecksResponseFormGroup() {
 		return new FormGroup<ListHealthChecksResponseFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined),
-			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
-			NextMarker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64)]),
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			MaxItems: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ListHostedZonesResponse {
+
+		/** Required */
 		HostedZones: Array<HostedZone>;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 */
 		Marker: string;
+
+		/** Required */
 		IsTruncated: boolean;
+
+		/** Max length: 64 */
 		NextMarker?: string | null;
+
+		/** Required */
 		MaxItems: string;
 	}
 	export interface ListHostedZonesResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/** Required */
 		IsTruncated: FormControl<boolean | null | undefined>,
+
+		/** Max length: 64 */
 		NextMarker: FormControl<string | null | undefined>,
+
+		/** Required */
 		MaxItems: FormControl<string | null | undefined>,
 	}
 	export function CreateListHostedZonesResponseFormGroup() {
 		return new FormGroup<ListHostedZonesResponseFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined),
-			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
-			NextMarker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64)]),
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			MaxItems: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1987,46 +2871,78 @@ export namespace MyNS {
 
 	/** A complex type that contains the response information for the request. */
 	export interface ListHostedZonesByNameResponse {
+
+		/** Required */
 		HostedZones: Array<HostedZone>;
+
+		/** Max length: 1024 */
 		DNSName?: string | null;
+
+		/** Max length: 32 */
 		HostedZoneId?: string | null;
+
+		/** Required */
 		IsTruncated: boolean;
+
+		/** Max length: 1024 */
 		NextDNSName?: string | null;
+
+		/** Max length: 32 */
 		NextHostedZoneId?: string | null;
+
+		/** Required */
 		MaxItems: string;
 	}
 
 	/** A complex type that contains the response information for the request. */
 	export interface ListHostedZonesByNameResponseFormProperties {
+
+		/** Max length: 1024 */
 		DNSName: FormControl<string | null | undefined>,
+
+		/** Max length: 32 */
 		HostedZoneId: FormControl<string | null | undefined>,
+
+		/** Required */
 		IsTruncated: FormControl<boolean | null | undefined>,
+
+		/** Max length: 1024 */
 		NextDNSName: FormControl<string | null | undefined>,
+
+		/** Max length: 32 */
 		NextHostedZoneId: FormControl<string | null | undefined>,
+
+		/** Required */
 		MaxItems: FormControl<string | null | undefined>,
 	}
 	export function CreateListHostedZonesByNameResponseFormGroup() {
 		return new FormGroup<ListHostedZonesByNameResponseFormProperties>({
-			DNSName: new FormControl<string | null | undefined>(undefined),
-			HostedZoneId: new FormControl<string | null | undefined>(undefined),
-			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
-			NextDNSName: new FormControl<string | null | undefined>(undefined),
-			NextHostedZoneId: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<string | null | undefined>(undefined),
+			DNSName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			HostedZoneId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32)]),
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			NextDNSName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			NextHostedZoneId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32)]),
+			MaxItems: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ListQueryLoggingConfigsResponse {
+
+		/** Required */
 		QueryLoggingConfigs: Array<QueryLoggingConfig>;
+
+		/** Max length: 256 */
 		NextToken?: string | null;
 	}
 	export interface ListQueryLoggingConfigsResponseFormProperties {
+
+		/** Max length: 256 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListQueryLoggingConfigsResponseFormGroup() {
 		return new FormGroup<ListQueryLoggingConfigsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -2044,29 +2960,53 @@ export namespace MyNS {
 
 	/** A complex type that contains list information for the resource record set. */
 	export interface ListResourceRecordSetsResponse {
+
+		/** Required */
 		ResourceRecordSets: Array<ResourceRecordSet>;
+
+		/** Required */
 		IsTruncated: boolean;
+
+		/** Max length: 1024 */
 		NextRecordName?: string | null;
 		NextRecordType?: ResourceRecordSetType | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		NextRecordIdentifier?: string | null;
+
+		/** Required */
 		MaxItems: string;
 	}
 
 	/** A complex type that contains list information for the resource record set. */
 	export interface ListResourceRecordSetsResponseFormProperties {
+
+		/** Required */
 		IsTruncated: FormControl<boolean | null | undefined>,
+
+		/** Max length: 1024 */
 		NextRecordName: FormControl<string | null | undefined>,
 		NextRecordType: FormControl<ResourceRecordSetType | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		NextRecordIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		MaxItems: FormControl<string | null | undefined>,
 	}
 	export function CreateListResourceRecordSetsResponseFormGroup() {
 		return new FormGroup<ListResourceRecordSetsResponseFormProperties>({
-			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
-			NextRecordName: new FormControl<string | null | undefined>(undefined),
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			NextRecordName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			NextRecordType: new FormControl<ResourceRecordSetType | null | undefined>(undefined),
-			NextRecordIdentifier: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<string | null | undefined>(undefined),
+			NextRecordIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			MaxItems: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2074,26 +3014,50 @@ export namespace MyNS {
 
 	/** A complex type that contains information about the reusable delegation sets that are associated with the current AWS account. */
 	export interface ListReusableDelegationSetsResponse {
+
+		/** Required */
 		DelegationSets: Array<DelegationSet>;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 */
 		Marker: string;
+
+		/** Required */
 		IsTruncated: boolean;
+
+		/** Max length: 64 */
 		NextMarker?: string | null;
+
+		/** Required */
 		MaxItems: string;
 	}
 
 	/** A complex type that contains information about the reusable delegation sets that are associated with the current AWS account. */
 	export interface ListReusableDelegationSetsResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/** Required */
 		IsTruncated: FormControl<boolean | null | undefined>,
+
+		/** Max length: 64 */
 		NextMarker: FormControl<string | null | undefined>,
+
+		/** Required */
 		MaxItems: FormControl<string | null | undefined>,
 	}
 	export function CreateListReusableDelegationSetsResponseFormGroup() {
 		return new FormGroup<ListReusableDelegationSetsResponseFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined),
-			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
-			NextMarker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64)]),
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			MaxItems: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2122,19 +3086,28 @@ export namespace MyNS {
 	/** A complex type containing a resource and its associated tags. */
 	export interface ResourceTagSet {
 		ResourceType?: ResourceTagSetResourceType | null;
+
+		/** Max length: 64 */
 		ResourceId?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		Tags?: Array<Tag>;
 	}
 
 	/** A complex type containing a resource and its associated tags. */
 	export interface ResourceTagSetFormProperties {
 		ResourceType: FormControl<ResourceTagSetResourceType | null | undefined>,
+
+		/** Max length: 64 */
 		ResourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateResourceTagSetFormGroup() {
 		return new FormGroup<ResourceTagSetFormProperties>({
 			ResourceType: new FormControl<ResourceTagSetResourceType | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
 		});
 
 	}
@@ -2144,6 +3117,8 @@ export namespace MyNS {
 
 	/** A complex type containing tags for the specified resources. */
 	export interface ListTagsForResourcesResponse {
+
+		/** Required */
 		ResourceTagSets: Array<ResourceTagSet>;
 	}
 
@@ -2159,23 +3134,45 @@ export namespace MyNS {
 
 	/** A complex type that contains the response information for the request. */
 	export interface ListTrafficPoliciesResponse {
+
+		/** Required */
 		TrafficPolicySummaries: Array<TrafficPolicySummary>;
+
+		/** Required */
 		IsTruncated: boolean;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		TrafficPolicyIdMarker: string;
+
+		/** Required */
 		MaxItems: string;
 	}
 
 	/** A complex type that contains the response information for the request. */
 	export interface ListTrafficPoliciesResponseFormProperties {
+
+		/** Required */
 		IsTruncated: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		TrafficPolicyIdMarker: FormControl<string | null | undefined>,
+
+		/** Required */
 		MaxItems: FormControl<string | null | undefined>,
 	}
 	export function CreateListTrafficPoliciesResponseFormGroup() {
 		return new FormGroup<ListTrafficPoliciesResponseFormProperties>({
-			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
-			TrafficPolicyIdMarker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<string | null | undefined>(undefined),
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			TrafficPolicyIdMarker: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			MaxItems: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2183,28 +3180,78 @@ export namespace MyNS {
 
 	/** A complex type that contains information about the latest version of one traffic policy that is associated with the current AWS account. */
 	export interface TrafficPolicySummary {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		Id: string;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 */
 		Name: string;
+
+		/** Required */
 		Type: ResourceRecordSetType;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		LatestVersion: number;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		TrafficPolicyCount: number;
 	}
 
 	/** A complex type that contains information about the latest version of one traffic policy that is associated with the current AWS account. */
 	export interface TrafficPolicySummaryFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 512
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Type: FormControl<ResourceRecordSetType | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		LatestVersion: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		TrafficPolicyCount: FormControl<number | null | undefined>,
 	}
 	export function CreateTrafficPolicySummaryFormGroup() {
 		return new FormGroup<TrafficPolicySummaryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Type: new FormControl<ResourceRecordSetType | null | undefined>(undefined),
-			LatestVersion: new FormControl<number | null | undefined>(undefined),
-			TrafficPolicyCount: new FormControl<number | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512)]),
+			Type: new FormControl<ResourceRecordSetType | null | undefined>(undefined, [Validators.required]),
+			LatestVersion: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(1000)]),
+			TrafficPolicyCount: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
@@ -2212,29 +3259,47 @@ export namespace MyNS {
 
 	/** A complex type that contains the response information for the request. */
 	export interface ListTrafficPolicyInstancesResponse {
+
+		/** Required */
 		TrafficPolicyInstances: Array<TrafficPolicyInstance>;
+
+		/** Max length: 32 */
 		HostedZoneIdMarker?: string | null;
+
+		/** Max length: 1024 */
 		TrafficPolicyInstanceNameMarker?: string | null;
 		TrafficPolicyInstanceTypeMarker?: ResourceRecordSetType | null;
+
+		/** Required */
 		IsTruncated: boolean;
+
+		/** Required */
 		MaxItems: string;
 	}
 
 	/** A complex type that contains the response information for the request. */
 	export interface ListTrafficPolicyInstancesResponseFormProperties {
+
+		/** Max length: 32 */
 		HostedZoneIdMarker: FormControl<string | null | undefined>,
+
+		/** Max length: 1024 */
 		TrafficPolicyInstanceNameMarker: FormControl<string | null | undefined>,
 		TrafficPolicyInstanceTypeMarker: FormControl<ResourceRecordSetType | null | undefined>,
+
+		/** Required */
 		IsTruncated: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		MaxItems: FormControl<string | null | undefined>,
 	}
 	export function CreateListTrafficPolicyInstancesResponseFormGroup() {
 		return new FormGroup<ListTrafficPolicyInstancesResponseFormProperties>({
-			HostedZoneIdMarker: new FormControl<string | null | undefined>(undefined),
-			TrafficPolicyInstanceNameMarker: new FormControl<string | null | undefined>(undefined),
+			HostedZoneIdMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32)]),
+			TrafficPolicyInstanceNameMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			TrafficPolicyInstanceTypeMarker: new FormControl<ResourceRecordSetType | null | undefined>(undefined),
-			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
-			MaxItems: new FormControl<string | null | undefined>(undefined),
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			MaxItems: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2242,26 +3307,40 @@ export namespace MyNS {
 
 	/** A complex type that contains the response information for the request. */
 	export interface ListTrafficPolicyInstancesByHostedZoneResponse {
+
+		/** Required */
 		TrafficPolicyInstances: Array<TrafficPolicyInstance>;
+
+		/** Max length: 1024 */
 		TrafficPolicyInstanceNameMarker?: string | null;
 		TrafficPolicyInstanceTypeMarker?: ResourceRecordSetType | null;
+
+		/** Required */
 		IsTruncated: boolean;
+
+		/** Required */
 		MaxItems: string;
 	}
 
 	/** A complex type that contains the response information for the request. */
 	export interface ListTrafficPolicyInstancesByHostedZoneResponseFormProperties {
+
+		/** Max length: 1024 */
 		TrafficPolicyInstanceNameMarker: FormControl<string | null | undefined>,
 		TrafficPolicyInstanceTypeMarker: FormControl<ResourceRecordSetType | null | undefined>,
+
+		/** Required */
 		IsTruncated: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		MaxItems: FormControl<string | null | undefined>,
 	}
 	export function CreateListTrafficPolicyInstancesByHostedZoneResponseFormGroup() {
 		return new FormGroup<ListTrafficPolicyInstancesByHostedZoneResponseFormProperties>({
-			TrafficPolicyInstanceNameMarker: new FormControl<string | null | undefined>(undefined),
+			TrafficPolicyInstanceNameMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			TrafficPolicyInstanceTypeMarker: new FormControl<ResourceRecordSetType | null | undefined>(undefined),
-			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
-			MaxItems: new FormControl<string | null | undefined>(undefined),
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			MaxItems: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2269,29 +3348,47 @@ export namespace MyNS {
 
 	/** A complex type that contains the response information for the request. */
 	export interface ListTrafficPolicyInstancesByPolicyResponse {
+
+		/** Required */
 		TrafficPolicyInstances: Array<TrafficPolicyInstance>;
+
+		/** Max length: 32 */
 		HostedZoneIdMarker?: string | null;
+
+		/** Max length: 1024 */
 		TrafficPolicyInstanceNameMarker?: string | null;
 		TrafficPolicyInstanceTypeMarker?: ResourceRecordSetType | null;
+
+		/** Required */
 		IsTruncated: boolean;
+
+		/** Required */
 		MaxItems: string;
 	}
 
 	/** A complex type that contains the response information for the request. */
 	export interface ListTrafficPolicyInstancesByPolicyResponseFormProperties {
+
+		/** Max length: 32 */
 		HostedZoneIdMarker: FormControl<string | null | undefined>,
+
+		/** Max length: 1024 */
 		TrafficPolicyInstanceNameMarker: FormControl<string | null | undefined>,
 		TrafficPolicyInstanceTypeMarker: FormControl<ResourceRecordSetType | null | undefined>,
+
+		/** Required */
 		IsTruncated: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		MaxItems: FormControl<string | null | undefined>,
 	}
 	export function CreateListTrafficPolicyInstancesByPolicyResponseFormGroup() {
 		return new FormGroup<ListTrafficPolicyInstancesByPolicyResponseFormProperties>({
-			HostedZoneIdMarker: new FormControl<string | null | undefined>(undefined),
-			TrafficPolicyInstanceNameMarker: new FormControl<string | null | undefined>(undefined),
+			HostedZoneIdMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32)]),
+			TrafficPolicyInstanceNameMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			TrafficPolicyInstanceTypeMarker: new FormControl<ResourceRecordSetType | null | undefined>(undefined),
-			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
-			MaxItems: new FormControl<string | null | undefined>(undefined),
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			MaxItems: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2299,23 +3396,43 @@ export namespace MyNS {
 
 	/** A complex type that contains the response information for the request. */
 	export interface ListTrafficPolicyVersionsResponse {
+
+		/** Required */
 		TrafficPolicies: Array<TrafficPolicy>;
+
+		/** Required */
 		IsTruncated: boolean;
+
+		/**
+		 * Required
+		 * Max length: 4
+		 */
 		TrafficPolicyVersionMarker: string;
+
+		/** Required */
 		MaxItems: string;
 	}
 
 	/** A complex type that contains the response information for the request. */
 	export interface ListTrafficPolicyVersionsResponseFormProperties {
+
+		/** Required */
 		IsTruncated: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 4
+		 */
 		TrafficPolicyVersionMarker: FormControl<string | null | undefined>,
+
+		/** Required */
 		MaxItems: FormControl<string | null | undefined>,
 	}
 	export function CreateListTrafficPolicyVersionsResponseFormGroup() {
 		return new FormGroup<ListTrafficPolicyVersionsResponseFormProperties>({
-			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
-			TrafficPolicyVersionMarker: new FormControl<string | null | undefined>(undefined),
-			MaxItems: new FormControl<string | null | undefined>(undefined),
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			TrafficPolicyVersionMarker: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4)]),
+			MaxItems: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2323,7 +3440,14 @@ export namespace MyNS {
 
 	/** A complex type that contains the response information for the request. */
 	export interface ListVPCAssociationAuthorizationsResponse {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 */
 		HostedZoneId: string;
+
+		/** Max length: 256 */
 		NextToken?: string | null;
 
 		/**
@@ -2336,13 +3460,20 @@ export namespace MyNS {
 
 	/** A complex type that contains the response information for the request. */
 	export interface ListVPCAssociationAuthorizationsResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 */
 		HostedZoneId: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListVPCAssociationAuthorizationsResponseFormGroup() {
 		return new FormGroup<ListVPCAssociationAuthorizationsResponseFormProperties>({
-			HostedZoneId: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			HostedZoneId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -2350,29 +3481,65 @@ export namespace MyNS {
 
 	/** A complex type that contains the response to a <code>TestDNSAnswer</code> request.  */
 	export interface TestDNSAnswerResponse {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 0
+		 */
 		Nameserver: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 */
 		RecordName: string;
+
+		/** Required */
 		RecordType: ResourceRecordSetType;
+
+		/** Required */
 		RecordData: Array<string>;
+
+		/** Required */
 		ResponseCode: string;
+
+		/** Required */
 		Protocol: string;
 	}
 
 	/** A complex type that contains the response to a <code>TestDNSAnswer</code> request.  */
 	export interface TestDNSAnswerResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 0
+		 */
 		Nameserver: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 */
 		RecordName: FormControl<string | null | undefined>,
+
+		/** Required */
 		RecordType: FormControl<ResourceRecordSetType | null | undefined>,
+
+		/** Required */
 		ResponseCode: FormControl<string | null | undefined>,
+
+		/** Required */
 		Protocol: FormControl<string | null | undefined>,
 	}
 	export function CreateTestDNSAnswerResponseFormGroup() {
 		return new FormGroup<TestDNSAnswerResponseFormProperties>({
-			Nameserver: new FormControl<string | null | undefined>(undefined),
-			RecordName: new FormControl<string | null | undefined>(undefined),
-			RecordType: new FormControl<ResourceRecordSetType | null | undefined>(undefined),
-			ResponseCode: new FormControl<string | null | undefined>(undefined),
-			Protocol: new FormControl<string | null | undefined>(undefined),
+			Nameserver: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(0)]),
+			RecordName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
+			RecordType: new FormControl<ResourceRecordSetType | null | undefined>(undefined, [Validators.required]),
+			ResponseCode: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Protocol: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2507,17 +3674,26 @@ export namespace MyNS {
 
 	/** The information for a change request. */
 	export interface ChangeBatch {
+
+		/** Max length: 256 */
 		Comment?: string | null;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 */
 		Changes: Array<Change>;
 	}
 
 	/** The information for a change request. */
 	export interface ChangeBatchFormProperties {
+
+		/** Max length: 256 */
 		Comment: FormControl<string | null | undefined>,
 	}
 	export function CreateChangeBatchFormGroup() {
 		return new FormGroup<ChangeBatchFormProperties>({
-			Comment: new FormControl<string | null | undefined>(undefined),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -2549,7 +3725,17 @@ export namespace MyNS {
 
 	/** A complex type that contains information about the tags that you want to add, edit, or delete. */
 	export interface ChangeTagsForResourceRequest {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		AddTags?: Array<Tag>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		RemoveTagKeys?: Array<string>;
 	}
 
@@ -2569,6 +3755,12 @@ export namespace MyNS {
 
 	/** A complex type that contains the health check request information. */
 	export interface CreateHealthCheckRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CallerReference: string;
 
 		/**
@@ -2580,11 +3772,17 @@ export namespace MyNS {
 
 	/** A complex type that contains the health check request information. */
 	export interface CreateHealthCheckRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		CallerReference: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateHealthCheckRequestFormGroup() {
 		return new FormGroup<CreateHealthCheckRequestFormProperties>({
-			CallerReference: new FormControl<string | null | undefined>(undefined),
+			CallerReference: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -2592,60 +3790,116 @@ export namespace MyNS {
 
 	/** A complex type that contains information about the request to create a public or private hosted zone. */
 	export interface CreateHostedZoneRequest {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 */
 		Name: string;
 
 		/** (Private hosted zones only) A complex type that contains information about an Amazon VPC. */
 		VPC?: VPC;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		CallerReference: string;
 
 		/** A complex type that contains an optional comment about your hosted zone. If you don't want to specify a comment, omit both the <code>HostedZoneConfig</code> and <code>Comment</code> elements. */
 		HostedZoneConfig?: HostedZoneConfig;
+
+		/** Max length: 32 */
 		DelegationSetId?: string | null;
 	}
 
 	/** A complex type that contains information about the request to create a public or private hosted zone. */
 	export interface CreateHostedZoneRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		CallerReference: FormControl<string | null | undefined>,
+
+		/** Max length: 32 */
 		DelegationSetId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateHostedZoneRequestFormGroup() {
 		return new FormGroup<CreateHostedZoneRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			CallerReference: new FormControl<string | null | undefined>(undefined),
-			DelegationSetId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
+			CallerReference: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			DelegationSetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32)]),
 		});
 
 	}
 
 	export interface CreateQueryLoggingConfigRequest {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 */
 		HostedZoneId: string;
+
+		/** Required */
 		CloudWatchLogsLogGroupArn: string;
 	}
 	export interface CreateQueryLoggingConfigRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 */
 		HostedZoneId: FormControl<string | null | undefined>,
+
+		/** Required */
 		CloudWatchLogsLogGroupArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateQueryLoggingConfigRequestFormGroup() {
 		return new FormGroup<CreateQueryLoggingConfigRequestFormProperties>({
-			HostedZoneId: new FormControl<string | null | undefined>(undefined),
-			CloudWatchLogsLogGroupArn: new FormControl<string | null | undefined>(undefined),
+			HostedZoneId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32)]),
+			CloudWatchLogsLogGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface CreateReusableDelegationSetRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		CallerReference: string;
+
+		/** Max length: 32 */
 		HostedZoneId?: string | null;
 	}
 	export interface CreateReusableDelegationSetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		CallerReference: FormControl<string | null | undefined>,
+
+		/** Max length: 32 */
 		HostedZoneId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateReusableDelegationSetRequestFormGroup() {
 		return new FormGroup<CreateReusableDelegationSetRequestFormProperties>({
-			CallerReference: new FormControl<string | null | undefined>(undefined),
-			HostedZoneId: new FormControl<string | null | undefined>(undefined),
+			CallerReference: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			HostedZoneId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32)]),
 		});
 
 	}
@@ -2653,28 +3907,84 @@ export namespace MyNS {
 
 	/** A complex type that contains information about the resource record sets that you want to create based on a specified traffic policy. */
 	export interface CreateTrafficPolicyInstanceRequest {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 */
 		HostedZoneId: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 2147483647
+		 */
 		TTL: number;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		TrafficPolicyId: string;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		TrafficPolicyVersion: number;
 	}
 
 	/** A complex type that contains information about the resource record sets that you want to create based on a specified traffic policy. */
 	export interface CreateTrafficPolicyInstanceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 */
 		HostedZoneId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 2147483647
+		 */
 		TTL: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		TrafficPolicyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		TrafficPolicyVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateTrafficPolicyInstanceRequestFormGroup() {
 		return new FormGroup<CreateTrafficPolicyInstanceRequestFormProperties>({
-			HostedZoneId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			TTL: new FormControl<number | null | undefined>(undefined),
-			TrafficPolicyId: new FormControl<string | null | undefined>(undefined),
-			TrafficPolicyVersion: new FormControl<number | null | undefined>(undefined),
+			HostedZoneId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
+			TTL: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(2147483647)]),
+			TrafficPolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			TrafficPolicyVersion: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
@@ -2682,22 +3992,46 @@ export namespace MyNS {
 
 	/** A complex type that contains information about the traffic policy that you want to create. */
 	export interface CreateTrafficPolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Max length: 102400
+		 */
 		Document: string;
+
+		/** Max length: 1024 */
 		Comment?: string | null;
 	}
 
 	/** A complex type that contains information about the traffic policy that you want to create. */
 	export interface CreateTrafficPolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 102400
+		 */
 		Document: FormControl<string | null | undefined>,
+
+		/** Max length: 1024 */
 		Comment: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateTrafficPolicyRequestFormGroup() {
 		return new FormGroup<CreateTrafficPolicyRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Document: new FormControl<string | null | undefined>(undefined),
-			Comment: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512)]),
+			Document: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(102400)]),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
@@ -2705,19 +4039,33 @@ export namespace MyNS {
 
 	/** A complex type that contains information about the traffic policy that you want to create a new version for. */
 	export interface CreateTrafficPolicyVersionRequest {
+
+		/**
+		 * Required
+		 * Max length: 102400
+		 */
 		Document: string;
+
+		/** Max length: 1024 */
 		Comment?: string | null;
 	}
 
 	/** A complex type that contains information about the traffic policy that you want to create a new version for. */
 	export interface CreateTrafficPolicyVersionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 102400
+		 */
 		Document: FormControl<string | null | undefined>,
+
+		/** Max length: 1024 */
 		Comment: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateTrafficPolicyVersionRequestFormGroup() {
 		return new FormGroup<CreateTrafficPolicyVersionRequestFormProperties>({
-			Document: new FormControl<string | null | undefined>(undefined),
-			Comment: new FormControl<string | null | undefined>(undefined),
+			Document: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(102400)]),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
@@ -3212,6 +4560,12 @@ export namespace MyNS {
 
 	/** A complex type that contains information about the health checks or hosted zones for which you want to list tags. */
 	export interface ListTagsForResourcesRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		ResourceIds: Array<string>;
 	}
 
@@ -3325,53 +4679,118 @@ export namespace MyNS {
 
 	/** A complex type that contains information about a request to update a health check. */
 	export interface UpdateHealthCheckRequest {
+
+		/** Minimum: 1 */
 		HealthCheckVersion?: number | null;
+
+		/**
+		 * Max length: 45
+		 * Pattern: (^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))$|^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$)
+		 */
 		IPAddress?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		Port?: number | null;
+
+		/** Max length: 255 */
 		ResourcePath?: string | null;
+
+		/** Max length: 255 */
 		FullyQualifiedDomainName?: string | null;
+
+		/** Max length: 255 */
 		SearchString?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		FailureThreshold?: number | null;
 		Inverted?: boolean | null;
 		Disabled?: boolean | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 256
+		 */
 		HealthThreshold?: number | null;
+
+		/** Maximum items: 256 */
 		ChildHealthChecks?: Array<string>;
 		EnableSNI?: boolean | null;
+
+		/**
+		 * Minimum items: 3
+		 * Maximum items: 64
+		 */
 		Regions?: Array<HealthCheckRegion>;
 
 		/** A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy. */
 		AlarmIdentifier?: AlarmIdentifier;
 		InsufficientDataHealthStatus?: HealthCheckConfigInsufficientDataHealthStatus | null;
+
+		/** Maximum items: 64 */
 		ResetElements?: Array<ResettableElementName>;
 	}
 
 	/** A complex type that contains information about a request to update a health check. */
 	export interface UpdateHealthCheckRequestFormProperties {
+
+		/** Minimum: 1 */
 		HealthCheckVersion: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 45
+		 * Pattern: (^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))$|^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$)
+		 */
 		IPAddress: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		Port: FormControl<number | null | undefined>,
+
+		/** Max length: 255 */
 		ResourcePath: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		FullyQualifiedDomainName: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		SearchString: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		FailureThreshold: FormControl<number | null | undefined>,
 		Inverted: FormControl<boolean | null | undefined>,
 		Disabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 256
+		 */
 		HealthThreshold: FormControl<number | null | undefined>,
 		EnableSNI: FormControl<boolean | null | undefined>,
 		InsufficientDataHealthStatus: FormControl<HealthCheckConfigInsufficientDataHealthStatus | null | undefined>,
 	}
 	export function CreateUpdateHealthCheckRequestFormGroup() {
 		return new FormGroup<UpdateHealthCheckRequestFormProperties>({
-			HealthCheckVersion: new FormControl<number | null | undefined>(undefined),
-			IPAddress: new FormControl<string | null | undefined>(undefined),
-			Port: new FormControl<number | null | undefined>(undefined),
-			ResourcePath: new FormControl<string | null | undefined>(undefined),
-			FullyQualifiedDomainName: new FormControl<string | null | undefined>(undefined),
-			SearchString: new FormControl<string | null | undefined>(undefined),
-			FailureThreshold: new FormControl<number | null | undefined>(undefined),
+			HealthCheckVersion: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			IPAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(45)]),
+			Port: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(65535)]),
+			ResourcePath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			FullyQualifiedDomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			SearchString: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			FailureThreshold: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10)]),
 			Inverted: new FormControl<boolean | null | undefined>(undefined),
 			Disabled: new FormControl<boolean | null | undefined>(undefined),
-			HealthThreshold: new FormControl<number | null | undefined>(undefined),
+			HealthThreshold: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(256)]),
 			EnableSNI: new FormControl<boolean | null | undefined>(undefined),
 			InsufficientDataHealthStatus: new FormControl<HealthCheckConfigInsufficientDataHealthStatus | null | undefined>(undefined),
 		});
@@ -3381,16 +4800,20 @@ export namespace MyNS {
 
 	/** A request to update the comment for a hosted zone. */
 	export interface UpdateHostedZoneCommentRequest {
+
+		/** Max length: 256 */
 		Comment?: string | null;
 	}
 
 	/** A request to update the comment for a hosted zone. */
 	export interface UpdateHostedZoneCommentRequestFormProperties {
+
+		/** Max length: 256 */
 		Comment: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateHostedZoneCommentRequestFormGroup() {
 		return new FormGroup<UpdateHostedZoneCommentRequestFormProperties>({
-			Comment: new FormControl<string | null | undefined>(undefined),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -3398,16 +4821,26 @@ export namespace MyNS {
 
 	/** A complex type that contains information about the traffic policy that you want to update the comment for. */
 	export interface UpdateTrafficPolicyCommentRequest {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 */
 		Comment: string;
 	}
 
 	/** A complex type that contains information about the traffic policy that you want to update the comment for. */
 	export interface UpdateTrafficPolicyCommentRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 */
 		Comment: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateTrafficPolicyCommentRequestFormGroup() {
 		return new FormGroup<UpdateTrafficPolicyCommentRequestFormProperties>({
-			Comment: new FormControl<string | null | undefined>(undefined),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
 		});
 
 	}
@@ -3415,22 +4848,58 @@ export namespace MyNS {
 
 	/** A complex type that contains information about the resource record sets that you want to update based on a specified traffic policy instance. */
 	export interface UpdateTrafficPolicyInstanceRequest {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 2147483647
+		 */
 		TTL: number;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		TrafficPolicyId: string;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		TrafficPolicyVersion: number;
 	}
 
 	/** A complex type that contains information about the resource record sets that you want to update based on a specified traffic policy instance. */
 	export interface UpdateTrafficPolicyInstanceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 2147483647
+		 */
 		TTL: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 */
 		TrafficPolicyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		TrafficPolicyVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateTrafficPolicyInstanceRequestFormGroup() {
 		return new FormGroup<UpdateTrafficPolicyInstanceRequestFormProperties>({
-			TTL: new FormControl<number | null | undefined>(undefined),
-			TrafficPolicyId: new FormControl<string | null | undefined>(undefined),
-			TrafficPolicyVersion: new FormControl<number | null | undefined>(undefined),
+			TTL: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(2147483647)]),
+			TrafficPolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			TrafficPolicyVersion: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(1000)]),
 		});
 
 	}

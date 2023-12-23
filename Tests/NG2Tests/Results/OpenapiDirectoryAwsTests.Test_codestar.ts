@@ -4,38 +4,100 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AssociateTeamMemberResult {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w:/-]+$
+		 */
 		clientRequestToken?: string | null;
 	}
 	export interface AssociateTeamMemberResultFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w:/-]+$
+		 */
 		clientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateTeamMemberResultFormGroup() {
 		return new FormGroup<AssociateTeamMemberResultFormProperties>({
-			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface AssociateTeamMemberRequest {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		projectId: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w:/-]+$
+		 */
 		clientRequestToken?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: string;
+
+		/**
+		 * Required
+		 * Pattern: ^(Owner|Viewer|Contributor)$
+		 */
 		projectRole: string;
 		remoteAccessAllowed?: boolean | null;
 	}
 	export interface AssociateTeamMemberRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		projectId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w:/-]+$
+		 */
 		clientRequestToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: ^(Owner|Viewer|Contributor)$
+		 */
 		projectRole: FormControl<string | null | undefined>,
 		remoteAccessAllowed: FormControl<boolean | null | undefined>,
 	}
 	export function CreateAssociateTeamMemberRequestFormGroup() {
 		return new FormGroup<AssociateTeamMemberRequestFormProperties>({
-			projectId: new FormControl<string | null | undefined>(undefined),
-			clientRequestToken: new FormControl<string | null | undefined>(undefined),
-			userArn: new FormControl<string | null | undefined>(undefined),
-			projectRole: new FormControl<string | null | undefined>(undefined),
+			projectId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(15), Validators.minLength(2)]),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			userArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(95), Validators.minLength(32)]),
+			projectRole: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			remoteAccessAllowed: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -112,31 +174,102 @@ export namespace MyNS {
 	}
 
 	export interface CreateProjectResult {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		id: string;
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws[^:\s]*:codestar:[^:\s]+:[0-9]{12}:project\/[a-z]([a-z0-9|-])+$
+		 */
 		arn: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w:/-]+$
+		 */
 		clientRequestToken?: string | null;
+
+		/**
+		 * Min length: 1
+		 * Pattern: ^arn:aws[^:\s]{0,5}:codestar:[^:\s]+::project-template(\/(github|codecommit))?\/[a-z0-9-]+$
+		 */
 		projectTemplateId?: string | null;
 	}
 	export interface CreateProjectResultFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: ^arn:aws[^:\s]*:codestar:[^:\s]+:[0-9]{12}:project\/[a-z]([a-z0-9|-])+$
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w:/-]+$
+		 */
 		clientRequestToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Min length: 1
+		 * Pattern: ^arn:aws[^:\s]{0,5}:codestar:[^:\s]+::project-template(\/(github|codecommit))?\/[a-z0-9-]+$
+		 */
 		projectTemplateId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateProjectResultFormGroup() {
 		return new FormGroup<CreateProjectResultFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			arn: new FormControl<string | null | undefined>(undefined),
-			clientRequestToken: new FormControl<string | null | undefined>(undefined),
-			projectTemplateId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(15), Validators.minLength(2)]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			projectTemplateId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateProjectRequest {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		name: string;
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		id: string;
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^$|^\S(.*\S)?$
+		 */
 		description?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w:/-]+$
+		 */
 		clientRequestToken?: string | null;
 		sourceCode?: Array<Code>;
 
@@ -145,17 +278,42 @@ export namespace MyNS {
 		tags?: Tags;
 	}
 	export interface CreateProjectRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^$|^\S(.*\S)?$
+		 */
 		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w:/-]+$
+		 */
 		clientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateProjectRequestFormGroup() {
 		return new FormGroup<CreateProjectRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(15), Validators.minLength(2)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -209,18 +367,28 @@ export namespace MyNS {
 
 	/** The Amazon S3 location where the source code files provided with the project request are stored. */
 	export interface S3Location {
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 */
 		bucketName?: string | null;
 		bucketKey?: string | null;
 	}
 
 	/** The Amazon S3 location where the source code files provided with the project request are stored. */
 	export interface S3LocationFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 */
 		bucketName: FormControl<string | null | undefined>,
 		bucketKey: FormControl<string | null | undefined>,
 	}
 	export function CreateS3LocationFormGroup() {
 		return new FormGroup<S3LocationFormProperties>({
-			bucketName: new FormControl<string | null | undefined>(undefined),
+			bucketName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3)]),
 			bucketKey: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -249,16 +417,30 @@ export namespace MyNS {
 
 	/** Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation. */
 	export interface CodeCommitCodeDestination {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S[\w.-]*$
+		 */
 		name: string;
 	}
 
 	/** Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation. */
 	export interface CodeCommitCodeDestinationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S[\w.-]*$
+		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateCodeCommitCodeDestinationFormGroup() {
 		return new FormGroup<CodeCommitCodeDestinationFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -266,34 +448,102 @@ export namespace MyNS {
 
 	/** Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation. */
 	export interface GitHubCodeDestination {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S[\w.-]*$
+		 */
 		name: string;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		description?: string | null;
+
+		/**
+		 * Required
+		 * Pattern: ^(user|organization|User|Organization)$
+		 */
 		type: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		owner: string;
+
+		/** Required */
 		privateRepository: boolean;
+
+		/** Required */
 		issuesEnabled: boolean;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		token: string;
 	}
 
 	/** Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation. */
 	export interface GitHubCodeDestinationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S[\w.-]*$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: ^(user|organization|User|Organization)$
+		 */
 		type: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		owner: FormControl<string | null | undefined>,
+
+		/** Required */
 		privateRepository: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		issuesEnabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		token: FormControl<string | null | undefined>,
 	}
 	export function CreateGitHubCodeDestinationFormGroup() {
 		return new FormGroup<GitHubCodeDestinationFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<string | null | undefined>(undefined),
-			owner: new FormControl<string | null | undefined>(undefined),
-			privateRepository: new FormControl<boolean | null | undefined>(undefined),
-			issuesEnabled: new FormControl<boolean | null | undefined>(undefined),
-			token: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			type: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			owner: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			privateRepository: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			issuesEnabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			token: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -307,17 +557,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		source: ToolchainSource;
+
+		/**
+		 * Max length: 1224
+		 * Min length: 1
+		 */
 		roleArn?: string | null;
 		stackParameters?: TemplateParameterMap;
 	}
 
 	/** The toolchain template file provided with the project request. AWS CodeStar uses the template to provision the toolchain stack in AWS CloudFormation. */
 	export interface ToolchainFormProperties {
+
+		/**
+		 * Max length: 1224
+		 * Min length: 1
+		 */
 		roleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateToolchainFormGroup() {
 		return new FormGroup<ToolchainFormProperties>({
-			roleArn: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
 		});
 
 	}
@@ -383,27 +643,75 @@ export namespace MyNS {
 	}
 
 	export interface CreateUserProfileResult {
+
+		/**
+		 * Required
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: string;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		displayName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[\w-.+]+@[\w-.+]+$
+		 */
 		emailAddress?: string | null;
+
+		/**
+		 * Max length: 16384
+		 * Pattern: ^[\t\r\n\u0020-\u00FF]*$
+		 */
 		sshPublicKey?: string | null;
 		createdTimestamp?: Date | null;
 		lastModifiedTimestamp?: Date | null;
 	}
 	export interface CreateUserProfileResultFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		displayName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[\w-.+]+@[\w-.+]+$
+		 */
 		emailAddress: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Pattern: ^[\t\r\n\u0020-\u00FF]*$
+		 */
 		sshPublicKey: FormControl<string | null | undefined>,
 		createdTimestamp: FormControl<Date | null | undefined>,
 		lastModifiedTimestamp: FormControl<Date | null | undefined>,
 	}
 	export function CreateCreateUserProfileResultFormGroup() {
 		return new FormGroup<CreateUserProfileResultFormProperties>({
-			userArn: new FormControl<string | null | undefined>(undefined),
-			displayName: new FormControl<string | null | undefined>(undefined),
-			emailAddress: new FormControl<string | null | undefined>(undefined),
-			sshPublicKey: new FormControl<string | null | undefined>(undefined),
+			userArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(95), Validators.minLength(32)]),
+			displayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			emailAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
+			sshPublicKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384)]),
 			createdTimestamp: new FormControl<Date | null | undefined>(undefined),
 			lastModifiedTimestamp: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -411,23 +719,75 @@ export namespace MyNS {
 	}
 
 	export interface CreateUserProfileRequest {
+
+		/**
+		 * Required
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		displayName: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[\w-.+]+@[\w-.+]+$
+		 */
 		emailAddress: string;
+
+		/**
+		 * Max length: 16384
+		 * Pattern: ^[\t\r\n\u0020-\u00FF]*$
+		 */
 		sshPublicKey?: string | null;
 	}
 	export interface CreateUserProfileRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		displayName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[\w-.+]+@[\w-.+]+$
+		 */
 		emailAddress: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Pattern: ^[\t\r\n\u0020-\u00FF]*$
+		 */
 		sshPublicKey: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateUserProfileRequestFormGroup() {
 		return new FormGroup<CreateUserProfileRequestFormProperties>({
-			userArn: new FormControl<string | null | undefined>(undefined),
-			displayName: new FormControl<string | null | undefined>(undefined),
-			emailAddress: new FormControl<string | null | undefined>(undefined),
-			sshPublicKey: new FormControl<string | null | undefined>(undefined),
+			userArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(95), Validators.minLength(32)]),
+			displayName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			emailAddress: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(3)]),
+			sshPublicKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384)]),
 		});
 
 	}
@@ -443,11 +803,19 @@ export namespace MyNS {
 	}
 
 	export interface DeleteProjectResult {
+
+		/** Pattern: ^arn:aws[^:\s]*:cloudformation:[^:\s]+:[0-9]{12}:stack\/[^:\s]+\/[^:\s]+$ */
 		stackId?: string | null;
+
+		/** Pattern: ^arn:aws[^:\s]*:codestar:[^:\s]+:[0-9]{12}:project\/[a-z]([a-z0-9|-])+$ */
 		projectArn?: string | null;
 	}
 	export interface DeleteProjectResultFormProperties {
+
+		/** Pattern: ^arn:aws[^:\s]*:cloudformation:[^:\s]+:[0-9]{12}:stack\/[^:\s]+\/[^:\s]+$ */
 		stackId: FormControl<string | null | undefined>,
+
+		/** Pattern: ^arn:aws[^:\s]*:codestar:[^:\s]+:[0-9]{12}:project\/[a-z]([a-z0-9|-])+$ */
 		projectArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteProjectResultFormGroup() {
@@ -459,83 +827,201 @@ export namespace MyNS {
 	}
 
 	export interface DeleteProjectRequest {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		id: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w:/-]+$
+		 */
 		clientRequestToken?: string | null;
 		deleteStack?: boolean | null;
 	}
 	export interface DeleteProjectRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w:/-]+$
+		 */
 		clientRequestToken: FormControl<string | null | undefined>,
 		deleteStack: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDeleteProjectRequestFormGroup() {
 		return new FormGroup<DeleteProjectRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(15), Validators.minLength(2)]),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			deleteStack: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface DeleteUserProfileResult {
+
+		/**
+		 * Required
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: string;
 	}
 	export interface DeleteUserProfileResultFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteUserProfileResultFormGroup() {
 		return new FormGroup<DeleteUserProfileResultFormProperties>({
-			userArn: new FormControl<string | null | undefined>(undefined),
+			userArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(95), Validators.minLength(32)]),
 		});
 
 	}
 
 	export interface DeleteUserProfileRequest {
+
+		/**
+		 * Required
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: string;
 	}
 	export interface DeleteUserProfileRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteUserProfileRequestFormGroup() {
 		return new FormGroup<DeleteUserProfileRequestFormProperties>({
-			userArn: new FormControl<string | null | undefined>(undefined),
+			userArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(95), Validators.minLength(32)]),
 		});
 
 	}
 
 	export interface DescribeProjectResult {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		id?: string | null;
+
+		/** Pattern: ^arn:aws[^:\s]*:codestar:[^:\s]+:[0-9]{12}:project\/[a-z]([a-z0-9|-])+$ */
 		arn?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^$|^\S(.*\S)?$
+		 */
 		description?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w:/-]+$
+		 */
 		clientRequestToken?: string | null;
 		createdTimeStamp?: Date | null;
+
+		/** Pattern: ^arn:aws[^:\s]*:cloudformation:[^:\s]+:[0-9]{12}:stack\/[^:\s]+\/[^:\s]+$ */
 		stackId?: string | null;
+
+		/**
+		 * Min length: 1
+		 * Pattern: ^arn:aws[^:\s]{0,5}:codestar:[^:\s]+::project-template(\/(github|codecommit))?\/[a-z0-9-]+$
+		 */
 		projectTemplateId?: string | null;
 
 		/** An indication of whether a project creation or deletion is failed or successful. */
 		status?: ProjectStatus;
 	}
 	export interface DescribeProjectResultFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		id: FormControl<string | null | undefined>,
+
+		/** Pattern: ^arn:aws[^:\s]*:codestar:[^:\s]+:[0-9]{12}:project\/[a-z]([a-z0-9|-])+$ */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^$|^\S(.*\S)?$
+		 */
 		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[\w:/-]+$
+		 */
 		clientRequestToken: FormControl<string | null | undefined>,
 		createdTimeStamp: FormControl<Date | null | undefined>,
+
+		/** Pattern: ^arn:aws[^:\s]*:cloudformation:[^:\s]+:[0-9]{12}:stack\/[^:\s]+\/[^:\s]+$ */
 		stackId: FormControl<string | null | undefined>,
+
+		/**
+		 * Min length: 1
+		 * Pattern: ^arn:aws[^:\s]{0,5}:codestar:[^:\s]+::project-template(\/(github|codecommit))?\/[a-z0-9-]+$
+		 */
 		projectTemplateId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeProjectResultFormGroup() {
 		return new FormGroup<DescribeProjectResultFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(15), Validators.minLength(2)]),
 			arn: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			createdTimeStamp: new FormControl<Date | null | undefined>(undefined),
 			stackId: new FormControl<string | null | undefined>(undefined),
-			projectTemplateId: new FormControl<string | null | undefined>(undefined),
+			projectTemplateId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -543,73 +1029,177 @@ export namespace MyNS {
 
 	/** An indication of whether a project creation or deletion is failed or successful. */
 	export interface ProjectStatus {
+
+		/**
+		 * Required
+		 * Pattern: ^(CreateInProgress|CreateComplete|CreateFailed|DeleteComplete|DeleteFailed|DeleteInProgress|UpdateComplete|UpdateInProgress|UpdateFailed|Unknown)$
+		 */
 		state: string;
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^$|^\S(.*\S)?$
+		 */
 		reason?: string | null;
 	}
 
 	/** An indication of whether a project creation or deletion is failed or successful. */
 	export interface ProjectStatusFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^(CreateInProgress|CreateComplete|CreateFailed|DeleteComplete|DeleteFailed|DeleteInProgress|UpdateComplete|UpdateInProgress|UpdateFailed|Unknown)$
+		 */
 		state: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^$|^\S(.*\S)?$
+		 */
 		reason: FormControl<string | null | undefined>,
 	}
 	export function CreateProjectStatusFormGroup() {
 		return new FormGroup<ProjectStatusFormProperties>({
-			state: new FormControl<string | null | undefined>(undefined),
-			reason: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			reason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
 
 	export interface DescribeProjectRequest {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		id: string;
 	}
 	export interface DescribeProjectRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeProjectRequestFormGroup() {
 		return new FormGroup<DescribeProjectRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(15), Validators.minLength(2)]),
 		});
 
 	}
 
 	export interface DescribeUserProfileResult {
+
+		/**
+		 * Required
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: string;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		displayName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[\w-.+]+@[\w-.+]+$
+		 */
 		emailAddress?: string | null;
+
+		/**
+		 * Max length: 16384
+		 * Pattern: ^[\t\r\n\u0020-\u00FF]*$
+		 */
 		sshPublicKey?: string | null;
+
+		/** Required */
 		createdTimestamp: Date;
+
+		/** Required */
 		lastModifiedTimestamp: Date;
 	}
 	export interface DescribeUserProfileResultFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		displayName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[\w-.+]+@[\w-.+]+$
+		 */
 		emailAddress: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Pattern: ^[\t\r\n\u0020-\u00FF]*$
+		 */
 		sshPublicKey: FormControl<string | null | undefined>,
+
+		/** Required */
 		createdTimestamp: FormControl<Date | null | undefined>,
+
+		/** Required */
 		lastModifiedTimestamp: FormControl<Date | null | undefined>,
 	}
 	export function CreateDescribeUserProfileResultFormGroup() {
 		return new FormGroup<DescribeUserProfileResultFormProperties>({
-			userArn: new FormControl<string | null | undefined>(undefined),
-			displayName: new FormControl<string | null | undefined>(undefined),
-			emailAddress: new FormControl<string | null | undefined>(undefined),
-			sshPublicKey: new FormControl<string | null | undefined>(undefined),
-			createdTimestamp: new FormControl<Date | null | undefined>(undefined),
-			lastModifiedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			userArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(95), Validators.minLength(32)]),
+			displayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			emailAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
+			sshPublicKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384)]),
+			createdTimestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			lastModifiedTimestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DescribeUserProfileRequest {
+
+		/**
+		 * Required
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: string;
 	}
 	export interface DescribeUserProfileRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeUserProfileRequestFormGroup() {
 		return new FormGroup<DescribeUserProfileRequestFormProperties>({
-			userArn: new FormControl<string | null | undefined>(undefined),
+			userArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(95), Validators.minLength(32)]),
 		});
 
 	}
@@ -635,31 +1225,73 @@ export namespace MyNS {
 	}
 
 	export interface DisassociateTeamMemberRequest {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		projectId: string;
+
+		/**
+		 * Required
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: string;
 	}
 	export interface DisassociateTeamMemberRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		projectId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDisassociateTeamMemberRequestFormGroup() {
 		return new FormGroup<DisassociateTeamMemberRequestFormProperties>({
-			projectId: new FormControl<string | null | undefined>(undefined),
-			userArn: new FormControl<string | null | undefined>(undefined),
+			projectId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(15), Validators.minLength(2)]),
+			userArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(95), Validators.minLength(32)]),
 		});
 
 	}
 
 	export interface ListProjectsResult {
+
+		/** Required */
 		projects: Array<ProjectSummary>;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ^[\w/+=]+$
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListProjectsResultFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ^[\w/+=]+$
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListProjectsResultFormGroup() {
 		return new FormGroup<ListProjectsResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
@@ -667,35 +1299,73 @@ export namespace MyNS {
 
 	/** Information about the metadata for a project. */
 	export interface ProjectSummary {
+
+		/**
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		projectId?: string | null;
+
+		/** Pattern: ^arn:aws[^:\s]*:codestar:[^:\s]+:[0-9]{12}:project\/[a-z]([a-z0-9|-])+$ */
 		projectArn?: string | null;
 	}
 
 	/** Information about the metadata for a project. */
 	export interface ProjectSummaryFormProperties {
+
+		/**
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		projectId: FormControl<string | null | undefined>,
+
+		/** Pattern: ^arn:aws[^:\s]*:codestar:[^:\s]+:[0-9]{12}:project\/[a-z]([a-z0-9|-])+$ */
 		projectArn: FormControl<string | null | undefined>,
 	}
 	export function CreateProjectSummaryFormGroup() {
 		return new FormGroup<ProjectSummaryFormProperties>({
-			projectId: new FormControl<string | null | undefined>(undefined),
+			projectId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(15), Validators.minLength(2)]),
 			projectArn: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ListProjectsRequest {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ^[\w/+=]+$
+		 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListProjectsRequestFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ^[\w/+=]+$
+		 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListProjectsRequestFormGroup() {
 		return new FormGroup<ListProjectsRequestFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -712,14 +1382,26 @@ export namespace MyNS {
 
 	export interface ListResourcesResult {
 		resources?: Array<Resource>;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ^[\w/+=]+$
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListResourcesResultFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ^[\w/+=]+$
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListResourcesResultFormGroup() {
 		return new FormGroup<ListResourcesResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
@@ -727,82 +1409,192 @@ export namespace MyNS {
 
 	/** Information about a resource for a project. */
 	export interface Resource {
+
+		/**
+		 * Required
+		 * Min length: 11
+		 * Pattern: ^arn\:aws\:\S.*\:.*
+		 */
 		id: string;
 	}
 
 	/** Information about a resource for a project. */
 	export interface ResourceFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 11
+		 * Pattern: ^arn\:aws\:\S.*\:.*
+		 */
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreateResourceFormGroup() {
 		return new FormGroup<ResourceFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11)]),
 		});
 
 	}
 
 	export interface ListResourcesRequest {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		projectId: string;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ^[\w/+=]+$
+		 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListResourcesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		projectId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ^[\w/+=]+$
+		 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListResourcesRequestFormGroup() {
 		return new FormGroup<ListResourcesRequestFormProperties>({
-			projectId: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			projectId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(15), Validators.minLength(2)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListTagsForProjectResult {
 		tags?: Tags;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ^[\w/+=]+$
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListTagsForProjectResultFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ^[\w/+=]+$
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForProjectResultFormGroup() {
 		return new FormGroup<ListTagsForProjectResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListTagsForProjectRequest {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		id: string;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ^[\w/+=]+$
+		 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListTagsForProjectRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ^[\w/+=]+$
+		 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListTagsForProjectRequestFormGroup() {
 		return new FormGroup<ListTagsForProjectRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(15), Validators.minLength(2)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListTeamMembersResult {
+
+		/** Required */
 		teamMembers: Array<TeamMember>;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ^[\w/+=]+$
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListTeamMembersResultFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ^[\w/+=]+$
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTeamMembersResultFormGroup() {
 		return new FormGroup<ListTeamMembersResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
@@ -810,55 +1602,129 @@ export namespace MyNS {
 
 	/** Information about a team member in a project. */
 	export interface TeamMember {
+
+		/**
+		 * Required
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: string;
+
+		/**
+		 * Required
+		 * Pattern: ^(Owner|Viewer|Contributor)$
+		 */
 		projectRole: string;
 		remoteAccessAllowed?: boolean | null;
 	}
 
 	/** Information about a team member in a project. */
 	export interface TeamMemberFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: ^(Owner|Viewer|Contributor)$
+		 */
 		projectRole: FormControl<string | null | undefined>,
 		remoteAccessAllowed: FormControl<boolean | null | undefined>,
 	}
 	export function CreateTeamMemberFormGroup() {
 		return new FormGroup<TeamMemberFormProperties>({
-			userArn: new FormControl<string | null | undefined>(undefined),
-			projectRole: new FormControl<string | null | undefined>(undefined),
+			userArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(95), Validators.minLength(32)]),
+			projectRole: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			remoteAccessAllowed: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ListTeamMembersRequest {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		projectId: string;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ^[\w/+=]+$
+		 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListTeamMembersRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		projectId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ^[\w/+=]+$
+		 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListTeamMembersRequestFormGroup() {
 		return new FormGroup<ListTeamMembersRequestFormProperties>({
-			projectId: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			projectId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(15), Validators.minLength(2)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListUserProfilesResult {
+
+		/** Required */
 		userProfiles: Array<UserProfileSummary>;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ^[\w/+=]+$
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListUserProfilesResultFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ^[\w/+=]+$
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListUserProfilesResultFormGroup() {
 		return new FormGroup<ListUserProfilesResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
@@ -866,41 +1732,109 @@ export namespace MyNS {
 
 	/** Information about a user's profile in AWS CodeStar. */
 	export interface UserProfileSummary {
+
+		/**
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		displayName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[\w-.+]+@[\w-.+]+$
+		 */
 		emailAddress?: string | null;
+
+		/**
+		 * Max length: 16384
+		 * Pattern: ^[\t\r\n\u0020-\u00FF]*$
+		 */
 		sshPublicKey?: string | null;
 	}
 
 	/** Information about a user's profile in AWS CodeStar. */
 	export interface UserProfileSummaryFormProperties {
+
+		/**
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		displayName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[\w-.+]+@[\w-.+]+$
+		 */
 		emailAddress: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Pattern: ^[\t\r\n\u0020-\u00FF]*$
+		 */
 		sshPublicKey: FormControl<string | null | undefined>,
 	}
 	export function CreateUserProfileSummaryFormGroup() {
 		return new FormGroup<UserProfileSummaryFormProperties>({
-			userArn: new FormControl<string | null | undefined>(undefined),
-			displayName: new FormControl<string | null | undefined>(undefined),
-			emailAddress: new FormControl<string | null | undefined>(undefined),
-			sshPublicKey: new FormControl<string | null | undefined>(undefined),
+			userArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(95), Validators.minLength(32)]),
+			displayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			emailAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
+			sshPublicKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384)]),
 		});
 
 	}
 
 	export interface ListUserProfilesRequest {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ^[\w/+=]+$
+		 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListUserProfilesRequestFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ^[\w/+=]+$
+		 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListUserProfilesRequestFormGroup() {
 		return new FormGroup<ListUserProfilesRequestFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -917,15 +1851,31 @@ export namespace MyNS {
 	}
 
 	export interface TagProjectRequest {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		id: string;
+
+		/** Required */
 		tags: Tags;
 	}
 	export interface TagProjectRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreateTagProjectRequestFormGroup() {
 		return new FormGroup<TagProjectRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(15), Validators.minLength(2)]),
 		});
 
 	}
@@ -941,15 +1891,31 @@ export namespace MyNS {
 	}
 
 	export interface UntagProjectRequest {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		id: string;
+
+		/** Required */
 		tags: Array<string>;
 	}
 	export interface UntagProjectRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagProjectRequestFormGroup() {
 		return new FormGroup<UntagProjectRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(15), Validators.minLength(2)]),
 		});
 
 	}
@@ -965,37 +1931,89 @@ export namespace MyNS {
 	}
 
 	export interface UpdateProjectRequest {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		id: string;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^$|^\S(.*\S)?$
+		 */
 		description?: string | null;
 	}
 	export interface UpdateProjectRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Pattern: ^$|^\S(.*\S)?$
+		 */
 		description: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateProjectRequestFormGroup() {
 		return new FormGroup<UpdateProjectRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(15), Validators.minLength(2)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
 
 	export interface UpdateTeamMemberResult {
+
+		/**
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn?: string | null;
+
+		/** Pattern: ^(Owner|Viewer|Contributor)$ */
 		projectRole?: string | null;
 		remoteAccessAllowed?: boolean | null;
 	}
 	export interface UpdateTeamMemberResultFormProperties {
+
+		/**
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: FormControl<string | null | undefined>,
+
+		/** Pattern: ^(Owner|Viewer|Contributor)$ */
 		projectRole: FormControl<string | null | undefined>,
 		remoteAccessAllowed: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpdateTeamMemberResultFormGroup() {
 		return new FormGroup<UpdateTeamMemberResultFormProperties>({
-			userArn: new FormControl<string | null | undefined>(undefined),
+			userArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(95), Validators.minLength(32)]),
 			projectRole: new FormControl<string | null | undefined>(undefined),
 			remoteAccessAllowed: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -1003,21 +2021,53 @@ export namespace MyNS {
 	}
 
 	export interface UpdateTeamMemberRequest {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		projectId: string;
+
+		/**
+		 * Required
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: string;
+
+		/** Pattern: ^(Owner|Viewer|Contributor)$ */
 		projectRole?: string | null;
 		remoteAccessAllowed?: boolean | null;
 	}
 	export interface UpdateTeamMemberRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 2
+		 * Pattern: ^[a-z][a-z0-9-]+$
+		 */
 		projectId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: FormControl<string | null | undefined>,
+
+		/** Pattern: ^(Owner|Viewer|Contributor)$ */
 		projectRole: FormControl<string | null | undefined>,
 		remoteAccessAllowed: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpdateTeamMemberRequestFormGroup() {
 		return new FormGroup<UpdateTeamMemberRequestFormProperties>({
-			projectId: new FormControl<string | null | undefined>(undefined),
-			userArn: new FormControl<string | null | undefined>(undefined),
+			projectId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(15), Validators.minLength(2)]),
+			userArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(95), Validators.minLength(32)]),
 			projectRole: new FormControl<string | null | undefined>(undefined),
 			remoteAccessAllowed: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -1035,27 +2085,75 @@ export namespace MyNS {
 	}
 
 	export interface UpdateUserProfileResult {
+
+		/**
+		 * Required
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: string;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		displayName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[\w-.+]+@[\w-.+]+$
+		 */
 		emailAddress?: string | null;
+
+		/**
+		 * Max length: 16384
+		 * Pattern: ^[\t\r\n\u0020-\u00FF]*$
+		 */
 		sshPublicKey?: string | null;
 		createdTimestamp?: Date | null;
 		lastModifiedTimestamp?: Date | null;
 	}
 	export interface UpdateUserProfileResultFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		displayName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[\w-.+]+@[\w-.+]+$
+		 */
 		emailAddress: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Pattern: ^[\t\r\n\u0020-\u00FF]*$
+		 */
 		sshPublicKey: FormControl<string | null | undefined>,
 		createdTimestamp: FormControl<Date | null | undefined>,
 		lastModifiedTimestamp: FormControl<Date | null | undefined>,
 	}
 	export function CreateUpdateUserProfileResultFormGroup() {
 		return new FormGroup<UpdateUserProfileResultFormProperties>({
-			userArn: new FormControl<string | null | undefined>(undefined),
-			displayName: new FormControl<string | null | undefined>(undefined),
-			emailAddress: new FormControl<string | null | undefined>(undefined),
-			sshPublicKey: new FormControl<string | null | undefined>(undefined),
+			userArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(95), Validators.minLength(32)]),
+			displayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			emailAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
+			sshPublicKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384)]),
 			createdTimestamp: new FormControl<Date | null | undefined>(undefined),
 			lastModifiedTimestamp: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1063,23 +2161,71 @@ export namespace MyNS {
 	}
 
 	export interface UpdateUserProfileRequest {
+
+		/**
+		 * Required
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: string;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		displayName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[\w-.+]+@[\w-.+]+$
+		 */
 		emailAddress?: string | null;
+
+		/**
+		 * Max length: 16384
+		 * Pattern: ^[\t\r\n\u0020-\u00FF]*$
+		 */
 		sshPublicKey?: string | null;
 	}
 	export interface UpdateUserProfileRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 95
+		 * Min length: 32
+		 * Pattern: ^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$
+		 */
 		userArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^\S(.*\S)?$
+		 */
 		displayName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[\w-.+]+@[\w-.+]+$
+		 */
 		emailAddress: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Pattern: ^[\t\r\n\u0020-\u00FF]*$
+		 */
 		sshPublicKey: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateUserProfileRequestFormGroup() {
 		return new FormGroup<UpdateUserProfileRequestFormProperties>({
-			userArn: new FormControl<string | null | undefined>(undefined),
-			displayName: new FormControl<string | null | undefined>(undefined),
-			emailAddress: new FormControl<string | null | undefined>(undefined),
-			sshPublicKey: new FormControl<string | null | undefined>(undefined),
+			userArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(95), Validators.minLength(32)]),
+			displayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			emailAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
+			sshPublicKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384)]),
 		});
 
 	}

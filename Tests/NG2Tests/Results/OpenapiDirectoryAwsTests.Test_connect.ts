@@ -109,6 +109,11 @@ export namespace MyNS {
 	export interface User {
 		Id?: string | null;
 		Arn?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		Username?: string | null;
 
 		/** Contains information about the identity of a user. */
@@ -117,6 +122,11 @@ export namespace MyNS {
 		/** Contains information about the phone configuration settings for a user. */
 		PhoneConfig?: UserPhoneConfig;
 		DirectoryUserId?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		SecurityProfileIds?: Array<string>;
 		RoutingProfileId?: string | null;
 		HierarchyGroupId?: string | null;
@@ -127,6 +137,11 @@ export namespace MyNS {
 	export interface UserFormProperties {
 		Id: FormControl<string | null | undefined>,
 		Arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		Username: FormControl<string | null | undefined>,
 		DirectoryUserId: FormControl<string | null | undefined>,
 		RoutingProfileId: FormControl<string | null | undefined>,
@@ -136,7 +151,7 @@ export namespace MyNS {
 		return new FormGroup<UserFormProperties>({
 			Id: new FormControl<string | null | undefined>(undefined),
 			Arn: new FormControl<string | null | undefined>(undefined),
-			Username: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			DirectoryUserId: new FormControl<string | null | undefined>(undefined),
 			RoutingProfileId: new FormControl<string | null | undefined>(undefined),
 			HierarchyGroupId: new FormControl<string | null | undefined>(undefined),
@@ -147,21 +162,41 @@ export namespace MyNS {
 
 	/** Contains information about the identity of a user. */
 	export interface UserIdentityInfo {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		FirstName?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		LastName?: string | null;
 		Email?: string | null;
 	}
 
 	/** Contains information about the identity of a user. */
 	export interface UserIdentityInfoFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		FirstName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		LastName: FormControl<string | null | undefined>,
 		Email: FormControl<string | null | undefined>,
 	}
 	export function CreateUserIdentityInfoFormGroup() {
 		return new FormGroup<UserIdentityInfoFormProperties>({
-			FirstName: new FormControl<string | null | undefined>(undefined),
-			LastName: new FormControl<string | null | undefined>(undefined),
+			FirstName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			LastName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			Email: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -170,24 +205,32 @@ export namespace MyNS {
 
 	/** Contains information about the phone configuration settings for a user. */
 	export interface UserPhoneConfig {
+
+		/** Required */
 		PhoneType: PhoneType;
 		AutoAccept?: boolean | null;
+
+		/** Minimum: 0 */
 		AfterContactWorkTimeLimit?: number | null;
 		DeskPhoneNumber?: string | null;
 	}
 
 	/** Contains information about the phone configuration settings for a user. */
 	export interface UserPhoneConfigFormProperties {
+
+		/** Required */
 		PhoneType: FormControl<PhoneType | null | undefined>,
 		AutoAccept: FormControl<boolean | null | undefined>,
+
+		/** Minimum: 0 */
 		AfterContactWorkTimeLimit: FormControl<number | null | undefined>,
 		DeskPhoneNumber: FormControl<string | null | undefined>,
 	}
 	export function CreateUserPhoneConfigFormGroup() {
 		return new FormGroup<UserPhoneConfigFormProperties>({
-			PhoneType: new FormControl<PhoneType | null | undefined>(undefined),
+			PhoneType: new FormControl<PhoneType | null | undefined>(undefined, [Validators.required]),
 			AutoAccept: new FormControl<boolean | null | undefined>(undefined),
-			AfterContactWorkTimeLimit: new FormControl<number | null | undefined>(undefined),
+			AfterContactWorkTimeLimit: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			DeskPhoneNumber: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -686,6 +729,8 @@ export namespace MyNS {
 
 	/** Contains summary information about a contact flow. */
 	export interface ContactFlowSummary {
+
+		/** Max length: 500 */
 		Id?: string | null;
 		Arn?: string | null;
 		Name?: string | null;
@@ -694,6 +739,8 @@ export namespace MyNS {
 
 	/** Contains summary information about a contact flow. */
 	export interface ContactFlowSummaryFormProperties {
+
+		/** Max length: 500 */
 		Id: FormControl<string | null | undefined>,
 		Arn: FormControl<string | null | undefined>,
 		Name: FormControl<string | null | undefined>,
@@ -701,7 +748,7 @@ export namespace MyNS {
 	}
 	export function CreateContactFlowSummaryFormGroup() {
 		return new FormGroup<ContactFlowSummaryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
 			Arn: new FormControl<string | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined),
 			ContactFlowType: new FormControl<ContactFlowSummaryContactFlowType | null | undefined>(undefined),
@@ -820,6 +867,11 @@ export namespace MyNS {
 	export interface QueueSummary {
 		Id?: string | null;
 		Arn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name?: string | null;
 		QueueType?: QueueSummaryQueueType | null;
 	}
@@ -828,6 +880,11 @@ export namespace MyNS {
 	export interface QueueSummaryFormProperties {
 		Id: FormControl<string | null | undefined>,
 		Arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 		QueueType: FormControl<QueueSummaryQueueType | null | undefined>,
 	}
@@ -835,7 +892,7 @@ export namespace MyNS {
 		return new FormGroup<QueueSummaryFormProperties>({
 			Id: new FormControl<string | null | undefined>(undefined),
 			Arn: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			QueueType: new FormControl<QueueSummaryQueueType | null | undefined>(undefined),
 		});
 
@@ -864,6 +921,11 @@ export namespace MyNS {
 	export interface RoutingProfileSummary {
 		Id?: string | null;
 		Arn?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		Name?: string | null;
 	}
 
@@ -871,13 +933,18 @@ export namespace MyNS {
 	export interface RoutingProfileSummaryFormProperties {
 		Id: FormControl<string | null | undefined>,
 		Arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateRoutingProfileSummaryFormGroup() {
 		return new FormGroup<RoutingProfileSummaryFormProperties>({
 			Id: new FormControl<string | null | undefined>(undefined),
 			Arn: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -963,6 +1030,11 @@ export namespace MyNS {
 	export interface UserSummary {
 		Id?: string | null;
 		Arn?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		Username?: string | null;
 	}
 
@@ -970,45 +1042,90 @@ export namespace MyNS {
 	export interface UserSummaryFormProperties {
 		Id: FormControl<string | null | undefined>,
 		Arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		Username: FormControl<string | null | undefined>,
 	}
 	export function CreateUserSummaryFormGroup() {
 		return new FormGroup<UserSummaryFormProperties>({
 			Id: new FormControl<string | null | undefined>(undefined),
 			Arn: new FormControl<string | null | undefined>(undefined),
-			Username: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface StartChatContactResponse {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ContactId?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ParticipantId?: string | null;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		ParticipantToken?: string | null;
 	}
 	export interface StartChatContactResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ContactId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ParticipantId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		ParticipantToken: FormControl<string | null | undefined>,
 	}
 	export function CreateStartChatContactResponseFormGroup() {
 		return new FormGroup<StartChatContactResponseFormProperties>({
-			ContactId: new FormControl<string | null | undefined>(undefined),
-			ParticipantId: new FormControl<string | null | undefined>(undefined),
-			ParticipantToken: new FormControl<string | null | undefined>(undefined),
+			ContactId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ParticipantId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ParticipantToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface StartOutboundVoiceContactResponse {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ContactId?: string | null;
 	}
 	export interface StartOutboundVoiceContactResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ContactId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartOutboundVoiceContactResponseFormGroup() {
 		return new FormGroup<StartOutboundVoiceContactResponseFormProperties>({
-			ContactId: new FormControl<string | null | undefined>(undefined),
+			ContactId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -1066,19 +1183,43 @@ export namespace MyNS {
 
 	/** A chat message. */
 	export interface ChatMessage {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ContentType: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Content: string;
 	}
 
 	/** A chat message. */
 	export interface ChatMessageFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ContentType: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Content: FormControl<string | null | undefined>,
 	}
 	export function CreateChatMessageFormGroup() {
 		return new FormGroup<ChatMessageFormProperties>({
-			ContentType: new FormControl<string | null | undefined>(undefined),
-			Content: new FormControl<string | null | undefined>(undefined),
+			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			Content: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1086,7 +1227,15 @@ export namespace MyNS {
 	export enum Comparison { LT = 0 }
 
 	export interface CreateUserRequest {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		Username: string;
+
+		/** Pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\S]{8,64}$/ */
 		Password?: string | null;
 
 		/** Contains information about the identity of a user. */
@@ -1098,24 +1247,42 @@ export namespace MyNS {
 		 */
 		PhoneConfig: UserPhoneConfig;
 		DirectoryUserId?: string | null;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		SecurityProfileIds: Array<string>;
+
+		/** Required */
 		RoutingProfileId: string;
 		HierarchyGroupId?: string | null;
 		Tags?: TagMap;
 	}
 	export interface CreateUserRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		Username: FormControl<string | null | undefined>,
+
+		/** Pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\S]{8,64}$/ */
 		Password: FormControl<string | null | undefined>,
 		DirectoryUserId: FormControl<string | null | undefined>,
+
+		/** Required */
 		RoutingProfileId: FormControl<string | null | undefined>,
 		HierarchyGroupId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateUserRequestFormGroup() {
 		return new FormGroup<CreateUserRequestFormProperties>({
-			Username: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			Password: new FormControl<string | null | undefined>(undefined),
 			DirectoryUserId: new FormControl<string | null | undefined>(undefined),
-			RoutingProfileId: new FormControl<string | null | undefined>(undefined),
+			RoutingProfileId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			HierarchyGroupId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1166,7 +1333,14 @@ export namespace MyNS {
 
 	/** Contains the filter to apply when retrieving metrics. */
 	export interface Filters {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		Queues?: Array<string>;
+
+		/** Maximum items: 1 */
 		Channels?: Array<Channel>;
 	}
 
@@ -1196,19 +1370,33 @@ export namespace MyNS {
 		 * Required
 		 */
 		Filters: Filters;
+
+		/** Maximum items: 2 */
 		Groupings?: Array<Grouping>;
+
+		/** Required */
 		CurrentMetrics: Array<CurrentMetric>;
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface GetCurrentMetricDataRequestFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateGetCurrentMetricDataRequestFormGroup() {
 		return new FormGroup<GetCurrentMetricDataRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -1224,7 +1412,11 @@ export namespace MyNS {
 	}
 
 	export interface GetMetricDataRequest {
+
+		/** Required */
 		StartTime: Date;
+
+		/** Required */
 		EndTime: Date;
 
 		/**
@@ -1232,23 +1424,41 @@ export namespace MyNS {
 		 * Required
 		 */
 		Filters: Filters;
+
+		/** Maximum items: 2 */
 		Groupings?: Array<Grouping>;
+
+		/** Required */
 		HistoricalMetrics: Array<HistoricalMetric>;
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface GetMetricDataRequestFormProperties {
+
+		/** Required */
 		StartTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		EndTime: FormControl<Date | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateGetMetricDataRequestFormGroup() {
 		return new FormGroup<GetMetricDataRequestFormProperties>({
-			StartTime: new FormControl<Date | null | undefined>(undefined),
-			EndTime: new FormControl<Date | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			EndTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -1348,22 +1558,45 @@ export namespace MyNS {
 
 	/** The customer's details. */
 	export interface ParticipantDetails {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		DisplayName: string;
 	}
 
 	/** The customer's details. */
 	export interface ParticipantDetailsFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		DisplayName: FormControl<string | null | undefined>,
 	}
 	export function CreateParticipantDetailsFormGroup() {
 		return new FormGroup<ParticipantDetailsFormProperties>({
-			DisplayName: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface StartChatContactRequest {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		InstanceId: string;
+
+		/**
+		 * Required
+		 * Max length: 500
+		 */
 		ContactFlowId: string;
 		Attributes?: Attributes;
 
@@ -1375,45 +1608,90 @@ export namespace MyNS {
 
 		/** A chat message. */
 		InitialMessage?: ChatMessage;
+
+		/** Max length: 500 */
 		ClientToken?: string | null;
 	}
 	export interface StartChatContactRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		InstanceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 500
+		 */
 		ContactFlowId: FormControl<string | null | undefined>,
+
+		/** Max length: 500 */
 		ClientToken: FormControl<string | null | undefined>,
 	}
 	export function CreateStartChatContactRequestFormGroup() {
 		return new FormGroup<StartChatContactRequestFormProperties>({
-			InstanceId: new FormControl<string | null | undefined>(undefined),
-			ContactFlowId: new FormControl<string | null | undefined>(undefined),
-			ClientToken: new FormControl<string | null | undefined>(undefined),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			ContactFlowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500)]),
+			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
 		});
 
 	}
 
 	export interface StartOutboundVoiceContactRequest {
+
+		/** Required */
 		DestinationPhoneNumber: string;
+
+		/**
+		 * Required
+		 * Max length: 500
+		 */
 		ContactFlowId: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		InstanceId: string;
+
+		/** Max length: 500 */
 		ClientToken?: string | null;
 		SourcePhoneNumber?: string | null;
 		QueueId?: string | null;
 		Attributes?: Attributes;
 	}
 	export interface StartOutboundVoiceContactRequestFormProperties {
+
+		/** Required */
 		DestinationPhoneNumber: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 500
+		 */
 		ContactFlowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		InstanceId: FormControl<string | null | undefined>,
+
+		/** Max length: 500 */
 		ClientToken: FormControl<string | null | undefined>,
 		SourcePhoneNumber: FormControl<string | null | undefined>,
 		QueueId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartOutboundVoiceContactRequestFormGroup() {
 		return new FormGroup<StartOutboundVoiceContactRequestFormProperties>({
-			DestinationPhoneNumber: new FormControl<string | null | undefined>(undefined),
-			ContactFlowId: new FormControl<string | null | undefined>(undefined),
-			InstanceId: new FormControl<string | null | undefined>(undefined),
-			ClientToken: new FormControl<string | null | undefined>(undefined),
+			DestinationPhoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ContactFlowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500)]),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
 			SourcePhoneNumber: new FormControl<string | null | undefined>(undefined),
 			QueueId: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1421,22 +1699,48 @@ export namespace MyNS {
 	}
 
 	export interface StopContactRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ContactId: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		InstanceId: string;
 	}
 	export interface StopContactRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ContactId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		InstanceId: FormControl<string | null | undefined>,
 	}
 	export function CreateStopContactRequestFormGroup() {
 		return new FormGroup<StopContactRequestFormProperties>({
-			ContactId: new FormControl<string | null | undefined>(undefined),
-			InstanceId: new FormControl<string | null | undefined>(undefined),
+			ContactId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface TagResourceRequest {
+
+		/** Required */
 		tags: TagMap;
 	}
 	export interface TagResourceRequestFormProperties {
@@ -1458,18 +1762,44 @@ export namespace MyNS {
 	}
 
 	export interface UpdateContactAttributesRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		InitialContactId: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		InstanceId: string;
+
+		/** Required */
 		Attributes: Attributes;
 	}
 	export interface UpdateContactAttributesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		InitialContactId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		InstanceId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateContactAttributesRequestFormGroup() {
 		return new FormGroup<UpdateContactAttributesRequestFormProperties>({
-			InitialContactId: new FormControl<string | null | undefined>(undefined),
-			InstanceId: new FormControl<string | null | undefined>(undefined),
+			InitialContactId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -1520,19 +1850,29 @@ export namespace MyNS {
 	}
 
 	export interface UpdateUserRoutingProfileRequest {
+
+		/** Required */
 		RoutingProfileId: string;
 	}
 	export interface UpdateUserRoutingProfileRequestFormProperties {
+
+		/** Required */
 		RoutingProfileId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateUserRoutingProfileRequestFormGroup() {
 		return new FormGroup<UpdateUserRoutingProfileRequestFormProperties>({
-			RoutingProfileId: new FormControl<string | null | undefined>(undefined),
+			RoutingProfileId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface UpdateUserSecurityProfilesRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		SecurityProfileIds: Array<string>;
 	}
 	export interface UpdateUserSecurityProfilesRequestFormProperties {
@@ -1966,10 +2306,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateUserPutBodyFormGroup() {
 		return new FormGroup<CreateUserPutBodyFormProperties>({
-			Username: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			Password: new FormControl<string | null | undefined>(undefined),
 			DirectoryUserId: new FormControl<string | null | undefined>(undefined),
-			RoutingProfileId: new FormControl<string | null | undefined>(undefined),
+			RoutingProfileId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			HierarchyGroupId: new FormControl<string | null | undefined>(undefined),
 			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
@@ -1977,19 +2317,39 @@ export namespace MyNS {
 	}
 
 	export interface CreateUserPutBodyIdentityInfo {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		FirstName?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		LastName?: string | null;
 		Email?: string | null;
 	}
 	export interface CreateUserPutBodyIdentityInfoFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		FirstName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		LastName: FormControl<string | null | undefined>,
 		Email: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateUserPutBodyIdentityInfoFormGroup() {
 		return new FormGroup<CreateUserPutBodyIdentityInfoFormProperties>({
-			FirstName: new FormControl<string | null | undefined>(undefined),
-			LastName: new FormControl<string | null | undefined>(undefined),
+			FirstName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			LastName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			Email: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1998,12 +2358,16 @@ export namespace MyNS {
 	export interface CreateUserPutBodyPhoneConfig {
 		PhoneType?: PhoneType | null;
 		AutoAccept?: boolean | null;
+
+		/** Minimum: 0 */
 		AfterContactWorkTimeLimit?: number | null;
 		DeskPhoneNumber?: string | null;
 	}
 	export interface CreateUserPutBodyPhoneConfigFormProperties {
 		PhoneType: FormControl<PhoneType | null | undefined>,
 		AutoAccept: FormControl<boolean | null | undefined>,
+
+		/** Minimum: 0 */
 		AfterContactWorkTimeLimit: FormControl<number | null | undefined>,
 		DeskPhoneNumber: FormControl<string | null | undefined>,
 	}
@@ -2011,7 +2375,7 @@ export namespace MyNS {
 		return new FormGroup<CreateUserPutBodyPhoneConfigFormProperties>({
 			PhoneType: new FormControl<PhoneType | null | undefined>(undefined),
 			AutoAccept: new FormControl<boolean | null | undefined>(undefined),
-			AfterContactWorkTimeLimit: new FormControl<number | null | undefined>(undefined),
+			AfterContactWorkTimeLimit: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			DeskPhoneNumber: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2062,13 +2426,20 @@ export namespace MyNS {
 	export function CreateGetCurrentMetricDataPostBodyFormGroup() {
 		return new FormGroup<GetCurrentMetricDataPostBodyFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface GetCurrentMetricDataPostBodyFilters {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		Queues?: Array<string>;
+
+		/** Maximum items: 1 */
 		Channels?: Array<Channel>;
 	}
 	export interface GetCurrentMetricDataPostBodyFiltersFormProperties {
@@ -2147,16 +2518,23 @@ export namespace MyNS {
 	}
 	export function CreateGetMetricDataPostBodyFormGroup() {
 		return new FormGroup<GetMetricDataPostBodyFormProperties>({
-			StartTime: new FormControl<Date | null | undefined>(undefined),
-			EndTime: new FormControl<Date | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			EndTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface GetMetricDataPostBodyFilters {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		Queues?: Array<string>;
+
+		/** Maximum items: 1 */
 		Channels?: Array<Channel>;
 	}
 	export interface GetMetricDataPostBodyFiltersFormProperties {
@@ -2185,7 +2563,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2253,39 +2631,69 @@ export namespace MyNS {
 	}
 	export function CreateStartChatContactPutBodyFormGroup() {
 		return new FormGroup<StartChatContactPutBodyFormProperties>({
-			InstanceId: new FormControl<string | null | undefined>(undefined),
-			ContactFlowId: new FormControl<string | null | undefined>(undefined),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			ContactFlowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500)]),
 			Attributes: new FormControl<{[id: string]: string } | null | undefined>(undefined),
-			ClientToken: new FormControl<string | null | undefined>(undefined),
+			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
 		});
 
 	}
 
 	export interface StartChatContactPutBodyParticipantDetails {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		DisplayName?: string | null;
 	}
 	export interface StartChatContactPutBodyParticipantDetailsFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		DisplayName: FormControl<string | null | undefined>,
 	}
 	export function CreateStartChatContactPutBodyParticipantDetailsFormGroup() {
 		return new FormGroup<StartChatContactPutBodyParticipantDetailsFormProperties>({
-			DisplayName: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface StartChatContactPutBodyInitialMessage {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ContentType?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Content?: string | null;
 	}
 	export interface StartChatContactPutBodyInitialMessageFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ContentType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Content: FormControl<string | null | undefined>,
 	}
 	export function CreateStartChatContactPutBodyInitialMessageFormGroup() {
 		return new FormGroup<StartChatContactPutBodyInitialMessageFormProperties>({
-			ContentType: new FormControl<string | null | undefined>(undefined),
-			Content: new FormControl<string | null | undefined>(undefined),
+			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			Content: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -2368,10 +2776,10 @@ export namespace MyNS {
 	}
 	export function CreateStartOutboundVoiceContactPutBodyFormGroup() {
 		return new FormGroup<StartOutboundVoiceContactPutBodyFormProperties>({
-			DestinationPhoneNumber: new FormControl<string | null | undefined>(undefined),
-			ContactFlowId: new FormControl<string | null | undefined>(undefined),
-			InstanceId: new FormControl<string | null | undefined>(undefined),
-			ClientToken: new FormControl<string | null | undefined>(undefined),
+			DestinationPhoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ContactFlowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500)]),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
 			SourcePhoneNumber: new FormControl<string | null | undefined>(undefined),
 			QueueId: new FormControl<string | null | undefined>(undefined),
 			Attributes: new FormControl<{[id: string]: string } | null | undefined>(undefined),
@@ -2417,8 +2825,8 @@ export namespace MyNS {
 	}
 	export function CreateStopContactPostBodyFormGroup() {
 		return new FormGroup<StopContactPostBodyFormProperties>({
-			ContactId: new FormControl<string | null | undefined>(undefined),
-			InstanceId: new FormControl<string | null | undefined>(undefined),
+			ContactId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -2473,9 +2881,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateContactAttributesPostBodyFormGroup() {
 		return new FormGroup<UpdateContactAttributesPostBodyFormProperties>({
-			InitialContactId: new FormControl<string | null | undefined>(undefined),
-			InstanceId: new FormControl<string | null | undefined>(undefined),
-			Attributes: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			InitialContactId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			Attributes: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2514,19 +2922,39 @@ export namespace MyNS {
 	}
 
 	export interface UpdateUserIdentityInfoPostBodyIdentityInfo {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		FirstName?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		LastName?: string | null;
 		Email?: string | null;
 	}
 	export interface UpdateUserIdentityInfoPostBodyIdentityInfoFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		FirstName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		LastName: FormControl<string | null | undefined>,
 		Email: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateUserIdentityInfoPostBodyIdentityInfoFormGroup() {
 		return new FormGroup<UpdateUserIdentityInfoPostBodyIdentityInfoFormProperties>({
-			FirstName: new FormControl<string | null | undefined>(undefined),
-			LastName: new FormControl<string | null | undefined>(undefined),
+			FirstName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			LastName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			Email: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2551,12 +2979,16 @@ export namespace MyNS {
 	export interface UpdateUserPhoneConfigPostBodyPhoneConfig {
 		PhoneType?: PhoneType | null;
 		AutoAccept?: boolean | null;
+
+		/** Minimum: 0 */
 		AfterContactWorkTimeLimit?: number | null;
 		DeskPhoneNumber?: string | null;
 	}
 	export interface UpdateUserPhoneConfigPostBodyPhoneConfigFormProperties {
 		PhoneType: FormControl<PhoneType | null | undefined>,
 		AutoAccept: FormControl<boolean | null | undefined>,
+
+		/** Minimum: 0 */
 		AfterContactWorkTimeLimit: FormControl<number | null | undefined>,
 		DeskPhoneNumber: FormControl<string | null | undefined>,
 	}
@@ -2564,7 +2996,7 @@ export namespace MyNS {
 		return new FormGroup<UpdateUserPhoneConfigPostBodyPhoneConfigFormProperties>({
 			PhoneType: new FormControl<PhoneType | null | undefined>(undefined),
 			AutoAccept: new FormControl<boolean | null | undefined>(undefined),
-			AfterContactWorkTimeLimit: new FormControl<number | null | undefined>(undefined),
+			AfterContactWorkTimeLimit: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			DeskPhoneNumber: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2588,7 +3020,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateUserRoutingProfilePostBodyFormGroup() {
 		return new FormGroup<UpdateUserRoutingProfilePostBodyFormProperties>({
-			RoutingProfileId: new FormControl<string | null | undefined>(undefined),
+			RoutingProfileId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

@@ -8,7 +8,7 @@ namespace SwagTests
 	{
 		public CodeGenAxiosTests()
 		{
-			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsAxiosClientApiGen));
+			helper = new TsTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsAxiosClientApiGen), TestHelpers.TestingSettings.Instance);
 		}
 
 		readonly TsTestHelper helper;

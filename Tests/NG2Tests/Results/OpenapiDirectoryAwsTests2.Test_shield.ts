@@ -14,14 +14,28 @@ export namespace MyNS {
 	}
 
 	export interface AssociateDRTLogBucketRequest {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 3
+		 * Pattern: ^([a-z]|(\d(?!\d{0,2}\.\d{1,3}\.\d{1,3}\.\d{1,3})))([a-z\d]|(\.(?!(\.|-)))|(-(?!\.))){1,61}[a-z\d]$
+		 */
 		LogBucket: string;
 	}
 	export interface AssociateDRTLogBucketRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 3
+		 * Pattern: ^([a-z]|(\d(?!\d{0,2}\.\d{1,3}\.\d{1,3}\.\d{1,3})))([a-z\d]|(\.(?!(\.|-)))|(-(?!\.))){1,61}[a-z\d]$
+		 */
 		LogBucket: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateDRTLogBucketRequestFormGroup() {
 		return new FormGroup<AssociateDRTLogBucketRequestFormProperties>({
-			LogBucket: new FormControl<string | null | undefined>(undefined),
+			LogBucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(3)]),
 		});
 
 	}
@@ -117,14 +131,28 @@ export namespace MyNS {
 	}
 
 	export interface AssociateDRTRoleRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleArn: string;
 	}
 	export interface AssociateDRTRoleRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateDRTRoleRequestFormGroup() {
 		return new FormGroup<AssociateDRTRoleRequestFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -140,17 +168,45 @@ export namespace MyNS {
 	}
 
 	export interface AssociateHealthCheckRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9\\-]*
+		 */
 		ProtectionId: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^arn:aws:route53:::healthcheck/\S{36}$
+		 */
 		HealthCheckArn: string;
 	}
 	export interface AssociateHealthCheckRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9\\-]*
+		 */
 		ProtectionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^arn:aws:route53:::healthcheck/\S{36}$
+		 */
 		HealthCheckArn: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateHealthCheckRequestFormGroup() {
 		return new FormGroup<AssociateHealthCheckRequestFormProperties>({
-			ProtectionId: new FormControl<string | null | undefined>(undefined),
-			HealthCheckArn: new FormControl<string | null | undefined>(undefined),
+			ProtectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			HealthCheckArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -166,6 +222,12 @@ export namespace MyNS {
 	}
 
 	export interface AssociateProactiveEngagementDetailsRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		EmergencyContactList: Array<EmergencyContact>;
 	}
 	export interface AssociateProactiveEngagementDetailsRequestFormProperties {
@@ -179,51 +241,129 @@ export namespace MyNS {
 
 	/** Contact information that the DRT can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support. */
 	export interface EmergencyContact {
+
+		/**
+		 * Required
+		 * Max length: 150
+		 * Min length: 1
+		 * Pattern: ^\S+@\S+\.\S+$
+		 */
 		EmailAddress: string;
+
+		/**
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: ^.*$
+		 */
 		PhoneNumber?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^[\w\s\.\-,:/()+@]*$
+		 */
 		ContactNotes?: string | null;
 	}
 
 	/** Contact information that the DRT can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support. */
 	export interface EmergencyContactFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 150
+		 * Min length: 1
+		 * Pattern: ^\S+@\S+\.\S+$
+		 */
 		EmailAddress: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: ^.*$
+		 */
 		PhoneNumber: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^[\w\s\.\-,:/()+@]*$
+		 */
 		ContactNotes: FormControl<string | null | undefined>,
 	}
 	export function CreateEmergencyContactFormGroup() {
 		return new FormGroup<EmergencyContactFormProperties>({
-			EmailAddress: new FormControl<string | null | undefined>(undefined),
-			PhoneNumber: new FormControl<string | null | undefined>(undefined),
-			ContactNotes: new FormControl<string | null | undefined>(undefined),
+			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(150), Validators.minLength(1)]),
+			PhoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(1)]),
+			ContactNotes: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateProtectionResponse {
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9\\-]*
+		 */
 		ProtectionId?: string | null;
 	}
 	export interface CreateProtectionResponseFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9\\-]*
+		 */
 		ProtectionId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateProtectionResponseFormGroup() {
 		return new FormGroup<CreateProtectionResponseFormProperties>({
-			ProtectionId: new FormControl<string | null | undefined>(undefined),
+			ProtectionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateProtectionRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [ a-zA-Z0-9_\\.\\-]*
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^arn:aws.*
+		 */
 		ResourceArn: string;
 	}
 	export interface CreateProtectionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [ a-zA-Z0-9_\\.\\-]*
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^arn:aws.*
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateProtectionRequestFormGroup() {
 		return new FormGroup<CreateProtectionRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -279,14 +419,28 @@ export namespace MyNS {
 	}
 
 	export interface DeleteProtectionRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9\\-]*
+		 */
 		ProtectionId: string;
 	}
 	export interface DeleteProtectionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9\\-]*
+		 */
 		ProtectionId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteProtectionRequestFormGroup() {
 		return new FormGroup<DeleteProtectionRequestFormProperties>({
-			ProtectionId: new FormControl<string | null | undefined>(undefined),
+			ProtectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
 		});
 
 	}
@@ -337,7 +491,19 @@ export namespace MyNS {
 
 	/** The details of a DDoS attack. */
 	export interface AttackDetail {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9\\-]*
+		 */
 		AttackId?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^arn:aws.*
+		 */
 		ResourceArn?: string | null;
 		SubResources?: Array<SubResourceSummary>;
 		StartTime?: Date | null;
@@ -349,15 +515,27 @@ export namespace MyNS {
 
 	/** The details of a DDoS attack. */
 	export interface AttackDetailFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9\\-]*
+		 */
 		AttackId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^arn:aws.*
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
 		EndTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateAttackDetailFormGroup() {
 		return new FormGroup<AttackDetailFormProperties>({
-			AttackId: new FormControl<string | null | undefined>(undefined),
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			AttackId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -391,17 +569,21 @@ export namespace MyNS {
 
 	/** A summary of information about the attack. */
 	export interface SummarizedAttackVector {
+
+		/** Required */
 		VectorType: string;
 		VectorCounters?: Array<SummarizedCounter>;
 	}
 
 	/** A summary of information about the attack. */
 	export interface SummarizedAttackVectorFormProperties {
+
+		/** Required */
 		VectorType: FormControl<string | null | undefined>,
 	}
 	export function CreateSummarizedAttackVectorFormGroup() {
 		return new FormGroup<SummarizedAttackVectorFormProperties>({
-			VectorType: new FormControl<string | null | undefined>(undefined),
+			VectorType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -509,14 +691,28 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAttackRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9\\-]*
+		 */
 		AttackId: string;
 	}
 	export interface DescribeAttackRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9\\-]*
+		 */
 		AttackId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeAttackRequestFormGroup() {
 		return new FormGroup<DescribeAttackRequestFormProperties>({
-			AttackId: new FormControl<string | null | undefined>(undefined),
+			AttackId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -532,15 +728,32 @@ export namespace MyNS {
 	}
 
 	export interface DescribeDRTAccessResponse {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleArn?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		LogBucketList?: Array<string>;
 	}
 	export interface DescribeDRTAccessResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
+		 */
 		RoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeDRTAccessResponseFormGroup() {
 		return new FormGroup<DescribeDRTAccessResponseFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -556,6 +769,11 @@ export namespace MyNS {
 	}
 
 	export interface DescribeEmergencyContactSettingsResponse {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		EmergencyContactList?: Array<EmergencyContact>;
 	}
 	export interface DescribeEmergencyContactSettingsResponseFormProperties {
@@ -592,39 +810,99 @@ export namespace MyNS {
 
 	/** An object that represents a resource that is under DDoS protection. */
 	export interface Protection {
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9\\-]*
+		 */
 		Id?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [ a-zA-Z0-9_\\.\\-]*
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^arn:aws.*
+		 */
 		ResourceArn?: string | null;
 		HealthCheckIds?: Array<string>;
 	}
 
 	/** An object that represents a resource that is under DDoS protection. */
 	export interface ProtectionFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9\\-]*
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [ a-zA-Z0-9_\\.\\-]*
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^arn:aws.*
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateProtectionFormGroup() {
 		return new FormGroup<ProtectionFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeProtectionRequest {
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9\\-]*
+		 */
 		ProtectionId?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^arn:aws.*
+		 */
 		ResourceArn?: string | null;
 	}
 	export interface DescribeProtectionRequestFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9\\-]*
+		 */
 		ProtectionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^arn:aws.*
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeProtectionRequestFormGroup() {
 		return new FormGroup<DescribeProtectionRequestFormProperties>({
-			ProtectionId: new FormControl<string | null | undefined>(undefined),
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ProtectionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -647,6 +925,8 @@ export namespace MyNS {
 	export interface Subscription {
 		StartTime?: Date | null;
 		EndTime?: Date | null;
+
+		/** Minimum: 0 */
 		TimeCommitmentInSeconds?: number | null;
 		AutoRenew?: SubscriptionAutoRenew | null;
 		Limits?: Array<Limit>;
@@ -657,6 +937,8 @@ export namespace MyNS {
 	export interface SubscriptionFormProperties {
 		StartTime: FormControl<Date | null | undefined>,
 		EndTime: FormControl<Date | null | undefined>,
+
+		/** Minimum: 0 */
 		TimeCommitmentInSeconds: FormControl<number | null | undefined>,
 		AutoRenew: FormControl<SubscriptionAutoRenew | null | undefined>,
 		ProactiveEngagementStatus: FormControl<SubscriptionProactiveEngagementStatus | null | undefined>,
@@ -665,7 +947,7 @@ export namespace MyNS {
 		return new FormGroup<SubscriptionFormProperties>({
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
-			TimeCommitmentInSeconds: new FormControl<number | null | undefined>(undefined),
+			TimeCommitmentInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			AutoRenew: new FormControl<SubscriptionAutoRenew | null | undefined>(undefined),
 			ProactiveEngagementStatus: new FormControl<SubscriptionProactiveEngagementStatus | null | undefined>(undefined),
 		});
@@ -737,14 +1019,28 @@ export namespace MyNS {
 	}
 
 	export interface DisassociateDRTLogBucketRequest {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 3
+		 * Pattern: ^([a-z]|(\d(?!\d{0,2}\.\d{1,3}\.\d{1,3}\.\d{1,3})))([a-z\d]|(\.(?!(\.|-)))|(-(?!\.))){1,61}[a-z\d]$
+		 */
 		LogBucket: string;
 	}
 	export interface DisassociateDRTLogBucketRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 3
+		 * Pattern: ^([a-z]|(\d(?!\d{0,2}\.\d{1,3}\.\d{1,3}\.\d{1,3})))([a-z\d]|(\.(?!(\.|-)))|(-(?!\.))){1,61}[a-z\d]$
+		 */
 		LogBucket: FormControl<string | null | undefined>,
 	}
 	export function CreateDisassociateDRTLogBucketRequestFormGroup() {
 		return new FormGroup<DisassociateDRTLogBucketRequestFormProperties>({
-			LogBucket: new FormControl<string | null | undefined>(undefined),
+			LogBucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(3)]),
 		});
 
 	}
@@ -780,17 +1076,45 @@ export namespace MyNS {
 	}
 
 	export interface DisassociateHealthCheckRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9\\-]*
+		 */
 		ProtectionId: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^arn:aws:route53:::healthcheck/\S{36}$
+		 */
 		HealthCheckArn: string;
 	}
 	export interface DisassociateHealthCheckRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9\\-]*
+		 */
 		ProtectionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^arn:aws:route53:::healthcheck/\S{36}$
+		 */
 		HealthCheckArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDisassociateHealthCheckRequestFormGroup() {
 		return new FormGroup<DisassociateHealthCheckRequestFormProperties>({
-			ProtectionId: new FormControl<string | null | undefined>(undefined),
-			HealthCheckArn: new FormControl<string | null | undefined>(undefined),
+			ProtectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			HealthCheckArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -816,14 +1140,18 @@ export namespace MyNS {
 	}
 
 	export interface GetSubscriptionStateResponse {
+
+		/** Required */
 		SubscriptionState: GetSubscriptionStateResponseSubscriptionState;
 	}
 	export interface GetSubscriptionStateResponseFormProperties {
+
+		/** Required */
 		SubscriptionState: FormControl<GetSubscriptionStateResponseSubscriptionState | null | undefined>,
 	}
 	export function CreateGetSubscriptionStateResponseFormGroup() {
 		return new FormGroup<GetSubscriptionStateResponseFormProperties>({
-			SubscriptionState: new FormControl<GetSubscriptionStateResponseSubscriptionState | null | undefined>(undefined),
+			SubscriptionState: new FormControl<GetSubscriptionStateResponseSubscriptionState | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -842,14 +1170,26 @@ export namespace MyNS {
 
 	export interface ListAttacksResponse {
 		AttackSummaries?: Array<AttackSummary>;
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: ^.*$
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListAttacksResponseFormProperties {
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: ^.*$
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListAttacksResponseFormGroup() {
 		return new FormGroup<ListAttacksResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
 		});
 
 	}
@@ -884,16 +1224,20 @@ export namespace MyNS {
 
 	/** Describes the attack. */
 	export interface AttackVectorDescription {
+
+		/** Required */
 		VectorType: string;
 	}
 
 	/** Describes the attack. */
 	export interface AttackVectorDescriptionFormProperties {
+
+		/** Required */
 		VectorType: FormControl<string | null | undefined>,
 	}
 	export function CreateAttackVectorDescriptionFormGroup() {
 		return new FormGroup<AttackVectorDescriptionFormProperties>({
-			VectorType: new FormControl<string | null | undefined>(undefined),
+			VectorType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -906,17 +1250,39 @@ export namespace MyNS {
 
 		/** The time range. */
 		EndTime?: TimeRange;
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: ^.*$
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 10000
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListAttacksRequestFormProperties {
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: ^.*$
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 10000
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListAttacksRequestFormGroup() {
 		return new FormGroup<ListAttacksRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(10000)]),
 		});
 
 	}
@@ -943,30 +1309,64 @@ export namespace MyNS {
 
 	export interface ListProtectionsResponse {
 		Protections?: Array<Protection>;
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: ^.*$
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListProtectionsResponseFormProperties {
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: ^.*$
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListProtectionsResponseFormGroup() {
 		return new FormGroup<ListProtectionsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListProtectionsRequest {
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: ^.*$
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 10000
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListProtectionsRequestFormProperties {
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: ^.*$
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 10000
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListProtectionsRequestFormGroup() {
 		return new FormGroup<ListProtectionsRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(10000)]),
 		});
 
 	}
@@ -992,6 +1392,11 @@ export namespace MyNS {
 	}
 
 	export interface UpdateEmergencyContactSettingsRequest {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		EmergencyContactList?: Array<EmergencyContact>;
 	}
 	export interface UpdateEmergencyContactSettingsRequestFormProperties {

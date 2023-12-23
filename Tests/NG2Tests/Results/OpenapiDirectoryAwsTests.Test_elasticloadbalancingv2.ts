@@ -77,19 +77,45 @@ export namespace MyNS {
 
 	/** Information about a tag. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Key: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Value?: string | null;
 	}
 
 	/** Information about a tag. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -150,6 +176,11 @@ export namespace MyNS {
 	export interface Listener {
 		ListenerArn?: string | null;
 		LoadBalancerArn?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		Port?: number | null;
 		Protocol?: ListenerProtocol | null;
 		Certificates?: Array<Certificate>;
@@ -162,6 +193,11 @@ export namespace MyNS {
 	export interface ListenerFormProperties {
 		ListenerArn: FormControl<string | null | undefined>,
 		LoadBalancerArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		Port: FormControl<number | null | undefined>,
 		Protocol: FormControl<ListenerProtocol | null | undefined>,
 		SslPolicy: FormControl<string | null | undefined>,
@@ -170,7 +206,7 @@ export namespace MyNS {
 		return new FormGroup<ListenerFormProperties>({
 			ListenerArn: new FormControl<string | null | undefined>(undefined),
 			LoadBalancerArn: new FormControl<string | null | undefined>(undefined),
-			Port: new FormControl<number | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(65535)]),
 			Protocol: new FormControl<ListenerProtocol | null | undefined>(undefined),
 			SslPolicy: new FormControl<string | null | undefined>(undefined),
 		});
@@ -182,6 +218,8 @@ export namespace MyNS {
 
 	/** Information about an action. */
 	export interface Action {
+
+		/** Required */
 		Type: ActionType;
 		TargetGroupArn?: string | null;
 
@@ -190,6 +228,11 @@ export namespace MyNS {
 
 		/** Request parameters to use when integrating with Amazon Cognito to authenticate users. */
 		AuthenticateCognitoConfig?: AuthenticateCognitoActionConfig;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50000
+		 */
 		Order?: number | null;
 
 		/** <p>Information about a redirect action.</p> <p>A URI consists of the following components: protocol://hostname:port/path?query. You must modify at least one of the following components to avoid a redirect loop: protocol, hostname, port, or path. Any components that you do not modify retain their original values.</p> <p>You can reuse URI components using the following reserved keywords:</p> <ul> <li> <p>#{protocol}</p> </li> <li> <p>#{host}</p> </li> <li> <p>#{port}</p> </li> <li> <p>#{path} (the leading "/" is removed)</p> </li> <li> <p>#{query}</p> </li> </ul> <p>For example, you can change the path to "/new/#{path}", the hostname to "example.#{host}", or the query to "#{query}&amp;value=xyz".</p> */
@@ -204,15 +247,22 @@ export namespace MyNS {
 
 	/** Information about an action. */
 	export interface ActionFormProperties {
+
+		/** Required */
 		Type: FormControl<ActionType | null | undefined>,
 		TargetGroupArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50000
+		 */
 		Order: FormControl<number | null | undefined>,
 	}
 	export function CreateActionFormGroup() {
 		return new FormGroup<ActionFormProperties>({
-			Type: new FormControl<ActionType | null | undefined>(undefined),
+			Type: new FormControl<ActionType | null | undefined>(undefined, [Validators.required]),
 			TargetGroupArn: new FormControl<string | null | undefined>(undefined),
-			Order: new FormControl<number | null | undefined>(undefined),
+			Order: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50000)]),
 		});
 
 	}
@@ -222,10 +272,20 @@ export namespace MyNS {
 
 	/** Request parameters when using an identity provider (IdP) that is compliant with OpenID Connect (OIDC) to authenticate users. */
 	export interface AuthenticateOidcActionConfig {
+
+		/** Required */
 		Issuer: string;
+
+		/** Required */
 		AuthorizationEndpoint: string;
+
+		/** Required */
 		TokenEndpoint: string;
+
+		/** Required */
 		UserInfoEndpoint: string;
+
+		/** Required */
 		ClientId: string;
 		ClientSecret?: string | null;
 		SessionCookieName?: string | null;
@@ -238,10 +298,20 @@ export namespace MyNS {
 
 	/** Request parameters when using an identity provider (IdP) that is compliant with OpenID Connect (OIDC) to authenticate users. */
 	export interface AuthenticateOidcActionConfigFormProperties {
+
+		/** Required */
 		Issuer: FormControl<string | null | undefined>,
+
+		/** Required */
 		AuthorizationEndpoint: FormControl<string | null | undefined>,
+
+		/** Required */
 		TokenEndpoint: FormControl<string | null | undefined>,
+
+		/** Required */
 		UserInfoEndpoint: FormControl<string | null | undefined>,
+
+		/** Required */
 		ClientId: FormControl<string | null | undefined>,
 		ClientSecret: FormControl<string | null | undefined>,
 		SessionCookieName: FormControl<string | null | undefined>,
@@ -252,11 +322,11 @@ export namespace MyNS {
 	}
 	export function CreateAuthenticateOidcActionConfigFormGroup() {
 		return new FormGroup<AuthenticateOidcActionConfigFormProperties>({
-			Issuer: new FormControl<string | null | undefined>(undefined),
-			AuthorizationEndpoint: new FormControl<string | null | undefined>(undefined),
-			TokenEndpoint: new FormControl<string | null | undefined>(undefined),
-			UserInfoEndpoint: new FormControl<string | null | undefined>(undefined),
-			ClientId: new FormControl<string | null | undefined>(undefined),
+			Issuer: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			AuthorizationEndpoint: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TokenEndpoint: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			UserInfoEndpoint: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ClientId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ClientSecret: new FormControl<string | null | undefined>(undefined),
 			SessionCookieName: new FormControl<string | null | undefined>(undefined),
 			Scope: new FormControl<string | null | undefined>(undefined),
@@ -282,8 +352,14 @@ export namespace MyNS {
 
 	/** Request parameters to use when integrating with Amazon Cognito to authenticate users. */
 	export interface AuthenticateCognitoActionConfig {
+
+		/** Required */
 		UserPoolArn: string;
+
+		/** Required */
 		UserPoolClientId: string;
+
+		/** Required */
 		UserPoolDomain: string;
 		SessionCookieName?: string | null;
 		Scope?: string | null;
@@ -294,8 +370,14 @@ export namespace MyNS {
 
 	/** Request parameters to use when integrating with Amazon Cognito to authenticate users. */
 	export interface AuthenticateCognitoActionConfigFormProperties {
+
+		/** Required */
 		UserPoolArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		UserPoolClientId: FormControl<string | null | undefined>,
+
+		/** Required */
 		UserPoolDomain: FormControl<string | null | undefined>,
 		SessionCookieName: FormControl<string | null | undefined>,
 		Scope: FormControl<string | null | undefined>,
@@ -304,9 +386,9 @@ export namespace MyNS {
 	}
 	export function CreateAuthenticateCognitoActionConfigFormGroup() {
 		return new FormGroup<AuthenticateCognitoActionConfigFormProperties>({
-			UserPoolArn: new FormControl<string | null | undefined>(undefined),
-			UserPoolClientId: new FormControl<string | null | undefined>(undefined),
-			UserPoolDomain: new FormControl<string | null | undefined>(undefined),
+			UserPoolArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			UserPoolClientId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			UserPoolDomain: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SessionCookieName: new FormControl<string | null | undefined>(undefined),
 			Scope: new FormControl<string | null | undefined>(undefined),
 			SessionTimeout: new FormControl<number | null | undefined>(undefined),
@@ -328,31 +410,69 @@ export namespace MyNS {
 
 	/** <p>Information about a redirect action.</p> <p>A URI consists of the following components: protocol://hostname:port/path?query. You must modify at least one of the following components to avoid a redirect loop: protocol, hostname, port, or path. Any components that you do not modify retain their original values.</p> <p>You can reuse URI components using the following reserved keywords:</p> <ul> <li> <p>#{protocol}</p> </li> <li> <p>#{host}</p> </li> <li> <p>#{port}</p> </li> <li> <p>#{path} (the leading "/" is removed)</p> </li> <li> <p>#{query}</p> </li> </ul> <p>For example, you can change the path to "/new/#{path}", the hostname to "example.#{host}", or the query to "#{query}&amp;value=xyz".</p> */
 	export interface RedirectActionConfig {
+
+		/** Pattern: ^(HTTPS?|#\{protocol\})$ */
 		Protocol?: string | null;
 		Port?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Host?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Path?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 0
+		 */
 		Query?: string | null;
+
+		/** Required */
 		StatusCode: RedirectActionConfigStatusCode;
 	}
 
 	/** <p>Information about a redirect action.</p> <p>A URI consists of the following components: protocol://hostname:port/path?query. You must modify at least one of the following components to avoid a redirect loop: protocol, hostname, port, or path. Any components that you do not modify retain their original values.</p> <p>You can reuse URI components using the following reserved keywords:</p> <ul> <li> <p>#{protocol}</p> </li> <li> <p>#{host}</p> </li> <li> <p>#{port}</p> </li> <li> <p>#{path} (the leading "/" is removed)</p> </li> <li> <p>#{query}</p> </li> </ul> <p>For example, you can change the path to "/new/#{path}", the hostname to "example.#{host}", or the query to "#{query}&amp;value=xyz".</p> */
 	export interface RedirectActionConfigFormProperties {
+
+		/** Pattern: ^(HTTPS?|#\{protocol\})$ */
 		Protocol: FormControl<string | null | undefined>,
 		Port: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Host: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Path: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 0
+		 */
 		Query: FormControl<string | null | undefined>,
+
+		/** Required */
 		StatusCode: FormControl<RedirectActionConfigStatusCode | null | undefined>,
 	}
 	export function CreateRedirectActionConfigFormGroup() {
 		return new FormGroup<RedirectActionConfigFormProperties>({
 			Protocol: new FormControl<string | null | undefined>(undefined),
 			Port: new FormControl<string | null | undefined>(undefined),
-			Host: new FormControl<string | null | undefined>(undefined),
-			Path: new FormControl<string | null | undefined>(undefined),
-			Query: new FormControl<string | null | undefined>(undefined),
-			StatusCode: new FormControl<RedirectActionConfigStatusCode | null | undefined>(undefined),
+			Host: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Query: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
+			StatusCode: new FormControl<RedirectActionConfigStatusCode | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -362,22 +482,52 @@ export namespace MyNS {
 
 	/** Information about an action that returns a custom HTTP response. */
 	export interface FixedResponseActionConfig {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		MessageBody?: string | null;
+
+		/**
+		 * Required
+		 * Pattern: ^(2|4|5)\d\d$
+		 */
 		StatusCode: string;
+
+		/**
+		 * Max length: 32
+		 * Min length: 0
+		 */
 		ContentType?: string | null;
 	}
 
 	/** Information about an action that returns a custom HTTP response. */
 	export interface FixedResponseActionConfigFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		MessageBody: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: ^(2|4|5)\d\d$
+		 */
 		StatusCode: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 0
+		 */
 		ContentType: FormControl<string | null | undefined>,
 	}
 	export function CreateFixedResponseActionConfigFormGroup() {
 		return new FormGroup<FixedResponseActionConfigFormProperties>({
-			MessageBody: new FormControl<string | null | undefined>(undefined),
-			StatusCode: new FormControl<string | null | undefined>(undefined),
-			ContentType: new FormControl<string | null | undefined>(undefined),
+			MessageBody: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			StatusCode: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(0)]),
 		});
 
 	}
@@ -861,6 +1011,8 @@ export namespace MyNS {
 
 	/** Information about a condition for a rule. */
 	export interface RuleCondition {
+
+		/** Max length: 64 */
 		Field?: string | null;
 		Values?: Array<string>;
 
@@ -885,11 +1037,13 @@ export namespace MyNS {
 
 	/** Information about a condition for a rule. */
 	export interface RuleConditionFormProperties {
+
+		/** Max length: 64 */
 		Field: FormControl<string | null | undefined>,
 	}
 	export function CreateRuleConditionFormGroup() {
 		return new FormGroup<RuleConditionFormProperties>({
-			Field: new FormControl<string | null | undefined>(undefined),
+			Field: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
 		});
 
 	}
@@ -1054,15 +1208,45 @@ export namespace MyNS {
 		TargetGroupArn?: string | null;
 		TargetGroupName?: string | null;
 		Protocol?: ListenerProtocol | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		Port?: number | null;
 		VpcId?: string | null;
 		HealthCheckProtocol?: ListenerProtocol | null;
 		HealthCheckPort?: string | null;
 		HealthCheckEnabled?: boolean | null;
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 300
+		 */
 		HealthCheckIntervalSeconds?: number | null;
+
+		/**
+		 * Minimum: 2
+		 * Maximum: 120
+		 */
 		HealthCheckTimeoutSeconds?: number | null;
+
+		/**
+		 * Minimum: 2
+		 * Maximum: 10
+		 */
 		HealthyThresholdCount?: number | null;
+
+		/**
+		 * Minimum: 2
+		 * Maximum: 10
+		 */
 		UnhealthyThresholdCount?: number | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		HealthCheckPath?: string | null;
 
 		/** Information to use when checking for a successful response from a target. */
@@ -1076,15 +1260,45 @@ export namespace MyNS {
 		TargetGroupArn: FormControl<string | null | undefined>,
 		TargetGroupName: FormControl<string | null | undefined>,
 		Protocol: FormControl<ListenerProtocol | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		Port: FormControl<number | null | undefined>,
 		VpcId: FormControl<string | null | undefined>,
 		HealthCheckProtocol: FormControl<ListenerProtocol | null | undefined>,
 		HealthCheckPort: FormControl<string | null | undefined>,
 		HealthCheckEnabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 300
+		 */
 		HealthCheckIntervalSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 2
+		 * Maximum: 120
+		 */
 		HealthCheckTimeoutSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 2
+		 * Maximum: 10
+		 */
 		HealthyThresholdCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 2
+		 * Maximum: 10
+		 */
 		UnhealthyThresholdCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		HealthCheckPath: FormControl<string | null | undefined>,
 		TargetType: FormControl<TargetGroupTargetType | null | undefined>,
 	}
@@ -1093,16 +1307,16 @@ export namespace MyNS {
 			TargetGroupArn: new FormControl<string | null | undefined>(undefined),
 			TargetGroupName: new FormControl<string | null | undefined>(undefined),
 			Protocol: new FormControl<ListenerProtocol | null | undefined>(undefined),
-			Port: new FormControl<number | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(65535)]),
 			VpcId: new FormControl<string | null | undefined>(undefined),
 			HealthCheckProtocol: new FormControl<ListenerProtocol | null | undefined>(undefined),
 			HealthCheckPort: new FormControl<string | null | undefined>(undefined),
 			HealthCheckEnabled: new FormControl<boolean | null | undefined>(undefined),
-			HealthCheckIntervalSeconds: new FormControl<number | null | undefined>(undefined),
-			HealthCheckTimeoutSeconds: new FormControl<number | null | undefined>(undefined),
-			HealthyThresholdCount: new FormControl<number | null | undefined>(undefined),
-			UnhealthyThresholdCount: new FormControl<number | null | undefined>(undefined),
-			HealthCheckPath: new FormControl<string | null | undefined>(undefined),
+			HealthCheckIntervalSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(300)]),
+			HealthCheckTimeoutSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(2), Validators.max(120)]),
+			HealthyThresholdCount: new FormControl<number | null | undefined>(undefined, [Validators.min(2), Validators.max(10)]),
+			UnhealthyThresholdCount: new FormControl<number | null | undefined>(undefined, [Validators.min(2), Validators.max(10)]),
+			HealthCheckPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			TargetType: new FormControl<TargetGroupTargetType | null | undefined>(undefined),
 		});
 
@@ -1111,16 +1325,20 @@ export namespace MyNS {
 
 	/** Information to use when checking for a successful response from a target. */
 	export interface Matcher {
+
+		/** Required */
 		HttpCode: string;
 	}
 
 	/** Information to use when checking for a successful response from a target. */
 	export interface MatcherFormProperties {
+
+		/** Required */
 		HttpCode: FormControl<string | null | undefined>,
 	}
 	export function CreateMatcherFormGroup() {
 		return new FormGroup<MatcherFormProperties>({
-			HttpCode: new FormControl<string | null | undefined>(undefined),
+			HttpCode: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1200,21 +1418,35 @@ export namespace MyNS {
 
 	/** Information about a target. */
 	export interface TargetDescription {
+
+		/** Required */
 		Id: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		Port?: number | null;
 		AvailabilityZone?: string | null;
 	}
 
 	/** Information about a target. */
 	export interface TargetDescriptionFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		Port: FormControl<number | null | undefined>,
 		AvailabilityZone: FormControl<string | null | undefined>,
 	}
 	export function CreateTargetDescriptionFormGroup() {
 		return new FormGroup<TargetDescriptionFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			Port: new FormControl<number | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Port: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(65535)]),
 			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1293,6 +1525,8 @@ export namespace MyNS {
 	}
 
 	export interface DescribeLoadBalancerAttributesOutput {
+
+		/** Maximum items: 20 */
 		Attributes?: Array<LoadBalancerAttribute>;
 	}
 	export interface DescribeLoadBalancerAttributesOutputFormProperties {
@@ -1306,19 +1540,33 @@ export namespace MyNS {
 
 	/** Information about a load balancer attribute. */
 	export interface LoadBalancerAttribute {
+
+		/**
+		 * Max length: 256
+		 * Pattern: ^[a-zA-Z0-9._]+$
+		 */
 		Key?: string | null;
+
+		/** Max length: 1024 */
 		Value?: string | null;
 	}
 
 	/** Information about a load balancer attribute. */
 	export interface LoadBalancerAttributeFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: ^[a-zA-Z0-9._]+$
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/** Max length: 1024 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateLoadBalancerAttributeFormGroup() {
 		return new FormGroup<LoadBalancerAttributeFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1419,6 +1667,8 @@ export namespace MyNS {
 	/** The tags associated with a resource. */
 	export interface TagDescription {
 		ResourceArn?: string | null;
+
+		/** Minimum items: 1 */
 		Tags?: Array<Tag>;
 	}
 
@@ -1447,18 +1697,28 @@ export namespace MyNS {
 
 	/** Information about a target group attribute. */
 	export interface TargetGroupAttribute {
+
+		/**
+		 * Max length: 256
+		 * Pattern: ^[a-zA-Z0-9._]+$
+		 */
 		Key?: string | null;
 		Value?: string | null;
 	}
 
 	/** Information about a target group attribute. */
 	export interface TargetGroupAttributeFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: ^[a-zA-Z0-9._]+$
+		 */
 		Key: FormControl<string | null | undefined>,
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTargetGroupAttributeFormGroup() {
 		return new FormGroup<TargetGroupAttributeFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			Value: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1561,6 +1821,8 @@ export namespace MyNS {
 	}
 
 	export interface ModifyLoadBalancerAttributesOutput {
+
+		/** Maximum items: 20 */
 		Attributes?: Array<LoadBalancerAttribute>;
 	}
 	export interface ModifyLoadBalancerAttributesOutputFormProperties {
@@ -1662,18 +1924,28 @@ export namespace MyNS {
 	/** Information about the priorities for the rules for a listener. */
 	export interface RulePriorityPair {
 		RuleArn?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50000
+		 */
 		Priority?: number | null;
 	}
 
 	/** Information about the priorities for the rules for a listener. */
 	export interface RulePriorityPairFormProperties {
 		RuleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50000
+		 */
 		Priority: FormControl<number | null | undefined>,
 	}
 	export function CreateRulePriorityPairFormGroup() {
 		return new FormGroup<RulePriorityPairFormProperties>({
 			RuleArn: new FormControl<string | null | undefined>(undefined),
-			Priority: new FormControl<number | null | undefined>(undefined),
+			Priority: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50000)]),
 		});
 
 	}
@@ -1703,21 +1975,34 @@ export namespace MyNS {
 	export enum ActionTypeEnum { forward = 0, authenticate_oidc = 1, authenticate_cognito = 2, redirect = 3, fixed_response = 4 }
 
 	export interface AddListenerCertificatesInput {
+
+		/** Required */
 		ListenerArn: string;
+
+		/** Required */
 		Certificates: Array<Certificate>;
 	}
 	export interface AddListenerCertificatesInputFormProperties {
+
+		/** Required */
 		ListenerArn: FormControl<string | null | undefined>,
 	}
 	export function CreateAddListenerCertificatesInputFormGroup() {
 		return new FormGroup<AddListenerCertificatesInputFormProperties>({
-			ListenerArn: new FormControl<string | null | undefined>(undefined),
+			ListenerArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface AddTagsInput {
+
+		/** Required */
 		ResourceArns: Array<string>;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 */
 		Tags: Array<Tag>;
 	}
 	export interface AddTagsInputFormProperties {
@@ -1735,25 +2020,47 @@ export namespace MyNS {
 	export enum ProtocolEnum { HTTP = 0, HTTPS = 1, TCP = 2, TLS = 3, UDP = 4, TCP_UDP = 5 }
 
 	export interface CreateListenerInput {
+
+		/** Required */
 		LoadBalancerArn: string;
+
+		/** Required */
 		Protocol: ListenerProtocol;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		Port: number;
 		SslPolicy?: string | null;
 		Certificates?: Array<Certificate>;
+
+		/** Required */
 		DefaultActions: Array<Action>;
 		AlpnPolicy?: Array<string>;
 	}
 	export interface CreateListenerInputFormProperties {
+
+		/** Required */
 		LoadBalancerArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		Protocol: FormControl<ListenerProtocol | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		Port: FormControl<number | null | undefined>,
 		SslPolicy: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateListenerInputFormGroup() {
 		return new FormGroup<CreateListenerInputFormProperties>({
-			LoadBalancerArn: new FormControl<string | null | undefined>(undefined),
-			Protocol: new FormControl<ListenerProtocol | null | undefined>(undefined),
-			Port: new FormControl<number | null | undefined>(undefined),
+			LoadBalancerArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Protocol: new FormControl<ListenerProtocol | null | undefined>(undefined, [Validators.required]),
+			Port: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(65535)]),
 			SslPolicy: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1766,16 +2073,22 @@ export namespace MyNS {
 	export enum IpAddressType { ipv4 = 0, dualstack = 1 }
 
 	export interface CreateLoadBalancerInput {
+
+		/** Required */
 		Name: string;
 		Subnets?: Array<string>;
 		SubnetMappings?: Array<SubnetMapping>;
 		SecurityGroups?: Array<string>;
 		Scheme?: CreateLoadBalancerInputScheme | null;
+
+		/** Minimum items: 1 */
 		Tags?: Array<Tag>;
 		Type?: LoadBalancerType | null;
 		IpAddressType?: LoadBalancerIpAddressType | null;
 	}
 	export interface CreateLoadBalancerInputFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 		Scheme: FormControl<CreateLoadBalancerInputScheme | null | undefined>,
 		Type: FormControl<LoadBalancerType | null | undefined>,
@@ -1783,7 +2096,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateLoadBalancerInputFormGroup() {
 		return new FormGroup<CreateLoadBalancerInputFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Scheme: new FormControl<CreateLoadBalancerInputScheme | null | undefined>(undefined),
 			Type: new FormControl<LoadBalancerType | null | undefined>(undefined),
 			IpAddressType: new FormControl<LoadBalancerIpAddressType | null | undefined>(undefined),
@@ -1794,19 +2107,39 @@ export namespace MyNS {
 	export enum CreateLoadBalancerInputScheme { internet_facing = 0, _internal = 1 }
 
 	export interface CreateRuleInput {
+
+		/** Required */
 		ListenerArn: string;
+
+		/** Required */
 		Conditions: Array<RuleCondition>;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 50000
+		 */
 		Priority: number;
+
+		/** Required */
 		Actions: Array<Action>;
 	}
 	export interface CreateRuleInputFormProperties {
+
+		/** Required */
 		ListenerArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 50000
+		 */
 		Priority: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateRuleInputFormGroup() {
 		return new FormGroup<CreateRuleInputFormProperties>({
-			ListenerArn: new FormControl<string | null | undefined>(undefined),
-			Priority: new FormControl<number | null | undefined>(undefined),
+			ListenerArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Priority: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(50000)]),
 		});
 
 	}
@@ -1814,17 +2147,49 @@ export namespace MyNS {
 	export enum TargetTypeEnum { instance = 0, ip = 1, lambda = 2 }
 
 	export interface CreateTargetGroupInput {
+
+		/** Required */
 		Name: string;
 		Protocol?: ListenerProtocol | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		Port?: number | null;
 		VpcId?: string | null;
 		HealthCheckProtocol?: ListenerProtocol | null;
 		HealthCheckPort?: string | null;
 		HealthCheckEnabled?: boolean | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		HealthCheckPath?: string | null;
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 300
+		 */
 		HealthCheckIntervalSeconds?: number | null;
+
+		/**
+		 * Minimum: 2
+		 * Maximum: 120
+		 */
 		HealthCheckTimeoutSeconds?: number | null;
+
+		/**
+		 * Minimum: 2
+		 * Maximum: 10
+		 */
 		HealthyThresholdCount?: number | null;
+
+		/**
+		 * Minimum: 2
+		 * Maximum: 10
+		 */
 		UnhealthyThresholdCount?: number | null;
 
 		/** Information to use when checking for a successful response from a target. */
@@ -1832,136 +2197,214 @@ export namespace MyNS {
 		TargetType?: TargetGroupTargetType | null;
 	}
 	export interface CreateTargetGroupInputFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 		Protocol: FormControl<ListenerProtocol | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		Port: FormControl<number | null | undefined>,
 		VpcId: FormControl<string | null | undefined>,
 		HealthCheckProtocol: FormControl<ListenerProtocol | null | undefined>,
 		HealthCheckPort: FormControl<string | null | undefined>,
 		HealthCheckEnabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		HealthCheckPath: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 300
+		 */
 		HealthCheckIntervalSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 2
+		 * Maximum: 120
+		 */
 		HealthCheckTimeoutSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 2
+		 * Maximum: 10
+		 */
 		HealthyThresholdCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 2
+		 * Maximum: 10
+		 */
 		UnhealthyThresholdCount: FormControl<number | null | undefined>,
 		TargetType: FormControl<TargetGroupTargetType | null | undefined>,
 	}
 	export function CreateCreateTargetGroupInputFormGroup() {
 		return new FormGroup<CreateTargetGroupInputFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Protocol: new FormControl<ListenerProtocol | null | undefined>(undefined),
-			Port: new FormControl<number | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(65535)]),
 			VpcId: new FormControl<string | null | undefined>(undefined),
 			HealthCheckProtocol: new FormControl<ListenerProtocol | null | undefined>(undefined),
 			HealthCheckPort: new FormControl<string | null | undefined>(undefined),
 			HealthCheckEnabled: new FormControl<boolean | null | undefined>(undefined),
-			HealthCheckPath: new FormControl<string | null | undefined>(undefined),
-			HealthCheckIntervalSeconds: new FormControl<number | null | undefined>(undefined),
-			HealthCheckTimeoutSeconds: new FormControl<number | null | undefined>(undefined),
-			HealthyThresholdCount: new FormControl<number | null | undefined>(undefined),
-			UnhealthyThresholdCount: new FormControl<number | null | undefined>(undefined),
+			HealthCheckPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			HealthCheckIntervalSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(300)]),
+			HealthCheckTimeoutSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(2), Validators.max(120)]),
+			HealthyThresholdCount: new FormControl<number | null | undefined>(undefined, [Validators.min(2), Validators.max(10)]),
+			UnhealthyThresholdCount: new FormControl<number | null | undefined>(undefined, [Validators.min(2), Validators.max(10)]),
 			TargetType: new FormControl<TargetGroupTargetType | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface DeleteListenerInput {
+
+		/** Required */
 		ListenerArn: string;
 	}
 	export interface DeleteListenerInputFormProperties {
+
+		/** Required */
 		ListenerArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteListenerInputFormGroup() {
 		return new FormGroup<DeleteListenerInputFormProperties>({
-			ListenerArn: new FormControl<string | null | undefined>(undefined),
+			ListenerArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeleteLoadBalancerInput {
+
+		/** Required */
 		LoadBalancerArn: string;
 	}
 	export interface DeleteLoadBalancerInputFormProperties {
+
+		/** Required */
 		LoadBalancerArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteLoadBalancerInputFormGroup() {
 		return new FormGroup<DeleteLoadBalancerInputFormProperties>({
-			LoadBalancerArn: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeleteRuleInput {
+
+		/** Required */
 		RuleArn: string;
 	}
 	export interface DeleteRuleInputFormProperties {
+
+		/** Required */
 		RuleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRuleInputFormGroup() {
 		return new FormGroup<DeleteRuleInputFormProperties>({
-			RuleArn: new FormControl<string | null | undefined>(undefined),
+			RuleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeleteTargetGroupInput {
+
+		/** Required */
 		TargetGroupArn: string;
 	}
 	export interface DeleteTargetGroupInputFormProperties {
+
+		/** Required */
 		TargetGroupArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteTargetGroupInputFormGroup() {
 		return new FormGroup<DeleteTargetGroupInputFormProperties>({
-			TargetGroupArn: new FormControl<string | null | undefined>(undefined),
+			TargetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeregisterTargetsInput {
+
+		/** Required */
 		TargetGroupArn: string;
+
+		/** Required */
 		Targets: Array<TargetDescription>;
 	}
 	export interface DeregisterTargetsInputFormProperties {
+
+		/** Required */
 		TargetGroupArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeregisterTargetsInputFormGroup() {
 		return new FormGroup<DeregisterTargetsInputFormProperties>({
-			TargetGroupArn: new FormControl<string | null | undefined>(undefined),
+			TargetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DescribeAccountLimitsInput {
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 400
+		 */
 		PageSize?: number | null;
 	}
 	export interface DescribeAccountLimitsInputFormProperties {
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 400
+		 */
 		PageSize: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeAccountLimitsInputFormGroup() {
 		return new FormGroup<DescribeAccountLimitsInputFormProperties>({
 			Marker: new FormControl<string | null | undefined>(undefined),
-			PageSize: new FormControl<number | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(400)]),
 		});
 
 	}
 
 	export interface DescribeListenerCertificatesInput {
+
+		/** Required */
 		ListenerArn: string;
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 400
+		 */
 		PageSize?: number | null;
 	}
 	export interface DescribeListenerCertificatesInputFormProperties {
+
+		/** Required */
 		ListenerArn: FormControl<string | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 400
+		 */
 		PageSize: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeListenerCertificatesInputFormGroup() {
 		return new FormGroup<DescribeListenerCertificatesInputFormProperties>({
-			ListenerArn: new FormControl<string | null | undefined>(undefined),
+			ListenerArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Marker: new FormControl<string | null | undefined>(undefined),
-			PageSize: new FormControl<number | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(400)]),
 		});
 
 	}
@@ -1970,31 +2413,45 @@ export namespace MyNS {
 		LoadBalancerArn?: string | null;
 		ListenerArns?: Array<string>;
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 400
+		 */
 		PageSize?: number | null;
 	}
 	export interface DescribeListenersInputFormProperties {
 		LoadBalancerArn: FormControl<string | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 400
+		 */
 		PageSize: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeListenersInputFormGroup() {
 		return new FormGroup<DescribeListenersInputFormProperties>({
 			LoadBalancerArn: new FormControl<string | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
-			PageSize: new FormControl<number | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(400)]),
 		});
 
 	}
 
 	export interface DescribeLoadBalancerAttributesInput {
+
+		/** Required */
 		LoadBalancerArn: string;
 	}
 	export interface DescribeLoadBalancerAttributesInputFormProperties {
+
+		/** Required */
 		LoadBalancerArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeLoadBalancerAttributesInputFormGroup() {
 		return new FormGroup<DescribeLoadBalancerAttributesInputFormProperties>({
-			LoadBalancerArn: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2003,16 +2460,26 @@ export namespace MyNS {
 		LoadBalancerArns?: Array<string>;
 		Names?: Array<string>;
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 400
+		 */
 		PageSize?: number | null;
 	}
 	export interface DescribeLoadBalancersInputFormProperties {
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 400
+		 */
 		PageSize: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeLoadBalancersInputFormGroup() {
 		return new FormGroup<DescribeLoadBalancersInputFormProperties>({
 			Marker: new FormControl<string | null | undefined>(undefined),
-			PageSize: new FormControl<number | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(400)]),
 		});
 
 	}
@@ -2021,18 +2488,28 @@ export namespace MyNS {
 		ListenerArn?: string | null;
 		RuleArns?: Array<string>;
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 400
+		 */
 		PageSize?: number | null;
 	}
 	export interface DescribeRulesInputFormProperties {
 		ListenerArn: FormControl<string | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 400
+		 */
 		PageSize: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeRulesInputFormGroup() {
 		return new FormGroup<DescribeRulesInputFormProperties>({
 			ListenerArn: new FormControl<string | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
-			PageSize: new FormControl<number | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(400)]),
 		});
 
 	}
@@ -2040,21 +2517,33 @@ export namespace MyNS {
 	export interface DescribeSSLPoliciesInput {
 		Names?: Array<string>;
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 400
+		 */
 		PageSize?: number | null;
 	}
 	export interface DescribeSSLPoliciesInputFormProperties {
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 400
+		 */
 		PageSize: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeSSLPoliciesInputFormGroup() {
 		return new FormGroup<DescribeSSLPoliciesInputFormProperties>({
 			Marker: new FormControl<string | null | undefined>(undefined),
-			PageSize: new FormControl<number | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(400)]),
 		});
 
 	}
 
 	export interface DescribeTagsInput {
+
+		/** Required */
 		ResourceArns: Array<string>;
 	}
 	export interface DescribeTagsInputFormProperties {
@@ -2066,14 +2555,18 @@ export namespace MyNS {
 	}
 
 	export interface DescribeTargetGroupAttributesInput {
+
+		/** Required */
 		TargetGroupArn: string;
 	}
 	export interface DescribeTargetGroupAttributesInputFormProperties {
+
+		/** Required */
 		TargetGroupArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeTargetGroupAttributesInputFormGroup() {
 		return new FormGroup<DescribeTargetGroupAttributesInputFormProperties>({
-			TargetGroupArn: new FormControl<string | null | undefined>(undefined),
+			TargetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2083,32 +2576,46 @@ export namespace MyNS {
 		TargetGroupArns?: Array<string>;
 		Names?: Array<string>;
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 400
+		 */
 		PageSize?: number | null;
 	}
 	export interface DescribeTargetGroupsInputFormProperties {
 		LoadBalancerArn: FormControl<string | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 400
+		 */
 		PageSize: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeTargetGroupsInputFormGroup() {
 		return new FormGroup<DescribeTargetGroupsInputFormProperties>({
 			LoadBalancerArn: new FormControl<string | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
-			PageSize: new FormControl<number | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(400)]),
 		});
 
 	}
 
 	export interface DescribeTargetHealthInput {
+
+		/** Required */
 		TargetGroupArn: string;
 		Targets?: Array<TargetDescription>;
 	}
 	export interface DescribeTargetHealthInputFormProperties {
+
+		/** Required */
 		TargetGroupArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeTargetHealthInputFormGroup() {
 		return new FormGroup<DescribeTargetHealthInputFormProperties>({
-			TargetGroupArn: new FormControl<string | null | undefined>(undefined),
+			TargetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2116,7 +2623,14 @@ export namespace MyNS {
 	export enum LoadBalancerStateEnum { active = 0, provisioning = 1, active_impaired = 2, failed = 3 }
 
 	export interface ModifyListenerInput {
+
+		/** Required */
 		ListenerArn: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		Port?: number | null;
 		Protocol?: ListenerProtocol | null;
 		SslPolicy?: string | null;
@@ -2125,15 +2639,22 @@ export namespace MyNS {
 		AlpnPolicy?: Array<string>;
 	}
 	export interface ModifyListenerInputFormProperties {
+
+		/** Required */
 		ListenerArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		Port: FormControl<number | null | undefined>,
 		Protocol: FormControl<ListenerProtocol | null | undefined>,
 		SslPolicy: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyListenerInputFormGroup() {
 		return new FormGroup<ModifyListenerInputFormProperties>({
-			ListenerArn: new FormControl<string | null | undefined>(undefined),
-			Port: new FormControl<number | null | undefined>(undefined),
+			ListenerArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Port: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(65535)]),
 			Protocol: new FormControl<ListenerProtocol | null | undefined>(undefined),
 			SslPolicy: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2141,84 +2662,157 @@ export namespace MyNS {
 	}
 
 	export interface ModifyLoadBalancerAttributesInput {
+
+		/** Required */
 		LoadBalancerArn: string;
+
+		/**
+		 * Required
+		 * Maximum items: 20
+		 */
 		Attributes: Array<LoadBalancerAttribute>;
 	}
 	export interface ModifyLoadBalancerAttributesInputFormProperties {
+
+		/** Required */
 		LoadBalancerArn: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyLoadBalancerAttributesInputFormGroup() {
 		return new FormGroup<ModifyLoadBalancerAttributesInputFormProperties>({
-			LoadBalancerArn: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ModifyRuleInput {
+
+		/** Required */
 		RuleArn: string;
 		Conditions?: Array<RuleCondition>;
 		Actions?: Array<Action>;
 	}
 	export interface ModifyRuleInputFormProperties {
+
+		/** Required */
 		RuleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyRuleInputFormGroup() {
 		return new FormGroup<ModifyRuleInputFormProperties>({
-			RuleArn: new FormControl<string | null | undefined>(undefined),
+			RuleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ModifyTargetGroupAttributesInput {
+
+		/** Required */
 		TargetGroupArn: string;
+
+		/** Required */
 		Attributes: Array<TargetGroupAttribute>;
 	}
 	export interface ModifyTargetGroupAttributesInputFormProperties {
+
+		/** Required */
 		TargetGroupArn: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyTargetGroupAttributesInputFormGroup() {
 		return new FormGroup<ModifyTargetGroupAttributesInputFormProperties>({
-			TargetGroupArn: new FormControl<string | null | undefined>(undefined),
+			TargetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ModifyTargetGroupInput {
+
+		/** Required */
 		TargetGroupArn: string;
 		HealthCheckProtocol?: ListenerProtocol | null;
 		HealthCheckPort?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		HealthCheckPath?: string | null;
 		HealthCheckEnabled?: boolean | null;
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 300
+		 */
 		HealthCheckIntervalSeconds?: number | null;
+
+		/**
+		 * Minimum: 2
+		 * Maximum: 120
+		 */
 		HealthCheckTimeoutSeconds?: number | null;
+
+		/**
+		 * Minimum: 2
+		 * Maximum: 10
+		 */
 		HealthyThresholdCount?: number | null;
+
+		/**
+		 * Minimum: 2
+		 * Maximum: 10
+		 */
 		UnhealthyThresholdCount?: number | null;
 
 		/** Information to use when checking for a successful response from a target. */
 		Matcher?: Matcher;
 	}
 	export interface ModifyTargetGroupInputFormProperties {
+
+		/** Required */
 		TargetGroupArn: FormControl<string | null | undefined>,
 		HealthCheckProtocol: FormControl<ListenerProtocol | null | undefined>,
 		HealthCheckPort: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		HealthCheckPath: FormControl<string | null | undefined>,
 		HealthCheckEnabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 300
+		 */
 		HealthCheckIntervalSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 2
+		 * Maximum: 120
+		 */
 		HealthCheckTimeoutSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 2
+		 * Maximum: 10
+		 */
 		HealthyThresholdCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 2
+		 * Maximum: 10
+		 */
 		UnhealthyThresholdCount: FormControl<number | null | undefined>,
 	}
 	export function CreateModifyTargetGroupInputFormGroup() {
 		return new FormGroup<ModifyTargetGroupInputFormProperties>({
-			TargetGroupArn: new FormControl<string | null | undefined>(undefined),
+			TargetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			HealthCheckProtocol: new FormControl<ListenerProtocol | null | undefined>(undefined),
 			HealthCheckPort: new FormControl<string | null | undefined>(undefined),
-			HealthCheckPath: new FormControl<string | null | undefined>(undefined),
+			HealthCheckPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			HealthCheckEnabled: new FormControl<boolean | null | undefined>(undefined),
-			HealthCheckIntervalSeconds: new FormControl<number | null | undefined>(undefined),
-			HealthCheckTimeoutSeconds: new FormControl<number | null | undefined>(undefined),
-			HealthyThresholdCount: new FormControl<number | null | undefined>(undefined),
-			UnhealthyThresholdCount: new FormControl<number | null | undefined>(undefined),
+			HealthCheckIntervalSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(300)]),
+			HealthCheckTimeoutSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(2), Validators.max(120)]),
+			HealthyThresholdCount: new FormControl<number | null | undefined>(undefined, [Validators.min(2), Validators.max(10)]),
+			UnhealthyThresholdCount: new FormControl<number | null | undefined>(undefined, [Validators.min(2), Validators.max(10)]),
 		});
 
 	}
@@ -2226,35 +2820,51 @@ export namespace MyNS {
 	export enum RedirectActionStatusCodeEnum { HTTP_301 = 0, HTTP_302 = 1 }
 
 	export interface RegisterTargetsInput {
+
+		/** Required */
 		TargetGroupArn: string;
+
+		/** Required */
 		Targets: Array<TargetDescription>;
 	}
 	export interface RegisterTargetsInputFormProperties {
+
+		/** Required */
 		TargetGroupArn: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterTargetsInputFormGroup() {
 		return new FormGroup<RegisterTargetsInputFormProperties>({
-			TargetGroupArn: new FormControl<string | null | undefined>(undefined),
+			TargetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface RemoveListenerCertificatesInput {
+
+		/** Required */
 		ListenerArn: string;
+
+		/** Required */
 		Certificates: Array<Certificate>;
 	}
 	export interface RemoveListenerCertificatesInputFormProperties {
+
+		/** Required */
 		ListenerArn: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveListenerCertificatesInputFormGroup() {
 		return new FormGroup<RemoveListenerCertificatesInputFormProperties>({
-			ListenerArn: new FormControl<string | null | undefined>(undefined),
+			ListenerArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface RemoveTagsInput {
+
+		/** Required */
 		ResourceArns: Array<string>;
+
+		/** Required */
 		TagKeys: Array<string>;
 	}
 	export interface RemoveTagsInputFormProperties {
@@ -2266,22 +2876,32 @@ export namespace MyNS {
 	}
 
 	export interface SetIpAddressTypeInput {
+
+		/** Required */
 		LoadBalancerArn: string;
+
+		/** Required */
 		IpAddressType: LoadBalancerIpAddressType;
 	}
 	export interface SetIpAddressTypeInputFormProperties {
+
+		/** Required */
 		LoadBalancerArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		IpAddressType: FormControl<LoadBalancerIpAddressType | null | undefined>,
 	}
 	export function CreateSetIpAddressTypeInputFormGroup() {
 		return new FormGroup<SetIpAddressTypeInputFormProperties>({
-			LoadBalancerArn: new FormControl<string | null | undefined>(undefined),
-			IpAddressType: new FormControl<LoadBalancerIpAddressType | null | undefined>(undefined),
+			LoadBalancerArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			IpAddressType: new FormControl<LoadBalancerIpAddressType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface SetRulePrioritiesInput {
+
+		/** Required */
 		RulePriorities: Array<RulePriorityPair>;
 	}
 	export interface SetRulePrioritiesInputFormProperties {
@@ -2293,30 +2913,40 @@ export namespace MyNS {
 	}
 
 	export interface SetSecurityGroupsInput {
+
+		/** Required */
 		LoadBalancerArn: string;
+
+		/** Required */
 		SecurityGroups: Array<string>;
 	}
 	export interface SetSecurityGroupsInputFormProperties {
+
+		/** Required */
 		LoadBalancerArn: FormControl<string | null | undefined>,
 	}
 	export function CreateSetSecurityGroupsInputFormGroup() {
 		return new FormGroup<SetSecurityGroupsInputFormProperties>({
-			LoadBalancerArn: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface SetSubnetsInput {
+
+		/** Required */
 		LoadBalancerArn: string;
 		Subnets?: Array<string>;
 		SubnetMappings?: Array<SubnetMapping>;
 	}
 	export interface SetSubnetsInputFormProperties {
+
+		/** Required */
 		LoadBalancerArn: FormControl<string | null | undefined>,
 	}
 	export function CreateSetSubnetsInputFormGroup() {
 		return new FormGroup<SetSubnetsInputFormProperties>({
-			LoadBalancerArn: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2781,14 +3411,18 @@ export namespace MyNS {
 	export enum POST_CreateRuleVersion { _2015_12_01 = 0 }
 
 	export interface GET_CreateTargetGroupMatcher {
+
+		/** Required */
 		HttpCode: string;
 	}
 	export interface GET_CreateTargetGroupMatcherFormProperties {
+
+		/** Required */
 		HttpCode: FormControl<string | null | undefined>,
 	}
 	export function CreateGET_CreateTargetGroupMatcherFormGroup() {
 		return new FormGroup<GET_CreateTargetGroupMatcherFormProperties>({
-			HttpCode: new FormControl<string | null | undefined>(undefined),
+			HttpCode: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2914,14 +3548,18 @@ export namespace MyNS {
 	export enum POST_ModifyRuleVersion { _2015_12_01 = 0 }
 
 	export interface GET_ModifyTargetGroupMatcher {
+
+		/** Required */
 		HttpCode: string;
 	}
 	export interface GET_ModifyTargetGroupMatcherFormProperties {
+
+		/** Required */
 		HttpCode: FormControl<string | null | undefined>,
 	}
 	export function CreateGET_ModifyTargetGroupMatcherFormGroup() {
 		return new FormGroup<GET_ModifyTargetGroupMatcherFormProperties>({
-			HttpCode: new FormControl<string | null | undefined>(undefined),
+			HttpCode: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

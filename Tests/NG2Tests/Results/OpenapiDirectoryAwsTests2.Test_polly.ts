@@ -35,14 +35,24 @@ export namespace MyNS {
 
 	export interface DescribeVoicesOutput {
 		Voices?: Array<Voice>;
+
+		/**
+		 * Max length: 4096
+		 * Min length: 0
+		 */
 		NextToken?: string | null;
 	}
 	export interface DescribeVoicesOutputFormProperties {
+
+		/**
+		 * Max length: 4096
+		 * Min length: 0
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeVoicesOutputFormGroup() {
 		return new FormGroup<DescribeVoicesOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(0)]),
 		});
 
 	}
@@ -118,12 +128,16 @@ export namespace MyNS {
 	/** Provides lexicon name and lexicon content in string format. For more information, see <a href="https://www.w3.org/TR/pronunciation-lexicon/">Pronunciation Lexicon Specification (PLS) Version 1.0</a>. */
 	export interface Lexicon {
 		Content?: string | null;
+
+		/** Pattern: [0-9A-Za-z]{1,20} */
 		Name?: string | null;
 	}
 
 	/** Provides lexicon name and lexicon content in string format. For more information, see <a href="https://www.w3.org/TR/pronunciation-lexicon/">Pronunciation Lexicon Specification (PLS) Version 1.0</a>. */
 	export interface LexiconFormProperties {
 		Content: FormControl<string | null | undefined>,
+
+		/** Pattern: [0-9A-Za-z]{1,20} */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateLexiconFormGroup() {
@@ -185,16 +199,24 @@ export namespace MyNS {
 	/** SynthesisTask object that provides information about a speech synthesis task. */
 	export interface SynthesisTask {
 		Engine?: Engine | null;
+
+		/** Pattern: ^[a-zA-Z0-9_-]{1,100}$ */
 		TaskId?: string | null;
 		TaskStatus?: SynthesisTaskTaskStatus | null;
 		TaskStatusReason?: string | null;
 		OutputUri?: string | null;
 		CreationTime?: Date | null;
 		RequestCharacters?: number | null;
+
+		/** Pattern: ^arn:aws(-(cn|iso(-b)?|us-gov))?:sns:[a-z0-9_-]{1,50}:\d{12}:[a-zA-Z0-9_-]{1,256}$ */
 		SnsTopicArn?: string | null;
+
+		/** Maximum items: 5 */
 		LexiconNames?: Array<string>;
 		OutputFormat?: SynthesisTaskOutputFormat | null;
 		SampleRate?: string | null;
+
+		/** Maximum items: 4 */
 		SpeechMarkTypes?: Array<SpeechMarkType>;
 		TextType?: SynthesisTaskTextType | null;
 		VoiceId?: VoiceId | null;
@@ -204,12 +226,16 @@ export namespace MyNS {
 	/** SynthesisTask object that provides information about a speech synthesis task. */
 	export interface SynthesisTaskFormProperties {
 		Engine: FormControl<Engine | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_-]{1,100}$ */
 		TaskId: FormControl<string | null | undefined>,
 		TaskStatus: FormControl<SynthesisTaskTaskStatus | null | undefined>,
 		TaskStatusReason: FormControl<string | null | undefined>,
 		OutputUri: FormControl<string | null | undefined>,
 		CreationTime: FormControl<Date | null | undefined>,
 		RequestCharacters: FormControl<number | null | undefined>,
+
+		/** Pattern: ^arn:aws(-(cn|iso(-b)?|us-gov))?:sns:[a-z0-9_-]{1,50}:\d{12}:[a-zA-Z0-9_-]{1,256}$ */
 		SnsTopicArn: FormControl<string | null | undefined>,
 		OutputFormat: FormControl<SynthesisTaskOutputFormat | null | undefined>,
 		SampleRate: FormControl<string | null | undefined>,
@@ -268,14 +294,24 @@ export namespace MyNS {
 
 	export interface ListLexiconsOutput {
 		Lexicons?: Array<LexiconDescription>;
+
+		/**
+		 * Max length: 4096
+		 * Min length: 0
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListLexiconsOutputFormProperties {
+
+		/**
+		 * Max length: 4096
+		 * Min length: 0
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListLexiconsOutputFormGroup() {
 		return new FormGroup<ListLexiconsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(0)]),
 		});
 
 	}
@@ -283,6 +319,8 @@ export namespace MyNS {
 
 	/** Describes the content of the lexicon. */
 	export interface LexiconDescription {
+
+		/** Pattern: [0-9A-Za-z]{1,20} */
 		Name?: string | null;
 
 		/** Contains metadata describing the lexicon such as the number of lexemes, language code, and so on. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>. */
@@ -291,6 +329,8 @@ export namespace MyNS {
 
 	/** Describes the content of the lexicon. */
 	export interface LexiconDescriptionFormProperties {
+
+		/** Pattern: [0-9A-Za-z]{1,20} */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateLexiconDescriptionFormGroup() {
@@ -301,15 +341,25 @@ export namespace MyNS {
 	}
 
 	export interface ListSpeechSynthesisTasksOutput {
+
+		/**
+		 * Max length: 4096
+		 * Min length: 0
+		 */
 		NextToken?: string | null;
 		SynthesisTasks?: Array<SynthesisTask>;
 	}
 	export interface ListSpeechSynthesisTasksOutputFormProperties {
+
+		/**
+		 * Max length: 4096
+		 * Min length: 0
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListSpeechSynthesisTasksOutputFormGroup() {
 		return new FormGroup<ListSpeechSynthesisTasksOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(0)]),
 		});
 
 	}
@@ -577,14 +627,18 @@ export namespace MyNS {
 	export enum OutputFormat { json = 0, mp3 = 1, ogg_vorbis = 2, pcm = 3 }
 
 	export interface PutLexiconInput {
+
+		/** Required */
 		Content: string;
 	}
 	export interface PutLexiconInputFormProperties {
+
+		/** Required */
 		Content: FormControl<string | null | undefined>,
 	}
 	export function CreatePutLexiconInputFormGroup() {
 		return new FormGroup<PutLexiconInputFormProperties>({
-			Content: new FormControl<string | null | undefined>(undefined),
+			Content: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -594,41 +648,75 @@ export namespace MyNS {
 	export interface StartSpeechSynthesisTaskInput {
 		Engine?: Engine | null;
 		LanguageCode?: StartSpeechSynthesisTaskInputLanguageCode | null;
+
+		/** Maximum items: 5 */
 		LexiconNames?: Array<string>;
+
+		/** Required */
 		OutputFormat: SynthesisTaskOutputFormat;
+
+		/**
+		 * Required
+		 * Pattern: ^[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]$
+		 */
 		OutputS3BucketName: string;
+
+		/** Pattern: ^[0-9a-zA-Z\/\!\-_\.\*\'\(\)]{0,800}$ */
 		OutputS3KeyPrefix?: string | null;
 		SampleRate?: string | null;
+
+		/** Pattern: ^arn:aws(-(cn|iso(-b)?|us-gov))?:sns:[a-z0-9_-]{1,50}:\d{12}:[a-zA-Z0-9_-]{1,256}$ */
 		SnsTopicArn?: string | null;
+
+		/** Maximum items: 4 */
 		SpeechMarkTypes?: Array<SpeechMarkType>;
+
+		/** Required */
 		Text: string;
 		TextType?: SynthesisTaskTextType | null;
+
+		/** Required */
 		VoiceId: VoiceId;
 	}
 	export interface StartSpeechSynthesisTaskInputFormProperties {
 		Engine: FormControl<Engine | null | undefined>,
 		LanguageCode: FormControl<StartSpeechSynthesisTaskInputLanguageCode | null | undefined>,
+
+		/** Required */
 		OutputFormat: FormControl<SynthesisTaskOutputFormat | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: ^[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]$
+		 */
 		OutputS3BucketName: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[0-9a-zA-Z\/\!\-_\.\*\'\(\)]{0,800}$ */
 		OutputS3KeyPrefix: FormControl<string | null | undefined>,
 		SampleRate: FormControl<string | null | undefined>,
+
+		/** Pattern: ^arn:aws(-(cn|iso(-b)?|us-gov))?:sns:[a-z0-9_-]{1,50}:\d{12}:[a-zA-Z0-9_-]{1,256}$ */
 		SnsTopicArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		Text: FormControl<string | null | undefined>,
 		TextType: FormControl<SynthesisTaskTextType | null | undefined>,
+
+		/** Required */
 		VoiceId: FormControl<VoiceId | null | undefined>,
 	}
 	export function CreateStartSpeechSynthesisTaskInputFormGroup() {
 		return new FormGroup<StartSpeechSynthesisTaskInputFormProperties>({
 			Engine: new FormControl<Engine | null | undefined>(undefined),
 			LanguageCode: new FormControl<StartSpeechSynthesisTaskInputLanguageCode | null | undefined>(undefined),
-			OutputFormat: new FormControl<SynthesisTaskOutputFormat | null | undefined>(undefined),
-			OutputS3BucketName: new FormControl<string | null | undefined>(undefined),
+			OutputFormat: new FormControl<SynthesisTaskOutputFormat | null | undefined>(undefined, [Validators.required]),
+			OutputS3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			OutputS3KeyPrefix: new FormControl<string | null | undefined>(undefined),
 			SampleRate: new FormControl<string | null | undefined>(undefined),
 			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
-			Text: new FormControl<string | null | undefined>(undefined),
+			Text: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TextType: new FormControl<SynthesisTaskTextType | null | undefined>(undefined),
-			VoiceId: new FormControl<VoiceId | null | undefined>(undefined),
+			VoiceId: new FormControl<VoiceId | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -638,32 +726,48 @@ export namespace MyNS {
 	export interface SynthesizeSpeechInput {
 		Engine?: Engine | null;
 		LanguageCode?: SynthesizeSpeechInputLanguageCode | null;
+
+		/** Maximum items: 5 */
 		LexiconNames?: Array<string>;
+
+		/** Required */
 		OutputFormat: SynthesisTaskOutputFormat;
 		SampleRate?: string | null;
+
+		/** Maximum items: 4 */
 		SpeechMarkTypes?: Array<SpeechMarkType>;
+
+		/** Required */
 		Text: string;
 		TextType?: SynthesisTaskTextType | null;
+
+		/** Required */
 		VoiceId: VoiceId;
 	}
 	export interface SynthesizeSpeechInputFormProperties {
 		Engine: FormControl<Engine | null | undefined>,
 		LanguageCode: FormControl<SynthesizeSpeechInputLanguageCode | null | undefined>,
+
+		/** Required */
 		OutputFormat: FormControl<SynthesisTaskOutputFormat | null | undefined>,
 		SampleRate: FormControl<string | null | undefined>,
+
+		/** Required */
 		Text: FormControl<string | null | undefined>,
 		TextType: FormControl<SynthesisTaskTextType | null | undefined>,
+
+		/** Required */
 		VoiceId: FormControl<VoiceId | null | undefined>,
 	}
 	export function CreateSynthesizeSpeechInputFormGroup() {
 		return new FormGroup<SynthesizeSpeechInputFormProperties>({
 			Engine: new FormControl<Engine | null | undefined>(undefined),
 			LanguageCode: new FormControl<SynthesizeSpeechInputLanguageCode | null | undefined>(undefined),
-			OutputFormat: new FormControl<SynthesisTaskOutputFormat | null | undefined>(undefined),
+			OutputFormat: new FormControl<SynthesisTaskOutputFormat | null | undefined>(undefined, [Validators.required]),
 			SampleRate: new FormControl<string | null | undefined>(undefined),
-			Text: new FormControl<string | null | undefined>(undefined),
+			Text: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TextType: new FormControl<SynthesisTaskTextType | null | undefined>(undefined),
-			VoiceId: new FormControl<VoiceId | null | undefined>(undefined),
+			VoiceId: new FormControl<VoiceId | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -787,7 +891,7 @@ export namespace MyNS {
 	}
 	export function CreatePutLexiconPutBodyFormGroup() {
 		return new FormGroup<PutLexiconPutBodyFormProperties>({
-			Content: new FormControl<string | null | undefined>(undefined),
+			Content: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -912,14 +1016,14 @@ export namespace MyNS {
 		return new FormGroup<StartSpeechSynthesisTaskPostBodyFormProperties>({
 			Engine: new FormControl<Engine | null | undefined>(undefined),
 			LanguageCode: new FormControl<StartSpeechSynthesisTaskPostBodyLanguageCode | null | undefined>(undefined),
-			OutputFormat: new FormControl<SynthesisTaskOutputFormat | null | undefined>(undefined),
-			OutputS3BucketName: new FormControl<string | null | undefined>(undefined),
+			OutputFormat: new FormControl<SynthesisTaskOutputFormat | null | undefined>(undefined, [Validators.required]),
+			OutputS3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			OutputS3KeyPrefix: new FormControl<string | null | undefined>(undefined),
 			SampleRate: new FormControl<string | null | undefined>(undefined),
 			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
-			Text: new FormControl<string | null | undefined>(undefined),
+			Text: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TextType: new FormControl<SynthesisTaskTextType | null | undefined>(undefined),
-			VoiceId: new FormControl<VoiceId | null | undefined>(undefined),
+			VoiceId: new FormControl<VoiceId | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1006,11 +1110,11 @@ export namespace MyNS {
 		return new FormGroup<SynthesizeSpeechPostBodyFormProperties>({
 			Engine: new FormControl<Engine | null | undefined>(undefined),
 			LanguageCode: new FormControl<SynthesizeSpeechPostBodyLanguageCode | null | undefined>(undefined),
-			OutputFormat: new FormControl<SynthesisTaskOutputFormat | null | undefined>(undefined),
+			OutputFormat: new FormControl<SynthesisTaskOutputFormat | null | undefined>(undefined, [Validators.required]),
 			SampleRate: new FormControl<string | null | undefined>(undefined),
-			Text: new FormControl<string | null | undefined>(undefined),
+			Text: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TextType: new FormControl<SynthesisTaskTextType | null | undefined>(undefined),
-			VoiceId: new FormControl<VoiceId | null | undefined>(undefined),
+			VoiceId: new FormControl<VoiceId | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

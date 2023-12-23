@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AddAttributesToFindingsResponse {
+
+		/** Required */
 		failedItems: FailedItems;
 	}
 	export interface AddAttributesToFindingsResponseFormProperties {
@@ -25,7 +27,19 @@ export namespace MyNS {
 	}
 
 	export interface AddAttributesToFindingsRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		findingArns: Array<string>;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		attributes: Array<Attribute>;
 	}
 	export interface AddAttributesToFindingsRequestFormProperties {
@@ -39,19 +53,41 @@ export namespace MyNS {
 
 	/** This data type is used as a request parameter in the <a>AddAttributesToFindings</a> and <a>CreateAssessmentTemplate</a> actions. */
 	export interface Attribute {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		key: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		value?: string | null;
 	}
 
 	/** This data type is used as a request parameter in the <a>AddAttributesToFindings</a> and <a>CreateAssessmentTemplate</a> actions. */
 	export interface AttributeFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateAttributeFormGroup() {
 		return new FormGroup<AttributeFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -107,30 +143,64 @@ export namespace MyNS {
 	}
 
 	export interface CreateAssessmentTargetResponse {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentTargetArn: string;
 	}
 	export interface CreateAssessmentTargetResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentTargetArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateAssessmentTargetResponseFormGroup() {
 		return new FormGroup<CreateAssessmentTargetResponseFormProperties>({
-			assessmentTargetArn: new FormControl<string | null | undefined>(undefined),
+			assessmentTargetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateAssessmentTargetRequest {
+
+		/**
+		 * Required
+		 * Max length: 140
+		 * Min length: 1
+		 */
 		assessmentTargetName: string;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		resourceGroupArn?: string | null;
 	}
 	export interface CreateAssessmentTargetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 140
+		 * Min length: 1
+		 */
 		assessmentTargetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		resourceGroupArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateAssessmentTargetRequestFormGroup() {
 		return new FormGroup<CreateAssessmentTargetRequestFormProperties>({
-			assessmentTargetName: new FormControl<string | null | undefined>(undefined),
-			resourceGroupArn: new FormControl<string | null | undefined>(undefined),
+			assessmentTargetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(140), Validators.minLength(1)]),
+			resourceGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
@@ -156,61 +226,142 @@ export namespace MyNS {
 	}
 
 	export interface CreateAssessmentTemplateResponse {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentTemplateArn: string;
 	}
 	export interface CreateAssessmentTemplateResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentTemplateArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateAssessmentTemplateResponseFormGroup() {
 		return new FormGroup<CreateAssessmentTemplateResponseFormProperties>({
-			assessmentTemplateArn: new FormControl<string | null | undefined>(undefined),
+			assessmentTemplateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateAssessmentTemplateRequest {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentTargetArn: string;
+
+		/**
+		 * Required
+		 * Max length: 140
+		 * Min length: 1
+		 */
 		assessmentTemplateName: string;
+
+		/**
+		 * Required
+		 * Minimum: 180
+		 * Maximum: 86400
+		 */
 		durationInSeconds: number;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		rulesPackageArns: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		userAttributesForFindings?: Array<Attribute>;
 	}
 	export interface CreateAssessmentTemplateRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentTargetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 140
+		 * Min length: 1
+		 */
 		assessmentTemplateName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 180
+		 * Maximum: 86400
+		 */
 		durationInSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateAssessmentTemplateRequestFormGroup() {
 		return new FormGroup<CreateAssessmentTemplateRequestFormProperties>({
-			assessmentTargetArn: new FormControl<string | null | undefined>(undefined),
-			assessmentTemplateName: new FormControl<string | null | undefined>(undefined),
-			durationInSeconds: new FormControl<number | null | undefined>(undefined),
+			assessmentTargetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			assessmentTemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(140), Validators.minLength(1)]),
+			durationInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(180), Validators.max(86400)]),
 		});
 
 	}
 
 	export interface CreateExclusionsPreviewResponse {
+
+		/**
+		 * Required
+		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		previewToken: string;
 	}
 	export interface CreateExclusionsPreviewResponseFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		previewToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateExclusionsPreviewResponseFormGroup() {
 		return new FormGroup<CreateExclusionsPreviewResponseFormProperties>({
-			previewToken: new FormControl<string | null | undefined>(undefined),
+			previewToken: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface CreateExclusionsPreviewRequest {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentTemplateArn: string;
 	}
 	export interface CreateExclusionsPreviewRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentTemplateArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateExclusionsPreviewRequestFormGroup() {
 		return new FormGroup<CreateExclusionsPreviewRequestFormProperties>({
-			assessmentTemplateArn: new FormControl<string | null | undefined>(undefined),
+			assessmentTemplateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
@@ -226,19 +377,37 @@ export namespace MyNS {
 	}
 
 	export interface CreateResourceGroupResponse {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		resourceGroupArn: string;
 	}
 	export interface CreateResourceGroupResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		resourceGroupArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateResourceGroupResponseFormGroup() {
 		return new FormGroup<CreateResourceGroupResponseFormProperties>({
-			resourceGroupArn: new FormControl<string | null | undefined>(undefined),
+			resourceGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateResourceGroupRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		resourceGroupTags: Array<ResourceGroupTag>;
 	}
 	export interface CreateResourceGroupRequestFormProperties {
@@ -252,32 +421,66 @@ export namespace MyNS {
 
 	/** This data type is used as one of the elements of the <a>ResourceGroup</a> data type. */
 	export interface ResourceGroupTag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		key: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		value?: string | null;
 	}
 
 	/** This data type is used as one of the elements of the <a>ResourceGroup</a> data type. */
 	export interface ResourceGroupTagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateResourceGroupTagFormGroup() {
 		return new FormGroup<ResourceGroupTagFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteAssessmentRunRequest {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentRunArn: string;
 	}
 	export interface DeleteAssessmentRunRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentRunArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteAssessmentRunRequestFormGroup() {
 		return new FormGroup<DeleteAssessmentRunRequestFormProperties>({
-			assessmentRunArn: new FormControl<string | null | undefined>(undefined),
+			assessmentRunArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
@@ -293,33 +496,65 @@ export namespace MyNS {
 	}
 
 	export interface DeleteAssessmentTargetRequest {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentTargetArn: string;
 	}
 	export interface DeleteAssessmentTargetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentTargetArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteAssessmentTargetRequestFormGroup() {
 		return new FormGroup<DeleteAssessmentTargetRequestFormProperties>({
-			assessmentTargetArn: new FormControl<string | null | undefined>(undefined),
+			assessmentTargetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteAssessmentTemplateRequest {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentTemplateArn: string;
 	}
 	export interface DeleteAssessmentTemplateRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentTemplateArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteAssessmentTemplateRequestFormGroup() {
 		return new FormGroup<DeleteAssessmentTemplateRequestFormProperties>({
-			assessmentTemplateArn: new FormControl<string | null | undefined>(undefined),
+			assessmentTemplateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeAssessmentRunsResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		assessmentRuns: Array<AssessmentRun>;
+
+		/** Required */
 		failedItems: FailedItems;
 	}
 	export interface DescribeAssessmentRunsResponseFormProperties {
@@ -333,48 +568,138 @@ export namespace MyNS {
 
 	/** <p>A snapshot of an Amazon Inspector assessment run that contains the findings of the assessment run .</p> <p>Used as the response element in the <a>DescribeAssessmentRuns</a> action.</p> */
 	export interface AssessmentRun {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		arn: string;
+
+		/**
+		 * Required
+		 * Max length: 140
+		 * Min length: 1
+		 */
 		name: string;
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentTemplateArn: string;
+
+		/** Required */
 		state: AssessmentRunState;
+
+		/**
+		 * Required
+		 * Minimum: 180
+		 * Maximum: 86400
+		 */
 		durationInSeconds: number;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		rulesPackageArns: Array<string>;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		userAttributesForFindings: Array<Attribute>;
+
+		/** Required */
 		createdAt: Date;
 		startedAt?: Date | null;
 		completedAt?: Date | null;
+
+		/** Required */
 		stateChangedAt: Date;
+
+		/** Required */
 		dataCollected: boolean;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		stateChanges: Array<AssessmentRunStateChange>;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		notifications: Array<AssessmentRunNotification>;
+
+		/** Required */
 		findingCounts: AssessmentRunFindingCounts;
 	}
 
 	/** <p>A snapshot of an Amazon Inspector assessment run that contains the findings of the assessment run .</p> <p>Used as the response element in the <a>DescribeAssessmentRuns</a> action.</p> */
 	export interface AssessmentRunFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 140
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentTemplateArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		state: FormControl<AssessmentRunState | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 180
+		 * Maximum: 86400
+		 */
 		durationInSeconds: FormControl<number | null | undefined>,
+
+		/** Required */
 		createdAt: FormControl<Date | null | undefined>,
 		startedAt: FormControl<Date | null | undefined>,
 		completedAt: FormControl<Date | null | undefined>,
+
+		/** Required */
 		stateChangedAt: FormControl<Date | null | undefined>,
+
+		/** Required */
 		dataCollected: FormControl<boolean | null | undefined>,
 	}
 	export function CreateAssessmentRunFormGroup() {
 		return new FormGroup<AssessmentRunFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			assessmentTemplateArn: new FormControl<string | null | undefined>(undefined),
-			state: new FormControl<AssessmentRunState | null | undefined>(undefined),
-			durationInSeconds: new FormControl<number | null | undefined>(undefined),
-			createdAt: new FormControl<Date | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(140), Validators.minLength(1)]),
+			assessmentTemplateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			state: new FormControl<AssessmentRunState | null | undefined>(undefined, [Validators.required]),
+			durationInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(180), Validators.max(86400)]),
+			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			startedAt: new FormControl<Date | null | undefined>(undefined),
 			completedAt: new FormControl<Date | null | undefined>(undefined),
-			stateChangedAt: new FormControl<Date | null | undefined>(undefined),
-			dataCollected: new FormControl<boolean | null | undefined>(undefined),
+			stateChangedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			dataCollected: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -384,19 +709,27 @@ export namespace MyNS {
 
 	/** Used as one of the elements of the <a>AssessmentRun</a> data type. */
 	export interface AssessmentRunStateChange {
+
+		/** Required */
 		stateChangedAt: Date;
+
+		/** Required */
 		state: AssessmentRunState;
 	}
 
 	/** Used as one of the elements of the <a>AssessmentRun</a> data type. */
 	export interface AssessmentRunStateChangeFormProperties {
+
+		/** Required */
 		stateChangedAt: FormControl<Date | null | undefined>,
+
+		/** Required */
 		state: FormControl<AssessmentRunState | null | undefined>,
 	}
 	export function CreateAssessmentRunStateChangeFormGroup() {
 		return new FormGroup<AssessmentRunStateChangeFormProperties>({
-			stateChangedAt: new FormControl<Date | null | undefined>(undefined),
-			state: new FormControl<AssessmentRunState | null | undefined>(undefined),
+			stateChangedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			state: new FormControl<AssessmentRunState | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -404,30 +737,62 @@ export namespace MyNS {
 
 	/** Used as one of the elements of the <a>AssessmentRun</a> data type. */
 	export interface AssessmentRunNotification {
+
+		/** Required */
 		date: Date;
+
+		/** Required */
 		event: AssessmentRunNotificationEvent;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 0
+		 */
 		message?: string | null;
+
+		/** Required */
 		error: boolean;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		snsTopicArn?: string | null;
 		snsPublishStatusCode?: AssessmentRunNotificationSnsPublishStatusCode | null;
 	}
 
 	/** Used as one of the elements of the <a>AssessmentRun</a> data type. */
 	export interface AssessmentRunNotificationFormProperties {
+
+		/** Required */
 		date: FormControl<Date | null | undefined>,
+
+		/** Required */
 		event: FormControl<AssessmentRunNotificationEvent | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 0
+		 */
 		message: FormControl<string | null | undefined>,
+
+		/** Required */
 		error: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		snsTopicArn: FormControl<string | null | undefined>,
 		snsPublishStatusCode: FormControl<AssessmentRunNotificationSnsPublishStatusCode | null | undefined>,
 	}
 	export function CreateAssessmentRunNotificationFormGroup() {
 		return new FormGroup<AssessmentRunNotificationFormProperties>({
-			date: new FormControl<Date | null | undefined>(undefined),
-			event: new FormControl<AssessmentRunNotificationEvent | null | undefined>(undefined),
-			message: new FormControl<string | null | undefined>(undefined),
-			error: new FormControl<boolean | null | undefined>(undefined),
-			snsTopicArn: new FormControl<string | null | undefined>(undefined),
+			date: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			event: new FormControl<AssessmentRunNotificationEvent | null | undefined>(undefined, [Validators.required]),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(0)]),
+			error: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			snsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 			snsPublishStatusCode: new FormControl<AssessmentRunNotificationSnsPublishStatusCode | null | undefined>(undefined),
 		});
 
@@ -448,6 +813,12 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAssessmentRunsRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		assessmentRunArns: Array<string>;
 	}
 	export interface DescribeAssessmentRunsRequestFormProperties {
@@ -459,7 +830,15 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAssessmentTargetsResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		assessmentTargets: Array<AssessmentTarget>;
+
+		/** Required */
 		failedItems: FailedItems;
 	}
 	export interface DescribeAssessmentTargetsResponseFormProperties {
@@ -473,33 +852,81 @@ export namespace MyNS {
 
 	/** Contains information about an Amazon Inspector application. This data type is used as the response element in the <a>DescribeAssessmentTargets</a> action. */
 	export interface AssessmentTarget {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		arn: string;
+
+		/**
+		 * Required
+		 * Max length: 140
+		 * Min length: 1
+		 */
 		name: string;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		resourceGroupArn?: string | null;
+
+		/** Required */
 		createdAt: Date;
+
+		/** Required */
 		updatedAt: Date;
 	}
 
 	/** Contains information about an Amazon Inspector application. This data type is used as the response element in the <a>DescribeAssessmentTargets</a> action. */
 	export interface AssessmentTargetFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 140
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		resourceGroupArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		createdAt: FormControl<Date | null | undefined>,
+
+		/** Required */
 		updatedAt: FormControl<Date | null | undefined>,
 	}
 	export function CreateAssessmentTargetFormGroup() {
 		return new FormGroup<AssessmentTargetFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			resourceGroupArn: new FormControl<string | null | undefined>(undefined),
-			createdAt: new FormControl<Date | null | undefined>(undefined),
-			updatedAt: new FormControl<Date | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(140), Validators.minLength(1)]),
+			resourceGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
+			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			updatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DescribeAssessmentTargetsRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		assessmentTargetArns: Array<string>;
 	}
 	export interface DescribeAssessmentTargetsRequestFormProperties {
@@ -511,7 +938,15 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAssessmentTemplatesResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		assessmentTemplates: Array<AssessmentTemplate>;
+
+		/** Required */
 		failedItems: FailedItems;
 	}
 	export interface DescribeAssessmentTemplatesResponseFormProperties {
@@ -525,41 +960,125 @@ export namespace MyNS {
 
 	/** Contains information about an Amazon Inspector assessment template. This data type is used as the response element in the <a>DescribeAssessmentTemplates</a> action. */
 	export interface AssessmentTemplate {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		arn: string;
+
+		/**
+		 * Required
+		 * Max length: 140
+		 * Min length: 1
+		 */
 		name: string;
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentTargetArn: string;
+
+		/**
+		 * Required
+		 * Minimum: 180
+		 * Maximum: 86400
+		 */
 		durationInSeconds: number;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		rulesPackageArns: Array<string>;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		userAttributesForFindings: Array<Attribute>;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		lastAssessmentRunArn?: string | null;
+
+		/** Required */
 		assessmentRunCount: number;
+
+		/** Required */
 		createdAt: Date;
 	}
 
 	/** Contains information about an Amazon Inspector assessment template. This data type is used as the response element in the <a>DescribeAssessmentTemplates</a> action. */
 	export interface AssessmentTemplateFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 140
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentTargetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 180
+		 * Maximum: 86400
+		 */
 		durationInSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		lastAssessmentRunArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		assessmentRunCount: FormControl<number | null | undefined>,
+
+		/** Required */
 		createdAt: FormControl<Date | null | undefined>,
 	}
 	export function CreateAssessmentTemplateFormGroup() {
 		return new FormGroup<AssessmentTemplateFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			assessmentTargetArn: new FormControl<string | null | undefined>(undefined),
-			durationInSeconds: new FormControl<number | null | undefined>(undefined),
-			lastAssessmentRunArn: new FormControl<string | null | undefined>(undefined),
-			assessmentRunCount: new FormControl<number | null | undefined>(undefined),
-			createdAt: new FormControl<Date | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(140), Validators.minLength(1)]),
+			assessmentTargetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			durationInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(180), Validators.max(86400)]),
+			lastAssessmentRunArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
+			assessmentRunCount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DescribeAssessmentTemplatesRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		assessmentTemplateArns: Array<string>;
 	}
 	export interface DescribeAssessmentTemplatesRequestFormProperties {
@@ -571,26 +1090,50 @@ export namespace MyNS {
 	}
 
 	export interface DescribeCrossAccountAccessRoleResponse {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		roleArn: string;
+
+		/** Required */
 		valid: boolean;
+
+		/** Required */
 		registeredAt: Date;
 	}
 	export interface DescribeCrossAccountAccessRoleResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		roleArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		valid: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		registeredAt: FormControl<Date | null | undefined>,
 	}
 	export function CreateDescribeCrossAccountAccessRoleResponseFormGroup() {
 		return new FormGroup<DescribeCrossAccountAccessRoleResponseFormProperties>({
-			roleArn: new FormControl<string | null | undefined>(undefined),
-			valid: new FormControl<boolean | null | undefined>(undefined),
-			registeredAt: new FormControl<Date | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			valid: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			registeredAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DescribeExclusionsResponse {
+
+		/** Required */
 		exclusions: ExclusionMap;
+
+		/** Required */
 		failedItems: FailedItems;
 	}
 	export interface DescribeExclusionsResponseFormProperties {
@@ -612,6 +1155,12 @@ export namespace MyNS {
 	}
 
 	export interface DescribeExclusionsRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		exclusionArns: Array<string>;
 		locale?: DescribeExclusionsRequestLocale | null;
 	}
@@ -628,7 +1177,15 @@ export namespace MyNS {
 	export enum DescribeExclusionsRequestLocale { EN_US = 0 }
 
 	export interface DescribeFindingsResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		findings: Array<Finding>;
+
+		/** Required */
 		failedItems: FailedItems;
 	}
 	export interface DescribeFindingsResponseFormProperties {
@@ -642,8 +1199,21 @@ export namespace MyNS {
 
 	/** Contains information about an Amazon Inspector finding. This data type is used as the response element in the <a>DescribeFindings</a> action. */
 	export interface Finding {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		arn: string;
+
+		/** Minimum: 0 */
 		schemaVersion?: number | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 0
+		 */
 		service?: string | null;
 
 		/** This data type is used in the <a>Finding</a> data type. */
@@ -652,53 +1222,146 @@ export namespace MyNS {
 
 		/** A collection of attributes of the host from which the finding is generated. */
 		assetAttributes?: AssetAttributes;
+
+		/**
+		 * Max length: 128
+		 * Min length: 0
+		 */
 		id?: string | null;
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		title?: string | null;
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		description?: string | null;
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		recommendation?: string | null;
 		severity?: FindingSeverity | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 10
+		 */
 		numericSeverity?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 10
+		 */
 		confidence?: number | null;
 		indicatorOfCompromise?: boolean | null;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		attributes: Array<Attribute>;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		userAttributes: Array<Attribute>;
+
+		/** Required */
 		createdAt: Date;
+
+		/** Required */
 		updatedAt: Date;
 	}
 
 	/** Contains information about an Amazon Inspector finding. This data type is used as the response element in the <a>DescribeFindings</a> action. */
 	export interface FindingFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		schemaVersion: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 0
+		 */
 		service: FormControl<string | null | undefined>,
 		assetType: FormControl<FindingAssetType | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 0
+		 */
 		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		title: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		recommendation: FormControl<string | null | undefined>,
 		severity: FormControl<FindingSeverity | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 10
+		 */
 		numericSeverity: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 10
+		 */
 		confidence: FormControl<number | null | undefined>,
 		indicatorOfCompromise: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		createdAt: FormControl<Date | null | undefined>,
+
+		/** Required */
 		updatedAt: FormControl<Date | null | undefined>,
 	}
 	export function CreateFindingFormGroup() {
 		return new FormGroup<FindingFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			schemaVersion: new FormControl<number | null | undefined>(undefined),
-			service: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			schemaVersion: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			service: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
 			assetType: new FormControl<FindingAssetType | null | undefined>(undefined),
-			id: new FormControl<string | null | undefined>(undefined),
-			title: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			recommendation: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
+			title: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20000), Validators.minLength(0)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20000), Validators.minLength(0)]),
+			recommendation: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20000), Validators.minLength(0)]),
 			severity: new FormControl<FindingSeverity | null | undefined>(undefined),
-			numericSeverity: new FormControl<number | null | undefined>(undefined),
-			confidence: new FormControl<number | null | undefined>(undefined),
+			numericSeverity: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(10)]),
+			confidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(10)]),
 			indicatorOfCompromise: new FormControl<boolean | null | undefined>(undefined),
-			createdAt: new FormControl<Date | null | undefined>(undefined),
-			updatedAt: new FormControl<Date | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			updatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -706,22 +1369,52 @@ export namespace MyNS {
 
 	/** This data type is used in the <a>Finding</a> data type. */
 	export interface InspectorServiceAttributes {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		schemaVersion: number;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentRunArn?: string | null;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		rulesPackageArn?: string | null;
 	}
 
 	/** This data type is used in the <a>Finding</a> data type. */
 	export interface InspectorServiceAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		schemaVersion: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentRunArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		rulesPackageArn: FormControl<string | null | undefined>,
 	}
 	export function CreateInspectorServiceAttributesFormGroup() {
 		return new FormGroup<InspectorServiceAttributesFormProperties>({
-			schemaVersion: new FormControl<number | null | undefined>(undefined),
-			assessmentRunArn: new FormControl<string | null | undefined>(undefined),
-			rulesPackageArn: new FormControl<string | null | undefined>(undefined),
+			schemaVersion: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			assessmentRunArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
+			rulesPackageArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
@@ -731,11 +1424,41 @@ export namespace MyNS {
 
 	/** A collection of attributes of the host from which the finding is generated. */
 	export interface AssetAttributes {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		schemaVersion: number;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		agentId?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		autoScalingGroup?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		amiId?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		hostname?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		ipv4Addresses?: Array<string>;
 		tags?: Array<Tag>;
 		networkInterfaces?: Array<NetworkInterface>;
@@ -743,19 +1466,44 @@ export namespace MyNS {
 
 	/** A collection of attributes of the host from which the finding is generated. */
 	export interface AssetAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		schemaVersion: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		agentId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		autoScalingGroup: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		amiId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		hostname: FormControl<string | null | undefined>,
 	}
 	export function CreateAssetAttributesFormGroup() {
 		return new FormGroup<AssetAttributesFormProperties>({
-			schemaVersion: new FormControl<number | null | undefined>(undefined),
-			agentId: new FormControl<string | null | undefined>(undefined),
-			autoScalingGroup: new FormControl<string | null | undefined>(undefined),
-			amiId: new FormControl<string | null | undefined>(undefined),
-			hostname: new FormControl<string | null | undefined>(undefined),
+			schemaVersion: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			agentId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			autoScalingGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			amiId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			hostname: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -763,19 +1511,41 @@ export namespace MyNS {
 
 	/** A key and value pair. This data type is used as a request parameter in the <a>SetTagsForResource</a> action and a response element in the <a>ListTagsForResource</a> action. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		key: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		value?: string | null;
 	}
 
 	/** A key and value pair. This data type is used as a request parameter in the <a>SetTagsForResource</a> action and a response element in the <a>ListTagsForResource</a> action. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -783,13 +1553,48 @@ export namespace MyNS {
 
 	/** Contains information about the network interfaces interacting with an EC2 instance. This data type is used as one of the elements of the <a>AssetAttributes</a> data type. */
 	export interface NetworkInterface {
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		networkInterfaceId?: string | null;
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		subnetId?: string | null;
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		vpcId?: string | null;
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		privateDnsName?: string | null;
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		privateIpAddress?: string | null;
 		privateIpAddresses?: Array<PrivateIp>;
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		publicDnsName?: string | null;
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		publicIp?: string | null;
 		ipv6Addresses?: Array<string>;
 		securityGroups?: Array<SecurityGroup>;
@@ -797,23 +1602,58 @@ export namespace MyNS {
 
 	/** Contains information about the network interfaces interacting with an EC2 instance. This data type is used as one of the elements of the <a>AssetAttributes</a> data type. */
 	export interface NetworkInterfaceFormProperties {
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		networkInterfaceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		subnetId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		vpcId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		privateDnsName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		privateIpAddress: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		publicDnsName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		publicIp: FormControl<string | null | undefined>,
 	}
 	export function CreateNetworkInterfaceFormGroup() {
 		return new FormGroup<NetworkInterfaceFormProperties>({
-			networkInterfaceId: new FormControl<string | null | undefined>(undefined),
-			subnetId: new FormControl<string | null | undefined>(undefined),
-			vpcId: new FormControl<string | null | undefined>(undefined),
-			privateDnsName: new FormControl<string | null | undefined>(undefined),
-			privateIpAddress: new FormControl<string | null | undefined>(undefined),
-			publicDnsName: new FormControl<string | null | undefined>(undefined),
-			publicIp: new FormControl<string | null | undefined>(undefined),
+			networkInterfaceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20000), Validators.minLength(0)]),
+			subnetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20000), Validators.minLength(0)]),
+			vpcId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20000), Validators.minLength(0)]),
+			privateDnsName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20000), Validators.minLength(0)]),
+			privateIpAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20000), Validators.minLength(0)]),
+			publicDnsName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20000), Validators.minLength(0)]),
+			publicIp: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20000), Validators.minLength(0)]),
 		});
 
 	}
@@ -821,19 +1661,39 @@ export namespace MyNS {
 
 	/** Contains information about a private IP address associated with a network interface. This data type is used as a response element in the <a>DescribeFindings</a> action. */
 	export interface PrivateIp {
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		privateDnsName?: string | null;
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		privateIpAddress?: string | null;
 	}
 
 	/** Contains information about a private IP address associated with a network interface. This data type is used as a response element in the <a>DescribeFindings</a> action. */
 	export interface PrivateIpFormProperties {
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		privateDnsName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		privateIpAddress: FormControl<string | null | undefined>,
 	}
 	export function CreatePrivateIpFormGroup() {
 		return new FormGroup<PrivateIpFormProperties>({
-			privateDnsName: new FormControl<string | null | undefined>(undefined),
-			privateIpAddress: new FormControl<string | null | undefined>(undefined),
+			privateDnsName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20000), Validators.minLength(0)]),
+			privateIpAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20000), Validators.minLength(0)]),
 		});
 
 	}
@@ -841,19 +1701,39 @@ export namespace MyNS {
 
 	/** Contains information about a security group associated with a network interface. This data type is used as one of the elements of the <a>NetworkInterface</a> data type. */
 	export interface SecurityGroup {
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		groupName?: string | null;
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		groupId?: string | null;
 	}
 
 	/** Contains information about a security group associated with a network interface. This data type is used as one of the elements of the <a>NetworkInterface</a> data type. */
 	export interface SecurityGroupFormProperties {
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		groupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		groupId: FormControl<string | null | undefined>,
 	}
 	export function CreateSecurityGroupFormGroup() {
 		return new FormGroup<SecurityGroupFormProperties>({
-			groupName: new FormControl<string | null | undefined>(undefined),
-			groupId: new FormControl<string | null | undefined>(undefined),
+			groupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20000), Validators.minLength(0)]),
+			groupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20000), Validators.minLength(0)]),
 		});
 
 	}
@@ -861,6 +1741,12 @@ export namespace MyNS {
 	export enum FindingSeverity { Low = 0, Medium = 1, High = 2, Informational = 3, Undefined = 4 }
 
 	export interface DescribeFindingsRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		findingArns: Array<string>;
 		locale?: DescribeExclusionsRequestLocale | null;
 	}
@@ -875,7 +1761,15 @@ export namespace MyNS {
 	}
 
 	export interface DescribeResourceGroupsResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		resourceGroups: Array<ResourceGroup>;
+
+		/** Required */
 		failedItems: FailedItems;
 	}
 	export interface DescribeResourceGroupsResponseFormProperties {
@@ -889,25 +1783,53 @@ export namespace MyNS {
 
 	/** Contains information about a resource group. The resource group defines a set of tags that, when queried, identify the AWS resources that make up the assessment target. This data type is used as the response element in the <a>DescribeResourceGroups</a> action. */
 	export interface ResourceGroup {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		arn: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		tags: Array<ResourceGroupTag>;
+
+		/** Required */
 		createdAt: Date;
 	}
 
 	/** Contains information about a resource group. The resource group defines a set of tags that, when queried, identify the AWS resources that make up the assessment target. This data type is used as the response element in the <a>DescribeResourceGroups</a> action. */
 	export interface ResourceGroupFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/** Required */
 		createdAt: FormControl<Date | null | undefined>,
 	}
 	export function CreateResourceGroupFormGroup() {
 		return new FormGroup<ResourceGroupFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			createdAt: new FormControl<Date | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DescribeResourceGroupsRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		resourceGroupArns: Array<string>;
 	}
 	export interface DescribeResourceGroupsRequestFormProperties {
@@ -919,7 +1841,15 @@ export namespace MyNS {
 	}
 
 	export interface DescribeRulesPackagesResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		rulesPackages: Array<RulesPackage>;
+
+		/** Required */
 		failedItems: FailedItems;
 	}
 	export interface DescribeRulesPackagesResponseFormProperties {
@@ -933,33 +1863,97 @@ export namespace MyNS {
 
 	/** Contains information about an Amazon Inspector rules package. This data type is used as the response element in the <a>DescribeRulesPackages</a> action. */
 	export interface RulesPackage {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		arn: string;
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 0
+		 */
 		name: string;
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 0
+		 */
 		version: string;
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 0
+		 */
 		provider: string;
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		description?: string | null;
 	}
 
 	/** Contains information about an Amazon Inspector rules package. This data type is used as the response element in the <a>DescribeRulesPackages</a> action. */
 	export interface RulesPackageFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 0
+		 */
 		version: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 0
+		 */
 		provider: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 	}
 	export function CreateRulesPackageFormGroup() {
 		return new FormGroup<RulesPackageFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
-			provider: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000), Validators.minLength(0)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000), Validators.minLength(0)]),
+			provider: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000), Validators.minLength(0)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20000), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface DescribeRulesPackagesRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		rulesPackageArns: Array<string>;
 		locale?: DescribeExclusionsRequestLocale | null;
 	}
@@ -974,17 +1968,25 @@ export namespace MyNS {
 	}
 
 	export interface GetAssessmentReportResponse {
+
+		/** Required */
 		status: GetAssessmentReportResponseStatus;
+
+		/** Max length: 2048 */
 		url?: string | null;
 	}
 	export interface GetAssessmentReportResponseFormProperties {
+
+		/** Required */
 		status: FormControl<GetAssessmentReportResponseStatus | null | undefined>,
+
+		/** Max length: 2048 */
 		url: FormControl<string | null | undefined>,
 	}
 	export function CreateGetAssessmentReportResponseFormGroup() {
 		return new FormGroup<GetAssessmentReportResponseFormProperties>({
-			status: new FormControl<GetAssessmentReportResponseStatus | null | undefined>(undefined),
-			url: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<GetAssessmentReportResponseStatus | null | undefined>(undefined, [Validators.required]),
+			url: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 		});
 
 	}
@@ -992,20 +1994,40 @@ export namespace MyNS {
 	export enum GetAssessmentReportResponseStatus { WORK_IN_PROGRESS = 0, FAILED = 1, COMPLETED = 2 }
 
 	export interface GetAssessmentReportRequest {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentRunArn: string;
+
+		/** Required */
 		reportFileFormat: GetAssessmentReportRequestReportFileFormat;
+
+		/** Required */
 		reportType: GetAssessmentReportRequestReportType;
 	}
 	export interface GetAssessmentReportRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentRunArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		reportFileFormat: FormControl<GetAssessmentReportRequestReportFileFormat | null | undefined>,
+
+		/** Required */
 		reportType: FormControl<GetAssessmentReportRequestReportType | null | undefined>,
 	}
 	export function CreateGetAssessmentReportRequestFormGroup() {
 		return new FormGroup<GetAssessmentReportRequestFormProperties>({
-			assessmentRunArn: new FormControl<string | null | undefined>(undefined),
-			reportFileFormat: new FormControl<GetAssessmentReportRequestReportFileFormat | null | undefined>(undefined),
-			reportType: new FormControl<GetAssessmentReportRequestReportType | null | undefined>(undefined),
+			assessmentRunArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			reportFileFormat: new FormControl<GetAssessmentReportRequestReportFileFormat | null | undefined>(undefined, [Validators.required]),
+			reportType: new FormControl<GetAssessmentReportRequestReportType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1025,18 +2047,37 @@ export namespace MyNS {
 	}
 
 	export interface GetExclusionsPreviewResponse {
+
+		/** Required */
 		previewStatus: GetExclusionsPreviewResponsePreviewStatus;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		exclusionPreviews?: Array<ExclusionPreview>;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 	}
 	export interface GetExclusionsPreviewResponseFormProperties {
+
+		/** Required */
 		previewStatus: FormControl<GetExclusionsPreviewResponsePreviewStatus | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetExclusionsPreviewResponseFormGroup() {
 		return new FormGroup<GetExclusionsPreviewResponseFormProperties>({
-			previewStatus: new FormControl<GetExclusionsPreviewResponsePreviewStatus | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			previewStatus: new FormControl<GetExclusionsPreviewResponsePreviewStatus | null | undefined>(undefined, [Validators.required]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
@@ -1046,24 +2087,70 @@ export namespace MyNS {
 
 	/** Contains information about what is excluded from an assessment run given the current state of the assessment template. */
 	export interface ExclusionPreview {
+
+		/**
+		 * Required
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		title: string;
+
+		/**
+		 * Required
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		description: string;
+
+		/**
+		 * Required
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		recommendation: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 */
 		scopes: Array<Scope>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		attributes?: Array<Attribute>;
 	}
 
 	/** Contains information about what is excluded from an assessment run given the current state of the assessment template. */
 	export interface ExclusionPreviewFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		title: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		recommendation: FormControl<string | null | undefined>,
 	}
 	export function CreateExclusionPreviewFormGroup() {
 		return new FormGroup<ExclusionPreviewFormProperties>({
-			title: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			recommendation: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20000), Validators.minLength(0)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20000), Validators.minLength(0)]),
+			recommendation: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20000), Validators.minLength(0)]),
 		});
 
 	}
@@ -1091,24 +2178,56 @@ export namespace MyNS {
 	export enum ScopeKey { INSTANCE_ID = 0, RULES_PACKAGE_ARN = 1 }
 
 	export interface GetExclusionsPreviewRequest {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentTemplateArn: string;
+
+		/**
+		 * Required
+		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		previewToken: string;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 		maxResults?: number | null;
 		locale?: DescribeExclusionsRequestLocale | null;
 	}
 	export interface GetExclusionsPreviewRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentTemplateArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		previewToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 		maxResults: FormControl<number | null | undefined>,
 		locale: FormControl<DescribeExclusionsRequestLocale | null | undefined>,
 	}
 	export function CreateGetExclusionsPreviewRequestFormGroup() {
 		return new FormGroup<GetExclusionsPreviewRequestFormProperties>({
-			assessmentTemplateArn: new FormControl<string | null | undefined>(undefined),
-			previewToken: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			assessmentTemplateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			previewToken: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 			maxResults: new FormControl<number | null | undefined>(undefined),
 			locale: new FormControl<DescribeExclusionsRequestLocale | null | undefined>(undefined),
 		});
@@ -1116,6 +2235,12 @@ export namespace MyNS {
 	}
 
 	export interface GetTelemetryMetadataResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 5000
+		 */
 		telemetryMetadata: Array<TelemetryMetadata>;
 	}
 	export interface GetTelemetryMetadataResponseFormProperties {
@@ -1129,49 +2254,93 @@ export namespace MyNS {
 
 	/** The metadata about the Amazon Inspector application data metrics collected by the agent. This data type is used as the response element in the <a>GetTelemetryMetadata</a> action. */
 	export interface TelemetryMetadata {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		messageType: string;
+
+		/** Required */
 		count: number;
 		dataSize?: number | null;
 	}
 
 	/** The metadata about the Amazon Inspector application data metrics collected by the agent. This data type is used as the response element in the <a>GetTelemetryMetadata</a> action. */
 	export interface TelemetryMetadataFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		messageType: FormControl<string | null | undefined>,
+
+		/** Required */
 		count: FormControl<number | null | undefined>,
 		dataSize: FormControl<number | null | undefined>,
 	}
 	export function CreateTelemetryMetadataFormGroup() {
 		return new FormGroup<TelemetryMetadataFormProperties>({
-			messageType: new FormControl<string | null | undefined>(undefined),
-			count: new FormControl<number | null | undefined>(undefined),
+			messageType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			count: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			dataSize: new FormControl<number | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetTelemetryMetadataRequest {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentRunArn: string;
 	}
 	export interface GetTelemetryMetadataRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentRunArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTelemetryMetadataRequestFormGroup() {
 		return new FormGroup<GetTelemetryMetadataRequestFormProperties>({
-			assessmentRunArn: new FormControl<string | null | undefined>(undefined),
+			assessmentRunArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListAssessmentRunAgentsResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 500
+		 */
 		assessmentRunAgents: Array<AssessmentRunAgent>;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListAssessmentRunAgentsResponseFormProperties {
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListAssessmentRunAgentsResponseFormGroup() {
 		return new FormGroup<ListAssessmentRunAgentsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
@@ -1179,32 +2348,90 @@ export namespace MyNS {
 
 	/** Contains information about an Amazon Inspector agent. This data type is used as a response element in the <a>ListAssessmentRunAgents</a> action. */
 	export interface AssessmentRunAgent {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		agentId: string;
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentRunArn: string;
+
+		/** Required */
 		agentHealth: AssessmentRunAgentAgentHealth;
+
+		/** Required */
 		agentHealthCode: AssessmentRunAgentAgentHealthCode;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 0
+		 */
 		agentHealthDetails?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		autoScalingGroup?: string | null;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 5000
+		 */
 		telemetryMetadata: Array<TelemetryMetadata>;
 	}
 
 	/** Contains information about an Amazon Inspector agent. This data type is used as a response element in the <a>ListAssessmentRunAgents</a> action. */
 	export interface AssessmentRunAgentFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		agentId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentRunArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		agentHealth: FormControl<AssessmentRunAgentAgentHealth | null | undefined>,
+
+		/** Required */
 		agentHealthCode: FormControl<AssessmentRunAgentAgentHealthCode | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 0
+		 */
 		agentHealthDetails: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		autoScalingGroup: FormControl<string | null | undefined>,
 	}
 	export function CreateAssessmentRunAgentFormGroup() {
 		return new FormGroup<AssessmentRunAgentFormProperties>({
-			agentId: new FormControl<string | null | undefined>(undefined),
-			assessmentRunArn: new FormControl<string | null | undefined>(undefined),
-			agentHealth: new FormControl<AssessmentRunAgentAgentHealth | null | undefined>(undefined),
-			agentHealthCode: new FormControl<AssessmentRunAgentAgentHealthCode | null | undefined>(undefined),
-			agentHealthDetails: new FormControl<string | null | undefined>(undefined),
-			autoScalingGroup: new FormControl<string | null | undefined>(undefined),
+			agentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			assessmentRunArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			agentHealth: new FormControl<AssessmentRunAgentAgentHealth | null | undefined>(undefined, [Validators.required]),
+			agentHealthCode: new FormControl<AssessmentRunAgentAgentHealthCode | null | undefined>(undefined, [Validators.required]),
+			agentHealthDetails: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(0)]),
+			autoScalingGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -1214,22 +2441,44 @@ export namespace MyNS {
 	export enum AssessmentRunAgentAgentHealthCode { IDLE = 0, RUNNING = 1, SHUTDOWN = 2, UNHEALTHY = 3, THROTTLED = 4, UNKNOWN = 5 }
 
 	export interface ListAssessmentRunAgentsRequest {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentRunArn: string;
 
 		/** Contains information about an Amazon Inspector agent. This data type is used as a request parameter in the <a>ListAssessmentRunAgents</a> action. */
 		filter?: AgentFilter;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
 	export interface ListAssessmentRunAgentsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentRunArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListAssessmentRunAgentsRequestFormGroup() {
 		return new FormGroup<ListAssessmentRunAgentsRequestFormProperties>({
-			assessmentRunArn: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			assessmentRunArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 			maxResults: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1238,7 +2487,19 @@ export namespace MyNS {
 
 	/** Contains information about an Amazon Inspector agent. This data type is used as a request parameter in the <a>ListAssessmentRunAgents</a> action. */
 	export interface AgentFilter {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		agentHealths: Array<AgentHealth>;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		agentHealthCodes: Array<AgentHealthCode>;
 	}
 
@@ -1256,34 +2517,65 @@ export namespace MyNS {
 	export enum AgentHealthCode { IDLE = 0, RUNNING = 1, SHUTDOWN = 2, UNHEALTHY = 3, THROTTLED = 4, UNKNOWN = 5 }
 
 	export interface ListAssessmentRunsResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		assessmentRunArns: Array<string>;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListAssessmentRunsResponseFormProperties {
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListAssessmentRunsResponseFormGroup() {
 		return new FormGroup<ListAssessmentRunsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListAssessmentRunsRequest {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		assessmentTemplateArns?: Array<string>;
 
 		/** Used as the request parameter in the <a>ListAssessmentRuns</a> action. */
 		filter?: AssessmentRunFilter;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
 	export interface ListAssessmentRunsRequestFormProperties {
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListAssessmentRunsRequestFormGroup() {
 		return new FormGroup<ListAssessmentRunsRequestFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 			maxResults: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1292,11 +2584,26 @@ export namespace MyNS {
 
 	/** Used as the request parameter in the <a>ListAssessmentRuns</a> action. */
 	export interface AssessmentRunFilter {
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 */
 		namePattern?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		states?: Array<AssessmentRunState>;
 
 		/** This data type is used in the <a>AssessmentTemplateFilter</a> data type. */
 		durationRange?: DurationRange;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		rulesPackageArns?: Array<string>;
 
 		/** This data type is used in the <a>AssessmentRunFilter</a> data type. */
@@ -1311,11 +2618,16 @@ export namespace MyNS {
 
 	/** Used as the request parameter in the <a>ListAssessmentRuns</a> action. */
 	export interface AssessmentRunFilterFormProperties {
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 */
 		namePattern: FormControl<string | null | undefined>,
 	}
 	export function CreateAssessmentRunFilterFormGroup() {
 		return new FormGroup<AssessmentRunFilterFormProperties>({
-			namePattern: new FormControl<string | null | undefined>(undefined),
+			namePattern: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1)]),
 		});
 
 	}
@@ -1323,19 +2635,39 @@ export namespace MyNS {
 
 	/** This data type is used in the <a>AssessmentTemplateFilter</a> data type. */
 	export interface DurationRange {
+
+		/**
+		 * Minimum: 180
+		 * Maximum: 86400
+		 */
 		minSeconds?: number | null;
+
+		/**
+		 * Minimum: 180
+		 * Maximum: 86400
+		 */
 		maxSeconds?: number | null;
 	}
 
 	/** This data type is used in the <a>AssessmentTemplateFilter</a> data type. */
 	export interface DurationRangeFormProperties {
+
+		/**
+		 * Minimum: 180
+		 * Maximum: 86400
+		 */
 		minSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 180
+		 * Maximum: 86400
+		 */
 		maxSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateDurationRangeFormGroup() {
 		return new FormGroup<DurationRangeFormProperties>({
-			minSeconds: new FormControl<number | null | undefined>(undefined),
-			maxSeconds: new FormControl<number | null | undefined>(undefined),
+			minSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(180), Validators.max(86400)]),
+			maxSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(180), Validators.max(86400)]),
 		});
 
 	}
@@ -1361,15 +2693,31 @@ export namespace MyNS {
 	}
 
 	export interface ListAssessmentTargetsResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		assessmentTargetArns: Array<string>;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListAssessmentTargetsResponseFormProperties {
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListAssessmentTargetsResponseFormGroup() {
 		return new FormGroup<ListAssessmentTargetsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
@@ -1378,16 +2726,26 @@ export namespace MyNS {
 
 		/** Used as the request parameter in the <a>ListAssessmentTargets</a> action. */
 		filter?: AssessmentTargetFilter;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
 	export interface ListAssessmentTargetsRequestFormProperties {
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListAssessmentTargetsRequestFormGroup() {
 		return new FormGroup<ListAssessmentTargetsRequestFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 			maxResults: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1396,49 +2754,90 @@ export namespace MyNS {
 
 	/** Used as the request parameter in the <a>ListAssessmentTargets</a> action. */
 	export interface AssessmentTargetFilter {
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 */
 		assessmentTargetNamePattern?: string | null;
 	}
 
 	/** Used as the request parameter in the <a>ListAssessmentTargets</a> action. */
 	export interface AssessmentTargetFilterFormProperties {
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 */
 		assessmentTargetNamePattern: FormControl<string | null | undefined>,
 	}
 	export function CreateAssessmentTargetFilterFormGroup() {
 		return new FormGroup<AssessmentTargetFilterFormProperties>({
-			assessmentTargetNamePattern: new FormControl<string | null | undefined>(undefined),
+			assessmentTargetNamePattern: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListAssessmentTemplatesResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		assessmentTemplateArns: Array<string>;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListAssessmentTemplatesResponseFormProperties {
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListAssessmentTemplatesResponseFormGroup() {
 		return new FormGroup<ListAssessmentTemplatesResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListAssessmentTemplatesRequest {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		assessmentTargetArns?: Array<string>;
 
 		/** Used as the request parameter in the <a>ListAssessmentTemplates</a> action. */
 		filter?: AssessmentTemplateFilter;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
 	export interface ListAssessmentTemplatesRequestFormProperties {
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListAssessmentTemplatesRequestFormGroup() {
 		return new FormGroup<ListAssessmentTemplatesRequestFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 			maxResults: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1447,34 +2846,65 @@ export namespace MyNS {
 
 	/** Used as the request parameter in the <a>ListAssessmentTemplates</a> action. */
 	export interface AssessmentTemplateFilter {
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 */
 		namePattern?: string | null;
 
 		/** This data type is used in the <a>AssessmentTemplateFilter</a> data type. */
 		durationRange?: DurationRange;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		rulesPackageArns?: Array<string>;
 	}
 
 	/** Used as the request parameter in the <a>ListAssessmentTemplates</a> action. */
 	export interface AssessmentTemplateFilterFormProperties {
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 */
 		namePattern: FormControl<string | null | undefined>,
 	}
 	export function CreateAssessmentTemplateFilterFormGroup() {
 		return new FormGroup<AssessmentTemplateFilterFormProperties>({
-			namePattern: new FormControl<string | null | undefined>(undefined),
+			namePattern: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListEventSubscriptionsResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		subscriptions: Array<Subscription>;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListEventSubscriptionsResponseFormProperties {
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListEventSubscriptionsResponseFormGroup() {
 		return new FormGroup<ListEventSubscriptionsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
@@ -1482,20 +2912,50 @@ export namespace MyNS {
 
 	/** This data type is used as a response element in the <a>ListEventSubscriptions</a> action. */
 	export interface Subscription {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		resourceArn: string;
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		topicArn: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		eventSubscriptions: Array<EventSubscription>;
 	}
 
 	/** This data type is used as a response element in the <a>ListEventSubscriptions</a> action. */
 	export interface SubscriptionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		resourceArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		topicArn: FormControl<string | null | undefined>,
 	}
 	export function CreateSubscriptionFormGroup() {
 		return new FormGroup<SubscriptionFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
-			topicArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			topicArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
@@ -1503,104 +2963,201 @@ export namespace MyNS {
 
 	/** This data type is used in the <a>Subscription</a> data type. */
 	export interface EventSubscription {
+
+		/** Required */
 		event: AssessmentRunNotificationEvent;
+
+		/** Required */
 		subscribedAt: Date;
 	}
 
 	/** This data type is used in the <a>Subscription</a> data type. */
 	export interface EventSubscriptionFormProperties {
+
+		/** Required */
 		event: FormControl<AssessmentRunNotificationEvent | null | undefined>,
+
+		/** Required */
 		subscribedAt: FormControl<Date | null | undefined>,
 	}
 	export function CreateEventSubscriptionFormGroup() {
 		return new FormGroup<EventSubscriptionFormProperties>({
-			event: new FormControl<AssessmentRunNotificationEvent | null | undefined>(undefined),
-			subscribedAt: new FormControl<Date | null | undefined>(undefined),
+			event: new FormControl<AssessmentRunNotificationEvent | null | undefined>(undefined, [Validators.required]),
+			subscribedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ListEventSubscriptionsRequest {
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		resourceArn?: string | null;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
 	export interface ListEventSubscriptionsRequestFormProperties {
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		resourceArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListEventSubscriptionsRequestFormGroup() {
 		return new FormGroup<ListEventSubscriptionsRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 			maxResults: new FormControl<number | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ListExclusionsResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		exclusionArns: Array<string>;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListExclusionsResponseFormProperties {
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListExclusionsResponseFormGroup() {
 		return new FormGroup<ListExclusionsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListExclusionsRequest {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentRunArn: string;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
 	export interface ListExclusionsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentRunArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListExclusionsRequestFormGroup() {
 		return new FormGroup<ListExclusionsRequestFormProperties>({
-			assessmentRunArn: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			assessmentRunArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 			maxResults: new FormControl<number | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ListFindingsResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		findingArns: Array<string>;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListFindingsResponseFormProperties {
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListFindingsResponseFormGroup() {
 		return new FormGroup<ListFindingsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListFindingsRequest {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		assessmentRunArns?: Array<string>;
 
 		/** This data type is used as a request parameter in the <a>ListFindings</a> action. */
 		filter?: FindingFilter;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
 	export interface ListFindingsRequestFormProperties {
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListFindingsRequestFormGroup() {
 		return new FormGroup<ListFindingsRequestFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 			maxResults: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1609,12 +3166,47 @@ export namespace MyNS {
 
 	/** This data type is used as a request parameter in the <a>ListFindings</a> action. */
 	export interface FindingFilter {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 99
+		 */
 		agentIds?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 20
+		 */
 		autoScalingGroups?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		ruleNames?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		severities?: Array<Severity>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		rulesPackageArns?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		attributes?: Array<Attribute>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		userAttributes?: Array<Attribute>;
 
 		/** This data type is used in the <a>AssessmentRunFilter</a> data type. */
@@ -1633,36 +3225,68 @@ export namespace MyNS {
 	export enum Severity { Low = 0, Medium = 1, High = 2, Informational = 3, Undefined = 4 }
 
 	export interface ListRulesPackagesResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		rulesPackageArns: Array<string>;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListRulesPackagesResponseFormProperties {
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListRulesPackagesResponseFormGroup() {
 		return new FormGroup<ListRulesPackagesResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListRulesPackagesRequest {
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
 	export interface ListRulesPackagesRequestFormProperties {
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListRulesPackagesRequestFormGroup() {
 		return new FormGroup<ListRulesPackagesRequestFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 			maxResults: new FormControl<number | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ListTagsForResourceResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		tags: Array<Tag>;
 	}
 	export interface ListTagsForResourceResponseFormProperties {
@@ -1674,28 +3298,56 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		resourceArn: string;
 	}
 	export interface ListTagsForResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface PreviewAgentsResponse {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		agentPreviews: Array<AgentPreview>;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 	}
 	export interface PreviewAgentsResponseFormProperties {
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreatePreviewAgentsResponseFormGroup() {
 		return new FormGroup<PreviewAgentsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
@@ -1703,74 +3355,182 @@ export namespace MyNS {
 
 	/** Used as a response element in the <a>PreviewAgents</a> action. */
 	export interface AgentPreview {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		hostname?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		agentId: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		autoScalingGroup?: string | null;
 		agentHealth?: AssessmentRunAgentAgentHealth | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		agentVersion?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		operatingSystem?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		kernelVersion?: string | null;
+
+		/**
+		 * Max length: 15
+		 * Min length: 7
+		 */
 		ipv4Address?: string | null;
 	}
 
 	/** Used as a response element in the <a>PreviewAgents</a> action. */
 	export interface AgentPreviewFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		hostname: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		agentId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		autoScalingGroup: FormControl<string | null | undefined>,
 		agentHealth: FormControl<AssessmentRunAgentAgentHealth | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		agentVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		operatingSystem: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		kernelVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 15
+		 * Min length: 7
+		 */
 		ipv4Address: FormControl<string | null | undefined>,
 	}
 	export function CreateAgentPreviewFormGroup() {
 		return new FormGroup<AgentPreviewFormProperties>({
-			hostname: new FormControl<string | null | undefined>(undefined),
-			agentId: new FormControl<string | null | undefined>(undefined),
-			autoScalingGroup: new FormControl<string | null | undefined>(undefined),
+			hostname: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			agentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			autoScalingGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			agentHealth: new FormControl<AssessmentRunAgentAgentHealth | null | undefined>(undefined),
-			agentVersion: new FormControl<string | null | undefined>(undefined),
-			operatingSystem: new FormControl<string | null | undefined>(undefined),
-			kernelVersion: new FormControl<string | null | undefined>(undefined),
-			ipv4Address: new FormControl<string | null | undefined>(undefined),
+			agentVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			operatingSystem: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			kernelVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ipv4Address: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(15), Validators.minLength(7)]),
 		});
 
 	}
 
 	export interface PreviewAgentsRequest {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		previewAgentsArn: string;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
 	export interface PreviewAgentsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		previewAgentsArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		nextToken: FormControl<string | null | undefined>,
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreatePreviewAgentsRequestFormGroup() {
 		return new FormGroup<PreviewAgentsRequestFormProperties>({
-			previewAgentsArn: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			previewAgentsArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 			maxResults: new FormControl<number | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface RegisterCrossAccountAccessRoleRequest {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		roleArn: string;
 	}
 	export interface RegisterCrossAccountAccessRoleRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		roleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterCrossAccountAccessRoleRequestFormGroup() {
 		return new FormGroup<RegisterCrossAccountAccessRoleRequestFormProperties>({
-			roleArn: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface RemoveAttributesFromFindingsResponse {
+
+		/** Required */
 		failedItems: FailedItems;
 	}
 	export interface RemoveAttributesFromFindingsResponseFormProperties {
@@ -1782,7 +3542,19 @@ export namespace MyNS {
 	}
 
 	export interface RemoveAttributesFromFindingsRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		findingArns: Array<string>;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		attributeKeys: Array<string>;
 	}
 	export interface RemoveAttributesFromFindingsRequestFormProperties {
@@ -1794,44 +3566,95 @@ export namespace MyNS {
 	}
 
 	export interface SetTagsForResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		resourceArn: string;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		tags?: Array<Tag>;
 	}
 	export interface SetTagsForResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateSetTagsForResourceRequestFormGroup() {
 		return new FormGroup<SetTagsForResourceRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface StartAssessmentRunResponse {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentRunArn: string;
 	}
 	export interface StartAssessmentRunResponseFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentRunArn: FormControl<string | null | undefined>,
 	}
 	export function CreateStartAssessmentRunResponseFormGroup() {
 		return new FormGroup<StartAssessmentRunResponseFormProperties>({
-			assessmentRunArn: new FormControl<string | null | undefined>(undefined),
+			assessmentRunArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface StartAssessmentRunRequest {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentTemplateArn: string;
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 */
 		assessmentRunName?: string | null;
 	}
 	export interface StartAssessmentRunRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentTemplateArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 140
+		 * Min length: 1
+		 */
 		assessmentRunName: FormControl<string | null | undefined>,
 	}
 	export function CreateStartAssessmentRunRequestFormGroup() {
 		return new FormGroup<StartAssessmentRunRequestFormProperties>({
-			assessmentTemplateArn: new FormControl<string | null | undefined>(undefined),
-			assessmentRunName: new FormControl<string | null | undefined>(undefined),
+			assessmentTemplateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			assessmentRunName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1)]),
 		});
 
 	}
@@ -1847,16 +3670,28 @@ export namespace MyNS {
 	}
 
 	export interface StopAssessmentRunRequest {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentRunArn: string;
 		stopAction?: StopAssessmentRunRequestStopAction | null;
 	}
 	export interface StopAssessmentRunRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentRunArn: FormControl<string | null | undefined>,
 		stopAction: FormControl<StopAssessmentRunRequestStopAction | null | undefined>,
 	}
 	export function CreateStopAssessmentRunRequestFormGroup() {
 		return new FormGroup<StopAssessmentRunRequestFormProperties>({
-			assessmentRunArn: new FormControl<string | null | undefined>(undefined),
+			assessmentRunArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
 			stopAction: new FormControl<StopAssessmentRunRequestStopAction | null | undefined>(undefined),
 		});
 
@@ -1865,58 +3700,148 @@ export namespace MyNS {
 	export enum StopAssessmentRunRequestStopAction { START_EVALUATION = 0, SKIP_EVALUATION = 1 }
 
 	export interface SubscribeToEventRequest {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		resourceArn: string;
+
+		/** Required */
 		event: AssessmentRunNotificationEvent;
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		topicArn: string;
 	}
 	export interface SubscribeToEventRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		resourceArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		event: FormControl<AssessmentRunNotificationEvent | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		topicArn: FormControl<string | null | undefined>,
 	}
 	export function CreateSubscribeToEventRequestFormGroup() {
 		return new FormGroup<SubscribeToEventRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
-			event: new FormControl<AssessmentRunNotificationEvent | null | undefined>(undefined),
-			topicArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			event: new FormControl<AssessmentRunNotificationEvent | null | undefined>(undefined, [Validators.required]),
+			topicArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UnsubscribeFromEventRequest {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		resourceArn: string;
+
+		/** Required */
 		event: AssessmentRunNotificationEvent;
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		topicArn: string;
 	}
 	export interface UnsubscribeFromEventRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		resourceArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		event: FormControl<AssessmentRunNotificationEvent | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		topicArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUnsubscribeFromEventRequestFormGroup() {
 		return new FormGroup<UnsubscribeFromEventRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
-			event: new FormControl<AssessmentRunNotificationEvent | null | undefined>(undefined),
-			topicArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			event: new FormControl<AssessmentRunNotificationEvent | null | undefined>(undefined, [Validators.required]),
+			topicArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateAssessmentTargetRequest {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentTargetArn: string;
+
+		/**
+		 * Required
+		 * Max length: 140
+		 * Min length: 1
+		 */
 		assessmentTargetName: string;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		resourceGroupArn?: string | null;
 	}
 	export interface UpdateAssessmentTargetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		assessmentTargetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 140
+		 * Min length: 1
+		 */
 		assessmentTargetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		resourceGroupArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateAssessmentTargetRequestFormGroup() {
 		return new FormGroup<UpdateAssessmentTargetRequestFormProperties>({
-			assessmentTargetArn: new FormControl<string | null | undefined>(undefined),
-			assessmentTargetName: new FormControl<string | null | undefined>(undefined),
-			resourceGroupArn: new FormControl<string | null | undefined>(undefined),
+			assessmentTargetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			assessmentTargetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(140), Validators.minLength(1)]),
+			resourceGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
@@ -1932,27 +3857,85 @@ export namespace MyNS {
 
 	/** Contains information about what was excluded from an assessment run. */
 	export interface Exclusion {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		arn: string;
+
+		/**
+		 * Required
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		title: string;
+
+		/**
+		 * Required
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		description: string;
+
+		/**
+		 * Required
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		recommendation: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 */
 		scopes: Array<Scope>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		attributes?: Array<Attribute>;
 	}
 
 	/** Contains information about what was excluded from an assessment run. */
 	export interface ExclusionFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		title: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 20000
+		 * Min length: 0
+		 */
 		recommendation: FormControl<string | null | undefined>,
 	}
 	export function CreateExclusionFormGroup() {
 		return new FormGroup<ExclusionFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			title: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			recommendation: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			title: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20000), Validators.minLength(0)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20000), Validators.minLength(0)]),
+			recommendation: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20000), Validators.minLength(0)]),
 		});
 
 	}
@@ -1962,19 +3945,27 @@ export namespace MyNS {
 
 	/** Includes details about the failed items. */
 	export interface FailedItemDetails {
+
+		/** Required */
 		failureCode: FailedItemErrorCode;
+
+		/** Required */
 		retryable: boolean;
 	}
 
 	/** Includes details about the failed items. */
 	export interface FailedItemDetailsFormProperties {
+
+		/** Required */
 		failureCode: FormControl<FailedItemErrorCode | null | undefined>,
+
+		/** Required */
 		retryable: FormControl<boolean | null | undefined>,
 	}
 	export function CreateFailedItemDetailsFormGroup() {
 		return new FormGroup<FailedItemDetailsFormProperties>({
-			failureCode: new FormControl<FailedItemErrorCode | null | undefined>(undefined),
-			retryable: new FormControl<boolean | null | undefined>(undefined),
+			failureCode: new FormControl<FailedItemErrorCode | null | undefined>(undefined, [Validators.required]),
+			retryable: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

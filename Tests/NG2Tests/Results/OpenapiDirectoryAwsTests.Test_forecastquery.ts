@@ -42,24 +42,48 @@ export namespace MyNS {
 	}
 
 	export interface QueryForecastRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):forecast:.*:.*:.+
+		 */
 		ForecastArn: string;
 		StartDate?: string | null;
 		EndDate?: string | null;
+
+		/** Required */
 		Filters: Filters;
+
+		/**
+		 * Max length: 3000
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface QueryForecastRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):forecast:.*:.*:.+
+		 */
 		ForecastArn: FormControl<string | null | undefined>,
 		StartDate: FormControl<string | null | undefined>,
 		EndDate: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 3000
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateQueryForecastRequestFormGroup() {
 		return new FormGroup<QueryForecastRequestFormProperties>({
-			ForecastArn: new FormControl<string | null | undefined>(undefined),
+			ForecastArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 			StartDate: new FormControl<string | null | undefined>(undefined),
 			EndDate: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3000), Validators.minLength(1)]),
 		});
 
 	}

@@ -4,15 +4,34 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateConnectionOutput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
+		 */
 		ConnectionArn: string;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		Tags?: Array<Tag>;
 	}
 	export interface CreateConnectionOutputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
+		 */
 		ConnectionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateConnectionOutputFormGroup() {
 		return new FormGroup<CreateConnectionOutputFormProperties>({
-			ConnectionArn: new FormControl<string | null | undefined>(undefined),
+			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -20,36 +39,81 @@ export namespace MyNS {
 
 	/** <p>A tag is a key-value pair that is used to manage the resource.</p> <p>This tag is available for use by AWS services that support tags.</p> */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Value: string;
 	}
 
 	/** <p>A tag is a key-value pair that is used to manage the resource.</p> <p>This tag is available for use by AWS services that support tags.</p> */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface CreateConnectionInput {
+
+		/** Required */
 		ProviderType: CreateConnectionInputProviderType;
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		ConnectionName: string;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		Tags?: Array<Tag>;
 	}
 	export interface CreateConnectionInputFormProperties {
+
+		/** Required */
 		ProviderType: FormControl<CreateConnectionInputProviderType | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		ConnectionName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateConnectionInputFormGroup() {
 		return new FormGroup<CreateConnectionInputFormProperties>({
-			ProviderType: new FormControl<CreateConnectionInputProviderType | null | undefined>(undefined),
-			ConnectionName: new FormControl<string | null | undefined>(undefined),
+			ProviderType: new FormControl<CreateConnectionInputProviderType | null | undefined>(undefined, [Validators.required]),
+			ConnectionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
 	}
@@ -77,14 +141,28 @@ export namespace MyNS {
 	}
 
 	export interface DeleteConnectionInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
+		 */
 		ConnectionArn: string;
 	}
 	export interface DeleteConnectionInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
+		 */
 		ConnectionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteConnectionInputFormGroup() {
 		return new FormGroup<DeleteConnectionInputFormProperties>({
-			ConnectionArn: new FormControl<string | null | undefined>(undefined),
+			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -115,27 +193,61 @@ export namespace MyNS {
 
 	/** <p>The AWS::CodeStarConnections::Connection resource can be used to connect external source providers with services like AWS CodePipeline.</p> <p>Note: A connection created through CloudFormation is in `PENDING` status by default. You can make its status `AVAILABLE` by editing the connection in the CodePipeline console.</p> */
 	export interface Connection {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		ConnectionName?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
+		 */
 		ConnectionArn?: string | null;
 		ProviderType?: CreateConnectionInputProviderType | null;
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: [0-9]{12}
+		 */
 		OwnerAccountId?: string | null;
 		ConnectionStatus?: ConnectionConnectionStatus | null;
 	}
 
 	/** <p>The AWS::CodeStarConnections::Connection resource can be used to connect external source providers with services like AWS CodePipeline.</p> <p>Note: A connection created through CloudFormation is in `PENDING` status by default. You can make its status `AVAILABLE` by editing the connection in the CodePipeline console.</p> */
 	export interface ConnectionFormProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		ConnectionName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
+		 */
 		ConnectionArn: FormControl<string | null | undefined>,
 		ProviderType: FormControl<CreateConnectionInputProviderType | null | undefined>,
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: [0-9]{12}
+		 */
 		OwnerAccountId: FormControl<string | null | undefined>,
 		ConnectionStatus: FormControl<ConnectionConnectionStatus | null | undefined>,
 	}
 	export function CreateConnectionFormGroup() {
 		return new FormGroup<ConnectionFormProperties>({
-			ConnectionName: new FormControl<string | null | undefined>(undefined),
-			ConnectionArn: new FormControl<string | null | undefined>(undefined),
+			ConnectionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			ProviderType: new FormControl<CreateConnectionInputProviderType | null | undefined>(undefined),
-			OwnerAccountId: new FormControl<string | null | undefined>(undefined),
+			OwnerAccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
 			ConnectionStatus: new FormControl<ConnectionConnectionStatus | null | undefined>(undefined),
 		});
 
@@ -144,52 +256,101 @@ export namespace MyNS {
 	export enum ConnectionConnectionStatus { PENDING = 0, AVAILABLE = 1, ERROR = 2 }
 
 	export interface GetConnectionInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
+		 */
 		ConnectionArn: string;
 	}
 	export interface GetConnectionInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
+		 */
 		ConnectionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetConnectionInputFormGroup() {
 		return new FormGroup<GetConnectionInputFormProperties>({
-			ConnectionArn: new FormControl<string | null | undefined>(undefined),
+			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface ListConnectionsOutput {
 		Connections?: Array<Connection>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListConnectionsOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListConnectionsOutputFormGroup() {
 		return new FormGroup<ListConnectionsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListConnectionsInput {
 		ProviderTypeFilter?: CreateConnectionInputProviderType | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 5000
+		 */
 		MaxResults?: number | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListConnectionsInputFormProperties {
 		ProviderTypeFilter: FormControl<CreateConnectionInputProviderType | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 5000
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListConnectionsInputFormGroup() {
 		return new FormGroup<ListConnectionsInputFormProperties>({
 			ProviderTypeFilter: new FormControl<CreateConnectionInputProviderType | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(5000)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListTagsForResourceOutput {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		Tags?: Array<Tag>;
 	}
 	export interface ListTagsForResourceOutputFormProperties {
@@ -201,14 +362,26 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceArn: string;
 	}
 	export interface ListTagsForResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceInputFormGroup() {
 		return new FormGroup<ListTagsForResourceInputFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
 		});
 
 	}
@@ -224,15 +397,33 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceArn: string;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		Tags: Array<Tag>;
 	}
 	export interface TagResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceInputFormGroup() {
 		return new FormGroup<TagResourceInputFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
 		});
 
 	}
@@ -248,15 +439,33 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceArn: string;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		TagKeys: Array<string>;
 	}
 	export interface UntagResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceInputFormGroup() {
 		return new FormGroup<UntagResourceInputFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
 		});
 
 	}

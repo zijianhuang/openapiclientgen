@@ -766,36 +766,52 @@ export namespace MyNS {
 	}
 
 	export interface AssociateCustomerGatewayRequest {
+
+		/** Required */
 		CustomerGatewayArn: string;
+
+		/** Required */
 		DeviceId: string;
 		LinkId?: string | null;
 	}
 	export interface AssociateCustomerGatewayRequestFormProperties {
+
+		/** Required */
 		CustomerGatewayArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		DeviceId: FormControl<string | null | undefined>,
 		LinkId: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateCustomerGatewayRequestFormGroup() {
 		return new FormGroup<AssociateCustomerGatewayRequestFormProperties>({
-			CustomerGatewayArn: new FormControl<string | null | undefined>(undefined),
-			DeviceId: new FormControl<string | null | undefined>(undefined),
+			CustomerGatewayArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DeviceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			LinkId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface AssociateLinkRequest {
+
+		/** Required */
 		DeviceId: string;
+
+		/** Required */
 		LinkId: string;
 	}
 	export interface AssociateLinkRequestFormProperties {
+
+		/** Required */
 		DeviceId: FormControl<string | null | undefined>,
+
+		/** Required */
 		LinkId: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateLinkRequestFormGroup() {
 		return new FormGroup<AssociateLinkRequestFormProperties>({
-			DeviceId: new FormControl<string | null | undefined>(undefined),
-			LinkId: new FormControl<string | null | undefined>(undefined),
+			DeviceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			LinkId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -856,6 +872,8 @@ export namespace MyNS {
 		 */
 		Bandwidth: Bandwidth;
 		Provider?: string | null;
+
+		/** Required */
 		SiteId: string;
 		Tags?: Array<Tag>;
 	}
@@ -863,6 +881,8 @@ export namespace MyNS {
 		Description: FormControl<string | null | undefined>,
 		Type: FormControl<string | null | undefined>,
 		Provider: FormControl<string | null | undefined>,
+
+		/** Required */
 		SiteId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateLinkRequestFormGroup() {
@@ -870,7 +890,7 @@ export namespace MyNS {
 			Description: new FormControl<string | null | undefined>(undefined),
 			Type: new FormControl<string | null | undefined>(undefined),
 			Provider: new FormControl<string | null | undefined>(undefined),
-			SiteId: new FormControl<string | null | undefined>(undefined),
+			SiteId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1049,14 +1069,18 @@ export namespace MyNS {
 	}
 
 	export interface RegisterTransitGatewayRequest {
+
+		/** Required */
 		TransitGatewayArn: string;
 	}
 	export interface RegisterTransitGatewayRequestFormProperties {
+
+		/** Required */
 		TransitGatewayArn: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterTransitGatewayRequestFormGroup() {
 		return new FormGroup<RegisterTransitGatewayRequestFormProperties>({
-			TransitGatewayArn: new FormControl<string | null | undefined>(undefined),
+			TransitGatewayArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1064,6 +1088,8 @@ export namespace MyNS {
 	export enum SiteState { PENDING = 0, AVAILABLE = 1, DELETING = 2, UPDATING = 3 }
 
 	export interface TagResourceRequest {
+
+		/** Required */
 		Tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
@@ -1539,8 +1565,8 @@ export namespace MyNS {
 	}
 	export function CreateAssociateCustomerGatewayPostBodyFormGroup() {
 		return new FormGroup<AssociateCustomerGatewayPostBodyFormProperties>({
-			CustomerGatewayArn: new FormControl<string | null | undefined>(undefined),
-			DeviceId: new FormControl<string | null | undefined>(undefined),
+			CustomerGatewayArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DeviceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			LinkId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1576,8 +1602,8 @@ export namespace MyNS {
 	}
 	export function CreateAssociateLinkPostBodyFormGroup() {
 		return new FormGroup<AssociateLinkPostBodyFormProperties>({
-			DeviceId: new FormControl<string | null | undefined>(undefined),
-			LinkId: new FormControl<string | null | undefined>(undefined),
+			DeviceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			LinkId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1727,7 +1753,7 @@ export namespace MyNS {
 			Description: new FormControl<string | null | undefined>(undefined),
 			Type: new FormControl<string | null | undefined>(undefined),
 			Provider: new FormControl<string | null | undefined>(undefined),
-			SiteId: new FormControl<string | null | undefined>(undefined),
+			SiteId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1988,7 +2014,7 @@ export namespace MyNS {
 	}
 	export function CreateRegisterTransitGatewayPostBodyFormGroup() {
 		return new FormGroup<RegisterTransitGatewayPostBodyFormProperties>({
-			TransitGatewayArn: new FormControl<string | null | undefined>(undefined),
+			TransitGatewayArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

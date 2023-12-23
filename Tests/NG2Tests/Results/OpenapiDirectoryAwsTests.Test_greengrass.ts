@@ -83,20 +83,28 @@ export namespace MyNS {
 
 	/** Information about a connector. Connectors run on the Greengrass core and contain built-in integration with local infrastructure, device protocols, AWS, and other cloud services. */
 	export interface Connector {
+
+		/** Required */
 		ConnectorArn: string;
+
+		/** Required */
 		Id: string;
 		Parameters?: __mapOf__string;
 	}
 
 	/** Information about a connector. Connectors run on the Greengrass core and contain built-in integration with local infrastructure, device protocols, AWS, and other cloud services. */
 	export interface ConnectorFormProperties {
+
+		/** Required */
 		ConnectorArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
 	}
 	export function CreateConnectorFormGroup() {
 		return new FormGroup<ConnectorFormProperties>({
-			ConnectorArn: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			ConnectorArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -167,25 +175,37 @@ export namespace MyNS {
 
 	/** Information about a core. */
 	export interface Core {
+
+		/** Required */
 		CertificateArn: string;
+
+		/** Required */
 		Id: string;
 		SyncShadow?: boolean | null;
+
+		/** Required */
 		ThingArn: string;
 	}
 
 	/** Information about a core. */
 	export interface CoreFormProperties {
+
+		/** Required */
 		CertificateArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
 		SyncShadow: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		ThingArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCoreFormGroup() {
 		return new FormGroup<CoreFormProperties>({
-			CertificateArn: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SyncShadow: new FormControl<boolean | null | undefined>(undefined),
-			ThingArn: new FormControl<string | null | undefined>(undefined),
+			ThingArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -262,25 +282,37 @@ export namespace MyNS {
 
 	/** Information about a device. */
 	export interface Device {
+
+		/** Required */
 		CertificateArn: string;
+
+		/** Required */
 		Id: string;
 		SyncShadow?: boolean | null;
+
+		/** Required */
 		ThingArn: string;
 	}
 
 	/** Information about a device. */
 	export interface DeviceFormProperties {
+
+		/** Required */
 		CertificateArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
 		SyncShadow: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		ThingArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeviceFormGroup() {
 		return new FormGroup<DeviceFormProperties>({
-			CertificateArn: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SyncShadow: new FormControl<boolean | null | undefined>(undefined),
-			ThingArn: new FormControl<string | null | undefined>(undefined),
+			ThingArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -408,18 +440,22 @@ export namespace MyNS {
 
 		/** The configuration of the Lambda function. */
 		FunctionConfiguration?: FunctionConfiguration;
+
+		/** Required */
 		Id: string;
 	}
 
 	/** Information about a Lambda function. */
 	export interface FunctionFormProperties {
 		FunctionArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
 	}
 	export function CreateFunctionFormGroup() {
 		return new FormGroup<FunctionFormProperties>({
 			FunctionArn: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -513,6 +549,8 @@ export namespace MyNS {
 
 		/** The type of permission a function has to access a resource. */
 		Permission?: ResourceAccessPolicyPermission | null;
+
+		/** Required */
 		ResourceId: string;
 	}
 
@@ -521,12 +559,14 @@ export namespace MyNS {
 
 		/** The type of permission a function has to access a resource. */
 		Permission: FormControl<ResourceAccessPolicyPermission | null | undefined>,
+
+		/** Required */
 		ResourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateResourceAccessPolicyFormGroup() {
 		return new FormGroup<ResourceAccessPolicyFormProperties>({
 			Permission: new FormControl<ResourceAccessPolicyPermission | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -655,28 +695,44 @@ export namespace MyNS {
 
 	/** Information about a logger */
 	export interface Logger {
+
+		/** Required */
 		Component: LoggerComponent;
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		Level: LoggerLevel;
 		Space?: number | null;
+
+		/** Required */
 		Type: LoggerType;
 	}
 
 	/** Information about a logger */
 	export interface LoggerFormProperties {
+
+		/** Required */
 		Component: FormControl<LoggerComponent | null | undefined>,
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		Level: FormControl<LoggerLevel | null | undefined>,
 		Space: FormControl<number | null | undefined>,
+
+		/** Required */
 		Type: FormControl<LoggerType | null | undefined>,
 	}
 	export function CreateLoggerFormGroup() {
 		return new FormGroup<LoggerFormProperties>({
-			Component: new FormControl<LoggerComponent | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			Level: new FormControl<LoggerLevel | null | undefined>(undefined),
+			Component: new FormControl<LoggerComponent | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Level: new FormControl<LoggerLevel | null | undefined>(undefined, [Validators.required]),
 			Space: new FormControl<number | null | undefined>(undefined),
-			Type: new FormControl<LoggerType | null | undefined>(undefined),
+			Type: new FormControl<LoggerType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -743,7 +799,11 @@ export namespace MyNS {
 
 	/** Information about a resource. */
 	export interface Resource {
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		Name: string;
 
 		/**
@@ -755,13 +815,17 @@ export namespace MyNS {
 
 	/** Information about a resource. */
 	export interface ResourceFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateResourceFormGroup() {
 		return new FormGroup<ResourceFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -884,6 +948,8 @@ export namespace MyNS {
 
 	/** The owner setting for downloaded machine learning resources. */
 	export interface ResourceDownloadOwnerSetting {
+
+		/** Required */
 		GroupOwner: string;
 
 		/**
@@ -895,6 +961,8 @@ export namespace MyNS {
 
 	/** The owner setting for downloaded machine learning resources. */
 	export interface ResourceDownloadOwnerSettingFormProperties {
+
+		/** Required */
 		GroupOwner: FormControl<string | null | undefined>,
 
 		/**
@@ -905,8 +973,8 @@ export namespace MyNS {
 	}
 	export function CreateResourceDownloadOwnerSettingFormGroup() {
 		return new FormGroup<ResourceDownloadOwnerSettingFormProperties>({
-			GroupOwner: new FormControl<string | null | undefined>(undefined),
-			GroupPermission: new FormControl<ResourceAccessPolicyPermission | null | undefined>(undefined),
+			GroupOwner: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			GroupPermission: new FormControl<ResourceAccessPolicyPermission | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1027,25 +1095,41 @@ export namespace MyNS {
 
 	/** Information about a subscription. */
 	export interface Subscription {
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		Source: string;
+
+		/** Required */
 		Subject: string;
+
+		/** Required */
 		Target: string;
 	}
 
 	/** Information about a subscription. */
 	export interface SubscriptionFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		Source: FormControl<string | null | undefined>,
+
+		/** Required */
 		Subject: FormControl<string | null | undefined>,
+
+		/** Required */
 		Target: FormControl<string | null | undefined>,
 	}
 	export function CreateSubscriptionFormGroup() {
 		return new FormGroup<SubscriptionFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			Source: new FormControl<string | null | undefined>(undefined),
-			Subject: new FormControl<string | null | undefined>(undefined),
-			Target: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Source: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Subject: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Target: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2705,27 +2789,35 @@ export namespace MyNS {
 	}
 
 	export interface AssociateRoleToGroupRequest {
+
+		/** Required */
 		RoleArn: string;
 	}
 	export interface AssociateRoleToGroupRequestFormProperties {
+
+		/** Required */
 		RoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateRoleToGroupRequestFormGroup() {
 		return new FormGroup<AssociateRoleToGroupRequestFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface AssociateServiceRoleToAccountRequest {
+
+		/** Required */
 		RoleArn: string;
 	}
 	export interface AssociateServiceRoleToAccountRequestFormProperties {
+
+		/** Required */
 		RoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateServiceRoleToAccountRequestFormGroup() {
 		return new FormGroup<AssociateServiceRoleToAccountRequestFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2825,7 +2917,7 @@ export namespace MyNS {
 	export function CreateCreateDeploymentRequestFormGroup() {
 		return new FormGroup<CreateDeploymentRequestFormProperties>({
 			DeploymentId: new FormControl<string | null | undefined>(undefined),
-			DeploymentType: new FormControl<GetDeploymentStatusResponseDeploymentType | null | undefined>(undefined),
+			DeploymentType: new FormControl<GetDeploymentStatusResponseDeploymentType | null | undefined>(undefined, [Validators.required]),
 			GroupVersionId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3100,11 +3192,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateSoftwareUpdateJobRequestFormGroup() {
 		return new FormGroup<CreateSoftwareUpdateJobRequestFormProperties>({
-			S3UrlSignerRole: new FormControl<string | null | undefined>(undefined),
-			SoftwareToUpdate: new FormControl<SoftwareToUpdate | null | undefined>(undefined),
+			S3UrlSignerRole: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SoftwareToUpdate: new FormControl<SoftwareToUpdate | null | undefined>(undefined, [Validators.required]),
 			UpdateAgentLogLevel: new FormControl<UpdateAgentLogLevel | null | undefined>(undefined),
-			UpdateTargetsArchitecture: new FormControl<UpdateTargetsArchitecture | null | undefined>(undefined),
-			UpdateTargetsOperatingSystem: new FormControl<UpdateTargetsOperatingSystem | null | undefined>(undefined),
+			UpdateTargetsArchitecture: new FormControl<UpdateTargetsArchitecture | null | undefined>(undefined, [Validators.required]),
+			UpdateTargetsOperatingSystem: new FormControl<UpdateTargetsOperatingSystem | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3707,20 +3799,28 @@ export namespace MyNS {
 	}
 
 	export interface StartBulkDeploymentRequest {
+
+		/** Required */
 		ExecutionRoleArn: string;
+
+		/** Required */
 		InputFileUri: string;
 
 		/** The key-value pair for the resource tag. */
 		tags?: Tags;
 	}
 	export interface StartBulkDeploymentRequestFormProperties {
+
+		/** Required */
 		ExecutionRoleArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		InputFileUri: FormControl<string | null | undefined>,
 	}
 	export function CreateStartBulkDeploymentRequestFormGroup() {
 		return new FormGroup<StartBulkDeploymentRequestFormProperties>({
-			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
-			InputFileUri: new FormControl<string | null | undefined>(undefined),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			InputFileUri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4850,7 +4950,7 @@ export namespace MyNS {
 	}
 	export function CreateAssociateRoleToGroupPutBodyFormGroup() {
 		return new FormGroup<AssociateRoleToGroupPutBodyFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4873,7 +4973,7 @@ export namespace MyNS {
 	}
 	export function CreateAssociateServiceRoleToAccountPutBodyFormGroup() {
 		return new FormGroup<AssociateServiceRoleToAccountPutBodyFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5011,7 +5111,7 @@ export namespace MyNS {
 	export function CreateCreateDeploymentPostBodyFormGroup() {
 		return new FormGroup<CreateDeploymentPostBodyFormProperties>({
 			DeploymentId: new FormControl<string | null | undefined>(undefined),
-			DeploymentType: new FormControl<GetDeploymentStatusResponseDeploymentType | null | undefined>(undefined),
+			DeploymentType: new FormControl<GetDeploymentStatusResponseDeploymentType | null | undefined>(undefined, [Validators.required]),
 			GroupVersionId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5423,11 +5523,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateSoftwareUpdateJobPostBodyFormGroup() {
 		return new FormGroup<CreateSoftwareUpdateJobPostBodyFormProperties>({
-			S3UrlSignerRole: new FormControl<string | null | undefined>(undefined),
-			SoftwareToUpdate: new FormControl<SoftwareToUpdate | null | undefined>(undefined),
+			S3UrlSignerRole: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SoftwareToUpdate: new FormControl<SoftwareToUpdate | null | undefined>(undefined, [Validators.required]),
 			UpdateAgentLogLevel: new FormControl<UpdateAgentLogLevel | null | undefined>(undefined),
-			UpdateTargetsArchitecture: new FormControl<UpdateTargetsArchitecture | null | undefined>(undefined),
-			UpdateTargetsOperatingSystem: new FormControl<UpdateTargetsOperatingSystem | null | undefined>(undefined),
+			UpdateTargetsArchitecture: new FormControl<UpdateTargetsArchitecture | null | undefined>(undefined, [Validators.required]),
+			UpdateTargetsOperatingSystem: new FormControl<UpdateTargetsOperatingSystem | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5685,8 +5785,8 @@ export namespace MyNS {
 	}
 	export function CreateStartBulkDeploymentPostBodyFormGroup() {
 		return new FormGroup<StartBulkDeploymentPostBodyFormProperties>({
-			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
-			InputFileUri: new FormControl<string | null | undefined>(undefined),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			InputFileUri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 

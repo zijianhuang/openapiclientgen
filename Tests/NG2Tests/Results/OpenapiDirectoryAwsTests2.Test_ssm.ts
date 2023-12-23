@@ -14,18 +14,31 @@ export namespace MyNS {
 	}
 
 	export interface AddTagsToResourceRequest {
+
+		/** Required */
 		ResourceType: AddTagsToResourceRequestResourceType;
+
+		/** Required */
 		ResourceId: string;
+
+		/**
+		 * Required
+		 * Maximum items: 1000
+		 */
 		Tags: Array<Tag>;
 	}
 	export interface AddTagsToResourceRequestFormProperties {
+
+		/** Required */
 		ResourceType: FormControl<AddTagsToResourceRequestResourceType | null | undefined>,
+
+		/** Required */
 		ResourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateAddTagsToResourceRequestFormGroup() {
 		return new FormGroup<AddTagsToResourceRequestFormProperties>({
-			ResourceType: new FormControl<AddTagsToResourceRequestResourceType | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<AddTagsToResourceRequestResourceType | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -35,19 +48,47 @@ export namespace MyNS {
 
 	/** Metadata that you assign to your AWS resources. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. In Systems Manager, you can apply tags to documents, managed instances, maintenance windows, Parameter Store parameters, and patch baselines. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Value: string;
 	}
 
 	/** Metadata that you assign to your AWS resources. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. In Systems Manager, you can apply tags to documents, managed instances, maintenance windows, Parameter Store parameters, and patch baselines. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -119,17 +160,34 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CancelCommandRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		CommandId: string;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		InstanceIds?: Array<string>;
 	}
 
 	/** <p/> */
 	export interface CancelCommandRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		CommandId: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelCommandRequestFormGroup() {
 		return new FormGroup<CancelCommandRequestFormProperties>({
-			CommandId: new FormControl<string | null | undefined>(undefined),
+			CommandId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
@@ -165,27 +223,53 @@ export namespace MyNS {
 	}
 
 	export interface CancelMaintenanceWindowExecutionResult {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId?: string | null;
 	}
 	export interface CancelMaintenanceWindowExecutionResultFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelMaintenanceWindowExecutionResultFormGroup() {
 		return new FormGroup<CancelMaintenanceWindowExecutionResultFormProperties>({
-			WindowExecutionId: new FormControl<string | null | undefined>(undefined),
+			WindowExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
 
 	export interface CancelMaintenanceWindowExecutionRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId: string;
 	}
 	export interface CancelMaintenanceWindowExecutionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelMaintenanceWindowExecutionRequestFormGroup() {
 		return new FormGroup<CancelMaintenanceWindowExecutionRequestFormProperties>({
-			WindowExecutionId: new FormControl<string | null | undefined>(undefined),
+			WindowExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
@@ -201,42 +285,100 @@ export namespace MyNS {
 	}
 
 	export interface CreateActivationResult {
+
+		/** Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$ */
 		ActivationId?: string | null;
+
+		/**
+		 * Max length: 250
+		 * Min length: 20
+		 */
 		ActivationCode?: string | null;
 	}
 	export interface CreateActivationResultFormProperties {
+
+		/** Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$ */
 		ActivationId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 250
+		 * Min length: 20
+		 */
 		ActivationCode: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateActivationResultFormGroup() {
 		return new FormGroup<CreateActivationResultFormProperties>({
 			ActivationId: new FormControl<string | null | undefined>(undefined),
-			ActivationCode: new FormControl<string | null | undefined>(undefined),
+			ActivationCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(250), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface CreateActivationRequest {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		DefaultInstanceName?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 */
 		IamRole: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		RegistrationLimit?: number | null;
 		ExpirationDate?: Date | null;
+
+		/** Maximum items: 1000 */
 		Tags?: Array<Tag>;
 	}
 	export interface CreateActivationRequestFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		DefaultInstanceName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 */
 		IamRole: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		RegistrationLimit: FormControl<number | null | undefined>,
 		ExpirationDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateCreateActivationRequestFormGroup() {
 		return new FormGroup<CreateActivationRequestFormProperties>({
-			Description: new FormControl<string | null | undefined>(undefined),
-			DefaultInstanceName: new FormControl<string | null | undefined>(undefined),
-			IamRole: new FormControl<string | null | undefined>(undefined),
-			RegistrationLimit: new FormControl<number | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			DefaultInstanceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			IamRole: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64)]),
+			RegistrationLimit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 			ExpirationDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -258,8 +400,14 @@ export namespace MyNS {
 
 	/** Describes the parameters for a document. */
 	export interface AssociationDescription {
+
+		/** Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$ */
 		Name?: string | null;
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId?: string | null;
+
+		/** Pattern: ([$]LATEST)|([1-9][0-9]*) */
 		AssociationVersion?: string | null;
 		Date?: Date | null;
 		LastUpdateAssociationDate?: Date | null;
@@ -269,19 +417,52 @@ export namespace MyNS {
 
 		/** Information about the association. */
 		Overview?: AssociationOverview;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion?: string | null;
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		AutomationTargetParameterName?: string | null;
 		Parameters?: Parameters;
+
+		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		AssociationId?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Targets?: Array<Target>;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ScheduleExpression?: string | null;
 
 		/** An S3 bucket where you want to store the results of this request. */
 		OutputLocation?: InstanceAssociationOutputLocation;
 		LastExecutionDate?: Date | null;
 		LastSuccessfulExecutionDate?: Date | null;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		AssociationName?: string | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors?: string | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency?: string | null;
 		ComplianceSeverity?: AssociationDescriptionComplianceSeverity | null;
 		SyncCompliance?: AssociationDescriptionSyncCompliance | null;
@@ -290,19 +471,53 @@ export namespace MyNS {
 
 	/** Describes the parameters for a document. */
 	export interface AssociationDescriptionFormProperties {
+
+		/** Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$ */
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST)|([1-9][0-9]*) */
 		AssociationVersion: FormControl<string | null | undefined>,
 		Date: FormControl<Date | null | undefined>,
 		LastUpdateAssociationDate: FormControl<Date | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		AutomationTargetParameterName: FormControl<string | null | undefined>,
+
+		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		AssociationId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ScheduleExpression: FormControl<string | null | undefined>,
 		LastExecutionDate: FormControl<Date | null | undefined>,
 		LastSuccessfulExecutionDate: FormControl<Date | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		AssociationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency: FormControl<string | null | undefined>,
 		ComplianceSeverity: FormControl<AssociationDescriptionComplianceSeverity | null | undefined>,
 		SyncCompliance: FormControl<AssociationDescriptionSyncCompliance | null | undefined>,
@@ -316,14 +531,14 @@ export namespace MyNS {
 			Date: new FormControl<Date | null | undefined>(undefined),
 			LastUpdateAssociationDate: new FormControl<Date | null | undefined>(undefined),
 			DocumentVersion: new FormControl<string | null | undefined>(undefined),
-			AutomationTargetParameterName: new FormControl<string | null | undefined>(undefined),
+			AutomationTargetParameterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
 			AssociationId: new FormControl<string | null | undefined>(undefined),
-			ScheduleExpression: new FormControl<string | null | undefined>(undefined),
+			ScheduleExpression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			LastExecutionDate: new FormControl<Date | null | undefined>(undefined),
 			LastSuccessfulExecutionDate: new FormControl<Date | null | undefined>(undefined),
 			AssociationName: new FormControl<string | null | undefined>(undefined),
-			MaxErrors: new FormControl<string | null | undefined>(undefined),
-			MaxConcurrency: new FormControl<string | null | undefined>(undefined),
+			MaxErrors: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
+			MaxConcurrency: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
 			ComplianceSeverity: new FormControl<AssociationDescriptionComplianceSeverity | null | undefined>(undefined),
 			SyncCompliance: new FormControl<AssociationDescriptionSyncCompliance | null | undefined>(undefined),
 			ApplyOnlyAtCronInterval: new FormControl<boolean | null | undefined>(undefined),
@@ -334,25 +549,49 @@ export namespace MyNS {
 
 	/** Describes an association status. */
 	export interface AssociationStatus {
+
+		/** Required */
 		Date: Date;
+
+		/** Required */
 		Name: AssociationStatusName;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Message: string;
+
+		/** Max length: 1024 */
 		AdditionalInfo?: string | null;
 	}
 
 	/** Describes an association status. */
 	export interface AssociationStatusFormProperties {
+
+		/** Required */
 		Date: FormControl<Date | null | undefined>,
+
+		/** Required */
 		Name: FormControl<AssociationStatusName | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Message: FormControl<string | null | undefined>,
+
+		/** Max length: 1024 */
 		AdditionalInfo: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociationStatusFormGroup() {
 		return new FormGroup<AssociationStatusFormProperties>({
-			Date: new FormControl<Date | null | undefined>(undefined),
-			Name: new FormControl<AssociationStatusName | null | undefined>(undefined),
-			Message: new FormControl<string | null | undefined>(undefined),
-			AdditionalInfo: new FormControl<string | null | undefined>(undefined),
+			Date: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<AssociationStatusName | null | undefined>(undefined, [Validators.required]),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			AdditionalInfo: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
@@ -403,17 +642,34 @@ export namespace MyNS {
 
 	/** <p>An array of search criteria that targets instances using a Key,Value combination that you specify. </p> <p>Supported formats include the following.</p> <ul> <li> <p> <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i> </code> </p> </li> <li> <p> <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i> </code> </p> </li> <li> <p> <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> </p> </li> <li> <p>(Maintenance window targets only) <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code> </p> </li> <li> <p>(Maintenance window targets only) <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i> </code> </p> </li> </ul> <p>For example:</p> <ul> <li> <p> <code>Key=InstanceIds,Values=i-02573cafcfEXAMPLE,i-0471e04240EXAMPLE,i-07782c72faEXAMPLE</code> </p> </li> <li> <p> <code>Key=tag:CostCenter,Values=CostCenter1,CostCenter2,CostCenter3</code> </p> </li> <li> <p> <code>Key=tag-key,Values=Name,Instance-Type,CostCenter</code> </p> </li> <li> <p>(Maintenance window targets only) <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code> </p> <p>This example demonstrates how to target all resources in the resource group <b>ProductionResourceGroup</b> in your maintenance window.</p> </li> <li> <p>(Maintenance window targets only) <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code> </p> <p>This example demonstrates how to target only EC2 instances and VPCs in your maintenance window.</p> </li> <li> <p>(State Manager association targets only) <code>Key=InstanceIds,Values=<i>*</i> </code> </p> <p>This example demonstrates how to target all managed instances in the AWS Region where the association was created.</p> </li> </ul> <p>For information about how to send commands that target instances using <code>Key,Value</code> parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting multiple instances</a> in the <i>AWS Systems Manager User Guide</i>.</p> */
 	export interface Target {
+
+		/**
+		 * Max length: 163
+		 * Min length: 1
+		 * Pattern: ^[\p{L}\p{Z}\p{N}_.:/=\-@]*$|resource-groups:ResourceTypeFilters|resource-groups:Name
+		 */
 		Key?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		Values?: Array<string>;
 	}
 
 	/** <p>An array of search criteria that targets instances using a Key,Value combination that you specify. </p> <p>Supported formats include the following.</p> <ul> <li> <p> <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i> </code> </p> </li> <li> <p> <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i> </code> </p> </li> <li> <p> <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> </p> </li> <li> <p>(Maintenance window targets only) <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code> </p> </li> <li> <p>(Maintenance window targets only) <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i> </code> </p> </li> </ul> <p>For example:</p> <ul> <li> <p> <code>Key=InstanceIds,Values=i-02573cafcfEXAMPLE,i-0471e04240EXAMPLE,i-07782c72faEXAMPLE</code> </p> </li> <li> <p> <code>Key=tag:CostCenter,Values=CostCenter1,CostCenter2,CostCenter3</code> </p> </li> <li> <p> <code>Key=tag-key,Values=Name,Instance-Type,CostCenter</code> </p> </li> <li> <p>(Maintenance window targets only) <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code> </p> <p>This example demonstrates how to target all resources in the resource group <b>ProductionResourceGroup</b> in your maintenance window.</p> </li> <li> <p>(Maintenance window targets only) <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code> </p> <p>This example demonstrates how to target only EC2 instances and VPCs in your maintenance window.</p> </li> <li> <p>(State Manager association targets only) <code>Key=InstanceIds,Values=<i>*</i> </code> </p> <p>This example demonstrates how to target all managed instances in the AWS Region where the association was created.</p> </li> </ul> <p>For information about how to send commands that target instances using <code>Key,Value</code> parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting multiple instances</a> in the <i>AWS Systems Manager User Guide</i>.</p> */
 	export interface TargetFormProperties {
+
+		/**
+		 * Max length: 163
+		 * Min length: 1
+		 * Pattern: ^[\p{L}\p{Z}\p{N}_.:/=\-@]*$|resource-groups:ResourceTypeFilters|resource-groups:Name
+		 */
 		Key: FormControl<string | null | undefined>,
 	}
 	export function CreateTargetFormGroup() {
 		return new FormGroup<TargetFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(163), Validators.minLength(1)]),
 		});
 
 	}
@@ -438,22 +694,46 @@ export namespace MyNS {
 
 	/** An S3 bucket where you want to store the results of this request. */
 	export interface S3OutputLocation {
+
+		/**
+		 * Max length: 20
+		 * Min length: 3
+		 */
 		OutputS3Region?: string | null;
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 */
 		OutputS3BucketName?: string | null;
+
+		/** Max length: 500 */
 		OutputS3KeyPrefix?: string | null;
 	}
 
 	/** An S3 bucket where you want to store the results of this request. */
 	export interface S3OutputLocationFormProperties {
+
+		/**
+		 * Max length: 20
+		 * Min length: 3
+		 */
 		OutputS3Region: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 */
 		OutputS3BucketName: FormControl<string | null | undefined>,
+
+		/** Max length: 500 */
 		OutputS3KeyPrefix: FormControl<string | null | undefined>,
 	}
 	export function CreateS3OutputLocationFormGroup() {
 		return new FormGroup<S3OutputLocationFormProperties>({
-			OutputS3Region: new FormControl<string | null | undefined>(undefined),
-			OutputS3BucketName: new FormControl<string | null | undefined>(undefined),
-			OutputS3KeyPrefix: new FormControl<string | null | undefined>(undefined),
+			OutputS3Region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(3)]),
+			OutputS3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3)]),
+			OutputS3KeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
 		});
 
 	}
@@ -463,31 +743,102 @@ export namespace MyNS {
 	export enum AssociationDescriptionSyncCompliance { AUTO = 0, MANUAL = 1 }
 
 	export interface CreateAssociationRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$
+		 */
 		Name: string;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion?: string | null;
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId?: string | null;
 		Parameters?: Parameters;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Targets?: Array<Target>;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ScheduleExpression?: string | null;
 
 		/** An S3 bucket where you want to store the results of this request. */
 		OutputLocation?: InstanceAssociationOutputLocation;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		AssociationName?: string | null;
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		AutomationTargetParameterName?: string | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors?: string | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency?: string | null;
 		ComplianceSeverity?: AssociationDescriptionComplianceSeverity | null;
 		SyncCompliance?: AssociationDescriptionSyncCompliance | null;
 		ApplyOnlyAtCronInterval?: boolean | null;
 	}
 	export interface CreateAssociationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion: FormControl<string | null | undefined>,
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ScheduleExpression: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		AssociationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		AutomationTargetParameterName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency: FormControl<string | null | undefined>,
 		ComplianceSeverity: FormControl<AssociationDescriptionComplianceSeverity | null | undefined>,
 		SyncCompliance: FormControl<AssociationDescriptionSyncCompliance | null | undefined>,
@@ -495,14 +846,14 @@ export namespace MyNS {
 	}
 	export function CreateCreateAssociationRequestFormGroup() {
 		return new FormGroup<CreateAssociationRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DocumentVersion: new FormControl<string | null | undefined>(undefined),
 			InstanceId: new FormControl<string | null | undefined>(undefined),
-			ScheduleExpression: new FormControl<string | null | undefined>(undefined),
+			ScheduleExpression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			AssociationName: new FormControl<string | null | undefined>(undefined),
-			AutomationTargetParameterName: new FormControl<string | null | undefined>(undefined),
-			MaxErrors: new FormControl<string | null | undefined>(undefined),
-			MaxConcurrency: new FormControl<string | null | undefined>(undefined),
+			AutomationTargetParameterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
+			MaxErrors: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
+			MaxConcurrency: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
 			ComplianceSeverity: new FormControl<AssociationDescriptionComplianceSeverity | null | undefined>(undefined),
 			SyncCompliance: new FormControl<AssociationDescriptionSyncCompliance | null | undefined>(undefined),
 			ApplyOnlyAtCronInterval: new FormControl<boolean | null | undefined>(undefined),
@@ -638,18 +989,56 @@ export namespace MyNS {
 
 	/** Describes the association of a Systems Manager SSM document and an instance. */
 	export interface CreateAssociationBatchRequestEntry {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$
+		 */
 		Name: string;
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId?: string | null;
 		Parameters?: Parameters;
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		AutomationTargetParameterName?: string | null;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Targets?: Array<Target>;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ScheduleExpression?: string | null;
 
 		/** An S3 bucket where you want to store the results of this request. */
 		OutputLocation?: InstanceAssociationOutputLocation;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		AssociationName?: string | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors?: string | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency?: string | null;
 		ComplianceSeverity?: AssociationDescriptionComplianceSeverity | null;
 		SyncCompliance?: AssociationDescriptionSyncCompliance | null;
@@ -658,13 +1047,46 @@ export namespace MyNS {
 
 	/** Describes the association of a Systems Manager SSM document and an instance. */
 	export interface CreateAssociationBatchRequestEntryFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		AutomationTargetParameterName: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ScheduleExpression: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		AssociationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency: FormControl<string | null | undefined>,
 		ComplianceSeverity: FormControl<AssociationDescriptionComplianceSeverity | null | undefined>,
 		SyncCompliance: FormControl<AssociationDescriptionSyncCompliance | null | undefined>,
@@ -672,14 +1094,14 @@ export namespace MyNS {
 	}
 	export function CreateCreateAssociationBatchRequestEntryFormGroup() {
 		return new FormGroup<CreateAssociationBatchRequestEntryFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			InstanceId: new FormControl<string | null | undefined>(undefined),
-			AutomationTargetParameterName: new FormControl<string | null | undefined>(undefined),
+			AutomationTargetParameterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
 			DocumentVersion: new FormControl<string | null | undefined>(undefined),
-			ScheduleExpression: new FormControl<string | null | undefined>(undefined),
+			ScheduleExpression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			AssociationName: new FormControl<string | null | undefined>(undefined),
-			MaxErrors: new FormControl<string | null | undefined>(undefined),
-			MaxConcurrency: new FormControl<string | null | undefined>(undefined),
+			MaxErrors: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
+			MaxConcurrency: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
 			ComplianceSeverity: new FormControl<AssociationDescriptionComplianceSeverity | null | undefined>(undefined),
 			SyncCompliance: new FormControl<AssociationDescriptionSyncCompliance | null | undefined>(undefined),
 			ApplyOnlyAtCronInterval: new FormControl<boolean | null | undefined>(undefined),
@@ -690,6 +1112,11 @@ export namespace MyNS {
 	export enum FailedCreateAssociationFault { Client = 0, Server = 1, Unknown = 2 }
 
 	export interface CreateAssociationBatchRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 */
 		Entries: Array<CreateAssociationBatchRequestEntry>;
 	}
 	export interface CreateAssociationBatchRequestFormProperties {
@@ -717,9 +1144,15 @@ export namespace MyNS {
 	/** Describes a Systems Manager document.  */
 	export interface DocumentDescription {
 		Sha1?: string | null;
+
+		/** Max length: 256 */
 		Hash?: string | null;
 		HashType?: DocumentDescriptionHashType | null;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$ */
 		Name?: string | null;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{1,128}$ */
 		VersionName?: string | null;
 		Owner?: string | null;
 		CreatedDate?: Date | null;
@@ -727,27 +1160,50 @@ export namespace MyNS {
 		/** The status of a document. */
 		Status?: DocumentDescriptionStatus | null;
 		StatusInformation?: string | null;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion?: string | null;
 		Description?: string | null;
 		Parameters?: Array<DocumentParameter>;
 		PlatformTypes?: Array<PlatformType>;
 		DocumentType?: DocumentDescriptionDocumentType | null;
+
+		/** Pattern: ([0-9]+)\.([0-9]+) */
 		SchemaVersion?: string | null;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		LatestVersion?: string | null;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DefaultVersion?: string | null;
 		DocumentFormat?: DocumentDescriptionDocumentFormat | null;
+
+		/**
+		 * Max length: 200
+		 * Pattern: ^\/[\w\.\-\:\/]*$
+		 */
 		TargetType?: string | null;
+
+		/** Maximum items: 1000 */
 		Tags?: Array<Tag>;
 		AttachmentsInformation?: Array<AttachmentInformation>;
+
+		/** Minimum items: 1 */
 		Requires?: Array<DocumentRequires>;
 	}
 
 	/** Describes a Systems Manager document.  */
 	export interface DocumentDescriptionFormProperties {
 		Sha1: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		Hash: FormControl<string | null | undefined>,
 		HashType: FormControl<DocumentDescriptionHashType | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$ */
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{1,128}$ */
 		VersionName: FormControl<string | null | undefined>,
 		Owner: FormControl<string | null | undefined>,
 		CreatedDate: FormControl<Date | null | undefined>,
@@ -755,19 +1211,32 @@ export namespace MyNS {
 		/** The status of a document. */
 		Status: FormControl<DocumentDescriptionStatus | null | undefined>,
 		StatusInformation: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion: FormControl<string | null | undefined>,
 		Description: FormControl<string | null | undefined>,
 		DocumentType: FormControl<DocumentDescriptionDocumentType | null | undefined>,
+
+		/** Pattern: ([0-9]+)\.([0-9]+) */
 		SchemaVersion: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		LatestVersion: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DefaultVersion: FormControl<string | null | undefined>,
 		DocumentFormat: FormControl<DocumentDescriptionDocumentFormat | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Pattern: ^\/[\w\.\-\:\/]*$
+		 */
 		TargetType: FormControl<string | null | undefined>,
 	}
 	export function CreateDocumentDescriptionFormGroup() {
 		return new FormGroup<DocumentDescriptionFormProperties>({
 			Sha1: new FormControl<string | null | undefined>(undefined),
-			Hash: new FormControl<string | null | undefined>(undefined),
+			Hash: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			HashType: new FormControl<DocumentDescriptionHashType | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined),
 			VersionName: new FormControl<string | null | undefined>(undefined),
@@ -782,7 +1251,7 @@ export namespace MyNS {
 			LatestVersion: new FormControl<string | null | undefined>(undefined),
 			DefaultVersion: new FormControl<string | null | undefined>(undefined),
 			DocumentFormat: new FormControl<DocumentDescriptionDocumentFormat | null | undefined>(undefined),
-			TargetType: new FormControl<string | null | undefined>(undefined),
+			TargetType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200)]),
 		});
 
 	}
@@ -828,11 +1297,15 @@ export namespace MyNS {
 
 	/** An attribute of an attachment, such as the attachment name. */
 	export interface AttachmentInformation {
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		Name?: string | null;
 	}
 
 	/** An attribute of an attachment, such as the attachment name. */
 	export interface AttachmentInformationFormProperties {
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateAttachmentInformationFormGroup() {
@@ -845,50 +1318,107 @@ export namespace MyNS {
 
 	/** An SSM document required by the current document. */
 	export interface DocumentRequires {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$
+		 */
 		Name: string;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		Version?: string | null;
 	}
 
 	/** An SSM document required by the current document. */
 	export interface DocumentRequiresFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		Version: FormControl<string | null | undefined>,
 	}
 	export function CreateDocumentRequiresFormGroup() {
 		return new FormGroup<DocumentRequiresFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Version: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CreateDocumentRequest {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Content: string;
+
+		/** Minimum items: 1 */
 		Requires?: Array<DocumentRequires>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 20
+		 */
 		Attachments?: Array<AttachmentsSource>;
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: string;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{1,128}$ */
 		VersionName?: string | null;
 		DocumentType?: DocumentDescriptionDocumentType | null;
 		DocumentFormat?: DocumentDescriptionDocumentFormat | null;
+
+		/**
+		 * Max length: 200
+		 * Pattern: ^\/[\w\.\-\:\/]*$
+		 */
 		TargetType?: string | null;
+
+		/** Maximum items: 1000 */
 		Tags?: Array<Tag>;
 	}
 	export interface CreateDocumentRequestFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Content: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{1,128}$ */
 		VersionName: FormControl<string | null | undefined>,
 		DocumentType: FormControl<DocumentDescriptionDocumentType | null | undefined>,
 		DocumentFormat: FormControl<DocumentDescriptionDocumentFormat | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Pattern: ^\/[\w\.\-\:\/]*$
+		 */
 		TargetType: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDocumentRequestFormGroup() {
 		return new FormGroup<CreateDocumentRequestFormProperties>({
-			Content: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Content: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			VersionName: new FormControl<string | null | undefined>(undefined),
 			DocumentType: new FormControl<DocumentDescriptionDocumentType | null | undefined>(undefined),
 			DocumentFormat: new FormControl<DocumentDescriptionDocumentFormat | null | undefined>(undefined),
-			TargetType: new FormControl<string | null | undefined>(undefined),
+			TargetType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200)]),
 		});
 
 	}
@@ -897,13 +1427,22 @@ export namespace MyNS {
 	/** Identifying information about a document attachment, including the file name and a key-value pair that identifies the location of an attachment to a document. */
 	export interface AttachmentsSource {
 		Key?: AttachmentsSourceKey | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 1
+		 */
 		Values?: Array<string>;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		Name?: string | null;
 	}
 
 	/** Identifying information about a document attachment, including the file name and a key-value pair that identifies the location of an attachment to a document. */
 	export interface AttachmentsSourceFormProperties {
 		Key: FormControl<AttachmentsSourceKey | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateAttachmentsSourceFormGroup() {
@@ -967,55 +1506,143 @@ export namespace MyNS {
 	}
 
 	export interface CreateMaintenanceWindowResult {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId?: string | null;
 	}
 	export interface CreateMaintenanceWindowResultFormProperties {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateMaintenanceWindowResultFormGroup() {
 		return new FormGroup<CreateMaintenanceWindowResultFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface CreateMaintenanceWindowRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: string;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description?: string | null;
 		StartDate?: string | null;
 		EndDate?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Schedule: string;
 		ScheduleTimezone?: string | null;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 24
+		 */
 		Duration: number;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 23
+		 */
 		Cutoff: number;
+
+		/** Required */
 		AllowUnassociatedTargets: boolean;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ClientToken?: string | null;
+
+		/** Maximum items: 1000 */
 		Tags?: Array<Tag>;
 	}
 	export interface CreateMaintenanceWindowRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 		StartDate: FormControl<string | null | undefined>,
 		EndDate: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Schedule: FormControl<string | null | undefined>,
 		ScheduleTimezone: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 24
+		 */
 		Duration: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 23
+		 */
 		Cutoff: FormControl<number | null | undefined>,
+
+		/** Required */
 		AllowUnassociatedTargets: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ClientToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateMaintenanceWindowRequestFormGroup() {
 		return new FormGroup<CreateMaintenanceWindowRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(3)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			StartDate: new FormControl<string | null | undefined>(undefined),
 			EndDate: new FormControl<string | null | undefined>(undefined),
-			Schedule: new FormControl<string | null | undefined>(undefined),
+			Schedule: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 			ScheduleTimezone: new FormControl<string | null | undefined>(undefined),
-			Duration: new FormControl<number | null | undefined>(undefined),
-			Cutoff: new FormControl<number | null | undefined>(undefined),
-			AllowUnassociatedTargets: new FormControl<boolean | null | undefined>(undefined),
-			ClientToken: new FormControl<string | null | undefined>(undefined),
+			Duration: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(24)]),
+			Cutoff: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(23)]),
+			AllowUnassociatedTargets: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1054,33 +1681,101 @@ export namespace MyNS {
 	}
 
 	export interface CreateOpsItemRequest {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: string;
 		OperationalData?: OpsItemOperationalData;
 		Notifications?: Array<OpsItemNotification>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 5
+		 */
 		Priority?: number | null;
 		RelatedOpsItems?: Array<RelatedOpsItem>;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Source: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Title: string;
+
+		/** Maximum items: 1000 */
 		Tags?: Array<Tag>;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Category?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Severity?: string | null;
 	}
 	export interface CreateOpsItemRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 5
+		 */
 		Priority: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Source: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Title: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Category: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Severity: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateOpsItemRequestFormGroup() {
 		return new FormGroup<CreateOpsItemRequestFormProperties>({
-			Description: new FormControl<string | null | undefined>(undefined),
-			Priority: new FormControl<number | null | undefined>(undefined),
-			Source: new FormControl<string | null | undefined>(undefined),
-			Title: new FormControl<string | null | undefined>(undefined),
-			Category: new FormControl<string | null | undefined>(undefined),
-			Severity: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			Priority: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(5)]),
+			Source: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Title: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			Category: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Severity: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1115,16 +1810,20 @@ export namespace MyNS {
 
 	/** An OpsItems that shares something in common with the current OpsItem. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource. */
 	export interface RelatedOpsItem {
+
+		/** Required */
 		OpsItemId: string;
 	}
 
 	/** An OpsItems that shares something in common with the current OpsItem. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource. */
 	export interface RelatedOpsItemFormProperties {
+
+		/** Required */
 		OpsItemId: FormControl<string | null | undefined>,
 	}
 	export function CreateRelatedOpsItemFormGroup() {
 		return new FormGroup<RelatedOpsItemFormProperties>({
-			OpsItemId: new FormControl<string | null | undefined>(undefined),
+			OpsItemId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1160,20 +1859,39 @@ export namespace MyNS {
 	}
 
 	export interface CreatePatchBaselineResult {
+
+		/**
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId?: string | null;
 	}
 	export interface CreatePatchBaselineResultFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePatchBaselineResultFormGroup() {
 		return new FormGroup<CreatePatchBaselineResultFormProperties>({
-			BaselineId: new FormControl<string | null | undefined>(undefined),
+			BaselineId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface CreatePatchBaselineRequest {
 		OperatingSystem?: CreatePatchBaselineRequestOperatingSystem | null;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: string;
 
 		/** A set of patch filters, typically used for approval rules. */
@@ -1181,34 +1899,78 @@ export namespace MyNS {
 
 		/** A set of rules defining the approval rules for a patch baseline. */
 		ApprovalRules?: PatchRuleGroup;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		ApprovedPatches?: Array<string>;
 		ApprovedPatchesComplianceLevel?: PatchRuleComplianceLevel | null;
 		ApprovedPatchesEnableNonSecurity?: boolean | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		RejectedPatches?: Array<string>;
 		RejectedPatchesAction?: CreatePatchBaselineRequestRejectedPatchesAction | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 20
+		 */
 		Sources?: Array<PatchSource>;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ClientToken?: string | null;
+
+		/** Maximum items: 1000 */
 		Tags?: Array<Tag>;
 	}
 	export interface CreatePatchBaselineRequestFormProperties {
 		OperatingSystem: FormControl<CreatePatchBaselineRequestOperatingSystem | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
 		ApprovedPatchesComplianceLevel: FormControl<PatchRuleComplianceLevel | null | undefined>,
 		ApprovedPatchesEnableNonSecurity: FormControl<boolean | null | undefined>,
 		RejectedPatchesAction: FormControl<CreatePatchBaselineRequestRejectedPatchesAction | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ClientToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePatchBaselineRequestFormGroup() {
 		return new FormGroup<CreatePatchBaselineRequestFormProperties>({
 			OperatingSystem: new FormControl<CreatePatchBaselineRequestOperatingSystem | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(3)]),
 			ApprovedPatchesComplianceLevel: new FormControl<PatchRuleComplianceLevel | null | undefined>(undefined),
 			ApprovedPatchesEnableNonSecurity: new FormControl<boolean | null | undefined>(undefined),
 			RejectedPatchesAction: new FormControl<CreatePatchBaselineRequestRejectedPatchesAction | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			ClientToken: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1218,6 +1980,12 @@ export namespace MyNS {
 
 	/** A set of patch filters, typically used for approval rules. */
 	export interface PatchFilterGroup {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 4
+		 */
 		PatchFilters: Array<PatchFilter>;
 	}
 
@@ -1233,17 +2001,27 @@ export namespace MyNS {
 
 	/** <p> Defines which patches should be included in a patch baseline.</p> <p>A patch filter consists of a key and a set of values. The filter key is a patch property. For example, the available filter keys for WINDOWS are PATCH_SET, PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, and MSRC_SEVERITY. The filter values define a matching criterion for the patch property indicated by the key. For example, if the filter key is PRODUCT and the filter values are ["Office 2013", "Office 2016"], then the filter accepts all patches where product name is either "Office 2013" or "Office 2016". The filter values can be exact values for the patch property given as a key, or a wildcard (*), which matches all values.</p> <p>You can view lists of valid values for the patch properties by running the <code>DescribePatchProperties</code> command. For information about which patch properties can be used with each major operating system, see <a>DescribePatchProperties</a>.</p> */
 	export interface PatchFilter {
+
+		/** Required */
 		Key: PatchFilterKey;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 20
+		 */
 		Values: Array<string>;
 	}
 
 	/** <p> Defines which patches should be included in a patch baseline.</p> <p>A patch filter consists of a key and a set of values. The filter key is a patch property. For example, the available filter keys for WINDOWS are PATCH_SET, PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, and MSRC_SEVERITY. The filter values define a matching criterion for the patch property indicated by the key. For example, if the filter key is PRODUCT and the filter values are ["Office 2013", "Office 2016"], then the filter accepts all patches where product name is either "Office 2013" or "Office 2016". The filter values can be exact values for the patch property given as a key, or a wildcard (*), which matches all values.</p> <p>You can view lists of valid values for the patch properties by running the <code>DescribePatchProperties</code> command. For information about which patch properties can be used with each major operating system, see <a>DescribePatchProperties</a>.</p> */
 	export interface PatchFilterFormProperties {
+
+		/** Required */
 		Key: FormControl<PatchFilterKey | null | undefined>,
 	}
 	export function CreatePatchFilterFormGroup() {
 		return new FormGroup<PatchFilterFormProperties>({
-			Key: new FormControl<PatchFilterKey | null | undefined>(undefined),
+			Key: new FormControl<PatchFilterKey | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1253,6 +2031,12 @@ export namespace MyNS {
 
 	/** A set of rules defining the approval rules for a patch baseline. */
 	export interface PatchRuleGroup {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		PatchRules: Array<PatchRule>;
 	}
 
@@ -1275,7 +2059,17 @@ export namespace MyNS {
 		 */
 		PatchFilterGroup: PatchFilterGroup;
 		ComplianceLevel?: PatchRuleComplianceLevel | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		ApproveAfterDays?: number | null;
+
+		/**
+		 * Max length: 10
+		 * Min length: 1
+		 */
 		ApproveUntilDate?: string | null;
 		EnableNonSecurity?: boolean | null;
 	}
@@ -1283,15 +2077,25 @@ export namespace MyNS {
 	/** Defines an approval rule for a patch baseline. */
 	export interface PatchRuleFormProperties {
 		ComplianceLevel: FormControl<PatchRuleComplianceLevel | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		ApproveAfterDays: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 10
+		 * Min length: 1
+		 */
 		ApproveUntilDate: FormControl<string | null | undefined>,
 		EnableNonSecurity: FormControl<boolean | null | undefined>,
 	}
 	export function CreatePatchRuleFormGroup() {
 		return new FormGroup<PatchRuleFormProperties>({
 			ComplianceLevel: new FormControl<PatchRuleComplianceLevel | null | undefined>(undefined),
-			ApproveAfterDays: new FormControl<number | null | undefined>(undefined),
-			ApproveUntilDate: new FormControl<string | null | undefined>(undefined),
+			ApproveAfterDays: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			ApproveUntilDate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10), Validators.minLength(1)]),
 			EnableNonSecurity: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1304,20 +2108,48 @@ export namespace MyNS {
 
 	/** Information about the patches to use to update the instances, including target operating systems and source repository. Applies to Linux instances only. */
 	export interface PatchSource {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,50}$
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 20
+		 */
 		Products: Array<string>;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Configuration: string;
 	}
 
 	/** Information about the patches to use to update the instances, including target operating systems and source repository. Applies to Linux instances only. */
 	export interface PatchSourceFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,50}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Configuration: FormControl<string | null | undefined>,
 	}
 	export function CreatePatchSourceFormGroup() {
 		return new FormGroup<PatchSourceFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Configuration: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Configuration: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -1333,23 +2165,45 @@ export namespace MyNS {
 	}
 
 	export interface CreateResourceDataSyncRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SyncName: string;
 
 		/** Information about the target S3 bucket for the Resource Data Sync. */
 		S3Destination?: ResourceDataSyncS3Destination;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SyncType?: string | null;
 
 		/** Information about the source of the data included in the resource data sync. */
 		SyncSource?: ResourceDataSyncSource;
 	}
 	export interface CreateResourceDataSyncRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SyncName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SyncType: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateResourceDataSyncRequestFormGroup() {
 		return new FormGroup<CreateResourceDataSyncRequestFormProperties>({
-			SyncName: new FormControl<string | null | undefined>(undefined),
-			SyncType: new FormControl<string | null | undefined>(undefined),
+			SyncName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			SyncType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1357,10 +2211,35 @@ export namespace MyNS {
 
 	/** Information about the target S3 bucket for the Resource Data Sync. */
 	export interface ResourceDataSyncS3Destination {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		BucketName: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Prefix?: string | null;
+
+		/** Required */
 		SyncFormat: ResourceDataSyncS3DestinationSyncFormat;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Region: string;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		AWSKMSKeyARN?: string | null;
 
 		/** Synchronize Systems Manager Inventory data from multiple AWS accounts defined in AWS Organizations to a centralized S3 bucket. Data is synchronized to individual key prefixes in the central bucket. Each key prefix represents a different AWS account ID. */
@@ -1369,19 +2248,44 @@ export namespace MyNS {
 
 	/** Information about the target S3 bucket for the Resource Data Sync. */
 	export interface ResourceDataSyncS3DestinationFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		BucketName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Prefix: FormControl<string | null | undefined>,
+
+		/** Required */
 		SyncFormat: FormControl<ResourceDataSyncS3DestinationSyncFormat | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Region: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: arn:.*
+		 */
 		AWSKMSKeyARN: FormControl<string | null | undefined>,
 	}
 	export function CreateResourceDataSyncS3DestinationFormGroup() {
 		return new FormGroup<ResourceDataSyncS3DestinationFormProperties>({
-			BucketName: new FormControl<string | null | undefined>(undefined),
-			Prefix: new FormControl<string | null | undefined>(undefined),
-			SyncFormat: new FormControl<ResourceDataSyncS3DestinationSyncFormat | null | undefined>(undefined),
-			Region: new FormControl<string | null | undefined>(undefined),
-			AWSKMSKeyARN: new FormControl<string | null | undefined>(undefined),
+			BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			SyncFormat: new FormControl<ResourceDataSyncS3DestinationSyncFormat | null | undefined>(undefined, [Validators.required]),
+			Region: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			AWSKMSKeyARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
@@ -1391,16 +2295,26 @@ export namespace MyNS {
 
 	/** Synchronize Systems Manager Inventory data from multiple AWS accounts defined in AWS Organizations to a centralized S3 bucket. Data is synchronized to individual key prefixes in the central bucket. Each key prefix represents a different AWS account ID. */
 	export interface ResourceDataSyncDestinationDataSharing {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		DestinationDataSharingType?: string | null;
 	}
 
 	/** Synchronize Systems Manager Inventory data from multiple AWS accounts defined in AWS Organizations to a centralized S3 bucket. Data is synchronized to individual key prefixes in the central bucket. Each key prefix represents a different AWS account ID. */
 	export interface ResourceDataSyncDestinationDataSharingFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		DestinationDataSharingType: FormControl<string | null | undefined>,
 	}
 	export function CreateResourceDataSyncDestinationDataSharingFormGroup() {
 		return new FormGroup<ResourceDataSyncDestinationDataSharingFormProperties>({
-			DestinationDataSharingType: new FormControl<string | null | undefined>(undefined),
+			DestinationDataSharingType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1408,22 +2322,36 @@ export namespace MyNS {
 
 	/** Information about the source of the data included in the resource data sync. */
 	export interface ResourceDataSyncSource {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SourceType: string;
 
 		/** Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can synchronize data from AWS Organizations or, if an AWS Organization is not present, from multiple AWS Regions. */
 		AwsOrganizationsSource?: ResourceDataSyncAwsOrganizationsSource;
+
+		/** Required */
 		SourceRegions: Array<string>;
 		IncludeFutureRegions?: boolean | null;
 	}
 
 	/** Information about the source of the data included in the resource data sync. */
 	export interface ResourceDataSyncSourceFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SourceType: FormControl<string | null | undefined>,
 		IncludeFutureRegions: FormControl<boolean | null | undefined>,
 	}
 	export function CreateResourceDataSyncSourceFormGroup() {
 		return new FormGroup<ResourceDataSyncSourceFormProperties>({
-			SourceType: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 			IncludeFutureRegions: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1432,17 +2360,34 @@ export namespace MyNS {
 
 	/** Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can synchronize data from AWS Organizations or, if an AWS Organization is not present, from multiple AWS Regions. */
 	export interface ResourceDataSyncAwsOrganizationsSource {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		OrganizationSourceType: string;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 1000
+		 */
 		OrganizationalUnits?: Array<ResourceDataSyncOrganizationalUnit>;
 	}
 
 	/** Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can synchronize data from AWS Organizations or, if an AWS Organization is not present, from multiple AWS Regions. */
 	export interface ResourceDataSyncAwsOrganizationsSourceFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		OrganizationSourceType: FormControl<string | null | undefined>,
 	}
 	export function CreateResourceDataSyncAwsOrganizationsSourceFormGroup() {
 		return new FormGroup<ResourceDataSyncAwsOrganizationsSourceFormProperties>({
-			OrganizationSourceType: new FormControl<string | null | undefined>(undefined),
+			OrganizationSourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1450,16 +2395,28 @@ export namespace MyNS {
 
 	/** The AWS Organizations organizational unit data source for the sync. */
 	export interface ResourceDataSyncOrganizationalUnit {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^ou-[0-9a-z]{4,32}-[a-z0-9]{8,32}$
+		 */
 		OrganizationalUnitId?: string | null;
 	}
 
 	/** The AWS Organizations organizational unit data source for the sync. */
 	export interface ResourceDataSyncOrganizationalUnitFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^ou-[0-9a-z]{4,32}-[a-z0-9]{8,32}$
+		 */
 		OrganizationalUnitId: FormControl<string | null | undefined>,
 	}
 	export function CreateResourceDataSyncOrganizationalUnitFormGroup() {
 		return new FormGroup<ResourceDataSyncOrganizationalUnitFormProperties>({
-			OrganizationalUnitId: new FormControl<string | null | undefined>(undefined),
+			OrganizationalUnitId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -1505,14 +2462,24 @@ export namespace MyNS {
 	}
 
 	export interface DeleteActivationRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+		 */
 		ActivationId: string;
 	}
 	export interface DeleteActivationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+		 */
 		ActivationId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteActivationRequestFormGroup() {
 		return new FormGroup<DeleteActivationRequestFormProperties>({
-			ActivationId: new FormControl<string | null | undefined>(undefined),
+			ActivationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1548,13 +2515,25 @@ export namespace MyNS {
 	}
 
 	export interface DeleteAssociationRequest {
+
+		/** Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$ */
 		Name?: string | null;
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId?: string | null;
+
+		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		AssociationId?: string | null;
 	}
 	export interface DeleteAssociationRequestFormProperties {
+
+		/** Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$ */
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId: FormControl<string | null | undefined>,
+
+		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		AssociationId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteAssociationRequestFormGroup() {
@@ -1587,20 +2566,38 @@ export namespace MyNS {
 	}
 
 	export interface DeleteDocumentRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: string;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion?: string | null;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{1,128}$ */
 		VersionName?: string | null;
 		Force?: boolean | null;
 	}
 	export interface DeleteDocumentRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{1,128}$ */
 		VersionName: FormControl<string | null | undefined>,
 		Force: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDeleteDocumentRequestFormGroup() {
 		return new FormGroup<DeleteDocumentRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DocumentVersion: new FormControl<string | null | undefined>(undefined),
 			VersionName: new FormControl<string | null | undefined>(undefined),
 			Force: new FormControl<boolean | null | undefined>(undefined),
@@ -1630,6 +2627,12 @@ export namespace MyNS {
 
 	export interface DeleteInventoryResult {
 		DeletionId?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^(AWS|Custom):.*$
+		 */
 		TypeName?: string | null;
 
 		/** Information about the delete operation. */
@@ -1637,12 +2640,18 @@ export namespace MyNS {
 	}
 	export interface DeleteInventoryResultFormProperties {
 		DeletionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^(AWS|Custom):.*$
+		 */
 		TypeName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteInventoryResultFormGroup() {
 		return new FormGroup<DeleteInventoryResultFormProperties>({
 			DeletionId: new FormControl<string | null | undefined>(undefined),
-			TypeName: new FormControl<string | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -1671,6 +2680,8 @@ export namespace MyNS {
 
 	/** Either a count, remaining count, or a version number in a delete inventory summary. */
 	export interface InventoryDeletionSummaryItem {
+
+		/** Pattern: ^([0-9]{1,6})(\.[0-9]{1,6})$ */
 		Version?: string | null;
 		Count?: number | null;
 		RemainingCount?: number | null;
@@ -1678,6 +2689,8 @@ export namespace MyNS {
 
 	/** Either a count, remaining count, or a version number in a delete inventory summary. */
 	export interface InventoryDeletionSummaryItemFormProperties {
+
+		/** Pattern: ^([0-9]{1,6})(\.[0-9]{1,6})$ */
 		Version: FormControl<string | null | undefined>,
 		Count: FormControl<number | null | undefined>,
 		RemainingCount: FormControl<number | null | undefined>,
@@ -1692,23 +2705,47 @@ export namespace MyNS {
 	}
 
 	export interface DeleteInventoryRequest {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^(AWS|Custom):.*$
+		 */
 		TypeName: string;
 		SchemaDeleteOption?: DeleteInventoryRequestSchemaDeleteOption | null;
 		DryRun?: boolean | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ClientToken?: string | null;
 	}
 	export interface DeleteInventoryRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^(AWS|Custom):.*$
+		 */
 		TypeName: FormControl<string | null | undefined>,
 		SchemaDeleteOption: FormControl<DeleteInventoryRequestSchemaDeleteOption | null | undefined>,
 		DryRun: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ClientToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteInventoryRequestFormGroup() {
 		return new FormGroup<DeleteInventoryRequestFormProperties>({
-			TypeName: new FormControl<string | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			SchemaDeleteOption: new FormControl<DeleteInventoryRequestSchemaDeleteOption | null | undefined>(undefined),
 			DryRun: new FormControl<boolean | null | undefined>(undefined),
-			ClientToken: new FormControl<string | null | undefined>(undefined),
+			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1756,27 +2793,53 @@ export namespace MyNS {
 	}
 
 	export interface DeleteMaintenanceWindowResult {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId?: string | null;
 	}
 	export interface DeleteMaintenanceWindowResultFormProperties {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteMaintenanceWindowResultFormGroup() {
 		return new FormGroup<DeleteMaintenanceWindowResultFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface DeleteMaintenanceWindowRequest {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: string;
 	}
 	export interface DeleteMaintenanceWindowRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteMaintenanceWindowRequestFormGroup() {
 		return new FormGroup<DeleteMaintenanceWindowRequestFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20), Validators.minLength(20)]),
 		});
 
 	}
@@ -1792,14 +2855,26 @@ export namespace MyNS {
 	}
 
 	export interface DeleteParameterRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Name: string;
 	}
 	export interface DeleteParameterRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteParameterRequestFormGroup() {
 		return new FormGroup<DeleteParameterRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -1815,7 +2890,17 @@ export namespace MyNS {
 	}
 
 	export interface DeleteParametersResult {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		DeletedParameters?: Array<string>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		InvalidParameters?: Array<string>;
 	}
 	export interface DeleteParametersResultFormProperties {
@@ -1827,6 +2912,12 @@ export namespace MyNS {
 	}
 
 	export interface DeleteParametersRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		Names: Array<string>;
 	}
 	export interface DeleteParametersRequestFormProperties {
@@ -1838,27 +2929,53 @@ export namespace MyNS {
 	}
 
 	export interface DeletePatchBaselineResult {
+
+		/**
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId?: string | null;
 	}
 	export interface DeletePatchBaselineResultFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeletePatchBaselineResultFormGroup() {
 		return new FormGroup<DeletePatchBaselineResultFormProperties>({
-			BaselineId: new FormControl<string | null | undefined>(undefined),
+			BaselineId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface DeletePatchBaselineRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: string;
 	}
 	export interface DeletePatchBaselineRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeletePatchBaselineRequestFormGroup() {
 		return new FormGroup<DeletePatchBaselineRequestFormProperties>({
-			BaselineId: new FormControl<string | null | undefined>(undefined),
+			BaselineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(20)]),
 		});
 
 	}
@@ -1884,17 +3001,39 @@ export namespace MyNS {
 	}
 
 	export interface DeleteResourceDataSyncRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SyncName: string;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SyncType?: string | null;
 	}
 	export interface DeleteResourceDataSyncRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SyncName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SyncType: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteResourceDataSyncRequestFormGroup() {
 		return new FormGroup<DeleteResourceDataSyncRequestFormProperties>({
-			SyncName: new FormControl<string | null | undefined>(undefined),
-			SyncType: new FormControl<string | null | undefined>(undefined),
+			SyncName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			SyncType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1920,80 +3059,194 @@ export namespace MyNS {
 	}
 
 	export interface DeregisterManagedInstanceRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^mi-[0-9a-f]{17}$
+		 */
 		InstanceId: string;
 	}
 	export interface DeregisterManagedInstanceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^mi-[0-9a-f]{17}$
+		 */
 		InstanceId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeregisterManagedInstanceRequestFormGroup() {
 		return new FormGroup<DeregisterManagedInstanceRequestFormProperties>({
-			InstanceId: new FormControl<string | null | undefined>(undefined),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeregisterPatchBaselineForPatchGroupResult {
+
+		/**
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PatchGroup?: string | null;
 	}
 	export interface DeregisterPatchBaselineForPatchGroupResultFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PatchGroup: FormControl<string | null | undefined>,
 	}
 	export function CreateDeregisterPatchBaselineForPatchGroupResultFormGroup() {
 		return new FormGroup<DeregisterPatchBaselineForPatchGroupResultFormProperties>({
-			BaselineId: new FormControl<string | null | undefined>(undefined),
-			PatchGroup: new FormControl<string | null | undefined>(undefined),
+			BaselineId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(20)]),
+			PatchGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeregisterPatchBaselineForPatchGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PatchGroup: string;
 	}
 	export interface DeregisterPatchBaselineForPatchGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PatchGroup: FormControl<string | null | undefined>,
 	}
 	export function CreateDeregisterPatchBaselineForPatchGroupRequestFormGroup() {
 		return new FormGroup<DeregisterPatchBaselineForPatchGroupRequestFormProperties>({
-			BaselineId: new FormControl<string | null | undefined>(undefined),
-			PatchGroup: new FormControl<string | null | undefined>(undefined),
+			BaselineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(20)]),
+			PatchGroup: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeregisterTargetFromMaintenanceWindowResult {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTargetId?: string | null;
 	}
 	export interface DeregisterTargetFromMaintenanceWindowResultFormProperties {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTargetId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeregisterTargetFromMaintenanceWindowResultFormGroup() {
 		return new FormGroup<DeregisterTargetFromMaintenanceWindowResultFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
-			WindowTargetId: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(20)]),
+			WindowTargetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
 
 	export interface DeregisterTargetFromMaintenanceWindowRequest {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTargetId: string;
 		Safe?: boolean | null;
 	}
 	export interface DeregisterTargetFromMaintenanceWindowRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTargetId: FormControl<string | null | undefined>,
 		Safe: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDeregisterTargetFromMaintenanceWindowRequestFormGroup() {
 		return new FormGroup<DeregisterTargetFromMaintenanceWindowRequestFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
-			WindowTargetId: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20), Validators.minLength(20)]),
+			WindowTargetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
 			Safe: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2010,33 +3263,85 @@ export namespace MyNS {
 	}
 
 	export interface DeregisterTaskFromMaintenanceWindowResult {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTaskId?: string | null;
 	}
 	export interface DeregisterTaskFromMaintenanceWindowResultFormProperties {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTaskId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeregisterTaskFromMaintenanceWindowResultFormGroup() {
 		return new FormGroup<DeregisterTaskFromMaintenanceWindowResultFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
-			WindowTaskId: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(20)]),
+			WindowTaskId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
 
 	export interface DeregisterTaskFromMaintenanceWindowRequest {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTaskId: string;
 	}
 	export interface DeregisterTaskFromMaintenanceWindowRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTaskId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeregisterTaskFromMaintenanceWindowRequestFormGroup() {
 		return new FormGroup<DeregisterTaskFromMaintenanceWindowRequestFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
-			WindowTaskId: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20), Validators.minLength(20)]),
+			WindowTaskId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
@@ -2058,25 +3363,77 @@ export namespace MyNS {
 
 	/** An activation registers one or more on-premises servers or virtual machines (VMs) with AWS so that you can configure those servers or VMs using Run Command. A server or VM that has been registered with AWS is called a managed instance. */
 	export interface Activation {
+
+		/** Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$ */
 		ActivationId?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		DefaultInstanceName?: string | null;
+
+		/** Max length: 64 */
 		IamRole?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		RegistrationLimit?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		RegistrationsCount?: number | null;
 		ExpirationDate?: Date | null;
 		Expired?: boolean | null;
 		CreatedDate?: Date | null;
+
+		/** Maximum items: 1000 */
 		Tags?: Array<Tag>;
 	}
 
 	/** An activation registers one or more on-premises servers or virtual machines (VMs) with AWS so that you can configure those servers or VMs using Run Command. A server or VM that has been registered with AWS is called a managed instance. */
 	export interface ActivationFormProperties {
+
+		/** Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$ */
 		ActivationId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		DefaultInstanceName: FormControl<string | null | undefined>,
+
+		/** Max length: 64 */
 		IamRole: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		RegistrationLimit: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		RegistrationsCount: FormControl<number | null | undefined>,
 		ExpirationDate: FormControl<Date | null | undefined>,
 		Expired: FormControl<boolean | null | undefined>,
@@ -2085,11 +3442,11 @@ export namespace MyNS {
 	export function CreateActivationFormGroup() {
 		return new FormGroup<ActivationFormProperties>({
 			ActivationId: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			DefaultInstanceName: new FormControl<string | null | undefined>(undefined),
-			IamRole: new FormControl<string | null | undefined>(undefined),
-			RegistrationLimit: new FormControl<number | null | undefined>(undefined),
-			RegistrationsCount: new FormControl<number | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			DefaultInstanceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			IamRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			RegistrationLimit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			RegistrationsCount: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 			ExpirationDate: new FormControl<Date | null | undefined>(undefined),
 			Expired: new FormControl<boolean | null | undefined>(undefined),
 			CreatedDate: new FormControl<Date | null | undefined>(undefined),
@@ -2099,16 +3456,26 @@ export namespace MyNS {
 
 	export interface DescribeActivationsRequest {
 		Filters?: Array<DescribeActivationsFilter>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeActivationsRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeActivationsRequestFormGroup() {
 		return new FormGroup<DescribeActivationsRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2168,15 +3535,31 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAssociationRequest {
+
+		/** Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$ */
 		Name?: string | null;
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId?: string | null;
+
+		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		AssociationId?: string | null;
+
+		/** Pattern: ([$]LATEST)|([1-9][0-9]*) */
 		AssociationVersion?: string | null;
 	}
 	export interface DescribeAssociationRequestFormProperties {
+
+		/** Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$ */
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId: FormControl<string | null | undefined>,
+
+		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		AssociationId: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST)|([1-9][0-9]*) */
 		AssociationVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeAssociationRequestFormGroup() {
@@ -2216,10 +3599,26 @@ export namespace MyNS {
 
 	/** Includes information about the specified association execution. */
 	export interface AssociationExecutionTarget {
+
+		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		AssociationId?: string | null;
+
+		/** Pattern: ([$]LATEST)|([1-9][0-9]*) */
 		AssociationVersion?: string | null;
+
+		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		ExecutionId?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ResourceId?: string | null;
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		ResourceType?: string | null;
 		Status?: string | null;
 		DetailedStatus?: string | null;
@@ -2231,10 +3630,26 @@ export namespace MyNS {
 
 	/** Includes information about the specified association execution. */
 	export interface AssociationExecutionTargetFormProperties {
+
+		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		AssociationId: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST)|([1-9][0-9]*) */
 		AssociationVersion: FormControl<string | null | undefined>,
+
+		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		ExecutionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ResourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		ResourceType: FormControl<string | null | undefined>,
 		Status: FormControl<string | null | undefined>,
 		DetailedStatus: FormControl<string | null | undefined>,
@@ -2245,8 +3660,8 @@ export namespace MyNS {
 			AssociationId: new FormControl<string | null | undefined>(undefined),
 			AssociationVersion: new FormControl<string | null | undefined>(undefined),
 			ExecutionId: new FormControl<string | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
-			ResourceType: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
 			Status: new FormControl<string | null | undefined>(undefined),
 			DetailedStatus: new FormControl<string | null | undefined>(undefined),
 			LastExecutionDate: new FormControl<Date | null | undefined>(undefined),
@@ -2257,41 +3672,83 @@ export namespace MyNS {
 
 	/** Information about the source where the association execution details are stored. */
 	export interface OutputSource {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		OutputSourceId?: string | null;
 		OutputSourceType?: string | null;
 	}
 
 	/** Information about the source where the association execution details are stored. */
 	export interface OutputSourceFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		OutputSourceId: FormControl<string | null | undefined>,
 		OutputSourceType: FormControl<string | null | undefined>,
 	}
 	export function CreateOutputSourceFormGroup() {
 		return new FormGroup<OutputSourceFormProperties>({
-			OutputSourceId: new FormControl<string | null | undefined>(undefined),
+			OutputSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 			OutputSourceType: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface DescribeAssociationExecutionTargetsRequest {
+
+		/**
+		 * Required
+		 * Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
+		 */
 		AssociationId: string;
+
+		/**
+		 * Required
+		 * Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
+		 */
 		ExecutionId: string;
+
+		/** Minimum items: 1 */
 		Filters?: Array<AssociationExecutionTargetsFilter>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeAssociationExecutionTargetsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
+		 */
 		AssociationId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
+		 */
 		ExecutionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeAssociationExecutionTargetsRequestFormGroup() {
 		return new FormGroup<DescribeAssociationExecutionTargetsRequestFormProperties>({
-			AssociationId: new FormControl<string | null | undefined>(undefined),
-			ExecutionId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			AssociationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2300,19 +3757,33 @@ export namespace MyNS {
 
 	/** Filters for the association execution. */
 	export interface AssociationExecutionTargetsFilter {
+
+		/** Required */
 		Key: AssociationExecutionTargetsFilterKey;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Value: string;
 	}
 
 	/** Filters for the association execution. */
 	export interface AssociationExecutionTargetsFilterFormProperties {
+
+		/** Required */
 		Key: FormControl<AssociationExecutionTargetsFilterKey | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociationExecutionTargetsFilterFormGroup() {
 		return new FormGroup<AssociationExecutionTargetsFilterFormProperties>({
-			Key: new FormControl<AssociationExecutionTargetsFilterKey | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<AssociationExecutionTargetsFilterKey | null | undefined>(undefined, [Validators.required]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -2346,8 +3817,14 @@ export namespace MyNS {
 
 	/** Includes information about the specified association. */
 	export interface AssociationExecution {
+
+		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		AssociationId?: string | null;
+
+		/** Pattern: ([$]LATEST)|([1-9][0-9]*) */
 		AssociationVersion?: string | null;
+
+		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		ExecutionId?: string | null;
 		Status?: string | null;
 		DetailedStatus?: string | null;
@@ -2358,8 +3835,14 @@ export namespace MyNS {
 
 	/** Includes information about the specified association. */
 	export interface AssociationExecutionFormProperties {
+
+		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		AssociationId: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST)|([1-9][0-9]*) */
 		AssociationVersion: FormControl<string | null | undefined>,
+
+		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		ExecutionId: FormControl<string | null | undefined>,
 		Status: FormControl<string | null | undefined>,
 		DetailedStatus: FormControl<string | null | undefined>,
@@ -2382,20 +3865,42 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAssociationExecutionsRequest {
+
+		/**
+		 * Required
+		 * Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
+		 */
 		AssociationId: string;
+
+		/** Minimum items: 1 */
 		Filters?: Array<AssociationExecutionFilter>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeAssociationExecutionsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
+		 */
 		AssociationId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeAssociationExecutionsRequestFormGroup() {
 		return new FormGroup<DescribeAssociationExecutionsRequestFormProperties>({
-			AssociationId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			AssociationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2404,22 +3909,40 @@ export namespace MyNS {
 
 	/** Filters used in the request. */
 	export interface AssociationExecutionFilter {
+
+		/** Required */
 		Key: AssociationExecutionFilterKey;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Value: string;
+
+		/** Required */
 		Type: AssociationExecutionFilterType;
 	}
 
 	/** Filters used in the request. */
 	export interface AssociationExecutionFilterFormProperties {
+
+		/** Required */
 		Key: FormControl<AssociationExecutionFilterKey | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Value: FormControl<string | null | undefined>,
+
+		/** Required */
 		Type: FormControl<AssociationExecutionFilterType | null | undefined>,
 	}
 	export function CreateAssociationExecutionFilterFormGroup() {
 		return new FormGroup<AssociationExecutionFilterFormProperties>({
-			Key: new FormControl<AssociationExecutionFilterKey | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
-			Type: new FormControl<AssociationExecutionFilterType | null | undefined>(undefined),
+			Key: new FormControl<AssociationExecutionFilterKey | null | undefined>(undefined, [Validators.required]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			Type: new FormControl<AssociationExecutionFilterType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2445,8 +3968,17 @@ export namespace MyNS {
 
 	/** Details about a specific Automation execution. */
 	export interface AutomationExecutionMetadata {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		AutomationExecutionId?: string | null;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		DocumentName?: string | null;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion?: string | null;
 		AutomationExecutionStatus?: AutomationExecutionMetadataAutomationExecutionStatus | null;
 		ExecutionStartTime?: Date | null;
@@ -2455,17 +3987,49 @@ export namespace MyNS {
 		LogFile?: string | null;
 		Outputs?: AutomationParameterMap;
 		Mode?: AutomationExecutionMetadataMode | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		ParentAutomationExecutionId?: string | null;
 		CurrentStepName?: string | null;
 		CurrentAction?: string | null;
 		FailureMessage?: string | null;
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		TargetParameterName?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Targets?: Array<Target>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 300
+		 */
 		TargetMaps?: Array<TargetMap>;
 
 		/** Information about targets that resolved during the Automation execution. */
 		ResolvedTargets?: ResolvedTargets;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency?: string | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors?: string | null;
 		Target?: string | null;
 		AutomationType?: AutomationExecutionMetadataAutomationType | null;
@@ -2473,8 +4037,17 @@ export namespace MyNS {
 
 	/** Details about a specific Automation execution. */
 	export interface AutomationExecutionMetadataFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		AutomationExecutionId: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		DocumentName: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion: FormControl<string | null | undefined>,
 		AutomationExecutionStatus: FormControl<AutomationExecutionMetadataAutomationExecutionStatus | null | undefined>,
 		ExecutionStartTime: FormControl<Date | null | undefined>,
@@ -2482,19 +4055,41 @@ export namespace MyNS {
 		ExecutedBy: FormControl<string | null | undefined>,
 		LogFile: FormControl<string | null | undefined>,
 		Mode: FormControl<AutomationExecutionMetadataMode | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		ParentAutomationExecutionId: FormControl<string | null | undefined>,
 		CurrentStepName: FormControl<string | null | undefined>,
 		CurrentAction: FormControl<string | null | undefined>,
 		FailureMessage: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		TargetParameterName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors: FormControl<string | null | undefined>,
 		Target: FormControl<string | null | undefined>,
 		AutomationType: FormControl<AutomationExecutionMetadataAutomationType | null | undefined>,
 	}
 	export function CreateAutomationExecutionMetadataFormGroup() {
 		return new FormGroup<AutomationExecutionMetadataFormProperties>({
-			AutomationExecutionId: new FormControl<string | null | undefined>(undefined),
+			AutomationExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 			DocumentName: new FormControl<string | null | undefined>(undefined),
 			DocumentVersion: new FormControl<string | null | undefined>(undefined),
 			AutomationExecutionStatus: new FormControl<AutomationExecutionMetadataAutomationExecutionStatus | null | undefined>(undefined),
@@ -2503,13 +4098,13 @@ export namespace MyNS {
 			ExecutedBy: new FormControl<string | null | undefined>(undefined),
 			LogFile: new FormControl<string | null | undefined>(undefined),
 			Mode: new FormControl<AutomationExecutionMetadataMode | null | undefined>(undefined),
-			ParentAutomationExecutionId: new FormControl<string | null | undefined>(undefined),
+			ParentAutomationExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 			CurrentStepName: new FormControl<string | null | undefined>(undefined),
 			CurrentAction: new FormControl<string | null | undefined>(undefined),
 			FailureMessage: new FormControl<string | null | undefined>(undefined),
-			TargetParameterName: new FormControl<string | null | undefined>(undefined),
-			MaxConcurrency: new FormControl<string | null | undefined>(undefined),
-			MaxErrors: new FormControl<string | null | undefined>(undefined),
+			TargetParameterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
+			MaxConcurrency: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
+			MaxErrors: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
 			Target: new FormControl<string | null | undefined>(undefined),
 			AutomationType: new FormControl<AutomationExecutionMetadataAutomationType | null | undefined>(undefined),
 		});
@@ -2561,17 +4156,32 @@ export namespace MyNS {
 	export enum AutomationExecutionMetadataAutomationType { CrossAccount = 0, Local = 1 }
 
 	export interface DescribeAutomationExecutionsRequest {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		Filters?: Array<AutomationExecutionFilter>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeAutomationExecutionsRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeAutomationExecutionsRequestFormGroup() {
 		return new FormGroup<DescribeAutomationExecutionsRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2580,17 +4190,27 @@ export namespace MyNS {
 
 	/** A filter used to match specific automation executions. This is used to limit the scope of Automation execution information returned. */
 	export interface AutomationExecutionFilter {
+
+		/** Required */
 		Key: AutomationExecutionFilterKey;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		Values: Array<string>;
 	}
 
 	/** A filter used to match specific automation executions. This is used to limit the scope of Automation execution information returned. */
 	export interface AutomationExecutionFilterFormProperties {
+
+		/** Required */
 		Key: FormControl<AutomationExecutionFilterKey | null | undefined>,
 	}
 	export function CreateAutomationExecutionFilterFormGroup() {
 		return new FormGroup<AutomationExecutionFilterFormProperties>({
-			Key: new FormControl<AutomationExecutionFilterKey | null | undefined>(undefined),
+			Key: new FormControl<AutomationExecutionFilterKey | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2635,6 +4255,8 @@ export namespace MyNS {
 	/** Detailed information about an the execution state of an Automation step. */
 	export interface StepExecution {
 		StepName?: string | null;
+
+		/** Pattern: ^aws:[a-zA-Z]{3,25}$ */
 		Action?: string | null;
 		TimeoutSeconds?: number | null;
 		OnFailure?: string | null;
@@ -2656,6 +4278,11 @@ export namespace MyNS {
 		NextStep?: string | null;
 		IsCritical?: boolean | null;
 		ValidNextSteps?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Targets?: Array<Target>;
 
 		/** The combination of AWS Regions and accounts targeted by the current Automation execution. */
@@ -2665,6 +4292,8 @@ export namespace MyNS {
 	/** Detailed information about an the execution state of an Automation step. */
 	export interface StepExecutionFormProperties {
 		StepName: FormControl<string | null | undefined>,
+
+		/** Pattern: ^aws:[a-zA-Z]{3,25}$ */
 		Action: FormControl<string | null | undefined>,
 		TimeoutSeconds: FormControl<number | null | undefined>,
 		OnFailure: FormControl<string | null | undefined>,
@@ -2735,46 +4364,117 @@ export namespace MyNS {
 
 	/** The combination of AWS Regions and accounts targeted by the current Automation execution. */
 	export interface TargetLocation {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Accounts?: Array<string>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Regions?: Array<string>;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		TargetLocationMaxConcurrency?: string | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		TargetLocationMaxErrors?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ExecutionRoleName?: string | null;
 	}
 
 	/** The combination of AWS Regions and accounts targeted by the current Automation execution. */
 	export interface TargetLocationFormProperties {
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		TargetLocationMaxConcurrency: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		TargetLocationMaxErrors: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ExecutionRoleName: FormControl<string | null | undefined>,
 	}
 	export function CreateTargetLocationFormGroup() {
 		return new FormGroup<TargetLocationFormProperties>({
-			TargetLocationMaxConcurrency: new FormControl<string | null | undefined>(undefined),
-			TargetLocationMaxErrors: new FormControl<string | null | undefined>(undefined),
-			ExecutionRoleName: new FormControl<string | null | undefined>(undefined),
+			TargetLocationMaxConcurrency: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
+			TargetLocationMaxErrors: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
+			ExecutionRoleName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeAutomationStepExecutionsRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		AutomationExecutionId: string;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 6
+		 */
 		Filters?: Array<StepExecutionFilter>;
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 		ReverseOrder?: boolean | null;
 	}
 	export interface DescribeAutomationStepExecutionsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		AutomationExecutionId: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		ReverseOrder: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDescribeAutomationStepExecutionsRequestFormGroup() {
 		return new FormGroup<DescribeAutomationStepExecutionsRequestFormProperties>({
-			AutomationExecutionId: new FormControl<string | null | undefined>(undefined),
+			AutomationExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 			ReverseOrder: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2783,17 +4483,27 @@ export namespace MyNS {
 
 	/** A filter to limit the amount of step execution information returned by the call. */
 	export interface StepExecutionFilter {
+
+		/** Required */
 		Key: StepExecutionFilterKey;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		Values: Array<string>;
 	}
 
 	/** A filter to limit the amount of step execution information returned by the call. */
 	export interface StepExecutionFilterFormProperties {
+
+		/** Required */
 		Key: FormControl<StepExecutionFilterKey | null | undefined>,
 	}
 	export function CreateStepExecutionFilterFormGroup() {
 		return new FormGroup<StepExecutionFilterFormProperties>({
-			Key: new FormControl<StepExecutionFilterKey | null | undefined>(undefined),
+			Key: new FormControl<StepExecutionFilterKey | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2827,6 +4537,11 @@ export namespace MyNS {
 
 	/** Represents metadata about a patch. */
 	export interface Patch {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		Id?: string | null;
 		ReleaseDate?: Date | null;
 		Title?: string | null;
@@ -2844,6 +4559,11 @@ export namespace MyNS {
 
 	/** Represents metadata about a patch. */
 	export interface PatchFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		Id: FormControl<string | null | undefined>,
 		ReleaseDate: FormControl<Date | null | undefined>,
 		Title: FormControl<string | null | undefined>,
@@ -2860,7 +4580,7 @@ export namespace MyNS {
 	}
 	export function CreatePatchFormGroup() {
 		return new FormGroup<PatchFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			ReleaseDate: new FormControl<Date | null | undefined>(undefined),
 			Title: new FormControl<string | null | undefined>(undefined),
 			Description: new FormControl<string | null | undefined>(undefined),
@@ -2878,17 +4598,32 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAvailablePatchesRequest {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Filters?: Array<PatchOrchestratorFilter>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeAvailablePatchesRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeAvailablePatchesRequestFormGroup() {
 		return new FormGroup<DescribeAvailablePatchesRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2897,17 +4632,27 @@ export namespace MyNS {
 
 	/** Defines a filter used in Patch Manager APIs. */
 	export interface PatchOrchestratorFilter {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key?: string | null;
 		Values?: Array<string>;
 	}
 
 	/** Defines a filter used in Patch Manager APIs. */
 	export interface PatchOrchestratorFilterFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
 	}
 	export function CreatePatchOrchestratorFilterFormGroup() {
 		return new FormGroup<PatchOrchestratorFilterFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -2926,18 +4671,36 @@ export namespace MyNS {
 	}
 
 	export interface DescribeDocumentRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$
+		 */
 		Name: string;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion?: string | null;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{1,128}$ */
 		VersionName?: string | null;
 	}
 	export interface DescribeDocumentRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{1,128}$ */
 		VersionName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeDocumentRequestFormGroup() {
 		return new FormGroup<DescribeDocumentRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DocumentVersion: new FormControl<string | null | undefined>(undefined),
 			VersionName: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2945,6 +4708,8 @@ export namespace MyNS {
 	}
 
 	export interface DescribeDocumentPermissionResponse {
+
+		/** Maximum items: 20 */
 		AccountIds?: Array<string>;
 
 		/** A list of of AWS accounts where the current document is shared and the version shared with each account. */
@@ -2961,6 +4726,8 @@ export namespace MyNS {
 
 	/** Information includes the AWS account ID where the current document is shared and the version shared with that account. */
 	export interface AccountSharingInfo {
+
+		/** Pattern: \(\?i\)all\|[0-9]\{12\} */
 		AccountId?: string | null;
 
 		/**
@@ -2973,6 +4740,8 @@ export namespace MyNS {
 
 	/** Information includes the AWS account ID where the current document is shared and the version shared with that account. */
 	export interface AccountSharingInfoFormProperties {
+
+		/** Pattern: \(\?i\)all\|[0-9]\{12\} */
 		AccountId: FormControl<string | null | undefined>,
 
 		/**
@@ -2985,23 +4754,37 @@ export namespace MyNS {
 	export function CreateAccountSharingInfoFormGroup() {
 		return new FormGroup<AccountSharingInfoFormProperties>({
 			AccountId: new FormControl<string | null | undefined>(undefined),
-			SharedDocumentVersion: new FormControl<string | null | undefined>(undefined),
+			SharedDocumentVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 		});
 
 	}
 
 	export interface DescribeDocumentPermissionRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: string;
+
+		/** Required */
 		PermissionType: DescribeDocumentPermissionRequestPermissionType;
 	}
 	export interface DescribeDocumentPermissionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		PermissionType: FormControl<DescribeDocumentPermissionRequestPermissionType | null | undefined>,
 	}
 	export function CreateDescribeDocumentPermissionRequestFormGroup() {
 		return new FormGroup<DescribeDocumentPermissionRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			PermissionType: new FormControl<DescribeDocumentPermissionRequestPermissionType | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PermissionType: new FormControl<DescribeDocumentPermissionRequestPermissionType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3035,43 +4818,79 @@ export namespace MyNS {
 
 	/** One or more association documents on the instance.  */
 	export interface InstanceAssociation {
+
+		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		AssociationId?: string | null;
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId?: string | null;
+
+		/** Min length: 1 */
 		Content?: string | null;
+
+		/** Pattern: ([$]LATEST)|([1-9][0-9]*) */
 		AssociationVersion?: string | null;
 	}
 
 	/** One or more association documents on the instance.  */
 	export interface InstanceAssociationFormProperties {
+
+		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		AssociationId: FormControl<string | null | undefined>,
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		Content: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST)|([1-9][0-9]*) */
 		AssociationVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateInstanceAssociationFormGroup() {
 		return new FormGroup<InstanceAssociationFormProperties>({
 			AssociationId: new FormControl<string | null | undefined>(undefined),
 			InstanceId: new FormControl<string | null | undefined>(undefined),
-			Content: new FormControl<string | null | undefined>(undefined),
+			Content: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			AssociationVersion: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface DescribeEffectiveInstanceAssociationsRequest {
+
+		/**
+		 * Required
+		 * Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)
+		 */
 		InstanceId: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 5
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeEffectiveInstanceAssociationsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)
+		 */
 		InstanceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 5
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeEffectiveInstanceAssociationsRequestFormGroup() {
 		return new FormGroup<DescribeEffectiveInstanceAssociationsRequestFormProperties>({
-			InstanceId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(5)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3137,19 +4956,43 @@ export namespace MyNS {
 	export enum PatchStatusDeploymentStatus { APPROVED = 0, PENDING_APPROVAL = 1, EXPLICIT_APPROVED = 2, EXPLICIT_REJECTED = 3 }
 
 	export interface DescribeEffectivePatchesForPatchBaselineRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeEffectivePatchesForPatchBaselineRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeEffectivePatchesForPatchBaselineRequestFormGroup() {
 		return new FormGroup<DescribeEffectivePatchesForPatchBaselineRequestFormProperties>({
-			BaselineId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			BaselineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(20)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3182,34 +5025,72 @@ export namespace MyNS {
 
 	/** Status information about the instance association. */
 	export interface InstanceAssociationStatusInfo {
+
+		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		AssociationId?: string | null;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$ */
 		Name?: string | null;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion?: string | null;
+
+		/** Pattern: ([$]LATEST)|([1-9][0-9]*) */
 		AssociationVersion?: string | null;
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId?: string | null;
 		ExecutionDate?: Date | null;
 		Status?: string | null;
 		DetailedStatus?: string | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		ExecutionSummary?: string | null;
+
+		/** Max length: 10 */
 		ErrorCode?: string | null;
 
 		/** The URL of S3 bucket where you want to store the results of this request. */
 		OutputUrl?: InstanceAssociationOutputUrl;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		AssociationName?: string | null;
 	}
 
 	/** Status information about the instance association. */
 	export interface InstanceAssociationStatusInfoFormProperties {
+
+		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		AssociationId: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$ */
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST)|([1-9][0-9]*) */
 		AssociationVersion: FormControl<string | null | undefined>,
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId: FormControl<string | null | undefined>,
 		ExecutionDate: FormControl<Date | null | undefined>,
 		Status: FormControl<string | null | undefined>,
 		DetailedStatus: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		ExecutionSummary: FormControl<string | null | undefined>,
+
+		/** Max length: 10 */
 		ErrorCode: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		AssociationName: FormControl<string | null | undefined>,
 	}
 	export function CreateInstanceAssociationStatusInfoFormGroup() {
@@ -3222,8 +5103,8 @@ export namespace MyNS {
 			ExecutionDate: new FormControl<Date | null | undefined>(undefined),
 			Status: new FormControl<string | null | undefined>(undefined),
 			DetailedStatus: new FormControl<string | null | undefined>(undefined),
-			ExecutionSummary: new FormControl<string | null | undefined>(undefined),
-			ErrorCode: new FormControl<string | null | undefined>(undefined),
+			ExecutionSummary: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			ErrorCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10)]),
 			AssociationName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3264,19 +5145,39 @@ export namespace MyNS {
 	}
 
 	export interface DescribeInstanceAssociationsStatusRequest {
+
+		/**
+		 * Required
+		 * Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)
+		 */
 		InstanceId: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeInstanceAssociationsStatusRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)
+		 */
 		InstanceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeInstanceAssociationsStatusRequestFormGroup() {
 		return new FormGroup<DescribeInstanceAssociationsStatusRequestFormProperties>({
-			InstanceId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3299,20 +5200,38 @@ export namespace MyNS {
 
 	/** Describes a filter for a specific list of instances.  */
 	export interface InstanceInformation {
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId?: string | null;
 		PingStatus?: InstanceInformationPingStatus | null;
 		LastPingDateTime?: Date | null;
+
+		/** Pattern: ^[0-9]{1,6}(\.[0-9]{1,6}){2,3}$ */
 		AgentVersion?: string | null;
 		IsLatestVersion?: boolean | null;
 		PlatformType?: PlatformType | null;
 		PlatformName?: string | null;
 		PlatformVersion?: string | null;
+
+		/** Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$ */
 		ActivationId?: string | null;
+
+		/** Max length: 64 */
 		IamRole?: string | null;
 		RegistrationDate?: Date | null;
 		ResourceType?: InstanceInformationResourceType | null;
 		Name?: string | null;
+
+		/**
+		 * Max length: 46
+		 * Min length: 1
+		 */
 		IPAddress?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		ComputerName?: string | null;
 		AssociationStatus?: string | null;
 		LastAssociationExecutionDate?: Date | null;
@@ -3324,20 +5243,38 @@ export namespace MyNS {
 
 	/** Describes a filter for a specific list of instances.  */
 	export interface InstanceInformationFormProperties {
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId: FormControl<string | null | undefined>,
 		PingStatus: FormControl<InstanceInformationPingStatus | null | undefined>,
 		LastPingDateTime: FormControl<Date | null | undefined>,
+
+		/** Pattern: ^[0-9]{1,6}(\.[0-9]{1,6}){2,3}$ */
 		AgentVersion: FormControl<string | null | undefined>,
 		IsLatestVersion: FormControl<boolean | null | undefined>,
 		PlatformType: FormControl<PlatformType | null | undefined>,
 		PlatformName: FormControl<string | null | undefined>,
 		PlatformVersion: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$ */
 		ActivationId: FormControl<string | null | undefined>,
+
+		/** Max length: 64 */
 		IamRole: FormControl<string | null | undefined>,
 		RegistrationDate: FormControl<Date | null | undefined>,
 		ResourceType: FormControl<InstanceInformationResourceType | null | undefined>,
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 46
+		 * Min length: 1
+		 */
 		IPAddress: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		ComputerName: FormControl<string | null | undefined>,
 		AssociationStatus: FormControl<string | null | undefined>,
 		LastAssociationExecutionDate: FormControl<Date | null | undefined>,
@@ -3354,12 +5291,12 @@ export namespace MyNS {
 			PlatformName: new FormControl<string | null | undefined>(undefined),
 			PlatformVersion: new FormControl<string | null | undefined>(undefined),
 			ActivationId: new FormControl<string | null | undefined>(undefined),
-			IamRole: new FormControl<string | null | undefined>(undefined),
+			IamRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
 			RegistrationDate: new FormControl<Date | null | undefined>(undefined),
 			ResourceType: new FormControl<InstanceInformationResourceType | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined),
-			IPAddress: new FormControl<string | null | undefined>(undefined),
-			ComputerName: new FormControl<string | null | undefined>(undefined),
+			IPAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(46), Validators.minLength(1)]),
+			ComputerName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 			AssociationStatus: new FormControl<string | null | undefined>(undefined),
 			LastAssociationExecutionDate: new FormControl<Date | null | undefined>(undefined),
 			LastSuccessfulAssociationExecutionDate: new FormControl<Date | null | undefined>(undefined),
@@ -3400,18 +5337,32 @@ export namespace MyNS {
 	}
 
 	export interface DescribeInstanceInformationRequest {
+
+		/** Minimum items: 0 */
 		InstanceInformationFilterList?: Array<InstanceInformationFilter>;
+
+		/** Minimum items: 0 */
 		Filters?: Array<InstanceInformationStringFilter>;
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeInstanceInformationRequestFormProperties {
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeInstanceInformationRequestFormGroup() {
 		return new FormGroup<DescribeInstanceInformationRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(50)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3420,17 +5371,27 @@ export namespace MyNS {
 
 	/** <p>Describes a filter for a specific list of instances. You can filter instances information by using tags. You specify tags by using a key-value mapping.</p> <p>Use this action instead of the <a>DescribeInstanceInformationRequest$InstanceInformationFilterList</a> method. The <code>InstanceInformationFilterList</code> method is a legacy method and does not support tags. </p> */
 	export interface InstanceInformationFilter {
+
+		/** Required */
 		key: InstanceInformationFilterKey;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		valueSet: Array<string>;
 	}
 
 	/** <p>Describes a filter for a specific list of instances. You can filter instances information by using tags. You specify tags by using a key-value mapping.</p> <p>Use this action instead of the <a>DescribeInstanceInformationRequest$InstanceInformationFilterList</a> method. The <code>InstanceInformationFilterList</code> method is a legacy method and does not support tags. </p> */
 	export interface InstanceInformationFilterFormProperties {
+
+		/** Required */
 		key: FormControl<InstanceInformationFilterKey | null | undefined>,
 	}
 	export function CreateInstanceInformationFilterFormGroup() {
 		return new FormGroup<InstanceInformationFilterFormProperties>({
-			key: new FormControl<InstanceInformationFilterKey | null | undefined>(undefined),
+			key: new FormControl<InstanceInformationFilterKey | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3440,17 +5401,33 @@ export namespace MyNS {
 
 	/** The filters to describe or get information about your managed instances. */
 	export interface InstanceInformationStringFilter {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		Values: Array<string>;
 	}
 
 	/** The filters to describe or get information about your managed instances. */
 	export interface InstanceInformationStringFilterFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
 	}
 	export function CreateInstanceInformationStringFilterFormGroup() {
 		return new FormGroup<InstanceInformationStringFilterFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -3482,11 +5459,47 @@ export namespace MyNS {
 
 	/** Defines the high-level patch compliance state for a managed instance, providing information about the number of installed, missing, not applicable, and failed patches along with metadata about the operation when this information was gathered for the instance. */
 	export interface InstancePatchState {
+
+		/**
+		 * Required
+		 * Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)
+		 */
 		InstanceId: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PatchGroup: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: string;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+		 */
 		SnapshotId?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^https://.+$|^s3://([^/]+)/(.*?([^/]+))$
+		 */
 		InstallOverrideList?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		OwnerInformation?: string | null;
 		InstalledCount?: number | null;
 		InstalledOtherCount?: number | null;
@@ -3496,8 +5509,14 @@ export namespace MyNS {
 		FailedCount?: number | null;
 		UnreportedNotApplicableCount?: number | null;
 		NotApplicableCount?: number | null;
+
+		/** Required */
 		OperationStartTime: Date;
+
+		/** Required */
 		OperationEndTime: Date;
+
+		/** Required */
 		Operation: InstancePatchStateOperation;
 		LastNoRebootInstallOperationTime?: Date | null;
 		RebootOption?: InstancePatchStateRebootOption | null;
@@ -3505,11 +5524,47 @@ export namespace MyNS {
 
 	/** Defines the high-level patch compliance state for a managed instance, providing information about the number of installed, missing, not applicable, and failed patches along with metadata about the operation when this information was gathered for the instance. */
 	export interface InstancePatchStateFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)
+		 */
 		InstanceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PatchGroup: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+		 */
 		SnapshotId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^https://.+$|^s3://([^/]+)/(.*?([^/]+))$
+		 */
 		InstallOverrideList: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		OwnerInformation: FormControl<string | null | undefined>,
 		InstalledCount: FormControl<number | null | undefined>,
 		InstalledOtherCount: FormControl<number | null | undefined>,
@@ -3519,20 +5574,26 @@ export namespace MyNS {
 		FailedCount: FormControl<number | null | undefined>,
 		UnreportedNotApplicableCount: FormControl<number | null | undefined>,
 		NotApplicableCount: FormControl<number | null | undefined>,
+
+		/** Required */
 		OperationStartTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		OperationEndTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		Operation: FormControl<InstancePatchStateOperation | null | undefined>,
 		LastNoRebootInstallOperationTime: FormControl<Date | null | undefined>,
 		RebootOption: FormControl<InstancePatchStateRebootOption | null | undefined>,
 	}
 	export function CreateInstancePatchStateFormGroup() {
 		return new FormGroup<InstancePatchStateFormProperties>({
-			InstanceId: new FormControl<string | null | undefined>(undefined),
-			PatchGroup: new FormControl<string | null | undefined>(undefined),
-			BaselineId: new FormControl<string | null | undefined>(undefined),
-			SnapshotId: new FormControl<string | null | undefined>(undefined),
-			InstallOverrideList: new FormControl<string | null | undefined>(undefined),
-			OwnerInformation: new FormControl<string | null | undefined>(undefined),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PatchGroup: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			BaselineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(20)]),
+			SnapshotId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
+			InstallOverrideList: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			OwnerInformation: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			InstalledCount: new FormControl<number | null | undefined>(undefined),
 			InstalledOtherCount: new FormControl<number | null | undefined>(undefined),
 			InstalledPendingRebootCount: new FormControl<number | null | undefined>(undefined),
@@ -3541,9 +5602,9 @@ export namespace MyNS {
 			FailedCount: new FormControl<number | null | undefined>(undefined),
 			UnreportedNotApplicableCount: new FormControl<number | null | undefined>(undefined),
 			NotApplicableCount: new FormControl<number | null | undefined>(undefined),
-			OperationStartTime: new FormControl<Date | null | undefined>(undefined),
-			OperationEndTime: new FormControl<Date | null | undefined>(undefined),
-			Operation: new FormControl<InstancePatchStateOperation | null | undefined>(undefined),
+			OperationStartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			OperationEndTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			Operation: new FormControl<InstancePatchStateOperation | null | undefined>(undefined, [Validators.required]),
 			LastNoRebootInstallOperationTime: new FormControl<Date | null | undefined>(undefined),
 			RebootOption: new FormControl<InstancePatchStateRebootOption | null | undefined>(undefined),
 		});
@@ -3555,23 +5616,44 @@ export namespace MyNS {
 	export enum InstancePatchStateRebootOption { RebootIfNeeded = 0, NoReboot = 1 }
 
 	export interface DescribeInstancePatchStatesRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		InstanceIds: Array<string>;
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface DescribeInstancePatchStatesRequestFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeInstancePatchStatesRequestFormGroup() {
 		return new FormGroup<DescribeInstancePatchStatesRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(10), Validators.max(100)]),
 		});
 
 	}
 
 	export interface DescribeInstancePatchStatesForPatchGroupResult {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 5
+		 */
 		InstancePatchStates?: Array<InstancePatchState>;
 		NextToken?: string | null;
 	}
@@ -3586,21 +5668,50 @@ export namespace MyNS {
 	}
 
 	export interface DescribeInstancePatchStatesForPatchGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PatchGroup: string;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 4
+		 */
 		Filters?: Array<InstancePatchStateFilter>;
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface DescribeInstancePatchStatesForPatchGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PatchGroup: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeInstancePatchStatesForPatchGroupRequestFormGroup() {
 		return new FormGroup<DescribeInstancePatchStatesForPatchGroupRequestFormProperties>({
-			PatchGroup: new FormControl<string | null | undefined>(undefined),
+			PatchGroup: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(10), Validators.max(100)]),
 		});
 
 	}
@@ -3608,20 +5719,42 @@ export namespace MyNS {
 
 	/** Defines a filter used in DescribeInstancePatchStatesForPatchGroup used to scope down the information returned by the API. */
 	export interface InstancePatchStateFilter {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 1
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 1
+		 */
 		Values: Array<string>;
+
+		/** Required */
 		Type: InstancePatchStateFilterType;
 	}
 
 	/** Defines a filter used in DescribeInstancePatchStatesForPatchGroup used to scope down the information returned by the API. */
 	export interface InstancePatchStateFilterFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/** Required */
 		Type: FormControl<InstancePatchStateFilterType | null | undefined>,
 	}
 	export function CreateInstancePatchStateFilterFormGroup() {
 		return new FormGroup<InstancePatchStateFilterFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Type: new FormControl<InstancePatchStateFilterType | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
+			Type: new FormControl<InstancePatchStateFilterType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3645,31 +5778,55 @@ export namespace MyNS {
 
 	/** Information about the state of a patch on a particular instance as it relates to the patch baseline used to patch the instance. */
 	export interface PatchComplianceData {
+
+		/** Required */
 		Title: string;
+
+		/** Required */
 		KBId: string;
+
+		/** Required */
 		Classification: string;
+
+		/** Required */
 		Severity: string;
+
+		/** Required */
 		State: PatchComplianceDataState;
+
+		/** Required */
 		InstalledTime: Date;
 	}
 
 	/** Information about the state of a patch on a particular instance as it relates to the patch baseline used to patch the instance. */
 	export interface PatchComplianceDataFormProperties {
+
+		/** Required */
 		Title: FormControl<string | null | undefined>,
+
+		/** Required */
 		KBId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Classification: FormControl<string | null | undefined>,
+
+		/** Required */
 		Severity: FormControl<string | null | undefined>,
+
+		/** Required */
 		State: FormControl<PatchComplianceDataState | null | undefined>,
+
+		/** Required */
 		InstalledTime: FormControl<Date | null | undefined>,
 	}
 	export function CreatePatchComplianceDataFormGroup() {
 		return new FormGroup<PatchComplianceDataFormProperties>({
-			Title: new FormControl<string | null | undefined>(undefined),
-			KBId: new FormControl<string | null | undefined>(undefined),
-			Classification: new FormControl<string | null | undefined>(undefined),
-			Severity: new FormControl<string | null | undefined>(undefined),
-			State: new FormControl<PatchComplianceDataState | null | undefined>(undefined),
-			InstalledTime: new FormControl<Date | null | undefined>(undefined),
+			Title: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			KBId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Classification: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Severity: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			State: new FormControl<PatchComplianceDataState | null | undefined>(undefined, [Validators.required]),
+			InstalledTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3677,21 +5834,46 @@ export namespace MyNS {
 	export enum PatchComplianceDataState { INSTALLED = 0, INSTALLED_OTHER = 1, INSTALLED_PENDING_REBOOT = 2, INSTALLED_REJECTED = 3, MISSING = 4, NOT_APPLICABLE = 5, FAILED = 6 }
 
 	export interface DescribeInstancePatchesRequest {
+
+		/**
+		 * Required
+		 * Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)
+		 */
 		InstanceId: string;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Filters?: Array<PatchOrchestratorFilter>;
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface DescribeInstancePatchesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)
+		 */
 		InstanceId: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeInstancePatchesRequestFormGroup() {
 		return new FormGroup<DescribeInstancePatchesRequestFormProperties>({
-			InstanceId: new FormControl<string | null | undefined>(undefined),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(10), Validators.max(100)]),
 		});
 
 	}
@@ -3714,6 +5896,12 @@ export namespace MyNS {
 	/** Status information returned by the <code>DeleteInventory</code> action. */
 	export interface InventoryDeletionStatusItem {
 		DeletionId?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^(AWS|Custom):.*$
+		 */
 		TypeName?: string | null;
 		DeletionStartTime?: Date | null;
 		LastStatus?: InventoryDeletionStatusItemLastStatus | null;
@@ -3727,6 +5915,12 @@ export namespace MyNS {
 	/** Status information returned by the <code>DeleteInventory</code> action. */
 	export interface InventoryDeletionStatusItemFormProperties {
 		DeletionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^(AWS|Custom):.*$
+		 */
 		TypeName: FormControl<string | null | undefined>,
 		DeletionStartTime: FormControl<Date | null | undefined>,
 		LastStatus: FormControl<InventoryDeletionStatusItemLastStatus | null | undefined>,
@@ -3736,7 +5930,7 @@ export namespace MyNS {
 	export function CreateInventoryDeletionStatusItemFormGroup() {
 		return new FormGroup<InventoryDeletionStatusItemFormProperties>({
 			DeletionId: new FormControl<string | null | undefined>(undefined),
-			TypeName: new FormControl<string | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			DeletionStartTime: new FormControl<Date | null | undefined>(undefined),
 			LastStatus: new FormControl<InventoryDeletionStatusItemLastStatus | null | undefined>(undefined),
 			LastStatusMessage: new FormControl<string | null | undefined>(undefined),
@@ -3750,18 +5944,28 @@ export namespace MyNS {
 	export interface DescribeInventoryDeletionsRequest {
 		DeletionId?: string | null;
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 	}
 	export interface DescribeInventoryDeletionsRequestFormProperties {
 		DeletionId: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeInventoryDeletionsRequestFormGroup() {
 		return new FormGroup<DescribeInventoryDeletionsRequestFormProperties>({
 			DeletionId: new FormControl<string | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 		});
 
 	}
@@ -3793,49 +5997,109 @@ export namespace MyNS {
 
 	/** Describes the information about a task invocation for a particular target as part of a task execution performed as part of a maintenance window execution. */
 	export interface MaintenanceWindowExecutionTaskInvocationIdentity {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		TaskExecutionId?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		InvocationId?: string | null;
 		ExecutionId?: string | null;
 		TaskType?: MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null;
 		Parameters?: string | null;
 		Status?: MaintenanceWindowExecutionTaskInvocationIdentityStatus | null;
+
+		/**
+		 * Max length: 250
+		 * Min length: 0
+		 */
 		StatusDetails?: string | null;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		OwnerInformation?: string | null;
+
+		/** Max length: 36 */
 		WindowTargetId?: string | null;
 	}
 
 	/** Describes the information about a task invocation for a particular target as part of a task execution performed as part of a maintenance window execution. */
 	export interface MaintenanceWindowExecutionTaskInvocationIdentityFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		TaskExecutionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		InvocationId: FormControl<string | null | undefined>,
 		ExecutionId: FormControl<string | null | undefined>,
 		TaskType: FormControl<MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null | undefined>,
 		Parameters: FormControl<string | null | undefined>,
 		Status: FormControl<MaintenanceWindowExecutionTaskInvocationIdentityStatus | null | undefined>,
+
+		/**
+		 * Max length: 250
+		 * Min length: 0
+		 */
 		StatusDetails: FormControl<string | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
 		EndTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		OwnerInformation: FormControl<string | null | undefined>,
+
+		/** Max length: 36 */
 		WindowTargetId: FormControl<string | null | undefined>,
 	}
 	export function CreateMaintenanceWindowExecutionTaskInvocationIdentityFormGroup() {
 		return new FormGroup<MaintenanceWindowExecutionTaskInvocationIdentityFormProperties>({
-			WindowExecutionId: new FormControl<string | null | undefined>(undefined),
-			TaskExecutionId: new FormControl<string | null | undefined>(undefined),
-			InvocationId: new FormControl<string | null | undefined>(undefined),
+			WindowExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
+			TaskExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
+			InvocationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 			ExecutionId: new FormControl<string | null | undefined>(undefined),
 			TaskType: new FormControl<MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null | undefined>(undefined),
 			Parameters: new FormControl<string | null | undefined>(undefined),
 			Status: new FormControl<MaintenanceWindowExecutionTaskInvocationIdentityStatus | null | undefined>(undefined),
-			StatusDetails: new FormControl<string | null | undefined>(undefined),
+			StatusDetails: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(250), Validators.minLength(0)]),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
-			OwnerInformation: new FormControl<string | null | undefined>(undefined),
-			WindowTargetId: new FormControl<string | null | undefined>(undefined),
+			OwnerInformation: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			WindowTargetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36)]),
 		});
 
 	}
@@ -3845,23 +6109,66 @@ export namespace MyNS {
 	export enum MaintenanceWindowExecutionTaskInvocationIdentityStatus { PENDING = 0, IN_PROGRESS = 1, SUCCESS = 2, FAILED = 3, TIMED_OUT = 4, CANCELLING = 5, CANCELLED = 6, SKIPPED_OVERLAPPING = 7 }
 
 	export interface DescribeMaintenanceWindowExecutionTaskInvocationsRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		TaskId: string;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Filters?: Array<MaintenanceWindowFilter>;
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeMaintenanceWindowExecutionTaskInvocationsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		TaskId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeMaintenanceWindowExecutionTaskInvocationsRequestFormGroup() {
 		return new FormGroup<DescribeMaintenanceWindowExecutionTaskInvocationsRequestFormProperties>({
-			WindowExecutionId: new FormControl<string | null | undefined>(undefined),
-			TaskId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			WindowExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			TaskId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(10), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3870,17 +6177,27 @@ export namespace MyNS {
 
 	/** Filter used in the request. Supported filter keys are Name and Enabled. */
 	export interface MaintenanceWindowFilter {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key?: string | null;
 		Values?: Array<string>;
 	}
 
 	/** Filter used in the request. Supported filter keys are Name and Enabled. */
 	export interface MaintenanceWindowFilterFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
 	}
 	export function CreateMaintenanceWindowFilterFormGroup() {
 		return new FormGroup<MaintenanceWindowFilterFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -3902,56 +6219,129 @@ export namespace MyNS {
 
 	/** Information about a task execution performed as part of a maintenance window execution. */
 	export interface MaintenanceWindowExecutionTaskIdentity {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		TaskExecutionId?: string | null;
 		Status?: MaintenanceWindowExecutionTaskInvocationIdentityStatus | null;
+
+		/**
+		 * Max length: 250
+		 * Min length: 0
+		 */
 		StatusDetails?: string | null;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		TaskArn?: string | null;
 		TaskType?: MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null;
 	}
 
 	/** Information about a task execution performed as part of a maintenance window execution. */
 	export interface MaintenanceWindowExecutionTaskIdentityFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		TaskExecutionId: FormControl<string | null | undefined>,
 		Status: FormControl<MaintenanceWindowExecutionTaskInvocationIdentityStatus | null | undefined>,
+
+		/**
+		 * Max length: 250
+		 * Min length: 0
+		 */
 		StatusDetails: FormControl<string | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
 		EndTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		TaskArn: FormControl<string | null | undefined>,
 		TaskType: FormControl<MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null | undefined>,
 	}
 	export function CreateMaintenanceWindowExecutionTaskIdentityFormGroup() {
 		return new FormGroup<MaintenanceWindowExecutionTaskIdentityFormProperties>({
-			WindowExecutionId: new FormControl<string | null | undefined>(undefined),
-			TaskExecutionId: new FormControl<string | null | undefined>(undefined),
+			WindowExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
+			TaskExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 			Status: new FormControl<MaintenanceWindowExecutionTaskInvocationIdentityStatus | null | undefined>(undefined),
-			StatusDetails: new FormControl<string | null | undefined>(undefined),
+			StatusDetails: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(250), Validators.minLength(0)]),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
-			TaskArn: new FormControl<string | null | undefined>(undefined),
+			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 			TaskType: new FormControl<MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface DescribeMaintenanceWindowExecutionTasksRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId: string;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Filters?: Array<MaintenanceWindowFilter>;
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeMaintenanceWindowExecutionTasksRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeMaintenanceWindowExecutionTasksRequestFormGroup() {
 		return new FormGroup<DescribeMaintenanceWindowExecutionTasksRequestFormProperties>({
-			WindowExecutionId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			WindowExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(10), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3974,9 +6364,26 @@ export namespace MyNS {
 
 	/** Describes the information about an execution of a maintenance window.  */
 	export interface MaintenanceWindowExecution {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId?: string | null;
 		Status?: MaintenanceWindowExecutionTaskInvocationIdentityStatus | null;
+
+		/**
+		 * Max length: 250
+		 * Min length: 0
+		 */
 		StatusDetails?: string | null;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
@@ -3984,19 +6391,36 @@ export namespace MyNS {
 
 	/** Describes the information about an execution of a maintenance window.  */
 	export interface MaintenanceWindowExecutionFormProperties {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId: FormControl<string | null | undefined>,
 		Status: FormControl<MaintenanceWindowExecutionTaskInvocationIdentityStatus | null | undefined>,
+
+		/**
+		 * Max length: 250
+		 * Min length: 0
+		 */
 		StatusDetails: FormControl<string | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
 		EndTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateMaintenanceWindowExecutionFormGroup() {
 		return new FormGroup<MaintenanceWindowExecutionFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
-			WindowExecutionId: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(20)]),
+			WindowExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 			Status: new FormControl<MaintenanceWindowExecutionTaskInvocationIdentityStatus | null | undefined>(undefined),
-			StatusDetails: new FormControl<string | null | undefined>(undefined),
+			StatusDetails: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(250), Validators.minLength(0)]),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -4004,20 +6428,49 @@ export namespace MyNS {
 	}
 
 	export interface DescribeMaintenanceWindowExecutionsRequest {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: string;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Filters?: Array<MaintenanceWindowFilter>;
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeMaintenanceWindowExecutionsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeMaintenanceWindowExecutionsRequestFormGroup() {
 		return new FormGroup<DescribeMaintenanceWindowExecutionsRequestFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20), Validators.minLength(20)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(10), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4040,45 +6493,95 @@ export namespace MyNS {
 
 	/** Information about a scheduled execution for a maintenance window. */
 	export interface ScheduledWindowExecution {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name?: string | null;
 		ExecutionTime?: string | null;
 	}
 
 	/** Information about a scheduled execution for a maintenance window. */
 	export interface ScheduledWindowExecutionFormProperties {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
 		ExecutionTime: FormControl<string | null | undefined>,
 	}
 	export function CreateScheduledWindowExecutionFormGroup() {
 		return new FormGroup<ScheduledWindowExecutionFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(20)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
 			ExecutionTime: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface DescribeMaintenanceWindowScheduleRequest {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Targets?: Array<Target>;
 		ResourceType?: DescribeMaintenanceWindowScheduleRequestResourceType | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Filters?: Array<PatchOrchestratorFilter>;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeMaintenanceWindowScheduleRequestFormProperties {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
 		ResourceType: FormControl<DescribeMaintenanceWindowScheduleRequestResourceType | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeMaintenanceWindowScheduleRequestFormGroup() {
 		return new FormGroup<DescribeMaintenanceWindowScheduleRequestFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(20)]),
 			ResourceType: new FormControl<DescribeMaintenanceWindowScheduleRequestResourceType | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4103,51 +6606,141 @@ export namespace MyNS {
 
 	/** The target registered with the maintenance window. */
 	export interface MaintenanceWindowTarget {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTargetId?: string | null;
 		ResourceType?: DescribeMaintenanceWindowScheduleRequestResourceType | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Targets?: Array<Target>;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		OwnerInformation?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description?: string | null;
 	}
 
 	/** The target registered with the maintenance window. */
 	export interface MaintenanceWindowTargetFormProperties {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTargetId: FormControl<string | null | undefined>,
 		ResourceType: FormControl<DescribeMaintenanceWindowScheduleRequestResourceType | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		OwnerInformation: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateMaintenanceWindowTargetFormGroup() {
 		return new FormGroup<MaintenanceWindowTargetFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
-			WindowTargetId: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(20)]),
+			WindowTargetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 			ResourceType: new FormControl<DescribeMaintenanceWindowScheduleRequestResourceType | null | undefined>(undefined),
-			OwnerInformation: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			OwnerInformation: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeMaintenanceWindowTargetsRequest {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: string;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Filters?: Array<MaintenanceWindowFilter>;
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeMaintenanceWindowTargetsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeMaintenanceWindowTargetsRequestFormGroup() {
 		return new FormGroup<DescribeMaintenanceWindowTargetsRequestFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20), Validators.minLength(20)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(10), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4170,48 +6763,137 @@ export namespace MyNS {
 
 	/** Information about a task defined for a maintenance window. */
 	export interface MaintenanceWindowTask {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTaskId?: string | null;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		TaskArn?: string | null;
 		Type?: MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Targets?: Array<Target>;
 		TaskParameters?: MaintenanceWindowTaskParameters;
+
+		/** Minimum: 0 */
 		Priority?: number | null;
 
 		/** <p>Information about an S3 bucket to write instance-level logs to.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> */
 		LoggingInfo?: LoggingInfo;
 		ServiceRoleArn?: string | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency?: string | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description?: string | null;
 	}
 
 	/** Information about a task defined for a maintenance window. */
 	export interface MaintenanceWindowTaskFormProperties {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTaskId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		TaskArn: FormControl<string | null | undefined>,
 		Type: FormControl<MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null | undefined>,
+
+		/** Minimum: 0 */
 		Priority: FormControl<number | null | undefined>,
 		ServiceRoleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateMaintenanceWindowTaskFormGroup() {
 		return new FormGroup<MaintenanceWindowTaskFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
-			WindowTaskId: new FormControl<string | null | undefined>(undefined),
-			TaskArn: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(20)]),
+			WindowTaskId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
+			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 			Type: new FormControl<MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null | undefined>(undefined),
-			Priority: new FormControl<number | null | undefined>(undefined),
+			Priority: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			ServiceRoleArn: new FormControl<string | null | undefined>(undefined),
-			MaxConcurrency: new FormControl<string | null | undefined>(undefined),
-			MaxErrors: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			MaxConcurrency: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
+			MaxErrors: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -4229,41 +6911,98 @@ export namespace MyNS {
 
 	/** <p>Information about an S3 bucket to write instance-level logs to.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> */
 	export interface LoggingInfo {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 3
+		 */
 		S3BucketName: string;
+
+		/** Max length: 500 */
 		S3KeyPrefix?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 3
+		 */
 		S3Region: string;
 	}
 
 	/** <p>Information about an S3 bucket to write instance-level logs to.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> */
 	export interface LoggingInfoFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 3
+		 */
 		S3BucketName: FormControl<string | null | undefined>,
+
+		/** Max length: 500 */
 		S3KeyPrefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 3
+		 */
 		S3Region: FormControl<string | null | undefined>,
 	}
 	export function CreateLoggingInfoFormGroup() {
 		return new FormGroup<LoggingInfoFormProperties>({
-			S3BucketName: new FormControl<string | null | undefined>(undefined),
-			S3KeyPrefix: new FormControl<string | null | undefined>(undefined),
-			S3Region: new FormControl<string | null | undefined>(undefined),
+			S3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(3)]),
+			S3KeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
+			S3Region: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20), Validators.minLength(3)]),
 		});
 
 	}
 
 	export interface DescribeMaintenanceWindowTasksRequest {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: string;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Filters?: Array<MaintenanceWindowFilter>;
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeMaintenanceWindowTasksRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeMaintenanceWindowTasksRequestFormGroup() {
 		return new FormGroup<DescribeMaintenanceWindowTasksRequestFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20), Validators.minLength(20)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(10), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4286,12 +7025,44 @@ export namespace MyNS {
 
 	/** Information about the maintenance window. */
 	export interface MaintenanceWindowIdentity {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description?: string | null;
 		Enabled?: boolean | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 24
+		 */
 		Duration?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 23
+		 */
 		Cutoff?: number | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Schedule?: string | null;
 		ScheduleTimezone?: string | null;
 		EndDate?: string | null;
@@ -4301,12 +7072,44 @@ export namespace MyNS {
 
 	/** Information about the maintenance window. */
 	export interface MaintenanceWindowIdentityFormProperties {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 24
+		 */
 		Duration: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 23
+		 */
 		Cutoff: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Schedule: FormControl<string | null | undefined>,
 		ScheduleTimezone: FormControl<string | null | undefined>,
 		EndDate: FormControl<string | null | undefined>,
@@ -4315,13 +7118,13 @@ export namespace MyNS {
 	}
 	export function CreateMaintenanceWindowIdentityFormGroup() {
 		return new FormGroup<MaintenanceWindowIdentityFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(20)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			Duration: new FormControl<number | null | undefined>(undefined),
-			Cutoff: new FormControl<number | null | undefined>(undefined),
-			Schedule: new FormControl<string | null | undefined>(undefined),
+			Duration: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(24)]),
+			Cutoff: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(23)]),
+			Schedule: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			ScheduleTimezone: new FormControl<string | null | undefined>(undefined),
 			EndDate: new FormControl<string | null | undefined>(undefined),
 			StartDate: new FormControl<string | null | undefined>(undefined),
@@ -4331,17 +7134,32 @@ export namespace MyNS {
 	}
 
 	export interface DescribeMaintenanceWindowsRequest {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Filters?: Array<MaintenanceWindowFilter>;
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeMaintenanceWindowsRequestFormProperties {
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeMaintenanceWindowsRequestFormGroup() {
 		return new FormGroup<DescribeMaintenanceWindowsRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(10), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4364,38 +7182,76 @@ export namespace MyNS {
 
 	/** The maintenance window to which the specified target belongs. */
 	export interface MaintenanceWindowIdentityForTarget {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name?: string | null;
 	}
 
 	/** The maintenance window to which the specified target belongs. */
 	export interface MaintenanceWindowIdentityForTargetFormProperties {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateMaintenanceWindowIdentityForTargetFormGroup() {
 		return new FormGroup<MaintenanceWindowIdentityForTargetFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(20)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
 		});
 
 	}
 
 	export interface DescribeMaintenanceWindowsForTargetRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Targets: Array<Target>;
+
+		/** Required */
 		ResourceType: DescribeMaintenanceWindowScheduleRequestResourceType;
+
+		/** Minimum: 1 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeMaintenanceWindowsForTargetRequestFormProperties {
+
+		/** Required */
 		ResourceType: FormControl<DescribeMaintenanceWindowScheduleRequestResourceType | null | undefined>,
+
+		/** Minimum: 1 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeMaintenanceWindowsForTargetRequestFormGroup() {
 		return new FormGroup<DescribeMaintenanceWindowsForTargetRequestFormProperties>({
-			ResourceType: new FormControl<DescribeMaintenanceWindowScheduleRequestResourceType | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			ResourceType: new FormControl<DescribeMaintenanceWindowScheduleRequestResourceType | null | undefined>(undefined, [Validators.required]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4422,13 +7278,40 @@ export namespace MyNS {
 		CreatedTime?: Date | null;
 		LastModifiedBy?: string | null;
 		LastModifiedTime?: Date | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 5
+		 */
 		Priority?: number | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Source?: string | null;
 		Status?: OpsItemSummaryStatus | null;
+
+		/** Pattern: ^(oi)-[0-9a-f]{12}$ */
 		OpsItemId?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Title?: string | null;
 		OperationalData?: OpsItemOperationalData;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Category?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Severity?: string | null;
 	}
 
@@ -4438,12 +7321,39 @@ export namespace MyNS {
 		CreatedTime: FormControl<Date | null | undefined>,
 		LastModifiedBy: FormControl<string | null | undefined>,
 		LastModifiedTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 5
+		 */
 		Priority: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Source: FormControl<string | null | undefined>,
 		Status: FormControl<OpsItemSummaryStatus | null | undefined>,
+
+		/** Pattern: ^(oi)-[0-9a-f]{12}$ */
 		OpsItemId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Title: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Category: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Severity: FormControl<string | null | undefined>,
 	}
 	export function CreateOpsItemSummaryFormGroup() {
@@ -4452,13 +7362,13 @@ export namespace MyNS {
 			CreatedTime: new FormControl<Date | null | undefined>(undefined),
 			LastModifiedBy: new FormControl<string | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
-			Priority: new FormControl<number | null | undefined>(undefined),
-			Source: new FormControl<string | null | undefined>(undefined),
+			Priority: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(5)]),
+			Source: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			Status: new FormControl<OpsItemSummaryStatus | null | undefined>(undefined),
 			OpsItemId: new FormControl<string | null | undefined>(undefined),
-			Title: new FormControl<string | null | undefined>(undefined),
-			Category: new FormControl<string | null | undefined>(undefined),
-			Severity: new FormControl<string | null | undefined>(undefined),
+			Title: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Category: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Severity: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -4467,16 +7377,26 @@ export namespace MyNS {
 
 	export interface DescribeOpsItemsRequest {
 		OpsItemFilters?: Array<OpsItemFilter>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeOpsItemsRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeOpsItemsRequestFormGroup() {
 		return new FormGroup<DescribeOpsItemsRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4485,20 +7405,30 @@ export namespace MyNS {
 
 	/** Describes an OpsItem filter. */
 	export interface OpsItemFilter {
+
+		/** Required */
 		Key: OpsItemFilterKey;
+
+		/** Required */
 		Values: Array<string>;
+
+		/** Required */
 		Operator: OpsItemFilterOperator;
 	}
 
 	/** Describes an OpsItem filter. */
 	export interface OpsItemFilterFormProperties {
+
+		/** Required */
 		Key: FormControl<OpsItemFilterKey | null | undefined>,
+
+		/** Required */
 		Operator: FormControl<OpsItemFilterOperator | null | undefined>,
 	}
 	export function CreateOpsItemFilterFormGroup() {
 		return new FormGroup<OpsItemFilterFormProperties>({
-			Key: new FormControl<OpsItemFilterKey | null | undefined>(undefined),
-			Operator: new FormControl<OpsItemFilterOperator | null | undefined>(undefined),
+			Key: new FormControl<OpsItemFilterKey | null | undefined>(undefined, [Validators.required]),
+			Operator: new FormControl<OpsItemFilterOperator | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4524,44 +7454,96 @@ export namespace MyNS {
 
 	/** Metadata includes information like the ARN of the last user and the date/time the parameter was last used. */
 	export interface ParameterMetadata {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Name?: string | null;
 		Type?: ParameterMetadataType | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([a-zA-Z0-9:/_-]+)$
+		 */
 		KeyId?: string | null;
 		LastModifiedDate?: Date | null;
 		LastModifiedUser?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		AllowedPattern?: string | null;
 		Version?: number | null;
 		Tier?: ParameterMetadataTier | null;
 		Policies?: Array<ParameterInlinePolicy>;
+
+		/**
+		 * Max length: 128
+		 * Min length: 0
+		 */
 		DataType?: string | null;
 	}
 
 	/** Metadata includes information like the ARN of the last user and the date/time the parameter was last used. */
 	export interface ParameterMetadataFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 		Type: FormControl<ParameterMetadataType | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([a-zA-Z0-9:/_-]+)$
+		 */
 		KeyId: FormControl<string | null | undefined>,
 		LastModifiedDate: FormControl<Date | null | undefined>,
 		LastModifiedUser: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		AllowedPattern: FormControl<string | null | undefined>,
 		Version: FormControl<number | null | undefined>,
 		Tier: FormControl<ParameterMetadataTier | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 0
+		 */
 		DataType: FormControl<string | null | undefined>,
 	}
 	export function CreateParameterMetadataFormGroup() {
 		return new FormGroup<ParameterMetadataFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 			Type: new FormControl<ParameterMetadataType | null | undefined>(undefined),
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
 			LastModifiedUser: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			AllowedPattern: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			AllowedPattern: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 			Version: new FormControl<number | null | undefined>(undefined),
 			Tier: new FormControl<ParameterMetadataTier | null | undefined>(undefined),
-			DataType: new FormControl<string | null | undefined>(undefined),
+			DataType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
 		});
 
 	}
@@ -4596,16 +7578,26 @@ export namespace MyNS {
 	export interface DescribeParametersRequest {
 		Filters?: Array<ParametersFilter>;
 		ParameterFilters?: Array<ParameterStringFilter>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeParametersRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeParametersRequestFormGroup() {
 		return new FormGroup<DescribeParametersRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4614,17 +7606,27 @@ export namespace MyNS {
 
 	/** This data type is deprecated. Instead, use <a>ParameterStringFilter</a>. */
 	export interface ParametersFilter {
+
+		/** Required */
 		Key: ParametersFilterKey;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Values: Array<string>;
 	}
 
 	/** This data type is deprecated. Instead, use <a>ParameterStringFilter</a>. */
 	export interface ParametersFilterFormProperties {
+
+		/** Required */
 		Key: FormControl<ParametersFilterKey | null | undefined>,
 	}
 	export function CreateParametersFilterFormGroup() {
 		return new FormGroup<ParametersFilterFormProperties>({
-			Key: new FormControl<ParametersFilterKey | null | undefined>(undefined),
+			Key: new FormControl<ParametersFilterKey | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4634,20 +7636,49 @@ export namespace MyNS {
 
 	/** <p>One or more filters. Use a filter to return a more specific list of results.</p> <important> <p>The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API actions. However, not all of the pattern values listed for <code>Key</code> can be used with both actions.</p> <p>For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception of <code>Label</code>.</p> <p>For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> are not valid: <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> <p>For examples of CLI commands demonstrating valid parameter filter constructions, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching for Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p> </important> */
 	export interface ParameterStringFilter {
+
+		/**
+		 * Required
+		 * Max length: 132
+		 * Min length: 1
+		 * Pattern: tag:.+|Name|Type|KeyId|Path|Label|Tier|DataType
+		 */
 		Key: string;
+
+		/**
+		 * Max length: 10
+		 * Min length: 1
+		 */
 		Option?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Values?: Array<string>;
 	}
 
 	/** <p>One or more filters. Use a filter to return a more specific list of results.</p> <important> <p>The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API actions. However, not all of the pattern values listed for <code>Key</code> can be used with both actions.</p> <p>For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception of <code>Label</code>.</p> <p>For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> are not valid: <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> <p>For examples of CLI commands demonstrating valid parameter filter constructions, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching for Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p> </important> */
 	export interface ParameterStringFilterFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 132
+		 * Min length: 1
+		 * Pattern: tag:.+|Name|Type|KeyId|Path|Label|Tier|DataType
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10
+		 * Min length: 1
+		 */
 		Option: FormControl<string | null | undefined>,
 	}
 	export function CreateParameterStringFilterFormGroup() {
 		return new FormGroup<ParameterStringFilterFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Option: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(132), Validators.minLength(1)]),
+			Option: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10), Validators.minLength(1)]),
 		});
 
 	}
@@ -4679,44 +7710,93 @@ export namespace MyNS {
 
 	/** Defines the basic information about a patch baseline. */
 	export interface PatchBaselineIdentity {
+
+		/**
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		BaselineName?: string | null;
 		OperatingSystem?: CreatePatchBaselineRequestOperatingSystem | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		BaselineDescription?: string | null;
 		DefaultBaseline?: boolean | null;
 	}
 
 	/** Defines the basic information about a patch baseline. */
 	export interface PatchBaselineIdentityFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		BaselineName: FormControl<string | null | undefined>,
 		OperatingSystem: FormControl<CreatePatchBaselineRequestOperatingSystem | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		BaselineDescription: FormControl<string | null | undefined>,
 		DefaultBaseline: FormControl<boolean | null | undefined>,
 	}
 	export function CreatePatchBaselineIdentityFormGroup() {
 		return new FormGroup<PatchBaselineIdentityFormProperties>({
-			BaselineId: new FormControl<string | null | undefined>(undefined),
-			BaselineName: new FormControl<string | null | undefined>(undefined),
+			BaselineId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(20)]),
+			BaselineName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
 			OperatingSystem: new FormControl<CreatePatchBaselineRequestOperatingSystem | null | undefined>(undefined),
-			BaselineDescription: new FormControl<string | null | undefined>(undefined),
+			BaselineDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			DefaultBaseline: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface DescribePatchBaselinesRequest {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Filters?: Array<PatchOrchestratorFilter>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribePatchBaselinesRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribePatchBaselinesRequestFormGroup() {
 		return new FormGroup<DescribePatchBaselinesRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4760,14 +7840,28 @@ export namespace MyNS {
 	}
 
 	export interface DescribePatchGroupStateRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PatchGroup: string;
 	}
 	export interface DescribePatchGroupStateRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PatchGroup: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribePatchGroupStateRequestFormGroup() {
 		return new FormGroup<DescribePatchGroupStateRequestFormProperties>({
-			PatchGroup: new FormControl<string | null | undefined>(undefined),
+			PatchGroup: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -4789,6 +7883,12 @@ export namespace MyNS {
 
 	/** The mapping between a patch group and the patch baseline the patch group is registered with. */
 	export interface PatchGroupPatchBaselineMapping {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PatchGroup?: string | null;
 
 		/** Defines the basic information about a patch baseline. */
@@ -4797,27 +7897,48 @@ export namespace MyNS {
 
 	/** The mapping between a patch group and the patch baseline the patch group is registered with. */
 	export interface PatchGroupPatchBaselineMappingFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PatchGroup: FormControl<string | null | undefined>,
 	}
 	export function CreatePatchGroupPatchBaselineMappingFormGroup() {
 		return new FormGroup<PatchGroupPatchBaselineMappingFormProperties>({
-			PatchGroup: new FormControl<string | null | undefined>(undefined),
+			PatchGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribePatchGroupsRequest {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Filters?: Array<PatchOrchestratorFilter>;
 		NextToken?: string | null;
 	}
 	export interface DescribePatchGroupsRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribePatchGroupsRequestFormGroup() {
 		return new FormGroup<DescribePatchGroupsRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4848,25 +7969,43 @@ export namespace MyNS {
 	}
 
 	export interface DescribePatchPropertiesRequest {
+
+		/** Required */
 		OperatingSystem: CreatePatchBaselineRequestOperatingSystem;
+
+		/** Required */
 		Property: DescribePatchPropertiesRequestProperty;
 		PatchSet?: DescribePatchPropertiesRequestPatchSet | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribePatchPropertiesRequestFormProperties {
+
+		/** Required */
 		OperatingSystem: FormControl<CreatePatchBaselineRequestOperatingSystem | null | undefined>,
+
+		/** Required */
 		Property: FormControl<DescribePatchPropertiesRequestProperty | null | undefined>,
 		PatchSet: FormControl<DescribePatchPropertiesRequestPatchSet | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribePatchPropertiesRequestFormGroup() {
 		return new FormGroup<DescribePatchPropertiesRequestFormProperties>({
-			OperatingSystem: new FormControl<CreatePatchBaselineRequestOperatingSystem | null | undefined>(undefined),
-			Property: new FormControl<DescribePatchPropertiesRequestProperty | null | undefined>(undefined),
+			OperatingSystem: new FormControl<CreatePatchBaselineRequestOperatingSystem | null | undefined>(undefined, [Validators.required]),
+			Property: new FormControl<DescribePatchPropertiesRequestProperty | null | undefined>(undefined, [Validators.required]),
 			PatchSet: new FormControl<DescribePatchPropertiesRequestPatchSet | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4893,13 +8032,35 @@ export namespace MyNS {
 
 	/** Information about a Session Manager connection to an instance. */
 	export interface Session {
+
+		/**
+		 * Max length: 96
+		 * Min length: 1
+		 */
 		SessionId?: string | null;
+
+		/**
+		 * Max length: 400
+		 * Min length: 1
+		 */
 		Target?: string | null;
 		Status?: SessionStatus | null;
 		StartDate?: Date | null;
 		EndDate?: Date | null;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		DocumentName?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Owner?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Details?: string | null;
 
 		/** Reserved for future use. */
@@ -4908,25 +8069,47 @@ export namespace MyNS {
 
 	/** Information about a Session Manager connection to an instance. */
 	export interface SessionFormProperties {
+
+		/**
+		 * Max length: 96
+		 * Min length: 1
+		 */
 		SessionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 400
+		 * Min length: 1
+		 */
 		Target: FormControl<string | null | undefined>,
 		Status: FormControl<SessionStatus | null | undefined>,
 		StartDate: FormControl<Date | null | undefined>,
 		EndDate: FormControl<Date | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		DocumentName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Owner: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Details: FormControl<string | null | undefined>,
 	}
 	export function CreateSessionFormGroup() {
 		return new FormGroup<SessionFormProperties>({
-			SessionId: new FormControl<string | null | undefined>(undefined),
-			Target: new FormControl<string | null | undefined>(undefined),
+			SessionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(96), Validators.minLength(1)]),
+			Target: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(400), Validators.minLength(1)]),
 			Status: new FormControl<SessionStatus | null | undefined>(undefined),
 			StartDate: new FormControl<Date | null | undefined>(undefined),
 			EndDate: new FormControl<Date | null | undefined>(undefined),
 			DocumentName: new FormControl<string | null | undefined>(undefined),
-			Owner: new FormControl<string | null | undefined>(undefined),
-			Details: new FormControl<string | null | undefined>(undefined),
+			Owner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -4936,38 +8119,77 @@ export namespace MyNS {
 
 	/** Reserved for future use. */
 	export interface SessionManagerOutputUrl {
+
+		/**
+		 * Max length: 2083
+		 * Min length: 1
+		 */
 		S3OutputUrl?: string | null;
+
+		/**
+		 * Max length: 2083
+		 * Min length: 1
+		 */
 		CloudWatchOutputUrl?: string | null;
 	}
 
 	/** Reserved for future use. */
 	export interface SessionManagerOutputUrlFormProperties {
+
+		/**
+		 * Max length: 2083
+		 * Min length: 1
+		 */
 		S3OutputUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2083
+		 * Min length: 1
+		 */
 		CloudWatchOutputUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateSessionManagerOutputUrlFormGroup() {
 		return new FormGroup<SessionManagerOutputUrlFormProperties>({
-			S3OutputUrl: new FormControl<string | null | undefined>(undefined),
-			CloudWatchOutputUrl: new FormControl<string | null | undefined>(undefined),
+			S3OutputUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2083), Validators.minLength(1)]),
+			CloudWatchOutputUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2083), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeSessionsRequest {
+
+		/** Required */
 		State: DescribeSessionsRequestState;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 200
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 5
+		 */
 		Filters?: Array<SessionFilter>;
 	}
 	export interface DescribeSessionsRequestFormProperties {
+
+		/** Required */
 		State: FormControl<DescribeSessionsRequestState | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 200
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeSessionsRequestFormGroup() {
 		return new FormGroup<DescribeSessionsRequestFormProperties>({
-			State: new FormControl<DescribeSessionsRequestState | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			State: new FormControl<DescribeSessionsRequestState | null | undefined>(undefined, [Validators.required]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(200)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4978,19 +8200,35 @@ export namespace MyNS {
 
 	/** Describes a filter for Session Manager information. */
 	export interface SessionFilter {
+
+		/** Required */
 		key: SessionFilterKey;
+
+		/**
+		 * Required
+		 * Max length: 400
+		 * Min length: 1
+		 */
 		value: string;
 	}
 
 	/** Describes a filter for Session Manager information. */
 	export interface SessionFilterFormProperties {
+
+		/** Required */
 		key: FormControl<SessionFilterKey | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 400
+		 * Min length: 1
+		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateSessionFilterFormGroup() {
 		return new FormGroup<SessionFilterFormProperties>({
-			key: new FormControl<SessionFilterKey | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<SessionFilterKey | null | undefined>(undefined, [Validators.required]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(400), Validators.minLength(1)]),
 		});
 
 	}
@@ -5013,8 +8251,17 @@ export namespace MyNS {
 
 	/** Detailed information about the current state of an individual Automation execution. */
 	export interface AutomationExecution {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		AutomationExecutionId?: string | null;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		DocumentName?: string | null;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion?: string | null;
 		ExecutionStartTime?: Date | null;
 		ExecutionEndTime?: Date | null;
@@ -5025,19 +8272,56 @@ export namespace MyNS {
 		Outputs?: AutomationParameterMap;
 		FailureMessage?: string | null;
 		Mode?: AutomationExecutionMetadataMode | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		ParentAutomationExecutionId?: string | null;
 		ExecutedBy?: string | null;
 		CurrentStepName?: string | null;
 		CurrentAction?: string | null;
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		TargetParameterName?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Targets?: Array<Target>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 300
+		 */
 		TargetMaps?: Array<TargetMap>;
 
 		/** Information about targets that resolved during the Automation execution. */
 		ResolvedTargets?: ResolvedTargets;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency?: string | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors?: string | null;
 		Target?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		TargetLocations?: Array<TargetLocation>;
 
 		/** An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account Automation execution. */
@@ -5046,8 +8330,17 @@ export namespace MyNS {
 
 	/** Detailed information about the current state of an individual Automation execution. */
 	export interface AutomationExecutionFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		AutomationExecutionId: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		DocumentName: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion: FormControl<string | null | undefined>,
 		ExecutionStartTime: FormControl<Date | null | undefined>,
 		ExecutionEndTime: FormControl<Date | null | undefined>,
@@ -5055,18 +8348,40 @@ export namespace MyNS {
 		StepExecutionsTruncated: FormControl<boolean | null | undefined>,
 		FailureMessage: FormControl<string | null | undefined>,
 		Mode: FormControl<AutomationExecutionMetadataMode | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		ParentAutomationExecutionId: FormControl<string | null | undefined>,
 		ExecutedBy: FormControl<string | null | undefined>,
 		CurrentStepName: FormControl<string | null | undefined>,
 		CurrentAction: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		TargetParameterName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors: FormControl<string | null | undefined>,
 		Target: FormControl<string | null | undefined>,
 	}
 	export function CreateAutomationExecutionFormGroup() {
 		return new FormGroup<AutomationExecutionFormProperties>({
-			AutomationExecutionId: new FormControl<string | null | undefined>(undefined),
+			AutomationExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 			DocumentName: new FormControl<string | null | undefined>(undefined),
 			DocumentVersion: new FormControl<string | null | undefined>(undefined),
 			ExecutionStartTime: new FormControl<Date | null | undefined>(undefined),
@@ -5075,13 +8390,13 @@ export namespace MyNS {
 			StepExecutionsTruncated: new FormControl<boolean | null | undefined>(undefined),
 			FailureMessage: new FormControl<string | null | undefined>(undefined),
 			Mode: new FormControl<AutomationExecutionMetadataMode | null | undefined>(undefined),
-			ParentAutomationExecutionId: new FormControl<string | null | undefined>(undefined),
+			ParentAutomationExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 			ExecutedBy: new FormControl<string | null | undefined>(undefined),
 			CurrentStepName: new FormControl<string | null | undefined>(undefined),
 			CurrentAction: new FormControl<string | null | undefined>(undefined),
-			TargetParameterName: new FormControl<string | null | undefined>(undefined),
-			MaxConcurrency: new FormControl<string | null | undefined>(undefined),
-			MaxErrors: new FormControl<string | null | undefined>(undefined),
+			TargetParameterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
+			MaxConcurrency: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
+			MaxErrors: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
 			Target: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5117,14 +8432,26 @@ export namespace MyNS {
 	}
 
 	export interface GetAutomationExecutionRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		AutomationExecutionId: string;
 	}
 	export interface GetAutomationExecutionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		AutomationExecutionId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetAutomationExecutionRequestFormGroup() {
 		return new FormGroup<GetAutomationExecutionRequestFormProperties>({
-			AutomationExecutionId: new FormControl<string | null | undefined>(undefined),
+			AutomationExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
@@ -5151,6 +8478,8 @@ export namespace MyNS {
 	export enum GetCalendarStateResponseState { OPEN = 0, CLOSED = 1 }
 
 	export interface GetCalendarStateRequest {
+
+		/** Required */
 		CalendarNames: Array<string>;
 		AtTime?: string | null;
 	}
@@ -5185,20 +8514,50 @@ export namespace MyNS {
 	}
 
 	export interface GetCommandInvocationResult {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		CommandId?: string | null;
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId?: string | null;
+
+		/** Max length: 100 */
 		Comment?: string | null;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		DocumentName?: string | null;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion?: string | null;
+
+		/** Min length: 4 */
 		PluginName?: string | null;
 		ResponseCode?: number | null;
+
+		/** Pattern: ^([\-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d(?!:))?)?(\17[0-5]\d([\.,]\d)?)?([zZ]|([\-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$ */
 		ExecutionStartDateTime?: string | null;
+
+		/** Pattern: ^([\-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d(?!:))?)?(\17[0-5]\d([\.,]\d)?)?([zZ]|([\-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$ */
 		ExecutionElapsedTime?: string | null;
+
+		/** Pattern: ^([\-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d(?!:))?)?(\17[0-5]\d([\.,]\d)?)?([zZ]|([\-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$ */
 		ExecutionEndDateTime?: string | null;
 		Status?: GetCommandInvocationResultStatus | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 0
+		 */
 		StatusDetails?: string | null;
+
+		/** Max length: 24000 */
 		StandardOutputContent?: string | null;
 		StandardOutputUrl?: string | null;
+
+		/** Max length: 8000 */
 		StandardErrorContent?: string | null;
 		StandardErrorUrl?: string | null;
 
@@ -5206,40 +8565,70 @@ export namespace MyNS {
 		CloudWatchOutputConfig?: CloudWatchOutputConfig;
 	}
 	export interface GetCommandInvocationResultFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		CommandId: FormControl<string | null | undefined>,
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId: FormControl<string | null | undefined>,
+
+		/** Max length: 100 */
 		Comment: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		DocumentName: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion: FormControl<string | null | undefined>,
+
+		/** Min length: 4 */
 		PluginName: FormControl<string | null | undefined>,
 		ResponseCode: FormControl<number | null | undefined>,
+
+		/** Pattern: ^([\-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d(?!:))?)?(\17[0-5]\d([\.,]\d)?)?([zZ]|([\-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$ */
 		ExecutionStartDateTime: FormControl<string | null | undefined>,
+
+		/** Pattern: ^([\-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d(?!:))?)?(\17[0-5]\d([\.,]\d)?)?([zZ]|([\-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$ */
 		ExecutionElapsedTime: FormControl<string | null | undefined>,
+
+		/** Pattern: ^([\-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d(?!:))?)?(\17[0-5]\d([\.,]\d)?)?([zZ]|([\-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$ */
 		ExecutionEndDateTime: FormControl<string | null | undefined>,
 		Status: FormControl<GetCommandInvocationResultStatus | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 0
+		 */
 		StatusDetails: FormControl<string | null | undefined>,
+
+		/** Max length: 24000 */
 		StandardOutputContent: FormControl<string | null | undefined>,
 		StandardOutputUrl: FormControl<string | null | undefined>,
+
+		/** Max length: 8000 */
 		StandardErrorContent: FormControl<string | null | undefined>,
 		StandardErrorUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateGetCommandInvocationResultFormGroup() {
 		return new FormGroup<GetCommandInvocationResultFormProperties>({
-			CommandId: new FormControl<string | null | undefined>(undefined),
+			CommandId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 			InstanceId: new FormControl<string | null | undefined>(undefined),
-			Comment: new FormControl<string | null | undefined>(undefined),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 			DocumentName: new FormControl<string | null | undefined>(undefined),
 			DocumentVersion: new FormControl<string | null | undefined>(undefined),
-			PluginName: new FormControl<string | null | undefined>(undefined),
+			PluginName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(4)]),
 			ResponseCode: new FormControl<number | null | undefined>(undefined),
 			ExecutionStartDateTime: new FormControl<string | null | undefined>(undefined),
 			ExecutionElapsedTime: new FormControl<string | null | undefined>(undefined),
 			ExecutionEndDateTime: new FormControl<string | null | undefined>(undefined),
 			Status: new FormControl<GetCommandInvocationResultStatus | null | undefined>(undefined),
-			StatusDetails: new FormControl<string | null | undefined>(undefined),
-			StandardOutputContent: new FormControl<string | null | undefined>(undefined),
+			StatusDetails: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(0)]),
+			StandardOutputContent: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(24000)]),
 			StandardOutputUrl: new FormControl<string | null | undefined>(undefined),
-			StandardErrorContent: new FormControl<string | null | undefined>(undefined),
+			StandardErrorContent: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8000)]),
 			StandardErrorUrl: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5250,38 +8639,74 @@ export namespace MyNS {
 
 	/** Configuration options for sending command output to CloudWatch Logs. */
 	export interface CloudWatchOutputConfig {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		CloudWatchLogGroupName?: string | null;
 		CloudWatchOutputEnabled?: boolean | null;
 	}
 
 	/** Configuration options for sending command output to CloudWatch Logs. */
 	export interface CloudWatchOutputConfigFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		CloudWatchLogGroupName: FormControl<string | null | undefined>,
 		CloudWatchOutputEnabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateCloudWatchOutputConfigFormGroup() {
 		return new FormGroup<CloudWatchOutputConfigFormProperties>({
-			CloudWatchLogGroupName: new FormControl<string | null | undefined>(undefined),
+			CloudWatchLogGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 			CloudWatchOutputEnabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetCommandInvocationRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		CommandId: string;
+
+		/**
+		 * Required
+		 * Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)
+		 */
 		InstanceId: string;
+
+		/** Min length: 4 */
 		PluginName?: string | null;
 	}
 	export interface GetCommandInvocationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		CommandId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)
+		 */
 		InstanceId: FormControl<string | null | undefined>,
+
+		/** Min length: 4 */
 		PluginName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetCommandInvocationRequestFormGroup() {
 		return new FormGroup<GetCommandInvocationRequestFormProperties>({
-			CommandId: new FormControl<string | null | undefined>(undefined),
-			InstanceId: new FormControl<string | null | undefined>(undefined),
-			PluginName: new FormControl<string | null | undefined>(undefined),
+			CommandId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PluginName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(4)]),
 		});
 
 	}
@@ -5307,16 +8732,26 @@ export namespace MyNS {
 	}
 
 	export interface GetConnectionStatusResponse {
+
+		/**
+		 * Max length: 400
+		 * Min length: 1
+		 */
 		Target?: string | null;
 		Status?: GetConnectionStatusResponseStatus | null;
 	}
 	export interface GetConnectionStatusResponseFormProperties {
+
+		/**
+		 * Max length: 400
+		 * Min length: 1
+		 */
 		Target: FormControl<string | null | undefined>,
 		Status: FormControl<GetConnectionStatusResponseStatus | null | undefined>,
 	}
 	export function CreateGetConnectionStatusResponseFormGroup() {
 		return new FormGroup<GetConnectionStatusResponseFormProperties>({
-			Target: new FormControl<string | null | undefined>(undefined),
+			Target: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(400), Validators.minLength(1)]),
 			Status: new FormControl<GetConnectionStatusResponseStatus | null | undefined>(undefined),
 		});
 
@@ -5325,29 +8760,53 @@ export namespace MyNS {
 	export enum GetConnectionStatusResponseStatus { Connected = 0, NotConnected = 1 }
 
 	export interface GetConnectionStatusRequest {
+
+		/**
+		 * Required
+		 * Max length: 400
+		 * Min length: 1
+		 */
 		Target: string;
 	}
 	export interface GetConnectionStatusRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 400
+		 * Min length: 1
+		 */
 		Target: FormControl<string | null | undefined>,
 	}
 	export function CreateGetConnectionStatusRequestFormGroup() {
 		return new FormGroup<GetConnectionStatusRequestFormProperties>({
-			Target: new FormControl<string | null | undefined>(undefined),
+			Target: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(400), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetDefaultPatchBaselineResult {
+
+		/**
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId?: string | null;
 		OperatingSystem?: CreatePatchBaselineRequestOperatingSystem | null;
 	}
 	export interface GetDefaultPatchBaselineResultFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: FormControl<string | null | undefined>,
 		OperatingSystem: FormControl<CreatePatchBaselineRequestOperatingSystem | null | undefined>,
 	}
 	export function CreateGetDefaultPatchBaselineResultFormGroup() {
 		return new FormGroup<GetDefaultPatchBaselineResultFormProperties>({
-			BaselineId: new FormControl<string | null | undefined>(undefined),
+			BaselineId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(20)]),
 			OperatingSystem: new FormControl<CreatePatchBaselineRequestOperatingSystem | null | undefined>(undefined),
 		});
 
@@ -5367,13 +8826,29 @@ export namespace MyNS {
 	}
 
 	export interface GetDeployablePatchSnapshotForInstanceResult {
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+		 */
 		SnapshotId?: string | null;
 		SnapshotDownloadUrl?: string | null;
 		Product?: string | null;
 	}
 	export interface GetDeployablePatchSnapshotForInstanceResultFormProperties {
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+		 */
 		SnapshotId: FormControl<string | null | undefined>,
 		SnapshotDownloadUrl: FormControl<string | null | undefined>,
 		Product: FormControl<string | null | undefined>,
@@ -5381,7 +8856,7 @@ export namespace MyNS {
 	export function CreateGetDeployablePatchSnapshotForInstanceResultFormGroup() {
 		return new FormGroup<GetDeployablePatchSnapshotForInstanceResultFormProperties>({
 			InstanceId: new FormControl<string | null | undefined>(undefined),
-			SnapshotId: new FormControl<string | null | undefined>(undefined),
+			SnapshotId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 			SnapshotDownloadUrl: new FormControl<string | null | undefined>(undefined),
 			Product: new FormControl<string | null | undefined>(undefined),
 		});
@@ -5389,17 +8864,41 @@ export namespace MyNS {
 	}
 
 	export interface GetDeployablePatchSnapshotForInstanceRequest {
+
+		/**
+		 * Required
+		 * Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)
+		 */
 		InstanceId: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+		 */
 		SnapshotId: string;
 	}
 	export interface GetDeployablePatchSnapshotForInstanceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)
+		 */
 		InstanceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+		 */
 		SnapshotId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetDeployablePatchSnapshotForInstanceRequestFormGroup() {
 		return new FormGroup<GetDeployablePatchSnapshotForInstanceRequestFormProperties>({
-			InstanceId: new FormControl<string | null | undefined>(undefined),
-			SnapshotId: new FormControl<string | null | undefined>(undefined),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SnapshotId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
@@ -5415,27 +8914,45 @@ export namespace MyNS {
 	}
 
 	export interface GetDocumentResult {
+
+		/** Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$ */
 		Name?: string | null;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{1,128}$ */
 		VersionName?: string | null;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion?: string | null;
 
 		/** The status of a document. */
 		Status?: DocumentDescriptionStatus | null;
 		StatusInformation?: string | null;
+
+		/** Min length: 1 */
 		Content?: string | null;
 		DocumentType?: DocumentDescriptionDocumentType | null;
 		DocumentFormat?: DocumentDescriptionDocumentFormat | null;
+
+		/** Minimum items: 1 */
 		Requires?: Array<DocumentRequires>;
 		AttachmentsContent?: Array<AttachmentContent>;
 	}
 	export interface GetDocumentResultFormProperties {
+
+		/** Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$ */
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{1,128}$ */
 		VersionName: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion: FormControl<string | null | undefined>,
 
 		/** The status of a document. */
 		Status: FormControl<DocumentDescriptionStatus | null | undefined>,
 		StatusInformation: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		Content: FormControl<string | null | undefined>,
 		DocumentType: FormControl<DocumentDescriptionDocumentType | null | undefined>,
 		DocumentFormat: FormControl<DocumentDescriptionDocumentFormat | null | undefined>,
@@ -5447,7 +8964,7 @@ export namespace MyNS {
 			DocumentVersion: new FormControl<string | null | undefined>(undefined),
 			Status: new FormControl<DocumentDescriptionStatus | null | undefined>(undefined),
 			StatusInformation: new FormControl<string | null | undefined>(undefined),
-			Content: new FormControl<string | null | undefined>(undefined),
+			Content: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			DocumentType: new FormControl<DocumentDescriptionDocumentType | null | undefined>(undefined),
 			DocumentFormat: new FormControl<DocumentDescriptionDocumentFormat | null | undefined>(undefined),
 		});
@@ -5457,8 +8974,12 @@ export namespace MyNS {
 
 	/** A structure that includes attributes that describe a document attachment. */
 	export interface AttachmentContent {
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		Name?: string | null;
 		Size?: number | null;
+
+		/** Max length: 256 */
 		Hash?: string | null;
 		HashType?: AttachmentContentHashType | null;
 		Url?: string | null;
@@ -5466,8 +8987,12 @@ export namespace MyNS {
 
 	/** A structure that includes attributes that describe a document attachment. */
 	export interface AttachmentContentFormProperties {
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		Name: FormControl<string | null | undefined>,
 		Size: FormControl<number | null | undefined>,
+
+		/** Max length: 256 */
 		Hash: FormControl<string | null | undefined>,
 		HashType: FormControl<AttachmentContentHashType | null | undefined>,
 		Url: FormControl<string | null | undefined>,
@@ -5476,7 +9001,7 @@ export namespace MyNS {
 		return new FormGroup<AttachmentContentFormProperties>({
 			Name: new FormControl<string | null | undefined>(undefined),
 			Size: new FormControl<number | null | undefined>(undefined),
-			Hash: new FormControl<string | null | undefined>(undefined),
+			Hash: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			HashType: new FormControl<AttachmentContentHashType | null | undefined>(undefined),
 			Url: new FormControl<string | null | undefined>(undefined),
 		});
@@ -5486,20 +9011,38 @@ export namespace MyNS {
 	export enum AttachmentContentHashType { Sha256 = 0 }
 
 	export interface GetDocumentRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$
+		 */
 		Name: string;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{1,128}$ */
 		VersionName?: string | null;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion?: string | null;
 		DocumentFormat?: DocumentDescriptionDocumentFormat | null;
 	}
 	export interface GetDocumentRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{1,128}$ */
 		VersionName: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion: FormControl<string | null | undefined>,
 		DocumentFormat: FormControl<DocumentDescriptionDocumentFormat | null | undefined>,
 	}
 	export function CreateGetDocumentRequestFormGroup() {
 		return new FormGroup<GetDocumentRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			VersionName: new FormControl<string | null | undefined>(undefined),
 			DocumentVersion: new FormControl<string | null | undefined>(undefined),
 			DocumentFormat: new FormControl<DocumentDescriptionDocumentFormat | null | undefined>(undefined),
@@ -5550,20 +9093,45 @@ export namespace MyNS {
 	}
 
 	export interface GetInventoryRequest {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 5
+		 */
 		Filters?: Array<InventoryFilter>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		Aggregators?: Array<InventoryAggregator>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 1
+		 */
 		ResultAttributes?: Array<ResultAttribute>;
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 	}
 	export interface GetInventoryRequestFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateGetInventoryRequestFormGroup() {
 		return new FormGroup<GetInventoryRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 		});
 
 	}
@@ -5571,19 +9139,37 @@ export namespace MyNS {
 
 	/** One or more filters. Use a filter to return a more specific list of results. */
 	export interface InventoryFilter {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 1
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 40
+		 */
 		Values: Array<string>;
 		Type?: InventoryFilterType | null;
 	}
 
 	/** One or more filters. Use a filter to return a more specific list of results. */
 	export interface InventoryFilterFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
 		Type: FormControl<InventoryFilterType | null | undefined>,
 	}
 	export function CreateInventoryFilterFormGroup() {
 		return new FormGroup<InventoryFilterFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
 			Type: new FormControl<InventoryFilterType | null | undefined>(undefined),
 		});
 
@@ -5594,18 +9180,38 @@ export namespace MyNS {
 
 	/** Specifies the inventory type and attribute for the aggregation execution. */
 	export interface InventoryAggregator {
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Expression?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		Aggregators?: Array<InventoryAggregator>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 15
+		 */
 		Groups?: Array<InventoryGroup>;
 	}
 
 	/** Specifies the inventory type and attribute for the aggregation execution. */
 	export interface InventoryAggregatorFormProperties {
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Expression: FormControl<string | null | undefined>,
 	}
 	export function CreateInventoryAggregatorFormGroup() {
 		return new FormGroup<InventoryAggregatorFormProperties>({
-			Expression: new FormControl<string | null | undefined>(undefined),
+			Expression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
@@ -5613,17 +9219,35 @@ export namespace MyNS {
 
 	/** A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of resources that match and don't match the specified criteria. */
 	export interface InventoryGroup {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 1
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 5
+		 */
 		Filters: Array<InventoryFilter>;
 	}
 
 	/** A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of resources that match and don't match the specified criteria. */
 	export interface InventoryGroupFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateInventoryGroupFormGroup() {
 		return new FormGroup<InventoryGroupFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
 		});
 
 	}
@@ -5631,16 +9255,30 @@ export namespace MyNS {
 
 	/** The inventory item result attribute. */
 	export interface ResultAttribute {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^(AWS|Custom):.*$
+		 */
 		TypeName: string;
 	}
 
 	/** The inventory item result attribute. */
 	export interface ResultAttributeFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^(AWS|Custom):.*$
+		 */
 		TypeName: FormControl<string | null | undefined>,
 	}
 	export function CreateResultAttributeFormGroup() {
 		return new FormGroup<ResultAttributeFormProperties>({
-			TypeName: new FormControl<string | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -5692,21 +9330,45 @@ export namespace MyNS {
 
 	/** The inventory item schema definition. Users can use this to compose inventory query filters. */
 	export interface InventoryItemSchema {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^(AWS|Custom):.*$
+		 */
 		TypeName: string;
+
+		/** Pattern: ^([0-9]{1,6})(\.[0-9]{1,6})$ */
 		Version?: string | null;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Attributes: Array<InventoryItemAttribute>;
 		DisplayName?: string | null;
 	}
 
 	/** The inventory item schema definition. Users can use this to compose inventory query filters. */
 	export interface InventoryItemSchemaFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^(AWS|Custom):.*$
+		 */
 		TypeName: FormControl<string | null | undefined>,
+
+		/** Pattern: ^([0-9]{1,6})(\.[0-9]{1,6})$ */
 		Version: FormControl<string | null | undefined>,
 		DisplayName: FormControl<string | null | undefined>,
 	}
 	export function CreateInventoryItemSchemaFormGroup() {
 		return new FormGroup<InventoryItemSchemaFormProperties>({
-			TypeName: new FormControl<string | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			Version: new FormControl<string | null | undefined>(undefined),
 			DisplayName: new FormControl<string | null | undefined>(undefined),
 		});
@@ -5716,19 +9378,27 @@ export namespace MyNS {
 
 	/** Attributes are the entries within the inventory item content. It contains name and value. */
 	export interface InventoryItemAttribute {
+
+		/** Required */
 		Name: string;
+
+		/** Required */
 		DataType: InventoryItemAttributeDataType;
 	}
 
 	/** Attributes are the entries within the inventory item content. It contains name and value. */
 	export interface InventoryItemAttributeFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		DataType: FormControl<InventoryItemAttributeDataType | null | undefined>,
 	}
 	export function CreateInventoryItemAttributeFormGroup() {
 		return new FormGroup<InventoryItemAttributeFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			DataType: new FormControl<InventoryItemAttributeDataType | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DataType: new FormControl<InventoryItemAttributeDataType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5736,24 +9406,44 @@ export namespace MyNS {
 	export enum InventoryItemAttributeDataType { _string = 0, number = 1 }
 
 	export interface GetInventorySchemaRequest {
+
+		/**
+		 * Max length: 100
+		 * Min length: 0
+		 */
 		TypeName?: string | null;
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 50
+		 * Maximum: 200
+		 */
 		MaxResults?: number | null;
 		Aggregator?: boolean | null;
 		SubType?: boolean | null;
 	}
 	export interface GetInventorySchemaRequestFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 0
+		 */
 		TypeName: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 50
+		 * Maximum: 200
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		Aggregator: FormControl<boolean | null | undefined>,
 		SubType: FormControl<boolean | null | undefined>,
 	}
 	export function CreateGetInventorySchemaRequestFormGroup() {
 		return new FormGroup<GetInventorySchemaRequestFormProperties>({
-			TypeName: new FormControl<string | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(0)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(50), Validators.max(200)]),
 			Aggregator: new FormControl<boolean | null | undefined>(undefined),
 			SubType: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -5761,15 +9451,47 @@ export namespace MyNS {
 	}
 
 	export interface GetMaintenanceWindowResult {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description?: string | null;
 		StartDate?: string | null;
 		EndDate?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Schedule?: string | null;
 		ScheduleTimezone?: string | null;
 		NextExecutionTime?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 24
+		 */
 		Duration?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 23
+		 */
 		Cutoff?: number | null;
 		AllowUnassociatedTargets?: boolean | null;
 		Enabled?: boolean | null;
@@ -5777,15 +9499,47 @@ export namespace MyNS {
 		ModifiedDate?: Date | null;
 	}
 	export interface GetMaintenanceWindowResultFormProperties {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 		StartDate: FormControl<string | null | undefined>,
 		EndDate: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Schedule: FormControl<string | null | undefined>,
 		ScheduleTimezone: FormControl<string | null | undefined>,
 		NextExecutionTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 24
+		 */
 		Duration: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 23
+		 */
 		Cutoff: FormControl<number | null | undefined>,
 		AllowUnassociatedTargets: FormControl<boolean | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
@@ -5794,16 +9548,16 @@ export namespace MyNS {
 	}
 	export function CreateGetMaintenanceWindowResultFormGroup() {
 		return new FormGroup<GetMaintenanceWindowResultFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(20)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			StartDate: new FormControl<string | null | undefined>(undefined),
 			EndDate: new FormControl<string | null | undefined>(undefined),
-			Schedule: new FormControl<string | null | undefined>(undefined),
+			Schedule: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			ScheduleTimezone: new FormControl<string | null | undefined>(undefined),
 			NextExecutionTime: new FormControl<string | null | undefined>(undefined),
-			Duration: new FormControl<number | null | undefined>(undefined),
-			Cutoff: new FormControl<number | null | undefined>(undefined),
+			Duration: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(24)]),
+			Cutoff: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(23)]),
 			AllowUnassociatedTargets: new FormControl<boolean | null | undefined>(undefined),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
 			CreatedDate: new FormControl<Date | null | undefined>(undefined),
@@ -5813,38 +9567,74 @@ export namespace MyNS {
 	}
 
 	export interface GetMaintenanceWindowRequest {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: string;
 	}
 	export interface GetMaintenanceWindowRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetMaintenanceWindowRequestFormGroup() {
 		return new FormGroup<GetMaintenanceWindowRequestFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface GetMaintenanceWindowExecutionResult {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId?: string | null;
 		TaskIds?: Array<string>;
 		Status?: MaintenanceWindowExecutionTaskInvocationIdentityStatus | null;
+
+		/**
+		 * Max length: 250
+		 * Min length: 0
+		 */
 		StatusDetails?: string | null;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
 	}
 	export interface GetMaintenanceWindowExecutionResultFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId: FormControl<string | null | undefined>,
 		Status: FormControl<MaintenanceWindowExecutionTaskInvocationIdentityStatus | null | undefined>,
+
+		/**
+		 * Max length: 250
+		 * Min length: 0
+		 */
 		StatusDetails: FormControl<string | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
 		EndTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateGetMaintenanceWindowExecutionResultFormGroup() {
 		return new FormGroup<GetMaintenanceWindowExecutionResultFormProperties>({
-			WindowExecutionId: new FormControl<string | null | undefined>(undefined),
+			WindowExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 			Status: new FormControl<MaintenanceWindowExecutionTaskInvocationIdentityStatus | null | undefined>(undefined),
-			StatusDetails: new FormControl<string | null | undefined>(undefined),
+			StatusDetails: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(250), Validators.minLength(0)]),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -5852,59 +9642,145 @@ export namespace MyNS {
 	}
 
 	export interface GetMaintenanceWindowExecutionRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId: string;
 	}
 	export interface GetMaintenanceWindowExecutionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetMaintenanceWindowExecutionRequestFormGroup() {
 		return new FormGroup<GetMaintenanceWindowExecutionRequestFormProperties>({
-			WindowExecutionId: new FormControl<string | null | undefined>(undefined),
+			WindowExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
 
 	export interface GetMaintenanceWindowExecutionTaskResult {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		TaskExecutionId?: string | null;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		TaskArn?: string | null;
 		ServiceRole?: string | null;
 		Type?: MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null;
 		TaskParameters?: Array<MaintenanceWindowTaskParameters>;
+
+		/** Minimum: 0 */
 		Priority?: number | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency?: string | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors?: string | null;
 		Status?: MaintenanceWindowExecutionTaskInvocationIdentityStatus | null;
+
+		/**
+		 * Max length: 250
+		 * Min length: 0
+		 */
 		StatusDetails?: string | null;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
 	}
 	export interface GetMaintenanceWindowExecutionTaskResultFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		TaskExecutionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		TaskArn: FormControl<string | null | undefined>,
 		ServiceRole: FormControl<string | null | undefined>,
 		Type: FormControl<MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null | undefined>,
+
+		/** Minimum: 0 */
 		Priority: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors: FormControl<string | null | undefined>,
 		Status: FormControl<MaintenanceWindowExecutionTaskInvocationIdentityStatus | null | undefined>,
+
+		/**
+		 * Max length: 250
+		 * Min length: 0
+		 */
 		StatusDetails: FormControl<string | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
 		EndTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateGetMaintenanceWindowExecutionTaskResultFormGroup() {
 		return new FormGroup<GetMaintenanceWindowExecutionTaskResultFormProperties>({
-			WindowExecutionId: new FormControl<string | null | undefined>(undefined),
-			TaskExecutionId: new FormControl<string | null | undefined>(undefined),
-			TaskArn: new FormControl<string | null | undefined>(undefined),
+			WindowExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
+			TaskExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
+			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 			ServiceRole: new FormControl<string | null | undefined>(undefined),
 			Type: new FormControl<MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null | undefined>(undefined),
-			Priority: new FormControl<number | null | undefined>(undefined),
-			MaxConcurrency: new FormControl<string | null | undefined>(undefined),
-			MaxErrors: new FormControl<string | null | undefined>(undefined),
+			Priority: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			MaxConcurrency: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
+			MaxErrors: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
 			Status: new FormControl<MaintenanceWindowExecutionTaskInvocationIdentityStatus | null | undefined>(undefined),
-			StatusDetails: new FormControl<string | null | undefined>(undefined),
+			StatusDetails: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(250), Validators.minLength(0)]),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -5912,90 +9788,242 @@ export namespace MyNS {
 	}
 
 	export interface GetMaintenanceWindowExecutionTaskRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		TaskId: string;
 	}
 	export interface GetMaintenanceWindowExecutionTaskRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		TaskId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetMaintenanceWindowExecutionTaskRequestFormGroup() {
 		return new FormGroup<GetMaintenanceWindowExecutionTaskRequestFormProperties>({
-			WindowExecutionId: new FormControl<string | null | undefined>(undefined),
-			TaskId: new FormControl<string | null | undefined>(undefined),
+			WindowExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			TaskId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
 
 	export interface GetMaintenanceWindowExecutionTaskInvocationResult {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		TaskExecutionId?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		InvocationId?: string | null;
 		ExecutionId?: string | null;
 		TaskType?: MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null;
 		Parameters?: string | null;
 		Status?: MaintenanceWindowExecutionTaskInvocationIdentityStatus | null;
+
+		/**
+		 * Max length: 250
+		 * Min length: 0
+		 */
 		StatusDetails?: string | null;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		OwnerInformation?: string | null;
+
+		/** Max length: 36 */
 		WindowTargetId?: string | null;
 	}
 	export interface GetMaintenanceWindowExecutionTaskInvocationResultFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		TaskExecutionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		InvocationId: FormControl<string | null | undefined>,
 		ExecutionId: FormControl<string | null | undefined>,
 		TaskType: FormControl<MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null | undefined>,
 		Parameters: FormControl<string | null | undefined>,
 		Status: FormControl<MaintenanceWindowExecutionTaskInvocationIdentityStatus | null | undefined>,
+
+		/**
+		 * Max length: 250
+		 * Min length: 0
+		 */
 		StatusDetails: FormControl<string | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
 		EndTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		OwnerInformation: FormControl<string | null | undefined>,
+
+		/** Max length: 36 */
 		WindowTargetId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetMaintenanceWindowExecutionTaskInvocationResultFormGroup() {
 		return new FormGroup<GetMaintenanceWindowExecutionTaskInvocationResultFormProperties>({
-			WindowExecutionId: new FormControl<string | null | undefined>(undefined),
-			TaskExecutionId: new FormControl<string | null | undefined>(undefined),
-			InvocationId: new FormControl<string | null | undefined>(undefined),
+			WindowExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
+			TaskExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
+			InvocationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 			ExecutionId: new FormControl<string | null | undefined>(undefined),
 			TaskType: new FormControl<MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null | undefined>(undefined),
 			Parameters: new FormControl<string | null | undefined>(undefined),
 			Status: new FormControl<MaintenanceWindowExecutionTaskInvocationIdentityStatus | null | undefined>(undefined),
-			StatusDetails: new FormControl<string | null | undefined>(undefined),
+			StatusDetails: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(250), Validators.minLength(0)]),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
-			OwnerInformation: new FormControl<string | null | undefined>(undefined),
-			WindowTargetId: new FormControl<string | null | undefined>(undefined),
+			OwnerInformation: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			WindowTargetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36)]),
 		});
 
 	}
 
 	export interface GetMaintenanceWindowExecutionTaskInvocationRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		TaskId: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		InvocationId: string;
 	}
 	export interface GetMaintenanceWindowExecutionTaskInvocationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowExecutionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		TaskId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		InvocationId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetMaintenanceWindowExecutionTaskInvocationRequestFormGroup() {
 		return new FormGroup<GetMaintenanceWindowExecutionTaskInvocationRequestFormProperties>({
-			WindowExecutionId: new FormControl<string | null | undefined>(undefined),
-			TaskId: new FormControl<string | null | undefined>(undefined),
-			InvocationId: new FormControl<string | null | undefined>(undefined),
+			WindowExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			TaskId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			InvocationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
 
 	export interface GetMaintenanceWindowTaskResult {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTaskId?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Targets?: Array<Target>;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		TaskArn?: string | null;
 		ServiceRoleArn?: string | null;
 		TaskType?: MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null;
@@ -6003,39 +10031,106 @@ export namespace MyNS {
 
 		/** The parameters for task execution. */
 		TaskInvocationParameters?: MaintenanceWindowTaskInvocationParameters;
+
+		/** Minimum: 0 */
 		Priority?: number | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency?: string | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors?: string | null;
 
 		/** <p>Information about an S3 bucket to write instance-level logs to.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> */
 		LoggingInfo?: LoggingInfo;
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description?: string | null;
 	}
 	export interface GetMaintenanceWindowTaskResultFormProperties {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTaskId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		TaskArn: FormControl<string | null | undefined>,
 		ServiceRoleArn: FormControl<string | null | undefined>,
 		TaskType: FormControl<MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null | undefined>,
+
+		/** Minimum: 0 */
 		Priority: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateGetMaintenanceWindowTaskResultFormGroup() {
 		return new FormGroup<GetMaintenanceWindowTaskResultFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
-			WindowTaskId: new FormControl<string | null | undefined>(undefined),
-			TaskArn: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(20)]),
+			WindowTaskId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
+			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 			ServiceRoleArn: new FormControl<string | null | undefined>(undefined),
 			TaskType: new FormControl<MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null | undefined>(undefined),
-			Priority: new FormControl<number | null | undefined>(undefined),
-			MaxConcurrency: new FormControl<string | null | undefined>(undefined),
-			MaxErrors: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Priority: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			MaxConcurrency: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
+			MaxErrors: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -6069,44 +10164,80 @@ export namespace MyNS {
 
 	/** <p>The parameters for a RUN_COMMAND task type.</p> <p>For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For Run Command tasks, Systems Manager uses specified values for <code>TaskParameters</code> and <code>LoggingInfo</code> only if no values are specified for <code>TaskInvocationParameters</code>. </p> </note> */
 	export interface MaintenanceWindowRunCommandParameters {
+
+		/** Max length: 100 */
 		Comment?: string | null;
 
 		/** Configuration options for sending command output to CloudWatch Logs. */
 		CloudWatchOutputConfig?: CloudWatchOutputConfig;
+
+		/** Max length: 256 */
 		DocumentHash?: string | null;
 		DocumentHashType?: DocumentDescriptionHashType | null;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion?: string | null;
 
 		/** Configurations for sending notifications. */
 		NotificationConfig?: NotificationConfig;
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 */
 		OutputS3BucketName?: string | null;
+
+		/** Max length: 500 */
 		OutputS3KeyPrefix?: string | null;
 		Parameters?: Parameters;
 		ServiceRoleArn?: string | null;
+
+		/**
+		 * Minimum: 30
+		 * Maximum: 2592000
+		 */
 		TimeoutSeconds?: number | null;
 	}
 
 	/** <p>The parameters for a RUN_COMMAND task type.</p> <p>For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For Run Command tasks, Systems Manager uses specified values for <code>TaskParameters</code> and <code>LoggingInfo</code> only if no values are specified for <code>TaskInvocationParameters</code>. </p> </note> */
 	export interface MaintenanceWindowRunCommandParametersFormProperties {
+
+		/** Max length: 100 */
 		Comment: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		DocumentHash: FormControl<string | null | undefined>,
 		DocumentHashType: FormControl<DocumentDescriptionHashType | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 */
 		OutputS3BucketName: FormControl<string | null | undefined>,
+
+		/** Max length: 500 */
 		OutputS3KeyPrefix: FormControl<string | null | undefined>,
 		ServiceRoleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 30
+		 * Maximum: 2592000
+		 */
 		TimeoutSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateMaintenanceWindowRunCommandParametersFormGroup() {
 		return new FormGroup<MaintenanceWindowRunCommandParametersFormProperties>({
-			Comment: new FormControl<string | null | undefined>(undefined),
-			DocumentHash: new FormControl<string | null | undefined>(undefined),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
+			DocumentHash: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			DocumentHashType: new FormControl<DocumentDescriptionHashType | null | undefined>(undefined),
 			DocumentVersion: new FormControl<string | null | undefined>(undefined),
-			OutputS3BucketName: new FormControl<string | null | undefined>(undefined),
-			OutputS3KeyPrefix: new FormControl<string | null | undefined>(undefined),
+			OutputS3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3)]),
+			OutputS3KeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
 			ServiceRoleArn: new FormControl<string | null | undefined>(undefined),
-			TimeoutSeconds: new FormControl<number | null | undefined>(undefined),
+			TimeoutSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(30), Validators.max(2592000)]),
 		});
 
 	}
@@ -6139,12 +10270,16 @@ export namespace MyNS {
 
 	/** The parameters for an AUTOMATION task type. */
 	export interface MaintenanceWindowAutomationParameters {
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion?: string | null;
 		Parameters?: AutomationParameterMap;
 	}
 
 	/** The parameters for an AUTOMATION task type. */
 	export interface MaintenanceWindowAutomationParametersFormProperties {
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateMaintenanceWindowAutomationParametersFormGroup() {
@@ -6157,19 +10292,33 @@ export namespace MyNS {
 
 	/** <p>The parameters for a STEP_FUNCTIONS task.</p> <p>For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For Step Functions tasks, Systems Manager ignores any values specified for <code>TaskParameters</code> and <code>LoggingInfo</code>.</p> </note> */
 	export interface MaintenanceWindowStepFunctionsParameters {
+
+		/** Max length: 4096 */
 		Input?: string | null;
+
+		/**
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		Name?: string | null;
 	}
 
 	/** <p>The parameters for a STEP_FUNCTIONS task.</p> <p>For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For Step Functions tasks, Systems Manager ignores any values specified for <code>TaskParameters</code> and <code>LoggingInfo</code>.</p> </note> */
 	export interface MaintenanceWindowStepFunctionsParametersFormProperties {
+
+		/** Max length: 4096 */
 		Input: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateMaintenanceWindowStepFunctionsParametersFormGroup() {
 		return new FormGroup<MaintenanceWindowStepFunctionsParametersFormProperties>({
-			Input: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(80), Validators.minLength(1)]),
 		});
 
 	}
@@ -6177,38 +10326,90 @@ export namespace MyNS {
 
 	/** <p>The parameters for a LAMBDA task type.</p> <p>For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For Lambda tasks, Systems Manager ignores any values specified for TaskParameters and LoggingInfo.</p> </note> */
 	export interface MaintenanceWindowLambdaParameters {
+
+		/**
+		 * Max length: 8000
+		 * Min length: 1
+		 */
 		ClientContext?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Qualifier?: string | null;
+
+		/** Max length: 4096 */
 		Payload?: string | null;
 	}
 
 	/** <p>The parameters for a LAMBDA task type.</p> <p>For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For Lambda tasks, Systems Manager ignores any values specified for TaskParameters and LoggingInfo.</p> </note> */
 	export interface MaintenanceWindowLambdaParametersFormProperties {
+
+		/**
+		 * Max length: 8000
+		 * Min length: 1
+		 */
 		ClientContext: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Qualifier: FormControl<string | null | undefined>,
+
+		/** Max length: 4096 */
 		Payload: FormControl<string | null | undefined>,
 	}
 	export function CreateMaintenanceWindowLambdaParametersFormGroup() {
 		return new FormGroup<MaintenanceWindowLambdaParametersFormProperties>({
-			ClientContext: new FormControl<string | null | undefined>(undefined),
-			Qualifier: new FormControl<string | null | undefined>(undefined),
-			Payload: new FormControl<string | null | undefined>(undefined),
+			ClientContext: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8000), Validators.minLength(1)]),
+			Qualifier: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Payload: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
 		});
 
 	}
 
 	export interface GetMaintenanceWindowTaskRequest {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTaskId: string;
 	}
 	export interface GetMaintenanceWindowTaskRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTaskId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetMaintenanceWindowTaskRequestFormGroup() {
 		return new FormGroup<GetMaintenanceWindowTaskRequestFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
-			WindowTaskId: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20), Validators.minLength(20)]),
+			WindowTaskId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
@@ -6231,19 +10432,51 @@ export namespace MyNS {
 	export interface OpsItem {
 		CreatedBy?: string | null;
 		CreatedTime?: Date | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
 		LastModifiedBy?: string | null;
 		LastModifiedTime?: Date | null;
 		Notifications?: Array<OpsItemNotification>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 5
+		 */
 		Priority?: number | null;
 		RelatedOpsItems?: Array<RelatedOpsItem>;
 		Status?: OpsItemSummaryStatus | null;
+
+		/** Pattern: ^(oi)-[0-9a-f]{12}$ */
 		OpsItemId?: string | null;
 		Version?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Title?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Source?: string | null;
 		OperationalData?: OpsItemOperationalData;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Category?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Severity?: string | null;
 	}
 
@@ -6251,46 +10484,88 @@ export namespace MyNS {
 	export interface OpsItemFormProperties {
 		CreatedBy: FormControl<string | null | undefined>,
 		CreatedTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 		LastModifiedBy: FormControl<string | null | undefined>,
 		LastModifiedTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 5
+		 */
 		Priority: FormControl<number | null | undefined>,
 		Status: FormControl<OpsItemSummaryStatus | null | undefined>,
+
+		/** Pattern: ^(oi)-[0-9a-f]{12}$ */
 		OpsItemId: FormControl<string | null | undefined>,
 		Version: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Title: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Source: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Category: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Severity: FormControl<string | null | undefined>,
 	}
 	export function CreateOpsItemFormGroup() {
 		return new FormGroup<OpsItemFormProperties>({
 			CreatedBy: new FormControl<string | null | undefined>(undefined),
 			CreatedTime: new FormControl<Date | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			LastModifiedBy: new FormControl<string | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
-			Priority: new FormControl<number | null | undefined>(undefined),
+			Priority: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(5)]),
 			Status: new FormControl<OpsItemSummaryStatus | null | undefined>(undefined),
 			OpsItemId: new FormControl<string | null | undefined>(undefined),
 			Version: new FormControl<string | null | undefined>(undefined),
-			Title: new FormControl<string | null | undefined>(undefined),
-			Source: new FormControl<string | null | undefined>(undefined),
-			Category: new FormControl<string | null | undefined>(undefined),
-			Severity: new FormControl<string | null | undefined>(undefined),
+			Title: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Source: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Category: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Severity: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetOpsItemRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^(oi)-[0-9a-f]{12}$
+		 */
 		OpsItemId: string;
 	}
 	export interface GetOpsItemRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^(oi)-[0-9a-f]{12}$
+		 */
 		OpsItemId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetOpsItemRequestFormGroup() {
 		return new FormGroup<GetOpsItemRequestFormProperties>({
-			OpsItemId: new FormControl<string | null | undefined>(undefined),
+			OpsItemId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -6348,23 +10623,55 @@ export namespace MyNS {
 	}
 
 	export interface GetOpsSummaryRequest {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SyncName?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 5
+		 */
 		Filters?: Array<OpsFilter>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 12
+		 */
 		Aggregators?: Array<OpsAggregator>;
+
+		/** Minimum items: 1 */
 		ResultAttributes?: Array<OpsResultAttribute>;
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 	}
 	export interface GetOpsSummaryRequestFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SyncName: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOpsSummaryRequestFormGroup() {
 		return new FormGroup<GetOpsSummaryRequestFormProperties>({
-			SyncName: new FormControl<string | null | undefined>(undefined),
+			SyncName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 		});
 
 	}
@@ -6372,19 +10679,37 @@ export namespace MyNS {
 
 	/** A filter for viewing OpsItem summaries. */
 	export interface OpsFilter {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 1
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 40
+		 */
 		Values: Array<string>;
 		Type?: InventoryFilterType | null;
 	}
 
 	/** A filter for viewing OpsItem summaries. */
 	export interface OpsFilterFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
 		Type: FormControl<InventoryFilterType | null | undefined>,
 	}
 	export function CreateOpsFilterFormGroup() {
 		return new FormGroup<OpsFilterFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
 			Type: new FormControl<InventoryFilterType | null | undefined>(undefined),
 		});
 
@@ -6393,24 +10718,58 @@ export namespace MyNS {
 
 	/** One or more aggregators for viewing counts of OpsItems using different dimensions such as <code>Source</code>, <code>CreatedTime</code>, or <code>Source and CreatedTime</code>, to name a few. */
 	export interface OpsAggregator {
+
+		/**
+		 * Max length: 20
+		 * Min length: 1
+		 * Pattern: ^(range|count|sum)
+		 */
 		AggregatorType?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^(AWS|Custom):.*$
+		 */
 		TypeName?: string | null;
 		AttributeName?: string | null;
 		Values?: OpsAggregatorValueMap;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 5
+		 */
 		Filters?: Array<OpsFilter>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 12
+		 */
 		Aggregators?: Array<OpsAggregator>;
 	}
 
 	/** One or more aggregators for viewing counts of OpsItems using different dimensions such as <code>Source</code>, <code>CreatedTime</code>, or <code>Source and CreatedTime</code>, to name a few. */
 	export interface OpsAggregatorFormProperties {
+
+		/**
+		 * Max length: 20
+		 * Min length: 1
+		 * Pattern: ^(range|count|sum)
+		 */
 		AggregatorType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^(AWS|Custom):.*$
+		 */
 		TypeName: FormControl<string | null | undefined>,
 		AttributeName: FormControl<string | null | undefined>,
 	}
 	export function CreateOpsAggregatorFormGroup() {
 		return new FormGroup<OpsAggregatorFormProperties>({
-			AggregatorType: new FormControl<string | null | undefined>(undefined),
-			TypeName: new FormControl<string | null | undefined>(undefined),
+			AggregatorType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(1)]),
+			TypeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			AttributeName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -6429,16 +10788,30 @@ export namespace MyNS {
 
 	/** The OpsItem data type to return. */
 	export interface OpsResultAttribute {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^(AWS|Custom):.*$
+		 */
 		TypeName: string;
 	}
 
 	/** The OpsItem data type to return. */
 	export interface OpsResultAttributeFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^(AWS|Custom):.*$
+		 */
 		TypeName: FormControl<string | null | undefined>,
 	}
 	export function CreateOpsResultAttributeFormGroup() {
 		return new FormGroup<OpsResultAttributeFormProperties>({
-			TypeName: new FormControl<string | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -6459,55 +10832,97 @@ export namespace MyNS {
 
 	/** An Systems Manager parameter in Parameter Store. */
 	export interface Parameter {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Name?: string | null;
 		Type?: ParameterMetadataType | null;
 		Value?: string | null;
 		Version?: number | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 0
+		 */
 		Selector?: string | null;
 		SourceResult?: string | null;
 		LastModifiedDate?: Date | null;
 		ARN?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 0
+		 */
 		DataType?: string | null;
 	}
 
 	/** An Systems Manager parameter in Parameter Store. */
 	export interface ParameterFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 		Type: FormControl<ParameterMetadataType | null | undefined>,
 		Value: FormControl<string | null | undefined>,
 		Version: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 0
+		 */
 		Selector: FormControl<string | null | undefined>,
 		SourceResult: FormControl<string | null | undefined>,
 		LastModifiedDate: FormControl<Date | null | undefined>,
 		ARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 0
+		 */
 		DataType: FormControl<string | null | undefined>,
 	}
 	export function CreateParameterFormGroup() {
 		return new FormGroup<ParameterFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 			Type: new FormControl<ParameterMetadataType | null | undefined>(undefined),
 			Value: new FormControl<string | null | undefined>(undefined),
 			Version: new FormControl<number | null | undefined>(undefined),
-			Selector: new FormControl<string | null | undefined>(undefined),
+			Selector: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
 			SourceResult: new FormControl<string | null | undefined>(undefined),
 			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
 			ARN: new FormControl<string | null | undefined>(undefined),
-			DataType: new FormControl<string | null | undefined>(undefined),
+			DataType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface GetParameterRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Name: string;
 		WithDecryption?: boolean | null;
 	}
 	export interface GetParameterRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 		WithDecryption: FormControl<boolean | null | undefined>,
 	}
 	export function CreateGetParameterRequestFormGroup() {
 		return new FormGroup<GetParameterRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 			WithDecryption: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -6550,48 +10965,105 @@ export namespace MyNS {
 
 	/** Information about parameter usage. */
 	export interface ParameterHistory {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Name?: string | null;
 		Type?: ParameterMetadataType | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([a-zA-Z0-9:/_-]+)$
+		 */
 		KeyId?: string | null;
 		LastModifiedDate?: Date | null;
 		LastModifiedUser?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description?: string | null;
 		Value?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		AllowedPattern?: string | null;
 		Version?: number | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		Labels?: Array<string>;
 		Tier?: ParameterHistoryTier | null;
 		Policies?: Array<ParameterInlinePolicy>;
+
+		/**
+		 * Max length: 128
+		 * Min length: 0
+		 */
 		DataType?: string | null;
 	}
 
 	/** Information about parameter usage. */
 	export interface ParameterHistoryFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 		Type: FormControl<ParameterMetadataType | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([a-zA-Z0-9:/_-]+)$
+		 */
 		KeyId: FormControl<string | null | undefined>,
 		LastModifiedDate: FormControl<Date | null | undefined>,
 		LastModifiedUser: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
 		Value: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		AllowedPattern: FormControl<string | null | undefined>,
 		Version: FormControl<number | null | undefined>,
 		Tier: FormControl<ParameterHistoryTier | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 0
+		 */
 		DataType: FormControl<string | null | undefined>,
 	}
 	export function CreateParameterHistoryFormGroup() {
 		return new FormGroup<ParameterHistoryFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 			Type: new FormControl<ParameterMetadataType | null | undefined>(undefined),
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
 			LastModifiedUser: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 			Value: new FormControl<string | null | undefined>(undefined),
-			AllowedPattern: new FormControl<string | null | undefined>(undefined),
+			AllowedPattern: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 			Version: new FormControl<number | null | undefined>(undefined),
 			Tier: new FormControl<ParameterHistoryTier | null | undefined>(undefined),
-			DataType: new FormControl<string | null | undefined>(undefined),
+			DataType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
 		});
 
 	}
@@ -6599,22 +11071,44 @@ export namespace MyNS {
 	export enum ParameterHistoryTier { Standard = 0, Advanced = 1, Intelligent_Tiering = 2 }
 
 	export interface GetParameterHistoryRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Name: string;
 		WithDecryption?: boolean | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface GetParameterHistoryRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 		WithDecryption: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetParameterHistoryRequestFormGroup() {
 		return new FormGroup<GetParameterHistoryRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 			WithDecryption: new FormControl<boolean | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -6622,6 +11116,11 @@ export namespace MyNS {
 
 	export interface GetParametersResult {
 		Parameters?: Array<Parameter>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		InvalidParameters?: Array<string>;
 	}
 	export interface GetParametersResultFormProperties {
@@ -6633,6 +11132,12 @@ export namespace MyNS {
 	}
 
 	export interface GetParametersRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		Names: Array<string>;
 		WithDecryption?: boolean | null;
 	}
@@ -6661,33 +11166,67 @@ export namespace MyNS {
 	}
 
 	export interface GetParametersByPathRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Path: string;
 		Recursive?: boolean | null;
 		ParameterFilters?: Array<ParameterStringFilter>;
 		WithDecryption?: boolean | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface GetParametersByPathRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Path: FormControl<string | null | undefined>,
 		Recursive: FormControl<boolean | null | undefined>,
 		WithDecryption: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetParametersByPathRequestFormGroup() {
 		return new FormGroup<GetParametersByPathRequestFormProperties>({
-			Path: new FormControl<string | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 			Recursive: new FormControl<boolean | null | undefined>(undefined),
 			WithDecryption: new FormControl<boolean | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetPatchBaselineResult {
+
+		/**
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name?: string | null;
 		OperatingSystem?: CreatePatchBaselineRequestOperatingSystem | null;
 
@@ -6696,19 +11235,51 @@ export namespace MyNS {
 
 		/** A set of rules defining the approval rules for a patch baseline. */
 		ApprovalRules?: PatchRuleGroup;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		ApprovedPatches?: Array<string>;
 		ApprovedPatchesComplianceLevel?: PatchRuleComplianceLevel | null;
 		ApprovedPatchesEnableNonSecurity?: boolean | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		RejectedPatches?: Array<string>;
 		RejectedPatchesAction?: CreatePatchBaselineRequestRejectedPatchesAction | null;
 		PatchGroups?: Array<string>;
 		CreatedDate?: Date | null;
 		ModifiedDate?: Date | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 20
+		 */
 		Sources?: Array<PatchSource>;
 	}
 	export interface GetPatchBaselineResultFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
 		OperatingSystem: FormControl<CreatePatchBaselineRequestOperatingSystem | null | undefined>,
 		ApprovedPatchesComplianceLevel: FormControl<PatchRuleComplianceLevel | null | undefined>,
@@ -6716,66 +11287,123 @@ export namespace MyNS {
 		RejectedPatchesAction: FormControl<CreatePatchBaselineRequestRejectedPatchesAction | null | undefined>,
 		CreatedDate: FormControl<Date | null | undefined>,
 		ModifiedDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateGetPatchBaselineResultFormGroup() {
 		return new FormGroup<GetPatchBaselineResultFormProperties>({
-			BaselineId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			BaselineId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(20)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
 			OperatingSystem: new FormControl<CreatePatchBaselineRequestOperatingSystem | null | undefined>(undefined),
 			ApprovedPatchesComplianceLevel: new FormControl<PatchRuleComplianceLevel | null | undefined>(undefined),
 			ApprovedPatchesEnableNonSecurity: new FormControl<boolean | null | undefined>(undefined),
 			RejectedPatchesAction: new FormControl<CreatePatchBaselineRequestRejectedPatchesAction | null | undefined>(undefined),
 			CreatedDate: new FormControl<Date | null | undefined>(undefined),
 			ModifiedDate: new FormControl<Date | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetPatchBaselineRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: string;
 	}
 	export interface GetPatchBaselineRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetPatchBaselineRequestFormGroup() {
 		return new FormGroup<GetPatchBaselineRequestFormProperties>({
-			BaselineId: new FormControl<string | null | undefined>(undefined),
+			BaselineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface GetPatchBaselineForPatchGroupResult {
+
+		/**
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PatchGroup?: string | null;
 		OperatingSystem?: CreatePatchBaselineRequestOperatingSystem | null;
 	}
 	export interface GetPatchBaselineForPatchGroupResultFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PatchGroup: FormControl<string | null | undefined>,
 		OperatingSystem: FormControl<CreatePatchBaselineRequestOperatingSystem | null | undefined>,
 	}
 	export function CreateGetPatchBaselineForPatchGroupResultFormGroup() {
 		return new FormGroup<GetPatchBaselineForPatchGroupResultFormProperties>({
-			BaselineId: new FormControl<string | null | undefined>(undefined),
-			PatchGroup: new FormControl<string | null | undefined>(undefined),
+			BaselineId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(20)]),
+			PatchGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			OperatingSystem: new FormControl<CreatePatchBaselineRequestOperatingSystem | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetPatchBaselineForPatchGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PatchGroup: string;
 		OperatingSystem?: CreatePatchBaselineRequestOperatingSystem | null;
 	}
 	export interface GetPatchBaselineForPatchGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PatchGroup: FormControl<string | null | undefined>,
 		OperatingSystem: FormControl<CreatePatchBaselineRequestOperatingSystem | null | undefined>,
 	}
 	export function CreateGetPatchBaselineForPatchGroupRequestFormGroup() {
 		return new FormGroup<GetPatchBaselineForPatchGroupRequestFormProperties>({
-			PatchGroup: new FormControl<string | null | undefined>(undefined),
+			PatchGroup: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 			OperatingSystem: new FormControl<CreatePatchBaselineRequestOperatingSystem | null | undefined>(undefined),
 		});
 
@@ -6801,7 +11429,17 @@ export namespace MyNS {
 
 	/** <p>The service setting data structure.</p> <p> <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an AWS service charges money to the account based on feature or service usage, then the AWS service team might create a default setting of "false". This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for a paid feature.</p> <p>Services map a <code>SettingId</code> object to a setting value. AWS services teams define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <a>UpdateServiceSetting</a> API action to change the default setting. Or, use the <a>ResetServiceSetting</a> to change the value back to the original value defined by the AWS service team.</p> */
 	export interface ServiceSetting {
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		SettingId?: string | null;
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		SettingValue?: string | null;
 		LastModifiedDate?: Date | null;
 		LastModifiedUser?: string | null;
@@ -6811,7 +11449,17 @@ export namespace MyNS {
 
 	/** <p>The service setting data structure.</p> <p> <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an AWS service charges money to the account based on feature or service usage, then the AWS service team might create a default setting of "false". This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for a paid feature.</p> <p>Services map a <code>SettingId</code> object to a setting value. AWS services teams define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <a>UpdateServiceSetting</a> API action to change the default setting. Or, use the <a>ResetServiceSetting</a> to change the value back to the original value defined by the AWS service team.</p> */
 	export interface ServiceSettingFormProperties {
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		SettingId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		SettingValue: FormControl<string | null | undefined>,
 		LastModifiedDate: FormControl<Date | null | undefined>,
 		LastModifiedUser: FormControl<string | null | undefined>,
@@ -6820,8 +11468,8 @@ export namespace MyNS {
 	}
 	export function CreateServiceSettingFormGroup() {
 		return new FormGroup<ServiceSettingFormProperties>({
-			SettingId: new FormControl<string | null | undefined>(undefined),
-			SettingValue: new FormControl<string | null | undefined>(undefined),
+			SettingId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			SettingValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
 			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
 			LastModifiedUser: new FormControl<string | null | undefined>(undefined),
 			ARN: new FormControl<string | null | undefined>(undefined),
@@ -6833,16 +11481,28 @@ export namespace MyNS {
 
 	/** The request body of the GetServiceSetting API action. */
 	export interface GetServiceSettingRequest {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		SettingId: string;
 	}
 
 	/** The request body of the GetServiceSetting API action. */
 	export interface GetServiceSettingRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		SettingId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetServiceSettingRequestFormGroup() {
 		return new FormGroup<GetServiceSettingRequestFormProperties>({
-			SettingId: new FormControl<string | null | undefined>(undefined),
+			SettingId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
@@ -6858,6 +11518,11 @@ export namespace MyNS {
 	}
 
 	export interface LabelParameterVersionResult {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		InvalidLabels?: Array<string>;
 		ParameterVersion?: number | null;
 	}
@@ -6872,17 +11537,35 @@ export namespace MyNS {
 	}
 
 	export interface LabelParameterVersionRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Name: string;
 		ParameterVersion?: number | null;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		Labels: Array<string>;
 	}
 	export interface LabelParameterVersionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
 		ParameterVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateLabelParameterVersionRequestFormGroup() {
 		return new FormGroup<LabelParameterVersionRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 			ParameterVersion: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -6899,6 +11582,8 @@ export namespace MyNS {
 	}
 
 	export interface ListAssociationVersionsResult {
+
+		/** Minimum items: 1 */
 		AssociationVersions?: Array<AssociationVersionInfo>;
 		NextToken?: string | null;
 	}
@@ -6915,19 +11600,51 @@ export namespace MyNS {
 
 	/** Information about the association version. */
 	export interface AssociationVersionInfo {
+
+		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		AssociationId?: string | null;
+
+		/** Pattern: ([$]LATEST)|([1-9][0-9]*) */
 		AssociationVersion?: string | null;
 		CreatedDate?: Date | null;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$ */
 		Name?: string | null;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion?: string | null;
 		Parameters?: Parameters;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Targets?: Array<Target>;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ScheduleExpression?: string | null;
 
 		/** An S3 bucket where you want to store the results of this request. */
 		OutputLocation?: InstanceAssociationOutputLocation;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		AssociationName?: string | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors?: string | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency?: string | null;
 		ComplianceSeverity?: AssociationDescriptionComplianceSeverity | null;
 		SyncCompliance?: AssociationDescriptionSyncCompliance | null;
@@ -6936,14 +11653,41 @@ export namespace MyNS {
 
 	/** Information about the association version. */
 	export interface AssociationVersionInfoFormProperties {
+
+		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		AssociationId: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST)|([1-9][0-9]*) */
 		AssociationVersion: FormControl<string | null | undefined>,
 		CreatedDate: FormControl<Date | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$ */
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ScheduleExpression: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		AssociationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency: FormControl<string | null | undefined>,
 		ComplianceSeverity: FormControl<AssociationDescriptionComplianceSeverity | null | undefined>,
 		SyncCompliance: FormControl<AssociationDescriptionSyncCompliance | null | undefined>,
@@ -6956,10 +11700,10 @@ export namespace MyNS {
 			CreatedDate: new FormControl<Date | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined),
 			DocumentVersion: new FormControl<string | null | undefined>(undefined),
-			ScheduleExpression: new FormControl<string | null | undefined>(undefined),
+			ScheduleExpression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			AssociationName: new FormControl<string | null | undefined>(undefined),
-			MaxErrors: new FormControl<string | null | undefined>(undefined),
-			MaxConcurrency: new FormControl<string | null | undefined>(undefined),
+			MaxErrors: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
+			MaxConcurrency: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
 			ComplianceSeverity: new FormControl<AssociationDescriptionComplianceSeverity | null | undefined>(undefined),
 			SyncCompliance: new FormControl<AssociationDescriptionSyncCompliance | null | undefined>(undefined),
 			ApplyOnlyAtCronInterval: new FormControl<boolean | null | undefined>(undefined),
@@ -6968,19 +11712,39 @@ export namespace MyNS {
 	}
 
 	export interface ListAssociationVersionsRequest {
+
+		/**
+		 * Required
+		 * Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
+		 */
 		AssociationId: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface ListAssociationVersionsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
+		 */
 		AssociationId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListAssociationVersionsRequestFormGroup() {
 		return new FormGroup<ListAssociationVersionsRequestFormProperties>({
-			AssociationId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			AssociationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -7003,29 +11767,68 @@ export namespace MyNS {
 
 	/** Describes an association of a Systems Manager document and an instance. */
 	export interface Association {
+
+		/** Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$ */
 		Name?: string | null;
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId?: string | null;
+
+		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		AssociationId?: string | null;
+
+		/** Pattern: ([$]LATEST)|([1-9][0-9]*) */
 		AssociationVersion?: string | null;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Targets?: Array<Target>;
 		LastExecutionDate?: Date | null;
 
 		/** Information about the association. */
 		Overview?: AssociationOverview;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ScheduleExpression?: string | null;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		AssociationName?: string | null;
 	}
 
 	/** Describes an association of a Systems Manager document and an instance. */
 	export interface AssociationFormProperties {
+
+		/** Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$ */
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId: FormControl<string | null | undefined>,
+
+		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		AssociationId: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST)|([1-9][0-9]*) */
 		AssociationVersion: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion: FormControl<string | null | undefined>,
 		LastExecutionDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ScheduleExpression: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		AssociationName: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociationFormGroup() {
@@ -7036,24 +11839,36 @@ export namespace MyNS {
 			AssociationVersion: new FormControl<string | null | undefined>(undefined),
 			DocumentVersion: new FormControl<string | null | undefined>(undefined),
 			LastExecutionDate: new FormControl<Date | null | undefined>(undefined),
-			ScheduleExpression: new FormControl<string | null | undefined>(undefined),
+			ScheduleExpression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			AssociationName: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ListAssociationsRequest {
+
+		/** Minimum items: 1 */
 		AssociationFilterList?: Array<AssociationFilter>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface ListAssociationsRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListAssociationsRequestFormGroup() {
 		return new FormGroup<ListAssociationsRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -7062,19 +11877,33 @@ export namespace MyNS {
 
 	/** Describes a filter. */
 	export interface AssociationFilter {
+
+		/** Required */
 		key: AssociationFilterKey;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		value: string;
 	}
 
 	/** Describes a filter. */
 	export interface AssociationFilterFormProperties {
+
+		/** Required */
 		key: FormControl<AssociationFilterKey | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociationFilterFormGroup() {
 		return new FormGroup<AssociationFilterFormProperties>({
-			key: new FormControl<AssociationFilterKey | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<AssociationFilterKey | null | undefined>(undefined, [Validators.required]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -7098,15 +11927,37 @@ export namespace MyNS {
 
 	/** An invocation is copy of a command sent to a specific instance. A command can apply to one or more instances. A command invocation applies to one instance. For example, if a user runs SendCommand against three instances, then a command invocation is created for each requested instance ID. A command invocation returns status and detail information about a command you ran.  */
 	export interface CommandInvocation {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		CommandId?: string | null;
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId?: string | null;
+
+		/** Max length: 255 */
 		InstanceName?: string | null;
+
+		/** Max length: 100 */
 		Comment?: string | null;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		DocumentName?: string | null;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion?: string | null;
 		RequestedDateTime?: Date | null;
 		Status?: GetCommandInvocationResultStatus | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 0
+		 */
 		StatusDetails?: string | null;
+
+		/** Max length: 2500 */
 		TraceOutput?: string | null;
 		StandardOutputUrl?: string | null;
 		StandardErrorUrl?: string | null;
@@ -7122,15 +11973,37 @@ export namespace MyNS {
 
 	/** An invocation is copy of a command sent to a specific instance. A command can apply to one or more instances. A command invocation applies to one instance. For example, if a user runs SendCommand against three instances, then a command invocation is created for each requested instance ID. A command invocation returns status and detail information about a command you ran.  */
 	export interface CommandInvocationFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		CommandId: FormControl<string | null | undefined>,
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		InstanceName: FormControl<string | null | undefined>,
+
+		/** Max length: 100 */
 		Comment: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		DocumentName: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion: FormControl<string | null | undefined>,
 		RequestedDateTime: FormControl<Date | null | undefined>,
 		Status: FormControl<GetCommandInvocationResultStatus | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 0
+		 */
 		StatusDetails: FormControl<string | null | undefined>,
+
+		/** Max length: 2500 */
 		TraceOutput: FormControl<string | null | undefined>,
 		StandardOutputUrl: FormControl<string | null | undefined>,
 		StandardErrorUrl: FormControl<string | null | undefined>,
@@ -7138,16 +12011,16 @@ export namespace MyNS {
 	}
 	export function CreateCommandInvocationFormGroup() {
 		return new FormGroup<CommandInvocationFormProperties>({
-			CommandId: new FormControl<string | null | undefined>(undefined),
+			CommandId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 			InstanceId: new FormControl<string | null | undefined>(undefined),
-			InstanceName: new FormControl<string | null | undefined>(undefined),
-			Comment: new FormControl<string | null | undefined>(undefined),
+			InstanceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 			DocumentName: new FormControl<string | null | undefined>(undefined),
 			DocumentVersion: new FormControl<string | null | undefined>(undefined),
 			RequestedDateTime: new FormControl<Date | null | undefined>(undefined),
 			Status: new FormControl<GetCommandInvocationResultStatus | null | undefined>(undefined),
-			StatusDetails: new FormControl<string | null | undefined>(undefined),
-			TraceOutput: new FormControl<string | null | undefined>(undefined),
+			StatusDetails: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(0)]),
+			TraceOutput: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2500)]),
 			StandardOutputUrl: new FormControl<string | null | undefined>(undefined),
 			StandardErrorUrl: new FormControl<string | null | undefined>(undefined),
 			ServiceRole: new FormControl<string | null | undefined>(undefined),
@@ -7158,49 +12031,91 @@ export namespace MyNS {
 
 	/** Describes plugin details. */
 	export interface CommandPlugin {
+
+		/** Min length: 4 */
 		Name?: string | null;
 		Status?: CommandPluginStatus | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 0
+		 */
 		StatusDetails?: string | null;
 		ResponseCode?: number | null;
 		ResponseStartDateTime?: Date | null;
 		ResponseFinishDateTime?: Date | null;
+
+		/** Max length: 2500 */
 		Output?: string | null;
 		StandardOutputUrl?: string | null;
 		StandardErrorUrl?: string | null;
+
+		/**
+		 * Max length: 20
+		 * Min length: 3
+		 */
 		OutputS3Region?: string | null;
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 */
 		OutputS3BucketName?: string | null;
+
+		/** Max length: 500 */
 		OutputS3KeyPrefix?: string | null;
 	}
 
 	/** Describes plugin details. */
 	export interface CommandPluginFormProperties {
+
+		/** Min length: 4 */
 		Name: FormControl<string | null | undefined>,
 		Status: FormControl<CommandPluginStatus | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 0
+		 */
 		StatusDetails: FormControl<string | null | undefined>,
 		ResponseCode: FormControl<number | null | undefined>,
 		ResponseStartDateTime: FormControl<Date | null | undefined>,
 		ResponseFinishDateTime: FormControl<Date | null | undefined>,
+
+		/** Max length: 2500 */
 		Output: FormControl<string | null | undefined>,
 		StandardOutputUrl: FormControl<string | null | undefined>,
 		StandardErrorUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 20
+		 * Min length: 3
+		 */
 		OutputS3Region: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 */
 		OutputS3BucketName: FormControl<string | null | undefined>,
+
+		/** Max length: 500 */
 		OutputS3KeyPrefix: FormControl<string | null | undefined>,
 	}
 	export function CreateCommandPluginFormGroup() {
 		return new FormGroup<CommandPluginFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(4)]),
 			Status: new FormControl<CommandPluginStatus | null | undefined>(undefined),
-			StatusDetails: new FormControl<string | null | undefined>(undefined),
+			StatusDetails: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(0)]),
 			ResponseCode: new FormControl<number | null | undefined>(undefined),
 			ResponseStartDateTime: new FormControl<Date | null | undefined>(undefined),
 			ResponseFinishDateTime: new FormControl<Date | null | undefined>(undefined),
-			Output: new FormControl<string | null | undefined>(undefined),
+			Output: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2500)]),
 			StandardOutputUrl: new FormControl<string | null | undefined>(undefined),
 			StandardErrorUrl: new FormControl<string | null | undefined>(undefined),
-			OutputS3Region: new FormControl<string | null | undefined>(undefined),
-			OutputS3BucketName: new FormControl<string | null | undefined>(undefined),
-			OutputS3KeyPrefix: new FormControl<string | null | undefined>(undefined),
+			OutputS3Region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(3)]),
+			OutputS3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3)]),
+			OutputS3KeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
 		});
 
 	}
@@ -7208,25 +12123,54 @@ export namespace MyNS {
 	export enum CommandPluginStatus { Pending = 0, InProgress = 1, Success = 2, TimedOut = 3, Cancelled = 4, Failed = 5 }
 
 	export interface ListCommandInvocationsRequest {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		CommandId?: string | null;
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 5
+		 */
 		Filters?: Array<CommandFilter>;
 		Details?: boolean | null;
 	}
 	export interface ListCommandInvocationsRequestFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		CommandId: FormControl<string | null | undefined>,
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 		Details: FormControl<boolean | null | undefined>,
 	}
 	export function CreateListCommandInvocationsRequestFormGroup() {
 		return new FormGroup<ListCommandInvocationsRequestFormProperties>({
-			CommandId: new FormControl<string | null | undefined>(undefined),
+			CommandId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 			InstanceId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			Details: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -7236,19 +12180,35 @@ export namespace MyNS {
 
 	/** Describes a command filter. */
 	export interface CommandFilter {
+
+		/** Required */
 		key: CommandFilterKey;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		value: string;
 	}
 
 	/** Describes a command filter. */
 	export interface CommandFilterFormProperties {
+
+		/** Required */
 		key: FormControl<CommandFilterKey | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateCommandFilterFormGroup() {
 		return new FormGroup<CommandFilterFormProperties>({
-			key: new FormControl<CommandFilterKey | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<CommandFilterKey | null | undefined>(undefined, [Validators.required]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -7272,21 +12232,71 @@ export namespace MyNS {
 
 	/** Describes a command request. */
 	export interface Command {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		CommandId?: string | null;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		DocumentName?: string | null;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion?: string | null;
+
+		/** Max length: 100 */
 		Comment?: string | null;
 		ExpiresAfter?: Date | null;
 		Parameters?: Parameters;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		InstanceIds?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Targets?: Array<Target>;
 		RequestedDateTime?: Date | null;
 		Status?: CommandStatus | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 0
+		 */
 		StatusDetails?: string | null;
+
+		/**
+		 * Max length: 20
+		 * Min length: 3
+		 */
 		OutputS3Region?: string | null;
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 */
 		OutputS3BucketName?: string | null;
+
+		/** Max length: 500 */
 		OutputS3KeyPrefix?: string | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency?: string | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors?: string | null;
 		TargetCount?: number | null;
 		CompletedCount?: number | null;
@@ -7299,52 +12309,102 @@ export namespace MyNS {
 
 		/** Configuration options for sending command output to CloudWatch Logs. */
 		CloudWatchOutputConfig?: CloudWatchOutputConfig;
+
+		/**
+		 * Minimum: 30
+		 * Maximum: 2592000
+		 */
 		TimeoutSeconds?: number | null;
 	}
 
 	/** Describes a command request. */
 	export interface CommandFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		CommandId: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		DocumentName: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion: FormControl<string | null | undefined>,
+
+		/** Max length: 100 */
 		Comment: FormControl<string | null | undefined>,
 		ExpiresAfter: FormControl<Date | null | undefined>,
 		RequestedDateTime: FormControl<Date | null | undefined>,
 		Status: FormControl<CommandStatus | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 0
+		 */
 		StatusDetails: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 20
+		 * Min length: 3
+		 */
 		OutputS3Region: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 */
 		OutputS3BucketName: FormControl<string | null | undefined>,
+
+		/** Max length: 500 */
 		OutputS3KeyPrefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors: FormControl<string | null | undefined>,
 		TargetCount: FormControl<number | null | undefined>,
 		CompletedCount: FormControl<number | null | undefined>,
 		ErrorCount: FormControl<number | null | undefined>,
 		DeliveryTimedOutCount: FormControl<number | null | undefined>,
 		ServiceRole: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 30
+		 * Maximum: 2592000
+		 */
 		TimeoutSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateCommandFormGroup() {
 		return new FormGroup<CommandFormProperties>({
-			CommandId: new FormControl<string | null | undefined>(undefined),
+			CommandId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 			DocumentName: new FormControl<string | null | undefined>(undefined),
 			DocumentVersion: new FormControl<string | null | undefined>(undefined),
-			Comment: new FormControl<string | null | undefined>(undefined),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 			ExpiresAfter: new FormControl<Date | null | undefined>(undefined),
 			RequestedDateTime: new FormControl<Date | null | undefined>(undefined),
 			Status: new FormControl<CommandStatus | null | undefined>(undefined),
-			StatusDetails: new FormControl<string | null | undefined>(undefined),
-			OutputS3Region: new FormControl<string | null | undefined>(undefined),
-			OutputS3BucketName: new FormControl<string | null | undefined>(undefined),
-			OutputS3KeyPrefix: new FormControl<string | null | undefined>(undefined),
-			MaxConcurrency: new FormControl<string | null | undefined>(undefined),
-			MaxErrors: new FormControl<string | null | undefined>(undefined),
+			StatusDetails: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(0)]),
+			OutputS3Region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(3)]),
+			OutputS3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3)]),
+			OutputS3KeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
+			MaxConcurrency: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
+			MaxErrors: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
 			TargetCount: new FormControl<number | null | undefined>(undefined),
 			CompletedCount: new FormControl<number | null | undefined>(undefined),
 			ErrorCount: new FormControl<number | null | undefined>(undefined),
 			DeliveryTimedOutCount: new FormControl<number | null | undefined>(undefined),
 			ServiceRole: new FormControl<string | null | undefined>(undefined),
-			TimeoutSeconds: new FormControl<number | null | undefined>(undefined),
+			TimeoutSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(30), Validators.max(2592000)]),
 		});
 
 	}
@@ -7352,23 +12412,52 @@ export namespace MyNS {
 	export enum CommandStatus { Pending = 0, InProgress = 1, Success = 2, Cancelled = 3, Failed = 4, TimedOut = 5, Cancelling = 6 }
 
 	export interface ListCommandsRequest {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		CommandId?: string | null;
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 5
+		 */
 		Filters?: Array<CommandFilter>;
 	}
 	export interface ListCommandsRequestFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		CommandId: FormControl<string | null | undefined>,
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListCommandsRequestFormGroup() {
 		return new FormGroup<ListCommandsRequestFormProperties>({
-			CommandId: new FormControl<string | null | undefined>(undefined),
+			CommandId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 			InstanceId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -7391,10 +12480,28 @@ export namespace MyNS {
 
 	/** Information about the compliance as defined by the resource type. For example, for a patch resource type, <code>Items</code> includes information about the PatchSeverity, Classification, and so on. */
 	export interface ComplianceItem {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [A-Za-z0-9_\-]\w+|Custom:[a-zA-Z0-9_\-]\w+
+		 */
 		ComplianceType?: string | null;
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		ResourceType?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ResourceId?: string | null;
 		Id?: string | null;
+
+		/** Max length: 500 */
 		Title?: string | null;
 		Status?: ComplianceItemStatus | null;
 		Severity?: PatchRuleComplianceLevel | null;
@@ -7406,21 +12513,39 @@ export namespace MyNS {
 
 	/** Information about the compliance as defined by the resource type. For example, for a patch resource type, <code>Items</code> includes information about the PatchSeverity, Classification, and so on. */
 	export interface ComplianceItemFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [A-Za-z0-9_\-]\w+|Custom:[a-zA-Z0-9_\-]\w+
+		 */
 		ComplianceType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		ResourceType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ResourceId: FormControl<string | null | undefined>,
 		Id: FormControl<string | null | undefined>,
+
+		/** Max length: 500 */
 		Title: FormControl<string | null | undefined>,
 		Status: FormControl<ComplianceItemStatus | null | undefined>,
 		Severity: FormControl<PatchRuleComplianceLevel | null | undefined>,
 	}
 	export function CreateComplianceItemFormGroup() {
 		return new FormGroup<ComplianceItemFormProperties>({
-			ComplianceType: new FormControl<string | null | undefined>(undefined),
-			ResourceType: new FormControl<string | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ComplianceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			Id: new FormControl<string | null | undefined>(undefined),
-			Title: new FormControl<string | null | undefined>(undefined),
+			Title: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
 			Status: new FormControl<ComplianceItemStatus | null | undefined>(undefined),
 			Severity: new FormControl<PatchRuleComplianceLevel | null | undefined>(undefined),
 		});
@@ -7432,22 +12557,34 @@ export namespace MyNS {
 
 	/** A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'. */
 	export interface ComplianceExecutionSummary {
+
+		/** Required */
 		ExecutionTime: Date;
+
+		/** Max length: 100 */
 		ExecutionId?: string | null;
+
+		/** Max length: 50 */
 		ExecutionType?: string | null;
 	}
 
 	/** A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'. */
 	export interface ComplianceExecutionSummaryFormProperties {
+
+		/** Required */
 		ExecutionTime: FormControl<Date | null | undefined>,
+
+		/** Max length: 100 */
 		ExecutionId: FormControl<string | null | undefined>,
+
+		/** Max length: 50 */
 		ExecutionType: FormControl<string | null | undefined>,
 	}
 	export function CreateComplianceExecutionSummaryFormGroup() {
 		return new FormGroup<ComplianceExecutionSummaryFormProperties>({
-			ExecutionTime: new FormControl<Date | null | undefined>(undefined),
-			ExecutionId: new FormControl<string | null | undefined>(undefined),
-			ExecutionType: new FormControl<string | null | undefined>(undefined),
+			ExecutionTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			ExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
+			ExecutionType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50)]),
 		});
 
 	}
@@ -7464,19 +12601,33 @@ export namespace MyNS {
 
 	export interface ListComplianceItemsRequest {
 		Filters?: Array<ComplianceStringFilter>;
+
+		/** Minimum items: 1 */
 		ResourceIds?: Array<string>;
+
+		/** Minimum items: 1 */
 		ResourceTypes?: Array<string>;
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListComplianceItemsRequestFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListComplianceItemsRequestFormGroup() {
 		return new FormGroup<ListComplianceItemsRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 		});
 
 	}
@@ -7484,19 +12635,34 @@ export namespace MyNS {
 
 	/** One or more filters. Use a filter to return a more specific list of results. */
 	export interface ComplianceStringFilter {
+
+		/**
+		 * Max length: 200
+		 * Min length: 1
+		 */
 		Key?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 20
+		 */
 		Values?: Array<string>;
 		Type?: ComplianceStringFilterType | null;
 	}
 
 	/** One or more filters. Use a filter to return a more specific list of results. */
 	export interface ComplianceStringFilterFormProperties {
+
+		/**
+		 * Max length: 200
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
 		Type: FormControl<ComplianceStringFilterType | null | undefined>,
 	}
 	export function CreateComplianceStringFilterFormGroup() {
 		return new FormGroup<ComplianceStringFilterFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
 			Type: new FormControl<ComplianceStringFilterType | null | undefined>(undefined),
 		});
 
@@ -7521,6 +12687,12 @@ export namespace MyNS {
 
 	/** A summary of compliance information by compliance type. */
 	export interface ComplianceSummaryItem {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [A-Za-z0-9_\-]\w+|Custom:[a-zA-Z0-9_\-]\w+
+		 */
 		ComplianceType?: string | null;
 
 		/** A summary of resources that are compliant. The summary is organized according to the resource count for each compliance type. */
@@ -7532,11 +12704,17 @@ export namespace MyNS {
 
 	/** A summary of compliance information by compliance type. */
 	export interface ComplianceSummaryItemFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [A-Za-z0-9_\-]\w+|Custom:[a-zA-Z0-9_\-]\w+
+		 */
 		ComplianceType: FormControl<string | null | undefined>,
 	}
 	export function CreateComplianceSummaryItemFormGroup() {
 		return new FormGroup<ComplianceSummaryItemFormProperties>({
-			ComplianceType: new FormControl<string | null | undefined>(undefined),
+			ComplianceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -7616,21 +12794,33 @@ export namespace MyNS {
 	export interface ListComplianceSummariesRequest {
 		Filters?: Array<ComplianceStringFilter>;
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListComplianceSummariesRequestFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListComplianceSummariesRequestFormGroup() {
 		return new FormGroup<ListComplianceSummariesRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 		});
 
 	}
 
 	export interface ListDocumentVersionsResult {
+
+		/** Minimum items: 1 */
 		DocumentVersions?: Array<DocumentVersionInfo>;
 		NextToken?: string | null;
 	}
@@ -7647,8 +12837,14 @@ export namespace MyNS {
 
 	/** Version information about the document. */
 	export interface DocumentVersionInfo {
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		Name?: string | null;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion?: string | null;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{1,128}$ */
 		VersionName?: string | null;
 		CreatedDate?: Date | null;
 		IsDefaultVersion?: boolean | null;
@@ -7661,8 +12857,14 @@ export namespace MyNS {
 
 	/** Version information about the document. */
 	export interface DocumentVersionInfoFormProperties {
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{1,128}$ */
 		VersionName: FormControl<string | null | undefined>,
 		CreatedDate: FormControl<Date | null | undefined>,
 		IsDefaultVersion: FormControl<boolean | null | undefined>,
@@ -7687,19 +12889,39 @@ export namespace MyNS {
 	}
 
 	export interface ListDocumentVersionsRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$
+		 */
 		Name: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface ListDocumentVersionsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListDocumentVersionsRequestFormGroup() {
 		return new FormGroup<ListDocumentVersionsRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -7722,28 +12944,58 @@ export namespace MyNS {
 
 	/** Describes the name of a Systems Manager document. */
 	export interface DocumentIdentifier {
+
+		/** Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$ */
 		Name?: string | null;
 		Owner?: string | null;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{1,128}$ */
 		VersionName?: string | null;
 		PlatformTypes?: Array<PlatformType>;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion?: string | null;
 		DocumentType?: DocumentDescriptionDocumentType | null;
+
+		/** Pattern: ([0-9]+)\.([0-9]+) */
 		SchemaVersion?: string | null;
 		DocumentFormat?: DocumentDescriptionDocumentFormat | null;
+
+		/**
+		 * Max length: 200
+		 * Pattern: ^\/[\w\.\-\:\/]*$
+		 */
 		TargetType?: string | null;
+
+		/** Maximum items: 1000 */
 		Tags?: Array<Tag>;
+
+		/** Minimum items: 1 */
 		Requires?: Array<DocumentRequires>;
 	}
 
 	/** Describes the name of a Systems Manager document. */
 	export interface DocumentIdentifierFormProperties {
+
+		/** Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$ */
 		Name: FormControl<string | null | undefined>,
 		Owner: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{1,128}$ */
 		VersionName: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion: FormControl<string | null | undefined>,
 		DocumentType: FormControl<DocumentDescriptionDocumentType | null | undefined>,
+
+		/** Pattern: ([0-9]+)\.([0-9]+) */
 		SchemaVersion: FormControl<string | null | undefined>,
 		DocumentFormat: FormControl<DocumentDescriptionDocumentFormat | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Pattern: ^\/[\w\.\-\:\/]*$
+		 */
 		TargetType: FormControl<string | null | undefined>,
 	}
 	export function CreateDocumentIdentifierFormGroup() {
@@ -7755,24 +13007,41 @@ export namespace MyNS {
 			DocumentType: new FormControl<DocumentDescriptionDocumentType | null | undefined>(undefined),
 			SchemaVersion: new FormControl<string | null | undefined>(undefined),
 			DocumentFormat: new FormControl<DocumentDescriptionDocumentFormat | null | undefined>(undefined),
-			TargetType: new FormControl<string | null | undefined>(undefined),
+			TargetType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200)]),
 		});
 
 	}
 
 	export interface ListDocumentsRequest {
+
+		/** Minimum items: 1 */
 		DocumentFilterList?: Array<DocumentFilter>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 6
+		 */
 		Filters?: Array<DocumentKeyValuesFilter>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface ListDocumentsRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListDocumentsRequestFormGroup() {
 		return new FormGroup<ListDocumentsRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -7781,19 +13050,33 @@ export namespace MyNS {
 
 	/** This data type is deprecated. Instead, use <a>DocumentKeyValuesFilter</a>. */
 	export interface DocumentFilter {
+
+		/** Required */
 		key: DocumentFilterKey;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		value: string;
 	}
 
 	/** This data type is deprecated. Instead, use <a>DocumentKeyValuesFilter</a>. */
 	export interface DocumentFilterFormProperties {
+
+		/** Required */
 		key: FormControl<DocumentFilterKey | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateDocumentFilterFormGroup() {
 		return new FormGroup<DocumentFilterFormProperties>({
-			key: new FormControl<DocumentFilterKey | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<DocumentFilterKey | null | undefined>(undefined, [Validators.required]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -7803,39 +13086,78 @@ export namespace MyNS {
 
 	/** <p>One or more filters. Use a filter to return a more specific list of documents.</p> <p>For keys, you can specify one or more tags that have been applied to a document. </p> <p>Other valid values include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>.</p> <p>Note that only one Owner can be specified in a request. For example: <code>Key=Owner,Values=Self</code>.</p> <p>If you use Name as a key, you can use a name prefix to return a list of documents. For example, in the AWS CLI, to return a list of all documents that begin with <code>Te</code>, run the following command:</p> <p> <code>aws ssm list-documents --filters Key=Name,Values=Te</code> </p> <p>If you specify more than two keys, only documents that are identified by all the tags are returned in the results. If you specify more than two values for a key, documents that are identified by any of the values are returned in the results.</p> <p>To specify a custom key and value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.</p> <p>For example, if you created a Key called region and are using the AWS CLI to call the <code>list-documents</code> command: </p> <p> <code>aws ssm list-documents --filters Key=tag:region,Values=east,west Key=Owner,Values=Self</code> </p> */
 	export interface DocumentKeyValuesFilter {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key?: string | null;
 		Values?: Array<string>;
 	}
 
 	/** <p>One or more filters. Use a filter to return a more specific list of documents.</p> <p>For keys, you can specify one or more tags that have been applied to a document. </p> <p>Other valid values include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>.</p> <p>Note that only one Owner can be specified in a request. For example: <code>Key=Owner,Values=Self</code>.</p> <p>If you use Name as a key, you can use a name prefix to return a list of documents. For example, in the AWS CLI, to return a list of all documents that begin with <code>Te</code>, run the following command:</p> <p> <code>aws ssm list-documents --filters Key=Name,Values=Te</code> </p> <p>If you specify more than two keys, only documents that are identified by all the tags are returned in the results. If you specify more than two values for a key, documents that are identified by any of the values are returned in the results.</p> <p>To specify a custom key and value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.</p> <p>For example, if you created a Key called region and are using the AWS CLI to call the <code>list-documents</code> command: </p> <p> <code>aws ssm list-documents --filters Key=tag:region,Values=east,west Key=Owner,Values=Self</code> </p> */
 	export interface DocumentKeyValuesFilterFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
 	}
 	export function CreateDocumentKeyValuesFilterFormGroup() {
 		return new FormGroup<DocumentKeyValuesFilterFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListInventoryEntriesResult {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^(AWS|Custom):.*$
+		 */
 		TypeName?: string | null;
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId?: string | null;
+
+		/** Pattern: ^([0-9]{1,6})(\.[0-9]{1,6})$ */
 		SchemaVersion?: string | null;
+
+		/** Pattern: ^(20)[0-9][0-9]-(0[1-9]|1[012])-([12][0-9]|3[01]|0[1-9])(T)(2[0-3]|[0-1][0-9])(:[0-5][0-9])(:[0-5][0-9])(Z)$ */
 		CaptureTime?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10000
+		 */
 		Entries?: Array<InventoryItemEntry>;
 		NextToken?: string | null;
 	}
 	export interface ListInventoryEntriesResultFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^(AWS|Custom):.*$
+		 */
 		TypeName: FormControl<string | null | undefined>,
+
+		/** Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$) */
 		InstanceId: FormControl<string | null | undefined>,
+
+		/** Pattern: ^([0-9]{1,6})(\.[0-9]{1,6})$ */
 		SchemaVersion: FormControl<string | null | undefined>,
+
+		/** Pattern: ^(20)[0-9][0-9]-(0[1-9]|1[012])-([12][0-9]|3[01]|0[1-9])(T)(2[0-3]|[0-1][0-9])(:[0-5][0-9])(:[0-5][0-9])(Z)$ */
 		CaptureTime: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListInventoryEntriesResultFormGroup() {
 		return new FormGroup<ListInventoryEntriesResultFormProperties>({
-			TypeName: new FormControl<string | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			InstanceId: new FormControl<string | null | undefined>(undefined),
 			SchemaVersion: new FormControl<string | null | undefined>(undefined),
 			CaptureTime: new FormControl<string | null | undefined>(undefined),
@@ -7855,24 +13177,63 @@ export namespace MyNS {
 	}
 
 	export interface ListInventoryEntriesRequest {
+
+		/**
+		 * Required
+		 * Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)
+		 */
 		InstanceId: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^(AWS|Custom):.*$
+		 */
 		TypeName: string;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 5
+		 */
 		Filters?: Array<InventoryFilter>;
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListInventoryEntriesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)
+		 */
 		InstanceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^(AWS|Custom):.*$
+		 */
 		TypeName: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListInventoryEntriesRequestFormGroup() {
 		return new FormGroup<ListInventoryEntriesRequestFormProperties>({
-			InstanceId: new FormControl<string | null | undefined>(undefined),
-			TypeName: new FormControl<string | null | undefined>(undefined),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TypeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 		});
 
 	}
@@ -7894,8 +13255,24 @@ export namespace MyNS {
 
 	/** Compliance summary information for a specific resource.  */
 	export interface ResourceComplianceSummaryItem {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [A-Za-z0-9_\-]\w+|Custom:[a-zA-Z0-9_\-]\w+
+		 */
 		ComplianceType?: string | null;
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		ResourceType?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ResourceId?: string | null;
 		Status?: ComplianceItemStatus | null;
 		OverallSeverity?: PatchRuleComplianceLevel | null;
@@ -7912,17 +13289,33 @@ export namespace MyNS {
 
 	/** Compliance summary information for a specific resource.  */
 	export interface ResourceComplianceSummaryItemFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [A-Za-z0-9_\-]\w+|Custom:[a-zA-Z0-9_\-]\w+
+		 */
 		ComplianceType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		ResourceType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ResourceId: FormControl<string | null | undefined>,
 		Status: FormControl<ComplianceItemStatus | null | undefined>,
 		OverallSeverity: FormControl<PatchRuleComplianceLevel | null | undefined>,
 	}
 	export function CreateResourceComplianceSummaryItemFormGroup() {
 		return new FormGroup<ResourceComplianceSummaryItemFormProperties>({
-			ComplianceType: new FormControl<string | null | undefined>(undefined),
-			ResourceType: new FormControl<string | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ComplianceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			Status: new FormControl<ComplianceItemStatus | null | undefined>(undefined),
 			OverallSeverity: new FormControl<PatchRuleComplianceLevel | null | undefined>(undefined),
 		});
@@ -7932,16 +13325,26 @@ export namespace MyNS {
 	export interface ListResourceComplianceSummariesRequest {
 		Filters?: Array<ComplianceStringFilter>;
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListResourceComplianceSummariesRequestFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListResourceComplianceSummariesRequestFormGroup() {
 		return new FormGroup<ListResourceComplianceSummariesRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 		});
 
 	}
@@ -7963,7 +13366,17 @@ export namespace MyNS {
 
 	/** Information about a Resource Data Sync configuration, including its current status and last successful sync. */
 	export interface ResourceDataSyncItem {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SyncName?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SyncType?: string | null;
 
 		/** <p>The data type name for including resource data sync state. There are four sync states:</p> <p> <code>OrganizationNotExists</code> (Your organization doesn't exist)</p> <p> <code>NoPermissions</code> (The system can't locate the service-linked role. This role is automatically created when a user creates a resource data sync in Explorer.)</p> <p> <code>InvalidOrganizationalUnit</code> (You specified or selected an invalid unit in the resource data sync configuration.)</p> <p> <code>TrustedAccessDisabled</code> (You disabled Systems Manager access in the organization in AWS Organizations.)</p> */
@@ -7981,7 +13394,17 @@ export namespace MyNS {
 
 	/** Information about a Resource Data Sync configuration, including its current status and last successful sync. */
 	export interface ResourceDataSyncItemFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SyncName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SyncType: FormControl<string | null | undefined>,
 		LastSyncTime: FormControl<Date | null | undefined>,
 		LastSuccessfulSyncTime: FormControl<Date | null | undefined>,
@@ -7992,8 +13415,8 @@ export namespace MyNS {
 	}
 	export function CreateResourceDataSyncItemFormGroup() {
 		return new FormGroup<ResourceDataSyncItemFormProperties>({
-			SyncName: new FormControl<string | null | undefined>(undefined),
-			SyncType: new FormControl<string | null | undefined>(undefined),
+			SyncName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			SyncType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			LastSyncTime: new FormControl<Date | null | undefined>(undefined),
 			LastSuccessfulSyncTime: new FormControl<Date | null | undefined>(undefined),
 			SyncLastModifiedTime: new FormControl<Date | null | undefined>(undefined),
@@ -8007,26 +13430,46 @@ export namespace MyNS {
 
 	/** <p>The data type name for including resource data sync state. There are four sync states:</p> <p> <code>OrganizationNotExists</code> (Your organization doesn't exist)</p> <p> <code>NoPermissions</code> (The system can't locate the service-linked role. This role is automatically created when a user creates a resource data sync in Explorer.)</p> <p> <code>InvalidOrganizationalUnit</code> (You specified or selected an invalid unit in the resource data sync configuration.)</p> <p> <code>TrustedAccessDisabled</code> (You disabled Systems Manager access in the organization in AWS Organizations.)</p> */
 	export interface ResourceDataSyncSourceWithState {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SourceType?: string | null;
 
 		/** Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can synchronize data from AWS Organizations or, if an AWS Organization is not present, from multiple AWS Regions. */
 		AwsOrganizationsSource?: ResourceDataSyncAwsOrganizationsSource;
 		SourceRegions?: Array<string>;
 		IncludeFutureRegions?: boolean | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		State?: string | null;
 	}
 
 	/** <p>The data type name for including resource data sync state. There are four sync states:</p> <p> <code>OrganizationNotExists</code> (Your organization doesn't exist)</p> <p> <code>NoPermissions</code> (The system can't locate the service-linked role. This role is automatically created when a user creates a resource data sync in Explorer.)</p> <p> <code>InvalidOrganizationalUnit</code> (You specified or selected an invalid unit in the resource data sync configuration.)</p> <p> <code>TrustedAccessDisabled</code> (You disabled Systems Manager access in the organization in AWS Organizations.)</p> */
 	export interface ResourceDataSyncSourceWithStateFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SourceType: FormControl<string | null | undefined>,
 		IncludeFutureRegions: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		State: FormControl<string | null | undefined>,
 	}
 	export function CreateResourceDataSyncSourceWithStateFormGroup() {
 		return new FormGroup<ResourceDataSyncSourceWithStateFormProperties>({
-			SourceType: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			IncludeFutureRegions: new FormControl<boolean | null | undefined>(undefined),
-			State: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -8034,25 +13477,47 @@ export namespace MyNS {
 	export enum ResourceDataSyncItemLastStatus { Successful = 0, Failed = 1, InProgress = 2 }
 
 	export interface ListResourceDataSyncRequest {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SyncType?: string | null;
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListResourceDataSyncRequestFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SyncType: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListResourceDataSyncRequestFormGroup() {
 		return new FormGroup<ListResourceDataSyncRequestFormProperties>({
-			SyncType: new FormControl<string | null | undefined>(undefined),
+			SyncType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 		});
 
 	}
 
 	export interface ListTagsForResourceResult {
+
+		/** Maximum items: 1000 */
 		TagList?: Array<Tag>;
 	}
 	export interface ListTagsForResourceResultFormProperties {
@@ -8064,17 +13529,25 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceRequest {
+
+		/** Required */
 		ResourceType: AddTagsToResourceRequestResourceType;
+
+		/** Required */
 		ResourceId: string;
 	}
 	export interface ListTagsForResourceRequestFormProperties {
+
+		/** Required */
 		ResourceType: FormControl<AddTagsToResourceRequestResourceType | null | undefined>,
+
+		/** Required */
 		ResourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			ResourceType: new FormControl<AddTagsToResourceRequestResourceType | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<AddTagsToResourceRequestResourceType | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8090,9 +13563,20 @@ export namespace MyNS {
 	}
 
 	export interface ModifyDocumentPermissionRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: string;
+
+		/** Required */
 		PermissionType: DescribeDocumentPermissionRequestPermissionType;
+
+		/** Maximum items: 20 */
 		AccountIdsToAdd?: Array<string>;
+
+		/** Maximum items: 20 */
 		AccountIdsToRemove?: Array<string>;
 
 		/**
@@ -8103,7 +13587,14 @@ export namespace MyNS {
 		SharedDocumentVersion?: string | null;
 	}
 	export interface ModifyDocumentPermissionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		PermissionType: FormControl<DescribeDocumentPermissionRequestPermissionType | null | undefined>,
 
 		/**
@@ -8115,9 +13606,9 @@ export namespace MyNS {
 	}
 	export function CreateModifyDocumentPermissionRequestFormGroup() {
 		return new FormGroup<ModifyDocumentPermissionRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			PermissionType: new FormControl<DescribeDocumentPermissionRequestPermissionType | null | undefined>(undefined),
-			SharedDocumentVersion: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PermissionType: new FormControl<DescribeDocumentPermissionRequestPermissionType | null | undefined>(undefined, [Validators.required]),
+			SharedDocumentVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 		});
 
 	}
@@ -8143,8 +13634,27 @@ export namespace MyNS {
 	}
 
 	export interface PutComplianceItemsRequest {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ResourceId: string;
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		ResourceType: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [A-Za-z0-9_\-]\w+|Custom:[a-zA-Z0-9_\-]\w+
+		 */
 		ComplianceType: string;
 
 		/**
@@ -8152,23 +13662,52 @@ export namespace MyNS {
 		 * Required
 		 */
 		ExecutionSummary: ComplianceExecutionSummary;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 10000
+		 */
 		Items: Array<ComplianceItemEntry>;
+
+		/** Max length: 256 */
 		ItemContentHash?: string | null;
 		UploadType?: PutComplianceItemsRequestUploadType | null;
 	}
 	export interface PutComplianceItemsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		ResourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		ResourceType: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [A-Za-z0-9_\-]\w+|Custom:[a-zA-Z0-9_\-]\w+
+		 */
 		ComplianceType: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		ItemContentHash: FormControl<string | null | undefined>,
 		UploadType: FormControl<PutComplianceItemsRequestUploadType | null | undefined>,
 	}
 	export function CreatePutComplianceItemsRequestFormGroup() {
 		return new FormGroup<PutComplianceItemsRequestFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined),
-			ResourceType: new FormControl<string | null | undefined>(undefined),
-			ComplianceType: new FormControl<string | null | undefined>(undefined),
-			ItemContentHash: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
+			ComplianceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			ItemContentHash: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			UploadType: new FormControl<PutComplianceItemsRequestUploadType | null | undefined>(undefined),
 		});
 
@@ -8178,8 +13717,14 @@ export namespace MyNS {
 	/** Information about a compliance item. */
 	export interface ComplianceItemEntry {
 		Id?: string | null;
+
+		/** Max length: 500 */
 		Title?: string | null;
+
+		/** Required */
 		Severity: PatchRuleComplianceLevel;
+
+		/** Required */
 		Status: ComplianceItemStatus;
 		Details?: ComplianceItemDetails;
 	}
@@ -8187,16 +13732,22 @@ export namespace MyNS {
 	/** Information about a compliance item. */
 	export interface ComplianceItemEntryFormProperties {
 		Id: FormControl<string | null | undefined>,
+
+		/** Max length: 500 */
 		Title: FormControl<string | null | undefined>,
+
+		/** Required */
 		Severity: FormControl<PatchRuleComplianceLevel | null | undefined>,
+
+		/** Required */
 		Status: FormControl<ComplianceItemStatus | null | undefined>,
 	}
 	export function CreateComplianceItemEntryFormGroup() {
 		return new FormGroup<ComplianceItemEntryFormProperties>({
 			Id: new FormControl<string | null | undefined>(undefined),
-			Title: new FormControl<string | null | undefined>(undefined),
-			Severity: new FormControl<PatchRuleComplianceLevel | null | undefined>(undefined),
-			Status: new FormControl<ComplianceItemStatus | null | undefined>(undefined),
+			Title: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
+			Severity: new FormControl<PatchRuleComplianceLevel | null | undefined>(undefined, [Validators.required]),
+			Status: new FormControl<ComplianceItemStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8257,15 +13808,31 @@ export namespace MyNS {
 	}
 
 	export interface PutInventoryRequest {
+
+		/**
+		 * Required
+		 * Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)
+		 */
 		InstanceId: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 30
+		 */
 		Items: Array<InventoryItem>;
 	}
 	export interface PutInventoryRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)
+		 */
 		InstanceId: FormControl<string | null | undefined>,
 	}
 	export function CreatePutInventoryRequestFormGroup() {
 		return new FormGroup<PutInventoryRequestFormProperties>({
-			InstanceId: new FormControl<string | null | undefined>(undefined),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8273,27 +13840,70 @@ export namespace MyNS {
 
 	/** Information collected from managed instances based on your inventory policy document */
 	export interface InventoryItem {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^(AWS|Custom):.*$
+		 */
 		TypeName: string;
+
+		/**
+		 * Required
+		 * Pattern: ^([0-9]{1,6})(\.[0-9]{1,6})$
+		 */
 		SchemaVersion: string;
+
+		/**
+		 * Required
+		 * Pattern: ^(20)[0-9][0-9]-(0[1-9]|1[012])-([12][0-9]|3[01]|0[1-9])(T)(2[0-3]|[0-1][0-9])(:[0-5][0-9])(:[0-5][0-9])(Z)$
+		 */
 		CaptureTime: string;
+
+		/** Max length: 256 */
 		ContentHash?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10000
+		 */
 		Content?: Array<InventoryItemEntry>;
 		Context?: InventoryItemContentContext;
 	}
 
 	/** Information collected from managed instances based on your inventory policy document */
 	export interface InventoryItemFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^(AWS|Custom):.*$
+		 */
 		TypeName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: ^([0-9]{1,6})(\.[0-9]{1,6})$
+		 */
 		SchemaVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: ^(20)[0-9][0-9]-(0[1-9]|1[012])-([12][0-9]|3[01]|0[1-9])(T)(2[0-3]|[0-1][0-9])(:[0-5][0-9])(:[0-5][0-9])(Z)$
+		 */
 		CaptureTime: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		ContentHash: FormControl<string | null | undefined>,
 	}
 	export function CreateInventoryItemFormGroup() {
 		return new FormGroup<InventoryItemFormProperties>({
-			TypeName: new FormControl<string | null | undefined>(undefined),
-			SchemaVersion: new FormControl<string | null | undefined>(undefined),
-			CaptureTime: new FormControl<string | null | undefined>(undefined),
-			ContentHash: new FormControl<string | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			SchemaVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			CaptureTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ContentHash: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -8387,42 +13997,112 @@ export namespace MyNS {
 	export enum PutParameterResultTier { Standard = 0, Advanced = 1, Intelligent_Tiering = 2 }
 
 	export interface PutParameterRequest {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Name: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description?: string | null;
+
+		/** Required */
 		Value: string;
 		Type?: ParameterMetadataType | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([a-zA-Z0-9:/_-]+)$
+		 */
 		KeyId?: string | null;
 		Overwrite?: boolean | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		AllowedPattern?: string | null;
+
+		/** Maximum items: 1000 */
 		Tags?: Array<Tag>;
 		Tier?: PutParameterRequestTier | null;
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		Policies?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 0
+		 */
 		DataType?: string | null;
 	}
 	export interface PutParameterRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/** Required */
 		Value: FormControl<string | null | undefined>,
 		Type: FormControl<ParameterMetadataType | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([a-zA-Z0-9:/_-]+)$
+		 */
 		KeyId: FormControl<string | null | undefined>,
 		Overwrite: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		AllowedPattern: FormControl<string | null | undefined>,
 		Tier: FormControl<PutParameterRequestTier | null | undefined>,
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		Policies: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 0
+		 */
 		DataType: FormControl<string | null | undefined>,
 	}
 	export function CreatePutParameterRequestFormGroup() {
 		return new FormGroup<PutParameterRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Type: new FormControl<ParameterMetadataType | null | undefined>(undefined),
-			KeyId: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			Overwrite: new FormControl<boolean | null | undefined>(undefined),
-			AllowedPattern: new FormControl<string | null | undefined>(undefined),
+			AllowedPattern: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 			Tier: new FormControl<PutParameterRequestTier | null | undefined>(undefined),
-			Policies: new FormControl<string | null | undefined>(undefined),
-			DataType: new FormControl<string | null | undefined>(undefined),
+			Policies: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			DataType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
 		});
 
 	}
@@ -8550,59 +14230,137 @@ export namespace MyNS {
 	}
 
 	export interface RegisterDefaultPatchBaselineResult {
+
+		/**
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId?: string | null;
 	}
 	export interface RegisterDefaultPatchBaselineResultFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterDefaultPatchBaselineResultFormGroup() {
 		return new FormGroup<RegisterDefaultPatchBaselineResultFormProperties>({
-			BaselineId: new FormControl<string | null | undefined>(undefined),
+			BaselineId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface RegisterDefaultPatchBaselineRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: string;
 	}
 	export interface RegisterDefaultPatchBaselineRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterDefaultPatchBaselineRequestFormGroup() {
 		return new FormGroup<RegisterDefaultPatchBaselineRequestFormProperties>({
-			BaselineId: new FormControl<string | null | undefined>(undefined),
+			BaselineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(20)]),
 		});
 
 	}
 
 	export interface RegisterPatchBaselineForPatchGroupResult {
+
+		/**
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PatchGroup?: string | null;
 	}
 	export interface RegisterPatchBaselineForPatchGroupResultFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PatchGroup: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterPatchBaselineForPatchGroupResultFormGroup() {
 		return new FormGroup<RegisterPatchBaselineForPatchGroupResultFormProperties>({
-			BaselineId: new FormControl<string | null | undefined>(undefined),
-			PatchGroup: new FormControl<string | null | undefined>(undefined),
+			BaselineId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(20)]),
+			PatchGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface RegisterPatchBaselineForPatchGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PatchGroup: string;
 	}
 	export interface RegisterPatchBaselineForPatchGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		PatchGroup: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterPatchBaselineForPatchGroupRequestFormGroup() {
 		return new FormGroup<RegisterPatchBaselineForPatchGroupRequestFormProperties>({
-			BaselineId: new FormControl<string | null | undefined>(undefined),
-			PatchGroup: new FormControl<string | null | undefined>(undefined),
+			BaselineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(20)]),
+			PatchGroup: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -8618,104 +14376,294 @@ export namespace MyNS {
 	}
 
 	export interface RegisterTargetWithMaintenanceWindowResult {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTargetId?: string | null;
 	}
 	export interface RegisterTargetWithMaintenanceWindowResultFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTargetId: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterTargetWithMaintenanceWindowResultFormGroup() {
 		return new FormGroup<RegisterTargetWithMaintenanceWindowResultFormProperties>({
-			WindowTargetId: new FormControl<string | null | undefined>(undefined),
+			WindowTargetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
 
 	export interface RegisterTargetWithMaintenanceWindowRequest {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: string;
+
+		/** Required */
 		ResourceType: DescribeMaintenanceWindowScheduleRequestResourceType;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Targets: Array<Target>;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		OwnerInformation?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ClientToken?: string | null;
 	}
 	export interface RegisterTargetWithMaintenanceWindowRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
+
+		/** Required */
 		ResourceType: FormControl<DescribeMaintenanceWindowScheduleRequestResourceType | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		OwnerInformation: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ClientToken: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterTargetWithMaintenanceWindowRequestFormGroup() {
 		return new FormGroup<RegisterTargetWithMaintenanceWindowRequestFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
-			ResourceType: new FormControl<DescribeMaintenanceWindowScheduleRequestResourceType | null | undefined>(undefined),
-			OwnerInformation: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			ClientToken: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20), Validators.minLength(20)]),
+			ResourceType: new FormControl<DescribeMaintenanceWindowScheduleRequestResourceType | null | undefined>(undefined, [Validators.required]),
+			OwnerInformation: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface RegisterTaskWithMaintenanceWindowResult {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTaskId?: string | null;
 	}
 	export interface RegisterTaskWithMaintenanceWindowResultFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTaskId: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterTaskWithMaintenanceWindowResultFormGroup() {
 		return new FormGroup<RegisterTaskWithMaintenanceWindowResultFormProperties>({
-			WindowTaskId: new FormControl<string | null | undefined>(undefined),
+			WindowTaskId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
 
 	export interface RegisterTaskWithMaintenanceWindowRequest {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: string;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Targets: Array<Target>;
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		TaskArn: string;
 		ServiceRoleArn?: string | null;
+
+		/** Required */
 		TaskType: MaintenanceWindowExecutionTaskInvocationIdentityTaskType;
 		TaskParameters?: MaintenanceWindowTaskParameters;
 
 		/** The parameters for task execution. */
 		TaskInvocationParameters?: MaintenanceWindowTaskInvocationParameters;
+
+		/** Minimum: 0 */
 		Priority?: number | null;
+
+		/**
+		 * Required
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency: string;
+
+		/**
+		 * Required
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors: string;
 
 		/** <p>Information about an S3 bucket to write instance-level logs to.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> */
 		LoggingInfo?: LoggingInfo;
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ClientToken?: string | null;
 	}
 	export interface RegisterTaskWithMaintenanceWindowRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		TaskArn: FormControl<string | null | undefined>,
 		ServiceRoleArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		TaskType: FormControl<MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null | undefined>,
+
+		/** Minimum: 0 */
 		Priority: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		ClientToken: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterTaskWithMaintenanceWindowRequestFormGroup() {
 		return new FormGroup<RegisterTaskWithMaintenanceWindowRequestFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
-			TaskArn: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20), Validators.minLength(20)]),
+			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
 			ServiceRoleArn: new FormControl<string | null | undefined>(undefined),
-			TaskType: new FormControl<MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null | undefined>(undefined),
-			Priority: new FormControl<number | null | undefined>(undefined),
-			MaxConcurrency: new FormControl<string | null | undefined>(undefined),
-			MaxErrors: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			ClientToken: new FormControl<string | null | undefined>(undefined),
+			TaskType: new FormControl<MaintenanceWindowExecutionTaskInvocationIdentityTaskType | null | undefined>(undefined, [Validators.required]),
+			Priority: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			MaxConcurrency: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(7), Validators.minLength(1)]),
+			MaxErrors: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(7), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -8741,18 +14689,28 @@ export namespace MyNS {
 	}
 
 	export interface RemoveTagsFromResourceRequest {
+
+		/** Required */
 		ResourceType: AddTagsToResourceRequestResourceType;
+
+		/** Required */
 		ResourceId: string;
+
+		/** Required */
 		TagKeys: Array<string>;
 	}
 	export interface RemoveTagsFromResourceRequestFormProperties {
+
+		/** Required */
 		ResourceType: FormControl<AddTagsToResourceRequestResourceType | null | undefined>,
+
+		/** Required */
 		ResourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveTagsFromResourceRequestFormGroup() {
 		return new FormGroup<RemoveTagsFromResourceRequestFormProperties>({
-			ResourceType: new FormControl<AddTagsToResourceRequestResourceType | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<AddTagsToResourceRequestResourceType | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8777,48 +14735,92 @@ export namespace MyNS {
 
 	/** The request body of the ResetServiceSetting API action. */
 	export interface ResetServiceSettingRequest {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		SettingId: string;
 	}
 
 	/** The request body of the ResetServiceSetting API action. */
 	export interface ResetServiceSettingRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		SettingId: FormControl<string | null | undefined>,
 	}
 	export function CreateResetServiceSettingRequestFormGroup() {
 		return new FormGroup<ResetServiceSettingRequestFormProperties>({
-			SettingId: new FormControl<string | null | undefined>(undefined),
+			SettingId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ResumeSessionResponse {
+
+		/**
+		 * Max length: 96
+		 * Min length: 1
+		 */
 		SessionId?: string | null;
+
+		/**
+		 * Max length: 300
+		 * Min length: 0
+		 */
 		TokenValue?: string | null;
 		StreamUrl?: string | null;
 	}
 	export interface ResumeSessionResponseFormProperties {
+
+		/**
+		 * Max length: 96
+		 * Min length: 1
+		 */
 		SessionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Min length: 0
+		 */
 		TokenValue: FormControl<string | null | undefined>,
 		StreamUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateResumeSessionResponseFormGroup() {
 		return new FormGroup<ResumeSessionResponseFormProperties>({
-			SessionId: new FormControl<string | null | undefined>(undefined),
-			TokenValue: new FormControl<string | null | undefined>(undefined),
+			SessionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(96), Validators.minLength(1)]),
+			TokenValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(0)]),
 			StreamUrl: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ResumeSessionRequest {
+
+		/**
+		 * Required
+		 * Max length: 96
+		 * Min length: 1
+		 */
 		SessionId: string;
 	}
 	export interface ResumeSessionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 96
+		 * Min length: 1
+		 */
 		SessionId: FormControl<string | null | undefined>,
 	}
 	export function CreateResumeSessionRequestFormGroup() {
 		return new FormGroup<ResumeSessionRequestFormProperties>({
-			SessionId: new FormControl<string | null | undefined>(undefined),
+			SessionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(96), Validators.minLength(1)]),
 		});
 
 	}
@@ -8834,18 +14836,34 @@ export namespace MyNS {
 	}
 
 	export interface SendAutomationSignalRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		AutomationExecutionId: string;
+
+		/** Required */
 		SignalType: SendAutomationSignalRequestSignalType;
 		Payload?: AutomationParameterMap;
 	}
 	export interface SendAutomationSignalRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		AutomationExecutionId: FormControl<string | null | undefined>,
+
+		/** Required */
 		SignalType: FormControl<SendAutomationSignalRequestSignalType | null | undefined>,
 	}
 	export function CreateSendAutomationSignalRequestFormGroup() {
 		return new FormGroup<SendAutomationSignalRequestFormProperties>({
-			AutomationExecutionId: new FormControl<string | null | undefined>(undefined),
-			SignalType: new FormControl<SendAutomationSignalRequestSignalType | null | undefined>(undefined),
+			AutomationExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			SignalType: new FormControl<SendAutomationSignalRequestSignalType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -8886,19 +14904,69 @@ export namespace MyNS {
 	}
 
 	export interface SendCommandRequest {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		InstanceIds?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Targets?: Array<Target>;
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$
+		 */
 		DocumentName: string;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion?: string | null;
+
+		/** Max length: 256 */
 		DocumentHash?: string | null;
 		DocumentHashType?: DocumentDescriptionHashType | null;
+
+		/**
+		 * Minimum: 30
+		 * Maximum: 2592000
+		 */
 		TimeoutSeconds?: number | null;
+
+		/** Max length: 100 */
 		Comment?: string | null;
 		Parameters?: Parameters;
+
+		/**
+		 * Max length: 20
+		 * Min length: 3
+		 */
 		OutputS3Region?: string | null;
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 */
 		OutputS3BucketName?: string | null;
+
+		/** Max length: 500 */
 		OutputS3KeyPrefix?: string | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency?: string | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors?: string | null;
 		ServiceRoleArn?: string | null;
 
@@ -8909,32 +14977,72 @@ export namespace MyNS {
 		CloudWatchOutputConfig?: CloudWatchOutputConfig;
 	}
 	export interface SendCommandRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$
+		 */
 		DocumentName: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		DocumentHash: FormControl<string | null | undefined>,
 		DocumentHashType: FormControl<DocumentDescriptionHashType | null | undefined>,
+
+		/**
+		 * Minimum: 30
+		 * Maximum: 2592000
+		 */
 		TimeoutSeconds: FormControl<number | null | undefined>,
+
+		/** Max length: 100 */
 		Comment: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 20
+		 * Min length: 3
+		 */
 		OutputS3Region: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 63
+		 * Min length: 3
+		 */
 		OutputS3BucketName: FormControl<string | null | undefined>,
+
+		/** Max length: 500 */
 		OutputS3KeyPrefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors: FormControl<string | null | undefined>,
 		ServiceRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateSendCommandRequestFormGroup() {
 		return new FormGroup<SendCommandRequestFormProperties>({
-			DocumentName: new FormControl<string | null | undefined>(undefined),
+			DocumentName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DocumentVersion: new FormControl<string | null | undefined>(undefined),
-			DocumentHash: new FormControl<string | null | undefined>(undefined),
+			DocumentHash: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			DocumentHashType: new FormControl<DocumentDescriptionHashType | null | undefined>(undefined),
-			TimeoutSeconds: new FormControl<number | null | undefined>(undefined),
-			Comment: new FormControl<string | null | undefined>(undefined),
-			OutputS3Region: new FormControl<string | null | undefined>(undefined),
-			OutputS3BucketName: new FormControl<string | null | undefined>(undefined),
-			OutputS3KeyPrefix: new FormControl<string | null | undefined>(undefined),
-			MaxConcurrency: new FormControl<string | null | undefined>(undefined),
-			MaxErrors: new FormControl<string | null | undefined>(undefined),
+			TimeoutSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(30), Validators.max(2592000)]),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
+			OutputS3Region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(3)]),
+			OutputS3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3)]),
+			OutputS3KeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
+			MaxConcurrency: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
+			MaxErrors: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
 			ServiceRoleArn: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -8981,6 +15089,12 @@ export namespace MyNS {
 	}
 
 	export interface StartAssociationsOnceRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		AssociationIds: Array<string>;
 	}
 	export interface StartAssociationsOnceRequestFormProperties {
@@ -9002,50 +15116,137 @@ export namespace MyNS {
 	}
 
 	export interface StartAutomationExecutionResult {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		AutomationExecutionId?: string | null;
 	}
 	export interface StartAutomationExecutionResultFormProperties {
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		AutomationExecutionId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartAutomationExecutionResultFormGroup() {
 		return new FormGroup<StartAutomationExecutionResultFormProperties>({
-			AutomationExecutionId: new FormControl<string | null | undefined>(undefined),
+			AutomationExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 		});
 
 	}
 
 	export interface StartAutomationExecutionRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$
+		 */
 		DocumentName: string;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion?: string | null;
 		Parameters?: AutomationParameterMap;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}
+		 */
 		ClientToken?: string | null;
 		Mode?: AutomationExecutionMetadataMode | null;
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		TargetParameterName?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Targets?: Array<Target>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 300
+		 */
 		TargetMaps?: Array<TargetMap>;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency?: string | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		TargetLocations?: Array<TargetLocation>;
+
+		/** Maximum items: 1000 */
 		Tags?: Array<Tag>;
 	}
 	export interface StartAutomationExecutionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$
+		 */
 		DocumentName: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: [a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}
+		 */
 		ClientToken: FormControl<string | null | undefined>,
 		Mode: FormControl<AutomationExecutionMetadataMode | null | undefined>,
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		TargetParameterName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors: FormControl<string | null | undefined>,
 	}
 	export function CreateStartAutomationExecutionRequestFormGroup() {
 		return new FormGroup<StartAutomationExecutionRequestFormProperties>({
-			DocumentName: new FormControl<string | null | undefined>(undefined),
+			DocumentName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DocumentVersion: new FormControl<string | null | undefined>(undefined),
-			ClientToken: new FormControl<string | null | undefined>(undefined),
+			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 			Mode: new FormControl<AutomationExecutionMetadataMode | null | undefined>(undefined),
-			TargetParameterName: new FormControl<string | null | undefined>(undefined),
-			MaxConcurrency: new FormControl<string | null | undefined>(undefined),
-			MaxErrors: new FormControl<string | null | undefined>(undefined),
+			TargetParameterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
+			MaxConcurrency: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
+			MaxErrors: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
 		});
 
 	}
@@ -9091,36 +15292,72 @@ export namespace MyNS {
 	}
 
 	export interface StartSessionResponse {
+
+		/**
+		 * Max length: 96
+		 * Min length: 1
+		 */
 		SessionId?: string | null;
+
+		/**
+		 * Max length: 300
+		 * Min length: 0
+		 */
 		TokenValue?: string | null;
 		StreamUrl?: string | null;
 	}
 	export interface StartSessionResponseFormProperties {
+
+		/**
+		 * Max length: 96
+		 * Min length: 1
+		 */
 		SessionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Min length: 0
+		 */
 		TokenValue: FormControl<string | null | undefined>,
 		StreamUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateStartSessionResponseFormGroup() {
 		return new FormGroup<StartSessionResponseFormProperties>({
-			SessionId: new FormControl<string | null | undefined>(undefined),
-			TokenValue: new FormControl<string | null | undefined>(undefined),
+			SessionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(96), Validators.minLength(1)]),
+			TokenValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(0)]),
 			StreamUrl: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface StartSessionRequest {
+
+		/**
+		 * Required
+		 * Max length: 400
+		 * Min length: 1
+		 */
 		Target: string;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$ */
 		DocumentName?: string | null;
 		Parameters?: SessionManagerParameters;
 	}
 	export interface StartSessionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 400
+		 * Min length: 1
+		 */
 		Target: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$ */
 		DocumentName: FormControl<string | null | undefined>,
 	}
 	export function CreateStartSessionRequestFormGroup() {
 		return new FormGroup<StartSessionRequestFormProperties>({
-			Target: new FormControl<string | null | undefined>(undefined),
+			Target: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(400), Validators.minLength(1)]),
 			DocumentName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -9157,16 +15394,28 @@ export namespace MyNS {
 	}
 
 	export interface StopAutomationExecutionRequest {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		AutomationExecutionId: string;
 		Type?: StopAutomationExecutionRequestType | null;
 	}
 	export interface StopAutomationExecutionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 */
 		AutomationExecutionId: FormControl<string | null | undefined>,
 		Type: FormControl<StopAutomationExecutionRequestType | null | undefined>,
 	}
 	export function CreateStopAutomationExecutionRequestFormGroup() {
 		return new FormGroup<StopAutomationExecutionRequestFormProperties>({
-			AutomationExecutionId: new FormControl<string | null | undefined>(undefined),
+			AutomationExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
 			Type: new FormControl<StopAutomationExecutionRequestType | null | undefined>(undefined),
 		});
 
@@ -9185,27 +15434,49 @@ export namespace MyNS {
 	}
 
 	export interface TerminateSessionResponse {
+
+		/**
+		 * Max length: 96
+		 * Min length: 1
+		 */
 		SessionId?: string | null;
 	}
 	export interface TerminateSessionResponseFormProperties {
+
+		/**
+		 * Max length: 96
+		 * Min length: 1
+		 */
 		SessionId: FormControl<string | null | undefined>,
 	}
 	export function CreateTerminateSessionResponseFormGroup() {
 		return new FormGroup<TerminateSessionResponseFormProperties>({
-			SessionId: new FormControl<string | null | undefined>(undefined),
+			SessionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(96), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface TerminateSessionRequest {
+
+		/**
+		 * Required
+		 * Max length: 96
+		 * Min length: 1
+		 */
 		SessionId: string;
 	}
 	export interface TerminateSessionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 96
+		 * Min length: 1
+		 */
 		SessionId: FormControl<string | null | undefined>,
 	}
 	export function CreateTerminateSessionRequestFormGroup() {
 		return new FormGroup<TerminateSessionRequestFormProperties>({
-			SessionId: new FormControl<string | null | undefined>(undefined),
+			SessionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(96), Validators.minLength(1)]),
 		});
 
 	}
@@ -9224,33 +15495,108 @@ export namespace MyNS {
 	}
 
 	export interface UpdateAssociationRequest {
+
+		/**
+		 * Required
+		 * Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
+		 */
 		AssociationId: string;
 		Parameters?: Parameters;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ScheduleExpression?: string | null;
 
 		/** An S3 bucket where you want to store the results of this request. */
 		OutputLocation?: InstanceAssociationOutputLocation;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$ */
 		Name?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Targets?: Array<Target>;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		AssociationName?: string | null;
+
+		/** Pattern: ([$]LATEST)|([1-9][0-9]*) */
 		AssociationVersion?: string | null;
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		AutomationTargetParameterName?: string | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors?: string | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency?: string | null;
 		ComplianceSeverity?: AssociationDescriptionComplianceSeverity | null;
 		SyncCompliance?: AssociationDescriptionSyncCompliance | null;
 		ApplyOnlyAtCronInterval?: boolean | null;
 	}
 	export interface UpdateAssociationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
+		 */
 		AssociationId: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		ScheduleExpression: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$ */
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		AssociationName: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST)|([1-9][0-9]*) */
 		AssociationVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		AutomationTargetParameterName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency: FormControl<string | null | undefined>,
 		ComplianceSeverity: FormControl<AssociationDescriptionComplianceSeverity | null | undefined>,
 		SyncCompliance: FormControl<AssociationDescriptionSyncCompliance | null | undefined>,
@@ -9258,15 +15604,15 @@ export namespace MyNS {
 	}
 	export function CreateUpdateAssociationRequestFormGroup() {
 		return new FormGroup<UpdateAssociationRequestFormProperties>({
-			AssociationId: new FormControl<string | null | undefined>(undefined),
+			AssociationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DocumentVersion: new FormControl<string | null | undefined>(undefined),
-			ScheduleExpression: new FormControl<string | null | undefined>(undefined),
+			ScheduleExpression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			Name: new FormControl<string | null | undefined>(undefined),
 			AssociationName: new FormControl<string | null | undefined>(undefined),
 			AssociationVersion: new FormControl<string | null | undefined>(undefined),
-			AutomationTargetParameterName: new FormControl<string | null | undefined>(undefined),
-			MaxErrors: new FormControl<string | null | undefined>(undefined),
-			MaxConcurrency: new FormControl<string | null | undefined>(undefined),
+			AutomationTargetParameterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
+			MaxErrors: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
+			MaxConcurrency: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
 			ComplianceSeverity: new FormControl<AssociationDescriptionComplianceSeverity | null | undefined>(undefined),
 			SyncCompliance: new FormControl<AssociationDescriptionSyncCompliance | null | undefined>(undefined),
 			ApplyOnlyAtCronInterval: new FormControl<boolean | null | undefined>(undefined),
@@ -9308,7 +15654,17 @@ export namespace MyNS {
 	}
 
 	export interface UpdateAssociationStatusRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)
+		 */
 		InstanceId: string;
 
 		/**
@@ -9318,13 +15674,23 @@ export namespace MyNS {
 		AssociationStatus: AssociationStatus;
 	}
 	export interface UpdateAssociationStatusRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: (^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)
+		 */
 		InstanceId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateAssociationStatusRequestFormGroup() {
 		return new FormGroup<UpdateAssociationStatusRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			InstanceId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -9353,30 +15719,73 @@ export namespace MyNS {
 	}
 
 	export interface UpdateDocumentRequest {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Content: string;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 20
+		 */
 		Attachments?: Array<AttachmentsSource>;
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: string;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{1,128}$ */
 		VersionName?: string | null;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion?: string | null;
 		DocumentFormat?: DocumentDescriptionDocumentFormat | null;
+
+		/**
+		 * Max length: 200
+		 * Pattern: ^\/[\w\.\-\:\/]*$
+		 */
 		TargetType?: string | null;
 	}
 	export interface UpdateDocumentRequestFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Content: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{1,128}$ */
 		VersionName: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DocumentVersion: FormControl<string | null | undefined>,
 		DocumentFormat: FormControl<DocumentDescriptionDocumentFormat | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Pattern: ^\/[\w\.\-\:\/]*$
+		 */
 		TargetType: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateDocumentRequestFormGroup() {
 		return new FormGroup<UpdateDocumentRequestFormProperties>({
-			Content: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Content: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			VersionName: new FormControl<string | null | undefined>(undefined),
 			DocumentVersion: new FormControl<string | null | undefined>(undefined),
 			DocumentFormat: new FormControl<DocumentDescriptionDocumentFormat | null | undefined>(undefined),
-			TargetType: new FormControl<string | null | undefined>(undefined),
+			TargetType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200)]),
 		});
 
 	}
@@ -9427,15 +15836,27 @@ export namespace MyNS {
 
 	/** A default version of a document. */
 	export interface DocumentDefaultVersionDescription {
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		Name?: string | null;
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DefaultVersion?: string | null;
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{1,128}$ */
 		DefaultVersionName?: string | null;
 	}
 
 	/** A default version of a document. */
 	export interface DocumentDefaultVersionDescriptionFormProperties {
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{3,128}$ */
 		Name: FormControl<string | null | undefined>,
+
+		/** Pattern: ([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$) */
 		DefaultVersion: FormControl<string | null | undefined>,
+
+		/** Pattern: ^[a-zA-Z0-9_\-.]{1,128}$ */
 		DefaultVersionName: FormControl<string | null | undefined>,
 	}
 	export function CreateDocumentDefaultVersionDescriptionFormGroup() {
@@ -9448,58 +15869,142 @@ export namespace MyNS {
 	}
 
 	export interface UpdateDocumentDefaultVersionRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Pattern: (^[1-9][0-9]*$)
+		 */
 		DocumentVersion: string;
 	}
 	export interface UpdateDocumentDefaultVersionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: (^[1-9][0-9]*$)
+		 */
 		DocumentVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateDocumentDefaultVersionRequestFormGroup() {
 		return new FormGroup<UpdateDocumentDefaultVersionRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			DocumentVersion: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DocumentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface UpdateMaintenanceWindowResult {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description?: string | null;
 		StartDate?: string | null;
 		EndDate?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Schedule?: string | null;
 		ScheduleTimezone?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 24
+		 */
 		Duration?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 23
+		 */
 		Cutoff?: number | null;
 		AllowUnassociatedTargets?: boolean | null;
 		Enabled?: boolean | null;
 	}
 	export interface UpdateMaintenanceWindowResultFormProperties {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 		StartDate: FormControl<string | null | undefined>,
 		EndDate: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Schedule: FormControl<string | null | undefined>,
 		ScheduleTimezone: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 24
+		 */
 		Duration: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 23
+		 */
 		Cutoff: FormControl<number | null | undefined>,
 		AllowUnassociatedTargets: FormControl<boolean | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpdateMaintenanceWindowResultFormGroup() {
 		return new FormGroup<UpdateMaintenanceWindowResultFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(20)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			StartDate: new FormControl<string | null | undefined>(undefined),
 			EndDate: new FormControl<string | null | undefined>(undefined),
-			Schedule: new FormControl<string | null | undefined>(undefined),
+			Schedule: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			ScheduleTimezone: new FormControl<string | null | undefined>(undefined),
-			Duration: new FormControl<number | null | undefined>(undefined),
-			Cutoff: new FormControl<number | null | undefined>(undefined),
+			Duration: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(24)]),
+			Cutoff: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(23)]),
 			AllowUnassociatedTargets: new FormControl<boolean | null | undefined>(undefined),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -9507,28 +16012,94 @@ export namespace MyNS {
 	}
 
 	export interface UpdateMaintenanceWindowRequest {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: string;
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description?: string | null;
 		StartDate?: string | null;
 		EndDate?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Schedule?: string | null;
 		ScheduleTimezone?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 24
+		 */
 		Duration?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 23
+		 */
 		Cutoff?: number | null;
 		AllowUnassociatedTargets?: boolean | null;
 		Enabled?: boolean | null;
 		Replace?: boolean | null;
 	}
 	export interface UpdateMaintenanceWindowRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 		StartDate: FormControl<string | null | undefined>,
 		EndDate: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		Schedule: FormControl<string | null | undefined>,
 		ScheduleTimezone: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 24
+		 */
 		Duration: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 23
+		 */
 		Cutoff: FormControl<number | null | undefined>,
 		AllowUnassociatedTargets: FormControl<boolean | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
@@ -9536,15 +16107,15 @@ export namespace MyNS {
 	}
 	export function CreateUpdateMaintenanceWindowRequestFormGroup() {
 		return new FormGroup<UpdateMaintenanceWindowRequestFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20), Validators.minLength(20)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			StartDate: new FormControl<string | null | undefined>(undefined),
 			EndDate: new FormControl<string | null | undefined>(undefined),
-			Schedule: new FormControl<string | null | undefined>(undefined),
+			Schedule: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			ScheduleTimezone: new FormControl<string | null | undefined>(undefined),
-			Duration: new FormControl<number | null | undefined>(undefined),
-			Cutoff: new FormControl<number | null | undefined>(undefined),
+			Duration: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(24)]),
+			Cutoff: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(23)]),
 			AllowUnassociatedTargets: new FormControl<boolean | null | undefined>(undefined),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
 			Replace: new FormControl<boolean | null | undefined>(undefined),
@@ -9553,148 +16124,456 @@ export namespace MyNS {
 	}
 
 	export interface UpdateMaintenanceWindowTargetResult {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTargetId?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Targets?: Array<Target>;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		OwnerInformation?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description?: string | null;
 	}
 	export interface UpdateMaintenanceWindowTargetResultFormProperties {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTargetId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		OwnerInformation: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateMaintenanceWindowTargetResultFormGroup() {
 		return new FormGroup<UpdateMaintenanceWindowTargetResultFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
-			WindowTargetId: new FormControl<string | null | undefined>(undefined),
-			OwnerInformation: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(20)]),
+			WindowTargetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
+			OwnerInformation: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateMaintenanceWindowTargetRequest {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTargetId: string;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Targets?: Array<Target>;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		OwnerInformation?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description?: string | null;
 		Replace?: boolean | null;
 	}
 	export interface UpdateMaintenanceWindowTargetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTargetId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		OwnerInformation: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 		Replace: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpdateMaintenanceWindowTargetRequestFormGroup() {
 		return new FormGroup<UpdateMaintenanceWindowTargetRequestFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
-			WindowTargetId: new FormControl<string | null | undefined>(undefined),
-			OwnerInformation: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20), Validators.minLength(20)]),
+			WindowTargetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			OwnerInformation: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			Replace: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface UpdateMaintenanceWindowTaskResult {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId?: string | null;
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTaskId?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Targets?: Array<Target>;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		TaskArn?: string | null;
 		ServiceRoleArn?: string | null;
 		TaskParameters?: MaintenanceWindowTaskParameters;
 
 		/** The parameters for task execution. */
 		TaskInvocationParameters?: MaintenanceWindowTaskInvocationParameters;
+
+		/** Minimum: 0 */
 		Priority?: number | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency?: string | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors?: string | null;
 
 		/** <p>Information about an S3 bucket to write instance-level logs to.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> */
 		LoggingInfo?: LoggingInfo;
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description?: string | null;
 	}
 	export interface UpdateMaintenanceWindowTaskResultFormProperties {
+
+		/**
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTaskId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		TaskArn: FormControl<string | null | undefined>,
 		ServiceRoleArn: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		Priority: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateMaintenanceWindowTaskResultFormGroup() {
 		return new FormGroup<UpdateMaintenanceWindowTaskResultFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
-			WindowTaskId: new FormControl<string | null | undefined>(undefined),
-			TaskArn: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(20)]),
+			WindowTaskId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
+			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 			ServiceRoleArn: new FormControl<string | null | undefined>(undefined),
-			Priority: new FormControl<number | null | undefined>(undefined),
-			MaxConcurrency: new FormControl<string | null | undefined>(undefined),
-			MaxErrors: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Priority: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			MaxConcurrency: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
+			MaxErrors: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdateMaintenanceWindowTaskRequest {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: string;
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTaskId: string;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		Targets?: Array<Target>;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		TaskArn?: string | null;
 		ServiceRoleArn?: string | null;
 		TaskParameters?: MaintenanceWindowTaskParameters;
 
 		/** The parameters for task execution. */
 		TaskInvocationParameters?: MaintenanceWindowTaskInvocationParameters;
+
+		/** Minimum: 0 */
 		Priority?: number | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency?: string | null;
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors?: string | null;
 
 		/** <p>Information about an S3 bucket to write instance-level logs to.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> */
 		LoggingInfo?: LoggingInfo;
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description?: string | null;
 		Replace?: boolean | null;
 	}
 	export interface UpdateMaintenanceWindowTaskRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 20
+		 * Min length: 20
+		 * Pattern: ^mw-[0-9a-f]{17}$
+		 */
 		WindowId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$
+		 */
 		WindowTaskId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		TaskArn: FormControl<string | null | undefined>,
 		ServiceRoleArn: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		Priority: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$
+		 */
 		MaxConcurrency: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 7
+		 * Min length: 1
+		 * Pattern: ^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$
+		 */
 		MaxErrors: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 		Replace: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpdateMaintenanceWindowTaskRequestFormGroup() {
 		return new FormGroup<UpdateMaintenanceWindowTaskRequestFormProperties>({
-			WindowId: new FormControl<string | null | undefined>(undefined),
-			WindowTaskId: new FormControl<string | null | undefined>(undefined),
-			TaskArn: new FormControl<string | null | undefined>(undefined),
+			WindowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20), Validators.minLength(20)]),
+			WindowTaskId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 			ServiceRoleArn: new FormControl<string | null | undefined>(undefined),
-			Priority: new FormControl<number | null | undefined>(undefined),
-			MaxConcurrency: new FormControl<string | null | undefined>(undefined),
-			MaxErrors: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Priority: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			MaxConcurrency: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
+			MaxErrors: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			Replace: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -9711,17 +16590,37 @@ export namespace MyNS {
 	}
 
 	export interface UpdateManagedInstanceRoleRequest {
+
+		/**
+		 * Required
+		 * Pattern: ^mi-[0-9a-f]{17}$
+		 */
 		InstanceId: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 */
 		IamRole: string;
 	}
 	export interface UpdateManagedInstanceRoleRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: ^mi-[0-9a-f]{17}$
+		 */
 		InstanceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 */
 		IamRole: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateManagedInstanceRoleRequestFormGroup() {
 		return new FormGroup<UpdateManagedInstanceRoleRequestFormProperties>({
-			InstanceId: new FormControl<string | null | undefined>(undefined),
-			IamRole: new FormControl<string | null | undefined>(undefined),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			IamRole: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64)]),
 		});
 
 	}
@@ -9737,42 +16636,114 @@ export namespace MyNS {
 	}
 
 	export interface UpdateOpsItemRequest {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
 		OperationalData?: OpsItemOperationalData;
 		OperationalDataToDelete?: Array<string>;
 		Notifications?: Array<OpsItemNotification>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 5
+		 */
 		Priority?: number | null;
 		RelatedOpsItems?: Array<RelatedOpsItem>;
 		Status?: OpsItemSummaryStatus | null;
+
+		/**
+		 * Required
+		 * Pattern: ^(oi)-[0-9a-f]{12}$
+		 */
 		OpsItemId: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Title?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Category?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Severity?: string | null;
 	}
 	export interface UpdateOpsItemRequestFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 5
+		 */
 		Priority: FormControl<number | null | undefined>,
 		Status: FormControl<OpsItemSummaryStatus | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: ^(oi)-[0-9a-f]{12}$
+		 */
 		OpsItemId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Title: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Category: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		Severity: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateOpsItemRequestFormGroup() {
 		return new FormGroup<UpdateOpsItemRequestFormProperties>({
-			Description: new FormControl<string | null | undefined>(undefined),
-			Priority: new FormControl<number | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Priority: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(5)]),
 			Status: new FormControl<OpsItemSummaryStatus | null | undefined>(undefined),
-			OpsItemId: new FormControl<string | null | undefined>(undefined),
-			Title: new FormControl<string | null | undefined>(undefined),
-			Category: new FormControl<string | null | undefined>(undefined),
-			Severity: new FormControl<string | null | undefined>(undefined),
+			OpsItemId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Title: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Category: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Severity: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdatePatchBaselineResult {
+
+		/**
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name?: string | null;
 		OperatingSystem?: CreatePatchBaselineRequestOperatingSystem | null;
 
@@ -9781,18 +16752,50 @@ export namespace MyNS {
 
 		/** A set of rules defining the approval rules for a patch baseline. */
 		ApprovalRules?: PatchRuleGroup;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		ApprovedPatches?: Array<string>;
 		ApprovedPatchesComplianceLevel?: PatchRuleComplianceLevel | null;
 		ApprovedPatchesEnableNonSecurity?: boolean | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		RejectedPatches?: Array<string>;
 		RejectedPatchesAction?: CreatePatchBaselineRequestRejectedPatchesAction | null;
 		CreatedDate?: Date | null;
 		ModifiedDate?: Date | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 20
+		 */
 		Sources?: Array<PatchSource>;
 	}
 	export interface UpdatePatchBaselineResultFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
 		OperatingSystem: FormControl<CreatePatchBaselineRequestOperatingSystem | null | undefined>,
 		ApprovedPatchesComplianceLevel: FormControl<PatchRuleComplianceLevel | null | undefined>,
@@ -9800,25 +16803,43 @@ export namespace MyNS {
 		RejectedPatchesAction: FormControl<CreatePatchBaselineRequestRejectedPatchesAction | null | undefined>,
 		CreatedDate: FormControl<Date | null | undefined>,
 		ModifiedDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdatePatchBaselineResultFormGroup() {
 		return new FormGroup<UpdatePatchBaselineResultFormProperties>({
-			BaselineId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			BaselineId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(20)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
 			OperatingSystem: new FormControl<CreatePatchBaselineRequestOperatingSystem | null | undefined>(undefined),
 			ApprovedPatchesComplianceLevel: new FormControl<PatchRuleComplianceLevel | null | undefined>(undefined),
 			ApprovedPatchesEnableNonSecurity: new FormControl<boolean | null | undefined>(undefined),
 			RejectedPatchesAction: new FormControl<CreatePatchBaselineRequestRejectedPatchesAction | null | undefined>(undefined),
 			CreatedDate: new FormControl<Date | null | undefined>(undefined),
 			ModifiedDate: new FormControl<Date | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface UpdatePatchBaselineRequest {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: string;
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name?: string | null;
 
 		/** A set of patch filters, typically used for approval rules. */
@@ -9826,32 +16847,70 @@ export namespace MyNS {
 
 		/** A set of rules defining the approval rules for a patch baseline. */
 		ApprovalRules?: PatchRuleGroup;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		ApprovedPatches?: Array<string>;
 		ApprovedPatchesComplianceLevel?: PatchRuleComplianceLevel | null;
 		ApprovedPatchesEnableNonSecurity?: boolean | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		RejectedPatches?: Array<string>;
 		RejectedPatchesAction?: CreatePatchBaselineRequestRejectedPatchesAction | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 20
+		 */
 		Sources?: Array<PatchSource>;
 		Replace?: boolean | null;
 	}
 	export interface UpdatePatchBaselineRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 20
+		 * Pattern: ^[a-zA-Z0-9_\-:/]{20,128}$
+		 */
 		BaselineId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 3
+		 * Pattern: ^[a-zA-Z0-9_\-.]{3,128}$
+		 */
 		Name: FormControl<string | null | undefined>,
 		ApprovedPatchesComplianceLevel: FormControl<PatchRuleComplianceLevel | null | undefined>,
 		ApprovedPatchesEnableNonSecurity: FormControl<boolean | null | undefined>,
 		RejectedPatchesAction: FormControl<CreatePatchBaselineRequestRejectedPatchesAction | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 		Replace: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpdatePatchBaselineRequestFormGroup() {
 		return new FormGroup<UpdatePatchBaselineRequestFormProperties>({
-			BaselineId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			BaselineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(20)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
 			ApprovedPatchesComplianceLevel: new FormControl<PatchRuleComplianceLevel | null | undefined>(undefined),
 			ApprovedPatchesEnableNonSecurity: new FormControl<boolean | null | undefined>(undefined),
 			RejectedPatchesAction: new FormControl<CreatePatchBaselineRequestRejectedPatchesAction | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			Replace: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -9868,7 +16927,19 @@ export namespace MyNS {
 	}
 
 	export interface UpdateResourceDataSyncRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SyncName: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SyncType: string;
 
 		/**
@@ -9878,13 +16949,25 @@ export namespace MyNS {
 		SyncSource: ResourceDataSyncSource;
 	}
 	export interface UpdateResourceDataSyncRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SyncName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		SyncType: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateResourceDataSyncRequestFormGroup() {
 		return new FormGroup<UpdateResourceDataSyncRequestFormProperties>({
-			SyncName: new FormControl<string | null | undefined>(undefined),
-			SyncType: new FormControl<string | null | undefined>(undefined),
+			SyncName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			SyncType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -9916,19 +16999,43 @@ export namespace MyNS {
 
 	/** The request body of the UpdateServiceSetting API action. */
 	export interface UpdateServiceSettingRequest {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		SettingId: string;
+
+		/**
+		 * Required
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		SettingValue: string;
 	}
 
 	/** The request body of the UpdateServiceSetting API action. */
 	export interface UpdateServiceSettingRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		SettingId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 4096
+		 * Min length: 1
+		 */
 		SettingValue: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateServiceSettingRequestFormGroup() {
 		return new FormGroup<UpdateServiceSettingRequestFormProperties>({
-			SettingId: new FormControl<string | null | undefined>(undefined),
-			SettingValue: new FormControl<string | null | undefined>(undefined),
+			SettingId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000), Validators.minLength(1)]),
+			SettingValue: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4096), Validators.minLength(1)]),
 		});
 
 	}
@@ -10018,26 +17125,64 @@ export namespace MyNS {
 
 	/** The inventory result item. */
 	export interface InventoryResultItem {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^(AWS|Custom):.*$
+		 */
 		TypeName: string;
+
+		/**
+		 * Required
+		 * Pattern: ^([0-9]{1,6})(\.[0-9]{1,6})$
+		 */
 		SchemaVersion: string;
+
+		/** Pattern: ^(20)[0-9][0-9]-(0[1-9]|1[012])-([12][0-9]|3[01]|0[1-9])(T)(2[0-3]|[0-1][0-9])(:[0-5][0-9])(:[0-5][0-9])(Z)$ */
 		CaptureTime?: string | null;
+
+		/** Max length: 256 */
 		ContentHash?: string | null;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 10000
+		 */
 		Content: Array<InventoryItemEntry>;
 	}
 
 	/** The inventory result item. */
 	export interface InventoryResultItemFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^(AWS|Custom):.*$
+		 */
 		TypeName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: ^([0-9]{1,6})(\.[0-9]{1,6})$
+		 */
 		SchemaVersion: FormControl<string | null | undefined>,
+
+		/** Pattern: ^(20)[0-9][0-9]-(0[1-9]|1[012])-([12][0-9]|3[01]|0[1-9])(T)(2[0-3]|[0-1][0-9])(:[0-5][0-9])(:[0-5][0-9])(Z)$ */
 		CaptureTime: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		ContentHash: FormControl<string | null | undefined>,
 	}
 	export function CreateInventoryResultItemFormGroup() {
 		return new FormGroup<InventoryResultItemFormProperties>({
-			TypeName: new FormControl<string | null | undefined>(undefined),
-			SchemaVersion: new FormControl<string | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			SchemaVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			CaptureTime: new FormControl<string | null | undefined>(undefined),
-			ContentHash: new FormControl<string | null | undefined>(undefined),
+			ContentHash: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -10074,12 +17219,21 @@ export namespace MyNS {
 
 	/** The OpsItem summaries result item. */
 	export interface OpsEntityItem {
+
+		/** Pattern: ^(20)[0-9][0-9]-(0[1-9]|1[012])-([12][0-9]|3[01]|0[1-9])(T)(2[0-3]|[0-1][0-9])(:[0-5][0-9])(:[0-5][0-9])(Z)$ */
 		CaptureTime?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10000
+		 */
 		Content?: Array<OpsEntityItemEntry>;
 	}
 
 	/** The OpsItem summaries result item. */
 	export interface OpsEntityItemFormProperties {
+
+		/** Pattern: ^(20)[0-9][0-9]-(0[1-9]|1[012])-([12][0-9]|3[01]|0[1-9])(T)(2[0-3]|[0-1][0-9])(:[0-5][0-9])(:[0-5][0-9])(Z)$ */
 		CaptureTime: FormControl<string | null | undefined>,
 	}
 	export function CreateOpsEntityItemFormGroup() {

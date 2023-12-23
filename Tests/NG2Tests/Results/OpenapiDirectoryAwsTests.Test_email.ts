@@ -100,19 +100,27 @@ export namespace MyNS {
 
 	/** <p>Contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p> <p>Event destinations, such as Amazon Kinesis Firehose, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
 	export interface KinesisFirehoseDestination {
+
+		/** Required */
 		IAMRoleARN: string;
+
+		/** Required */
 		DeliveryStreamARN: string;
 	}
 
 	/** <p>Contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p> <p>Event destinations, such as Amazon Kinesis Firehose, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
 	export interface KinesisFirehoseDestinationFormProperties {
+
+		/** Required */
 		IAMRoleARN: FormControl<string | null | undefined>,
+
+		/** Required */
 		DeliveryStreamARN: FormControl<string | null | undefined>,
 	}
 	export function CreateKinesisFirehoseDestinationFormGroup() {
 		return new FormGroup<KinesisFirehoseDestinationFormProperties>({
-			IAMRoleARN: new FormControl<string | null | undefined>(undefined),
-			DeliveryStreamARN: new FormControl<string | null | undefined>(undefined),
+			IAMRoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DeliveryStreamARN: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -120,6 +128,8 @@ export namespace MyNS {
 
 	/** <p>Contains information associated with an Amazon CloudWatch event destination to which email sending events are published.</p> <p>Event destinations, such as Amazon CloudWatch, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
 	export interface CloudWatchDestination {
+
+		/** Required */
 		DimensionConfigurations: Array<CloudWatchDimensionConfiguration>;
 	}
 
@@ -135,22 +145,34 @@ export namespace MyNS {
 
 	/** <p>Contains the dimension configuration to use when you publish email sending events to Amazon CloudWatch.</p> <p>For information about publishing email sending events to Amazon CloudWatch, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
 	export interface CloudWatchDimensionConfiguration {
+
+		/** Required */
 		DimensionName: string;
+
+		/** Required */
 		DimensionValueSource: CloudWatchDimensionConfigurationDimensionValueSource;
+
+		/** Required */
 		DefaultDimensionValue: string;
 	}
 
 	/** <p>Contains the dimension configuration to use when you publish email sending events to Amazon CloudWatch.</p> <p>For information about publishing email sending events to Amazon CloudWatch, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
 	export interface CloudWatchDimensionConfigurationFormProperties {
+
+		/** Required */
 		DimensionName: FormControl<string | null | undefined>,
+
+		/** Required */
 		DimensionValueSource: FormControl<CloudWatchDimensionConfigurationDimensionValueSource | null | undefined>,
+
+		/** Required */
 		DefaultDimensionValue: FormControl<string | null | undefined>,
 	}
 	export function CreateCloudWatchDimensionConfigurationFormGroup() {
 		return new FormGroup<CloudWatchDimensionConfigurationFormProperties>({
-			DimensionName: new FormControl<string | null | undefined>(undefined),
-			DimensionValueSource: new FormControl<CloudWatchDimensionConfigurationDimensionValueSource | null | undefined>(undefined),
-			DefaultDimensionValue: new FormControl<string | null | undefined>(undefined),
+			DimensionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DimensionValueSource: new FormControl<CloudWatchDimensionConfigurationDimensionValueSource | null | undefined>(undefined, [Validators.required]),
+			DefaultDimensionValue: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -160,16 +182,20 @@ export namespace MyNS {
 
 	/** <p>Contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event destination.</p> <p>Event destinations, such as Amazon SNS, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
 	export interface SNSDestination {
+
+		/** Required */
 		TopicARN: string;
 	}
 
 	/** <p>Contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event destination.</p> <p>Event destinations, such as Amazon SNS, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
 	export interface SNSDestinationFormProperties {
+
+		/** Required */
 		TopicARN: FormControl<string | null | undefined>,
 	}
 	export function CreateSNSDestinationFormGroup() {
 		return new FormGroup<SNSDestinationFormProperties>({
-			TopicARN: new FormControl<string | null | undefined>(undefined),
+			TopicARN: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -305,19 +331,27 @@ export namespace MyNS {
 
 	/** <p>A receipt IP address filter enables you to specify whether to accept or reject mail originating from an IP address or range of IP addresses.</p> <p>For information about setting up IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon SES Developer Guide</a>.</p> */
 	export interface ReceiptIpFilter {
+
+		/** Required */
 		Policy: ReceiptIpFilterPolicy;
+
+		/** Required */
 		Cidr: string;
 	}
 
 	/** <p>A receipt IP address filter enables you to specify whether to accept or reject mail originating from an IP address or range of IP addresses.</p> <p>For information about setting up IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon SES Developer Guide</a>.</p> */
 	export interface ReceiptIpFilterFormProperties {
+
+		/** Required */
 		Policy: FormControl<ReceiptIpFilterPolicy | null | undefined>,
+
+		/** Required */
 		Cidr: FormControl<string | null | undefined>,
 	}
 	export function CreateReceiptIpFilterFormGroup() {
 		return new FormGroup<ReceiptIpFilterFormProperties>({
-			Policy: new FormControl<ReceiptIpFilterPolicy | null | undefined>(undefined),
-			Cidr: new FormControl<string | null | undefined>(undefined),
+			Policy: new FormControl<ReceiptIpFilterPolicy | null | undefined>(undefined, [Validators.required]),
+			Cidr: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -379,6 +413,8 @@ export namespace MyNS {
 	/** <p>When included in a receipt rule, this action saves the received message to an Amazon Simple Storage Service (Amazon S3) bucket and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p> <p>To enable Amazon SES to write emails to your Amazon S3 bucket, use an AWS KMS key to encrypt your emails, or publish to an Amazon SNS topic of another account, Amazon SES must have permission to access those resources. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p> <note> <p>When you save your emails to an Amazon S3 bucket, the maximum email size (including headers) is 30 MB. Emails larger than that will bounce.</p> </note> <p>For information about specifying Amazon S3 actions in receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-s3.html">Amazon SES Developer Guide</a>.</p> */
 	export interface S3Action {
 		TopicArn?: string | null;
+
+		/** Required */
 		BucketName: string;
 		ObjectKeyPrefix?: string | null;
 		KmsKeyArn?: string | null;
@@ -387,6 +423,8 @@ export namespace MyNS {
 	/** <p>When included in a receipt rule, this action saves the received message to an Amazon Simple Storage Service (Amazon S3) bucket and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p> <p>To enable Amazon SES to write emails to your Amazon S3 bucket, use an AWS KMS key to encrypt your emails, or publish to an Amazon SNS topic of another account, Amazon SES must have permission to access those resources. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p> <note> <p>When you save your emails to an Amazon S3 bucket, the maximum email size (including headers) is 30 MB. Emails larger than that will bounce.</p> </note> <p>For information about specifying Amazon S3 actions in receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-s3.html">Amazon SES Developer Guide</a>.</p> */
 	export interface S3ActionFormProperties {
 		TopicArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		BucketName: FormControl<string | null | undefined>,
 		ObjectKeyPrefix: FormControl<string | null | undefined>,
 		KmsKeyArn: FormControl<string | null | undefined>,
@@ -394,7 +432,7 @@ export namespace MyNS {
 	export function CreateS3ActionFormGroup() {
 		return new FormGroup<S3ActionFormProperties>({
 			TopicArn: new FormControl<string | null | undefined>(undefined),
-			BucketName: new FormControl<string | null | undefined>(undefined),
+			BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ObjectKeyPrefix: new FormControl<string | null | undefined>(undefined),
 			KmsKeyArn: new FormControl<string | null | undefined>(undefined),
 		});
@@ -405,27 +443,39 @@ export namespace MyNS {
 	/** <p>When included in a receipt rule, this action rejects the received email by returning a bounce response to the sender and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p> <p>For information about sending a bounce message in response to a received email, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-bounce.html">Amazon SES Developer Guide</a>.</p> */
 	export interface BounceAction {
 		TopicArn?: string | null;
+
+		/** Required */
 		SmtpReplyCode: string;
 		StatusCode?: string | null;
+
+		/** Required */
 		Message: string;
+
+		/** Required */
 		Sender: string;
 	}
 
 	/** <p>When included in a receipt rule, this action rejects the received email by returning a bounce response to the sender and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p> <p>For information about sending a bounce message in response to a received email, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-bounce.html">Amazon SES Developer Guide</a>.</p> */
 	export interface BounceActionFormProperties {
 		TopicArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		SmtpReplyCode: FormControl<string | null | undefined>,
 		StatusCode: FormControl<string | null | undefined>,
+
+		/** Required */
 		Message: FormControl<string | null | undefined>,
+
+		/** Required */
 		Sender: FormControl<string | null | undefined>,
 	}
 	export function CreateBounceActionFormGroup() {
 		return new FormGroup<BounceActionFormProperties>({
 			TopicArn: new FormControl<string | null | undefined>(undefined),
-			SmtpReplyCode: new FormControl<string | null | undefined>(undefined),
+			SmtpReplyCode: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			StatusCode: new FormControl<string | null | undefined>(undefined),
-			Message: new FormControl<string | null | undefined>(undefined),
-			Sender: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Sender: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -434,18 +484,22 @@ export namespace MyNS {
 	/** <p>When included in a receipt rule, this action calls Amazon WorkMail and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS). You will typically not use this action directly because Amazon WorkMail adds the rule automatically during its setup procedure.</p> <p>For information using a receipt rule to call Amazon WorkMail, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-workmail.html">Amazon SES Developer Guide</a>.</p> */
 	export interface WorkmailAction {
 		TopicArn?: string | null;
+
+		/** Required */
 		OrganizationArn: string;
 	}
 
 	/** <p>When included in a receipt rule, this action calls Amazon WorkMail and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS). You will typically not use this action directly because Amazon WorkMail adds the rule automatically during its setup procedure.</p> <p>For information using a receipt rule to call Amazon WorkMail, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-workmail.html">Amazon SES Developer Guide</a>.</p> */
 	export interface WorkmailActionFormProperties {
 		TopicArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		OrganizationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateWorkmailActionFormGroup() {
 		return new FormGroup<WorkmailActionFormProperties>({
 			TopicArn: new FormControl<string | null | undefined>(undefined),
-			OrganizationArn: new FormControl<string | null | undefined>(undefined),
+			OrganizationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -454,6 +508,8 @@ export namespace MyNS {
 	/** <p>When included in a receipt rule, this action calls an AWS Lambda function and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p> <p>To enable Amazon SES to call your AWS Lambda function or to publish to an Amazon SNS topic of another account, Amazon SES must have permission to access those resources. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p> <p>For information about using AWS Lambda actions in receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-lambda.html">Amazon SES Developer Guide</a>.</p> */
 	export interface LambdaAction {
 		TopicArn?: string | null;
+
+		/** Required */
 		FunctionArn: string;
 		InvocationType?: LambdaActionInvocationType | null;
 	}
@@ -461,13 +517,15 @@ export namespace MyNS {
 	/** <p>When included in a receipt rule, this action calls an AWS Lambda function and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p> <p>To enable Amazon SES to call your AWS Lambda function or to publish to an Amazon SNS topic of another account, Amazon SES must have permission to access those resources. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p> <p>For information about using AWS Lambda actions in receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-lambda.html">Amazon SES Developer Guide</a>.</p> */
 	export interface LambdaActionFormProperties {
 		TopicArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		FunctionArn: FormControl<string | null | undefined>,
 		InvocationType: FormControl<LambdaActionInvocationType | null | undefined>,
 	}
 	export function CreateLambdaActionFormGroup() {
 		return new FormGroup<LambdaActionFormProperties>({
 			TopicArn: new FormControl<string | null | undefined>(undefined),
-			FunctionArn: new FormControl<string | null | undefined>(undefined),
+			FunctionArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			InvocationType: new FormControl<LambdaActionInvocationType | null | undefined>(undefined),
 		});
 
@@ -478,18 +536,22 @@ export namespace MyNS {
 
 	/** <p>When included in a receipt rule, this action terminates the evaluation of the receipt rule set and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p> <p>For information about setting a stop action in a receipt rule, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-stop.html">Amazon SES Developer Guide</a>.</p> */
 	export interface StopAction {
+
+		/** Required */
 		Scope: StopActionScope;
 		TopicArn?: string | null;
 	}
 
 	/** <p>When included in a receipt rule, this action terminates the evaluation of the receipt rule set and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p> <p>For information about setting a stop action in a receipt rule, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-stop.html">Amazon SES Developer Guide</a>.</p> */
 	export interface StopActionFormProperties {
+
+		/** Required */
 		Scope: FormControl<StopActionScope | null | undefined>,
 		TopicArn: FormControl<string | null | undefined>,
 	}
 	export function CreateStopActionFormGroup() {
 		return new FormGroup<StopActionFormProperties>({
-			Scope: new FormControl<StopActionScope | null | undefined>(undefined),
+			Scope: new FormControl<StopActionScope | null | undefined>(undefined, [Validators.required]),
 			TopicArn: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -500,19 +562,27 @@ export namespace MyNS {
 
 	/** <p>When included in a receipt rule, this action adds a header to the received email.</p> <p>For information about adding a header using a receipt rule, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-add-header.html">Amazon SES Developer Guide</a>.</p> */
 	export interface AddHeaderAction {
+
+		/** Required */
 		HeaderName: string;
+
+		/** Required */
 		HeaderValue: string;
 	}
 
 	/** <p>When included in a receipt rule, this action adds a header to the received email.</p> <p>For information about adding a header using a receipt rule, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-add-header.html">Amazon SES Developer Guide</a>.</p> */
 	export interface AddHeaderActionFormProperties {
+
+		/** Required */
 		HeaderName: FormControl<string | null | undefined>,
+
+		/** Required */
 		HeaderValue: FormControl<string | null | undefined>,
 	}
 	export function CreateAddHeaderActionFormGroup() {
 		return new FormGroup<AddHeaderActionFormProperties>({
-			HeaderName: new FormControl<string | null | undefined>(undefined),
-			HeaderValue: new FormControl<string | null | undefined>(undefined),
+			HeaderName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			HeaderValue: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -520,18 +590,22 @@ export namespace MyNS {
 
 	/** <p>When included in a receipt rule, this action publishes a notification to Amazon Simple Notification Service (Amazon SNS). This action includes a complete copy of the email content in the Amazon SNS notifications. Amazon SNS notifications for all other actions simply provide information about the email. They do not include the email content itself.</p> <p>If you own the Amazon SNS topic, you don't need to do anything to give Amazon SES permission to publish emails to it. However, if you don't own the Amazon SNS topic, you need to attach a policy to the topic to give Amazon SES permissions to access it. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p> <important> <p>You can only publish emails that are 150 KB or less (including the header) to Amazon SNS. Larger emails will bounce. If you anticipate emails larger than 150 KB, use the S3 action instead.</p> </important> <p>For information about using a receipt rule to publish an Amazon SNS notification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-sns.html">Amazon SES Developer Guide</a>.</p> */
 	export interface SNSAction {
+
+		/** Required */
 		TopicArn: string;
 		Encoding?: SNSActionEncoding | null;
 	}
 
 	/** <p>When included in a receipt rule, this action publishes a notification to Amazon Simple Notification Service (Amazon SNS). This action includes a complete copy of the email content in the Amazon SNS notifications. Amazon SNS notifications for all other actions simply provide information about the email. They do not include the email content itself.</p> <p>If you own the Amazon SNS topic, you don't need to do anything to give Amazon SES permission to publish emails to it. However, if you don't own the Amazon SNS topic, you need to attach a policy to the topic to give Amazon SES permissions to access it. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p> <important> <p>You can only publish emails that are 150 KB or less (including the header) to Amazon SNS. Larger emails will bounce. If you anticipate emails larger than 150 KB, use the S3 action instead.</p> </important> <p>For information about using a receipt rule to publish an Amazon SNS notification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-sns.html">Amazon SES Developer Guide</a>.</p> */
 	export interface SNSActionFormProperties {
+
+		/** Required */
 		TopicArn: FormControl<string | null | undefined>,
 		Encoding: FormControl<SNSActionEncoding | null | undefined>,
 	}
 	export function CreateSNSActionFormGroup() {
 		return new FormGroup<SNSActionFormProperties>({
-			TopicArn: new FormControl<string | null | undefined>(undefined),
+			TopicArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Encoding: new FormControl<SNSActionEncoding | null | undefined>(undefined),
 		});
 
@@ -806,6 +880,8 @@ export namespace MyNS {
 
 	/** <p>Receipt rules enable you to specify which actions Amazon SES should take when it receives mail on behalf of one or more email addresses or domains that you own.</p> <p>Each receipt rule defines a set of email addresses or domains that it applies to. If the email addresses or domains match at least one recipient address of the message, Amazon SES executes all of the receipt rule's actions on the message.</p> <p>For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon SES Developer Guide</a>.</p> */
 	export interface ReceiptRule {
+
+		/** Required */
 		Name: string;
 		Enabled?: boolean | null;
 		TlsPolicy?: TlsPolicy | null;
@@ -816,6 +892,8 @@ export namespace MyNS {
 
 	/** <p>Receipt rules enable you to specify which actions Amazon SES should take when it receives mail on behalf of one or more email addresses or domains that you own.</p> <p>Each receipt rule defines a set of email addresses or domains that it applies to. If the email addresses or domains match at least one recipient address of the message, Amazon SES executes all of the receipt rule's actions on the message.</p> <p>For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon SES Developer Guide</a>.</p> */
 	export interface ReceiptRuleFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
 		TlsPolicy: FormControl<TlsPolicy | null | undefined>,
@@ -823,7 +901,7 @@ export namespace MyNS {
 	}
 	export function CreateReceiptRuleFormGroup() {
 		return new FormGroup<ReceiptRuleFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
 			TlsPolicy: new FormControl<TlsPolicy | null | undefined>(undefined),
 			ScanEnabled: new FormControl<boolean | null | undefined>(undefined),
@@ -861,16 +939,20 @@ export namespace MyNS {
 
 	/** <p>The name of the configuration set.</p> <p>Configuration sets let you create groups of rules that you can apply to the emails you send using Amazon SES. For more information about using configuration sets, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/using-configuration-sets.html">Using Amazon SES Configuration Sets</a> in the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/">Amazon SES Developer Guide</a>.</p> */
 	export interface ConfigurationSet {
+
+		/** Required */
 		Name: string;
 	}
 
 	/** <p>The name of the configuration set.</p> <p>Configuration sets let you create groups of rules that you can apply to the emails you send using Amazon SES. For more information about using configuration sets, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/using-configuration-sets.html">Using Amazon SES Configuration Sets</a> in the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/">Amazon SES Developer Guide</a>.</p> */
 	export interface ConfigurationSetFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateConfigurationSetFormGroup() {
 		return new FormGroup<ConfigurationSetFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -878,8 +960,12 @@ export namespace MyNS {
 
 	/** <p>Contains information about the event destination that the specified email sending events will be published to.</p> <note> <p>When you create or update an event destination, you must provide one, and only one, destination. The destination can be Amazon CloudWatch, Amazon Kinesis Firehose or Amazon Simple Notification Service (Amazon SNS).</p> </note> <p>Event destinations are associated with configuration sets, which enable you to publish email sending events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon SNS). For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
 	export interface EventDestination {
+
+		/** Required */
 		Name: string;
 		Enabled?: boolean | null;
+
+		/** Required */
 		MatchingEventTypes: Array<EventType>;
 
 		/** <p>Contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p> <p>Event destinations, such as Amazon Kinesis Firehose, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
@@ -894,12 +980,14 @@ export namespace MyNS {
 
 	/** <p>Contains information about the event destination that the specified email sending events will be published to.</p> <note> <p>When you create or update an event destination, you must provide one, and only one, destination. The destination can be Amazon CloudWatch, Amazon Kinesis Firehose or Amazon Simple Notification Service (Amazon SNS).</p> </note> <p>Event destinations are associated with configuration sets, which enable you to publish email sending events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon SNS). For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
 	export interface EventDestinationFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateEventDestinationFormGroup() {
 		return new FormGroup<EventDestinationFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1061,6 +1149,8 @@ export namespace MyNS {
 
 	/** Represents the status of Amazon SES Easy DKIM signing for an identity. For domain identities, this response also contains the DKIM tokens that are required for Easy DKIM signing, and whether Amazon SES successfully verified that these tokens were published. */
 	export interface GetIdentityDkimAttributesResponse {
+
+		/** Required */
 		DkimAttributes: DkimAttributes;
 	}
 
@@ -1086,6 +1176,8 @@ export namespace MyNS {
 
 	/** Represents the custom MAIL FROM attributes for a list of identities. */
 	export interface GetIdentityMailFromDomainAttributesResponse {
+
+		/** Required */
 		MailFromDomainAttributes: MailFromDomainAttributes;
 	}
 
@@ -1111,6 +1203,8 @@ export namespace MyNS {
 
 	/** Represents the notification attributes for a list of identities. */
 	export interface GetIdentityNotificationAttributesResponse {
+
+		/** Required */
 		NotificationAttributes: NotificationAttributes;
 	}
 
@@ -1136,6 +1230,8 @@ export namespace MyNS {
 
 	/** Represents the requested sending authorization policies. */
 	export interface GetIdentityPoliciesResponse {
+
+		/** Required */
 		Policies: PolicyMap;
 	}
 
@@ -1161,6 +1257,8 @@ export namespace MyNS {
 
 	/** The Amazon SES verification status of a list of identities. For domain identities, this response also contains the verification token. */
 	export interface GetIdentityVerificationAttributesResponse {
+
+		/** Required */
 		VerificationAttributes: VerificationAttributes;
 	}
 
@@ -1266,6 +1364,8 @@ export namespace MyNS {
 
 	/** The content of the email, composed of a subject line, an HTML part, and a text-only part. */
 	export interface Template {
+
+		/** Required */
 		TemplateName: string;
 		SubjectPart?: string | null;
 		TextPart?: string | null;
@@ -1274,6 +1374,8 @@ export namespace MyNS {
 
 	/** The content of the email, composed of a subject line, an HTML part, and a text-only part. */
 	export interface TemplateFormProperties {
+
+		/** Required */
 		TemplateName: FormControl<string | null | undefined>,
 		SubjectPart: FormControl<string | null | undefined>,
 		TextPart: FormControl<string | null | undefined>,
@@ -1281,7 +1383,7 @@ export namespace MyNS {
 	}
 	export function CreateTemplateFormGroup() {
 		return new FormGroup<TemplateFormProperties>({
-			TemplateName: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SubjectPart: new FormControl<string | null | undefined>(undefined),
 			TextPart: new FormControl<string | null | undefined>(undefined),
 			HtmlPart: new FormControl<string | null | undefined>(undefined),
@@ -1367,6 +1469,8 @@ export namespace MyNS {
 
 	/** A list of all identities that you have attempted to verify under your AWS account, regardless of verification status. */
 	export interface ListIdentitiesResponse {
+
+		/** Required */
 		Identities: Array<string>;
 		NextToken?: string | null;
 	}
@@ -1385,6 +1489,8 @@ export namespace MyNS {
 
 	/** A list of names of sending authorization policies that apply to an identity. */
 	export interface ListIdentityPoliciesResponse {
+
+		/** Required */
 		PolicyNames: Array<string>;
 	}
 
@@ -1415,6 +1521,8 @@ export namespace MyNS {
 
 	/** <p>A receipt IP address filter enables you to specify whether to accept or reject mail originating from an IP address or range of IP addresses.</p> <p>For information about setting up IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon SES Developer Guide</a>.</p> */
 	export interface ReceiptFilter {
+
+		/** Required */
 		Name: string;
 
 		/**
@@ -1426,11 +1534,13 @@ export namespace MyNS {
 
 	/** <p>A receipt IP address filter enables you to specify whether to accept or reject mail originating from an IP address or range of IP addresses.</p> <p>For information about setting up IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon SES Developer Guide</a>.</p> */
 	export interface ReceiptFilterFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateReceiptFilterFormGroup() {
 		return new FormGroup<ReceiptFilterFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1584,19 +1694,27 @@ export namespace MyNS {
 
 	/** <p>Additional X-headers to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p> <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p> */
 	export interface ExtensionField {
+
+		/** Required */
 		Name: string;
+
+		/** Required */
 		Value: string;
 	}
 
 	/** <p>Additional X-headers to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p> <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p> */
 	export interface ExtensionFieldFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateExtensionFieldFormGroup() {
 		return new FormGroup<ExtensionFieldFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1604,6 +1722,8 @@ export namespace MyNS {
 
 	/** <p>Recipient-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p> <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p> */
 	export interface BouncedRecipientInfo {
+
+		/** Required */
 		Recipient: string;
 		RecipientArn?: string | null;
 		BounceType?: BouncedRecipientInfoBounceType | null;
@@ -1614,13 +1734,15 @@ export namespace MyNS {
 
 	/** <p>Recipient-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p> <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p> */
 	export interface BouncedRecipientInfoFormProperties {
+
+		/** Required */
 		Recipient: FormControl<string | null | undefined>,
 		RecipientArn: FormControl<string | null | undefined>,
 		BounceType: FormControl<BouncedRecipientInfoBounceType | null | undefined>,
 	}
 	export function CreateBouncedRecipientInfoFormGroup() {
 		return new FormGroup<BouncedRecipientInfoFormProperties>({
-			Recipient: new FormControl<string | null | undefined>(undefined),
+			Recipient: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RecipientArn: new FormControl<string | null | undefined>(undefined),
 			BounceType: new FormControl<BouncedRecipientInfoBounceType | null | undefined>(undefined),
 		});
@@ -1633,8 +1755,12 @@ export namespace MyNS {
 	/** <p>Recipient-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p> <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p> */
 	export interface RecipientDsnFields {
 		FinalRecipient?: string | null;
+
+		/** Required */
 		Action: RecipientDsnFieldsAction;
 		RemoteMta?: string | null;
+
+		/** Required */
 		Status: string;
 		DiagnosticCode?: string | null;
 		LastAttemptDate?: Date | null;
@@ -1644,8 +1770,12 @@ export namespace MyNS {
 	/** <p>Recipient-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p> <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p> */
 	export interface RecipientDsnFieldsFormProperties {
 		FinalRecipient: FormControl<string | null | undefined>,
+
+		/** Required */
 		Action: FormControl<RecipientDsnFieldsAction | null | undefined>,
 		RemoteMta: FormControl<string | null | undefined>,
+
+		/** Required */
 		Status: FormControl<string | null | undefined>,
 		DiagnosticCode: FormControl<string | null | undefined>,
 		LastAttemptDate: FormControl<Date | null | undefined>,
@@ -1653,9 +1783,9 @@ export namespace MyNS {
 	export function CreateRecipientDsnFieldsFormGroup() {
 		return new FormGroup<RecipientDsnFieldsFormProperties>({
 			FinalRecipient: new FormControl<string | null | undefined>(undefined),
-			Action: new FormControl<RecipientDsnFieldsAction | null | undefined>(undefined),
+			Action: new FormControl<RecipientDsnFieldsAction | null | undefined>(undefined, [Validators.required]),
 			RemoteMta: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DiagnosticCode: new FormControl<string | null | undefined>(undefined),
 			LastAttemptDate: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1675,6 +1805,8 @@ export namespace MyNS {
 	}
 
 	export interface SendBulkTemplatedEmailResponse {
+
+		/** Required */
 		Status: Array<BulkEmailDestinationStatus>;
 	}
 	export interface SendBulkTemplatedEmailResponseFormProperties {
@@ -1713,19 +1845,27 @@ export namespace MyNS {
 
 	/** <p>Contains the name and value of a tag that you can provide to <code>SendEmail</code> or <code>SendRawEmail</code> to apply to an email.</p> <p>Message tags, which you use with configuration sets, enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
 	export interface MessageTag {
+
+		/** Required */
 		Name: string;
+
+		/** Required */
 		Value: string;
 	}
 
 	/** <p>Contains the name and value of a tag that you can provide to <code>SendEmail</code> or <code>SendRawEmail</code> to apply to an email.</p> <p>Message tags, which you use with configuration sets, enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
 	export interface MessageTagFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateMessageTagFormGroup() {
 		return new FormGroup<MessageTagFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1740,16 +1880,20 @@ export namespace MyNS {
 		 */
 		Destination: Destination;
 		ReplacementTags?: Array<MessageTag>;
+
+		/** Max length: 262144 */
 		ReplacementTemplateData?: string | null;
 	}
 
 	/** An array that contains one or more Destinations, as well as the tags and replacement data associated with each of those Destinations. */
 	export interface BulkEmailDestinationFormProperties {
+
+		/** Max length: 262144 */
 		ReplacementTemplateData: FormControl<string | null | undefined>,
 	}
 	export function CreateBulkEmailDestinationFormGroup() {
 		return new FormGroup<BulkEmailDestinationFormProperties>({
-			ReplacementTemplateData: new FormControl<string | null | undefined>(undefined),
+			ReplacementTemplateData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(262144)]),
 		});
 
 	}
@@ -1831,16 +1975,20 @@ export namespace MyNS {
 
 	/** Represents a unique message ID. */
 	export interface SendEmailResponse {
+
+		/** Required */
 		MessageId: string;
 	}
 
 	/** Represents a unique message ID. */
 	export interface SendEmailResponseFormProperties {
+
+		/** Required */
 		MessageId: FormControl<string | null | undefined>,
 	}
 	export function CreateSendEmailResponseFormGroup() {
 		return new FormGroup<SendEmailResponseFormProperties>({
-			MessageId: new FormControl<string | null | undefined>(undefined),
+			MessageId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1848,18 +1996,22 @@ export namespace MyNS {
 
 	/** <p>Represents textual data, plus an optional character set specification.</p> <p>By default, the text must be 7-bit ASCII, due to the constraints of the SMTP protocol. If the text must contain any other characters, then you must also specify a character set. Examples include UTF-8, ISO-8859-1, and Shift_JIS.</p> */
 	export interface Content {
+
+		/** Required */
 		Data: string;
 		Charset?: string | null;
 	}
 
 	/** <p>Represents textual data, plus an optional character set specification.</p> <p>By default, the text must be 7-bit ASCII, due to the constraints of the SMTP protocol. If the text must contain any other characters, then you must also specify a character set. Examples include UTF-8, ISO-8859-1, and Shift_JIS.</p> */
 	export interface ContentFormProperties {
+
+		/** Required */
 		Data: FormControl<string | null | undefined>,
 		Charset: FormControl<string | null | undefined>,
 	}
 	export function CreateContentFormGroup() {
 		return new FormGroup<ContentFormProperties>({
-			Data: new FormControl<string | null | undefined>(undefined),
+			Data: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Charset: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1888,29 +2040,37 @@ export namespace MyNS {
 
 	/** Represents a unique message ID. */
 	export interface SendRawEmailResponse {
+
+		/** Required */
 		MessageId: string;
 	}
 
 	/** Represents a unique message ID. */
 	export interface SendRawEmailResponseFormProperties {
+
+		/** Required */
 		MessageId: FormControl<string | null | undefined>,
 	}
 	export function CreateSendRawEmailResponseFormGroup() {
 		return new FormGroup<SendRawEmailResponseFormProperties>({
-			MessageId: new FormControl<string | null | undefined>(undefined),
+			MessageId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface SendTemplatedEmailResponse {
+
+		/** Required */
 		MessageId: string;
 	}
 	export interface SendTemplatedEmailResponseFormProperties {
+
+		/** Required */
 		MessageId: FormControl<string | null | undefined>,
 	}
 	export function CreateSendTemplatedEmailResponseFormGroup() {
 		return new FormGroup<SendTemplatedEmailResponseFormProperties>({
-			MessageId: new FormControl<string | null | undefined>(undefined),
+			MessageId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2101,6 +2261,8 @@ export namespace MyNS {
 
 	/** Returns CNAME records that you must publish to the DNS server of your domain to set up Easy DKIM with Amazon SES. */
 	export interface VerifyDomainDkimResponse {
+
+		/** Required */
 		DkimTokens: Array<string>;
 	}
 
@@ -2116,16 +2278,20 @@ export namespace MyNS {
 
 	/** Returns a TXT record that you must publish to the DNS server of your domain to complete domain verification with Amazon SES. */
 	export interface VerifyDomainIdentityResponse {
+
+		/** Required */
 		VerificationToken: string;
 	}
 
 	/** Returns a TXT record that you must publish to the DNS server of your domain to complete domain verification with Amazon SES. */
 	export interface VerifyDomainIdentityResponseFormProperties {
+
+		/** Required */
 		VerificationToken: FormControl<string | null | undefined>,
 	}
 	export function CreateVerifyDomainIdentityResponseFormGroup() {
 		return new FormGroup<VerifyDomainIdentityResponseFormProperties>({
-			VerificationToken: new FormControl<string | null | undefined>(undefined),
+			VerificationToken: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2153,19 +2319,27 @@ export namespace MyNS {
 
 	/** Represents a request to create a receipt rule set by cloning an existing one. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
 	export interface CloneReceiptRuleSetRequest {
+
+		/** Required */
 		RuleSetName: string;
+
+		/** Required */
 		OriginalRuleSetName: string;
 	}
 
 	/** Represents a request to create a receipt rule set by cloning an existing one. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
 	export interface CloneReceiptRuleSetRequestFormProperties {
+
+		/** Required */
 		RuleSetName: FormControl<string | null | undefined>,
+
+		/** Required */
 		OriginalRuleSetName: FormControl<string | null | undefined>,
 	}
 	export function CreateCloneReceiptRuleSetRequestFormGroup() {
 		return new FormGroup<CloneReceiptRuleSetRequestFormProperties>({
-			RuleSetName: new FormControl<string | null | undefined>(undefined),
-			OriginalRuleSetName: new FormControl<string | null | undefined>(undefined),
+			RuleSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			OriginalRuleSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2175,6 +2349,8 @@ export namespace MyNS {
 
 	/** Represents a request to create a configuration set event destination. A configuration set event destination, which can be either Amazon CloudWatch or Amazon Kinesis Firehose, describes an AWS service in which Amazon SES publishes the email sending events associated with a configuration set. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>. */
 	export interface CreateConfigurationSetEventDestinationRequest {
+
+		/** Required */
 		ConfigurationSetName: string;
 
 		/**
@@ -2186,11 +2362,13 @@ export namespace MyNS {
 
 	/** Represents a request to create a configuration set event destination. A configuration set event destination, which can be either Amazon CloudWatch or Amazon Kinesis Firehose, describes an AWS service in which Amazon SES publishes the email sending events associated with a configuration set. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>. */
 	export interface CreateConfigurationSetEventDestinationRequestFormProperties {
+
+		/** Required */
 		ConfigurationSetName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateConfigurationSetEventDestinationRequestFormGroup() {
 		return new FormGroup<CreateConfigurationSetEventDestinationRequestFormProperties>({
-			ConfigurationSetName: new FormControl<string | null | undefined>(undefined),
+			ConfigurationSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2218,6 +2396,8 @@ export namespace MyNS {
 
 	/** Represents a request to create an open and click tracking option object in a configuration set.  */
 	export interface CreateConfigurationSetTrackingOptionsRequest {
+
+		/** Required */
 		ConfigurationSetName: string;
 
 		/**
@@ -2229,11 +2409,13 @@ export namespace MyNS {
 
 	/** Represents a request to create an open and click tracking option object in a configuration set.  */
 	export interface CreateConfigurationSetTrackingOptionsRequestFormProperties {
+
+		/** Required */
 		ConfigurationSetName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateConfigurationSetTrackingOptionsRequestFormGroup() {
 		return new FormGroup<CreateConfigurationSetTrackingOptionsRequestFormProperties>({
-			ConfigurationSetName: new FormControl<string | null | undefined>(undefined),
+			ConfigurationSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2241,31 +2423,55 @@ export namespace MyNS {
 
 	/** Represents a request to create a custom verification email template. */
 	export interface CreateCustomVerificationEmailTemplateRequest {
+
+		/** Required */
 		TemplateName: string;
+
+		/** Required */
 		FromEmailAddress: string;
+
+		/** Required */
 		TemplateSubject: string;
+
+		/** Required */
 		TemplateContent: string;
+
+		/** Required */
 		SuccessRedirectionURL: string;
+
+		/** Required */
 		FailureRedirectionURL: string;
 	}
 
 	/** Represents a request to create a custom verification email template. */
 	export interface CreateCustomVerificationEmailTemplateRequestFormProperties {
+
+		/** Required */
 		TemplateName: FormControl<string | null | undefined>,
+
+		/** Required */
 		FromEmailAddress: FormControl<string | null | undefined>,
+
+		/** Required */
 		TemplateSubject: FormControl<string | null | undefined>,
+
+		/** Required */
 		TemplateContent: FormControl<string | null | undefined>,
+
+		/** Required */
 		SuccessRedirectionURL: FormControl<string | null | undefined>,
+
+		/** Required */
 		FailureRedirectionURL: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateCustomVerificationEmailTemplateRequestFormGroup() {
 		return new FormGroup<CreateCustomVerificationEmailTemplateRequestFormProperties>({
-			TemplateName: new FormControl<string | null | undefined>(undefined),
-			FromEmailAddress: new FormControl<string | null | undefined>(undefined),
-			TemplateSubject: new FormControl<string | null | undefined>(undefined),
-			TemplateContent: new FormControl<string | null | undefined>(undefined),
-			SuccessRedirectionURL: new FormControl<string | null | undefined>(undefined),
-			FailureRedirectionURL: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			FromEmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TemplateSubject: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TemplateContent: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SuccessRedirectionURL: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			FailureRedirectionURL: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2293,6 +2499,8 @@ export namespace MyNS {
 
 	/** Represents a request to create a receipt rule. You use receipt rules to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
 	export interface CreateReceiptRuleRequest {
+
+		/** Required */
 		RuleSetName: string;
 		After?: string | null;
 
@@ -2305,12 +2513,14 @@ export namespace MyNS {
 
 	/** Represents a request to create a receipt rule. You use receipt rules to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
 	export interface CreateReceiptRuleRequestFormProperties {
+
+		/** Required */
 		RuleSetName: FormControl<string | null | undefined>,
 		After: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateReceiptRuleRequestFormGroup() {
 		return new FormGroup<CreateReceiptRuleRequestFormProperties>({
-			RuleSetName: new FormControl<string | null | undefined>(undefined),
+			RuleSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			After: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2319,16 +2529,20 @@ export namespace MyNS {
 
 	/** Represents a request to create an empty receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
 	export interface CreateReceiptRuleSetRequest {
+
+		/** Required */
 		RuleSetName: string;
 	}
 
 	/** Represents a request to create an empty receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
 	export interface CreateReceiptRuleSetRequestFormProperties {
+
+		/** Required */
 		RuleSetName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateReceiptRuleSetRequestFormGroup() {
 		return new FormGroup<CreateReceiptRuleSetRequestFormProperties>({
-			RuleSetName: new FormControl<string | null | undefined>(undefined),
+			RuleSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2358,19 +2572,27 @@ export namespace MyNS {
 
 	/** Represents a request to delete a configuration set event destination. Configuration set event destinations are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>. */
 	export interface DeleteConfigurationSetEventDestinationRequest {
+
+		/** Required */
 		ConfigurationSetName: string;
+
+		/** Required */
 		EventDestinationName: string;
 	}
 
 	/** Represents a request to delete a configuration set event destination. Configuration set event destinations are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>. */
 	export interface DeleteConfigurationSetEventDestinationRequestFormProperties {
+
+		/** Required */
 		ConfigurationSetName: FormControl<string | null | undefined>,
+
+		/** Required */
 		EventDestinationName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteConfigurationSetEventDestinationRequestFormGroup() {
 		return new FormGroup<DeleteConfigurationSetEventDestinationRequestFormProperties>({
-			ConfigurationSetName: new FormControl<string | null | undefined>(undefined),
-			EventDestinationName: new FormControl<string | null | undefined>(undefined),
+			ConfigurationSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			EventDestinationName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2378,16 +2600,20 @@ export namespace MyNS {
 
 	/** Represents a request to delete a configuration set. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>. */
 	export interface DeleteConfigurationSetRequest {
+
+		/** Required */
 		ConfigurationSetName: string;
 	}
 
 	/** Represents a request to delete a configuration set. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>. */
 	export interface DeleteConfigurationSetRequestFormProperties {
+
+		/** Required */
 		ConfigurationSetName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteConfigurationSetRequestFormGroup() {
 		return new FormGroup<DeleteConfigurationSetRequestFormProperties>({
-			ConfigurationSetName: new FormControl<string | null | undefined>(undefined),
+			ConfigurationSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2395,16 +2621,20 @@ export namespace MyNS {
 
 	/** Represents a request to delete open and click tracking options in a configuration set.  */
 	export interface DeleteConfigurationSetTrackingOptionsRequest {
+
+		/** Required */
 		ConfigurationSetName: string;
 	}
 
 	/** Represents a request to delete open and click tracking options in a configuration set.  */
 	export interface DeleteConfigurationSetTrackingOptionsRequestFormProperties {
+
+		/** Required */
 		ConfigurationSetName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteConfigurationSetTrackingOptionsRequestFormGroup() {
 		return new FormGroup<DeleteConfigurationSetTrackingOptionsRequestFormProperties>({
-			ConfigurationSetName: new FormControl<string | null | undefined>(undefined),
+			ConfigurationSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2412,16 +2642,20 @@ export namespace MyNS {
 
 	/** Represents a request to delete an existing custom verification email template. */
 	export interface DeleteCustomVerificationEmailTemplateRequest {
+
+		/** Required */
 		TemplateName: string;
 	}
 
 	/** Represents a request to delete an existing custom verification email template. */
 	export interface DeleteCustomVerificationEmailTemplateRequestFormProperties {
+
+		/** Required */
 		TemplateName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteCustomVerificationEmailTemplateRequestFormGroup() {
 		return new FormGroup<DeleteCustomVerificationEmailTemplateRequestFormProperties>({
-			TemplateName: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2429,19 +2663,35 @@ export namespace MyNS {
 
 	/** Represents a request to delete a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. */
 	export interface DeleteIdentityPolicyRequest {
+
+		/** Required */
 		Identity: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		PolicyName: string;
 	}
 
 	/** Represents a request to delete a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. */
 	export interface DeleteIdentityPolicyRequestFormProperties {
+
+		/** Required */
 		Identity: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		PolicyName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteIdentityPolicyRequestFormGroup() {
 		return new FormGroup<DeleteIdentityPolicyRequestFormProperties>({
-			Identity: new FormControl<string | null | undefined>(undefined),
-			PolicyName: new FormControl<string | null | undefined>(undefined),
+			Identity: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -2449,16 +2699,20 @@ export namespace MyNS {
 
 	/** Represents a request to delete one of your Amazon SES identities (an email address or domain). */
 	export interface DeleteIdentityRequest {
+
+		/** Required */
 		Identity: string;
 	}
 
 	/** Represents a request to delete one of your Amazon SES identities (an email address or domain). */
 	export interface DeleteIdentityRequestFormProperties {
+
+		/** Required */
 		Identity: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteIdentityRequestFormGroup() {
 		return new FormGroup<DeleteIdentityRequestFormProperties>({
-			Identity: new FormControl<string | null | undefined>(undefined),
+			Identity: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2466,16 +2720,20 @@ export namespace MyNS {
 
 	/** Represents a request to delete an IP address filter. You use IP address filters when you receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
 	export interface DeleteReceiptFilterRequest {
+
+		/** Required */
 		FilterName: string;
 	}
 
 	/** Represents a request to delete an IP address filter. You use IP address filters when you receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
 	export interface DeleteReceiptFilterRequestFormProperties {
+
+		/** Required */
 		FilterName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteReceiptFilterRequestFormGroup() {
 		return new FormGroup<DeleteReceiptFilterRequestFormProperties>({
-			FilterName: new FormControl<string | null | undefined>(undefined),
+			FilterName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2483,19 +2741,27 @@ export namespace MyNS {
 
 	/** Represents a request to delete a receipt rule. You use receipt rules to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
 	export interface DeleteReceiptRuleRequest {
+
+		/** Required */
 		RuleSetName: string;
+
+		/** Required */
 		RuleName: string;
 	}
 
 	/** Represents a request to delete a receipt rule. You use receipt rules to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
 	export interface DeleteReceiptRuleRequestFormProperties {
+
+		/** Required */
 		RuleSetName: FormControl<string | null | undefined>,
+
+		/** Required */
 		RuleName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteReceiptRuleRequestFormGroup() {
 		return new FormGroup<DeleteReceiptRuleRequestFormProperties>({
-			RuleSetName: new FormControl<string | null | undefined>(undefined),
-			RuleName: new FormControl<string | null | undefined>(undefined),
+			RuleSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RuleName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2503,16 +2769,20 @@ export namespace MyNS {
 
 	/** Represents a request to delete a receipt rule set and all of the receipt rules it contains. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
 	export interface DeleteReceiptRuleSetRequest {
+
+		/** Required */
 		RuleSetName: string;
 	}
 
 	/** Represents a request to delete a receipt rule set and all of the receipt rules it contains. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
 	export interface DeleteReceiptRuleSetRequestFormProperties {
+
+		/** Required */
 		RuleSetName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteReceiptRuleSetRequestFormGroup() {
 		return new FormGroup<DeleteReceiptRuleSetRequestFormProperties>({
-			RuleSetName: new FormControl<string | null | undefined>(undefined),
+			RuleSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2520,16 +2790,20 @@ export namespace MyNS {
 
 	/** Represents a request to delete an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>. */
 	export interface DeleteTemplateRequest {
+
+		/** Required */
 		TemplateName: string;
 	}
 
 	/** Represents a request to delete an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>. */
 	export interface DeleteTemplateRequestFormProperties {
+
+		/** Required */
 		TemplateName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteTemplateRequestFormGroup() {
 		return new FormGroup<DeleteTemplateRequestFormProperties>({
-			TemplateName: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2537,16 +2811,20 @@ export namespace MyNS {
 
 	/** Represents a request to delete an email address from the list of email addresses you have attempted to verify under your AWS account. */
 	export interface DeleteVerifiedEmailAddressRequest {
+
+		/** Required */
 		EmailAddress: string;
 	}
 
 	/** Represents a request to delete an email address from the list of email addresses you have attempted to verify under your AWS account. */
 	export interface DeleteVerifiedEmailAddressRequestFormProperties {
+
+		/** Required */
 		EmailAddress: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteVerifiedEmailAddressRequestFormGroup() {
 		return new FormGroup<DeleteVerifiedEmailAddressRequestFormProperties>({
-			EmailAddress: new FormControl<string | null | undefined>(undefined),
+			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2568,17 +2846,21 @@ export namespace MyNS {
 
 	/** Represents a request to return the details of a configuration set. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>. */
 	export interface DescribeConfigurationSetRequest {
+
+		/** Required */
 		ConfigurationSetName: string;
 		ConfigurationSetAttributeNames?: Array<ConfigurationSetAttribute>;
 	}
 
 	/** Represents a request to return the details of a configuration set. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>. */
 	export interface DescribeConfigurationSetRequestFormProperties {
+
+		/** Required */
 		ConfigurationSetName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeConfigurationSetRequestFormGroup() {
 		return new FormGroup<DescribeConfigurationSetRequestFormProperties>({
-			ConfigurationSetName: new FormControl<string | null | undefined>(undefined),
+			ConfigurationSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2586,19 +2868,27 @@ export namespace MyNS {
 
 	/** Represents a request to return the details of a receipt rule. You use receipt rules to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
 	export interface DescribeReceiptRuleRequest {
+
+		/** Required */
 		RuleSetName: string;
+
+		/** Required */
 		RuleName: string;
 	}
 
 	/** Represents a request to return the details of a receipt rule. You use receipt rules to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
 	export interface DescribeReceiptRuleRequestFormProperties {
+
+		/** Required */
 		RuleSetName: FormControl<string | null | undefined>,
+
+		/** Required */
 		RuleName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeReceiptRuleRequestFormGroup() {
 		return new FormGroup<DescribeReceiptRuleRequestFormProperties>({
-			RuleSetName: new FormControl<string | null | undefined>(undefined),
-			RuleName: new FormControl<string | null | undefined>(undefined),
+			RuleSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RuleName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2606,16 +2896,20 @@ export namespace MyNS {
 
 	/** Represents a request to return the details of a receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
 	export interface DescribeReceiptRuleSetRequest {
+
+		/** Required */
 		RuleSetName: string;
 	}
 
 	/** Represents a request to return the details of a receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
 	export interface DescribeReceiptRuleSetRequestFormProperties {
+
+		/** Required */
 		RuleSetName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeReceiptRuleSetRequestFormGroup() {
 		return new FormGroup<DescribeReceiptRuleSetRequestFormProperties>({
-			RuleSetName: new FormControl<string | null | undefined>(undefined),
+			RuleSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2623,20 +2917,28 @@ export namespace MyNS {
 
 	/** Represents the DKIM attributes of a verified email address or a domain. */
 	export interface IdentityDkimAttributes {
+
+		/** Required */
 		DkimEnabled: boolean;
+
+		/** Required */
 		DkimVerificationStatus: IdentityDkimAttributesDkimVerificationStatus;
 		DkimTokens?: Array<string>;
 	}
 
 	/** Represents the DKIM attributes of a verified email address or a domain. */
 	export interface IdentityDkimAttributesFormProperties {
+
+		/** Required */
 		DkimEnabled: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		DkimVerificationStatus: FormControl<IdentityDkimAttributesDkimVerificationStatus | null | undefined>,
 	}
 	export function CreateIdentityDkimAttributesFormGroup() {
 		return new FormGroup<IdentityDkimAttributesFormProperties>({
-			DkimEnabled: new FormControl<boolean | null | undefined>(undefined),
-			DkimVerificationStatus: new FormControl<IdentityDkimAttributesDkimVerificationStatus | null | undefined>(undefined),
+			DkimEnabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			DkimVerificationStatus: new FormControl<IdentityDkimAttributesDkimVerificationStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2648,16 +2950,20 @@ export namespace MyNS {
 
 	/** Represents a request to retrieve an existing custom verification email template. */
 	export interface GetCustomVerificationEmailTemplateRequest {
+
+		/** Required */
 		TemplateName: string;
 	}
 
 	/** Represents a request to retrieve an existing custom verification email template. */
 	export interface GetCustomVerificationEmailTemplateRequestFormProperties {
+
+		/** Required */
 		TemplateName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetCustomVerificationEmailTemplateRequestFormGroup() {
 		return new FormGroup<GetCustomVerificationEmailTemplateRequestFormProperties>({
-			TemplateName: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2665,6 +2971,8 @@ export namespace MyNS {
 
 	/** Represents a request for the status of Amazon SES Easy DKIM signing for an identity. For domain identities, this request also returns the DKIM tokens that are required for Easy DKIM signing, and whether Amazon SES successfully verified that these tokens were published. For more information about Easy DKIM, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>. */
 	export interface GetIdentityDkimAttributesRequest {
+
+		/** Required */
 		Identities: Array<string>;
 	}
 
@@ -2680,6 +2988,8 @@ export namespace MyNS {
 
 	/** Represents a request to return the Amazon SES custom MAIL FROM attributes for a list of identities. For information about using a custom MAIL FROM domain, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>. */
 	export interface GetIdentityMailFromDomainAttributesRequest {
+
+		/** Required */
 		Identities: Array<string>;
 	}
 
@@ -2695,6 +3005,8 @@ export namespace MyNS {
 
 	/** Represents a request to return the notification attributes for a list of identities you verified with Amazon SES. For information about Amazon SES notifications, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>. */
 	export interface GetIdentityNotificationAttributesRequest {
+
+		/** Required */
 		Identities: Array<string>;
 	}
 
@@ -2710,17 +3022,23 @@ export namespace MyNS {
 
 	/** Represents a request to return the requested sending authorization policies for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. */
 	export interface GetIdentityPoliciesRequest {
+
+		/** Required */
 		Identity: string;
+
+		/** Required */
 		PolicyNames: Array<string>;
 	}
 
 	/** Represents a request to return the requested sending authorization policies for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. */
 	export interface GetIdentityPoliciesRequestFormProperties {
+
+		/** Required */
 		Identity: FormControl<string | null | undefined>,
 	}
 	export function CreateGetIdentityPoliciesRequestFormGroup() {
 		return new FormGroup<GetIdentityPoliciesRequestFormProperties>({
-			Identity: new FormControl<string | null | undefined>(undefined),
+			Identity: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2728,6 +3046,8 @@ export namespace MyNS {
 
 	/** Represents a request to return the Amazon SES verification status of a list of identities. For domain identities, this request also returns the verification token. For information about verifying identities with Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>. */
 	export interface GetIdentityVerificationAttributesRequest {
+
+		/** Required */
 		Identities: Array<string>;
 	}
 
@@ -2741,14 +3061,18 @@ export namespace MyNS {
 	}
 
 	export interface GetTemplateRequest {
+
+		/** Required */
 		TemplateName: string;
 	}
 	export interface GetTemplateRequestFormProperties {
+
+		/** Required */
 		TemplateName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTemplateRequestFormGroup() {
 		return new FormGroup<GetTemplateRequestFormProperties>({
-			TemplateName: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2758,22 +3082,34 @@ export namespace MyNS {
 
 	/** Represents the custom MAIL FROM domain attributes of a verified identity (email address or domain). */
 	export interface IdentityMailFromDomainAttributes {
+
+		/** Required */
 		MailFromDomain: string;
+
+		/** Required */
 		MailFromDomainStatus: CustomMailFromStatus;
+
+		/** Required */
 		BehaviorOnMXFailure: BehaviorOnMXFailure;
 	}
 
 	/** Represents the custom MAIL FROM domain attributes of a verified identity (email address or domain). */
 	export interface IdentityMailFromDomainAttributesFormProperties {
+
+		/** Required */
 		MailFromDomain: FormControl<string | null | undefined>,
+
+		/** Required */
 		MailFromDomainStatus: FormControl<CustomMailFromStatus | null | undefined>,
+
+		/** Required */
 		BehaviorOnMXFailure: FormControl<BehaviorOnMXFailure | null | undefined>,
 	}
 	export function CreateIdentityMailFromDomainAttributesFormGroup() {
 		return new FormGroup<IdentityMailFromDomainAttributesFormProperties>({
-			MailFromDomain: new FormControl<string | null | undefined>(undefined),
-			MailFromDomainStatus: new FormControl<CustomMailFromStatus | null | undefined>(undefined),
-			BehaviorOnMXFailure: new FormControl<BehaviorOnMXFailure | null | undefined>(undefined),
+			MailFromDomain: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MailFromDomainStatus: new FormControl<CustomMailFromStatus | null | undefined>(undefined, [Validators.required]),
+			BehaviorOnMXFailure: new FormControl<BehaviorOnMXFailure | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2781,9 +3117,17 @@ export namespace MyNS {
 
 	/** Represents the notification attributes of an identity, including whether an identity has Amazon Simple Notification Service (Amazon SNS) topics set for bounce, complaint, and/or delivery notifications, and whether feedback forwarding is enabled for bounce and complaint notifications. */
 	export interface IdentityNotificationAttributes {
+
+		/** Required */
 		BounceTopic: string;
+
+		/** Required */
 		ComplaintTopic: string;
+
+		/** Required */
 		DeliveryTopic: string;
+
+		/** Required */
 		ForwardingEnabled: boolean;
 		HeadersInBounceNotificationsEnabled?: boolean | null;
 		HeadersInComplaintNotificationsEnabled?: boolean | null;
@@ -2792,9 +3136,17 @@ export namespace MyNS {
 
 	/** Represents the notification attributes of an identity, including whether an identity has Amazon Simple Notification Service (Amazon SNS) topics set for bounce, complaint, and/or delivery notifications, and whether feedback forwarding is enabled for bounce and complaint notifications. */
 	export interface IdentityNotificationAttributesFormProperties {
+
+		/** Required */
 		BounceTopic: FormControl<string | null | undefined>,
+
+		/** Required */
 		ComplaintTopic: FormControl<string | null | undefined>,
+
+		/** Required */
 		DeliveryTopic: FormControl<string | null | undefined>,
+
+		/** Required */
 		ForwardingEnabled: FormControl<boolean | null | undefined>,
 		HeadersInBounceNotificationsEnabled: FormControl<boolean | null | undefined>,
 		HeadersInComplaintNotificationsEnabled: FormControl<boolean | null | undefined>,
@@ -2802,10 +3154,10 @@ export namespace MyNS {
 	}
 	export function CreateIdentityNotificationAttributesFormGroup() {
 		return new FormGroup<IdentityNotificationAttributesFormProperties>({
-			BounceTopic: new FormControl<string | null | undefined>(undefined),
-			ComplaintTopic: new FormControl<string | null | undefined>(undefined),
-			DeliveryTopic: new FormControl<string | null | undefined>(undefined),
-			ForwardingEnabled: new FormControl<boolean | null | undefined>(undefined),
+			BounceTopic: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ComplaintTopic: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DeliveryTopic: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ForwardingEnabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			HeadersInBounceNotificationsEnabled: new FormControl<boolean | null | undefined>(undefined),
 			HeadersInComplaintNotificationsEnabled: new FormControl<boolean | null | undefined>(undefined),
 			HeadersInDeliveryNotificationsEnabled: new FormControl<boolean | null | undefined>(undefined),
@@ -2818,18 +3170,22 @@ export namespace MyNS {
 
 	/** Represents the verification attributes of a single identity. */
 	export interface IdentityVerificationAttributes {
+
+		/** Required */
 		VerificationStatus: IdentityDkimAttributesDkimVerificationStatus;
 		VerificationToken?: string | null;
 	}
 
 	/** Represents the verification attributes of a single identity. */
 	export interface IdentityVerificationAttributesFormProperties {
+
+		/** Required */
 		VerificationStatus: FormControl<IdentityDkimAttributesDkimVerificationStatus | null | undefined>,
 		VerificationToken: FormControl<string | null | undefined>,
 	}
 	export function CreateIdentityVerificationAttributesFormGroup() {
 		return new FormGroup<IdentityVerificationAttributesFormProperties>({
-			VerificationStatus: new FormControl<IdentityDkimAttributesDkimVerificationStatus | null | undefined>(undefined),
+			VerificationStatus: new FormControl<IdentityDkimAttributesDkimVerificationStatus | null | undefined>(undefined, [Validators.required]),
 			VerificationToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2861,18 +3217,28 @@ export namespace MyNS {
 	/** <p>Represents a request to list the existing custom verification email templates for your account.</p> <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.</p> */
 	export interface ListCustomVerificationEmailTemplatesRequest {
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults?: number | null;
 	}
 
 	/** <p>Represents a request to list the existing custom verification email templates for your account.</p> <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.</p> */
 	export interface ListCustomVerificationEmailTemplatesRequestFormProperties {
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListCustomVerificationEmailTemplatesRequestFormGroup() {
 		return new FormGroup<ListCustomVerificationEmailTemplatesRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 		});
 
 	}
@@ -2903,16 +3269,20 @@ export namespace MyNS {
 
 	/** Represents a request to return a list of sending authorization policies that are attached to an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. */
 	export interface ListIdentityPoliciesRequest {
+
+		/** Required */
 		Identity: string;
 	}
 
 	/** Represents a request to return a list of sending authorization policies that are attached to an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. */
 	export interface ListIdentityPoliciesRequestFormProperties {
+
+		/** Required */
 		Identity: FormControl<string | null | undefined>,
 	}
 	export function CreateListIdentityPoliciesRequestFormGroup() {
 		return new FormGroup<ListIdentityPoliciesRequestFormProperties>({
-			Identity: new FormControl<string | null | undefined>(undefined),
+			Identity: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2993,6 +3363,8 @@ export namespace MyNS {
 
 	/** <p>Message-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p> <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p> */
 	export interface MessageDsn {
+
+		/** Required */
 		ReportingMta: string;
 		ArrivalDate?: Date | null;
 		ExtensionFields?: Array<ExtensionField>;
@@ -3000,12 +3372,14 @@ export namespace MyNS {
 
 	/** <p>Message-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p> <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p> */
 	export interface MessageDsnFormProperties {
+
+		/** Required */
 		ReportingMta: FormControl<string | null | undefined>,
 		ArrivalDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateMessageDsnFormGroup() {
 		return new FormGroup<MessageDsnFormProperties>({
-			ReportingMta: new FormControl<string | null | undefined>(undefined),
+			ReportingMta: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ArrivalDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -3016,6 +3390,8 @@ export namespace MyNS {
 
 	/** A request to modify the delivery options for a configuration set. */
 	export interface PutConfigurationSetDeliveryOptionsRequest {
+
+		/** Required */
 		ConfigurationSetName: string;
 
 		/** Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). */
@@ -3024,11 +3400,13 @@ export namespace MyNS {
 
 	/** A request to modify the delivery options for a configuration set. */
 	export interface PutConfigurationSetDeliveryOptionsRequestFormProperties {
+
+		/** Required */
 		ConfigurationSetName: FormControl<string | null | undefined>,
 	}
 	export function CreatePutConfigurationSetDeliveryOptionsRequestFormGroup() {
 		return new FormGroup<PutConfigurationSetDeliveryOptionsRequestFormProperties>({
-			ConfigurationSetName: new FormControl<string | null | undefined>(undefined),
+			ConfigurationSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3036,22 +3414,48 @@ export namespace MyNS {
 
 	/** Represents a request to add or update a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. */
 	export interface PutIdentityPolicyRequest {
+
+		/** Required */
 		Identity: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		PolicyName: string;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Policy: string;
 	}
 
 	/** Represents a request to add or update a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. */
 	export interface PutIdentityPolicyRequestFormProperties {
+
+		/** Required */
 		Identity: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
 		PolicyName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		Policy: FormControl<string | null | undefined>,
 	}
 	export function CreatePutIdentityPolicyRequestFormGroup() {
 		return new FormGroup<PutIdentityPolicyRequestFormProperties>({
-			Identity: new FormControl<string | null | undefined>(undefined),
-			PolicyName: new FormControl<string | null | undefined>(undefined),
-			Policy: new FormControl<string | null | undefined>(undefined),
+			Identity: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -3059,16 +3463,20 @@ export namespace MyNS {
 
 	/** Represents the raw data of the message. */
 	export interface RawMessage {
+
+		/** Required */
 		Data: string;
 	}
 
 	/** Represents the raw data of the message. */
 	export interface RawMessageFormProperties {
+
+		/** Required */
 		Data: FormControl<string | null | undefined>,
 	}
 	export function CreateRawMessageFormGroup() {
 		return new FormGroup<RawMessageFormProperties>({
-			Data: new FormControl<string | null | undefined>(undefined),
+			Data: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3078,17 +3486,23 @@ export namespace MyNS {
 
 	/** Represents a request to reorder the receipt rules within a receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
 	export interface ReorderReceiptRuleSetRequest {
+
+		/** Required */
 		RuleSetName: string;
+
+		/** Required */
 		RuleNames: Array<string>;
 	}
 
 	/** Represents a request to reorder the receipt rules within a receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
 	export interface ReorderReceiptRuleSetRequestFormProperties {
+
+		/** Required */
 		RuleSetName: FormControl<string | null | undefined>,
 	}
 	export function CreateReorderReceiptRuleSetRequestFormGroup() {
 		return new FormGroup<ReorderReceiptRuleSetRequestFormProperties>({
-			RuleSetName: new FormControl<string | null | undefined>(undefined),
+			RuleSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3096,27 +3510,37 @@ export namespace MyNS {
 
 	/** Represents a request to send a bounce message to the sender of an email you received through Amazon SES. */
 	export interface SendBounceRequest {
+
+		/** Required */
 		OriginalMessageId: string;
+
+		/** Required */
 		BounceSender: string;
 		Explanation?: string | null;
 
 		/** <p>Message-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p> <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p> */
 		MessageDsn?: MessageDsn;
+
+		/** Required */
 		BouncedRecipientInfoList: Array<BouncedRecipientInfo>;
 		BounceSenderArn?: string | null;
 	}
 
 	/** Represents a request to send a bounce message to the sender of an email you received through Amazon SES. */
 	export interface SendBounceRequestFormProperties {
+
+		/** Required */
 		OriginalMessageId: FormControl<string | null | undefined>,
+
+		/** Required */
 		BounceSender: FormControl<string | null | undefined>,
 		Explanation: FormControl<string | null | undefined>,
 		BounceSenderArn: FormControl<string | null | undefined>,
 	}
 	export function CreateSendBounceRequestFormGroup() {
 		return new FormGroup<SendBounceRequestFormProperties>({
-			OriginalMessageId: new FormControl<string | null | undefined>(undefined),
-			BounceSender: new FormControl<string | null | undefined>(undefined),
+			OriginalMessageId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			BounceSender: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Explanation: new FormControl<string | null | undefined>(undefined),
 			BounceSenderArn: new FormControl<string | null | undefined>(undefined),
 		});
@@ -3126,6 +3550,8 @@ export namespace MyNS {
 
 	/** Represents a request to send a templated email to multiple destinations using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>. */
 	export interface SendBulkTemplatedEmailRequest {
+
+		/** Required */
 		Source: string;
 		SourceArn?: string | null;
 		ReplyToAddresses?: Array<string>;
@@ -3133,33 +3559,45 @@ export namespace MyNS {
 		ReturnPathArn?: string | null;
 		ConfigurationSetName?: string | null;
 		DefaultTags?: Array<MessageTag>;
+
+		/** Required */
 		Template: string;
 		TemplateArn?: string | null;
+
+		/** Max length: 262144 */
 		DefaultTemplateData?: string | null;
+
+		/** Required */
 		Destinations: Array<BulkEmailDestination>;
 	}
 
 	/** Represents a request to send a templated email to multiple destinations using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>. */
 	export interface SendBulkTemplatedEmailRequestFormProperties {
+
+		/** Required */
 		Source: FormControl<string | null | undefined>,
 		SourceArn: FormControl<string | null | undefined>,
 		ReturnPath: FormControl<string | null | undefined>,
 		ReturnPathArn: FormControl<string | null | undefined>,
 		ConfigurationSetName: FormControl<string | null | undefined>,
+
+		/** Required */
 		Template: FormControl<string | null | undefined>,
 		TemplateArn: FormControl<string | null | undefined>,
+
+		/** Max length: 262144 */
 		DefaultTemplateData: FormControl<string | null | undefined>,
 	}
 	export function CreateSendBulkTemplatedEmailRequestFormGroup() {
 		return new FormGroup<SendBulkTemplatedEmailRequestFormProperties>({
-			Source: new FormControl<string | null | undefined>(undefined),
+			Source: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SourceArn: new FormControl<string | null | undefined>(undefined),
 			ReturnPath: new FormControl<string | null | undefined>(undefined),
 			ReturnPathArn: new FormControl<string | null | undefined>(undefined),
 			ConfigurationSetName: new FormControl<string | null | undefined>(undefined),
-			Template: new FormControl<string | null | undefined>(undefined),
+			Template: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TemplateArn: new FormControl<string | null | undefined>(undefined),
-			DefaultTemplateData: new FormControl<string | null | undefined>(undefined),
+			DefaultTemplateData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(262144)]),
 		});
 
 	}
@@ -3167,21 +3605,29 @@ export namespace MyNS {
 
 	/** Represents a request to send a custom verification email to a specified recipient. */
 	export interface SendCustomVerificationEmailRequest {
+
+		/** Required */
 		EmailAddress: string;
+
+		/** Required */
 		TemplateName: string;
 		ConfigurationSetName?: string | null;
 	}
 
 	/** Represents a request to send a custom verification email to a specified recipient. */
 	export interface SendCustomVerificationEmailRequestFormProperties {
+
+		/** Required */
 		EmailAddress: FormControl<string | null | undefined>,
+
+		/** Required */
 		TemplateName: FormControl<string | null | undefined>,
 		ConfigurationSetName: FormControl<string | null | undefined>,
 	}
 	export function CreateSendCustomVerificationEmailRequestFormGroup() {
 		return new FormGroup<SendCustomVerificationEmailRequestFormProperties>({
-			EmailAddress: new FormControl<string | null | undefined>(undefined),
-			TemplateName: new FormControl<string | null | undefined>(undefined),
+			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ConfigurationSetName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3190,6 +3636,8 @@ export namespace MyNS {
 
 	/** Represents a request to send a single formatted email using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html">Amazon SES Developer Guide</a>. */
 	export interface SendEmailRequest {
+
+		/** Required */
 		Source: string;
 
 		/**
@@ -3213,6 +3661,8 @@ export namespace MyNS {
 
 	/** Represents a request to send a single formatted email using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html">Amazon SES Developer Guide</a>. */
 	export interface SendEmailRequestFormProperties {
+
+		/** Required */
 		Source: FormControl<string | null | undefined>,
 		ReturnPath: FormControl<string | null | undefined>,
 		SourceArn: FormControl<string | null | undefined>,
@@ -3221,7 +3671,7 @@ export namespace MyNS {
 	}
 	export function CreateSendEmailRequestFormGroup() {
 		return new FormGroup<SendEmailRequestFormProperties>({
-			Source: new FormControl<string | null | undefined>(undefined),
+			Source: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ReturnPath: new FormControl<string | null | undefined>(undefined),
 			SourceArn: new FormControl<string | null | undefined>(undefined),
 			ReturnPathArn: new FormControl<string | null | undefined>(undefined),
@@ -3270,6 +3720,8 @@ export namespace MyNS {
 
 	/** Represents a request to send a templated email using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>. */
 	export interface SendTemplatedEmailRequest {
+
+		/** Required */
 		Source: string;
 
 		/**
@@ -3283,32 +3735,48 @@ export namespace MyNS {
 		ReturnPathArn?: string | null;
 		Tags?: Array<MessageTag>;
 		ConfigurationSetName?: string | null;
+
+		/** Required */
 		Template: string;
 		TemplateArn?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 262144
+		 */
 		TemplateData: string;
 	}
 
 	/** Represents a request to send a templated email using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>. */
 	export interface SendTemplatedEmailRequestFormProperties {
+
+		/** Required */
 		Source: FormControl<string | null | undefined>,
 		ReturnPath: FormControl<string | null | undefined>,
 		SourceArn: FormControl<string | null | undefined>,
 		ReturnPathArn: FormControl<string | null | undefined>,
 		ConfigurationSetName: FormControl<string | null | undefined>,
+
+		/** Required */
 		Template: FormControl<string | null | undefined>,
 		TemplateArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 262144
+		 */
 		TemplateData: FormControl<string | null | undefined>,
 	}
 	export function CreateSendTemplatedEmailRequestFormGroup() {
 		return new FormGroup<SendTemplatedEmailRequestFormProperties>({
-			Source: new FormControl<string | null | undefined>(undefined),
+			Source: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ReturnPath: new FormControl<string | null | undefined>(undefined),
 			SourceArn: new FormControl<string | null | undefined>(undefined),
 			ReturnPathArn: new FormControl<string | null | undefined>(undefined),
 			ConfigurationSetName: new FormControl<string | null | undefined>(undefined),
-			Template: new FormControl<string | null | undefined>(undefined),
+			Template: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TemplateArn: new FormControl<string | null | undefined>(undefined),
-			TemplateData: new FormControl<string | null | undefined>(undefined),
+			TemplateData: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(262144)]),
 		});
 
 	}
@@ -3333,19 +3801,27 @@ export namespace MyNS {
 
 	/** Represents a request to enable or disable Amazon SES Easy DKIM signing for an identity. For more information about setting up Easy DKIM, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>. */
 	export interface SetIdentityDkimEnabledRequest {
+
+		/** Required */
 		Identity: string;
+
+		/** Required */
 		DkimEnabled: boolean;
 	}
 
 	/** Represents a request to enable or disable Amazon SES Easy DKIM signing for an identity. For more information about setting up Easy DKIM, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>. */
 	export interface SetIdentityDkimEnabledRequestFormProperties {
+
+		/** Required */
 		Identity: FormControl<string | null | undefined>,
+
+		/** Required */
 		DkimEnabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateSetIdentityDkimEnabledRequestFormGroup() {
 		return new FormGroup<SetIdentityDkimEnabledRequestFormProperties>({
-			Identity: new FormControl<string | null | undefined>(undefined),
-			DkimEnabled: new FormControl<boolean | null | undefined>(undefined),
+			Identity: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DkimEnabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3353,19 +3829,27 @@ export namespace MyNS {
 
 	/** Represents a request to enable or disable whether Amazon SES forwards you bounce and complaint notifications through email. For information about email feedback forwarding, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-email.html">Amazon SES Developer Guide</a>. */
 	export interface SetIdentityFeedbackForwardingEnabledRequest {
+
+		/** Required */
 		Identity: string;
+
+		/** Required */
 		ForwardingEnabled: boolean;
 	}
 
 	/** Represents a request to enable or disable whether Amazon SES forwards you bounce and complaint notifications through email. For information about email feedback forwarding, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-email.html">Amazon SES Developer Guide</a>. */
 	export interface SetIdentityFeedbackForwardingEnabledRequestFormProperties {
+
+		/** Required */
 		Identity: FormControl<string | null | undefined>,
+
+		/** Required */
 		ForwardingEnabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateSetIdentityFeedbackForwardingEnabledRequestFormGroup() {
 		return new FormGroup<SetIdentityFeedbackForwardingEnabledRequestFormProperties>({
-			Identity: new FormControl<string | null | undefined>(undefined),
-			ForwardingEnabled: new FormControl<boolean | null | undefined>(undefined),
+			Identity: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ForwardingEnabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3373,22 +3857,34 @@ export namespace MyNS {
 
 	/** Represents a request to set whether Amazon SES includes the original email headers in the Amazon SNS notifications of a specified type. For information about notifications, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html">Amazon SES Developer Guide</a>. */
 	export interface SetIdentityHeadersInNotificationsEnabledRequest {
+
+		/** Required */
 		Identity: string;
+
+		/** Required */
 		NotificationType: NotificationType;
+
+		/** Required */
 		Enabled: boolean;
 	}
 
 	/** Represents a request to set whether Amazon SES includes the original email headers in the Amazon SNS notifications of a specified type. For information about notifications, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html">Amazon SES Developer Guide</a>. */
 	export interface SetIdentityHeadersInNotificationsEnabledRequestFormProperties {
+
+		/** Required */
 		Identity: FormControl<string | null | undefined>,
+
+		/** Required */
 		NotificationType: FormControl<NotificationType | null | undefined>,
+
+		/** Required */
 		Enabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateSetIdentityHeadersInNotificationsEnabledRequestFormGroup() {
 		return new FormGroup<SetIdentityHeadersInNotificationsEnabledRequestFormProperties>({
-			Identity: new FormControl<string | null | undefined>(undefined),
-			NotificationType: new FormControl<NotificationType | null | undefined>(undefined),
-			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			Identity: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			NotificationType: new FormControl<NotificationType | null | undefined>(undefined, [Validators.required]),
+			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3396,6 +3892,8 @@ export namespace MyNS {
 
 	/** Represents a request to enable or disable the Amazon SES custom MAIL FROM domain setup for a verified identity. For information about using a custom MAIL FROM domain, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>. */
 	export interface SetIdentityMailFromDomainRequest {
+
+		/** Required */
 		Identity: string;
 		MailFromDomain?: string | null;
 		BehaviorOnMXFailure?: BehaviorOnMXFailure | null;
@@ -3403,13 +3901,15 @@ export namespace MyNS {
 
 	/** Represents a request to enable or disable the Amazon SES custom MAIL FROM domain setup for a verified identity. For information about using a custom MAIL FROM domain, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>. */
 	export interface SetIdentityMailFromDomainRequestFormProperties {
+
+		/** Required */
 		Identity: FormControl<string | null | undefined>,
 		MailFromDomain: FormControl<string | null | undefined>,
 		BehaviorOnMXFailure: FormControl<BehaviorOnMXFailure | null | undefined>,
 	}
 	export function CreateSetIdentityMailFromDomainRequestFormGroup() {
 		return new FormGroup<SetIdentityMailFromDomainRequestFormProperties>({
-			Identity: new FormControl<string | null | undefined>(undefined),
+			Identity: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			MailFromDomain: new FormControl<string | null | undefined>(undefined),
 			BehaviorOnMXFailure: new FormControl<BehaviorOnMXFailure | null | undefined>(undefined),
 		});
@@ -3419,21 +3919,29 @@ export namespace MyNS {
 
 	/** Represents a request to specify the Amazon SNS topic to which Amazon SES will publish bounce, complaint, or delivery notifications for emails sent with that identity as the Source. For information about Amazon SES notifications, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html">Amazon SES Developer Guide</a>. */
 	export interface SetIdentityNotificationTopicRequest {
+
+		/** Required */
 		Identity: string;
+
+		/** Required */
 		NotificationType: NotificationType;
 		SnsTopic?: string | null;
 	}
 
 	/** Represents a request to specify the Amazon SNS topic to which Amazon SES will publish bounce, complaint, or delivery notifications for emails sent with that identity as the Source. For information about Amazon SES notifications, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html">Amazon SES Developer Guide</a>. */
 	export interface SetIdentityNotificationTopicRequestFormProperties {
+
+		/** Required */
 		Identity: FormControl<string | null | undefined>,
+
+		/** Required */
 		NotificationType: FormControl<NotificationType | null | undefined>,
 		SnsTopic: FormControl<string | null | undefined>,
 	}
 	export function CreateSetIdentityNotificationTopicRequestFormGroup() {
 		return new FormGroup<SetIdentityNotificationTopicRequestFormProperties>({
-			Identity: new FormControl<string | null | undefined>(undefined),
-			NotificationType: new FormControl<NotificationType | null | undefined>(undefined),
+			Identity: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			NotificationType: new FormControl<NotificationType | null | undefined>(undefined, [Validators.required]),
 			SnsTopic: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3442,21 +3950,29 @@ export namespace MyNS {
 
 	/** Represents a request to set the position of a receipt rule in a receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
 	export interface SetReceiptRulePositionRequest {
+
+		/** Required */
 		RuleSetName: string;
+
+		/** Required */
 		RuleName: string;
 		After?: string | null;
 	}
 
 	/** Represents a request to set the position of a receipt rule in a receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
 	export interface SetReceiptRulePositionRequestFormProperties {
+
+		/** Required */
 		RuleSetName: FormControl<string | null | undefined>,
+
+		/** Required */
 		RuleName: FormControl<string | null | undefined>,
 		After: FormControl<string | null | undefined>,
 	}
 	export function CreateSetReceiptRulePositionRequestFormGroup() {
 		return new FormGroup<SetReceiptRulePositionRequestFormProperties>({
-			RuleSetName: new FormControl<string | null | undefined>(undefined),
-			RuleName: new FormControl<string | null | undefined>(undefined),
+			RuleSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RuleName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			After: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3465,17 +3981,31 @@ export namespace MyNS {
 	export enum StopScope { RuleSet = 0 }
 
 	export interface TestRenderTemplateRequest {
+
+		/** Required */
 		TemplateName: string;
+
+		/**
+		 * Required
+		 * Max length: 262144
+		 */
 		TemplateData: string;
 	}
 	export interface TestRenderTemplateRequestFormProperties {
+
+		/** Required */
 		TemplateName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 262144
+		 */
 		TemplateData: FormControl<string | null | undefined>,
 	}
 	export function CreateTestRenderTemplateRequestFormGroup() {
 		return new FormGroup<TestRenderTemplateRequestFormProperties>({
-			TemplateName: new FormControl<string | null | undefined>(undefined),
-			TemplateData: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TemplateData: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(262144)]),
 		});
 
 	}
@@ -3500,6 +4030,8 @@ export namespace MyNS {
 
 	/** Represents a request to update the event destination of a configuration set. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>. */
 	export interface UpdateConfigurationSetEventDestinationRequest {
+
+		/** Required */
 		ConfigurationSetName: string;
 
 		/**
@@ -3511,11 +4043,13 @@ export namespace MyNS {
 
 	/** Represents a request to update the event destination of a configuration set. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>. */
 	export interface UpdateConfigurationSetEventDestinationRequestFormProperties {
+
+		/** Required */
 		ConfigurationSetName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateConfigurationSetEventDestinationRequestFormGroup() {
 		return new FormGroup<UpdateConfigurationSetEventDestinationRequestFormProperties>({
-			ConfigurationSetName: new FormControl<string | null | undefined>(undefined),
+			ConfigurationSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3523,19 +4057,27 @@ export namespace MyNS {
 
 	/** Represents a request to modify the reputation metric publishing settings for a configuration set. */
 	export interface UpdateConfigurationSetReputationMetricsEnabledRequest {
+
+		/** Required */
 		ConfigurationSetName: string;
+
+		/** Required */
 		Enabled: boolean;
 	}
 
 	/** Represents a request to modify the reputation metric publishing settings for a configuration set. */
 	export interface UpdateConfigurationSetReputationMetricsEnabledRequestFormProperties {
+
+		/** Required */
 		ConfigurationSetName: FormControl<string | null | undefined>,
+
+		/** Required */
 		Enabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpdateConfigurationSetReputationMetricsEnabledRequestFormGroup() {
 		return new FormGroup<UpdateConfigurationSetReputationMetricsEnabledRequestFormProperties>({
-			ConfigurationSetName: new FormControl<string | null | undefined>(undefined),
-			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			ConfigurationSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3543,19 +4085,27 @@ export namespace MyNS {
 
 	/** Represents a request to enable or disable the email sending capabilities for a specific configuration set. */
 	export interface UpdateConfigurationSetSendingEnabledRequest {
+
+		/** Required */
 		ConfigurationSetName: string;
+
+		/** Required */
 		Enabled: boolean;
 	}
 
 	/** Represents a request to enable or disable the email sending capabilities for a specific configuration set. */
 	export interface UpdateConfigurationSetSendingEnabledRequestFormProperties {
+
+		/** Required */
 		ConfigurationSetName: FormControl<string | null | undefined>,
+
+		/** Required */
 		Enabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpdateConfigurationSetSendingEnabledRequestFormGroup() {
 		return new FormGroup<UpdateConfigurationSetSendingEnabledRequestFormProperties>({
-			ConfigurationSetName: new FormControl<string | null | undefined>(undefined),
-			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			ConfigurationSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3563,6 +4113,8 @@ export namespace MyNS {
 
 	/** Represents a request to update the tracking options for a configuration set.  */
 	export interface UpdateConfigurationSetTrackingOptionsRequest {
+
+		/** Required */
 		ConfigurationSetName: string;
 
 		/**
@@ -3574,11 +4126,13 @@ export namespace MyNS {
 
 	/** Represents a request to update the tracking options for a configuration set.  */
 	export interface UpdateConfigurationSetTrackingOptionsRequestFormProperties {
+
+		/** Required */
 		ConfigurationSetName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateConfigurationSetTrackingOptionsRequestFormGroup() {
 		return new FormGroup<UpdateConfigurationSetTrackingOptionsRequestFormProperties>({
-			ConfigurationSetName: new FormControl<string | null | undefined>(undefined),
+			ConfigurationSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3586,6 +4140,8 @@ export namespace MyNS {
 
 	/** Represents a request to update an existing custom verification email template. */
 	export interface UpdateCustomVerificationEmailTemplateRequest {
+
+		/** Required */
 		TemplateName: string;
 		FromEmailAddress?: string | null;
 		TemplateSubject?: string | null;
@@ -3596,6 +4152,8 @@ export namespace MyNS {
 
 	/** Represents a request to update an existing custom verification email template. */
 	export interface UpdateCustomVerificationEmailTemplateRequestFormProperties {
+
+		/** Required */
 		TemplateName: FormControl<string | null | undefined>,
 		FromEmailAddress: FormControl<string | null | undefined>,
 		TemplateSubject: FormControl<string | null | undefined>,
@@ -3605,7 +4163,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateCustomVerificationEmailTemplateRequestFormGroup() {
 		return new FormGroup<UpdateCustomVerificationEmailTemplateRequestFormProperties>({
-			TemplateName: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			FromEmailAddress: new FormControl<string | null | undefined>(undefined),
 			TemplateSubject: new FormControl<string | null | undefined>(undefined),
 			TemplateContent: new FormControl<string | null | undefined>(undefined),
@@ -3618,6 +4176,8 @@ export namespace MyNS {
 
 	/** Represents a request to update a receipt rule. You use receipt rules to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
 	export interface UpdateReceiptRuleRequest {
+
+		/** Required */
 		RuleSetName: string;
 
 		/**
@@ -3629,11 +4189,13 @@ export namespace MyNS {
 
 	/** Represents a request to update a receipt rule. You use receipt rules to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
 	export interface UpdateReceiptRuleRequestFormProperties {
+
+		/** Required */
 		RuleSetName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateReceiptRuleRequestFormGroup() {
 		return new FormGroup<UpdateReceiptRuleRequestFormProperties>({
-			RuleSetName: new FormControl<string | null | undefined>(undefined),
+			RuleSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3657,16 +4219,20 @@ export namespace MyNS {
 
 	/** Represents a request to generate the CNAME records needed to set up Easy DKIM with Amazon SES. For more information about setting up Easy DKIM, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>. */
 	export interface VerifyDomainDkimRequest {
+
+		/** Required */
 		Domain: string;
 	}
 
 	/** Represents a request to generate the CNAME records needed to set up Easy DKIM with Amazon SES. For more information about setting up Easy DKIM, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>. */
 	export interface VerifyDomainDkimRequestFormProperties {
+
+		/** Required */
 		Domain: FormControl<string | null | undefined>,
 	}
 	export function CreateVerifyDomainDkimRequestFormGroup() {
 		return new FormGroup<VerifyDomainDkimRequestFormProperties>({
-			Domain: new FormControl<string | null | undefined>(undefined),
+			Domain: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3674,16 +4240,20 @@ export namespace MyNS {
 
 	/** Represents a request to begin Amazon SES domain verification and to generate the TXT records that you must publish to the DNS server of your domain to complete the verification. For information about domain verification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-domains.html">Amazon SES Developer Guide</a>. */
 	export interface VerifyDomainIdentityRequest {
+
+		/** Required */
 		Domain: string;
 	}
 
 	/** Represents a request to begin Amazon SES domain verification and to generate the TXT records that you must publish to the DNS server of your domain to complete the verification. For information about domain verification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-domains.html">Amazon SES Developer Guide</a>. */
 	export interface VerifyDomainIdentityRequestFormProperties {
+
+		/** Required */
 		Domain: FormControl<string | null | undefined>,
 	}
 	export function CreateVerifyDomainIdentityRequestFormGroup() {
 		return new FormGroup<VerifyDomainIdentityRequestFormProperties>({
-			Domain: new FormControl<string | null | undefined>(undefined),
+			Domain: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3691,16 +4261,20 @@ export namespace MyNS {
 
 	/** Represents a request to begin email address verification with Amazon SES. For information about email address verification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">Amazon SES Developer Guide</a>. */
 	export interface VerifyEmailAddressRequest {
+
+		/** Required */
 		EmailAddress: string;
 	}
 
 	/** Represents a request to begin email address verification with Amazon SES. For information about email address verification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">Amazon SES Developer Guide</a>. */
 	export interface VerifyEmailAddressRequestFormProperties {
+
+		/** Required */
 		EmailAddress: FormControl<string | null | undefined>,
 	}
 	export function CreateVerifyEmailAddressRequestFormGroup() {
 		return new FormGroup<VerifyEmailAddressRequestFormProperties>({
-			EmailAddress: new FormControl<string | null | undefined>(undefined),
+			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3708,16 +4282,20 @@ export namespace MyNS {
 
 	/** Represents a request to begin email address verification with Amazon SES. For information about email address verification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">Amazon SES Developer Guide</a>. */
 	export interface VerifyEmailIdentityRequest {
+
+		/** Required */
 		EmailAddress: string;
 	}
 
 	/** Represents a request to begin email address verification with Amazon SES. For information about email address verification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">Amazon SES Developer Guide</a>. */
 	export interface VerifyEmailIdentityRequestFormProperties {
+
+		/** Required */
 		EmailAddress: FormControl<string | null | undefined>,
 	}
 	export function CreateVerifyEmailIdentityRequestFormGroup() {
 		return new FormGroup<VerifyEmailIdentityRequestFormProperties>({
-			EmailAddress: new FormControl<string | null | undefined>(undefined),
+			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4560,14 +5138,18 @@ export namespace MyNS {
 	export enum POST_CloneReceiptRuleSetVersion { _2010_12_01 = 0 }
 
 	export interface GET_CreateConfigurationSetConfigurationSet {
+
+		/** Required */
 		Name: string;
 	}
 	export interface GET_CreateConfigurationSetConfigurationSetFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateGET_CreateConfigurationSetConfigurationSetFormGroup() {
 		return new FormGroup<GET_CreateConfigurationSetConfigurationSetFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4579,8 +5161,12 @@ export namespace MyNS {
 	export enum POST_CreateConfigurationSetVersion { _2010_12_01 = 0 }
 
 	export interface GET_CreateConfigurationSetEventDestinationEventDestination {
+
+		/** Required */
 		Name: string;
 		Enabled?: boolean | null;
+
+		/** Required */
 		MatchingEventTypes: Array<EventType>;
 
 		/** <p>Contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p> <p>Event destinations, such as Amazon Kinesis Firehose, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
@@ -4593,12 +5179,14 @@ export namespace MyNS {
 		SNSDestination?: SNSDestination;
 	}
 	export interface GET_CreateConfigurationSetEventDestinationEventDestinationFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateGET_CreateConfigurationSetEventDestinationEventDestinationFormGroup() {
 		return new FormGroup<GET_CreateConfigurationSetEventDestinationEventDestinationFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -4636,6 +5224,8 @@ export namespace MyNS {
 	export enum POST_CreateCustomVerificationEmailTemplateVersion { _2010_12_01 = 0 }
 
 	export interface GET_CreateReceiptFilterFilter {
+
+		/** Required */
 		Name: string;
 
 		/**
@@ -4645,11 +5235,13 @@ export namespace MyNS {
 		IpFilter: ReceiptIpFilter;
 	}
 	export interface GET_CreateReceiptFilterFilterFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateGET_CreateReceiptFilterFilterFormGroup() {
 		return new FormGroup<GET_CreateReceiptFilterFilterFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4661,6 +5253,8 @@ export namespace MyNS {
 	export enum POST_CreateReceiptFilterVersion { _2010_12_01 = 0 }
 
 	export interface GET_CreateReceiptRuleRule {
+
+		/** Required */
 		Name: string;
 		Enabled?: boolean | null;
 		TlsPolicy?: TlsPolicy | null;
@@ -4669,6 +5263,8 @@ export namespace MyNS {
 		ScanEnabled?: boolean | null;
 	}
 	export interface GET_CreateReceiptRuleRuleFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
 		TlsPolicy: FormControl<TlsPolicy | null | undefined>,
@@ -4676,7 +5272,7 @@ export namespace MyNS {
 	}
 	export function CreateGET_CreateReceiptRuleRuleFormGroup() {
 		return new FormGroup<GET_CreateReceiptRuleRuleFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
 			TlsPolicy: new FormControl<TlsPolicy | null | undefined>(undefined),
 			ScanEnabled: new FormControl<boolean | null | undefined>(undefined),
@@ -4697,12 +5293,16 @@ export namespace MyNS {
 	export enum POST_CreateReceiptRuleSetVersion { _2010_12_01 = 0 }
 
 	export interface GET_CreateTemplateTemplate {
+
+		/** Required */
 		TemplateName: string;
 		SubjectPart?: string | null;
 		TextPart?: string | null;
 		HtmlPart?: string | null;
 	}
 	export interface GET_CreateTemplateTemplateFormProperties {
+
+		/** Required */
 		TemplateName: FormControl<string | null | undefined>,
 		SubjectPart: FormControl<string | null | undefined>,
 		TextPart: FormControl<string | null | undefined>,
@@ -4710,7 +5310,7 @@ export namespace MyNS {
 	}
 	export function CreateGET_CreateTemplateTemplateFormGroup() {
 		return new FormGroup<GET_CreateTemplateTemplateFormProperties>({
-			TemplateName: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SubjectPart: new FormControl<string | null | undefined>(undefined),
 			TextPart: new FormControl<string | null | undefined>(undefined),
 			HtmlPart: new FormControl<string | null | undefined>(undefined),
@@ -4954,17 +5554,21 @@ export namespace MyNS {
 	export enum POST_ReorderReceiptRuleSetVersion { _2010_12_01 = 0 }
 
 	export interface GET_SendBounceMessageDsn {
+
+		/** Required */
 		ReportingMta: string;
 		ArrivalDate?: Date | null;
 		ExtensionFields?: Array<ExtensionField>;
 	}
 	export interface GET_SendBounceMessageDsnFormProperties {
+
+		/** Required */
 		ReportingMta: FormControl<string | null | undefined>,
 		ArrivalDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateGET_SendBounceMessageDsnFormGroup() {
 		return new FormGroup<GET_SendBounceMessageDsnFormProperties>({
-			ReportingMta: new FormControl<string | null | undefined>(undefined),
+			ReportingMta: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ArrivalDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -5030,14 +5634,18 @@ export namespace MyNS {
 	export enum POST_SendEmailVersion { _2010_12_01 = 0 }
 
 	export interface GET_SendRawEmailRawMessage {
+
+		/** Required */
 		Data: string;
 	}
 	export interface GET_SendRawEmailRawMessageFormProperties {
+
+		/** Required */
 		Data: FormControl<string | null | undefined>,
 	}
 	export function CreateGET_SendRawEmailRawMessageFormGroup() {
 		return new FormGroup<GET_SendRawEmailRawMessageFormProperties>({
-			Data: new FormControl<string | null | undefined>(undefined),
+			Data: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5122,8 +5730,12 @@ export namespace MyNS {
 	export enum POST_UpdateAccountSendingEnabledVersion { _2010_12_01 = 0 }
 
 	export interface GET_UpdateConfigurationSetEventDestinationEventDestination {
+
+		/** Required */
 		Name: string;
 		Enabled?: boolean | null;
+
+		/** Required */
 		MatchingEventTypes: Array<EventType>;
 
 		/** <p>Contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p> <p>Event destinations, such as Amazon Kinesis Firehose, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
@@ -5136,12 +5748,14 @@ export namespace MyNS {
 		SNSDestination?: SNSDestination;
 	}
 	export interface GET_UpdateConfigurationSetEventDestinationEventDestinationFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateGET_UpdateConfigurationSetEventDestinationEventDestinationFormGroup() {
 		return new FormGroup<GET_UpdateConfigurationSetEventDestinationEventDestinationFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -5191,6 +5805,8 @@ export namespace MyNS {
 	export enum POST_UpdateCustomVerificationEmailTemplateVersion { _2010_12_01 = 0 }
 
 	export interface GET_UpdateReceiptRuleRule {
+
+		/** Required */
 		Name: string;
 		Enabled?: boolean | null;
 		TlsPolicy?: TlsPolicy | null;
@@ -5199,6 +5815,8 @@ export namespace MyNS {
 		ScanEnabled?: boolean | null;
 	}
 	export interface GET_UpdateReceiptRuleRuleFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
 		TlsPolicy: FormControl<TlsPolicy | null | undefined>,
@@ -5206,7 +5824,7 @@ export namespace MyNS {
 	}
 	export function CreateGET_UpdateReceiptRuleRuleFormGroup() {
 		return new FormGroup<GET_UpdateReceiptRuleRuleFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
 			TlsPolicy: new FormControl<TlsPolicy | null | undefined>(undefined),
 			ScanEnabled: new FormControl<boolean | null | undefined>(undefined),
@@ -5221,12 +5839,16 @@ export namespace MyNS {
 	export enum POST_UpdateReceiptRuleVersion { _2010_12_01 = 0 }
 
 	export interface GET_UpdateTemplateTemplate {
+
+		/** Required */
 		TemplateName: string;
 		SubjectPart?: string | null;
 		TextPart?: string | null;
 		HtmlPart?: string | null;
 	}
 	export interface GET_UpdateTemplateTemplateFormProperties {
+
+		/** Required */
 		TemplateName: FormControl<string | null | undefined>,
 		SubjectPart: FormControl<string | null | undefined>,
 		TextPart: FormControl<string | null | undefined>,
@@ -5234,7 +5856,7 @@ export namespace MyNS {
 	}
 	export function CreateGET_UpdateTemplateTemplateFormGroup() {
 		return new FormGroup<GET_UpdateTemplateTemplateFormProperties>({
-			TemplateName: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SubjectPart: new FormControl<string | null | undefined>(undefined),
 			TextPart: new FormControl<string | null | undefined>(undefined),
 			HtmlPart: new FormControl<string | null | undefined>(undefined),

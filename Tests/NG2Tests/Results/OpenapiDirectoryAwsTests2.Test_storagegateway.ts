@@ -27,7 +27,7 @@ export namespace MyNS {
 	}
 	export function CreateActivateGatewayOutputFormGroup() {
 		return new FormGroup<ActivateGatewayOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -35,6 +35,12 @@ export namespace MyNS {
 
 	/** <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>ActivateGatewayInput$ActivationKey</a> </p> </li> <li> <p> <a>ActivateGatewayInput$GatewayName</a> </p> </li> <li> <p> <a>ActivateGatewayInput$GatewayRegion</a> </p> </li> <li> <p> <a>ActivateGatewayInput$GatewayTimezone</a> </p> </li> <li> <p> <a>ActivateGatewayInput$GatewayType</a> </p> </li> <li> <p> <a>ActivateGatewayInput$TapeDriveType</a> </p> </li> <li> <p> <a>ActivateGatewayInput$MediumChangerType</a> </p> </li> </ul> */
 	export interface ActivateGatewayInput {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		ActivationKey: string;
 
 		/**
@@ -45,16 +51,49 @@ export namespace MyNS {
 		 * Pattern: ^[ -\.0-\[\]-~]*[!-\.0-\[\]-~][ -\.0-\[\]-~]*$
 		 */
 		GatewayName: string;
+
+		/**
+		 * Required
+		 * Max length: 10
+		 * Min length: 3
+		 */
 		GatewayTimezone: string;
+
+		/**
+		 * Required
+		 * Max length: 25
+		 * Min length: 1
+		 */
 		GatewayRegion: string;
+
+		/**
+		 * Max length: 20
+		 * Min length: 2
+		 */
 		GatewayType?: string | null;
+
+		/**
+		 * Max length: 50
+		 * Min length: 2
+		 */
 		TapeDriveType?: string | null;
+
+		/**
+		 * Max length: 50
+		 * Min length: 2
+		 */
 		MediumChangerType?: string | null;
 		Tags?: Array<Tag>;
 	}
 
 	/** <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>ActivateGatewayInput$ActivationKey</a> </p> </li> <li> <p> <a>ActivateGatewayInput$GatewayName</a> </p> </li> <li> <p> <a>ActivateGatewayInput$GatewayRegion</a> </p> </li> <li> <p> <a>ActivateGatewayInput$GatewayTimezone</a> </p> </li> <li> <p> <a>ActivateGatewayInput$GatewayType</a> </p> </li> <li> <p> <a>ActivateGatewayInput$TapeDriveType</a> </p> </li> <li> <p> <a>ActivateGatewayInput$MediumChangerType</a> </p> </li> </ul> */
 	export interface ActivateGatewayInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		ActivationKey: FormControl<string | null | undefined>,
 
 		/**
@@ -65,21 +104,48 @@ export namespace MyNS {
 		 * Pattern: ^[ -\.0-\[\]-~]*[!-\.0-\[\]-~][ -\.0-\[\]-~]*$
 		 */
 		GatewayName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 10
+		 * Min length: 3
+		 */
 		GatewayTimezone: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 25
+		 * Min length: 1
+		 */
 		GatewayRegion: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 20
+		 * Min length: 2
+		 */
 		GatewayType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 50
+		 * Min length: 2
+		 */
 		TapeDriveType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 50
+		 * Min length: 2
+		 */
 		MediumChangerType: FormControl<string | null | undefined>,
 	}
 	export function CreateActivateGatewayInputFormGroup() {
 		return new FormGroup<ActivateGatewayInputFormProperties>({
-			ActivationKey: new FormControl<string | null | undefined>(undefined),
-			GatewayName: new FormControl<string | null | undefined>(undefined),
-			GatewayTimezone: new FormControl<string | null | undefined>(undefined),
-			GatewayRegion: new FormControl<string | null | undefined>(undefined),
-			GatewayType: new FormControl<string | null | undefined>(undefined),
-			TapeDriveType: new FormControl<string | null | undefined>(undefined),
-			MediumChangerType: new FormControl<string | null | undefined>(undefined),
+			ActivationKey: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
+			GatewayName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(2)]),
+			GatewayTimezone: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(3)]),
+			GatewayRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(25), Validators.minLength(1)]),
+			GatewayType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(2)]),
+			TapeDriveType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2)]),
+			MediumChangerType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2)]),
 		});
 
 	}
@@ -87,19 +153,43 @@ export namespace MyNS {
 
 	/** A key-value pair that helps you manage, filter, and search for your resource. Allowed characters: letters, white space, and numbers, representable in UTF-8, and the following characters: + - = . _ : / */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 */
 		Value: string;
 	}
 
 	/** A key-value pair that helps you manage, filter, and search for your resource. Allowed characters: letters, white space, and numbers, representable in UTF-8, and the following characters: + - = . _ : / */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
@@ -144,7 +234,7 @@ export namespace MyNS {
 	}
 	export function CreateAddCacheOutputFormGroup() {
 		return new FormGroup<AddCacheOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -158,6 +248,8 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
+
+		/** Required */
 		DiskIds: Array<string>;
 	}
 	export interface AddCacheInputFormProperties {
@@ -172,7 +264,7 @@ export namespace MyNS {
 	}
 	export function CreateAddCacheInputFormGroup() {
 		return new FormGroup<AddCacheInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -180,16 +272,26 @@ export namespace MyNS {
 
 	/** AddTagsToResourceOutput */
 	export interface AddTagsToResourceOutput {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		ResourceARN?: string | null;
 	}
 
 	/** AddTagsToResourceOutput */
 	export interface AddTagsToResourceOutputFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateAddTagsToResourceOutputFormGroup() {
 		return new FormGroup<AddTagsToResourceOutputFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -197,17 +299,31 @@ export namespace MyNS {
 
 	/** AddTagsToResourceInput */
 	export interface AddTagsToResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		ResourceARN: string;
+
+		/** Required */
 		Tags: Array<Tag>;
 	}
 
 	/** AddTagsToResourceInput */
 	export interface AddTagsToResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateAddTagsToResourceInputFormGroup() {
 		return new FormGroup<AddTagsToResourceInputFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -232,7 +348,7 @@ export namespace MyNS {
 	}
 	export function CreateAddUploadBufferOutputFormGroup() {
 		return new FormGroup<AddUploadBufferOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -246,6 +362,8 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
+
+		/** Required */
 		DiskIds: Array<string>;
 	}
 	export interface AddUploadBufferInputFormProperties {
@@ -260,7 +378,7 @@ export namespace MyNS {
 	}
 	export function CreateAddUploadBufferInputFormGroup() {
 		return new FormGroup<AddUploadBufferInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -289,7 +407,7 @@ export namespace MyNS {
 	}
 	export function CreateAddWorkingStorageOutputFormGroup() {
 		return new FormGroup<AddWorkingStorageOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -305,6 +423,8 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
+
+		/** Required */
 		DiskIds: Array<string>;
 	}
 
@@ -321,36 +441,74 @@ export namespace MyNS {
 	}
 	export function CreateAddWorkingStorageInputFormGroup() {
 		return new FormGroup<AddWorkingStorageInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
 
 	export interface AssignTapePoolOutput {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN?: string | null;
 	}
 	export interface AssignTapePoolOutputFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: FormControl<string | null | undefined>,
 	}
 	export function CreateAssignTapePoolOutputFormGroup() {
 		return new FormGroup<AssignTapePoolOutputFormProperties>({
-			TapeARN: new FormControl<string | null | undefined>(undefined),
+			TapeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
 
 	export interface AssignTapePoolInput {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		PoolId: string;
 	}
 	export interface AssignTapePoolInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		PoolId: FormControl<string | null | undefined>,
 	}
 	export function CreateAssignTapePoolInputFormGroup() {
 		return new FormGroup<AssignTapePoolInputFormProperties>({
-			TapeARN: new FormControl<string | null | undefined>(undefined),
-			PoolId: new FormControl<string | null | undefined>(undefined),
+			TapeARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			PoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -358,19 +516,39 @@ export namespace MyNS {
 
 	/** AttachVolumeOutput */
 	export interface AttachVolumeOutput {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN?: string | null;
+
+		/**
+		 * Max length: 800
+		 * Min length: 50
+		 */
 		TargetARN?: string | null;
 	}
 
 	/** AttachVolumeOutput */
 	export interface AttachVolumeOutputFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 800
+		 * Min length: 50
+		 */
 		TargetARN: FormControl<string | null | undefined>,
 	}
 	export function CreateAttachVolumeOutputFormGroup() {
 		return new FormGroup<AttachVolumeOutputFormProperties>({
-			VolumeARN: new FormControl<string | null | undefined>(undefined),
-			TargetARN: new FormControl<string | null | undefined>(undefined),
+			VolumeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			TargetARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(800), Validators.minLength(50)]),
 		});
 
 	}
@@ -386,9 +564,31 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
+
+		/**
+		 * Max length: 200
+		 * Min length: 1
+		 * Pattern: ^[-\.;a-z0-9]+$
+		 */
 		TargetName?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: string;
+
+		/**
+		 * Required
+		 * Pattern: \A(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}\z
+		 */
 		NetworkInterfaceId: string;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		DiskId?: string | null;
 	}
 
@@ -402,18 +602,40 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Min length: 1
+		 * Pattern: ^[-\.;a-z0-9]+$
+		 */
 		TargetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: \A(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}\z
+		 */
 		NetworkInterfaceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		DiskId: FormControl<string | null | undefined>,
 	}
 	export function CreateAttachVolumeInputFormGroup() {
 		return new FormGroup<AttachVolumeInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			TargetName: new FormControl<string | null | undefined>(undefined),
-			VolumeARN: new FormControl<string | null | undefined>(undefined),
-			NetworkInterfaceId: new FormControl<string | null | undefined>(undefined),
-			DiskId: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			TargetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
+			VolumeARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			NetworkInterfaceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DiskId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 		});
 
 	}
@@ -421,16 +643,28 @@ export namespace MyNS {
 
 	/** CancelArchivalOutput */
 	export interface CancelArchivalOutput {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN?: string | null;
 	}
 
 	/** CancelArchivalOutput */
 	export interface CancelArchivalOutputFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelArchivalOutputFormGroup() {
 		return new FormGroup<CancelArchivalOutputFormProperties>({
-			TapeARN: new FormControl<string | null | undefined>(undefined),
+			TapeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -446,6 +680,13 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: string;
 	}
 
@@ -459,12 +700,19 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelArchivalInputFormGroup() {
 		return new FormGroup<CancelArchivalInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			TapeARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			TapeARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -472,16 +720,28 @@ export namespace MyNS {
 
 	/** CancelRetrievalOutput */
 	export interface CancelRetrievalOutput {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN?: string | null;
 	}
 
 	/** CancelRetrievalOutput */
 	export interface CancelRetrievalOutputFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelRetrievalOutputFormGroup() {
 		return new FormGroup<CancelRetrievalOutputFormProperties>({
-			TapeARN: new FormControl<string | null | undefined>(undefined),
+			TapeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -497,6 +757,13 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: string;
 	}
 
@@ -510,28 +777,55 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelRetrievalInputFormGroup() {
 		return new FormGroup<CancelRetrievalInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			TapeARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			TapeARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
 
 	export interface CreateCachediSCSIVolumeOutput {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN?: string | null;
+
+		/**
+		 * Max length: 800
+		 * Min length: 50
+		 */
 		TargetARN?: string | null;
 	}
 	export interface CreateCachediSCSIVolumeOutputFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 800
+		 * Min length: 50
+		 */
 		TargetARN: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateCachediSCSIVolumeOutputFormGroup() {
 		return new FormGroup<CreateCachediSCSIVolumeOutputFormProperties>({
-			VolumeARN: new FormControl<string | null | undefined>(undefined),
-			TargetARN: new FormControl<string | null | undefined>(undefined),
+			VolumeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			TargetARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(800), Validators.minLength(50)]),
 		});
 
 	}
@@ -545,11 +839,38 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
+
+		/** Required */
 		VolumeSizeInBytes: number;
+
+		/** Pattern: \Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z */
 		SnapshotId?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 1
+		 * Pattern: ^[-\.;a-z0-9]+$
+		 */
 		TargetName: string;
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		SourceVolumeARN?: string | null;
+
+		/**
+		 * Required
+		 * Pattern: \A(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}\z
+		 */
 		NetworkInterfaceId: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 5
+		 */
 		ClientToken: string;
 		KMSEncrypted?: boolean | null;
 
@@ -570,11 +891,38 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/** Required */
 		VolumeSizeInBytes: FormControl<number | null | undefined>,
+
+		/** Pattern: \Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z */
 		SnapshotId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 1
+		 * Pattern: ^[-\.;a-z0-9]+$
+		 */
 		TargetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		SourceVolumeARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: \A(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}\z
+		 */
 		NetworkInterfaceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 5
+		 */
 		ClientToken: FormControl<string | null | undefined>,
 		KMSEncrypted: FormControl<boolean | null | undefined>,
 
@@ -587,15 +935,15 @@ export namespace MyNS {
 	}
 	export function CreateCreateCachediSCSIVolumeInputFormGroup() {
 		return new FormGroup<CreateCachediSCSIVolumeInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			VolumeSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			VolumeSizeInBytes: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			SnapshotId: new FormControl<string | null | undefined>(undefined),
-			TargetName: new FormControl<string | null | undefined>(undefined),
-			SourceVolumeARN: new FormControl<string | null | undefined>(undefined),
-			NetworkInterfaceId: new FormControl<string | null | undefined>(undefined),
-			ClientToken: new FormControl<string | null | undefined>(undefined),
+			TargetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
+			SourceVolumeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			NetworkInterfaceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(5)]),
 			KMSEncrypted: new FormControl<boolean | null | undefined>(undefined),
-			KMSKey: new FormControl<string | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(7)]),
 		});
 
 	}
@@ -624,7 +972,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateNFSFileShareOutputFormGroup() {
 		return new FormGroup<CreateNFSFileShareOutputFormProperties>({
-			FileShareARN: new FormControl<string | null | undefined>(undefined),
+			FileShareARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -632,6 +980,12 @@ export namespace MyNS {
 
 	/** CreateNFSFileShareInput */
 	export interface CreateNFSFileShareInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 5
+		 */
 		ClientToken: string;
 
 		/** Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for file gateways. */
@@ -700,6 +1054,12 @@ export namespace MyNS {
 
 	/** CreateNFSFileShareInput */
 	export interface CreateNFSFileShareInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 5
+		 */
 		ClientToken: FormControl<string | null | undefined>,
 
 		/**
@@ -756,15 +1116,15 @@ export namespace MyNS {
 	}
 	export function CreateCreateNFSFileShareInputFormGroup() {
 		return new FormGroup<CreateNFSFileShareInputFormProperties>({
-			ClientToken: new FormControl<string | null | undefined>(undefined),
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(5)]),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 			KMSEncrypted: new FormControl<boolean | null | undefined>(undefined),
-			KMSKey: new FormControl<string | null | undefined>(undefined),
-			Role: new FormControl<string | null | undefined>(undefined),
-			LocationARN: new FormControl<string | null | undefined>(undefined),
-			DefaultStorageClass: new FormControl<string | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(7)]),
+			Role: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			LocationARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(310), Validators.minLength(16)]),
+			DefaultStorageClass: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(5)]),
 			ObjectACL: new FormControl<CreateNFSFileShareInputObjectACL | null | undefined>(undefined),
-			Squash: new FormControl<string | null | undefined>(undefined),
+			Squash: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(15), Validators.minLength(5)]),
 			ReadOnly: new FormControl<boolean | null | undefined>(undefined),
 			GuessMIMETypeEnabled: new FormControl<boolean | null | undefined>(undefined),
 			RequesterPays: new FormControl<boolean | null | undefined>(undefined),
@@ -775,25 +1135,69 @@ export namespace MyNS {
 
 	/** Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for file gateways. */
 	export interface NFSFileShareDefaults {
+
+		/**
+		 * Max length: 4
+		 * Min length: 1
+		 * Pattern: ^[0-7]{4}$
+		 */
 		FileMode?: string | null;
+
+		/**
+		 * Max length: 4
+		 * Min length: 1
+		 * Pattern: ^[0-7]{4}$
+		 */
 		DirectoryMode?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 4294967294
+		 */
 		GroupId?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 4294967294
+		 */
 		OwnerId?: number | null;
 	}
 
 	/** Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for file gateways. */
 	export interface NFSFileShareDefaultsFormProperties {
+
+		/**
+		 * Max length: 4
+		 * Min length: 1
+		 * Pattern: ^[0-7]{4}$
+		 */
 		FileMode: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 4
+		 * Min length: 1
+		 * Pattern: ^[0-7]{4}$
+		 */
 		DirectoryMode: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 4294967294
+		 */
 		GroupId: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 4294967294
+		 */
 		OwnerId: FormControl<number | null | undefined>,
 	}
 	export function CreateNFSFileShareDefaultsFormGroup() {
 		return new FormGroup<NFSFileShareDefaultsFormProperties>({
-			FileMode: new FormControl<string | null | undefined>(undefined),
-			DirectoryMode: new FormControl<string | null | undefined>(undefined),
-			GroupId: new FormControl<number | null | undefined>(undefined),
-			OwnerId: new FormControl<number | null | undefined>(undefined),
+			FileMode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4), Validators.minLength(1)]),
+			DirectoryMode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4), Validators.minLength(1)]),
+			GroupId: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(4294967294)]),
+			OwnerId: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(4294967294)]),
 		});
 
 	}
@@ -824,7 +1228,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateSMBFileShareOutputFormGroup() {
 		return new FormGroup<CreateSMBFileShareOutputFormProperties>({
-			FileShareARN: new FormControl<string | null | undefined>(undefined),
+			FileShareARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -832,6 +1236,12 @@ export namespace MyNS {
 
 	/** CreateSMBFileShareInput */
 	export interface CreateSMBFileShareInput {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 5
+		 */
 		ClientToken: string;
 
 		/**
@@ -879,9 +1289,26 @@ export namespace MyNS {
 		GuessMIMETypeEnabled?: boolean | null;
 		RequesterPays?: boolean | null;
 		SMBACLEnabled?: boolean | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		AdminUserList?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		ValidUserList?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		InvalidUserList?: Array<string>;
+
+		/** Max length: 1024 */
 		AuditDestinationARN?: string | null;
 
 		/**
@@ -895,6 +1322,12 @@ export namespace MyNS {
 
 	/** CreateSMBFileShareInput */
 	export interface CreateSMBFileShareInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 5
+		 */
 		ClientToken: FormControl<string | null | undefined>,
 
 		/**
@@ -942,6 +1375,8 @@ export namespace MyNS {
 		GuessMIMETypeEnabled: FormControl<boolean | null | undefined>,
 		RequesterPays: FormControl<boolean | null | undefined>,
 		SMBACLEnabled: FormControl<boolean | null | undefined>,
+
+		/** Max length: 1024 */
 		AuditDestinationARN: FormControl<string | null | undefined>,
 
 		/**
@@ -953,20 +1388,20 @@ export namespace MyNS {
 	}
 	export function CreateCreateSMBFileShareInputFormGroup() {
 		return new FormGroup<CreateSMBFileShareInputFormProperties>({
-			ClientToken: new FormControl<string | null | undefined>(undefined),
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(5)]),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 			KMSEncrypted: new FormControl<boolean | null | undefined>(undefined),
-			KMSKey: new FormControl<string | null | undefined>(undefined),
-			Role: new FormControl<string | null | undefined>(undefined),
-			LocationARN: new FormControl<string | null | undefined>(undefined),
-			DefaultStorageClass: new FormControl<string | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(7)]),
+			Role: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			LocationARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(310), Validators.minLength(16)]),
+			DefaultStorageClass: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(5)]),
 			ObjectACL: new FormControl<CreateSMBFileShareInputObjectACL | null | undefined>(undefined),
 			ReadOnly: new FormControl<boolean | null | undefined>(undefined),
 			GuessMIMETypeEnabled: new FormControl<boolean | null | undefined>(undefined),
 			RequesterPays: new FormControl<boolean | null | undefined>(undefined),
 			SMBACLEnabled: new FormControl<boolean | null | undefined>(undefined),
-			AuditDestinationARN: new FormControl<string | null | undefined>(undefined),
-			Authentication: new FormControl<string | null | undefined>(undefined),
+			AuditDestinationARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			Authentication: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(15), Validators.minLength(5)]),
 		});
 
 	}
@@ -976,18 +1411,32 @@ export namespace MyNS {
 
 	/** A JSON object containing the following fields: */
 	export interface CreateSnapshotOutput {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN?: string | null;
+
+		/** Pattern: \Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z */
 		SnapshotId?: string | null;
 	}
 
 	/** A JSON object containing the following fields: */
 	export interface CreateSnapshotOutputFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: FormControl<string | null | undefined>,
+
+		/** Pattern: \Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z */
 		SnapshotId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSnapshotOutputFormGroup() {
 		return new FormGroup<CreateSnapshotOutputFormProperties>({
-			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			VolumeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 			SnapshotId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -996,20 +1445,44 @@ export namespace MyNS {
 
 	/** <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>CreateSnapshotInput$SnapshotDescription</a> </p> </li> <li> <p> <a>CreateSnapshotInput$VolumeARN</a> </p> </li> </ul> */
 	export interface CreateSnapshotInput {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		SnapshotDescription: string;
 		Tags?: Array<Tag>;
 	}
 
 	/** <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>CreateSnapshotInput$SnapshotDescription</a> </p> </li> <li> <p> <a>CreateSnapshotInput$VolumeARN</a> </p> </li> </ul> */
 	export interface CreateSnapshotInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		SnapshotDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSnapshotInputFormGroup() {
 		return new FormGroup<CreateSnapshotInputFormProperties>({
-			VolumeARN: new FormControl<string | null | undefined>(undefined),
-			SnapshotDescription: new FormControl<string | null | undefined>(undefined),
+			VolumeARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			SnapshotDescription: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -1025,37 +1498,75 @@ export namespace MyNS {
 	}
 
 	export interface CreateSnapshotFromVolumeRecoveryPointOutput {
+
+		/** Pattern: \Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z */
 		SnapshotId?: string | null;
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN?: string | null;
 		VolumeRecoveryPointTime?: string | null;
 	}
 	export interface CreateSnapshotFromVolumeRecoveryPointOutputFormProperties {
+
+		/** Pattern: \Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z */
 		SnapshotId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: FormControl<string | null | undefined>,
 		VolumeRecoveryPointTime: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSnapshotFromVolumeRecoveryPointOutputFormGroup() {
 		return new FormGroup<CreateSnapshotFromVolumeRecoveryPointOutputFormProperties>({
 			SnapshotId: new FormControl<string | null | undefined>(undefined),
-			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			VolumeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 			VolumeRecoveryPointTime: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CreateSnapshotFromVolumeRecoveryPointInput {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		SnapshotDescription: string;
 		Tags?: Array<Tag>;
 	}
 	export interface CreateSnapshotFromVolumeRecoveryPointInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		SnapshotDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSnapshotFromVolumeRecoveryPointInputFormGroup() {
 		return new FormGroup<CreateSnapshotFromVolumeRecoveryPointInputFormProperties>({
-			VolumeARN: new FormControl<string | null | undefined>(undefined),
-			SnapshotDescription: new FormControl<string | null | undefined>(undefined),
+			VolumeARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			SnapshotDescription: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -1063,22 +1574,42 @@ export namespace MyNS {
 
 	/** A JSON object containing the following fields: */
 	export interface CreateStorediSCSIVolumeOutput {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN?: string | null;
 		VolumeSizeInBytes?: number | null;
+
+		/**
+		 * Max length: 800
+		 * Min length: 50
+		 */
 		TargetARN?: string | null;
 	}
 
 	/** A JSON object containing the following fields: */
 	export interface CreateStorediSCSIVolumeOutputFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: FormControl<string | null | undefined>,
 		VolumeSizeInBytes: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 800
+		 * Min length: 50
+		 */
 		TargetARN: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateStorediSCSIVolumeOutputFormGroup() {
 		return new FormGroup<CreateStorediSCSIVolumeOutputFormProperties>({
-			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			VolumeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 			VolumeSizeInBytes: new FormControl<number | null | undefined>(undefined),
-			TargetARN: new FormControl<string | null | undefined>(undefined),
+			TargetARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(800), Validators.minLength(50)]),
 		});
 
 	}
@@ -1094,10 +1625,32 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		DiskId: string;
+
+		/** Pattern: \Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z */
 		SnapshotId?: string | null;
+
+		/** Required */
 		PreserveExistingData: boolean;
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 1
+		 * Pattern: ^[-\.;a-z0-9]+$
+		 */
 		TargetName: string;
+
+		/**
+		 * Required
+		 * Pattern: \A(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}\z
+		 */
 		NetworkInterfaceId: string;
 		KMSEncrypted?: boolean | null;
 
@@ -1120,10 +1673,32 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		DiskId: FormControl<string | null | undefined>,
+
+		/** Pattern: \Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z */
 		SnapshotId: FormControl<string | null | undefined>,
+
+		/** Required */
 		PreserveExistingData: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 200
+		 * Min length: 1
+		 * Pattern: ^[-\.;a-z0-9]+$
+		 */
 		TargetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: \A(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}\z
+		 */
 		NetworkInterfaceId: FormControl<string | null | undefined>,
 		KMSEncrypted: FormControl<boolean | null | undefined>,
 
@@ -1136,14 +1711,14 @@ export namespace MyNS {
 	}
 	export function CreateCreateStorediSCSIVolumeInputFormGroup() {
 		return new FormGroup<CreateStorediSCSIVolumeInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			DiskId: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			DiskId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
 			SnapshotId: new FormControl<string | null | undefined>(undefined),
-			PreserveExistingData: new FormControl<boolean | null | undefined>(undefined),
-			TargetName: new FormControl<string | null | undefined>(undefined),
-			NetworkInterfaceId: new FormControl<string | null | undefined>(undefined),
+			PreserveExistingData: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			TargetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
+			NetworkInterfaceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			KMSEncrypted: new FormControl<boolean | null | undefined>(undefined),
-			KMSKey: new FormControl<string | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(7)]),
 		});
 
 	}
@@ -1151,16 +1726,28 @@ export namespace MyNS {
 
 	/** CreateTapeOutput */
 	export interface CreateTapeWithBarcodeOutput {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN?: string | null;
 	}
 
 	/** CreateTapeOutput */
 	export interface CreateTapeWithBarcodeOutputFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateTapeWithBarcodeOutputFormGroup() {
 		return new FormGroup<CreateTapeWithBarcodeOutputFormProperties>({
-			TapeARN: new FormControl<string | null | undefined>(undefined),
+			TapeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -1176,7 +1763,16 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
+
+		/** Required */
 		TapeSizeInBytes: number;
+
+		/**
+		 * Required
+		 * Max length: 16
+		 * Min length: 7
+		 * Pattern: ^[A-Z0-9]*$
+		 */
 		TapeBarcode: string;
 		KMSEncrypted?: boolean | null;
 
@@ -1186,6 +1782,11 @@ export namespace MyNS {
 		 * Min length: 7
 		 */
 		KMSKey?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		PoolId?: string | null;
 		Tags?: Array<Tag>;
 	}
@@ -1200,7 +1801,16 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/** Required */
 		TapeSizeInBytes: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 16
+		 * Min length: 7
+		 * Pattern: ^[A-Z0-9]*$
+		 */
 		TapeBarcode: FormControl<string | null | undefined>,
 		KMSEncrypted: FormControl<boolean | null | undefined>,
 
@@ -1210,16 +1820,21 @@ export namespace MyNS {
 		 * Min length: 7
 		 */
 		KMSKey: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		PoolId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateTapeWithBarcodeInputFormGroup() {
 		return new FormGroup<CreateTapeWithBarcodeInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			TapeSizeInBytes: new FormControl<number | null | undefined>(undefined),
-			TapeBarcode: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			TapeSizeInBytes: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			TapeBarcode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(16), Validators.minLength(7)]),
 			KMSEncrypted: new FormControl<boolean | null | undefined>(undefined),
-			KMSKey: new FormControl<string | null | undefined>(undefined),
-			PoolId: new FormControl<string | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(7)]),
+			PoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -1252,9 +1867,30 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
+
+		/** Required */
 		TapeSizeInBytes: number;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 5
+		 */
 		ClientToken: string;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		NumTapesToCreate: number;
+
+		/**
+		 * Required
+		 * Max length: 4
+		 * Min length: 1
+		 * Pattern: ^[A-Z]*$
+		 */
 		TapeBarcodePrefix: string;
 		KMSEncrypted?: boolean | null;
 
@@ -1264,6 +1900,11 @@ export namespace MyNS {
 		 * Min length: 7
 		 */
 		KMSKey?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		PoolId?: string | null;
 		Tags?: Array<Tag>;
 	}
@@ -1278,9 +1919,30 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/** Required */
 		TapeSizeInBytes: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 5
+		 */
 		ClientToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		NumTapesToCreate: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 4
+		 * Min length: 1
+		 * Pattern: ^[A-Z]*$
+		 */
 		TapeBarcodePrefix: FormControl<string | null | undefined>,
 		KMSEncrypted: FormControl<boolean | null | undefined>,
 
@@ -1290,18 +1952,23 @@ export namespace MyNS {
 		 * Min length: 7
 		 */
 		KMSKey: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		PoolId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateTapesInputFormGroup() {
 		return new FormGroup<CreateTapesInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			TapeSizeInBytes: new FormControl<number | null | undefined>(undefined),
-			ClientToken: new FormControl<string | null | undefined>(undefined),
-			NumTapesToCreate: new FormControl<number | null | undefined>(undefined),
-			TapeBarcodePrefix: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			TapeSizeInBytes: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(5)]),
+			NumTapesToCreate: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(10)]),
+			TapeBarcodePrefix: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4), Validators.minLength(1)]),
 			KMSEncrypted: new FormControl<boolean | null | undefined>(undefined),
-			KMSKey: new FormControl<string | null | undefined>(undefined),
-			PoolId: new FormControl<string | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(7)]),
+			PoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -1326,7 +1993,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteAutomaticTapeCreationPolicyOutputFormGroup() {
 		return new FormGroup<DeleteAutomaticTapeCreationPolicyOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -1353,7 +2020,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteAutomaticTapeCreationPolicyInputFormGroup() {
 		return new FormGroup<DeleteAutomaticTapeCreationPolicyInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -1382,7 +2049,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteBandwidthRateLimitOutputFormGroup() {
 		return new FormGroup<DeleteBandwidthRateLimitOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -1398,6 +2065,12 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
+
+		/**
+		 * Required
+		 * Max length: 25
+		 * Min length: 3
+		 */
 		BandwidthType: string;
 	}
 
@@ -1411,12 +2084,18 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 25
+		 * Min length: 3
+		 */
 		BandwidthType: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteBandwidthRateLimitInputFormGroup() {
 		return new FormGroup<DeleteBandwidthRateLimitInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			BandwidthType: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			BandwidthType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(25), Validators.minLength(3)]),
 		});
 
 	}
@@ -1424,19 +2103,41 @@ export namespace MyNS {
 
 	/** A JSON object containing the following fields: */
 	export interface DeleteChapCredentialsOutput {
+
+		/**
+		 * Max length: 800
+		 * Min length: 50
+		 */
 		TargetARN?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [0-9a-z:.-]+
+		 */
 		InitiatorName?: string | null;
 	}
 
 	/** A JSON object containing the following fields: */
 	export interface DeleteChapCredentialsOutputFormProperties {
+
+		/**
+		 * Max length: 800
+		 * Min length: 50
+		 */
 		TargetARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [0-9a-z:.-]+
+		 */
 		InitiatorName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteChapCredentialsOutputFormGroup() {
 		return new FormGroup<DeleteChapCredentialsOutputFormProperties>({
-			TargetARN: new FormControl<string | null | undefined>(undefined),
-			InitiatorName: new FormControl<string | null | undefined>(undefined),
+			TargetARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(800), Validators.minLength(50)]),
+			InitiatorName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -1444,19 +2145,45 @@ export namespace MyNS {
 
 	/** <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>DeleteChapCredentialsInput$InitiatorName</a> </p> </li> <li> <p> <a>DeleteChapCredentialsInput$TargetARN</a> </p> </li> </ul> */
 	export interface DeleteChapCredentialsInput {
+
+		/**
+		 * Required
+		 * Max length: 800
+		 * Min length: 50
+		 */
 		TargetARN: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [0-9a-z:.-]+
+		 */
 		InitiatorName: string;
 	}
 
 	/** <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>DeleteChapCredentialsInput$InitiatorName</a> </p> </li> <li> <p> <a>DeleteChapCredentialsInput$TargetARN</a> </p> </li> </ul> */
 	export interface DeleteChapCredentialsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 800
+		 * Min length: 50
+		 */
 		TargetARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [0-9a-z:.-]+
+		 */
 		InitiatorName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteChapCredentialsInputFormGroup() {
 		return new FormGroup<DeleteChapCredentialsInputFormProperties>({
-			TargetARN: new FormControl<string | null | undefined>(undefined),
-			InitiatorName: new FormControl<string | null | undefined>(undefined),
+			TargetARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(800), Validators.minLength(50)]),
+			InitiatorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -1485,7 +2212,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteFileShareOutputFormGroup() {
 		return new FormGroup<DeleteFileShareOutputFormProperties>({
-			FileShareARN: new FormControl<string | null | undefined>(undefined),
+			FileShareARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -1518,7 +2245,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteFileShareInputFormGroup() {
 		return new FormGroup<DeleteFileShareInputFormProperties>({
-			FileShareARN: new FormControl<string | null | undefined>(undefined),
+			FileShareARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 			ForceDelete: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1548,7 +2275,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteGatewayOutputFormGroup() {
 		return new FormGroup<DeleteGatewayOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -1579,33 +2306,55 @@ export namespace MyNS {
 	}
 	export function CreateDeleteGatewayInputFormGroup() {
 		return new FormGroup<DeleteGatewayInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
 
 	export interface DeleteSnapshotScheduleOutput {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN?: string | null;
 	}
 	export interface DeleteSnapshotScheduleOutputFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSnapshotScheduleOutputFormGroup() {
 		return new FormGroup<DeleteSnapshotScheduleOutputFormProperties>({
-			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			VolumeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
 
 	export interface DeleteSnapshotScheduleInput {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: string;
 	}
 	export interface DeleteSnapshotScheduleInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSnapshotScheduleInputFormGroup() {
 		return new FormGroup<DeleteSnapshotScheduleInputFormProperties>({
-			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			VolumeARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -1613,16 +2362,28 @@ export namespace MyNS {
 
 	/** DeleteTapeOutput */
 	export interface DeleteTapeOutput {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN?: string | null;
 	}
 
 	/** DeleteTapeOutput */
 	export interface DeleteTapeOutputFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteTapeOutputFormGroup() {
 		return new FormGroup<DeleteTapeOutputFormProperties>({
-			TapeARN: new FormControl<string | null | undefined>(undefined),
+			TapeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -1638,6 +2399,13 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: string;
 	}
 
@@ -1651,12 +2419,19 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteTapeInputFormGroup() {
 		return new FormGroup<DeleteTapeInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			TapeARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			TapeARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -1664,16 +2439,28 @@ export namespace MyNS {
 
 	/** DeleteTapeArchiveOutput */
 	export interface DeleteTapeArchiveOutput {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN?: string | null;
 	}
 
 	/** DeleteTapeArchiveOutput */
 	export interface DeleteTapeArchiveOutputFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteTapeArchiveOutputFormGroup() {
 		return new FormGroup<DeleteTapeArchiveOutputFormProperties>({
-			TapeARN: new FormControl<string | null | undefined>(undefined),
+			TapeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -1681,16 +2468,30 @@ export namespace MyNS {
 
 	/** DeleteTapeArchiveInput */
 	export interface DeleteTapeArchiveInput {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: string;
 	}
 
 	/** DeleteTapeArchiveInput */
 	export interface DeleteTapeArchiveInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteTapeArchiveInputFormGroup() {
 		return new FormGroup<DeleteTapeArchiveInputFormProperties>({
-			TapeARN: new FormControl<string | null | undefined>(undefined),
+			TapeARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -1698,16 +2499,26 @@ export namespace MyNS {
 
 	/** A JSON object containing the Amazon Resource Name (ARN) of the storage volume that was deleted */
 	export interface DeleteVolumeOutput {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN?: string | null;
 	}
 
 	/** A JSON object containing the Amazon Resource Name (ARN) of the storage volume that was deleted */
 	export interface DeleteVolumeOutputFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteVolumeOutputFormGroup() {
 		return new FormGroup<DeleteVolumeOutputFormProperties>({
-			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			VolumeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -1715,16 +2526,28 @@ export namespace MyNS {
 
 	/** A JSON object containing the <a>DeleteVolumeInput$VolumeARN</a> to delete. */
 	export interface DeleteVolumeInput {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: string;
 	}
 
 	/** A JSON object containing the <a>DeleteVolumeInput$VolumeARN</a> to delete. */
 	export interface DeleteVolumeInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteVolumeInputFormGroup() {
 		return new FormGroup<DeleteVolumeInputFormProperties>({
-			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			VolumeARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -1753,7 +2576,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeAvailabilityMonitorTestOutputFormGroup() {
 		return new FormGroup<DescribeAvailabilityMonitorTestOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 			Status: new FormControl<DescribeAvailabilityMonitorTestOutputStatus | null | undefined>(undefined),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1784,7 +2607,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeAvailabilityMonitorTestInputFormGroup() {
 		return new FormGroup<DescribeAvailabilityMonitorTestInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -1799,7 +2622,11 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+
+		/** Minimum: 51200 */
 		AverageUploadRateLimitInBitsPerSec?: number | null;
+
+		/** Minimum: 102400 */
 		AverageDownloadRateLimitInBitsPerSec?: number | null;
 	}
 
@@ -1812,14 +2639,18 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/** Minimum: 51200 */
 		AverageUploadRateLimitInBitsPerSec: FormControl<number | null | undefined>,
+
+		/** Minimum: 102400 */
 		AverageDownloadRateLimitInBitsPerSec: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeBandwidthRateLimitOutputFormGroup() {
 		return new FormGroup<DescribeBandwidthRateLimitOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			AverageUploadRateLimitInBitsPerSec: new FormControl<number | null | undefined>(undefined),
-			AverageDownloadRateLimitInBitsPerSec: new FormControl<number | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			AverageUploadRateLimitInBitsPerSec: new FormControl<number | null | undefined>(undefined, [Validators.min(51200)]),
+			AverageDownloadRateLimitInBitsPerSec: new FormControl<number | null | undefined>(undefined, [Validators.min(102400)]),
 		});
 
 	}
@@ -1850,7 +2681,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeBandwidthRateLimitInputFormGroup() {
 		return new FormGroup<DescribeBandwidthRateLimitInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -1886,7 +2717,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeCacheOutputFormGroup() {
 		return new FormGroup<DescribeCacheOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 			CacheAllocatedInBytes: new FormControl<number | null | undefined>(undefined),
 			CacheUsedPercentage: new FormControl<number | null | undefined>(undefined),
 			CacheDirtyPercentage: new FormControl<number | null | undefined>(undefined),
@@ -1918,7 +2749,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeCacheInputFormGroup() {
 		return new FormGroup<DescribeCacheInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -1941,13 +2772,40 @@ export namespace MyNS {
 
 	/** Describes an iSCSI cached volume. */
 	export interface CachediSCSIVolume {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN?: string | null;
+
+		/**
+		 * Max length: 30
+		 * Min length: 12
+		 */
 		VolumeId?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 3
+		 */
 		VolumeType?: string | null;
+
+		/**
+		 * Max length: 50
+		 * Min length: 3
+		 */
 		VolumeStatus?: string | null;
+
+		/**
+		 * Max length: 50
+		 * Min length: 3
+		 */
 		VolumeAttachmentStatus?: string | null;
 		VolumeSizeInBytes?: number | null;
 		VolumeProgress?: number | null;
+
+		/** Pattern: \Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z */
 		SourceSnapshotId?: string | null;
 
 		/** Lists iSCSI information about a volume. */
@@ -1961,18 +2819,51 @@ export namespace MyNS {
 		 * Min length: 7
 		 */
 		KMSKey?: string | null;
+
+		/**
+		 * Max length: 200
+		 * Min length: 1
+		 * Pattern: ^[-\.;a-z0-9]+$
+		 */
 		TargetName?: string | null;
 	}
 
 	/** Describes an iSCSI cached volume. */
 	export interface CachediSCSIVolumeFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 30
+		 * Min length: 12
+		 */
 		VolumeId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 3
+		 */
 		VolumeType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 50
+		 * Min length: 3
+		 */
 		VolumeStatus: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 50
+		 * Min length: 3
+		 */
 		VolumeAttachmentStatus: FormControl<string | null | undefined>,
 		VolumeSizeInBytes: FormControl<number | null | undefined>,
 		VolumeProgress: FormControl<number | null | undefined>,
+
+		/** Pattern: \Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z */
 		SourceSnapshotId: FormControl<string | null | undefined>,
 		CreatedDate: FormControl<Date | null | undefined>,
 		VolumeUsedInBytes: FormControl<number | null | undefined>,
@@ -1983,22 +2874,28 @@ export namespace MyNS {
 		 * Min length: 7
 		 */
 		KMSKey: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Min length: 1
+		 * Pattern: ^[-\.;a-z0-9]+$
+		 */
 		TargetName: FormControl<string | null | undefined>,
 	}
 	export function CreateCachediSCSIVolumeFormGroup() {
 		return new FormGroup<CachediSCSIVolumeFormProperties>({
-			VolumeARN: new FormControl<string | null | undefined>(undefined),
-			VolumeId: new FormControl<string | null | undefined>(undefined),
-			VolumeType: new FormControl<string | null | undefined>(undefined),
-			VolumeStatus: new FormControl<string | null | undefined>(undefined),
-			VolumeAttachmentStatus: new FormControl<string | null | undefined>(undefined),
+			VolumeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			VolumeId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30), Validators.minLength(12)]),
+			VolumeType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(3)]),
+			VolumeStatus: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(3)]),
+			VolumeAttachmentStatus: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(3)]),
 			VolumeSizeInBytes: new FormControl<number | null | undefined>(undefined),
 			VolumeProgress: new FormControl<number | null | undefined>(undefined),
 			SourceSnapshotId: new FormControl<string | null | undefined>(undefined),
 			CreatedDate: new FormControl<Date | null | undefined>(undefined),
 			VolumeUsedInBytes: new FormControl<number | null | undefined>(undefined),
-			KMSKey: new FormControl<string | null | undefined>(undefined),
-			TargetName: new FormControl<string | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(7)]),
+			TargetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
 		});
 
 	}
@@ -2006,33 +2903,53 @@ export namespace MyNS {
 
 	/** Lists iSCSI information about a volume. */
 	export interface VolumeiSCSIAttributes {
+
+		/**
+		 * Max length: 800
+		 * Min length: 50
+		 */
 		TargetARN?: string | null;
+
+		/** Pattern: \A(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}\z */
 		NetworkInterfaceId?: string | null;
 		NetworkInterfacePort?: number | null;
+
+		/** Minimum: 1 */
 		LunNumber?: number | null;
 		ChapEnabled?: boolean | null;
 	}
 
 	/** Lists iSCSI information about a volume. */
 	export interface VolumeiSCSIAttributesFormProperties {
+
+		/**
+		 * Max length: 800
+		 * Min length: 50
+		 */
 		TargetARN: FormControl<string | null | undefined>,
+
+		/** Pattern: \A(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}\z */
 		NetworkInterfaceId: FormControl<string | null | undefined>,
 		NetworkInterfacePort: FormControl<number | null | undefined>,
+
+		/** Minimum: 1 */
 		LunNumber: FormControl<number | null | undefined>,
 		ChapEnabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateVolumeiSCSIAttributesFormGroup() {
 		return new FormGroup<VolumeiSCSIAttributesFormProperties>({
-			TargetARN: new FormControl<string | null | undefined>(undefined),
+			TargetARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(800), Validators.minLength(50)]),
 			NetworkInterfaceId: new FormControl<string | null | undefined>(undefined),
 			NetworkInterfacePort: new FormControl<number | null | undefined>(undefined),
-			LunNumber: new FormControl<number | null | undefined>(undefined),
+			LunNumber: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			ChapEnabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface DescribeCachediSCSIVolumesInput {
+
+		/** Required */
 		VolumeARNs: Array<string>;
 	}
 	export interface DescribeCachediSCSIVolumesInputFormProperties {
@@ -2061,25 +2978,67 @@ export namespace MyNS {
 
 	/** Describes Challenge-Handshake Authentication Protocol (CHAP) information that supports authentication between your gateway and iSCSI initiators. */
 	export interface ChapInfo {
+
+		/**
+		 * Max length: 800
+		 * Min length: 50
+		 */
 		TargetARN?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		SecretToAuthenticateInitiator?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [0-9a-z:.-]+
+		 */
 		InitiatorName?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		SecretToAuthenticateTarget?: string | null;
 	}
 
 	/** Describes Challenge-Handshake Authentication Protocol (CHAP) information that supports authentication between your gateway and iSCSI initiators. */
 	export interface ChapInfoFormProperties {
+
+		/**
+		 * Max length: 800
+		 * Min length: 50
+		 */
 		TargetARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		SecretToAuthenticateInitiator: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [0-9a-z:.-]+
+		 */
 		InitiatorName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		SecretToAuthenticateTarget: FormControl<string | null | undefined>,
 	}
 	export function CreateChapInfoFormGroup() {
 		return new FormGroup<ChapInfoFormProperties>({
-			TargetARN: new FormControl<string | null | undefined>(undefined),
-			SecretToAuthenticateInitiator: new FormControl<string | null | undefined>(undefined),
-			InitiatorName: new FormControl<string | null | undefined>(undefined),
-			SecretToAuthenticateTarget: new FormControl<string | null | undefined>(undefined),
+			TargetARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(800), Validators.minLength(50)]),
+			SecretToAuthenticateInitiator: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			InitiatorName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			SecretToAuthenticateTarget: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -2087,16 +3046,28 @@ export namespace MyNS {
 
 	/** A JSON object containing the Amazon Resource Name (ARN) of the iSCSI volume target. */
 	export interface DescribeChapCredentialsInput {
+
+		/**
+		 * Required
+		 * Max length: 800
+		 * Min length: 50
+		 */
 		TargetARN: string;
 	}
 
 	/** A JSON object containing the Amazon Resource Name (ARN) of the iSCSI volume target. */
 	export interface DescribeChapCredentialsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 800
+		 * Min length: 50
+		 */
 		TargetARN: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeChapCredentialsInputFormGroup() {
 		return new FormGroup<DescribeChapCredentialsInputFormProperties>({
-			TargetARN: new FormControl<string | null | undefined>(undefined),
+			TargetARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(800), Validators.minLength(50)]),
 		});
 
 	}
@@ -2111,18 +3082,50 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+
+		/**
+		 * Max length: 30
+		 * Min length: 12
+		 */
 		GatewayId?: string | null;
 		GatewayName?: string | null;
+
+		/**
+		 * Max length: 10
+		 * Min length: 3
+		 */
 		GatewayTimezone?: string | null;
+
+		/**
+		 * Max length: 25
+		 * Min length: 2
+		 */
 		GatewayState?: string | null;
 		GatewayNetworkInterfaces?: Array<NetworkInterface>;
+
+		/**
+		 * Max length: 20
+		 * Min length: 2
+		 */
 		GatewayType?: string | null;
+
+		/**
+		 * Max length: 25
+		 * Min length: 1
+		 */
 		NextUpdateAvailabilityDate?: string | null;
+
+		/**
+		 * Max length: 25
+		 * Min length: 1
+		 */
 		LastSoftwareUpdate?: string | null;
 		Ec2InstanceId?: string | null;
 		Ec2InstanceRegion?: string | null;
 		Tags?: Array<Tag>;
 		VPCEndpoint?: string | null;
+
+		/** Max length: 562 */
 		CloudWatchLogGroupARN?: string | null;
 		HostEnvironment?: DescribeGatewayInformationOutputHostEnvironment | null;
 	}
@@ -2136,33 +3139,65 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 30
+		 * Min length: 12
+		 */
 		GatewayId: FormControl<string | null | undefined>,
 		GatewayName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10
+		 * Min length: 3
+		 */
 		GatewayTimezone: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 25
+		 * Min length: 2
+		 */
 		GatewayState: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 20
+		 * Min length: 2
+		 */
 		GatewayType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 25
+		 * Min length: 1
+		 */
 		NextUpdateAvailabilityDate: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 25
+		 * Min length: 1
+		 */
 		LastSoftwareUpdate: FormControl<string | null | undefined>,
 		Ec2InstanceId: FormControl<string | null | undefined>,
 		Ec2InstanceRegion: FormControl<string | null | undefined>,
 		VPCEndpoint: FormControl<string | null | undefined>,
+
+		/** Max length: 562 */
 		CloudWatchLogGroupARN: FormControl<string | null | undefined>,
 		HostEnvironment: FormControl<DescribeGatewayInformationOutputHostEnvironment | null | undefined>,
 	}
 	export function CreateDescribeGatewayInformationOutputFormGroup() {
 		return new FormGroup<DescribeGatewayInformationOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			GatewayId: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			GatewayId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30), Validators.minLength(12)]),
 			GatewayName: new FormControl<string | null | undefined>(undefined),
-			GatewayTimezone: new FormControl<string | null | undefined>(undefined),
-			GatewayState: new FormControl<string | null | undefined>(undefined),
-			GatewayType: new FormControl<string | null | undefined>(undefined),
-			NextUpdateAvailabilityDate: new FormControl<string | null | undefined>(undefined),
-			LastSoftwareUpdate: new FormControl<string | null | undefined>(undefined),
+			GatewayTimezone: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10), Validators.minLength(3)]),
+			GatewayState: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25), Validators.minLength(2)]),
+			GatewayType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(2)]),
+			NextUpdateAvailabilityDate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25), Validators.minLength(1)]),
+			LastSoftwareUpdate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25), Validators.minLength(1)]),
 			Ec2InstanceId: new FormControl<string | null | undefined>(undefined),
 			Ec2InstanceRegion: new FormControl<string | null | undefined>(undefined),
 			VPCEndpoint: new FormControl<string | null | undefined>(undefined),
-			CloudWatchLogGroupARN: new FormControl<string | null | undefined>(undefined),
+			CloudWatchLogGroupARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(562)]),
 			HostEnvironment: new FormControl<DescribeGatewayInformationOutputHostEnvironment | null | undefined>(undefined),
 		});
 
@@ -2219,7 +3254,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeGatewayInformationInputFormGroup() {
 		return new FormGroup<DescribeGatewayInformationInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -2234,10 +3269,35 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 23
+		 */
 		HourOfDay?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 59
+		 */
 		MinuteOfHour?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 6
+		 */
 		DayOfWeek?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 28
+		 */
 		DayOfMonth?: number | null;
+
+		/**
+		 * Max length: 10
+		 * Min length: 3
+		 */
 		Timezone?: string | null;
 	}
 
@@ -2250,20 +3310,45 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 23
+		 */
 		HourOfDay: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 59
+		 */
 		MinuteOfHour: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 6
+		 */
 		DayOfWeek: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 28
+		 */
 		DayOfMonth: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 10
+		 * Min length: 3
+		 */
 		Timezone: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeMaintenanceStartTimeOutputFormGroup() {
 		return new FormGroup<DescribeMaintenanceStartTimeOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			HourOfDay: new FormControl<number | null | undefined>(undefined),
-			MinuteOfHour: new FormControl<number | null | undefined>(undefined),
-			DayOfWeek: new FormControl<number | null | undefined>(undefined),
-			DayOfMonth: new FormControl<number | null | undefined>(undefined),
-			Timezone: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			HourOfDay: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(23)]),
+			MinuteOfHour: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(59)]),
+			DayOfWeek: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(6)]),
+			DayOfMonth: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(28)]),
+			Timezone: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10), Validators.minLength(3)]),
 		});
 
 	}
@@ -2294,7 +3379,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeMaintenanceStartTimeInputFormGroup() {
 		return new FormGroup<DescribeMaintenanceStartTimeInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -2481,18 +3566,18 @@ export namespace MyNS {
 	}
 	export function CreateNFSFileShareInfoFormGroup() {
 		return new FormGroup<NFSFileShareInfoFormProperties>({
-			FileShareARN: new FormControl<string | null | undefined>(undefined),
-			FileShareId: new FormControl<string | null | undefined>(undefined),
-			FileShareStatus: new FormControl<string | null | undefined>(undefined),
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			FileShareARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			FileShareId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30), Validators.minLength(12)]),
+			FileShareStatus: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(3)]),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 			KMSEncrypted: new FormControl<boolean | null | undefined>(undefined),
-			KMSKey: new FormControl<string | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(7)]),
 			Path: new FormControl<string | null | undefined>(undefined),
-			Role: new FormControl<string | null | undefined>(undefined),
-			LocationARN: new FormControl<string | null | undefined>(undefined),
-			DefaultStorageClass: new FormControl<string | null | undefined>(undefined),
+			Role: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			LocationARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(310), Validators.minLength(16)]),
+			DefaultStorageClass: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(5)]),
 			ObjectACL: new FormControl<NFSFileShareInfoObjectACL | null | undefined>(undefined),
-			Squash: new FormControl<string | null | undefined>(undefined),
+			Squash: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(15), Validators.minLength(5)]),
 			ReadOnly: new FormControl<boolean | null | undefined>(undefined),
 			GuessMIMETypeEnabled: new FormControl<boolean | null | undefined>(undefined),
 			RequesterPays: new FormControl<boolean | null | undefined>(undefined),
@@ -2505,6 +3590,12 @@ export namespace MyNS {
 
 	/** DescribeNFSFileSharesInput */
 	export interface DescribeNFSFileSharesInput {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		FileShareARNList: Array<string>;
 	}
 
@@ -2602,9 +3693,26 @@ export namespace MyNS {
 		GuessMIMETypeEnabled?: boolean | null;
 		RequesterPays?: boolean | null;
 		SMBACLEnabled?: boolean | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		AdminUserList?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		ValidUserList?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		InvalidUserList?: Array<string>;
+
+		/** Max length: 1024 */
 		AuditDestinationARN?: string | null;
 
 		/**
@@ -2685,6 +3793,8 @@ export namespace MyNS {
 		GuessMIMETypeEnabled: FormControl<boolean | null | undefined>,
 		RequesterPays: FormControl<boolean | null | undefined>,
 		SMBACLEnabled: FormControl<boolean | null | undefined>,
+
+		/** Max length: 1024 */
 		AuditDestinationARN: FormControl<string | null | undefined>,
 
 		/**
@@ -2696,23 +3806,23 @@ export namespace MyNS {
 	}
 	export function CreateSMBFileShareInfoFormGroup() {
 		return new FormGroup<SMBFileShareInfoFormProperties>({
-			FileShareARN: new FormControl<string | null | undefined>(undefined),
-			FileShareId: new FormControl<string | null | undefined>(undefined),
-			FileShareStatus: new FormControl<string | null | undefined>(undefined),
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			FileShareARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			FileShareId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30), Validators.minLength(12)]),
+			FileShareStatus: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(3)]),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 			KMSEncrypted: new FormControl<boolean | null | undefined>(undefined),
-			KMSKey: new FormControl<string | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(7)]),
 			Path: new FormControl<string | null | undefined>(undefined),
-			Role: new FormControl<string | null | undefined>(undefined),
-			LocationARN: new FormControl<string | null | undefined>(undefined),
-			DefaultStorageClass: new FormControl<string | null | undefined>(undefined),
+			Role: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			LocationARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(310), Validators.minLength(16)]),
+			DefaultStorageClass: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(5)]),
 			ObjectACL: new FormControl<SMBFileShareInfoObjectACL | null | undefined>(undefined),
 			ReadOnly: new FormControl<boolean | null | undefined>(undefined),
 			GuessMIMETypeEnabled: new FormControl<boolean | null | undefined>(undefined),
 			RequesterPays: new FormControl<boolean | null | undefined>(undefined),
 			SMBACLEnabled: new FormControl<boolean | null | undefined>(undefined),
-			AuditDestinationARN: new FormControl<string | null | undefined>(undefined),
-			Authentication: new FormControl<string | null | undefined>(undefined),
+			AuditDestinationARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			Authentication: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(15), Validators.minLength(5)]),
 		});
 
 	}
@@ -2722,6 +3832,12 @@ export namespace MyNS {
 
 	/** DescribeSMBFileSharesInput */
 	export interface DescribeSMBFileSharesInput {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		FileShareARNList: Array<string>;
 	}
 
@@ -2742,6 +3858,12 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$
+		 */
 		DomainName?: string | null;
 		ActiveDirectoryStatus?: DescribeSMBSettingsOutputActiveDirectoryStatus | null;
 		SMBGuestPasswordSet?: boolean | null;
@@ -2755,6 +3877,12 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$
+		 */
 		DomainName: FormControl<string | null | undefined>,
 		ActiveDirectoryStatus: FormControl<DescribeSMBSettingsOutputActiveDirectoryStatus | null | undefined>,
 		SMBGuestPasswordSet: FormControl<boolean | null | undefined>,
@@ -2762,8 +3890,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeSMBSettingsOutputFormGroup() {
 		return new FormGroup<DescribeSMBSettingsOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			DomainName: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			ActiveDirectoryStatus: new FormControl<DescribeSMBSettingsOutputActiveDirectoryStatus | null | undefined>(undefined),
 			SMBGuestPasswordSet: new FormControl<boolean | null | undefined>(undefined),
 			SMBSecurityStrategy: new FormControl<DescribeSMBSettingsOutputSMBSecurityStrategy | null | undefined>(undefined),
@@ -2797,33 +3925,83 @@ export namespace MyNS {
 	}
 	export function CreateDescribeSMBSettingsInputFormGroup() {
 		return new FormGroup<DescribeSMBSettingsInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
 
 	export interface DescribeSnapshotScheduleOutput {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 23
+		 */
 		StartAt?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 24
+		 */
 		RecurrenceInHours?: number | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 10
+		 * Min length: 3
+		 */
 		Timezone?: string | null;
 		Tags?: Array<Tag>;
 	}
 	export interface DescribeSnapshotScheduleOutputFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 23
+		 */
 		StartAt: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 24
+		 */
 		RecurrenceInHours: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10
+		 * Min length: 3
+		 */
 		Timezone: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeSnapshotScheduleOutputFormGroup() {
 		return new FormGroup<DescribeSnapshotScheduleOutputFormProperties>({
-			VolumeARN: new FormControl<string | null | undefined>(undefined),
-			StartAt: new FormControl<number | null | undefined>(undefined),
-			RecurrenceInHours: new FormControl<number | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			Timezone: new FormControl<string | null | undefined>(undefined),
+			VolumeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			StartAt: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(23)]),
+			RecurrenceInHours: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(24)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			Timezone: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10), Validators.minLength(3)]),
 		});
 
 	}
@@ -2831,16 +4009,28 @@ export namespace MyNS {
 
 	/** A JSON object containing the <a>DescribeSnapshotScheduleInput$VolumeARN</a> of the volume. */
 	export interface DescribeSnapshotScheduleInput {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: string;
 	}
 
 	/** A JSON object containing the <a>DescribeSnapshotScheduleInput$VolumeARN</a> of the volume. */
 	export interface DescribeSnapshotScheduleInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeSnapshotScheduleInputFormGroup() {
 		return new FormGroup<DescribeSnapshotScheduleInputFormProperties>({
-			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			VolumeARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -2859,14 +4049,46 @@ export namespace MyNS {
 
 	/** Describes an iSCSI stored volume. */
 	export interface StorediSCSIVolume {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN?: string | null;
+
+		/**
+		 * Max length: 30
+		 * Min length: 12
+		 */
 		VolumeId?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 3
+		 */
 		VolumeType?: string | null;
+
+		/**
+		 * Max length: 50
+		 * Min length: 3
+		 */
 		VolumeStatus?: string | null;
+
+		/**
+		 * Max length: 50
+		 * Min length: 3
+		 */
 		VolumeAttachmentStatus?: string | null;
 		VolumeSizeInBytes?: number | null;
 		VolumeProgress?: number | null;
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		VolumeDiskId?: string | null;
+
+		/** Pattern: \Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z */
 		SourceSnapshotId?: string | null;
 		PreservedExistingData?: boolean | null;
 
@@ -2881,19 +4103,57 @@ export namespace MyNS {
 		 * Min length: 7
 		 */
 		KMSKey?: string | null;
+
+		/**
+		 * Max length: 200
+		 * Min length: 1
+		 * Pattern: ^[-\.;a-z0-9]+$
+		 */
 		TargetName?: string | null;
 	}
 
 	/** Describes an iSCSI stored volume. */
 	export interface StorediSCSIVolumeFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 30
+		 * Min length: 12
+		 */
 		VolumeId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 3
+		 */
 		VolumeType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 50
+		 * Min length: 3
+		 */
 		VolumeStatus: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 50
+		 * Min length: 3
+		 */
 		VolumeAttachmentStatus: FormControl<string | null | undefined>,
 		VolumeSizeInBytes: FormControl<number | null | undefined>,
 		VolumeProgress: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		VolumeDiskId: FormControl<string | null | undefined>,
+
+		/** Pattern: \Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z */
 		SourceSnapshotId: FormControl<string | null | undefined>,
 		PreservedExistingData: FormControl<boolean | null | undefined>,
 		CreatedDate: FormControl<Date | null | undefined>,
@@ -2905,24 +4165,30 @@ export namespace MyNS {
 		 * Min length: 7
 		 */
 		KMSKey: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 200
+		 * Min length: 1
+		 * Pattern: ^[-\.;a-z0-9]+$
+		 */
 		TargetName: FormControl<string | null | undefined>,
 	}
 	export function CreateStorediSCSIVolumeFormGroup() {
 		return new FormGroup<StorediSCSIVolumeFormProperties>({
-			VolumeARN: new FormControl<string | null | undefined>(undefined),
-			VolumeId: new FormControl<string | null | undefined>(undefined),
-			VolumeType: new FormControl<string | null | undefined>(undefined),
-			VolumeStatus: new FormControl<string | null | undefined>(undefined),
-			VolumeAttachmentStatus: new FormControl<string | null | undefined>(undefined),
+			VolumeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			VolumeId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30), Validators.minLength(12)]),
+			VolumeType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(3)]),
+			VolumeStatus: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(3)]),
+			VolumeAttachmentStatus: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(3)]),
 			VolumeSizeInBytes: new FormControl<number | null | undefined>(undefined),
 			VolumeProgress: new FormControl<number | null | undefined>(undefined),
-			VolumeDiskId: new FormControl<string | null | undefined>(undefined),
+			VolumeDiskId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 			SourceSnapshotId: new FormControl<string | null | undefined>(undefined),
 			PreservedExistingData: new FormControl<boolean | null | undefined>(undefined),
 			CreatedDate: new FormControl<Date | null | undefined>(undefined),
 			VolumeUsedInBytes: new FormControl<number | null | undefined>(undefined),
-			KMSKey: new FormControl<string | null | undefined>(undefined),
-			TargetName: new FormControl<string | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(7)]),
+			TargetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
 		});
 
 	}
@@ -2930,6 +4196,8 @@ export namespace MyNS {
 
 	/** A JSON object containing a list of <a>DescribeStorediSCSIVolumesInput$VolumeARNs</a>. */
 	export interface DescribeStorediSCSIVolumesInput {
+
+		/** Required */
 		VolumeARNs: Array<string>;
 	}
 
@@ -2946,16 +4214,26 @@ export namespace MyNS {
 	/** DescribeTapeArchivesOutput */
 	export interface DescribeTapeArchivesOutput {
 		TapeArchives?: Array<TapeArchive>;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker?: string | null;
 	}
 
 	/** DescribeTapeArchivesOutput */
 	export interface DescribeTapeArchivesOutputFormProperties {
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeTapeArchivesOutputFormGroup() {
 		return new FormGroup<DescribeTapeArchivesOutputFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
@@ -2963,7 +4241,19 @@ export namespace MyNS {
 
 	/** Represents a virtual tape that is archived in the virtual tape shelf (VTS). */
 	export interface TapeArchive {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN?: string | null;
+
+		/**
+		 * Max length: 16
+		 * Min length: 7
+		 * Pattern: ^[A-Z0-9]*$
+		 */
 		TapeBarcode?: string | null;
 		TapeCreatedDate?: Date | null;
 		TapeSizeInBytes?: number | null;
@@ -2984,12 +4274,29 @@ export namespace MyNS {
 		 * Min length: 7
 		 */
 		KMSKey?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		PoolId?: string | null;
 	}
 
 	/** Represents a virtual tape that is archived in the virtual tape shelf (VTS). */
 	export interface TapeArchiveFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16
+		 * Min length: 7
+		 * Pattern: ^[A-Z0-9]*$
+		 */
 		TapeBarcode: FormControl<string | null | undefined>,
 		TapeCreatedDate: FormControl<Date | null | undefined>,
 		TapeSizeInBytes: FormControl<number | null | undefined>,
@@ -3010,20 +4317,25 @@ export namespace MyNS {
 		 * Min length: 7
 		 */
 		KMSKey: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		PoolId: FormControl<string | null | undefined>,
 	}
 	export function CreateTapeArchiveFormGroup() {
 		return new FormGroup<TapeArchiveFormProperties>({
-			TapeARN: new FormControl<string | null | undefined>(undefined),
-			TapeBarcode: new FormControl<string | null | undefined>(undefined),
+			TapeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			TapeBarcode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16), Validators.minLength(7)]),
 			TapeCreatedDate: new FormControl<Date | null | undefined>(undefined),
 			TapeSizeInBytes: new FormControl<number | null | undefined>(undefined),
 			CompletionTime: new FormControl<Date | null | undefined>(undefined),
-			RetrievedTo: new FormControl<string | null | undefined>(undefined),
+			RetrievedTo: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 			TapeStatus: new FormControl<string | null | undefined>(undefined),
 			TapeUsedInBytes: new FormControl<number | null | undefined>(undefined),
-			KMSKey: new FormControl<string | null | undefined>(undefined),
-			PoolId: new FormControl<string | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(7)]),
+			PoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -3034,19 +4346,33 @@ export namespace MyNS {
 
 		/** The Amazon Resource Name (ARN) of each of the tapes you want to list. If you don't specify a tape ARN, the response lists all tapes in both your VTL and VTS. */
 		TapeARNs?: Array<string>;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker?: string | null;
+
+		/** Minimum: 1 */
 		Limit?: number | null;
 	}
 
 	/** DescribeTapeArchivesInput */
 	export interface DescribeTapeArchivesInputFormProperties {
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeTapeArchivesInputFormGroup() {
 		return new FormGroup<DescribeTapeArchivesInputFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -3062,6 +4388,11 @@ export namespace MyNS {
 		 */
 		GatewayARN?: string | null;
 		TapeRecoveryPointInfos?: Array<TapeRecoveryPointInfo>;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker?: string | null;
 	}
 
@@ -3074,12 +4405,17 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeTapeRecoveryPointsOutputFormGroup() {
 		return new FormGroup<DescribeTapeRecoveryPointsOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
@@ -3087,6 +4423,12 @@ export namespace MyNS {
 
 	/** Describes a recovery point. */
 	export interface TapeRecoveryPointInfo {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN?: string | null;
 		TapeRecoveryPointTime?: Date | null;
 		TapeSizeInBytes?: number | null;
@@ -3095,6 +4437,12 @@ export namespace MyNS {
 
 	/** Describes a recovery point. */
 	export interface TapeRecoveryPointInfoFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: FormControl<string | null | undefined>,
 		TapeRecoveryPointTime: FormControl<Date | null | undefined>,
 		TapeSizeInBytes: FormControl<number | null | undefined>,
@@ -3102,7 +4450,7 @@ export namespace MyNS {
 	}
 	export function CreateTapeRecoveryPointInfoFormGroup() {
 		return new FormGroup<TapeRecoveryPointInfoFormProperties>({
-			TapeARN: new FormControl<string | null | undefined>(undefined),
+			TapeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 			TapeRecoveryPointTime: new FormControl<Date | null | undefined>(undefined),
 			TapeSizeInBytes: new FormControl<number | null | undefined>(undefined),
 			TapeStatus: new FormControl<string | null | undefined>(undefined),
@@ -3121,7 +4469,14 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker?: string | null;
+
+		/** Minimum: 1 */
 		Limit?: number | null;
 	}
 
@@ -3135,14 +4490,21 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeTapeRecoveryPointsInputFormGroup() {
 		return new FormGroup<DescribeTapeRecoveryPointsInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -3151,16 +4513,26 @@ export namespace MyNS {
 	/** DescribeTapesOutput */
 	export interface DescribeTapesOutput {
 		Tapes?: Array<Tape>;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker?: string | null;
 	}
 
 	/** DescribeTapesOutput */
 	export interface DescribeTapesOutputFormProperties {
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeTapesOutputFormGroup() {
 		return new FormGroup<DescribeTapesOutputFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
@@ -3168,11 +4540,28 @@ export namespace MyNS {
 
 	/** Describes a virtual tape object. */
 	export interface Tape {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN?: string | null;
+
+		/**
+		 * Max length: 16
+		 * Min length: 7
+		 * Pattern: ^[A-Z0-9]*$
+		 */
 		TapeBarcode?: string | null;
 		TapeCreatedDate?: Date | null;
 		TapeSizeInBytes?: number | null;
 		TapeStatus?: string | null;
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VTLDevice?: string | null;
 		Progress?: number | null;
 		TapeUsedInBytes?: number | null;
@@ -3183,16 +4572,38 @@ export namespace MyNS {
 		 * Min length: 7
 		 */
 		KMSKey?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		PoolId?: string | null;
 	}
 
 	/** Describes a virtual tape object. */
 	export interface TapeFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16
+		 * Min length: 7
+		 * Pattern: ^[A-Z0-9]*$
+		 */
 		TapeBarcode: FormControl<string | null | undefined>,
 		TapeCreatedDate: FormControl<Date | null | undefined>,
 		TapeSizeInBytes: FormControl<number | null | undefined>,
 		TapeStatus: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VTLDevice: FormControl<string | null | undefined>,
 		Progress: FormControl<number | null | undefined>,
 		TapeUsedInBytes: FormControl<number | null | undefined>,
@@ -3203,20 +4614,25 @@ export namespace MyNS {
 		 * Min length: 7
 		 */
 		KMSKey: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		PoolId: FormControl<string | null | undefined>,
 	}
 	export function CreateTapeFormGroup() {
 		return new FormGroup<TapeFormProperties>({
-			TapeARN: new FormControl<string | null | undefined>(undefined),
-			TapeBarcode: new FormControl<string | null | undefined>(undefined),
+			TapeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			TapeBarcode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16), Validators.minLength(7)]),
 			TapeCreatedDate: new FormControl<Date | null | undefined>(undefined),
 			TapeSizeInBytes: new FormControl<number | null | undefined>(undefined),
 			TapeStatus: new FormControl<string | null | undefined>(undefined),
-			VTLDevice: new FormControl<string | null | undefined>(undefined),
+			VTLDevice: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 			Progress: new FormControl<number | null | undefined>(undefined),
 			TapeUsedInBytes: new FormControl<number | null | undefined>(undefined),
-			KMSKey: new FormControl<string | null | undefined>(undefined),
-			PoolId: new FormControl<string | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(7)]),
+			PoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -3235,7 +4651,14 @@ export namespace MyNS {
 
 		/** The Amazon Resource Name (ARN) of each of the tapes you want to list. If you don't specify a tape ARN, the response lists all tapes in both your VTL and VTS. */
 		TapeARNs?: Array<string>;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker?: string | null;
+
+		/** Minimum: 1 */
 		Limit?: number | null;
 	}
 
@@ -3249,14 +4672,21 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeTapesInputFormGroup() {
 		return new FormGroup<DescribeTapesInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -3286,7 +4716,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeUploadBufferOutputFormGroup() {
 		return new FormGroup<DescribeUploadBufferOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 			UploadBufferUsedInBytes: new FormControl<number | null | undefined>(undefined),
 			UploadBufferAllocatedInBytes: new FormControl<number | null | undefined>(undefined),
 		});
@@ -3315,7 +4745,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeUploadBufferInputFormGroup() {
 		return new FormGroup<DescribeUploadBufferInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -3331,6 +4761,11 @@ export namespace MyNS {
 		 */
 		GatewayARN?: string | null;
 		VTLDevices?: Array<VTLDevice>;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker?: string | null;
 	}
 
@@ -3343,12 +4778,17 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeVTLDevicesOutputFormGroup() {
 		return new FormGroup<DescribeVTLDevicesOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
@@ -3356,6 +4796,11 @@ export namespace MyNS {
 
 	/** Represents a device object associated with a tape gateway. */
 	export interface VTLDevice {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VTLDeviceARN?: string | null;
 		VTLDeviceType?: string | null;
 		VTLDeviceVendor?: string | null;
@@ -3367,6 +4812,11 @@ export namespace MyNS {
 
 	/** Represents a device object associated with a tape gateway. */
 	export interface VTLDeviceFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VTLDeviceARN: FormControl<string | null | undefined>,
 		VTLDeviceType: FormControl<string | null | undefined>,
 		VTLDeviceVendor: FormControl<string | null | undefined>,
@@ -3374,7 +4824,7 @@ export namespace MyNS {
 	}
 	export function CreateVTLDeviceFormGroup() {
 		return new FormGroup<VTLDeviceFormProperties>({
-			VTLDeviceARN: new FormControl<string | null | undefined>(undefined),
+			VTLDeviceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 			VTLDeviceType: new FormControl<string | null | undefined>(undefined),
 			VTLDeviceVendor: new FormControl<string | null | undefined>(undefined),
 			VTLDeviceProductIdentifier: new FormControl<string | null | undefined>(undefined),
@@ -3385,7 +4835,14 @@ export namespace MyNS {
 
 	/** Lists iSCSI information about a VTL device. */
 	export interface DeviceiSCSIAttributes {
+
+		/**
+		 * Max length: 800
+		 * Min length: 50
+		 */
 		TargetARN?: string | null;
+
+		/** Pattern: \A(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}\z */
 		NetworkInterfaceId?: string | null;
 		NetworkInterfacePort?: number | null;
 		ChapEnabled?: boolean | null;
@@ -3393,14 +4850,21 @@ export namespace MyNS {
 
 	/** Lists iSCSI information about a VTL device. */
 	export interface DeviceiSCSIAttributesFormProperties {
+
+		/**
+		 * Max length: 800
+		 * Min length: 50
+		 */
 		TargetARN: FormControl<string | null | undefined>,
+
+		/** Pattern: \A(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}\z */
 		NetworkInterfaceId: FormControl<string | null | undefined>,
 		NetworkInterfacePort: FormControl<number | null | undefined>,
 		ChapEnabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDeviceiSCSIAttributesFormGroup() {
 		return new FormGroup<DeviceiSCSIAttributesFormProperties>({
-			TargetARN: new FormControl<string | null | undefined>(undefined),
+			TargetARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(800), Validators.minLength(50)]),
 			NetworkInterfaceId: new FormControl<string | null | undefined>(undefined),
 			NetworkInterfacePort: new FormControl<number | null | undefined>(undefined),
 			ChapEnabled: new FormControl<boolean | null | undefined>(undefined),
@@ -3420,7 +4884,14 @@ export namespace MyNS {
 		 */
 		GatewayARN: string;
 		VTLDeviceARNs?: Array<string>;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker?: string | null;
+
+		/** Minimum: 1 */
 		Limit?: number | null;
 	}
 
@@ -3434,14 +4905,21 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeVTLDevicesInputFormGroup() {
 		return new FormGroup<DescribeVTLDevicesInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -3475,7 +4953,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeWorkingStorageOutputFormGroup() {
 		return new FormGroup<DescribeWorkingStorageOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 			WorkingStorageUsedInBytes: new FormControl<number | null | undefined>(undefined),
 			WorkingStorageAllocatedInBytes: new FormControl<number | null | undefined>(undefined),
 		});
@@ -3508,7 +4986,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeWorkingStorageInputFormGroup() {
 		return new FormGroup<DescribeWorkingStorageInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -3516,16 +4994,26 @@ export namespace MyNS {
 
 	/** AttachVolumeOutput */
 	export interface DetachVolumeOutput {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN?: string | null;
 	}
 
 	/** AttachVolumeOutput */
 	export interface DetachVolumeOutputFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: FormControl<string | null | undefined>,
 	}
 	export function CreateDetachVolumeOutputFormGroup() {
 		return new FormGroup<DetachVolumeOutputFormProperties>({
-			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			VolumeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -3533,18 +5021,30 @@ export namespace MyNS {
 
 	/** AttachVolumeInput */
 	export interface DetachVolumeInput {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: string;
 		ForceDetach?: boolean | null;
 	}
 
 	/** AttachVolumeInput */
 	export interface DetachVolumeInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: FormControl<string | null | undefined>,
 		ForceDetach: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDetachVolumeInputFormGroup() {
 		return new FormGroup<DetachVolumeInputFormProperties>({
-			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			VolumeARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 			ForceDetach: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -3574,7 +5074,7 @@ export namespace MyNS {
 	}
 	export function CreateDisableGatewayOutputFormGroup() {
 		return new FormGroup<DisableGatewayOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -3605,7 +5105,7 @@ export namespace MyNS {
 	}
 	export function CreateDisableGatewayInputFormGroup() {
 		return new FormGroup<DisableGatewayInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -3636,7 +5136,7 @@ export namespace MyNS {
 	}
 	export function CreateJoinDomainOutputFormGroup() {
 		return new FormGroup<JoinDomainOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 			ActiveDirectoryStatus: new FormControl<DescribeSMBSettingsOutputActiveDirectoryStatus | null | undefined>(undefined),
 		});
 
@@ -3653,11 +5153,42 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$
+		 */
 		DomainName: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		OrganizationalUnit?: string | null;
 		DomainControllers?: Array<string>;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 3600
+		 */
 		TimeoutInSeconds?: number | null;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^\w[\w\.\- ]*$
+		 */
 		UserName: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^[ -~]+$
+		 */
 		Password: string;
 	}
 
@@ -3671,20 +5202,51 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$
+		 */
 		DomainName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		OrganizationalUnit: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 3600
+		 */
 		TimeoutInSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^\w[\w\.\- ]*$
+		 */
 		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: ^[ -~]+$
+		 */
 		Password: FormControl<string | null | undefined>,
 	}
 	export function CreateJoinDomainInputFormGroup() {
 		return new FormGroup<JoinDomainInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			DomainName: new FormControl<string | null | undefined>(undefined),
-			OrganizationalUnit: new FormControl<string | null | undefined>(undefined),
-			TimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
-			UserName: new FormControl<string | null | undefined>(undefined),
-			Password: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			OrganizationalUnit: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			TimeoutInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(3600)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -3703,6 +5265,11 @@ export namespace MyNS {
 
 	/** Information about the gateway's automatic tape creation policies, including the automatic tape creation rules and the gateway that is using the policies. */
 	export interface AutomaticTapeCreationPolicyInfo {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		AutomaticTapeCreationRules?: Array<AutomaticTapeCreationRule>;
 
 		/**
@@ -3725,7 +5292,7 @@ export namespace MyNS {
 	}
 	export function CreateAutomaticTapeCreationPolicyInfoFormGroup() {
 		return new FormGroup<AutomaticTapeCreationPolicyInfoFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -3733,25 +5300,67 @@ export namespace MyNS {
 
 	/** An automatic tape creation policy consists of automatic tape creation rules where each rule defines when and how to create new tapes. */
 	export interface AutomaticTapeCreationRule {
+
+		/**
+		 * Required
+		 * Max length: 4
+		 * Min length: 1
+		 * Pattern: ^[A-Z]*$
+		 */
 		TapeBarcodePrefix: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		PoolId: string;
+
+		/** Required */
 		TapeSizeInBytes: number;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		MinimumNumTapes: number;
 	}
 
 	/** An automatic tape creation policy consists of automatic tape creation rules where each rule defines when and how to create new tapes. */
 	export interface AutomaticTapeCreationRuleFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 4
+		 * Min length: 1
+		 * Pattern: ^[A-Z]*$
+		 */
 		TapeBarcodePrefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		PoolId: FormControl<string | null | undefined>,
+
+		/** Required */
 		TapeSizeInBytes: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 10
+		 */
 		MinimumNumTapes: FormControl<number | null | undefined>,
 	}
 	export function CreateAutomaticTapeCreationRuleFormGroup() {
 		return new FormGroup<AutomaticTapeCreationRuleFormProperties>({
-			TapeBarcodePrefix: new FormControl<string | null | undefined>(undefined),
-			PoolId: new FormControl<string | null | undefined>(undefined),
-			TapeSizeInBytes: new FormControl<number | null | undefined>(undefined),
-			MinimumNumTapes: new FormControl<number | null | undefined>(undefined),
+			TapeBarcodePrefix: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4), Validators.minLength(1)]),
+			PoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			TapeSizeInBytes: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			MinimumNumTapes: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(10)]),
 		});
 
 	}
@@ -3776,7 +5385,7 @@ export namespace MyNS {
 	}
 	export function CreateListAutomaticTapeCreationPoliciesInputFormGroup() {
 		return new FormGroup<ListAutomaticTapeCreationPoliciesInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -3784,20 +5393,40 @@ export namespace MyNS {
 
 	/** ListFileShareOutput */
 	export interface ListFileSharesOutput {
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker?: string | null;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		NextMarker?: string | null;
 		FileShareInfoList?: Array<FileShareInfo>;
 	}
 
 	/** ListFileShareOutput */
 	export interface ListFileSharesOutputFormProperties {
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListFileSharesOutputFormGroup() {
 		return new FormGroup<ListFileSharesOutputFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined),
-			NextMarker: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
@@ -3875,10 +5504,10 @@ export namespace MyNS {
 	export function CreateFileShareInfoFormGroup() {
 		return new FormGroup<FileShareInfoFormProperties>({
 			FileShareType: new FormControl<FileShareInfoFileShareType | null | undefined>(undefined),
-			FileShareARN: new FormControl<string | null | undefined>(undefined),
-			FileShareId: new FormControl<string | null | undefined>(undefined),
-			FileShareStatus: new FormControl<string | null | undefined>(undefined),
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			FileShareARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			FileShareId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30), Validators.minLength(12)]),
+			FileShareStatus: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(3)]),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -3895,7 +5524,14 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+
+		/** Minimum: 1 */
 		Limit?: number | null;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker?: string | null;
 	}
 
@@ -3908,28 +5544,45 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		Limit: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateListFileSharesInputFormGroup() {
 		return new FormGroup<ListFileSharesInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListGatewaysOutput {
 		Gateways?: Array<GatewayInfo>;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker?: string | null;
 	}
 	export interface ListGatewaysOutputFormProperties {
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateListGatewaysOutputFormGroup() {
 		return new FormGroup<ListGatewaysOutputFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
@@ -3937,6 +5590,11 @@ export namespace MyNS {
 
 	/** Describes a gateway object. */
 	export interface GatewayInfo {
+
+		/**
+		 * Max length: 30
+		 * Min length: 12
+		 */
 		GatewayId?: string | null;
 
 		/**
@@ -3945,7 +5603,17 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+
+		/**
+		 * Max length: 20
+		 * Min length: 2
+		 */
 		GatewayType?: string | null;
+
+		/**
+		 * Max length: 25
+		 * Min length: 2
+		 */
 		GatewayOperationalState?: string | null;
 		GatewayName?: string | null;
 		Ec2InstanceId?: string | null;
@@ -3954,6 +5622,11 @@ export namespace MyNS {
 
 	/** Describes a gateway object. */
 	export interface GatewayInfoFormProperties {
+
+		/**
+		 * Max length: 30
+		 * Min length: 12
+		 */
 		GatewayId: FormControl<string | null | undefined>,
 
 		/**
@@ -3962,7 +5635,17 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 20
+		 * Min length: 2
+		 */
 		GatewayType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 25
+		 * Min length: 2
+		 */
 		GatewayOperationalState: FormControl<string | null | undefined>,
 		GatewayName: FormControl<string | null | undefined>,
 		Ec2InstanceId: FormControl<string | null | undefined>,
@@ -3970,10 +5653,10 @@ export namespace MyNS {
 	}
 	export function CreateGatewayInfoFormGroup() {
 		return new FormGroup<GatewayInfoFormProperties>({
-			GatewayId: new FormControl<string | null | undefined>(undefined),
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			GatewayType: new FormControl<string | null | undefined>(undefined),
-			GatewayOperationalState: new FormControl<string | null | undefined>(undefined),
+			GatewayId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30), Validators.minLength(12)]),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			GatewayType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(2)]),
+			GatewayOperationalState: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25), Validators.minLength(2)]),
 			GatewayName: new FormControl<string | null | undefined>(undefined),
 			Ec2InstanceId: new FormControl<string | null | undefined>(undefined),
 			Ec2InstanceRegion: new FormControl<string | null | undefined>(undefined),
@@ -3984,19 +5667,33 @@ export namespace MyNS {
 
 	/** <p>A JSON object containing zero or more of the following fields:</p> <ul> <li> <p> <a>ListGatewaysInput$Limit</a> </p> </li> <li> <p> <a>ListGatewaysInput$Marker</a> </p> </li> </ul> */
 	export interface ListGatewaysInput {
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker?: string | null;
+
+		/** Minimum: 1 */
 		Limit?: number | null;
 	}
 
 	/** <p>A JSON object containing zero or more of the following fields:</p> <ul> <li> <p> <a>ListGatewaysInput$Limit</a> </p> </li> <li> <p> <a>ListGatewaysInput$Marker</a> </p> </li> </ul> */
 	export interface ListGatewaysInputFormProperties {
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateListGatewaysInputFormGroup() {
 		return new FormGroup<ListGatewaysInputFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -4022,7 +5719,7 @@ export namespace MyNS {
 	}
 	export function CreateListLocalDisksOutputFormGroup() {
 		return new FormGroup<ListLocalDisksOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -4030,6 +5727,11 @@ export namespace MyNS {
 
 	/** Represents a gateway's local disk. */
 	export interface Disk {
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		DiskId?: string | null;
 		DiskPath?: string | null;
 		DiskNode?: string | null;
@@ -4054,6 +5756,11 @@ export namespace MyNS {
 
 	/** Represents a gateway's local disk. */
 	export interface DiskFormProperties {
+
+		/**
+		 * Max length: 300
+		 * Min length: 1
+		 */
 		DiskId: FormControl<string | null | undefined>,
 		DiskPath: FormControl<string | null | undefined>,
 		DiskNode: FormControl<string | null | undefined>,
@@ -4070,12 +5777,12 @@ export namespace MyNS {
 	}
 	export function CreateDiskFormGroup() {
 		return new FormGroup<DiskFormProperties>({
-			DiskId: new FormControl<string | null | undefined>(undefined),
+			DiskId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
 			DiskPath: new FormControl<string | null | undefined>(undefined),
 			DiskNode: new FormControl<string | null | undefined>(undefined),
 			DiskStatus: new FormControl<string | null | undefined>(undefined),
 			DiskSizeInBytes: new FormControl<number | null | undefined>(undefined),
-			DiskAllocationType: new FormControl<string | null | undefined>(undefined),
+			DiskAllocationType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(3)]),
 			DiskAllocationResource: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4107,7 +5814,7 @@ export namespace MyNS {
 	}
 	export function CreateListLocalDisksInputFormGroup() {
 		return new FormGroup<ListLocalDisksInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -4115,20 +5822,40 @@ export namespace MyNS {
 
 	/** ListTagsForResourceOutput */
 	export interface ListTagsForResourceOutput {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		ResourceARN?: string | null;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker?: string | null;
 		Tags?: Array<Tag>;
 	}
 
 	/** ListTagsForResourceOutput */
 	export interface ListTagsForResourceOutputFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceOutputFormGroup() {
 		return new FormGroup<ListTagsForResourceOutputFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
@@ -4136,22 +5863,48 @@ export namespace MyNS {
 
 	/** ListTagsForResourceInput */
 	export interface ListTagsForResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		ResourceARN: string;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker?: string | null;
+
+		/** Minimum: 1 */
 		Limit?: number | null;
 	}
 
 	/** ListTagsForResourceInput */
 	export interface ListTagsForResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateListTagsForResourceInputFormGroup() {
 		return new FormGroup<ListTagsForResourceInputFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -4162,16 +5915,26 @@ export namespace MyNS {
 
 		/** An array of <a>TapeInfo</a> objects, where each object describes a single tape. If there are no tapes in the tape library or VTS, then the <code>TapeInfos</code> is an empty array. */
 		TapeInfos?: Array<TapeInfo>;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker?: string | null;
 	}
 
 	/** <p>A JSON object containing the following fields:</p> <ul> <li> <p> <a>ListTapesOutput$Marker</a> </p> </li> <li> <p> <a>ListTapesOutput$VolumeInfos</a> </p> </li> </ul> */
 	export interface ListTapesOutputFormProperties {
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateListTapesOutputFormGroup() {
 		return new FormGroup<ListTapesOutputFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
@@ -4179,7 +5942,19 @@ export namespace MyNS {
 
 	/** Describes a virtual tape. */
 	export interface TapeInfo {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN?: string | null;
+
+		/**
+		 * Max length: 16
+		 * Min length: 7
+		 * Pattern: ^[A-Z0-9]*$
+		 */
 		TapeBarcode?: string | null;
 		TapeSizeInBytes?: number | null;
 		TapeStatus?: string | null;
@@ -4190,12 +5965,29 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		PoolId?: string | null;
 	}
 
 	/** Describes a virtual tape. */
 	export interface TapeInfoFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16
+		 * Min length: 7
+		 * Pattern: ^[A-Z0-9]*$
+		 */
 		TapeBarcode: FormControl<string | null | undefined>,
 		TapeSizeInBytes: FormControl<number | null | undefined>,
 		TapeStatus: FormControl<string | null | undefined>,
@@ -4206,16 +5998,21 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		PoolId: FormControl<string | null | undefined>,
 	}
 	export function CreateTapeInfoFormGroup() {
 		return new FormGroup<TapeInfoFormProperties>({
-			TapeARN: new FormControl<string | null | undefined>(undefined),
-			TapeBarcode: new FormControl<string | null | undefined>(undefined),
+			TapeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			TapeBarcode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16), Validators.minLength(7)]),
 			TapeSizeInBytes: new FormControl<number | null | undefined>(undefined),
 			TapeStatus: new FormControl<string | null | undefined>(undefined),
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			PoolId: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			PoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -4226,19 +6023,33 @@ export namespace MyNS {
 
 		/** The Amazon Resource Name (ARN) of each of the tapes you want to list. If you don't specify a tape ARN, the response lists all tapes in both your VTL and VTS. */
 		TapeARNs?: Array<string>;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker?: string | null;
+
+		/** Minimum: 1 */
 		Limit?: number | null;
 	}
 
 	/** <p>A JSON object that contains one or more of the following fields:</p> <ul> <li> <p> <a>ListTapesInput$Limit</a> </p> </li> <li> <p> <a>ListTapesInput$Marker</a> </p> </li> <li> <p> <a>ListTapesInput$TapeARNs</a> </p> </li> </ul> */
 	export interface ListTapesInputFormProperties {
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateListTapesInputFormGroup() {
 		return new FormGroup<ListTapesInputFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -4261,16 +6072,28 @@ export namespace MyNS {
 
 	/** ListVolumeInitiatorsInput */
 	export interface ListVolumeInitiatorsInput {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: string;
 	}
 
 	/** ListVolumeInitiatorsInput */
 	export interface ListVolumeInitiatorsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: FormControl<string | null | undefined>,
 	}
 	export function CreateListVolumeInitiatorsInputFormGroup() {
 		return new FormGroup<ListVolumeInitiatorsInputFormProperties>({
-			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			VolumeARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -4296,7 +6119,7 @@ export namespace MyNS {
 	}
 	export function CreateListVolumeRecoveryPointsOutputFormGroup() {
 		return new FormGroup<ListVolumeRecoveryPointsOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -4304,6 +6127,11 @@ export namespace MyNS {
 
 	/** Describes a storage volume recovery point object. */
 	export interface VolumeRecoveryPointInfo {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN?: string | null;
 		VolumeSizeInBytes?: number | null;
 		VolumeUsageInBytes?: number | null;
@@ -4312,6 +6140,11 @@ export namespace MyNS {
 
 	/** Describes a storage volume recovery point object. */
 	export interface VolumeRecoveryPointInfoFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: FormControl<string | null | undefined>,
 		VolumeSizeInBytes: FormControl<number | null | undefined>,
 		VolumeUsageInBytes: FormControl<number | null | undefined>,
@@ -4319,7 +6152,7 @@ export namespace MyNS {
 	}
 	export function CreateVolumeRecoveryPointInfoFormGroup() {
 		return new FormGroup<VolumeRecoveryPointInfoFormProperties>({
-			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			VolumeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 			VolumeSizeInBytes: new FormControl<number | null | undefined>(undefined),
 			VolumeUsageInBytes: new FormControl<number | null | undefined>(undefined),
 			VolumeRecoveryPointTime: new FormControl<string | null | undefined>(undefined),
@@ -4349,7 +6182,7 @@ export namespace MyNS {
 	}
 	export function CreateListVolumeRecoveryPointsInputFormGroup() {
 		return new FormGroup<ListVolumeRecoveryPointsInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -4364,6 +6197,11 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker?: string | null;
 		VolumeInfos?: Array<VolumeInfo>;
 	}
@@ -4377,12 +6215,17 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateListVolumesOutputFormGroup() {
 		return new FormGroup<ListVolumesOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
@@ -4390,7 +6233,17 @@ export namespace MyNS {
 
 	/** Describes a storage volume object. */
 	export interface VolumeInfo {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN?: string | null;
+
+		/**
+		 * Max length: 30
+		 * Min length: 12
+		 */
 		VolumeId?: string | null;
 
 		/**
@@ -4399,15 +6252,40 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+
+		/**
+		 * Max length: 30
+		 * Min length: 12
+		 */
 		GatewayId?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 3
+		 */
 		VolumeType?: string | null;
 		VolumeSizeInBytes?: number | null;
+
+		/**
+		 * Max length: 50
+		 * Min length: 3
+		 */
 		VolumeAttachmentStatus?: string | null;
 	}
 
 	/** Describes a storage volume object. */
 	export interface VolumeInfoFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 30
+		 * Min length: 12
+		 */
 		VolumeId: FormControl<string | null | undefined>,
 
 		/**
@@ -4416,20 +6294,35 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 30
+		 * Min length: 12
+		 */
 		GatewayId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 3
+		 */
 		VolumeType: FormControl<string | null | undefined>,
 		VolumeSizeInBytes: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 50
+		 * Min length: 3
+		 */
 		VolumeAttachmentStatus: FormControl<string | null | undefined>,
 	}
 	export function CreateVolumeInfoFormGroup() {
 		return new FormGroup<VolumeInfoFormProperties>({
-			VolumeARN: new FormControl<string | null | undefined>(undefined),
-			VolumeId: new FormControl<string | null | undefined>(undefined),
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			GatewayId: new FormControl<string | null | undefined>(undefined),
-			VolumeType: new FormControl<string | null | undefined>(undefined),
+			VolumeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			VolumeId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30), Validators.minLength(12)]),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			GatewayId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30), Validators.minLength(12)]),
+			VolumeType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(3)]),
 			VolumeSizeInBytes: new FormControl<number | null | undefined>(undefined),
-			VolumeAttachmentStatus: new FormControl<string | null | undefined>(undefined),
+			VolumeAttachmentStatus: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(3)]),
 		});
 
 	}
@@ -4444,7 +6337,14 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker?: string | null;
+
+		/** Minimum: 1 */
 		Limit?: number | null;
 	}
 
@@ -4457,14 +6357,21 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		Marker: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateListVolumesInputFormGroup() {
 		return new FormGroup<ListVolumesInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -4503,8 +6410,8 @@ export namespace MyNS {
 	}
 	export function CreateNotifyWhenUploadedOutputFormGroup() {
 		return new FormGroup<NotifyWhenUploadedOutputFormProperties>({
-			FileShareARN: new FormControl<string | null | undefined>(undefined),
-			NotificationId: new FormControl<string | null | undefined>(undefined),
+			FileShareARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			NotificationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -4531,7 +6438,7 @@ export namespace MyNS {
 	}
 	export function CreateNotifyWhenUploadedInputFormGroup() {
 		return new FormGroup<NotifyWhenUploadedInputFormProperties>({
-			FileShareARN: new FormControl<string | null | undefined>(undefined),
+			FileShareARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -4574,8 +6481,8 @@ export namespace MyNS {
 	}
 	export function CreateRefreshCacheOutputFormGroup() {
 		return new FormGroup<RefreshCacheOutputFormProperties>({
-			FileShareARN: new FormControl<string | null | undefined>(undefined),
-			NotificationId: new FormControl<string | null | undefined>(undefined),
+			FileShareARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
+			NotificationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -4591,6 +6498,11 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		FileShareARN: string;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		FolderList?: Array<string>;
 		Recursive?: boolean | null;
 	}
@@ -4609,7 +6521,7 @@ export namespace MyNS {
 	}
 	export function CreateRefreshCacheInputFormGroup() {
 		return new FormGroup<RefreshCacheInputFormProperties>({
-			FileShareARN: new FormControl<string | null | undefined>(undefined),
+			FileShareARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 			Recursive: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -4618,16 +6530,26 @@ export namespace MyNS {
 
 	/** RemoveTagsFromResourceOutput */
 	export interface RemoveTagsFromResourceOutput {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		ResourceARN?: string | null;
 	}
 
 	/** RemoveTagsFromResourceOutput */
 	export interface RemoveTagsFromResourceOutputFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveTagsFromResourceOutputFormGroup() {
 		return new FormGroup<RemoveTagsFromResourceOutputFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -4635,17 +6557,31 @@ export namespace MyNS {
 
 	/** RemoveTagsFromResourceInput */
 	export interface RemoveTagsFromResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		ResourceARN: string;
+
+		/** Required */
 		TagKeys: Array<string>;
 	}
 
 	/** RemoveTagsFromResourceInput */
 	export interface RemoveTagsFromResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveTagsFromResourceInputFormGroup() {
 		return new FormGroup<RemoveTagsFromResourceInputFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -4670,7 +6606,7 @@ export namespace MyNS {
 	}
 	export function CreateResetCacheOutputFormGroup() {
 		return new FormGroup<ResetCacheOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -4697,7 +6633,7 @@ export namespace MyNS {
 	}
 	export function CreateResetCacheInputFormGroup() {
 		return new FormGroup<ResetCacheInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -4705,16 +6641,28 @@ export namespace MyNS {
 
 	/** RetrieveTapeArchiveOutput */
 	export interface RetrieveTapeArchiveOutput {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN?: string | null;
 	}
 
 	/** RetrieveTapeArchiveOutput */
 	export interface RetrieveTapeArchiveOutputFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: FormControl<string | null | undefined>,
 	}
 	export function CreateRetrieveTapeArchiveOutputFormGroup() {
 		return new FormGroup<RetrieveTapeArchiveOutputFormProperties>({
-			TapeARN: new FormControl<string | null | undefined>(undefined),
+			TapeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -4722,6 +6670,13 @@ export namespace MyNS {
 
 	/** RetrieveTapeArchiveInput */
 	export interface RetrieveTapeArchiveInput {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: string;
 
 		/**
@@ -4735,6 +6690,13 @@ export namespace MyNS {
 
 	/** RetrieveTapeArchiveInput */
 	export interface RetrieveTapeArchiveInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: FormControl<string | null | undefined>,
 
 		/**
@@ -4747,8 +6709,8 @@ export namespace MyNS {
 	}
 	export function CreateRetrieveTapeArchiveInputFormGroup() {
 		return new FormGroup<RetrieveTapeArchiveInputFormProperties>({
-			TapeARN: new FormControl<string | null | undefined>(undefined),
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			TapeARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -4756,16 +6718,28 @@ export namespace MyNS {
 
 	/** RetrieveTapeRecoveryPointOutput */
 	export interface RetrieveTapeRecoveryPointOutput {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN?: string | null;
 	}
 
 	/** RetrieveTapeRecoveryPointOutput */
 	export interface RetrieveTapeRecoveryPointOutputFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: FormControl<string | null | undefined>,
 	}
 	export function CreateRetrieveTapeRecoveryPointOutputFormGroup() {
 		return new FormGroup<RetrieveTapeRecoveryPointOutputFormProperties>({
-			TapeARN: new FormControl<string | null | undefined>(undefined),
+			TapeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -4773,6 +6747,13 @@ export namespace MyNS {
 
 	/** RetrieveTapeRecoveryPointInput */
 	export interface RetrieveTapeRecoveryPointInput {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: string;
 
 		/**
@@ -4786,6 +6767,13 @@ export namespace MyNS {
 
 	/** RetrieveTapeRecoveryPointInput */
 	export interface RetrieveTapeRecoveryPointInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$
+		 */
 		TapeARN: FormControl<string | null | undefined>,
 
 		/**
@@ -4798,8 +6786,8 @@ export namespace MyNS {
 	}
 	export function CreateRetrieveTapeRecoveryPointInputFormGroup() {
 		return new FormGroup<RetrieveTapeRecoveryPointInputFormProperties>({
-			TapeARN: new FormControl<string | null | undefined>(undefined),
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			TapeARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -4824,7 +6812,7 @@ export namespace MyNS {
 	}
 	export function CreateSetLocalConsolePasswordOutputFormGroup() {
 		return new FormGroup<SetLocalConsolePasswordOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -4840,6 +6828,13 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 6
+		 * Pattern: ^[ -~]+$
+		 */
 		LocalConsolePassword: string;
 	}
 
@@ -4853,12 +6848,19 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 6
+		 * Pattern: ^[ -~]+$
+		 */
 		LocalConsolePassword: FormControl<string | null | undefined>,
 	}
 	export function CreateSetLocalConsolePasswordInputFormGroup() {
 		return new FormGroup<SetLocalConsolePasswordInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			LocalConsolePassword: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			LocalConsolePassword: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(6)]),
 		});
 
 	}
@@ -4883,7 +6885,7 @@ export namespace MyNS {
 	}
 	export function CreateSetSMBGuestPasswordOutputFormGroup() {
 		return new FormGroup<SetSMBGuestPasswordOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -4899,6 +6901,13 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 6
+		 * Pattern: ^[ -~]+$
+		 */
 		Password: string;
 	}
 
@@ -4912,12 +6921,19 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 6
+		 * Pattern: ^[ -~]+$
+		 */
 		Password: FormControl<string | null | undefined>,
 	}
 	export function CreateSetSMBGuestPasswordInputFormGroup() {
 		return new FormGroup<SetSMBGuestPasswordInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			Password: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(6)]),
 		});
 
 	}
@@ -4946,7 +6962,7 @@ export namespace MyNS {
 	}
 	export function CreateShutdownGatewayOutputFormGroup() {
 		return new FormGroup<ShutdownGatewayOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -4977,7 +6993,7 @@ export namespace MyNS {
 	}
 	export function CreateShutdownGatewayInputFormGroup() {
 		return new FormGroup<ShutdownGatewayInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -5002,7 +7018,7 @@ export namespace MyNS {
 	}
 	export function CreateStartAvailabilityMonitorTestOutputFormGroup() {
 		return new FormGroup<StartAvailabilityMonitorTestOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -5029,7 +7045,7 @@ export namespace MyNS {
 	}
 	export function CreateStartAvailabilityMonitorTestInputFormGroup() {
 		return new FormGroup<StartAvailabilityMonitorTestInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -5058,7 +7074,7 @@ export namespace MyNS {
 	}
 	export function CreateStartGatewayOutputFormGroup() {
 		return new FormGroup<StartGatewayOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -5089,7 +7105,7 @@ export namespace MyNS {
 	}
 	export function CreateStartGatewayInputFormGroup() {
 		return new FormGroup<StartGatewayInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -5114,12 +7130,18 @@ export namespace MyNS {
 	}
 	export function CreateUpdateAutomaticTapeCreationPolicyOutputFormGroup() {
 		return new FormGroup<UpdateAutomaticTapeCreationPolicyOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
 
 	export interface UpdateAutomaticTapeCreationPolicyInput {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		AutomaticTapeCreationRules: Array<AutomaticTapeCreationRule>;
 
 		/**
@@ -5142,7 +7164,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateAutomaticTapeCreationPolicyInputFormGroup() {
 		return new FormGroup<UpdateAutomaticTapeCreationPolicyInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -5171,7 +7193,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateBandwidthRateLimitOutputFormGroup() {
 		return new FormGroup<UpdateBandwidthRateLimitOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -5187,7 +7209,11 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
+
+		/** Minimum: 51200 */
 		AverageUploadRateLimitInBitsPerSec?: number | null;
+
+		/** Minimum: 102400 */
 		AverageDownloadRateLimitInBitsPerSec?: number | null;
 	}
 
@@ -5201,14 +7227,18 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/** Minimum: 51200 */
 		AverageUploadRateLimitInBitsPerSec: FormControl<number | null | undefined>,
+
+		/** Minimum: 102400 */
 		AverageDownloadRateLimitInBitsPerSec: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateBandwidthRateLimitInputFormGroup() {
 		return new FormGroup<UpdateBandwidthRateLimitInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			AverageUploadRateLimitInBitsPerSec: new FormControl<number | null | undefined>(undefined),
-			AverageDownloadRateLimitInBitsPerSec: new FormControl<number | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			AverageUploadRateLimitInBitsPerSec: new FormControl<number | null | undefined>(undefined, [Validators.min(51200)]),
+			AverageDownloadRateLimitInBitsPerSec: new FormControl<number | null | undefined>(undefined, [Validators.min(102400)]),
 		});
 
 	}
@@ -5216,19 +7246,41 @@ export namespace MyNS {
 
 	/** A JSON object containing the following fields: */
 	export interface UpdateChapCredentialsOutput {
+
+		/**
+		 * Max length: 800
+		 * Min length: 50
+		 */
 		TargetARN?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [0-9a-z:.-]+
+		 */
 		InitiatorName?: string | null;
 	}
 
 	/** A JSON object containing the following fields: */
 	export interface UpdateChapCredentialsOutputFormProperties {
+
+		/**
+		 * Max length: 800
+		 * Min length: 50
+		 */
 		TargetARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [0-9a-z:.-]+
+		 */
 		InitiatorName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateChapCredentialsOutputFormGroup() {
 		return new FormGroup<UpdateChapCredentialsOutputFormProperties>({
-			TargetARN: new FormControl<string | null | undefined>(undefined),
-			InitiatorName: new FormControl<string | null | undefined>(undefined),
+			TargetARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(800), Validators.minLength(50)]),
+			InitiatorName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -5236,25 +7288,73 @@ export namespace MyNS {
 
 	/** <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>UpdateChapCredentialsInput$InitiatorName</a> </p> </li> <li> <p> <a>UpdateChapCredentialsInput$SecretToAuthenticateInitiator</a> </p> </li> <li> <p> <a>UpdateChapCredentialsInput$SecretToAuthenticateTarget</a> </p> </li> <li> <p> <a>UpdateChapCredentialsInput$TargetARN</a> </p> </li> </ul> */
 	export interface UpdateChapCredentialsInput {
+
+		/**
+		 * Required
+		 * Max length: 800
+		 * Min length: 50
+		 */
 		TargetARN: string;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		SecretToAuthenticateInitiator: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [0-9a-z:.-]+
+		 */
 		InitiatorName: string;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		SecretToAuthenticateTarget?: string | null;
 	}
 
 	/** <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>UpdateChapCredentialsInput$InitiatorName</a> </p> </li> <li> <p> <a>UpdateChapCredentialsInput$SecretToAuthenticateInitiator</a> </p> </li> <li> <p> <a>UpdateChapCredentialsInput$SecretToAuthenticateTarget</a> </p> </li> <li> <p> <a>UpdateChapCredentialsInput$TargetARN</a> </p> </li> </ul> */
 	export interface UpdateChapCredentialsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 800
+		 * Min length: 50
+		 */
 		TargetARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		SecretToAuthenticateInitiator: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [0-9a-z:.-]+
+		 */
 		InitiatorName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		SecretToAuthenticateTarget: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateChapCredentialsInputFormGroup() {
 		return new FormGroup<UpdateChapCredentialsInputFormProperties>({
-			TargetARN: new FormControl<string | null | undefined>(undefined),
-			SecretToAuthenticateInitiator: new FormControl<string | null | undefined>(undefined),
-			InitiatorName: new FormControl<string | null | undefined>(undefined),
-			SecretToAuthenticateTarget: new FormControl<string | null | undefined>(undefined),
+			TargetARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(800), Validators.minLength(50)]),
+			SecretToAuthenticateInitiator: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			InitiatorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			SecretToAuthenticateTarget: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -5285,7 +7385,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateGatewayInformationOutputFormGroup() {
 		return new FormGroup<UpdateGatewayInformationOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 			GatewayName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5308,7 +7408,14 @@ export namespace MyNS {
 		 * Pattern: ^[ -\.0-\[\]-~]*[!-\.0-\[\]-~][ -\.0-\[\]-~]*$
 		 */
 		GatewayName?: string | null;
+
+		/**
+		 * Max length: 10
+		 * Min length: 3
+		 */
 		GatewayTimezone?: string | null;
+
+		/** Max length: 562 */
 		CloudWatchLogGroupARN?: string | null;
 	}
 	export interface UpdateGatewayInformationInputFormProperties {
@@ -5328,15 +7435,22 @@ export namespace MyNS {
 		 * Pattern: ^[ -\.0-\[\]-~]*[!-\.0-\[\]-~][ -\.0-\[\]-~]*$
 		 */
 		GatewayName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10
+		 * Min length: 3
+		 */
 		GatewayTimezone: FormControl<string | null | undefined>,
+
+		/** Max length: 562 */
 		CloudWatchLogGroupARN: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateGatewayInformationInputFormGroup() {
 		return new FormGroup<UpdateGatewayInformationInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			GatewayName: new FormControl<string | null | undefined>(undefined),
-			GatewayTimezone: new FormControl<string | null | undefined>(undefined),
-			CloudWatchLogGroupARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			GatewayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(2)]),
+			GatewayTimezone: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10), Validators.minLength(3)]),
+			CloudWatchLogGroupARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(562)]),
 		});
 
 	}
@@ -5365,7 +7479,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateGatewaySoftwareNowOutputFormGroup() {
 		return new FormGroup<UpdateGatewaySoftwareNowOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -5396,7 +7510,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateGatewaySoftwareNowInputFormGroup() {
 		return new FormGroup<UpdateGatewaySoftwareNowInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -5425,7 +7539,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateMaintenanceStartTimeOutputFormGroup() {
 		return new FormGroup<UpdateMaintenanceStartTimeOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -5441,9 +7555,31 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 23
+		 */
 		HourOfDay: number;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 59
+		 */
 		MinuteOfHour: number;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 6
+		 */
 		DayOfWeek?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 28
+		 */
 		DayOfMonth?: number | null;
 	}
 
@@ -5457,18 +7593,40 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 23
+		 */
 		HourOfDay: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 59
+		 */
 		MinuteOfHour: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 6
+		 */
 		DayOfWeek: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 28
+		 */
 		DayOfMonth: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateMaintenanceStartTimeInputFormGroup() {
 		return new FormGroup<UpdateMaintenanceStartTimeInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			HourOfDay: new FormControl<number | null | undefined>(undefined),
-			MinuteOfHour: new FormControl<number | null | undefined>(undefined),
-			DayOfWeek: new FormControl<number | null | undefined>(undefined),
-			DayOfMonth: new FormControl<number | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			HourOfDay: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(23)]),
+			MinuteOfHour: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(59)]),
+			DayOfWeek: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(6)]),
+			DayOfMonth: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(28)]),
 		});
 
 	}
@@ -5497,7 +7655,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateNFSFileShareOutputFormGroup() {
 		return new FormGroup<UpdateNFSFileShareOutputFormProperties>({
-			FileShareARN: new FormControl<string | null | undefined>(undefined),
+			FileShareARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -5594,12 +7752,12 @@ export namespace MyNS {
 	}
 	export function CreateUpdateNFSFileShareInputFormGroup() {
 		return new FormGroup<UpdateNFSFileShareInputFormProperties>({
-			FileShareARN: new FormControl<string | null | undefined>(undefined),
+			FileShareARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 			KMSEncrypted: new FormControl<boolean | null | undefined>(undefined),
-			KMSKey: new FormControl<string | null | undefined>(undefined),
-			DefaultStorageClass: new FormControl<string | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(7)]),
+			DefaultStorageClass: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(5)]),
 			ObjectACL: new FormControl<UpdateNFSFileShareInputObjectACL | null | undefined>(undefined),
-			Squash: new FormControl<string | null | undefined>(undefined),
+			Squash: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(15), Validators.minLength(5)]),
 			ReadOnly: new FormControl<boolean | null | undefined>(undefined),
 			GuessMIMETypeEnabled: new FormControl<boolean | null | undefined>(undefined),
 			RequesterPays: new FormControl<boolean | null | undefined>(undefined),
@@ -5633,7 +7791,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateSMBFileShareOutputFormGroup() {
 		return new FormGroup<UpdateSMBFileShareOutputFormProperties>({
-			FileShareARN: new FormControl<string | null | undefined>(undefined),
+			FileShareARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -5671,9 +7829,26 @@ export namespace MyNS {
 		GuessMIMETypeEnabled?: boolean | null;
 		RequesterPays?: boolean | null;
 		SMBACLEnabled?: boolean | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		AdminUserList?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		ValidUserList?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		InvalidUserList?: Array<string>;
+
+		/** Max length: 1024 */
 		AuditDestinationARN?: string | null;
 	}
 
@@ -5709,20 +7884,22 @@ export namespace MyNS {
 		GuessMIMETypeEnabled: FormControl<boolean | null | undefined>,
 		RequesterPays: FormControl<boolean | null | undefined>,
 		SMBACLEnabled: FormControl<boolean | null | undefined>,
+
+		/** Max length: 1024 */
 		AuditDestinationARN: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateSMBFileShareInputFormGroup() {
 		return new FormGroup<UpdateSMBFileShareInputFormProperties>({
-			FileShareARN: new FormControl<string | null | undefined>(undefined),
+			FileShareARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
 			KMSEncrypted: new FormControl<boolean | null | undefined>(undefined),
-			KMSKey: new FormControl<string | null | undefined>(undefined),
-			DefaultStorageClass: new FormControl<string | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(7)]),
+			DefaultStorageClass: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(5)]),
 			ObjectACL: new FormControl<UpdateSMBFileShareInputObjectACL | null | undefined>(undefined),
 			ReadOnly: new FormControl<boolean | null | undefined>(undefined),
 			GuessMIMETypeEnabled: new FormControl<boolean | null | undefined>(undefined),
 			RequesterPays: new FormControl<boolean | null | undefined>(undefined),
 			SMBACLEnabled: new FormControl<boolean | null | undefined>(undefined),
-			AuditDestinationARN: new FormControl<string | null | undefined>(undefined),
+			AuditDestinationARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
@@ -5749,7 +7926,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateSMBSecurityStrategyOutputFormGroup() {
 		return new FormGroup<UpdateSMBSecurityStrategyOutputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -5763,6 +7940,8 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
+
+		/** Required */
 		SMBSecurityStrategy: DescribeSMBSettingsOutputSMBSecurityStrategy;
 	}
 	export interface UpdateSMBSecurityStrategyInputFormProperties {
@@ -5774,12 +7953,14 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: FormControl<string | null | undefined>,
+
+		/** Required */
 		SMBSecurityStrategy: FormControl<DescribeSMBSettingsOutputSMBSecurityStrategy | null | undefined>,
 	}
 	export function CreateUpdateSMBSecurityStrategyInputFormGroup() {
 		return new FormGroup<UpdateSMBSecurityStrategyInputFormProperties>({
-			GatewayARN: new FormControl<string | null | undefined>(undefined),
-			SMBSecurityStrategy: new FormControl<DescribeSMBSettingsOutputSMBSecurityStrategy | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			SMBSecurityStrategy: new FormControl<DescribeSMBSettingsOutputSMBSecurityStrategy | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -5787,16 +7968,26 @@ export namespace MyNS {
 
 	/** A JSON object containing the Amazon Resource Name (ARN) of the updated storage volume. */
 	export interface UpdateSnapshotScheduleOutput {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN?: string | null;
 	}
 
 	/** A JSON object containing the Amazon Resource Name (ARN) of the updated storage volume. */
 	export interface UpdateSnapshotScheduleOutputFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateSnapshotScheduleOutputFormGroup() {
 		return new FormGroup<UpdateSnapshotScheduleOutputFormProperties>({
-			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			VolumeARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
@@ -5804,26 +7995,72 @@ export namespace MyNS {
 
 	/** <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>UpdateSnapshotScheduleInput$Description</a> </p> </li> <li> <p> <a>UpdateSnapshotScheduleInput$RecurrenceInHours</a> </p> </li> <li> <p> <a>UpdateSnapshotScheduleInput$StartAt</a> </p> </li> <li> <p> <a>UpdateSnapshotScheduleInput$VolumeARN</a> </p> </li> </ul> */
 	export interface UpdateSnapshotScheduleInput {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: string;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 23
+		 */
 		StartAt: number;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 24
+		 */
 		RecurrenceInHours: number;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		Description?: string | null;
 		Tags?: Array<Tag>;
 	}
 
 	/** <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>UpdateSnapshotScheduleInput$Description</a> </p> </li> <li> <p> <a>UpdateSnapshotScheduleInput$RecurrenceInHours</a> </p> </li> <li> <p> <a>UpdateSnapshotScheduleInput$StartAt</a> </p> </li> <li> <p> <a>UpdateSnapshotScheduleInput$VolumeARN</a> </p> </li> </ul> */
 	export interface UpdateSnapshotScheduleInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VolumeARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 23
+		 */
 		StartAt: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 24
+		 */
 		RecurrenceInHours: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateSnapshotScheduleInputFormGroup() {
 		return new FormGroup<UpdateSnapshotScheduleInputFormProperties>({
-			VolumeARN: new FormControl<string | null | undefined>(undefined),
-			StartAt: new FormControl<number | null | undefined>(undefined),
-			RecurrenceInHours: new FormControl<number | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			VolumeARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			StartAt: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(23)]),
+			RecurrenceInHours: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(24)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -5831,32 +8068,66 @@ export namespace MyNS {
 
 	/** UpdateVTLDeviceTypeOutput */
 	export interface UpdateVTLDeviceTypeOutput {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VTLDeviceARN?: string | null;
 	}
 
 	/** UpdateVTLDeviceTypeOutput */
 	export interface UpdateVTLDeviceTypeOutputFormProperties {
+
+		/**
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VTLDeviceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateVTLDeviceTypeOutputFormGroup() {
 		return new FormGroup<UpdateVTLDeviceTypeOutputFormProperties>({
-			VTLDeviceARN: new FormControl<string | null | undefined>(undefined),
+			VTLDeviceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(50)]),
 		});
 
 	}
 
 	export interface UpdateVTLDeviceTypeInput {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VTLDeviceARN: string;
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 2
+		 */
 		DeviceType: string;
 	}
 	export interface UpdateVTLDeviceTypeInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
 		VTLDeviceARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 2
+		 */
 		DeviceType: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateVTLDeviceTypeInputFormGroup() {
 		return new FormGroup<UpdateVTLDeviceTypeInputFormProperties>({
-			VTLDeviceARN: new FormControl<string | null | undefined>(undefined),
-			DeviceType: new FormControl<string | null | undefined>(undefined),
+			VTLDeviceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(50)]),
+			DeviceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(2)]),
 		});
 
 	}

@@ -789,7 +789,7 @@ export namespace MyNS {
 	}
 	export function CreateCancelJobInputFormGroup() {
 		return new FormGroup<CancelJobInputFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			APIVersion: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -857,16 +857,18 @@ export namespace MyNS {
 	}
 	export function CreateCreateJobInputFormGroup() {
 		return new FormGroup<CreateJobInputFormProperties>({
-			JobType: new FormControl<CreateJobOutputJobType | null | undefined>(undefined),
-			Manifest: new FormControl<string | null | undefined>(undefined),
+			JobType: new FormControl<CreateJobOutputJobType | null | undefined>(undefined, [Validators.required]),
+			Manifest: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ManifestAddendum: new FormControl<string | null | undefined>(undefined),
-			ValidateOnly: new FormControl<boolean | null | undefined>(undefined),
+			ValidateOnly: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			APIVersion: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetShippingLabelInput {
+
+		/** Required */
 		jobIds: Array<string>;
 
 		/** Specifies the name of the person responsible for shipping this package. */
@@ -982,7 +984,7 @@ export namespace MyNS {
 	}
 	export function CreateGetStatusInputFormGroup() {
 		return new FormGroup<GetStatusInputFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			APIVersion: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1087,10 +1089,10 @@ export namespace MyNS {
 	}
 	export function CreateUpdateJobInputFormGroup() {
 		return new FormGroup<UpdateJobInputFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
-			Manifest: new FormControl<string | null | undefined>(undefined),
-			JobType: new FormControl<CreateJobOutputJobType | null | undefined>(undefined),
-			ValidateOnly: new FormControl<boolean | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Manifest: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			JobType: new FormControl<CreateJobOutputJobType | null | undefined>(undefined, [Validators.required]),
+			ValidateOnly: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			APIVersion: new FormControl<string | null | undefined>(undefined),
 		});
 

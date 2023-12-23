@@ -22,30 +22,76 @@ export namespace MyNS {
 
 	/** This section describes operations that you can perform on an AWS Elemental MediaStore container. */
 	export interface Container {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		Endpoint?: string | null;
 		CreationTime?: Date | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}
+		 */
 		ARN?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 16
+		 * Min length: 1
+		 */
 		Status?: ContainerStatus | null;
 		AccessLoggingEnabled?: boolean | null;
 	}
 
 	/** This section describes operations that you can perform on an AWS Elemental MediaStore container. */
 	export interface ContainerFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		Endpoint: FormControl<string | null | undefined>,
 		CreationTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}
+		 */
 		ARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16
+		 * Min length: 1
+		 */
 		Status: FormControl<ContainerStatus | null | undefined>,
 		AccessLoggingEnabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateContainerFormGroup() {
 		return new FormGroup<ContainerFormProperties>({
-			Endpoint: new FormControl<string | null | undefined>(undefined),
+			Endpoint: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
-			ARN: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<ContainerStatus | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			Status: new FormControl<ContainerStatus | null | undefined>(undefined, [Validators.maxLength(16), Validators.minLength(1)]),
 			AccessLoggingEnabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -54,15 +100,34 @@ export namespace MyNS {
 	export enum ContainerStatus { ACTIVE = 0, CREATING = 1, DELETING = 2 }
 
 	export interface CreateContainerInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: string;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 200
+		 */
 		Tags?: Array<Tag>;
 	}
 	export interface CreateContainerInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateContainerInputFormGroup() {
 		return new FormGroup<CreateContainerInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -70,19 +135,45 @@ export namespace MyNS {
 
 	/** A collection of tags associated with a container. Each tag consists of a key:value pair, which can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{L}\p{Z}\p{N}_.:/=+\-@]*
+		 */
 		Key: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: [\p{L}\p{Z}\p{N}_.:/=+\-@]*
+		 */
 		Value?: string | null;
 	}
 
 	/** A collection of tags associated with a container. Each tag consists of a key:value pair, which can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\p{L}\p{Z}\p{N}_.:/=+\-@]*
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: [\p{L}\p{Z}\p{N}_.:/=+\-@]*
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -128,14 +219,28 @@ export namespace MyNS {
 	}
 
 	export interface DeleteContainerInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: string;
 	}
 	export interface DeleteContainerInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteContainerInputFormGroup() {
 		return new FormGroup<DeleteContainerInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -161,14 +266,28 @@ export namespace MyNS {
 	}
 
 	export interface DeleteContainerPolicyInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: string;
 	}
 	export interface DeleteContainerPolicyInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteContainerPolicyInputFormGroup() {
 		return new FormGroup<DeleteContainerPolicyInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -194,14 +313,28 @@ export namespace MyNS {
 	}
 
 	export interface DeleteCorsPolicyInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: string;
 	}
 	export interface DeleteCorsPolicyInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteCorsPolicyInputFormGroup() {
 		return new FormGroup<DeleteCorsPolicyInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -227,14 +360,28 @@ export namespace MyNS {
 	}
 
 	export interface DeleteLifecyclePolicyInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: string;
 	}
 	export interface DeleteLifecyclePolicyInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteLifecyclePolicyInputFormGroup() {
 		return new FormGroup<DeleteLifecyclePolicyInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -250,14 +397,28 @@ export namespace MyNS {
 	}
 
 	export interface DeleteMetricPolicyInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: string;
 	}
 	export interface DeleteMetricPolicyInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteMetricPolicyInputFormGroup() {
 		return new FormGroup<DeleteMetricPolicyInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -276,40 +437,80 @@ export namespace MyNS {
 	}
 
 	export interface DescribeContainerInput {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName?: string | null;
 	}
 	export interface DescribeContainerInputFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeContainerInputFormGroup() {
 		return new FormGroup<DescribeContainerInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetContainerPolicyOutput {
+
+		/**
+		 * Required
+		 * Max length: 8192
+		 * Min length: 1
+		 * Pattern: [\x00-\x7F]+
+		 */
 		Policy: string;
 	}
 	export interface GetContainerPolicyOutputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 8192
+		 * Min length: 1
+		 * Pattern: [\x00-\x7F]+
+		 */
 		Policy: FormControl<string | null | undefined>,
 	}
 	export function CreateGetContainerPolicyOutputFormGroup() {
 		return new FormGroup<GetContainerPolicyOutputFormProperties>({
-			Policy: new FormControl<string | null | undefined>(undefined),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetContainerPolicyInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: string;
 	}
 	export interface GetContainerPolicyInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetContainerPolicyInputFormGroup() {
 		return new FormGroup<GetContainerPolicyInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -335,20 +536,52 @@ export namespace MyNS {
 
 	/** A rule for a CORS policy. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses the first applicable rule listed. */
 	export interface CorsRule {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		AllowedOrigins: Array<string>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 4
+		 */
 		AllowedMethods?: Array<MethodName>;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		AllowedHeaders: Array<string>;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 2147483647
+		 */
 		MaxAgeSeconds?: number | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		ExposeHeaders?: Array<string>;
 	}
 
 	/** A rule for a CORS policy. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses the first applicable rule listed. */
 	export interface CorsRuleFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 2147483647
+		 */
 		MaxAgeSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateCorsRuleFormGroup() {
 		return new FormGroup<CorsRuleFormProperties>({
-			MaxAgeSeconds: new FormControl<number | null | undefined>(undefined),
+			MaxAgeSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
 		});
 
 	}
@@ -356,40 +589,82 @@ export namespace MyNS {
 	export enum MethodName { PUT = 0, GET = 1, DELETE = 2, HEAD = 3 }
 
 	export interface GetCorsPolicyInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: string;
 	}
 	export interface GetCorsPolicyInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetCorsPolicyInputFormGroup() {
 		return new FormGroup<GetCorsPolicyInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetLifecyclePolicyOutput {
+
+		/**
+		 * Required
+		 * Max length: 8192
+		 * Min length: 0
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		LifecyclePolicy: string;
 	}
 	export interface GetLifecyclePolicyOutputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 8192
+		 * Min length: 0
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		LifecyclePolicy: FormControl<string | null | undefined>,
 	}
 	export function CreateGetLifecyclePolicyOutputFormGroup() {
 		return new FormGroup<GetLifecyclePolicyOutputFormProperties>({
-			LifecyclePolicy: new FormControl<string | null | undefined>(undefined),
+			LifecyclePolicy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface GetLifecyclePolicyInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: string;
 	}
 	export interface GetLifecyclePolicyInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetLifecyclePolicyInputFormGroup() {
 		return new FormGroup<GetLifecyclePolicyInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -413,17 +688,26 @@ export namespace MyNS {
 
 	/** <p>The metric policy that is associated with the container. A metric policy allows AWS Elemental MediaStore to send metrics to Amazon CloudWatch. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include rules to define groups of objects that you want MediaStore to send object-level metrics for.</p> <p>To view examples of how to construct a metric policy for your use case, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-metric-examples.html">Example Metric Policies</a>.</p> */
 	export interface MetricPolicy {
+
+		/** Required */
 		ContainerLevelMetrics: MetricPolicyContainerLevelMetrics;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 300
+		 */
 		MetricPolicyRules?: Array<MetricPolicyRule>;
 	}
 
 	/** <p>The metric policy that is associated with the container. A metric policy allows AWS Elemental MediaStore to send metrics to Amazon CloudWatch. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include rules to define groups of objects that you want MediaStore to send object-level metrics for.</p> <p>To view examples of how to construct a metric policy for your use case, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-metric-examples.html">Example Metric Policies</a>.</p> */
 	export interface MetricPolicyFormProperties {
+
+		/** Required */
 		ContainerLevelMetrics: FormControl<MetricPolicyContainerLevelMetrics | null | undefined>,
 	}
 	export function CreateMetricPolicyFormGroup() {
 		return new FormGroup<MetricPolicyFormProperties>({
-			ContainerLevelMetrics: new FormControl<MetricPolicyContainerLevelMetrics | null | undefined>(undefined),
+			ContainerLevelMetrics: new FormControl<MetricPolicyContainerLevelMetrics | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -433,67 +717,150 @@ export namespace MyNS {
 
 	/** A setting that enables metrics at the object level. Each rule contains an object group and an object group name. If the policy includes the MetricPolicyRules parameter, you must include at least one rule. Each metric policy can include up to five rules by default. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy. */
 	export interface MetricPolicyRule {
+
+		/**
+		 * Required
+		 * Max length: 900
+		 * Min length: 1
+		 * Pattern: /?(?:[A-Za-z0-9_=:\.\-\~\*]+/){0,10}(?:[A-Za-z0-9_=:\.\-\~\*]+)?/?
+		 */
 		ObjectGroup: string;
+
+		/**
+		 * Required
+		 * Max length: 30
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_]+
+		 */
 		ObjectGroupName: string;
 	}
 
 	/** A setting that enables metrics at the object level. Each rule contains an object group and an object group name. If the policy includes the MetricPolicyRules parameter, you must include at least one rule. Each metric policy can include up to five rules by default. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy. */
 	export interface MetricPolicyRuleFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 900
+		 * Min length: 1
+		 * Pattern: /?(?:[A-Za-z0-9_=:\.\-\~\*]+/){0,10}(?:[A-Za-z0-9_=:\.\-\~\*]+)?/?
+		 */
 		ObjectGroup: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 30
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_]+
+		 */
 		ObjectGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateMetricPolicyRuleFormGroup() {
 		return new FormGroup<MetricPolicyRuleFormProperties>({
-			ObjectGroup: new FormControl<string | null | undefined>(undefined),
-			ObjectGroupName: new FormControl<string | null | undefined>(undefined),
+			ObjectGroup: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(900), Validators.minLength(1)]),
+			ObjectGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(30), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetMetricPolicyInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: string;
 	}
 	export interface GetMetricPolicyInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetMetricPolicyInputFormGroup() {
 		return new FormGroup<GetMetricPolicyInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListContainersOutput {
+
+		/** Required */
 		Containers: Array<Container>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [0-9A-Za-z=/+]+
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListContainersOutputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [0-9A-Za-z=/+]+
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListContainersOutputFormGroup() {
 		return new FormGroup<ListContainersOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListContainersInput {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [0-9A-Za-z=/+]+
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface ListContainersInputFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [0-9A-Za-z=/+]+
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListContainersInputFormGroup() {
 		return new FormGroup<ListContainersInputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListTagsForResourceOutput {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 200
+		 */
 		Tags?: Array<Tag>;
 	}
 	export interface ListTagsForResourceOutputFormProperties {
@@ -505,14 +872,28 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}
+		 */
 		Resource: string;
 	}
 	export interface ListTagsForResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}
+		 */
 		Resource: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceInputFormGroup() {
 		return new FormGroup<ListTagsForResourceInputFormProperties>({
-			Resource: new FormControl<string | null | undefined>(undefined),
+			Resource: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -528,17 +909,45 @@ export namespace MyNS {
 	}
 
 	export interface PutContainerPolicyInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: string;
+
+		/**
+		 * Required
+		 * Max length: 8192
+		 * Min length: 1
+		 * Pattern: [\x00-\x7F]+
+		 */
 		Policy: string;
 	}
 	export interface PutContainerPolicyInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 8192
+		 * Min length: 1
+		 * Pattern: [\x00-\x7F]+
+		 */
 		Policy: FormControl<string | null | undefined>,
 	}
 	export function CreatePutContainerPolicyInputFormGroup() {
 		return new FormGroup<PutContainerPolicyInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined),
-			Policy: new FormControl<string | null | undefined>(undefined),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(1)]),
 		});
 
 	}
@@ -554,6 +963,13 @@ export namespace MyNS {
 	}
 
 	export interface PutCorsPolicyInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: string;
 
 		/**
@@ -565,11 +981,18 @@ export namespace MyNS {
 		CorsPolicy: Array<CorsRule>;
 	}
 	export interface PutCorsPolicyInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: FormControl<string | null | undefined>,
 	}
 	export function CreatePutCorsPolicyInputFormGroup() {
 		return new FormGroup<PutCorsPolicyInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -585,17 +1008,45 @@ export namespace MyNS {
 	}
 
 	export interface PutLifecyclePolicyInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: string;
+
+		/**
+		 * Required
+		 * Max length: 8192
+		 * Min length: 0
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		LifecyclePolicy: string;
 	}
 	export interface PutLifecyclePolicyInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 8192
+		 * Min length: 0
+		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
+		 */
 		LifecyclePolicy: FormControl<string | null | undefined>,
 	}
 	export function CreatePutLifecyclePolicyInputFormGroup() {
 		return new FormGroup<PutLifecyclePolicyInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined),
-			LifecyclePolicy: new FormControl<string | null | undefined>(undefined),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			LifecyclePolicy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(0)]),
 		});
 
 	}
@@ -611,6 +1062,13 @@ export namespace MyNS {
 	}
 
 	export interface PutMetricPolicyInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: string;
 
 		/**
@@ -620,11 +1078,18 @@ export namespace MyNS {
 		MetricPolicy: MetricPolicy;
 	}
 	export interface PutMetricPolicyInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: FormControl<string | null | undefined>,
 	}
 	export function CreatePutMetricPolicyInputFormGroup() {
 		return new FormGroup<PutMetricPolicyInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -640,14 +1105,28 @@ export namespace MyNS {
 	}
 
 	export interface StartAccessLoggingInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: string;
 	}
 	export interface StartAccessLoggingInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: FormControl<string | null | undefined>,
 	}
 	export function CreateStartAccessLoggingInputFormGroup() {
 		return new FormGroup<StartAccessLoggingInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -663,14 +1142,28 @@ export namespace MyNS {
 	}
 
 	export interface StopAccessLoggingInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: string;
 	}
 	export interface StopAccessLoggingInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\w-]+
+		 */
 		ContainerName: FormControl<string | null | undefined>,
 	}
 	export function CreateStopAccessLoggingInputFormGroup() {
 		return new FormGroup<StopAccessLoggingInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -686,15 +1179,35 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}
+		 */
 		Resource: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 200
+		 */
 		Tags: Array<Tag>;
 	}
 	export interface TagResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}
+		 */
 		Resource: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceInputFormGroup() {
 		return new FormGroup<TagResourceInputFormProperties>({
-			Resource: new FormControl<string | null | undefined>(undefined),
+			Resource: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -710,15 +1223,31 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}
+		 */
 		Resource: string;
+
+		/** Required */
 		TagKeys: Array<string>;
 	}
 	export interface UntagResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}
+		 */
 		Resource: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceInputFormGroup() {
 		return new FormGroup<UntagResourceInputFormProperties>({
-			Resource: new FormControl<string | null | undefined>(undefined),
+			Resource: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}

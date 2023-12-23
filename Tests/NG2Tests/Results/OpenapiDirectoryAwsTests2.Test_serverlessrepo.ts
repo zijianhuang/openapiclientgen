@@ -53,36 +53,60 @@ export namespace MyNS {
 
 	/** Application version details. */
 	export interface Version {
+
+		/** Required */
 		ApplicationId: string;
+
+		/** Required */
 		CreationTime: string;
+
+		/** Required */
 		ParameterDefinitions: Array<ParameterDefinition>;
+
+		/** Required */
 		RequiredCapabilities: Array<Capability>;
+
+		/** Required */
 		ResourcesSupported: boolean;
+
+		/** Required */
 		SemanticVersion: string;
 		SourceCodeArchiveUrl?: string | null;
 		SourceCodeUrl?: string | null;
+
+		/** Required */
 		TemplateUrl: string;
 	}
 
 	/** Application version details. */
 	export interface VersionFormProperties {
+
+		/** Required */
 		ApplicationId: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreationTime: FormControl<string | null | undefined>,
+
+		/** Required */
 		ResourcesSupported: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		SemanticVersion: FormControl<string | null | undefined>,
 		SourceCodeArchiveUrl: FormControl<string | null | undefined>,
 		SourceCodeUrl: FormControl<string | null | undefined>,
+
+		/** Required */
 		TemplateUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateVersionFormGroup() {
 		return new FormGroup<VersionFormProperties>({
-			ApplicationId: new FormControl<string | null | undefined>(undefined),
-			CreationTime: new FormControl<string | null | undefined>(undefined),
-			ResourcesSupported: new FormControl<boolean | null | undefined>(undefined),
-			SemanticVersion: new FormControl<string | null | undefined>(undefined),
+			ApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			CreationTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ResourcesSupported: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			SemanticVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SourceCodeArchiveUrl: new FormControl<string | null | undefined>(undefined),
 			SourceCodeUrl: new FormControl<string | null | undefined>(undefined),
-			TemplateUrl: new FormControl<string | null | undefined>(undefined),
+			TemplateUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -99,8 +123,12 @@ export namespace MyNS {
 		MaxValue?: number | null;
 		MinLength?: number | null;
 		MinValue?: number | null;
+
+		/** Required */
 		Name: string;
 		NoEcho?: boolean | null;
+
+		/** Required */
 		ReferencedByResources: Array<string>;
 		Type?: string | null;
 	}
@@ -115,6 +143,8 @@ export namespace MyNS {
 		MaxValue: FormControl<number | null | undefined>,
 		MinLength: FormControl<number | null | undefined>,
 		MinValue: FormControl<number | null | undefined>,
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 		NoEcho: FormControl<boolean | null | undefined>,
 		Type: FormControl<string | null | undefined>,
@@ -129,7 +159,7 @@ export namespace MyNS {
 			MaxValue: new FormControl<number | null | undefined>(undefined),
 			MinLength: new FormControl<number | null | undefined>(undefined),
 			MinValue: new FormControl<number | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NoEcho: new FormControl<boolean | null | undefined>(undefined),
 			Type: new FormControl<string | null | undefined>(undefined),
 		});
@@ -248,19 +278,27 @@ export namespace MyNS {
 
 	/** Parameter value of the application. */
 	export interface ParameterValue {
+
+		/** Required */
 		Name: string;
+
+		/** Required */
 		Value: string;
 	}
 
 	/** Parameter value of the application. */
 	export interface ParameterValueFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateParameterValueFormGroup() {
 		return new FormGroup<ParameterValueFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -271,7 +309,11 @@ export namespace MyNS {
 	 *  </i> Data Type.
 	 */
 	export interface RollbackTrigger {
+
+		/** Required */
 		Arn: string;
+
+		/** Required */
 		Type: string;
 	}
 
@@ -280,13 +322,17 @@ export namespace MyNS {
 	 *  </i> Data Type.
 	 */
 	export interface RollbackTriggerFormProperties {
+
+		/** Required */
 		Arn: FormControl<string | null | undefined>,
+
+		/** Required */
 		Type: FormControl<string | null | undefined>,
 	}
 	export function CreateRollbackTriggerFormGroup() {
 		return new FormGroup<RollbackTriggerFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
-			Type: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Type: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -297,7 +343,11 @@ export namespace MyNS {
 	 *  </i> Data Type.
 	 */
 	export interface Tag {
+
+		/** Required */
 		Key: string;
+
+		/** Required */
 		Value: string;
 	}
 
@@ -306,13 +356,17 @@ export namespace MyNS {
 	 *  </i> Data Type.
 	 */
 	export interface TagFormProperties {
+
+		/** Required */
 		Key: FormControl<string | null | undefined>,
+
+		/** Required */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -421,8 +475,12 @@ export namespace MyNS {
 
 	/** Policy statement applied to the application. */
 	export interface ApplicationPolicyStatement {
+
+		/** Required */
 		Actions: Array<string>;
 		PrincipalOrgIDs?: Array<string>;
+
+		/** Required */
 		Principals: Array<string>;
 		StatementId?: string | null;
 	}
@@ -486,19 +544,27 @@ export namespace MyNS {
 
 	/** A nested application summary. */
 	export interface ApplicationDependencySummary {
+
+		/** Required */
 		ApplicationId: string;
+
+		/** Required */
 		SemanticVersion: string;
 	}
 
 	/** A nested application summary. */
 	export interface ApplicationDependencySummaryFormProperties {
+
+		/** Required */
 		ApplicationId: FormControl<string | null | undefined>,
+
+		/** Required */
 		SemanticVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateApplicationDependencySummaryFormGroup() {
 		return new FormGroup<ApplicationDependencySummaryFormProperties>({
-			ApplicationId: new FormControl<string | null | undefined>(undefined),
-			SemanticVersion: new FormControl<string | null | undefined>(undefined),
+			ApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SemanticVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -520,24 +586,36 @@ export namespace MyNS {
 
 	/** An application version summary. */
 	export interface VersionSummary {
+
+		/** Required */
 		ApplicationId: string;
+
+		/** Required */
 		CreationTime: string;
+
+		/** Required */
 		SemanticVersion: string;
 		SourceCodeUrl?: string | null;
 	}
 
 	/** An application version summary. */
 	export interface VersionSummaryFormProperties {
+
+		/** Required */
 		ApplicationId: FormControl<string | null | undefined>,
+
+		/** Required */
 		CreationTime: FormControl<string | null | undefined>,
+
+		/** Required */
 		SemanticVersion: FormControl<string | null | undefined>,
 		SourceCodeUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateVersionSummaryFormGroup() {
 		return new FormGroup<VersionSummaryFormProperties>({
-			ApplicationId: new FormControl<string | null | undefined>(undefined),
-			CreationTime: new FormControl<string | null | undefined>(undefined),
-			SemanticVersion: new FormControl<string | null | undefined>(undefined),
+			ApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			CreationTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SemanticVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SourceCodeUrl: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -560,34 +638,50 @@ export namespace MyNS {
 
 	/** Summary of details about the application. */
 	export interface ApplicationSummary {
+
+		/** Required */
 		ApplicationId: string;
+
+		/** Required */
 		Author: string;
 		CreationTime?: string | null;
+
+		/** Required */
 		Description: string;
 		HomePageUrl?: string | null;
 		Labels?: Array<string>;
+
+		/** Required */
 		Name: string;
 		SpdxLicenseId?: string | null;
 	}
 
 	/** Summary of details about the application. */
 	export interface ApplicationSummaryFormProperties {
+
+		/** Required */
 		ApplicationId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Author: FormControl<string | null | undefined>,
 		CreationTime: FormControl<string | null | undefined>,
+
+		/** Required */
 		Description: FormControl<string | null | undefined>,
 		HomePageUrl: FormControl<string | null | undefined>,
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 		SpdxLicenseId: FormControl<string | null | undefined>,
 	}
 	export function CreateApplicationSummaryFormGroup() {
 		return new FormGroup<ApplicationSummaryFormProperties>({
-			ApplicationId: new FormControl<string | null | undefined>(undefined),
-			Author: new FormControl<string | null | undefined>(undefined),
+			ApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Author: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			CreationTime: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			HomePageUrl: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SpdxLicenseId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -652,12 +746,18 @@ export namespace MyNS {
 	}
 
 	export interface CreateApplicationRequest {
+
+		/** Required */
 		Author: string;
+
+		/** Required */
 		Description: string;
 		HomePageUrl?: string | null;
 		Labels?: Array<string>;
 		LicenseBody?: string | null;
 		LicenseUrl?: string | null;
+
+		/** Required */
 		Name: string;
 		ReadmeBody?: string | null;
 		ReadmeUrl?: string | null;
@@ -669,11 +769,17 @@ export namespace MyNS {
 		TemplateUrl?: string | null;
 	}
 	export interface CreateApplicationRequestFormProperties {
+
+		/** Required */
 		Author: FormControl<string | null | undefined>,
+
+		/** Required */
 		Description: FormControl<string | null | undefined>,
 		HomePageUrl: FormControl<string | null | undefined>,
 		LicenseBody: FormControl<string | null | undefined>,
 		LicenseUrl: FormControl<string | null | undefined>,
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 		ReadmeBody: FormControl<string | null | undefined>,
 		ReadmeUrl: FormControl<string | null | undefined>,
@@ -686,12 +792,12 @@ export namespace MyNS {
 	}
 	export function CreateCreateApplicationRequestFormGroup() {
 		return new FormGroup<CreateApplicationRequestFormProperties>({
-			Author: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Author: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			HomePageUrl: new FormControl<string | null | undefined>(undefined),
 			LicenseBody: new FormControl<string | null | undefined>(undefined),
 			LicenseUrl: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ReadmeBody: new FormControl<string | null | undefined>(undefined),
 			ReadmeUrl: new FormControl<string | null | undefined>(undefined),
 			SemanticVersion: new FormControl<string | null | undefined>(undefined),
@@ -765,6 +871,8 @@ export namespace MyNS {
 		 */
 		RollbackConfiguration?: RollbackConfiguration;
 		SemanticVersion?: string | null;
+
+		/** Required */
 		StackName: string;
 		Tags?: Array<Tag>;
 		TemplateId?: string | null;
@@ -774,6 +882,8 @@ export namespace MyNS {
 		ClientToken: FormControl<string | null | undefined>,
 		Description: FormControl<string | null | undefined>,
 		SemanticVersion: FormControl<string | null | undefined>,
+
+		/** Required */
 		StackName: FormControl<string | null | undefined>,
 		TemplateId: FormControl<string | null | undefined>,
 	}
@@ -783,7 +893,7 @@ export namespace MyNS {
 			ClientToken: new FormControl<string | null | undefined>(undefined),
 			Description: new FormControl<string | null | undefined>(undefined),
 			SemanticVersion: new FormControl<string | null | undefined>(undefined),
-			StackName: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TemplateId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -875,6 +985,8 @@ export namespace MyNS {
 	}
 
 	export interface PutApplicationPolicyRequest {
+
+		/** Required */
 		Statements: Array<ApplicationPolicyStatement>;
 	}
 	export interface PutApplicationPolicyRequestFormProperties {
@@ -886,14 +998,18 @@ export namespace MyNS {
 	}
 
 	export interface UnshareApplicationRequest {
+
+		/** Required */
 		OrganizationId: string;
 	}
 	export interface UnshareApplicationRequestFormProperties {
+
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 	}
 	export function CreateUnshareApplicationRequestFormGroup() {
 		return new FormGroup<UnshareApplicationRequestFormProperties>({
-			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			OrganizationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1224,12 +1340,12 @@ export namespace MyNS {
 	}
 	export function CreateCreateApplicationPostBodyFormGroup() {
 		return new FormGroup<CreateApplicationPostBodyFormProperties>({
-			author: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			author: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			homePageUrl: new FormControl<string | null | undefined>(undefined),
 			licenseBody: new FormControl<string | null | undefined>(undefined),
 			licenseUrl: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			readmeBody: new FormControl<string | null | undefined>(undefined),
 			readmeUrl: new FormControl<string | null | undefined>(undefined),
 			semanticVersion: new FormControl<string | null | undefined>(undefined),
@@ -1414,7 +1530,7 @@ export namespace MyNS {
 			clientToken: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
 			semanticVersion: new FormControl<string | null | undefined>(undefined),
-			stackName: new FormControl<string | null | undefined>(undefined),
+			stackName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			templateId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1541,7 +1657,7 @@ export namespace MyNS {
 	}
 	export function CreateUnshareApplicationPostBodyFormGroup() {
 		return new FormGroup<UnshareApplicationPostBodyFormProperties>({
-			organizationId: new FormControl<string | null | undefined>(undefined),
+			organizationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

@@ -21,6 +21,11 @@ export namespace MyNS {
 
 	/** A collection of segment documents with matching trace IDs. */
 	export interface Trace {
+
+		/**
+		 * Max length: 35
+		 * Min length: 1
+		 */
 		Id?: string | null;
 		Duration?: number | null;
 		Segments?: Array<Segment>;
@@ -28,12 +33,17 @@ export namespace MyNS {
 
 	/** A collection of segment documents with matching trace IDs. */
 	export interface TraceFormProperties {
+
+		/**
+		 * Max length: 35
+		 * Min length: 1
+		 */
 		Id: FormControl<string | null | undefined>,
 		Duration: FormControl<number | null | undefined>,
 	}
 	export function CreateTraceFormGroup() {
 		return new FormGroup<TraceFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(35), Validators.minLength(1)]),
 			Duration: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -43,18 +53,22 @@ export namespace MyNS {
 	/** <p>A segment from a trace that has been ingested by the X-Ray service. The segment can be compiled from documents uploaded with <a>PutTraceSegments</a>, or an <code>inferred</code> segment for a downstream service, generated from a subsegment sent by the service that called it.</p> <p>For the full segment document schema, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.</p> */
 	export interface Segment {
 		Id?: string | null;
+
+		/** Min length: 1 */
 		Document?: string | null;
 	}
 
 	/** <p>A segment from a trace that has been ingested by the X-Ray service. The segment can be compiled from documents uploaded with <a>PutTraceSegments</a>, or an <code>inferred</code> segment for a downstream service, generated from a subsegment sent by the service that called it.</p> <p>For the full segment document schema, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.</p> */
 	export interface SegmentFormProperties {
 		Id: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		Document: FormControl<string | null | undefined>,
 	}
 	export function CreateSegmentFormGroup() {
 		return new FormGroup<SegmentFormProperties>({
 			Id: new FormControl<string | null | undefined>(undefined),
-			Document: new FormControl<string | null | undefined>(undefined),
+			Document: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -154,50 +168,164 @@ export namespace MyNS {
 
 	/** A sampling rule that services use to decide whether to instrument a request. Rule fields can match properties of the service, or properties of a request. The service can ignore rules that don't match its properties. */
 	export interface SamplingRule {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		RuleName?: string | null;
 		RuleARN?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 500
+		 */
 		ResourceARN: string;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 9999
+		 */
 		Priority: number;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 1
+		 */
 		FixedRate: number;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		ReservoirSize: number;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 */
 		ServiceName: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 */
 		ServiceType: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 */
 		Host: string;
+
+		/**
+		 * Required
+		 * Max length: 10
+		 */
 		HTTPMethod: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 */
 		URLPath: string;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		Version: number;
 		Attributes?: AttributeMap;
 	}
 
 	/** A sampling rule that services use to decide whether to instrument a request. Rule fields can match properties of the service, or properties of a request. The service can ignore rules that don't match its properties. */
 	export interface SamplingRuleFormProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		RuleName: FormControl<string | null | undefined>,
 		RuleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 500
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 9999
+		 */
 		Priority: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 1
+		 */
 		FixedRate: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		ReservoirSize: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 */
 		ServiceName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 */
 		ServiceType: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 */
 		Host: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 10
+		 */
 		HTTPMethod: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 */
 		URLPath: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 */
 		Version: FormControl<number | null | undefined>,
 	}
 	export function CreateSamplingRuleFormGroup() {
 		return new FormGroup<SamplingRuleFormProperties>({
-			RuleName: new FormControl<string | null | undefined>(undefined),
+			RuleName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 			RuleARN: new FormControl<string | null | undefined>(undefined),
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
-			Priority: new FormControl<number | null | undefined>(undefined),
-			FixedRate: new FormControl<number | null | undefined>(undefined),
-			ReservoirSize: new FormControl<number | null | undefined>(undefined),
-			ServiceName: new FormControl<string | null | undefined>(undefined),
-			ServiceType: new FormControl<string | null | undefined>(undefined),
-			Host: new FormControl<string | null | undefined>(undefined),
-			HTTPMethod: new FormControl<string | null | undefined>(undefined),
-			URLPath: new FormControl<string | null | undefined>(undefined),
-			Version: new FormControl<number | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500)]),
+			Priority: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(9999)]),
+			FixedRate: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(1)]),
+			ReservoirSize: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			ServiceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64)]),
+			ServiceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64)]),
+			Host: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64)]),
+			HTTPMethod: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10)]),
+			URLPath: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			Version: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 		});
 
 	}
@@ -462,31 +590,83 @@ export namespace MyNS {
 
 	/** Request sampling results for a single rule from a service. Results are for the last 10 seconds unless the service has been assigned a longer reporting interval after a previous call to <a>GetSamplingTargets</a>. */
 	export interface SamplingStatisticsDocument {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		RuleName: string;
+
+		/**
+		 * Required
+		 * Max length: 24
+		 * Min length: 24
+		 */
 		ClientID: string;
+
+		/** Required */
 		Timestamp: Date;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		RequestCount: number;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		SampledCount: number;
+
+		/** Minimum: 0 */
 		BorrowCount?: number | null;
 	}
 
 	/** Request sampling results for a single rule from a service. Results are for the last 10 seconds unless the service has been assigned a longer reporting interval after a previous call to <a>GetSamplingTargets</a>. */
 	export interface SamplingStatisticsDocumentFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		RuleName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 24
+		 * Min length: 24
+		 */
 		ClientID: FormControl<string | null | undefined>,
+
+		/** Required */
 		Timestamp: FormControl<Date | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		RequestCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		SampledCount: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		BorrowCount: FormControl<number | null | undefined>,
 	}
 	export function CreateSamplingStatisticsDocumentFormGroup() {
 		return new FormGroup<SamplingStatisticsDocumentFormProperties>({
-			RuleName: new FormControl<string | null | undefined>(undefined),
-			ClientID: new FormControl<string | null | undefined>(undefined),
-			Timestamp: new FormControl<Date | null | undefined>(undefined),
-			RequestCount: new FormControl<number | null | undefined>(undefined),
-			SampledCount: new FormControl<number | null | undefined>(undefined),
-			BorrowCount: new FormControl<number | null | undefined>(undefined),
+			RuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
+			ClientID: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(24), Validators.minLength(24)]),
+			Timestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			RequestCount: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			SampledCount: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			BorrowCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -807,6 +987,11 @@ export namespace MyNS {
 
 	/** Metadata generated from the segment documents in a trace. */
 	export interface TraceSummary {
+
+		/**
+		 * Max length: 35
+		 * Min length: 1
+		 */
 		Id?: string | null;
 		Duration?: number | null;
 		ResponseTime?: number | null;
@@ -835,6 +1020,11 @@ export namespace MyNS {
 
 	/** Metadata generated from the segment documents in a trace. */
 	export interface TraceSummaryFormProperties {
+
+		/**
+		 * Max length: 35
+		 * Min length: 1
+		 */
 		Id: FormControl<string | null | undefined>,
 		Duration: FormControl<number | null | undefined>,
 		ResponseTime: FormControl<number | null | undefined>,
@@ -847,7 +1037,7 @@ export namespace MyNS {
 	}
 	export function CreateTraceSummaryFormGroup() {
 		return new FormGroup<TraceSummaryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(35), Validators.minLength(1)]),
 			Duration: new FormControl<number | null | undefined>(undefined),
 			ResponseTime: new FormControl<number | null | undefined>(undefined),
 			HasFault: new FormControl<boolean | null | undefined>(undefined),
@@ -1243,6 +1433,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface TelemetryRecord {
+
+		/** Required */
 		Timestamp: Date;
 		SegmentsReceivedCount?: number | null;
 		SegmentsSentCount?: number | null;
@@ -1255,6 +1447,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface TelemetryRecordFormProperties {
+
+		/** Required */
 		Timestamp: FormControl<Date | null | undefined>,
 		SegmentsReceivedCount: FormControl<number | null | undefined>,
 		SegmentsSentCount: FormControl<number | null | undefined>,
@@ -1263,7 +1457,7 @@ export namespace MyNS {
 	}
 	export function CreateTelemetryRecordFormGroup() {
 		return new FormGroup<TelemetryRecordFormProperties>({
-			Timestamp: new FormControl<Date | null | undefined>(undefined),
+			Timestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			SegmentsReceivedCount: new FormControl<number | null | undefined>(undefined),
 			SegmentsSentCount: new FormControl<number | null | undefined>(undefined),
 			SegmentsSpilloverCount: new FormControl<number | null | undefined>(undefined),
@@ -1406,6 +1600,8 @@ export namespace MyNS {
 	}
 
 	export interface BatchGetTracesRequest {
+
+		/** Required */
 		TraceIds: Array<string>;
 		NextToken?: string | null;
 	}
@@ -1420,16 +1616,28 @@ export namespace MyNS {
 	}
 
 	export interface CreateGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		GroupName: string;
 		FilterExpression?: string | null;
 	}
 	export interface CreateGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		GroupName: FormControl<string | null | undefined>,
 		FilterExpression: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateGroupRequestFormGroup() {
 		return new FormGroup<CreateGroupRequestFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
 			FilterExpression: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1452,17 +1660,37 @@ export namespace MyNS {
 	}
 
 	export interface DeleteGroupRequest {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		GroupName?: string | null;
+
+		/**
+		 * Max length: 400
+		 * Min length: 1
+		 */
 		GroupARN?: string | null;
 	}
 	export interface DeleteGroupRequestFormProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		GroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 400
+		 * Min length: 1
+		 */
 		GroupARN: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteGroupRequestFormGroup() {
 		return new FormGroup<DeleteGroupRequestFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			GroupARN: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			GroupARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(400), Validators.minLength(1)]),
 		});
 
 	}
@@ -1498,30 +1726,60 @@ export namespace MyNS {
 	}
 
 	export interface GetGroupRequest {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		GroupName?: string | null;
+
+		/**
+		 * Max length: 400
+		 * Min length: 1
+		 */
 		GroupARN?: string | null;
 	}
 	export interface GetGroupRequestFormProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		GroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 400
+		 * Min length: 1
+		 */
 		GroupARN: FormControl<string | null | undefined>,
 	}
 	export function CreateGetGroupRequestFormGroup() {
 		return new FormGroup<GetGroupRequestFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			GroupARN: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			GroupARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(400), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetGroupsRequest {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface GetGroupsRequestFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetGroupsRequestFormGroup() {
 		return new FormGroup<GetGroupsRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -1553,6 +1811,11 @@ export namespace MyNS {
 	}
 
 	export interface GetSamplingTargetsRequest {
+
+		/**
+		 * Required
+		 * Maximum items: 25
+		 */
 		SamplingStatisticsDocuments: Array<SamplingStatisticsDocument>;
 	}
 	export interface GetSamplingTargetsRequestFormProperties {
@@ -1564,55 +1827,121 @@ export namespace MyNS {
 	}
 
 	export interface GetServiceGraphRequest {
+
+		/** Required */
 		StartTime: Date;
+
+		/** Required */
 		EndTime: Date;
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		GroupName?: string | null;
+
+		/**
+		 * Max length: 400
+		 * Min length: 1
+		 */
 		GroupARN?: string | null;
 		NextToken?: string | null;
 	}
 	export interface GetServiceGraphRequestFormProperties {
+
+		/** Required */
 		StartTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		EndTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		GroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 400
+		 * Min length: 1
+		 */
 		GroupARN: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetServiceGraphRequestFormGroup() {
 		return new FormGroup<GetServiceGraphRequestFormProperties>({
-			StartTime: new FormControl<Date | null | undefined>(undefined),
-			EndTime: new FormControl<Date | null | undefined>(undefined),
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			GroupARN: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			EndTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			GroupARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(400), Validators.minLength(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetTimeSeriesServiceStatisticsRequest {
+
+		/** Required */
 		StartTime: Date;
+
+		/** Required */
 		EndTime: Date;
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		GroupName?: string | null;
+
+		/**
+		 * Max length: 400
+		 * Min length: 1
+		 */
 		GroupARN?: string | null;
+
+		/**
+		 * Max length: 500
+		 * Min length: 1
+		 */
 		EntitySelectorExpression?: string | null;
 		Period?: number | null;
 		NextToken?: string | null;
 	}
 	export interface GetTimeSeriesServiceStatisticsRequestFormProperties {
+
+		/** Required */
 		StartTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		EndTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		GroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 400
+		 * Min length: 1
+		 */
 		GroupARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 500
+		 * Min length: 1
+		 */
 		EntitySelectorExpression: FormControl<string | null | undefined>,
 		Period: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTimeSeriesServiceStatisticsRequestFormGroup() {
 		return new FormGroup<GetTimeSeriesServiceStatisticsRequestFormProperties>({
-			StartTime: new FormControl<Date | null | undefined>(undefined),
-			EndTime: new FormControl<Date | null | undefined>(undefined),
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			GroupARN: new FormControl<string | null | undefined>(undefined),
-			EntitySelectorExpression: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			EndTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			GroupARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(400), Validators.minLength(1)]),
+			EntitySelectorExpression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(1)]),
 			Period: new FormControl<number | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1620,6 +1949,8 @@ export namespace MyNS {
 	}
 
 	export interface GetTraceGraphRequest {
+
+		/** Required */
 		TraceIds: Array<string>;
 		NextToken?: string | null;
 	}
@@ -1656,7 +1987,11 @@ export namespace MyNS {
 	}
 
 	export interface GetTraceSummariesRequest {
+
+		/** Required */
 		StartTime: Date;
+
+		/** Required */
 		EndTime: Date;
 		TimeRangeType?: TimeRangeType | null;
 		Sampling?: boolean | null;
@@ -1667,7 +2002,11 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 	export interface GetTraceSummariesRequestFormProperties {
+
+		/** Required */
 		StartTime: FormControl<Date | null | undefined>,
+
+		/** Required */
 		EndTime: FormControl<Date | null | undefined>,
 		TimeRangeType: FormControl<TimeRangeType | null | undefined>,
 		Sampling: FormControl<boolean | null | undefined>,
@@ -1676,8 +2015,8 @@ export namespace MyNS {
 	}
 	export function CreateGetTraceSummariesRequestFormGroup() {
 		return new FormGroup<GetTraceSummariesRequestFormProperties>({
-			StartTime: new FormControl<Date | null | undefined>(undefined),
-			EndTime: new FormControl<Date | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			EndTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			TimeRangeType: new FormControl<TimeRangeType | null | undefined>(undefined),
 			Sampling: new FormControl<boolean | null | undefined>(undefined),
 			FilterExpression: new FormControl<string | null | undefined>(undefined),
@@ -1687,42 +2026,72 @@ export namespace MyNS {
 	}
 
 	export interface PutEncryptionConfigRequest {
+
+		/**
+		 * Max length: 3000
+		 * Min length: 1
+		 */
 		KeyId?: string | null;
+
+		/** Required */
 		Type: EncryptionConfigType;
 	}
 	export interface PutEncryptionConfigRequestFormProperties {
+
+		/**
+		 * Max length: 3000
+		 * Min length: 1
+		 */
 		KeyId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Type: FormControl<EncryptionConfigType | null | undefined>,
 	}
 	export function CreatePutEncryptionConfigRequestFormGroup() {
 		return new FormGroup<PutEncryptionConfigRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			Type: new FormControl<EncryptionConfigType | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3000), Validators.minLength(1)]),
+			Type: new FormControl<EncryptionConfigType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface PutTelemetryRecordsRequest {
+
+		/** Required */
 		TelemetryRecords: Array<TelemetryRecord>;
+
+		/** Max length: 20 */
 		EC2InstanceId?: string | null;
+
+		/** Max length: 255 */
 		Hostname?: string | null;
+
+		/** Max length: 500 */
 		ResourceARN?: string | null;
 	}
 	export interface PutTelemetryRecordsRequestFormProperties {
+
+		/** Max length: 20 */
 		EC2InstanceId: FormControl<string | null | undefined>,
+
+		/** Max length: 255 */
 		Hostname: FormControl<string | null | undefined>,
+
+		/** Max length: 500 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreatePutTelemetryRecordsRequestFormGroup() {
 		return new FormGroup<PutTelemetryRecordsRequestFormProperties>({
-			EC2InstanceId: new FormControl<string | null | undefined>(undefined),
-			Hostname: new FormControl<string | null | undefined>(undefined),
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			EC2InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20)]),
+			Hostname: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
 		});
 
 	}
 
 	export interface PutTraceSegmentsRequest {
+
+		/** Required */
 		TraceSegmentDocuments: Array<string>;
 	}
 	export interface PutTraceSegmentsRequestFormProperties {
@@ -1736,65 +2105,119 @@ export namespace MyNS {
 
 	/** A document specifying changes to a sampling rule's configuration. */
 	export interface SamplingRuleUpdate {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		RuleName?: string | null;
 		RuleARN?: string | null;
+
+		/** Max length: 500 */
 		ResourceARN?: string | null;
 		Priority?: number | null;
 		FixedRate?: number | null;
 		ReservoirSize?: number | null;
+
+		/** Max length: 64 */
 		Host?: string | null;
+
+		/** Max length: 64 */
 		ServiceName?: string | null;
+
+		/** Max length: 64 */
 		ServiceType?: string | null;
+
+		/** Max length: 10 */
 		HTTPMethod?: string | null;
+
+		/** Max length: 128 */
 		URLPath?: string | null;
 		Attributes?: AttributeMap;
 	}
 
 	/** A document specifying changes to a sampling rule's configuration. */
 	export interface SamplingRuleUpdateFormProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		RuleName: FormControl<string | null | undefined>,
 		RuleARN: FormControl<string | null | undefined>,
+
+		/** Max length: 500 */
 		ResourceARN: FormControl<string | null | undefined>,
 		Priority: FormControl<number | null | undefined>,
 		FixedRate: FormControl<number | null | undefined>,
 		ReservoirSize: FormControl<number | null | undefined>,
+
+		/** Max length: 64 */
 		Host: FormControl<string | null | undefined>,
+
+		/** Max length: 64 */
 		ServiceName: FormControl<string | null | undefined>,
+
+		/** Max length: 64 */
 		ServiceType: FormControl<string | null | undefined>,
+
+		/** Max length: 10 */
 		HTTPMethod: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		URLPath: FormControl<string | null | undefined>,
 	}
 	export function CreateSamplingRuleUpdateFormGroup() {
 		return new FormGroup<SamplingRuleUpdateFormProperties>({
-			RuleName: new FormControl<string | null | undefined>(undefined),
+			RuleName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 			RuleARN: new FormControl<string | null | undefined>(undefined),
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
 			Priority: new FormControl<number | null | undefined>(undefined),
 			FixedRate: new FormControl<number | null | undefined>(undefined),
 			ReservoirSize: new FormControl<number | null | undefined>(undefined),
-			Host: new FormControl<string | null | undefined>(undefined),
-			ServiceName: new FormControl<string | null | undefined>(undefined),
-			ServiceType: new FormControl<string | null | undefined>(undefined),
-			HTTPMethod: new FormControl<string | null | undefined>(undefined),
-			URLPath: new FormControl<string | null | undefined>(undefined),
+			Host: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			ServiceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			ServiceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			HTTPMethod: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10)]),
+			URLPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 		});
 
 	}
 
 	export interface UpdateGroupRequest {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		GroupName?: string | null;
+
+		/**
+		 * Max length: 400
+		 * Min length: 1
+		 */
 		GroupARN?: string | null;
 		FilterExpression?: string | null;
 	}
 	export interface UpdateGroupRequestFormProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		GroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 400
+		 * Min length: 1
+		 */
 		GroupARN: FormControl<string | null | undefined>,
 		FilterExpression: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateGroupRequestFormGroup() {
 		return new FormGroup<UpdateGroupRequestFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			GroupARN: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			GroupARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(400), Validators.minLength(1)]),
 			FilterExpression: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2061,7 +2484,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateGroupPostBodyFormGroup() {
 		return new FormGroup<CreateGroupPostBodyFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
 			FilterExpression: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2084,48 +2507,110 @@ export namespace MyNS {
 	}
 
 	export interface CreateSamplingRulePostBodySamplingRule {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		RuleName?: string | null;
 		RuleARN?: string | null;
+
+		/** Max length: 500 */
 		ResourceARN?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 9999
+		 */
 		Priority?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1
+		 */
 		FixedRate?: number | null;
+
+		/** Minimum: 0 */
 		ReservoirSize?: number | null;
+
+		/** Max length: 64 */
 		ServiceName?: string | null;
+
+		/** Max length: 64 */
 		ServiceType?: string | null;
+
+		/** Max length: 64 */
 		Host?: string | null;
+
+		/** Max length: 10 */
 		HTTPMethod?: string | null;
+
+		/** Max length: 128 */
 		URLPath?: string | null;
+
+		/** Minimum: 1 */
 		Version?: number | null;
 		Attributes?: AttributeMap;
 	}
 	export interface CreateSamplingRulePostBodySamplingRuleFormProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		RuleName: FormControl<string | null | undefined>,
 		RuleARN: FormControl<string | null | undefined>,
+
+		/** Max length: 500 */
 		ResourceARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 9999
+		 */
 		Priority: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 1
+		 */
 		FixedRate: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		ReservoirSize: FormControl<number | null | undefined>,
+
+		/** Max length: 64 */
 		ServiceName: FormControl<string | null | undefined>,
+
+		/** Max length: 64 */
 		ServiceType: FormControl<string | null | undefined>,
+
+		/** Max length: 64 */
 		Host: FormControl<string | null | undefined>,
+
+		/** Max length: 10 */
 		HTTPMethod: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		URLPath: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		Version: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateSamplingRulePostBodySamplingRuleFormGroup() {
 		return new FormGroup<CreateSamplingRulePostBodySamplingRuleFormProperties>({
-			RuleName: new FormControl<string | null | undefined>(undefined),
+			RuleName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 			RuleARN: new FormControl<string | null | undefined>(undefined),
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
-			Priority: new FormControl<number | null | undefined>(undefined),
-			FixedRate: new FormControl<number | null | undefined>(undefined),
-			ReservoirSize: new FormControl<number | null | undefined>(undefined),
-			ServiceName: new FormControl<string | null | undefined>(undefined),
-			ServiceType: new FormControl<string | null | undefined>(undefined),
-			Host: new FormControl<string | null | undefined>(undefined),
-			HTTPMethod: new FormControl<string | null | undefined>(undefined),
-			URLPath: new FormControl<string | null | undefined>(undefined),
-			Version: new FormControl<number | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
+			Priority: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(9999)]),
+			FixedRate: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1)]),
+			ReservoirSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			ServiceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			ServiceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			Host: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			HTTPMethod: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10)]),
+			URLPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			Version: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
 	}
@@ -2164,8 +2649,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteGroupPostBodyFormGroup() {
 		return new FormGroup<DeleteGroupPostBodyFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			GroupARN: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			GroupARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(400), Validators.minLength(1)]),
 		});
 
 	}
@@ -2228,8 +2713,8 @@ export namespace MyNS {
 	}
 	export function CreateGetGroupPostBodyFormGroup() {
 		return new FormGroup<GetGroupPostBodyFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			GroupARN: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			GroupARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(400), Validators.minLength(1)]),
 		});
 
 	}
@@ -2254,7 +2739,7 @@ export namespace MyNS {
 	}
 	export function CreateGetGroupsPostBodyFormGroup() {
 		return new FormGroup<GetGroupsPostBodyFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 		});
 
 	}
@@ -2374,10 +2859,10 @@ export namespace MyNS {
 	}
 	export function CreateGetServiceGraphPostBodyFormGroup() {
 		return new FormGroup<GetServiceGraphPostBodyFormProperties>({
-			StartTime: new FormControl<Date | null | undefined>(undefined),
-			EndTime: new FormControl<Date | null | undefined>(undefined),
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			GroupARN: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			EndTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			GroupARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(400), Validators.minLength(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2467,11 +2952,11 @@ export namespace MyNS {
 	}
 	export function CreateGetTimeSeriesServiceStatisticsPostBodyFormGroup() {
 		return new FormGroup<GetTimeSeriesServiceStatisticsPostBodyFormProperties>({
-			StartTime: new FormControl<Date | null | undefined>(undefined),
-			EndTime: new FormControl<Date | null | undefined>(undefined),
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			GroupARN: new FormControl<string | null | undefined>(undefined),
-			EntitySelectorExpression: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			EndTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			GroupARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(400), Validators.minLength(1)]),
+			EntitySelectorExpression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(1)]),
 			Period: new FormControl<number | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2558,8 +3043,8 @@ export namespace MyNS {
 	}
 	export function CreateGetTraceSummariesPostBodyFormGroup() {
 		return new FormGroup<GetTraceSummariesPostBodyFormProperties>({
-			StartTime: new FormControl<Date | null | undefined>(undefined),
-			EndTime: new FormControl<Date | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			EndTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			TimeRangeType: new FormControl<TimeRangeType | null | undefined>(undefined),
 			Sampling: new FormControl<boolean | null | undefined>(undefined),
 			FilterExpression: new FormControl<string | null | undefined>(undefined),
@@ -2616,8 +3101,8 @@ export namespace MyNS {
 	}
 	export function CreatePutEncryptionConfigPostBodyFormGroup() {
 		return new FormGroup<PutEncryptionConfigPostBodyFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			Type: new FormControl<EncryptionConfigType | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3000), Validators.minLength(1)]),
+			Type: new FormControl<EncryptionConfigType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2670,9 +3155,9 @@ export namespace MyNS {
 	}
 	export function CreatePutTelemetryRecordsPostBodyFormGroup() {
 		return new FormGroup<PutTelemetryRecordsPostBodyFormProperties>({
-			EC2InstanceId: new FormControl<string | null | undefined>(undefined),
-			Hostname: new FormControl<string | null | undefined>(undefined),
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			EC2InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20)]),
+			Hostname: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
 		});
 
 	}
@@ -2733,8 +3218,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateGroupPostBodyFormGroup() {
 		return new FormGroup<UpdateGroupPostBodyFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			GroupARN: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			GroupARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(400), Validators.minLength(1)]),
 			FilterExpression: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2757,45 +3242,79 @@ export namespace MyNS {
 	}
 
 	export interface UpdateSamplingRulePostBodySamplingRuleUpdate {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		RuleName?: string | null;
 		RuleARN?: string | null;
+
+		/** Max length: 500 */
 		ResourceARN?: string | null;
 		Priority?: number | null;
 		FixedRate?: number | null;
 		ReservoirSize?: number | null;
+
+		/** Max length: 64 */
 		Host?: string | null;
+
+		/** Max length: 64 */
 		ServiceName?: string | null;
+
+		/** Max length: 64 */
 		ServiceType?: string | null;
+
+		/** Max length: 10 */
 		HTTPMethod?: string | null;
+
+		/** Max length: 128 */
 		URLPath?: string | null;
 		Attributes?: AttributeMap;
 	}
 	export interface UpdateSamplingRulePostBodySamplingRuleUpdateFormProperties {
+
+		/**
+		 * Max length: 32
+		 * Min length: 1
+		 */
 		RuleName: FormControl<string | null | undefined>,
 		RuleARN: FormControl<string | null | undefined>,
+
+		/** Max length: 500 */
 		ResourceARN: FormControl<string | null | undefined>,
 		Priority: FormControl<number | null | undefined>,
 		FixedRate: FormControl<number | null | undefined>,
 		ReservoirSize: FormControl<number | null | undefined>,
+
+		/** Max length: 64 */
 		Host: FormControl<string | null | undefined>,
+
+		/** Max length: 64 */
 		ServiceName: FormControl<string | null | undefined>,
+
+		/** Max length: 64 */
 		ServiceType: FormControl<string | null | undefined>,
+
+		/** Max length: 10 */
 		HTTPMethod: FormControl<string | null | undefined>,
+
+		/** Max length: 128 */
 		URLPath: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateSamplingRulePostBodySamplingRuleUpdateFormGroup() {
 		return new FormGroup<UpdateSamplingRulePostBodySamplingRuleUpdateFormProperties>({
-			RuleName: new FormControl<string | null | undefined>(undefined),
+			RuleName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 			RuleARN: new FormControl<string | null | undefined>(undefined),
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
 			Priority: new FormControl<number | null | undefined>(undefined),
 			FixedRate: new FormControl<number | null | undefined>(undefined),
 			ReservoirSize: new FormControl<number | null | undefined>(undefined),
-			Host: new FormControl<string | null | undefined>(undefined),
-			ServiceName: new FormControl<string | null | undefined>(undefined),
-			ServiceType: new FormControl<string | null | undefined>(undefined),
-			HTTPMethod: new FormControl<string | null | undefined>(undefined),
-			URLPath: new FormControl<string | null | undefined>(undefined),
+			Host: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			ServiceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			ServiceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			HTTPMethod: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10)]),
+			URLPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 		});
 
 	}

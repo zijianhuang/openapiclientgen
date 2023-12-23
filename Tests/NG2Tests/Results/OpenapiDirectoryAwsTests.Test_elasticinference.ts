@@ -4,6 +4,11 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface DescribeAcceleratorOfferingsResponse {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		acceleratorTypeOfferings?: Array<AcceleratorTypeOffering>;
 	}
 	export interface DescribeAcceleratorOfferingsResponseFormProperties {
@@ -17,22 +22,54 @@ export namespace MyNS {
 
 	/**  The offering for an Elastic Inference Accelerator type.  */
 	export interface AcceleratorTypeOffering {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^\S+$
+		 */
 		acceleratorType?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		locationType?: AcceleratorTypeOfferingLocationType | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		location?: string | null;
 	}
 
 	/**  The offering for an Elastic Inference Accelerator type.  */
 	export interface AcceleratorTypeOfferingFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^\S+$
+		 */
 		acceleratorType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		locationType: FormControl<AcceleratorTypeOfferingLocationType | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		location: FormControl<string | null | undefined>,
 	}
 	export function CreateAcceleratorTypeOfferingFormGroup() {
 		return new FormGroup<AcceleratorTypeOfferingFormProperties>({
-			acceleratorType: new FormControl<string | null | undefined>(undefined),
-			locationType: new FormControl<AcceleratorTypeOfferingLocationType | null | undefined>(undefined),
-			location: new FormControl<string | null | undefined>(undefined),
+			acceleratorType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			locationType: new FormControl<AcceleratorTypeOfferingLocationType | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			location: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -70,6 +107,11 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAcceleratorTypesResponse {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		acceleratorTypes?: Array<AcceleratorType>;
 	}
 	export interface DescribeAcceleratorTypesResponseFormProperties {
@@ -83,20 +125,37 @@ export namespace MyNS {
 
 	/**  The details of an Elastic Inference Accelerator type.  */
 	export interface AcceleratorType {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^\S+$
+		 */
 		acceleratorTypeName?: string | null;
 
 		/** The memory information of an Elastic Inference Accelerator type. */
 		memoryInfo?: MemoryInfo;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		throughputInfo?: Array<KeyValuePair>;
 	}
 
 	/**  The details of an Elastic Inference Accelerator type.  */
 	export interface AcceleratorTypeFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^\S+$
+		 */
 		acceleratorTypeName: FormControl<string | null | undefined>,
 	}
 	export function CreateAcceleratorTypeFormGroup() {
 		return new FormGroup<AcceleratorTypeFormProperties>({
-			acceleratorTypeName: new FormControl<string | null | undefined>(undefined),
+			acceleratorTypeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -121,18 +180,30 @@ export namespace MyNS {
 
 	/**  A throughput entry for an Elastic Inference Accelerator type.  */
 	export interface KeyValuePair {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^\S+$
+		 */
 		key?: string | null;
 		value?: number | null;
 	}
 
 	/**  A throughput entry for an Elastic Inference Accelerator type.  */
 	export interface KeyValuePairFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^\S+$
+		 */
 		key: FormControl<string | null | undefined>,
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateKeyValuePairFormGroup() {
 		return new FormGroup<KeyValuePairFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			value: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -140,14 +211,26 @@ export namespace MyNS {
 
 	export interface DescribeAcceleratorsResponse {
 		acceleratorSet?: Array<ElasticInferenceAccelerator>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^[A-Za-z0-9+/]+={0,2}$
+		 */
 		nextToken?: string | null;
 	}
 	export interface DescribeAcceleratorsResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^[A-Za-z0-9+/]+={0,2}$
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeAcceleratorsResponseFormGroup() {
 		return new FormGroup<DescribeAcceleratorsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -158,25 +241,69 @@ export namespace MyNS {
 
 		/** The health details of an Elastic Inference Accelerator. */
 		acceleratorHealth?: ElasticInferenceAcceleratorHealth;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^\S+$
+		 */
 		acceleratorType?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^eia-[0-9a-f]+$
+		 */
 		acceleratorId?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		availabilityZone?: string | null;
+
+		/**
+		 * Max length: 1283
+		 * Min length: 1
+		 */
 		attachedResource?: string | null;
 	}
 
 	/**  The details of an Elastic Inference Accelerator.  */
 	export interface ElasticInferenceAcceleratorFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^\S+$
+		 */
 		acceleratorType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^eia-[0-9a-f]+$
+		 */
 		acceleratorId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		availabilityZone: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1283
+		 * Min length: 1
+		 */
 		attachedResource: FormControl<string | null | undefined>,
 	}
 	export function CreateElasticInferenceAcceleratorFormGroup() {
 		return new FormGroup<ElasticInferenceAcceleratorFormProperties>({
-			acceleratorType: new FormControl<string | null | undefined>(undefined),
-			acceleratorId: new FormControl<string | null | undefined>(undefined),
-			availabilityZone: new FormControl<string | null | undefined>(undefined),
-			attachedResource: new FormControl<string | null | undefined>(undefined),
+			acceleratorType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			acceleratorId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			availabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			attachedResource: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1283), Validators.minLength(1)]),
 		});
 
 	}
@@ -184,16 +311,26 @@ export namespace MyNS {
 
 	/**  The health details of an Elastic Inference Accelerator.  */
 	export interface ElasticInferenceAcceleratorHealth {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		status?: string | null;
 	}
 
 	/**  The health details of an Elastic Inference Accelerator.  */
 	export interface ElasticInferenceAcceleratorHealthFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		status: FormControl<string | null | undefined>,
 	}
 	export function CreateElasticInferenceAcceleratorHealthFormGroup() {
 		return new FormGroup<ElasticInferenceAcceleratorHealthFormProperties>({
-			status: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -201,17 +338,34 @@ export namespace MyNS {
 
 	/**  A filter expression for the Elastic Inference Accelerator list.  */
 	export interface Filter {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^\S+$
+		 */
 		name?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		values?: Array<string>;
 	}
 
 	/**  A filter expression for the Elastic Inference Accelerator list.  */
 	export interface FilterFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^\S+$
+		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateFilterFormGroup() {
 		return new FormGroup<FilterFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -260,15 +414,32 @@ export namespace MyNS {
 	export enum LocationType { region = 0, availability_zone = 1, availability_zone_id = 2 }
 
 	export interface DescribeAcceleratorOfferingsRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		locationType: DescribeAcceleratorOfferingsRequestLocationType;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		acceleratorTypes?: Array<string>;
 	}
 	export interface DescribeAcceleratorOfferingsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
 		locationType: FormControl<DescribeAcceleratorOfferingsRequestLocationType | null | undefined>,
 	}
 	export function CreateDescribeAcceleratorOfferingsRequestFormGroup() {
 		return new FormGroup<DescribeAcceleratorOfferingsRequestFormProperties>({
-			locationType: new FormControl<DescribeAcceleratorOfferingsRequestLocationType | null | undefined>(undefined),
+			locationType: new FormControl<DescribeAcceleratorOfferingsRequestLocationType | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -286,19 +457,51 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAcceleratorsRequest {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 1000
+		 */
 		acceleratorIds?: Array<string>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		filters?: Array<Filter>;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^[A-Za-z0-9+/]+={0,2}$
+		 */
 		nextToken?: string | null;
 	}
 	export interface DescribeAcceleratorsRequestFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^[A-Za-z0-9+/]+={0,2}$
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeAcceleratorsRequestFormGroup() {
 		return new FormGroup<DescribeAcceleratorsRequestFormProperties>({
-			maxResults: new FormControl<number | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -314,6 +517,8 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/** Required */
 		tags: TagMap;
 	}
 	export interface TagResourceRequestFormProperties {
@@ -429,7 +634,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeAcceleratorOfferingsPostBodyFormGroup() {
 		return new FormGroup<DescribeAcceleratorOfferingsPostBodyFormProperties>({
-			locationType: new FormControl<DescribeAcceleratorOfferingsPostBodyLocationType | null | undefined>(undefined),
+			locationType: new FormControl<DescribeAcceleratorOfferingsPostBodyLocationType | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -486,8 +691,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeAcceleratorsPostBodyFormGroup() {
 		return new FormGroup<DescribeAcceleratorsPostBodyFormProperties>({
-			maxResults: new FormControl<number | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -510,7 +715,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

@@ -20,17 +20,23 @@ export namespace MyNS {
 
 	/** Associates a set of tags with an AWS DMS resource. */
 	export interface AddTagsToResourceMessage {
+
+		/** Required */
 		ResourceArn: string;
+
+		/** Required */
 		Tags: Array<Tag>;
 	}
 
 	/** Associates a set of tags with an AWS DMS resource. */
 	export interface AddTagsToResourceMessageFormProperties {
+
+		/** Required */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateAddTagsToResourceMessageFormGroup() {
 		return new FormGroup<AddTagsToResourceMessageFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -135,22 +141,34 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ApplyPendingMaintenanceActionMessage {
+
+		/** Required */
 		ReplicationInstanceArn: string;
+
+		/** Required */
 		ApplyAction: string;
+
+		/** Required */
 		OptInType: string;
 	}
 
 	/** <p/> */
 	export interface ApplyPendingMaintenanceActionMessageFormProperties {
+
+		/** Required */
 		ReplicationInstanceArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		ApplyAction: FormControl<string | null | undefined>,
+
+		/** Required */
 		OptInType: FormControl<string | null | undefined>,
 	}
 	export function CreateApplyPendingMaintenanceActionMessageFormGroup() {
 		return new FormGroup<ApplyPendingMaintenanceActionMessageFormProperties>({
-			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined),
-			ApplyAction: new FormControl<string | null | undefined>(undefined),
-			OptInType: new FormControl<string | null | undefined>(undefined),
+			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ApplyAction: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			OptInType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -271,16 +289,20 @@ export namespace MyNS {
 
 	/** Provides the Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role used to define an Amazon DynamoDB target endpoint. */
 	export interface DynamoDbSettings {
+
+		/** Required */
 		ServiceAccessRoleArn: string;
 	}
 
 	/** Provides the Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role used to define an Amazon DynamoDB target endpoint. */
 	export interface DynamoDbSettingsFormProperties {
+
+		/** Required */
 		ServiceAccessRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDynamoDbSettingsFormGroup() {
 		return new FormGroup<DynamoDbSettingsFormProperties>({
-			ServiceAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			ServiceAccessRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -511,7 +533,11 @@ export namespace MyNS {
 
 	/** Provides information that defines an Elasticsearch endpoint. */
 	export interface ElasticsearchSettings {
+
+		/** Required */
 		ServiceAccessRoleArn: string;
+
+		/** Required */
 		EndpointUri: string;
 		FullLoadErrorPercentage?: number | null;
 		ErrorRetryDuration?: number | null;
@@ -519,15 +545,19 @@ export namespace MyNS {
 
 	/** Provides information that defines an Elasticsearch endpoint. */
 	export interface ElasticsearchSettingsFormProperties {
+
+		/** Required */
 		ServiceAccessRoleArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		EndpointUri: FormControl<string | null | undefined>,
 		FullLoadErrorPercentage: FormControl<number | null | undefined>,
 		ErrorRetryDuration: FormControl<number | null | undefined>,
 	}
 	export function CreateElasticsearchSettingsFormGroup() {
 		return new FormGroup<ElasticsearchSettingsFormProperties>({
-			ServiceAccessRoleArn: new FormControl<string | null | undefined>(undefined),
-			EndpointUri: new FormControl<string | null | undefined>(undefined),
+			ServiceAccessRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			EndpointUri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			FullLoadErrorPercentage: new FormControl<number | null | undefined>(undefined),
 			ErrorRetryDuration: new FormControl<number | null | undefined>(undefined),
 		});
@@ -538,7 +568,11 @@ export namespace MyNS {
 	/** Provides information that defines an Amazon Neptune endpoint. */
 	export interface NeptuneSettings {
 		ServiceAccessRoleArn?: string | null;
+
+		/** Required */
 		S3BucketName: string;
+
+		/** Required */
 		S3BucketFolder: string;
 		ErrorRetryDuration?: number | null;
 		MaxFileSize?: number | null;
@@ -549,7 +583,11 @@ export namespace MyNS {
 	/** Provides information that defines an Amazon Neptune endpoint. */
 	export interface NeptuneSettingsFormProperties {
 		ServiceAccessRoleArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		S3BucketName: FormControl<string | null | undefined>,
+
+		/** Required */
 		S3BucketFolder: FormControl<string | null | undefined>,
 		ErrorRetryDuration: FormControl<number | null | undefined>,
 		MaxFileSize: FormControl<number | null | undefined>,
@@ -559,8 +597,8 @@ export namespace MyNS {
 	export function CreateNeptuneSettingsFormGroup() {
 		return new FormGroup<NeptuneSettingsFormProperties>({
 			ServiceAccessRoleArn: new FormControl<string | null | undefined>(undefined),
-			S3BucketName: new FormControl<string | null | undefined>(undefined),
-			S3BucketFolder: new FormControl<string | null | undefined>(undefined),
+			S3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			S3BucketFolder: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ErrorRetryDuration: new FormControl<number | null | undefined>(undefined),
 			MaxFileSize: new FormControl<number | null | undefined>(undefined),
 			MaxRetryCount: new FormControl<number | null | undefined>(undefined),
@@ -663,8 +701,14 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateEndpointMessage {
+
+		/** Required */
 		EndpointIdentifier: string;
+
+		/** Required */
 		EndpointType: EndpointEndpointType;
+
+		/** Required */
 		EngineName: string;
 		Username?: string | null;
 		Password?: string | null;
@@ -709,8 +753,14 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateEndpointMessageFormProperties {
+
+		/** Required */
 		EndpointIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		EndpointType: FormControl<EndpointEndpointType | null | undefined>,
+
+		/** Required */
 		EngineName: FormControl<string | null | undefined>,
 		Username: FormControl<string | null | undefined>,
 		Password: FormControl<string | null | undefined>,
@@ -726,9 +776,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateEndpointMessageFormGroup() {
 		return new FormGroup<CreateEndpointMessageFormProperties>({
-			EndpointIdentifier: new FormControl<string | null | undefined>(undefined),
-			EndpointType: new FormControl<EndpointEndpointType | null | undefined>(undefined),
-			EngineName: new FormControl<string | null | undefined>(undefined),
+			EndpointIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			EndpointType: new FormControl<EndpointEndpointType | null | undefined>(undefined, [Validators.required]),
+			EngineName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Username: new FormControl<string | null | undefined>(undefined),
 			Password: new FormControl<string | null | undefined>(undefined),
 			ServerName: new FormControl<string | null | undefined>(undefined),
@@ -853,7 +903,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateEventSubscriptionMessage {
+
+		/** Required */
 		SubscriptionName: string;
+
+		/** Required */
 		SnsTopicArn: string;
 		SourceType?: string | null;
 		EventCategories?: Array<string>;
@@ -864,15 +918,19 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateEventSubscriptionMessageFormProperties {
+
+		/** Required */
 		SubscriptionName: FormControl<string | null | undefined>,
+
+		/** Required */
 		SnsTopicArn: FormControl<string | null | undefined>,
 		SourceType: FormControl<string | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateCreateEventSubscriptionMessageFormGroup() {
 		return new FormGroup<CreateEventSubscriptionMessageFormProperties>({
-			SubscriptionName: new FormControl<string | null | undefined>(undefined),
-			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
+			SubscriptionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SourceType: new FormControl<string | null | undefined>(undefined),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -1159,8 +1217,12 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateReplicationInstanceMessage {
+
+		/** Required */
 		ReplicationInstanceIdentifier: string;
 		AllocatedStorage?: number | null;
+
+		/** Required */
 		ReplicationInstanceClass: string;
 		VpcSecurityGroupIds?: Array<string>;
 		AvailabilityZone?: string | null;
@@ -1177,8 +1239,12 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateReplicationInstanceMessageFormProperties {
+
+		/** Required */
 		ReplicationInstanceIdentifier: FormControl<string | null | undefined>,
 		AllocatedStorage: FormControl<number | null | undefined>,
+
+		/** Required */
 		ReplicationInstanceClass: FormControl<string | null | undefined>,
 		AvailabilityZone: FormControl<string | null | undefined>,
 		ReplicationSubnetGroupIdentifier: FormControl<string | null | undefined>,
@@ -1192,9 +1258,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateReplicationInstanceMessageFormGroup() {
 		return new FormGroup<CreateReplicationInstanceMessageFormProperties>({
-			ReplicationInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			ReplicationInstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			AllocatedStorage: new FormControl<number | null | undefined>(undefined),
-			ReplicationInstanceClass: new FormControl<string | null | undefined>(undefined),
+			ReplicationInstanceClass: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
 			ReplicationSubnetGroupIdentifier: new FormControl<string | null | undefined>(undefined),
 			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
@@ -1268,21 +1334,31 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateReplicationSubnetGroupMessage {
+
+		/** Required */
 		ReplicationSubnetGroupIdentifier: string;
+
+		/** Required */
 		ReplicationSubnetGroupDescription: string;
+
+		/** Required */
 		SubnetIds: Array<string>;
 		Tags?: Array<Tag>;
 	}
 
 	/** <p/> */
 	export interface CreateReplicationSubnetGroupMessageFormProperties {
+
+		/** Required */
 		ReplicationSubnetGroupIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		ReplicationSubnetGroupDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateReplicationSubnetGroupMessageFormGroup() {
 		return new FormGroup<CreateReplicationSubnetGroupMessageFormProperties>({
-			ReplicationSubnetGroupIdentifier: new FormControl<string | null | undefined>(undefined),
-			ReplicationSubnetGroupDescription: new FormControl<string | null | undefined>(undefined),
+			ReplicationSubnetGroupIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ReplicationSubnetGroupDescription: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1424,11 +1500,23 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateReplicationTaskMessage {
+
+		/** Required */
 		ReplicationTaskIdentifier: string;
+
+		/** Required */
 		SourceEndpointArn: string;
+
+		/** Required */
 		TargetEndpointArn: string;
+
+		/** Required */
 		ReplicationInstanceArn: string;
+
+		/** Required */
 		MigrationType: CreateReplicationTaskMessageMigrationType;
+
+		/** Required */
 		TableMappings: string;
 		ReplicationTaskSettings?: string | null;
 		CdcStartTime?: Date | null;
@@ -1440,11 +1528,23 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CreateReplicationTaskMessageFormProperties {
+
+		/** Required */
 		ReplicationTaskIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		SourceEndpointArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		TargetEndpointArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		ReplicationInstanceArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		MigrationType: FormControl<CreateReplicationTaskMessageMigrationType | null | undefined>,
+
+		/** Required */
 		TableMappings: FormControl<string | null | undefined>,
 		ReplicationTaskSettings: FormControl<string | null | undefined>,
 		CdcStartTime: FormControl<Date | null | undefined>,
@@ -1454,12 +1554,12 @@ export namespace MyNS {
 	}
 	export function CreateCreateReplicationTaskMessageFormGroup() {
 		return new FormGroup<CreateReplicationTaskMessageFormProperties>({
-			ReplicationTaskIdentifier: new FormControl<string | null | undefined>(undefined),
-			SourceEndpointArn: new FormControl<string | null | undefined>(undefined),
-			TargetEndpointArn: new FormControl<string | null | undefined>(undefined),
-			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined),
-			MigrationType: new FormControl<CreateReplicationTaskMessageMigrationType | null | undefined>(undefined),
-			TableMappings: new FormControl<string | null | undefined>(undefined),
+			ReplicationTaskIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SourceEndpointArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TargetEndpointArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MigrationType: new FormControl<CreateReplicationTaskMessageMigrationType | null | undefined>(undefined, [Validators.required]),
+			TableMappings: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ReplicationTaskSettings: new FormControl<string | null | undefined>(undefined),
 			CdcStartTime: new FormControl<Date | null | undefined>(undefined),
 			CdcStartPosition: new FormControl<string | null | undefined>(undefined),
@@ -1529,14 +1629,18 @@ export namespace MyNS {
 	}
 
 	export interface DeleteCertificateMessage {
+
+		/** Required */
 		CertificateArn: string;
 	}
 	export interface DeleteCertificateMessageFormProperties {
+
+		/** Required */
 		CertificateArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteCertificateMessageFormGroup() {
 		return new FormGroup<DeleteCertificateMessageFormProperties>({
-			CertificateArn: new FormControl<string | null | undefined>(undefined),
+			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1593,19 +1697,27 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteConnectionMessage {
+
+		/** Required */
 		EndpointArn: string;
+
+		/** Required */
 		ReplicationInstanceArn: string;
 	}
 
 	/** <p/> */
 	export interface DeleteConnectionMessageFormProperties {
+
+		/** Required */
 		EndpointArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		ReplicationInstanceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteConnectionMessageFormGroup() {
 		return new FormGroup<DeleteConnectionMessageFormProperties>({
-			EndpointArn: new FormControl<string | null | undefined>(undefined),
-			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined),
+			EndpointArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1630,16 +1742,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteEndpointMessage {
+
+		/** Required */
 		EndpointArn: string;
 	}
 
 	/** <p/> */
 	export interface DeleteEndpointMessageFormProperties {
+
+		/** Required */
 		EndpointArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteEndpointMessageFormGroup() {
 		return new FormGroup<DeleteEndpointMessageFormProperties>({
-			EndpointArn: new FormControl<string | null | undefined>(undefined),
+			EndpointArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1664,16 +1780,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteEventSubscriptionMessage {
+
+		/** Required */
 		SubscriptionName: string;
 	}
 
 	/** <p/> */
 	export interface DeleteEventSubscriptionMessageFormProperties {
+
+		/** Required */
 		SubscriptionName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteEventSubscriptionMessageFormGroup() {
 		return new FormGroup<DeleteEventSubscriptionMessageFormProperties>({
-			SubscriptionName: new FormControl<string | null | undefined>(undefined),
+			SubscriptionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1698,16 +1818,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteReplicationInstanceMessage {
+
+		/** Required */
 		ReplicationInstanceArn: string;
 	}
 
 	/** <p/> */
 	export interface DeleteReplicationInstanceMessageFormProperties {
+
+		/** Required */
 		ReplicationInstanceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteReplicationInstanceMessageFormGroup() {
 		return new FormGroup<DeleteReplicationInstanceMessageFormProperties>({
-			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined),
+			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1729,16 +1853,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteReplicationSubnetGroupMessage {
+
+		/** Required */
 		ReplicationSubnetGroupIdentifier: string;
 	}
 
 	/** <p/> */
 	export interface DeleteReplicationSubnetGroupMessageFormProperties {
+
+		/** Required */
 		ReplicationSubnetGroupIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteReplicationSubnetGroupMessageFormGroup() {
 		return new FormGroup<DeleteReplicationSubnetGroupMessageFormProperties>({
-			ReplicationSubnetGroupIdentifier: new FormControl<string | null | undefined>(undefined),
+			ReplicationSubnetGroupIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1763,16 +1891,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DeleteReplicationTaskMessage {
+
+		/** Required */
 		ReplicationTaskArn: string;
 	}
 
 	/** <p/> */
 	export interface DeleteReplicationTaskMessageFormProperties {
+
+		/** Required */
 		ReplicationTaskArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteReplicationTaskMessageFormGroup() {
 		return new FormGroup<DeleteReplicationTaskMessageFormProperties>({
-			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined),
+			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1866,17 +1998,23 @@ export namespace MyNS {
 
 	/** Identifies the name and value of a source filter object used to limit the number and type of records transferred from your source to your target. */
 	export interface Filter {
+
+		/** Required */
 		Name: string;
+
+		/** Required */
 		Values: Array<string>;
 	}
 
 	/** Identifies the name and value of a source filter object used to limit the number and type of records transferred from your source to your target. */
 	export interface FilterFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateFilterFormGroup() {
 		return new FormGroup<FilterFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2378,16 +2516,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeRefreshSchemasStatusMessage {
+
+		/** Required */
 		EndpointArn: string;
 	}
 
 	/** <p/> */
 	export interface DescribeRefreshSchemasStatusMessageFormProperties {
+
+		/** Required */
 		EndpointArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeRefreshSchemasStatusMessageFormGroup() {
 		return new FormGroup<DescribeRefreshSchemasStatusMessageFormProperties>({
-			EndpointArn: new FormControl<string | null | undefined>(undefined),
+			EndpointArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2433,18 +2575,22 @@ export namespace MyNS {
 	}
 
 	export interface DescribeReplicationInstanceTaskLogsMessage {
+
+		/** Required */
 		ReplicationInstanceArn: string;
 		MaxRecords?: number | null;
 		Marker?: string | null;
 	}
 	export interface DescribeReplicationInstanceTaskLogsMessageFormProperties {
+
+		/** Required */
 		ReplicationInstanceArn: FormControl<string | null | undefined>,
 		MaxRecords: FormControl<number | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeReplicationInstanceTaskLogsMessageFormGroup() {
 		return new FormGroup<DescribeReplicationInstanceTaskLogsMessageFormProperties>({
-			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined),
+			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			MaxRecords: new FormControl<number | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2671,6 +2817,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeSchemasMessage {
+
+		/** Required */
 		EndpointArn: string;
 		MaxRecords?: number | null;
 		Marker?: string | null;
@@ -2678,13 +2826,15 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeSchemasMessageFormProperties {
+
+		/** Required */
 		EndpointArn: FormControl<string | null | undefined>,
 		MaxRecords: FormControl<number | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeSchemasMessageFormGroup() {
 		return new FormGroup<DescribeSchemasMessageFormProperties>({
-			EndpointArn: new FormControl<string | null | undefined>(undefined),
+			EndpointArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			MaxRecords: new FormControl<number | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2786,6 +2936,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeTableStatisticsMessage {
+
+		/** Required */
 		ReplicationTaskArn: string;
 		MaxRecords?: number | null;
 		Marker?: string | null;
@@ -2794,13 +2946,15 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeTableStatisticsMessageFormProperties {
+
+		/** Required */
 		ReplicationTaskArn: FormControl<string | null | undefined>,
 		MaxRecords: FormControl<number | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeTableStatisticsMessageFormGroup() {
 		return new FormGroup<DescribeTableStatisticsMessageFormProperties>({
-			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined),
+			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			MaxRecords: new FormControl<number | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2821,19 +2975,23 @@ export namespace MyNS {
 	}
 
 	export interface ImportCertificateMessage {
+
+		/** Required */
 		CertificateIdentifier: string;
 		CertificatePem?: string | null;
 		CertificateWallet?: string | null;
 		Tags?: Array<Tag>;
 	}
 	export interface ImportCertificateMessageFormProperties {
+
+		/** Required */
 		CertificateIdentifier: FormControl<string | null | undefined>,
 		CertificatePem: FormControl<string | null | undefined>,
 		CertificateWallet: FormControl<string | null | undefined>,
 	}
 	export function CreateImportCertificateMessageFormGroup() {
 		return new FormGroup<ImportCertificateMessageFormProperties>({
-			CertificateIdentifier: new FormControl<string | null | undefined>(undefined),
+			CertificateIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			CertificatePem: new FormControl<string | null | undefined>(undefined),
 			CertificateWallet: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2868,16 +3026,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ListTagsForResourceMessage {
+
+		/** Required */
 		ResourceArn: string;
 	}
 
 	/** <p/> */
 	export interface ListTagsForResourceMessageFormProperties {
+
+		/** Required */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceMessageFormGroup() {
 		return new FormGroup<ListTagsForResourceMessageFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2902,6 +3064,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyEndpointMessage {
+
+		/** Required */
 		EndpointArn: string;
 		EndpointIdentifier?: string | null;
 		EndpointType?: EndpointEndpointType | null;
@@ -2947,6 +3111,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyEndpointMessageFormProperties {
+
+		/** Required */
 		EndpointArn: FormControl<string | null | undefined>,
 		EndpointIdentifier: FormControl<string | null | undefined>,
 		EndpointType: FormControl<EndpointEndpointType | null | undefined>,
@@ -2964,7 +3130,7 @@ export namespace MyNS {
 	}
 	export function CreateModifyEndpointMessageFormGroup() {
 		return new FormGroup<ModifyEndpointMessageFormProperties>({
-			EndpointArn: new FormControl<string | null | undefined>(undefined),
+			EndpointArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			EndpointIdentifier: new FormControl<string | null | undefined>(undefined),
 			EndpointType: new FormControl<EndpointEndpointType | null | undefined>(undefined),
 			EngineName: new FormControl<string | null | undefined>(undefined),
@@ -3004,6 +3170,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyEventSubscriptionMessage {
+
+		/** Required */
 		SubscriptionName: string;
 		SnsTopicArn?: string | null;
 		SourceType?: string | null;
@@ -3013,6 +3181,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyEventSubscriptionMessageFormProperties {
+
+		/** Required */
 		SubscriptionName: FormControl<string | null | undefined>,
 		SnsTopicArn: FormControl<string | null | undefined>,
 		SourceType: FormControl<string | null | undefined>,
@@ -3020,7 +3190,7 @@ export namespace MyNS {
 	}
 	export function CreateModifyEventSubscriptionMessageFormGroup() {
 		return new FormGroup<ModifyEventSubscriptionMessageFormProperties>({
-			SubscriptionName: new FormControl<string | null | undefined>(undefined),
+			SubscriptionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
 			SourceType: new FormControl<string | null | undefined>(undefined),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
@@ -3048,6 +3218,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyReplicationInstanceMessage {
+
+		/** Required */
 		ReplicationInstanceArn: string;
 		AllocatedStorage?: number | null;
 		ApplyImmediately?: boolean | null;
@@ -3063,6 +3235,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyReplicationInstanceMessageFormProperties {
+
+		/** Required */
 		ReplicationInstanceArn: FormControl<string | null | undefined>,
 		AllocatedStorage: FormControl<number | null | undefined>,
 		ApplyImmediately: FormControl<boolean | null | undefined>,
@@ -3076,7 +3250,7 @@ export namespace MyNS {
 	}
 	export function CreateModifyReplicationInstanceMessageFormGroup() {
 		return new FormGroup<ModifyReplicationInstanceMessageFormProperties>({
-			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined),
+			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			AllocatedStorage: new FormControl<number | null | undefined>(undefined),
 			ApplyImmediately: new FormControl<boolean | null | undefined>(undefined),
 			ReplicationInstanceClass: new FormControl<string | null | undefined>(undefined),
@@ -3120,19 +3294,25 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyReplicationSubnetGroupMessage {
+
+		/** Required */
 		ReplicationSubnetGroupIdentifier: string;
 		ReplicationSubnetGroupDescription?: string | null;
+
+		/** Required */
 		SubnetIds: Array<string>;
 	}
 
 	/** <p/> */
 	export interface ModifyReplicationSubnetGroupMessageFormProperties {
+
+		/** Required */
 		ReplicationSubnetGroupIdentifier: FormControl<string | null | undefined>,
 		ReplicationSubnetGroupDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyReplicationSubnetGroupMessageFormGroup() {
 		return new FormGroup<ModifyReplicationSubnetGroupMessageFormProperties>({
-			ReplicationSubnetGroupIdentifier: new FormControl<string | null | undefined>(undefined),
+			ReplicationSubnetGroupIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ReplicationSubnetGroupDescription: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3168,6 +3348,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyReplicationTaskMessage {
+
+		/** Required */
 		ReplicationTaskArn: string;
 		ReplicationTaskIdentifier?: string | null;
 		MigrationType?: ModifyReplicationTaskMessageMigrationType | null;
@@ -3181,6 +3363,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyReplicationTaskMessageFormProperties {
+
+		/** Required */
 		ReplicationTaskArn: FormControl<string | null | undefined>,
 		ReplicationTaskIdentifier: FormControl<string | null | undefined>,
 		MigrationType: FormControl<ModifyReplicationTaskMessageMigrationType | null | undefined>,
@@ -3193,7 +3377,7 @@ export namespace MyNS {
 	}
 	export function CreateModifyReplicationTaskMessageFormGroup() {
 		return new FormGroup<ModifyReplicationTaskMessageFormProperties>({
-			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined),
+			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ReplicationTaskIdentifier: new FormControl<string | null | undefined>(undefined),
 			MigrationType: new FormControl<ModifyReplicationTaskMessageMigrationType | null | undefined>(undefined),
 			TableMappings: new FormControl<string | null | undefined>(undefined),
@@ -3222,16 +3406,20 @@ export namespace MyNS {
 	}
 
 	export interface RebootReplicationInstanceMessage {
+
+		/** Required */
 		ReplicationInstanceArn: string;
 		ForceFailover?: boolean | null;
 	}
 	export interface RebootReplicationInstanceMessageFormProperties {
+
+		/** Required */
 		ReplicationInstanceArn: FormControl<string | null | undefined>,
 		ForceFailover: FormControl<boolean | null | undefined>,
 	}
 	export function CreateRebootReplicationInstanceMessageFormGroup() {
 		return new FormGroup<RebootReplicationInstanceMessageFormProperties>({
-			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined),
+			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ForceFailover: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -3257,19 +3445,27 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface RefreshSchemasMessage {
+
+		/** Required */
 		EndpointArn: string;
+
+		/** Required */
 		ReplicationInstanceArn: string;
 	}
 
 	/** <p/> */
 	export interface RefreshSchemasMessageFormProperties {
+
+		/** Required */
 		EndpointArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		ReplicationInstanceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateRefreshSchemasMessageFormGroup() {
 		return new FormGroup<RefreshSchemasMessageFormProperties>({
-			EndpointArn: new FormControl<string | null | undefined>(undefined),
-			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined),
+			EndpointArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3288,17 +3484,23 @@ export namespace MyNS {
 	}
 
 	export interface ReloadTablesMessage {
+
+		/** Required */
 		ReplicationTaskArn: string;
+
+		/** Required */
 		TablesToReload: Array<TableToReload>;
 		ReloadOption?: ReloadTablesMessageReloadOption | null;
 	}
 	export interface ReloadTablesMessageFormProperties {
+
+		/** Required */
 		ReplicationTaskArn: FormControl<string | null | undefined>,
 		ReloadOption: FormControl<ReloadTablesMessageReloadOption | null | undefined>,
 	}
 	export function CreateReloadTablesMessageFormGroup() {
 		return new FormGroup<ReloadTablesMessageFormProperties>({
-			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined),
+			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ReloadOption: new FormControl<ReloadTablesMessageReloadOption | null | undefined>(undefined),
 		});
 
@@ -3343,17 +3545,23 @@ export namespace MyNS {
 
 	/** Removes one or more tags from an AWS DMS resource. */
 	export interface RemoveTagsFromResourceMessage {
+
+		/** Required */
 		ResourceArn: string;
+
+		/** Required */
 		TagKeys: Array<string>;
 	}
 
 	/** Removes one or more tags from an AWS DMS resource. */
 	export interface RemoveTagsFromResourceMessageFormProperties {
+
+		/** Required */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveTagsFromResourceMessageFormGroup() {
 		return new FormGroup<RemoveTagsFromResourceMessageFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3378,7 +3586,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface StartReplicationTaskMessage {
+
+		/** Required */
 		ReplicationTaskArn: string;
+
+		/** Required */
 		StartReplicationTaskType: StartReplicationTaskMessageStartReplicationTaskType;
 		CdcStartTime?: Date | null;
 		CdcStartPosition?: string | null;
@@ -3387,7 +3599,11 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface StartReplicationTaskMessageFormProperties {
+
+		/** Required */
 		ReplicationTaskArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		StartReplicationTaskType: FormControl<StartReplicationTaskMessageStartReplicationTaskType | null | undefined>,
 		CdcStartTime: FormControl<Date | null | undefined>,
 		CdcStartPosition: FormControl<string | null | undefined>,
@@ -3395,8 +3611,8 @@ export namespace MyNS {
 	}
 	export function CreateStartReplicationTaskMessageFormGroup() {
 		return new FormGroup<StartReplicationTaskMessageFormProperties>({
-			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined),
-			StartReplicationTaskType: new FormControl<StartReplicationTaskMessageStartReplicationTaskType | null | undefined>(undefined),
+			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			StartReplicationTaskType: new FormControl<StartReplicationTaskMessageStartReplicationTaskType | null | undefined>(undefined, [Validators.required]),
 			CdcStartTime: new FormControl<Date | null | undefined>(undefined),
 			CdcStartPosition: new FormControl<string | null | undefined>(undefined),
 			CdcStopPosition: new FormControl<string | null | undefined>(undefined),
@@ -3426,16 +3642,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface StartReplicationTaskAssessmentMessage {
+
+		/** Required */
 		ReplicationTaskArn: string;
 	}
 
 	/** <p/> */
 	export interface StartReplicationTaskAssessmentMessageFormProperties {
+
+		/** Required */
 		ReplicationTaskArn: FormControl<string | null | undefined>,
 	}
 	export function CreateStartReplicationTaskAssessmentMessageFormGroup() {
 		return new FormGroup<StartReplicationTaskAssessmentMessageFormProperties>({
-			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined),
+			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3460,16 +3680,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface StopReplicationTaskMessage {
+
+		/** Required */
 		ReplicationTaskArn: string;
 	}
 
 	/** <p/> */
 	export interface StopReplicationTaskMessageFormProperties {
+
+		/** Required */
 		ReplicationTaskArn: FormControl<string | null | undefined>,
 	}
 	export function CreateStopReplicationTaskMessageFormGroup() {
 		return new FormGroup<StopReplicationTaskMessageFormProperties>({
-			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined),
+			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3494,19 +3718,27 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface TestConnectionMessage {
+
+		/** Required */
 		ReplicationInstanceArn: string;
+
+		/** Required */
 		EndpointArn: string;
 	}
 
 	/** <p/> */
 	export interface TestConnectionMessageFormProperties {
+
+		/** Required */
 		ReplicationInstanceArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		EndpointArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTestConnectionMessageFormGroup() {
 		return new FormGroup<TestConnectionMessageFormProperties>({
-			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined),
-			EndpointArn: new FormControl<string | null | undefined>(undefined),
+			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			EndpointArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

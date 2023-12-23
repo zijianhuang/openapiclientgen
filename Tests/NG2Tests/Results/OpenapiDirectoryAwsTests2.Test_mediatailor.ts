@@ -31,6 +31,8 @@ export namespace MyNS {
 		/** The configuration for pre-roll ad insertion. */
 		LivePreRollConfiguration?: LivePreRollConfiguration;
 		Name?: string | null;
+
+		/** Minimum: 1 */
 		PersonalizationThresholdSeconds?: number | null;
 		PlaybackConfigurationArn?: string | null;
 		PlaybackEndpointPrefix?: string | null;
@@ -43,6 +45,8 @@ export namespace MyNS {
 	export interface GetPlaybackConfigurationResponseFormProperties {
 		AdDecisionServerUrl: FormControl<string | null | undefined>,
 		Name: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		PersonalizationThresholdSeconds: FormControl<number | null | undefined>,
 		PlaybackConfigurationArn: FormControl<string | null | undefined>,
 		PlaybackEndpointPrefix: FormControl<string | null | undefined>,
@@ -55,7 +59,7 @@ export namespace MyNS {
 		return new FormGroup<GetPlaybackConfigurationResponseFormProperties>({
 			AdDecisionServerUrl: new FormControl<string | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined),
-			PersonalizationThresholdSeconds: new FormControl<number | null | undefined>(undefined),
+			PersonalizationThresholdSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			PlaybackConfigurationArn: new FormControl<string | null | undefined>(undefined),
 			PlaybackEndpointPrefix: new FormControl<string | null | undefined>(undefined),
 			SessionInitializationEndpointPrefix: new FormControl<string | null | undefined>(undefined),
@@ -217,6 +221,8 @@ export namespace MyNS {
 		SlateAdUrl?: string | null;
 		Tags?: __mapOf__string;
 		TranscodeProfileName?: string | null;
+
+		/** Minimum: 1 */
 		PersonalizationThresholdSeconds?: number | null;
 		VideoContentSourceUrl?: string | null;
 	}
@@ -230,6 +236,8 @@ export namespace MyNS {
 		SessionInitializationEndpointPrefix: FormControl<string | null | undefined>,
 		SlateAdUrl: FormControl<string | null | undefined>,
 		TranscodeProfileName: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		PersonalizationThresholdSeconds: FormControl<number | null | undefined>,
 		VideoContentSourceUrl: FormControl<string | null | undefined>,
 	}
@@ -242,7 +250,7 @@ export namespace MyNS {
 			SessionInitializationEndpointPrefix: new FormControl<string | null | undefined>(undefined),
 			SlateAdUrl: new FormControl<string | null | undefined>(undefined),
 			TranscodeProfileName: new FormControl<string | null | undefined>(undefined),
-			PersonalizationThresholdSeconds: new FormControl<number | null | undefined>(undefined),
+			PersonalizationThresholdSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			VideoContentSourceUrl: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -287,6 +295,8 @@ export namespace MyNS {
 		/** The configuration for pre-roll ad insertion. */
 		LivePreRollConfiguration?: LivePreRollConfiguration;
 		Name?: string | null;
+
+		/** Minimum: 1 */
 		PersonalizationThresholdSeconds?: number | null;
 		PlaybackConfigurationArn?: string | null;
 		PlaybackEndpointPrefix?: string | null;
@@ -299,6 +309,8 @@ export namespace MyNS {
 	export interface PutPlaybackConfigurationResponseFormProperties {
 		AdDecisionServerUrl: FormControl<string | null | undefined>,
 		Name: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		PersonalizationThresholdSeconds: FormControl<number | null | undefined>,
 		PlaybackConfigurationArn: FormControl<string | null | undefined>,
 		PlaybackEndpointPrefix: FormControl<string | null | undefined>,
@@ -311,7 +323,7 @@ export namespace MyNS {
 		return new FormGroup<PutPlaybackConfigurationResponseFormProperties>({
 			AdDecisionServerUrl: new FormControl<string | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined),
-			PersonalizationThresholdSeconds: new FormControl<number | null | undefined>(undefined),
+			PersonalizationThresholdSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			PlaybackConfigurationArn: new FormControl<string | null | undefined>(undefined),
 			PlaybackEndpointPrefix: new FormControl<string | null | undefined>(undefined),
 			SessionInitializationEndpointPrefix: new FormControl<string | null | undefined>(undefined),
@@ -401,6 +413,8 @@ export namespace MyNS {
 		/** The configuration for pre-roll ad insertion. */
 		LivePreRollConfiguration?: LivePreRollConfiguration;
 		Name?: string | null;
+
+		/** Minimum: 1 */
 		PersonalizationThresholdSeconds?: number | null;
 		SlateAdUrl?: string | null;
 		Tags?: __mapOf__string;
@@ -410,6 +424,8 @@ export namespace MyNS {
 	export interface PutPlaybackConfigurationRequestFormProperties {
 		AdDecisionServerUrl: FormControl<string | null | undefined>,
 		Name: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		PersonalizationThresholdSeconds: FormControl<number | null | undefined>,
 		SlateAdUrl: FormControl<string | null | undefined>,
 		TranscodeProfileName: FormControl<string | null | undefined>,
@@ -419,7 +435,7 @@ export namespace MyNS {
 		return new FormGroup<PutPlaybackConfigurationRequestFormProperties>({
 			AdDecisionServerUrl: new FormControl<string | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined),
-			PersonalizationThresholdSeconds: new FormControl<number | null | undefined>(undefined),
+			PersonalizationThresholdSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			SlateAdUrl: new FormControl<string | null | undefined>(undefined),
 			TranscodeProfileName: new FormControl<string | null | undefined>(undefined),
 			VideoContentSourceUrl: new FormControl<string | null | undefined>(undefined),
@@ -428,6 +444,8 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/** Required */
 		Tags: __mapOf__string;
 	}
 	export interface TagResourceRequestFormProperties {
@@ -551,7 +569,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -624,7 +642,7 @@ export namespace MyNS {
 		return new FormGroup<PutPlaybackConfigurationPutBodyFormProperties>({
 			AdDecisionServerUrl: new FormControl<string | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined),
-			PersonalizationThresholdSeconds: new FormControl<number | null | undefined>(undefined),
+			PersonalizationThresholdSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			SlateAdUrl: new FormControl<string | null | undefined>(undefined),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			TranscodeProfileName: new FormControl<string | null | undefined>(undefined),

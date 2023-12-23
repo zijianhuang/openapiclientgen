@@ -24,19 +24,27 @@ export namespace MyNS {
 
 	/** <p>An object that defines the tags that are associated with a resource. A <i>tag</i> is a label that you optionally define and associate with a resource. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as many as 50 tags.</p> <p>Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for a more specific tag value. A tag value acts as a descriptor within a tag key. A tag key can contain as many as 128 characters. A tag value can contain as many as 256 characters. The characters can be Unicode letters, digits, white space, or one of the following symbols: _ . : / = + -. The following additional restrictions apply to tags:</p> <ul> <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>For each associated resource, each tag key must be unique and it can have only one value.</p> </li> <li> <p>The <code>aws:</code> prefix is reserved for use by AWS; you can’t use it in any tag keys or values that you define. In addition, you can't edit or remove tag keys or values that use this prefix. Tags that use this prefix don’t count against the limit of 50 tags per resource.</p> </li> <li> <p>You can associate tags with public or shared resources, but the tags are available only for your AWS account, not any other accounts that share the resource. In addition, the tags are available only for resources that are located in the specified AWS Region for your AWS account.</p> </li> </ul> */
 	export interface Tag {
+
+		/** Required */
 		Key: string;
+
+		/** Required */
 		Value: string;
 	}
 
 	/** <p>An object that defines the tags that are associated with a resource. A <i>tag</i> is a label that you optionally define and associate with a resource. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as many as 50 tags.</p> <p>Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for a more specific tag value. A tag value acts as a descriptor within a tag key. A tag key can contain as many as 128 characters. A tag value can contain as many as 256 characters. The characters can be Unicode letters, digits, white space, or one of the following symbols: _ . : / = + -. The following additional restrictions apply to tags:</p> <ul> <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>For each associated resource, each tag key must be unique and it can have only one value.</p> </li> <li> <p>The <code>aws:</code> prefix is reserved for use by AWS; you can’t use it in any tag keys or values that you define. In addition, you can't edit or remove tag keys or values that use this prefix. Tags that use this prefix don’t count against the limit of 50 tags per resource.</p> </li> <li> <p>You can associate tags with public or shared resources, but the tags are available only for your AWS account, not any other accounts that share the resource. In addition, the tags are available only for resources that are located in the specified AWS Region for your AWS account.</p> </li> </ul> */
 	export interface TagFormProperties {
+
+		/** Required */
 		Key: FormControl<string | null | undefined>,
+
+		/** Required */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -126,19 +134,27 @@ export namespace MyNS {
 
 	/** An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift. */
 	export interface KinesisFirehoseDestination {
+
+		/** Required */
 		IamRoleArn: string;
+
+		/** Required */
 		DeliveryStreamArn: string;
 	}
 
 	/** An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift. */
 	export interface KinesisFirehoseDestinationFormProperties {
+
+		/** Required */
 		IamRoleArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		DeliveryStreamArn: FormControl<string | null | undefined>,
 	}
 	export function CreateKinesisFirehoseDestinationFormGroup() {
 		return new FormGroup<KinesisFirehoseDestinationFormProperties>({
-			IamRoleArn: new FormControl<string | null | undefined>(undefined),
-			DeliveryStreamArn: new FormControl<string | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DeliveryStreamArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -146,6 +162,8 @@ export namespace MyNS {
 
 	/** An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics. */
 	export interface CloudWatchDestination {
+
+		/** Required */
 		DimensionConfigurations: Array<CloudWatchDimensionConfiguration>;
 	}
 
@@ -204,9 +222,9 @@ export namespace MyNS {
 	}
 	export function CreateCloudWatchDimensionConfigurationFormGroup() {
 		return new FormGroup<CloudWatchDimensionConfigurationFormProperties>({
-			DimensionName: new FormControl<string | null | undefined>(undefined),
-			DimensionValueSource: new FormControl<CloudWatchDimensionConfigurationDimensionValueSource | null | undefined>(undefined),
-			DefaultDimensionValue: new FormControl<string | null | undefined>(undefined),
+			DimensionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DimensionValueSource: new FormControl<CloudWatchDimensionConfigurationDimensionValueSource | null | undefined>(undefined, [Validators.required]),
+			DefaultDimensionValue: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -216,16 +234,20 @@ export namespace MyNS {
 
 	/** An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur. */
 	export interface SnsDestination {
+
+		/** Required */
 		TopicArn: string;
 	}
 
 	/** An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur. */
 	export interface SnsDestinationFormProperties {
+
+		/** Required */
 		TopicArn: FormControl<string | null | undefined>,
 	}
 	export function CreateSnsDestinationFormGroup() {
 		return new FormGroup<SnsDestinationFormProperties>({
-			TopicArn: new FormControl<string | null | undefined>(undefined),
+			TopicArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -295,8 +317,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateDeliverabilityTestReportResponseFormGroup() {
 		return new FormGroup<CreateDeliverabilityTestReportResponseFormProperties>({
-			ReportId: new FormControl<string | null | undefined>(undefined),
-			DeliverabilityTestStatus: new FormControl<CreateDeliverabilityTestReportResponseDeliverabilityTestStatus | null | undefined>(undefined),
+			ReportId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DeliverabilityTestStatus: new FormControl<CreateDeliverabilityTestReportResponseDeliverabilityTestStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -332,18 +354,22 @@ export namespace MyNS {
 
 	/** An object that represents the content of the email, and optionally a character set specification. */
 	export interface Content {
+
+		/** Required */
 		Data: string;
 		Charset?: string | null;
 	}
 
 	/** An object that represents the content of the email, and optionally a character set specification. */
 	export interface ContentFormProperties {
+
+		/** Required */
 		Data: FormControl<string | null | undefined>,
 		Charset: FormControl<string | null | undefined>,
 	}
 	export function CreateContentFormGroup() {
 		return new FormGroup<ContentFormProperties>({
-			Data: new FormControl<string | null | undefined>(undefined),
+			Data: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Charset: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -391,7 +417,7 @@ export namespace MyNS {
 	}
 	export function CreateRawMessageFormGroup() {
 		return new FormGroup<RawMessageFormProperties>({
-			Data: new FormControl<string | null | undefined>(undefined),
+			Data: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -400,18 +426,22 @@ export namespace MyNS {
 	/** An object that defines the email template to use for an email message, and the values to use for any message variables in that template. An <i>email template</i> is a type of message template that contains content that you want to define, save, and reuse in email messages that you send. */
 	export interface Template {
 		TemplateArn?: string | null;
+
+		/** Max length: 262144 */
 		TemplateData?: string | null;
 	}
 
 	/** An object that defines the email template to use for an email message, and the values to use for any message variables in that template. An <i>email template</i> is a type of message template that contains content that you want to define, save, and reuse in email messages that you send. */
 	export interface TemplateFormProperties {
 		TemplateArn: FormControl<string | null | undefined>,
+
+		/** Max length: 262144 */
 		TemplateData: FormControl<string | null | undefined>,
 	}
 	export function CreateTemplateFormGroup() {
 		return new FormGroup<TemplateFormProperties>({
 			TemplateArn: new FormControl<string | null | undefined>(undefined),
-			TemplateData: new FormControl<string | null | undefined>(undefined),
+			TemplateData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(262144)]),
 		});
 
 	}
@@ -660,6 +690,8 @@ export namespace MyNS {
 
 	/** An object that contains information about blacklist events. */
 	export interface GetBlacklistReportsResponse {
+
+		/** Required */
 		BlacklistReport: BlacklistReport;
 	}
 
@@ -741,7 +773,7 @@ export namespace MyNS {
 	}
 	export function CreateTrackingOptionsFormGroup() {
 		return new FormGroup<TrackingOptionsFormProperties>({
-			CustomRedirectDomain: new FormControl<string | null | undefined>(undefined),
+			CustomRedirectDomain: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -855,6 +887,8 @@ export namespace MyNS {
 		 */
 		Name: string;
 		Enabled?: boolean | null;
+
+		/** Required */
 		MatchingEventTypes: Array<EventType>;
 
 		/** An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift. */
@@ -882,7 +916,7 @@ export namespace MyNS {
 	}
 	export function CreateEventDestinationFormGroup() {
 		return new FormGroup<EventDestinationFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -920,6 +954,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		WarmupStatus: DedicatedIpWarmupStatus;
+
+		/** Required */
 		WarmupPercentage: number;
 
 		/** The name of a dedicated IP pool. */
@@ -940,6 +976,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		WarmupStatus: FormControl<DedicatedIpWarmupStatus | null | undefined>,
+
+		/** Required */
 		WarmupPercentage: FormControl<number | null | undefined>,
 
 		/** The name of a dedicated IP pool. */
@@ -947,9 +985,9 @@ export namespace MyNS {
 	}
 	export function CreateDedicatedIpFormGroup() {
 		return new FormGroup<DedicatedIpFormProperties>({
-			Ip: new FormControl<string | null | undefined>(undefined),
-			WarmupStatus: new FormControl<DedicatedIpWarmupStatus | null | undefined>(undefined),
-			WarmupPercentage: new FormControl<number | null | undefined>(undefined),
+			Ip: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			WarmupStatus: new FormControl<DedicatedIpWarmupStatus | null | undefined>(undefined, [Validators.required]),
+			WarmupPercentage: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			PoolName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -980,6 +1018,8 @@ export namespace MyNS {
 
 	/** An object that shows the status of the Deliverability dashboard. */
 	export interface GetDeliverabilityDashboardOptionsResponse {
+
+		/** Required */
 		DashboardEnabled: boolean;
 		SubscriptionExpiryDate?: Date | null;
 
@@ -995,6 +1035,8 @@ export namespace MyNS {
 
 	/** An object that shows the status of the Deliverability dashboard. */
 	export interface GetDeliverabilityDashboardOptionsResponseFormProperties {
+
+		/** Required */
 		DashboardEnabled: FormControl<boolean | null | undefined>,
 		SubscriptionExpiryDate: FormControl<Date | null | undefined>,
 
@@ -1003,7 +1045,7 @@ export namespace MyNS {
 	}
 	export function CreateGetDeliverabilityDashboardOptionsResponseFormGroup() {
 		return new FormGroup<GetDeliverabilityDashboardOptionsResponseFormProperties>({
-			DashboardEnabled: new FormControl<boolean | null | undefined>(undefined),
+			DashboardEnabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			SubscriptionExpiryDate: new FormControl<Date | null | undefined>(undefined),
 			AccountStatus: new FormControl<GetDeliverabilityDashboardOptionsResponseAccountStatus | null | undefined>(undefined),
 		});
@@ -1068,6 +1110,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		OverallPlacement: PlacementStatistics;
+
+		/** Required */
 		IspPlacements: Array<IspPlacement>;
 
 		/** The body of an email message. */
@@ -1314,6 +1358,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		OverallVolume: OverallVolume;
+
+		/** Required */
 		DailyVolumes: Array<DailyVolume>;
 	}
 
@@ -1543,9 +1589,9 @@ export namespace MyNS {
 	}
 	export function CreateMailFromAttributesFormGroup() {
 		return new FormGroup<MailFromAttributesFormProperties>({
-			MailFromDomain: new FormControl<string | null | undefined>(undefined),
-			MailFromDomainStatus: new FormControl<MailFromAttributesMailFromDomainStatus | null | undefined>(undefined),
-			BehaviorOnMxFailure: new FormControl<MailFromAttributesBehaviorOnMxFailure | null | undefined>(undefined),
+			MailFromDomain: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MailFromDomainStatus: new FormControl<MailFromAttributesMailFromDomainStatus | null | undefined>(undefined, [Validators.required]),
+			BehaviorOnMxFailure: new FormControl<MailFromAttributesBehaviorOnMxFailure | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1577,6 +1623,8 @@ export namespace MyNS {
 
 	/** An object that contains information about an email address that is on the suppression list for your account. */
 	export interface SuppressedDestination {
+
+		/** Required */
 		EmailAddress: string;
 
 		/**
@@ -1584,6 +1632,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		Reason: SuppressionListReason;
+
+		/** Required */
 		LastUpdateTime: Date;
 
 		/** An object that contains additional attributes that are related an email address that is on the suppression list for your account. */
@@ -1592,6 +1642,8 @@ export namespace MyNS {
 
 	/** An object that contains information about an email address that is on the suppression list for your account. */
 	export interface SuppressedDestinationFormProperties {
+
+		/** Required */
 		EmailAddress: FormControl<string | null | undefined>,
 
 		/**
@@ -1599,13 +1651,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		Reason: FormControl<SuppressionListReason | null | undefined>,
+
+		/** Required */
 		LastUpdateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateSuppressedDestinationFormGroup() {
 		return new FormGroup<SuppressedDestinationFormProperties>({
-			EmailAddress: new FormControl<string | null | undefined>(undefined),
-			Reason: new FormControl<SuppressionListReason | null | undefined>(undefined),
-			LastUpdateTime: new FormControl<Date | null | undefined>(undefined),
+			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Reason: new FormControl<SuppressionListReason | null | undefined>(undefined, [Validators.required]),
+			LastUpdateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1671,6 +1725,8 @@ export namespace MyNS {
 
 	/** A list of the predictive inbox placement test reports that are available for your account, regardless of whether or not those tests are complete. */
 	export interface ListDeliverabilityTestReportsResponse {
+
+		/** Required */
 		DeliverabilityTestReports: Array<DeliverabilityTestReport>;
 		NextToken?: string | null;
 	}
@@ -1775,6 +1831,8 @@ export namespace MyNS {
 
 	/** A summary that describes the suppressed email address. */
 	export interface SuppressedDestinationSummary {
+
+		/** Required */
 		EmailAddress: string;
 
 		/**
@@ -1782,11 +1840,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		Reason: SuppressionListReason;
+
+		/** Required */
 		LastUpdateTime: Date;
 	}
 
 	/** A summary that describes the suppressed email address. */
 	export interface SuppressedDestinationSummaryFormProperties {
+
+		/** Required */
 		EmailAddress: FormControl<string | null | undefined>,
 
 		/**
@@ -1794,13 +1856,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		Reason: FormControl<SuppressionListReason | null | undefined>,
+
+		/** Required */
 		LastUpdateTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateSuppressedDestinationSummaryFormGroup() {
 		return new FormGroup<SuppressedDestinationSummaryFormProperties>({
-			EmailAddress: new FormControl<string | null | undefined>(undefined),
-			Reason: new FormControl<SuppressionListReason | null | undefined>(undefined),
-			LastUpdateTime: new FormControl<Date | null | undefined>(undefined),
+			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Reason: new FormControl<SuppressionListReason | null | undefined>(undefined, [Validators.required]),
+			LastUpdateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1816,6 +1880,8 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceResponse {
+
+		/** Required */
 		Tags: Array<Tag>;
 	}
 	export interface ListTagsForResourceResponseFormProperties {
@@ -2109,8 +2175,8 @@ export namespace MyNS {
 	}
 	export function CreateMessageTagFormGroup() {
 		return new FormGroup<MessageTagFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2246,7 +2312,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateConfigurationSetEventDestinationRequestFormGroup() {
 		return new FormGroup<CreateConfigurationSetEventDestinationRequestFormProperties>({
-			EventDestinationName: new FormControl<string | null | undefined>(undefined),
+			EventDestinationName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2289,7 +2355,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateConfigurationSetRequestFormGroup() {
 		return new FormGroup<CreateConfigurationSetRequestFormProperties>({
-			ConfigurationSetName: new FormControl<string | null | undefined>(undefined),
+			ConfigurationSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2317,7 +2383,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateDedicatedIpPoolRequestFormGroup() {
 		return new FormGroup<CreateDedicatedIpPoolRequestFormProperties>({
-			PoolName: new FormControl<string | null | undefined>(undefined),
+			PoolName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2351,6 +2417,8 @@ export namespace MyNS {
 
 		/** A name that helps you identify a report generated by the Deliverability dashboard. */
 		ReportName?: string | null;
+
+		/** Required */
 		FromEmailAddress: string;
 
 		/**
@@ -2366,12 +2434,14 @@ export namespace MyNS {
 
 		/** A name that helps you identify a report generated by the Deliverability dashboard. */
 		ReportName: FormControl<string | null | undefined>,
+
+		/** Required */
 		FromEmailAddress: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDeliverabilityTestReportRequestFormGroup() {
 		return new FormGroup<CreateDeliverabilityTestReportRequestFormProperties>({
 			ReportName: new FormControl<string | null | undefined>(undefined),
-			FromEmailAddress: new FormControl<string | null | undefined>(undefined),
+			FromEmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2383,19 +2453,47 @@ export namespace MyNS {
 
 	/** An object that contains information about the tokens used for setting up Bring Your Own DKIM (BYODKIM). */
 	export interface DkimSigningAttributes {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9]))$
+		 */
 		DomainSigningSelector: string;
+
+		/**
+		 * Required
+		 * Max length: 20480
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9+\/]+={0,2}$
+		 */
 		DomainSigningPrivateKey: string;
 	}
 
 	/** An object that contains information about the tokens used for setting up Bring Your Own DKIM (BYODKIM). */
 	export interface DkimSigningAttributesFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9]))$
+		 */
 		DomainSigningSelector: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 20480
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9+\/]+={0,2}$
+		 */
 		DomainSigningPrivateKey: FormControl<string | null | undefined>,
 	}
 	export function CreateDkimSigningAttributesFormGroup() {
 		return new FormGroup<DkimSigningAttributesFormProperties>({
-			DomainSigningSelector: new FormControl<string | null | undefined>(undefined),
-			DomainSigningPrivateKey: new FormControl<string | null | undefined>(undefined),
+			DomainSigningSelector: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
+			DomainSigningPrivateKey: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20480), Validators.minLength(1)]),
 		});
 
 	}
@@ -2403,6 +2501,8 @@ export namespace MyNS {
 
 	/** A request to begin the verification process for an email identity (an email address or domain). */
 	export interface CreateEmailIdentityRequest {
+
+		/** Required */
 		EmailIdentity: string;
 		Tags?: Array<Tag>;
 
@@ -2412,11 +2512,13 @@ export namespace MyNS {
 
 	/** A request to begin the verification process for an email identity (an email address or domain). */
 	export interface CreateEmailIdentityRequestFormProperties {
+
+		/** Required */
 		EmailIdentity: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateEmailIdentityRequestFormGroup() {
 		return new FormGroup<CreateEmailIdentityRequestFormProperties>({
-			EmailIdentity: new FormControl<string | null | undefined>(undefined),
+			EmailIdentity: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2961,7 +3063,7 @@ export namespace MyNS {
 	}
 	export function CreatePutDedicatedIpInPoolRequestFormGroup() {
 		return new FormGroup<PutDedicatedIpInPoolRequestFormProperties>({
-			DestinationPoolName: new FormControl<string | null | undefined>(undefined),
+			DestinationPoolName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2969,16 +3071,20 @@ export namespace MyNS {
 
 	/** A request to change the warm-up attributes for a dedicated IP address. This operation is useful when you want to resume the warm-up process for an existing IP address. */
 	export interface PutDedicatedIpWarmupAttributesRequest {
+
+		/** Required */
 		WarmupPercentage: number;
 	}
 
 	/** A request to change the warm-up attributes for a dedicated IP address. This operation is useful when you want to resume the warm-up process for an existing IP address. */
 	export interface PutDedicatedIpWarmupAttributesRequestFormProperties {
+
+		/** Required */
 		WarmupPercentage: FormControl<number | null | undefined>,
 	}
 	export function CreatePutDedicatedIpWarmupAttributesRequestFormGroup() {
 		return new FormGroup<PutDedicatedIpWarmupAttributesRequestFormProperties>({
-			WarmupPercentage: new FormControl<number | null | undefined>(undefined),
+			WarmupPercentage: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2986,6 +3092,8 @@ export namespace MyNS {
 
 	/** <p>Enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon SES API v2. You also gain the ability to perform predictive inbox placement tests.</p> <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other AWS services. For more information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.</p> */
 	export interface PutDeliverabilityDashboardOptionRequest {
+
+		/** Required */
 		DashboardEnabled: boolean;
 
 		/** An object that contains information about the Deliverability dashboard subscription for a verified domain that you use to send email and currently has an active Deliverability dashboard subscription. If a Deliverability dashboard subscription is active for a domain, you gain access to reputation, inbox placement, and other metrics for the domain. */
@@ -2994,11 +3102,13 @@ export namespace MyNS {
 
 	/** <p>Enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon SES API v2. You also gain the ability to perform predictive inbox placement tests.</p> <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other AWS services. For more information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.</p> */
 	export interface PutDeliverabilityDashboardOptionRequestFormProperties {
+
+		/** Required */
 		DashboardEnabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreatePutDeliverabilityDashboardOptionRequestFormGroup() {
 		return new FormGroup<PutDeliverabilityDashboardOptionRequestFormProperties>({
-			DashboardEnabled: new FormControl<boolean | null | undefined>(undefined),
+			DashboardEnabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3023,6 +3133,8 @@ export namespace MyNS {
 
 	/** A request to change the DKIM attributes for an email identity. */
 	export interface PutEmailIdentityDkimSigningAttributesRequest {
+
+		/** Required */
 		SigningAttributesOrigin: DkimAttributesSigningAttributesOrigin;
 
 		/** An object that contains information about the tokens used for setting up Bring Your Own DKIM (BYODKIM). */
@@ -3031,11 +3143,13 @@ export namespace MyNS {
 
 	/** A request to change the DKIM attributes for an email identity. */
 	export interface PutEmailIdentityDkimSigningAttributesRequestFormProperties {
+
+		/** Required */
 		SigningAttributesOrigin: FormControl<DkimAttributesSigningAttributesOrigin | null | undefined>,
 	}
 	export function CreatePutEmailIdentityDkimSigningAttributesRequestFormGroup() {
 		return new FormGroup<PutEmailIdentityDkimSigningAttributesRequestFormProperties>({
-			SigningAttributesOrigin: new FormControl<DkimAttributesSigningAttributesOrigin | null | undefined>(undefined),
+			SigningAttributesOrigin: new FormControl<DkimAttributesSigningAttributesOrigin | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3088,6 +3202,8 @@ export namespace MyNS {
 
 	/** A request to add an email destination to the suppression list for your account. */
 	export interface PutSuppressedDestinationRequest {
+
+		/** Required */
 		EmailAddress: string;
 
 		/**
@@ -3099,6 +3215,8 @@ export namespace MyNS {
 
 	/** A request to add an email destination to the suppression list for your account. */
 	export interface PutSuppressedDestinationRequestFormProperties {
+
+		/** Required */
 		EmailAddress: FormControl<string | null | undefined>,
 
 		/**
@@ -3109,8 +3227,8 @@ export namespace MyNS {
 	}
 	export function CreatePutSuppressedDestinationRequestFormGroup() {
 		return new FormGroup<PutSuppressedDestinationRequestFormProperties>({
-			EmailAddress: new FormControl<string | null | undefined>(undefined),
-			Reason: new FormControl<SuppressionListReason | null | undefined>(undefined),
+			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Reason: new FormControl<SuppressionListReason | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3159,15 +3277,21 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/** Required */
 		ResourceArn: string;
+
+		/** Required */
 		Tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/** Required */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3740,7 +3864,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateConfigurationSetPostBodyFormGroup() {
 		return new FormGroup<CreateConfigurationSetPostBodyFormProperties>({
-			ConfigurationSetName: new FormControl<string | null | undefined>(undefined),
+			ConfigurationSetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3854,7 +3978,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateConfigurationSetEventDestinationPostBodyFormGroup() {
 		return new FormGroup<CreateConfigurationSetEventDestinationPostBodyFormProperties>({
-			EventDestinationName: new FormControl<string | null | undefined>(undefined),
+			EventDestinationName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3906,7 +4030,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateDedicatedIpPoolPostBodyFormGroup() {
 		return new FormGroup<CreateDedicatedIpPoolPostBodyFormProperties>({
-			PoolName: new FormControl<string | null | undefined>(undefined),
+			PoolName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3945,7 +4069,7 @@ export namespace MyNS {
 	export function CreateCreateDeliverabilityTestReportPostBodyFormGroup() {
 		return new FormGroup<CreateDeliverabilityTestReportPostBodyFormProperties>({
 			ReportName: new FormControl<string | null | undefined>(undefined),
-			FromEmailAddress: new FormControl<string | null | undefined>(undefined),
+			FromEmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3993,23 +4117,47 @@ export namespace MyNS {
 	}
 	export function CreateCreateEmailIdentityPostBodyFormGroup() {
 		return new FormGroup<CreateEmailIdentityPostBodyFormProperties>({
-			EmailIdentity: new FormControl<string | null | undefined>(undefined),
+			EmailIdentity: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface CreateEmailIdentityPostBodyDkimSigningAttributes {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9]))$
+		 */
 		DomainSigningSelector?: string | null;
+
+		/**
+		 * Max length: 20480
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9+\/]+={0,2}$
+		 */
 		DomainSigningPrivateKey?: string | null;
 	}
 	export interface CreateEmailIdentityPostBodyDkimSigningAttributesFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9]))$
+		 */
 		DomainSigningSelector: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 20480
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9+\/]+={0,2}$
+		 */
 		DomainSigningPrivateKey: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateEmailIdentityPostBodyDkimSigningAttributesFormGroup() {
 		return new FormGroup<CreateEmailIdentityPostBodyDkimSigningAttributesFormProperties>({
-			DomainSigningSelector: new FormControl<string | null | undefined>(undefined),
-			DomainSigningPrivateKey: new FormControl<string | null | undefined>(undefined),
+			DomainSigningSelector: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			DomainSigningPrivateKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20480), Validators.minLength(1)]),
 		});
 
 	}
@@ -4077,7 +4225,7 @@ export namespace MyNS {
 	}
 	export function CreatePutDeliverabilityDashboardOptionPutBodyFormGroup() {
 		return new FormGroup<PutDeliverabilityDashboardOptionPutBodyFormProperties>({
-			DashboardEnabled: new FormControl<boolean | null | undefined>(undefined),
+			DashboardEnabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4112,8 +4260,8 @@ export namespace MyNS {
 	}
 	export function CreatePutSuppressedDestinationPutBodyFormGroup() {
 		return new FormGroup<PutSuppressedDestinationPutBodyFormProperties>({
-			EmailAddress: new FormControl<string | null | undefined>(undefined),
-			Reason: new FormControl<SuppressionListReason | null | undefined>(undefined),
+			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Reason: new FormControl<SuppressionListReason | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4271,7 +4419,7 @@ export namespace MyNS {
 	}
 	export function CreatePutDedicatedIpInPoolPutBodyFormGroup() {
 		return new FormGroup<PutDedicatedIpInPoolPutBodyFormProperties>({
-			DestinationPoolName: new FormControl<string | null | undefined>(undefined),
+			DestinationPoolName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4294,7 +4442,7 @@ export namespace MyNS {
 	}
 	export function CreatePutDedicatedIpWarmupAttributesPutBodyFormGroup() {
 		return new FormGroup<PutDedicatedIpWarmupAttributesPutBodyFormProperties>({
-			WarmupPercentage: new FormControl<number | null | undefined>(undefined),
+			WarmupPercentage: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -4337,23 +4485,47 @@ export namespace MyNS {
 	}
 	export function CreatePutEmailIdentityDkimSigningAttributesPutBodyFormGroup() {
 		return new FormGroup<PutEmailIdentityDkimSigningAttributesPutBodyFormProperties>({
-			SigningAttributesOrigin: new FormControl<DkimAttributesSigningAttributesOrigin | null | undefined>(undefined),
+			SigningAttributesOrigin: new FormControl<DkimAttributesSigningAttributesOrigin | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface PutEmailIdentityDkimSigningAttributesPutBodySigningAttributes {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9]))$
+		 */
 		DomainSigningSelector?: string | null;
+
+		/**
+		 * Max length: 20480
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9+\/]+={0,2}$
+		 */
 		DomainSigningPrivateKey?: string | null;
 	}
 	export interface PutEmailIdentityDkimSigningAttributesPutBodySigningAttributesFormProperties {
+
+		/**
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9]))$
+		 */
 		DomainSigningSelector: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 20480
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9+\/]+={0,2}$
+		 */
 		DomainSigningPrivateKey: FormControl<string | null | undefined>,
 	}
 	export function CreatePutEmailIdentityDkimSigningAttributesPutBodySigningAttributesFormGroup() {
 		return new FormGroup<PutEmailIdentityDkimSigningAttributesPutBodySigningAttributesFormProperties>({
-			DomainSigningSelector: new FormControl<string | null | undefined>(undefined),
-			DomainSigningPrivateKey: new FormControl<string | null | undefined>(undefined),
+			DomainSigningSelector: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			DomainSigningPrivateKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20480), Validators.minLength(1)]),
 		});
 
 	}
@@ -4504,7 +4676,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

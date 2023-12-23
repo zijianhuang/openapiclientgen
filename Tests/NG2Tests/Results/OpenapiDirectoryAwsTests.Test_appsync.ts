@@ -191,6 +191,12 @@ export namespace MyNS {
 	/** Describes a data source. */
 	export interface DataSource {
 		dataSourceArn?: string | null;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		name?: string | null;
 		description?: string | null;
 		type?: DataSourceType | null;
@@ -215,6 +221,12 @@ export namespace MyNS {
 	/** Describes a data source. */
 	export interface DataSourceFormProperties {
 		dataSourceArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		name: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		type: FormControl<DataSourceType | null | undefined>,
@@ -223,7 +235,7 @@ export namespace MyNS {
 	export function CreateDataSourceFormGroup() {
 		return new FormGroup<DataSourceFormProperties>({
 			dataSourceArn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
 			description: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<DataSourceType | null | undefined>(undefined),
 			serviceRoleArn: new FormControl<string | null | undefined>(undefined),
@@ -236,7 +248,11 @@ export namespace MyNS {
 
 	/** Describes an Amazon DynamoDB data source configuration. */
 	export interface DynamodbDataSourceConfig {
+
+		/** Required */
 		tableName: string;
+
+		/** Required */
 		awsRegion: string;
 		useCallerCredentials?: boolean | null;
 
@@ -247,15 +263,19 @@ export namespace MyNS {
 
 	/** Describes an Amazon DynamoDB data source configuration. */
 	export interface DynamodbDataSourceConfigFormProperties {
+
+		/** Required */
 		tableName: FormControl<string | null | undefined>,
+
+		/** Required */
 		awsRegion: FormControl<string | null | undefined>,
 		useCallerCredentials: FormControl<boolean | null | undefined>,
 		versioned: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDynamodbDataSourceConfigFormGroup() {
 		return new FormGroup<DynamodbDataSourceConfigFormProperties>({
-			tableName: new FormControl<string | null | undefined>(undefined),
-			awsRegion: new FormControl<string | null | undefined>(undefined),
+			tableName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			awsRegion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			useCallerCredentials: new FormControl<boolean | null | undefined>(undefined),
 			versioned: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -288,16 +308,20 @@ export namespace MyNS {
 
 	/** Describes an AWS Lambda data source configuration. */
 	export interface LambdaDataSourceConfig {
+
+		/** Required */
 		lambdaFunctionArn: string;
 	}
 
 	/** Describes an AWS Lambda data source configuration. */
 	export interface LambdaDataSourceConfigFormProperties {
+
+		/** Required */
 		lambdaFunctionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateLambdaDataSourceConfigFormGroup() {
 		return new FormGroup<LambdaDataSourceConfigFormProperties>({
-			lambdaFunctionArn: new FormControl<string | null | undefined>(undefined),
+			lambdaFunctionArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -305,19 +329,27 @@ export namespace MyNS {
 
 	/** Describes an Elasticsearch data source configuration. */
 	export interface ElasticsearchDataSourceConfig {
+
+		/** Required */
 		endpoint: string;
+
+		/** Required */
 		awsRegion: string;
 	}
 
 	/** Describes an Elasticsearch data source configuration. */
 	export interface ElasticsearchDataSourceConfigFormProperties {
+
+		/** Required */
 		endpoint: FormControl<string | null | undefined>,
+
+		/** Required */
 		awsRegion: FormControl<string | null | undefined>,
 	}
 	export function CreateElasticsearchDataSourceConfigFormGroup() {
 		return new FormGroup<ElasticsearchDataSourceConfigFormProperties>({
-			endpoint: new FormControl<string | null | undefined>(undefined),
-			awsRegion: new FormControl<string | null | undefined>(undefined),
+			endpoint: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			awsRegion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -345,6 +377,8 @@ export namespace MyNS {
 
 	/** The authorization config in case the HTTP endpoint requires authorization. */
 	export interface AuthorizationConfig {
+
+		/** Required */
 		authorizationType: AuthorizationConfigAuthorizationType;
 
 		/** The AWS IAM configuration. */
@@ -353,11 +387,13 @@ export namespace MyNS {
 
 	/** The authorization config in case the HTTP endpoint requires authorization. */
 	export interface AuthorizationConfigFormProperties {
+
+		/** Required */
 		authorizationType: FormControl<AuthorizationConfigAuthorizationType | null | undefined>,
 	}
 	export function CreateAuthorizationConfigFormGroup() {
 		return new FormGroup<AuthorizationConfigFormProperties>({
-			authorizationType: new FormControl<AuthorizationConfigAuthorizationType | null | undefined>(undefined),
+			authorizationType: new FormControl<AuthorizationConfigAuthorizationType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -455,10 +491,32 @@ export namespace MyNS {
 	export interface FunctionConfiguration {
 		functionId?: string | null;
 		functionArn?: string | null;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		name?: string | null;
 		description?: string | null;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		dataSourceName?: string | null;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 */
 		requestMappingTemplate?: string | null;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 */
 		responseMappingTemplate?: string | null;
 		functionVersion?: string | null;
 	}
@@ -467,10 +525,32 @@ export namespace MyNS {
 	export interface FunctionConfigurationFormProperties {
 		functionId: FormControl<string | null | undefined>,
 		functionArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		name: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		dataSourceName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 */
 		requestMappingTemplate: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 */
 		responseMappingTemplate: FormControl<string | null | undefined>,
 		functionVersion: FormControl<string | null | undefined>,
 	}
@@ -478,11 +558,11 @@ export namespace MyNS {
 		return new FormGroup<FunctionConfigurationFormProperties>({
 			functionId: new FormControl<string | null | undefined>(undefined),
 			functionArn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
 			description: new FormControl<string | null | undefined>(undefined),
-			dataSourceName: new FormControl<string | null | undefined>(undefined),
-			requestMappingTemplate: new FormControl<string | null | undefined>(undefined),
-			responseMappingTemplate: new FormControl<string | null | undefined>(undefined),
+			dataSourceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
+			requestMappingTemplate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
+			responseMappingTemplate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
 			functionVersion: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -504,6 +584,12 @@ export namespace MyNS {
 
 	/** Describes a GraphQL API. */
 	export interface GraphqlApi {
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		name?: string | null;
 		apiId?: string | null;
 		authenticationType?: GraphqlApiAuthenticationType | null;
@@ -527,6 +613,12 @@ export namespace MyNS {
 
 	/** Describes a GraphQL API. */
 	export interface GraphqlApiFormProperties {
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		name: FormControl<string | null | undefined>,
 		apiId: FormControl<string | null | undefined>,
 		authenticationType: FormControl<GraphqlApiAuthenticationType | null | undefined>,
@@ -535,7 +627,7 @@ export namespace MyNS {
 	}
 	export function CreateGraphqlApiFormGroup() {
 		return new FormGroup<GraphqlApiFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
 			apiId: new FormControl<string | null | undefined>(undefined),
 			authenticationType: new FormControl<GraphqlApiAuthenticationType | null | undefined>(undefined),
 			arn: new FormControl<string | null | undefined>(undefined),
@@ -549,21 +641,29 @@ export namespace MyNS {
 
 	/** The CloudWatch Logs configuration. */
 	export interface LogConfig {
+
+		/** Required */
 		fieldLogLevel: LogConfigFieldLogLevel;
+
+		/** Required */
 		cloudWatchLogsRoleArn: string;
 		excludeVerboseContent?: boolean | null;
 	}
 
 	/** The CloudWatch Logs configuration. */
 	export interface LogConfigFormProperties {
+
+		/** Required */
 		fieldLogLevel: FormControl<LogConfigFieldLogLevel | null | undefined>,
+
+		/** Required */
 		cloudWatchLogsRoleArn: FormControl<string | null | undefined>,
 		excludeVerboseContent: FormControl<boolean | null | undefined>,
 	}
 	export function CreateLogConfigFormGroup() {
 		return new FormGroup<LogConfigFormProperties>({
-			fieldLogLevel: new FormControl<LogConfigFieldLogLevel | null | undefined>(undefined),
-			cloudWatchLogsRoleArn: new FormControl<string | null | undefined>(undefined),
+			fieldLogLevel: new FormControl<LogConfigFieldLogLevel | null | undefined>(undefined, [Validators.required]),
+			cloudWatchLogsRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			excludeVerboseContent: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -574,24 +674,36 @@ export namespace MyNS {
 
 	/** Describes an Amazon Cognito user pool configuration. */
 	export interface UserPoolConfig {
+
+		/** Required */
 		userPoolId: string;
+
+		/** Required */
 		awsRegion: string;
+
+		/** Required */
 		defaultAction: UserPoolConfigDefaultAction;
 		appIdClientRegex?: string | null;
 	}
 
 	/** Describes an Amazon Cognito user pool configuration. */
 	export interface UserPoolConfigFormProperties {
+
+		/** Required */
 		userPoolId: FormControl<string | null | undefined>,
+
+		/** Required */
 		awsRegion: FormControl<string | null | undefined>,
+
+		/** Required */
 		defaultAction: FormControl<UserPoolConfigDefaultAction | null | undefined>,
 		appIdClientRegex: FormControl<string | null | undefined>,
 	}
 	export function CreateUserPoolConfigFormGroup() {
 		return new FormGroup<UserPoolConfigFormProperties>({
-			userPoolId: new FormControl<string | null | undefined>(undefined),
-			awsRegion: new FormControl<string | null | undefined>(undefined),
-			defaultAction: new FormControl<UserPoolConfigDefaultAction | null | undefined>(undefined),
+			userPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			awsRegion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			defaultAction: new FormControl<UserPoolConfigDefaultAction | null | undefined>(undefined, [Validators.required]),
 			appIdClientRegex: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -602,6 +714,8 @@ export namespace MyNS {
 
 	/** Describes an OpenID Connect configuration. */
 	export interface OpenIDConnectConfig {
+
+		/** Required */
 		issuer: string;
 		clientId?: string | null;
 		iatTTL?: number | null;
@@ -610,6 +724,8 @@ export namespace MyNS {
 
 	/** Describes an OpenID Connect configuration. */
 	export interface OpenIDConnectConfigFormProperties {
+
+		/** Required */
 		issuer: FormControl<string | null | undefined>,
 		clientId: FormControl<string | null | undefined>,
 		iatTTL: FormControl<number | null | undefined>,
@@ -617,7 +733,7 @@ export namespace MyNS {
 	}
 	export function CreateOpenIDConnectConfigFormGroup() {
 		return new FormGroup<OpenIDConnectConfigFormProperties>({
-			issuer: new FormControl<string | null | undefined>(undefined),
+			issuer: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientId: new FormControl<string | null | undefined>(undefined),
 			iatTTL: new FormControl<number | null | undefined>(undefined),
 			authTTL: new FormControl<number | null | undefined>(undefined),
@@ -675,21 +791,29 @@ export namespace MyNS {
 
 	/** Describes an Amazon Cognito user pool configuration. */
 	export interface CognitoUserPoolConfig {
+
+		/** Required */
 		userPoolId: string;
+
+		/** Required */
 		awsRegion: string;
 		appIdClientRegex?: string | null;
 	}
 
 	/** Describes an Amazon Cognito user pool configuration. */
 	export interface CognitoUserPoolConfigFormProperties {
+
+		/** Required */
 		userPoolId: FormControl<string | null | undefined>,
+
+		/** Required */
 		awsRegion: FormControl<string | null | undefined>,
 		appIdClientRegex: FormControl<string | null | undefined>,
 	}
 	export function CreateCognitoUserPoolConfigFormGroup() {
 		return new FormGroup<CognitoUserPoolConfigFormProperties>({
-			userPoolId: new FormControl<string | null | undefined>(undefined),
-			awsRegion: new FormControl<string | null | undefined>(undefined),
+			userPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			awsRegion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			appIdClientRegex: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -725,11 +849,39 @@ export namespace MyNS {
 
 	/** Describes a resolver. */
 	export interface Resolver {
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		typeName?: string | null;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		fieldName?: string | null;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		dataSourceName?: string | null;
 		resolverArn?: string | null;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 */
 		requestMappingTemplate?: string | null;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 */
 		responseMappingTemplate?: string | null;
 		kind?: ResolverKind | null;
 
@@ -745,22 +897,50 @@ export namespace MyNS {
 
 	/** Describes a resolver. */
 	export interface ResolverFormProperties {
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		typeName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		fieldName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		dataSourceName: FormControl<string | null | undefined>,
 		resolverArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 */
 		requestMappingTemplate: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 */
 		responseMappingTemplate: FormControl<string | null | undefined>,
 		kind: FormControl<ResolverKind | null | undefined>,
 	}
 	export function CreateResolverFormGroup() {
 		return new FormGroup<ResolverFormProperties>({
-			typeName: new FormControl<string | null | undefined>(undefined),
-			fieldName: new FormControl<string | null | undefined>(undefined),
-			dataSourceName: new FormControl<string | null | undefined>(undefined),
+			typeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
+			fieldName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
+			dataSourceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
 			resolverArn: new FormControl<string | null | undefined>(undefined),
-			requestMappingTemplate: new FormControl<string | null | undefined>(undefined),
-			responseMappingTemplate: new FormControl<string | null | undefined>(undefined),
+			requestMappingTemplate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
+			responseMappingTemplate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
 			kind: new FormControl<ResolverKind | null | undefined>(undefined),
 		});
 
@@ -865,6 +1045,12 @@ export namespace MyNS {
 
 	/** Describes a type. */
 	export interface Type {
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		name?: string | null;
 		description?: string | null;
 		arn?: string | null;
@@ -874,6 +1060,12 @@ export namespace MyNS {
 
 	/** Describes a type. */
 	export interface TypeFormProperties {
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		name: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		arn: FormControl<string | null | undefined>,
@@ -882,7 +1074,7 @@ export namespace MyNS {
 	}
 	export function CreateTypeFormGroup() {
 		return new FormGroup<TypeFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
 			description: new FormControl<string | null | undefined>(undefined),
 			arn: new FormControl<string | null | undefined>(undefined),
 			definition: new FormControl<string | null | undefined>(undefined),
@@ -1116,84 +1308,156 @@ export namespace MyNS {
 
 	export interface ListApiKeysResponse {
 		apiKeys?: Array<ApiKey>;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [\\S]+
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListApiKeysResponseFormProperties {
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [\\S]+
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListApiKeysResponseFormGroup() {
 		return new FormGroup<ListApiKeysResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListDataSourcesResponse {
 		dataSources?: Array<DataSource>;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [\\S]+
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListDataSourcesResponseFormProperties {
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [\\S]+
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListDataSourcesResponseFormGroup() {
 		return new FormGroup<ListDataSourcesResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListFunctionsResponse {
 		functions?: Array<FunctionConfiguration>;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [\\S]+
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListFunctionsResponseFormProperties {
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [\\S]+
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListFunctionsResponseFormGroup() {
 		return new FormGroup<ListFunctionsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListGraphqlApisResponse {
 		graphqlApis?: Array<GraphqlApi>;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [\\S]+
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListGraphqlApisResponseFormProperties {
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [\\S]+
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListGraphqlApisResponseFormGroup() {
 		return new FormGroup<ListGraphqlApisResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListResolversResponse {
 		resolvers?: Array<Resolver>;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [\\S]+
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListResolversResponseFormProperties {
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [\\S]+
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListResolversResponseFormGroup() {
 		return new FormGroup<ListResolversResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListResolversByFunctionResponse {
 		resolvers?: Array<Resolver>;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [\\S]+
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListResolversByFunctionResponseFormProperties {
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [\\S]+
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListResolversByFunctionResponseFormGroup() {
 		return new FormGroup<ListResolversByFunctionResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
 		});
 
 	}
@@ -1213,14 +1477,26 @@ export namespace MyNS {
 
 	export interface ListTypesResponse {
 		types?: Array<Type>;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [\\S]+
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListTypesResponseFormProperties {
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [\\S]+
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTypesResponseFormGroup() {
 		return new FormGroup<ListTypesResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
 		});
 
 	}
@@ -1362,28 +1638,40 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>CreateApiCache</code> operation. */
 	export interface CreateApiCacheRequest {
+
+		/** Required */
 		ttl: number;
 		transitEncryptionEnabled?: boolean | null;
 		atRestEncryptionEnabled?: boolean | null;
+
+		/** Required */
 		apiCachingBehavior: ApiCacheApiCachingBehavior;
+
+		/** Required */
 		type: ApiCacheType;
 	}
 
 	/** Represents the input of a <code>CreateApiCache</code> operation. */
 	export interface CreateApiCacheRequestFormProperties {
+
+		/** Required */
 		ttl: FormControl<number | null | undefined>,
 		transitEncryptionEnabled: FormControl<boolean | null | undefined>,
 		atRestEncryptionEnabled: FormControl<boolean | null | undefined>,
+
+		/** Required */
 		apiCachingBehavior: FormControl<ApiCacheApiCachingBehavior | null | undefined>,
+
+		/** Required */
 		type: FormControl<ApiCacheType | null | undefined>,
 	}
 	export function CreateCreateApiCacheRequestFormGroup() {
 		return new FormGroup<CreateApiCacheRequestFormProperties>({
-			ttl: new FormControl<number | null | undefined>(undefined),
+			ttl: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			transitEncryptionEnabled: new FormControl<boolean | null | undefined>(undefined),
 			atRestEncryptionEnabled: new FormControl<boolean | null | undefined>(undefined),
-			apiCachingBehavior: new FormControl<ApiCacheApiCachingBehavior | null | undefined>(undefined),
-			type: new FormControl<ApiCacheType | null | undefined>(undefined),
+			apiCachingBehavior: new FormControl<ApiCacheApiCachingBehavior | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<ApiCacheType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1405,8 +1693,17 @@ export namespace MyNS {
 	}
 
 	export interface CreateDataSourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		name: string;
 		description?: string | null;
+
+		/** Required */
 		type: DataSourceType;
 		serviceRoleArn?: string | null;
 
@@ -1426,54 +1723,121 @@ export namespace MyNS {
 		relationalDatabaseConfig?: RelationalDatabaseDataSourceConfig;
 	}
 	export interface CreateDataSourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		name: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Required */
 		type: FormControl<DataSourceType | null | undefined>,
 		serviceRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDataSourceRequestFormGroup() {
 		return new FormGroup<CreateDataSourceRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(1)]),
 			description: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<DataSourceType | null | undefined>(undefined),
+			type: new FormControl<DataSourceType | null | undefined>(undefined, [Validators.required]),
 			serviceRoleArn: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CreateFunctionRequest {
+
+		/**
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		name: string;
 		description?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		dataSourceName: string;
+
+		/**
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 */
 		requestMappingTemplate: string;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 */
 		responseMappingTemplate?: string | null;
+
+		/** Required */
 		functionVersion: string;
 	}
 	export interface CreateFunctionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		name: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		dataSourceName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 */
 		requestMappingTemplate: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 */
 		responseMappingTemplate: FormControl<string | null | undefined>,
+
+		/** Required */
 		functionVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateFunctionRequestFormGroup() {
 		return new FormGroup<CreateFunctionRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(1)]),
 			description: new FormControl<string | null | undefined>(undefined),
-			dataSourceName: new FormControl<string | null | undefined>(undefined),
-			requestMappingTemplate: new FormControl<string | null | undefined>(undefined),
-			responseMappingTemplate: new FormControl<string | null | undefined>(undefined),
-			functionVersion: new FormControl<string | null | undefined>(undefined),
+			dataSourceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(1)]),
+			requestMappingTemplate: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(1)]),
+			responseMappingTemplate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
+			functionVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface CreateGraphqlApiRequest {
+
+		/** Required */
 		name: string;
 
 		/** The CloudWatch Logs configuration. */
 		logConfig?: LogConfig;
+
+		/** Required */
 		authenticationType: GraphqlApiAuthenticationType;
 
 		/** Describes an Amazon Cognito user pool configuration. */
@@ -1488,23 +1852,51 @@ export namespace MyNS {
 		xrayEnabled?: boolean | null;
 	}
 	export interface CreateGraphqlApiRequestFormProperties {
+
+		/** Required */
 		name: FormControl<string | null | undefined>,
+
+		/** Required */
 		authenticationType: FormControl<GraphqlApiAuthenticationType | null | undefined>,
 		xrayEnabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateCreateGraphqlApiRequestFormGroup() {
 		return new FormGroup<CreateGraphqlApiRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			authenticationType: new FormControl<GraphqlApiAuthenticationType | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			authenticationType: new FormControl<GraphqlApiAuthenticationType | null | undefined>(undefined, [Validators.required]),
 			xrayEnabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface CreateResolverRequest {
+
+		/**
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		fieldName: string;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		dataSourceName?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 */
 		requestMappingTemplate: string;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 */
 		responseMappingTemplate?: string | null;
 		kind?: ResolverKind | null;
 
@@ -1518,18 +1910,42 @@ export namespace MyNS {
 		cachingConfig?: CachingConfig;
 	}
 	export interface CreateResolverRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		fieldName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		dataSourceName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 */
 		requestMappingTemplate: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 */
 		responseMappingTemplate: FormControl<string | null | undefined>,
 		kind: FormControl<ResolverKind | null | undefined>,
 	}
 	export function CreateCreateResolverRequestFormGroup() {
 		return new FormGroup<CreateResolverRequestFormProperties>({
-			fieldName: new FormControl<string | null | undefined>(undefined),
-			dataSourceName: new FormControl<string | null | undefined>(undefined),
-			requestMappingTemplate: new FormControl<string | null | undefined>(undefined),
-			responseMappingTemplate: new FormControl<string | null | undefined>(undefined),
+			fieldName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(1)]),
+			dataSourceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
+			requestMappingTemplate: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(1)]),
+			responseMappingTemplate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
 			kind: new FormControl<ResolverKind | null | undefined>(undefined),
 		});
 
@@ -1538,17 +1954,25 @@ export namespace MyNS {
 	export enum TypeDefinitionFormat { SDL = 0, JSON = 1 }
 
 	export interface CreateTypeRequest {
+
+		/** Required */
 		definition: string;
+
+		/** Required */
 		format: TypeFormat;
 	}
 	export interface CreateTypeRequestFormProperties {
+
+		/** Required */
 		definition: FormControl<string | null | undefined>,
+
+		/** Required */
 		format: FormControl<TypeFormat | null | undefined>,
 	}
 	export function CreateCreateTypeRequestFormGroup() {
 		return new FormGroup<CreateTypeRequestFormProperties>({
-			definition: new FormControl<string | null | undefined>(undefined),
-			format: new FormControl<TypeFormat | null | undefined>(undefined),
+			definition: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			format: new FormControl<TypeFormat | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1810,14 +2234,18 @@ export namespace MyNS {
 	}
 
 	export interface StartSchemaCreationRequest {
+
+		/** Required */
 		definition: string;
 	}
 	export interface StartSchemaCreationRequestFormProperties {
+
+		/** Required */
 		definition: FormControl<string | null | undefined>,
 	}
 	export function CreateStartSchemaCreationRequestFormGroup() {
 		return new FormGroup<StartSchemaCreationRequestFormProperties>({
-			definition: new FormControl<string | null | undefined>(undefined),
+			definition: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1851,22 +2279,34 @@ export namespace MyNS {
 
 	/** Represents the input of a <code>UpdateApiCache</code> operation. */
 	export interface UpdateApiCacheRequest {
+
+		/** Required */
 		ttl: number;
+
+		/** Required */
 		apiCachingBehavior: ApiCacheApiCachingBehavior;
+
+		/** Required */
 		type: ApiCacheType;
 	}
 
 	/** Represents the input of a <code>UpdateApiCache</code> operation. */
 	export interface UpdateApiCacheRequestFormProperties {
+
+		/** Required */
 		ttl: FormControl<number | null | undefined>,
+
+		/** Required */
 		apiCachingBehavior: FormControl<ApiCacheApiCachingBehavior | null | undefined>,
+
+		/** Required */
 		type: FormControl<ApiCacheType | null | undefined>,
 	}
 	export function CreateUpdateApiCacheRequestFormGroup() {
 		return new FormGroup<UpdateApiCacheRequestFormProperties>({
-			ttl: new FormControl<number | null | undefined>(undefined),
-			apiCachingBehavior: new FormControl<ApiCacheApiCachingBehavior | null | undefined>(undefined),
-			type: new FormControl<ApiCacheType | null | undefined>(undefined),
+			ttl: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			apiCachingBehavior: new FormControl<ApiCacheApiCachingBehavior | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<ApiCacheType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1889,6 +2329,8 @@ export namespace MyNS {
 
 	export interface UpdateDataSourceRequest {
 		description?: string | null;
+
+		/** Required */
 		type: DataSourceType;
 		serviceRoleArn?: string | null;
 
@@ -1909,47 +2351,105 @@ export namespace MyNS {
 	}
 	export interface UpdateDataSourceRequestFormProperties {
 		description: FormControl<string | null | undefined>,
+
+		/** Required */
 		type: FormControl<DataSourceType | null | undefined>,
 		serviceRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateDataSourceRequestFormGroup() {
 		return new FormGroup<UpdateDataSourceRequestFormProperties>({
 			description: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<DataSourceType | null | undefined>(undefined),
+			type: new FormControl<DataSourceType | null | undefined>(undefined, [Validators.required]),
 			serviceRoleArn: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface UpdateFunctionRequest {
+
+		/**
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		name: string;
 		description?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		dataSourceName: string;
+
+		/**
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 */
 		requestMappingTemplate: string;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 */
 		responseMappingTemplate?: string | null;
+
+		/** Required */
 		functionVersion: string;
 	}
 	export interface UpdateFunctionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		name: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		dataSourceName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 */
 		requestMappingTemplate: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 */
 		responseMappingTemplate: FormControl<string | null | undefined>,
+
+		/** Required */
 		functionVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateFunctionRequestFormGroup() {
 		return new FormGroup<UpdateFunctionRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(1)]),
 			description: new FormControl<string | null | undefined>(undefined),
-			dataSourceName: new FormControl<string | null | undefined>(undefined),
-			requestMappingTemplate: new FormControl<string | null | undefined>(undefined),
-			responseMappingTemplate: new FormControl<string | null | undefined>(undefined),
-			functionVersion: new FormControl<string | null | undefined>(undefined),
+			dataSourceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(1)]),
+			requestMappingTemplate: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(1)]),
+			responseMappingTemplate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
+			functionVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface UpdateGraphqlApiRequest {
+
+		/** Required */
 		name: string;
 
 		/** The CloudWatch Logs configuration. */
@@ -1965,13 +2465,15 @@ export namespace MyNS {
 		xrayEnabled?: boolean | null;
 	}
 	export interface UpdateGraphqlApiRequestFormProperties {
+
+		/** Required */
 		name: FormControl<string | null | undefined>,
 		authenticationType: FormControl<GraphqlApiAuthenticationType | null | undefined>,
 		xrayEnabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpdateGraphqlApiRequestFormGroup() {
 		return new FormGroup<UpdateGraphqlApiRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			authenticationType: new FormControl<GraphqlApiAuthenticationType | null | undefined>(undefined),
 			xrayEnabled: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -1979,8 +2481,25 @@ export namespace MyNS {
 	}
 
 	export interface UpdateResolverRequest {
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		dataSourceName?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 */
 		requestMappingTemplate: string;
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 */
 		responseMappingTemplate?: string | null;
 		kind?: ResolverKind | null;
 
@@ -1994,16 +2513,33 @@ export namespace MyNS {
 		cachingConfig?: CachingConfig;
 	}
 	export interface UpdateResolverRequestFormProperties {
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 * Pattern: [_A-Za-z][_0-9A-Za-z]*
+		 */
 		dataSourceName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 */
 		requestMappingTemplate: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 65536
+		 * Min length: 1
+		 */
 		responseMappingTemplate: FormControl<string | null | undefined>,
 		kind: FormControl<ResolverKind | null | undefined>,
 	}
 	export function CreateUpdateResolverRequestFormGroup() {
 		return new FormGroup<UpdateResolverRequestFormProperties>({
-			dataSourceName: new FormControl<string | null | undefined>(undefined),
-			requestMappingTemplate: new FormControl<string | null | undefined>(undefined),
-			responseMappingTemplate: new FormControl<string | null | undefined>(undefined),
+			dataSourceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
+			requestMappingTemplate: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(1)]),
+			responseMappingTemplate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
 			kind: new FormControl<ResolverKind | null | undefined>(undefined),
 		});
 
@@ -2011,16 +2547,20 @@ export namespace MyNS {
 
 	export interface UpdateTypeRequest {
 		definition?: string | null;
+
+		/** Required */
 		format: TypeFormat;
 	}
 	export interface UpdateTypeRequestFormProperties {
 		definition: FormControl<string | null | undefined>,
+
+		/** Required */
 		format: FormControl<TypeFormat | null | undefined>,
 	}
 	export function CreateUpdateTypeRequestFormGroup() {
 		return new FormGroup<UpdateTypeRequestFormProperties>({
 			definition: new FormControl<string | null | undefined>(undefined),
-			format: new FormControl<TypeFormat | null | undefined>(undefined),
+			format: new FormControl<TypeFormat | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2532,11 +3072,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateApiCachePostBodyFormGroup() {
 		return new FormGroup<CreateApiCachePostBodyFormProperties>({
-			ttl: new FormControl<number | null | undefined>(undefined),
+			ttl: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			transitEncryptionEnabled: new FormControl<boolean | null | undefined>(undefined),
 			atRestEncryptionEnabled: new FormControl<boolean | null | undefined>(undefined),
-			apiCachingBehavior: new FormControl<ApiCacheApiCachingBehavior | null | undefined>(undefined),
-			type: new FormControl<ApiCacheType | null | undefined>(undefined),
+			apiCachingBehavior: new FormControl<ApiCacheApiCachingBehavior | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<ApiCacheType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2628,9 +3168,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateDataSourcePostBodyFormGroup() {
 		return new FormGroup<CreateDataSourcePostBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(1)]),
 			description: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<DataSourceType | null | undefined>(undefined),
+			type: new FormControl<DataSourceType | null | undefined>(undefined, [Validators.required]),
 			serviceRoleArn: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2812,12 +3352,12 @@ export namespace MyNS {
 	}
 	export function CreateCreateFunctionPostBodyFormGroup() {
 		return new FormGroup<CreateFunctionPostBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(1)]),
 			description: new FormControl<string | null | undefined>(undefined),
-			dataSourceName: new FormControl<string | null | undefined>(undefined),
-			requestMappingTemplate: new FormControl<string | null | undefined>(undefined),
-			responseMappingTemplate: new FormControl<string | null | undefined>(undefined),
-			functionVersion: new FormControl<string | null | undefined>(undefined),
+			dataSourceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(1)]),
+			requestMappingTemplate: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(1)]),
+			responseMappingTemplate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
+			functionVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2876,8 +3416,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateGraphqlApiPostBodyFormGroup() {
 		return new FormGroup<CreateGraphqlApiPostBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			authenticationType: new FormControl<GraphqlApiAuthenticationType | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			authenticationType: new FormControl<GraphqlApiAuthenticationType | null | undefined>(undefined, [Validators.required]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			xrayEnabled: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -3032,10 +3572,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateResolverPostBodyFormGroup() {
 		return new FormGroup<CreateResolverPostBodyFormProperties>({
-			fieldName: new FormControl<string | null | undefined>(undefined),
-			dataSourceName: new FormControl<string | null | undefined>(undefined),
-			requestMappingTemplate: new FormControl<string | null | undefined>(undefined),
-			responseMappingTemplate: new FormControl<string | null | undefined>(undefined),
+			fieldName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(1)]),
+			dataSourceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
+			requestMappingTemplate: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(1)]),
+			responseMappingTemplate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
 			kind: new FormControl<ResolverKind | null | undefined>(undefined),
 		});
 
@@ -3115,8 +3655,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateTypePostBodyFormGroup() {
 		return new FormGroup<CreateTypePostBodyFormProperties>({
-			definition: new FormControl<string | null | undefined>(undefined),
-			format: new FormControl<TypeFormat | null | undefined>(undefined),
+			definition: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			format: new FormControl<TypeFormat | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3191,7 +3731,7 @@ export namespace MyNS {
 	export function CreateUpdateDataSourcePostBodyFormGroup() {
 		return new FormGroup<UpdateDataSourcePostBodyFormProperties>({
 			description: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<DataSourceType | null | undefined>(undefined),
+			type: new FormControl<DataSourceType | null | undefined>(undefined, [Validators.required]),
 			serviceRoleArn: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3373,12 +3913,12 @@ export namespace MyNS {
 	}
 	export function CreateUpdateFunctionPostBodyFormGroup() {
 		return new FormGroup<UpdateFunctionPostBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(1)]),
 			description: new FormControl<string | null | undefined>(undefined),
-			dataSourceName: new FormControl<string | null | undefined>(undefined),
-			requestMappingTemplate: new FormControl<string | null | undefined>(undefined),
-			responseMappingTemplate: new FormControl<string | null | undefined>(undefined),
-			functionVersion: new FormControl<string | null | undefined>(undefined),
+			dataSourceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(1)]),
+			requestMappingTemplate: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(1)]),
+			responseMappingTemplate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
+			functionVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3425,7 +3965,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateGraphqlApiPostBodyFormGroup() {
 		return new FormGroup<UpdateGraphqlApiPostBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			authenticationType: new FormControl<GraphqlApiAuthenticationType | null | undefined>(undefined),
 			xrayEnabled: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -3562,9 +4102,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateResolverPostBodyFormGroup() {
 		return new FormGroup<UpdateResolverPostBodyFormProperties>({
-			dataSourceName: new FormControl<string | null | undefined>(undefined),
-			requestMappingTemplate: new FormControl<string | null | undefined>(undefined),
-			responseMappingTemplate: new FormControl<string | null | undefined>(undefined),
+			dataSourceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
+			requestMappingTemplate: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(1)]),
+			responseMappingTemplate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65536), Validators.minLength(1)]),
 			kind: new FormControl<ResolverKind | null | undefined>(undefined),
 		});
 
@@ -3639,7 +4179,7 @@ export namespace MyNS {
 	export function CreateUpdateTypePostBodyFormGroup() {
 		return new FormGroup<UpdateTypePostBodyFormProperties>({
 			definition: new FormControl<string | null | undefined>(undefined),
-			format: new FormControl<TypeFormat | null | undefined>(undefined),
+			format: new FormControl<TypeFormat | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3662,7 +4202,7 @@ export namespace MyNS {
 	}
 	export function CreateStartSchemaCreationPostBodyFormGroup() {
 		return new FormGroup<StartSchemaCreationPostBodyFormProperties>({
-			definition: new FormControl<string | null | undefined>(undefined),
+			definition: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3685,7 +4225,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3732,9 +4272,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateApiCachePostBodyFormGroup() {
 		return new FormGroup<UpdateApiCachePostBodyFormProperties>({
-			ttl: new FormControl<number | null | undefined>(undefined),
-			apiCachingBehavior: new FormControl<ApiCacheApiCachingBehavior | null | undefined>(undefined),
-			type: new FormControl<ApiCacheType | null | undefined>(undefined),
+			ttl: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			apiCachingBehavior: new FormControl<ApiCacheApiCachingBehavior | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<ApiCacheType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

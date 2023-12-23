@@ -14,15 +14,21 @@ export namespace MyNS {
 	}
 
 	export interface AssociateConfigurationItemsToApplicationRequest {
+
+		/** Required */
 		applicationConfigurationId: string;
+
+		/** Required */
 		configurationIds: Array<string>;
 	}
 	export interface AssociateConfigurationItemsToApplicationRequestFormProperties {
+
+		/** Required */
 		applicationConfigurationId: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateConfigurationItemsToApplicationRequestFormGroup() {
 		return new FormGroup<AssociateConfigurationItemsToApplicationRequestFormProperties>({
-			applicationConfigurationId: new FormControl<string | null | undefined>(undefined),
+			applicationConfigurationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -114,6 +120,12 @@ export namespace MyNS {
 	export enum BatchDeleteImportDataErrorErrorCode { NOT_FOUND = 0, INTERNAL_SERVER_ERROR = 1, OVER_LIMIT = 2 }
 
 	export interface BatchDeleteImportDataRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		importTaskIds: Array<string>;
 	}
 	export interface BatchDeleteImportDataRequestFormProperties {
@@ -138,16 +150,20 @@ export namespace MyNS {
 	}
 
 	export interface CreateApplicationRequest {
+
+		/** Required */
 		name: string;
 		description?: string | null;
 	}
 	export interface CreateApplicationRequestFormProperties {
+
+		/** Required */
 		name: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateApplicationRequestFormGroup() {
 		return new FormGroup<CreateApplicationRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			description: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -164,7 +180,11 @@ export namespace MyNS {
 	}
 
 	export interface CreateTagsRequest {
+
+		/** Required */
 		configurationIds: Array<string>;
+
+		/** Required */
 		tags: Array<Tag>;
 	}
 	export interface CreateTagsRequestFormProperties {
@@ -178,19 +198,27 @@ export namespace MyNS {
 
 	/** Metadata that help you categorize IT assets. */
 	export interface Tag {
+
+		/** Required */
 		key: string;
+
+		/** Required */
 		value: string;
 	}
 
 	/** Metadata that help you categorize IT assets. */
 	export interface TagFormProperties {
+
+		/** Required */
 		key: FormControl<string | null | undefined>,
+
+		/** Required */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -216,6 +244,8 @@ export namespace MyNS {
 	}
 
 	export interface DeleteApplicationsRequest {
+
+		/** Required */
 		configurationIds: Array<string>;
 	}
 	export interface DeleteApplicationsRequestFormProperties {
@@ -237,6 +267,8 @@ export namespace MyNS {
 	}
 
 	export interface DeleteTagsRequest {
+
+		/** Required */
 		configurationIds: Array<string>;
 		tags?: Array<Tag>;
 	}
@@ -347,20 +379,30 @@ export namespace MyNS {
 
 	/** <p>A filter that can use conditional operators.</p> <p>For more information about filters, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html">Querying Discovered Configuration Items</a> in the <i>AWS Application Discovery Service User Guide</i>. </p> */
 	export interface Filter {
+
+		/** Required */
 		name: string;
+
+		/** Required */
 		values: Array<string>;
+
+		/** Required */
 		condition: string;
 	}
 
 	/** <p>A filter that can use conditional operators.</p> <p>For more information about filters, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html">Querying Discovered Configuration Items</a> in the <i>AWS Application Discovery Service User Guide</i>. </p> */
 	export interface FilterFormProperties {
+
+		/** Required */
 		name: FormControl<string | null | undefined>,
+
+		/** Required */
 		condition: FormControl<string | null | undefined>,
 	}
 	export function CreateFilterFormGroup() {
 		return new FormGroup<FilterFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			condition: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			condition: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -387,6 +429,8 @@ export namespace MyNS {
 	}
 
 	export interface DescribeConfigurationsRequest {
+
+		/** Required */
 		configurationIds: Array<string>;
 	}
 	export interface DescribeConfigurationsRequestFormProperties {
@@ -416,6 +460,11 @@ export namespace MyNS {
 	export interface ContinuousExportDescription {
 		exportId?: string | null;
 		status?: ContinuousExportDescriptionStatus | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		statusDetail?: string | null;
 		s3Bucket?: string | null;
 		startTime?: Date | null;
@@ -428,6 +477,11 @@ export namespace MyNS {
 	export interface ContinuousExportDescriptionFormProperties {
 		exportId: FormControl<string | null | undefined>,
 		status: FormControl<ContinuousExportDescriptionStatus | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		statusDetail: FormControl<string | null | undefined>,
 		s3Bucket: FormControl<string | null | undefined>,
 		startTime: FormControl<Date | null | undefined>,
@@ -438,7 +492,7 @@ export namespace MyNS {
 		return new FormGroup<ContinuousExportDescriptionFormProperties>({
 			exportId: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<ContinuousExportDescriptionStatus | null | undefined>(undefined),
-			statusDetail: new FormControl<string | null | undefined>(undefined),
+			statusDetail: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 			s3Bucket: new FormControl<string | null | undefined>(undefined),
 			startTime: new FormControl<Date | null | undefined>(undefined),
 			stopTime: new FormControl<Date | null | undefined>(undefined),
@@ -463,16 +517,26 @@ export namespace MyNS {
 
 	export interface DescribeContinuousExportsRequest {
 		exportIds?: Array<string>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
 		nextToken?: string | null;
 	}
 	export interface DescribeContinuousExportsRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeContinuousExportsRequestFormGroup() {
 		return new FormGroup<DescribeContinuousExportsRequestFormProperties>({
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -505,10 +569,18 @@ export namespace MyNS {
 
 	/** Information regarding the export status of discovered data. The value is an array of objects. */
 	export interface ExportInfo {
+
+		/** Required */
 		exportId: string;
+
+		/** Required */
 		exportStatus: ExportInfoExportStatus;
+
+		/** Required */
 		statusMessage: string;
 		configurationsDownloadUrl?: string | null;
+
+		/** Required */
 		exportRequestTime: Date;
 		isTruncated?: boolean | null;
 		requestedStartTime?: Date | null;
@@ -517,10 +589,18 @@ export namespace MyNS {
 
 	/** Information regarding the export status of discovered data. The value is an array of objects. */
 	export interface ExportInfoFormProperties {
+
+		/** Required */
 		exportId: FormControl<string | null | undefined>,
+
+		/** Required */
 		exportStatus: FormControl<ExportInfoExportStatus | null | undefined>,
+
+		/** Required */
 		statusMessage: FormControl<string | null | undefined>,
 		configurationsDownloadUrl: FormControl<string | null | undefined>,
+
+		/** Required */
 		exportRequestTime: FormControl<Date | null | undefined>,
 		isTruncated: FormControl<boolean | null | undefined>,
 		requestedStartTime: FormControl<Date | null | undefined>,
@@ -528,11 +608,11 @@ export namespace MyNS {
 	}
 	export function CreateExportInfoFormGroup() {
 		return new FormGroup<ExportInfoFormProperties>({
-			exportId: new FormControl<string | null | undefined>(undefined),
-			exportStatus: new FormControl<ExportInfoExportStatus | null | undefined>(undefined),
-			statusMessage: new FormControl<string | null | undefined>(undefined),
+			exportId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			exportStatus: new FormControl<ExportInfoExportStatus | null | undefined>(undefined, [Validators.required]),
+			statusMessage: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			configurationsDownloadUrl: new FormControl<string | null | undefined>(undefined),
-			exportRequestTime: new FormControl<Date | null | undefined>(undefined),
+			exportRequestTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			isTruncated: new FormControl<boolean | null | undefined>(undefined),
 			requestedStartTime: new FormControl<Date | null | undefined>(undefined),
 			requestedEndTime: new FormControl<Date | null | undefined>(undefined),
@@ -594,20 +674,30 @@ export namespace MyNS {
 
 	/** Used to select which agent's data is to be exported. A single agent ID may be selected for export using the <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartExportTask.html">StartExportTask</a> action. */
 	export interface ExportFilter {
+
+		/** Required */
 		name: string;
+
+		/** Required */
 		values: Array<string>;
+
+		/** Required */
 		condition: string;
 	}
 
 	/** Used to select which agent's data is to be exported. A single agent ID may be selected for export using the <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartExportTask.html">StartExportTask</a> action. */
 	export interface ExportFilterFormProperties {
+
+		/** Required */
 		name: FormControl<string | null | undefined>,
+
+		/** Required */
 		condition: FormControl<string | null | undefined>,
 	}
 	export function CreateExportFilterFormGroup() {
 		return new FormGroup<ExportFilterFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			condition: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			condition: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -630,8 +720,23 @@ export namespace MyNS {
 	/** An array of information related to the import task request that includes status information, times, IDs, the Amazon S3 Object URL for the import file, and more. */
 	export interface ImportTask {
 		importTaskId?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		clientRequestToken?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 4000
+		 * Min length: 1
+		 */
 		importUrl?: string | null;
 		status?: ImportTaskStatus | null;
 		importRequestTime?: Date | null;
@@ -647,8 +752,23 @@ export namespace MyNS {
 	/** An array of information related to the import task request that includes status information, times, IDs, the Amazon S3 Object URL for the import file, and more. */
 	export interface ImportTaskFormProperties {
 		importTaskId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		clientRequestToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 4000
+		 * Min length: 1
+		 */
 		importUrl: FormControl<string | null | undefined>,
 		status: FormControl<ImportTaskStatus | null | undefined>,
 		importRequestTime: FormControl<Date | null | undefined>,
@@ -663,9 +783,9 @@ export namespace MyNS {
 	export function CreateImportTaskFormGroup() {
 		return new FormGroup<ImportTaskFormProperties>({
 			importTaskId: new FormControl<string | null | undefined>(undefined),
-			clientRequestToken: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			importUrl: new FormControl<string | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			importUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4000), Validators.minLength(1)]),
 			status: new FormControl<ImportTaskStatus | null | undefined>(undefined),
 			importRequestTime: new FormControl<Date | null | undefined>(undefined),
 			importCompletionTime: new FormControl<Date | null | undefined>(undefined),
@@ -683,16 +803,26 @@ export namespace MyNS {
 
 	export interface DescribeImportTasksRequest {
 		filters?: Array<ImportTaskFilter>;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
 		nextToken?: string | null;
 	}
 	export interface DescribeImportTasksRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeImportTasksRequestFormGroup() {
 		return new FormGroup<DescribeImportTasksRequestFormProperties>({
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -702,6 +832,11 @@ export namespace MyNS {
 	/** <p>A name-values pair of elements you can use to filter the results when querying your import tasks. Currently, wildcards are not supported for filters.</p> <note> <p>When filtering by import status, all other filter values are ignored.</p> </note> */
 	export interface ImportTaskFilter {
 		name?: ImportTaskFilterName | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		values?: Array<string>;
 	}
 
@@ -783,17 +918,23 @@ export namespace MyNS {
 
 	/** The tag filter. Valid names are: <code>tagKey</code>, <code>tagValue</code>, <code>configurationId</code>. */
 	export interface TagFilter {
+
+		/** Required */
 		name: string;
+
+		/** Required */
 		values: Array<string>;
 	}
 
 	/** The tag filter. Valid names are: <code>tagKey</code>, <code>tagValue</code>, <code>configurationId</code>. */
 	export interface TagFilterFormProperties {
+
+		/** Required */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFilterFormGroup() {
 		return new FormGroup<TagFilterFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -809,15 +950,21 @@ export namespace MyNS {
 	}
 
 	export interface DisassociateConfigurationItemsFromApplicationRequest {
+
+		/** Required */
 		applicationConfigurationId: string;
+
+		/** Required */
 		configurationIds: Array<string>;
 	}
 	export interface DisassociateConfigurationItemsFromApplicationRequestFormProperties {
+
+		/** Required */
 		applicationConfigurationId: FormControl<string | null | undefined>,
 	}
 	export function CreateDisassociateConfigurationItemsFromApplicationRequestFormGroup() {
 		return new FormGroup<DisassociateConfigurationItemsFromApplicationRequestFormProperties>({
-			applicationConfigurationId: new FormControl<string | null | undefined>(undefined),
+			applicationConfigurationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -866,34 +1013,62 @@ export namespace MyNS {
 
 	/** Inventory data for installed discovery agents. */
 	export interface CustomerAgentInfo {
+
+		/** Required */
 		activeAgents: number;
+
+		/** Required */
 		healthyAgents: number;
+
+		/** Required */
 		blackListedAgents: number;
+
+		/** Required */
 		shutdownAgents: number;
+
+		/** Required */
 		unhealthyAgents: number;
+
+		/** Required */
 		totalAgents: number;
+
+		/** Required */
 		unknownAgents: number;
 	}
 
 	/** Inventory data for installed discovery agents. */
 	export interface CustomerAgentInfoFormProperties {
+
+		/** Required */
 		activeAgents: FormControl<number | null | undefined>,
+
+		/** Required */
 		healthyAgents: FormControl<number | null | undefined>,
+
+		/** Required */
 		blackListedAgents: FormControl<number | null | undefined>,
+
+		/** Required */
 		shutdownAgents: FormControl<number | null | undefined>,
+
+		/** Required */
 		unhealthyAgents: FormControl<number | null | undefined>,
+
+		/** Required */
 		totalAgents: FormControl<number | null | undefined>,
+
+		/** Required */
 		unknownAgents: FormControl<number | null | undefined>,
 	}
 	export function CreateCustomerAgentInfoFormGroup() {
 		return new FormGroup<CustomerAgentInfoFormProperties>({
-			activeAgents: new FormControl<number | null | undefined>(undefined),
-			healthyAgents: new FormControl<number | null | undefined>(undefined),
-			blackListedAgents: new FormControl<number | null | undefined>(undefined),
-			shutdownAgents: new FormControl<number | null | undefined>(undefined),
-			unhealthyAgents: new FormControl<number | null | undefined>(undefined),
-			totalAgents: new FormControl<number | null | undefined>(undefined),
-			unknownAgents: new FormControl<number | null | undefined>(undefined),
+			activeAgents: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			healthyAgents: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			blackListedAgents: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			shutdownAgents: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			unhealthyAgents: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			totalAgents: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			unknownAgents: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -901,34 +1076,62 @@ export namespace MyNS {
 
 	/** Inventory data for installed discovery connectors. */
 	export interface CustomerConnectorInfo {
+
+		/** Required */
 		activeConnectors: number;
+
+		/** Required */
 		healthyConnectors: number;
+
+		/** Required */
 		blackListedConnectors: number;
+
+		/** Required */
 		shutdownConnectors: number;
+
+		/** Required */
 		unhealthyConnectors: number;
+
+		/** Required */
 		totalConnectors: number;
+
+		/** Required */
 		unknownConnectors: number;
 	}
 
 	/** Inventory data for installed discovery connectors. */
 	export interface CustomerConnectorInfoFormProperties {
+
+		/** Required */
 		activeConnectors: FormControl<number | null | undefined>,
+
+		/** Required */
 		healthyConnectors: FormControl<number | null | undefined>,
+
+		/** Required */
 		blackListedConnectors: FormControl<number | null | undefined>,
+
+		/** Required */
 		shutdownConnectors: FormControl<number | null | undefined>,
+
+		/** Required */
 		unhealthyConnectors: FormControl<number | null | undefined>,
+
+		/** Required */
 		totalConnectors: FormControl<number | null | undefined>,
+
+		/** Required */
 		unknownConnectors: FormControl<number | null | undefined>,
 	}
 	export function CreateCustomerConnectorInfoFormGroup() {
 		return new FormGroup<CustomerConnectorInfoFormProperties>({
-			activeConnectors: new FormControl<number | null | undefined>(undefined),
-			healthyConnectors: new FormControl<number | null | undefined>(undefined),
-			blackListedConnectors: new FormControl<number | null | undefined>(undefined),
-			shutdownConnectors: new FormControl<number | null | undefined>(undefined),
-			unhealthyConnectors: new FormControl<number | null | undefined>(undefined),
-			totalConnectors: new FormControl<number | null | undefined>(undefined),
-			unknownConnectors: new FormControl<number | null | undefined>(undefined),
+			activeConnectors: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			healthyConnectors: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			blackListedConnectors: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			shutdownConnectors: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			unhealthyConnectors: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			totalConnectors: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			unknownConnectors: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -968,6 +1171,8 @@ export namespace MyNS {
 	}
 
 	export interface ListConfigurationsRequest {
+
+		/** Required */
 		configurationType: ConfigurationTagConfigurationType;
 		filters?: Array<Filter>;
 		maxResults?: number | null;
@@ -975,13 +1180,15 @@ export namespace MyNS {
 		orderBy?: Array<OrderByElement>;
 	}
 	export interface ListConfigurationsRequestFormProperties {
+
+		/** Required */
 		configurationType: FormControl<ConfigurationTagConfigurationType | null | undefined>,
 		maxResults: FormControl<number | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListConfigurationsRequestFormGroup() {
 		return new FormGroup<ListConfigurationsRequestFormProperties>({
-			configurationType: new FormControl<ConfigurationTagConfigurationType | null | undefined>(undefined),
+			configurationType: new FormControl<ConfigurationTagConfigurationType | null | undefined>(undefined, [Validators.required]),
 			maxResults: new FormControl<number | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -991,18 +1198,22 @@ export namespace MyNS {
 
 	/** A field and direction for ordered output. */
 	export interface OrderByElement {
+
+		/** Required */
 		fieldName: string;
 		sortOrder?: OrderByElementSortOrder | null;
 	}
 
 	/** A field and direction for ordered output. */
 	export interface OrderByElementFormProperties {
+
+		/** Required */
 		fieldName: FormControl<string | null | undefined>,
 		sortOrder: FormControl<OrderByElementSortOrder | null | undefined>,
 	}
 	export function CreateOrderByElementFormGroup() {
 		return new FormGroup<OrderByElementFormProperties>({
-			fieldName: new FormControl<string | null | undefined>(undefined),
+			fieldName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			sortOrder: new FormControl<OrderByElementSortOrder | null | undefined>(undefined),
 		});
 
@@ -1011,6 +1222,8 @@ export namespace MyNS {
 	export enum OrderByElementSortOrder { ASC = 0, DESC = 1 }
 
 	export interface ListServerNeighborsResponse {
+
+		/** Required */
 		neighbors: Array<NeighborConnectionDetail>;
 		nextToken?: string | null;
 		knownDependencyCount?: number | null;
@@ -1030,33 +1243,47 @@ export namespace MyNS {
 
 	/** Details about neighboring servers. */
 	export interface NeighborConnectionDetail {
+
+		/** Required */
 		sourceServerId: string;
+
+		/** Required */
 		destinationServerId: string;
 		destinationPort?: number | null;
 		transportProtocol?: string | null;
+
+		/** Required */
 		connectionsCount: number;
 	}
 
 	/** Details about neighboring servers. */
 	export interface NeighborConnectionDetailFormProperties {
+
+		/** Required */
 		sourceServerId: FormControl<string | null | undefined>,
+
+		/** Required */
 		destinationServerId: FormControl<string | null | undefined>,
 		destinationPort: FormControl<number | null | undefined>,
 		transportProtocol: FormControl<string | null | undefined>,
+
+		/** Required */
 		connectionsCount: FormControl<number | null | undefined>,
 	}
 	export function CreateNeighborConnectionDetailFormGroup() {
 		return new FormGroup<NeighborConnectionDetailFormProperties>({
-			sourceServerId: new FormControl<string | null | undefined>(undefined),
-			destinationServerId: new FormControl<string | null | undefined>(undefined),
+			sourceServerId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			destinationServerId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			destinationPort: new FormControl<number | null | undefined>(undefined),
 			transportProtocol: new FormControl<string | null | undefined>(undefined),
-			connectionsCount: new FormControl<number | null | undefined>(undefined),
+			connectionsCount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ListServerNeighborsRequest {
+
+		/** Required */
 		configurationId: string;
 		portInformationNeeded?: boolean | null;
 		neighborConfigurationIds?: Array<string>;
@@ -1064,6 +1291,8 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 	export interface ListServerNeighborsRequestFormProperties {
+
+		/** Required */
 		configurationId: FormControl<string | null | undefined>,
 		portInformationNeeded: FormControl<boolean | null | undefined>,
 		maxResults: FormControl<number | null | undefined>,
@@ -1071,7 +1300,7 @@ export namespace MyNS {
 	}
 	export function CreateListServerNeighborsRequestFormGroup() {
 		return new FormGroup<ListServerNeighborsRequestFormProperties>({
-			configurationId: new FormControl<string | null | undefined>(undefined),
+			configurationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			portInformationNeeded: new FormControl<boolean | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
@@ -1167,6 +1396,8 @@ export namespace MyNS {
 	}
 
 	export interface StartDataCollectionByAgentIdsRequest {
+
+		/** Required */
 		agentIds: Array<string>;
 	}
 	export interface StartDataCollectionByAgentIdsRequestFormProperties {
@@ -1224,20 +1455,54 @@ export namespace MyNS {
 	}
 
 	export interface StartImportTaskRequest {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		clientRequestToken?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		name: string;
+
+		/**
+		 * Required
+		 * Max length: 4000
+		 * Min length: 1
+		 */
 		importUrl: string;
 	}
 	export interface StartImportTaskRequestFormProperties {
+
+		/**
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		clientRequestToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 4000
+		 * Min length: 1
+		 */
 		importUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateStartImportTaskRequestFormGroup() {
 		return new FormGroup<StartImportTaskRequestFormProperties>({
-			clientRequestToken: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			importUrl: new FormControl<string | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			importUrl: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4000), Validators.minLength(1)]),
 		});
 
 	}
@@ -1259,14 +1524,18 @@ export namespace MyNS {
 	}
 
 	export interface StopContinuousExportRequest {
+
+		/** Required */
 		exportId: string;
 	}
 	export interface StopContinuousExportRequestFormProperties {
+
+		/** Required */
 		exportId: FormControl<string | null | undefined>,
 	}
 	export function CreateStopContinuousExportRequestFormGroup() {
 		return new FormGroup<StopContinuousExportRequestFormProperties>({
-			exportId: new FormControl<string | null | undefined>(undefined),
+			exportId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1283,6 +1552,8 @@ export namespace MyNS {
 	}
 
 	export interface StopDataCollectionByAgentIdsRequest {
+
+		/** Required */
 		agentIds: Array<string>;
 	}
 	export interface StopDataCollectionByAgentIdsRequestFormProperties {
@@ -1304,18 +1575,22 @@ export namespace MyNS {
 	}
 
 	export interface UpdateApplicationRequest {
+
+		/** Required */
 		configurationId: string;
 		name?: string | null;
 		description?: string | null;
 	}
 	export interface UpdateApplicationRequestFormProperties {
+
+		/** Required */
 		configurationId: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateApplicationRequestFormGroup() {
 		return new FormGroup<UpdateApplicationRequestFormProperties>({
-			configurationId: new FormControl<string | null | undefined>(undefined),
+			configurationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
 		});

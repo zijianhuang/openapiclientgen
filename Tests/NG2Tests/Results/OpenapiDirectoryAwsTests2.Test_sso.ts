@@ -135,6 +135,11 @@ export namespace MyNS {
 	export interface AccountInfo {
 		accountId?: string | null;
 		accountName?: string | null;
+
+		/**
+		 * Max length: 254
+		 * Min length: 1
+		 */
 		emailAddress?: string | null;
 	}
 
@@ -142,13 +147,18 @@ export namespace MyNS {
 	export interface AccountInfoFormProperties {
 		accountId: FormControl<string | null | undefined>,
 		accountName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 254
+		 * Min length: 1
+		 */
 		emailAddress: FormControl<string | null | undefined>,
 	}
 	export function CreateAccountInfoFormGroup() {
 		return new FormGroup<AccountInfoFormProperties>({
 			accountId: new FormControl<string | null | undefined>(undefined),
 			accountName: new FormControl<string | null | undefined>(undefined),
-			emailAddress: new FormControl<string | null | undefined>(undefined),
+			emailAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(254), Validators.minLength(1)]),
 		});
 
 	}

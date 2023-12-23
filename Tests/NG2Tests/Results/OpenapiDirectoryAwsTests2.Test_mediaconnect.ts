@@ -28,7 +28,11 @@ export namespace MyNS {
 		Encryption?: Encryption;
 		EntitlementArn?: string | null;
 		MediaLiveInputArn?: string | null;
+
+		/** Required */
 		Name: string;
+
+		/** Required */
 		OutputArn: string;
 		Port?: number | null;
 
@@ -46,7 +50,11 @@ export namespace MyNS {
 		Destination: FormControl<string | null | undefined>,
 		EntitlementArn: FormControl<string | null | undefined>,
 		MediaLiveInputArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		OutputArn: FormControl<string | null | undefined>,
 		Port: FormControl<number | null | undefined>,
 	}
@@ -57,8 +65,8 @@ export namespace MyNS {
 			Destination: new FormControl<string | null | undefined>(undefined),
 			EntitlementArn: new FormControl<string | null | undefined>(undefined),
 			MediaLiveInputArn: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			OutputArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			OutputArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Port: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -67,12 +75,16 @@ export namespace MyNS {
 
 	/** Information about the encryption of the flow. */
 	export interface Encryption {
+
+		/** Required */
 		Algorithm: EncryptionAlgorithm;
 		ConstantInitializationVector?: string | null;
 		DeviceId?: string | null;
 		KeyType?: EncryptionKeyType | null;
 		Region?: string | null;
 		ResourceId?: string | null;
+
+		/** Required */
 		RoleArn: string;
 		SecretArn?: string | null;
 		Url?: string | null;
@@ -80,25 +92,29 @@ export namespace MyNS {
 
 	/** Information about the encryption of the flow. */
 	export interface EncryptionFormProperties {
+
+		/** Required */
 		Algorithm: FormControl<EncryptionAlgorithm | null | undefined>,
 		ConstantInitializationVector: FormControl<string | null | undefined>,
 		DeviceId: FormControl<string | null | undefined>,
 		KeyType: FormControl<EncryptionKeyType | null | undefined>,
 		Region: FormControl<string | null | undefined>,
 		ResourceId: FormControl<string | null | undefined>,
+
+		/** Required */
 		RoleArn: FormControl<string | null | undefined>,
 		SecretArn: FormControl<string | null | undefined>,
 		Url: FormControl<string | null | undefined>,
 	}
 	export function CreateEncryptionFormGroup() {
 		return new FormGroup<EncryptionFormProperties>({
-			Algorithm: new FormControl<EncryptionAlgorithm | null | undefined>(undefined),
+			Algorithm: new FormControl<EncryptionAlgorithm | null | undefined>(undefined, [Validators.required]),
 			ConstantInitializationVector: new FormControl<string | null | undefined>(undefined),
 			DeviceId: new FormControl<string | null | undefined>(undefined),
 			KeyType: new FormControl<EncryptionKeyType | null | undefined>(undefined),
 			Region: new FormControl<string | null | undefined>(undefined),
 			ResourceId: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SecretArn: new FormControl<string | null | undefined>(undefined),
 			Url: new FormControl<string | null | undefined>(undefined),
 		});
@@ -115,6 +131,8 @@ export namespace MyNS {
 		CidrAllowList?: Array<string>;
 		MaxBitrate?: number | null;
 		MaxLatency?: number | null;
+
+		/** Required */
 		Protocol: TransportProtocol;
 		RemoteId?: string | null;
 		SmoothingLatency?: number | null;
@@ -125,6 +143,8 @@ export namespace MyNS {
 	export interface TransportFormProperties {
 		MaxBitrate: FormControl<number | null | undefined>,
 		MaxLatency: FormControl<number | null | undefined>,
+
+		/** Required */
 		Protocol: FormControl<TransportProtocol | null | undefined>,
 		RemoteId: FormControl<string | null | undefined>,
 		SmoothingLatency: FormControl<number | null | undefined>,
@@ -134,7 +154,7 @@ export namespace MyNS {
 		return new FormGroup<TransportFormProperties>({
 			MaxBitrate: new FormControl<number | null | undefined>(undefined),
 			MaxLatency: new FormControl<number | null | undefined>(undefined),
-			Protocol: new FormControl<TransportProtocol | null | undefined>(undefined),
+			Protocol: new FormControl<TransportProtocol | null | undefined>(undefined, [Validators.required]),
 			RemoteId: new FormControl<string | null | undefined>(undefined),
 			SmoothingLatency: new FormControl<number | null | undefined>(undefined),
 			StreamId: new FormControl<string | null | undefined>(undefined),
@@ -173,6 +193,8 @@ export namespace MyNS {
 		MaxLatency?: number | null;
 		Name?: string | null;
 		Port?: number | null;
+
+		/** Required */
 		Protocol: AddOutputRequestProtocol;
 		RemoteId?: string | null;
 		SmoothingLatency?: number | null;
@@ -189,6 +211,8 @@ export namespace MyNS {
 		MaxLatency: FormControl<number | null | undefined>,
 		Name: FormControl<string | null | undefined>,
 		Port: FormControl<number | null | undefined>,
+
+		/** Required */
 		Protocol: FormControl<AddOutputRequestProtocol | null | undefined>,
 		RemoteId: FormControl<string | null | undefined>,
 		SmoothingLatency: FormControl<number | null | undefined>,
@@ -201,7 +225,7 @@ export namespace MyNS {
 			MaxLatency: new FormControl<number | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined),
 			Port: new FormControl<number | null | undefined>(undefined),
-			Protocol: new FormControl<AddOutputRequestProtocol | null | undefined>(undefined),
+			Protocol: new FormControl<AddOutputRequestProtocol | null | undefined>(undefined, [Validators.required]),
 			RemoteId: new FormControl<string | null | undefined>(undefined),
 			SmoothingLatency: new FormControl<number | null | undefined>(undefined),
 			StreamId: new FormControl<string | null | undefined>(undefined),
@@ -306,7 +330,11 @@ export namespace MyNS {
 		EntitlementArn?: string | null;
 		IngestIp?: string | null;
 		IngestPort?: number | null;
+
+		/** Required */
 		Name: string;
+
+		/** Required */
 		SourceArn: string;
 
 		/** Attributes related to the transport stream that are used in a source or output. */
@@ -322,7 +350,11 @@ export namespace MyNS {
 		EntitlementArn: FormControl<string | null | undefined>,
 		IngestIp: FormControl<string | null | undefined>,
 		IngestPort: FormControl<number | null | undefined>,
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		SourceArn: FormControl<string | null | undefined>,
 		VpcInterfaceName: FormControl<string | null | undefined>,
 		WhitelistCidr: FormControl<string | null | undefined>,
@@ -334,8 +366,8 @@ export namespace MyNS {
 			EntitlementArn: new FormControl<string | null | undefined>(undefined),
 			IngestIp: new FormControl<string | null | undefined>(undefined),
 			IngestPort: new FormControl<number | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			SourceArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			VpcInterfaceName: new FormControl<string | null | undefined>(undefined),
 			WhitelistCidr: new FormControl<string | null | undefined>(undefined),
 		});
@@ -408,24 +440,40 @@ export namespace MyNS {
 
 	/** The settings for a VPC Source. */
 	export interface VpcInterface {
+
+		/** Required */
 		Name: string;
+
+		/** Required */
 		NetworkInterfaceIds: Array<string>;
+
+		/** Required */
 		RoleArn: string;
+
+		/** Required */
 		SecurityGroupIds: Array<string>;
+
+		/** Required */
 		SubnetId: string;
 	}
 
 	/** The settings for a VPC Source. */
 	export interface VpcInterfaceFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		RoleArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		SubnetId: FormControl<string | null | undefined>,
 	}
 	export function CreateVpcInterfaceFormGroup() {
 		return new FormGroup<VpcInterfaceFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
-			SubnetId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SubnetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -433,23 +481,37 @@ export namespace MyNS {
 
 	/** Desired VPC Interface for a Flow */
 	export interface VpcInterfaceRequest {
+
+		/** Required */
 		Name: string;
+
+		/** Required */
 		RoleArn: string;
+
+		/** Required */
 		SecurityGroupIds: Array<string>;
+
+		/** Required */
 		SubnetId: string;
 	}
 
 	/** Desired VPC Interface for a Flow */
 	export interface VpcInterfaceRequestFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		RoleArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		SubnetId: FormControl<string | null | undefined>,
 	}
 	export function CreateVpcInterfaceRequestFormGroup() {
 		return new FormGroup<VpcInterfaceRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
-			SubnetId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SubnetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -470,12 +532,22 @@ export namespace MyNS {
 
 	/** The settings for a flow, including its source, outputs, and entitlements. */
 	export interface Flow {
+
+		/** Required */
 		AvailabilityZone: string;
 		Description?: string | null;
 		EgressIp?: string | null;
+
+		/** Required */
 		Entitlements: Array<Entitlement>;
+
+		/** Required */
 		FlowArn: string;
+
+		/** Required */
 		Name: string;
+
+		/** Required */
 		Outputs: Array<Output>;
 
 		/**
@@ -487,27 +559,37 @@ export namespace MyNS {
 		/** The settings for source failover */
 		SourceFailoverConfig?: FailoverConfig;
 		Sources?: Array<Source>;
+
+		/** Required */
 		Status: FlowStatus;
 		VpcInterfaces?: Array<VpcInterface>;
 	}
 
 	/** The settings for a flow, including its source, outputs, and entitlements. */
 	export interface FlowFormProperties {
+
+		/** Required */
 		AvailabilityZone: FormControl<string | null | undefined>,
 		Description: FormControl<string | null | undefined>,
 		EgressIp: FormControl<string | null | undefined>,
+
+		/** Required */
 		FlowArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Status: FormControl<FlowStatus | null | undefined>,
 	}
 	export function CreateFlowFormGroup() {
 		return new FormGroup<FlowFormProperties>({
-			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Description: new FormControl<string | null | undefined>(undefined),
 			EgressIp: new FormControl<string | null | undefined>(undefined),
-			FlowArn: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<FlowStatus | null | undefined>(undefined),
+			FlowArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Status: new FormControl<FlowStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -520,8 +602,14 @@ export namespace MyNS {
 
 		/** Information about the encryption of the flow. */
 		Encryption?: Encryption;
+
+		/** Required */
 		EntitlementArn: string;
+
+		/** Required */
 		Name: string;
+
+		/** Required */
 		Subscribers: Array<string>;
 	}
 
@@ -529,15 +617,19 @@ export namespace MyNS {
 	export interface EntitlementFormProperties {
 		DataTransferSubscriberFeePercent: FormControl<number | null | undefined>,
 		Description: FormControl<string | null | undefined>,
+
+		/** Required */
 		EntitlementArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateEntitlementFormGroup() {
 		return new FormGroup<EntitlementFormProperties>({
 			DataTransferSubscriberFeePercent: new FormControl<number | null | undefined>(undefined),
 			Description: new FormControl<string | null | undefined>(undefined),
-			EntitlementArn: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			EntitlementArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -575,6 +667,8 @@ export namespace MyNS {
 		/** Information about the encryption of the flow. */
 		Encryption?: Encryption;
 		Name?: string | null;
+
+		/** Required */
 		Subscribers: Array<string>;
 	}
 
@@ -642,6 +736,8 @@ export namespace MyNS {
 
 	/** Messages that provide the state of the flow. */
 	export interface Messages {
+
+		/** Required */
 		Errors: Array<string>;
 	}
 
@@ -696,21 +792,29 @@ export namespace MyNS {
 	/** An entitlement that has been granted to you from other AWS accounts. */
 	export interface ListedEntitlement {
 		DataTransferSubscriberFeePercent?: number | null;
+
+		/** Required */
 		EntitlementArn: string;
+
+		/** Required */
 		EntitlementName: string;
 	}
 
 	/** An entitlement that has been granted to you from other AWS accounts. */
 	export interface ListedEntitlementFormProperties {
 		DataTransferSubscriberFeePercent: FormControl<number | null | undefined>,
+
+		/** Required */
 		EntitlementArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		EntitlementName: FormControl<string | null | undefined>,
 	}
 	export function CreateListedEntitlementFormGroup() {
 		return new FormGroup<ListedEntitlementFormProperties>({
 			DataTransferSubscriberFeePercent: new FormControl<number | null | undefined>(undefined),
-			EntitlementArn: new FormControl<string | null | undefined>(undefined),
-			EntitlementName: new FormControl<string | null | undefined>(undefined),
+			EntitlementArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			EntitlementName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -732,31 +836,55 @@ export namespace MyNS {
 
 	/** Provides a summary of a flow, including its ARN, Availability Zone, and source type. */
 	export interface ListedFlow {
+
+		/** Required */
 		AvailabilityZone: string;
+
+		/** Required */
 		Description: string;
+
+		/** Required */
 		FlowArn: string;
+
+		/** Required */
 		Name: string;
+
+		/** Required */
 		SourceType: ListedFlowSourceType;
+
+		/** Required */
 		Status: FlowStatus;
 	}
 
 	/** Provides a summary of a flow, including its ARN, Availability Zone, and source type. */
 	export interface ListedFlowFormProperties {
+
+		/** Required */
 		AvailabilityZone: FormControl<string | null | undefined>,
+
+		/** Required */
 		Description: FormControl<string | null | undefined>,
+
+		/** Required */
 		FlowArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		SourceType: FormControl<ListedFlowSourceType | null | undefined>,
+
+		/** Required */
 		Status: FormControl<FlowStatus | null | undefined>,
 	}
 	export function CreateListedFlowFormGroup() {
 		return new FormGroup<ListedFlowFormProperties>({
-			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			FlowArn: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			SourceType: new FormControl<ListedFlowSourceType | null | undefined>(undefined),
-			Status: new FormControl<FlowStatus | null | undefined>(undefined),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			FlowArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SourceType: new FormControl<ListedFlowSourceType | null | undefined>(undefined, [Validators.required]),
+			Status: new FormControl<FlowStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -949,6 +1077,8 @@ export namespace MyNS {
 
 	/** A request to add outputs to the specified flow. */
 	export interface AddFlowOutputsRequest {
+
+		/** Required */
 		Outputs: Array<AddOutputRequest>;
 	}
 
@@ -964,6 +1094,8 @@ export namespace MyNS {
 
 	/** A request to add sources to the flow. */
 	export interface AddFlowSourcesRequest {
+
+		/** Required */
 		Sources: Array<SetSourceRequest>;
 	}
 
@@ -979,6 +1111,8 @@ export namespace MyNS {
 
 	/** A request to add VPC interfaces to the flow. */
 	export interface AddFlowVpcInterfacesRequest {
+
+		/** Required */
 		VpcInterfaces: Array<VpcInterfaceRequest>;
 	}
 
@@ -996,6 +1130,8 @@ export namespace MyNS {
 	export interface CreateFlowRequest {
 		AvailabilityZone?: string | null;
 		Entitlements?: Array<GrantEntitlementRequest>;
+
+		/** Required */
 		Name: string;
 		Outputs?: Array<AddOutputRequest>;
 
@@ -1011,12 +1147,14 @@ export namespace MyNS {
 	/** Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50) and entitlements (up to 50). */
 	export interface CreateFlowRequestFormProperties {
 		AvailabilityZone: FormControl<string | null | undefined>,
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateFlowRequestFormGroup() {
 		return new FormGroup<CreateFlowRequestFormProperties>({
 			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1046,6 +1184,8 @@ export namespace MyNS {
 
 	/** A request to grant entitlements on a flow. */
 	export interface GrantFlowEntitlementsRequest {
+
+		/** Required */
 		Entitlements: Array<GrantEntitlementRequest>;
 	}
 
@@ -1153,6 +1293,8 @@ export namespace MyNS {
 
 	/** The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters. */
 	export interface TagResourceRequest {
+
+		/** Required */
 		Tags: __mapOf__string;
 	}
 
@@ -1697,7 +1839,7 @@ export namespace MyNS {
 	export function CreateCreateFlowPostBodyFormGroup() {
 		return new FormGroup<CreateFlowPostBodyFormProperties>({
 			availabilityZone: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1826,7 +1968,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

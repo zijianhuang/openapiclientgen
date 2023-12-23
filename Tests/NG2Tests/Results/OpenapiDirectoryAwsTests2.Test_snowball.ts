@@ -14,14 +14,28 @@ export namespace MyNS {
 	}
 
 	export interface CancelClusterRequest {
+
+		/**
+		 * Required
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		ClusterId: string;
 	}
 	export interface CancelClusterRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		ClusterId: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelClusterRequestFormGroup() {
 		return new FormGroup<CancelClusterRequestFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39)]),
 		});
 
 	}
@@ -67,27 +81,45 @@ export namespace MyNS {
 	}
 
 	export interface CancelJobRequest {
+
+		/**
+		 * Required
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		JobId: string;
 	}
 	export interface CancelJobRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelJobRequestFormGroup() {
 		return new FormGroup<CancelJobRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39)]),
 		});
 
 	}
 
 	export interface CreateAddressResult {
+
+		/** Min length: 1 */
 		AddressId?: string | null;
 	}
 	export interface CreateAddressResultFormProperties {
+
+		/** Min length: 1 */
 		AddressId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateAddressResultFormGroup() {
 		return new FormGroup<CreateAddressResultFormProperties>({
-			AddressId: new FormControl<string | null | undefined>(undefined),
+			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -111,54 +143,114 @@ export namespace MyNS {
 
 	/** The address that you want the Snowball or Snowballs associated with a specific job to be shipped to. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or unsupported, then an exception is thrown. */
 	export interface Address {
+
+		/**
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		AddressId?: string | null;
+
+		/** Min length: 1 */
 		Name?: string | null;
+
+		/** Min length: 1 */
 		Company?: string | null;
+
+		/** Min length: 1 */
 		Street1?: string | null;
+
+		/** Min length: 1 */
 		Street2?: string | null;
+
+		/** Min length: 1 */
 		Street3?: string | null;
+
+		/** Min length: 1 */
 		City?: string | null;
+
+		/** Min length: 1 */
 		StateOrProvince?: string | null;
+
+		/** Min length: 1 */
 		PrefectureOrDistrict?: string | null;
+
+		/** Min length: 1 */
 		Landmark?: string | null;
+
+		/** Min length: 1 */
 		Country?: string | null;
+
+		/** Min length: 1 */
 		PostalCode?: string | null;
+
+		/** Min length: 1 */
 		PhoneNumber?: string | null;
 		IsRestricted?: boolean | null;
 	}
 
 	/** The address that you want the Snowball or Snowballs associated with a specific job to be shipped to. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or unsupported, then an exception is thrown. */
 	export interface AddressFormProperties {
+
+		/**
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		AddressId: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		Company: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		Street1: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		Street2: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		Street3: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		City: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		StateOrProvince: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		PrefectureOrDistrict: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		Landmark: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		Country: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		PostalCode: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		PhoneNumber: FormControl<string | null | undefined>,
 		IsRestricted: FormControl<boolean | null | undefined>,
 	}
 	export function CreateAddressFormGroup() {
 		return new FormGroup<AddressFormProperties>({
-			AddressId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Company: new FormControl<string | null | undefined>(undefined),
-			Street1: new FormControl<string | null | undefined>(undefined),
-			Street2: new FormControl<string | null | undefined>(undefined),
-			Street3: new FormControl<string | null | undefined>(undefined),
-			City: new FormControl<string | null | undefined>(undefined),
-			StateOrProvince: new FormControl<string | null | undefined>(undefined),
-			PrefectureOrDistrict: new FormControl<string | null | undefined>(undefined),
-			Landmark: new FormControl<string | null | undefined>(undefined),
-			Country: new FormControl<string | null | undefined>(undefined),
-			PostalCode: new FormControl<string | null | undefined>(undefined),
-			PhoneNumber: new FormControl<string | null | undefined>(undefined),
+			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			Company: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			Street1: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			Street2: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			Street3: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			City: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			StateOrProvince: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			PrefectureOrDistrict: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			Landmark: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			Country: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			PostalCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			PhoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			IsRestricted: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -185,19 +277,33 @@ export namespace MyNS {
 	}
 
 	export interface CreateClusterResult {
+
+		/**
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		ClusterId?: string | null;
 	}
 	export interface CreateClusterResultFormProperties {
+
+		/**
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		ClusterId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateClusterResultFormGroup() {
 		return new FormGroup<CreateClusterResultFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(39), Validators.minLength(39)]),
 		});
 
 	}
 
 	export interface CreateClusterRequest {
+
+		/** Required */
 		JobType: CreateClusterRequestJobType;
 
 		/**
@@ -205,40 +311,98 @@ export namespace MyNS {
 		 * Required
 		 */
 		Resources: JobResource;
+
+		/** Min length: 1 */
 		Description?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		AddressId: string;
+
+		/**
+		 * Max length: 255
+		 * Pattern: arn:aws.*:kms:.*:[0-9]{12}:key/.*
+		 */
 		KmsKeyARN?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Pattern: arn:aws.*:iam::[0-9]{12}:role/.*
+		 */
 		RoleARN: string;
 		SnowballType?: CreateClusterRequestSnowballType | null;
+
+		/** Required */
 		ShippingOption: CreateClusterRequestShippingOption;
 
 		/** <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p> */
 		Notification?: Notification;
+
+		/**
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		ForwardingAddressId?: string | null;
 
 		/** The tax documents required in your AWS Region. */
 		TaxDocuments?: TaxDocuments;
 	}
 	export interface CreateClusterRequestFormProperties {
+
+		/** Required */
 		JobType: FormControl<CreateClusterRequestJobType | null | undefined>,
+
+		/** Min length: 1 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		AddressId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Pattern: arn:aws.*:kms:.*:[0-9]{12}:key/.*
+		 */
 		KmsKeyARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Pattern: arn:aws.*:iam::[0-9]{12}:role/.*
+		 */
 		RoleARN: FormControl<string | null | undefined>,
 		SnowballType: FormControl<CreateClusterRequestSnowballType | null | undefined>,
+
+		/** Required */
 		ShippingOption: FormControl<CreateClusterRequestShippingOption | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		ForwardingAddressId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateClusterRequestFormGroup() {
 		return new FormGroup<CreateClusterRequestFormProperties>({
-			JobType: new FormControl<CreateClusterRequestJobType | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			AddressId: new FormControl<string | null | undefined>(undefined),
-			KmsKeyARN: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			JobType: new FormControl<CreateClusterRequestJobType | null | undefined>(undefined, [Validators.required]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(40)]),
+			KmsKeyARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 			SnowballType: new FormControl<CreateClusterRequestSnowballType | null | undefined>(undefined),
-			ShippingOption: new FormControl<CreateClusterRequestShippingOption | null | undefined>(undefined),
-			ForwardingAddressId: new FormControl<string | null | undefined>(undefined),
+			ShippingOption: new FormControl<CreateClusterRequestShippingOption | null | undefined>(undefined, [Validators.required]),
+			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40)]),
 		});
 
 	}
@@ -265,6 +429,8 @@ export namespace MyNS {
 
 	/** Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into. For export jobs, this object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted. */
 	export interface S3Resource {
+
+		/** Max length: 255 */
 		BucketArn?: string | null;
 
 		/** Contains a key range. For export jobs, a <code>S3Resource</code> object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted. */
@@ -273,11 +439,13 @@ export namespace MyNS {
 
 	/** Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into. For export jobs, this object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted. */
 	export interface S3ResourceFormProperties {
+
+		/** Max length: 255 */
 		BucketArn: FormControl<string | null | undefined>,
 	}
 	export function CreateS3ResourceFormGroup() {
 		return new FormGroup<S3ResourceFormProperties>({
-			BucketArn: new FormControl<string | null | undefined>(undefined),
+			BucketArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -285,19 +453,27 @@ export namespace MyNS {
 
 	/** Contains a key range. For export jobs, a <code>S3Resource</code> object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted. */
 	export interface KeyRange {
+
+		/** Min length: 1 */
 		BeginMarker?: string | null;
+
+		/** Min length: 1 */
 		EndMarker?: string | null;
 	}
 
 	/** Contains a key range. For export jobs, a <code>S3Resource</code> object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted. */
 	export interface KeyRangeFormProperties {
+
+		/** Min length: 1 */
 		BeginMarker: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		EndMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateKeyRangeFormGroup() {
 		return new FormGroup<KeyRangeFormProperties>({
-			BeginMarker: new FormControl<string | null | undefined>(undefined),
-			EndMarker: new FormControl<string | null | undefined>(undefined),
+			BeginMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			EndMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -305,17 +481,21 @@ export namespace MyNS {
 
 	/** Identifies  */
 	export interface LambdaResource {
+
+		/** Max length: 255 */
 		LambdaArn?: string | null;
 		EventTriggers?: Array<EventTriggerDefinition>;
 	}
 
 	/** Identifies  */
 	export interface LambdaResourceFormProperties {
+
+		/** Max length: 255 */
 		LambdaArn: FormControl<string | null | undefined>,
 	}
 	export function CreateLambdaResourceFormGroup() {
 		return new FormGroup<LambdaResourceFormProperties>({
-			LambdaArn: new FormControl<string | null | undefined>(undefined),
+			LambdaArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -323,16 +503,20 @@ export namespace MyNS {
 
 	/** The container for the <a>EventTriggerDefinition$EventResourceARN</a>. */
 	export interface EventTriggerDefinition {
+
+		/** Max length: 255 */
 		EventResourceARN?: string | null;
 	}
 
 	/** The container for the <a>EventTriggerDefinition$EventResourceARN</a>. */
 	export interface EventTriggerDefinitionFormProperties {
+
+		/** Max length: 255 */
 		EventResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateEventTriggerDefinitionFormGroup() {
 		return new FormGroup<EventTriggerDefinitionFormProperties>({
-			EventResourceARN: new FormControl<string | null | undefined>(undefined),
+			EventResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -340,19 +524,37 @@ export namespace MyNS {
 
 	/** A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2 AMI ID and the Snowball Edge AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the AWS Cloud and on the device. */
 	export interface Ec2AmiResource {
+
+		/**
+		 * Required
+		 * Max length: 21
+		 * Min length: 12
+		 * Pattern: (ami-[0-9a-f]{8})|(ami-[0-9a-f]{17})
+		 */
 		AmiId: string;
+
+		/** Min length: 1 */
 		SnowballAmiId?: string | null;
 	}
 
 	/** A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2 AMI ID and the Snowball Edge AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the AWS Cloud and on the device. */
 	export interface Ec2AmiResourceFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 21
+		 * Min length: 12
+		 * Pattern: (ami-[0-9a-f]{8})|(ami-[0-9a-f]{17})
+		 */
 		AmiId: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		SnowballAmiId: FormControl<string | null | undefined>,
 	}
 	export function CreateEc2AmiResourceFormGroup() {
 		return new FormGroup<Ec2AmiResourceFormProperties>({
-			AmiId: new FormControl<string | null | undefined>(undefined),
-			SnowballAmiId: new FormControl<string | null | undefined>(undefined),
+			AmiId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(12)]),
+			SnowballAmiId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -364,6 +566,11 @@ export namespace MyNS {
 
 	/** <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p> */
 	export interface Notification {
+
+		/**
+		 * Max length: 255
+		 * Pattern: arn:aws.*:sns:.*:[0-9]{12}:.*
+		 */
 		SnsTopicARN?: string | null;
 		JobStatesToNotify?: Array<JobState>;
 		NotifyAll?: boolean | null;
@@ -371,12 +578,17 @@ export namespace MyNS {
 
 	/** <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p> */
 	export interface NotificationFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Pattern: arn:aws.*:sns:.*:[0-9]{12}:.*
+		 */
 		SnsTopicARN: FormControl<string | null | undefined>,
 		NotifyAll: FormControl<boolean | null | undefined>,
 	}
 	export function CreateNotificationFormGroup() {
 		return new FormGroup<NotificationFormProperties>({
-			SnsTopicARN: new FormControl<string | null | undefined>(undefined),
+			SnsTopicARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			NotifyAll: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -404,11 +616,15 @@ export namespace MyNS {
 
 	/** The tax documents required in AWS Regions in India. */
 	export interface INDTaxDocuments {
+
+		/** Pattern: \d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1} */
 		GSTIN?: string | null;
 	}
 
 	/** The tax documents required in AWS Regions in India. */
 	export interface INDTaxDocumentsFormProperties {
+
+		/** Pattern: \d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1} */
 		GSTIN: FormControl<string | null | undefined>,
 	}
 	export function CreateINDTaxDocumentsFormGroup() {
@@ -439,14 +655,26 @@ export namespace MyNS {
 	}
 
 	export interface CreateJobResult {
+
+		/**
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		JobId?: string | null;
 	}
 	export interface CreateJobResultFormProperties {
+
+		/**
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateJobResultFormGroup() {
 		return new FormGroup<CreateJobResultFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(39), Validators.minLength(39)]),
 		});
 
 	}
@@ -456,17 +684,47 @@ export namespace MyNS {
 
 		/** Contains an array of AWS resource objects. Each object represents an Amazon S3 bucket, an AWS Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job. */
 		Resources?: JobResource;
+
+		/** Min length: 1 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		AddressId?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Pattern: arn:aws.*:kms:.*:[0-9]{12}:key/.*
+		 */
 		KmsKeyARN?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Pattern: arn:aws.*:iam::[0-9]{12}:role/.*
+		 */
 		RoleARN?: string | null;
 		SnowballCapacityPreference?: CreateJobRequestSnowballCapacityPreference | null;
 		ShippingOption?: CreateClusterRequestShippingOption | null;
 
 		/** <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p> */
 		Notification?: Notification;
+
+		/**
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		ClusterId?: string | null;
 		SnowballType?: CreateClusterRequestSnowballType | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		ForwardingAddressId?: string | null;
 
 		/** The tax documents required in your AWS Region. */
@@ -474,28 +732,58 @@ export namespace MyNS {
 	}
 	export interface CreateJobRequestFormProperties {
 		JobType: FormControl<CreateClusterRequestJobType | null | undefined>,
+
+		/** Min length: 1 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		AddressId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Pattern: arn:aws.*:kms:.*:[0-9]{12}:key/.*
+		 */
 		KmsKeyARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Pattern: arn:aws.*:iam::[0-9]{12}:role/.*
+		 */
 		RoleARN: FormControl<string | null | undefined>,
 		SnowballCapacityPreference: FormControl<CreateJobRequestSnowballCapacityPreference | null | undefined>,
 		ShippingOption: FormControl<CreateClusterRequestShippingOption | null | undefined>,
+
+		/**
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		ClusterId: FormControl<string | null | undefined>,
 		SnowballType: FormControl<CreateClusterRequestSnowballType | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		ForwardingAddressId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateJobRequestFormGroup() {
 		return new FormGroup<CreateJobRequestFormProperties>({
 			JobType: new FormControl<CreateClusterRequestJobType | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			AddressId: new FormControl<string | null | undefined>(undefined),
-			KmsKeyARN: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40)]),
+			KmsKeyARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			SnowballCapacityPreference: new FormControl<CreateJobRequestSnowballCapacityPreference | null | undefined>(undefined),
 			ShippingOption: new FormControl<CreateClusterRequestShippingOption | null | undefined>(undefined),
-			ClusterId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(39), Validators.minLength(39)]),
 			SnowballType: new FormControl<CreateClusterRequestSnowballType | null | undefined>(undefined),
-			ForwardingAddressId: new FormControl<string | null | undefined>(undefined),
+			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40)]),
 		});
 
 	}
@@ -526,44 +814,76 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAddressRequest {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		AddressId: string;
 	}
 	export interface DescribeAddressRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		AddressId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeAddressRequestFormGroup() {
 		return new FormGroup<DescribeAddressRequestFormProperties>({
-			AddressId: new FormControl<string | null | undefined>(undefined),
+			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(40)]),
 		});
 
 	}
 
 	export interface DescribeAddressesResult {
 		Addresses?: Array<Address>;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface DescribeAddressesResultFormProperties {
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeAddressesResultFormGroup() {
 		return new FormGroup<DescribeAddressesResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeAddressesRequest {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface DescribeAddressesRequestFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeAddressesRequestFormGroup() {
 		return new FormGroup<DescribeAddressesRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -594,9 +914,23 @@ export namespace MyNS {
 
 	/** Contains metadata about a specific cluster. */
 	export interface ClusterMetadata {
+
+		/** Min length: 1 */
 		ClusterId?: string | null;
+
+		/** Min length: 1 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Pattern: arn:aws.*:kms:.*:[0-9]{12}:key/.*
+		 */
 		KmsKeyARN?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Pattern: arn:aws.*:iam::[0-9]{12}:role/.*
+		 */
 		RoleARN?: string | null;
 		ClusterState?: ClusterMetadataClusterState | null;
 		JobType?: CreateClusterRequestJobType | null;
@@ -605,11 +939,23 @@ export namespace MyNS {
 
 		/** Contains an array of AWS resource objects. Each object represents an Amazon S3 bucket, an AWS Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job. */
 		Resources?: JobResource;
+
+		/**
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		AddressId?: string | null;
 		ShippingOption?: CreateClusterRequestShippingOption | null;
 
 		/** <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p> */
 		Notification?: Notification;
+
+		/**
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		ForwardingAddressId?: string | null;
 
 		/** The tax documents required in your AWS Region. */
@@ -618,31 +964,57 @@ export namespace MyNS {
 
 	/** Contains metadata about a specific cluster. */
 	export interface ClusterMetadataFormProperties {
+
+		/** Min length: 1 */
 		ClusterId: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Pattern: arn:aws.*:kms:.*:[0-9]{12}:key/.*
+		 */
 		KmsKeyARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Pattern: arn:aws.*:iam::[0-9]{12}:role/.*
+		 */
 		RoleARN: FormControl<string | null | undefined>,
 		ClusterState: FormControl<ClusterMetadataClusterState | null | undefined>,
 		JobType: FormControl<CreateClusterRequestJobType | null | undefined>,
 		SnowballType: FormControl<CreateClusterRequestSnowballType | null | undefined>,
 		CreationDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		AddressId: FormControl<string | null | undefined>,
 		ShippingOption: FormControl<CreateClusterRequestShippingOption | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		ForwardingAddressId: FormControl<string | null | undefined>,
 	}
 	export function CreateClusterMetadataFormGroup() {
 		return new FormGroup<ClusterMetadataFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			KmsKeyARN: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			KmsKeyARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			ClusterState: new FormControl<ClusterMetadataClusterState | null | undefined>(undefined),
 			JobType: new FormControl<CreateClusterRequestJobType | null | undefined>(undefined),
 			SnowballType: new FormControl<CreateClusterRequestSnowballType | null | undefined>(undefined),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
-			AddressId: new FormControl<string | null | undefined>(undefined),
+			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40)]),
 			ShippingOption: new FormControl<CreateClusterRequestShippingOption | null | undefined>(undefined),
-			ForwardingAddressId: new FormControl<string | null | undefined>(undefined),
+			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40)]),
 		});
 
 	}
@@ -650,14 +1022,28 @@ export namespace MyNS {
 	export enum ClusterMetadataClusterState { AwaitingQuorum = 0, Pending = 1, InUse = 2, Complete = 3, Cancelled = 4 }
 
 	export interface DescribeClusterRequest {
+
+		/**
+		 * Required
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		ClusterId: string;
 	}
 	export interface DescribeClusterRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		ClusterId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeClusterRequestFormGroup() {
 		return new FormGroup<DescribeClusterRequestFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39)]),
 		});
 
 	}
@@ -679,6 +1065,8 @@ export namespace MyNS {
 
 	/** Contains information about a specific job including shipping information, job status, and other important metadata. This information is returned as a part of the response syntax of the <code>DescribeJob</code> action. */
 	export interface JobMetadata {
+
+		/** Min length: 1 */
 		JobId?: string | null;
 		JobState?: JobState | null;
 		JobType?: CreateClusterRequestJobType | null;
@@ -687,9 +1075,27 @@ export namespace MyNS {
 
 		/** Contains an array of AWS resource objects. Each object represents an Amazon S3 bucket, an AWS Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job. */
 		Resources?: JobResource;
+
+		/** Min length: 1 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Pattern: arn:aws.*:kms:.*:[0-9]{12}:key/.*
+		 */
 		KmsKeyARN?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Pattern: arn:aws.*:iam::[0-9]{12}:role/.*
+		 */
 		RoleARN?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		AddressId?: string | null;
 
 		/** A job's shipping information, including inbound and outbound tracking numbers and shipping speed options. */
@@ -704,7 +1110,15 @@ export namespace MyNS {
 
 		/** <p>Contains job logs. Whenever Snowball is used to import data into or export data out of Amazon S3, you'll have the option of downloading a PDF job report. Job logs are returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type. The job logs can be accessed for up to 60 minutes after this request has been made. To access any of the job logs after 60 minutes have passed, you'll have to make another call to the <code>DescribeJob</code> action.</p> <p>For import jobs, the PDF job report becomes available at the end of the import process. For export jobs, your job report typically becomes available while the Snowball for your job part is being delivered to you.</p> <p>The job report provides you insight into the state of your Amazon S3 data transfer. The report includes details about your job or job part for your records.</p> <p>For deeper visibility into the status of your transferred objects, you can look at the two associated logs: a success log and a failure log. The logs are saved in comma-separated value (CSV) format, and the name of each log includes the ID of the job or job part that the log describes.</p> */
 		JobLogInfo?: JobLogs;
+
+		/** Min length: 1 */
 		ClusterId?: string | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		ForwardingAddressId?: string | null;
 
 		/** The tax documents required in your AWS Region. */
@@ -713,33 +1127,61 @@ export namespace MyNS {
 
 	/** Contains information about a specific job including shipping information, job status, and other important metadata. This information is returned as a part of the response syntax of the <code>DescribeJob</code> action. */
 	export interface JobMetadataFormProperties {
+
+		/** Min length: 1 */
 		JobId: FormControl<string | null | undefined>,
 		JobState: FormControl<JobState | null | undefined>,
 		JobType: FormControl<CreateClusterRequestJobType | null | undefined>,
 		SnowballType: FormControl<CreateClusterRequestSnowballType | null | undefined>,
 		CreationDate: FormControl<Date | null | undefined>,
+
+		/** Min length: 1 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Pattern: arn:aws.*:kms:.*:[0-9]{12}:key/.*
+		 */
 		KmsKeyARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Pattern: arn:aws.*:iam::[0-9]{12}:role/.*
+		 */
 		RoleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		AddressId: FormControl<string | null | undefined>,
 		SnowballCapacityPreference: FormControl<CreateJobRequestSnowballCapacityPreference | null | undefined>,
+
+		/** Min length: 1 */
 		ClusterId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		ForwardingAddressId: FormControl<string | null | undefined>,
 	}
 	export function CreateJobMetadataFormGroup() {
 		return new FormGroup<JobMetadataFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			JobState: new FormControl<JobState | null | undefined>(undefined),
 			JobType: new FormControl<CreateClusterRequestJobType | null | undefined>(undefined),
 			SnowballType: new FormControl<CreateClusterRequestSnowballType | null | undefined>(undefined),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			KmsKeyARN: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
-			AddressId: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			KmsKeyARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40)]),
 			SnowballCapacityPreference: new FormControl<CreateJobRequestSnowballCapacityPreference | null | undefined>(undefined),
-			ClusterId: new FormControl<string | null | undefined>(undefined),
-			ForwardingAddressId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40)]),
 		});
 
 	}
@@ -770,19 +1212,27 @@ export namespace MyNS {
 
 	/** The <code>Status</code> and <code>TrackingNumber</code> information for an inbound or outbound shipment. */
 	export interface Shipment {
+
+		/** Min length: 1 */
 		Status?: string | null;
+
+		/** Min length: 1 */
 		TrackingNumber?: string | null;
 	}
 
 	/** The <code>Status</code> and <code>TrackingNumber</code> information for an inbound or outbound shipment. */
 	export interface ShipmentFormProperties {
+
+		/** Min length: 1 */
 		Status: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		TrackingNumber: FormControl<string | null | undefined>,
 	}
 	export function CreateShipmentFormGroup() {
 		return new FormGroup<ShipmentFormProperties>({
-			Status: new FormControl<string | null | undefined>(undefined),
-			TrackingNumber: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			TrackingNumber: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -816,87 +1266,149 @@ export namespace MyNS {
 
 	/** <p>Contains job logs. Whenever Snowball is used to import data into or export data out of Amazon S3, you'll have the option of downloading a PDF job report. Job logs are returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type. The job logs can be accessed for up to 60 minutes after this request has been made. To access any of the job logs after 60 minutes have passed, you'll have to make another call to the <code>DescribeJob</code> action.</p> <p>For import jobs, the PDF job report becomes available at the end of the import process. For export jobs, your job report typically becomes available while the Snowball for your job part is being delivered to you.</p> <p>The job report provides you insight into the state of your Amazon S3 data transfer. The report includes details about your job or job part for your records.</p> <p>For deeper visibility into the status of your transferred objects, you can look at the two associated logs: a success log and a failure log. The logs are saved in comma-separated value (CSV) format, and the name of each log includes the ID of the job or job part that the log describes.</p> */
 	export interface JobLogs {
+
+		/** Min length: 1 */
 		JobCompletionReportURI?: string | null;
+
+		/** Min length: 1 */
 		JobSuccessLogURI?: string | null;
+
+		/** Min length: 1 */
 		JobFailureLogURI?: string | null;
 	}
 
 	/** <p>Contains job logs. Whenever Snowball is used to import data into or export data out of Amazon S3, you'll have the option of downloading a PDF job report. Job logs are returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type. The job logs can be accessed for up to 60 minutes after this request has been made. To access any of the job logs after 60 minutes have passed, you'll have to make another call to the <code>DescribeJob</code> action.</p> <p>For import jobs, the PDF job report becomes available at the end of the import process. For export jobs, your job report typically becomes available while the Snowball for your job part is being delivered to you.</p> <p>The job report provides you insight into the state of your Amazon S3 data transfer. The report includes details about your job or job part for your records.</p> <p>For deeper visibility into the status of your transferred objects, you can look at the two associated logs: a success log and a failure log. The logs are saved in comma-separated value (CSV) format, and the name of each log includes the ID of the job or job part that the log describes.</p> */
 	export interface JobLogsFormProperties {
+
+		/** Min length: 1 */
 		JobCompletionReportURI: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		JobSuccessLogURI: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		JobFailureLogURI: FormControl<string | null | undefined>,
 	}
 	export function CreateJobLogsFormGroup() {
 		return new FormGroup<JobLogsFormProperties>({
-			JobCompletionReportURI: new FormControl<string | null | undefined>(undefined),
-			JobSuccessLogURI: new FormControl<string | null | undefined>(undefined),
-			JobFailureLogURI: new FormControl<string | null | undefined>(undefined),
+			JobCompletionReportURI: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			JobSuccessLogURI: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			JobFailureLogURI: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeJobRequest {
+
+		/**
+		 * Required
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		JobId: string;
 	}
 	export interface DescribeJobRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeJobRequestFormGroup() {
 		return new FormGroup<DescribeJobRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39)]),
 		});
 
 	}
 
 	export interface GetJobManifestResult {
+
+		/** Min length: 1 */
 		ManifestURI?: string | null;
 	}
 	export interface GetJobManifestResultFormProperties {
+
+		/** Min length: 1 */
 		ManifestURI: FormControl<string | null | undefined>,
 	}
 	export function CreateGetJobManifestResultFormGroup() {
 		return new FormGroup<GetJobManifestResultFormProperties>({
-			ManifestURI: new FormControl<string | null | undefined>(undefined),
+			ManifestURI: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetJobManifestRequest {
+
+		/**
+		 * Required
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		JobId: string;
 	}
 	export interface GetJobManifestRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetJobManifestRequestFormGroup() {
 		return new FormGroup<GetJobManifestRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39)]),
 		});
 
 	}
 
 	export interface GetJobUnlockCodeResult {
+
+		/** Min length: 1 */
 		UnlockCode?: string | null;
 	}
 	export interface GetJobUnlockCodeResultFormProperties {
+
+		/** Min length: 1 */
 		UnlockCode: FormControl<string | null | undefined>,
 	}
 	export function CreateGetJobUnlockCodeResultFormGroup() {
 		return new FormGroup<GetJobUnlockCodeResultFormProperties>({
-			UnlockCode: new FormControl<string | null | undefined>(undefined),
+			UnlockCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetJobUnlockCodeRequest {
+
+		/**
+		 * Required
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		JobId: string;
 	}
 	export interface GetJobUnlockCodeRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetJobUnlockCodeRequestFormGroup() {
 		return new FormGroup<GetJobUnlockCodeRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39)]),
 		});
 
 	}
@@ -928,41 +1440,63 @@ export namespace MyNS {
 	}
 
 	export interface GetSoftwareUpdatesResult {
+
+		/** Min length: 1 */
 		UpdatesURI?: string | null;
 	}
 	export interface GetSoftwareUpdatesResultFormProperties {
+
+		/** Min length: 1 */
 		UpdatesURI: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSoftwareUpdatesResultFormGroup() {
 		return new FormGroup<GetSoftwareUpdatesResultFormProperties>({
-			UpdatesURI: new FormControl<string | null | undefined>(undefined),
+			UpdatesURI: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetSoftwareUpdatesRequest {
+
+		/**
+		 * Required
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		JobId: string;
 	}
 	export interface GetSoftwareUpdatesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSoftwareUpdatesRequestFormGroup() {
 		return new FormGroup<GetSoftwareUpdatesRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39)]),
 		});
 
 	}
 
 	export interface ListClusterJobsResult {
 		JobListEntries?: Array<JobListEntry>;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface ListClusterJobsResultFormProperties {
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListClusterJobsResultFormGroup() {
 		return new FormGroup<ListClusterJobsResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -970,67 +1504,107 @@ export namespace MyNS {
 
 	/** Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of an export job. */
 	export interface JobListEntry {
+
+		/** Min length: 1 */
 		JobId?: string | null;
 		JobState?: JobState | null;
 		IsMaster?: boolean | null;
 		JobType?: CreateClusterRequestJobType | null;
 		SnowballType?: CreateClusterRequestSnowballType | null;
 		CreationDate?: Date | null;
+
+		/** Min length: 1 */
 		Description?: string | null;
 	}
 
 	/** Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of an export job. */
 	export interface JobListEntryFormProperties {
+
+		/** Min length: 1 */
 		JobId: FormControl<string | null | undefined>,
 		JobState: FormControl<JobState | null | undefined>,
 		IsMaster: FormControl<boolean | null | undefined>,
 		JobType: FormControl<CreateClusterRequestJobType | null | undefined>,
 		SnowballType: FormControl<CreateClusterRequestSnowballType | null | undefined>,
 		CreationDate: FormControl<Date | null | undefined>,
+
+		/** Min length: 1 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateJobListEntryFormGroup() {
 		return new FormGroup<JobListEntryFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			JobState: new FormControl<JobState | null | undefined>(undefined),
 			IsMaster: new FormControl<boolean | null | undefined>(undefined),
 			JobType: new FormControl<CreateClusterRequestJobType | null | undefined>(undefined),
 			SnowballType: new FormControl<CreateClusterRequestSnowballType | null | undefined>(undefined),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListClusterJobsRequest {
+
+		/**
+		 * Required
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		ClusterId: string;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface ListClusterJobsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		ClusterId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListClusterJobsRequestFormGroup() {
 		return new FormGroup<ListClusterJobsRequestFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListClustersResult {
 		ClusterListEntries?: Array<ClusterListEntry>;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface ListClustersResultFormProperties {
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListClustersResultFormGroup() {
 		return new FormGroup<ListClustersResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1038,55 +1612,81 @@ export namespace MyNS {
 
 	/** Contains a cluster's state, a cluster's ID, and other important information. */
 	export interface ClusterListEntry {
+
+		/** Min length: 1 */
 		ClusterId?: string | null;
 		ClusterState?: ClusterMetadataClusterState | null;
 		CreationDate?: Date | null;
+
+		/** Min length: 1 */
 		Description?: string | null;
 	}
 
 	/** Contains a cluster's state, a cluster's ID, and other important information. */
 	export interface ClusterListEntryFormProperties {
+
+		/** Min length: 1 */
 		ClusterId: FormControl<string | null | undefined>,
 		ClusterState: FormControl<ClusterMetadataClusterState | null | undefined>,
 		CreationDate: FormControl<Date | null | undefined>,
+
+		/** Min length: 1 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateClusterListEntryFormGroup() {
 		return new FormGroup<ClusterListEntryFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			ClusterState: new FormControl<ClusterMetadataClusterState | null | undefined>(undefined),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListClustersRequest {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface ListClustersRequestFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListClustersRequestFormGroup() {
 		return new FormGroup<ListClustersRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListCompatibleImagesResult {
 		CompatibleImages?: Array<CompatibleImage>;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface ListCompatibleImagesResultFormProperties {
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListCompatibleImagesResultFormGroup() {
 		return new FormGroup<ListCompatibleImagesResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1094,65 +1694,105 @@ export namespace MyNS {
 
 	/** A JSON-formatted object that describes a compatible Amazon Machine Image (AMI), including the ID and name for a Snowball Edge AMI. This AMI is compatible with the device's physical hardware requirements, and it should be able to be run in an SBE1 instance on the device. */
 	export interface CompatibleImage {
+
+		/** Min length: 1 */
 		AmiId?: string | null;
+
+		/** Min length: 1 */
 		Name?: string | null;
 	}
 
 	/** A JSON-formatted object that describes a compatible Amazon Machine Image (AMI), including the ID and name for a Snowball Edge AMI. This AMI is compatible with the device's physical hardware requirements, and it should be able to be run in an SBE1 instance on the device. */
 	export interface CompatibleImageFormProperties {
+
+		/** Min length: 1 */
 		AmiId: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateCompatibleImageFormGroup() {
 		return new FormGroup<CompatibleImageFormProperties>({
-			AmiId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			AmiId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListCompatibleImagesRequest {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface ListCompatibleImagesRequestFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListCompatibleImagesRequestFormGroup() {
 		return new FormGroup<ListCompatibleImagesRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListJobsResult {
 		JobListEntries?: Array<JobListEntry>;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface ListJobsResultFormProperties {
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListJobsResultFormGroup() {
 		return new FormGroup<ListJobsResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListJobsRequest {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
+
+		/** Min length: 1 */
 		NextToken?: string | null;
 	}
 	export interface ListJobsRequestFormProperties {
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/** Min length: 1 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListJobsRequestFormGroup() {
 		return new FormGroup<ListJobsRequestFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1168,35 +1808,87 @@ export namespace MyNS {
 	}
 
 	export interface UpdateClusterRequest {
+
+		/**
+		 * Required
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		ClusterId: string;
+
+		/**
+		 * Max length: 255
+		 * Pattern: arn:aws.*:iam::[0-9]{12}:role/.*
+		 */
 		RoleARN?: string | null;
+
+		/** Min length: 1 */
 		Description?: string | null;
 
 		/** Contains an array of AWS resource objects. Each object represents an Amazon S3 bucket, an AWS Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job. */
 		Resources?: JobResource;
+
+		/**
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		AddressId?: string | null;
 		ShippingOption?: CreateClusterRequestShippingOption | null;
 
 		/** <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p> */
 		Notification?: Notification;
+
+		/**
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		ForwardingAddressId?: string | null;
 	}
 	export interface UpdateClusterRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		ClusterId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Pattern: arn:aws.*:iam::[0-9]{12}:role/.*
+		 */
 		RoleARN: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		AddressId: FormControl<string | null | undefined>,
 		ShippingOption: FormControl<CreateClusterRequestShippingOption | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		ForwardingAddressId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateClusterRequestFormGroup() {
 		return new FormGroup<UpdateClusterRequestFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			AddressId: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40)]),
 			ShippingOption: new FormControl<CreateClusterRequestShippingOption | null | undefined>(undefined),
-			ForwardingAddressId: new FormControl<string | null | undefined>(undefined),
+			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40)]),
 		});
 
 	}
@@ -1212,7 +1904,19 @@ export namespace MyNS {
 	}
 
 	export interface UpdateJobRequest {
+
+		/**
+		 * Required
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		JobId: string;
+
+		/**
+		 * Max length: 255
+		 * Pattern: arn:aws.*:iam::[0-9]{12}:role/.*
+		 */
 		RoleARN?: string | null;
 
 		/** <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p> */
@@ -1220,30 +1924,70 @@ export namespace MyNS {
 
 		/** Contains an array of AWS resource objects. Each object represents an Amazon S3 bucket, an AWS Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job. */
 		Resources?: JobResource;
+
+		/**
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		AddressId?: string | null;
 		ShippingOption?: CreateClusterRequestShippingOption | null;
+
+		/** Min length: 1 */
 		Description?: string | null;
 		SnowballCapacityPreference?: CreateJobRequestSnowballCapacityPreference | null;
+
+		/**
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		ForwardingAddressId?: string | null;
 	}
 	export interface UpdateJobRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 39
+		 * Min length: 39
+		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		JobId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Pattern: arn:aws.*:iam::[0-9]{12}:role/.*
+		 */
 		RoleARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		AddressId: FormControl<string | null | undefined>,
 		ShippingOption: FormControl<CreateClusterRequestShippingOption | null | undefined>,
+
+		/** Min length: 1 */
 		Description: FormControl<string | null | undefined>,
 		SnowballCapacityPreference: FormControl<CreateJobRequestSnowballCapacityPreference | null | undefined>,
+
+		/**
+		 * Max length: 40
+		 * Min length: 40
+		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+		 */
 		ForwardingAddressId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateJobRequestFormGroup() {
 		return new FormGroup<UpdateJobRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
-			AddressId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40)]),
 			ShippingOption: new FormControl<CreateClusterRequestShippingOption | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			SnowballCapacityPreference: new FormControl<CreateJobRequestSnowballCapacityPreference | null | undefined>(undefined),
-			ForwardingAddressId: new FormControl<string | null | undefined>(undefined),
+			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40)]),
 		});
 
 	}

@@ -6,11 +6,33 @@ export namespace MyNS {
 
 	/** An object representing an Amazon Cognito identity pool. */
 	export interface IdentityPool {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w\s+=,.@-]+
+		 */
 		IdentityPoolName: string;
+
+		/** Required */
 		AllowUnauthenticatedIdentities: boolean;
 		AllowClassicFlow?: boolean | null;
 		SupportedLoginProviders?: IdentityProviders;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w._-]+
+		 */
 		DeveloperProviderName?: string | null;
 		OpenIdConnectProviderARNs?: Array<string>;
 		CognitoIdentityProviders?: Array<CognitoIdentityProvider>;
@@ -20,19 +42,41 @@ export namespace MyNS {
 
 	/** An object representing an Amazon Cognito identity pool. */
 	export interface IdentityPoolFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w\s+=,.@-]+
+		 */
 		IdentityPoolName: FormControl<string | null | undefined>,
+
+		/** Required */
 		AllowUnauthenticatedIdentities: FormControl<boolean | null | undefined>,
 		AllowClassicFlow: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w._-]+
+		 */
 		DeveloperProviderName: FormControl<string | null | undefined>,
 	}
 	export function CreateIdentityPoolFormGroup() {
 		return new FormGroup<IdentityPoolFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
-			IdentityPoolName: new FormControl<string | null | undefined>(undefined),
-			AllowUnauthenticatedIdentities: new FormControl<boolean | null | undefined>(undefined),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1)]),
+			IdentityPoolName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			AllowUnauthenticatedIdentities: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			AllowClassicFlow: new FormControl<boolean | null | undefined>(undefined),
-			DeveloperProviderName: new FormControl<string | null | undefined>(undefined),
+			DeveloperProviderName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -50,21 +94,45 @@ export namespace MyNS {
 
 	/** A provider representing an Amazon Cognito user pool and its client ID. */
 	export interface CognitoIdentityProvider {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w._:/-]+
+		 */
 		ProviderName?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w_]+
+		 */
 		ClientId?: string | null;
 		ServerSideTokenCheck?: boolean | null;
 	}
 
 	/** A provider representing an Amazon Cognito user pool and its client ID. */
 	export interface CognitoIdentityProviderFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w._:/-]+
+		 */
 		ProviderName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w_]+
+		 */
 		ClientId: FormControl<string | null | undefined>,
 		ServerSideTokenCheck: FormControl<boolean | null | undefined>,
 	}
 	export function CreateCognitoIdentityProviderFormGroup() {
 		return new FormGroup<CognitoIdentityProviderFormProperties>({
-			ProviderName: new FormControl<string | null | undefined>(undefined),
-			ClientId: new FormControl<string | null | undefined>(undefined),
+			ProviderName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ClientId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			ServerSideTokenCheck: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -83,10 +151,25 @@ export namespace MyNS {
 
 	/** Input to the CreateIdentityPool action. */
 	export interface CreateIdentityPoolInput {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w\s+=,.@-]+
+		 */
 		IdentityPoolName: string;
+
+		/** Required */
 		AllowUnauthenticatedIdentities: boolean;
 		AllowClassicFlow?: boolean | null;
 		SupportedLoginProviders?: IdentityProviders;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w._-]+
+		 */
 		DeveloperProviderName?: string | null;
 		OpenIdConnectProviderARNs?: Array<string>;
 		CognitoIdentityProviders?: Array<CognitoIdentityProvider>;
@@ -96,17 +179,32 @@ export namespace MyNS {
 
 	/** Input to the CreateIdentityPool action. */
 	export interface CreateIdentityPoolInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w\s+=,.@-]+
+		 */
 		IdentityPoolName: FormControl<string | null | undefined>,
+
+		/** Required */
 		AllowUnauthenticatedIdentities: FormControl<boolean | null | undefined>,
 		AllowClassicFlow: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w._-]+
+		 */
 		DeveloperProviderName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateIdentityPoolInputFormGroup() {
 		return new FormGroup<CreateIdentityPoolInputFormProperties>({
-			IdentityPoolName: new FormControl<string | null | undefined>(undefined),
-			AllowUnauthenticatedIdentities: new FormControl<boolean | null | undefined>(undefined),
+			IdentityPoolName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			AllowUnauthenticatedIdentities: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			AllowClassicFlow: new FormControl<boolean | null | undefined>(undefined),
-			DeveloperProviderName: new FormControl<string | null | undefined>(undefined),
+			DeveloperProviderName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -174,6 +272,8 @@ export namespace MyNS {
 
 	/** Returned in response to a successful <code>DeleteIdentities</code> operation. */
 	export interface DeleteIdentitiesResponse {
+
+		/** Maximum items: 60 */
 		UnprocessedIdentityIds?: Array<UnprocessedIdentityId>;
 	}
 
@@ -189,18 +289,30 @@ export namespace MyNS {
 
 	/** An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId. */
 	export interface UnprocessedIdentityId {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId?: string | null;
 		ErrorCode?: UnprocessedIdentityIdErrorCode | null;
 	}
 
 	/** An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId. */
 	export interface UnprocessedIdentityIdFormProperties {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId: FormControl<string | null | undefined>,
 		ErrorCode: FormControl<UnprocessedIdentityIdErrorCode | null | undefined>,
 	}
 	export function CreateUnprocessedIdentityIdFormGroup() {
 		return new FormGroup<UnprocessedIdentityIdFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
 			ErrorCode: new FormControl<UnprocessedIdentityIdErrorCode | null | undefined>(undefined),
 		});
 
@@ -211,6 +323,12 @@ export namespace MyNS {
 
 	/** Input to the <code>DeleteIdentities</code> action. */
 	export interface DeleteIdentitiesInput {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 60
+		 */
 		IdentityIdsToDelete: Array<string>;
 	}
 
@@ -226,16 +344,30 @@ export namespace MyNS {
 
 	/** Input to the DeleteIdentityPool action. */
 	export interface DeleteIdentityPoolInput {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: string;
 	}
 
 	/** Input to the DeleteIdentityPool action. */
 	export interface DeleteIdentityPoolInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteIdentityPoolInputFormGroup() {
 		return new FormGroup<DeleteIdentityPoolInputFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1)]),
 		});
 
 	}
@@ -253,6 +385,12 @@ export namespace MyNS {
 
 	/** A description of the identity. */
 	export interface IdentityDescription {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId?: string | null;
 		Logins?: Array<string>;
 		CreationDate?: Date | null;
@@ -261,13 +399,19 @@ export namespace MyNS {
 
 	/** A description of the identity. */
 	export interface IdentityDescriptionFormProperties {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId: FormControl<string | null | undefined>,
 		CreationDate: FormControl<Date | null | undefined>,
 		LastModifiedDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateIdentityDescriptionFormGroup() {
 		return new FormGroup<IdentityDescriptionFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
 			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -277,16 +421,30 @@ export namespace MyNS {
 
 	/** Input to the <code>DescribeIdentity</code> action. */
 	export interface DescribeIdentityInput {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId: string;
 	}
 
 	/** Input to the <code>DescribeIdentity</code> action. */
 	export interface DescribeIdentityInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeIdentityInputFormGroup() {
 		return new FormGroup<DescribeIdentityInputFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1)]),
 		});
 
 	}
@@ -294,16 +452,30 @@ export namespace MyNS {
 
 	/** Input to the DescribeIdentityPool action. */
 	export interface DescribeIdentityPoolInput {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: string;
 	}
 
 	/** Input to the DescribeIdentityPool action. */
 	export interface DescribeIdentityPoolInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeIdentityPoolInputFormGroup() {
 		return new FormGroup<DescribeIdentityPoolInputFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1)]),
 		});
 
 	}
@@ -311,6 +483,12 @@ export namespace MyNS {
 
 	/** Returned in response to a successful <code>GetCredentialsForIdentity</code> operation. */
 	export interface GetCredentialsForIdentityResponse {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId?: string | null;
 
 		/** Credentials for the provided identity ID. */
@@ -319,11 +497,17 @@ export namespace MyNS {
 
 	/** Returned in response to a successful <code>GetCredentialsForIdentity</code> operation. */
 	export interface GetCredentialsForIdentityResponseFormProperties {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetCredentialsForIdentityResponseFormGroup() {
 		return new FormGroup<GetCredentialsForIdentityResponseFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
 		});
 
 	}
@@ -357,20 +541,44 @@ export namespace MyNS {
 
 	/** Input to the <code>GetCredentialsForIdentity</code> action. */
 	export interface GetCredentialsForIdentityInput {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId: string;
 		Logins?: LoginsMap;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		CustomRoleArn?: string | null;
 	}
 
 	/** Input to the <code>GetCredentialsForIdentity</code> action. */
 	export interface GetCredentialsForIdentityInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		CustomRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetCredentialsForIdentityInputFormGroup() {
 		return new FormGroup<GetCredentialsForIdentityInputFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined),
-			CustomRoleArn: new FormControl<string | null | undefined>(undefined),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1)]),
+			CustomRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -408,16 +616,28 @@ export namespace MyNS {
 
 	/** Returned in response to a GetId request. */
 	export interface GetIdResponse {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId?: string | null;
 	}
 
 	/** Returned in response to a GetId request. */
 	export interface GetIdResponseFormProperties {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetIdResponseFormGroup() {
 		return new FormGroup<GetIdResponseFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
 		});
 
 	}
@@ -425,20 +645,46 @@ export namespace MyNS {
 
 	/** Input to the GetId action. */
 	export interface GetIdInput {
+
+		/**
+		 * Max length: 15
+		 * Min length: 1
+		 * Pattern: \d+
+		 */
 		AccountId?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: string;
 		Logins?: LoginsMap;
 	}
 
 	/** Input to the GetId action. */
 	export interface GetIdInputFormProperties {
+
+		/**
+		 * Max length: 15
+		 * Min length: 1
+		 * Pattern: \d+
+		 */
 		AccountId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetIdInputFormGroup() {
 		return new FormGroup<GetIdInputFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined),
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(15), Validators.minLength(1)]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1)]),
 		});
 
 	}
@@ -446,6 +692,12 @@ export namespace MyNS {
 
 	/** Returned in response to a successful <code>GetIdentityPoolRoles</code> operation. */
 	export interface GetIdentityPoolRolesResponse {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId?: string | null;
 		Roles?: RolesMap;
 		RoleMappings?: RoleMappingMap;
@@ -453,11 +705,17 @@ export namespace MyNS {
 
 	/** Returned in response to a successful <code>GetIdentityPoolRoles</code> operation. */
 	export interface GetIdentityPoolRolesResponseFormProperties {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetIdentityPoolRolesResponseFormGroup() {
 		return new FormGroup<GetIdentityPoolRolesResponseFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
 		});
 
 	}
@@ -485,16 +743,30 @@ export namespace MyNS {
 
 	/** Input to the <code>GetIdentityPoolRoles</code> action. */
 	export interface GetIdentityPoolRolesInput {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: string;
 	}
 
 	/** Input to the <code>GetIdentityPoolRoles</code> action. */
 	export interface GetIdentityPoolRolesInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetIdentityPoolRolesInputFormGroup() {
 		return new FormGroup<GetIdentityPoolRolesInputFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1)]),
 		});
 
 	}
@@ -502,18 +774,30 @@ export namespace MyNS {
 
 	/** Returned in response to a successful GetOpenIdToken request. */
 	export interface GetOpenIdTokenResponse {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId?: string | null;
 		Token?: string | null;
 	}
 
 	/** Returned in response to a successful GetOpenIdToken request. */
 	export interface GetOpenIdTokenResponseFormProperties {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId: FormControl<string | null | undefined>,
 		Token: FormControl<string | null | undefined>,
 	}
 	export function CreateGetOpenIdTokenResponseFormGroup() {
 		return new FormGroup<GetOpenIdTokenResponseFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
 			Token: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -522,17 +806,31 @@ export namespace MyNS {
 
 	/** Input to the GetOpenIdToken action. */
 	export interface GetOpenIdTokenInput {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId: string;
 		Logins?: LoginsMap;
 	}
 
 	/** Input to the GetOpenIdToken action. */
 	export interface GetOpenIdTokenInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetOpenIdTokenInputFormGroup() {
 		return new FormGroup<GetOpenIdTokenInputFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1)]),
 		});
 
 	}
@@ -540,18 +838,30 @@ export namespace MyNS {
 
 	/** Returned in response to a successful <code>GetOpenIdTokenForDeveloperIdentity</code> request. */
 	export interface GetOpenIdTokenForDeveloperIdentityResponse {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId?: string | null;
 		Token?: string | null;
 	}
 
 	/** Returned in response to a successful <code>GetOpenIdTokenForDeveloperIdentity</code> request. */
 	export interface GetOpenIdTokenForDeveloperIdentityResponseFormProperties {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId: FormControl<string | null | undefined>,
 		Token: FormControl<string | null | undefined>,
 	}
 	export function CreateGetOpenIdTokenForDeveloperIdentityResponseFormGroup() {
 		return new FormGroup<GetOpenIdTokenForDeveloperIdentityResponseFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
 			Token: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -560,23 +870,61 @@ export namespace MyNS {
 
 	/** Input to the <code>GetOpenIdTokenForDeveloperIdentity</code> action. */
 	export interface GetOpenIdTokenForDeveloperIdentityInput {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: string;
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId?: string | null;
+
+		/** Required */
 		Logins: LoginsMap;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 86400
+		 */
 		TokenDuration?: number | null;
 	}
 
 	/** Input to the <code>GetOpenIdTokenForDeveloperIdentity</code> action. */
 	export interface GetOpenIdTokenForDeveloperIdentityInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 86400
+		 */
 		TokenDuration: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOpenIdTokenForDeveloperIdentityInputFormGroup() {
 		return new FormGroup<GetOpenIdTokenForDeveloperIdentityInputFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
-			IdentityId: new FormControl<string | null | undefined>(undefined),
-			TokenDuration: new FormControl<number | null | undefined>(undefined),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1)]),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
+			TokenDuration: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(86400)]),
 		});
 
 	}
@@ -594,20 +942,42 @@ export namespace MyNS {
 
 	/** The response to a ListIdentities request. */
 	export interface ListIdentitiesResponse {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId?: string | null;
 		Identities?: Array<IdentityDescription>;
+
+		/**
+		 * Min length: 1
+		 * Pattern: [\S]+
+		 */
 		NextToken?: string | null;
 	}
 
 	/** The response to a ListIdentities request. */
 	export interface ListIdentitiesResponseFormProperties {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
+
+		/**
+		 * Min length: 1
+		 * Pattern: [\S]+
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListIdentitiesResponseFormGroup() {
 		return new FormGroup<ListIdentitiesResponseFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -615,24 +985,60 @@ export namespace MyNS {
 
 	/** Input to the ListIdentities action. */
 	export interface ListIdentitiesInput {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: string;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 60
+		 */
 		MaxResults: number;
+
+		/**
+		 * Min length: 1
+		 * Pattern: [\S]+
+		 */
 		NextToken?: string | null;
 		HideDisabled?: boolean | null;
 	}
 
 	/** Input to the ListIdentities action. */
 	export interface ListIdentitiesInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 60
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Min length: 1
+		 * Pattern: [\S]+
+		 */
 		NextToken: FormControl<string | null | undefined>,
 		HideDisabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateListIdentitiesInputFormGroup() {
 		return new FormGroup<ListIdentitiesInputFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(60)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			HideDisabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -642,16 +1048,26 @@ export namespace MyNS {
 	/** The result of a successful ListIdentityPools action. */
 	export interface ListIdentityPoolsResponse {
 		IdentityPools?: Array<IdentityPoolShortDescription>;
+
+		/**
+		 * Min length: 1
+		 * Pattern: [\S]+
+		 */
 		NextToken?: string | null;
 	}
 
 	/** The result of a successful ListIdentityPools action. */
 	export interface ListIdentityPoolsResponseFormProperties {
+
+		/**
+		 * Min length: 1
+		 * Pattern: [\S]+
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListIdentityPoolsResponseFormGroup() {
 		return new FormGroup<ListIdentityPoolsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -659,19 +1075,43 @@ export namespace MyNS {
 
 	/** A description of the identity pool. */
 	export interface IdentityPoolShortDescription {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w\s+=,.@-]+
+		 */
 		IdentityPoolName?: string | null;
 	}
 
 	/** A description of the identity pool. */
 	export interface IdentityPoolShortDescriptionFormProperties {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w\s+=,.@-]+
+		 */
 		IdentityPoolName: FormControl<string | null | undefined>,
 	}
 	export function CreateIdentityPoolShortDescriptionFormGroup() {
 		return new FormGroup<IdentityPoolShortDescriptionFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
-			IdentityPoolName: new FormControl<string | null | undefined>(undefined),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
+			IdentityPoolName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -679,19 +1119,41 @@ export namespace MyNS {
 
 	/** Input to the ListIdentityPools action. */
 	export interface ListIdentityPoolsInput {
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 60
+		 */
 		MaxResults: number;
+
+		/**
+		 * Min length: 1
+		 * Pattern: [\S]+
+		 */
 		NextToken?: string | null;
 	}
 
 	/** Input to the ListIdentityPools action. */
 	export interface ListIdentityPoolsInputFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 60
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Min length: 1
+		 * Pattern: [\S]+
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListIdentityPoolsInputFormGroup() {
 		return new FormGroup<ListIdentityPoolsInputFormProperties>({
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(60)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -708,14 +1170,26 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ResourceArn: string;
 	}
 	export interface ListTagsForResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceInputFormGroup() {
 		return new FormGroup<ListTagsForResourceInputFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -723,20 +1197,42 @@ export namespace MyNS {
 
 	/** Returned in response to a successful <code>LookupDeveloperIdentity</code> action. */
 	export interface LookupDeveloperIdentityResponse {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId?: string | null;
 		DeveloperUserIdentifierList?: Array<string>;
+
+		/**
+		 * Min length: 1
+		 * Pattern: [\S]+
+		 */
 		NextToken?: string | null;
 	}
 
 	/** Returned in response to a successful <code>LookupDeveloperIdentity</code> action. */
 	export interface LookupDeveloperIdentityResponseFormProperties {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId: FormControl<string | null | undefined>,
+
+		/**
+		 * Min length: 1
+		 * Pattern: [\S]+
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateLookupDeveloperIdentityResponseFormGroup() {
 		return new FormGroup<LookupDeveloperIdentityResponseFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -744,28 +1240,84 @@ export namespace MyNS {
 
 	/** Input to the <code>LookupDeveloperIdentityInput</code> action. */
 	export interface LookupDeveloperIdentityInput {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: string;
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		DeveloperUserIdentifier?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 60
+		 */
 		MaxResults?: number | null;
+
+		/**
+		 * Min length: 1
+		 * Pattern: [\S]+
+		 */
 		NextToken?: string | null;
 	}
 
 	/** Input to the <code>LookupDeveloperIdentityInput</code> action. */
 	export interface LookupDeveloperIdentityInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		DeveloperUserIdentifier: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 60
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Min length: 1
+		 * Pattern: [\S]+
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateLookupDeveloperIdentityInputFormGroup() {
 		return new FormGroup<LookupDeveloperIdentityInputFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
-			IdentityId: new FormControl<string | null | undefined>(undefined),
-			DeveloperUserIdentifier: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1)]),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
+			DeveloperUserIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(60)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -773,16 +1325,28 @@ export namespace MyNS {
 
 	/** Returned in response to a successful <code>MergeDeveloperIdentities</code> action. */
 	export interface MergeDeveloperIdentitiesResponse {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId?: string | null;
 	}
 
 	/** Returned in response to a successful <code>MergeDeveloperIdentities</code> action. */
 	export interface MergeDeveloperIdentitiesResponseFormProperties {
+
+		/**
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId: FormControl<string | null | undefined>,
 	}
 	export function CreateMergeDeveloperIdentitiesResponseFormGroup() {
 		return new FormGroup<MergeDeveloperIdentitiesResponseFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
 		});
 
 	}
@@ -790,25 +1354,77 @@ export namespace MyNS {
 
 	/** Input to the <code>MergeDeveloperIdentities</code> action. */
 	export interface MergeDeveloperIdentitiesInput {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		SourceUserIdentifier: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		DestinationUserIdentifier: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w._-]+
+		 */
 		DeveloperProviderName: string;
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: string;
 	}
 
 	/** Input to the <code>MergeDeveloperIdentities</code> action. */
 	export interface MergeDeveloperIdentitiesInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		SourceUserIdentifier: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		DestinationUserIdentifier: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w._-]+
+		 */
 		DeveloperProviderName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
 	}
 	export function CreateMergeDeveloperIdentitiesInputFormGroup() {
 		return new FormGroup<MergeDeveloperIdentitiesInputFormProperties>({
-			SourceUserIdentifier: new FormControl<string | null | undefined>(undefined),
-			DestinationUserIdentifier: new FormControl<string | null | undefined>(undefined),
-			DeveloperProviderName: new FormControl<string | null | undefined>(undefined),
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			SourceUserIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			DestinationUserIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			DeveloperProviderName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1)]),
 		});
 
 	}
@@ -816,18 +1432,34 @@ export namespace MyNS {
 
 	/** Input to the <code>SetIdentityPoolRoles</code> action. */
 	export interface SetIdentityPoolRolesInput {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: string;
+
+		/** Required */
 		Roles: RolesMap;
 		RoleMappings?: RoleMappingMap;
 	}
 
 	/** Input to the <code>SetIdentityPoolRoles</code> action. */
 	export interface SetIdentityPoolRolesInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
 	}
 	export function CreateSetIdentityPoolRolesInputFormGroup() {
 		return new FormGroup<SetIdentityPoolRolesInputFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1)]),
 		});
 
 	}
@@ -853,15 +1485,29 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ResourceArn: string;
+
+		/** Required */
 		Tags: IdentityPoolTagsType;
 	}
 	export interface TagResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceInputFormGroup() {
 		return new FormGroup<TagResourceInputFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -869,25 +1515,79 @@ export namespace MyNS {
 
 	/** Input to the <code>UnlinkDeveloperIdentity</code> action. */
 	export interface UnlinkDeveloperIdentityInput {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId: string;
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: string;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w._-]+
+		 */
 		DeveloperProviderName: string;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		DeveloperUserIdentifier: string;
 	}
 
 	/** Input to the <code>UnlinkDeveloperIdentity</code> action. */
 	export interface UnlinkDeveloperIdentityInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w._-]+
+		 */
 		DeveloperProviderName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		DeveloperUserIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateUnlinkDeveloperIdentityInputFormGroup() {
 		return new FormGroup<UnlinkDeveloperIdentityInputFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined),
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
-			DeveloperProviderName: new FormControl<string | null | undefined>(undefined),
-			DeveloperUserIdentifier: new FormControl<string | null | undefined>(undefined),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1)]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1)]),
+			DeveloperProviderName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			DeveloperUserIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -895,18 +1595,36 @@ export namespace MyNS {
 
 	/** Input to the UnlinkIdentity action. */
 	export interface UnlinkIdentityInput {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId: string;
+
+		/** Required */
 		Logins: LoginsMap;
+
+		/** Required */
 		LoginsToRemove: Array<string>;
 	}
 
 	/** Input to the UnlinkIdentity action. */
 	export interface UnlinkIdentityInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 55
+		 * Min length: 1
+		 * Pattern: [\w-]+:[0-9a-f-]+
+		 */
 		IdentityId: FormControl<string | null | undefined>,
 	}
 	export function CreateUnlinkIdentityInputFormGroup() {
 		return new FormGroup<UnlinkIdentityInputFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1)]),
 		});
 
 	}
@@ -922,15 +1640,29 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceInput {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ResourceArn: string;
+
+		/** Required */
 		TagKeys: Array<string>;
 	}
 	export interface UntagResourceInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceInputFormGroup() {
 		return new FormGroup<UntagResourceInputFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -944,25 +1676,67 @@ export namespace MyNS {
 
 	/** A rule that maps a claim name, a claim value, and a match type to a role ARN. */
 	export interface MappingRule {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}]+
+		 */
 		Claim: string;
+
+		/** Required */
 		MatchType: MappingRuleMatchType;
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Value: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		RoleARN: string;
 	}
 
 	/** A rule that maps a claim name, a claim value, and a match type to a role ARN. */
 	export interface MappingRuleFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\p{L}\p{M}\p{S}\p{N}\p{P}]+
+		 */
 		Claim: FormControl<string | null | undefined>,
+
+		/** Required */
 		MatchType: FormControl<MappingRuleMatchType | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Value: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
 		RoleARN: FormControl<string | null | undefined>,
 	}
 	export function CreateMappingRuleFormGroup() {
 		return new FormGroup<MappingRuleFormProperties>({
-			Claim: new FormControl<string | null | undefined>(undefined),
-			MatchType: new FormControl<MappingRuleMatchType | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined),
+			Claim: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			MatchType: new FormControl<MappingRuleMatchType | null | undefined>(undefined, [Validators.required]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
 	}
@@ -972,6 +1746,12 @@ export namespace MyNS {
 
 	/** A container for rules. */
 	export interface RulesConfigurationType {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 25
+		 */
 		Rules: Array<MappingRule>;
 	}
 
@@ -987,6 +1767,8 @@ export namespace MyNS {
 
 	/** A role mapping. */
 	export interface RoleMapping {
+
+		/** Required */
 		Type: RoleMappingType;
 		AmbiguousRoleResolution?: AmbiguousRoleResolutionType | null;
 
@@ -996,12 +1778,14 @@ export namespace MyNS {
 
 	/** A role mapping. */
 	export interface RoleMappingFormProperties {
+
+		/** Required */
 		Type: FormControl<RoleMappingType | null | undefined>,
 		AmbiguousRoleResolution: FormControl<AmbiguousRoleResolutionType | null | undefined>,
 	}
 	export function CreateRoleMappingFormGroup() {
 		return new FormGroup<RoleMappingFormProperties>({
-			Type: new FormControl<RoleMappingType | null | undefined>(undefined),
+			Type: new FormControl<RoleMappingType | null | undefined>(undefined, [Validators.required]),
 			AmbiguousRoleResolution: new FormControl<AmbiguousRoleResolutionType | null | undefined>(undefined),
 		});
 

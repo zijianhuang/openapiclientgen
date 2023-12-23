@@ -4,14 +4,28 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface ActivateEventSourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: aws\.partner(/[\.\-_A-Za-z0-9]+){2,}
+		 */
 		Name: string;
 	}
 	export interface ActivateEventSourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: aws\.partner(/[\.\-_A-Za-z0-9]+){2,}
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateActivateEventSourceRequestFormGroup() {
 		return new FormGroup<ActivateEventSourceRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -70,18 +84,44 @@ export namespace MyNS {
 	}
 
 	export interface CreateEventBusRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		Name: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: aws\.partner(/[\.\-_A-Za-z0-9]+){2,}
+		 */
 		EventSourceName?: string | null;
 		Tags?: Array<Tag>;
 	}
 	export interface CreateEventBusRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: aws\.partner(/[\.\-_A-Za-z0-9]+){2,}
+		 */
 		EventSourceName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateEventBusRequestFormGroup() {
 		return new FormGroup<CreateEventBusRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			EventSourceName: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			EventSourceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -89,19 +129,43 @@ export namespace MyNS {
 
 	/** A key-value pair associated with an AWS resource. In EventBridge, rules and event buses support tagging. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Value: string;
 	}
 
 	/** A key-value pair associated with an AWS resource. In EventBridge, rules and event buses support tagging. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -140,77 +204,187 @@ export namespace MyNS {
 	}
 
 	export interface CreatePartnerEventSourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: aws\.partner(/[\.\-_A-Za-z0-9]+){2,}
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: \d{12}
+		 */
 		Account: string;
 	}
 	export interface CreatePartnerEventSourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: aws\.partner(/[\.\-_A-Za-z0-9]+){2,}
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: \d{12}
+		 */
 		Account: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePartnerEventSourceRequestFormGroup() {
 		return new FormGroup<CreatePartnerEventSourceRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Account: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			Account: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
 		});
 
 	}
 
 	export interface DeactivateEventSourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: aws\.partner(/[\.\-_A-Za-z0-9]+){2,}
+		 */
 		Name: string;
 	}
 	export interface DeactivateEventSourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: aws\.partner(/[\.\-_A-Za-z0-9]+){2,}
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeactivateEventSourceRequestFormGroup() {
 		return new FormGroup<DeactivateEventSourceRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteEventBusRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		Name: string;
 	}
 	export interface DeleteEventBusRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteEventBusRequestFormGroup() {
 		return new FormGroup<DeleteEventBusRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeletePartnerEventSourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: aws\.partner(/[\.\-_A-Za-z0-9]+){2,}
+		 */
 		Name: string;
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: \d{12}
+		 */
 		Account: string;
 	}
 	export interface DeletePartnerEventSourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: aws\.partner(/[\.\-_A-Za-z0-9]+){2,}
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: \d{12}
+		 */
 		Account: FormControl<string | null | undefined>,
 	}
 	export function CreateDeletePartnerEventSourceRequestFormGroup() {
 		return new FormGroup<DeletePartnerEventSourceRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Account: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			Account: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
 		});
 
 	}
 
 	export interface DeleteRuleRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		Name: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		EventBusName?: string | null;
 		Force?: boolean | null;
 	}
 	export interface DeleteRuleRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		EventBusName: FormControl<string | null | undefined>,
 		Force: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDeleteRuleRequestFormGroup() {
 		return new FormGroup<DeleteRuleRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			EventBusName: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			EventBusName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			Force: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -246,14 +420,26 @@ export namespace MyNS {
 	}
 
 	export interface DescribeEventBusRequest {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		Name?: string | null;
 	}
 	export interface DescribeEventBusRequestFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeEventBusRequestFormGroup() {
 		return new FormGroup<DescribeEventBusRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -289,14 +475,28 @@ export namespace MyNS {
 	export enum DescribeEventSourceResponseState { PENDING = 0, ACTIVE = 1, DELETED = 2 }
 
 	export interface DescribeEventSourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: aws\.partner(/[\.\-_A-Za-z0-9]+){2,}
+		 */
 		Name: string;
 	}
 	export interface DescribeEventSourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: aws\.partner(/[\.\-_A-Za-z0-9]+){2,}
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeEventSourceRequestFormGroup() {
 		return new FormGroup<DescribeEventSourceRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -318,51 +518,127 @@ export namespace MyNS {
 	}
 
 	export interface DescribePartnerEventSourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: aws\.partner(/[\.\-_A-Za-z0-9]+){2,}
+		 */
 		Name: string;
 	}
 	export interface DescribePartnerEventSourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: aws\.partner(/[\.\-_A-Za-z0-9]+){2,}
+		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribePartnerEventSourceRequestFormGroup() {
 		return new FormGroup<DescribePartnerEventSourceRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DescribeRuleResponse {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		Arn?: string | null;
 		EventPattern?: string | null;
+
+		/** Max length: 256 */
 		ScheduleExpression?: string | null;
 		State?: DescribeRuleResponseState | null;
+
+		/** Max length: 512 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		RoleArn?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		ManagedBy?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		EventBusName?: string | null;
 	}
 	export interface DescribeRuleResponseFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		Arn: FormControl<string | null | undefined>,
 		EventPattern: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		ScheduleExpression: FormControl<string | null | undefined>,
 		State: FormControl<DescribeRuleResponseState | null | undefined>,
+
+		/** Max length: 512 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		RoleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		ManagedBy: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		EventBusName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeRuleResponseFormGroup() {
 		return new FormGroup<DescribeRuleResponseFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 			EventPattern: new FormControl<string | null | undefined>(undefined),
-			ScheduleExpression: new FormControl<string | null | undefined>(undefined),
+			ScheduleExpression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			State: new FormControl<DescribeRuleResponseState | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
-			ManagedBy: new FormControl<string | null | undefined>(undefined),
-			EventBusName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			ManagedBy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			EventBusName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -370,63 +646,151 @@ export namespace MyNS {
 	export enum DescribeRuleResponseState { ENABLED = 0, DISABLED = 1 }
 
 	export interface DescribeRuleRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		Name: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		EventBusName?: string | null;
 	}
 	export interface DescribeRuleRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		EventBusName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeRuleRequestFormGroup() {
 		return new FormGroup<DescribeRuleRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			EventBusName: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			EventBusName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DisableRuleRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		Name: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		EventBusName?: string | null;
 	}
 	export interface DisableRuleRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		EventBusName: FormControl<string | null | undefined>,
 	}
 	export function CreateDisableRuleRequestFormGroup() {
 		return new FormGroup<DisableRuleRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			EventBusName: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			EventBusName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface EnableRuleRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		Name: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		EventBusName?: string | null;
 	}
 	export interface EnableRuleRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		EventBusName: FormControl<string | null | undefined>,
 	}
 	export function CreateEnableRuleRequestFormGroup() {
 		return new FormGroup<EnableRuleRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			EventBusName: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			EventBusName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListEventBusesResponse {
 		EventBuses?: Array<EventBus>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListEventBusesResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListEventBusesResponseFormGroup() {
 		return new FormGroup<ListEventBusesResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -455,34 +819,76 @@ export namespace MyNS {
 	}
 
 	export interface ListEventBusesRequest {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		NamePrefix?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit?: number | null;
 	}
 	export interface ListEventBusesRequestFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		NamePrefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateListEventBusesRequestFormGroup() {
 		return new FormGroup<ListEventBusesRequestFormProperties>({
-			NamePrefix: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			NamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListEventSourcesResponse {
 		EventSources?: Array<EventSource>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListEventSourcesResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListEventSourcesResponseFormGroup() {
 		return new FormGroup<ListEventSourcesResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -520,34 +926,76 @@ export namespace MyNS {
 	}
 
 	export interface ListEventSourcesRequest {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		NamePrefix?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit?: number | null;
 	}
 	export interface ListEventSourcesRequestFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		NamePrefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateListEventSourcesRequestFormGroup() {
 		return new FormGroup<ListEventSourcesRequestFormProperties>({
-			NamePrefix: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			NamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListPartnerEventSourceAccountsResponse {
 		PartnerEventSourceAccounts?: Array<PartnerEventSourceAccount>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListPartnerEventSourceAccountsResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListPartnerEventSourceAccountsResponseFormGroup() {
 		return new FormGroup<ListPartnerEventSourceAccountsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -555,6 +1003,12 @@ export namespace MyNS {
 
 	/** The AWS account that a partner event source has been offered to. */
 	export interface PartnerEventSourceAccount {
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: \d{12}
+		 */
 		Account?: string | null;
 		CreationTime?: Date | null;
 		ExpirationTime?: Date | null;
@@ -563,6 +1017,12 @@ export namespace MyNS {
 
 	/** The AWS account that a partner event source has been offered to. */
 	export interface PartnerEventSourceAccountFormProperties {
+
+		/**
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: \d{12}
+		 */
 		Account: FormControl<string | null | undefined>,
 		CreationTime: FormControl<Date | null | undefined>,
 		ExpirationTime: FormControl<Date | null | undefined>,
@@ -570,7 +1030,7 @@ export namespace MyNS {
 	}
 	export function CreatePartnerEventSourceAccountFormGroup() {
 		return new FormGroup<PartnerEventSourceAccountFormProperties>({
-			Account: new FormControl<string | null | undefined>(undefined),
+			Account: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			ExpirationTime: new FormControl<Date | null | undefined>(undefined),
 			State: new FormControl<DescribeEventSourceResponseState | null | undefined>(undefined),
@@ -579,34 +1039,78 @@ export namespace MyNS {
 	}
 
 	export interface ListPartnerEventSourceAccountsRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: aws\.partner(/[\.\-_A-Za-z0-9]+){2,}
+		 */
 		EventSourceName: string;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit?: number | null;
 	}
 	export interface ListPartnerEventSourceAccountsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: aws\.partner(/[\.\-_A-Za-z0-9]+){2,}
+		 */
 		EventSourceName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateListPartnerEventSourceAccountsRequestFormGroup() {
 		return new FormGroup<ListPartnerEventSourceAccountsRequestFormProperties>({
-			EventSourceName: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			EventSourceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListPartnerEventSourcesResponse {
 		PartnerEventSources?: Array<PartnerEventSource>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListPartnerEventSourcesResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListPartnerEventSourcesResponseFormGroup() {
 		return new FormGroup<ListPartnerEventSourcesResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -632,70 +1136,168 @@ export namespace MyNS {
 	}
 
 	export interface ListPartnerEventSourcesRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: aws\.partner/[\.\-_A-Za-z0-9]+/[/\.\-_A-Za-z0-9]*
+		 */
 		NamePrefix: string;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit?: number | null;
 	}
 	export interface ListPartnerEventSourcesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: aws\.partner/[\.\-_A-Za-z0-9]+/[/\.\-_A-Za-z0-9]*
+		 */
 		NamePrefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateListPartnerEventSourcesRequestFormGroup() {
 		return new FormGroup<ListPartnerEventSourcesRequestFormProperties>({
-			NamePrefix: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			NamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListRuleNamesByTargetResponse {
 		RuleNames?: Array<string>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListRuleNamesByTargetResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListRuleNamesByTargetResponseFormGroup() {
 		return new FormGroup<ListRuleNamesByTargetResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListRuleNamesByTargetRequest {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		TargetArn: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		EventBusName?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit?: number | null;
 	}
 	export interface ListRuleNamesByTargetRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		TargetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		EventBusName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateListRuleNamesByTargetRequestFormGroup() {
 		return new FormGroup<ListRuleNamesByTargetRequestFormProperties>({
-			TargetArn: new FormControl<string | null | undefined>(undefined),
-			EventBusName: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			TargetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			EventBusName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListRulesResponse {
 		Rules?: Array<Rule>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListRulesResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListRulesResponseFormGroup() {
 		return new FormGroup<ListRulesResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -703,62 +1305,168 @@ export namespace MyNS {
 
 	/** Contains information about a rule in Amazon EventBridge. */
 	export interface Rule {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		Name?: string | null;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		Arn?: string | null;
 		EventPattern?: string | null;
 		State?: DescribeRuleResponseState | null;
+
+		/** Max length: 512 */
 		Description?: string | null;
+
+		/** Max length: 256 */
 		ScheduleExpression?: string | null;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		RoleArn?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		ManagedBy?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		EventBusName?: string | null;
 	}
 
 	/** Contains information about a rule in Amazon EventBridge. */
 	export interface RuleFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		Arn: FormControl<string | null | undefined>,
 		EventPattern: FormControl<string | null | undefined>,
 		State: FormControl<DescribeRuleResponseState | null | undefined>,
+
+		/** Max length: 512 */
 		Description: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		ScheduleExpression: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		RoleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		ManagedBy: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		EventBusName: FormControl<string | null | undefined>,
 	}
 	export function CreateRuleFormGroup() {
 		return new FormGroup<RuleFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 			EventPattern: new FormControl<string | null | undefined>(undefined),
 			State: new FormControl<DescribeRuleResponseState | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			ScheduleExpression: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
-			ManagedBy: new FormControl<string | null | undefined>(undefined),
-			EventBusName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512)]),
+			ScheduleExpression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			ManagedBy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			EventBusName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListRulesRequest {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		NamePrefix?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		EventBusName?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit?: number | null;
 	}
 	export interface ListRulesRequestFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		NamePrefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		EventBusName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateListRulesRequestFormGroup() {
 		return new FormGroup<ListRulesRequestFormProperties>({
-			NamePrefix: new FormControl<string | null | undefined>(undefined),
-			EventBusName: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			NamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			EventBusName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -775,28 +1483,55 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceARN: string;
 	}
 	export interface ListTagsForResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListTargetsByRuleResponse {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		Targets?: Array<Target>;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListTargetsByRuleResponseFormProperties {
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTargetsByRuleResponseFormGroup() {
 		return new FormGroup<ListTargetsByRuleResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -804,10 +1539,32 @@ export namespace MyNS {
 
 	/** <p>Targets are the resources to be invoked when a rule is triggered. For a complete list of services and resources that can be set as a target, see <a>PutTargets</a>.</p> <p>If you are setting the event bus of another account as the target, and that account granted permission to your account through an organization instead of directly by the account ID, then you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending and Receiving Events Between AWS Accounts</a> in the <i>Amazon EventBridge User Guide</i>.</p> */
 	export interface Target {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		Id: string;
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		Arn: string;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		RoleArn?: string | null;
+
+		/** Max length: 8192 */
 		Input?: string | null;
+
+		/** Max length: 256 */
 		InputPath?: string | null;
 
 		/** Contains the parameters needed for you to provide custom input to a target based on one or more pieces of data extracted from the event. */
@@ -831,19 +1588,41 @@ export namespace MyNS {
 
 	/** <p>Targets are the resources to be invoked when a rule is triggered. For a complete list of services and resources that can be set as a target, see <a>PutTargets</a>.</p> <p>If you are setting the event bus of another account as the target, and that account granted permission to your account through an organization instead of directly by the account ID, then you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending and Receiving Events Between AWS Accounts</a> in the <i>Amazon EventBridge User Guide</i>.</p> */
 	export interface TargetFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		Arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		RoleArn: FormControl<string | null | undefined>,
+
+		/** Max length: 8192 */
 		Input: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		InputPath: FormControl<string | null | undefined>,
 	}
 	export function CreateTargetFormGroup() {
 		return new FormGroup<TargetFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
-			Input: new FormControl<string | null | undefined>(undefined),
-			InputPath: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			Input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
+			InputPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -852,16 +1631,28 @@ export namespace MyNS {
 	/** Contains the parameters needed for you to provide custom input to a target based on one or more pieces of data extracted from the event. */
 	export interface InputTransformer {
 		InputPathsMap?: TransformerPaths;
+
+		/**
+		 * Required
+		 * Max length: 8192
+		 * Min length: 1
+		 */
 		InputTemplate: string;
 	}
 
 	/** Contains the parameters needed for you to provide custom input to a target based on one or more pieces of data extracted from the event. */
 	export interface InputTransformerFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 8192
+		 * Min length: 1
+		 */
 		InputTemplate: FormControl<string | null | undefined>,
 	}
 	export function CreateInputTransformerFormGroup() {
 		return new FormGroup<InputTransformerFormProperties>({
-			InputTemplate: new FormControl<string | null | undefined>(undefined),
+			InputTemplate: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(1)]),
 		});
 
 	}
@@ -879,16 +1670,26 @@ export namespace MyNS {
 
 	/** This object enables you to specify a JSON path to extract from the event and use as the partition key for the Amazon Kinesis data stream, so that you can control the shard to which the event goes. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key. */
 	export interface KinesisParameters {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 */
 		PartitionKeyPath: string;
 	}
 
 	/** This object enables you to specify a JSON path to extract from the event and use as the partition key for the Amazon Kinesis data stream, so that you can control the shard to which the event goes. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key. */
 	export interface KinesisParametersFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 */
 		PartitionKeyPath: FormControl<string | null | undefined>,
 	}
 	export function CreateKinesisParametersFormGroup() {
 		return new FormGroup<KinesisParametersFormProperties>({
-			PartitionKeyPath: new FormControl<string | null | undefined>(undefined),
+			PartitionKeyPath: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
@@ -896,6 +1697,12 @@ export namespace MyNS {
 
 	/** This parameter contains the criteria (either InstanceIds or a tag) used to specify which EC2 instances are to be sent the command.  */
 	export interface RunCommandParameters {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 5
+		 */
 		RunCommandTargets: Array<RunCommandTarget>;
 	}
 
@@ -911,17 +1718,37 @@ export namespace MyNS {
 
 	/** Information about the EC2 instances that are to be sent the command, specified as key-value pairs. Each <code>RunCommandTarget</code> block can include only one key, but this key may specify multiple values. */
 	export interface RunCommandTarget {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\p{L}\p{Z}\p{N}_.:/=+\-@]*$
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		Values: Array<string>;
 	}
 
 	/** Information about the EC2 instances that are to be sent the command, specified as key-value pairs. Each <code>RunCommandTarget</code> block can include only one key, but this key may specify multiple values. */
 	export interface RunCommandTargetFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[\p{L}\p{Z}\p{N}_.:/=+\-@]*$
+		 */
 		Key: FormControl<string | null | undefined>,
 	}
 	export function CreateRunCommandTargetFormGroup() {
 		return new FormGroup<RunCommandTargetFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -929,7 +1756,15 @@ export namespace MyNS {
 
 	/** The custom parameters to be used when the target is an Amazon ECS task. */
 	export interface EcsParameters {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		TaskDefinitionArn: string;
+
+		/** Minimum: 1 */
 		TaskCount?: number | null;
 		LaunchType?: EcsParametersLaunchType | null;
 
@@ -941,7 +1776,15 @@ export namespace MyNS {
 
 	/** The custom parameters to be used when the target is an Amazon ECS task. */
 	export interface EcsParametersFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		TaskDefinitionArn: FormControl<string | null | undefined>,
+
+		/** Minimum: 1 */
 		TaskCount: FormControl<number | null | undefined>,
 		LaunchType: FormControl<EcsParametersLaunchType | null | undefined>,
 		PlatformVersion: FormControl<string | null | undefined>,
@@ -949,8 +1792,8 @@ export namespace MyNS {
 	}
 	export function CreateEcsParametersFormGroup() {
 		return new FormGroup<EcsParametersFormProperties>({
-			TaskDefinitionArn: new FormControl<string | null | undefined>(undefined),
-			TaskCount: new FormControl<number | null | undefined>(undefined),
+			TaskDefinitionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			TaskCount: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			LaunchType: new FormControl<EcsParametersLaunchType | null | undefined>(undefined),
 			PlatformVersion: new FormControl<string | null | undefined>(undefined),
 			Group: new FormControl<string | null | undefined>(undefined),
@@ -980,6 +1823,8 @@ export namespace MyNS {
 
 	/** This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode. */
 	export interface AwsVpcConfiguration {
+
+		/** Required */
 		Subnets: Array<string>;
 		SecurityGroups?: Array<string>;
 		AssignPublicIp?: DescribeRuleResponseState | null;
@@ -999,7 +1844,11 @@ export namespace MyNS {
 
 	/** The custom parameters to be used when the target is an AWS Batch job. */
 	export interface BatchParameters {
+
+		/** Required */
 		JobDefinition: string;
+
+		/** Required */
 		JobName: string;
 
 		/** The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an AWS Batch job. */
@@ -1011,13 +1860,17 @@ export namespace MyNS {
 
 	/** The custom parameters to be used when the target is an AWS Batch job. */
 	export interface BatchParametersFormProperties {
+
+		/** Required */
 		JobDefinition: FormControl<string | null | undefined>,
+
+		/** Required */
 		JobName: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchParametersFormGroup() {
 		return new FormGroup<BatchParametersFormProperties>({
-			JobDefinition: new FormControl<string | null | undefined>(undefined),
-			JobName: new FormControl<string | null | undefined>(undefined),
+			JobDefinition: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			JobName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1074,23 +1927,69 @@ export namespace MyNS {
 	}
 
 	export interface ListTargetsByRuleRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		Rule: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		EventBusName?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit?: number | null;
 	}
 	export interface ListTargetsByRuleRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		Rule: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		EventBusName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		Limit: FormControl<number | null | undefined>,
 	}
 	export function CreateListTargetsByRuleRequestFormGroup() {
 		return new FormGroup<ListTargetsByRuleRequestFormProperties>({
-			Rule: new FormControl<string | null | undefined>(undefined),
-			EventBusName: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
-			Limit: new FormControl<number | null | undefined>(undefined),
+			Rule: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			EventBusName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -1133,6 +2032,12 @@ export namespace MyNS {
 	}
 
 	export interface PutEventsRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10
+		 */
 		Entries: Array<PutEventsRequestEntry>;
 	}
 	export interface PutEventsRequestFormProperties {
@@ -1151,6 +2056,12 @@ export namespace MyNS {
 		Resources?: Array<string>;
 		DetailType?: string | null;
 		Detail?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		EventBusName?: string | null;
 	}
 
@@ -1160,6 +2071,12 @@ export namespace MyNS {
 		Source: FormControl<string | null | undefined>,
 		DetailType: FormControl<string | null | undefined>,
 		Detail: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		EventBusName: FormControl<string | null | undefined>,
 	}
 	export function CreatePutEventsRequestEntryFormGroup() {
@@ -1168,7 +2085,7 @@ export namespace MyNS {
 			Source: new FormControl<string | null | undefined>(undefined),
 			DetailType: new FormControl<string | null | undefined>(undefined),
 			Detail: new FormControl<string | null | undefined>(undefined),
-			EventBusName: new FormControl<string | null | undefined>(undefined),
+			EventBusName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -1211,6 +2128,12 @@ export namespace MyNS {
 	}
 
 	export interface PutPartnerEventsRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 20
+		 */
 		Entries: Array<PutPartnerEventsRequestEntry>;
 	}
 	export interface PutPartnerEventsRequestFormProperties {
@@ -1225,6 +2148,12 @@ export namespace MyNS {
 	/** The details about an event generated by an SaaS partner. */
 	export interface PutPartnerEventsRequestEntry {
 		Time?: Date | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: aws\.partner(/[\.\-_A-Za-z0-9]+){2,}
+		 */
 		Source?: string | null;
 		Resources?: Array<string>;
 		DetailType?: string | null;
@@ -1234,6 +2163,12 @@ export namespace MyNS {
 	/** The details about an event generated by an SaaS partner. */
 	export interface PutPartnerEventsRequestEntryFormProperties {
 		Time: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: aws\.partner(/[\.\-_A-Za-z0-9]+){2,}
+		 */
 		Source: FormControl<string | null | undefined>,
 		DetailType: FormControl<string | null | undefined>,
 		Detail: FormControl<string | null | undefined>,
@@ -1241,7 +2176,7 @@ export namespace MyNS {
 	export function CreatePutPartnerEventsRequestEntryFormGroup() {
 		return new FormGroup<PutPartnerEventsRequestEntryFormProperties>({
 			Time: new FormControl<Date | null | undefined>(undefined),
-			Source: new FormControl<string | null | undefined>(undefined),
+			Source: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			DetailType: new FormControl<string | null | undefined>(undefined),
 			Detail: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1249,26 +2184,80 @@ export namespace MyNS {
 	}
 
 	export interface PutPermissionRequest {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		EventBusName?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: events:[a-zA-Z]+
+		 */
 		Action: string;
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 1
+		 * Pattern: (\d{12}|\*)
+		 */
 		Principal: string;
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9-_]+
+		 */
 		StatementId: string;
 
 		/** <p>A JSON string which you can use to limit the event bus permissions you are granting to only accounts that fulfill the condition. Currently, the only supported condition is membership in a certain AWS organization. The string must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields. The <code>Value</code> field specifies the ID of the AWS organization. Following is an example value for <code>Condition</code>:</p> <p> <code>'{"Type" : "StringEquals", "Key": "aws:PrincipalOrgID", "Value": "o-1234567890"}'</code> </p> */
 		Condition?: Condition;
 	}
 	export interface PutPermissionRequestFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		EventBusName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: events:[a-zA-Z]+
+		 */
 		Action: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 12
+		 * Min length: 1
+		 * Pattern: (\d{12}|\*)
+		 */
 		Principal: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9-_]+
+		 */
 		StatementId: FormControl<string | null | undefined>,
 	}
 	export function CreatePutPermissionRequestFormGroup() {
 		return new FormGroup<PutPermissionRequestFormProperties>({
-			EventBusName: new FormControl<string | null | undefined>(undefined),
-			Action: new FormControl<string | null | undefined>(undefined),
-			Principal: new FormControl<string | null | undefined>(undefined),
-			StatementId: new FormControl<string | null | undefined>(undefined),
+			EventBusName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Action: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Principal: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(1)]),
+			StatementId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -1276,22 +2265,34 @@ export namespace MyNS {
 
 	/** <p>A JSON string which you can use to limit the event bus permissions you are granting to only accounts that fulfill the condition. Currently, the only supported condition is membership in a certain AWS organization. The string must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields. The <code>Value</code> field specifies the ID of the AWS organization. Following is an example value for <code>Condition</code>:</p> <p> <code>'{"Type" : "StringEquals", "Key": "aws:PrincipalOrgID", "Value": "o-1234567890"}'</code> </p> */
 	export interface Condition {
+
+		/** Required */
 		Type: string;
+
+		/** Required */
 		Key: string;
+
+		/** Required */
 		Value: string;
 	}
 
 	/** <p>A JSON string which you can use to limit the event bus permissions you are granting to only accounts that fulfill the condition. Currently, the only supported condition is membership in a certain AWS organization. The string must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields. The <code>Value</code> field specifies the ID of the AWS organization. Following is an example value for <code>Condition</code>:</p> <p> <code>'{"Type" : "StringEquals", "Key": "aws:PrincipalOrgID", "Value": "o-1234567890"}'</code> </p> */
 	export interface ConditionFormProperties {
+
+		/** Required */
 		Type: FormControl<string | null | undefined>,
+
+		/** Required */
 		Key: FormControl<string | null | undefined>,
+
+		/** Required */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateConditionFormGroup() {
 		return new FormGroup<ConditionFormProperties>({
-			Type: new FormControl<string | null | undefined>(undefined),
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1307,46 +2308,100 @@ export namespace MyNS {
 	}
 
 	export interface PutRuleResponse {
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		RuleArn?: string | null;
 	}
 	export interface PutRuleResponseFormProperties {
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		RuleArn: FormControl<string | null | undefined>,
 	}
 	export function CreatePutRuleResponseFormGroup() {
 		return new FormGroup<PutRuleResponseFormProperties>({
-			RuleArn: new FormControl<string | null | undefined>(undefined),
+			RuleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface PutRuleRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		Name: string;
+
+		/** Max length: 256 */
 		ScheduleExpression?: string | null;
 		EventPattern?: string | null;
 		State?: DescribeRuleResponseState | null;
+
+		/** Max length: 512 */
 		Description?: string | null;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		RoleArn?: string | null;
 		Tags?: Array<Tag>;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		EventBusName?: string | null;
 	}
 	export interface PutRuleRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		Name: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		ScheduleExpression: FormControl<string | null | undefined>,
 		EventPattern: FormControl<string | null | undefined>,
 		State: FormControl<DescribeRuleResponseState | null | undefined>,
+
+		/** Max length: 512 */
 		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		RoleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		EventBusName: FormControl<string | null | undefined>,
 	}
 	export function CreatePutRuleRequestFormGroup() {
 		return new FormGroup<PutRuleRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			ScheduleExpression: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			ScheduleExpression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			EventPattern: new FormControl<string | null | undefined>(undefined),
 			State: new FormControl<DescribeRuleResponseState | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
-			EventBusName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			EventBusName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -1378,6 +2433,12 @@ export namespace MyNS {
 
 	/** Represents a target that failed to be added to a rule. */
 	export interface PutTargetsResultEntry {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		TargetId?: string | null;
 		ErrorCode?: string | null;
 		ErrorMessage?: string | null;
@@ -1385,13 +2446,19 @@ export namespace MyNS {
 
 	/** Represents a target that failed to be added to a rule. */
 	export interface PutTargetsResultEntryFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		TargetId: FormControl<string | null | undefined>,
 		ErrorCode: FormControl<string | null | undefined>,
 		ErrorMessage: FormControl<string | null | undefined>,
 	}
 	export function CreatePutTargetsResultEntryFormGroup() {
 		return new FormGroup<PutTargetsResultEntryFormProperties>({
-			TargetId: new FormControl<string | null | undefined>(undefined),
+			TargetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			ErrorCode: new FormControl<string | null | undefined>(undefined),
 			ErrorMessage: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1399,34 +2466,92 @@ export namespace MyNS {
 	}
 
 	export interface PutTargetsRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		Rule: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		EventBusName?: string | null;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		Targets: Array<Target>;
 	}
 	export interface PutTargetsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		Rule: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		EventBusName: FormControl<string | null | undefined>,
 	}
 	export function CreatePutTargetsRequestFormGroup() {
 		return new FormGroup<PutTargetsRequestFormProperties>({
-			Rule: new FormControl<string | null | undefined>(undefined),
-			EventBusName: new FormControl<string | null | undefined>(undefined),
+			Rule: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			EventBusName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface RemovePermissionRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9-_]+
+		 */
 		StatementId: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		EventBusName?: string | null;
 	}
 	export interface RemovePermissionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9-_]+
+		 */
 		StatementId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		EventBusName: FormControl<string | null | undefined>,
 	}
 	export function CreateRemovePermissionRequestFormGroup() {
 		return new FormGroup<RemovePermissionRequestFormProperties>({
-			StatementId: new FormControl<string | null | undefined>(undefined),
-			EventBusName: new FormControl<string | null | undefined>(undefined),
+			StatementId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			EventBusName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -1448,6 +2573,12 @@ export namespace MyNS {
 
 	/** Represents a target that failed to be removed from a rule. */
 	export interface RemoveTargetsResultEntry {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		TargetId?: string | null;
 		ErrorCode?: string | null;
 		ErrorMessage?: string | null;
@@ -1455,13 +2586,19 @@ export namespace MyNS {
 
 	/** Represents a target that failed to be removed from a rule. */
 	export interface RemoveTargetsResultEntryFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		TargetId: FormControl<string | null | undefined>,
 		ErrorCode: FormControl<string | null | undefined>,
 		ErrorMessage: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveTargetsResultEntryFormGroup() {
 		return new FormGroup<RemoveTargetsResultEntryFormProperties>({
-			TargetId: new FormControl<string | null | undefined>(undefined),
+			TargetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			ErrorCode: new FormControl<string | null | undefined>(undefined),
 			ErrorMessage: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1469,20 +2606,52 @@ export namespace MyNS {
 	}
 
 	export interface RemoveTargetsRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		Rule: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		EventBusName?: string | null;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		Ids: Array<string>;
 		Force?: boolean | null;
 	}
 	export interface RemoveTargetsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [\.\-_A-Za-z0-9]+
+		 */
 		Rule: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [/\.\-_A-Za-z0-9]+
+		 */
 		EventBusName: FormControl<string | null | undefined>,
 		Force: FormControl<boolean | null | undefined>,
 	}
 	export function CreateRemoveTargetsRequestFormGroup() {
 		return new FormGroup<RemoveTargetsRequestFormProperties>({
-			Rule: new FormControl<string | null | undefined>(undefined),
-			EventBusName: new FormControl<string | null | undefined>(undefined),
+			Rule: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			EventBusName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			Force: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1499,15 +2668,29 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceARN: string;
+
+		/** Required */
 		Tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
 		});
 
 	}
@@ -1526,17 +2709,25 @@ export namespace MyNS {
 	}
 
 	export interface TestEventPatternRequest {
+
+		/** Required */
 		EventPattern: string;
+
+		/** Required */
 		Event: string;
 	}
 	export interface TestEventPatternRequestFormProperties {
+
+		/** Required */
 		EventPattern: FormControl<string | null | undefined>,
+
+		/** Required */
 		Event: FormControl<string | null | undefined>,
 	}
 	export function CreateTestEventPatternRequestFormGroup() {
 		return new FormGroup<TestEventPatternRequestFormProperties>({
-			EventPattern: new FormControl<string | null | undefined>(undefined),
-			Event: new FormControl<string | null | undefined>(undefined),
+			EventPattern: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Event: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1552,15 +2743,29 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceARN: string;
+
+		/** Required */
 		TagKeys: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
 		});
 
 	}

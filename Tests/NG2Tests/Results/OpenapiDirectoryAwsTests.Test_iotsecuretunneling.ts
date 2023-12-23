@@ -14,16 +14,26 @@ export namespace MyNS {
 	}
 
 	export interface CloseTunnelRequest {
+
+		/**
+		 * Required
+		 * Pattern: [a-zA-Z0-9_\-+=:]{1,128}
+		 */
 		tunnelId: string;
 		delete?: boolean | null;
 	}
 	export interface CloseTunnelRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: [a-zA-Z0-9_\-+=:]{1,128}
+		 */
 		tunnelId: FormControl<string | null | undefined>,
 		delete: FormControl<boolean | null | undefined>,
 	}
 	export function CreateCloseTunnelRequestFormGroup() {
 		return new FormGroup<CloseTunnelRequestFormProperties>({
-			tunnelId: new FormControl<string | null | undefined>(undefined),
+			tunnelId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			delete: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -55,7 +65,14 @@ export namespace MyNS {
 
 	/** A connection between a source computer and a destination device. */
 	export interface Tunnel {
+
+		/** Pattern: [a-zA-Z0-9_\-+=:]{1,128} */
 		tunnelId?: string | null;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		tunnelArn?: string | null;
 		status?: TunnelStatus | null;
 
@@ -64,6 +81,8 @@ export namespace MyNS {
 
 		/** The state of a connection. */
 		destinationConnectionState?: ConnectionState;
+
+		/** Pattern: [^\p{C}]{1,2048} */
 		description?: string | null;
 
 		/** The destination configuration. */
@@ -71,6 +90,11 @@ export namespace MyNS {
 
 		/** Tunnel timeout configuration. */
 		timeoutConfig?: TimeoutConfig;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 200
+		 */
 		tags?: Array<Tag>;
 		createdAt?: Date | null;
 		lastUpdatedAt?: Date | null;
@@ -78,9 +102,18 @@ export namespace MyNS {
 
 	/** A connection between a source computer and a destination device. */
 	export interface TunnelFormProperties {
+
+		/** Pattern: [a-zA-Z0-9_\-+=:]{1,128} */
 		tunnelId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		tunnelArn: FormControl<string | null | undefined>,
 		status: FormControl<TunnelStatus | null | undefined>,
+
+		/** Pattern: [^\p{C}]{1,2048} */
 		description: FormControl<string | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
 		lastUpdatedAt: FormControl<Date | null | undefined>,
@@ -88,7 +121,7 @@ export namespace MyNS {
 	export function CreateTunnelFormGroup() {
 		return new FormGroup<TunnelFormProperties>({
 			tunnelId: new FormControl<string | null | undefined>(undefined),
-			tunnelArn: new FormControl<string | null | undefined>(undefined),
+			tunnelArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 			status: new FormControl<TunnelStatus | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
@@ -124,17 +157,37 @@ export namespace MyNS {
 
 	/** The destination configuration. */
 	export interface DestinationConfig {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
 		thingName: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 1
+		 */
 		services: Array<string>;
 	}
 
 	/** The destination configuration. */
 	export interface DestinationConfigFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
 		thingName: FormControl<string | null | undefined>,
 	}
 	export function CreateDestinationConfigFormGroup() {
 		return new FormGroup<DestinationConfigFormProperties>({
-			thingName: new FormControl<string | null | undefined>(undefined),
+			thingName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -142,16 +195,26 @@ export namespace MyNS {
 
 	/** Tunnel timeout configuration. */
 	export interface TimeoutConfig {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 720
+		 */
 		maxLifetimeTimeoutMinutes?: number | null;
 	}
 
 	/** Tunnel timeout configuration. */
 	export interface TimeoutConfigFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 720
+		 */
 		maxLifetimeTimeoutMinutes: FormControl<number | null | undefined>,
 	}
 	export function CreateTimeoutConfigFormGroup() {
 		return new FormGroup<TimeoutConfigFormProperties>({
-			maxLifetimeTimeoutMinutes: new FormControl<number | null | undefined>(undefined),
+			maxLifetimeTimeoutMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(720)]),
 		});
 
 	}
@@ -159,37 +222,80 @@ export namespace MyNS {
 
 	/** An arbitary key/value pair used to add searchable metadata to secure tunnel resources. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		value: string;
 	}
 
 	/** An arbitary key/value pair used to add searchable metadata to secure tunnel resources. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface DescribeTunnelRequest {
+
+		/**
+		 * Required
+		 * Pattern: [a-zA-Z0-9_\-+=:]{1,128}
+		 */
 		tunnelId: string;
 	}
 	export interface DescribeTunnelRequestFormProperties {
+
+		/**
+		 * Required
+		 * Pattern: [a-zA-Z0-9_\-+=:]{1,128}
+		 */
 		tunnelId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeTunnelRequestFormGroup() {
 		return new FormGroup<DescribeTunnelRequestFormProperties>({
-			tunnelId: new FormControl<string | null | undefined>(undefined),
+			tunnelId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface ListTagsForResourceResponse {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 200
+		 */
 		tags?: Array<Tag>;
 	}
 	export interface ListTagsForResourceResponseFormProperties {
@@ -201,23 +307,39 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		resourceArn: string;
 	}
 	export interface ListTagsForResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListTunnelsResponse {
 		tunnelSummaries?: Array<TunnelSummary>;
+
+		/** Pattern: [a-zA-Z0-9_=-]{1,4096} */
 		nextToken?: string | null;
 	}
 	export interface ListTunnelsResponseFormProperties {
+
+		/** Pattern: [a-zA-Z0-9_=-]{1,4096} */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTunnelsResponseFormGroup() {
@@ -230,9 +352,18 @@ export namespace MyNS {
 
 	/** Information about the tunnel. */
 	export interface TunnelSummary {
+
+		/** Pattern: [a-zA-Z0-9_\-+=:]{1,128} */
 		tunnelId?: string | null;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		tunnelArn?: string | null;
 		status?: TunnelStatus | null;
+
+		/** Pattern: [^\p{C}]{1,2048} */
 		description?: string | null;
 		createdAt?: Date | null;
 		lastUpdatedAt?: Date | null;
@@ -240,9 +371,18 @@ export namespace MyNS {
 
 	/** Information about the tunnel. */
 	export interface TunnelSummaryFormProperties {
+
+		/** Pattern: [a-zA-Z0-9_\-+=:]{1,128} */
 		tunnelId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		tunnelArn: FormControl<string | null | undefined>,
 		status: FormControl<TunnelStatus | null | undefined>,
+
+		/** Pattern: [^\p{C}]{1,2048} */
 		description: FormControl<string | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
 		lastUpdatedAt: FormControl<Date | null | undefined>,
@@ -250,7 +390,7 @@ export namespace MyNS {
 	export function CreateTunnelSummaryFormGroup() {
 		return new FormGroup<TunnelSummaryFormProperties>({
 			tunnelId: new FormControl<string | null | undefined>(undefined),
-			tunnelArn: new FormControl<string | null | undefined>(undefined),
+			tunnelArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 			status: new FormControl<TunnelStatus | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
@@ -260,32 +400,72 @@ export namespace MyNS {
 	}
 
 	export interface ListTunnelsRequest {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
 		thingName?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
+
+		/** Pattern: [a-zA-Z0-9_=-]{1,4096} */
 		nextToken?: string | null;
 	}
 	export interface ListTunnelsRequestFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
 		thingName: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
+
+		/** Pattern: [a-zA-Z0-9_=-]{1,4096} */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTunnelsRequestFormGroup() {
 		return new FormGroup<ListTunnelsRequestFormProperties>({
-			thingName: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			thingName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface OpenTunnelResponse {
+
+		/** Pattern: [a-zA-Z0-9_\-+=:]{1,128} */
 		tunnelId?: string | null;
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		tunnelArn?: string | null;
 		sourceAccessToken?: string | null;
 		destinationAccessToken?: string | null;
 	}
 	export interface OpenTunnelResponseFormProperties {
+
+		/** Pattern: [a-zA-Z0-9_\-+=:]{1,128} */
 		tunnelId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1600
+		 * Min length: 1
+		 */
 		tunnelArn: FormControl<string | null | undefined>,
 		sourceAccessToken: FormControl<string | null | undefined>,
 		destinationAccessToken: FormControl<string | null | undefined>,
@@ -293,7 +473,7 @@ export namespace MyNS {
 	export function CreateOpenTunnelResponseFormGroup() {
 		return new FormGroup<OpenTunnelResponseFormProperties>({
 			tunnelId: new FormControl<string | null | undefined>(undefined),
-			tunnelArn: new FormControl<string | null | undefined>(undefined),
+			tunnelArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 			sourceAccessToken: new FormControl<string | null | undefined>(undefined),
 			destinationAccessToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -301,7 +481,14 @@ export namespace MyNS {
 	}
 
 	export interface OpenTunnelRequest {
+
+		/** Pattern: [^\p{C}]{1,2048} */
 		description?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 200
+		 */
 		tags?: Array<Tag>;
 
 		/** The destination configuration. */
@@ -311,6 +498,8 @@ export namespace MyNS {
 		timeoutConfig?: TimeoutConfig;
 	}
 	export interface OpenTunnelRequestFormProperties {
+
+		/** Pattern: [^\p{C}]{1,2048} */
 		description: FormControl<string | null | undefined>,
 	}
 	export function CreateOpenTunnelRequestFormGroup() {
@@ -341,15 +530,33 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		resourceArn: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 200
+		 */
 		tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
 		});
 
 	}
@@ -365,15 +572,33 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		resourceArn: string;
+
+		/**
+		 * Required
+		 * Minimum items: 0
+		 * Maximum items: 200
+		 */
 		tagKeys: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
 		});
 
 	}

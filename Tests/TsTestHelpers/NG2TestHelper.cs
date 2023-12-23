@@ -17,10 +17,10 @@ namespace SwagTests
 		readonly ITestOutputHelper output;
 		readonly bool buildToValidate;
 
-		public NG2TestHelper(Type genType, ITestOutputHelper output) : base(genType)
+		public NG2TestHelper(Type genType, ITestOutputHelper output, ITestingSettings testingSettings) : base(genType, testingSettings)
 		{
 			this.output = output;
-			this.buildToValidate = TestingSettings.Instance.Build;
+			this.buildToValidate = testingSettings.Build;
 		}
 
 		public void GenerateAndAssertAndBuild(string openApiFile, string expectedFile, Settings settings = null)
@@ -34,7 +34,7 @@ namespace SwagTests
 				DataAnnotationsToComments = true,
 			});
 
-			if (TestingSettings.Instance.UpdateGenerated)
+			if (testingSettings.UpdateGenerated)
 			{
 				File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
 			}
@@ -84,19 +84,38 @@ namespace SwagTests
 				RedirectStandardError = true,
 			};
 
+			var warningCode = 0;
 			try
 			{
 				var process = Process.Start(info);
 				var errorMsg = process.StandardError.ReadToEnd(); //before WaitForExit() https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process.standarderror?view=netcore-3.1#System_Diagnostics_Process_StandardError
 				if (!String.IsNullOrEmpty(errorMsg))
 				{
-					output.WriteLine("Code generated but with ng build errors:");
-					output.WriteLine(errorMsg);
+					//If the first line is "- Generating browser application bundles (phase: setup)", things should be OK, no warning.
+					if (!errorMsg.StartsWith("- Generating browser application bundles (phase: setup)"))
+					{
+						output.WriteLine("Code generated but with ng build errors:");
+						output.WriteLine(errorMsg);
+						warningCode = 999;
+					}
+					else
+					{
+						output.WriteLine("NG build OK");
+					}
 				}
 
 				process.WaitForExit();
 
-				return process.ExitCode;
+				var buildProcessCode = process.ExitCode;
+				if (buildProcessCode != 0)
+				{
+					return buildProcessCode;
+				}else if (warningCode != 0)
+				{
+					return warningCode;
+				}
+
+				return 0;
 			}
 			finally
 			{

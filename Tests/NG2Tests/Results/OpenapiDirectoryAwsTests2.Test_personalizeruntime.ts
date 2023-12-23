@@ -17,18 +17,22 @@ export namespace MyNS {
 
 	/** <p>An object that identifies an item.</p> <p>The and APIs return a list of <code>PredictedItem</code>s.</p> */
 	export interface PredictedItem {
+
+		/** Max length: 256 */
 		itemId?: string | null;
 		score?: number | null;
 	}
 
 	/** <p>An object that identifies an item.</p> <p>The and APIs return a list of <code>PredictedItem</code>s.</p> */
 	export interface PredictedItemFormProperties {
+
+		/** Max length: 256 */
 		itemId: FormControl<string | null | undefined>,
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreatePredictedItemFormGroup() {
 		return new FormGroup<PredictedItemFormProperties>({
-			itemId: new FormControl<string | null | undefined>(undefined),
+			itemId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			score: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -76,45 +80,103 @@ export namespace MyNS {
 	}
 
 	export interface GetPersonalizedRankingRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		campaignArn: string;
+
+		/** Required */
 		inputList: Array<string>;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 */
 		userId: string;
 		context?: Context;
 	}
 	export interface GetPersonalizedRankingRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		campaignArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 */
 		userId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetPersonalizedRankingRequestFormGroup() {
 		return new FormGroup<GetPersonalizedRankingRequestFormProperties>({
-			campaignArn: new FormControl<string | null | undefined>(undefined),
-			userId: new FormControl<string | null | undefined>(undefined),
+			campaignArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			userId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface GetRecommendationsRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		campaignArn: string;
+
+		/** Max length: 256 */
 		itemId?: string | null;
+
+		/** Max length: 256 */
 		userId?: string | null;
+
+		/** Minimum: 0 */
 		numResults?: number | null;
 		context?: Context;
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		filterArn?: string | null;
 	}
 	export interface GetRecommendationsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		campaignArn: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		itemId: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		userId: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		numResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
 		filterArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRecommendationsRequestFormGroup() {
 		return new FormGroup<GetRecommendationsRequestFormProperties>({
-			campaignArn: new FormControl<string | null | undefined>(undefined),
-			itemId: new FormControl<string | null | undefined>(undefined),
-			userId: new FormControl<string | null | undefined>(undefined),
-			numResults: new FormControl<number | null | undefined>(undefined),
-			filterArn: new FormControl<string | null | undefined>(undefined),
+			campaignArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			itemId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			userId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			numResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			filterArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -191,8 +253,8 @@ export namespace MyNS {
 	}
 	export function CreateGetPersonalizedRankingPostBodyFormGroup() {
 		return new FormGroup<GetPersonalizedRankingPostBodyFormProperties>({
-			campaignArn: new FormControl<string | null | undefined>(undefined),
-			userId: new FormControl<string | null | undefined>(undefined),
+			campaignArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			userId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 			context: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -276,12 +338,12 @@ export namespace MyNS {
 	}
 	export function CreateGetRecommendationsPostBodyFormGroup() {
 		return new FormGroup<GetRecommendationsPostBodyFormProperties>({
-			campaignArn: new FormControl<string | null | undefined>(undefined),
-			itemId: new FormControl<string | null | undefined>(undefined),
-			userId: new FormControl<string | null | undefined>(undefined),
-			numResults: new FormControl<number | null | undefined>(undefined),
+			campaignArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			itemId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			userId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			numResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			context: new FormControl<{[id: string]: string } | null | undefined>(undefined),
-			filterArn: new FormControl<string | null | undefined>(undefined),
+			filterArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}

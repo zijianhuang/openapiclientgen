@@ -42,12 +42,22 @@ export namespace MyNS {
 		ServiceCode?: string | null;
 		FormatVersion?: string | null;
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface DescribeServicesRequestFormProperties {
 		ServiceCode: FormControl<string | null | undefined>,
 		FormatVersion: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeServicesRequestFormGroup() {
@@ -55,7 +65,7 @@ export namespace MyNS {
 			ServiceCode: new FormControl<string | null | undefined>(undefined),
 			FormatVersion: new FormControl<string | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -177,23 +187,41 @@ export namespace MyNS {
 	}
 
 	export interface GetAttributeValuesRequest {
+
+		/** Required */
 		ServiceCode: string;
+
+		/** Required */
 		AttributeName: string;
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface GetAttributeValuesRequestFormProperties {
+
+		/** Required */
 		ServiceCode: FormControl<string | null | undefined>,
+
+		/** Required */
 		AttributeName: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateGetAttributeValuesRequestFormGroup() {
 		return new FormGroup<GetAttributeValuesRequestFormProperties>({
-			ServiceCode: new FormControl<string | null | undefined>(undefined),
-			AttributeName: new FormControl<string | null | undefined>(undefined),
+			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -220,12 +248,22 @@ export namespace MyNS {
 		Filters?: Array<Filter>;
 		FormatVersion?: string | null;
 		NextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults?: number | null;
 	}
 	export interface GetProductsRequestFormProperties {
 		ServiceCode: FormControl<string | null | undefined>,
 		FormatVersion: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateGetProductsRequestFormGroup() {
@@ -233,7 +271,7 @@ export namespace MyNS {
 			ServiceCode: new FormControl<string | null | undefined>(undefined),
 			FormatVersion: new FormControl<string | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -241,22 +279,34 @@ export namespace MyNS {
 
 	/** The constraints that you want all returned products to match. */
 	export interface Filter {
+
+		/** Required */
 		Type: FilterType;
+
+		/** Required */
 		Field: string;
+
+		/** Required */
 		Value: string;
 	}
 
 	/** The constraints that you want all returned products to match. */
 	export interface FilterFormProperties {
+
+		/** Required */
 		Type: FormControl<FilterType | null | undefined>,
+
+		/** Required */
 		Field: FormControl<string | null | undefined>,
+
+		/** Required */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateFilterFormGroup() {
 		return new FormGroup<FilterFormProperties>({
-			Type: new FormControl<FilterType | null | undefined>(undefined),
-			Field: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<FilterType | null | undefined>(undefined, [Validators.required]),
+			Field: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

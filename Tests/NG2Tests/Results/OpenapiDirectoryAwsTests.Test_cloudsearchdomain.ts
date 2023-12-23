@@ -415,16 +415,20 @@ export namespace MyNS {
 
 	/** Container for the parameters to the <code>UploadDocuments</code> request. */
 	export interface UploadDocumentsRequest {
+
+		/** Required */
 		documents: string;
 	}
 
 	/** Container for the parameters to the <code>UploadDocuments</code> request. */
 	export interface UploadDocumentsRequestFormProperties {
+
+		/** Required */
 		documents: FormControl<string | null | undefined>,
 	}
 	export function CreateUploadDocumentsRequestFormGroup() {
 		return new FormGroup<UploadDocumentsRequestFormProperties>({
-			documents: new FormControl<string | null | undefined>(undefined),
+			documents: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -505,7 +509,7 @@ export namespace MyNS {
 	}
 	export function CreateUploadDocumentsPostBodyFormGroup() {
 		return new FormGroup<UploadDocumentsPostBodyFormProperties>({
-			documents: new FormControl<string | null | undefined>(undefined),
+			documents: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

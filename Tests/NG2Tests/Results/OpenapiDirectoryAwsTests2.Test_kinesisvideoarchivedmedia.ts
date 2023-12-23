@@ -21,19 +21,27 @@ export namespace MyNS {
 
 	/** <p>The range of timestamps for which to return fragments.</p> <p>The values in the ClipTimestampRange are <code>inclusive</code>. Fragments that begin before the start time but continue past it, or fragments that begin before the end time but continue past it, are included in the session. </p> */
 	export interface ClipTimestampRange {
+
+		/** Required */
 		StartTimestamp: Date;
+
+		/** Required */
 		EndTimestamp: Date;
 	}
 
 	/** <p>The range of timestamps for which to return fragments.</p> <p>The values in the ClipTimestampRange are <code>inclusive</code>. Fragments that begin before the start time but continue past it, or fragments that begin before the end time but continue past it, are included in the session. </p> */
 	export interface ClipTimestampRangeFormProperties {
+
+		/** Required */
 		StartTimestamp: FormControl<Date | null | undefined>,
+
+		/** Required */
 		EndTimestamp: FormControl<Date | null | undefined>,
 	}
 	export function CreateClipTimestampRangeFormGroup() {
 		return new FormGroup<ClipTimestampRangeFormProperties>({
-			StartTimestamp: new FormControl<Date | null | undefined>(undefined),
-			EndTimestamp: new FormControl<Date | null | undefined>(undefined),
+			StartTimestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			EndTimestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -213,14 +221,26 @@ export namespace MyNS {
 
 	export interface ListFragmentsOutput {
 		Fragments?: Array<Fragment>;
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9+/]+={0,2}
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListFragmentsOutputFormProperties {
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9+/]+={0,2}
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListFragmentsOutputFormGroup() {
 		return new FormGroup<ListFragmentsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
 		});
 
 	}
@@ -228,6 +248,12 @@ export namespace MyNS {
 
 	/** Represents a segment of video or other time-delimited data. */
 	export interface Fragment {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[0-9]+$
+		 */
 		FragmentNumber?: string | null;
 		FragmentSizeInBytes?: number | null;
 		ProducerTimestamp?: Date | null;
@@ -237,6 +263,12 @@ export namespace MyNS {
 
 	/** Represents a segment of video or other time-delimited data. */
 	export interface FragmentFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[0-9]+$
+		 */
 		FragmentNumber: FormControl<string | null | undefined>,
 		FragmentSizeInBytes: FormControl<number | null | undefined>,
 		ProducerTimestamp: FormControl<Date | null | undefined>,
@@ -245,7 +277,7 @@ export namespace MyNS {
 	}
 	export function CreateFragmentFormGroup() {
 		return new FormGroup<FragmentFormProperties>({
-			FragmentNumber: new FormControl<string | null | undefined>(undefined),
+			FragmentNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			FragmentSizeInBytes: new FormControl<number | null | undefined>(undefined),
 			ProducerTimestamp: new FormControl<Date | null | undefined>(undefined),
 			ServerTimestamp: new FormControl<Date | null | undefined>(undefined),
@@ -259,19 +291,27 @@ export namespace MyNS {
 
 	/** The range of timestamps for which to return fragments. */
 	export interface TimestampRange {
+
+		/** Required */
 		StartTimestamp: Date;
+
+		/** Required */
 		EndTimestamp: Date;
 	}
 
 	/** The range of timestamps for which to return fragments. */
 	export interface TimestampRangeFormProperties {
+
+		/** Required */
 		StartTimestamp: FormControl<Date | null | undefined>,
+
+		/** Required */
 		EndTimestamp: FormControl<Date | null | undefined>,
 	}
 	export function CreateTimestampRangeFormGroup() {
 		return new FormGroup<TimestampRangeFormProperties>({
-			StartTimestamp: new FormControl<Date | null | undefined>(undefined),
-			EndTimestamp: new FormControl<Date | null | undefined>(undefined),
+			StartTimestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			EndTimestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -279,6 +319,8 @@ export namespace MyNS {
 
 	/** <p>Describes the timestamp range and timestamp origin of a range of fragments.</p> <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the clip will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p> */
 	export interface ClipFragmentSelector {
+
+		/** Required */
 		FragmentSelectorType: ClipFragmentSelectorType;
 
 		/**
@@ -290,11 +332,13 @@ export namespace MyNS {
 
 	/** <p>Describes the timestamp range and timestamp origin of a range of fragments.</p> <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the clip will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p> */
 	export interface ClipFragmentSelectorFormProperties {
+
+		/** Required */
 		FragmentSelectorType: FormControl<ClipFragmentSelectorType | null | undefined>,
 	}
 	export function CreateClipFragmentSelectorFormGroup() {
 		return new FormGroup<ClipFragmentSelectorFormProperties>({
-			FragmentSelectorType: new FormControl<ClipFragmentSelectorType | null | undefined>(undefined),
+			FragmentSelectorType: new FormControl<ClipFragmentSelectorType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -330,6 +374,8 @@ export namespace MyNS {
 
 	/** <p>Describes the timestamp range and timestamp origin of a range of fragments.</p> <p>Only fragments with a start timestamp greater than or equal to the given start time and less than or equal to the end time are returned. For example, if a stream contains fragments with the following start timestamps: </p> <ul> <li> <p>00:00:00</p> </li> <li> <p>00:00:02</p> </li> <li> <p>00:00:04</p> </li> <li> <p>00:00:06</p> </li> </ul> <p> A fragment selector range with a start time of 00:00:01 and end time of 00:00:04 would return the fragments with start times of 00:00:02 and 00:00:04. </p> */
 	export interface FragmentSelector {
+
+		/** Required */
 		FragmentSelectorType: ClipFragmentSelectorType;
 
 		/**
@@ -341,17 +387,31 @@ export namespace MyNS {
 
 	/** <p>Describes the timestamp range and timestamp origin of a range of fragments.</p> <p>Only fragments with a start timestamp greater than or equal to the given start time and less than or equal to the end time are returned. For example, if a stream contains fragments with the following start timestamps: </p> <ul> <li> <p>00:00:00</p> </li> <li> <p>00:00:02</p> </li> <li> <p>00:00:04</p> </li> <li> <p>00:00:06</p> </li> </ul> <p> A fragment selector range with a start time of 00:00:01 and end time of 00:00:04 would return the fragments with start times of 00:00:02 and 00:00:04. </p> */
 	export interface FragmentSelectorFormProperties {
+
+		/** Required */
 		FragmentSelectorType: FormControl<ClipFragmentSelectorType | null | undefined>,
 	}
 	export function CreateFragmentSelectorFormGroup() {
 		return new FormGroup<FragmentSelectorFormProperties>({
-			FragmentSelectorType: new FormControl<ClipFragmentSelectorType | null | undefined>(undefined),
+			FragmentSelectorType: new FormControl<ClipFragmentSelectorType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface GetClipInput {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN?: string | null;
 
 		/**
@@ -361,19 +421,43 @@ export namespace MyNS {
 		ClipFragmentSelector: ClipFragmentSelector;
 	}
 	export interface GetClipInputFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN: FormControl<string | null | undefined>,
 	}
 	export function CreateGetClipInputFormGroup() {
 		return new FormGroup<GetClipInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined),
-			StreamARN: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetDASHStreamingSessionURLInput {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN?: string | null;
 		PlaybackMode?: DASHPlaybackMode | null;
 		DisplayFragmentTimestamp?: DASHDisplayFragmentNumber | null;
@@ -381,27 +465,59 @@ export namespace MyNS {
 
 		/** Contains the range of timestamps for the requested media, and the source of the timestamps. */
 		DASHFragmentSelector?: DASHFragmentSelector;
+
+		/**
+		 * Minimum: 300
+		 * Maximum: 43200
+		 */
 		Expires?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxManifestFragmentResults?: number | null;
 	}
 	export interface GetDASHStreamingSessionURLInputFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN: FormControl<string | null | undefined>,
 		PlaybackMode: FormControl<DASHPlaybackMode | null | undefined>,
 		DisplayFragmentTimestamp: FormControl<DASHDisplayFragmentNumber | null | undefined>,
 		DisplayFragmentNumber: FormControl<DASHDisplayFragmentNumber | null | undefined>,
+
+		/**
+		 * Minimum: 300
+		 * Maximum: 43200
+		 */
 		Expires: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxManifestFragmentResults: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDASHStreamingSessionURLInputFormGroup() {
 		return new FormGroup<GetDASHStreamingSessionURLInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined),
-			StreamARN: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			PlaybackMode: new FormControl<DASHPlaybackMode | null | undefined>(undefined),
 			DisplayFragmentTimestamp: new FormControl<DASHDisplayFragmentNumber | null | undefined>(undefined),
 			DisplayFragmentNumber: new FormControl<DASHDisplayFragmentNumber | null | undefined>(undefined),
-			Expires: new FormControl<number | null | undefined>(undefined),
-			MaxManifestFragmentResults: new FormControl<number | null | undefined>(undefined),
+			Expires: new FormControl<number | null | undefined>(undefined, [Validators.min(300), Validators.max(43200)]),
+			MaxManifestFragmentResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
@@ -433,7 +549,19 @@ export namespace MyNS {
 	export enum HLSDisplayFragmentTimestamp { ALWAYS = 0, NEVER = 1 }
 
 	export interface GetHLSStreamingSessionURLInput {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN?: string | null;
 		PlaybackMode?: DASHPlaybackMode | null;
 
@@ -442,65 +570,153 @@ export namespace MyNS {
 		ContainerFormat?: ContainerFormat | null;
 		DiscontinuityMode?: HLSDiscontinuityMode | null;
 		DisplayFragmentTimestamp?: DASHDisplayFragmentNumber | null;
+
+		/**
+		 * Minimum: 300
+		 * Maximum: 43200
+		 */
 		Expires?: number | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxMediaPlaylistFragmentResults?: number | null;
 	}
 	export interface GetHLSStreamingSessionURLInputFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		StreamARN: FormControl<string | null | undefined>,
 		PlaybackMode: FormControl<DASHPlaybackMode | null | undefined>,
 		ContainerFormat: FormControl<ContainerFormat | null | undefined>,
 		DiscontinuityMode: FormControl<HLSDiscontinuityMode | null | undefined>,
 		DisplayFragmentTimestamp: FormControl<DASHDisplayFragmentNumber | null | undefined>,
+
+		/**
+		 * Minimum: 300
+		 * Maximum: 43200
+		 */
 		Expires: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxMediaPlaylistFragmentResults: FormControl<number | null | undefined>,
 	}
 	export function CreateGetHLSStreamingSessionURLInputFormGroup() {
 		return new FormGroup<GetHLSStreamingSessionURLInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined),
-			StreamARN: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			PlaybackMode: new FormControl<DASHPlaybackMode | null | undefined>(undefined),
 			ContainerFormat: new FormControl<ContainerFormat | null | undefined>(undefined),
 			DiscontinuityMode: new FormControl<HLSDiscontinuityMode | null | undefined>(undefined),
 			DisplayFragmentTimestamp: new FormControl<DASHDisplayFragmentNumber | null | undefined>(undefined),
-			Expires: new FormControl<number | null | undefined>(undefined),
-			MaxMediaPlaylistFragmentResults: new FormControl<number | null | undefined>(undefined),
+			Expires: new FormControl<number | null | undefined>(undefined, [Validators.min(300), Validators.max(43200)]),
+			MaxMediaPlaylistFragmentResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
 
 	export interface GetMediaForFragmentListInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 1000
+		 */
 		Fragments: Array<string>;
 	}
 	export interface GetMediaForFragmentListInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetMediaForFragmentListInputFormGroup() {
 		return new FormGroup<GetMediaForFragmentListInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListFragmentsInput {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxResults?: number | null;
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9+/]+={0,2}
+		 */
 		NextToken?: string | null;
 
 		/** <p>Describes the timestamp range and timestamp origin of a range of fragments.</p> <p>Only fragments with a start timestamp greater than or equal to the given start time and less than or equal to the end time are returned. For example, if a stream contains fragments with the following start timestamps: </p> <ul> <li> <p>00:00:00</p> </li> <li> <p>00:00:02</p> </li> <li> <p>00:00:04</p> </li> <li> <p>00:00:06</p> </li> </ul> <p> A fragment selector range with a start time of 00:00:01 and end time of 00:00:04 would return the fragments with start times of 00:00:02 and 00:00:04. </p> */
 		FragmentSelector?: FragmentSelector;
 	}
 	export interface ListFragmentsInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		StreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9+/]+={0,2}
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListFragmentsInputFormGroup() {
 		return new FormGroup<ListFragmentsInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
 		});
 
 	}
@@ -602,8 +818,8 @@ export namespace MyNS {
 	}
 	export function CreateGetClipPostBodyFormGroup() {
 		return new FormGroup<GetClipPostBodyFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined),
-			StreamARN: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -711,13 +927,13 @@ export namespace MyNS {
 	}
 	export function CreateGetDASHStreamingSessionURLPostBodyFormGroup() {
 		return new FormGroup<GetDASHStreamingSessionURLPostBodyFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined),
-			StreamARN: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			PlaybackMode: new FormControl<DASHPlaybackMode | null | undefined>(undefined),
 			DisplayFragmentTimestamp: new FormControl<DASHDisplayFragmentNumber | null | undefined>(undefined),
 			DisplayFragmentNumber: new FormControl<DASHDisplayFragmentNumber | null | undefined>(undefined),
-			Expires: new FormControl<number | null | undefined>(undefined),
-			MaxManifestFragmentResults: new FormControl<number | null | undefined>(undefined),
+			Expires: new FormControl<number | null | undefined>(undefined, [Validators.min(300), Validators.max(43200)]),
+			MaxManifestFragmentResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
@@ -831,14 +1047,14 @@ export namespace MyNS {
 	}
 	export function CreateGetHLSStreamingSessionURLPostBodyFormGroup() {
 		return new FormGroup<GetHLSStreamingSessionURLPostBodyFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined),
-			StreamARN: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			PlaybackMode: new FormControl<DASHPlaybackMode | null | undefined>(undefined),
 			ContainerFormat: new FormControl<ContainerFormat | null | undefined>(undefined),
 			DiscontinuityMode: new FormControl<HLSDiscontinuityMode | null | undefined>(undefined),
 			DisplayFragmentTimestamp: new FormControl<DASHDisplayFragmentNumber | null | undefined>(undefined),
-			Expires: new FormControl<number | null | undefined>(undefined),
-			MaxMediaPlaylistFragmentResults: new FormControl<number | null | undefined>(undefined),
+			Expires: new FormControl<number | null | undefined>(undefined, [Validators.min(300), Validators.max(43200)]),
+			MaxMediaPlaylistFragmentResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
 	}
@@ -891,7 +1107,7 @@ export namespace MyNS {
 	}
 	export function CreateGetMediaForFragmentListPostBodyFormGroup() {
 		return new FormGroup<GetMediaForFragmentListPostBodyFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -953,9 +1169,9 @@ export namespace MyNS {
 	}
 	export function CreateListFragmentsPostBodyFormGroup() {
 		return new FormGroup<ListFragmentsPostBodyFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined),
-			MaxResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
 		});
 
 	}

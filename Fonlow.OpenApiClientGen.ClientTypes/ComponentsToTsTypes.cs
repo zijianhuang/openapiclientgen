@@ -412,7 +412,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			if (settings.DataAnnotationsToComments)
 			{
-				List<string> ss = ComponentsHelper.GetCommentsFromAnnotations(item.Value, item.Key, modelSchema);
+				List<string> ss = ComponentsHelper.GetCommentsFromAnnotations(item.Value, item.Key, modelSchema, true);
 				if (!String.IsNullOrEmpty(typeComment))
 				{
 					ss.Insert(0, typeComment);

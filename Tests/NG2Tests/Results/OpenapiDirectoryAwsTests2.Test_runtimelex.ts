@@ -6,12 +6,24 @@ export namespace MyNS {
 	export interface DeleteSessionResponse {
 		botName?: string | null;
 		botAlias?: string | null;
+
+		/**
+		 * Max length: 100
+		 * Min length: 2
+		 * Pattern: [0-9a-zA-Z._:-]+
+		 */
 		userId?: string | null;
 		sessionId?: string | null;
 	}
 	export interface DeleteSessionResponseFormProperties {
 		botName: FormControl<string | null | undefined>,
 		botAlias: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 100
+		 * Min length: 2
+		 * Pattern: [0-9a-zA-Z._:-]+
+		 */
 		userId: FormControl<string | null | undefined>,
 		sessionId: FormControl<string | null | undefined>,
 	}
@@ -19,7 +31,7 @@ export namespace MyNS {
 		return new FormGroup<DeleteSessionResponseFormProperties>({
 			botName: new FormControl<string | null | undefined>(undefined),
 			botAlias: new FormControl<string | null | undefined>(undefined),
-			userId: new FormControl<string | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(2)]),
 			sessionId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -76,6 +88,11 @@ export namespace MyNS {
 	}
 
 	export interface GetSessionResponse {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 3
+		 */
 		recentIntentSummaryView?: Array<IntentSummary>;
 		sessionAttributes?: StringMap;
 		sessionId?: string | null;
@@ -97,9 +114,17 @@ export namespace MyNS {
 	/** Provides information about the state of an intent. You can use this information to get the current state of an intent so that you can process the intent, or so that you can return the intent to its previous state. */
 	export interface IntentSummary {
 		intentName?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9-]+
+		 */
 		checkpointLabel?: string | null;
 		slots?: StringMap;
 		confirmationStatus?: IntentSummaryConfirmationStatus | null;
+
+		/** Required */
 		dialogActionType: IntentSummaryDialogActionType;
 		fulfillmentState?: IntentSummaryFulfillmentState | null;
 		slotToElicit?: string | null;
@@ -108,8 +133,16 @@ export namespace MyNS {
 	/** Provides information about the state of an intent. You can use this information to get the current state of an intent so that you can process the intent, or so that you can return the intent to its previous state. */
 	export interface IntentSummaryFormProperties {
 		intentName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9-]+
+		 */
 		checkpointLabel: FormControl<string | null | undefined>,
 		confirmationStatus: FormControl<IntentSummaryConfirmationStatus | null | undefined>,
+
+		/** Required */
 		dialogActionType: FormControl<IntentSummaryDialogActionType | null | undefined>,
 		fulfillmentState: FormControl<IntentSummaryFulfillmentState | null | undefined>,
 		slotToElicit: FormControl<string | null | undefined>,
@@ -117,9 +150,9 @@ export namespace MyNS {
 	export function CreateIntentSummaryFormGroup() {
 		return new FormGroup<IntentSummaryFormProperties>({
 			intentName: new FormControl<string | null | undefined>(undefined),
-			checkpointLabel: new FormControl<string | null | undefined>(undefined),
+			checkpointLabel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 			confirmationStatus: new FormControl<IntentSummaryConfirmationStatus | null | undefined>(undefined),
-			dialogActionType: new FormControl<IntentSummaryDialogActionType | null | undefined>(undefined),
+			dialogActionType: new FormControl<IntentSummaryDialogActionType | null | undefined>(undefined, [Validators.required]),
 			fulfillmentState: new FormControl<IntentSummaryFulfillmentState | null | undefined>(undefined),
 			slotToElicit: new FormControl<string | null | undefined>(undefined),
 		});
@@ -145,31 +178,45 @@ export namespace MyNS {
 
 	/** Describes the next action that the bot should take in its interaction with the user and provides information about the context in which the action takes place. Use the <code>DialogAction</code> data type to set the interaction to a specific state, or to return the interaction to a previous state. */
 	export interface DialogAction {
+
+		/** Required */
 		type: IntentSummaryDialogActionType;
 		intentName?: string | null;
 		slots?: StringMap;
 		slotToElicit?: string | null;
 		fulfillmentState?: IntentSummaryFulfillmentState | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		message?: string | null;
 		messageFormat?: DialogActionMessageFormat | null;
 	}
 
 	/** Describes the next action that the bot should take in its interaction with the user and provides information about the context in which the action takes place. Use the <code>DialogAction</code> data type to set the interaction to a specific state, or to return the interaction to a previous state. */
 	export interface DialogActionFormProperties {
+
+		/** Required */
 		type: FormControl<IntentSummaryDialogActionType | null | undefined>,
 		intentName: FormControl<string | null | undefined>,
 		slotToElicit: FormControl<string | null | undefined>,
 		fulfillmentState: FormControl<IntentSummaryFulfillmentState | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		message: FormControl<string | null | undefined>,
 		messageFormat: FormControl<DialogActionMessageFormat | null | undefined>,
 	}
 	export function CreateDialogActionFormGroup() {
 		return new FormGroup<DialogActionFormProperties>({
-			type: new FormControl<IntentSummaryDialogActionType | null | undefined>(undefined),
+			type: new FormControl<IntentSummaryDialogActionType | null | undefined>(undefined, [Validators.required]),
 			intentName: new FormControl<string | null | undefined>(undefined),
 			slotToElicit: new FormControl<string | null | undefined>(undefined),
 			fulfillmentState: new FormControl<IntentSummaryFulfillmentState | null | undefined>(undefined),
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			messageFormat: new FormControl<DialogActionMessageFormat | null | undefined>(undefined),
 		});
 
@@ -254,6 +301,11 @@ export namespace MyNS {
 		intentName?: string | null;
 		slots?: StringMap;
 		sessionAttributes?: StringMap;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		message?: string | null;
 
 		/** <p>The sentiment expressed in an utterance.</p> <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field structure contains the result of the analysis.</p> */
@@ -268,6 +320,11 @@ export namespace MyNS {
 	}
 	export interface PostTextResponseFormProperties {
 		intentName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		message: FormControl<string | null | undefined>,
 		messageFormat: FormControl<DialogActionMessageFormat | null | undefined>,
 		dialogState: FormControl<PostTextResponseDialogState | null | undefined>,
@@ -277,7 +334,7 @@ export namespace MyNS {
 	export function CreatePostTextResponseFormGroup() {
 		return new FormGroup<PostTextResponseFormProperties>({
 			intentName: new FormControl<string | null | undefined>(undefined),
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			messageFormat: new FormControl<DialogActionMessageFormat | null | undefined>(undefined),
 			dialogState: new FormControl<PostTextResponseDialogState | null | undefined>(undefined),
 			slotToElicit: new FormControl<string | null | undefined>(undefined),
@@ -313,6 +370,11 @@ export namespace MyNS {
 	export interface ResponseCard {
 		version?: string | null;
 		contentType?: ResponseCardContentType | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		genericAttachments?: Array<GenericAttachment>;
 	}
 
@@ -334,26 +396,71 @@ export namespace MyNS {
 
 	/** Represents an option rendered to the user when a prompt is shown. It could be an image, a button, a link, or text.  */
 	export interface GenericAttachment {
+
+		/**
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		title?: string | null;
+
+		/**
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		subTitle?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		attachmentLinkUrl?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		imageUrl?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 5
+		 */
 		buttons?: Array<Button>;
 	}
 
 	/** Represents an option rendered to the user when a prompt is shown. It could be an image, a button, a link, or text.  */
 	export interface GenericAttachmentFormProperties {
+
+		/**
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		title: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 80
+		 * Min length: 1
+		 */
 		subTitle: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		attachmentLinkUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 */
 		imageUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateGenericAttachmentFormGroup() {
 		return new FormGroup<GenericAttachmentFormProperties>({
-			title: new FormControl<string | null | undefined>(undefined),
-			subTitle: new FormControl<string | null | undefined>(undefined),
-			attachmentLinkUrl: new FormControl<string | null | undefined>(undefined),
-			imageUrl: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(80), Validators.minLength(1)]),
+			subTitle: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(80), Validators.minLength(1)]),
+			attachmentLinkUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			imageUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -361,19 +468,43 @@ export namespace MyNS {
 
 	/** Represents an option to be shown on the client platform (Facebook, Slack, etc.) */
 	export interface Button {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 1
+		 */
 		text: string;
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		value: string;
 	}
 
 	/** Represents an option to be shown on the client platform (Facebook, Slack, etc.) */
 	export interface ButtonFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 15
+		 * Min length: 1
+		 */
 		text: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1000
+		 * Min length: 1
+		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateButtonFormGroup() {
 		return new FormGroup<ButtonFormProperties>({
-			text: new FormControl<string | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			text: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(15), Validators.minLength(1)]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000), Validators.minLength(1)]),
 		});
 
 	}
@@ -424,14 +555,18 @@ export namespace MyNS {
 	}
 
 	export interface PostContentRequest {
+
+		/** Required */
 		inputStream: string;
 	}
 	export interface PostContentRequestFormProperties {
+
+		/** Required */
 		inputStream: FormControl<string | null | undefined>,
 	}
 	export function CreatePostContentRequestFormGroup() {
 		return new FormGroup<PostContentRequestFormProperties>({
-			inputStream: new FormControl<string | null | undefined>(undefined),
+			inputStream: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -439,14 +574,26 @@ export namespace MyNS {
 	export interface PostTextRequest {
 		sessionAttributes?: StringMap;
 		requestAttributes?: StringMap;
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		inputText: string;
 	}
 	export interface PostTextRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		inputText: FormControl<string | null | undefined>,
 	}
 	export function CreatePostTextRequestFormGroup() {
 		return new FormGroup<PostTextRequestFormProperties>({
-			inputText: new FormControl<string | null | undefined>(undefined),
+			inputText: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}
@@ -456,6 +603,11 @@ export namespace MyNS {
 
 		/** Describes the next action that the bot should take in its interaction with the user and provides information about the context in which the action takes place. Use the <code>DialogAction</code> data type to set the interaction to a specific state, or to return the interaction to a previous state. */
 		dialogAction?: DialogAction;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 3
+		 */
 		recentIntentSummaryView?: Array<IntentSummary>;
 	}
 	export interface PutSessionRequestFormProperties {
@@ -566,6 +718,11 @@ export namespace MyNS {
 		slots?: StringMap;
 		slotToElicit?: string | null;
 		fulfillmentState?: IntentSummaryFulfillmentState | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		message?: string | null;
 		messageFormat?: DialogActionMessageFormat | null;
 	}
@@ -574,6 +731,11 @@ export namespace MyNS {
 		intentName: FormControl<string | null | undefined>,
 		slotToElicit: FormControl<string | null | undefined>,
 		fulfillmentState: FormControl<IntentSummaryFulfillmentState | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 1
+		 */
 		message: FormControl<string | null | undefined>,
 		messageFormat: FormControl<DialogActionMessageFormat | null | undefined>,
 	}
@@ -583,7 +745,7 @@ export namespace MyNS {
 			intentName: new FormControl<string | null | undefined>(undefined),
 			slotToElicit: new FormControl<string | null | undefined>(undefined),
 			fulfillmentState: new FormControl<IntentSummaryFulfillmentState | null | undefined>(undefined),
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			messageFormat: new FormControl<DialogActionMessageFormat | null | undefined>(undefined),
 		});
 
@@ -607,7 +769,7 @@ export namespace MyNS {
 	}
 	export function CreatePostContentPostBodyFormGroup() {
 		return new FormGroup<PostContentPostBodyFormProperties>({
-			inputStream: new FormControl<string | null | undefined>(undefined),
+			inputStream: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -648,7 +810,7 @@ export namespace MyNS {
 		return new FormGroup<PostTextPostBodyFormProperties>({
 			sessionAttributes: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			requestAttributes: new FormControl<{[id: string]: string } | null | undefined>(undefined),
-			inputText: new FormControl<string | null | undefined>(undefined),
+			inputText: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
 	}

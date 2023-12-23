@@ -6,11 +6,24 @@ export namespace MyNS {
 
 	/** A JSON object representing a batch of unique event occurrences in your app. */
 	export interface Event {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		eventType: string;
+
+		/** Required */
 		timestamp: string;
 
 		/** Describes the session. Session information is required on ALL events. */
 		session?: Session;
+
+		/**
+		 * Max length: 10
+		 * Min length: 1
+		 */
 		version?: string | null;
 		attributes?: MapOfStringToString;
 		metrics?: MapOfStringToNumber;
@@ -18,15 +31,28 @@ export namespace MyNS {
 
 	/** A JSON object representing a batch of unique event occurrences in your app. */
 	export interface EventFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		eventType: FormControl<string | null | undefined>,
+
+		/** Required */
 		timestamp: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10
+		 * Min length: 1
+		 */
 		version: FormControl<string | null | undefined>,
 	}
 	export function CreateEventFormGroup() {
 		return new FormGroup<EventFormProperties>({
-			eventType: new FormControl<string | null | undefined>(undefined),
-			timestamp: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
+			eventType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
+			timestamp: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10), Validators.minLength(1)]),
 		});
 
 	}
@@ -34,6 +60,11 @@ export namespace MyNS {
 
 	/** Describes the session. Session information is required on ALL events. */
 	export interface Session {
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		id?: string | null;
 		duration?: number | null;
 		startTimestamp?: string | null;
@@ -42,6 +73,11 @@ export namespace MyNS {
 
 	/** Describes the session. Session information is required on ALL events. */
 	export interface SessionFormProperties {
+
+		/**
+		 * Max length: 50
+		 * Min length: 1
+		 */
 		id: FormControl<string | null | undefined>,
 		duration: FormControl<number | null | undefined>,
 		startTimestamp: FormControl<string | null | undefined>,
@@ -49,7 +85,7 @@ export namespace MyNS {
 	}
 	export function CreateSessionFormGroup() {
 		return new FormGroup<SessionFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
 			duration: new FormControl<number | null | undefined>(undefined),
 			startTimestamp: new FormControl<string | null | undefined>(undefined),
 			stopTimestamp: new FormControl<string | null | undefined>(undefined),
@@ -97,6 +133,8 @@ export namespace MyNS {
 
 	/** A container for the data needed for a PutEvent operation */
 	export interface PutEventsInput {
+
+		/** Required */
 		events: Array<Event>;
 	}
 

@@ -41,12 +41,22 @@ export namespace MyNS {
 		ExpiryTime?: Date | null;
 		VolumeSize?: number | null;
 		BlockSize?: number | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: ^[A-Za-z0-9+/=]+$
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListChangedBlocksResponseFormProperties {
 		ExpiryTime: FormControl<Date | null | undefined>,
 		VolumeSize: FormControl<number | null | undefined>,
 		BlockSize: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: ^[A-Za-z0-9+/=]+$
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListChangedBlocksResponseFormGroup() {
@@ -54,7 +64,7 @@ export namespace MyNS {
 			ExpiryTime: new FormControl<Date | null | undefined>(undefined),
 			VolumeSize: new FormControl<number | null | undefined>(undefined),
 			BlockSize: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -63,21 +73,41 @@ export namespace MyNS {
 	/** A block of data in an Amazon Elastic Block Store snapshot that is different from another snapshot of the same volume/snapshot lineage. */
 	export interface ChangedBlock {
 		BlockIndex?: number | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: ^[A-Za-z0-9+/=]+$
+		 */
 		FirstBlockToken?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: ^[A-Za-z0-9+/=]+$
+		 */
 		SecondBlockToken?: string | null;
 	}
 
 	/** A block of data in an Amazon Elastic Block Store snapshot that is different from another snapshot of the same volume/snapshot lineage. */
 	export interface ChangedBlockFormProperties {
 		BlockIndex: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: ^[A-Za-z0-9+/=]+$
+		 */
 		FirstBlockToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: ^[A-Za-z0-9+/=]+$
+		 */
 		SecondBlockToken: FormControl<string | null | undefined>,
 	}
 	export function CreateChangedBlockFormGroup() {
 		return new FormGroup<ChangedBlockFormProperties>({
 			BlockIndex: new FormControl<number | null | undefined>(undefined),
-			FirstBlockToken: new FormControl<string | null | undefined>(undefined),
-			SecondBlockToken: new FormControl<string | null | undefined>(undefined),
+			FirstBlockToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			SecondBlockToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -87,12 +117,22 @@ export namespace MyNS {
 		ExpiryTime?: Date | null;
 		VolumeSize?: number | null;
 		BlockSize?: number | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: ^[A-Za-z0-9+/=]+$
+		 */
 		NextToken?: string | null;
 	}
 	export interface ListSnapshotBlocksResponseFormProperties {
 		ExpiryTime: FormControl<Date | null | undefined>,
 		VolumeSize: FormControl<number | null | undefined>,
 		BlockSize: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: ^[A-Za-z0-9+/=]+$
+		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListSnapshotBlocksResponseFormGroup() {
@@ -100,7 +140,7 @@ export namespace MyNS {
 			ExpiryTime: new FormControl<Date | null | undefined>(undefined),
 			VolumeSize: new FormControl<number | null | undefined>(undefined),
 			BlockSize: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -109,18 +149,28 @@ export namespace MyNS {
 	/** A block of data in an Amazon Elastic Block Store snapshot. */
 	export interface Block {
 		BlockIndex?: number | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: ^[A-Za-z0-9+/=]+$
+		 */
 		BlockToken?: string | null;
 	}
 
 	/** A block of data in an Amazon Elastic Block Store snapshot. */
 	export interface BlockFormProperties {
 		BlockIndex: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: ^[A-Za-z0-9+/=]+$
+		 */
 		BlockToken: FormControl<string | null | undefined>,
 	}
 	export function CreateBlockFormGroup() {
 		return new FormGroup<BlockFormProperties>({
 			BlockIndex: new FormControl<number | null | undefined>(undefined),
-			BlockToken: new FormControl<string | null | undefined>(undefined),
+			BlockToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}

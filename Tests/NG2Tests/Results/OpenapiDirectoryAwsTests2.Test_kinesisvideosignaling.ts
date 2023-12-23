@@ -18,22 +18,56 @@ export namespace MyNS {
 	/** A structure for the ICE server connection data. */
 	export interface IceServer {
 		Uris?: Array<string>;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		Username?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		Password?: string | null;
+
+		/**
+		 * Minimum: 30
+		 * Maximum: 86400
+		 */
 		Ttl?: number | null;
 	}
 
 	/** A structure for the ICE server connection data. */
 	export interface IceServerFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		Username: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		Password: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 30
+		 * Maximum: 86400
+		 */
 		Ttl: FormControl<number | null | undefined>,
 	}
 	export function CreateIceServerFormGroup() {
 		return new FormGroup<IceServerFormProperties>({
-			Username: new FormControl<string | null | undefined>(undefined),
-			Password: new FormControl<string | null | undefined>(undefined),
-			Ttl: new FormControl<number | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Ttl: new FormControl<number | null | undefined>(undefined, [Validators.min(30), Validators.max(86400)]),
 		});
 
 	}
@@ -99,14 +133,24 @@ export namespace MyNS {
 	}
 
 	export interface SendAlexaOfferToMasterResponse {
+
+		/**
+		 * Max length: 10000
+		 * Min length: 1
+		 */
 		Answer?: string | null;
 	}
 	export interface SendAlexaOfferToMasterResponseFormProperties {
+
+		/**
+		 * Max length: 10000
+		 * Min length: 1
+		 */
 		Answer: FormControl<string | null | undefined>,
 	}
 	export function CreateSendAlexaOfferToMasterResponseFormGroup() {
 		return new FormGroup<SendAlexaOfferToMasterResponseFormProperties>({
-			Answer: new FormControl<string | null | undefined>(undefined),
+			Answer: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.minLength(1)]),
 		});
 
 	}
@@ -114,42 +158,122 @@ export namespace MyNS {
 	export enum Service { TURN = 0 }
 
 	export interface GetIceServerConfigRequest {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		ChannelARN: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ClientId?: string | null;
 		Service?: Service | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		Username?: string | null;
 	}
 	export interface GetIceServerConfigRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		ChannelARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		ClientId: FormControl<string | null | undefined>,
 		Service: FormControl<Service | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		Username: FormControl<string | null | undefined>,
 	}
 	export function CreateGetIceServerConfigRequestFormGroup() {
 		return new FormGroup<GetIceServerConfigRequestFormProperties>({
-			ChannelARN: new FormControl<string | null | undefined>(undefined),
-			ClientId: new FormControl<string | null | undefined>(undefined),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			ClientId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			Service: new FormControl<Service | null | undefined>(undefined),
-			Username: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface SendAlexaOfferToMasterRequest {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		ChannelARN: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		SenderClientId: string;
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9+/=]+
+		 */
 		MessagePayload: string;
 	}
 	export interface SendAlexaOfferToMasterRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
 		ChannelARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
 		SenderClientId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9+/=]+
+		 */
 		MessagePayload: FormControl<string | null | undefined>,
 	}
 	export function CreateSendAlexaOfferToMasterRequestFormGroup() {
 		return new FormGroup<SendAlexaOfferToMasterRequestFormProperties>({
-			ChannelARN: new FormControl<string | null | undefined>(undefined),
-			SenderClientId: new FormControl<string | null | undefined>(undefined),
-			MessagePayload: new FormControl<string | null | undefined>(undefined),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			SenderClientId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			MessagePayload: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000), Validators.minLength(1)]),
 		});
 
 	}
@@ -240,10 +364,10 @@ export namespace MyNS {
 	}
 	export function CreateGetIceServerConfigPostBodyFormGroup() {
 		return new FormGroup<GetIceServerConfigPostBodyFormProperties>({
-			ChannelARN: new FormControl<string | null | undefined>(undefined),
-			ClientId: new FormControl<string | null | undefined>(undefined),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			ClientId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			Service: new FormControl<Service | null | undefined>(undefined),
-			Username: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
 	}
@@ -308,9 +432,9 @@ export namespace MyNS {
 	}
 	export function CreateSendAlexaOfferToMasterPostBodyFormGroup() {
 		return new FormGroup<SendAlexaOfferToMasterPostBodyFormProperties>({
-			ChannelARN: new FormControl<string | null | undefined>(undefined),
-			SenderClientId: new FormControl<string | null | undefined>(undefined),
-			MessagePayload: new FormControl<string | null | undefined>(undefined),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			SenderClientId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			MessagePayload: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000), Validators.minLength(1)]),
 		});
 
 	}

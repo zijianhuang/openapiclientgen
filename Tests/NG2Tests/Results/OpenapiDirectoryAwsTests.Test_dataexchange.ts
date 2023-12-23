@@ -133,14 +133,18 @@ export namespace MyNS {
 	export enum CreateDataSetResponseOrigin { OWNED = 0, ENTITLED = 1 }
 
 	export interface OriginDetails {
+
+		/** Required */
 		ProductId: string;
 	}
 	export interface OriginDetailsFormProperties {
+
+		/** Required */
 		ProductId: FormControl<string | null | undefined>,
 	}
 	export function CreateOriginDetailsFormGroup() {
 		return new FormGroup<OriginDetailsFormProperties>({
-			ProductId: new FormControl<string | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -303,9 +307,9 @@ export namespace MyNS {
 	}
 	export function CreateExportAssetToSignedUrlResponseDetailsFormGroup() {
 		return new FormGroup<ExportAssetToSignedUrlResponseDetailsFormProperties>({
-			AssetId: new FormControl<string | null | undefined>(undefined),
-			DataSetId: new FormControl<string | null | undefined>(undefined),
-			RevisionId: new FormControl<string | null | undefined>(undefined),
+			AssetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DataSetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RevisionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SignedUrl: new FormControl<string | null | undefined>(undefined),
 			SignedUrlExpiresAt: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -355,8 +359,8 @@ export namespace MyNS {
 	}
 	export function CreateExportAssetsToS3ResponseDetailsFormGroup() {
 		return new FormGroup<ExportAssetsToS3ResponseDetailsFormProperties>({
-			DataSetId: new FormControl<string | null | undefined>(undefined),
-			RevisionId: new FormControl<string | null | undefined>(undefined),
+			DataSetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RevisionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -370,6 +374,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		AssetId: string;
+
+		/** Required */
 		Bucket: string;
 		Key?: string | null;
 	}
@@ -382,13 +388,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		AssetId: FormControl<string | null | undefined>,
+
+		/** Required */
 		Bucket: FormControl<string | null | undefined>,
 		Key: FormControl<string | null | undefined>,
 	}
 	export function CreateAssetDestinationEntryFormGroup() {
 		return new FormGroup<AssetDestinationEntryFormProperties>({
-			AssetId: new FormControl<string | null | undefined>(undefined),
-			Bucket: new FormControl<string | null | undefined>(undefined),
+			AssetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Key: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -397,6 +405,8 @@ export namespace MyNS {
 
 	/** Encryption configuration of the export job. Includes the encryption type as well as the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption type. */
 	export interface ExportServerSideEncryption {
+
+		/** Required */
 		KmsKeyArn: string;
 
 		/**
@@ -408,6 +418,8 @@ export namespace MyNS {
 
 	/** Encryption configuration of the export job. Includes the encryption type as well as the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption type. */
 	export interface ExportServerSideEncryptionFormProperties {
+
+		/** Required */
 		KmsKeyArn: FormControl<string | null | undefined>,
 
 		/**
@@ -418,8 +430,8 @@ export namespace MyNS {
 	}
 	export function CreateExportServerSideEncryptionFormGroup() {
 		return new FormGroup<ExportServerSideEncryptionFormProperties>({
-			KmsKeyArn: new FormControl<string | null | undefined>(undefined),
-			Type: new FormControl<ExportServerSideEncryptionType | null | undefined>(undefined),
+			KmsKeyArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Type: new FormControl<ExportServerSideEncryptionType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -441,6 +453,12 @@ export namespace MyNS {
 		 * Required
 		 */
 		DataSetId: string;
+
+		/**
+		 * Max length: 24
+		 * Min length: 24
+		 * Pattern: /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/
+		 */
 		Md5Hash?: string | null;
 
 		/**
@@ -468,6 +486,12 @@ export namespace MyNS {
 		 * Required
 		 */
 		DataSetId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 24
+		 * Min length: 24
+		 * Pattern: /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/
+		 */
 		Md5Hash: FormControl<string | null | undefined>,
 
 		/**
@@ -482,10 +506,10 @@ export namespace MyNS {
 	}
 	export function CreateImportAssetFromSignedUrlResponseDetailsFormGroup() {
 		return new FormGroup<ImportAssetFromSignedUrlResponseDetailsFormProperties>({
-			AssetName: new FormControl<string | null | undefined>(undefined),
-			DataSetId: new FormControl<string | null | undefined>(undefined),
-			Md5Hash: new FormControl<string | null | undefined>(undefined),
-			RevisionId: new FormControl<string | null | undefined>(undefined),
+			AssetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DataSetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Md5Hash: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(24), Validators.minLength(24)]),
+			RevisionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SignedUrl: new FormControl<string | null | undefined>(undefined),
 			SignedUrlExpiresAt: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -532,8 +556,8 @@ export namespace MyNS {
 	}
 	export function CreateImportAssetsFromS3ResponseDetailsFormGroup() {
 		return new FormGroup<ImportAssetsFromS3ResponseDetailsFormProperties>({
-			DataSetId: new FormControl<string | null | undefined>(undefined),
-			RevisionId: new FormControl<string | null | undefined>(undefined),
+			DataSetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RevisionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -541,19 +565,27 @@ export namespace MyNS {
 
 	/** The source of the assets. */
 	export interface AssetSourceEntry {
+
+		/** Required */
 		Bucket: string;
+
+		/** Required */
 		Key: string;
 	}
 
 	/** The source of the assets. */
 	export interface AssetSourceEntryFormProperties {
+
+		/** Required */
 		Bucket: FormControl<string | null | undefined>,
+
+		/** Required */
 		Key: FormControl<string | null | undefined>,
 	}
 	export function CreateAssetSourceEntryFormGroup() {
 		return new FormGroup<AssetSourceEntryFormProperties>({
-			Bucket: new FormControl<string | null | undefined>(undefined),
-			Key: new FormControl<string | null | undefined>(undefined),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -561,12 +593,16 @@ export namespace MyNS {
 
 	/** An error that occurred with the job request. */
 	export interface JobError {
+
+		/** Required */
 		Code: JobErrorCode;
 		Details?: Details;
 
 		/** The name of the limit that was reached. */
 		LimitName?: JobErrorLimitName | null;
 		LimitValue?: number | null;
+
+		/** Required */
 		Message: string;
 		ResourceId?: string | null;
 
@@ -576,11 +612,15 @@ export namespace MyNS {
 
 	/** An error that occurred with the job request. */
 	export interface JobErrorFormProperties {
+
+		/** Required */
 		Code: FormControl<JobErrorCode | null | undefined>,
 
 		/** The name of the limit that was reached. */
 		LimitName: FormControl<JobErrorLimitName | null | undefined>,
 		LimitValue: FormControl<number | null | undefined>,
+
+		/** Required */
 		Message: FormControl<string | null | undefined>,
 		ResourceId: FormControl<string | null | undefined>,
 
@@ -589,10 +629,10 @@ export namespace MyNS {
 	}
 	export function CreateJobErrorFormGroup() {
 		return new FormGroup<JobErrorFormProperties>({
-			Code: new FormControl<JobErrorCode | null | undefined>(undefined),
+			Code: new FormControl<JobErrorCode | null | undefined>(undefined, [Validators.required]),
 			LimitName: new FormControl<JobErrorLimitName | null | undefined>(undefined),
 			LimitValue: new FormControl<number | null | undefined>(undefined),
-			Message: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ResourceId: new FormControl<string | null | undefined>(undefined),
 			ResourceType: new FormControl<JobErrorResourceType | null | undefined>(undefined),
 		});
@@ -633,7 +673,7 @@ export namespace MyNS {
 	}
 	export function CreateImportAssetFromSignedUrlJobErrorDetailsFormGroup() {
 		return new FormGroup<ImportAssetFromSignedUrlJobErrorDetailsFormProperties>({
-			AssetName: new FormControl<string | null | undefined>(undefined),
+			AssetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -692,9 +732,9 @@ export namespace MyNS {
 	}
 	export function CreateExportAssetToSignedUrlRequestDetailsFormGroup() {
 		return new FormGroup<ExportAssetToSignedUrlRequestDetailsFormProperties>({
-			AssetId: new FormControl<string | null | undefined>(undefined),
-			DataSetId: new FormControl<string | null | undefined>(undefined),
-			RevisionId: new FormControl<string | null | undefined>(undefined),
+			AssetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DataSetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RevisionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -742,8 +782,8 @@ export namespace MyNS {
 	}
 	export function CreateExportAssetsToS3RequestDetailsFormGroup() {
 		return new FormGroup<ExportAssetsToS3RequestDetailsFormProperties>({
-			DataSetId: new FormControl<string | null | undefined>(undefined),
-			RevisionId: new FormControl<string | null | undefined>(undefined),
+			DataSetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RevisionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -763,6 +803,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		DataSetId: string;
+
+		/**
+		 * Required
+		 * Max length: 24
+		 * Min length: 24
+		 * Pattern: /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/
+		 */
 		Md5Hash: string;
 
 		/**
@@ -786,6 +833,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		DataSetId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 24
+		 * Min length: 24
+		 * Pattern: /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/
+		 */
 		Md5Hash: FormControl<string | null | undefined>,
 
 		/**
@@ -796,10 +850,10 @@ export namespace MyNS {
 	}
 	export function CreateImportAssetFromSignedUrlRequestDetailsFormGroup() {
 		return new FormGroup<ImportAssetFromSignedUrlRequestDetailsFormProperties>({
-			AssetName: new FormControl<string | null | undefined>(undefined),
-			DataSetId: new FormControl<string | null | undefined>(undefined),
-			Md5Hash: new FormControl<string | null | undefined>(undefined),
-			RevisionId: new FormControl<string | null | undefined>(undefined),
+			AssetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DataSetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Md5Hash: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(24), Validators.minLength(24)]),
+			RevisionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -844,8 +898,8 @@ export namespace MyNS {
 	}
 	export function CreateImportAssetsFromS3RequestDetailsFormGroup() {
 		return new FormGroup<ImportAssetsFromS3RequestDetailsFormProperties>({
-			DataSetId: new FormControl<string | null | undefined>(undefined),
-			RevisionId: new FormControl<string | null | undefined>(undefined),
+			DataSetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RevisionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -854,6 +908,11 @@ export namespace MyNS {
 
 		/** An Amazon Resource Name (ARN) that uniquely identifies an AWS resource. */
 		Arn?: string | null;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		Comment?: string | null;
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
@@ -877,6 +936,11 @@ export namespace MyNS {
 
 		/** An Amazon Resource Name (ARN) that uniquely identifies an AWS resource. */
 		Arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		Comment: FormControl<string | null | undefined>,
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
@@ -898,7 +962,7 @@ export namespace MyNS {
 	export function CreateCreateRevisionResponseFormGroup() {
 		return new FormGroup<CreateRevisionResponseFormProperties>({
 			Arn: new FormControl<string | null | undefined>(undefined),
-			Comment: new FormControl<string | null | undefined>(undefined),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			DataSetId: new FormControl<string | null | undefined>(undefined),
 			Finalized: new FormControl<boolean | null | undefined>(undefined),
@@ -999,16 +1063,20 @@ export namespace MyNS {
 
 	/** The S3 object that is the asset. */
 	export interface S3SnapshotAsset {
+
+		/** Required */
 		Size: number;
 	}
 
 	/** The S3 object that is the asset. */
 	export interface S3SnapshotAssetFormProperties {
+
+		/** Required */
 		Size: FormControl<number | null | undefined>,
 	}
 	export function CreateS3SnapshotAssetFormGroup() {
 		return new FormGroup<S3SnapshotAssetFormProperties>({
-			Size: new FormControl<number | null | undefined>(undefined),
+			Size: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1140,6 +1208,11 @@ export namespace MyNS {
 
 		/** An Amazon Resource Name (ARN) that uniquely identifies an AWS resource. */
 		Arn?: string | null;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		Comment?: string | null;
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
@@ -1163,6 +1236,11 @@ export namespace MyNS {
 
 		/** An Amazon Resource Name (ARN) that uniquely identifies an AWS resource. */
 		Arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		Comment: FormControl<string | null | undefined>,
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
@@ -1184,7 +1262,7 @@ export namespace MyNS {
 	export function CreateGetRevisionResponseFormGroup() {
 		return new FormGroup<GetRevisionResponseFormProperties>({
 			Arn: new FormControl<string | null | undefined>(undefined),
-			Comment: new FormControl<string | null | undefined>(undefined),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			DataSetId: new FormControl<string | null | undefined>(undefined),
 			Finalized: new FormControl<boolean | null | undefined>(undefined),
@@ -1222,6 +1300,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		Arn: string;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		Comment?: string | null;
 
 		/**
@@ -1261,6 +1344,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		Arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		Comment: FormControl<string | null | undefined>,
 
 		/**
@@ -1293,14 +1381,14 @@ export namespace MyNS {
 	}
 	export function CreateRevisionEntryFormGroup() {
 		return new FormGroup<RevisionEntryFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
-			Comment: new FormControl<string | null | undefined>(undefined),
-			CreatedAt: new FormControl<Date | null | undefined>(undefined),
-			DataSetId: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			DataSetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Finalized: new FormControl<boolean | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SourceId: new FormControl<string | null | undefined>(undefined),
-			UpdatedAt: new FormControl<Date | null | undefined>(undefined),
+			UpdatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1436,15 +1524,15 @@ export namespace MyNS {
 	}
 	export function CreateDataSetEntryFormGroup() {
 		return new FormGroup<DataSetEntryFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
-			AssetType: new FormControl<CreateDataSetResponseAssetType | null | undefined>(undefined),
-			CreatedAt: new FormControl<Date | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Origin: new FormControl<CreateDataSetResponseOrigin | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			AssetType: new FormControl<CreateDataSetResponseAssetType | null | undefined>(undefined, [Validators.required]),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Origin: new FormControl<CreateDataSetResponseOrigin | null | undefined>(undefined, [Validators.required]),
 			SourceId: new FormControl<string | null | undefined>(undefined),
-			UpdatedAt: new FormControl<Date | null | undefined>(undefined),
+			UpdatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1495,7 +1583,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		Id: string;
+
+		/** Required */
 		State: CreateJobResponseState;
+
+		/** Required */
 		Type: CreateJobResponseType;
 
 		/**
@@ -1525,7 +1617,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		State: FormControl<CreateJobResponseState | null | undefined>,
+
+		/** Required */
 		Type: FormControl<CreateJobResponseType | null | undefined>,
 
 		/**
@@ -1536,12 +1632,12 @@ export namespace MyNS {
 	}
 	export function CreateJobEntryFormGroup() {
 		return new FormGroup<JobEntryFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
-			CreatedAt: new FormControl<Date | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			State: new FormControl<CreateJobResponseState | null | undefined>(undefined),
-			Type: new FormControl<CreateJobResponseType | null | undefined>(undefined),
-			UpdatedAt: new FormControl<Date | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			State: new FormControl<CreateJobResponseState | null | undefined>(undefined, [Validators.required]),
+			Type: new FormControl<CreateJobResponseType | null | undefined>(undefined, [Validators.required]),
+			UpdatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1573,6 +1669,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		Arn: string;
+
+		/** Required */
 		AssetDetails: AssetDetails;
 
 		/**
@@ -1677,15 +1775,15 @@ export namespace MyNS {
 	}
 	export function CreateAssetEntryFormGroup() {
 		return new FormGroup<AssetEntryFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
-			AssetType: new FormControl<CreateDataSetResponseAssetType | null | undefined>(undefined),
-			CreatedAt: new FormControl<Date | null | undefined>(undefined),
-			DataSetId: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			RevisionId: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			AssetType: new FormControl<CreateDataSetResponseAssetType | null | undefined>(undefined, [Validators.required]),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			DataSetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RevisionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SourceId: new FormControl<string | null | undefined>(undefined),
-			UpdatedAt: new FormControl<Date | null | undefined>(undefined),
+			UpdatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1863,6 +1961,11 @@ export namespace MyNS {
 
 		/** An Amazon Resource Name (ARN) that uniquely identifies an AWS resource. */
 		Arn?: string | null;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		Comment?: string | null;
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
@@ -1885,6 +1988,11 @@ export namespace MyNS {
 
 		/** An Amazon Resource Name (ARN) that uniquely identifies an AWS resource. */
 		Arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		Comment: FormControl<string | null | undefined>,
 
 		/** Dates and times in AWS Data Exchange are recorded in ISO 8601 format. */
@@ -1906,7 +2014,7 @@ export namespace MyNS {
 	export function CreateUpdateRevisionResponseFormGroup() {
 		return new FormGroup<UpdateRevisionResponseFormProperties>({
 			Arn: new FormControl<string | null | undefined>(undefined),
-			Comment: new FormControl<string | null | undefined>(undefined),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			DataSetId: new FormControl<string | null | undefined>(undefined),
 			Finalized: new FormControl<boolean | null | undefined>(undefined),
@@ -1980,9 +2088,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateDataSetRequestFormGroup() {
 		return new FormGroup<CreateDataSetRequestFormProperties>({
-			AssetType: new FormControl<CreateDataSetResponseAssetType | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			AssetType: new FormControl<CreateDataSetResponseAssetType | null | undefined>(undefined, [Validators.required]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2028,16 +2136,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		Details: RequestDetails;
+
+		/** Required */
 		Type: CreateJobResponseType;
 	}
 
 	/** The request body for CreateJob. */
 	export interface CreateJobRequestFormProperties {
+
+		/** Required */
 		Type: FormControl<CreateJobResponseType | null | undefined>,
 	}
 	export function CreateCreateJobRequestFormGroup() {
 		return new FormGroup<CreateJobRequestFormProperties>({
-			Type: new FormControl<CreateJobResponseType | null | undefined>(undefined),
+			Type: new FormControl<CreateJobResponseType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2047,17 +2159,27 @@ export namespace MyNS {
 
 	/** The request body for CreateRevision. */
 	export interface CreateRevisionRequest {
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		Comment?: string | null;
 		Tags?: MapOf__string;
 	}
 
 	/** The request body for CreateRevision. */
 	export interface CreateRevisionRequestFormProperties {
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		Comment: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateRevisionRequestFormGroup() {
 		return new FormGroup<CreateRevisionRequestFormProperties>({
-			Comment: new FormControl<string | null | undefined>(undefined),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 		});
 
 	}
@@ -2203,6 +2325,8 @@ export namespace MyNS {
 
 	/** The request body for TagResource. */
 	export interface TagResourceRequest {
+
+		/** Required */
 		Tags: MapOf__string;
 	}
 
@@ -2247,7 +2371,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateAssetRequestFormGroup() {
 		return new FormGroup<UpdateAssetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2283,18 +2407,28 @@ export namespace MyNS {
 
 	/** The request body for UpdateRevision. */
 	export interface UpdateRevisionRequest {
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		Comment?: string | null;
 		Finalized?: boolean | null;
 	}
 
 	/** The request body for UpdateRevision. */
 	export interface UpdateRevisionRequestFormProperties {
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		Comment: FormControl<string | null | undefined>,
 		Finalized: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpdateRevisionRequestFormGroup() {
 		return new FormGroup<UpdateRevisionRequestFormProperties>({
-			Comment: new FormControl<string | null | undefined>(undefined),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 			Finalized: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2600,9 +2734,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateDataSetPostBodyFormGroup() {
 		return new FormGroup<CreateDataSetPostBodyFormProperties>({
-			AssetType: new FormControl<CreateDataSetResponseAssetType | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			AssetType: new FormControl<CreateDataSetResponseAssetType | null | undefined>(undefined, [Validators.required]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -2632,7 +2766,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateJobPostBodyFormGroup() {
 		return new FormGroup<CreateJobPostBodyFormProperties>({
-			Type: new FormControl<CreateJobResponseType | null | undefined>(undefined),
+			Type: new FormControl<CreateJobResponseType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2685,7 +2819,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateRevisionPostBodyFormGroup() {
 		return new FormGroup<CreateRevisionPostBodyFormProperties>({
-			Comment: new FormControl<string | null | undefined>(undefined),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -2709,7 +2843,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateAssetPatchBodyFormGroup() {
 		return new FormGroup<UpdateAssetPatchBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2764,7 +2898,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateRevisionPatchBodyFormGroup() {
 		return new FormGroup<UpdateRevisionPatchBodyFormProperties>({
-			Comment: new FormControl<string | null | undefined>(undefined),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 			Finalized: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2788,7 +2922,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

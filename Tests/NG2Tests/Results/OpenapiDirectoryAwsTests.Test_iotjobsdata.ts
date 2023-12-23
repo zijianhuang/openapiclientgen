@@ -19,7 +19,19 @@ export namespace MyNS {
 
 	/** Contains data about a job execution. */
 	export interface JobExecution {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_-]+
+		 */
 		jobId?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
 		thingName?: string | null;
 		status?: JobExecutionStatus | null;
 		statusDetails?: DetailsMap;
@@ -29,12 +41,26 @@ export namespace MyNS {
 		approximateSecondsBeforeTimedOut?: number | null;
 		versionNumber?: number | null;
 		executionNumber?: number | null;
+
+		/** Max length: 32768 */
 		jobDocument?: string | null;
 	}
 
 	/** Contains data about a job execution. */
 	export interface JobExecutionFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_-]+
+		 */
 		jobId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
 		thingName: FormControl<string | null | undefined>,
 		status: FormControl<JobExecutionStatus | null | undefined>,
 		queuedAt: FormControl<number | null | undefined>,
@@ -43,12 +69,14 @@ export namespace MyNS {
 		approximateSecondsBeforeTimedOut: FormControl<number | null | undefined>,
 		versionNumber: FormControl<number | null | undefined>,
 		executionNumber: FormControl<number | null | undefined>,
+
+		/** Max length: 32768 */
 		jobDocument: FormControl<string | null | undefined>,
 	}
 	export function CreateJobExecutionFormGroup() {
 		return new FormGroup<JobExecutionFormProperties>({
-			jobId: new FormControl<string | null | undefined>(undefined),
-			thingName: new FormControl<string | null | undefined>(undefined),
+			jobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			thingName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			status: new FormControl<JobExecutionStatus | null | undefined>(undefined),
 			queuedAt: new FormControl<number | null | undefined>(undefined),
 			startedAt: new FormControl<number | null | undefined>(undefined),
@@ -56,7 +84,7 @@ export namespace MyNS {
 			approximateSecondsBeforeTimedOut: new FormControl<number | null | undefined>(undefined),
 			versionNumber: new FormControl<number | null | undefined>(undefined),
 			executionNumber: new FormControl<number | null | undefined>(undefined),
-			jobDocument: new FormControl<string | null | undefined>(undefined),
+			jobDocument: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -148,6 +176,12 @@ export namespace MyNS {
 
 	/** Contains a subset of information about a job execution. */
 	export interface JobExecutionSummary {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_-]+
+		 */
 		jobId?: string | null;
 		queuedAt?: number | null;
 		startedAt?: number | null;
@@ -158,6 +192,12 @@ export namespace MyNS {
 
 	/** Contains a subset of information about a job execution. */
 	export interface JobExecutionSummaryFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_-]+
+		 */
 		jobId: FormControl<string | null | undefined>,
 		queuedAt: FormControl<number | null | undefined>,
 		startedAt: FormControl<number | null | undefined>,
@@ -167,7 +207,7 @@ export namespace MyNS {
 	}
 	export function CreateJobExecutionSummaryFormGroup() {
 		return new FormGroup<JobExecutionSummaryFormProperties>({
-			jobId: new FormControl<string | null | undefined>(undefined),
+			jobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			queuedAt: new FormControl<number | null | undefined>(undefined),
 			startedAt: new FormControl<number | null | undefined>(undefined),
 			lastUpdatedAt: new FormControl<number | null | undefined>(undefined),
@@ -194,14 +234,18 @@ export namespace MyNS {
 
 		/** Contains data about the state of a job execution. */
 		executionState?: JobExecutionState;
+
+		/** Max length: 32768 */
 		jobDocument?: string | null;
 	}
 	export interface UpdateJobExecutionResponseFormProperties {
+
+		/** Max length: 32768 */
 		jobDocument: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateJobExecutionResponseFormGroup() {
 		return new FormGroup<UpdateJobExecutionResponseFormProperties>({
-			jobDocument: new FormControl<string | null | undefined>(undefined),
+			jobDocument: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
 	}
@@ -272,6 +316,8 @@ export namespace MyNS {
 	}
 
 	export interface UpdateJobExecutionRequest {
+
+		/** Required */
 		status: JobExecutionStatus;
 		statusDetails?: DetailsMap;
 		stepTimeoutInMinutes?: number | null;
@@ -281,6 +327,8 @@ export namespace MyNS {
 		executionNumber?: number | null;
 	}
 	export interface UpdateJobExecutionRequestFormProperties {
+
+		/** Required */
 		status: FormControl<JobExecutionStatus | null | undefined>,
 		stepTimeoutInMinutes: FormControl<number | null | undefined>,
 		expectedVersion: FormControl<number | null | undefined>,
@@ -290,7 +338,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateJobExecutionRequestFormGroup() {
 		return new FormGroup<UpdateJobExecutionRequestFormProperties>({
-			status: new FormControl<JobExecutionStatus | null | undefined>(undefined),
+			status: new FormControl<JobExecutionStatus | null | undefined>(undefined, [Validators.required]),
 			stepTimeoutInMinutes: new FormControl<number | null | undefined>(undefined),
 			expectedVersion: new FormControl<number | null | undefined>(undefined),
 			includeJobExecutionState: new FormControl<boolean | null | undefined>(undefined),
@@ -404,7 +452,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateJobExecutionPostBodyFormGroup() {
 		return new FormGroup<UpdateJobExecutionPostBodyFormProperties>({
-			status: new FormControl<JobExecutionStatus | null | undefined>(undefined),
+			status: new FormControl<JobExecutionStatus | null | undefined>(undefined, [Validators.required]),
 			statusDetails: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			stepTimeoutInMinutes: new FormControl<number | null | undefined>(undefined),
 			expectedVersion: new FormControl<number | null | undefined>(undefined),

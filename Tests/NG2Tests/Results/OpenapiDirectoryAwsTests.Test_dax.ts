@@ -208,15 +208,23 @@ export namespace MyNS {
 	export enum SSEDescriptionStatus { ENABLING = 0, ENABLED = 1, DISABLING = 2, DISABLED = 3 }
 
 	export interface CreateClusterRequest {
+
+		/** Required */
 		ClusterName: string;
+
+		/** Required */
 		NodeType: string;
 		Description?: string | null;
+
+		/** Required */
 		ReplicationFactor: number;
 		AvailabilityZones?: Array<string>;
 		SubnetGroupName?: string | null;
 		SecurityGroupIds?: Array<string>;
 		PreferredMaintenanceWindow?: string | null;
 		NotificationTopicArn?: string | null;
+
+		/** Required */
 		IamRoleArn: string;
 		ParameterGroupName?: string | null;
 		Tags?: Array<Tag>;
@@ -225,26 +233,34 @@ export namespace MyNS {
 		SSESpecification?: SSESpecification;
 	}
 	export interface CreateClusterRequestFormProperties {
+
+		/** Required */
 		ClusterName: FormControl<string | null | undefined>,
+
+		/** Required */
 		NodeType: FormControl<string | null | undefined>,
 		Description: FormControl<string | null | undefined>,
+
+		/** Required */
 		ReplicationFactor: FormControl<number | null | undefined>,
 		SubnetGroupName: FormControl<string | null | undefined>,
 		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
 		NotificationTopicArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		IamRoleArn: FormControl<string | null | undefined>,
 		ParameterGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateClusterRequestFormGroup() {
 		return new FormGroup<CreateClusterRequestFormProperties>({
-			ClusterName: new FormControl<string | null | undefined>(undefined),
-			NodeType: new FormControl<string | null | undefined>(undefined),
+			ClusterName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			NodeType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Description: new FormControl<string | null | undefined>(undefined),
-			ReplicationFactor: new FormControl<number | null | undefined>(undefined),
+			ReplicationFactor: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			SubnetGroupName: new FormControl<string | null | undefined>(undefined),
 			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
 			NotificationTopicArn: new FormControl<string | null | undefined>(undefined),
-			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -273,16 +289,20 @@ export namespace MyNS {
 
 	/** Represents the settings used to enable server-side encryption. */
 	export interface SSESpecification {
+
+		/** Required */
 		Enabled: boolean;
 	}
 
 	/** Represents the settings used to enable server-side encryption. */
 	export interface SSESpecificationFormProperties {
+
+		/** Required */
 		Enabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateSSESpecificationFormGroup() {
 		return new FormGroup<SSESpecificationFormProperties>({
-			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -461,16 +481,20 @@ export namespace MyNS {
 	}
 
 	export interface CreateParameterGroupRequest {
+
+		/** Required */
 		ParameterGroupName: string;
 		Description?: string | null;
 	}
 	export interface CreateParameterGroupRequestFormProperties {
+
+		/** Required */
 		ParameterGroupName: FormControl<string | null | undefined>,
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateParameterGroupRequestFormGroup() {
 		return new FormGroup<CreateParameterGroupRequestFormProperties>({
-			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Description: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -554,17 +578,23 @@ export namespace MyNS {
 	}
 
 	export interface CreateSubnetGroupRequest {
+
+		/** Required */
 		SubnetGroupName: string;
 		Description?: string | null;
+
+		/** Required */
 		SubnetIds: Array<string>;
 	}
 	export interface CreateSubnetGroupRequestFormProperties {
+
+		/** Required */
 		SubnetGroupName: FormControl<string | null | undefined>,
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSubnetGroupRequestFormGroup() {
 		return new FormGroup<CreateSubnetGroupRequestFormProperties>({
-			SubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			SubnetGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Description: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -624,19 +654,27 @@ export namespace MyNS {
 	}
 
 	export interface DecreaseReplicationFactorRequest {
+
+		/** Required */
 		ClusterName: string;
+
+		/** Required */
 		NewReplicationFactor: number;
 		AvailabilityZones?: Array<string>;
 		NodeIdsToRemove?: Array<string>;
 	}
 	export interface DecreaseReplicationFactorRequestFormProperties {
+
+		/** Required */
 		ClusterName: FormControl<string | null | undefined>,
+
+		/** Required */
 		NewReplicationFactor: FormControl<number | null | undefined>,
 	}
 	export function CreateDecreaseReplicationFactorRequestFormGroup() {
 		return new FormGroup<DecreaseReplicationFactorRequestFormProperties>({
-			ClusterName: new FormControl<string | null | undefined>(undefined),
-			NewReplicationFactor: new FormControl<number | null | undefined>(undefined),
+			ClusterName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			NewReplicationFactor: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -675,14 +713,18 @@ export namespace MyNS {
 	}
 
 	export interface DeleteClusterRequest {
+
+		/** Required */
 		ClusterName: string;
 	}
 	export interface DeleteClusterRequestFormProperties {
+
+		/** Required */
 		ClusterName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteClusterRequestFormGroup() {
 		return new FormGroup<DeleteClusterRequestFormProperties>({
-			ClusterName: new FormControl<string | null | undefined>(undefined),
+			ClusterName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -701,14 +743,18 @@ export namespace MyNS {
 	}
 
 	export interface DeleteParameterGroupRequest {
+
+		/** Required */
 		ParameterGroupName: string;
 	}
 	export interface DeleteParameterGroupRequestFormProperties {
+
+		/** Required */
 		ParameterGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteParameterGroupRequestFormGroup() {
 		return new FormGroup<DeleteParameterGroupRequestFormProperties>({
-			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -727,14 +773,18 @@ export namespace MyNS {
 	}
 
 	export interface DeleteSubnetGroupRequest {
+
+		/** Required */
 		SubnetGroupName: string;
 	}
 	export interface DeleteSubnetGroupRequestFormProperties {
+
+		/** Required */
 		SubnetGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSubnetGroupRequestFormGroup() {
 		return new FormGroup<DeleteSubnetGroupRequestFormProperties>({
-			SubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			SubnetGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -997,12 +1047,16 @@ export namespace MyNS {
 	}
 
 	export interface DescribeParametersRequest {
+
+		/** Required */
 		ParameterGroupName: string;
 		Source?: string | null;
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeParametersRequestFormProperties {
+
+		/** Required */
 		ParameterGroupName: FormControl<string | null | undefined>,
 		Source: FormControl<string | null | undefined>,
 		MaxResults: FormControl<number | null | undefined>,
@@ -1010,7 +1064,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeParametersRequestFormGroup() {
 		return new FormGroup<DescribeParametersRequestFormProperties>({
-			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Source: new FormControl<string | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
@@ -1063,18 +1117,26 @@ export namespace MyNS {
 	}
 
 	export interface IncreaseReplicationFactorRequest {
+
+		/** Required */
 		ClusterName: string;
+
+		/** Required */
 		NewReplicationFactor: number;
 		AvailabilityZones?: Array<string>;
 	}
 	export interface IncreaseReplicationFactorRequestFormProperties {
+
+		/** Required */
 		ClusterName: FormControl<string | null | undefined>,
+
+		/** Required */
 		NewReplicationFactor: FormControl<number | null | undefined>,
 	}
 	export function CreateIncreaseReplicationFactorRequestFormGroup() {
 		return new FormGroup<IncreaseReplicationFactorRequestFormProperties>({
-			ClusterName: new FormControl<string | null | undefined>(undefined),
-			NewReplicationFactor: new FormControl<number | null | undefined>(undefined),
+			ClusterName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			NewReplicationFactor: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1094,16 +1156,20 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsRequest {
+
+		/** Required */
 		ResourceName: string;
 		NextToken?: string | null;
 	}
 	export interface ListTagsRequestFormProperties {
+
+		/** Required */
 		ResourceName: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsRequestFormGroup() {
 		return new FormGroup<ListTagsRequestFormProperties>({
-			ResourceName: new FormControl<string | null | undefined>(undefined),
+			ResourceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1133,17 +1199,25 @@ export namespace MyNS {
 	}
 
 	export interface RebootNodeRequest {
+
+		/** Required */
 		ClusterName: string;
+
+		/** Required */
 		NodeId: string;
 	}
 	export interface RebootNodeRequestFormProperties {
+
+		/** Required */
 		ClusterName: FormControl<string | null | undefined>,
+
+		/** Required */
 		NodeId: FormControl<string | null | undefined>,
 	}
 	export function CreateRebootNodeRequestFormGroup() {
 		return new FormGroup<RebootNodeRequestFormProperties>({
-			ClusterName: new FormControl<string | null | undefined>(undefined),
-			NodeId: new FormControl<string | null | undefined>(undefined),
+			ClusterName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			NodeId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1160,15 +1234,21 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/** Required */
 		ResourceName: string;
+
+		/** Required */
 		Tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/** Required */
 		ResourceName: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceName: new FormControl<string | null | undefined>(undefined),
+			ResourceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1185,15 +1265,21 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceRequest {
+
+		/** Required */
 		ResourceName: string;
+
+		/** Required */
 		TagKeys: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/** Required */
 		ResourceName: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceName: new FormControl<string | null | undefined>(undefined),
+			ResourceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1222,6 +1308,8 @@ export namespace MyNS {
 	}
 
 	export interface UpdateClusterRequest {
+
+		/** Required */
 		ClusterName: string;
 		Description?: string | null;
 		PreferredMaintenanceWindow?: string | null;
@@ -1231,6 +1319,8 @@ export namespace MyNS {
 		SecurityGroupIds?: Array<string>;
 	}
 	export interface UpdateClusterRequestFormProperties {
+
+		/** Required */
 		ClusterName: FormControl<string | null | undefined>,
 		Description: FormControl<string | null | undefined>,
 		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
@@ -1240,7 +1330,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateClusterRequestFormGroup() {
 		return new FormGroup<UpdateClusterRequestFormProperties>({
-			ClusterName: new FormControl<string | null | undefined>(undefined),
+			ClusterName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Description: new FormControl<string | null | undefined>(undefined),
 			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
 			NotificationTopicArn: new FormControl<string | null | undefined>(undefined),
@@ -1264,15 +1354,21 @@ export namespace MyNS {
 	}
 
 	export interface UpdateParameterGroupRequest {
+
+		/** Required */
 		ParameterGroupName: string;
+
+		/** Required */
 		ParameterNameValues: Array<ParameterNameValue>;
 	}
 	export interface UpdateParameterGroupRequestFormProperties {
+
+		/** Required */
 		ParameterGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateParameterGroupRequestFormGroup() {
 		return new FormGroup<UpdateParameterGroupRequestFormProperties>({
-			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1311,17 +1407,21 @@ export namespace MyNS {
 	}
 
 	export interface UpdateSubnetGroupRequest {
+
+		/** Required */
 		SubnetGroupName: string;
 		Description?: string | null;
 		SubnetIds?: Array<string>;
 	}
 	export interface UpdateSubnetGroupRequestFormProperties {
+
+		/** Required */
 		SubnetGroupName: FormControl<string | null | undefined>,
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateSubnetGroupRequestFormGroup() {
 		return new FormGroup<UpdateSubnetGroupRequestFormProperties>({
-			SubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			SubnetGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Description: new FormControl<string | null | undefined>(undefined),
 		});
 

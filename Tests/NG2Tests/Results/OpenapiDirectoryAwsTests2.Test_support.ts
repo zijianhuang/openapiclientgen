@@ -25,6 +25,8 @@ export namespace MyNS {
 
 	export interface AddAttachmentsToSetRequest {
 		attachmentSetId?: string | null;
+
+		/** Required */
 		attachments: Array<Attachment>;
 	}
 	export interface AddAttachmentsToSetRequestFormProperties {
@@ -128,7 +130,18 @@ export namespace MyNS {
 	/** To be written. */
 	export interface AddCommunicationToCaseRequest {
 		caseId?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 8000
+		 * Min length: 1
+		 */
 		communicationBody: string;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		ccEmailAddresses?: Array<string>;
 		attachmentSetId?: string | null;
 	}
@@ -136,13 +149,19 @@ export namespace MyNS {
 	/** To be written. */
 	export interface AddCommunicationToCaseRequestFormProperties {
 		caseId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 8000
+		 * Min length: 1
+		 */
 		communicationBody: FormControl<string | null | undefined>,
 		attachmentSetId: FormControl<string | null | undefined>,
 	}
 	export function CreateAddCommunicationToCaseRequestFormGroup() {
 		return new FormGroup<AddCommunicationToCaseRequestFormProperties>({
 			caseId: new FormControl<string | null | undefined>(undefined),
-			communicationBody: new FormControl<string | null | undefined>(undefined),
+			communicationBody: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8000), Validators.minLength(1)]),
 			attachmentSetId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -176,21 +195,42 @@ export namespace MyNS {
 	}
 
 	export interface CreateCaseRequest {
+
+		/** Required */
 		subject: string;
 		serviceCode?: string | null;
 		severityCode?: string | null;
 		categoryCode?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 8000
+		 * Min length: 1
+		 */
 		communicationBody: string;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		ccEmailAddresses?: Array<string>;
 		language?: string | null;
 		issueType?: string | null;
 		attachmentSetId?: string | null;
 	}
 	export interface CreateCaseRequestFormProperties {
+
+		/** Required */
 		subject: FormControl<string | null | undefined>,
 		serviceCode: FormControl<string | null | undefined>,
 		severityCode: FormControl<string | null | undefined>,
 		categoryCode: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 8000
+		 * Min length: 1
+		 */
 		communicationBody: FormControl<string | null | undefined>,
 		language: FormControl<string | null | undefined>,
 		issueType: FormControl<string | null | undefined>,
@@ -198,11 +238,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateCaseRequestFormGroup() {
 		return new FormGroup<CreateCaseRequestFormProperties>({
-			subject: new FormControl<string | null | undefined>(undefined),
+			subject: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			serviceCode: new FormControl<string | null | undefined>(undefined),
 			severityCode: new FormControl<string | null | undefined>(undefined),
 			categoryCode: new FormControl<string | null | undefined>(undefined),
-			communicationBody: new FormControl<string | null | undefined>(undefined),
+			communicationBody: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8000), Validators.minLength(1)]),
 			language: new FormControl<string | null | undefined>(undefined),
 			issueType: new FormControl<string | null | undefined>(undefined),
 			attachmentSetId: new FormControl<string | null | undefined>(undefined),
@@ -238,14 +278,18 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAttachmentRequest {
+
+		/** Required */
 		attachmentId: string;
 	}
 	export interface DescribeAttachmentRequestFormProperties {
+
+		/** Required */
 		attachmentId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeAttachmentRequestFormGroup() {
 		return new FormGroup<DescribeAttachmentRequestFormProperties>({
-			attachmentId: new FormControl<string | null | undefined>(undefined),
+			attachmentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -303,6 +347,11 @@ export namespace MyNS {
 
 		/** The five most recent communications associated with the case. */
 		recentCommunications?: RecentCaseCommunications;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 10
+		 */
 		ccEmailAddresses?: Array<string>;
 		language?: string | null;
 	}
@@ -358,6 +407,11 @@ export namespace MyNS {
 	/** A communication associated with an AWS Support case. The communication consists of the case ID, the message body, attachment information, the submitter of the communication, and the date and time of the communication. */
 	export interface Communication {
 		caseId?: string | null;
+
+		/**
+		 * Max length: 8000
+		 * Min length: 1
+		 */
 		body?: string | null;
 		submittedBy?: string | null;
 		timeCreated?: string | null;
@@ -367,6 +421,11 @@ export namespace MyNS {
 	/** A communication associated with an AWS Support case. The communication consists of the case ID, the message body, attachment information, the submitter of the communication, and the date and time of the communication. */
 	export interface CommunicationFormProperties {
 		caseId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 8000
+		 * Min length: 1
+		 */
 		body: FormControl<string | null | undefined>,
 		submittedBy: FormControl<string | null | undefined>,
 		timeCreated: FormControl<string | null | undefined>,
@@ -374,7 +433,7 @@ export namespace MyNS {
 	export function CreateCommunicationFormGroup() {
 		return new FormGroup<CommunicationFormProperties>({
 			caseId: new FormControl<string | null | undefined>(undefined),
-			body: new FormControl<string | null | undefined>(undefined),
+			body: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8000), Validators.minLength(1)]),
 			submittedBy: new FormControl<string | null | undefined>(undefined),
 			timeCreated: new FormControl<string | null | undefined>(undefined),
 		});
@@ -402,12 +461,22 @@ export namespace MyNS {
 	}
 
 	export interface DescribeCasesRequest {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		caseIdList?: Array<string>;
 		displayId?: string | null;
 		afterTime?: string | null;
 		beforeTime?: string | null;
 		includeResolvedCases?: boolean | null;
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
 		language?: string | null;
 		includeCommunications?: boolean | null;
@@ -418,6 +487,11 @@ export namespace MyNS {
 		beforeTime: FormControl<string | null | undefined>,
 		includeResolvedCases: FormControl<boolean | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
 		language: FormControl<string | null | undefined>,
 		includeCommunications: FormControl<boolean | null | undefined>,
@@ -429,7 +503,7 @@ export namespace MyNS {
 			beforeTime: new FormControl<string | null | undefined>(undefined),
 			includeResolvedCases: new FormControl<boolean | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(10), Validators.max(100)]),
 			language: new FormControl<string | null | undefined>(undefined),
 			includeCommunications: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -455,26 +529,40 @@ export namespace MyNS {
 	}
 
 	export interface DescribeCommunicationsRequest {
+
+		/** Required */
 		caseId: string;
 		beforeTime?: string | null;
 		afterTime?: string | null;
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
 	}
 	export interface DescribeCommunicationsRequestFormProperties {
+
+		/** Required */
 		caseId: FormControl<string | null | undefined>,
 		beforeTime: FormControl<string | null | undefined>,
 		afterTime: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 10
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeCommunicationsRequestFormGroup() {
 		return new FormGroup<DescribeCommunicationsRequestFormProperties>({
-			caseId: new FormControl<string | null | undefined>(undefined),
+			caseId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			beforeTime: new FormControl<string | null | undefined>(undefined),
 			afterTime: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(10), Validators.max(100)]),
 		});
 
 	}
@@ -536,6 +624,11 @@ export namespace MyNS {
 	}
 
 	export interface DescribeServicesRequest {
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 100
+		 */
 		serviceCodeList?: Array<string>;
 		language?: string | null;
 	}
@@ -600,6 +693,8 @@ export namespace MyNS {
 
 	/** The statuses of the Trusted Advisor checks returned by the <a>DescribeTrustedAdvisorCheckRefreshStatuses</a> operation. */
 	export interface DescribeTrustedAdvisorCheckRefreshStatusesResponse {
+
+		/** Required */
 		statuses: Array<TrustedAdvisorCheckRefreshStatus>;
 	}
 
@@ -615,22 +710,34 @@ export namespace MyNS {
 
 	/** The refresh status of a Trusted Advisor check. */
 	export interface TrustedAdvisorCheckRefreshStatus {
+
+		/** Required */
 		checkId: string;
+
+		/** Required */
 		status: string;
+
+		/** Required */
 		millisUntilNextRefreshable: number;
 	}
 
 	/** The refresh status of a Trusted Advisor check. */
 	export interface TrustedAdvisorCheckRefreshStatusFormProperties {
+
+		/** Required */
 		checkId: FormControl<string | null | undefined>,
+
+		/** Required */
 		status: FormControl<string | null | undefined>,
+
+		/** Required */
 		millisUntilNextRefreshable: FormControl<number | null | undefined>,
 	}
 	export function CreateTrustedAdvisorCheckRefreshStatusFormGroup() {
 		return new FormGroup<TrustedAdvisorCheckRefreshStatusFormProperties>({
-			checkId: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
-			millisUntilNextRefreshable: new FormControl<number | null | undefined>(undefined),
+			checkId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			millisUntilNextRefreshable: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -638,6 +745,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeTrustedAdvisorCheckRefreshStatusesRequest {
+
+		/** Required */
 		checkIds: Array<string>;
 	}
 
@@ -670,8 +779,14 @@ export namespace MyNS {
 
 	/** The results of a Trusted Advisor check returned by <a>DescribeTrustedAdvisorCheckResult</a>. */
 	export interface TrustedAdvisorCheckResult {
+
+		/** Required */
 		checkId: string;
+
+		/** Required */
 		timestamp: string;
+
+		/** Required */
 		status: string;
 
 		/**
@@ -685,20 +800,28 @@ export namespace MyNS {
 		 * Required
 		 */
 		categorySpecificSummary: TrustedAdvisorCategorySpecificSummary;
+
+		/** Required */
 		flaggedResources: Array<TrustedAdvisorResourceDetail>;
 	}
 
 	/** The results of a Trusted Advisor check returned by <a>DescribeTrustedAdvisorCheckResult</a>. */
 	export interface TrustedAdvisorCheckResultFormProperties {
+
+		/** Required */
 		checkId: FormControl<string | null | undefined>,
+
+		/** Required */
 		timestamp: FormControl<string | null | undefined>,
+
+		/** Required */
 		status: FormControl<string | null | undefined>,
 	}
 	export function CreateTrustedAdvisorCheckResultFormGroup() {
 		return new FormGroup<TrustedAdvisorCheckResultFormProperties>({
-			checkId: new FormControl<string | null | undefined>(undefined),
-			timestamp: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
+			checkId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			timestamp: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -706,25 +829,41 @@ export namespace MyNS {
 
 	/** Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>. */
 	export interface TrustedAdvisorResourcesSummary {
+
+		/** Required */
 		resourcesProcessed: number;
+
+		/** Required */
 		resourcesFlagged: number;
+
+		/** Required */
 		resourcesIgnored: number;
+
+		/** Required */
 		resourcesSuppressed: number;
 	}
 
 	/** Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>. */
 	export interface TrustedAdvisorResourcesSummaryFormProperties {
+
+		/** Required */
 		resourcesProcessed: FormControl<number | null | undefined>,
+
+		/** Required */
 		resourcesFlagged: FormControl<number | null | undefined>,
+
+		/** Required */
 		resourcesIgnored: FormControl<number | null | undefined>,
+
+		/** Required */
 		resourcesSuppressed: FormControl<number | null | undefined>,
 	}
 	export function CreateTrustedAdvisorResourcesSummaryFormGroup() {
 		return new FormGroup<TrustedAdvisorResourcesSummaryFormProperties>({
-			resourcesProcessed: new FormControl<number | null | undefined>(undefined),
-			resourcesFlagged: new FormControl<number | null | undefined>(undefined),
-			resourcesIgnored: new FormControl<number | null | undefined>(undefined),
-			resourcesSuppressed: new FormControl<number | null | undefined>(undefined),
+			resourcesProcessed: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			resourcesFlagged: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			resourcesIgnored: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			resourcesSuppressed: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -749,19 +888,27 @@ export namespace MyNS {
 
 	/** The estimated cost savings that might be realized if the recommended operations are taken. */
 	export interface TrustedAdvisorCostOptimizingSummary {
+
+		/** Required */
 		estimatedMonthlySavings: number;
+
+		/** Required */
 		estimatedPercentMonthlySavings: number;
 	}
 
 	/** The estimated cost savings that might be realized if the recommended operations are taken. */
 	export interface TrustedAdvisorCostOptimizingSummaryFormProperties {
+
+		/** Required */
 		estimatedMonthlySavings: FormControl<number | null | undefined>,
+
+		/** Required */
 		estimatedPercentMonthlySavings: FormControl<number | null | undefined>,
 	}
 	export function CreateTrustedAdvisorCostOptimizingSummaryFormGroup() {
 		return new FormGroup<TrustedAdvisorCostOptimizingSummaryFormProperties>({
-			estimatedMonthlySavings: new FormControl<number | null | undefined>(undefined),
-			estimatedPercentMonthlySavings: new FormControl<number | null | undefined>(undefined),
+			estimatedMonthlySavings: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			estimatedPercentMonthlySavings: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -769,25 +916,35 @@ export namespace MyNS {
 
 	/** Contains information about a resource identified by a Trusted Advisor check. */
 	export interface TrustedAdvisorResourceDetail {
+
+		/** Required */
 		status: string;
 		region?: string | null;
+
+		/** Required */
 		resourceId: string;
 		isSuppressed?: boolean | null;
+
+		/** Required */
 		metadata: Array<string>;
 	}
 
 	/** Contains information about a resource identified by a Trusted Advisor check. */
 	export interface TrustedAdvisorResourceDetailFormProperties {
+
+		/** Required */
 		status: FormControl<string | null | undefined>,
 		region: FormControl<string | null | undefined>,
+
+		/** Required */
 		resourceId: FormControl<string | null | undefined>,
 		isSuppressed: FormControl<boolean | null | undefined>,
 	}
 	export function CreateTrustedAdvisorResourceDetailFormGroup() {
 		return new FormGroup<TrustedAdvisorResourceDetailFormProperties>({
-			status: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			region: new FormControl<string | null | undefined>(undefined),
-			resourceId: new FormControl<string | null | undefined>(undefined),
+			resourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			isSuppressed: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -796,18 +953,22 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeTrustedAdvisorCheckResultRequest {
+
+		/** Required */
 		checkId: string;
 		language?: string | null;
 	}
 
 	/** <p/> */
 	export interface DescribeTrustedAdvisorCheckResultRequestFormProperties {
+
+		/** Required */
 		checkId: FormControl<string | null | undefined>,
 		language: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeTrustedAdvisorCheckResultRequestFormGroup() {
 		return new FormGroup<DescribeTrustedAdvisorCheckResultRequestFormProperties>({
-			checkId: new FormControl<string | null | undefined>(undefined),
+			checkId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			language: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -816,6 +977,8 @@ export namespace MyNS {
 
 	/** The summaries of the Trusted Advisor checks returned by the <a>DescribeTrustedAdvisorCheckSummaries</a> operation. */
 	export interface DescribeTrustedAdvisorCheckSummariesResponse {
+
+		/** Required */
 		summaries: Array<TrustedAdvisorCheckSummary>;
 	}
 
@@ -831,8 +994,14 @@ export namespace MyNS {
 
 	/** A summary of a Trusted Advisor check result, including the alert status, last refresh, and number of resources examined. */
 	export interface TrustedAdvisorCheckSummary {
+
+		/** Required */
 		checkId: string;
+
+		/** Required */
 		timestamp: string;
+
+		/** Required */
 		status: string;
 		hasFlaggedResources?: boolean | null;
 
@@ -851,22 +1020,30 @@ export namespace MyNS {
 
 	/** A summary of a Trusted Advisor check result, including the alert status, last refresh, and number of resources examined. */
 	export interface TrustedAdvisorCheckSummaryFormProperties {
+
+		/** Required */
 		checkId: FormControl<string | null | undefined>,
+
+		/** Required */
 		timestamp: FormControl<string | null | undefined>,
+
+		/** Required */
 		status: FormControl<string | null | undefined>,
 		hasFlaggedResources: FormControl<boolean | null | undefined>,
 	}
 	export function CreateTrustedAdvisorCheckSummaryFormGroup() {
 		return new FormGroup<TrustedAdvisorCheckSummaryFormProperties>({
-			checkId: new FormControl<string | null | undefined>(undefined),
-			timestamp: new FormControl<string | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined),
+			checkId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			timestamp: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			hasFlaggedResources: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface DescribeTrustedAdvisorCheckSummariesRequest {
+
+		/** Required */
 		checkIds: Array<string>;
 	}
 	export interface DescribeTrustedAdvisorCheckSummariesRequestFormProperties {
@@ -880,6 +1057,8 @@ export namespace MyNS {
 
 	/** Information about the Trusted Advisor checks returned by the <a>DescribeTrustedAdvisorChecks</a> operation. */
 	export interface DescribeTrustedAdvisorChecksResponse {
+
+		/** Required */
 		checks: Array<TrustedAdvisorCheckDescription>;
 	}
 
@@ -895,26 +1074,44 @@ export namespace MyNS {
 
 	/** The description and metadata for a Trusted Advisor check. */
 	export interface TrustedAdvisorCheckDescription {
+
+		/** Required */
 		id: string;
+
+		/** Required */
 		name: string;
+
+		/** Required */
 		description: string;
+
+		/** Required */
 		category: string;
+
+		/** Required */
 		metadata: Array<string>;
 	}
 
 	/** The description and metadata for a Trusted Advisor check. */
 	export interface TrustedAdvisorCheckDescriptionFormProperties {
+
+		/** Required */
 		id: FormControl<string | null | undefined>,
+
+		/** Required */
 		name: FormControl<string | null | undefined>,
+
+		/** Required */
 		description: FormControl<string | null | undefined>,
+
+		/** Required */
 		category: FormControl<string | null | undefined>,
 	}
 	export function CreateTrustedAdvisorCheckDescriptionFormGroup() {
 		return new FormGroup<TrustedAdvisorCheckDescriptionFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			category: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			category: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -922,16 +1119,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeTrustedAdvisorChecksRequest {
+
+		/** Required */
 		language: string;
 	}
 
 	/** <p/> */
 	export interface DescribeTrustedAdvisorChecksRequestFormProperties {
+
+		/** Required */
 		language: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeTrustedAdvisorChecksRequestFormGroup() {
 		return new FormGroup<DescribeTrustedAdvisorChecksRequestFormProperties>({
-			language: new FormControl<string | null | undefined>(undefined),
+			language: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -959,16 +1160,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface RefreshTrustedAdvisorCheckRequest {
+
+		/** Required */
 		checkId: string;
 	}
 
 	/** <p/> */
 	export interface RefreshTrustedAdvisorCheckRequestFormProperties {
+
+		/** Required */
 		checkId: FormControl<string | null | undefined>,
 	}
 	export function CreateRefreshTrustedAdvisorCheckRequestFormGroup() {
 		return new FormGroup<RefreshTrustedAdvisorCheckRequestFormProperties>({
-			checkId: new FormControl<string | null | undefined>(undefined),
+			checkId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

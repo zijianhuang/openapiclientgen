@@ -4,14 +4,24 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface InvokeEndpointOutput {
+
+		/**
+		 * Required
+		 * Max length: 6291456
+		 */
 		Body: string;
 	}
 	export interface InvokeEndpointOutputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 6291456
+		 */
 		Body: FormControl<string | null | undefined>,
 	}
 	export function CreateInvokeEndpointOutputFormGroup() {
 		return new FormGroup<InvokeEndpointOutputFormProperties>({
-			Body: new FormControl<string | null | undefined>(undefined),
+			Body: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6291456)]),
 		});
 
 	}
@@ -57,14 +67,24 @@ export namespace MyNS {
 	}
 
 	export interface InvokeEndpointInput {
+
+		/**
+		 * Required
+		 * Max length: 6291456
+		 */
 		Body: string;
 	}
 	export interface InvokeEndpointInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 6291456
+		 */
 		Body: FormControl<string | null | undefined>,
 	}
 	export function CreateInvokeEndpointInputFormGroup() {
 		return new FormGroup<InvokeEndpointInputFormProperties>({
-			Body: new FormControl<string | null | undefined>(undefined),
+			Body: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6291456)]),
 		});
 
 	}
@@ -105,7 +125,7 @@ export namespace MyNS {
 	}
 	export function CreateInvokeEndpointPostBodyFormGroup() {
 		return new FormGroup<InvokeEndpointPostBodyFormProperties>({
-			Body: new FormControl<string | null | undefined>(undefined),
+			Body: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6291456)]),
 		});
 
 	}

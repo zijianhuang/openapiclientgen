@@ -172,6 +172,8 @@ export namespace MyNS {
 
 		/** A CMAF encryption configuration. */
 		Encryption?: CmafEncryption;
+
+		/** Required */
 		HlsManifests: Array<HlsManifest>;
 		SegmentDurationSeconds?: number | null;
 	}
@@ -210,20 +212,30 @@ export namespace MyNS {
 
 	/** A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys. */
 	export interface SpekeKeyProvider {
+
+		/** Required */
 		RoleArn: string;
+
+		/** Required */
 		SystemIds: Array<string>;
+
+		/** Required */
 		Url: string;
 	}
 
 	/** A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys. */
 	export interface SpekeKeyProviderFormProperties {
+
+		/** Required */
 		RoleArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		Url: FormControl<string | null | undefined>,
 	}
 	export function CreateSpekeKeyProviderFormGroup() {
 		return new FormGroup<SpekeKeyProviderFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined),
-			Url: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -290,6 +302,8 @@ export namespace MyNS {
 
 	/** A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration. */
 	export interface DashPackage {
+
+		/** Required */
 		DashManifests: Array<DashManifest>;
 
 		/** A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration. */
@@ -375,6 +389,8 @@ export namespace MyNS {
 
 		/** An HTTP Live Streaming (HLS) encryption configuration. */
 		Encryption?: HlsEncryption;
+
+		/** Required */
 		HlsManifests: Array<HlsManifest>;
 		SegmentDurationSeconds?: number | null;
 		UseAudioRenditionGroup?: boolean | null;
@@ -427,6 +443,8 @@ export namespace MyNS {
 
 		/** A Microsoft Smooth Streaming (MSS) encryption configuration. */
 		Encryption?: MssEncryption;
+
+		/** Required */
 		MssManifests: Array<MssManifest>;
 		SegmentDurationSeconds?: number | null;
 	}
@@ -512,19 +530,27 @@ export namespace MyNS {
 
 	/** CDN Authorization credentials */
 	export interface Authorization {
+
+		/** Required */
 		CdnIdentifierSecret: string;
+
+		/** Required */
 		SecretsRoleArn: string;
 	}
 
 	/** CDN Authorization credentials */
 	export interface AuthorizationFormProperties {
+
+		/** Required */
 		CdnIdentifierSecret: FormControl<string | null | undefined>,
+
+		/** Required */
 		SecretsRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateAuthorizationFormGroup() {
 		return new FormGroup<AuthorizationFormProperties>({
-			CdnIdentifierSecret: new FormControl<string | null | undefined>(undefined),
-			SecretsRoleArn: new FormControl<string | null | undefined>(undefined),
+			CdnIdentifierSecret: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SecretsRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -851,10 +877,18 @@ export namespace MyNS {
 
 	/** A new MediaPackage VOD Asset configuration. */
 	export interface CreateAssetRequest {
+
+		/** Required */
 		Id: string;
+
+		/** Required */
 		PackagingGroupId: string;
 		ResourceId?: string | null;
+
+		/** Required */
 		SourceArn: string;
+
+		/** Required */
 		SourceRoleArn: string;
 
 		/** A collection of tags associated with a resource */
@@ -863,19 +897,27 @@ export namespace MyNS {
 
 	/** A new MediaPackage VOD Asset configuration. */
 	export interface CreateAssetRequestFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		PackagingGroupId: FormControl<string | null | undefined>,
 		ResourceId: FormControl<string | null | undefined>,
+
+		/** Required */
 		SourceArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		SourceRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateAssetRequestFormGroup() {
 		return new FormGroup<CreateAssetRequestFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			PackagingGroupId: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PackagingGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ResourceId: new FormControl<string | null | undefined>(undefined),
-			SourceArn: new FormControl<string | null | undefined>(undefined),
-			SourceRoleArn: new FormControl<string | null | undefined>(undefined),
+			SourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SourceRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -892,10 +934,14 @@ export namespace MyNS {
 
 		/** An HTTP Live Streaming (HLS) packaging configuration. */
 		HlsPackage?: HlsPackage;
+
+		/** Required */
 		Id: string;
 
 		/** A Microsoft Smooth Streaming (MSS) PackagingConfiguration. */
 		MssPackage?: MssPackage;
+
+		/** Required */
 		PackagingGroupId: string;
 
 		/** A collection of tags associated with a resource */
@@ -904,13 +950,17 @@ export namespace MyNS {
 
 	/** A new MediaPackage VOD PackagingConfiguration resource configuration. */
 	export interface CreatePackagingConfigurationRequestFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
+
+		/** Required */
 		PackagingGroupId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePackagingConfigurationRequestFormGroup() {
 		return new FormGroup<CreatePackagingConfigurationRequestFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			PackagingGroupId: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PackagingGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -921,6 +971,8 @@ export namespace MyNS {
 
 		/** CDN Authorization credentials */
 		Authorization?: Authorization;
+
+		/** Required */
 		Id: string;
 
 		/** A collection of tags associated with a resource */
@@ -929,11 +981,13 @@ export namespace MyNS {
 
 	/** A new MediaPackage VOD PackagingGroup resource configuration. */
 	export interface CreatePackagingGroupRequestFormProperties {
+
+		/** Required */
 		Id: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePackagingGroupRequestFormGroup() {
 		return new FormGroup<CreatePackagingGroupRequestFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1047,6 +1101,8 @@ export namespace MyNS {
 	export enum StreamOrder { ORIGINAL = 0, VIDEO_BITRATE_ASCENDING = 1, VIDEO_BITRATE_DESCENDING = 2 }
 
 	export interface TagResourceRequest {
+
+		/** Required */
 		Tags: __mapOf__string;
 	}
 	export interface TagResourceRequestFormProperties {
@@ -1325,11 +1381,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateAssetPostBodyFormGroup() {
 		return new FormGroup<CreateAssetPostBodyFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			packagingGroupId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			packagingGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			resourceId: new FormControl<string | null | undefined>(undefined),
-			sourceArn: new FormControl<string | null | undefined>(undefined),
-			sourceRoleArn: new FormControl<string | null | undefined>(undefined),
+			sourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			sourceRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -1383,8 +1439,8 @@ export namespace MyNS {
 	}
 	export function CreateCreatePackagingConfigurationPostBodyFormGroup() {
 		return new FormGroup<CreatePackagingConfigurationPostBodyFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			packagingGroupId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			packagingGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -1492,7 +1548,7 @@ export namespace MyNS {
 	}
 	export function CreateCreatePackagingGroupPostBodyFormGroup() {
 		return new FormGroup<CreatePackagingGroupPostBodyFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -1561,7 +1617,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

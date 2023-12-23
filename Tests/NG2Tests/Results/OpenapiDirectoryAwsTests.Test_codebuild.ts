@@ -4,6 +4,11 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface BatchDeleteBuildsOutput {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		buildsDeleted?: Array<string>;
 		buildsNotDeleted?: Array<BuildNotDeleted>;
 	}
@@ -18,24 +23,34 @@ export namespace MyNS {
 
 	/** Information about a build that could not be successfully deleted. */
 	export interface BuildNotDeleted {
+
+		/** Min length: 1 */
 		id?: string | null;
 		statusCode?: string | null;
 	}
 
 	/** Information about a build that could not be successfully deleted. */
 	export interface BuildNotDeletedFormProperties {
+
+		/** Min length: 1 */
 		id: FormControl<string | null | undefined>,
 		statusCode: FormControl<string | null | undefined>,
 	}
 	export function CreateBuildNotDeletedFormGroup() {
 		return new FormGroup<BuildNotDeletedFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			statusCode: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface BatchDeleteBuildsInput {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		ids: Array<string>;
 	}
 	export interface BatchDeleteBuildsInputFormProperties {
@@ -58,6 +73,11 @@ export namespace MyNS {
 
 	export interface BatchGetBuildsOutput {
 		builds?: Array<Build>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		buildsNotFound?: Array<string>;
 	}
 	export interface BatchGetBuildsOutputFormProperties {
@@ -71,25 +91,50 @@ export namespace MyNS {
 
 	/** Information about a build. */
 	export interface Build {
+
+		/** Min length: 1 */
 		id?: string | null;
+
+		/** Min length: 1 */
 		arn?: string | null;
 		buildNumber?: number | null;
 		startTime?: Date | null;
 		endTime?: Date | null;
 		currentPhase?: string | null;
 		buildStatus?: BuildBuildStatus | null;
+
+		/** Min length: 1 */
 		sourceVersion?: string | null;
+
+		/** Min length: 1 */
 		resolvedSourceVersion?: string | null;
+
+		/** Min length: 1 */
 		projectName?: string | null;
 		phases?: Array<BuildPhase>;
 
 		/** Information about the build input source code for the build project. */
 		source?: ProjectSource;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 12
+		 */
 		secondarySources?: Array<ProjectSource>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 12
+		 */
 		secondarySourceVersions?: Array<ProjectSourceVersion>;
 
 		/** Information about build output artifacts. */
 		artifacts?: BuildArtifacts;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 12
+		 */
 		secondaryArtifacts?: Array<BuildArtifacts>;
 
 		/** Information about the cache for the build project. */
@@ -97,6 +142,8 @@ export namespace MyNS {
 
 		/** Information about the build environment of the build project. */
 		environment?: ProjectEnvironment;
+
+		/** Min length: 1 */
 		serviceRole?: string | null;
 
 		/** Information about build logs in Amazon CloudWatch Logs. */
@@ -111,6 +158,8 @@ export namespace MyNS {
 
 		/** Describes a network interface. */
 		networkInterface?: NetworkInterface;
+
+		/** Min length: 1 */
 		encryptionKey?: string | null;
 		exportedEnvironmentVariables?: Array<ExportedEnvironmentVariable>;
 		reportArns?: Array<string>;
@@ -119,41 +168,55 @@ export namespace MyNS {
 
 	/** Information about a build. */
 	export interface BuildFormProperties {
+
+		/** Min length: 1 */
 		id: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		arn: FormControl<string | null | undefined>,
 		buildNumber: FormControl<number | null | undefined>,
 		startTime: FormControl<Date | null | undefined>,
 		endTime: FormControl<Date | null | undefined>,
 		currentPhase: FormControl<string | null | undefined>,
 		buildStatus: FormControl<BuildBuildStatus | null | undefined>,
+
+		/** Min length: 1 */
 		sourceVersion: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		resolvedSourceVersion: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		projectName: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		serviceRole: FormControl<string | null | undefined>,
 		timeoutInMinutes: FormControl<number | null | undefined>,
 		queuedTimeoutInMinutes: FormControl<number | null | undefined>,
 		buildComplete: FormControl<boolean | null | undefined>,
 		initiator: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		encryptionKey: FormControl<string | null | undefined>,
 	}
 	export function CreateBuildFormGroup() {
 		return new FormGroup<BuildFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			arn: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			buildNumber: new FormControl<number | null | undefined>(undefined),
 			startTime: new FormControl<Date | null | undefined>(undefined),
 			endTime: new FormControl<Date | null | undefined>(undefined),
 			currentPhase: new FormControl<string | null | undefined>(undefined),
 			buildStatus: new FormControl<BuildBuildStatus | null | undefined>(undefined),
-			sourceVersion: new FormControl<string | null | undefined>(undefined),
-			resolvedSourceVersion: new FormControl<string | null | undefined>(undefined),
-			projectName: new FormControl<string | null | undefined>(undefined),
-			serviceRole: new FormControl<string | null | undefined>(undefined),
+			sourceVersion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			resolvedSourceVersion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			serviceRole: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			timeoutInMinutes: new FormControl<number | null | undefined>(undefined),
 			queuedTimeoutInMinutes: new FormControl<number | null | undefined>(undefined),
 			buildComplete: new FormControl<boolean | null | undefined>(undefined),
 			initiator: new FormControl<string | null | undefined>(undefined),
-			encryptionKey: new FormControl<string | null | undefined>(undefined),
+			encryptionKey: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -215,8 +278,12 @@ export namespace MyNS {
 
 	/** Information about the build input source code for the build project. */
 	export interface ProjectSource {
+
+		/** Required */
 		type: ProjectSourceType;
 		location?: string | null;
+
+		/** Minimum: 0 */
 		gitCloneDepth?: number | null;
 
 		/** Information about the Git submodules configuration for an AWS CodeBuild build project. */
@@ -232,8 +299,12 @@ export namespace MyNS {
 
 	/** Information about the build input source code for the build project. */
 	export interface ProjectSourceFormProperties {
+
+		/** Required */
 		type: FormControl<ProjectSourceType | null | undefined>,
 		location: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		gitCloneDepth: FormControl<number | null | undefined>,
 		buildspec: FormControl<string | null | undefined>,
 		reportBuildStatus: FormControl<boolean | null | undefined>,
@@ -242,9 +313,9 @@ export namespace MyNS {
 	}
 	export function CreateProjectSourceFormGroup() {
 		return new FormGroup<ProjectSourceFormProperties>({
-			type: new FormControl<ProjectSourceType | null | undefined>(undefined),
+			type: new FormControl<ProjectSourceType | null | undefined>(undefined, [Validators.required]),
 			location: new FormControl<string | null | undefined>(undefined),
-			gitCloneDepth: new FormControl<number | null | undefined>(undefined),
+			gitCloneDepth: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			buildspec: new FormControl<string | null | undefined>(undefined),
 			reportBuildStatus: new FormControl<boolean | null | undefined>(undefined),
 			insecureSsl: new FormControl<boolean | null | undefined>(undefined),
@@ -258,16 +329,20 @@ export namespace MyNS {
 
 	/**  Information about the Git submodules configuration for an AWS CodeBuild build project.  */
 	export interface GitSubmodulesConfig {
+
+		/** Required */
 		fetchSubmodules: boolean;
 	}
 
 	/**  Information about the Git submodules configuration for an AWS CodeBuild build project.  */
 	export interface GitSubmodulesConfigFormProperties {
+
+		/** Required */
 		fetchSubmodules: FormControl<boolean | null | undefined>,
 	}
 	export function CreateGitSubmodulesConfigFormGroup() {
 		return new FormGroup<GitSubmodulesConfigFormProperties>({
-			fetchSubmodules: new FormControl<boolean | null | undefined>(undefined),
+			fetchSubmodules: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -275,18 +350,22 @@ export namespace MyNS {
 
 	/** <p>Information about the authorization settings for AWS CodeBuild to access the source code to be built.</p> <p>This information is for the AWS CodeBuild console's use only. Your code should not get or set this information directly.</p> */
 	export interface SourceAuth {
+
+		/** Required */
 		type: SourceAuthType;
 		resource?: string | null;
 	}
 
 	/** <p>Information about the authorization settings for AWS CodeBuild to access the source code to be built.</p> <p>This information is for the AWS CodeBuild console's use only. Your code should not get or set this information directly.</p> */
 	export interface SourceAuthFormProperties {
+
+		/** Required */
 		type: FormControl<SourceAuthType | null | undefined>,
 		resource: FormControl<string | null | undefined>,
 	}
 	export function CreateSourceAuthFormGroup() {
 		return new FormGroup<SourceAuthFormProperties>({
-			type: new FormControl<SourceAuthType | null | undefined>(undefined),
+			type: new FormControl<SourceAuthType | null | undefined>(undefined, [Validators.required]),
 			resource: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -297,19 +376,27 @@ export namespace MyNS {
 
 	/**  A source identifier and its corresponding version.  */
 	export interface ProjectSourceVersion {
+
+		/** Required */
 		sourceIdentifier: string;
+
+		/** Required */
 		sourceVersion: string;
 	}
 
 	/**  A source identifier and its corresponding version.  */
 	export interface ProjectSourceVersionFormProperties {
+
+		/** Required */
 		sourceIdentifier: FormControl<string | null | undefined>,
+
+		/** Required */
 		sourceVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateProjectSourceVersionFormGroup() {
 		return new FormGroup<ProjectSourceVersionFormProperties>({
-			sourceIdentifier: new FormControl<string | null | undefined>(undefined),
-			sourceVersion: new FormControl<string | null | undefined>(undefined),
+			sourceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			sourceVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -349,6 +436,8 @@ export namespace MyNS {
 
 	/** Information about the cache for the build project. */
 	export interface ProjectCache {
+
+		/** Required */
 		type: ProjectCacheType;
 		location?: string | null;
 		modes?: Array<CacheMode>;
@@ -356,12 +445,14 @@ export namespace MyNS {
 
 	/** Information about the cache for the build project. */
 	export interface ProjectCacheFormProperties {
+
+		/** Required */
 		type: FormControl<ProjectCacheType | null | undefined>,
 		location: FormControl<string | null | undefined>,
 	}
 	export function CreateProjectCacheFormGroup() {
 		return new FormGroup<ProjectCacheFormProperties>({
-			type: new FormControl<ProjectCacheType | null | undefined>(undefined),
+			type: new FormControl<ProjectCacheType | null | undefined>(undefined, [Validators.required]),
 			location: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -374,8 +465,17 @@ export namespace MyNS {
 
 	/** Information about the build environment of the build project. */
 	export interface ProjectEnvironment {
+
+		/** Required */
 		type: ProjectEnvironmentType;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		image: string;
+
+		/** Required */
 		computeType: ProjectEnvironmentComputeType;
 		environmentVariables?: Array<EnvironmentVariable>;
 		privilegedMode?: boolean | null;
@@ -388,8 +488,17 @@ export namespace MyNS {
 
 	/** Information about the build environment of the build project. */
 	export interface ProjectEnvironmentFormProperties {
+
+		/** Required */
 		type: FormControl<ProjectEnvironmentType | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		image: FormControl<string | null | undefined>,
+
+		/** Required */
 		computeType: FormControl<ProjectEnvironmentComputeType | null | undefined>,
 		privilegedMode: FormControl<boolean | null | undefined>,
 		certificate: FormControl<string | null | undefined>,
@@ -397,9 +506,9 @@ export namespace MyNS {
 	}
 	export function CreateProjectEnvironmentFormGroup() {
 		return new FormGroup<ProjectEnvironmentFormProperties>({
-			type: new FormControl<ProjectEnvironmentType | null | undefined>(undefined),
-			image: new FormControl<string | null | undefined>(undefined),
-			computeType: new FormControl<ProjectEnvironmentComputeType | null | undefined>(undefined),
+			type: new FormControl<ProjectEnvironmentType | null | undefined>(undefined, [Validators.required]),
+			image: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			computeType: new FormControl<ProjectEnvironmentComputeType | null | undefined>(undefined, [Validators.required]),
 			privilegedMode: new FormControl<boolean | null | undefined>(undefined),
 			certificate: new FormControl<string | null | undefined>(undefined),
 			imagePullCredentialsType: new FormControl<ProjectEnvironmentImagePullCredentialsType | null | undefined>(undefined),
@@ -414,21 +523,35 @@ export namespace MyNS {
 
 	/** Information about an environment variable for a build project or a build. */
 	export interface EnvironmentVariable {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		name: string;
+
+		/** Required */
 		value: string;
 		type?: EnvironmentVariableType | null;
 	}
 
 	/** Information about an environment variable for a build project or a build. */
 	export interface EnvironmentVariableFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Required */
 		value: FormControl<string | null | undefined>,
 		type: FormControl<EnvironmentVariableType | null | undefined>,
 	}
 	export function CreateEnvironmentVariableFormGroup() {
 		return new FormGroup<EnvironmentVariableFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			type: new FormControl<EnvironmentVariableType | null | undefined>(undefined),
 		});
 
@@ -439,19 +562,33 @@ export namespace MyNS {
 
 	/** <p> Information about credentials that provide access to a private Docker registry. When this is set: </p> <ul> <li> <p> <code>imagePullCredentialsType</code> must be set to <code>SERVICE_ROLE</code>. </p> </li> <li> <p> images cannot be curated or an Amazon ECR image.</p> </li> </ul> <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-private-registry.html">Private Registry with AWS Secrets Manager Sample for AWS CodeBuild</a>. </p> */
 	export interface RegistryCredential {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		credential: string;
+
+		/** Required */
 		credentialProvider: RegistryCredentialCredentialProvider;
 	}
 
 	/** <p> Information about credentials that provide access to a private Docker registry. When this is set: </p> <ul> <li> <p> <code>imagePullCredentialsType</code> must be set to <code>SERVICE_ROLE</code>. </p> </li> <li> <p> images cannot be curated or an Amazon ECR image.</p> </li> </ul> <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-private-registry.html">Private Registry with AWS Secrets Manager Sample for AWS CodeBuild</a>. </p> */
 	export interface RegistryCredentialFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		credential: FormControl<string | null | undefined>,
+
+		/** Required */
 		credentialProvider: FormControl<RegistryCredentialCredentialProvider | null | undefined>,
 	}
 	export function CreateRegistryCredentialFormGroup() {
 		return new FormGroup<RegistryCredentialFormProperties>({
-			credential: new FormControl<string | null | undefined>(undefined),
-			credentialProvider: new FormControl<RegistryCredentialCredentialProvider | null | undefined>(undefined),
+			credential: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			credentialProvider: new FormControl<RegistryCredentialCredentialProvider | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -501,6 +638,8 @@ export namespace MyNS {
 
 	/**  Information about Amazon CloudWatch Logs for a build project.  */
 	export interface CloudWatchLogsConfig {
+
+		/** Required */
 		status: CloudWatchLogsConfigStatus;
 		groupName?: string | null;
 		streamName?: string | null;
@@ -508,13 +647,15 @@ export namespace MyNS {
 
 	/**  Information about Amazon CloudWatch Logs for a build project.  */
 	export interface CloudWatchLogsConfigFormProperties {
+
+		/** Required */
 		status: FormControl<CloudWatchLogsConfigStatus | null | undefined>,
 		groupName: FormControl<string | null | undefined>,
 		streamName: FormControl<string | null | undefined>,
 	}
 	export function CreateCloudWatchLogsConfigFormGroup() {
 		return new FormGroup<CloudWatchLogsConfigFormProperties>({
-			status: new FormControl<CloudWatchLogsConfigStatus | null | undefined>(undefined),
+			status: new FormControl<CloudWatchLogsConfigStatus | null | undefined>(undefined, [Validators.required]),
 			groupName: new FormControl<string | null | undefined>(undefined),
 			streamName: new FormControl<string | null | undefined>(undefined),
 		});
@@ -526,6 +667,8 @@ export namespace MyNS {
 
 	/**  Information about S3 logs for a build project.  */
 	export interface S3LogsConfig {
+
+		/** Required */
 		status: CloudWatchLogsConfigStatus;
 		location?: string | null;
 		encryptionDisabled?: boolean | null;
@@ -533,13 +676,15 @@ export namespace MyNS {
 
 	/**  Information about S3 logs for a build project.  */
 	export interface S3LogsConfigFormProperties {
+
+		/** Required */
 		status: FormControl<CloudWatchLogsConfigStatus | null | undefined>,
 		location: FormControl<string | null | undefined>,
 		encryptionDisabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateS3LogsConfigFormGroup() {
 		return new FormGroup<S3LogsConfigFormProperties>({
-			status: new FormControl<CloudWatchLogsConfigStatus | null | undefined>(undefined),
+			status: new FormControl<CloudWatchLogsConfigStatus | null | undefined>(undefined, [Validators.required]),
 			location: new FormControl<string | null | undefined>(undefined),
 			encryptionDisabled: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -549,18 +694,26 @@ export namespace MyNS {
 
 	/** Information about the VPC configuration that AWS CodeBuild accesses. */
 	export interface VpcConfig {
+
+		/** Min length: 1 */
 		vpcId?: string | null;
+
+		/** Maximum items: 16 */
 		subnets?: Array<string>;
+
+		/** Maximum items: 5 */
 		securityGroupIds?: Array<string>;
 	}
 
 	/** Information about the VPC configuration that AWS CodeBuild accesses. */
 	export interface VpcConfigFormProperties {
+
+		/** Min length: 1 */
 		vpcId: FormControl<string | null | undefined>,
 	}
 	export function CreateVpcConfigFormGroup() {
 		return new FormGroup<VpcConfigFormProperties>({
-			vpcId: new FormControl<string | null | undefined>(undefined),
+			vpcId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -568,19 +721,27 @@ export namespace MyNS {
 
 	/** Describes a network interface. */
 	export interface NetworkInterface {
+
+		/** Min length: 1 */
 		subnetId?: string | null;
+
+		/** Min length: 1 */
 		networkInterfaceId?: string | null;
 	}
 
 	/** Describes a network interface. */
 	export interface NetworkInterfaceFormProperties {
+
+		/** Min length: 1 */
 		subnetId: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		networkInterfaceId: FormControl<string | null | undefined>,
 	}
 	export function CreateNetworkInterfaceFormGroup() {
 		return new FormGroup<NetworkInterfaceFormProperties>({
-			subnetId: new FormControl<string | null | undefined>(undefined),
-			networkInterfaceId: new FormControl<string | null | undefined>(undefined),
+			subnetId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			networkInterfaceId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -588,18 +749,22 @@ export namespace MyNS {
 
 	/**  Information about an exported environment variable.  */
 	export interface ExportedEnvironmentVariable {
+
+		/** Min length: 1 */
 		name?: string | null;
 		value?: string | null;
 	}
 
 	/**  Information about an exported environment variable.  */
 	export interface ExportedEnvironmentVariableFormProperties {
+
+		/** Min length: 1 */
 		name: FormControl<string | null | undefined>,
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateExportedEnvironmentVariableFormGroup() {
 		return new FormGroup<ExportedEnvironmentVariableFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			value: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -637,6 +802,12 @@ export namespace MyNS {
 	export enum ProjectFileSystemLocationType { EFS = 0 }
 
 	export interface BatchGetBuildsInput {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		ids: Array<string>;
 	}
 	export interface BatchGetBuildsInputFormProperties {
@@ -649,6 +820,11 @@ export namespace MyNS {
 
 	export interface BatchGetProjectsOutput {
 		projects?: Array<Project>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		projectsNotFound?: Array<string>;
 	}
 	export interface BatchGetProjectsOutputFormProperties {
@@ -662,18 +838,44 @@ export namespace MyNS {
 
 	/** Information about a build project. */
 	export interface Project {
+
+		/**
+		 * Max length: 255
+		 * Min length: 2
+		 * Pattern: [A-Za-z0-9][A-Za-z0-9\-_]{1,254}
+		 */
 		name?: string | null;
 		arn?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 0
+		 */
 		description?: string | null;
 
 		/** Information about the build input source code for the build project. */
 		source?: ProjectSource;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 12
+		 */
 		secondarySources?: Array<ProjectSource>;
 		sourceVersion?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 12
+		 */
 		secondarySourceVersions?: Array<ProjectSourceVersion>;
 
 		/** Information about the build output artifacts for the build project. */
 		artifacts?: ProjectArtifacts;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 12
+		 */
 		secondaryArtifacts?: Array<ProjectArtifacts>;
 
 		/** Information about the cache for the build project. */
@@ -681,10 +883,29 @@ export namespace MyNS {
 
 		/** Information about the build environment of the build project. */
 		environment?: ProjectEnvironment;
+
+		/** Min length: 1 */
 		serviceRole?: string | null;
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 480
+		 */
 		timeoutInMinutes?: number | null;
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 480
+		 */
 		queuedTimeoutInMinutes?: number | null;
+
+		/** Min length: 1 */
 		encryptionKey?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<Tag>;
 		created?: Date | null;
 		lastModified?: Date | null;
@@ -705,27 +926,52 @@ export namespace MyNS {
 
 	/** Information about a build project. */
 	export interface ProjectFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 2
+		 * Pattern: [A-Za-z0-9][A-Za-z0-9\-_]{1,254}
+		 */
 		name: FormControl<string | null | undefined>,
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		sourceVersion: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		serviceRole: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 480
+		 */
 		timeoutInMinutes: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 480
+		 */
 		queuedTimeoutInMinutes: FormControl<number | null | undefined>,
+
+		/** Min length: 1 */
 		encryptionKey: FormControl<string | null | undefined>,
 		created: FormControl<Date | null | undefined>,
 		lastModified: FormControl<Date | null | undefined>,
 	}
 	export function CreateProjectFormGroup() {
 		return new FormGroup<ProjectFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(2)]),
 			arn: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
 			sourceVersion: new FormControl<string | null | undefined>(undefined),
-			serviceRole: new FormControl<string | null | undefined>(undefined),
-			timeoutInMinutes: new FormControl<number | null | undefined>(undefined),
-			queuedTimeoutInMinutes: new FormControl<number | null | undefined>(undefined),
-			encryptionKey: new FormControl<string | null | undefined>(undefined),
+			serviceRole: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			timeoutInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(480)]),
+			queuedTimeoutInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(480)]),
+			encryptionKey: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			created: new FormControl<Date | null | undefined>(undefined),
 			lastModified: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -735,6 +981,8 @@ export namespace MyNS {
 
 	/** Information about the build output artifacts for the build project. */
 	export interface ProjectArtifacts {
+
+		/** Required */
 		type: ProjectArtifactsType;
 		location?: string | null;
 		path?: string | null;
@@ -748,6 +996,8 @@ export namespace MyNS {
 
 	/** Information about the build output artifacts for the build project. */
 	export interface ProjectArtifactsFormProperties {
+
+		/** Required */
 		type: FormControl<ProjectArtifactsType | null | undefined>,
 		location: FormControl<string | null | undefined>,
 		path: FormControl<string | null | undefined>,
@@ -760,7 +1010,7 @@ export namespace MyNS {
 	}
 	export function CreateProjectArtifactsFormGroup() {
 		return new FormGroup<ProjectArtifactsFormProperties>({
-			type: new FormControl<ProjectArtifactsType | null | undefined>(undefined),
+			type: new FormControl<ProjectArtifactsType | null | undefined>(undefined, [Validators.required]),
 			location: new FormControl<string | null | undefined>(undefined),
 			path: new FormControl<string | null | undefined>(undefined),
 			namespaceType: new FormControl<ProjectArtifactsNamespaceType | null | undefined>(undefined),
@@ -782,19 +1032,43 @@ export namespace MyNS {
 
 	/** <p>A tag, consisting of a key and a value.</p> <p>This tag is available for use by AWS services that support tags in AWS CodeBuild.</p> */
 	export interface Tag {
+
+		/**
+		 * Max length: 127
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=@+\-]*)$
+		 */
 		key?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=@+\-]*)$
+		 */
 		value?: string | null;
 	}
 
 	/** <p>A tag, consisting of a key and a value.</p> <p>This tag is available for use by AWS services that support tags in AWS CodeBuild.</p> */
 	export interface TagFormProperties {
+
+		/**
+		 * Max length: 127
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=@+\-]*)$
+		 */
 		key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=@+\-]*)$
+		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(127), Validators.minLength(1)]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
 		});
 
 	}
@@ -802,8 +1076,14 @@ export namespace MyNS {
 
 	/** Information about a webhook that connects repository events to a build project in AWS CodeBuild. */
 	export interface Webhook {
+
+		/** Min length: 1 */
 		url?: string | null;
+
+		/** Min length: 1 */
 		payloadUrl?: string | null;
+
+		/** Min length: 1 */
 		secret?: string | null;
 		branchFilter?: string | null;
 		filterGroups?: Array<Array<WebhookFilter>>;
@@ -812,17 +1092,23 @@ export namespace MyNS {
 
 	/** Information about a webhook that connects repository events to a build project in AWS CodeBuild. */
 	export interface WebhookFormProperties {
+
+		/** Min length: 1 */
 		url: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		payloadUrl: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		secret: FormControl<string | null | undefined>,
 		branchFilter: FormControl<string | null | undefined>,
 		lastModifiedSecret: FormControl<Date | null | undefined>,
 	}
 	export function CreateWebhookFormGroup() {
 		return new FormGroup<WebhookFormProperties>({
-			url: new FormControl<string | null | undefined>(undefined),
-			payloadUrl: new FormControl<string | null | undefined>(undefined),
-			secret: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			payloadUrl: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			secret: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			branchFilter: new FormControl<string | null | undefined>(undefined),
 			lastModifiedSecret: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -832,21 +1118,29 @@ export namespace MyNS {
 
 	/**  A filter used to determine which webhooks trigger a build.  */
 	export interface WebhookFilter {
+
+		/** Required */
 		type: WebhookFilterType;
+
+		/** Required */
 		pattern: string;
 		excludeMatchedPattern?: boolean | null;
 	}
 
 	/**  A filter used to determine which webhooks trigger a build.  */
 	export interface WebhookFilterFormProperties {
+
+		/** Required */
 		type: FormControl<WebhookFilterType | null | undefined>,
+
+		/** Required */
 		pattern: FormControl<string | null | undefined>,
 		excludeMatchedPattern: FormControl<boolean | null | undefined>,
 	}
 	export function CreateWebhookFilterFormGroup() {
 		return new FormGroup<WebhookFilterFormProperties>({
-			type: new FormControl<WebhookFilterType | null | undefined>(undefined),
-			pattern: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<WebhookFilterType | null | undefined>(undefined, [Validators.required]),
+			pattern: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			excludeMatchedPattern: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -895,6 +1189,12 @@ export namespace MyNS {
 	}
 
 	export interface BatchGetProjectsInput {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		names: Array<string>;
 	}
 	export interface BatchGetProjectsInputFormProperties {
@@ -906,7 +1206,17 @@ export namespace MyNS {
 	}
 
 	export interface BatchGetReportGroupsOutput {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		reportGroups?: Array<ReportGroup>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		reportGroupsNotFound?: Array<string>;
 	}
 	export interface BatchGetReportGroupsOutputFormProperties {
@@ -920,7 +1230,14 @@ export namespace MyNS {
 
 	/**  A series of reports. Each report contains information about the results from running a series of test cases. You specify the test cases for a report group in the buildspec for a build project using one or more paths to the test case files.  */
 	export interface ReportGroup {
+
+		/** Min length: 1 */
 		arn?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 2
+		 */
 		name?: string | null;
 		type?: ReportGroupType | null;
 
@@ -928,12 +1245,24 @@ export namespace MyNS {
 		exportConfig?: ReportExportConfig;
 		created?: Date | null;
 		lastModified?: Date | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<Tag>;
 	}
 
 	/**  A series of reports. Each report contains information about the results from running a series of test cases. You specify the test cases for a report group in the buildspec for a build project using one or more paths to the test case files.  */
 	export interface ReportGroupFormProperties {
+
+		/** Min length: 1 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 2
+		 */
 		name: FormControl<string | null | undefined>,
 		type: FormControl<ReportGroupType | null | undefined>,
 		created: FormControl<Date | null | undefined>,
@@ -941,8 +1270,8 @@ export namespace MyNS {
 	}
 	export function CreateReportGroupFormGroup() {
 		return new FormGroup<ReportGroupFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(2)]),
 			type: new FormControl<ReportGroupType | null | undefined>(undefined),
 			created: new FormControl<Date | null | undefined>(undefined),
 			lastModified: new FormControl<Date | null | undefined>(undefined),
@@ -977,27 +1306,35 @@ export namespace MyNS {
 
 	/**  Information about the S3 bucket where the raw data of a report are exported.  */
 	export interface S3ReportExportConfig {
+
+		/** Min length: 1 */
 		bucket?: string | null;
 		path?: string | null;
 		packaging?: S3ReportExportConfigPackaging | null;
+
+		/** Min length: 1 */
 		encryptionKey?: string | null;
 		encryptionDisabled?: boolean | null;
 	}
 
 	/**  Information about the S3 bucket where the raw data of a report are exported.  */
 	export interface S3ReportExportConfigFormProperties {
+
+		/** Min length: 1 */
 		bucket: FormControl<string | null | undefined>,
 		path: FormControl<string | null | undefined>,
 		packaging: FormControl<S3ReportExportConfigPackaging | null | undefined>,
+
+		/** Min length: 1 */
 		encryptionKey: FormControl<string | null | undefined>,
 		encryptionDisabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateS3ReportExportConfigFormGroup() {
 		return new FormGroup<S3ReportExportConfigFormProperties>({
-			bucket: new FormControl<string | null | undefined>(undefined),
+			bucket: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			path: new FormControl<string | null | undefined>(undefined),
 			packaging: new FormControl<S3ReportExportConfigPackaging | null | undefined>(undefined),
-			encryptionKey: new FormControl<string | null | undefined>(undefined),
+			encryptionKey: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			encryptionDisabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1006,6 +1343,12 @@ export namespace MyNS {
 	export enum S3ReportExportConfigPackaging { ZIP = 0, NONE = 1 }
 
 	export interface BatchGetReportGroupsInput {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		reportGroupArns: Array<string>;
 	}
 	export interface BatchGetReportGroupsInputFormProperties {
@@ -1017,7 +1360,17 @@ export namespace MyNS {
 	}
 
 	export interface BatchGetReportsOutput {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		reports?: Array<Report>;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		reportsNotFound?: Array<string>;
 	}
 	export interface BatchGetReportsOutputFormProperties {
@@ -1031,9 +1384,13 @@ export namespace MyNS {
 
 	/**  Information about the results from running a series of test cases during the run of a build project. The test cases are specified in the buildspec for the build project using one or more paths to the test case files. You can specify any type of tests you want, such as unit tests, integration tests, and functional tests.  */
 	export interface Report {
+
+		/** Min length: 1 */
 		arn?: string | null;
 		type?: ReportGroupType | null;
 		name?: string | null;
+
+		/** Min length: 1 */
 		reportGroupArn?: string | null;
 		executionId?: string | null;
 		status?: ReportStatus | null;
@@ -1050,9 +1407,13 @@ export namespace MyNS {
 
 	/**  Information about the results from running a series of test cases during the run of a build project. The test cases are specified in the buildspec for the build project using one or more paths to the test case files. You can specify any type of tests you want, such as unit tests, integration tests, and functional tests.  */
 	export interface ReportFormProperties {
+
+		/** Min length: 1 */
 		arn: FormControl<string | null | undefined>,
 		type: FormControl<ReportGroupType | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		reportGroupArn: FormControl<string | null | undefined>,
 		executionId: FormControl<string | null | undefined>,
 		status: FormControl<ReportStatus | null | undefined>,
@@ -1062,10 +1423,10 @@ export namespace MyNS {
 	}
 	export function CreateReportFormGroup() {
 		return new FormGroup<ReportFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			type: new FormControl<ReportGroupType | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			reportGroupArn: new FormControl<string | null | undefined>(undefined),
+			reportGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			executionId: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<ReportStatus | null | undefined>(undefined),
 			created: new FormControl<Date | null | undefined>(undefined),
@@ -1080,20 +1441,30 @@ export namespace MyNS {
 
 	/**  Information about a test report.  */
 	export interface TestReportSummary {
+
+		/** Required */
 		total: number;
+
+		/** Required */
 		statusCounts: ReportStatusCounts;
+
+		/** Required */
 		durationInNanoSeconds: number;
 	}
 
 	/**  Information about a test report.  */
 	export interface TestReportSummaryFormProperties {
+
+		/** Required */
 		total: FormControl<number | null | undefined>,
+
+		/** Required */
 		durationInNanoSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateTestReportSummaryFormGroup() {
 		return new FormGroup<TestReportSummaryFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
-			durationInNanoSeconds: new FormControl<number | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			durationInNanoSeconds: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1109,6 +1480,12 @@ export namespace MyNS {
 	}
 
 	export interface BatchGetReportsInput {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		reportArns: Array<string>;
 	}
 	export interface BatchGetReportsInputFormProperties {
@@ -1133,7 +1510,19 @@ export namespace MyNS {
 	}
 
 	export interface CreateProjectInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 2
+		 * Pattern: [A-Za-z0-9][A-Za-z0-9\-_]{1,254}
+		 */
 		name: string;
+
+		/**
+		 * Max length: 255
+		 * Min length: 0
+		 */
 		description?: string | null;
 
 		/**
@@ -1141,8 +1530,18 @@ export namespace MyNS {
 		 * Required
 		 */
 		source: ProjectSource;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 12
+		 */
 		secondarySources?: Array<ProjectSource>;
 		sourceVersion?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 12
+		 */
 		secondarySourceVersions?: Array<ProjectSourceVersion>;
 
 		/**
@@ -1150,6 +1549,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		artifacts: ProjectArtifacts;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 12
+		 */
 		secondaryArtifacts?: Array<ProjectArtifacts>;
 
 		/** Information about the cache for the build project. */
@@ -1160,10 +1564,32 @@ export namespace MyNS {
 		 * Required
 		 */
 		environment: ProjectEnvironment;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		serviceRole: string;
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 480
+		 */
 		timeoutInMinutes?: number | null;
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 480
+		 */
 		queuedTimeoutInMinutes?: number | null;
+
+		/** Min length: 1 */
 		encryptionKey?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<Tag>;
 
 		/** Information about the VPC configuration that AWS CodeBuild accesses. */
@@ -1175,24 +1601,53 @@ export namespace MyNS {
 		fileSystemLocations?: Array<ProjectFileSystemLocation>;
 	}
 	export interface CreateProjectInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 2
+		 * Pattern: [A-Za-z0-9][A-Za-z0-9\-_]{1,254}
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		sourceVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		serviceRole: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 480
+		 */
 		timeoutInMinutes: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 480
+		 */
 		queuedTimeoutInMinutes: FormControl<number | null | undefined>,
+
+		/** Min length: 1 */
 		encryptionKey: FormControl<string | null | undefined>,
 		badgeEnabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateCreateProjectInputFormGroup() {
 		return new FormGroup<CreateProjectInputFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(2)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
 			sourceVersion: new FormControl<string | null | undefined>(undefined),
-			serviceRole: new FormControl<string | null | undefined>(undefined),
-			timeoutInMinutes: new FormControl<number | null | undefined>(undefined),
-			queuedTimeoutInMinutes: new FormControl<number | null | undefined>(undefined),
-			encryptionKey: new FormControl<string | null | undefined>(undefined),
+			serviceRole: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			timeoutInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(480)]),
+			queuedTimeoutInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(480)]),
+			encryptionKey: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			badgeEnabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1232,7 +1687,15 @@ export namespace MyNS {
 	}
 
 	export interface CreateReportGroupInput {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 2
+		 */
 		name: string;
+
+		/** Required */
 		type: ReportGroupType;
 
 		/**
@@ -1240,16 +1703,29 @@ export namespace MyNS {
 		 * Required
 		 */
 		exportConfig: ReportExportConfig;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<Tag>;
 	}
 	export interface CreateReportGroupInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 2
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Required */
 		type: FormControl<ReportGroupType | null | undefined>,
 	}
 	export function CreateCreateReportGroupInputFormGroup() {
 		return new FormGroup<CreateReportGroupInputFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<ReportGroupType | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(2)]),
+			type: new FormControl<ReportGroupType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1268,17 +1744,31 @@ export namespace MyNS {
 	}
 
 	export interface CreateWebhookInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 2
+		 * Pattern: [A-Za-z0-9][A-Za-z0-9\-_]{1,254}
+		 */
 		projectName: string;
 		branchFilter?: string | null;
 		filterGroups?: Array<Array<WebhookFilter>>;
 	}
 	export interface CreateWebhookInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 2
+		 * Pattern: [A-Za-z0-9][A-Za-z0-9\-_]{1,254}
+		 */
 		projectName: FormControl<string | null | undefined>,
 		branchFilter: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateWebhookInputFormGroup() {
 		return new FormGroup<CreateWebhookInputFormProperties>({
-			projectName: new FormControl<string | null | undefined>(undefined),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(2)]),
 			branchFilter: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1315,14 +1805,24 @@ export namespace MyNS {
 	}
 
 	export interface DeleteProjectInput {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		name: string;
 	}
 	export interface DeleteProjectInputFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteProjectInputFormGroup() {
 		return new FormGroup<DeleteProjectInputFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -1338,14 +1838,24 @@ export namespace MyNS {
 	}
 
 	export interface DeleteReportInput {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		arn: string;
 	}
 	export interface DeleteReportInputFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteReportInputFormGroup() {
 		return new FormGroup<DeleteReportInputFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -1361,14 +1871,24 @@ export namespace MyNS {
 	}
 
 	export interface DeleteReportGroupInput {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		arn: string;
 	}
 	export interface DeleteReportGroupInputFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteReportGroupInputFormGroup() {
 		return new FormGroup<DeleteReportGroupInputFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -1384,40 +1904,64 @@ export namespace MyNS {
 	}
 
 	export interface DeleteResourcePolicyInput {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		resourceArn: string;
 	}
 	export interface DeleteResourcePolicyInputFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteResourcePolicyInputFormGroup() {
 		return new FormGroup<DeleteResourcePolicyInputFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteSourceCredentialsOutput {
+
+		/** Min length: 1 */
 		arn?: string | null;
 	}
 	export interface DeleteSourceCredentialsOutputFormProperties {
+
+		/** Min length: 1 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSourceCredentialsOutputFormGroup() {
 		return new FormGroup<DeleteSourceCredentialsOutputFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteSourceCredentialsInput {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		arn: string;
 	}
 	export interface DeleteSourceCredentialsInputFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSourceCredentialsInputFormGroup() {
 		return new FormGroup<DeleteSourceCredentialsInputFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -1433,14 +1977,28 @@ export namespace MyNS {
 	}
 
 	export interface DeleteWebhookInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 2
+		 * Pattern: [A-Za-z0-9][A-Za-z0-9\-_]{1,254}
+		 */
 		projectName: string;
 	}
 	export interface DeleteWebhookInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 2
+		 * Pattern: [A-Za-z0-9][A-Za-z0-9\-_]{1,254}
+		 */
 		projectName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteWebhookInputFormGroup() {
 		return new FormGroup<DeleteWebhookInputFormProperties>({
-			projectName: new FormControl<string | null | undefined>(undefined),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(2)]),
 		});
 
 	}
@@ -1462,6 +2020,8 @@ export namespace MyNS {
 
 	/**  Information about a test case created using a framework such as NUnit or Cucumber. A test case might be a unit test or a configuration test.  */
 	export interface TestCase {
+
+		/** Min length: 1 */
 		reportArn?: string | null;
 		testRawDataPath?: string | null;
 		prefix?: string | null;
@@ -1474,6 +2034,8 @@ export namespace MyNS {
 
 	/**  Information about a test case created using a framework such as NUnit or Cucumber. A test case might be a unit test or a configuration test.  */
 	export interface TestCaseFormProperties {
+
+		/** Min length: 1 */
 		reportArn: FormControl<string | null | undefined>,
 		testRawDataPath: FormControl<string | null | undefined>,
 		prefix: FormControl<string | null | undefined>,
@@ -1485,7 +2047,7 @@ export namespace MyNS {
 	}
 	export function CreateTestCaseFormGroup() {
 		return new FormGroup<TestCaseFormProperties>({
-			reportArn: new FormControl<string | null | undefined>(undefined),
+			reportArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			testRawDataPath: new FormControl<string | null | undefined>(undefined),
 			prefix: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
@@ -1498,23 +2060,37 @@ export namespace MyNS {
 	}
 
 	export interface DescribeTestCasesInput {
+
+		/** Required */
 		reportArn: string;
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
 
 		/** A filter used to return specific types of test cases. */
 		filter?: TestCaseFilter;
 	}
 	export interface DescribeTestCasesInputFormProperties {
+
+		/** Required */
 		reportArn: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeTestCasesInputFormGroup() {
 		return new FormGroup<DescribeTestCasesInputFormProperties>({
-			reportArn: new FormControl<string | null | undefined>(undefined),
+			reportArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -1537,64 +2113,104 @@ export namespace MyNS {
 	}
 
 	export interface GetResourcePolicyOutput {
+
+		/** Min length: 1 */
 		policy?: string | null;
 	}
 	export interface GetResourcePolicyOutputFormProperties {
+
+		/** Min length: 1 */
 		policy: FormControl<string | null | undefined>,
 	}
 	export function CreateGetResourcePolicyOutputFormGroup() {
 		return new FormGroup<GetResourcePolicyOutputFormProperties>({
-			policy: new FormControl<string | null | undefined>(undefined),
+			policy: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface GetResourcePolicyInput {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		resourceArn: string;
 	}
 	export interface GetResourcePolicyInputFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetResourcePolicyInputFormGroup() {
 		return new FormGroup<GetResourcePolicyInputFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ImportSourceCredentialsOutput {
+
+		/** Min length: 1 */
 		arn?: string | null;
 	}
 	export interface ImportSourceCredentialsOutputFormProperties {
+
+		/** Min length: 1 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateImportSourceCredentialsOutputFormGroup() {
 		return new FormGroup<ImportSourceCredentialsOutputFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ImportSourceCredentialsInput {
+
+		/** Min length: 1 */
 		username?: string | null;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		token: string;
+
+		/** Required */
 		serverType: ImportSourceCredentialsInputServerType;
+
+		/** Required */
 		authType: ImportSourceCredentialsInputAuthType;
 		shouldOverwrite?: boolean | null;
 	}
 	export interface ImportSourceCredentialsInputFormProperties {
+
+		/** Min length: 1 */
 		username: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		token: FormControl<string | null | undefined>,
+
+		/** Required */
 		serverType: FormControl<ImportSourceCredentialsInputServerType | null | undefined>,
+
+		/** Required */
 		authType: FormControl<ImportSourceCredentialsInputAuthType | null | undefined>,
 		shouldOverwrite: FormControl<boolean | null | undefined>,
 	}
 	export function CreateImportSourceCredentialsInputFormGroup() {
 		return new FormGroup<ImportSourceCredentialsInputFormProperties>({
-			username: new FormControl<string | null | undefined>(undefined),
-			token: new FormControl<string | null | undefined>(undefined),
-			serverType: new FormControl<ImportSourceCredentialsInputServerType | null | undefined>(undefined),
-			authType: new FormControl<ImportSourceCredentialsInputAuthType | null | undefined>(undefined),
+			username: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			token: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			serverType: new FormControl<ImportSourceCredentialsInputServerType | null | undefined>(undefined, [Validators.required]),
+			authType: new FormControl<ImportSourceCredentialsInputAuthType | null | undefined>(undefined, [Validators.required]),
 			shouldOverwrite: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1615,19 +2231,34 @@ export namespace MyNS {
 	}
 
 	export interface InvalidateProjectCacheInput {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		projectName: string;
 	}
 	export interface InvalidateProjectCacheInputFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		projectName: FormControl<string | null | undefined>,
 	}
 	export function CreateInvalidateProjectCacheInputFormGroup() {
 		return new FormGroup<InvalidateProjectCacheInputFormProperties>({
-			projectName: new FormControl<string | null | undefined>(undefined),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface ListBuildsOutput {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		ids?: Array<string>;
 		nextToken?: string | null;
 	}
@@ -1660,6 +2291,11 @@ export namespace MyNS {
 	export enum ListBuildsInputSortOrder { ASCENDING = 0, DESCENDING = 1 }
 
 	export interface ListBuildsForProjectOutput {
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		ids?: Array<string>;
 		nextToken?: string | null;
 	}
@@ -1674,18 +2310,28 @@ export namespace MyNS {
 	}
 
 	export interface ListBuildsForProjectInput {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		projectName: string;
 		sortOrder?: ListBuildsInputSortOrder | null;
 		nextToken?: string | null;
 	}
 	export interface ListBuildsForProjectInputFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		projectName: FormControl<string | null | undefined>,
 		sortOrder: FormControl<ListBuildsInputSortOrder | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListBuildsForProjectInputFormGroup() {
 		return new FormGroup<ListBuildsForProjectInputFormProperties>({
-			projectName: new FormControl<string | null | undefined>(undefined),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 			sortOrder: new FormControl<ListBuildsInputSortOrder | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1776,6 +2422,11 @@ export namespace MyNS {
 
 	export interface ListProjectsOutput {
 		nextToken?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		projects?: Array<string>;
 	}
 	export interface ListProjectsOutputFormProperties {
@@ -1791,18 +2442,22 @@ export namespace MyNS {
 	export interface ListProjectsInput {
 		sortBy?: ListProjectsInputSortBy | null;
 		sortOrder?: ListBuildsInputSortOrder | null;
+
+		/** Min length: 1 */
 		nextToken?: string | null;
 	}
 	export interface ListProjectsInputFormProperties {
 		sortBy: FormControl<ListProjectsInputSortBy | null | undefined>,
 		sortOrder: FormControl<ListBuildsInputSortOrder | null | undefined>,
+
+		/** Min length: 1 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListProjectsInputFormGroup() {
 		return new FormGroup<ListProjectsInputFormProperties>({
 			sortBy: new FormControl<ListProjectsInputSortBy | null | undefined>(undefined),
 			sortOrder: new FormControl<ListBuildsInputSortOrder | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1811,6 +2466,11 @@ export namespace MyNS {
 
 	export interface ListReportGroupsOutput {
 		nextToken?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		reportGroups?: Array<string>;
 	}
 	export interface ListReportGroupsOutputFormProperties {
@@ -1827,12 +2487,22 @@ export namespace MyNS {
 		sortOrder?: ListBuildsInputSortOrder | null;
 		sortBy?: ListProjectsInputSortBy | null;
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListReportGroupsInputFormProperties {
 		sortOrder: FormControl<ListBuildsInputSortOrder | null | undefined>,
 		sortBy: FormControl<ListProjectsInputSortBy | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListReportGroupsInputFormGroup() {
@@ -1840,13 +2510,18 @@ export namespace MyNS {
 			sortOrder: new FormControl<ListBuildsInputSortOrder | null | undefined>(undefined),
 			sortBy: new FormControl<ListProjectsInputSortBy | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListReportsOutput {
 		nextToken?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		reports?: Array<string>;
 	}
 	export interface ListReportsOutputFormProperties {
@@ -1862,6 +2537,11 @@ export namespace MyNS {
 	export interface ListReportsInput {
 		sortOrder?: ListBuildsInputSortOrder | null;
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
 
 		/** A filter used to return reports with the status specified by the input <code>status</code> parameter. */
@@ -1870,13 +2550,18 @@ export namespace MyNS {
 	export interface ListReportsInputFormProperties {
 		sortOrder: FormControl<ListBuildsInputSortOrder | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListReportsInputFormGroup() {
 		return new FormGroup<ListReportsInputFormProperties>({
 			sortOrder: new FormControl<ListBuildsInputSortOrder | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -1900,6 +2585,11 @@ export namespace MyNS {
 
 	export interface ListReportsForReportGroupOutput {
 		nextToken?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		reports?: Array<string>;
 	}
 	export interface ListReportsForReportGroupOutputFormProperties {
@@ -1913,32 +2603,51 @@ export namespace MyNS {
 	}
 
 	export interface ListReportsForReportGroupInput {
+
+		/** Required */
 		reportGroupArn: string;
 		nextToken?: string | null;
 		sortOrder?: ListBuildsInputSortOrder | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
 
 		/** A filter used to return reports with the status specified by the input <code>status</code> parameter. */
 		filter?: ReportFilter;
 	}
 	export interface ListReportsForReportGroupInputFormProperties {
+
+		/** Required */
 		reportGroupArn: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
 		sortOrder: FormControl<ListBuildsInputSortOrder | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListReportsForReportGroupInputFormGroup() {
 		return new FormGroup<ListReportsForReportGroupInputFormProperties>({
-			reportGroupArn: new FormControl<string | null | undefined>(undefined),
+			reportGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 			sortOrder: new FormControl<ListBuildsInputSortOrder | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
 
 	export interface ListSharedProjectsOutput {
 		nextToken?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		projects?: Array<string>;
 	}
 	export interface ListSharedProjectsOutputFormProperties {
@@ -1954,21 +2663,35 @@ export namespace MyNS {
 	export interface ListSharedProjectsInput {
 		sortBy?: ListSharedProjectsInputSortBy | null;
 		sortOrder?: ListBuildsInputSortOrder | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
+
+		/** Min length: 1 */
 		nextToken?: string | null;
 	}
 	export interface ListSharedProjectsInputFormProperties {
 		sortBy: FormControl<ListSharedProjectsInputSortBy | null | undefined>,
 		sortOrder: FormControl<ListBuildsInputSortOrder | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
+
+		/** Min length: 1 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListSharedProjectsInputFormGroup() {
 		return new FormGroup<ListSharedProjectsInputFormProperties>({
 			sortBy: new FormControl<ListSharedProjectsInputSortBy | null | undefined>(undefined),
 			sortOrder: new FormControl<ListBuildsInputSortOrder | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1977,6 +2700,11 @@ export namespace MyNS {
 
 	export interface ListSharedReportGroupsOutput {
 		nextToken?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		reportGroups?: Array<string>;
 	}
 	export interface ListSharedReportGroupsOutputFormProperties {
@@ -1993,12 +2721,22 @@ export namespace MyNS {
 		sortOrder?: ListBuildsInputSortOrder | null;
 		sortBy?: ListSharedProjectsInputSortBy | null;
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListSharedReportGroupsInputFormProperties {
 		sortOrder: FormControl<ListBuildsInputSortOrder | null | undefined>,
 		sortBy: FormControl<ListSharedProjectsInputSortBy | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListSharedReportGroupsInputFormGroup() {
@@ -2006,7 +2744,7 @@ export namespace MyNS {
 			sortOrder: new FormControl<ListBuildsInputSortOrder | null | undefined>(undefined),
 			sortBy: new FormControl<ListSharedProjectsInputSortBy | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
 	}
@@ -2025,6 +2763,8 @@ export namespace MyNS {
 
 	/**  Information about the credentials for a GitHub, GitHub Enterprise, or Bitbucket repository.  */
 	export interface SourceCredentialsInfo {
+
+		/** Min length: 1 */
 		arn?: string | null;
 		serverType?: ImportSourceCredentialsInputServerType | null;
 		authType?: ImportSourceCredentialsInputAuthType | null;
@@ -2032,13 +2772,15 @@ export namespace MyNS {
 
 	/**  Information about the credentials for a GitHub, GitHub Enterprise, or Bitbucket repository.  */
 	export interface SourceCredentialsInfoFormProperties {
+
+		/** Min length: 1 */
 		arn: FormControl<string | null | undefined>,
 		serverType: FormControl<ImportSourceCredentialsInputServerType | null | undefined>,
 		authType: FormControl<ImportSourceCredentialsInputAuthType | null | undefined>,
 	}
 	export function CreateSourceCredentialsInfoFormGroup() {
 		return new FormGroup<SourceCredentialsInfoFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			serverType: new FormControl<ImportSourceCredentialsInputServerType | null | undefined>(undefined),
 			authType: new FormControl<ImportSourceCredentialsInputAuthType | null | undefined>(undefined),
 		});
@@ -2056,30 +2798,54 @@ export namespace MyNS {
 	}
 
 	export interface PutResourcePolicyOutput {
+
+		/** Min length: 1 */
 		resourceArn?: string | null;
 	}
 	export interface PutResourcePolicyOutputFormProperties {
+
+		/** Min length: 1 */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreatePutResourcePolicyOutputFormGroup() {
 		return new FormGroup<PutResourcePolicyOutputFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface PutResourcePolicyInput {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		policy: string;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		resourceArn: string;
 	}
 	export interface PutResourcePolicyInputFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		policy: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreatePutResourcePolicyInputFormGroup() {
 		return new FormGroup<PutResourcePolicyInputFormProperties>({
-			policy: new FormControl<string | null | undefined>(undefined),
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -2098,13 +2864,33 @@ export namespace MyNS {
 	}
 
 	export interface StartBuildInput {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		projectName: string;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 12
+		 */
 		secondarySourcesOverride?: Array<ProjectSource>;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 12
+		 */
 		secondarySourcesVersionOverride?: Array<ProjectSourceVersion>;
 		sourceVersion?: string | null;
 
 		/** Information about the build output artifacts for the build project. */
 		artifactsOverride?: ProjectArtifacts;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 12
+		 */
 		secondaryArtifactsOverride?: Array<ProjectArtifacts>;
 		environmentVariablesOverride?: Array<EnvironmentVariable>;
 		sourceTypeOverride?: ProjectSourceType | null;
@@ -2112,6 +2898,8 @@ export namespace MyNS {
 
 		/** <p>Information about the authorization settings for AWS CodeBuild to access the source code to be built.</p> <p>This information is for the AWS CodeBuild console's use only. Your code should not get or set this information directly.</p> */
 		sourceAuthOverride?: SourceAuth;
+
+		/** Minimum: 0 */
 		gitCloneDepthOverride?: number | null;
 
 		/** Information about the Git submodules configuration for an AWS CodeBuild build project. */
@@ -2120,16 +2908,32 @@ export namespace MyNS {
 		insecureSslOverride?: boolean | null;
 		reportBuildStatusOverride?: boolean | null;
 		environmentTypeOverride?: ProjectEnvironmentType | null;
+
+		/** Min length: 1 */
 		imageOverride?: string | null;
 		computeTypeOverride?: ProjectEnvironmentComputeType | null;
 		certificateOverride?: string | null;
 
 		/** Information about the cache for the build project. */
 		cacheOverride?: ProjectCache;
+
+		/** Min length: 1 */
 		serviceRoleOverride?: string | null;
 		privilegedModeOverride?: boolean | null;
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 480
+		 */
 		timeoutInMinutesOverride?: number | null;
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 480
+		 */
 		queuedTimeoutInMinutesOverride?: number | null;
+
+		/** Min length: 1 */
 		encryptionKeyOverride?: string | null;
 
 		/** Information about logs for a build project. These can be logs in Amazon CloudWatch Logs, built in a specified S3 bucket, or both. */
@@ -2140,44 +2944,67 @@ export namespace MyNS {
 		imagePullCredentialsTypeOverride?: ProjectEnvironmentImagePullCredentialsType | null;
 	}
 	export interface StartBuildInputFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		projectName: FormControl<string | null | undefined>,
 		sourceVersion: FormControl<string | null | undefined>,
 		sourceTypeOverride: FormControl<ProjectSourceType | null | undefined>,
 		sourceLocationOverride: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		gitCloneDepthOverride: FormControl<number | null | undefined>,
 		buildspecOverride: FormControl<string | null | undefined>,
 		insecureSslOverride: FormControl<boolean | null | undefined>,
 		reportBuildStatusOverride: FormControl<boolean | null | undefined>,
 		environmentTypeOverride: FormControl<ProjectEnvironmentType | null | undefined>,
+
+		/** Min length: 1 */
 		imageOverride: FormControl<string | null | undefined>,
 		computeTypeOverride: FormControl<ProjectEnvironmentComputeType | null | undefined>,
 		certificateOverride: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		serviceRoleOverride: FormControl<string | null | undefined>,
 		privilegedModeOverride: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 480
+		 */
 		timeoutInMinutesOverride: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 480
+		 */
 		queuedTimeoutInMinutesOverride: FormControl<number | null | undefined>,
+
+		/** Min length: 1 */
 		encryptionKeyOverride: FormControl<string | null | undefined>,
 		imagePullCredentialsTypeOverride: FormControl<ProjectEnvironmentImagePullCredentialsType | null | undefined>,
 	}
 	export function CreateStartBuildInputFormGroup() {
 		return new FormGroup<StartBuildInputFormProperties>({
-			projectName: new FormControl<string | null | undefined>(undefined),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 			sourceVersion: new FormControl<string | null | undefined>(undefined),
 			sourceTypeOverride: new FormControl<ProjectSourceType | null | undefined>(undefined),
 			sourceLocationOverride: new FormControl<string | null | undefined>(undefined),
-			gitCloneDepthOverride: new FormControl<number | null | undefined>(undefined),
+			gitCloneDepthOverride: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			buildspecOverride: new FormControl<string | null | undefined>(undefined),
 			insecureSslOverride: new FormControl<boolean | null | undefined>(undefined),
 			reportBuildStatusOverride: new FormControl<boolean | null | undefined>(undefined),
 			environmentTypeOverride: new FormControl<ProjectEnvironmentType | null | undefined>(undefined),
-			imageOverride: new FormControl<string | null | undefined>(undefined),
+			imageOverride: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			computeTypeOverride: new FormControl<ProjectEnvironmentComputeType | null | undefined>(undefined),
 			certificateOverride: new FormControl<string | null | undefined>(undefined),
-			serviceRoleOverride: new FormControl<string | null | undefined>(undefined),
+			serviceRoleOverride: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			privilegedModeOverride: new FormControl<boolean | null | undefined>(undefined),
-			timeoutInMinutesOverride: new FormControl<number | null | undefined>(undefined),
-			queuedTimeoutInMinutesOverride: new FormControl<number | null | undefined>(undefined),
-			encryptionKeyOverride: new FormControl<string | null | undefined>(undefined),
+			timeoutInMinutesOverride: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(480)]),
+			queuedTimeoutInMinutesOverride: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(480)]),
+			encryptionKeyOverride: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			imagePullCredentialsTypeOverride: new FormControl<ProjectEnvironmentImagePullCredentialsType | null | undefined>(undefined),
 		});
 
@@ -2197,14 +3024,24 @@ export namespace MyNS {
 	}
 
 	export interface StopBuildInput {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		id: string;
 	}
 	export interface StopBuildInputFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreateStopBuildInputFormGroup() {
 		return new FormGroup<StopBuildInputFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -2223,17 +3060,42 @@ export namespace MyNS {
 	}
 
 	export interface UpdateProjectInput {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		name: string;
+
+		/**
+		 * Max length: 255
+		 * Min length: 0
+		 */
 		description?: string | null;
 
 		/** Information about the build input source code for the build project. */
 		source?: ProjectSource;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 12
+		 */
 		secondarySources?: Array<ProjectSource>;
 		sourceVersion?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 12
+		 */
 		secondarySourceVersions?: Array<ProjectSourceVersion>;
 
 		/** Information about the build output artifacts for the build project. */
 		artifacts?: ProjectArtifacts;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 12
+		 */
 		secondaryArtifacts?: Array<ProjectArtifacts>;
 
 		/** Information about the cache for the build project. */
@@ -2241,10 +3103,29 @@ export namespace MyNS {
 
 		/** Information about the build environment of the build project. */
 		environment?: ProjectEnvironment;
+
+		/** Min length: 1 */
 		serviceRole?: string | null;
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 480
+		 */
 		timeoutInMinutes?: number | null;
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 480
+		 */
 		queuedTimeoutInMinutes?: number | null;
+
+		/** Min length: 1 */
 		encryptionKey?: string | null;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<Tag>;
 
 		/** Information about the VPC configuration that AWS CodeBuild accesses. */
@@ -2256,24 +3137,48 @@ export namespace MyNS {
 		fileSystemLocations?: Array<ProjectFileSystemLocation>;
 	}
 	export interface UpdateProjectInputFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		sourceVersion: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		serviceRole: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 480
+		 */
 		timeoutInMinutes: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 5
+		 * Maximum: 480
+		 */
 		queuedTimeoutInMinutes: FormControl<number | null | undefined>,
+
+		/** Min length: 1 */
 		encryptionKey: FormControl<string | null | undefined>,
 		badgeEnabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpdateProjectInputFormGroup() {
 		return new FormGroup<UpdateProjectInputFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
 			sourceVersion: new FormControl<string | null | undefined>(undefined),
-			serviceRole: new FormControl<string | null | undefined>(undefined),
-			timeoutInMinutes: new FormControl<number | null | undefined>(undefined),
-			queuedTimeoutInMinutes: new FormControl<number | null | undefined>(undefined),
-			encryptionKey: new FormControl<string | null | undefined>(undefined),
+			serviceRole: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			timeoutInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(480)]),
+			queuedTimeoutInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(480)]),
+			encryptionKey: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			badgeEnabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2293,18 +3198,33 @@ export namespace MyNS {
 	}
 
 	export interface UpdateReportGroupInput {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		arn: string;
 
 		/** Information about the location where the run of a report is exported. */
 		exportConfig?: ReportExportConfig;
+
+		/**
+		 * Minimum items: 0
+		 * Maximum items: 50
+		 */
 		tags?: Array<Tag>;
 	}
 	export interface UpdateReportGroupInputFormProperties {
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateReportGroupInputFormGroup() {
 		return new FormGroup<UpdateReportGroupInputFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -2323,19 +3243,33 @@ export namespace MyNS {
 	}
 
 	export interface UpdateWebhookInput {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 2
+		 * Pattern: [A-Za-z0-9][A-Za-z0-9\-_]{1,254}
+		 */
 		projectName: string;
 		branchFilter?: string | null;
 		rotateSecret?: boolean | null;
 		filterGroups?: Array<Array<WebhookFilter>>;
 	}
 	export interface UpdateWebhookInputFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 2
+		 * Pattern: [A-Za-z0-9][A-Za-z0-9\-_]{1,254}
+		 */
 		projectName: FormControl<string | null | undefined>,
 		branchFilter: FormControl<string | null | undefined>,
 		rotateSecret: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpdateWebhookInputFormGroup() {
 		return new FormGroup<UpdateWebhookInputFormProperties>({
-			projectName: new FormControl<string | null | undefined>(undefined),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(2)]),
 			branchFilter: new FormControl<string | null | undefined>(undefined),
 			rotateSecret: new FormControl<boolean | null | undefined>(undefined),
 		});

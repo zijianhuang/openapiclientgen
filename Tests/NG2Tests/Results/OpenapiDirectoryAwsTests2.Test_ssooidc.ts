@@ -205,9 +205,17 @@ export namespace MyNS {
 	}
 
 	export interface CreateTokenRequest {
+
+		/** Required */
 		clientId: string;
+
+		/** Required */
 		clientSecret: string;
+
+		/** Required */
 		grantType: string;
+
+		/** Required */
 		deviceCode: string;
 		code?: string | null;
 		refreshToken?: string | null;
@@ -215,9 +223,17 @@ export namespace MyNS {
 		redirectUri?: string | null;
 	}
 	export interface CreateTokenRequestFormProperties {
+
+		/** Required */
 		clientId: FormControl<string | null | undefined>,
+
+		/** Required */
 		clientSecret: FormControl<string | null | undefined>,
+
+		/** Required */
 		grantType: FormControl<string | null | undefined>,
+
+		/** Required */
 		deviceCode: FormControl<string | null | undefined>,
 		code: FormControl<string | null | undefined>,
 		refreshToken: FormControl<string | null | undefined>,
@@ -225,10 +241,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateTokenRequestFormGroup() {
 		return new FormGroup<CreateTokenRequestFormProperties>({
-			clientId: new FormControl<string | null | undefined>(undefined),
-			clientSecret: new FormControl<string | null | undefined>(undefined),
-			grantType: new FormControl<string | null | undefined>(undefined),
-			deviceCode: new FormControl<string | null | undefined>(undefined),
+			clientId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			clientSecret: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			grantType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			deviceCode: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			code: new FormControl<string | null | undefined>(undefined),
 			refreshToken: new FormControl<string | null | undefined>(undefined),
 			redirectUri: new FormControl<string | null | undefined>(undefined),
@@ -237,37 +253,57 @@ export namespace MyNS {
 	}
 
 	export interface RegisterClientRequest {
+
+		/** Required */
 		clientName: string;
+
+		/** Required */
 		clientType: string;
 		scopes?: Array<string>;
 	}
 	export interface RegisterClientRequestFormProperties {
+
+		/** Required */
 		clientName: FormControl<string | null | undefined>,
+
+		/** Required */
 		clientType: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterClientRequestFormGroup() {
 		return new FormGroup<RegisterClientRequestFormProperties>({
-			clientName: new FormControl<string | null | undefined>(undefined),
-			clientType: new FormControl<string | null | undefined>(undefined),
+			clientName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			clientType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface StartDeviceAuthorizationRequest {
+
+		/** Required */
 		clientId: string;
+
+		/** Required */
 		clientSecret: string;
+
+		/** Required */
 		startUrl: string;
 	}
 	export interface StartDeviceAuthorizationRequestFormProperties {
+
+		/** Required */
 		clientId: FormControl<string | null | undefined>,
+
+		/** Required */
 		clientSecret: FormControl<string | null | undefined>,
+
+		/** Required */
 		startUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateStartDeviceAuthorizationRequestFormGroup() {
 		return new FormGroup<StartDeviceAuthorizationRequestFormProperties>({
-			clientId: new FormControl<string | null | undefined>(undefined),
-			clientSecret: new FormControl<string | null | undefined>(undefined),
-			startUrl: new FormControl<string | null | undefined>(undefined),
+			clientId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			clientSecret: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			startUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -380,10 +416,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateTokenPostBodyFormGroup() {
 		return new FormGroup<CreateTokenPostBodyFormProperties>({
-			clientId: new FormControl<string | null | undefined>(undefined),
-			clientSecret: new FormControl<string | null | undefined>(undefined),
-			grantType: new FormControl<string | null | undefined>(undefined),
-			deviceCode: new FormControl<string | null | undefined>(undefined),
+			clientId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			clientSecret: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			grantType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			deviceCode: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			code: new FormControl<string | null | undefined>(undefined),
 			refreshToken: new FormControl<string | null | undefined>(undefined),
 			redirectUri: new FormControl<string | null | undefined>(undefined),
@@ -424,8 +460,8 @@ export namespace MyNS {
 	}
 	export function CreateRegisterClientPostBodyFormGroup() {
 		return new FormGroup<RegisterClientPostBodyFormProperties>({
-			clientName: new FormControl<string | null | undefined>(undefined),
-			clientType: new FormControl<string | null | undefined>(undefined),
+			clientName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			clientType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -472,9 +508,9 @@ export namespace MyNS {
 	}
 	export function CreateStartDeviceAuthorizationPostBodyFormGroup() {
 		return new FormGroup<StartDeviceAuthorizationPostBodyFormProperties>({
-			clientId: new FormControl<string | null | undefined>(undefined),
-			clientSecret: new FormControl<string | null | undefined>(undefined),
-			startUrl: new FormControl<string | null | undefined>(undefined),
+			clientId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			clientSecret: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			startUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

@@ -4,17 +4,41 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AssociateKmsKeyRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 */
 		kmsKeyId: string;
 	}
 	export interface AssociateKmsKeyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 */
 		kmsKeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateKmsKeyRequestFormGroup() {
 		return new FormGroup<AssociateKmsKeyRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined),
-			kmsKeyId: new FormControl<string | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			kmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
 	}
@@ -60,14 +84,26 @@ export namespace MyNS {
 	}
 
 	export interface CancelExportTaskRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		taskId: string;
 	}
 	export interface CancelExportTaskRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		taskId: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelExportTaskRequestFormGroup() {
 		return new FormGroup<CancelExportTaskRequestFormProperties>({
-			taskId: new FormControl<string | null | undefined>(undefined),
+			taskId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
@@ -83,44 +119,122 @@ export namespace MyNS {
 	}
 
 	export interface CreateExportTaskResponse {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		taskId?: string | null;
 	}
 	export interface CreateExportTaskResponseFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		taskId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateExportTaskResponseFormGroup() {
 		return new FormGroup<CreateExportTaskResponseFormProperties>({
-			taskId: new FormControl<string | null | undefined>(undefined),
+			taskId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface CreateExportTaskRequest {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		taskName?: string | null;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: string;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		logStreamNamePrefix?: string | null;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		from: number;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		to: number;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		destination: string;
 		destinationPrefix?: string | null;
 	}
 	export interface CreateExportTaskRequestFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		taskName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		logStreamNamePrefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		from: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		to: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		destination: FormControl<string | null | undefined>,
 		destinationPrefix: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateExportTaskRequestFormGroup() {
 		return new FormGroup<CreateExportTaskRequestFormProperties>({
-			taskName: new FormControl<string | null | undefined>(undefined),
-			logGroupName: new FormControl<string | null | undefined>(undefined),
-			logStreamNamePrefix: new FormControl<string | null | undefined>(undefined),
-			from: new FormControl<number | null | undefined>(undefined),
-			to: new FormControl<number | null | undefined>(undefined),
-			destination: new FormControl<string | null | undefined>(undefined),
+			taskName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			logStreamNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			from: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			to: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			destination: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
 			destinationPrefix: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -147,18 +261,36 @@ export namespace MyNS {
 	}
 
 	export interface CreateLogGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: string;
+
+		/** Max length: 256 */
 		kmsKeyId?: string | null;
 		tags?: Tags;
 	}
 	export interface CreateLogGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
+
+		/** Max length: 256 */
 		kmsKeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateLogGroupRequestFormGroup() {
 		return new FormGroup<CreateLogGroupRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined),
-			kmsKeyId: new FormControl<string | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			kmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -174,75 +306,187 @@ export namespace MyNS {
 	}
 
 	export interface CreateLogStreamRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: string;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		logStreamName: string;
 	}
 	export interface CreateLogStreamRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		logStreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateLogStreamRequestFormGroup() {
 		return new FormGroup<CreateLogStreamRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined),
-			logStreamName: new FormControl<string | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			logStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteDestinationRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		destinationName: string;
 	}
 	export interface DeleteDestinationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		destinationName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDestinationRequestFormGroup() {
 		return new FormGroup<DeleteDestinationRequestFormProperties>({
-			destinationName: new FormControl<string | null | undefined>(undefined),
+			destinationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteLogGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: string;
 	}
 	export interface DeleteLogGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteLogGroupRequestFormGroup() {
 		return new FormGroup<DeleteLogGroupRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteLogStreamRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: string;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		logStreamName: string;
 	}
 	export interface DeleteLogStreamRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		logStreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteLogStreamRequestFormGroup() {
 		return new FormGroup<DeleteLogStreamRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined),
-			logStreamName: new FormControl<string | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			logStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteMetricFilterRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: string;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		filterName: string;
 	}
 	export interface DeleteMetricFilterRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		filterName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteMetricFilterRequestFormGroup() {
 		return new FormGroup<DeleteMetricFilterRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined),
-			filterName: new FormControl<string | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			filterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
@@ -261,14 +505,26 @@ export namespace MyNS {
 	}
 
 	export interface DeleteQueryDefinitionRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		queryDefinitionId: string;
 	}
 	export interface DeleteQueryDefinitionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		queryDefinitionId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteQueryDefinitionRequestFormGroup() {
 		return new FormGroup<DeleteQueryDefinitionRequestFormProperties>({
-			queryDefinitionId: new FormControl<string | null | undefined>(undefined),
+			queryDefinitionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -287,30 +543,72 @@ export namespace MyNS {
 	}
 
 	export interface DeleteRetentionPolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: string;
 	}
 	export interface DeleteRetentionPolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRetentionPolicyRequestFormGroup() {
 		return new FormGroup<DeleteRetentionPolicyRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface DeleteSubscriptionFilterRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: string;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		filterName: string;
 	}
 	export interface DeleteSubscriptionFilterRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		filterName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSubscriptionFilterRequestFormGroup() {
 		return new FormGroup<DeleteSubscriptionFilterRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined),
-			filterName: new FormControl<string | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			filterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
@@ -334,7 +632,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeDestinationsResponseFormGroup() {
 		return new FormGroup<DescribeDestinationsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -342,36 +640,70 @@ export namespace MyNS {
 
 	/** Represents a cross-account destination that receives subscription log events. */
 	export interface Destination {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		destinationName?: string | null;
+
+		/** Min length: 1 */
 		targetArn?: string | null;
+
+		/** Min length: 1 */
 		roleArn?: string | null;
+
+		/** Min length: 1 */
 		accessPolicy?: string | null;
 		arn?: string | null;
+
+		/** Minimum: 0 */
 		creationTime?: number | null;
 	}
 
 	/** Represents a cross-account destination that receives subscription log events. */
 	export interface DestinationFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		destinationName: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		targetArn: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		roleArn: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		accessPolicy: FormControl<string | null | undefined>,
 		arn: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		creationTime: FormControl<number | null | undefined>,
 	}
 	export function CreateDestinationFormGroup() {
 		return new FormGroup<DestinationFormProperties>({
-			destinationName: new FormControl<string | null | undefined>(undefined),
-			targetArn: new FormControl<string | null | undefined>(undefined),
-			roleArn: new FormControl<string | null | undefined>(undefined),
-			accessPolicy: new FormControl<string | null | undefined>(undefined),
+			destinationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			targetArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			accessPolicy: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			arn: new FormControl<string | null | undefined>(undefined),
-			creationTime: new FormControl<number | null | undefined>(undefined),
+			creationTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
 
 	export interface DescribeDestinationsRequest {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		DestinationNamePrefix?: string | null;
 
 		/**
@@ -379,9 +711,20 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		limit?: number | null;
 	}
 	export interface DescribeDestinationsRequestFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		DestinationNamePrefix: FormControl<string | null | undefined>,
 
 		/**
@@ -389,13 +732,18 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		limit: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeDestinationsRequestFormGroup() {
 		return new FormGroup<DescribeDestinationsRequestFormProperties>({
-			DestinationNamePrefix: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			limit: new FormControl<number | null | undefined>(undefined),
+			DestinationNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 		});
 
 	}
@@ -419,7 +767,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeExportTasksResponseFormGroup() {
 		return new FormGroup<DescribeExportTasksResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -427,11 +775,36 @@ export namespace MyNS {
 
 	/** Represents an export task. */
 	export interface ExportTask {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		taskId?: string | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		taskName?: string | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName?: string | null;
+
+		/** Minimum: 0 */
 		from?: number | null;
+
+		/** Minimum: 0 */
 		to?: number | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		destination?: string | null;
 		destinationPrefix?: string | null;
 
@@ -444,22 +817,47 @@ export namespace MyNS {
 
 	/** Represents an export task. */
 	export interface ExportTaskFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		taskId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		taskName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		from: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		to: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		destination: FormControl<string | null | undefined>,
 		destinationPrefix: FormControl<string | null | undefined>,
 	}
 	export function CreateExportTaskFormGroup() {
 		return new FormGroup<ExportTaskFormProperties>({
-			taskId: new FormControl<string | null | undefined>(undefined),
-			taskName: new FormControl<string | null | undefined>(undefined),
-			logGroupName: new FormControl<string | null | undefined>(undefined),
-			from: new FormControl<number | null | undefined>(undefined),
-			to: new FormControl<number | null | undefined>(undefined),
-			destination: new FormControl<string | null | undefined>(undefined),
+			taskId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			taskName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			from: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			to: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			destination: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 			destinationPrefix: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -490,24 +888,37 @@ export namespace MyNS {
 
 	/** Represents the status of an export task. */
 	export interface ExportTaskExecutionInfo {
+
+		/** Minimum: 0 */
 		creationTime?: number | null;
+
+		/** Minimum: 0 */
 		completionTime?: number | null;
 	}
 
 	/** Represents the status of an export task. */
 	export interface ExportTaskExecutionInfoFormProperties {
+
+		/** Minimum: 0 */
 		creationTime: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		completionTime: FormControl<number | null | undefined>,
 	}
 	export function CreateExportTaskExecutionInfoFormGroup() {
 		return new FormGroup<ExportTaskExecutionInfoFormProperties>({
-			creationTime: new FormControl<number | null | undefined>(undefined),
-			completionTime: new FormControl<number | null | undefined>(undefined),
+			creationTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			completionTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
 
 	export interface DescribeExportTasksRequest {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		taskId?: string | null;
 		statusCode?: ExportTaskStatusCode | null;
 
@@ -516,9 +927,19 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		limit?: number | null;
 	}
 	export interface DescribeExportTasksRequestFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 */
 		taskId: FormControl<string | null | undefined>,
 		statusCode: FormControl<ExportTaskStatusCode | null | undefined>,
 
@@ -527,14 +948,19 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		limit: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeExportTasksRequestFormGroup() {
 		return new FormGroup<DescribeExportTasksRequestFormProperties>({
-			taskId: new FormControl<string | null | undefined>(undefined),
+			taskId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 			statusCode: new FormControl<ExportTaskStatusCode | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			limit: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 		});
 
 	}
@@ -558,7 +984,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeLogGroupsResponseFormGroup() {
 		return new FormGroup<DescribeLogGroupsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -566,43 +992,73 @@ export namespace MyNS {
 
 	/** Represents a log group. */
 	export interface LogGroup {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName?: string | null;
+
+		/** Minimum: 0 */
 		creationTime?: number | null;
 
 		/** The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653. */
 		retentionInDays?: number | null;
 		metricFilterCount?: number | null;
 		arn?: string | null;
+
+		/** Minimum: 0 */
 		storedBytes?: number | null;
+
+		/** Max length: 256 */
 		kmsKeyId?: string | null;
 	}
 
 	/** Represents a log group. */
 	export interface LogGroupFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		creationTime: FormControl<number | null | undefined>,
 
 		/** The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653. */
 		retentionInDays: FormControl<number | null | undefined>,
 		metricFilterCount: FormControl<number | null | undefined>,
 		arn: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		storedBytes: FormControl<number | null | undefined>,
+
+		/** Max length: 256 */
 		kmsKeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateLogGroupFormGroup() {
 		return new FormGroup<LogGroupFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined),
-			creationTime: new FormControl<number | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			creationTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			retentionInDays: new FormControl<number | null | undefined>(undefined),
 			metricFilterCount: new FormControl<number | null | undefined>(undefined),
 			arn: new FormControl<string | null | undefined>(undefined),
-			storedBytes: new FormControl<number | null | undefined>(undefined),
-			kmsKeyId: new FormControl<string | null | undefined>(undefined),
+			storedBytes: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			kmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
 
 	export interface DescribeLogGroupsRequest {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupNamePrefix?: string | null;
 
 		/**
@@ -610,9 +1066,20 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		limit?: number | null;
 	}
 	export interface DescribeLogGroupsRequestFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupNamePrefix: FormControl<string | null | undefined>,
 
 		/**
@@ -620,13 +1087,18 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		limit: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeLogGroupsRequestFormGroup() {
 		return new FormGroup<DescribeLogGroupsRequestFormProperties>({
-			logGroupNamePrefix: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			limit: new FormControl<number | null | undefined>(undefined),
+			logGroupNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 		});
 
 	}
@@ -650,7 +1122,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeLogStreamsResponseFormGroup() {
 		return new FormGroup<DescribeLogStreamsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -658,43 +1130,92 @@ export namespace MyNS {
 
 	/** Represents a log stream, which is a sequence of log events from a single emitter of logs. */
 	export interface LogStream {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		logStreamName?: string | null;
+
+		/** Minimum: 0 */
 		creationTime?: number | null;
+
+		/** Minimum: 0 */
 		firstEventTimestamp?: number | null;
+
+		/** Minimum: 0 */
 		lastEventTimestamp?: number | null;
+
+		/** Minimum: 0 */
 		lastIngestionTime?: number | null;
+
+		/** Min length: 1 */
 		uploadSequenceToken?: string | null;
 		arn?: string | null;
+
+		/** Minimum: 0 */
 		storedBytes?: number | null;
 	}
 
 	/** Represents a log stream, which is a sequence of log events from a single emitter of logs. */
 	export interface LogStreamFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		logStreamName: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		creationTime: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		firstEventTimestamp: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		lastEventTimestamp: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		lastIngestionTime: FormControl<number | null | undefined>,
+
+		/** Min length: 1 */
 		uploadSequenceToken: FormControl<string | null | undefined>,
 		arn: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		storedBytes: FormControl<number | null | undefined>,
 	}
 	export function CreateLogStreamFormGroup() {
 		return new FormGroup<LogStreamFormProperties>({
-			logStreamName: new FormControl<string | null | undefined>(undefined),
-			creationTime: new FormControl<number | null | undefined>(undefined),
-			firstEventTimestamp: new FormControl<number | null | undefined>(undefined),
-			lastEventTimestamp: new FormControl<number | null | undefined>(undefined),
-			lastIngestionTime: new FormControl<number | null | undefined>(undefined),
-			uploadSequenceToken: new FormControl<string | null | undefined>(undefined),
+			logStreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			creationTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			firstEventTimestamp: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			lastEventTimestamp: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			lastIngestionTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			uploadSequenceToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			arn: new FormControl<string | null | undefined>(undefined),
-			storedBytes: new FormControl<number | null | undefined>(undefined),
+			storedBytes: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
 
 	export interface DescribeLogStreamsRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: string;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		logStreamNamePrefix?: string | null;
 		orderBy?: DescribeLogStreamsRequestOrderBy | null;
 		descending?: boolean | null;
@@ -704,10 +1225,28 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		limit?: number | null;
 	}
 	export interface DescribeLogStreamsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		logStreamNamePrefix: FormControl<string | null | undefined>,
 		orderBy: FormControl<DescribeLogStreamsRequestOrderBy | null | undefined>,
 		descending: FormControl<boolean | null | undefined>,
@@ -717,16 +1256,21 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		limit: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeLogStreamsRequestFormGroup() {
 		return new FormGroup<DescribeLogStreamsRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined),
-			logStreamNamePrefix: new FormControl<string | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			logStreamNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 			orderBy: new FormControl<DescribeLogStreamsRequestOrderBy | null | undefined>(undefined),
 			descending: new FormControl<boolean | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			limit: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 		});
 
 	}
@@ -752,7 +1296,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeMetricFiltersResponseFormGroup() {
 		return new FormGroup<DescribeMetricFiltersResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -760,6 +1304,12 @@ export namespace MyNS {
 
 	/** Metric filters express how CloudWatch Logs would extract metric observations from ingested log events and transform them into metric data in a CloudWatch metric. */
 	export interface MetricFilter {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		filterName?: string | null;
 
 		/**
@@ -768,13 +1318,32 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		filterPattern?: string | null;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 1
+		 */
 		metricTransformations?: Array<MetricTransformation>;
+
+		/** Minimum: 0 */
 		creationTime?: number | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName?: string | null;
 	}
 
 	/** Metric filters express how CloudWatch Logs would extract metric observations from ingested log events and transform them into metric data in a CloudWatch metric. */
 	export interface MetricFilterFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		filterName: FormControl<string | null | undefined>,
 
 		/**
@@ -783,15 +1352,23 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		filterPattern: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		creationTime: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateMetricFilterFormGroup() {
 		return new FormGroup<MetricFilterFormProperties>({
-			filterName: new FormControl<string | null | undefined>(undefined),
-			filterPattern: new FormControl<string | null | undefined>(undefined),
-			creationTime: new FormControl<number | null | undefined>(undefined),
-			logGroupName: new FormControl<string | null | undefined>(undefined),
+			filterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			filterPattern: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			creationTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
@@ -807,6 +1384,12 @@ export namespace MyNS {
 		 * Pattern: [^:*$]*
 		 */
 		metricName: string;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Pattern: [^:*$]*
+		 */
 		metricNamespace: string;
 
 		/**
@@ -828,6 +1411,12 @@ export namespace MyNS {
 		 * Pattern: [^:*$]*
 		 */
 		metricName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Pattern: [^:*$]*
+		 */
 		metricNamespace: FormControl<string | null | undefined>,
 
 		/**
@@ -840,16 +1429,28 @@ export namespace MyNS {
 	}
 	export function CreateMetricTransformationFormGroup() {
 		return new FormGroup<MetricTransformationFormProperties>({
-			metricName: new FormControl<string | null | undefined>(undefined),
-			metricNamespace: new FormControl<string | null | undefined>(undefined),
-			metricValue: new FormControl<string | null | undefined>(undefined),
+			metricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			metricNamespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			metricValue: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100)]),
 			defaultValue: new FormControl<number | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface DescribeMetricFiltersRequest {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName?: string | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		filterNamePrefix?: string | null;
 
 		/**
@@ -857,6 +1458,11 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		limit?: number | null;
 
 		/**
@@ -865,10 +1471,27 @@ export namespace MyNS {
 		 * Pattern: [^:*$]*
 		 */
 		metricName?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Pattern: [^:*$]*
+		 */
 		metricNamespace?: string | null;
 	}
 	export interface DescribeMetricFiltersRequestFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		filterNamePrefix: FormControl<string | null | undefined>,
 
 		/**
@@ -876,6 +1499,11 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/**
@@ -884,16 +1512,21 @@ export namespace MyNS {
 		 * Pattern: [^:*$]*
 		 */
 		metricName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Pattern: [^:*$]*
+		 */
 		metricNamespace: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeMetricFiltersRequestFormGroup() {
 		return new FormGroup<DescribeMetricFiltersRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined),
-			filterNamePrefix: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			limit: new FormControl<number | null | undefined>(undefined),
-			metricName: new FormControl<string | null | undefined>(undefined),
-			metricNamespace: new FormControl<string | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			filterNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
+			metricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			metricNamespace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -917,7 +1550,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeQueriesResponseFormGroup() {
 		return new FormGroup<DescribeQueriesResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -925,28 +1558,64 @@ export namespace MyNS {
 
 	/** Information about one CloudWatch Logs Insights query that matches the request in a <code>DescribeQueries</code> operation.  */
 	export interface QueryInfo {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		queryId?: string | null;
+
+		/**
+		 * Max length: 10000
+		 * Min length: 0
+		 */
 		queryString?: string | null;
 		status?: QueryInfoStatus | null;
+
+		/** Minimum: 0 */
 		createTime?: number | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName?: string | null;
 	}
 
 	/** Information about one CloudWatch Logs Insights query that matches the request in a <code>DescribeQueries</code> operation.  */
 	export interface QueryInfoFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		queryId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Min length: 0
+		 */
 		queryString: FormControl<string | null | undefined>,
 		status: FormControl<QueryInfoStatus | null | undefined>,
+
+		/** Minimum: 0 */
 		createTime: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateQueryInfoFormGroup() {
 		return new FormGroup<QueryInfoFormProperties>({
-			queryId: new FormControl<string | null | undefined>(undefined),
-			queryString: new FormControl<string | null | undefined>(undefined),
+			queryId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			queryString: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.minLength(0)]),
 			status: new FormControl<QueryInfoStatus | null | undefined>(undefined),
-			createTime: new FormControl<number | null | undefined>(undefined),
-			logGroupName: new FormControl<string | null | undefined>(undefined),
+			createTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
@@ -954,8 +1623,19 @@ export namespace MyNS {
 	export enum QueryInfoStatus { Scheduled = 0, Running = 1, Complete = 2, Failed = 3, Cancelled = 4 }
 
 	export interface DescribeQueriesRequest {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName?: string | null;
 		status?: QueryInfoStatus | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		maxResults?: number | null;
 
 		/**
@@ -965,8 +1645,19 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 	export interface DescribeQueriesRequestFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
 		status: FormControl<QueryInfoStatus | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		maxResults: FormControl<number | null | undefined>,
 
 		/**
@@ -977,10 +1668,10 @@ export namespace MyNS {
 	}
 	export function CreateDescribeQueriesRequestFormGroup() {
 		return new FormGroup<DescribeQueriesRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 			status: new FormControl<QueryInfoStatus | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1004,36 +1695,83 @@ export namespace MyNS {
 	}
 	export function CreateDescribeQueryDefinitionsResponseFormGroup() {
 		return new FormGroup<DescribeQueryDefinitionsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface QueryDefinition {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		queryDefinitionId?: string | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^([^:*\/]+\/?)*[^:*\/]+$
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 10000
+		 * Min length: 1
+		 */
 		queryString?: string | null;
+
+		/** Minimum: 0 */
 		lastModified?: number | null;
 		logGroupNames?: Array<string>;
 	}
 	export interface QueryDefinitionFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		queryDefinitionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^([^:*\/]+\/?)*[^:*\/]+$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 10000
+		 * Min length: 1
+		 */
 		queryString: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		lastModified: FormControl<number | null | undefined>,
 	}
 	export function CreateQueryDefinitionFormGroup() {
 		return new FormGroup<QueryDefinitionFormProperties>({
-			queryDefinitionId: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			queryString: new FormControl<string | null | undefined>(undefined),
-			lastModified: new FormControl<number | null | undefined>(undefined),
+			queryDefinitionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			queryString: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.minLength(1)]),
+			lastModified: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
 
 	export interface DescribeQueryDefinitionsRequest {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^([^:*\/]+\/?)*[^:*\/]+$
+		 */
 		queryDefinitionNamePrefix?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		maxResults?: number | null;
 
 		/**
@@ -1043,7 +1781,18 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 	export interface DescribeQueryDefinitionsRequestFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^([^:*\/]+\/?)*[^:*\/]+$
+		 */
 		queryDefinitionNamePrefix: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		maxResults: FormControl<number | null | undefined>,
 
 		/**
@@ -1054,9 +1803,9 @@ export namespace MyNS {
 	}
 	export function CreateDescribeQueryDefinitionsRequestFormGroup() {
 		return new FormGroup<DescribeQueryDefinitionsRequestFormProperties>({
-			queryDefinitionNamePrefix: new FormControl<string | null | undefined>(undefined),
-			maxResults: new FormControl<number | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			queryDefinitionNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1080,7 +1829,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeResourcePoliciesResponseFormGroup() {
 		return new FormGroup<DescribeResourcePoliciesResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1089,21 +1838,35 @@ export namespace MyNS {
 	/** A policy enabling one or more entities to put logs to a log group in this account. */
 	export interface ResourcePolicy {
 		policyName?: string | null;
+
+		/**
+		 * Max length: 5120
+		 * Min length: 1
+		 */
 		policyDocument?: string | null;
+
+		/** Minimum: 0 */
 		lastUpdatedTime?: number | null;
 	}
 
 	/** A policy enabling one or more entities to put logs to a log group in this account. */
 	export interface ResourcePolicyFormProperties {
 		policyName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 5120
+		 * Min length: 1
+		 */
 		policyDocument: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		lastUpdatedTime: FormControl<number | null | undefined>,
 	}
 	export function CreateResourcePolicyFormGroup() {
 		return new FormGroup<ResourcePolicyFormProperties>({
 			policyName: new FormControl<string | null | undefined>(undefined),
-			policyDocument: new FormControl<string | null | undefined>(undefined),
-			lastUpdatedTime: new FormControl<number | null | undefined>(undefined),
+			policyDocument: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5120), Validators.minLength(1)]),
+			lastUpdatedTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -1115,6 +1878,11 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		limit?: number | null;
 	}
 	export interface DescribeResourcePoliciesRequestFormProperties {
@@ -1124,12 +1892,17 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		limit: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeResourcePoliciesRequestFormGroup() {
 		return new FormGroup<DescribeResourcePoliciesRequestFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			limit: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 		});
 
 	}
@@ -1153,7 +1926,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeSubscriptionFiltersResponseFormGroup() {
 		return new FormGroup<DescribeSubscriptionFiltersResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1161,7 +1934,19 @@ export namespace MyNS {
 
 	/** Represents a subscription filter. */
 	export interface SubscriptionFilter {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		filterName?: string | null;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName?: string | null;
 
 		/**
@@ -1170,17 +1955,35 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		filterPattern?: string | null;
+
+		/** Min length: 1 */
 		destinationArn?: string | null;
+
+		/** Min length: 1 */
 		roleArn?: string | null;
 
 		/** The method used to distribute log data to the destination, which can be either random or grouped by log stream. */
 		distribution?: SubscriptionFilterDistribution | null;
+
+		/** Minimum: 0 */
 		creationTime?: number | null;
 	}
 
 	/** Represents a subscription filter. */
 	export interface SubscriptionFilterFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		filterName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
 
 		/**
@@ -1189,22 +1992,28 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		filterPattern: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		destinationArn: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		roleArn: FormControl<string | null | undefined>,
 
 		/** The method used to distribute log data to the destination, which can be either random or grouped by log stream. */
 		distribution: FormControl<SubscriptionFilterDistribution | null | undefined>,
+
+		/** Minimum: 0 */
 		creationTime: FormControl<number | null | undefined>,
 	}
 	export function CreateSubscriptionFilterFormGroup() {
 		return new FormGroup<SubscriptionFilterFormProperties>({
-			filterName: new FormControl<string | null | undefined>(undefined),
-			logGroupName: new FormControl<string | null | undefined>(undefined),
-			filterPattern: new FormControl<string | null | undefined>(undefined),
-			destinationArn: new FormControl<string | null | undefined>(undefined),
-			roleArn: new FormControl<string | null | undefined>(undefined),
+			filterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			filterPattern: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			destinationArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			distribution: new FormControl<SubscriptionFilterDistribution | null | undefined>(undefined),
-			creationTime: new FormControl<number | null | undefined>(undefined),
+			creationTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -1212,7 +2021,20 @@ export namespace MyNS {
 	export enum SubscriptionFilterDistribution { Random = 0, ByLogStream = 1 }
 
 	export interface DescribeSubscriptionFiltersRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: string;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		filterNamePrefix?: string | null;
 
 		/**
@@ -1220,10 +2042,28 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		limit?: number | null;
 	}
 	export interface DescribeSubscriptionFiltersRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		filterNamePrefix: FormControl<string | null | undefined>,
 
 		/**
@@ -1231,27 +2071,46 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
 		limit: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeSubscriptionFiltersRequestFormGroup() {
 		return new FormGroup<DescribeSubscriptionFiltersRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined),
-			filterNamePrefix: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			limit: new FormControl<number | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			filterNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 		});
 
 	}
 
 	export interface DisassociateKmsKeyRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: string;
 	}
 	export interface DisassociateKmsKeyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateDisassociateKmsKeyRequestFormGroup() {
 		return new FormGroup<DisassociateKmsKeyRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
@@ -1276,7 +2135,7 @@ export namespace MyNS {
 	}
 	export function CreateFilterLogEventsResponseFormGroup() {
 		return new FormGroup<FilterLogEventsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1284,27 +2143,51 @@ export namespace MyNS {
 
 	/** Represents a matched event. */
 	export interface FilteredLogEvent {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		logStreamName?: string | null;
+
+		/** Minimum: 0 */
 		timestamp?: number | null;
+
+		/** Min length: 1 */
 		message?: string | null;
+
+		/** Minimum: 0 */
 		ingestionTime?: number | null;
 		eventId?: string | null;
 	}
 
 	/** Represents a matched event. */
 	export interface FilteredLogEventFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		logStreamName: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		timestamp: FormControl<number | null | undefined>,
+
+		/** Min length: 1 */
 		message: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		ingestionTime: FormControl<number | null | undefined>,
 		eventId: FormControl<string | null | undefined>,
 	}
 	export function CreateFilteredLogEventFormGroup() {
 		return new FormGroup<FilteredLogEventFormProperties>({
-			logStreamName: new FormControl<string | null | undefined>(undefined),
-			timestamp: new FormControl<number | null | undefined>(undefined),
-			message: new FormControl<string | null | undefined>(undefined),
-			ingestionTime: new FormControl<number | null | undefined>(undefined),
+			logStreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			timestamp: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			ingestionTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			eventId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1313,28 +2196,62 @@ export namespace MyNS {
 
 	/** Represents the search status of a log stream. */
 	export interface SearchedLogStream {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		logStreamName?: string | null;
 		searchedCompletely?: boolean | null;
 	}
 
 	/** Represents the search status of a log stream. */
 	export interface SearchedLogStreamFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		logStreamName: FormControl<string | null | undefined>,
 		searchedCompletely: FormControl<boolean | null | undefined>,
 	}
 	export function CreateSearchedLogStreamFormGroup() {
 		return new FormGroup<SearchedLogStreamFormProperties>({
-			logStreamName: new FormControl<string | null | undefined>(undefined),
+			logStreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
 			searchedCompletely: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface FilterLogEventsRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: string;
+
+		/**
+		 * Minimum items: 1
+		 * Maximum items: 100
+		 */
 		logStreamNames?: Array<string>;
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		logStreamNamePrefix?: string | null;
+
+		/** Minimum: 0 */
 		startTime?: number | null;
+
+		/** Minimum: 0 */
 		endTime?: number | null;
 
 		/**
@@ -1349,13 +2266,35 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
 		limit?: number | null;
 		interleaved?: boolean | null;
 	}
 	export interface FilterLogEventsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		logStreamNamePrefix: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		startTime: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		endTime: FormControl<number | null | undefined>,
 
 		/**
@@ -1370,18 +2309,23 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
 		limit: FormControl<number | null | undefined>,
 		interleaved: FormControl<boolean | null | undefined>,
 	}
 	export function CreateFilterLogEventsRequestFormGroup() {
 		return new FormGroup<FilterLogEventsRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined),
-			logStreamNamePrefix: new FormControl<string | null | undefined>(undefined),
-			startTime: new FormControl<number | null | undefined>(undefined),
-			endTime: new FormControl<number | null | undefined>(undefined),
-			filterPattern: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			limit: new FormControl<number | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			logStreamNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			startTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			endTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			filterPattern: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
 			interleaved: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1418,8 +2362,8 @@ export namespace MyNS {
 	}
 	export function CreateGetLogEventsResponseFormGroup() {
 		return new FormGroup<GetLogEventsResponseFormProperties>({
-			nextForwardToken: new FormControl<string | null | undefined>(undefined),
-			nextBackwardToken: new FormControl<string | null | undefined>(undefined),
+			nextForwardToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			nextBackwardToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1427,30 +2371,60 @@ export namespace MyNS {
 
 	/** Represents a log event. */
 	export interface OutputLogEvent {
+
+		/** Minimum: 0 */
 		timestamp?: number | null;
+
+		/** Min length: 1 */
 		message?: string | null;
+
+		/** Minimum: 0 */
 		ingestionTime?: number | null;
 	}
 
 	/** Represents a log event. */
 	export interface OutputLogEventFormProperties {
+
+		/** Minimum: 0 */
 		timestamp: FormControl<number | null | undefined>,
+
+		/** Min length: 1 */
 		message: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		ingestionTime: FormControl<number | null | undefined>,
 	}
 	export function CreateOutputLogEventFormGroup() {
 		return new FormGroup<OutputLogEventFormProperties>({
-			timestamp: new FormControl<number | null | undefined>(undefined),
-			message: new FormControl<string | null | undefined>(undefined),
-			ingestionTime: new FormControl<number | null | undefined>(undefined),
+			timestamp: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			ingestionTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
 
 	export interface GetLogEventsRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: string;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		logStreamName: string;
+
+		/** Minimum: 0 */
 		startTime?: number | null;
+
+		/** Minimum: 0 */
 		endTime?: number | null;
 
 		/**
@@ -1458,13 +2432,36 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		nextToken?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
 		limit?: number | null;
 		startFromHead?: boolean | null;
 	}
 	export interface GetLogEventsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		logStreamName: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		startTime: FormControl<number | null | undefined>,
+
+		/** Minimum: 0 */
 		endTime: FormControl<number | null | undefined>,
 
 		/**
@@ -1472,17 +2469,22 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
 		limit: FormControl<number | null | undefined>,
 		startFromHead: FormControl<boolean | null | undefined>,
 	}
 	export function CreateGetLogEventsRequestFormGroup() {
 		return new FormGroup<GetLogEventsRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined),
-			logStreamName: new FormControl<string | null | undefined>(undefined),
-			startTime: new FormControl<number | null | undefined>(undefined),
-			endTime: new FormControl<number | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
-			limit: new FormControl<number | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			logStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			startTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			endTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
 			startFromHead: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1503,34 +2505,62 @@ export namespace MyNS {
 	/** The fields contained in log events found by a <code>GetLogGroupFields</code> operation, along with the percentage of queried log events in which each field appears. */
 	export interface LogGroupField {
 		name?: string | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		percent?: number | null;
 	}
 
 	/** The fields contained in log events found by a <code>GetLogGroupFields</code> operation, along with the percentage of queried log events in which each field appears. */
 	export interface LogGroupFieldFormProperties {
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		percent: FormControl<number | null | undefined>,
 	}
 	export function CreateLogGroupFieldFormGroup() {
 		return new FormGroup<LogGroupFieldFormProperties>({
 			name: new FormControl<string | null | undefined>(undefined),
-			percent: new FormControl<number | null | undefined>(undefined),
+			percent: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
 
 	export interface GetLogGroupFieldsRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: string;
+
+		/** Minimum: 0 */
 		time?: number | null;
 	}
 	export interface GetLogGroupFieldsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		time: FormControl<number | null | undefined>,
 	}
 	export function CreateGetLogGroupFieldsRequestFormGroup() {
 		return new FormGroup<GetLogGroupFieldsRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined),
-			time: new FormControl<number | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			time: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -1557,14 +2587,18 @@ export namespace MyNS {
 	}
 
 	export interface GetLogRecordRequest {
+
+		/** Required */
 		logRecordPointer: string;
 	}
 	export interface GetLogRecordRequestFormProperties {
+
+		/** Required */
 		logRecordPointer: FormControl<string | null | undefined>,
 	}
 	export function CreateGetLogRecordRequestFormGroup() {
 		return new FormGroup<GetLogRecordRequestFormProperties>({
-			logRecordPointer: new FormControl<string | null | undefined>(undefined),
+			logRecordPointer: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1630,14 +2664,26 @@ export namespace MyNS {
 	}
 
 	export interface GetQueryResultsRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		queryId: string;
 	}
 	export interface GetQueryResultsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		queryId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetQueryResultsRequestFormGroup() {
 		return new FormGroup<GetQueryResultsRequestFormProperties>({
-			queryId: new FormControl<string | null | undefined>(undefined),
+			queryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -1654,14 +2700,28 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsLogGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: string;
 	}
 	export interface ListTagsLogGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsLogGroupRequestFormGroup() {
 		return new FormGroup<ListTagsLogGroupRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
@@ -1680,52 +2740,114 @@ export namespace MyNS {
 	}
 
 	export interface PutDestinationRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		destinationName: string;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		targetArn: string;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		roleArn: string;
 	}
 	export interface PutDestinationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		destinationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		targetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		roleArn: FormControl<string | null | undefined>,
 	}
 	export function CreatePutDestinationRequestFormGroup() {
 		return new FormGroup<PutDestinationRequestFormProperties>({
-			destinationName: new FormControl<string | null | undefined>(undefined),
-			targetArn: new FormControl<string | null | undefined>(undefined),
-			roleArn: new FormControl<string | null | undefined>(undefined),
+			destinationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			targetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface PutDestinationPolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		destinationName: string;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		accessPolicy: string;
 	}
 	export interface PutDestinationPolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		destinationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		accessPolicy: FormControl<string | null | undefined>,
 	}
 	export function CreatePutDestinationPolicyRequestFormGroup() {
 		return new FormGroup<PutDestinationPolicyRequestFormProperties>({
-			destinationName: new FormControl<string | null | undefined>(undefined),
-			accessPolicy: new FormControl<string | null | undefined>(undefined),
+			destinationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			accessPolicy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface PutLogEventsResponse {
+
+		/** Min length: 1 */
 		nextSequenceToken?: string | null;
 
 		/** Represents the rejected events. */
 		rejectedLogEventsInfo?: RejectedLogEventsInfo;
 	}
 	export interface PutLogEventsResponseFormProperties {
+
+		/** Min length: 1 */
 		nextSequenceToken: FormControl<string | null | undefined>,
 	}
 	export function CreatePutLogEventsResponseFormGroup() {
 		return new FormGroup<PutLogEventsResponseFormProperties>({
-			nextSequenceToken: new FormControl<string | null | undefined>(undefined),
+			nextSequenceToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1754,21 +2876,59 @@ export namespace MyNS {
 	}
 
 	export interface PutLogEventsRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: string;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		logStreamName: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 10000
+		 */
 		logEvents: Array<InputLogEvent>;
+
+		/** Min length: 1 */
 		sequenceToken?: string | null;
 	}
 	export interface PutLogEventsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		logStreamName: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		sequenceToken: FormControl<string | null | undefined>,
 	}
 	export function CreatePutLogEventsRequestFormGroup() {
 		return new FormGroup<PutLogEventsRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined),
-			logStreamName: new FormControl<string | null | undefined>(undefined),
-			sequenceToken: new FormControl<string | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			logStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			sequenceToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -1776,19 +2936,39 @@ export namespace MyNS {
 
 	/** Represents a log event, which is a record of activity that was recorded by the application or resource being monitored. */
 	export interface InputLogEvent {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		timestamp: number;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		message: string;
 	}
 
 	/** Represents a log event, which is a record of activity that was recorded by the application or resource being monitored. */
 	export interface InputLogEventFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		timestamp: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateInputLogEventFormGroup() {
 		return new FormGroup<InputLogEventFormProperties>({
-			timestamp: new FormControl<number | null | undefined>(undefined),
-			message: new FormControl<string | null | undefined>(undefined),
+			timestamp: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
 	}
@@ -1824,7 +3004,21 @@ export namespace MyNS {
 	}
 
 	export interface PutMetricFilterRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: string;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		filterName: string;
 
 		/**
@@ -1834,10 +3028,30 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		filterPattern: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 1
+		 */
 		metricTransformations: Array<MetricTransformation>;
 	}
 	export interface PutMetricFilterRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		filterName: FormControl<string | null | undefined>,
 
 		/**
@@ -1850,42 +3064,88 @@ export namespace MyNS {
 	}
 	export function CreatePutMetricFilterRequestFormGroup() {
 		return new FormGroup<PutMetricFilterRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined),
-			filterName: new FormControl<string | null | undefined>(undefined),
-			filterPattern: new FormControl<string | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			filterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			filterPattern: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface PutQueryDefinitionResponse {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		queryDefinitionId?: string | null;
 	}
 	export interface PutQueryDefinitionResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		queryDefinitionId: FormControl<string | null | undefined>,
 	}
 	export function CreatePutQueryDefinitionResponseFormGroup() {
 		return new FormGroup<PutQueryDefinitionResponseFormProperties>({
-			queryDefinitionId: new FormControl<string | null | undefined>(undefined),
+			queryDefinitionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface PutQueryDefinitionRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^([^:*\/]+\/?)*[^:*\/]+$
+		 */
 		name: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		queryDefinitionId?: string | null;
 		logGroupNames?: Array<string>;
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 * Min length: 1
+		 */
 		queryString: string;
 	}
 	export interface PutQueryDefinitionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^([^:*\/]+\/?)*[^:*\/]+$
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		queryDefinitionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 * Min length: 1
+		 */
 		queryString: FormControl<string | null | undefined>,
 	}
 	export function CreatePutQueryDefinitionRequestFormGroup() {
 		return new FormGroup<PutQueryDefinitionRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			queryDefinitionId: new FormControl<string | null | undefined>(undefined),
-			queryString: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			queryDefinitionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			queryString: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000), Validators.minLength(1)]),
 		});
 
 	}
@@ -1905,21 +3165,38 @@ export namespace MyNS {
 
 	export interface PutResourcePolicyRequest {
 		policyName?: string | null;
+
+		/**
+		 * Max length: 5120
+		 * Min length: 1
+		 */
 		policyDocument?: string | null;
 	}
 	export interface PutResourcePolicyRequestFormProperties {
 		policyName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 5120
+		 * Min length: 1
+		 */
 		policyDocument: FormControl<string | null | undefined>,
 	}
 	export function CreatePutResourcePolicyRequestFormGroup() {
 		return new FormGroup<PutResourcePolicyRequestFormProperties>({
 			policyName: new FormControl<string | null | undefined>(undefined),
-			policyDocument: new FormControl<string | null | undefined>(undefined),
+			policyDocument: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5120), Validators.minLength(1)]),
 		});
 
 	}
 
 	export interface PutRetentionPolicyRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: string;
 
 		/**
@@ -1929,6 +3206,13 @@ export namespace MyNS {
 		retentionInDays: number;
 	}
 	export interface PutRetentionPolicyRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
 
 		/**
@@ -1939,14 +3223,28 @@ export namespace MyNS {
 	}
 	export function CreatePutRetentionPolicyRequestFormGroup() {
 		return new FormGroup<PutRetentionPolicyRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined),
-			retentionInDays: new FormControl<number | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			retentionInDays: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface PutSubscriptionFilterRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: string;
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		filterName: string;
 
 		/**
@@ -1956,14 +3254,35 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		filterPattern: string;
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		destinationArn: string;
+
+		/** Min length: 1 */
 		roleArn?: string | null;
 
 		/** The method used to distribute log data to the destination, which can be either random or grouped by log stream. */
 		distribution?: SubscriptionFilterDistribution | null;
 	}
 	export interface PutSubscriptionFilterRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [^:*]*
+		 */
 		filterName: FormControl<string | null | undefined>,
 
 		/**
@@ -1973,7 +3292,14 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		filterPattern: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Min length: 1
+		 */
 		destinationArn: FormControl<string | null | undefined>,
+
+		/** Min length: 1 */
 		roleArn: FormControl<string | null | undefined>,
 
 		/** The method used to distribute log data to the destination, which can be either random or grouped by log stream. */
@@ -1981,51 +3307,115 @@ export namespace MyNS {
 	}
 	export function CreatePutSubscriptionFilterRequestFormGroup() {
 		return new FormGroup<PutSubscriptionFilterRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined),
-			filterName: new FormControl<string | null | undefined>(undefined),
-			filterPattern: new FormControl<string | null | undefined>(undefined),
-			destinationArn: new FormControl<string | null | undefined>(undefined),
-			roleArn: new FormControl<string | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			filterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			filterPattern: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(0)]),
+			destinationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			distribution: new FormControl<SubscriptionFilterDistribution | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface StartQueryResponse {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		queryId?: string | null;
 	}
 	export interface StartQueryResponseFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		queryId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartQueryResponseFormGroup() {
 		return new FormGroup<StartQueryResponseFormProperties>({
-			queryId: new FormControl<string | null | undefined>(undefined),
+			queryId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface StartQueryRequest {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName?: string | null;
 		logGroupNames?: Array<string>;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		startTime: number;
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		endTime: number;
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 * Min length: 0
+		 */
 		queryString: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
 		limit?: number | null;
 	}
 	export interface StartQueryRequestFormProperties {
+
+		/**
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		startTime: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 0
+		 */
 		endTime: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 10000
+		 * Min length: 0
+		 */
 		queryString: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
 		limit: FormControl<number | null | undefined>,
 	}
 	export function CreateStartQueryRequestFormGroup() {
 		return new FormGroup<StartQueryRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined),
-			startTime: new FormControl<number | null | undefined>(undefined),
-			endTime: new FormControl<number | null | undefined>(undefined),
-			queryString: new FormControl<string | null | undefined>(undefined),
-			limit: new FormControl<number | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			startTime: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			endTime: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			queryString: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000), Validators.minLength(0)]),
+			limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
 		});
 
 	}
@@ -2054,28 +3444,56 @@ export namespace MyNS {
 	}
 
 	export interface StopQueryRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		queryId: string;
 	}
 	export interface StopQueryRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		queryId: FormControl<string | null | undefined>,
 	}
 	export function CreateStopQueryRequestFormGroup() {
 		return new FormGroup<StopQueryRequestFormProperties>({
-			queryId: new FormControl<string | null | undefined>(undefined),
+			queryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface TagLogGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: string;
+
+		/** Required */
 		tags: Tags;
 	}
 	export interface TagLogGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateTagLogGroupRequestFormGroup() {
 		return new FormGroup<TagLogGroupRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}
@@ -2095,6 +3513,8 @@ export namespace MyNS {
 	/** Represents a matched event. */
 	export interface MetricFilterMatchRecord {
 		eventNumber?: number | null;
+
+		/** Min length: 1 */
 		eventMessage?: string | null;
 		extractedValues?: ExtractedValues;
 	}
@@ -2102,12 +3522,14 @@ export namespace MyNS {
 	/** Represents a matched event. */
 	export interface MetricFilterMatchRecordFormProperties {
 		eventNumber: FormControl<number | null | undefined>,
+
+		/** Min length: 1 */
 		eventMessage: FormControl<string | null | undefined>,
 	}
 	export function CreateMetricFilterMatchRecordFormGroup() {
 		return new FormGroup<MetricFilterMatchRecordFormProperties>({
 			eventNumber: new FormControl<number | null | undefined>(undefined),
-			eventMessage: new FormControl<string | null | undefined>(undefined),
+			eventMessage: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -2131,6 +3553,12 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		filterPattern: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		logEventMessages: Array<string>;
 	}
 	export interface TestMetricFilterRequestFormProperties {
@@ -2145,21 +3573,40 @@ export namespace MyNS {
 	}
 	export function CreateTestMetricFilterRequestFormGroup() {
 		return new FormGroup<TestMetricFilterRequestFormProperties>({
-			filterPattern: new FormControl<string | null | undefined>(undefined),
+			filterPattern: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface UntagLogGroupRequest {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: string;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 */
 		tags: Array<string>;
 	}
 	export interface UntagLogGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: [\.\-_/#A-Za-z0-9]+
+		 */
 		logGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagLogGroupRequestFormGroup() {
 		return new FormGroup<UntagLogGroupRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
 		});
 
 	}

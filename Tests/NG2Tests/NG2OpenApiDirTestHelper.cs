@@ -1,6 +1,7 @@
 ﻿using Fonlow.OpenApiClientGen.ClientTypes;
 using System;
 using System.IO;
+using TestHelpers;
 using Xunit.Abstractions;
 
 namespace SwagTests
@@ -11,7 +12,7 @@ namespace SwagTests
 	/// </summary>
 	public class NG2OpenApiDirTestHelper: NG2TestHelper
 	{
-		public NG2OpenApiDirTestHelper(Type genType, ITestOutputHelper output): base(genType, output)
+		public NG2OpenApiDirTestHelper(Type genType, ITestOutputHelper output): base(genType, output, new CasualTestingSettings(true, true))
 		{
 		}
 

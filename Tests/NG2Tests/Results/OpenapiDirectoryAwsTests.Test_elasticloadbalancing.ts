@@ -20,19 +20,45 @@ export namespace MyNS {
 
 	/** Information about a tag. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Key: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Value?: string | null;
 	}
 
 	/** Information about a tag. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -157,28 +183,80 @@ export namespace MyNS {
 
 	/** Information about a health check. */
 	export interface HealthCheck {
+
+		/** Required */
 		Target: string;
+
+		/**
+		 * Required
+		 * Minimum: 5
+		 * Maximum: 300
+		 */
 		Interval: number;
+
+		/**
+		 * Required
+		 * Minimum: 2
+		 * Maximum: 60
+		 */
 		Timeout: number;
+
+		/**
+		 * Required
+		 * Minimum: 2
+		 * Maximum: 10
+		 */
 		UnhealthyThreshold: number;
+
+		/**
+		 * Required
+		 * Minimum: 2
+		 * Maximum: 10
+		 */
 		HealthyThreshold: number;
 	}
 
 	/** Information about a health check. */
 	export interface HealthCheckFormProperties {
+
+		/** Required */
 		Target: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 5
+		 * Maximum: 300
+		 */
 		Interval: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 2
+		 * Maximum: 60
+		 */
 		Timeout: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 2
+		 * Maximum: 10
+		 */
 		UnhealthyThreshold: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 2
+		 * Maximum: 10
+		 */
 		HealthyThreshold: FormControl<number | null | undefined>,
 	}
 	export function CreateHealthCheckFormGroup() {
 		return new FormGroup<HealthCheckFormProperties>({
-			Target: new FormControl<string | null | undefined>(undefined),
-			Interval: new FormControl<number | null | undefined>(undefined),
-			Timeout: new FormControl<number | null | undefined>(undefined),
-			UnhealthyThreshold: new FormControl<number | null | undefined>(undefined),
-			HealthyThreshold: new FormControl<number | null | undefined>(undefined),
+			Target: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Interval: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(5), Validators.max(300)]),
+			Timeout: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(2), Validators.max(60)]),
+			UnhealthyThreshold: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(2), Validators.max(10)]),
+			HealthyThreshold: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(2), Validators.max(10)]),
 		});
 
 	}
@@ -251,27 +329,47 @@ export namespace MyNS {
 
 	/** <p>Information about a listener.</p> <p>For information about the protocols and the ports supported by Elastic Load Balancing, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p> */
 	export interface Listener {
+
+		/** Required */
 		Protocol: string;
+
+		/** Required */
 		LoadBalancerPort: number;
 		InstanceProtocol?: string | null;
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		InstancePort: number;
 		SSLCertificateId?: string | null;
 	}
 
 	/** <p>Information about a listener.</p> <p>For information about the protocols and the ports supported by Elastic Load Balancing, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p> */
 	export interface ListenerFormProperties {
+
+		/** Required */
 		Protocol: FormControl<string | null | undefined>,
+
+		/** Required */
 		LoadBalancerPort: FormControl<number | null | undefined>,
 		InstanceProtocol: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		InstancePort: FormControl<number | null | undefined>,
 		SSLCertificateId: FormControl<string | null | undefined>,
 	}
 	export function CreateListenerFormGroup() {
 		return new FormGroup<ListenerFormProperties>({
-			Protocol: new FormControl<string | null | undefined>(undefined),
-			LoadBalancerPort: new FormControl<number | null | undefined>(undefined),
+			Protocol: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			LoadBalancerPort: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			InstanceProtocol: new FormControl<string | null | undefined>(undefined),
-			InstancePort: new FormControl<number | null | undefined>(undefined),
+			InstancePort: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(65535)]),
 			SSLCertificateId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -596,6 +694,8 @@ export namespace MyNS {
 
 		/** Information about the <code>ConnectionSettings</code> attribute. */
 		ConnectionSettings?: ConnectionSettings;
+
+		/** Maximum items: 10 */
 		AdditionalAttributes?: Array<AdditionalAttribute>;
 	}
 
@@ -611,16 +711,20 @@ export namespace MyNS {
 
 	/** Information about the <code>CrossZoneLoadBalancing</code> attribute. */
 	export interface CrossZoneLoadBalancing {
+
+		/** Required */
 		Enabled: boolean;
 	}
 
 	/** Information about the <code>CrossZoneLoadBalancing</code> attribute. */
 	export interface CrossZoneLoadBalancingFormProperties {
+
+		/** Required */
 		Enabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateCrossZoneLoadBalancingFormGroup() {
 		return new FormGroup<CrossZoneLoadBalancingFormProperties>({
-			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -628,6 +732,8 @@ export namespace MyNS {
 
 	/** Information about the <code>AccessLog</code> attribute. */
 	export interface AccessLog {
+
+		/** Required */
 		Enabled: boolean;
 		S3BucketName?: string | null;
 		EmitInterval?: number | null;
@@ -636,6 +742,8 @@ export namespace MyNS {
 
 	/** Information about the <code>AccessLog</code> attribute. */
 	export interface AccessLogFormProperties {
+
+		/** Required */
 		Enabled: FormControl<boolean | null | undefined>,
 		S3BucketName: FormControl<string | null | undefined>,
 		EmitInterval: FormControl<number | null | undefined>,
@@ -643,7 +751,7 @@ export namespace MyNS {
 	}
 	export function CreateAccessLogFormGroup() {
 		return new FormGroup<AccessLogFormProperties>({
-			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			S3BucketName: new FormControl<string | null | undefined>(undefined),
 			EmitInterval: new FormControl<number | null | undefined>(undefined),
 			S3BucketPrefix: new FormControl<string | null | undefined>(undefined),
@@ -654,18 +762,22 @@ export namespace MyNS {
 
 	/** Information about the <code>ConnectionDraining</code> attribute. */
 	export interface ConnectionDraining {
+
+		/** Required */
 		Enabled: boolean;
 		Timeout?: number | null;
 	}
 
 	/** Information about the <code>ConnectionDraining</code> attribute. */
 	export interface ConnectionDrainingFormProperties {
+
+		/** Required */
 		Enabled: FormControl<boolean | null | undefined>,
 		Timeout: FormControl<number | null | undefined>,
 	}
 	export function CreateConnectionDrainingFormGroup() {
 		return new FormGroup<ConnectionDrainingFormProperties>({
-			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			Timeout: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -674,16 +786,28 @@ export namespace MyNS {
 
 	/** Information about the <code>ConnectionSettings</code> attribute. */
 	export interface ConnectionSettings {
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 3600
+		 */
 		IdleTimeout: number;
 	}
 
 	/** Information about the <code>ConnectionSettings</code> attribute. */
 	export interface ConnectionSettingsFormProperties {
+
+		/**
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 3600
+		 */
 		IdleTimeout: FormControl<number | null | undefined>,
 	}
 	export function CreateConnectionSettingsFormGroup() {
 		return new FormGroup<ConnectionSettingsFormProperties>({
-			IdleTimeout: new FormControl<number | null | undefined>(undefined),
+			IdleTimeout: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(3600)]),
 		});
 
 	}
@@ -691,19 +815,39 @@ export namespace MyNS {
 
 	/** This data type is reserved. */
 	export interface AdditionalAttribute {
+
+		/**
+		 * Max length: 256
+		 * Pattern: ^[a-zA-Z0-9.]+$
+		 */
 		Key?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Pattern: ^[a-zA-Z0-9.]+$
+		 */
 		Value?: string | null;
 	}
 
 	/** This data type is reserved. */
 	export interface AdditionalAttributeFormProperties {
+
+		/**
+		 * Max length: 256
+		 * Pattern: ^[a-zA-Z0-9.]+$
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Pattern: ^[a-zA-Z0-9.]+$
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateAdditionalAttributeFormGroup() {
 		return new FormGroup<AdditionalAttributeFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
 	}
@@ -995,17 +1139,27 @@ export namespace MyNS {
 
 	/** Information about the configuration of an EC2 instance. */
 	export interface BackendServerDescription {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		InstancePort?: number | null;
 		PolicyNames?: Array<string>;
 	}
 
 	/** Information about the configuration of an EC2 instance. */
 	export interface BackendServerDescriptionFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 65535
+		 */
 		InstancePort: FormControl<number | null | undefined>,
 	}
 	export function CreateBackendServerDescriptionFormGroup() {
 		return new FormGroup<BackendServerDescriptionFormProperties>({
-			InstancePort: new FormControl<number | null | undefined>(undefined),
+			InstancePort: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(65535)]),
 		});
 
 	}
@@ -1059,6 +1213,8 @@ export namespace MyNS {
 	/** The tags associated with a load balancer. */
 	export interface TagDescription {
 		LoadBalancerName?: string | null;
+
+		/** Minimum items: 1 */
 		Tags?: Array<Tag>;
 	}
 
@@ -1170,16 +1326,28 @@ export namespace MyNS {
 
 	/** The key of a tag. */
 	export interface TagKeyOnly {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Key?: string | null;
 	}
 
 	/** The key of a tag. */
 	export interface TagKeyOnlyFormProperties {
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
 		Key: FormControl<string | null | undefined>,
 	}
 	export function CreateTagKeyOnlyFormGroup() {
 		return new FormGroup<TagKeyOnlyFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
 	}
@@ -1239,17 +1407,23 @@ export namespace MyNS {
 
 	/** Contains the parameters for EnableAvailabilityZonesForLoadBalancer. */
 	export interface AddAvailabilityZonesInput {
+
+		/** Required */
 		LoadBalancerName: string;
+
+		/** Required */
 		AvailabilityZones: Array<string>;
 	}
 
 	/** Contains the parameters for EnableAvailabilityZonesForLoadBalancer. */
 	export interface AddAvailabilityZonesInputFormProperties {
+
+		/** Required */
 		LoadBalancerName: FormControl<string | null | undefined>,
 	}
 	export function CreateAddAvailabilityZonesInputFormGroup() {
 		return new FormGroup<AddAvailabilityZonesInputFormProperties>({
-			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1257,7 +1431,14 @@ export namespace MyNS {
 
 	/** Contains the parameters for AddTags. */
 	export interface AddTagsInput {
+
+		/** Required */
 		LoadBalancerNames: Array<string>;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 */
 		Tags: Array<Tag>;
 	}
 
@@ -1273,17 +1454,23 @@ export namespace MyNS {
 
 	/** Contains the parameters for ApplySecurityGroupsToLoadBalancer. */
 	export interface ApplySecurityGroupsToLoadBalancerInput {
+
+		/** Required */
 		LoadBalancerName: string;
+
+		/** Required */
 		SecurityGroups: Array<string>;
 	}
 
 	/** Contains the parameters for ApplySecurityGroupsToLoadBalancer. */
 	export interface ApplySecurityGroupsToLoadBalancerInputFormProperties {
+
+		/** Required */
 		LoadBalancerName: FormControl<string | null | undefined>,
 	}
 	export function CreateApplySecurityGroupsToLoadBalancerInputFormGroup() {
 		return new FormGroup<ApplySecurityGroupsToLoadBalancerInputFormProperties>({
-			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1291,17 +1478,23 @@ export namespace MyNS {
 
 	/** Contains the parameters for AttachLoaBalancerToSubnets. */
 	export interface AttachLoadBalancerToSubnetsInput {
+
+		/** Required */
 		LoadBalancerName: string;
+
+		/** Required */
 		Subnets: Array<string>;
 	}
 
 	/** Contains the parameters for AttachLoaBalancerToSubnets. */
 	export interface AttachLoadBalancerToSubnetsInputFormProperties {
+
+		/** Required */
 		LoadBalancerName: FormControl<string | null | undefined>,
 	}
 	export function CreateAttachLoadBalancerToSubnetsInputFormGroup() {
 		return new FormGroup<AttachLoadBalancerToSubnetsInputFormProperties>({
-			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1309,6 +1502,8 @@ export namespace MyNS {
 
 	/** Contains the parameters for ConfigureHealthCheck. */
 	export interface ConfigureHealthCheckInput {
+
+		/** Required */
 		LoadBalancerName: string;
 
 		/**
@@ -1320,11 +1515,13 @@ export namespace MyNS {
 
 	/** Contains the parameters for ConfigureHealthCheck. */
 	export interface ConfigureHealthCheckInputFormProperties {
+
+		/** Required */
 		LoadBalancerName: FormControl<string | null | undefined>,
 	}
 	export function CreateConfigureHealthCheckInputFormGroup() {
 		return new FormGroup<ConfigureHealthCheckInputFormProperties>({
-			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1332,23 +1529,31 @@ export namespace MyNS {
 
 	/** Contains the parameters for CreateLoadBalancer. */
 	export interface CreateAccessPointInput {
+
+		/** Required */
 		LoadBalancerName: string;
+
+		/** Required */
 		Listeners: Array<Listener>;
 		AvailabilityZones?: Array<string>;
 		Subnets?: Array<string>;
 		SecurityGroups?: Array<string>;
 		Scheme?: string | null;
+
+		/** Minimum items: 1 */
 		Tags?: Array<Tag>;
 	}
 
 	/** Contains the parameters for CreateLoadBalancer. */
 	export interface CreateAccessPointInputFormProperties {
+
+		/** Required */
 		LoadBalancerName: FormControl<string | null | undefined>,
 		Scheme: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateAccessPointInputFormGroup() {
 		return new FormGroup<CreateAccessPointInputFormProperties>({
-			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Scheme: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1357,22 +1562,34 @@ export namespace MyNS {
 
 	/** Contains the parameters for CreateAppCookieStickinessPolicy. */
 	export interface CreateAppCookieStickinessPolicyInput {
+
+		/** Required */
 		LoadBalancerName: string;
+
+		/** Required */
 		PolicyName: string;
+
+		/** Required */
 		CookieName: string;
 	}
 
 	/** Contains the parameters for CreateAppCookieStickinessPolicy. */
 	export interface CreateAppCookieStickinessPolicyInputFormProperties {
+
+		/** Required */
 		LoadBalancerName: FormControl<string | null | undefined>,
+
+		/** Required */
 		PolicyName: FormControl<string | null | undefined>,
+
+		/** Required */
 		CookieName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateAppCookieStickinessPolicyInputFormGroup() {
 		return new FormGroup<CreateAppCookieStickinessPolicyInputFormProperties>({
-			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
-			PolicyName: new FormControl<string | null | undefined>(undefined),
-			CookieName: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			CookieName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1380,21 +1597,29 @@ export namespace MyNS {
 
 	/** Contains the parameters for CreateLBCookieStickinessPolicy. */
 	export interface CreateLBCookieStickinessPolicyInput {
+
+		/** Required */
 		LoadBalancerName: string;
+
+		/** Required */
 		PolicyName: string;
 		CookieExpirationPeriod?: number | null;
 	}
 
 	/** Contains the parameters for CreateLBCookieStickinessPolicy. */
 	export interface CreateLBCookieStickinessPolicyInputFormProperties {
+
+		/** Required */
 		LoadBalancerName: FormControl<string | null | undefined>,
+
+		/** Required */
 		PolicyName: FormControl<string | null | undefined>,
 		CookieExpirationPeriod: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateLBCookieStickinessPolicyInputFormGroup() {
 		return new FormGroup<CreateLBCookieStickinessPolicyInputFormProperties>({
-			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
-			PolicyName: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			CookieExpirationPeriod: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1403,17 +1628,23 @@ export namespace MyNS {
 
 	/** Contains the parameters for CreateLoadBalancerListeners. */
 	export interface CreateLoadBalancerListenerInput {
+
+		/** Required */
 		LoadBalancerName: string;
+
+		/** Required */
 		Listeners: Array<Listener>;
 	}
 
 	/** Contains the parameters for CreateLoadBalancerListeners. */
 	export interface CreateLoadBalancerListenerInputFormProperties {
+
+		/** Required */
 		LoadBalancerName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateLoadBalancerListenerInputFormGroup() {
 		return new FormGroup<CreateLoadBalancerListenerInputFormProperties>({
-			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1421,23 +1652,35 @@ export namespace MyNS {
 
 	/** Contains the parameters for CreateLoadBalancerPolicy. */
 	export interface CreateLoadBalancerPolicyInput {
+
+		/** Required */
 		LoadBalancerName: string;
+
+		/** Required */
 		PolicyName: string;
+
+		/** Required */
 		PolicyTypeName: string;
 		PolicyAttributes?: Array<PolicyAttribute>;
 	}
 
 	/** Contains the parameters for CreateLoadBalancerPolicy. */
 	export interface CreateLoadBalancerPolicyInputFormProperties {
+
+		/** Required */
 		LoadBalancerName: FormControl<string | null | undefined>,
+
+		/** Required */
 		PolicyName: FormControl<string | null | undefined>,
+
+		/** Required */
 		PolicyTypeName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateLoadBalancerPolicyInputFormGroup() {
 		return new FormGroup<CreateLoadBalancerPolicyInputFormProperties>({
-			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
-			PolicyName: new FormControl<string | null | undefined>(undefined),
-			PolicyTypeName: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PolicyTypeName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1445,16 +1688,20 @@ export namespace MyNS {
 
 	/** Contains the parameters for DeleteLoadBalancer. */
 	export interface DeleteAccessPointInput {
+
+		/** Required */
 		LoadBalancerName: string;
 	}
 
 	/** Contains the parameters for DeleteLoadBalancer. */
 	export interface DeleteAccessPointInputFormProperties {
+
+		/** Required */
 		LoadBalancerName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteAccessPointInputFormGroup() {
 		return new FormGroup<DeleteAccessPointInputFormProperties>({
-			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1462,17 +1709,23 @@ export namespace MyNS {
 
 	/** Contains the parameters for DeleteLoadBalancerListeners. */
 	export interface DeleteLoadBalancerListenerInput {
+
+		/** Required */
 		LoadBalancerName: string;
+
+		/** Required */
 		LoadBalancerPorts: Array<number>;
 	}
 
 	/** Contains the parameters for DeleteLoadBalancerListeners. */
 	export interface DeleteLoadBalancerListenerInputFormProperties {
+
+		/** Required */
 		LoadBalancerName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteLoadBalancerListenerInputFormGroup() {
 		return new FormGroup<DeleteLoadBalancerListenerInputFormProperties>({
-			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1480,19 +1733,27 @@ export namespace MyNS {
 
 	/** Contains the parameters for DeleteLoadBalancerPolicy. */
 	export interface DeleteLoadBalancerPolicyInput {
+
+		/** Required */
 		LoadBalancerName: string;
+
+		/** Required */
 		PolicyName: string;
 	}
 
 	/** Contains the parameters for DeleteLoadBalancerPolicy. */
 	export interface DeleteLoadBalancerPolicyInputFormProperties {
+
+		/** Required */
 		LoadBalancerName: FormControl<string | null | undefined>,
+
+		/** Required */
 		PolicyName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteLoadBalancerPolicyInputFormGroup() {
 		return new FormGroup<DeleteLoadBalancerPolicyInputFormProperties>({
-			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
-			PolicyName: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1500,17 +1761,23 @@ export namespace MyNS {
 
 	/** Contains the parameters for DeregisterInstancesFromLoadBalancer. */
 	export interface DeregisterEndPointsInput {
+
+		/** Required */
 		LoadBalancerName: string;
+
+		/** Required */
 		Instances: Array<Instance>;
 	}
 
 	/** Contains the parameters for DeregisterInstancesFromLoadBalancer. */
 	export interface DeregisterEndPointsInputFormProperties {
+
+		/** Required */
 		LoadBalancerName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeregisterEndPointsInputFormGroup() {
 		return new FormGroup<DeregisterEndPointsInputFormProperties>({
-			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1520,34 +1787,54 @@ export namespace MyNS {
 	export interface DescribeAccessPointsInput {
 		LoadBalancerNames?: Array<string>;
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 400
+		 */
 		PageSize?: number | null;
 	}
 
 	/** Contains the parameters for DescribeLoadBalancers. */
 	export interface DescribeAccessPointsInputFormProperties {
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 400
+		 */
 		PageSize: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeAccessPointsInputFormGroup() {
 		return new FormGroup<DescribeAccessPointsInputFormProperties>({
 			Marker: new FormControl<string | null | undefined>(undefined),
-			PageSize: new FormControl<number | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(400)]),
 		});
 
 	}
 
 	export interface DescribeAccountLimitsInput {
 		Marker?: string | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 400
+		 */
 		PageSize?: number | null;
 	}
 	export interface DescribeAccountLimitsInputFormProperties {
 		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 400
+		 */
 		PageSize: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeAccountLimitsInputFormGroup() {
 		return new FormGroup<DescribeAccountLimitsInputFormProperties>({
 			Marker: new FormControl<string | null | undefined>(undefined),
-			PageSize: new FormControl<number | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(400)]),
 		});
 
 	}
@@ -1555,17 +1842,21 @@ export namespace MyNS {
 
 	/** Contains the parameters for DescribeInstanceHealth. */
 	export interface DescribeEndPointStateInput {
+
+		/** Required */
 		LoadBalancerName: string;
 		Instances?: Array<Instance>;
 	}
 
 	/** Contains the parameters for DescribeInstanceHealth. */
 	export interface DescribeEndPointStateInputFormProperties {
+
+		/** Required */
 		LoadBalancerName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeEndPointStateInputFormGroup() {
 		return new FormGroup<DescribeEndPointStateInputFormProperties>({
-			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1573,16 +1864,20 @@ export namespace MyNS {
 
 	/** Contains the parameters for DescribeLoadBalancerAttributes. */
 	export interface DescribeLoadBalancerAttributesInput {
+
+		/** Required */
 		LoadBalancerName: string;
 	}
 
 	/** Contains the parameters for DescribeLoadBalancerAttributes. */
 	export interface DescribeLoadBalancerAttributesInputFormProperties {
+
+		/** Required */
 		LoadBalancerName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeLoadBalancerAttributesInputFormGroup() {
 		return new FormGroup<DescribeLoadBalancerAttributesInputFormProperties>({
-			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1623,6 +1918,12 @@ export namespace MyNS {
 
 	/** Contains the parameters for DescribeTags. */
 	export interface DescribeTagsInput {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 20
+		 */
 		LoadBalancerNames: Array<string>;
 	}
 
@@ -1638,17 +1939,23 @@ export namespace MyNS {
 
 	/** Contains the parameters for DetachLoadBalancerFromSubnets. */
 	export interface DetachLoadBalancerFromSubnetsInput {
+
+		/** Required */
 		LoadBalancerName: string;
+
+		/** Required */
 		Subnets: Array<string>;
 	}
 
 	/** Contains the parameters for DetachLoadBalancerFromSubnets. */
 	export interface DetachLoadBalancerFromSubnetsInputFormProperties {
+
+		/** Required */
 		LoadBalancerName: FormControl<string | null | undefined>,
 	}
 	export function CreateDetachLoadBalancerFromSubnetsInputFormGroup() {
 		return new FormGroup<DetachLoadBalancerFromSubnetsInputFormProperties>({
-			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1656,6 +1963,8 @@ export namespace MyNS {
 
 	/** Contains the parameters for ModifyLoadBalancerAttributes. */
 	export interface ModifyLoadBalancerAttributesInput {
+
+		/** Required */
 		LoadBalancerName: string;
 
 		/**
@@ -1667,11 +1976,13 @@ export namespace MyNS {
 
 	/** Contains the parameters for ModifyLoadBalancerAttributes. */
 	export interface ModifyLoadBalancerAttributesInputFormProperties {
+
+		/** Required */
 		LoadBalancerName: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyLoadBalancerAttributesInputFormGroup() {
 		return new FormGroup<ModifyLoadBalancerAttributesInputFormProperties>({
-			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1679,17 +1990,23 @@ export namespace MyNS {
 
 	/** Contains the parameters for RegisterInstancesWithLoadBalancer. */
 	export interface RegisterEndPointsInput {
+
+		/** Required */
 		LoadBalancerName: string;
+
+		/** Required */
 		Instances: Array<Instance>;
 	}
 
 	/** Contains the parameters for RegisterInstancesWithLoadBalancer. */
 	export interface RegisterEndPointsInputFormProperties {
+
+		/** Required */
 		LoadBalancerName: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterEndPointsInputFormGroup() {
 		return new FormGroup<RegisterEndPointsInputFormProperties>({
-			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1697,17 +2014,23 @@ export namespace MyNS {
 
 	/** Contains the parameters for DisableAvailabilityZonesForLoadBalancer. */
 	export interface RemoveAvailabilityZonesInput {
+
+		/** Required */
 		LoadBalancerName: string;
+
+		/** Required */
 		AvailabilityZones: Array<string>;
 	}
 
 	/** Contains the parameters for DisableAvailabilityZonesForLoadBalancer. */
 	export interface RemoveAvailabilityZonesInputFormProperties {
+
+		/** Required */
 		LoadBalancerName: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveAvailabilityZonesInputFormGroup() {
 		return new FormGroup<RemoveAvailabilityZonesInputFormProperties>({
-			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1715,7 +2038,14 @@ export namespace MyNS {
 
 	/** Contains the parameters for RemoveTags. */
 	export interface RemoveTagsInput {
+
+		/** Required */
 		LoadBalancerNames: Array<string>;
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 */
 		Tags: Array<TagKeyOnly>;
 	}
 
@@ -1731,22 +2061,34 @@ export namespace MyNS {
 
 	/** Contains the parameters for SetLoadBalancerListenerSSLCertificate. */
 	export interface SetLoadBalancerListenerSSLCertificateInput {
+
+		/** Required */
 		LoadBalancerName: string;
+
+		/** Required */
 		LoadBalancerPort: number;
+
+		/** Required */
 		SSLCertificateId: string;
 	}
 
 	/** Contains the parameters for SetLoadBalancerListenerSSLCertificate. */
 	export interface SetLoadBalancerListenerSSLCertificateInputFormProperties {
+
+		/** Required */
 		LoadBalancerName: FormControl<string | null | undefined>,
+
+		/** Required */
 		LoadBalancerPort: FormControl<number | null | undefined>,
+
+		/** Required */
 		SSLCertificateId: FormControl<string | null | undefined>,
 	}
 	export function CreateSetLoadBalancerListenerSSLCertificateInputFormGroup() {
 		return new FormGroup<SetLoadBalancerListenerSSLCertificateInputFormProperties>({
-			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
-			LoadBalancerPort: new FormControl<number | null | undefined>(undefined),
-			SSLCertificateId: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			LoadBalancerPort: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			SSLCertificateId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1754,20 +2096,30 @@ export namespace MyNS {
 
 	/** Contains the parameters for SetLoadBalancerPoliciesForBackendServer. */
 	export interface SetLoadBalancerPoliciesForBackendServerInput {
+
+		/** Required */
 		LoadBalancerName: string;
+
+		/** Required */
 		InstancePort: number;
+
+		/** Required */
 		PolicyNames: Array<string>;
 	}
 
 	/** Contains the parameters for SetLoadBalancerPoliciesForBackendServer. */
 	export interface SetLoadBalancerPoliciesForBackendServerInputFormProperties {
+
+		/** Required */
 		LoadBalancerName: FormControl<string | null | undefined>,
+
+		/** Required */
 		InstancePort: FormControl<number | null | undefined>,
 	}
 	export function CreateSetLoadBalancerPoliciesForBackendServerInputFormGroup() {
 		return new FormGroup<SetLoadBalancerPoliciesForBackendServerInputFormProperties>({
-			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
-			InstancePort: new FormControl<number | null | undefined>(undefined),
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			InstancePort: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1775,20 +2127,30 @@ export namespace MyNS {
 
 	/** Contains the parameters for SetLoadBalancePoliciesOfListener. */
 	export interface SetLoadBalancerPoliciesOfListenerInput {
+
+		/** Required */
 		LoadBalancerName: string;
+
+		/** Required */
 		LoadBalancerPort: number;
+
+		/** Required */
 		PolicyNames: Array<string>;
 	}
 
 	/** Contains the parameters for SetLoadBalancePoliciesOfListener. */
 	export interface SetLoadBalancerPoliciesOfListenerInputFormProperties {
+
+		/** Required */
 		LoadBalancerName: FormControl<string | null | undefined>,
+
+		/** Required */
 		LoadBalancerPort: FormControl<number | null | undefined>,
 	}
 	export function CreateSetLoadBalancerPoliciesOfListenerInputFormGroup() {
 		return new FormGroup<SetLoadBalancerPoliciesOfListenerInputFormProperties>({
-			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
-			LoadBalancerPort: new FormControl<number | null | undefined>(undefined),
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			LoadBalancerPort: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2146,26 +2508,78 @@ export namespace MyNS {
 	export enum POST_AttachLoadBalancerToSubnetsVersion { _2012_06_01 = 0 }
 
 	export interface GET_ConfigureHealthCheckHealthCheck {
+
+		/** Required */
 		Target: string;
+
+		/**
+		 * Required
+		 * Minimum: 5
+		 * Maximum: 300
+		 */
 		Interval: number;
+
+		/**
+		 * Required
+		 * Minimum: 2
+		 * Maximum: 60
+		 */
 		Timeout: number;
+
+		/**
+		 * Required
+		 * Minimum: 2
+		 * Maximum: 10
+		 */
 		UnhealthyThreshold: number;
+
+		/**
+		 * Required
+		 * Minimum: 2
+		 * Maximum: 10
+		 */
 		HealthyThreshold: number;
 	}
 	export interface GET_ConfigureHealthCheckHealthCheckFormProperties {
+
+		/** Required */
 		Target: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 5
+		 * Maximum: 300
+		 */
 		Interval: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 2
+		 * Maximum: 60
+		 */
 		Timeout: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 2
+		 * Maximum: 10
+		 */
 		UnhealthyThreshold: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 2
+		 * Maximum: 10
+		 */
 		HealthyThreshold: FormControl<number | null | undefined>,
 	}
 	export function CreateGET_ConfigureHealthCheckHealthCheckFormGroup() {
 		return new FormGroup<GET_ConfigureHealthCheckHealthCheckFormProperties>({
-			Target: new FormControl<string | null | undefined>(undefined),
-			Interval: new FormControl<number | null | undefined>(undefined),
-			Timeout: new FormControl<number | null | undefined>(undefined),
-			UnhealthyThreshold: new FormControl<number | null | undefined>(undefined),
-			HealthyThreshold: new FormControl<number | null | undefined>(undefined),
+			Target: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Interval: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(5), Validators.max(300)]),
+			Timeout: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(2), Validators.max(60)]),
+			UnhealthyThreshold: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(2), Validators.max(10)]),
+			HealthyThreshold: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(2), Validators.max(10)]),
 		});
 
 	}
@@ -2303,6 +2717,8 @@ export namespace MyNS {
 
 		/** Information about the <code>ConnectionSettings</code> attribute. */
 		ConnectionSettings?: ConnectionSettings;
+
+		/** Maximum items: 10 */
 		AdditionalAttributes?: Array<AdditionalAttribute>;
 	}
 	export interface GET_ModifyLoadBalancerAttributesLoadBalancerAttributesFormProperties {

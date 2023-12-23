@@ -7,16 +7,26 @@ export namespace MyNS {
 
 	export interface GetHash {
 		key?: number | null;
+
+		/**
+		 * Required
+		 * Max length: 100000
+		 */
 		text: string;
 	}
 	export interface GetHashFormProperties {
 		key: FormControl<number | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 100000
+		 */
 		text: FormControl<string | null | undefined>,
 	}
 	export function CreateGetHashFormGroup() {
 		return new FormGroup<GetHashFormProperties>({
 			key: new FormControl<number | null | undefined>(undefined),
-			text: new FormControl<string | null | undefined>(undefined),
+			text: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100000)]),
 		});
 
 	}

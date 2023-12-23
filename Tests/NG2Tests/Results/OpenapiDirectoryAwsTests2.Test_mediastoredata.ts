@@ -96,31 +96,55 @@ export namespace MyNS {
 
 	/** A metadata entry for a folder or object. */
 	export interface Item {
+
+		/** Pattern: [A-Za-z0-9_\.\-\~]+ */
 		Name?: string | null;
 		Type?: ItemType | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [0-9A-Fa-f]+
+		 */
 		ETag?: string | null;
 		LastModified?: Date | null;
+
+		/** Pattern: ^[\w\-\/\.\+]{1,255}$ */
 		ContentType?: string | null;
+
+		/** Minimum: 0 */
 		ContentLength?: number | null;
 	}
 
 	/** A metadata entry for a folder or object. */
 	export interface ItemFormProperties {
+
+		/** Pattern: [A-Za-z0-9_\.\-\~]+ */
 		Name: FormControl<string | null | undefined>,
 		Type: FormControl<ItemType | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [0-9A-Fa-f]+
+		 */
 		ETag: FormControl<string | null | undefined>,
 		LastModified: FormControl<Date | null | undefined>,
+
+		/** Pattern: ^[\w\-\/\.\+]{1,255}$ */
 		ContentType: FormControl<string | null | undefined>,
+
+		/** Minimum: 0 */
 		ContentLength: FormControl<number | null | undefined>,
 	}
 	export function CreateItemFormGroup() {
 		return new FormGroup<ItemFormProperties>({
 			Name: new FormControl<string | null | undefined>(undefined),
 			Type: new FormControl<ItemType | null | undefined>(undefined),
-			ETag: new FormControl<string | null | undefined>(undefined),
+			ETag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			LastModified: new FormControl<Date | null | undefined>(undefined),
 			ContentType: new FormControl<string | null | undefined>(undefined),
-			ContentLength: new FormControl<number | null | undefined>(undefined),
+			ContentLength: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -128,20 +152,54 @@ export namespace MyNS {
 	export enum ItemType { OBJECT = 0, FOLDER = 1 }
 
 	export interface PutObjectResponse {
+
+		/**
+		 * Max length: 64
+		 * Min length: 64
+		 * Pattern: [0-9A-Fa-f]{64}
+		 */
 		ContentSHA256?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [0-9A-Fa-f]+
+		 */
 		ETag?: string | null;
+
+		/**
+		 * Max length: 16
+		 * Min length: 1
+		 */
 		StorageClass?: PutObjectResponseStorageClass | null;
 	}
 	export interface PutObjectResponseFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 64
+		 * Pattern: [0-9A-Fa-f]{64}
+		 */
 		ContentSHA256: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [0-9A-Fa-f]+
+		 */
 		ETag: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16
+		 * Min length: 1
+		 */
 		StorageClass: FormControl<PutObjectResponseStorageClass | null | undefined>,
 	}
 	export function CreatePutObjectResponseFormGroup() {
 		return new FormGroup<PutObjectResponseFormProperties>({
-			ContentSHA256: new FormControl<string | null | undefined>(undefined),
-			ETag: new FormControl<string | null | undefined>(undefined),
-			StorageClass: new FormControl<PutObjectResponseStorageClass | null | undefined>(undefined),
+			ContentSHA256: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(64)]),
+			ETag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			StorageClass: new FormControl<PutObjectResponseStorageClass | null | undefined>(undefined, [Validators.maxLength(16), Validators.minLength(1)]),
 		});
 
 	}
@@ -193,14 +251,18 @@ export namespace MyNS {
 	export enum UploadAvailability { STANDARD = 0, STREAMING = 1 }
 
 	export interface PutObjectRequest {
+
+		/** Required */
 		Body: string;
 	}
 	export interface PutObjectRequestFormProperties {
+
+		/** Required */
 		Body: FormControl<string | null | undefined>,
 	}
 	export function CreatePutObjectRequestFormGroup() {
 		return new FormGroup<PutObjectRequestFormProperties>({
-			Body: new FormControl<string | null | undefined>(undefined),
+			Body: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -271,7 +333,7 @@ export namespace MyNS {
 	}
 	export function CreatePutObjectPutBodyFormGroup() {
 		return new FormGroup<PutObjectPutBodyFormProperties>({
-			Body: new FormControl<string | null | undefined>(undefined),
+			Body: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

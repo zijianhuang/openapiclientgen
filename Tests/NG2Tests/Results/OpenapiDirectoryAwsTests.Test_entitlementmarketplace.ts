@@ -6,12 +6,18 @@ export namespace MyNS {
 
 	/** The GetEntitlementsRequest contains results from the GetEntitlements operation. */
 	export interface GetEntitlementsResult {
+
+		/** Minimum items: 0 */
 		Entitlements?: Array<Entitlement>;
+
+		/** Pattern: \S+ */
 		NextToken?: string | null;
 	}
 
 	/** The GetEntitlementsRequest contains results from the GetEntitlements operation. */
 	export interface GetEntitlementsResultFormProperties {
+
+		/** Pattern: \S+ */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetEntitlementsResultFormGroup() {
@@ -24,8 +30,17 @@ export namespace MyNS {
 
 	/** An entitlement represents capacity in a product owned by the customer. For example, a customer might own some number of users or seats in an SaaS application or some amount of data capacity in a multi-tenant database. */
 	export interface Entitlement {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		ProductCode?: string | null;
+
+		/** Pattern: \S+ */
 		Dimension?: string | null;
+
+		/** Pattern: \S+ */
 		CustomerIdentifier?: string | null;
 
 		/** The EntitlementValue represents the amount of capacity that the customer is entitled to for the product. */
@@ -35,14 +50,23 @@ export namespace MyNS {
 
 	/** An entitlement represents capacity in a product owned by the customer. For example, a customer might own some number of users or seats in an SaaS application or some amount of data capacity in a multi-tenant database. */
 	export interface EntitlementFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		ProductCode: FormControl<string | null | undefined>,
+
+		/** Pattern: \S+ */
 		Dimension: FormControl<string | null | undefined>,
+
+		/** Pattern: \S+ */
 		CustomerIdentifier: FormControl<string | null | undefined>,
 		ExpirationDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateEntitlementFormGroup() {
 		return new FormGroup<EntitlementFormProperties>({
-			ProductCode: new FormControl<string | null | undefined>(undefined),
+			ProductCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 			Dimension: new FormControl<string | null | undefined>(undefined),
 			CustomerIdentifier: new FormControl<string | null | undefined>(undefined),
 			ExpirationDate: new FormControl<Date | null | undefined>(undefined),
@@ -79,21 +103,37 @@ export namespace MyNS {
 
 	/** The GetEntitlementsRequest contains parameters for the GetEntitlements operation. */
 	export interface GetEntitlementsRequest {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		ProductCode: string;
 		Filter?: GetEntitlementFilters;
+
+		/** Pattern: \S+ */
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
 
 	/** The GetEntitlementsRequest contains parameters for the GetEntitlements operation. */
 	export interface GetEntitlementsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
 		ProductCode: FormControl<string | null | undefined>,
+
+		/** Pattern: \S+ */
 		NextToken: FormControl<string | null | undefined>,
 		MaxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateGetEntitlementsRequestFormGroup() {
 		return new FormGroup<GetEntitlementsRequestFormProperties>({
-			ProductCode: new FormControl<string | null | undefined>(undefined),
+			ProductCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined),
 		});

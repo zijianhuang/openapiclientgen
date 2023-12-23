@@ -26,19 +26,27 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface AgentConfiguration {
+
+		/** Required */
 		periodInSeconds: number;
+
+		/** Required */
 		shouldProfile: boolean;
 	}
 
 	/** <p/> */
 	export interface AgentConfigurationFormProperties {
+
+		/** Required */
 		periodInSeconds: FormControl<number | null | undefined>,
+
+		/** Required */
 		shouldProfile: FormControl<boolean | null | undefined>,
 	}
 	export function CreateAgentConfigurationFormGroup() {
 		return new FormGroup<AgentConfigurationFormProperties>({
-			periodInSeconds: new FormControl<number | null | undefined>(undefined),
-			shouldProfile: new FormControl<boolean | null | undefined>(undefined),
+			periodInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			shouldProfile: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -111,6 +119,12 @@ export namespace MyNS {
 		agentOrchestrationConfig?: AgentOrchestrationConfig;
 		arn?: string | null;
 		createdAt?: Date | null;
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^[\w-]+$
+		 */
 		name?: string | null;
 
 		/** Information about the profiling status. */
@@ -122,6 +136,12 @@ export namespace MyNS {
 	export interface ProfilingGroupDescriptionFormProperties {
 		arn: FormControl<string | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^[\w-]+$
+		 */
 		name: FormControl<string | null | undefined>,
 		updatedAt: FormControl<Date | null | undefined>,
 	}
@@ -129,7 +149,7 @@ export namespace MyNS {
 		return new FormGroup<ProfilingGroupDescriptionFormProperties>({
 			arn: new FormControl<string | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 			updatedAt: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -138,16 +158,20 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface AgentOrchestrationConfig {
+
+		/** Required */
 		profilingEnabled: boolean;
 	}
 
 	/** <p/> */
 	export interface AgentOrchestrationConfigFormProperties {
+
+		/** Required */
 		profilingEnabled: FormControl<boolean | null | undefined>,
 	}
 	export function CreateAgentOrchestrationConfigFormGroup() {
 		return new FormGroup<AgentOrchestrationConfigFormProperties>({
-			profilingEnabled: new FormControl<boolean | null | undefined>(undefined),
+			profilingEnabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -254,19 +278,33 @@ export namespace MyNS {
 
 	/** The structure representing the getPolicyResponse. */
 	export interface GetPolicyResponse {
+
+		/** Required */
 		policy: string;
+
+		/**
+		 * Required
+		 * Pattern: [a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}
+		 */
 		revisionId: string;
 	}
 
 	/** The structure representing the getPolicyResponse. */
 	export interface GetPolicyResponseFormProperties {
+
+		/** Required */
 		policy: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: [a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}
+		 */
 		revisionId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetPolicyResponseFormGroup() {
 		return new FormGroup<GetPolicyResponseFormProperties>({
-			policy: new FormControl<string | null | undefined>(undefined),
-			revisionId: new FormControl<string | null | undefined>(undefined),
+			policy: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			revisionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -274,16 +312,20 @@ export namespace MyNS {
 
 	/** The structure representing the getProfileResponse. */
 	export interface GetProfileResponse {
+
+		/** Required */
 		profile: string;
 	}
 
 	/** The structure representing the getProfileResponse. */
 	export interface GetProfileResponseFormProperties {
+
+		/** Required */
 		profile: FormControl<string | null | undefined>,
 	}
 	export function CreateGetProfileResponseFormGroup() {
 		return new FormGroup<GetProfileResponseFormProperties>({
-			profile: new FormControl<string | null | undefined>(undefined),
+			profile: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -291,17 +333,31 @@ export namespace MyNS {
 
 	/** The structure representing the listProfileTimesResponse. */
 	export interface ListProfileTimesResponse {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[\w-]+$
+		 */
 		nextToken?: string | null;
+
+		/** Required */
 		profileTimes: Array<ProfileTime>;
 	}
 
 	/** The structure representing the listProfileTimesResponse. */
 	export interface ListProfileTimesResponseFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[\w-]+$
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListProfileTimesResponseFormGroup() {
 		return new FormGroup<ListProfileTimesResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -326,18 +382,32 @@ export namespace MyNS {
 
 	/** The structure representing the listProfilingGroupsResponse. */
 	export interface ListProfilingGroupsResponse {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[\w-]+$
+		 */
 		nextToken?: string | null;
+
+		/** Required */
 		profilingGroupNames: Array<string>;
 		profilingGroups?: Array<ProfilingGroupDescription>;
 	}
 
 	/** The structure representing the listProfilingGroupsResponse. */
 	export interface ListProfilingGroupsResponseFormProperties {
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[\w-]+$
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListProfilingGroupsResponseFormGroup() {
 		return new FormGroup<ListProfilingGroupsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
 	}
@@ -359,19 +429,33 @@ export namespace MyNS {
 
 	/** The structure representing the putPermissionResponse. */
 	export interface PutPermissionResponse {
+
+		/** Required */
 		policy: string;
+
+		/**
+		 * Required
+		 * Pattern: [a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}
+		 */
 		revisionId: string;
 	}
 
 	/** The structure representing the putPermissionResponse. */
 	export interface PutPermissionResponseFormProperties {
+
+		/** Required */
 		policy: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: [a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}
+		 */
 		revisionId: FormControl<string | null | undefined>,
 	}
 	export function CreatePutPermissionResponseFormGroup() {
 		return new FormGroup<PutPermissionResponseFormProperties>({
-			policy: new FormControl<string | null | undefined>(undefined),
-			revisionId: new FormControl<string | null | undefined>(undefined),
+			policy: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			revisionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -379,19 +463,33 @@ export namespace MyNS {
 
 	/** The structure representing the removePermissionResponse. */
 	export interface RemovePermissionResponse {
+
+		/** Required */
 		policy: string;
+
+		/**
+		 * Required
+		 * Pattern: [a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}
+		 */
 		revisionId: string;
 	}
 
 	/** The structure representing the removePermissionResponse. */
 	export interface RemovePermissionResponseFormProperties {
+
+		/** Required */
 		policy: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Pattern: [a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}
+		 */
 		revisionId: FormControl<string | null | undefined>,
 	}
 	export function CreateRemovePermissionResponseFormGroup() {
 		return new FormGroup<RemovePermissionResponseFormProperties>({
-			policy: new FormControl<string | null | undefined>(undefined),
-			revisionId: new FormControl<string | null | undefined>(undefined),
+			policy: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			revisionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -423,16 +521,28 @@ export namespace MyNS {
 
 	/** The structure representing the configureAgentRequest. */
 	export interface ConfigureAgentRequest {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^[\w-.:/]+$
+		 */
 		fleetInstanceId?: string | null;
 	}
 
 	/** The structure representing the configureAgentRequest. */
 	export interface ConfigureAgentRequestFormProperties {
+
+		/**
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^[\w-.:/]+$
+		 */
 		fleetInstanceId: FormControl<string | null | undefined>,
 	}
 	export function CreateConfigureAgentRequestFormGroup() {
 		return new FormGroup<ConfigureAgentRequestFormProperties>({
-			fleetInstanceId: new FormControl<string | null | undefined>(undefined),
+			fleetInstanceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -443,16 +553,30 @@ export namespace MyNS {
 
 		/** <p/> */
 		agentOrchestrationConfig?: AgentOrchestrationConfig;
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^[\w-]+$
+		 */
 		profilingGroupName: string;
 	}
 
 	/** The structure representing the createProfiliingGroupRequest. */
 	export interface CreateProfilingGroupRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^[\w-]+$
+		 */
 		profilingGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateProfilingGroupRequestFormGroup() {
 		return new FormGroup<CreateProfilingGroupRequestFormProperties>({
-			profilingGroupName: new FormControl<string | null | undefined>(undefined),
+			profilingGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -546,16 +670,20 @@ export namespace MyNS {
 
 	/** The structure representing the postAgentProfileRequest. */
 	export interface PostAgentProfileRequest {
+
+		/** Required */
 		agentProfile: string;
 	}
 
 	/** The structure representing the postAgentProfileRequest. */
 	export interface PostAgentProfileRequestFormProperties {
+
+		/** Required */
 		agentProfile: FormControl<string | null | undefined>,
 	}
 	export function CreatePostAgentProfileRequestFormGroup() {
 		return new FormGroup<PostAgentProfileRequestFormProperties>({
-			agentProfile: new FormControl<string | null | undefined>(undefined),
+			agentProfile: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -563,12 +691,22 @@ export namespace MyNS {
 
 	/** The structure representing the putPermissionRequest. */
 	export interface PutPermissionRequest {
+
+		/**
+		 * Required
+		 * Minimum items: 1
+		 * Maximum items: 50
+		 */
 		principals: Array<string>;
+
+		/** Pattern: [a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12} */
 		revisionId?: string | null;
 	}
 
 	/** The structure representing the putPermissionRequest. */
 	export interface PutPermissionRequestFormProperties {
+
+		/** Pattern: [a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12} */
 		revisionId: FormControl<string | null | undefined>,
 	}
 	export function CreatePutPermissionRequestFormGroup() {
@@ -776,7 +914,7 @@ export namespace MyNS {
 	}
 	export function CreateConfigureAgentPostBodyFormGroup() {
 		return new FormGroup<ConfigureAgentPostBodyFormProperties>({
-			fleetInstanceId: new FormControl<string | null | undefined>(undefined),
+			fleetInstanceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -808,7 +946,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateProfilingGroupPostBodyFormGroup() {
 		return new FormGroup<CreateProfilingGroupPostBodyFormProperties>({
-			profilingGroupName: new FormControl<string | null | undefined>(undefined),
+			profilingGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
 	}
@@ -873,7 +1011,7 @@ export namespace MyNS {
 	}
 	export function CreatePostAgentProfilePostBodyFormGroup() {
 		return new FormGroup<PostAgentProfilePostBodyFormProperties>({
-			agentProfile: new FormControl<string | null | undefined>(undefined),
+			agentProfile: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

@@ -23,8 +23,24 @@ export namespace MyNS {
 
 	/** Represents a collection of device types. */
 	export interface DevicePool {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		description?: string | null;
 		type?: DevicePoolType | null;
 		rules?: Array<Rule>;
@@ -33,17 +49,33 @@ export namespace MyNS {
 
 	/** Represents a collection of device types. */
 	export interface DevicePoolFormProperties {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		type: FormControl<DevicePoolType | null | undefined>,
 		maxDevices: FormControl<number | null | undefined>,
 	}
 	export function CreateDevicePoolFormGroup() {
 		return new FormGroup<DevicePoolFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 			type: new FormControl<DevicePoolType | null | undefined>(undefined),
 			maxDevices: new FormControl<number | null | undefined>(undefined),
 		});
@@ -82,25 +114,63 @@ export namespace MyNS {
 
 	/** Represents a request to the create device pool operation. */
 	export interface CreateDevicePoolRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		projectArn: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: string;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		description?: string | null;
+
+		/** Required */
 		rules: Array<Rule>;
 		maxDevices?: number | null;
 	}
 
 	/** Represents a request to the create device pool operation. */
 	export interface CreateDevicePoolRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		projectArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		maxDevices: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateDevicePoolRequestFormGroup() {
 		return new FormGroup<CreateDevicePoolRequestFormProperties>({
-			projectArn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			projectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 			maxDevices: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -162,50 +232,104 @@ export namespace MyNS {
 
 	/** Represents the instance profile. */
 	export interface InstanceProfile {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn?: string | null;
 		packageCleanup?: boolean | null;
 		excludeAppPackagesFromCleanup?: Array<string>;
 		rebootAfterUse?: boolean | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		description?: string | null;
 	}
 
 	/** Represents the instance profile. */
 	export interface InstanceProfileFormProperties {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 		packageCleanup: FormControl<boolean | null | undefined>,
 		rebootAfterUse: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 	}
 	export function CreateInstanceProfileFormGroup() {
 		return new FormGroup<InstanceProfileFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
 			packageCleanup: new FormControl<boolean | null | undefined>(undefined),
 			rebootAfterUse: new FormControl<boolean | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface CreateInstanceProfileRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: string;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		description?: string | null;
 		packageCleanup?: boolean | null;
 		excludeAppPackagesFromCleanup?: Array<string>;
 		rebootAfterUse?: boolean | null;
 	}
 	export interface CreateInstanceProfileRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		packageCleanup: FormControl<boolean | null | undefined>,
 		rebootAfterUse: FormControl<boolean | null | undefined>,
 	}
 	export function CreateCreateInstanceProfileRequestFormGroup() {
 		return new FormGroup<CreateInstanceProfileRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 			packageCleanup: new FormControl<boolean | null | undefined>(undefined),
 			rebootAfterUse: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -228,8 +352,24 @@ export namespace MyNS {
 
 	/** An array of settings that describes characteristics of a network profile. */
 	export interface NetworkProfile {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		description?: string | null;
 		type?: DevicePoolType | null;
 		uplinkBandwidthBits?: number | null;
@@ -238,14 +378,40 @@ export namespace MyNS {
 		downlinkDelayMs?: number | null;
 		uplinkJitterMs?: number | null;
 		downlinkJitterMs?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		uplinkLossPercent?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		downlinkLossPercent?: number | null;
 	}
 
 	/** An array of settings that describes characteristics of a network profile. */
 	export interface NetworkProfileFormProperties {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		type: FormControl<DevicePoolType | null | undefined>,
 		uplinkBandwidthBits: FormControl<number | null | undefined>,
@@ -254,14 +420,24 @@ export namespace MyNS {
 		downlinkDelayMs: FormControl<number | null | undefined>,
 		uplinkJitterMs: FormControl<number | null | undefined>,
 		downlinkJitterMs: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		uplinkLossPercent: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		downlinkLossPercent: FormControl<number | null | undefined>,
 	}
 	export function CreateNetworkProfileFormGroup() {
 		return new FormGroup<NetworkProfileFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 			type: new FormControl<DevicePoolType | null | undefined>(undefined),
 			uplinkBandwidthBits: new FormControl<number | null | undefined>(undefined),
 			downlinkBandwidthBits: new FormControl<number | null | undefined>(undefined),
@@ -269,15 +445,33 @@ export namespace MyNS {
 			downlinkDelayMs: new FormControl<number | null | undefined>(undefined),
 			uplinkJitterMs: new FormControl<number | null | undefined>(undefined),
 			downlinkJitterMs: new FormControl<number | null | undefined>(undefined),
-			uplinkLossPercent: new FormControl<number | null | undefined>(undefined),
-			downlinkLossPercent: new FormControl<number | null | undefined>(undefined),
+			uplinkLossPercent: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			downlinkLossPercent: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
 
 	export interface CreateNetworkProfileRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		projectArn: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: string;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		description?: string | null;
 		type?: DevicePoolType | null;
 		uplinkBandwidthBits?: number | null;
@@ -286,12 +480,40 @@ export namespace MyNS {
 		downlinkDelayMs?: number | null;
 		uplinkJitterMs?: number | null;
 		downlinkJitterMs?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		uplinkLossPercent?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		downlinkLossPercent?: number | null;
 	}
 	export interface CreateNetworkProfileRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		projectArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		type: FormControl<DevicePoolType | null | undefined>,
 		uplinkBandwidthBits: FormControl<number | null | undefined>,
@@ -300,14 +522,24 @@ export namespace MyNS {
 		downlinkDelayMs: FormControl<number | null | undefined>,
 		uplinkJitterMs: FormControl<number | null | undefined>,
 		downlinkJitterMs: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		uplinkLossPercent: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		downlinkLossPercent: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateNetworkProfileRequestFormGroup() {
 		return new FormGroup<CreateNetworkProfileRequestFormProperties>({
-			projectArn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			projectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 			type: new FormControl<DevicePoolType | null | undefined>(undefined),
 			uplinkBandwidthBits: new FormControl<number | null | undefined>(undefined),
 			downlinkBandwidthBits: new FormControl<number | null | undefined>(undefined),
@@ -315,8 +547,8 @@ export namespace MyNS {
 			downlinkDelayMs: new FormControl<number | null | undefined>(undefined),
 			uplinkJitterMs: new FormControl<number | null | undefined>(undefined),
 			downlinkJitterMs: new FormControl<number | null | undefined>(undefined),
-			uplinkLossPercent: new FormControl<number | null | undefined>(undefined),
-			downlinkLossPercent: new FormControl<number | null | undefined>(undefined),
+			uplinkLossPercent: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			downlinkLossPercent: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -341,7 +573,18 @@ export namespace MyNS {
 
 	/** Represents an operating-system neutral workspace for running and managing tests. */
 	export interface Project {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name?: string | null;
 		defaultJobTimeoutMinutes?: number | null;
 		created?: Date | null;
@@ -349,15 +592,26 @@ export namespace MyNS {
 
 	/** Represents an operating-system neutral workspace for running and managing tests. */
 	export interface ProjectFormProperties {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
 		defaultJobTimeoutMinutes: FormControl<number | null | undefined>,
 		created: FormControl<Date | null | undefined>,
 	}
 	export function CreateProjectFormGroup() {
 		return new FormGroup<ProjectFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			defaultJobTimeoutMinutes: new FormControl<number | null | undefined>(undefined),
 			created: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -367,18 +621,30 @@ export namespace MyNS {
 
 	/** Represents a request to the create project operation. */
 	export interface CreateProjectRequest {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: string;
 		defaultJobTimeoutMinutes?: number | null;
 	}
 
 	/** Represents a request to the create project operation. */
 	export interface CreateProjectRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
 		defaultJobTimeoutMinutes: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateProjectRequestFormGroup() {
 		return new FormGroup<CreateProjectRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 			defaultJobTimeoutMinutes: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -414,22 +680,57 @@ export namespace MyNS {
 
 	/** Represents information about the remote access session. */
 	export interface RemoteAccessSession {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name?: string | null;
 		created?: Date | null;
 		status?: RemoteAccessSessionStatus | null;
 		result?: RemoteAccessSessionResult | null;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		message?: string | null;
 		started?: Date | null;
 		stopped?: Date | null;
 
 		/** Represents a device type that an app is tested against. */
 		device?: Device;
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		instanceArn?: string | null;
 		remoteDebugEnabled?: boolean | null;
 		remoteRecordEnabled?: boolean | null;
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		remoteRecordAppArn?: string | null;
+
+		/** Max length: 1024 */
 		hostAddress?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		clientId?: string | null;
 		billingMethod?: RemoteAccessSessionBillingMethod | null;
 
@@ -437,52 +738,97 @@ export namespace MyNS {
 		deviceMinutes?: DeviceMinutes;
 		endpoint?: string | null;
 		deviceUdid?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		interactionMode?: RemoteAccessSessionInteractionMode | null;
 		skipAppResign?: boolean | null;
 	}
 
 	/** Represents information about the remote access session. */
 	export interface RemoteAccessSessionFormProperties {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
 		created: FormControl<Date | null | undefined>,
 		status: FormControl<RemoteAccessSessionStatus | null | undefined>,
 		result: FormControl<RemoteAccessSessionResult | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		message: FormControl<string | null | undefined>,
 		started: FormControl<Date | null | undefined>,
 		stopped: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		instanceArn: FormControl<string | null | undefined>,
 		remoteDebugEnabled: FormControl<boolean | null | undefined>,
 		remoteRecordEnabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		remoteRecordAppArn: FormControl<string | null | undefined>,
+
+		/** Max length: 1024 */
 		hostAddress: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		clientId: FormControl<string | null | undefined>,
 		billingMethod: FormControl<RemoteAccessSessionBillingMethod | null | undefined>,
 		endpoint: FormControl<string | null | undefined>,
 		deviceUdid: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		interactionMode: FormControl<RemoteAccessSessionInteractionMode | null | undefined>,
 		skipAppResign: FormControl<boolean | null | undefined>,
 	}
 	export function CreateRemoteAccessSessionFormGroup() {
 		return new FormGroup<RemoteAccessSessionFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			created: new FormControl<Date | null | undefined>(undefined),
 			status: new FormControl<RemoteAccessSessionStatus | null | undefined>(undefined),
 			result: new FormControl<RemoteAccessSessionResult | null | undefined>(undefined),
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 			started: new FormControl<Date | null | undefined>(undefined),
 			stopped: new FormControl<Date | null | undefined>(undefined),
-			instanceArn: new FormControl<string | null | undefined>(undefined),
+			instanceArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
 			remoteDebugEnabled: new FormControl<boolean | null | undefined>(undefined),
 			remoteRecordEnabled: new FormControl<boolean | null | undefined>(undefined),
-			remoteRecordAppArn: new FormControl<string | null | undefined>(undefined),
-			hostAddress: new FormControl<string | null | undefined>(undefined),
-			clientId: new FormControl<string | null | undefined>(undefined),
+			remoteRecordAppArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
+			hostAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			clientId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
 			billingMethod: new FormControl<RemoteAccessSessionBillingMethod | null | undefined>(undefined),
 			endpoint: new FormControl<string | null | undefined>(undefined),
 			deviceUdid: new FormControl<string | null | undefined>(undefined),
-			interactionMode: new FormControl<RemoteAccessSessionInteractionMode | null | undefined>(undefined),
+			interactionMode: new FormControl<RemoteAccessSessionInteractionMode | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
 			skipAppResign: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -495,7 +841,18 @@ export namespace MyNS {
 
 	/** Represents a device type that an app is tested against. */
 	export interface Device {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name?: string | null;
 		manufacturer?: string | null;
 		model?: string | null;
@@ -524,7 +881,18 @@ export namespace MyNS {
 
 	/** Represents a device type that an app is tested against. */
 	export interface DeviceFormProperties {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
 		manufacturer: FormControl<string | null | undefined>,
 		model: FormControl<string | null | undefined>,
@@ -545,8 +913,8 @@ export namespace MyNS {
 	}
 	export function CreateDeviceFormGroup() {
 		return new FormGroup<DeviceFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			manufacturer: new FormControl<string | null | undefined>(undefined),
 			model: new FormControl<string | null | undefined>(undefined),
 			modelId: new FormControl<string | null | undefined>(undefined),
@@ -617,7 +985,19 @@ export namespace MyNS {
 
 	/** Represents the device instance. */
 	export interface DeviceInstance {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn?: string | null;
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		deviceArn?: string | null;
 		labels?: Array<string>;
 		status?: DeviceInstanceStatus | null;
@@ -629,15 +1009,27 @@ export namespace MyNS {
 
 	/** Represents the device instance. */
 	export interface DeviceInstanceFormProperties {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		deviceArn: FormControl<string | null | undefined>,
 		status: FormControl<DeviceInstanceStatus | null | undefined>,
 		udid: FormControl<string | null | undefined>,
 	}
 	export function CreateDeviceInstanceFormGroup() {
 		return new FormGroup<DeviceInstanceFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			deviceArn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
+			deviceArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
 			status: new FormControl<DeviceInstanceStatus | null | undefined>(undefined),
 			udid: new FormControl<string | null | undefined>(undefined),
 		});
@@ -678,48 +1070,140 @@ export namespace MyNS {
 
 	/** Creates and submits a request to start a remote access session. */
 	export interface CreateRemoteAccessSessionRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		projectArn: string;
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		deviceArn: string;
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		instanceArn?: string | null;
+
+		/**
+		 * Max length: 8192
+		 * Min length: 0
+		 */
 		sshPublicKey?: string | null;
 		remoteDebugEnabled?: boolean | null;
 		remoteRecordEnabled?: boolean | null;
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		remoteRecordAppArn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		clientId?: string | null;
 
 		/** Configuration settings for a remote access session, including billing method. */
 		configuration?: CreateRemoteAccessSessionConfiguration;
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		interactionMode?: RemoteAccessSessionInteractionMode | null;
 		skipAppResign?: boolean | null;
 	}
 
 	/** Creates and submits a request to start a remote access session. */
 	export interface CreateRemoteAccessSessionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		projectArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		deviceArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		instanceArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 8192
+		 * Min length: 0
+		 */
 		sshPublicKey: FormControl<string | null | undefined>,
 		remoteDebugEnabled: FormControl<boolean | null | undefined>,
 		remoteRecordEnabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		remoteRecordAppArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		clientId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		interactionMode: FormControl<RemoteAccessSessionInteractionMode | null | undefined>,
 		skipAppResign: FormControl<boolean | null | undefined>,
 	}
 	export function CreateCreateRemoteAccessSessionRequestFormGroup() {
 		return new FormGroup<CreateRemoteAccessSessionRequestFormProperties>({
-			projectArn: new FormControl<string | null | undefined>(undefined),
-			deviceArn: new FormControl<string | null | undefined>(undefined),
-			instanceArn: new FormControl<string | null | undefined>(undefined),
-			sshPublicKey: new FormControl<string | null | undefined>(undefined),
+			projectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			deviceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			instanceArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
+			sshPublicKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
 			remoteDebugEnabled: new FormControl<boolean | null | undefined>(undefined),
 			remoteRecordEnabled: new FormControl<boolean | null | undefined>(undefined),
-			remoteRecordAppArn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			clientId: new FormControl<string | null | undefined>(undefined),
-			interactionMode: new FormControl<RemoteAccessSessionInteractionMode | null | undefined>(undefined),
+			remoteRecordAppArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			clientId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
+			interactionMode: new FormControl<RemoteAccessSessionInteractionMode | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
 			skipAppResign: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -759,6 +1243,12 @@ export namespace MyNS {
 
 	/** A Selenium testing project. Projects are used to collect and collate sessions. */
 	export interface TestGridProject {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		arn?: string | null;
 		name?: string | null;
 		description?: string | null;
@@ -767,6 +1257,12 @@ export namespace MyNS {
 
 	/** A Selenium testing project. Projects are used to collect and collate sessions. */
 	export interface TestGridProjectFormProperties {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
@@ -774,7 +1270,7 @@ export namespace MyNS {
 	}
 	export function CreateTestGridProjectFormGroup() {
 		return new FormGroup<TestGridProjectFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
 			name: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
 			created: new FormControl<Date | null | undefined>(undefined),
@@ -783,17 +1279,43 @@ export namespace MyNS {
 	}
 
 	export interface CreateTestGridProjectRequest {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		name: string;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		description?: string | null;
 	}
 	export interface CreateTestGridProjectRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		description: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateTestGridProjectRequestFormGroup() {
 		return new FormGroup<CreateTestGridProjectRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -825,17 +1347,43 @@ export namespace MyNS {
 	}
 
 	export interface CreateTestGridUrlRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		projectArn: string;
+
+		/**
+		 * Required
+		 * Minimum: 60
+		 * Maximum: 86400
+		 */
 		expiresInSeconds: number;
 	}
 	export interface CreateTestGridUrlRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		projectArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Minimum: 60
+		 * Maximum: 86400
+		 */
 		expiresInSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateTestGridUrlRequestFormGroup() {
 		return new FormGroup<CreateTestGridUrlRequestFormProperties>({
-			projectArn: new FormControl<string | null | undefined>(undefined),
-			expiresInSeconds: new FormControl<number | null | undefined>(undefined),
+			projectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			expiresInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(60), Validators.max(86400)]),
 		});
 
 	}
@@ -860,42 +1408,104 @@ export namespace MyNS {
 
 	/** An app or a set of one or more tests to upload or that have been uploaded. */
 	export interface Upload {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name?: string | null;
 		created?: Date | null;
 		type?: UploadType | null;
 		status?: UploadStatus | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		url?: string | null;
+
+		/**
+		 * Max length: 8192
+		 * Min length: 0
+		 */
 		metadata?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		contentType?: string | null;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		message?: string | null;
 		category?: DevicePoolType | null;
 	}
 
 	/** An app or a set of one or more tests to upload or that have been uploaded. */
 	export interface UploadFormProperties {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
 		created: FormControl<Date | null | undefined>,
 		type: FormControl<UploadType | null | undefined>,
 		status: FormControl<UploadStatus | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		url: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 8192
+		 * Min length: 0
+		 */
 		metadata: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		contentType: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		message: FormControl<string | null | undefined>,
 		category: FormControl<DevicePoolType | null | undefined>,
 	}
 	export function CreateUploadFormGroup() {
 		return new FormGroup<UploadFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			created: new FormControl<Date | null | undefined>(undefined),
 			type: new FormControl<UploadType | null | undefined>(undefined),
 			status: new FormControl<UploadStatus | null | undefined>(undefined),
-			url: new FormControl<string | null | undefined>(undefined),
-			metadata: new FormControl<string | null | undefined>(undefined),
-			contentType: new FormControl<string | null | undefined>(undefined),
-			message: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
+			metadata: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			contentType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 			category: new FormControl<DevicePoolType | null | undefined>(undefined),
 		});
 
@@ -908,25 +1518,65 @@ export namespace MyNS {
 
 	/** Represents a request to the create upload operation. */
 	export interface CreateUploadRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		projectArn: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: string;
+
+		/** Required */
 		type: UploadType;
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		contentType?: string | null;
 	}
 
 	/** Represents a request to the create upload operation. */
 	export interface CreateUploadRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		projectArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Required */
 		type: FormControl<UploadType | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		contentType: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateUploadRequestFormGroup() {
 		return new FormGroup<CreateUploadRequestFormProperties>({
-			projectArn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<UploadType | null | undefined>(undefined),
-			contentType: new FormControl<string | null | undefined>(undefined),
+			projectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			type: new FormControl<UploadType | null | undefined>(undefined, [Validators.required]),
+			contentType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
 		});
 
 	}
@@ -947,50 +1597,148 @@ export namespace MyNS {
 
 	/** Represents an Amazon Virtual Private Cloud (VPC) endpoint configuration. */
 	export interface VPCEConfiguration {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		vpceConfigurationName?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		vpceServiceName?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		serviceDnsName?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		vpceConfigurationDescription?: string | null;
 	}
 
 	/** Represents an Amazon Virtual Private Cloud (VPC) endpoint configuration. */
 	export interface VPCEConfigurationFormProperties {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		vpceConfigurationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		vpceServiceName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		serviceDnsName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		vpceConfigurationDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateVPCEConfigurationFormGroup() {
 		return new FormGroup<VPCEConfigurationFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			vpceConfigurationName: new FormControl<string | null | undefined>(undefined),
-			vpceServiceName: new FormControl<string | null | undefined>(undefined),
-			serviceDnsName: new FormControl<string | null | undefined>(undefined),
-			vpceConfigurationDescription: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
+			vpceConfigurationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			vpceServiceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
+			serviceDnsName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
+			vpceConfigurationDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface CreateVPCEConfigurationRequest {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		vpceConfigurationName: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		vpceServiceName: string;
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		serviceDnsName: string;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		vpceConfigurationDescription?: string | null;
 	}
 	export interface CreateVPCEConfigurationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		vpceConfigurationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		vpceServiceName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		serviceDnsName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		vpceConfigurationDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateVPCEConfigurationRequestFormGroup() {
 		return new FormGroup<CreateVPCEConfigurationRequestFormProperties>({
-			vpceConfigurationName: new FormControl<string | null | undefined>(undefined),
-			vpceServiceName: new FormControl<string | null | undefined>(undefined),
-			serviceDnsName: new FormControl<string | null | undefined>(undefined),
-			vpceConfigurationDescription: new FormControl<string | null | undefined>(undefined),
+			vpceConfigurationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(0)]),
+			vpceServiceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(0)]),
+			serviceDnsName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(0)]),
+			vpceConfigurationDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 		});
 
 	}
@@ -1012,16 +1760,30 @@ export namespace MyNS {
 
 	/** Represents a request to the delete device pool operation. */
 	export interface DeleteDevicePoolRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 	}
 
 	/** Represents a request to the delete device pool operation. */
 	export interface DeleteDevicePoolRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDevicePoolRequestFormGroup() {
 		return new FormGroup<DeleteDevicePoolRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -1037,14 +1799,28 @@ export namespace MyNS {
 	}
 
 	export interface DeleteInstanceProfileRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 	}
 	export interface DeleteInstanceProfileRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteInstanceProfileRequestFormGroup() {
 		return new FormGroup<DeleteInstanceProfileRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -1060,14 +1836,28 @@ export namespace MyNS {
 	}
 
 	export interface DeleteNetworkProfileRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 	}
 	export interface DeleteNetworkProfileRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteNetworkProfileRequestFormGroup() {
 		return new FormGroup<DeleteNetworkProfileRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -1089,16 +1879,30 @@ export namespace MyNS {
 
 	/** Represents a request to the delete project operation. */
 	export interface DeleteProjectRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 	}
 
 	/** Represents a request to the delete project operation. */
 	export interface DeleteProjectRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteProjectRequestFormGroup() {
 		return new FormGroup<DeleteProjectRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -1120,16 +1924,30 @@ export namespace MyNS {
 
 	/** Represents the request to delete the specified remote access session. */
 	export interface DeleteRemoteAccessSessionRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 	}
 
 	/** Represents the request to delete the specified remote access session. */
 	export interface DeleteRemoteAccessSessionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRemoteAccessSessionRequestFormGroup() {
 		return new FormGroup<DeleteRemoteAccessSessionRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -1151,16 +1969,30 @@ export namespace MyNS {
 
 	/** Represents a request to the delete run operation. */
 	export interface DeleteRunRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 	}
 
 	/** Represents a request to the delete run operation. */
 	export interface DeleteRunRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRunRequestFormGroup() {
 		return new FormGroup<DeleteRunRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -1176,14 +2008,28 @@ export namespace MyNS {
 	}
 
 	export interface DeleteTestGridProjectRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		projectArn: string;
 	}
 	export interface DeleteTestGridProjectRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		projectArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteTestGridProjectRequestFormGroup() {
 		return new FormGroup<DeleteTestGridProjectRequestFormProperties>({
-			projectArn: new FormControl<string | null | undefined>(undefined),
+			projectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -1215,16 +2061,30 @@ export namespace MyNS {
 
 	/** Represents a request to the delete upload operation. */
 	export interface DeleteUploadRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 	}
 
 	/** Represents a request to the delete upload operation. */
 	export interface DeleteUploadRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteUploadRequestFormGroup() {
 		return new FormGroup<DeleteUploadRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -1240,14 +2100,28 @@ export namespace MyNS {
 	}
 
 	export interface DeleteVPCEConfigurationRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 	}
 	export interface DeleteVPCEConfigurationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteVPCEConfigurationRequestFormGroup() {
 		return new FormGroup<DeleteVPCEConfigurationRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -1282,6 +2156,11 @@ export namespace MyNS {
 
 	/** A container for account-level settings in AWS Device Farm. */
 	export interface AccountSettings {
+
+		/**
+		 * Max length: 16
+		 * Min length: 2
+		 */
 		awsAccountNumber?: string | null;
 		unmeteredDevices?: PurchasedDevicesMap;
 		unmeteredRemoteAccessDevices?: PurchasedDevicesMap;
@@ -1296,6 +2175,11 @@ export namespace MyNS {
 
 	/** A container for account-level settings in AWS Device Farm. */
 	export interface AccountSettingsFormProperties {
+
+		/**
+		 * Max length: 16
+		 * Min length: 2
+		 */
 		awsAccountNumber: FormControl<string | null | undefined>,
 		maxJobTimeoutMinutes: FormControl<number | null | undefined>,
 		defaultJobTimeoutMinutes: FormControl<number | null | undefined>,
@@ -1303,7 +2187,7 @@ export namespace MyNS {
 	}
 	export function CreateAccountSettingsFormGroup() {
 		return new FormGroup<AccountSettingsFormProperties>({
-			awsAccountNumber: new FormControl<string | null | undefined>(undefined),
+			awsAccountNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16), Validators.minLength(2)]),
 			maxJobTimeoutMinutes: new FormControl<number | null | undefined>(undefined),
 			defaultJobTimeoutMinutes: new FormControl<number | null | undefined>(undefined),
 			skipAppResign: new FormControl<boolean | null | undefined>(undefined),
@@ -1385,16 +2269,30 @@ export namespace MyNS {
 
 	/** Represents a request to the get device request. */
 	export interface GetDeviceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 	}
 
 	/** Represents a request to the get device request. */
 	export interface GetDeviceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetDeviceRequestFormGroup() {
 		return new FormGroup<GetDeviceRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -1413,14 +2311,28 @@ export namespace MyNS {
 	}
 
 	export interface GetDeviceInstanceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 	}
 	export interface GetDeviceInstanceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetDeviceInstanceRequestFormGroup() {
 		return new FormGroup<GetDeviceInstanceRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -1445,16 +2357,30 @@ export namespace MyNS {
 
 	/** Represents a request to the get device pool operation. */
 	export interface GetDevicePoolRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 	}
 
 	/** Represents a request to the get device pool operation. */
 	export interface GetDevicePoolRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetDevicePoolRequestFormGroup() {
 		return new FormGroup<GetDevicePoolRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -1499,18 +2425,28 @@ export namespace MyNS {
 
 	/** Represents information about incompatibility. */
 	export interface IncompatibilityMessage {
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		message?: string | null;
 		type?: RuleAttribute | null;
 	}
 
 	/** Represents information about incompatibility. */
 	export interface IncompatibilityMessageFormProperties {
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		message: FormControl<string | null | undefined>,
 		type: FormControl<RuleAttribute | null | undefined>,
 	}
 	export function CreateIncompatibilityMessageFormGroup() {
 		return new FormGroup<IncompatibilityMessageFormProperties>({
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 			type: new FormControl<RuleAttribute | null | undefined>(undefined),
 		});
 
@@ -1519,7 +2455,20 @@ export namespace MyNS {
 
 	/** Represents a request to the get device pool compatibility operation. */
 	export interface GetDevicePoolCompatibilityRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		devicePoolArn: string;
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		appArn?: string | null;
 		testType?: GetDevicePoolCompatibilityRequestTestType | null;
 
@@ -1532,14 +2481,27 @@ export namespace MyNS {
 
 	/** Represents a request to the get device pool compatibility operation. */
 	export interface GetDevicePoolCompatibilityRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		devicePoolArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		appArn: FormControl<string | null | undefined>,
 		testType: FormControl<GetDevicePoolCompatibilityRequestTestType | null | undefined>,
 	}
 	export function CreateGetDevicePoolCompatibilityRequestFormGroup() {
 		return new FormGroup<GetDevicePoolCompatibilityRequestFormProperties>({
-			devicePoolArn: new FormControl<string | null | undefined>(undefined),
-			appArn: new FormControl<string | null | undefined>(undefined),
+			devicePoolArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			appArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
 			testType: new FormControl<GetDevicePoolCompatibilityRequestTestType | null | undefined>(undefined),
 		});
 
@@ -1550,26 +2512,64 @@ export namespace MyNS {
 
 	/** Represents test settings. This data structure is passed in as the test parameter to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>. */
 	export interface ScheduleRunTest {
+
+		/** Required */
 		type: GetDevicePoolCompatibilityRequestTestType;
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		testPackageArn?: string | null;
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		testSpecArn?: string | null;
+
+		/**
+		 * Max length: 8192
+		 * Min length: 0
+		 */
 		filter?: string | null;
 		parameters?: TestParameters;
 	}
 
 	/** Represents test settings. This data structure is passed in as the test parameter to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>. */
 	export interface ScheduleRunTestFormProperties {
+
+		/** Required */
 		type: FormControl<GetDevicePoolCompatibilityRequestTestType | null | undefined>,
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		testPackageArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		testSpecArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 8192
+		 * Min length: 0
+		 */
 		filter: FormControl<string | null | undefined>,
 	}
 	export function CreateScheduleRunTestFormGroup() {
 		return new FormGroup<ScheduleRunTestFormProperties>({
-			type: new FormControl<GetDevicePoolCompatibilityRequestTestType | null | undefined>(undefined),
-			testPackageArn: new FormControl<string | null | undefined>(undefined),
-			testSpecArn: new FormControl<string | null | undefined>(undefined),
-			filter: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<GetDevicePoolCompatibilityRequestTestType | null | undefined>(undefined, [Validators.required]),
+			testPackageArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
+			testSpecArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
+			filter: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
 		});
 
 	}
@@ -1587,7 +2587,19 @@ export namespace MyNS {
 
 	/** Represents the settings for a run. Includes things like location, radio states, auxiliary apps, and network profiles. */
 	export interface ScheduleRunConfiguration {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		extraDataPackageArn?: string | null;
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		networkProfileArn?: string | null;
 		locale?: string | null;
 
@@ -1606,15 +2618,27 @@ export namespace MyNS {
 
 	/** Represents the settings for a run. Includes things like location, radio states, auxiliary apps, and network profiles. */
 	export interface ScheduleRunConfigurationFormProperties {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		extraDataPackageArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		networkProfileArn: FormControl<string | null | undefined>,
 		locale: FormControl<string | null | undefined>,
 		billingMethod: FormControl<RemoteAccessSessionBillingMethod | null | undefined>,
 	}
 	export function CreateScheduleRunConfigurationFormGroup() {
 		return new FormGroup<ScheduleRunConfigurationFormProperties>({
-			extraDataPackageArn: new FormControl<string | null | undefined>(undefined),
-			networkProfileArn: new FormControl<string | null | undefined>(undefined),
+			extraDataPackageArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
+			networkProfileArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
 			locale: new FormControl<string | null | undefined>(undefined),
 			billingMethod: new FormControl<RemoteAccessSessionBillingMethod | null | undefined>(undefined),
 		});
@@ -1624,19 +2648,27 @@ export namespace MyNS {
 
 	/** <p>Represents a latitude and longitude pair, expressed in geographic coordinate system degrees (for example, 47.6204, -122.3491).</p> <p>Elevation is currently not supported.</p> */
 	export interface Location {
+
+		/** Required */
 		latitude: number;
+
+		/** Required */
 		longitude: number;
 	}
 
 	/** <p>Represents a latitude and longitude pair, expressed in geographic coordinate system degrees (for example, 47.6204, -122.3491).</p> <p>Elevation is currently not supported.</p> */
 	export interface LocationFormProperties {
+
+		/** Required */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Required */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateLocationFormGroup() {
 		return new FormGroup<LocationFormProperties>({
-			latitude: new FormControl<number | null | undefined>(undefined),
-			longitude: new FormControl<number | null | undefined>(undefined),
+			latitude: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			longitude: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1698,14 +2730,28 @@ export namespace MyNS {
 	}
 
 	export interface GetInstanceProfileRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 	}
 	export interface GetInstanceProfileRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetInstanceProfileRequestFormGroup() {
 		return new FormGroup<GetInstanceProfileRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -1730,7 +2776,18 @@ export namespace MyNS {
 
 	/** Represents a device. */
 	export interface Job {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name?: string | null;
 		type?: GetDevicePoolCompatibilityRequestTestType | null;
 		created?: Date | null;
@@ -1741,10 +2798,21 @@ export namespace MyNS {
 
 		/** Represents entity counters. */
 		counters?: Counters;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		message?: string | null;
 
 		/** Represents a device type that an app is tested against. */
 		device?: Device;
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		instanceArn?: string | null;
 
 		/** Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children. */
@@ -1755,7 +2823,18 @@ export namespace MyNS {
 
 	/** Represents a device. */
 	export interface JobFormProperties {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
 		type: FormControl<GetDevicePoolCompatibilityRequestTestType | null | undefined>,
 		created: FormControl<Date | null | undefined>,
@@ -1763,23 +2842,34 @@ export namespace MyNS {
 		result: FormControl<RemoteAccessSessionResult | null | undefined>,
 		started: FormControl<Date | null | undefined>,
 		stopped: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		message: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		instanceArn: FormControl<string | null | undefined>,
 		videoEndpoint: FormControl<string | null | undefined>,
 		videoCapture: FormControl<boolean | null | undefined>,
 	}
 	export function CreateJobFormGroup() {
 		return new FormGroup<JobFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			type: new FormControl<GetDevicePoolCompatibilityRequestTestType | null | undefined>(undefined),
 			created: new FormControl<Date | null | undefined>(undefined),
 			status: new FormControl<RemoteAccessSessionStatus | null | undefined>(undefined),
 			result: new FormControl<RemoteAccessSessionResult | null | undefined>(undefined),
 			started: new FormControl<Date | null | undefined>(undefined),
 			stopped: new FormControl<Date | null | undefined>(undefined),
-			message: new FormControl<string | null | undefined>(undefined),
-			instanceArn: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
+			instanceArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
 			videoEndpoint: new FormControl<string | null | undefined>(undefined),
 			videoCapture: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -1824,16 +2914,30 @@ export namespace MyNS {
 
 	/** Represents a request to the get job operation. */
 	export interface GetJobRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 	}
 
 	/** Represents a request to the get job operation. */
 	export interface GetJobRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetJobRequestFormGroup() {
 		return new FormGroup<GetJobRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -1852,14 +2956,28 @@ export namespace MyNS {
 	}
 
 	export interface GetNetworkProfileRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 	}
 	export interface GetNetworkProfileRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetNetworkProfileRequestFormGroup() {
 		return new FormGroup<GetNetworkProfileRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -1869,16 +2987,26 @@ export namespace MyNS {
 	export interface GetOfferingStatusResult {
 		current?: OfferingStatusMap;
 		nextPeriod?: OfferingStatusMap;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Returns the status result for a device offering. */
 	export interface GetOfferingStatusResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetOfferingStatusResultFormGroup() {
 		return new FormGroup<GetOfferingStatusResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -1896,16 +3024,26 @@ export namespace MyNS {
 
 	/** Represents the request to retrieve the offering status for the specified customer or account. */
 	export interface GetOfferingStatusRequest {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents the request to retrieve the offering status for the specified customer or account. */
 	export interface GetOfferingStatusRequestFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetOfferingStatusRequestFormGroup() {
 		return new FormGroup<GetOfferingStatusRequestFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -1940,16 +3078,30 @@ export namespace MyNS {
 
 	/** Represents a request to the get project operation. */
 	export interface GetProjectRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 	}
 
 	/** Represents a request to the get project operation. */
 	export interface GetProjectRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetProjectRequestFormGroup() {
 		return new FormGroup<GetProjectRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -1974,16 +3126,30 @@ export namespace MyNS {
 
 	/** Represents the request to get information about the specified remote access session. */
 	export interface GetRemoteAccessSessionRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 	}
 
 	/** Represents the request to get information about the specified remote access session. */
 	export interface GetRemoteAccessSessionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRemoteAccessSessionRequestFormGroup() {
 		return new FormGroup<GetRemoteAccessSessionRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -2008,7 +3174,18 @@ export namespace MyNS {
 
 	/** Represents a test run on a set of devices with a given app package, test parameters, and so on. */
 	export interface Run {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name?: string | null;
 		type?: GetDevicePoolCompatibilityRequestTestType | null;
 		platform?: DevicePlatform | null;
@@ -2020,6 +3197,11 @@ export namespace MyNS {
 
 		/** Represents entity counters. */
 		counters?: Counters;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		message?: string | null;
 		totalJobs?: number | null;
 		completedJobs?: number | null;
@@ -2033,9 +3215,21 @@ export namespace MyNS {
 		parsingResultUrl?: string | null;
 		resultCode?: RunResultCode | null;
 		seed?: number | null;
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		appUpload?: string | null;
 		eventCount?: number | null;
 		jobTimeoutMinutes?: number | null;
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		devicePoolArn?: string | null;
 		locale?: string | null;
 
@@ -2049,6 +3243,12 @@ export namespace MyNS {
 		customerArtifactPaths?: CustomerArtifactPaths;
 		webUrl?: string | null;
 		skipAppResign?: boolean | null;
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		testSpecArn?: string | null;
 
 		/** Contains the run results requested by the device selection configuration and how many devices were returned. For an example of the JSON response syntax, see <a>ScheduleRun</a>. */
@@ -2057,7 +3257,18 @@ export namespace MyNS {
 
 	/** Represents a test run on a set of devices with a given app package, test parameters, and so on. */
 	export interface RunFormProperties {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
 		type: FormControl<GetDevicePoolCompatibilityRequestTestType | null | undefined>,
 		platform: FormControl<DevicePlatform | null | undefined>,
@@ -2066,6 +3277,11 @@ export namespace MyNS {
 		result: FormControl<RemoteAccessSessionResult | null | undefined>,
 		started: FormControl<Date | null | undefined>,
 		stopped: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		message: FormControl<string | null | undefined>,
 		totalJobs: FormControl<number | null | undefined>,
 		completedJobs: FormControl<number | null | undefined>,
@@ -2073,19 +3289,37 @@ export namespace MyNS {
 		parsingResultUrl: FormControl<string | null | undefined>,
 		resultCode: FormControl<RunResultCode | null | undefined>,
 		seed: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		appUpload: FormControl<string | null | undefined>,
 		eventCount: FormControl<number | null | undefined>,
 		jobTimeoutMinutes: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		devicePoolArn: FormControl<string | null | undefined>,
 		locale: FormControl<string | null | undefined>,
 		webUrl: FormControl<string | null | undefined>,
 		skipAppResign: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		testSpecArn: FormControl<string | null | undefined>,
 	}
 	export function CreateRunFormGroup() {
 		return new FormGroup<RunFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			type: new FormControl<GetDevicePoolCompatibilityRequestTestType | null | undefined>(undefined),
 			platform: new FormControl<DevicePlatform | null | undefined>(undefined),
 			created: new FormControl<Date | null | undefined>(undefined),
@@ -2093,21 +3327,21 @@ export namespace MyNS {
 			result: new FormControl<RemoteAccessSessionResult | null | undefined>(undefined),
 			started: new FormControl<Date | null | undefined>(undefined),
 			stopped: new FormControl<Date | null | undefined>(undefined),
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 			totalJobs: new FormControl<number | null | undefined>(undefined),
 			completedJobs: new FormControl<number | null | undefined>(undefined),
 			billingMethod: new FormControl<RemoteAccessSessionBillingMethod | null | undefined>(undefined),
 			parsingResultUrl: new FormControl<string | null | undefined>(undefined),
 			resultCode: new FormControl<RunResultCode | null | undefined>(undefined),
 			seed: new FormControl<number | null | undefined>(undefined),
-			appUpload: new FormControl<string | null | undefined>(undefined),
+			appUpload: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
 			eventCount: new FormControl<number | null | undefined>(undefined),
 			jobTimeoutMinutes: new FormControl<number | null | undefined>(undefined),
-			devicePoolArn: new FormControl<string | null | undefined>(undefined),
+			devicePoolArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
 			locale: new FormControl<string | null | undefined>(undefined),
 			webUrl: new FormControl<string | null | undefined>(undefined),
 			skipAppResign: new FormControl<boolean | null | undefined>(undefined),
-			testSpecArn: new FormControl<string | null | undefined>(undefined),
+			testSpecArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -2161,16 +3395,30 @@ export namespace MyNS {
 
 	/** Represents a request to the get run operation. */
 	export interface GetRunRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 	}
 
 	/** Represents a request to the get run operation. */
 	export interface GetRunRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRunRequestFormGroup() {
 		return new FormGroup<GetRunRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -2195,7 +3443,18 @@ export namespace MyNS {
 
 	/** Represents a collection of one or more tests. */
 	export interface Suite {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name?: string | null;
 		type?: GetDevicePoolCompatibilityRequestTestType | null;
 		created?: Date | null;
@@ -2206,6 +3465,11 @@ export namespace MyNS {
 
 		/** Represents entity counters. */
 		counters?: Counters;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		message?: string | null;
 
 		/** Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children. */
@@ -2214,7 +3478,18 @@ export namespace MyNS {
 
 	/** Represents a collection of one or more tests. */
 	export interface SuiteFormProperties {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
 		type: FormControl<GetDevicePoolCompatibilityRequestTestType | null | undefined>,
 		created: FormControl<Date | null | undefined>,
@@ -2222,19 +3497,24 @@ export namespace MyNS {
 		result: FormControl<RemoteAccessSessionResult | null | undefined>,
 		started: FormControl<Date | null | undefined>,
 		stopped: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateSuiteFormGroup() {
 		return new FormGroup<SuiteFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			type: new FormControl<GetDevicePoolCompatibilityRequestTestType | null | undefined>(undefined),
 			created: new FormControl<Date | null | undefined>(undefined),
 			status: new FormControl<RemoteAccessSessionStatus | null | undefined>(undefined),
 			result: new FormControl<RemoteAccessSessionResult | null | undefined>(undefined),
 			started: new FormControl<Date | null | undefined>(undefined),
 			stopped: new FormControl<Date | null | undefined>(undefined),
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 		});
 
 	}
@@ -2242,16 +3522,30 @@ export namespace MyNS {
 
 	/** Represents a request to the get suite operation. */
 	export interface GetSuiteRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 	}
 
 	/** Represents a request to the get suite operation. */
 	export interface GetSuiteRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSuiteRequestFormGroup() {
 		return new FormGroup<GetSuiteRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -2276,7 +3570,18 @@ export namespace MyNS {
 
 	/** Represents a condition that is evaluated. */
 	export interface Test {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name?: string | null;
 		type?: GetDevicePoolCompatibilityRequestTestType | null;
 		created?: Date | null;
@@ -2287,6 +3592,11 @@ export namespace MyNS {
 
 		/** Represents entity counters. */
 		counters?: Counters;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		message?: string | null;
 
 		/** Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children. */
@@ -2295,7 +3605,18 @@ export namespace MyNS {
 
 	/** Represents a condition that is evaluated. */
 	export interface TestFormProperties {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
 		type: FormControl<GetDevicePoolCompatibilityRequestTestType | null | undefined>,
 		created: FormControl<Date | null | undefined>,
@@ -2303,19 +3624,24 @@ export namespace MyNS {
 		result: FormControl<RemoteAccessSessionResult | null | undefined>,
 		started: FormControl<Date | null | undefined>,
 		stopped: FormControl<Date | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateTestFormGroup() {
 		return new FormGroup<TestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			type: new FormControl<GetDevicePoolCompatibilityRequestTestType | null | undefined>(undefined),
 			created: new FormControl<Date | null | undefined>(undefined),
 			status: new FormControl<RemoteAccessSessionStatus | null | undefined>(undefined),
 			result: new FormControl<RemoteAccessSessionResult | null | undefined>(undefined),
 			started: new FormControl<Date | null | undefined>(undefined),
 			stopped: new FormControl<Date | null | undefined>(undefined),
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 		});
 
 	}
@@ -2323,16 +3649,30 @@ export namespace MyNS {
 
 	/** Represents a request to the get test operation. */
 	export interface GetTestRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 	}
 
 	/** Represents a request to the get test operation. */
 	export interface GetTestRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTestRequestFormGroup() {
 		return new FormGroup<GetTestRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -2351,14 +3691,28 @@ export namespace MyNS {
 	}
 
 	export interface GetTestGridProjectRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		projectArn: string;
 	}
 	export interface GetTestGridProjectRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		projectArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTestGridProjectRequestFormGroup() {
 		return new FormGroup<GetTestGridProjectRequestFormProperties>({
-			projectArn: new FormControl<string | null | undefined>(undefined),
+			projectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -2379,6 +3733,12 @@ export namespace MyNS {
 
 	/** A <a>TestGridSession</a> is a single instance of a browser launched from the URL provided by a call to <a>CreateTestGridUrl</a>. */
 	export interface TestGridSession {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		arn?: string | null;
 		status?: TestGridSessionStatus | null;
 		created?: Date | null;
@@ -2389,6 +3749,12 @@ export namespace MyNS {
 
 	/** A <a>TestGridSession</a> is a single instance of a browser launched from the URL provided by a call to <a>CreateTestGridUrl</a>. */
 	export interface TestGridSessionFormProperties {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 		status: FormControl<TestGridSessionStatus | null | undefined>,
 		created: FormControl<Date | null | undefined>,
@@ -2398,7 +3764,7 @@ export namespace MyNS {
 	}
 	export function CreateTestGridSessionFormGroup() {
 		return new FormGroup<TestGridSessionFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
 			status: new FormControl<TestGridSessionStatus | null | undefined>(undefined),
 			created: new FormControl<Date | null | undefined>(undefined),
 			ended: new FormControl<Date | null | undefined>(undefined),
@@ -2411,20 +3777,56 @@ export namespace MyNS {
 	export enum TestGridSessionStatus { ACTIVE = 0, CLOSED = 1, ERRORED = 2 }
 
 	export interface GetTestGridSessionRequest {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		projectArn?: string | null;
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		sessionId?: string | null;
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		sessionArn?: string | null;
 	}
 	export interface GetTestGridSessionRequestFormProperties {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		projectArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		sessionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		sessionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTestGridSessionRequestFormGroup() {
 		return new FormGroup<GetTestGridSessionRequestFormProperties>({
-			projectArn: new FormControl<string | null | undefined>(undefined),
-			sessionId: new FormControl<string | null | undefined>(undefined),
-			sessionArn: new FormControl<string | null | undefined>(undefined),
+			projectArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
+			sessionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			sessionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -2449,16 +3851,30 @@ export namespace MyNS {
 
 	/** Represents a request to the get upload operation. */
 	export interface GetUploadRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 	}
 
 	/** Represents a request to the get upload operation. */
 	export interface GetUploadRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetUploadRequestFormGroup() {
 		return new FormGroup<GetUploadRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -2477,14 +3893,28 @@ export namespace MyNS {
 	}
 
 	export interface GetVPCEConfigurationRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 	}
 	export interface GetVPCEConfigurationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetVPCEConfigurationRequestFormGroup() {
 		return new FormGroup<GetVPCEConfigurationRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -2509,19 +3939,47 @@ export namespace MyNS {
 
 	/** Represents the request to install an Android application (in .apk format) or an iOS application (in .ipa format) as part of a remote access session. */
 	export interface InstallToRemoteAccessSessionRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		remoteAccessSessionArn: string;
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		appArn: string;
 	}
 
 	/** Represents the request to install an Android application (in .apk format) or an iOS application (in .ipa format) as part of a remote access session. */
 	export interface InstallToRemoteAccessSessionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		remoteAccessSessionArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		appArn: FormControl<string | null | undefined>,
 	}
 	export function CreateInstallToRemoteAccessSessionRequestFormGroup() {
 		return new FormGroup<InstallToRemoteAccessSessionRequestFormProperties>({
-			remoteAccessSessionArn: new FormControl<string | null | undefined>(undefined),
-			appArn: new FormControl<string | null | undefined>(undefined),
+			remoteAccessSessionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			appArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -2530,16 +3988,26 @@ export namespace MyNS {
 	/** Represents the result of a list artifacts operation. */
 	export interface ListArtifactsResult {
 		artifacts?: Array<Artifact>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents the result of a list artifacts operation. */
 	export interface ListArtifactsResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListArtifactsResultFormGroup() {
 		return new FormGroup<ListArtifactsResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -2547,28 +4015,60 @@ export namespace MyNS {
 
 	/** Represents the output of a test. Examples of artifacts include logs and screenshots. */
 	export interface Artifact {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name?: string | null;
 		type?: ArtifactType | null;
 		extension?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		url?: string | null;
 	}
 
 	/** Represents the output of a test. Examples of artifacts include logs and screenshots. */
 	export interface ArtifactFormProperties {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
 		type: FormControl<ArtifactType | null | undefined>,
 		extension: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		url: FormControl<string | null | undefined>,
 	}
 	export function CreateArtifactFormGroup() {
 		return new FormGroup<ArtifactFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			type: new FormControl<ArtifactType | null | undefined>(undefined),
 			extension: new FormControl<string | null | undefined>(undefined),
-			url: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 		});
 
 	}
@@ -2578,22 +4078,50 @@ export namespace MyNS {
 
 	/** Represents a request to the list artifacts operation. */
 	export interface ListArtifactsRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
+
+		/** Required */
 		type: ListArtifactsRequestType;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents a request to the list artifacts operation. */
 	export interface ListArtifactsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/** Required */
 		type: FormControl<ListArtifactsRequestType | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListArtifactsRequestFormGroup() {
 		return new FormGroup<ListArtifactsRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<ListArtifactsRequestType | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			type: new FormControl<ListArtifactsRequestType | null | undefined>(undefined, [Validators.required]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -2602,30 +4130,50 @@ export namespace MyNS {
 
 	export interface ListDeviceInstancesResult {
 		deviceInstances?: Array<DeviceInstance>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListDeviceInstancesResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListDeviceInstancesResultFormGroup() {
 		return new FormGroup<ListDeviceInstancesResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
 
 	export interface ListDeviceInstancesRequest {
 		maxResults?: number | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListDeviceInstancesRequestFormProperties {
 		maxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListDeviceInstancesRequestFormGroup() {
 		return new FormGroup<ListDeviceInstancesRequestFormProperties>({
 			maxResults: new FormControl<number | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -2634,16 +4182,26 @@ export namespace MyNS {
 	/** Represents the result of a list device pools request. */
 	export interface ListDevicePoolsResult {
 		devicePools?: Array<DevicePool>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents the result of a list device pools request. */
 	export interface ListDevicePoolsResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListDevicePoolsResultFormGroup() {
 		return new FormGroup<ListDevicePoolsResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -2651,22 +4209,46 @@ export namespace MyNS {
 
 	/** Represents the result of a list device pools request. */
 	export interface ListDevicePoolsRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 		type?: DevicePoolType | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents the result of a list device pools request. */
 	export interface ListDevicePoolsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 		type: FormControl<DevicePoolType | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListDevicePoolsRequestFormGroup() {
 		return new FormGroup<ListDevicePoolsRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 			type: new FormControl<DevicePoolType | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -2675,16 +4257,26 @@ export namespace MyNS {
 	/** Represents the result of a list devices operation. */
 	export interface ListDevicesResult {
 		devices?: Array<Device>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents the result of a list devices operation. */
 	export interface ListDevicesResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListDevicesResultFormGroup() {
 		return new FormGroup<ListDevicesResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -2692,50 +4284,92 @@ export namespace MyNS {
 
 	/** Represents the result of a list devices request. */
 	export interface ListDevicesRequest {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 		filters?: Array<DeviceFilter>;
 	}
 
 	/** Represents the result of a list devices request. */
 	export interface ListDevicesRequestFormProperties {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListDevicesRequestFormGroup() {
 		return new FormGroup<ListDevicesRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
 
 	export interface ListInstanceProfilesResult {
 		instanceProfiles?: Array<InstanceProfile>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListInstanceProfilesResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListInstanceProfilesResultFormGroup() {
 		return new FormGroup<ListInstanceProfilesResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
 
 	export interface ListInstanceProfilesRequest {
 		maxResults?: number | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListInstanceProfilesRequestFormProperties {
 		maxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListInstanceProfilesRequestFormGroup() {
 		return new FormGroup<ListInstanceProfilesRequestFormProperties>({
 			maxResults: new FormControl<number | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -2744,16 +4378,26 @@ export namespace MyNS {
 	/** Represents the result of a list jobs request. */
 	export interface ListJobsResult {
 		jobs?: Array<Job>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents the result of a list jobs request. */
 	export interface ListJobsResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListJobsResultFormGroup() {
 		return new FormGroup<ListJobsResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -2761,66 +4405,134 @@ export namespace MyNS {
 
 	/** Represents a request to the list jobs operation. */
 	export interface ListJobsRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents a request to the list jobs operation. */
 	export interface ListJobsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListJobsRequestFormGroup() {
 		return new FormGroup<ListJobsRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
 
 	export interface ListNetworkProfilesResult {
 		networkProfiles?: Array<NetworkProfile>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListNetworkProfilesResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListNetworkProfilesResultFormGroup() {
 		return new FormGroup<ListNetworkProfilesResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
 
 	export interface ListNetworkProfilesRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 		type?: DevicePoolType | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListNetworkProfilesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 		type: FormControl<DevicePoolType | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListNetworkProfilesRequestFormGroup() {
 		return new FormGroup<ListNetworkProfilesRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 			type: new FormControl<DevicePoolType | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
 
 	export interface ListOfferingPromotionsResult {
 		offeringPromotions?: Array<OfferingPromotion>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListOfferingPromotionsResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListOfferingPromotionsResultFormGroup() {
 		return new FormGroup<ListOfferingPromotionsResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -2828,32 +4540,56 @@ export namespace MyNS {
 
 	/** Represents information about an offering promotion. */
 	export interface OfferingPromotion {
+
+		/** Min length: 4 */
 		id?: string | null;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		description?: string | null;
 	}
 
 	/** Represents information about an offering promotion. */
 	export interface OfferingPromotionFormProperties {
+
+		/** Min length: 4 */
 		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 	}
 	export function CreateOfferingPromotionFormGroup() {
 		return new FormGroup<OfferingPromotionFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(4)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface ListOfferingPromotionsRequest {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListOfferingPromotionsRequestFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListOfferingPromotionsRequestFormGroup() {
 		return new FormGroup<ListOfferingPromotionsRequestFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -2862,16 +4598,26 @@ export namespace MyNS {
 	/** Returns the transaction log of the specified offerings. */
 	export interface ListOfferingTransactionsResult {
 		offeringTransactions?: Array<OfferingTransaction>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Returns the transaction log of the specified offerings. */
 	export interface ListOfferingTransactionsResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListOfferingTransactionsResultFormGroup() {
 		return new FormGroup<ListOfferingTransactionsResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -2882,7 +4628,11 @@ export namespace MyNS {
 
 		/** The status of the offering. */
 		offeringStatus?: OfferingStatus;
+
+		/** Min length: 32 */
 		transactionId?: string | null;
+
+		/** Min length: 4 */
 		offeringPromotionId?: string | null;
 		createdOn?: Date | null;
 
@@ -2892,14 +4642,18 @@ export namespace MyNS {
 
 	/** Represents the metadata of an offering transaction. */
 	export interface OfferingTransactionFormProperties {
+
+		/** Min length: 32 */
 		transactionId: FormControl<string | null | undefined>,
+
+		/** Min length: 4 */
 		offeringPromotionId: FormControl<string | null | undefined>,
 		createdOn: FormControl<Date | null | undefined>,
 	}
 	export function CreateOfferingTransactionFormGroup() {
 		return new FormGroup<OfferingTransactionFormProperties>({
-			transactionId: new FormControl<string | null | undefined>(undefined),
-			offeringPromotionId: new FormControl<string | null | undefined>(undefined),
+			transactionId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(32)]),
+			offeringPromotionId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(4)]),
 			createdOn: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -2936,7 +4690,14 @@ export namespace MyNS {
 
 	/** Represents the metadata of a device offering. */
 	export interface Offering {
+
+		/** Min length: 32 */
 		id?: string | null;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		description?: string | null;
 		type?: OfferingType | null;
 		platform?: DevicePlatform | null;
@@ -2945,15 +4706,22 @@ export namespace MyNS {
 
 	/** Represents the metadata of a device offering. */
 	export interface OfferingFormProperties {
+
+		/** Min length: 32 */
 		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		type: FormControl<OfferingType | null | undefined>,
 		platform: FormControl<DevicePlatform | null | undefined>,
 	}
 	export function CreateOfferingFormGroup() {
 		return new FormGroup<OfferingFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(32)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 			type: new FormControl<OfferingType | null | undefined>(undefined),
 			platform: new FormControl<DevicePlatform | null | undefined>(undefined),
 		});
@@ -3009,16 +4777,26 @@ export namespace MyNS {
 
 	/** Represents the request to list the offering transaction history. */
 	export interface ListOfferingTransactionsRequest {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents the request to list the offering transaction history. */
 	export interface ListOfferingTransactionsRequestFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListOfferingTransactionsRequestFormGroup() {
 		return new FormGroup<ListOfferingTransactionsRequestFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -3027,16 +4805,26 @@ export namespace MyNS {
 	/** Represents the return values of the list of offerings. */
 	export interface ListOfferingsResult {
 		offerings?: Array<Offering>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents the return values of the list of offerings. */
 	export interface ListOfferingsResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListOfferingsResultFormGroup() {
 		return new FormGroup<ListOfferingsResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -3044,16 +4832,26 @@ export namespace MyNS {
 
 	/** Represents the request to list all offerings. */
 	export interface ListOfferingsRequest {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents the request to list all offerings. */
 	export interface ListOfferingsRequestFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListOfferingsRequestFormGroup() {
 		return new FormGroup<ListOfferingsRequestFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -3062,16 +4860,26 @@ export namespace MyNS {
 	/** Represents the result of a list projects request. */
 	export interface ListProjectsResult {
 		projects?: Array<Project>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents the result of a list projects request. */
 	export interface ListProjectsResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListProjectsResultFormGroup() {
 		return new FormGroup<ListProjectsResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -3079,19 +4887,41 @@ export namespace MyNS {
 
 	/** Represents a request to the list projects operation. */
 	export interface ListProjectsRequest {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn?: string | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents a request to the list projects operation. */
 	export interface ListProjectsRequestFormProperties {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListProjectsRequestFormGroup() {
 		return new FormGroup<ListProjectsRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -3100,16 +4930,26 @@ export namespace MyNS {
 	/** Represents the response from the server after AWS Device Farm makes a request to return information about the remote access session. */
 	export interface ListRemoteAccessSessionsResult {
 		remoteAccessSessions?: Array<RemoteAccessSession>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents the response from the server after AWS Device Farm makes a request to return information about the remote access session. */
 	export interface ListRemoteAccessSessionsResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListRemoteAccessSessionsResultFormGroup() {
 		return new FormGroup<ListRemoteAccessSessionsResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -3117,19 +4957,43 @@ export namespace MyNS {
 
 	/** Represents the request to return information about the remote access session. */
 	export interface ListRemoteAccessSessionsRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents the request to return information about the remote access session. */
 	export interface ListRemoteAccessSessionsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListRemoteAccessSessionsRequestFormGroup() {
 		return new FormGroup<ListRemoteAccessSessionsRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -3138,16 +5002,26 @@ export namespace MyNS {
 	/** Represents the result of a list runs request. */
 	export interface ListRunsResult {
 		runs?: Array<Run>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents the result of a list runs request. */
 	export interface ListRunsResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListRunsResultFormGroup() {
 		return new FormGroup<ListRunsResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -3155,19 +5029,43 @@ export namespace MyNS {
 
 	/** Represents a request to the list runs operation. */
 	export interface ListRunsRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents a request to the list runs operation. */
 	export interface ListRunsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListRunsRequestFormGroup() {
 		return new FormGroup<ListRunsRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -3176,16 +5074,26 @@ export namespace MyNS {
 	/** Represents the result of a list samples request. */
 	export interface ListSamplesResult {
 		samples?: Array<Sample>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents the result of a list samples request. */
 	export interface ListSamplesResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListSamplesResultFormGroup() {
 		return new FormGroup<ListSamplesResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -3193,22 +5101,44 @@ export namespace MyNS {
 
 	/** Represents a sample of performance data. */
 	export interface Sample {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn?: string | null;
 		type?: SampleType | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		url?: string | null;
 	}
 
 	/** Represents a sample of performance data. */
 	export interface SampleFormProperties {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 		type: FormControl<SampleType | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		url: FormControl<string | null | undefined>,
 	}
 	export function CreateSampleFormGroup() {
 		return new FormGroup<SampleFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
 			type: new FormControl<SampleType | null | undefined>(undefined),
-			url: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 		});
 
 	}
@@ -3218,19 +5148,43 @@ export namespace MyNS {
 
 	/** Represents a request to the list samples operation. */
 	export interface ListSamplesRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents a request to the list samples operation. */
 	export interface ListSamplesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListSamplesRequestFormGroup() {
 		return new FormGroup<ListSamplesRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -3239,16 +5193,26 @@ export namespace MyNS {
 	/** Represents the result of a list suites request. */
 	export interface ListSuitesResult {
 		suites?: Array<Suite>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents the result of a list suites request. */
 	export interface ListSuitesResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListSuitesResultFormGroup() {
 		return new FormGroup<ListSuitesResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -3256,24 +5220,50 @@ export namespace MyNS {
 
 	/** Represents a request to the list suites operation. */
 	export interface ListSuitesRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents a request to the list suites operation. */
 	export interface ListSuitesRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListSuitesRequestFormGroup() {
 		return new FormGroup<ListSuitesRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
 
 	export interface ListTagsForResourceResponse {
+
+		/** Maximum items: 150 */
 		Tags?: Array<Tag>;
 	}
 	export interface ListTagsForResourceResponseFormProperties {
@@ -3287,76 +5277,154 @@ export namespace MyNS {
 
 	/** The metadata that you apply to a resource to help you categorize and organize it. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters.  */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Value: string;
 	}
 
 	/** The metadata that you apply to a resource to help you categorize and organize it. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters.  */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface ListTagsForResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		ResourceARN: string;
 	}
 	export interface ListTagsForResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
 
 	export interface ListTestGridProjectsResult {
 		testGridProjects?: Array<TestGridProject>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListTestGridProjectsResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTestGridProjectsResultFormGroup() {
 		return new FormGroup<ListTestGridProjectsResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
 
 	export interface ListTestGridProjectsRequest {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		maxResult?: number | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListTestGridProjectsRequestFormProperties {
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		maxResult: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTestGridProjectsRequestFormGroup() {
 		return new FormGroup<ListTestGridProjectsRequestFormProperties>({
-			maxResult: new FormControl<number | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResult: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
 
 	export interface ListTestGridSessionActionsResult {
 		actions?: Array<TestGridSessionAction>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListTestGridSessionActionsResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTestGridSessionActionsResultFormGroup() {
 		return new FormGroup<ListTestGridSessionActionsResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -3391,34 +5459,78 @@ export namespace MyNS {
 	}
 
 	export interface ListTestGridSessionActionsRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		sessionArn: string;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		maxResult?: number | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListTestGridSessionActionsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		sessionArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		maxResult: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTestGridSessionActionsRequestFormGroup() {
 		return new FormGroup<ListTestGridSessionActionsRequestFormProperties>({
-			sessionArn: new FormControl<string | null | undefined>(undefined),
-			maxResult: new FormControl<number | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			sessionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			maxResult: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
 
 	export interface ListTestGridSessionArtifactsResult {
 		artifacts?: Array<TestGridSessionArtifact>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListTestGridSessionArtifactsResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTestGridSessionArtifactsResultFormGroup() {
 		return new FormGroup<ListTestGridSessionArtifactsResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -3449,23 +5561,57 @@ export namespace MyNS {
 	export enum TestGridSessionArtifactType { UNKNOWN = 0, VIDEO = 1, SELENIUM_LOG = 2 }
 
 	export interface ListTestGridSessionArtifactsRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		sessionArn: string;
 		type?: ListTestGridSessionArtifactsRequestType | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		maxResult?: number | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListTestGridSessionArtifactsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		sessionArn: FormControl<string | null | undefined>,
 		type: FormControl<ListTestGridSessionArtifactsRequestType | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		maxResult: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTestGridSessionArtifactsRequestFormGroup() {
 		return new FormGroup<ListTestGridSessionArtifactsRequestFormProperties>({
-			sessionArn: new FormControl<string | null | undefined>(undefined),
+			sessionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 			type: new FormControl<ListTestGridSessionArtifactsRequestType | null | undefined>(undefined),
-			maxResult: new FormControl<number | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResult: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -3474,48 +5620,92 @@ export namespace MyNS {
 
 	export interface ListTestGridSessionsResult {
 		testGridSessions?: Array<TestGridSession>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListTestGridSessionsResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTestGridSessionsResultFormGroup() {
 		return new FormGroup<ListTestGridSessionsResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
 
 	export interface ListTestGridSessionsRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		projectArn: string;
 		status?: TestGridSessionStatus | null;
 		creationTimeAfter?: Date | null;
 		creationTimeBefore?: Date | null;
 		endTimeAfter?: Date | null;
 		endTimeBefore?: Date | null;
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		maxResult?: number | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListTestGridSessionsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		projectArn: FormControl<string | null | undefined>,
 		status: FormControl<TestGridSessionStatus | null | undefined>,
 		creationTimeAfter: FormControl<Date | null | undefined>,
 		creationTimeBefore: FormControl<Date | null | undefined>,
 		endTimeAfter: FormControl<Date | null | undefined>,
 		endTimeBefore: FormControl<Date | null | undefined>,
+
+		/**
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
 		maxResult: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTestGridSessionsRequestFormGroup() {
 		return new FormGroup<ListTestGridSessionsRequestFormProperties>({
-			projectArn: new FormControl<string | null | undefined>(undefined),
+			projectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 			status: new FormControl<TestGridSessionStatus | null | undefined>(undefined),
 			creationTimeAfter: new FormControl<Date | null | undefined>(undefined),
 			creationTimeBefore: new FormControl<Date | null | undefined>(undefined),
 			endTimeAfter: new FormControl<Date | null | undefined>(undefined),
 			endTimeBefore: new FormControl<Date | null | undefined>(undefined),
-			maxResult: new FormControl<number | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResult: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -3524,16 +5714,26 @@ export namespace MyNS {
 	/** Represents the result of a list tests request. */
 	export interface ListTestsResult {
 		tests?: Array<Test>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents the result of a list tests request. */
 	export interface ListTestsResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTestsResultFormGroup() {
 		return new FormGroup<ListTestsResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -3541,19 +5741,43 @@ export namespace MyNS {
 
 	/** Represents a request to the list tests operation. */
 	export interface ListTestsRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents a request to the list tests operation. */
 	export interface ListTestsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTestsRequestFormGroup() {
 		return new FormGroup<ListTestsRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -3562,16 +5786,26 @@ export namespace MyNS {
 	/** Represents the result of a list unique problems request. */
 	export interface ListUniqueProblemsResult {
 		uniqueProblems?: UniqueProblemsByExecutionResultMap;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents the result of a list unique problems request. */
 	export interface ListUniqueProblemsResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListUniqueProblemsResultFormGroup() {
 		return new FormGroup<ListUniqueProblemsResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -3589,19 +5823,43 @@ export namespace MyNS {
 
 	/** Represents a request to the list unique problems operation. */
 	export interface ListUniqueProblemsRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents a request to the list unique problems operation. */
 	export interface ListUniqueProblemsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListUniqueProblemsRequestFormGroup() {
 		return new FormGroup<ListUniqueProblemsRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -3610,16 +5868,26 @@ export namespace MyNS {
 	/** Represents the result of a list uploads request. */
 	export interface ListUploadsResult {
 		uploads?: Array<Upload>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents the result of a list uploads request. */
 	export interface ListUploadsResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListUploadsResultFormGroup() {
 		return new FormGroup<ListUploadsResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -3627,52 +5895,96 @@ export namespace MyNS {
 
 	/** Represents a request to the list uploads operation. */
 	export interface ListUploadsRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 		type?: UploadType | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 
 	/** Represents a request to the list uploads operation. */
 	export interface ListUploadsRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 		type: FormControl<UploadType | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListUploadsRequestFormGroup() {
 		return new FormGroup<ListUploadsRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 			type: new FormControl<UploadType | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
 
 	export interface ListVPCEConfigurationsResult {
 		vpceConfigurations?: Array<VPCEConfiguration>;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListVPCEConfigurationsResultFormProperties {
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListVPCEConfigurationsResultFormGroup() {
 		return new FormGroup<ListVPCEConfigurationsResultFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
 
 	export interface ListVPCEConfigurationsRequest {
 		maxResults?: number | null;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken?: string | null;
 	}
 	export interface ListVPCEConfigurationsRequestFormProperties {
 		maxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 4
+		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListVPCEConfigurationsRequestFormGroup() {
 		return new FormGroup<ListVPCEConfigurationsRequestFormProperties>({
 			maxResults: new FormControl<number | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
 		});
 
 	}
@@ -3697,22 +6009,30 @@ export namespace MyNS {
 
 	/** Represents a request for a purchase offering. */
 	export interface PurchaseOfferingRequest {
+
+		/** Min length: 32 */
 		offeringId?: string | null;
 		quantity?: number | null;
+
+		/** Min length: 4 */
 		offeringPromotionId?: string | null;
 	}
 
 	/** Represents a request for a purchase offering. */
 	export interface PurchaseOfferingRequestFormProperties {
+
+		/** Min length: 32 */
 		offeringId: FormControl<string | null | undefined>,
 		quantity: FormControl<number | null | undefined>,
+
+		/** Min length: 4 */
 		offeringPromotionId: FormControl<string | null | undefined>,
 	}
 	export function CreatePurchaseOfferingRequestFormGroup() {
 		return new FormGroup<PurchaseOfferingRequestFormProperties>({
-			offeringId: new FormControl<string | null | undefined>(undefined),
+			offeringId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(32)]),
 			quantity: new FormControl<number | null | undefined>(undefined),
-			offeringPromotionId: new FormControl<string | null | undefined>(undefined),
+			offeringPromotionId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(4)]),
 		});
 
 	}
@@ -3737,18 +6057,22 @@ export namespace MyNS {
 
 	/** A request that represents an offering renewal. */
 	export interface RenewOfferingRequest {
+
+		/** Min length: 32 */
 		offeringId?: string | null;
 		quantity?: number | null;
 	}
 
 	/** A request that represents an offering renewal. */
 	export interface RenewOfferingRequestFormProperties {
+
+		/** Min length: 32 */
 		offeringId: FormControl<string | null | undefined>,
 		quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateRenewOfferingRequestFormGroup() {
 		return new FormGroup<RenewOfferingRequestFormProperties>({
-			offeringId: new FormControl<string | null | undefined>(undefined),
+			offeringId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(32)]),
 			quantity: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -3774,12 +6098,36 @@ export namespace MyNS {
 
 	/** Represents a request to the schedule run operation. */
 	export interface ScheduleRunRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		projectArn: string;
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		appArn?: string | null;
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		devicePoolArn?: string | null;
 
 		/** Represents the device filters used in a test run and the maximum number of devices to be included in the run. It is passed in as the <code>deviceSelectionConfiguration</code> request parameter in <a>ScheduleRun</a>. */
 		deviceSelectionConfiguration?: DeviceSelectionConfiguration;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name?: string | null;
 
 		/**
@@ -3797,17 +6145,41 @@ export namespace MyNS {
 
 	/** Represents a request to the schedule run operation. */
 	export interface ScheduleRunRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		projectArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		appArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		devicePoolArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateScheduleRunRequestFormGroup() {
 		return new FormGroup<ScheduleRunRequestFormProperties>({
-			projectArn: new FormControl<string | null | undefined>(undefined),
-			appArn: new FormControl<string | null | undefined>(undefined),
-			devicePoolArn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			projectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			appArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
+			devicePoolArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -3815,17 +6187,23 @@ export namespace MyNS {
 
 	/** Represents the device filters used in a test run and the maximum number of devices to be included in the run. It is passed in as the <code>deviceSelectionConfiguration</code> request parameter in <a>ScheduleRun</a>. */
 	export interface DeviceSelectionConfiguration {
+
+		/** Required */
 		filters: Array<DeviceFilter>;
+
+		/** Required */
 		maxDevices: number;
 	}
 
 	/** Represents the device filters used in a test run and the maximum number of devices to be included in the run. It is passed in as the <code>deviceSelectionConfiguration</code> request parameter in <a>ScheduleRun</a>. */
 	export interface DeviceSelectionConfigurationFormProperties {
+
+		/** Required */
 		maxDevices: FormControl<number | null | undefined>,
 	}
 	export function CreateDeviceSelectionConfigurationFormGroup() {
 		return new FormGroup<DeviceSelectionConfigurationFormProperties>({
-			maxDevices: new FormControl<number | null | undefined>(undefined),
+			maxDevices: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -3883,14 +6261,28 @@ export namespace MyNS {
 	}
 
 	export interface StopJobRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 	}
 	export interface StopJobRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateStopJobRequestFormGroup() {
 		return new FormGroup<StopJobRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -3915,16 +6307,30 @@ export namespace MyNS {
 
 	/** Represents the request to stop the remote access session. */
 	export interface StopRemoteAccessSessionRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 	}
 
 	/** Represents the request to stop the remote access session. */
 	export interface StopRemoteAccessSessionRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateStopRemoteAccessSessionRequestFormGroup() {
 		return new FormGroup<StopRemoteAccessSessionRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -3949,16 +6355,30 @@ export namespace MyNS {
 
 	/** Represents the request to stop a specific run. */
 	export interface StopRunRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
 	}
 
 	/** Represents the request to stop a specific run. */
 	export interface StopRunRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateStopRunRequestFormGroup() {
 		return new FormGroup<StopRunRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -3974,15 +6394,34 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		ResourceARN: string;
+
+		/**
+		 * Required
+		 * Maximum items: 150
+		 */
 		Tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -4018,15 +6457,34 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		ResourceARN: string;
+
+		/**
+		 * Required
+		 * Maximum items: 150
+		 */
 		TagKeys: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -4045,18 +6503,44 @@ export namespace MyNS {
 	}
 
 	export interface UpdateDeviceInstanceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		profileArn?: string | null;
 		labels?: Array<string>;
 	}
 	export interface UpdateDeviceInstanceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		profileArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateDeviceInstanceRequestFormGroup() {
 		return new FormGroup<UpdateDeviceInstanceRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			profileArn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			profileArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
 		});
 
 	}
@@ -4081,8 +6565,25 @@ export namespace MyNS {
 
 	/** Represents a request to the update device pool operation. */
 	export interface UpdateDevicePoolRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		description?: string | null;
 		rules?: Array<Rule>;
 		maxDevices?: number | null;
@@ -4091,17 +6592,34 @@ export namespace MyNS {
 
 	/** Represents a request to the update device pool operation. */
 	export interface UpdateDevicePoolRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		maxDevices: FormControl<number | null | undefined>,
 		clearMaxDevices: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpdateDevicePoolRequestFormGroup() {
 		return new FormGroup<UpdateDevicePoolRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 			maxDevices: new FormControl<number | null | undefined>(undefined),
 			clearMaxDevices: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -4122,25 +6640,59 @@ export namespace MyNS {
 	}
 
 	export interface UpdateInstanceProfileRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		description?: string | null;
 		packageCleanup?: boolean | null;
 		excludeAppPackagesFromCleanup?: Array<string>;
 		rebootAfterUse?: boolean | null;
 	}
 	export interface UpdateInstanceProfileRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		packageCleanup: FormControl<boolean | null | undefined>,
 		rebootAfterUse: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpdateInstanceProfileRequestFormGroup() {
 		return new FormGroup<UpdateInstanceProfileRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 			packageCleanup: new FormControl<boolean | null | undefined>(undefined),
 			rebootAfterUse: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -4161,8 +6713,25 @@ export namespace MyNS {
 	}
 
 	export interface UpdateNetworkProfileRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		description?: string | null;
 		type?: DevicePoolType | null;
 		uplinkBandwidthBits?: number | null;
@@ -4171,12 +6740,39 @@ export namespace MyNS {
 		downlinkDelayMs?: number | null;
 		uplinkJitterMs?: number | null;
 		downlinkJitterMs?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		uplinkLossPercent?: number | null;
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		downlinkLossPercent?: number | null;
 	}
 	export interface UpdateNetworkProfileRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		description: FormControl<string | null | undefined>,
 		type: FormControl<DevicePoolType | null | undefined>,
 		uplinkBandwidthBits: FormControl<number | null | undefined>,
@@ -4185,14 +6781,24 @@ export namespace MyNS {
 		downlinkDelayMs: FormControl<number | null | undefined>,
 		uplinkJitterMs: FormControl<number | null | undefined>,
 		downlinkJitterMs: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		uplinkLossPercent: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
 		downlinkLossPercent: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateNetworkProfileRequestFormGroup() {
 		return new FormGroup<UpdateNetworkProfileRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 			type: new FormControl<DevicePoolType | null | undefined>(undefined),
 			uplinkBandwidthBits: new FormControl<number | null | undefined>(undefined),
 			downlinkBandwidthBits: new FormControl<number | null | undefined>(undefined),
@@ -4200,8 +6806,8 @@ export namespace MyNS {
 			downlinkDelayMs: new FormControl<number | null | undefined>(undefined),
 			uplinkJitterMs: new FormControl<number | null | undefined>(undefined),
 			downlinkJitterMs: new FormControl<number | null | undefined>(undefined),
-			uplinkLossPercent: new FormControl<number | null | undefined>(undefined),
-			downlinkLossPercent: new FormControl<number | null | undefined>(undefined),
+			uplinkLossPercent: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
+			downlinkLossPercent: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
 	}
@@ -4226,21 +6832,45 @@ export namespace MyNS {
 
 	/** Represents a request to the update project operation. */
 	export interface UpdateProjectRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name?: string | null;
 		defaultJobTimeoutMinutes?: number | null;
 	}
 
 	/** Represents a request to the update project operation. */
 	export interface UpdateProjectRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
 		defaultJobTimeoutMinutes: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateProjectRequestFormGroup() {
 		return new FormGroup<UpdateProjectRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			defaultJobTimeoutMinutes: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -4260,20 +6890,58 @@ export namespace MyNS {
 	}
 
 	export interface UpdateTestGridProjectRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		projectArn: string;
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		description?: string | null;
 	}
 	export interface UpdateTestGridProjectRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:aws:devicefarm:.+
+		 */
 		projectArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
 		description: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateTestGridProjectRequestFormGroup() {
 		return new FormGroup<UpdateTestGridProjectRequestFormProperties>({
-			projectArn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			projectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
 
 	}
@@ -4292,22 +6960,56 @@ export namespace MyNS {
 	}
 
 	export interface UpdateUploadRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name?: string | null;
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		contentType?: string | null;
 		editContent?: boolean | null;
 	}
 	export interface UpdateUploadRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 64
+		 * Min length: 0
+		 */
 		contentType: FormControl<string | null | undefined>,
 		editContent: FormControl<boolean | null | undefined>,
 	}
 	export function CreateUpdateUploadRequestFormGroup() {
 		return new FormGroup<UpdateUploadRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			contentType: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			contentType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
 			editContent: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -4327,26 +7029,80 @@ export namespace MyNS {
 	}
 
 	export interface UpdateVPCEConfigurationRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: string;
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		vpceConfigurationName?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		vpceServiceName?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		serviceDnsName?: string | null;
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		vpceConfigurationDescription?: string | null;
 	}
 	export interface UpdateVPCEConfigurationRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 1024
+		 * Min length: 0
+		 */
 		vpceConfigurationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		vpceServiceName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		serviceDnsName: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 2048
+		 * Min length: 0
+		 */
 		vpceConfigurationDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateVPCEConfigurationRequestFormGroup() {
 		return new FormGroup<UpdateVPCEConfigurationRequestFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			vpceConfigurationName: new FormControl<string | null | undefined>(undefined),
-			vpceServiceName: new FormControl<string | null | undefined>(undefined),
-			serviceDnsName: new FormControl<string | null | undefined>(undefined),
-			vpceConfigurationDescription: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(32)]),
+			vpceConfigurationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			vpceServiceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
+			serviceDnsName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
+			vpceConfigurationDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 		});
 
 	}
@@ -4380,19 +7136,41 @@ export namespace MyNS {
 
 	/** Information about a problem detail. */
 	export interface ProblemDetail {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn?: string | null;
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name?: string | null;
 	}
 
 	/** Information about a problem detail. */
 	export interface ProblemDetailFormProperties {
+
+		/**
+		 * Max length: 1011
+		 * Min length: 32
+		 * Pattern: ^arn:.+
+		 */
 		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateProblemDetailFormGroup() {
 		return new FormGroup<ProblemDetailFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(32)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -4416,18 +7194,28 @@ export namespace MyNS {
 		/** Represents a device type that an app is tested against. */
 		device?: Device;
 		result?: RemoteAccessSessionResult | null;
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		message?: string | null;
 	}
 
 	/** Represents a specific warning or failure. */
 	export interface ProblemFormProperties {
 		result: FormControl<RemoteAccessSessionResult | null | undefined>,
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateProblemFormGroup() {
 		return new FormGroup<ProblemFormProperties>({
 			result: new FormControl<RemoteAccessSessionResult | null | undefined>(undefined),
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 		});
 
 	}
@@ -4435,17 +7223,27 @@ export namespace MyNS {
 
 	/** A collection of one or more problems, grouped by their result. */
 	export interface UniqueProblem {
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		message?: string | null;
 		problems?: Array<Problem>;
 	}
 
 	/** A collection of one or more problems, grouped by their result. */
 	export interface UniqueProblemFormProperties {
+
+		/**
+		 * Max length: 16384
+		 * Min length: 0
+		 */
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateUniqueProblemFormGroup() {
 		return new FormGroup<UniqueProblemFormProperties>({
-			message: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
 		});
 
 	}

@@ -161,19 +161,43 @@ export namespace MyNS {
 
 	/** The list of tags to be added to the specified topic. */
 	export interface Tag {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: string;
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Value: string;
 	}
 
 	/** The list of tags to be added to the specified topic. */
 	export interface TagFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
 		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
 	}
@@ -588,6 +612,8 @@ export namespace MyNS {
 
 	/** <p>The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>.</p> <p>Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html">Using Amazon SNS Message Attributes</a>.</p> */
 	export interface MessageAttributeValue {
+
+		/** Required */
 		DataType: string;
 		StringValue?: string | null;
 		BinaryValue?: string | null;
@@ -595,13 +621,15 @@ export namespace MyNS {
 
 	/** <p>The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>.</p> <p>Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html">Using Amazon SNS Message Attributes</a>.</p> */
 	export interface MessageAttributeValueFormProperties {
+
+		/** Required */
 		DataType: FormControl<string | null | undefined>,
 		StringValue: FormControl<string | null | undefined>,
 		BinaryValue: FormControl<string | null | undefined>,
 	}
 	export function CreateMessageAttributeValueFormGroup() {
 		return new FormGroup<MessageAttributeValueFormProperties>({
-			DataType: new FormControl<string | null | undefined>(undefined),
+			DataType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			StringValue: new FormControl<string | null | undefined>(undefined),
 			BinaryValue: new FormControl<string | null | undefined>(undefined),
 		});
@@ -750,19 +778,31 @@ export namespace MyNS {
 	}
 
 	export interface AddPermissionInput {
+
+		/** Required */
 		TopicArn: string;
+
+		/** Required */
 		Label: string;
+
+		/** Required */
 		AWSAccountId: Array<string>;
+
+		/** Required */
 		ActionName: Array<string>;
 	}
 	export interface AddPermissionInputFormProperties {
+
+		/** Required */
 		TopicArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		Label: FormControl<string | null | undefined>,
 	}
 	export function CreateAddPermissionInputFormGroup() {
 		return new FormGroup<AddPermissionInputFormProperties>({
-			TopicArn: new FormControl<string | null | undefined>(undefined),
-			Label: new FormControl<string | null | undefined>(undefined),
+			TopicArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Label: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -770,16 +810,20 @@ export namespace MyNS {
 
 	/** The input for the <code>CheckIfPhoneNumberIsOptedOut</code> action. */
 	export interface CheckIfPhoneNumberIsOptedOutInput {
+
+		/** Required */
 		phoneNumber: string;
 	}
 
 	/** The input for the <code>CheckIfPhoneNumberIsOptedOut</code> action. */
 	export interface CheckIfPhoneNumberIsOptedOutInputFormProperties {
+
+		/** Required */
 		phoneNumber: FormControl<string | null | undefined>,
 	}
 	export function CreateCheckIfPhoneNumberIsOptedOutInputFormGroup() {
 		return new FormGroup<CheckIfPhoneNumberIsOptedOutInputFormProperties>({
-			phoneNumber: new FormControl<string | null | undefined>(undefined),
+			phoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -787,21 +831,29 @@ export namespace MyNS {
 
 	/** Input for ConfirmSubscription action. */
 	export interface ConfirmSubscriptionInput {
+
+		/** Required */
 		TopicArn: string;
+
+		/** Required */
 		Token: string;
 		AuthenticateOnUnsubscribe?: string | null;
 	}
 
 	/** Input for ConfirmSubscription action. */
 	export interface ConfirmSubscriptionInputFormProperties {
+
+		/** Required */
 		TopicArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		Token: FormControl<string | null | undefined>,
 		AuthenticateOnUnsubscribe: FormControl<string | null | undefined>,
 	}
 	export function CreateConfirmSubscriptionInputFormGroup() {
 		return new FormGroup<ConfirmSubscriptionInputFormProperties>({
-			TopicArn: new FormControl<string | null | undefined>(undefined),
-			Token: new FormControl<string | null | undefined>(undefined),
+			TopicArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Token: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			AuthenticateOnUnsubscribe: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -810,20 +862,30 @@ export namespace MyNS {
 
 	/** Input for CreatePlatformApplication action. */
 	export interface CreatePlatformApplicationInput {
+
+		/** Required */
 		Name: string;
+
+		/** Required */
 		Platform: string;
+
+		/** Required */
 		Attributes: MapStringToString;
 	}
 
 	/** Input for CreatePlatformApplication action. */
 	export interface CreatePlatformApplicationInputFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
+
+		/** Required */
 		Platform: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePlatformApplicationInputFormGroup() {
 		return new FormGroup<CreatePlatformApplicationInputFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Platform: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Platform: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -831,7 +893,11 @@ export namespace MyNS {
 
 	/** Input for CreatePlatformEndpoint action. */
 	export interface CreatePlatformEndpointInput {
+
+		/** Required */
 		PlatformApplicationArn: string;
+
+		/** Required */
 		Token: string;
 		CustomUserData?: string | null;
 		Attributes?: MapStringToString;
@@ -839,14 +905,18 @@ export namespace MyNS {
 
 	/** Input for CreatePlatformEndpoint action. */
 	export interface CreatePlatformEndpointInputFormProperties {
+
+		/** Required */
 		PlatformApplicationArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		Token: FormControl<string | null | undefined>,
 		CustomUserData: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePlatformEndpointInputFormGroup() {
 		return new FormGroup<CreatePlatformEndpointInputFormProperties>({
-			PlatformApplicationArn: new FormControl<string | null | undefined>(undefined),
-			Token: new FormControl<string | null | undefined>(undefined),
+			PlatformApplicationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Token: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			CustomUserData: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -855,6 +925,8 @@ export namespace MyNS {
 
 	/** Input for CreateTopic action. */
 	export interface CreateTopicInput {
+
+		/** Required */
 		Name: string;
 		Attributes?: TopicAttributesMap;
 		Tags?: Array<Tag>;
@@ -862,11 +934,13 @@ export namespace MyNS {
 
 	/** Input for CreateTopic action. */
 	export interface CreateTopicInputFormProperties {
+
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateTopicInputFormGroup() {
 		return new FormGroup<CreateTopicInputFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -874,16 +948,20 @@ export namespace MyNS {
 
 	/** Input for DeleteEndpoint action. */
 	export interface DeleteEndpointInput {
+
+		/** Required */
 		EndpointArn: string;
 	}
 
 	/** Input for DeleteEndpoint action. */
 	export interface DeleteEndpointInputFormProperties {
+
+		/** Required */
 		EndpointArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteEndpointInputFormGroup() {
 		return new FormGroup<DeleteEndpointInputFormProperties>({
-			EndpointArn: new FormControl<string | null | undefined>(undefined),
+			EndpointArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -891,29 +969,37 @@ export namespace MyNS {
 
 	/** Input for DeletePlatformApplication action. */
 	export interface DeletePlatformApplicationInput {
+
+		/** Required */
 		PlatformApplicationArn: string;
 	}
 
 	/** Input for DeletePlatformApplication action. */
 	export interface DeletePlatformApplicationInputFormProperties {
+
+		/** Required */
 		PlatformApplicationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeletePlatformApplicationInputFormGroup() {
 		return new FormGroup<DeletePlatformApplicationInputFormProperties>({
-			PlatformApplicationArn: new FormControl<string | null | undefined>(undefined),
+			PlatformApplicationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface DeleteTopicInput {
+
+		/** Required */
 		TopicArn: string;
 	}
 	export interface DeleteTopicInputFormProperties {
+
+		/** Required */
 		TopicArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteTopicInputFormGroup() {
 		return new FormGroup<DeleteTopicInputFormProperties>({
-			TopicArn: new FormControl<string | null | undefined>(undefined),
+			TopicArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -921,16 +1007,20 @@ export namespace MyNS {
 
 	/** Input for GetEndpointAttributes action. */
 	export interface GetEndpointAttributesInput {
+
+		/** Required */
 		EndpointArn: string;
 	}
 
 	/** Input for GetEndpointAttributes action. */
 	export interface GetEndpointAttributesInputFormProperties {
+
+		/** Required */
 		EndpointArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetEndpointAttributesInputFormGroup() {
 		return new FormGroup<GetEndpointAttributesInputFormProperties>({
-			EndpointArn: new FormControl<string | null | undefined>(undefined),
+			EndpointArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -938,16 +1028,20 @@ export namespace MyNS {
 
 	/** Input for GetPlatformApplicationAttributes action. */
 	export interface GetPlatformApplicationAttributesInput {
+
+		/** Required */
 		PlatformApplicationArn: string;
 	}
 
 	/** Input for GetPlatformApplicationAttributes action. */
 	export interface GetPlatformApplicationAttributesInputFormProperties {
+
+		/** Required */
 		PlatformApplicationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetPlatformApplicationAttributesInputFormGroup() {
 		return new FormGroup<GetPlatformApplicationAttributesInputFormProperties>({
-			PlatformApplicationArn: new FormControl<string | null | undefined>(undefined),
+			PlatformApplicationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -970,16 +1064,20 @@ export namespace MyNS {
 
 	/** Input for GetSubscriptionAttributes. */
 	export interface GetSubscriptionAttributesInput {
+
+		/** Required */
 		SubscriptionArn: string;
 	}
 
 	/** Input for GetSubscriptionAttributes. */
 	export interface GetSubscriptionAttributesInputFormProperties {
+
+		/** Required */
 		SubscriptionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSubscriptionAttributesInputFormGroup() {
 		return new FormGroup<GetSubscriptionAttributesInputFormProperties>({
-			SubscriptionArn: new FormControl<string | null | undefined>(undefined),
+			SubscriptionArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -987,16 +1085,20 @@ export namespace MyNS {
 
 	/** Input for GetTopicAttributes action. */
 	export interface GetTopicAttributesInput {
+
+		/** Required */
 		TopicArn: string;
 	}
 
 	/** Input for GetTopicAttributes action. */
 	export interface GetTopicAttributesInputFormProperties {
+
+		/** Required */
 		TopicArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTopicAttributesInputFormGroup() {
 		return new FormGroup<GetTopicAttributesInputFormProperties>({
-			TopicArn: new FormControl<string | null | undefined>(undefined),
+			TopicArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1004,18 +1106,22 @@ export namespace MyNS {
 
 	/** Input for ListEndpointsByPlatformApplication action. */
 	export interface ListEndpointsByPlatformApplicationInput {
+
+		/** Required */
 		PlatformApplicationArn: string;
 		NextToken?: string | null;
 	}
 
 	/** Input for ListEndpointsByPlatformApplication action. */
 	export interface ListEndpointsByPlatformApplicationInputFormProperties {
+
+		/** Required */
 		PlatformApplicationArn: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListEndpointsByPlatformApplicationInputFormGroup() {
 		return new FormGroup<ListEndpointsByPlatformApplicationInputFormProperties>({
-			PlatformApplicationArn: new FormControl<string | null | undefined>(undefined),
+			PlatformApplicationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1058,18 +1164,22 @@ export namespace MyNS {
 
 	/** Input for ListSubscriptionsByTopic action. */
 	export interface ListSubscriptionsByTopicInput {
+
+		/** Required */
 		TopicArn: string;
 		NextToken?: string | null;
 	}
 
 	/** Input for ListSubscriptionsByTopic action. */
 	export interface ListSubscriptionsByTopicInputFormProperties {
+
+		/** Required */
 		TopicArn: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListSubscriptionsByTopicInputFormGroup() {
 		return new FormGroup<ListSubscriptionsByTopicInputFormProperties>({
-			TopicArn: new FormControl<string | null | undefined>(undefined),
+			TopicArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1093,14 +1203,26 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceArn: string;
 	}
 	export interface ListTagsForResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
 		});
 
 	}
@@ -1131,16 +1253,20 @@ export namespace MyNS {
 
 	/** Input for the OptInPhoneNumber action. */
 	export interface OptInPhoneNumberInput {
+
+		/** Required */
 		phoneNumber: string;
 	}
 
 	/** Input for the OptInPhoneNumber action. */
 	export interface OptInPhoneNumberInputFormProperties {
+
+		/** Required */
 		phoneNumber: FormControl<string | null | undefined>,
 	}
 	export function CreateOptInPhoneNumberInputFormGroup() {
 		return new FormGroup<OptInPhoneNumberInputFormProperties>({
-			phoneNumber: new FormControl<string | null | undefined>(undefined),
+			phoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1151,6 +1277,8 @@ export namespace MyNS {
 		TopicArn?: string | null;
 		TargetArn?: string | null;
 		PhoneNumber?: string | null;
+
+		/** Required */
 		Message: string;
 		Subject?: string | null;
 		MessageStructure?: string | null;
@@ -1162,6 +1290,8 @@ export namespace MyNS {
 		TopicArn: FormControl<string | null | undefined>,
 		TargetArn: FormControl<string | null | undefined>,
 		PhoneNumber: FormControl<string | null | undefined>,
+
+		/** Required */
 		Message: FormControl<string | null | undefined>,
 		Subject: FormControl<string | null | undefined>,
 		MessageStructure: FormControl<string | null | undefined>,
@@ -1171,7 +1301,7 @@ export namespace MyNS {
 			TopicArn: new FormControl<string | null | undefined>(undefined),
 			TargetArn: new FormControl<string | null | undefined>(undefined),
 			PhoneNumber: new FormControl<string | null | undefined>(undefined),
-			Message: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Subject: new FormControl<string | null | undefined>(undefined),
 			MessageStructure: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1181,19 +1311,27 @@ export namespace MyNS {
 
 	/** Input for RemovePermission action. */
 	export interface RemovePermissionInput {
+
+		/** Required */
 		TopicArn: string;
+
+		/** Required */
 		Label: string;
 	}
 
 	/** Input for RemovePermission action. */
 	export interface RemovePermissionInputFormProperties {
+
+		/** Required */
 		TopicArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		Label: FormControl<string | null | undefined>,
 	}
 	export function CreateRemovePermissionInputFormGroup() {
 		return new FormGroup<RemovePermissionInputFormProperties>({
-			TopicArn: new FormControl<string | null | undefined>(undefined),
-			Label: new FormControl<string | null | undefined>(undefined),
+			TopicArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Label: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1201,17 +1339,23 @@ export namespace MyNS {
 
 	/** Input for SetEndpointAttributes action. */
 	export interface SetEndpointAttributesInput {
+
+		/** Required */
 		EndpointArn: string;
+
+		/** Required */
 		Attributes: MapStringToString;
 	}
 
 	/** Input for SetEndpointAttributes action. */
 	export interface SetEndpointAttributesInputFormProperties {
+
+		/** Required */
 		EndpointArn: FormControl<string | null | undefined>,
 	}
 	export function CreateSetEndpointAttributesInputFormGroup() {
 		return new FormGroup<SetEndpointAttributesInputFormProperties>({
-			EndpointArn: new FormControl<string | null | undefined>(undefined),
+			EndpointArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1219,17 +1363,23 @@ export namespace MyNS {
 
 	/** Input for SetPlatformApplicationAttributes action. */
 	export interface SetPlatformApplicationAttributesInput {
+
+		/** Required */
 		PlatformApplicationArn: string;
+
+		/** Required */
 		Attributes: MapStringToString;
 	}
 
 	/** Input for SetPlatformApplicationAttributes action. */
 	export interface SetPlatformApplicationAttributesInputFormProperties {
+
+		/** Required */
 		PlatformApplicationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateSetPlatformApplicationAttributesInputFormGroup() {
 		return new FormGroup<SetPlatformApplicationAttributesInputFormProperties>({
-			PlatformApplicationArn: new FormControl<string | null | undefined>(undefined),
+			PlatformApplicationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1237,6 +1387,8 @@ export namespace MyNS {
 
 	/** The input for the SetSMSAttributes action. */
 	export interface SetSMSAttributesInput {
+
+		/** Required */
 		attributes: MapStringToString;
 	}
 
@@ -1252,21 +1404,29 @@ export namespace MyNS {
 
 	/** Input for SetSubscriptionAttributes action. */
 	export interface SetSubscriptionAttributesInput {
+
+		/** Required */
 		SubscriptionArn: string;
+
+		/** Required */
 		AttributeName: string;
 		AttributeValue?: string | null;
 	}
 
 	/** Input for SetSubscriptionAttributes action. */
 	export interface SetSubscriptionAttributesInputFormProperties {
+
+		/** Required */
 		SubscriptionArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		AttributeName: FormControl<string | null | undefined>,
 		AttributeValue: FormControl<string | null | undefined>,
 	}
 	export function CreateSetSubscriptionAttributesInputFormGroup() {
 		return new FormGroup<SetSubscriptionAttributesInputFormProperties>({
-			SubscriptionArn: new FormControl<string | null | undefined>(undefined),
-			AttributeName: new FormControl<string | null | undefined>(undefined),
+			SubscriptionArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			AttributeValue: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1275,21 +1435,29 @@ export namespace MyNS {
 
 	/** Input for SetTopicAttributes action. */
 	export interface SetTopicAttributesInput {
+
+		/** Required */
 		TopicArn: string;
+
+		/** Required */
 		AttributeName: string;
 		AttributeValue?: string | null;
 	}
 
 	/** Input for SetTopicAttributes action. */
 	export interface SetTopicAttributesInputFormProperties {
+
+		/** Required */
 		TopicArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		AttributeName: FormControl<string | null | undefined>,
 		AttributeValue: FormControl<string | null | undefined>,
 	}
 	export function CreateSetTopicAttributesInputFormGroup() {
 		return new FormGroup<SetTopicAttributesInputFormProperties>({
-			TopicArn: new FormControl<string | null | undefined>(undefined),
-			AttributeName: new FormControl<string | null | undefined>(undefined),
+			TopicArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			AttributeValue: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1298,7 +1466,11 @@ export namespace MyNS {
 
 	/** Input for Subscribe action. */
 	export interface SubscribeInput {
+
+		/** Required */
 		TopicArn: string;
+
+		/** Required */
 		Protocol: string;
 		Endpoint?: string | null;
 		Attributes?: SubscriptionAttributesMap;
@@ -1307,15 +1479,19 @@ export namespace MyNS {
 
 	/** Input for Subscribe action. */
 	export interface SubscribeInputFormProperties {
+
+		/** Required */
 		TopicArn: FormControl<string | null | undefined>,
+
+		/** Required */
 		Protocol: FormControl<string | null | undefined>,
 		Endpoint: FormControl<string | null | undefined>,
 		ReturnSubscriptionArn: FormControl<boolean | null | undefined>,
 	}
 	export function CreateSubscribeInputFormGroup() {
 		return new FormGroup<SubscribeInputFormProperties>({
-			TopicArn: new FormControl<string | null | undefined>(undefined),
-			Protocol: new FormControl<string | null | undefined>(undefined),
+			TopicArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Protocol: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Endpoint: new FormControl<string | null | undefined>(undefined),
 			ReturnSubscriptionArn: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -1323,15 +1499,29 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceArn: string;
+
+		/** Required */
 		Tags: Array<Tag>;
 	}
 	export interface TagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
 		});
 
 	}
@@ -1339,30 +1529,48 @@ export namespace MyNS {
 
 	/** Input for Unsubscribe action. */
 	export interface UnsubscribeInput {
+
+		/** Required */
 		SubscriptionArn: string;
 	}
 
 	/** Input for Unsubscribe action. */
 	export interface UnsubscribeInputFormProperties {
+
+		/** Required */
 		SubscriptionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUnsubscribeInputFormGroup() {
 		return new FormGroup<UnsubscribeInputFormProperties>({
-			SubscriptionArn: new FormControl<string | null | undefined>(undefined),
+			SubscriptionArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface UntagResourceRequest {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceArn: string;
+
+		/** Required */
 		TagKeys: Array<string>;
 	}
 	export interface UntagResourceRequestFormProperties {
+
+		/**
+		 * Required
+		 * Max length: 1011
+		 * Min length: 1
+		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
 		});
 
 	}
