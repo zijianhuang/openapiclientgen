@@ -4,10 +4,10 @@
 		<TargetFramework>net7.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<AssemblyName>Fonlow.OpenApiClientGen.NG2FormGroup</AssemblyName>
-		<Copyright>Copyright © Zijian Huang 2021-2023</Copyright>
+		<Copyright>Copyright © Zijian Huang 2021-2024</Copyright>
 		<Authors>Zijian Huang</Authors>
 		<RootNamespace>Fonlow.OpenApiClientGen.NG2FormGroup</RootNamespace>
-		<Version>1.6</Version>
+		<Version>1.7</Version>
 	</PropertyGroup>
 
 	<ItemGroup>

@@ -561,16 +561,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					CodeAttributeDeclaration cad = new("System.ComponentModel.DataAnnotations.StringLength", attributeParams.ToArray());
 					memberField.CustomAttributes.Add(cad);
-
-					if (!string.IsNullOrEmpty(fieldSchema.Pattern))
-					{
-						var escapedPattern = fieldSchema.Pattern.Replace("'", "\\'").Replace("\\0", "0o"); //sometimes the regex contains symbols of single quote. And https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Deprecated_octal
-																										   //openapi-directory\APIs\amazonaws.com\AWSMigrationHub\2017-05-31 has the deprecated expression of octal
-
-						CodeSnippetExpression patternTextExpression = new(escapedPattern);
-						CodeAttributeDeclaration pa = new("System.ComponentModel.DataAnnotations.RegularExpressionAttribute", new CodeAttributeArgument(patternTextExpression));
-						memberField.CustomAttributes.Add(pa);
-					}
 				}
 				else
 				{
@@ -645,6 +635,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				CodeAttributeDeclaration cad = new("System.ComponentModel.DataAnnotations.MaxLength", attributeParams);
 				memberField.CustomAttributes.Add(cad);
 			}
+
+			if (!string.IsNullOrEmpty(fieldSchema.Pattern))
+			{
+				var escapedPattern = fieldSchema.Pattern.Replace("'", "\\'").Replace("\\0", "0o"); //sometimes the regex contains symbols of single quote. And https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Deprecated_octal
+																								   //openapi-directory\APIs\amazonaws.com\AWSMigrationHub\2017-05-31 has the deprecated expression of octal
+
+				CodeSnippetExpression patternTextExpression = new(escapedPattern);
+				CodeAttributeDeclaration pa = new("System.ComponentModel.DataAnnotations.RegularExpressionAttribute", new CodeAttributeArgument(patternTextExpression));
+				memberField.CustomAttributes.Add(pa);
+			}
+
 
 		}
 
