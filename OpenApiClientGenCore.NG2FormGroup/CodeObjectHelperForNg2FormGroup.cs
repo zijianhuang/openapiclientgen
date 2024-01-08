@@ -235,6 +235,9 @@ namespace Fonlow.TypeScriptCodeDom
 						case "System.ComponentModel.DataAnnotations.EmailAddress":
 							validatorList.Add("Validators.email");
 							break;
+						case "System.ComponentModel.DataAnnotations.RegularExpressionAttribute":
+							AddRegexValidations(ca, validatorList);
+							break;
 						default:
 							break;
 					}
@@ -319,6 +322,14 @@ namespace Fonlow.TypeScriptCodeDom
 			var arg0 = ca.Arguments[0];
 			var arg0VExpression = arg0.Value as CodeSnippetExpression;
 			validatorList.Add($"Validators.maxLength({arg0VExpression.Value})");
+		}
+
+		void AddRegexValidations(CodeAttributeDeclaration ca, List<string> validatorList)
+		{
+			Debug.Assert(ca.Arguments.Count == 1);
+			var arg0 = ca.Arguments[0];
+			var arg0VExpression = arg0.Value as CodeSnippetExpression;
+			validatorList.Add($"Validators.pattern('{arg0VExpression.Value}')");
 		}
 
 		void WriteAngularFormTypeMembersAndCloseBracing(CodeTypeDeclaration typeDeclaration, TextWriter w, CodeGeneratorOptions o)

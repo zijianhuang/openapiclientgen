@@ -141,6 +141,20 @@ namespace SwagTests
 		}
 
 		[Fact]
+		public void TestAir()
+		{
+			helper.GenerateAndAssertBuild("SwagMock\\AirOne.yaml", "NG2FormGroupResults\\AirOne.txt", new Settings()
+			{
+				ClientNamespace = "MyNS",
+				ContainerClassName = "MyClient",
+				ActionNameStrategy = ActionNameStrategy.NormalizedOperationId,
+				//RegexForNormalizedOperationId = @"\w*",
+				ContainerNameStrategy = ContainerNameStrategy.None,
+				PathPrefixToRemove = "/mcp",
+			});
+		}
+
+		[Fact]
 		public void TestEBaySellAccount()
 		{
 			helper.GenerateAndAssertBuild("SwagMock\\sell_account_v1_oas3.json", "NG2FormGroupResults\\sell_account.txt");

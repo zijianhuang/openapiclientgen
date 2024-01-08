@@ -8,7 +8,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn?: string | null;
 	}
@@ -17,13 +16,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateCertificateAuthorityResponseFormGroup() {
 		return new FormGroup<CreateCertificateAuthorityResponseFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(5)]),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(5), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*')]),
 		});
 
 	}
@@ -45,7 +43,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 36
 		 * Min length: 1
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]*
 		 */
 		IdempotencyToken?: string | null;
 
@@ -63,14 +60,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 36
 		 * Min length: 1
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]*
 		 */
 		IdempotencyToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateCertificateAuthorityRequestFormGroup() {
 		return new FormGroup<CreateCertificateAuthorityRequestFormProperties>({
 			CertificateAuthorityType: new FormControl<CreateCertificateAuthorityRequestCertificateAuthorityType | null | undefined>(undefined, [Validators.required]),
-			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1), Validators.pattern('[\u0009\u000A\u000D\u0020-\u00FF]*')]),
 		});
 
 	}
@@ -116,8 +112,6 @@ export namespace MyNS {
 
 	/** Contains information about the certificate subject. The certificate can be one issued by your private certificate authority (CA) or it can be your private CA certificate. The <b>Subject</b> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <b>Subject</b> must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate. The DN must be unique for each entity, but your private CA can issue more than one certificate with the same DN to the same entity.  */
 	export interface ASN1Subject {
-
-		/** Pattern: [A-Za-z]{2} */
 		Country?: string | null;
 
 		/**
@@ -135,7 +129,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9'()+-.?:/= ]*
 		 */
 		DistinguishedNameQualifier?: string | null;
 
@@ -202,8 +195,6 @@ export namespace MyNS {
 
 	/** Contains information about the certificate subject. The certificate can be one issued by your private certificate authority (CA) or it can be your private CA certificate. The <b>Subject</b> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <b>Subject</b> must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate. The DN must be unique for each entity, but your private CA can issue more than one certificate with the same DN to the same entity.  */
 	export interface ASN1SubjectFormProperties {
-
-		/** Pattern: [A-Za-z]{2} */
 		Country: FormControl<string | null | undefined>,
 
 		/**
@@ -221,7 +212,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9'()+-.?:/= ]*
 		 */
 		DistinguishedNameQualifier: FormControl<string | null | undefined>,
 
@@ -290,7 +280,7 @@ export namespace MyNS {
 			Country: new FormControl<string | null | undefined>(undefined),
 			Organization: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
 			OrganizationalUnit: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
-			DistinguishedNameQualifier: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
+			DistinguishedNameQualifier: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0), Validators.pattern('[a-zA-Z0-9'()+-.?:/= ]*')]),
 			State: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
 			CommonName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
 			SerialNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
@@ -392,14 +382,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Key: string;
 
 		/**
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Value?: string | null;
 	}
@@ -411,21 +399,19 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Key: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
 		});
 
 	}
@@ -475,7 +461,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 36
 		 * Min length: 36
-		 * Pattern: [a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}
 		 */
 		AuditReportId?: string | null;
 		S3Key?: string | null;
@@ -485,14 +470,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 36
 		 * Min length: 36
-		 * Pattern: [a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}
 		 */
 		AuditReportId: FormControl<string | null | undefined>,
 		S3Key: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateCertificateAuthorityAuditReportResponseFormGroup() {
 		return new FormGroup<CreateCertificateAuthorityAuditReportResponseFormProperties>({
-			AuditReportId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
+			AuditReportId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36), Validators.pattern('[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}')]),
 			S3Key: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -504,7 +488,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: string;
 
@@ -520,7 +503,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 
@@ -532,7 +514,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateCertificateAuthorityAuditReportRequestFormGroup() {
 		return new FormGroup<CreateCertificateAuthorityAuditReportRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*')]),
 			S3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			AuditReportResponseFormat: new FormControl<CreateCertificateAuthorityAuditReportRequestAuditReportResponseFormat | null | undefined>(undefined, [Validators.required]),
 		});
@@ -597,7 +579,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: string;
 
@@ -605,14 +586,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 0
-		 * Pattern: ^[^*]+$
 		 */
 		Principal: string;
 
 		/**
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: [0-9]+
 		 */
 		SourceAccount?: string | null;
 
@@ -629,7 +608,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 
@@ -637,22 +615,20 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 0
-		 * Pattern: ^[^*]+$
 		 */
 		Principal: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: [0-9]+
 		 */
 		SourceAccount: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePermissionRequestFormGroup() {
 		return new FormGroup<CreatePermissionRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
-			Principal: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(0)]),
-			SourceAccount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*')]),
+			Principal: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(0), Validators.pattern('^[^*]+$')]),
+			SourceAccount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12), Validators.pattern('[0-9]+')]),
 		});
 
 	}
@@ -675,7 +651,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: string;
 
@@ -691,7 +666,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 
@@ -703,7 +677,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteCertificateAuthorityRequestFormGroup() {
 		return new FormGroup<DeleteCertificateAuthorityRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*')]),
 			PermanentDeletionTimeInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(7), Validators.max(30)]),
 		});
 
@@ -725,7 +699,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: string;
 
@@ -733,14 +706,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 0
-		 * Pattern: ^[^*]+$
 		 */
 		Principal: string;
 
 		/**
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: [0-9]+
 		 */
 		SourceAccount?: string | null;
 	}
@@ -750,7 +721,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 
@@ -758,22 +728,20 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 0
-		 * Pattern: ^[^*]+$
 		 */
 		Principal: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: [0-9]+
 		 */
 		SourceAccount: FormControl<string | null | undefined>,
 	}
 	export function CreateDeletePermissionRequestFormGroup() {
 		return new FormGroup<DeletePermissionRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
-			Principal: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(0)]),
-			SourceAccount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*')]),
+			Principal: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(0), Validators.pattern('^[^*]+$')]),
+			SourceAccount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12), Validators.pattern('[0-9]+')]),
 		});
 
 	}
@@ -798,7 +766,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		Arn?: string | null;
 		CreatedAt?: Date | null;
@@ -824,7 +791,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		Arn: FormControl<string | null | undefined>,
 		CreatedAt: FormControl<Date | null | undefined>,
@@ -839,7 +805,7 @@ export namespace MyNS {
 	}
 	export function CreateCertificateAuthorityFormGroup() {
 		return new FormGroup<CertificateAuthorityFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(5)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(5), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*')]),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			LastStateChangeAt: new FormControl<Date | null | undefined>(undefined),
 			Type: new FormControl<CreateCertificateAuthorityRequestCertificateAuthorityType | null | undefined>(undefined),
@@ -863,7 +829,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: string;
 	}
@@ -873,13 +838,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeCertificateAuthorityRequestFormGroup() {
 		return new FormGroup<DescribeCertificateAuthorityRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*')]),
 		});
 
 	}
@@ -914,7 +878,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: string;
 
@@ -922,7 +885,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 36
 		 * Min length: 36
-		 * Pattern: [a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}
 		 */
 		AuditReportId: string;
 	}
@@ -932,7 +894,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 
@@ -940,14 +901,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 36
 		 * Min length: 36
-		 * Pattern: [a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}
 		 */
 		AuditReportId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeCertificateAuthorityAuditReportRequestFormGroup() {
 		return new FormGroup<DescribeCertificateAuthorityAuditReportRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
-			AuditReportId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36)]),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*')]),
+			AuditReportId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}')]),
 		});
 
 	}
@@ -974,7 +934,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: string;
 
@@ -982,7 +941,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateArn: string;
 	}
@@ -992,7 +950,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 
@@ -1000,14 +957,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetCertificateRequestFormGroup() {
 		return new FormGroup<GetCertificateRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
-			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*')]),
+			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*')]),
 		});
 
 	}
@@ -1034,7 +990,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: string;
 	}
@@ -1044,13 +999,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetCertificateAuthorityCertificateRequestFormGroup() {
 		return new FormGroup<GetCertificateAuthorityCertificateRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*')]),
 		});
 
 	}
@@ -1074,7 +1028,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: string;
 	}
@@ -1084,13 +1037,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetCertificateAuthorityCsrRequestFormGroup() {
 		return new FormGroup<GetCertificateAuthorityCsrRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*')]),
 		});
 
 	}
@@ -1101,7 +1053,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: string;
 
@@ -1124,7 +1075,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 
@@ -1143,7 +1093,7 @@ export namespace MyNS {
 	}
 	export function CreateImportCertificateAuthorityCertificateRequestFormGroup() {
 		return new FormGroup<ImportCertificateAuthorityCertificateRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*')]),
 			Certificate: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32768), Validators.minLength(1)]),
 			CertificateChain: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2097152), Validators.minLength(0)]),
 		});
@@ -1185,7 +1135,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateArn?: string | null;
 	}
@@ -1194,13 +1143,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateArn: FormControl<string | null | undefined>,
 	}
 	export function CreateIssueCertificateResponseFormGroup() {
 		return new FormGroup<IssueCertificateResponseFormProperties>({
-			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(5)]),
+			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(5), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*')]),
 		});
 
 	}
@@ -1211,7 +1159,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: string;
 
@@ -1228,7 +1175,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		TemplateArn?: string | null;
 
@@ -1241,7 +1187,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 36
 		 * Min length: 1
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]*
 		 */
 		IdempotencyToken?: string | null;
 	}
@@ -1251,7 +1196,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 
@@ -1268,24 +1212,22 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		TemplateArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 36
 		 * Min length: 1
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]*
 		 */
 		IdempotencyToken: FormControl<string | null | undefined>,
 	}
 	export function CreateIssueCertificateRequestFormGroup() {
 		return new FormGroup<IssueCertificateRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*')]),
 			Csr: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32768), Validators.minLength(1)]),
 			SigningAlgorithm: new FormControl<CertificateAuthorityConfigurationSigningAlgorithm | null | undefined>(undefined, [Validators.required]),
-			TemplateArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(5)]),
-			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
+			TemplateArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(5), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*')]),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1), Validators.pattern('[\u0009\u000A\u000D\u0020-\u00FF]*')]),
 		});
 
 	}
@@ -1439,7 +1381,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn?: string | null;
 		CreatedAt?: Date | null;
@@ -1460,7 +1401,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 		CreatedAt: FormControl<Date | null | undefined>,
@@ -1470,7 +1410,7 @@ export namespace MyNS {
 	}
 	export function CreatePermissionFormGroup() {
 		return new FormGroup<PermissionFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(5)]),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(5), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*')]),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			Principal: new FormControl<string | null | undefined>(undefined),
 			SourceAccount: new FormControl<string | null | undefined>(undefined),
@@ -1485,7 +1425,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: string;
 
@@ -1507,7 +1446,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 
@@ -1525,7 +1463,7 @@ export namespace MyNS {
 	}
 	export function CreateListPermissionsRequestFormGroup() {
 		return new FormGroup<ListPermissionsRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*')]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(1)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
@@ -1567,7 +1505,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: string;
 
@@ -1589,7 +1526,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 
@@ -1607,7 +1543,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsRequestFormGroup() {
 		return new FormGroup<ListTagsRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*')]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(1)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
@@ -1620,7 +1556,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: string;
 	}
@@ -1630,13 +1565,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 	}
 	export function CreateRestoreCertificateAuthorityRequestFormGroup() {
 		return new FormGroup<RestoreCertificateAuthorityRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*')]),
 		});
 
 	}
@@ -1647,7 +1581,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: string;
 
@@ -1667,7 +1600,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 
@@ -1683,7 +1615,7 @@ export namespace MyNS {
 	}
 	export function CreateRevokeCertificateRequestFormGroup() {
 		return new FormGroup<RevokeCertificateRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*')]),
 			CertificateSerial: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(0)]),
 			RevocationReason: new FormControl<RevokeCertificateRequestRevocationReason | null | undefined>(undefined, [Validators.required]),
 		});
@@ -1708,7 +1640,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: string;
 
@@ -1725,13 +1656,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagCertificateAuthorityRequestFormGroup() {
 		return new FormGroup<TagCertificateAuthorityRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*')]),
 		});
 
 	}
@@ -1752,7 +1682,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: string;
 
@@ -1769,13 +1698,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagCertificateAuthorityRequestFormGroup() {
 		return new FormGroup<UntagCertificateAuthorityRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*')]),
 		});
 
 	}
@@ -1786,7 +1714,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: string;
 
@@ -1800,14 +1727,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 5
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		CertificateAuthorityArn: FormControl<string | null | undefined>,
 		Status: FormControl<CertificateAuthorityStatus | null | undefined>,
 	}
 	export function CreateUpdateCertificateAuthorityRequestFormGroup() {
 		return new FormGroup<UpdateCertificateAuthorityRequestFormProperties>({
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5)]),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(5), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]*:[\w+=,.@-]+(/[\w+=/,.@-]+)*')]),
 			Status: new FormControl<CertificateAuthorityStatus | null | undefined>(undefined),
 		});
 

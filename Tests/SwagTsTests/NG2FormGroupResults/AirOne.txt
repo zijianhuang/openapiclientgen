@@ -1,0 +1,1357 @@
+import { Injectable, Inject } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+export namespace MyNS {
+	export interface ProviderIdentifierType {
+
+		/** Vaccination provider number such as Medicare provider number or AIR provider number. */
+		providerNumber: string;
+		hpioNumber?: string | null;
+		hpiiNumber?: string | null;
+	}
+	export interface ProviderIdentifierTypeFormProperties {
+
+		/** Vaccination provider number such as Medicare provider number or AIR provider number. */
+		providerNumber: FormControl<string | null | undefined>,
+		hpioNumber: FormControl<string | null | undefined>,
+		hpiiNumber: FormControl<string | null | undefined>,
+	}
+	export function CreateProviderIdentifierTypeFormGroup() {
+		return new FormGroup<ProviderIdentifierTypeFormProperties>({
+			providerNumber: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8), Validators.minLength(6)]),
+			hpioNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16), Validators.minLength(16)]),
+			hpiiNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16), Validators.minLength(16)]),
+		});
+
+	}
+
+	export interface AccessType {
+		code: string;
+		name?: string | null;
+		hasAccess: boolean;
+	}
+	export interface AccessTypeFormProperties {
+		code: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		hasAccess: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAccessTypeFormGroup() {
+		return new FormGroup<AccessTypeFormProperties>({
+			code: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			hasAccess: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+		});
+
+	}
+
+	export interface AirAccessListRequestType {
+		informationProvider: ProviderIdentifierType;
+	}
+	export interface AirAccessListRequestTypeFormProperties {
+	}
+	export function CreateAirAccessListRequestTypeFormGroup() {
+		return new FormGroup<AirAccessListRequestTypeFormProperties>({
+		});
+
+	}
+
+	export interface AirAccessListResponseType {
+		statusCode: string;
+		codeType?: string | null;
+		message?: string | null;
+		accessList?: Array<AccessType>;
+		errors?: Array<ErrorMessageType>;
+	}
+	export interface AirAccessListResponseTypeFormProperties {
+		statusCode: FormControl<string | null | undefined>,
+		codeType: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateAirAccessListResponseTypeFormGroup() {
+		return new FormGroup<AirAccessListResponseTypeFormProperties>({
+			statusCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(10)]),
+			codeType: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+		});
+
+	}
+
+	export interface ErrorMessageType {
+
+		/** Error code */
+		code: string;
+
+		/** Error field name */
+		field?: string | null;
+
+		/** Error message details */
+		message?: string | null;
+	}
+	export interface ErrorMessageTypeFormProperties {
+
+		/** Error code */
+		code: FormControl<string | null | undefined>,
+
+		/** Error field name */
+		field: FormControl<string | null | undefined>,
+
+		/** Error message details */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorMessageTypeFormGroup() {
+		return new FormGroup<ErrorMessageTypeFormProperties>({
+			code: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(10)]),
+			field: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+		});
+
+	}
+
+	export interface MedicareCardType {
+
+		/** Individual's Medicare card number */
+		medicareCardNumber: string;
+
+		/** Medicare Individual Reference Number */
+		medicareIRN?: string | null;
+	}
+	export interface MedicareCardTypeFormProperties {
+
+		/** Individual's Medicare card number */
+		medicareCardNumber: FormControl<string | null | undefined>,
+
+		/** Medicare Individual Reference Number */
+		medicareIRN: FormControl<string | null | undefined>,
+	}
+	export function CreateMedicareCardTypeFormGroup() {
+		return new FormGroup<MedicareCardTypeFormProperties>({
+			medicareCardNumber: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(10)]),
+			medicareIRN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+		});
+
+	}
+
+	export interface PersonalDetailsType {
+
+		/** Individual's date of birth in format DDMMYYYY */
+		dateOfBirth: string;
+
+		/** Individual' First Name */
+		firstName?: string | null;
+
+		/** Individual' Last Name */
+		lastName: string;
+
+		/** Individual's gender */
+		gender?: string | null;
+	}
+	export interface PersonalDetailsTypeFormProperties {
+
+		/** Individual's date of birth in format DDMMYYYY */
+		dateOfBirth: FormControl<string | null | undefined>,
+
+		/** Individual' First Name */
+		firstName: FormControl<string | null | undefined>,
+
+		/** Individual' Last Name */
+		lastName: FormControl<string | null | undefined>,
+
+		/** Individual's gender */
+		gender: FormControl<string | null | undefined>,
+	}
+	export function CreatePersonalDetailsTypeFormGroup() {
+		return new FormGroup<PersonalDetailsTypeFormProperties>({
+			dateOfBirth: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8), Validators.minLength(8)]),
+			firstName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(1)]),
+			lastName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1)]),
+			gender: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+		});
+
+	}
+
+	export interface SearchAddressType {
+		postCode: string;
+	}
+	export interface SearchAddressTypeFormProperties {
+		postCode: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchAddressTypeFormGroup() {
+		return new FormGroup<SearchAddressTypeFormProperties>({
+			postCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4), Validators.minLength(4)]),
+		});
+
+	}
+
+	export interface AddressType {
+		addressLineOne?: string | null;
+		addressLineTwo?: string | null;
+		locality?: string | null;
+		postCode: string;
+	}
+	export interface AddressTypeFormProperties {
+		addressLineOne: FormControl<string | null | undefined>,
+		addressLineTwo: FormControl<string | null | undefined>,
+		locality: FormControl<string | null | undefined>,
+		postCode: FormControl<string | null | undefined>,
+	}
+	export function CreateAddressTypeFormGroup() {
+		return new FormGroup<AddressTypeFormProperties>({
+			addressLineOne: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(1)]),
+			addressLineTwo: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(0)]),
+			locality: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(1)]),
+			postCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4), Validators.minLength(4)]),
+		});
+
+	}
+
+	export interface IndividualType {
+		personalDetails?: PersonalDetailsType;
+		medicareCard?: MedicareCardType;
+		address?: SearchAddressType;
+		ihiNumber?: string | null;
+	}
+	export interface IndividualTypeFormProperties {
+		ihiNumber: FormControl<string | null | undefined>,
+	}
+	export function CreateIndividualTypeFormGroup() {
+		return new FormGroup<IndividualTypeFormProperties>({
+			ihiNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16), Validators.minLength(16)]),
+		});
+
+	}
+
+	export interface ResponseIndividualType {
+		personalDetails?: PersonalDetailsType;
+		medicareCard?: MedicareCardType;
+		address?: AddressType;
+	}
+	export interface ResponseIndividualTypeFormProperties {
+	}
+	export function CreateResponseIndividualTypeFormGroup() {
+		return new FormGroup<ResponseIndividualTypeFormProperties>({
+		});
+
+	}
+
+	export interface IndividualDetailsType {
+		individualIdentifier?: string | null;
+		individual?: ResponseIndividualType;
+
+		/** Individual's catchup date in format DDMMYYYY */
+		catchupDate?: string | null;
+		endDateCode?: string | null;
+		indigenousStatus?: boolean | null;
+		additionalVaccineIndicator?: boolean | null;
+		medContraindicationIndicator?: boolean | null;
+		naturalImmunityIndicator?: boolean | null;
+		vaccineTrialIndicator?: boolean | null;
+		actionRequiredIndicator?: boolean | null;
+	}
+	export interface IndividualDetailsTypeFormProperties {
+		individualIdentifier: FormControl<string | null | undefined>,
+
+		/** Individual's catchup date in format DDMMYYYY */
+		catchupDate: FormControl<string | null | undefined>,
+		endDateCode: FormControl<string | null | undefined>,
+		indigenousStatus: FormControl<boolean | null | undefined>,
+		additionalVaccineIndicator: FormControl<boolean | null | undefined>,
+		medContraindicationIndicator: FormControl<boolean | null | undefined>,
+		naturalImmunityIndicator: FormControl<boolean | null | undefined>,
+		vaccineTrialIndicator: FormControl<boolean | null | undefined>,
+		actionRequiredIndicator: FormControl<boolean | null | undefined>,
+	}
+	export function CreateIndividualDetailsTypeFormGroup() {
+		return new FormGroup<IndividualDetailsTypeFormProperties>({
+			individualIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			catchupDate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(8)]),
+			endDateCode: new FormControl<string | null | undefined>(undefined),
+			indigenousStatus: new FormControl<boolean | null | undefined>(undefined),
+			additionalVaccineIndicator: new FormControl<boolean | null | undefined>(undefined),
+			medContraindicationIndicator: new FormControl<boolean | null | undefined>(undefined),
+			naturalImmunityIndicator: new FormControl<boolean | null | undefined>(undefined),
+			vaccineTrialIndicator: new FormControl<boolean | null | undefined>(undefined),
+			actionRequiredIndicator: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface IdentifyIndividualRequestType {
+		individual: IndividualType;
+		informationProvider: ProviderIdentifierType;
+	}
+	export interface IdentifyIndividualRequestTypeFormProperties {
+	}
+	export function CreateIdentifyIndividualRequestTypeFormGroup() {
+		return new FormGroup<IdentifyIndividualRequestTypeFormProperties>({
+		});
+
+	}
+
+	export interface IndividualDetailsResponseType {
+		statusCode: string;
+		codeType?: string | null;
+		message?: string | null;
+		individualDetails?: IndividualDetailsType;
+		errors?: Array<ErrorMessageType>;
+	}
+	export interface IndividualDetailsResponseTypeFormProperties {
+		statusCode: FormControl<string | null | undefined>,
+		codeType: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateIndividualDetailsResponseTypeFormGroup() {
+		return new FormGroup<IndividualDetailsResponseTypeFormProperties>({
+			statusCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(10)]),
+			codeType: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+		});
+
+	}
+
+	export interface AdditionalVaccineIndicatorRequestType {
+		individualIdentifier: string;
+		acknowledgement: boolean;
+		informationProvider: ProviderIdentifierType;
+	}
+	export interface AdditionalVaccineIndicatorRequestTypeFormProperties {
+		individualIdentifier: FormControl<string | null | undefined>,
+		acknowledgement: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAdditionalVaccineIndicatorRequestTypeFormGroup() {
+		return new FormGroup<AdditionalVaccineIndicatorRequestTypeFormProperties>({
+			individualIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			acknowledgement: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+		});
+
+	}
+
+	export interface AdditionalVaccineIndicatorResponseType {
+		statusCode: string;
+		codeType?: string | null;
+		message?: string | null;
+		errors?: Array<ErrorMessageType>;
+	}
+	export interface AdditionalVaccineIndicatorResponseTypeFormProperties {
+		statusCode: FormControl<string | null | undefined>,
+		codeType: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateAdditionalVaccineIndicatorResponseTypeFormGroup() {
+		return new FormGroup<AdditionalVaccineIndicatorResponseTypeFormProperties>({
+			statusCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(10)]),
+			codeType: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+		});
+
+	}
+
+	export interface DueVaccineType {
+		disease?: string | null;
+		vaccineDose?: string | null;
+
+		/** Due date in format DDMMYYYY */
+		dueDate?: string | null;
+	}
+	export interface DueVaccineTypeFormProperties {
+		disease: FormControl<string | null | undefined>,
+		vaccineDose: FormControl<string | null | undefined>,
+
+		/** Due date in format DDMMYYYY */
+		dueDate: FormControl<string | null | undefined>,
+	}
+	export function CreateDueVaccineTypeFormGroup() {
+		return new FormGroup<DueVaccineTypeFormProperties>({
+			disease: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6), Validators.minLength(1)]),
+			vaccineDose: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(1)]),
+			dueDate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(8)]),
+		});
+
+	}
+
+	export interface EncounterHistoryType {
+
+		/** Claim id of the encounter */
+		claimId: string;
+
+		/** Claim sequence number of the encounter */
+		claimSeqNum: number;
+
+		/** Immunisation encounter sequence number of the encounter */
+		immEncSeqNum: number;
+		episodes?: Array<EpisodeResponseType>;
+		editable?: boolean | null;
+
+		/** Date submitted in format DDMMYYYY */
+		dateOfService?: string | null;
+
+		/** Date submitted in format DDMMYYYY */
+		dateSubmitted?: string | null;
+		schoolId?: string | null;
+	}
+	export interface EncounterHistoryTypeFormProperties {
+
+		/** Claim id of the encounter */
+		claimId: FormControl<string | null | undefined>,
+
+		/** Claim sequence number of the encounter */
+		claimSeqNum: FormControl<number | null | undefined>,
+
+		/** Immunisation encounter sequence number of the encounter */
+		immEncSeqNum: FormControl<number | null | undefined>,
+		editable: FormControl<boolean | null | undefined>,
+
+		/** Date submitted in format DDMMYYYY */
+		dateOfService: FormControl<string | null | undefined>,
+
+		/** Date submitted in format DDMMYYYY */
+		dateSubmitted: FormControl<string | null | undefined>,
+		schoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateEncounterHistoryTypeFormGroup() {
+		return new FormGroup<EncounterHistoryTypeFormProperties>({
+			claimId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			claimSeqNum: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			immEncSeqNum: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			editable: new FormControl<boolean | null | undefined>(undefined),
+			dateOfService: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(8)]),
+			dateSubmitted: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(8)]),
+			schoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(9), Validators.minLength(0)]),
+		});
+
+	}
+
+	export interface EpisodeResponseType {
+		id: number;
+		vaccineCode: string;
+		vaccineDose?: string | null;
+		vaccineBatch?: string | null;
+		vaccineSerialNumber?: string | null;
+		actionRequiredIndicator: boolean;
+		editable: boolean;
+		information?: InformationType;
+	}
+	export interface EpisodeResponseTypeFormProperties {
+		id: FormControl<number | null | undefined>,
+		vaccineCode: FormControl<string | null | undefined>,
+		vaccineDose: FormControl<string | null | undefined>,
+		vaccineBatch: FormControl<string | null | undefined>,
+		vaccineSerialNumber: FormControl<string | null | undefined>,
+		actionRequiredIndicator: FormControl<boolean | null | undefined>,
+		editable: FormControl<boolean | null | undefined>,
+	}
+	export function CreateEpisodeResponseTypeFormGroup() {
+		return new FormGroup<EpisodeResponseTypeFormProperties>({
+			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			vaccineCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6), Validators.minLength(1)]),
+			vaccineDose: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(1)]),
+			vaccineBatch: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(15), Validators.minLength(1)]),
+			vaccineSerialNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(108), Validators.minLength(1)]),
+			actionRequiredIndicator: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			editable: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+		});
+
+	}
+
+	export interface ImmunisationDetailsResponseType {
+		dueList?: Array<DueVaccineType>;
+		encounters?: Array<EncounterHistoryType>;
+	}
+	export interface ImmunisationDetailsResponseTypeFormProperties {
+	}
+	export function CreateImmunisationDetailsResponseTypeFormGroup() {
+		return new FormGroup<ImmunisationDetailsResponseTypeFormProperties>({
+		});
+
+	}
+
+	export interface AirHistoryRequestType {
+		individualIdentifier: string;
+		informationProvider: ProviderIdentifierType;
+	}
+	export interface AirHistoryRequestTypeFormProperties {
+		individualIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateAirHistoryRequestTypeFormGroup() {
+		return new FormGroup<AirHistoryRequestTypeFormProperties>({
+			individualIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+		});
+
+	}
+
+	export interface ImmunisationHistoryResponseType {
+		statusCode: string;
+		codeType?: string | null;
+		message?: string | null;
+		immunisationDetails?: ImmunisationDetailsResponseType;
+		errors?: Array<ErrorMessageType>;
+	}
+	export interface ImmunisationHistoryResponseTypeFormProperties {
+		statusCode: FormControl<string | null | undefined>,
+		codeType: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateImmunisationHistoryResponseTypeFormGroup() {
+		return new FormGroup<ImmunisationHistoryResponseTypeFormProperties>({
+			statusCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(10)]),
+			codeType: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+		});
+
+	}
+
+	export interface InformationType {
+		status: string;
+		code?: string | null;
+		text?: string | null;
+		messageCode?: string | null;
+		messageText?: string | null;
+	}
+	export interface InformationTypeFormProperties {
+		status: FormControl<string | null | undefined>,
+		code: FormControl<string | null | undefined>,
+		text: FormControl<string | null | undefined>,
+		messageCode: FormControl<string | null | undefined>,
+		messageText: FormControl<string | null | undefined>,
+	}
+	export function CreateInformationTypeFormGroup() {
+		return new FormGroup<InformationTypeFormProperties>({
+			status: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20), Validators.minLength(1)]),
+			code: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10), Validators.minLength(1)]),
+			text: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+			messageCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4), Validators.minLength(4)]),
+			messageText: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+		});
+
+	}
+
+	export interface ImmunisationHistoryStatementType {
+		mimeType: ImmunisationHistoryStatementTypeMimeType;
+
+		/** File name of the PDF immunisation history statement */
+		fileName: string;
+
+		/** Base64-encoded content of PDF immunisation history statement */
+		fileContent: string;
+	}
+	export interface ImmunisationHistoryStatementTypeFormProperties {
+		mimeType: FormControl<ImmunisationHistoryStatementTypeMimeType | null | undefined>,
+
+		/** File name of the PDF immunisation history statement */
+		fileName: FormControl<string | null | undefined>,
+
+		/** Base64-encoded content of PDF immunisation history statement */
+		fileContent: FormControl<string | null | undefined>,
+	}
+	export function CreateImmunisationHistoryStatementTypeFormGroup() {
+		return new FormGroup<ImmunisationHistoryStatementTypeFormProperties>({
+			mimeType: new FormControl<ImmunisationHistoryStatementTypeMimeType | null | undefined>(undefined, [Validators.required]),
+			fileName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			fileContent: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+		});
+
+	}
+
+	export enum ImmunisationHistoryStatementTypeMimeType { application_pdf = 0 }
+
+	export interface ImmunisationHistoryStatementResponseType {
+		statusCode: string;
+		codeType?: string | null;
+		message?: string | null;
+		immunisationHistoryStatement?: ImmunisationHistoryStatementType;
+		errors?: Array<ErrorMessageType>;
+	}
+	export interface ImmunisationHistoryStatementResponseTypeFormProperties {
+		statusCode: FormControl<string | null | undefined>,
+		codeType: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateImmunisationHistoryStatementResponseTypeFormGroup() {
+		return new FormGroup<ImmunisationHistoryStatementResponseTypeFormProperties>({
+			statusCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(10)]),
+			codeType: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+		});
+
+	}
+
+	export interface IndigenousStatusRequestType {
+		individualIdentifier: string;
+		indigenousStatus: boolean;
+		informationProvider: ProviderIdentifierType;
+	}
+	export interface IndigenousStatusRequestTypeFormProperties {
+		individualIdentifier: FormControl<string | null | undefined>,
+		indigenousStatus: FormControl<boolean | null | undefined>,
+	}
+	export function CreateIndigenousStatusRequestTypeFormGroup() {
+		return new FormGroup<IndigenousStatusRequestTypeFormProperties>({
+			individualIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			indigenousStatus: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+		});
+
+	}
+
+	export interface IndigenousStatusResponseType {
+		statusCode: string;
+		codeType?: string | null;
+		message?: string | null;
+		errors?: Array<ErrorMessageType>;
+	}
+	export interface IndigenousStatusResponseTypeFormProperties {
+		statusCode: FormControl<string | null | undefined>,
+		codeType: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateIndigenousStatusResponseTypeFormGroup() {
+		return new FormGroup<IndigenousStatusResponseTypeFormProperties>({
+			statusCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(10)]),
+			codeType: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+		});
+
+	}
+
+	export interface MedicalContraindiationResponseType {
+		vaccineCode: string;
+		typeCode: MedicalContraindiationResponseTypeTypeCode;
+
+		/** Start date in format DDMMYYYY */
+		startDate: string;
+
+		/** End date in format DDMMYYYY */
+		endDate?: string | null;
+		reason: MedicalContraindiationResponseTypeReason;
+
+		/** AnaphylaxisDate date in format DDMMYYYY */
+		anaphylaxisDate?: string | null;
+	}
+	export interface MedicalContraindiationResponseTypeFormProperties {
+		vaccineCode: FormControl<string | null | undefined>,
+		typeCode: FormControl<MedicalContraindiationResponseTypeTypeCode | null | undefined>,
+
+		/** Start date in format DDMMYYYY */
+		startDate: FormControl<string | null | undefined>,
+
+		/** End date in format DDMMYYYY */
+		endDate: FormControl<string | null | undefined>,
+		reason: FormControl<MedicalContraindiationResponseTypeReason | null | undefined>,
+
+		/** AnaphylaxisDate date in format DDMMYYYY */
+		anaphylaxisDate: FormControl<string | null | undefined>,
+	}
+	export function CreateMedicalContraindiationResponseTypeFormGroup() {
+		return new FormGroup<MedicalContraindiationResponseTypeFormProperties>({
+			vaccineCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6), Validators.minLength(1)]),
+			typeCode: new FormControl<MedicalContraindiationResponseTypeTypeCode | null | undefined>(undefined, [Validators.required]),
+			startDate: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8), Validators.minLength(8)]),
+			endDate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(8)]),
+			reason: new FormControl<MedicalContraindiationResponseTypeReason | null | undefined>(undefined, [Validators.required]),
+			anaphylaxisDate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(8)]),
+		});
+
+	}
+
+	export enum MedicalContraindiationResponseTypeTypeCode { P = 0, T = 1 }
+
+	export enum MedicalContraindiationResponseTypeReason { M = 0, S = 1, P = 2, I = 3, A = 4 }
+
+	export interface MedicalContraindicationHistoryResponseType {
+		statusCode: string;
+		codeType?: string | null;
+		message?: string | null;
+		medContraindicationList?: Array<MedicalContraindiationResponseType>;
+		errors?: Array<ErrorMessageType>;
+	}
+	export interface MedicalContraindicationHistoryResponseTypeFormProperties {
+		statusCode: FormControl<string | null | undefined>,
+		codeType: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateMedicalContraindicationHistoryResponseTypeFormGroup() {
+		return new FormGroup<MedicalContraindicationHistoryResponseTypeFormProperties>({
+			statusCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(10)]),
+			codeType: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+		});
+
+	}
+
+	export interface MedicalContraindiationRequestType {
+		vaccineCode: string;
+		typeCode: MedicalContraindiationResponseTypeTypeCode;
+
+		/** End date in format DDMMYYYY */
+		endDate?: string | null;
+		reason: MedicalContraindiationResponseTypeReason;
+
+		/** Previous anaphylaxis date in format DDMMYYYY */
+		anaphylaxisDate?: string | null;
+	}
+	export interface MedicalContraindiationRequestTypeFormProperties {
+		vaccineCode: FormControl<string | null | undefined>,
+		typeCode: FormControl<MedicalContraindiationResponseTypeTypeCode | null | undefined>,
+
+		/** End date in format DDMMYYYY */
+		endDate: FormControl<string | null | undefined>,
+		reason: FormControl<MedicalContraindiationResponseTypeReason | null | undefined>,
+
+		/** Previous anaphylaxis date in format DDMMYYYY */
+		anaphylaxisDate: FormControl<string | null | undefined>,
+	}
+	export function CreateMedicalContraindiationRequestTypeFormGroup() {
+		return new FormGroup<MedicalContraindiationRequestTypeFormProperties>({
+			vaccineCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6), Validators.minLength(1)]),
+			typeCode: new FormControl<MedicalContraindiationResponseTypeTypeCode | null | undefined>(undefined, [Validators.required]),
+			endDate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(8)]),
+			reason: new FormControl<MedicalContraindiationResponseTypeReason | null | undefined>(undefined, [Validators.required]),
+			anaphylaxisDate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(8)]),
+		});
+
+	}
+
+	export interface AddMedicalContraindicationRequestType {
+		individualIdentifier: string;
+		contraindication: MedicalContraindiationRequestType;
+		informationProvider: ProviderIdentifierType;
+	}
+	export interface AddMedicalContraindicationRequestTypeFormProperties {
+		individualIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateAddMedicalContraindicationRequestTypeFormGroup() {
+		return new FormGroup<AddMedicalContraindicationRequestTypeFormProperties>({
+			individualIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+		});
+
+	}
+
+	export interface AddMedicalContraindicationResponseType {
+		statusCode: string;
+		codeType?: string | null;
+		message?: string | null;
+		errors?: Array<ErrorMessageType>;
+	}
+	export interface AddMedicalContraindicationResponseTypeFormProperties {
+		statusCode: FormControl<string | null | undefined>,
+		codeType: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateAddMedicalContraindicationResponseTypeFormGroup() {
+		return new FormGroup<AddMedicalContraindicationResponseTypeFormProperties>({
+			statusCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(10)]),
+			codeType: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+		});
+
+	}
+
+	export interface NaturalImmunityResponseType {
+		disease: string;
+
+		/** Notification date in format DDMMYYYY */
+		notificationDate: string;
+
+		/** Lab test date in format DDMMYYYY */
+		labTestDate?: string | null;
+
+		/** Diagnosis date in format DDMMYYYY */
+		diagnosisDate?: string | null;
+	}
+	export interface NaturalImmunityResponseTypeFormProperties {
+		disease: FormControl<string | null | undefined>,
+
+		/** Notification date in format DDMMYYYY */
+		notificationDate: FormControl<string | null | undefined>,
+
+		/** Lab test date in format DDMMYYYY */
+		labTestDate: FormControl<string | null | undefined>,
+
+		/** Diagnosis date in format DDMMYYYY */
+		diagnosisDate: FormControl<string | null | undefined>,
+	}
+	export function CreateNaturalImmunityResponseTypeFormGroup() {
+		return new FormGroup<NaturalImmunityResponseTypeFormProperties>({
+			disease: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6), Validators.minLength(1)]),
+			notificationDate: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8), Validators.minLength(8)]),
+			labTestDate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(8)]),
+			diagnosisDate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(8)]),
+		});
+
+	}
+
+	export interface NaturalImmunityHistoryResponseType {
+		statusCode: string;
+		codeType?: string | null;
+		message?: string | null;
+		naturalImmunityList?: Array<NaturalImmunityResponseType>;
+		errors?: Array<ErrorMessageType>;
+	}
+	export interface NaturalImmunityHistoryResponseTypeFormProperties {
+		statusCode: FormControl<string | null | undefined>,
+		codeType: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateNaturalImmunityHistoryResponseTypeFormGroup() {
+		return new FormGroup<NaturalImmunityHistoryResponseTypeFormProperties>({
+			statusCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(10)]),
+			codeType: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+		});
+
+	}
+
+	export interface NaturalImmunityRequestType {
+		disease: string;
+
+		/** Lab test date in format DDMMYYYY - it is required if diagnosisDate is not provided */
+		labTestDate?: string | null;
+
+		/** Diagnosis date in format DDMMYYYY - it is required if labTestDate is not provided */
+		diagnosisDate?: string | null;
+	}
+	export interface NaturalImmunityRequestTypeFormProperties {
+		disease: FormControl<string | null | undefined>,
+
+		/** Lab test date in format DDMMYYYY - it is required if diagnosisDate is not provided */
+		labTestDate: FormControl<string | null | undefined>,
+
+		/** Diagnosis date in format DDMMYYYY - it is required if labTestDate is not provided */
+		diagnosisDate: FormControl<string | null | undefined>,
+	}
+	export function CreateNaturalImmunityRequestTypeFormGroup() {
+		return new FormGroup<NaturalImmunityRequestTypeFormProperties>({
+			disease: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6), Validators.minLength(1)]),
+			labTestDate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(8)]),
+			diagnosisDate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(8)]),
+		});
+
+	}
+
+	export interface AddNaturalImmunityRequestType {
+		individualIdentifier: string;
+		immunity: NaturalImmunityRequestType;
+		informationProvider: ProviderIdentifierType;
+	}
+	export interface AddNaturalImmunityRequestTypeFormProperties {
+		individualIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateAddNaturalImmunityRequestTypeFormGroup() {
+		return new FormGroup<AddNaturalImmunityRequestTypeFormProperties>({
+			individualIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+		});
+
+	}
+
+	export interface AddNaturalImmunityResponseType {
+		statusCode: string;
+		codeType?: string | null;
+		message?: string | null;
+		errors?: Array<ErrorMessageType>;
+	}
+	export interface AddNaturalImmunityResponseTypeFormProperties {
+		statusCode: FormControl<string | null | undefined>,
+		codeType: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateAddNaturalImmunityResponseTypeFormGroup() {
+		return new FormGroup<AddNaturalImmunityResponseTypeFormProperties>({
+			statusCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(10)]),
+			codeType: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+		});
+
+	}
+
+	export interface VaccineTrialType {
+		antigenCode?: string | null;
+		dose?: string | null;
+
+		/** Start date in format DDMMYYYY */
+		startDate?: string | null;
+
+		/** End date in format DDMMYYYY */
+		endDate?: string | null;
+	}
+	export interface VaccineTrialTypeFormProperties {
+		antigenCode: FormControl<string | null | undefined>,
+		dose: FormControl<string | null | undefined>,
+
+		/** Start date in format DDMMYYYY */
+		startDate: FormControl<string | null | undefined>,
+
+		/** End date in format DDMMYYYY */
+		endDate: FormControl<string | null | undefined>,
+	}
+	export function CreateVaccineTrialTypeFormGroup() {
+		return new FormGroup<VaccineTrialTypeFormProperties>({
+			antigenCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6), Validators.minLength(1)]),
+			dose: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(1)]),
+			startDate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(8)]),
+			endDate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(8)]),
+		});
+
+	}
+
+	export interface VaccineTrialHistoryResponseType {
+		statusCode: string;
+		codeType?: string | null;
+		message?: string | null;
+		vaccineTrialList?: Array<VaccineTrialType>;
+		errors?: Array<ErrorMessageType>;
+	}
+	export interface VaccineTrialHistoryResponseTypeFormProperties {
+		statusCode: FormControl<string | null | undefined>,
+		codeType: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateVaccineTrialHistoryResponseTypeFormGroup() {
+		return new FormGroup<VaccineTrialHistoryResponseTypeFormProperties>({
+			statusCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(10)]),
+			codeType: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+		});
+
+	}
+
+	export interface IndividualIdentifierType {
+		personalDetails?: PersonalDetailsType;
+		medicareCard?: MedicareCardType;
+		address?: AddressType;
+		ihiNumber?: string | null;
+		atsiIndicator?: IndividualIdentifierTypeAtsiIndicator | null;
+		acceptAndConfirm?: string | null;
+	}
+	export interface IndividualIdentifierTypeFormProperties {
+		ihiNumber: FormControl<string | null | undefined>,
+		atsiIndicator: FormControl<IndividualIdentifierTypeAtsiIndicator | null | undefined>,
+		acceptAndConfirm: FormControl<string | null | undefined>,
+	}
+	export function CreateIndividualIdentifierTypeFormGroup() {
+		return new FormGroup<IndividualIdentifierTypeFormProperties>({
+			ihiNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16), Validators.minLength(16)]),
+			atsiIndicator: new FormControl<IndividualIdentifierTypeAtsiIndicator | null | undefined>(undefined),
+			acceptAndConfirm: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+		});
+
+	}
+
+	export enum IndividualIdentifierTypeAtsiIndicator { Y = 0, N = 1 }
+
+	export interface CatchupDateRequestType {
+		individual: IndividualIdentifierType;
+		informationProvider: ProviderIdentifierType;
+	}
+	export interface CatchupDateRequestTypeFormProperties {
+	}
+	export function CreateCatchupDateRequestTypeFormGroup() {
+		return new FormGroup<CatchupDateRequestTypeFormProperties>({
+		});
+
+	}
+
+	export interface CatchupDateResponseType {
+		statusCode: string;
+		codeType?: string | null;
+		message?: string | null;
+
+		/** Immunisation schedule catchup date in format ddMMyyyy */
+		catchupDate?: string | null;
+		errors?: Array<ErrorMessageType>;
+	}
+	export interface CatchupDateResponseTypeFormProperties {
+		statusCode: FormControl<string | null | undefined>,
+		codeType: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+
+		/** Immunisation schedule catchup date in format ddMMyyyy */
+		catchupDate: FormControl<string | null | undefined>,
+	}
+	export function CreateCatchupDateResponseTypeFormGroup() {
+		return new FormGroup<CatchupDateResponseTypeFormProperties>({
+			statusCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4), Validators.minLength(4)]),
+			codeType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(1)]),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+			catchupDate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(8)]),
+		});
+
+	}
+
+	export interface EpisodeType {
+		id: number;
+		vaccineCode: string;
+		vaccineDose?: string | null;
+		vaccineBatch?: string | null;
+		vaccineSerialNumber?: string | null;
+	}
+	export interface EpisodeTypeFormProperties {
+		id: FormControl<number | null | undefined>,
+		vaccineCode: FormControl<string | null | undefined>,
+		vaccineDose: FormControl<string | null | undefined>,
+		vaccineBatch: FormControl<string | null | undefined>,
+		vaccineSerialNumber: FormControl<string | null | undefined>,
+	}
+	export function CreateEpisodeTypeFormGroup() {
+		return new FormGroup<EpisodeTypeFormProperties>({
+			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			vaccineCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6), Validators.minLength(1)]),
+			vaccineDose: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(1)]),
+			vaccineBatch: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(15), Validators.minLength(0)]),
+			vaccineSerialNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(108), Validators.minLength(1)]),
+		});
+
+	}
+
+	export interface EncounterType {
+		id: number;
+		claimSequenceNumber?: string | null;
+		episodes: Array<EpisodeType>;
+		immunisationProvider?: ProviderIdentifierType;
+		schoolId?: string | null;
+		administeredOverseas?: boolean | null;
+		acceptAndConfirm?: string | null;
+
+		/** The date on which the Individual received the immunisation in format ddMMyyy */
+		dateOfService: string;
+	}
+	export interface EncounterTypeFormProperties {
+		id: FormControl<number | null | undefined>,
+		claimSequenceNumber: FormControl<string | null | undefined>,
+		schoolId: FormControl<string | null | undefined>,
+		administeredOverseas: FormControl<boolean | null | undefined>,
+		acceptAndConfirm: FormControl<string | null | undefined>,
+
+		/** The date on which the Individual received the immunisation in format ddMMyyy */
+		dateOfService: FormControl<string | null | undefined>,
+	}
+	export function CreateEncounterTypeFormGroup() {
+		return new FormGroup<EncounterTypeFormProperties>({
+			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			claimSequenceNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4), Validators.minLength(1)]),
+			schoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(9), Validators.minLength(0)]),
+			administeredOverseas: new FormControl<boolean | null | undefined>(undefined),
+			acceptAndConfirm: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			dateOfService: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8), Validators.minLength(8)]),
+		});
+
+	}
+
+	export interface EncounterResponseType {
+		id: number;
+		claimSequenceNumber: string;
+		episodes: Array<EpisodeResponseType>;
+		information?: InformationType;
+
+		/** Claim id of the encounter */
+		claimId?: string | null;
+
+		/** Claim sequence number of the encounter */
+		claimSeqNum?: number | null;
+
+		/** Immunisation encounter sequence number of the encounter */
+		immEncSeqNum: number;
+		schoolId?: string | null;
+
+		/** Date of service in format DDMMYYYY */
+		dateOfService: string;
+	}
+	export interface EncounterResponseTypeFormProperties {
+		id: FormControl<number | null | undefined>,
+		claimSequenceNumber: FormControl<string | null | undefined>,
+
+		/** Claim id of the encounter */
+		claimId: FormControl<string | null | undefined>,
+
+		/** Claim sequence number of the encounter */
+		claimSeqNum: FormControl<number | null | undefined>,
+
+		/** Immunisation encounter sequence number of the encounter */
+		immEncSeqNum: FormControl<number | null | undefined>,
+		schoolId: FormControl<string | null | undefined>,
+
+		/** Date of service in format DDMMYYYY */
+		dateOfService: FormControl<string | null | undefined>,
+	}
+	export function CreateEncounterResponseTypeFormGroup() {
+		return new FormGroup<EncounterResponseTypeFormProperties>({
+			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			claimSequenceNumber: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4), Validators.minLength(1)]),
+			claimId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(5)]),
+			claimSeqNum: new FormControl<number | null | undefined>(undefined),
+			immEncSeqNum: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			schoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(9), Validators.minLength(0)]),
+			dateOfService: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8), Validators.minLength(8)]),
+		});
+
+	}
+
+	export interface ClaimDetailsResponseType {
+		claimId?: string | null;
+		encounters?: Array<EncounterResponseType>;
+	}
+	export interface ClaimDetailsResponseTypeFormProperties {
+		claimId: FormControl<string | null | undefined>,
+	}
+	export function CreateClaimDetailsResponseTypeFormGroup() {
+		return new FormGroup<ClaimDetailsResponseTypeFormProperties>({
+			claimId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(8)]),
+		});
+
+	}
+
+	export interface AddEncounterRequestType {
+		individual: IndividualIdentifierType;
+		encounters: Array<EncounterType>;
+		informationProvider: ProviderIdentifierType;
+		claimId?: string | null;
+	}
+	export interface AddEncounterRequestTypeFormProperties {
+		claimId: FormControl<string | null | undefined>,
+	}
+	export function CreateAddEncounterRequestTypeFormGroup() {
+		return new FormGroup<AddEncounterRequestTypeFormProperties>({
+			claimId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(8)]),
+		});
+
+	}
+
+	export interface AddEncounterResponseType {
+		statusCode: string;
+		codeType?: string | null;
+		message?: string | null;
+		claimDetails?: ClaimDetailsResponseType;
+		errors?: Array<ErrorMessageType>;
+	}
+	export interface AddEncounterResponseTypeFormProperties {
+		statusCode: FormControl<string | null | undefined>,
+		codeType: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateAddEncounterResponseTypeFormGroup() {
+		return new FormGroup<AddEncounterResponseTypeFormProperties>({
+			statusCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4), Validators.minLength(4)]),
+			codeType: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+		});
+
+	}
+
+	export interface EncounterRequestType {
+
+		/** Claim id of the encounter */
+		claimId: string;
+
+		/** Claim sequence number of the encounter */
+		claimSeqNum: number;
+
+		/** Immunisation encounter sequence number of the encounter */
+		immEncSeqNum: number;
+		episodes: Array<EpisodeType>;
+		schoolId?: string | null;
+
+		/** Date of service in format DDMMYYYY */
+		dateOfService: string;
+	}
+	export interface EncounterRequestTypeFormProperties {
+
+		/** Claim id of the encounter */
+		claimId: FormControl<string | null | undefined>,
+
+		/** Claim sequence number of the encounter */
+		claimSeqNum: FormControl<number | null | undefined>,
+
+		/** Immunisation encounter sequence number of the encounter */
+		immEncSeqNum: FormControl<number | null | undefined>,
+		schoolId: FormControl<string | null | undefined>,
+
+		/** Date of service in format DDMMYYYY */
+		dateOfService: FormControl<string | null | undefined>,
+	}
+	export function CreateEncounterRequestTypeFormGroup() {
+		return new FormGroup<EncounterRequestTypeFormProperties>({
+			claimId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8), Validators.minLength(5)]),
+			claimSeqNum: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			immEncSeqNum: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			schoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(9), Validators.minLength(0)]),
+			dateOfService: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8), Validators.minLength(8)]),
+		});
+
+	}
+
+	export interface UpdateEncounterRequestType {
+		individualIdentifier: string;
+		encounter: EncounterRequestType;
+		informationProvider: ProviderIdentifierType;
+	}
+	export interface UpdateEncounterRequestTypeFormProperties {
+		individualIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateEncounterRequestTypeFormGroup() {
+		return new FormGroup<UpdateEncounterRequestTypeFormProperties>({
+			individualIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+		});
+
+	}
+
+	export interface UpdateEncounterResponseType {
+		statusCode: string;
+		codeType?: string | null;
+		message?: string | null;
+		encounter?: EncounterResponseType;
+		errors?: Array<ErrorMessageType>;
+	}
+	export interface UpdateEncounterResponseTypeFormProperties {
+		statusCode: FormControl<string | null | undefined>,
+		codeType: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateEncounterResponseTypeFormGroup() {
+		return new FormGroup<UpdateEncounterResponseTypeFormProperties>({
+			statusCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(10)]),
+			codeType: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+		});
+
+	}
+
+	@Injectable()
+	export class MyClient {
+		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		}
+
+		/**
+		 * Get authorisation access list
+		 * Post v1/authorisation/access/list
+		 * @return {AirAccessListResponseType} 200 OK
+		 */
+		AirAuthorisationAccessList1EigwPost(requestBody: AirAccessListRequestType): Observable<AirAccessListResponseType> {
+			return this.http.post<AirAccessListResponseType>(this.baseUri + 'v1/authorisation/access/list', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * Identify Individual details request
+		 * Post v1/individual/details
+		 * @return {IndividualDetailsResponseType} 200 OK
+		 */
+		AirImmunisationIndividualDetails1EigwPost(requestBody: IdentifyIndividualRequestType): Observable<IndividualDetailsResponseType> {
+			return this.http.post<IndividualDetailsResponseType>(this.baseUri + 'v1/individual/details', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * Add additional vaccine indicator request
+		 * Post v1/individual/additional-vaccine-indicator/add
+		 * @return {AdditionalVaccineIndicatorResponseType} 200 OK
+		 */
+		AirImmunisationAdditionalVaccineIndicatorAdd1EigwPost(requestBody: AdditionalVaccineIndicatorRequestType): Observable<AdditionalVaccineIndicatorResponseType> {
+			return this.http.post<AdditionalVaccineIndicatorResponseType>(this.baseUri + 'v1/individual/additional-vaccine-indicator/add', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * Remove additional vaccine indicator request
+		 * Post v1/individual/additional-vaccine-indicator/remove
+		 * @return {AdditionalVaccineIndicatorResponseType} 200 OK
+		 */
+		AirImmunisationAdditionalVaccineIndicatorRemove1EigwPost(requestBody: AdditionalVaccineIndicatorRequestType): Observable<AdditionalVaccineIndicatorResponseType> {
+			return this.http.post<AdditionalVaccineIndicatorResponseType>(this.baseUri + 'v1/individual/additional-vaccine-indicator/remove', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * Get immunisation details request
+		 * Post v1/individual/immunisation-history/details
+		 * @return {ImmunisationHistoryResponseType} 200 OK
+		 */
+		AirImmunisationHistoryDetails1EigwPost(requestBody: AirHistoryRequestType): Observable<ImmunisationHistoryResponseType> {
+			return this.http.post<ImmunisationHistoryResponseType>(this.baseUri + 'v1/individual/immunisation-history/details', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * Get Vaccine Trial History
+		 * Post v1/individual/immunisation-history/statement
+		 * @return {ImmunisationHistoryStatementResponseType} 200 OK
+		 */
+		AirImmunisationHistoryStatement1EigwPost(requestBody: AirHistoryRequestType): Observable<ImmunisationHistoryStatementResponseType> {
+			return this.http.post<ImmunisationHistoryStatementResponseType>(this.baseUri + 'v1/individual/immunisation-history/statement', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * Update Indigenous Status request
+		 * Post v1/individual/indigenous-status/update
+		 * @return {IndigenousStatusResponseType} 200 OK
+		 */
+		AirImmunisationIndigenousStatusUpdate1EigwPost(requestBody: IndigenousStatusRequestType): Observable<IndigenousStatusResponseType> {
+			return this.http.post<IndigenousStatusResponseType>(this.baseUri + 'v1/individual/indigenous-status/update', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * Get Medical Contraindication History
+		 * Post v1/individual/medical-contraindication/history
+		 * @return {MedicalContraindicationHistoryResponseType} 200 OK
+		 */
+		AirImmunisationMedContraindicationHistory1EigwPost(requestBody: AirHistoryRequestType): Observable<MedicalContraindicationHistoryResponseType> {
+			return this.http.post<MedicalContraindicationHistoryResponseType>(this.baseUri + 'v1/individual/medical-contraindication/history', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * Record Medical Contraindication request
+		 * Post v1/individual/medical-contraindication/record
+		 * @return {AddMedicalContraindicationResponseType} 200 OK
+		 */
+		AirImmunisationMedContraindicationRecord1EigwPost(requestBody: AddMedicalContraindicationRequestType): Observable<AddMedicalContraindicationResponseType> {
+			return this.http.post<AddMedicalContraindicationResponseType>(this.baseUri + 'v1/individual/medical-contraindication/record', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * Get Natural Immunity History
+		 * Post v1/individual/natural-immunity/history
+		 * @return {NaturalImmunityHistoryResponseType} 200 OK
+		 */
+		AirImmunisationNaturalImmunityHistory1EigwPost(requestBody: AirHistoryRequestType): Observable<NaturalImmunityHistoryResponseType> {
+			return this.http.post<NaturalImmunityHistoryResponseType>(this.baseUri + 'v1/individual/natural-immunity/history', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * Record Natural Immunity request
+		 * Post v1/individual/natural-immunity/record
+		 * @return {AddNaturalImmunityResponseType} 200 OK
+		 */
+		AirImmunisationNaturalImmunityRecord1EigwPost(requestBody: AddNaturalImmunityRequestType): Observable<AddNaturalImmunityResponseType> {
+			return this.http.post<AddNaturalImmunityResponseType>(this.baseUri + 'v1/individual/natural-immunity/record', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * Get Vaccine Trial History
+		 * Post v1/individual/vaccine-trial/history
+		 * @return {VaccineTrialHistoryResponseType} 200 OK
+		 */
+		AirImmunisationVaccineTrialHistory1EigwPost(requestBody: AirHistoryRequestType): Observable<VaccineTrialHistoryResponseType> {
+			return this.http.post<VaccineTrialHistoryResponseType>(this.baseUri + 'v1/individual/vaccine-trial/history', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * Post v1.1/schedule/catchup
+		 * @return {CatchupDateResponseType} 200 OK
+		 */
+		AirImmunisationScheduleCatchup110EigwPost(requestBody: CatchupDateRequestType): Observable<CatchupDateResponseType> {
+			return this.http.post<CatchupDateResponseType>(this.baseUri + 'v1.1/schedule/catchup', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * Record Encounter request
+		 * Post v1.1/encounters/record
+		 * @return {AddEncounterResponseType} 200 OK
+		 */
+		AirImmunisationEncounterRecord110EigwPost(requestBody: AddEncounterRequestType): Observable<AddEncounterResponseType> {
+			return this.http.post<AddEncounterResponseType>(this.baseUri + 'v1.1/encounters/record', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * Update Encounter request
+		 * Post v1/encounter/update
+		 * @return {UpdateEncounterResponseType} 200 OK
+		 */
+		AirImmunisationEncounterUpdate1EigwPost(requestBody: UpdateEncounterRequestType): Observable<UpdateEncounterResponseType> {
+			return this.http.post<UpdateEncounterResponseType>(this.baseUri + 'v1/encounter/update', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+	}
+
+}
+
